@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="zh-tw" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>軟體開發，除了方法論，還有⋯⋯ - Potioneer&#39;s Essays</title>
+  
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="William Yeh" />
+  <meta name="description" content="在某些人眼中，「敏捷」是狂熱份子聚集的邪教。
+或許是被困在守舊勢力太久了，敏捷信徒不止有改變世界的熱情，更有捨我其誰的急迫感。不過，在傳播理念或推動改變時，若操之過急，忽略對方所處的情境、歷史及歷程，就很難有建設性對話。在這守舊勢力龐大的世界，自然很容易陣亡。
+但這還只是表象。單靠對話仍不足以化解，更需要在方法論層次達到理解，方可進退有據。
+尤其在看過《社會科學的理路》之後，我領悟到一些根源問題及槓桿解。
+" />
+
+
+
+
+<meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
+
+
+<meta name="generator" content="Hugo 0.49.2" />
+
+
+<link rel="canonical" href="/post/2018/10/methodology-and-criteria/" />
+
+
+
+<link rel="icon" href="/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+<link href="/dist/jane.min.css?v=2.7.0" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="軟體開發，除了方法論，還有⋯⋯" />
+<meta property="og:description" content="在某些人眼中，「敏捷」是狂熱份子聚集的邪教。
+
+或許是被困在守舊勢力太久了，敏捷信徒不止有改變世界的熱情，更有捨我其誰的急迫感。不過，在傳播理念或推動改變時，若操之過急，忽略對方所處的情境、歷史及歷程，就很難有建設性對話。在這守舊勢力龐大的世界，自然很容易陣亡。
+
+但這還只是表象。單靠對話仍不足以化解，更需要在方法論層次達到理解，方可進退有據。
+
+尤其在看過《社會科學的理路》之後，我領悟到一些根源問題及槓桿解。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/2018/10/methodology-and-criteria/" /><meta property="article:published_time" content="2018-10-25T12:22:16&#43;08:00"/>
+<meta property="article:modified_time" content="2018-10-25T12:22:16&#43;08:00"/>
+
+<meta itemprop="name" content="軟體開發，除了方法論，還有⋯⋯">
+<meta itemprop="description" content="在某些人眼中，「敏捷」是狂熱份子聚集的邪教。
+
+或許是被困在守舊勢力太久了，敏捷信徒不止有改變世界的熱情，更有捨我其誰的急迫感。不過，在傳播理念或推動改變時，若操之過急，忽略對方所處的情境、歷史及歷程，就很難有建設性對話。在這守舊勢力龐大的世界，自然很容易陣亡。
+
+但這還只是表象。單靠對話仍不足以化解，更需要在方法論層次達到理解，方可進退有據。
+
+尤其在看過《社會科學的理路》之後，我領悟到一些根源問題及槓桿解。">
+
+
+<meta itemprop="datePublished" content="2018-10-25T12:22:16&#43;08:00" />
+<meta itemprop="dateModified" content="2018-10-25T12:22:16&#43;08:00" />
+<meta itemprop="wordCount" content="1085">
+
+
+
+<meta itemprop="keywords" content="agile,waterfall,scrum,book," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="軟體開發，除了方法論，還有⋯⋯"/>
+<meta name="twitter:description" content="在某些人眼中，「敏捷」是狂熱份子聚集的邪教。
+
+或許是被困在守舊勢力太久了，敏捷信徒不止有改變世界的熱情，更有捨我其誰的急迫感。不過，在傳播理念或推動改變時，若操之過急，忽略對方所處的情境、歷史及歷程，就很難有建設性對話。在這守舊勢力龐大的世界，自然很容易陣亡。
+
+但這還只是表象。單靠對話仍不足以化解，更需要在方法論層次達到理解，方可進退有據。
+
+尤其在看過《社會科學的理路》之後，我領悟到一些根源問題及槓桿解。"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-751859-3', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Potioneer&#39;s Essays</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="/">♜</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="/post/">Archives</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="/tags/">Tags</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="/categories/">Categories</a>
+          
+        
+      </li>
+    
+  </ul>
+</nav>
+
+
+  
+    
+
+
+
+
+
+
+  <link rel="stylesheet" href="/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/" class="logo">
+    
+      Potioneer&#39;s Essays
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="/">♜</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="/post/">Archives</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="/tags/">Tags</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="/categories/">Categories</a>
+          
+
+        
+
+      </li>
+    
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">軟體開發，除了方法論，還有⋯⋯</h1>
+      
+      <div class="post-meta">
+        <time datetime="2018-10-25" class="post-time">
+          2018-10-25
+        </time>
+        <div class="post-category">
+            <a href="/categories/management/"> Management </a>
+            
+          </div>
+        <span class="more-meta"> 約 1085 字 </span>
+          <span class="more-meta"> 預計閱讀 3 分鐘 </span>
+
+        
+        
+          <span id="busuanzi_container_page_pv">
+            | 阅读 <span id="busuanzi_value_page_pv"></span>
+          </span>
+        
+
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    
+    <div class="post-content">
+      <p>在某些人眼中，「敏捷」是狂熱份子聚集的邪教。</p>
+
+<p>或許是被困在守舊勢力太久了，敏捷信徒不止有改變世界的熱情，更有捨我其誰的急迫感。不過，在傳播理念或推動改變時，若操之過急，忽略對方所處的情境、歷史及歷程，就很難有建設性對話。在這守舊勢力龐大的世界，自然很容易陣亡。</p>
+
+<p>但這還只是表象。單靠對話仍不足以化解，更需要在方法論層次達到理解，方可進退有據。</p>
+
+<p>尤其在看過《<a href="https://www.books.com.tw/products/0010791756">社會科學的理路</a>》之後，我領悟到一些根源問題及槓桿解。</p>
+
+
+<link rel="stylesheet" href="/css/hugo-easy-gallery.css" />
+<div class="box" style="max-width:30em">
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="/img/2018/10/social-sci.jpg" alt="圖一　《社會科學的理路》第一版 (2001) 及第四版 (2018)"/>
+    </div>
+    <a href="/img/2018/10/social-sci.jpg" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>圖一　《社會科學的理路》第一版 (2001) 及第四版 (2018)</p>
+      </figcaption>
+  </figure>
+</div>
+
+
+<h2 id="方法論形塑世界觀">方法論形塑世界觀</h2>
+
+<p>我們都在採用方法論，不管我們自覺或不自覺。</p>
+
+<p>瀑布模型是一種方法論，敏捷是一種方法論，Scrum 及 Kanban 則是敏捷方法論底下更具體的實踐作法。</p>
+
+<p>為什麼會決定採取某一種方法論？原因可能很多，本文不予探討。本文想談的是，一旦採取某一種方法論，就會逐漸被該方法論所形塑的世界觀所包圍，以及接下來的連鎖效應，不管我們自覺或不自覺。</p>
+
+<p>《<a href="https://www.books.com.tw/products/0010791756">社會科學的理路</a>》從科學哲學角度指出：</p>
+
+
+
+<div class="box" style="max-width:30em">
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="/img/2018/10/paradigm.jpg" alt="圖二　方法論與世界觀"/>
+    </div>
+    <a href="/img/2018/10/paradigm.jpg" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>圖二　方法論與世界觀</p>
+      </figcaption>
+  </figure>
+</div>
+
+
+<p>讓我們從「軟體開發流程」的角度來照樣造句吧！</p>
+
+<ul>
+<li><p>任何一種<strong>軟體開發流程</strong>所主張的「<strong>本體論／認識論／方法論</strong>」，構成了該一開發流程的「<strong>世界觀</strong>」，它在性質上是一種<strong>形而上學的預設</strong>，是由軟體開發團隊的<strong>基本信念</strong>所決定的。</p></li>
+
+<li><p>一個<strong>軟體開發者</strong>，對於方法論的回答，必然會受到其「本體論／認識論」立場的<strong>限制</strong>，而不能隨意選擇。當他決定採用某種方法論的時候，他也必須同時接受其「本體論／認識論」<strong>預設</strong>。</p></li>
+</ul>
+
+<p>所以，採取瀑布模式的人，採取敏捷模式的人，兩群人的世界觀，是非常不一樣的。</p>
+
+<p>想合作，或是想進一步改變對方，就得先認清這一點：你們的對話，是不同世界觀的對話。</p>
+
+<h2 id="方法論之外-還有判準">方法論之外，還有判準</h2>
+
+<p>瀑布模型是一種方法論，敏捷是一種方法論。</p>
+
+<p>不同方法論，有優劣之別嗎？</p>
+
+<p>或許有，但更常見的是：不同方法論，各有擅長的場域。</p>
+
+<p>《<a href="https://www.books.com.tw/products/0010791756">社會科學的理路</a>》從科學哲學角度指出：</p>
+
+
+
+<div class="box" style="max-width:30em">
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="/img/2018/10/paradigm-criteria.jpg" alt="圖三　典範的判準"/>
+    </div>
+    <a href="/img/2018/10/paradigm-criteria.jpg" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>圖三　典範的判準</p>
+      </figcaption>
+  </figure>
+</div>
+
+
+<p>文中點出很重要的觀念：「判準」。</p>
+
+<p>讓我們再從「軟體開發流程」的角度來照樣造句吧！</p>
+
+<ul>
+<li><p>我是贊同「敏捷運動」的。然而，我卻認為：「敏捷／不敏捷」不能夠作為軟體開發流程好壞的<strong>判準</strong>。</p></li>
+
+<li><p>我主張的「多元典範的軟體開發取向」認為：我們可以視問題的性質，採取瀑布或敏捷軟體開發典範。然而，採取某種典範，不但要說明自己的<strong>方法論立場</strong>，而且要採用該一典範的<strong>方法論判準</strong>。</p></li>
+
+<li><p>在我看來，軟體開發而沒有判準，是非常不可思議之事。</p></li>
+</ul>
+
+<p>判準，是將方法論落地實施的重要關鍵，也是方法論歧見的槓桿解。</p>
+
+<p>試問：你對自己採用的軟體開發方法論，了解它的判準嗎？</p>
+
+<p>試問：你對其他人採用的不一樣的軟體開發方法論，也了解它的判準嗎？</p>
+
+<p>先賣個關子。下一篇文章，再分別針對瀑布與敏捷取向，談談我所認為的方法論判準。</p>
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">William Yeh</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2018-10-25</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">授權條款</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW" target="_blank">CC BY-NC-SA 4.0</a> (姓名標示-非商業性-相同方式分享 4.0 國際)</span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/agile/">agile</a>
+          <a href="/tags/waterfall/">waterfall</a>
+          <a href="/tags/scrum/">scrum</a>
+          <a href="/tags/book/">book</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+        
+      </nav>
+    </footer>
+  </article>
+
+  
+  
+
+  
+  
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= "William-Yeh/utterances-area"
+            issue-term="pathname"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
+  
+
+  
+
+  
+
+  <div class="disqus-comment">
+  <div class="disqus-button" id="load_disqus" onclick="load_disqus()">
+    顯示 Disqus 評論
+  </div>
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_config = function () {
+      this.page.url = "/post/2018/10/methodology-and-criteria/";
+    };
+    function load_disqus() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'potioneer';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+      $('#load_disqus').remove();
+    };
+  </script>
+  <noscript>Please enable JavaScript to view the
+    <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+  </noscript>
+  
+  </div>
+
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:william.pjyeh@gmail.com" rel="me noopener" class="iconfont icon-email"
+        title="email">
+      </a>
+      <a href="https://twitter.com/william_yeh" rel="me noopener" class="iconfont icon-twitter"
+        title="twitter" target="_blank">
+      </a>
+      <a href="https://www.facebook.com/william.yeh" rel="me noopener" class="iconfont icon-facebook"
+        title="facebook" target="_blank">
+      </a>
+      <a href="https://www.linkedin.com/in/pjyeh/" rel="me noopener" class="iconfont icon-linkedin"
+        title="linkedin" target="_blank">
+      </a>
+      <a href="https://github.com/william-yeh" rel="me noopener" class="iconfont icon-github"
+        title="github" target="_blank">
+      </a>
+      <a href="https://www.slideshare.net/williamyeh" rel="me noopener" class="iconfont icon-coding"
+        title="coding" target="_blank">
+      </a>
+  <a href="/index.xml" rel="noopener alternate" type="application/rss&#43;xml" class="iconfont icon-rss"
+    title="rss" target="_blank">
+  </a>
+  </div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+      2015 -
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span><span class="author">
+        William Yeh
+        
+      </span></span>
+
+  
+  
+    <span id="busuanzi_container">
+      访客数/访问量：<span id="busuanzi_value_site_uv"></span>/<span id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+<script type="text/javascript" src="/dist/jane.min.js?v=2.7.0"></script>
+
+
+
+
+
+  
+    <script type="text/javascript" src="/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

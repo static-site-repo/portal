@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Potioneer&#39;s Essays</title>
+    <link>/</link>
+    <description>Recent content on Potioneer&#39;s Essays</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Thu, 25 Oct 2018 12:22:16 +0800</lastBuildDate>
+    
+        <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>軟體開發，除了方法論，還有⋯⋯</title>
+      <link>/post/2018/10/methodology-and-criteria/</link>
+      <pubDate>Thu, 25 Oct 2018 12:22:16 +0800</pubDate>
+      
+      <guid>/post/2018/10/methodology-and-criteria/</guid>
+      
+        <description>&lt;p&gt;在某些人眼中，「敏捷」是狂熱份子聚集的邪教。&lt;/p&gt;
+
+&lt;p&gt;或許是被困在守舊勢力太久了，敏捷信徒不止有改變世界的熱情，更有捨我其誰的急迫感。不過，在傳播理念或推動改變時，若操之過急，忽略對方所處的情境、歷史及歷程，就很難有建設性對話。在這守舊勢力龐大的世界，自然很容易陣亡。&lt;/p&gt;
+
+&lt;p&gt;但這還只是表象。單靠對話仍不足以化解，更需要在方法論層次達到理解，方可進退有據。&lt;/p&gt;
+
+&lt;p&gt;尤其在看過《&lt;a href=&#34;https://www.books.com.tw/products/0010791756&#34;&gt;社會科學的理路&lt;/a&gt;》之後，我領悟到一些根源問題及槓桿解。&lt;/p&gt;
+
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
+  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;/img/2018/10/social-sci.jpg&#34; alt=&#34;圖一　《社會科學的理路》第一版 (2001) 及第四版 (2018)&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;/img/2018/10/social-sci.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;圖一　《社會科學的理路》第一版 (2001) 及第四版 (2018)&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+
+&lt;h2 id=&#34;方法論形塑世界觀&#34;&gt;方法論形塑世界觀&lt;/h2&gt;
+
+&lt;p&gt;我們都在採用方法論，不管我們自覺或不自覺。&lt;/p&gt;
+
+&lt;p&gt;瀑布模型是一種方法論，敏捷是一種方法論，Scrum 及 Kanban 則是敏捷方法論底下更具體的實踐作法。&lt;/p&gt;
+
+&lt;p&gt;為什麼會決定採取某一種方法論？原因可能很多，本文不予探討。本文想談的是，一旦採取某一種方法論，就會逐漸被該方法論所形塑的世界觀所包圍，以及接下來的連鎖效應，不管我們自覺或不自覺。&lt;/p&gt;
+
+&lt;p&gt;《&lt;a href=&#34;https://www.books.com.tw/products/0010791756&#34;&gt;社會科學的理路&lt;/a&gt;》從科學哲學角度指出：&lt;/p&gt;
+
+
+
+&lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
+  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;/img/2018/10/paradigm.jpg&#34; alt=&#34;圖二　方法論與世界觀&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;/img/2018/10/paradigm.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;圖二　方法論與世界觀&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;讓我們從「軟體開發流程」的角度來照樣造句吧！&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;任何一種&lt;strong&gt;軟體開發流程&lt;/strong&gt;所主張的「&lt;strong&gt;本體論／認識論／方法論&lt;/strong&gt;」，構成了該一開發流程的「&lt;strong&gt;世界觀&lt;/strong&gt;」，它在性質上是一種&lt;strong&gt;形而上學的預設&lt;/strong&gt;，是由軟體開發團隊的&lt;strong&gt;基本信念&lt;/strong&gt;所決定的。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;一個&lt;strong&gt;軟體開發者&lt;/strong&gt;，對於方法論的回答，必然會受到其「本體論／認識論」立場的&lt;strong&gt;限制&lt;/strong&gt;，而不能隨意選擇。當他決定採用某種方法論的時候，他也必須同時接受其「本體論／認識論」&lt;strong&gt;預設&lt;/strong&gt;。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;所以，採取瀑布模式的人，採取敏捷模式的人，兩群人的世界觀，是非常不一樣的。&lt;/p&gt;
+
+&lt;p&gt;想合作，或是想進一步改變對方，就得先認清這一點：你們的對話，是不同世界觀的對話。&lt;/p&gt;
+
+&lt;h2 id=&#34;方法論之外-還有判準&#34;&gt;方法論之外，還有判準&lt;/h2&gt;
+
+&lt;p&gt;瀑布模型是一種方法論，敏捷是一種方法論。&lt;/p&gt;
+
+&lt;p&gt;不同方法論，有優劣之別嗎？&lt;/p&gt;
+
+&lt;p&gt;或許有，但更常見的是：不同方法論，各有擅長的場域。&lt;/p&gt;
+
+&lt;p&gt;《&lt;a href=&#34;https://www.books.com.tw/products/0010791756&#34;&gt;社會科學的理路&lt;/a&gt;》從科學哲學角度指出：&lt;/p&gt;
+
+
+
+&lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
+  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;/img/2018/10/paradigm-criteria.jpg&#34; alt=&#34;圖三　典範的判準&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;/img/2018/10/paradigm-criteria.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;圖三　典範的判準&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;文中點出很重要的觀念：「判準」。&lt;/p&gt;
+
+&lt;p&gt;讓我們再從「軟體開發流程」的角度來照樣造句吧！&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;我是贊同「敏捷運動」的。然而，我卻認為：「敏捷／不敏捷」不能夠作為軟體開發流程好壞的&lt;strong&gt;判準&lt;/strong&gt;。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;我主張的「多元典範的軟體開發取向」認為：我們可以視問題的性質，採取瀑布或敏捷軟體開發典範。然而，採取某種典範，不但要說明自己的&lt;strong&gt;方法論立場&lt;/strong&gt;，而且要採用該一典範的&lt;strong&gt;方法論判準&lt;/strong&gt;。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;在我看來，軟體開發而沒有判準，是非常不可思議之事。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;判準，是將方法論落地實施的重要關鍵，也是方法論歧見的槓桿解。&lt;/p&gt;
+
+&lt;p&gt;試問：你對自己採用的軟體開發方法論，了解它的判準嗎？&lt;/p&gt;
+
+&lt;p&gt;試問：你對其他人採用的不一樣的軟體開發方法論，也了解它的判準嗎？&lt;/p&gt;
+
+&lt;p&gt;先賣個關子。下一篇文章，再分別針對瀑布與敏捷取向，談談我所認為的方法論判準。&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>
