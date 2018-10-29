@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ci on Potioneer&#39;s Essays</title>
+    <link>//:/tags/ci/</link>
+    <description>Recent content in Ci on Potioneer&#39;s Essays</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Mon, 21 Dec 2015 08:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="//:/tags/ci/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>CI 是條不歸路</title>
+      <link>//:/post/2015/12/ci-no-turning-back/</link>
+      <pubDate>Mon, 21 Dec 2015 08:00:00 +0800</pubDate>
+      
+      <guid>//:/post/2015/12/ci-no-turning-back/</guid>
+      <description>今年九月初參加完 DevOps 2015 之後，有感而發，寫了兩則 tweets： 說實在的，打從 1999 年 Kent Beck 經典著作 Extreme Programming Explained 問世，整個軟體文化就被徹底分裂成兩個國度。以 agile</description>
+    </item>
+    
+  </channel>
+</rss>

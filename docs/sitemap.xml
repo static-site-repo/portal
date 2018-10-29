@@ -38,6 +38,13 @@
   </url>
   
   <url>
+    <loc>//:/post/2015/12/ci-no-turning-back/</loc>
+    <lastmod>2015-12-21T08:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>//:/post/2015/09/upgrade-adult-thinking/</loc>
     <lastmod>2015-09-15T23:02:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -72,6 +79,13 @@
   </url>
   
   <url>
+    <loc>//:/tags/ci/</loc>
+    <lastmod>2015-12-21T08:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>//:/tags/communication/</loc>
     <lastmod>2016-06-04T09:54:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -81,6 +95,13 @@
   <url>
     <loc>//:/categories/course/</loc>
     <lastmod>2016-08-29T07:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//:/tags/devops/</loc>
+    <lastmod>2015-12-21T08:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -130,6 +151,13 @@
   <url>
     <loc>//:/tags/</loc>
     <lastmod>2018-10-25T12:22:16+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//:/categories/tech/</loc>
+    <lastmod>2015-12-21T08:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
