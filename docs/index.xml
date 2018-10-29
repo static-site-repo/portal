@@ -2,38 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Potioneer&#39;s Essays</title>
-    <link>/</link>
+    <link>//:/</link>
     <description>Recent content on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <lastBuildDate>Thu, 25 Oct 2018 12:22:16 +0800</lastBuildDate>
     
-        <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="//:/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>軟體開發，除了方法論，還有⋯⋯</title>
-      <link>/post/2018/10/methodology-and-criteria/</link>
+      <link>//:/post/2018/10/methodology-and-criteria/</link>
       <pubDate>Thu, 25 Oct 2018 12:22:16 +0800</pubDate>
       
-      <guid>/post/2018/10/methodology-and-criteria/</guid>
+      <guid>//:/post/2018/10/methodology-and-criteria/</guid>
       
         <description>&lt;p&gt;在某些人眼中，「敏捷」是狂熱份子聚集的邪教。&lt;/p&gt;
 
-&lt;p&gt;或許是被困在守舊勢力太久了，敏捷信徒不止有改變世界的熱情，更有捨我其誰的急迫感。不過，在傳播理念或推動改變時，若操之過急，忽略對方所處的情境、歷史及歷程，就很難有建設性對話。在這守舊勢力龐大的世界，自然很容易陣亡。&lt;/p&gt;
+&lt;p&gt;或許是被困在守舊勢力太久了，敏捷信徒不只有改變世界的熱情，更有捨我其誰的急迫感。不過，在傳播理念或推動改變時，若操之過急，忽略對方所處的情境、歷史及歷程，就很難有建設性對話。在這守舊勢力龐大的世界，自然很容易陣亡。&lt;/p&gt;
 
-&lt;p&gt;但這還只是表象。單靠對話仍不足以化解，更需要在方法論層次達到理解，方可進退有據。&lt;/p&gt;
+&lt;p&gt;但這還只是表象。歧見，單靠對話仍不足以化解，更需要在方法論層次達到理解，方可進退有據。&lt;/p&gt;
 
 &lt;p&gt;尤其在看過《&lt;a href=&#34;https://www.books.com.tw/products/0010791756&#34;&gt;社會科學的理路&lt;/a&gt;》之後，我領悟到一些根源問題及槓桿解。&lt;/p&gt;
 
 
-&lt;link rel=&#34;stylesheet&#34; href=&#34;/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//:/css/hugo-easy-gallery.css&#34; /&gt;
 &lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
   &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
     &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;/img/2018/10/social-sci.jpg&#34; alt=&#34;圖一　《社會科學的理路》第一版 (2001) 及第四版 (2018)&#34;/&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//:/img/2018/10/social-sci.jpg&#34; alt=&#34;圖一　《社會科學的理路》第一版 (2001) 及第四版 (2018)&#34;/&gt;
     &lt;/div&gt;
-    &lt;a href=&#34;/img/2018/10/social-sci.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+    &lt;a href=&#34;//:/img/2018/10/social-sci.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
       &lt;figcaption&gt;
           &lt;p&gt;圖一　《社會科學的理路》第一版 (2001) 及第四版 (2018)&lt;/p&gt;
       &lt;/figcaption&gt;
@@ -47,7 +47,7 @@
 
 &lt;p&gt;瀑布模型是一種方法論，敏捷是一種方法論，Scrum 及 Kanban 則是敏捷方法論底下更具體的實踐作法。&lt;/p&gt;
 
-&lt;p&gt;為什麼會決定採取某一種方法論？原因可能很多，本文不予探討。本文想談的是，一旦採取某一種方法論，就會逐漸被該方法論所形塑的世界觀所包圍，以及接下來的連鎖效應，不管我們自覺或不自覺。&lt;/p&gt;
+&lt;p&gt;為什麼會決定採取某一種方法論？原因可能很多，本文不予探討。本文想談的是，一旦採取某一種方法論，就會逐漸被該方法論所形塑的世界觀所包圍，以及接下來的連鎖效應——不管我們自覺或不自覺。&lt;/p&gt;
 
 &lt;p&gt;《&lt;a href=&#34;https://www.books.com.tw/products/0010791756&#34;&gt;社會科學的理路&lt;/a&gt;》從科學哲學角度指出：&lt;/p&gt;
 
@@ -56,9 +56,9 @@
 &lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
   &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
     &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;/img/2018/10/paradigm.jpg&#34; alt=&#34;圖二　方法論與世界觀&#34;/&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//:/img/2018/10/paradigm.jpg&#34; alt=&#34;圖二　方法論與世界觀&#34;/&gt;
     &lt;/div&gt;
-    &lt;a href=&#34;/img/2018/10/paradigm.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+    &lt;a href=&#34;//:/img/2018/10/paradigm.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
       &lt;figcaption&gt;
           &lt;p&gt;圖二　方法論與世界觀&lt;/p&gt;
       &lt;/figcaption&gt;
@@ -93,9 +93,9 @@
 &lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
   &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
     &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;/img/2018/10/paradigm-criteria.jpg&#34; alt=&#34;圖三　典範的判準&#34;/&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//:/img/2018/10/paradigm-criteria.jpg&#34; alt=&#34;圖三　典範的判準&#34;/&gt;
     &lt;/div&gt;
-    &lt;a href=&#34;/img/2018/10/paradigm-criteria.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+    &lt;a href=&#34;//:/img/2018/10/paradigm-criteria.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
       &lt;figcaption&gt;
           &lt;p&gt;圖三　典範的判準&lt;/p&gt;
       &lt;/figcaption&gt;
