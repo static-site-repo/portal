@@ -10,6 +10,13 @@
   </url>
   
   <url>
+    <loc>//:/post/2016/08/reading-vs-extensive-reading/</loc>
+    <lastmod>2016-08-02T23:30:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>//:/post/2016/07/professional-attitude/</loc>
     <lastmod>2016-07-30T17:35:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -73,7 +80,14 @@
   
   <url>
     <loc>//:/tags/growth/</loc>
-    <lastmod>2016-07-30T17:35:00+08:00</lastmod>
+    <lastmod>2016-08-02T23:30:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//:/categories/life/</loc>
+    <lastmod>2016-08-02T23:30:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -125,6 +139,12 @@
     <lastmod>2018-10-25T12:22:16+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//:/post/2016/08/lifetime-keywords/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
 </urlset>
