@@ -972,6 +972,61 @@
     </item>
     
     <item>
+      <title>從「改變」角度看《魔戒》</title>
+      <link>//:/post/2016/05/change-viewpoint-on-lord-of-rings/</link>
+      <pubDate>Wed, 25 May 2016 08:00:00 +0800</pubDate>
+      
+      <guid>//:/post/2016/05/change-viewpoint-on-lord-of-rings/</guid>
+      
+        <description>&lt;p&gt;今年一月，參加 &lt;a href=&#34;http://kojenchieh.pixnet.net/blog&#34;&gt;David Ko&lt;/a&gt; 舉辦的一場敏捷轉型活動，從中學到了一個有趣的分析工具：Lean Change Canvas。&lt;/p&gt;
+
+&lt;p&gt;知道了一個好東西，自然要追本溯源，加深加廣。便研讀相關資料：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://kojenchieh.pixnet.net/blog/post/441018775-%E7%B2%BE%E5%AF%A6%E6%94%B9%E8%AE%8A%E7%95%AB%E5%B8%83&#34;&gt;精實改變畫布&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://kojenchieh.pixnet.net/blog/post/442550432-firstthing_of_agile_promotion&#34;&gt;推廣敏捷的第一要務是什麼&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://leankit.com/blog/2015/02/lean-change-method/&#34;&gt;Lean Change Method: Enabling Lean and Agile Transformations at Scale&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.safaribooksonline.com/library/view/lean-change-livelessons/9780133443912/&#34;&gt;Lean Change LiveLessons (Video Training): Achieving Agile Transformation with Kanban, Kotter, and Lean Startup&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;此外，也要找機會多演練、多思考，才會內化。於是，隔天我就在公司帶領小組討論任務時，現學現賣。數日後，也順便用在第二梯次 &lt;a href=&#34;http://get.soft-arch.net/ansible&#34;&gt;Ansible Workshop&lt;/a&gt; 課堂上：&lt;/p&gt;
+
+&lt;p&gt;
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//:/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
+  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//:/img/2016/05/lord-of-rings-example.jpg&#34; alt=&#34;Ansible Workshop 第二梯次&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//:/img/2016/05/lord-of-rings-example.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Ansible Workshop 第二梯次&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+Quote: &lt;a href=&#34;https://twitter.com/brecht/status/686004657085231104&#34;&gt;Brecht&amp;rsquo;s Tweet&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+
+&lt;p&gt;之後，再歷經第三、四、五梯次的 Ansible Workshop 的演練引導，不僅更了解 Lean Change Canvas 適用時機，也發展出有助於聚焦的配套措施：說故事、&lt;a href=&#34;http://www.books.com.tw/products/0010463047&#34;&gt;ORID&lt;/a&gt; 及 &lt;a href=&#34;https://en.wikipedia.org/wiki/Theory_of_constraints&#34;&gt;TOC&lt;/a&gt;。畢竟 Lean Change Canvas 只是個框架，只建議出九個思考面向，但並未具體說明個別面向該如何發想及收斂——這都有待自己再融入其他更針對性的思考工具。&lt;/p&gt;
+
+&lt;p&gt;我的方法是：先用某個耳熟能詳的故事，引介 Lean Change Canvas 九個格子的意涵。此處，我選擇大部分的人都看過電影版或小說版的《魔戒》為引子（應該是吧！），以求連結經驗。接著再拿真正要大家研討的案例，請大家各自照著 Lean Change Canvas 的九個面向去分析。最後的討論高潮，則以 ORID 的焦點討論法，及 TOC 的現況與衝突思辨手法，提煉出改變的共識。&lt;/p&gt;
+
+&lt;p&gt;在可預見的未來，我大概不太會在課堂上，慢慢引導 Lean Change Canvas 的分析流程。因此，我把剛結束的第五梯次 Ansible Workshop 課堂錄影，擷取其中第一段【&lt;strong&gt;從「改變」角度看《魔戒》&lt;/strong&gt;】的引介內容，公開出來，給有興趣進行團隊引導的人參考。&lt;/p&gt;
+
+&lt;p&gt;最後，要感謝 &lt;a href=&#34;http://kojenchieh.pixnet.net/blog&#34;&gt;David Ko&lt;/a&gt; 介紹 Lean Change Canvas 這麼有趣的分析框架，也要感謝過去四個梯次的 Ansible Workshop 學員，讓我有機會實際演練，反芻箇中細節。&lt;/p&gt;
+
+&lt;p&gt;影片全長約 11 分鐘，請慢用。&lt;/p&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/Ug5wKl8J2Ng&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;</description>
+      
+    </item>
+    
+    <item>
       <title>有了 Agile，為什麼還要有 DevOps？</title>
       <link>//:/post/2016/05/devops-a-lean-perspective/</link>
       <pubDate>Tue, 03 May 2016 08:00:00 +0800</pubDate>

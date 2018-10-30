@@ -38,6 +38,13 @@
   </url>
   
   <url>
+    <loc>//:/post/2016/05/change-viewpoint-on-lord-of-rings/</loc>
+    <lastmod>2016-05-25T08:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>//:/post/2016/05/devops-a-lean-perspective/</loc>
     <lastmod>2016-05-03T08:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -156,6 +163,13 @@
   </url>
   
   <url>
+    <loc>//:/tags/change/</loc>
+    <lastmod>2016-05-25T08:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>//:/tags/ci/</loc>
     <lastmod>2015-12-28T08:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -171,7 +185,7 @@
   
   <url>
     <loc>//:/tags/course/</loc>
-    <lastmod>2016-04-23T08:00:00+08:00</lastmod>
+    <lastmod>2016-05-25T08:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -185,7 +199,7 @@
   
   <url>
     <loc>//:/tags/devops/</loc>
-    <lastmod>2016-05-03T08:00:00+08:00</lastmod>
+    <lastmod>2016-05-25T08:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -193,6 +207,13 @@
   <url>
     <loc>//:/tags/docker/</loc>
     <lastmod>2015-12-22T08:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//:/tags/facilitation/</loc>
+    <lastmod>2016-05-25T08:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
