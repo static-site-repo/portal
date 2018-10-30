@@ -972,6 +972,106 @@
     </item>
     
     <item>
+      <title>DevOps 核心元素的考古溯源</title>
+      <link>//:/post/2016/03/origin-of-devops-elements/</link>
+      <pubDate>Mon, 07 Mar 2016 08:00:00 +0800</pubDate>
+      
+      <guid>//:/post/2016/03/origin-of-devops-elements/</guid>
+      
+        <description>&lt;p&gt;DevOps 和 Agile 的關係是什麼？DevOps 是源自 Agile 的嗎？&lt;/p&gt;
+
+&lt;p&gt;我在〈&lt;a href=&#34;//:/post/2016/01/devops-goals-in-a-nutshell/&#34;&gt;一句話囊括 DevOps 的目標&lt;/a&gt;〉文中曾經簡略提過：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;DevOps 雖然和 agile 運動有歷史上的臍帶關係，但嚴格來說，沒有遵循《&lt;a href=&#34;http://www.agilemanifesto.org/&#34;&gt;敏捷宣言&lt;/a&gt;》四大原則，也是能做 DevOps 的；硬是把兩個議題綁在一起，會限縮 DevOps 論述空間⋯⋯&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;這種&lt;del&gt;分離主義&lt;/del&gt;論點並不是我首創的。iThome 的〈&lt;a href=&#34;http://www.ithome.com.tw/news/96861&#34;&gt;為什麼會出現 DevOps？&lt;/a&gt;〉一開頭也提到，DevOps 的源頭不只有 agile 一系：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;DevOps 運動承襲自敏捷系統管理 (Agile System Administration) 運動以及企業系統管理 (Enterprise System Management，ESM) 運動。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;不過，我還是想替這種論述，找到更權威、更全面一點的溯源分析。&lt;/p&gt;
+
+&lt;p&gt;終於，我從 &lt;a href=&#34;http://www.amazon.com/dp/0988262592/ref=cm_sw_r_tw_dp_a4p3wb0PSYY97&#34;&gt;&lt;em&gt;The Phoenix Project&lt;/em&gt;&lt;/a&gt; 書中找到想要的論述。&lt;/p&gt;
+
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//:/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34; style=&#34;max-width:15em&#34;&gt;
+  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//:/img/2016/03/the-phoenix-project.png&#34; alt=&#34;The Phoenix Project&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//:/img/2016/03/the-phoenix-project.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;The Phoenix Project&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;&lt;a href=&#34;http://www.amazon.com/dp/0988262592/ref=cm_sw_r_tw_dp_a4p3wb0PSYY97&#34;&gt;&lt;em&gt;The Phoenix Project&lt;/em&gt;&lt;/a&gt; 這本書，以&lt;a href=&#34;http://www.bookzone.com.tw/event/201108_goldratt/&#34;&gt;高德拉特&lt;/a&gt;那種極受歡迎的企管小說形式，闡述在一個面臨內部外部危機的 IT 組織中，DevOps 能發揮什麼樣的功效。對這本書的背景有興趣的，請讀讀該書作者 Gene Kim 的&lt;a href=&#34;http://www.infoq.com/cn/articles/phoenix-project-book-review&#34;&gt;訪談文章&lt;/a&gt;，或是 Howie 寫的&lt;a href=&#34;http://lab.howie.tw/2016/02/phoenix-project.html&#34;&gt;重點整理&lt;/a&gt;、Ruddy 寫的&lt;a href=&#34;https://ruddyblog.wordpress.com/2016/01/26/the-phoenix-project-%E5%B0%8E%E8%AE%80/&#34;&gt;導讀&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;整本書非常豐富，本篇文章只專門針對該書附錄 &amp;ldquo;&lt;em&gt;Where DevOps Came From&lt;/em&gt;&amp;rdquo; 進行導讀。&lt;/p&gt;
+
+&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+
+&lt;p&gt;作者如此定調 DevOps：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;We refer to &amp;ldquo;DevOps&amp;rdquo; as the outcome of &lt;em&gt;applying Lean principles to the IT value stream&lt;/em&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;出現一個近年來非常潮的字眼——&lt;a href=&#34;http://leanmanufacturingtools.org/39/lean-thinking-lean-principles/&#34;&gt;Lean principles；精實／精益原則&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;這些原則，並不是 IT 界所獨有的，而是取經自其他領域，尤其是製造業：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;These principles are based on more than a century of sound management practices. However, instead of being applied to the transformation of physical goods, we are using these principles to &lt;em&gt;accelerate flow of work through Product Management, Development, Test, IT Operations, and InfoSec.&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;所以，DevOps 算是縱貫專案管理、開發、測試、維運、資安等環節的一條鞭精實手法。&lt;/p&gt;
+
+&lt;p&gt;在整個 IT 價值鏈中，DevOps 的確受惠於 agile 陣營對於傳統專案管理的顛覆觀點：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;DevOps has benefited tremendously from the work the Agile Community has done, showing how small teams operating with &lt;em&gt;high trust&lt;/em&gt; combined with small batch sizes and &lt;em&gt;smaller, more frequent software releases&lt;/em&gt; can dramatically increase productivity of Development organizations. In fact, many of the key moments in the DevOps history happened at Agile conferences [&amp;hellip;]&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;因此，在技術面來說，DevOps 吸納了以下的 agile 元素：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;DevOps extends and builds upon the practices of &amp;ldquo;&lt;em&gt;infrastructure as code&lt;/em&gt;&amp;rdquo; pioneered by Dr. Mark Burgess, as well as &lt;em&gt;continuous integration&lt;/em&gt; and &lt;em&gt;continuous deployment&lt;/em&gt; (pioneered by Jez Humble and David Farley), which is a prerequisite to &lt;em&gt;achieving fast deployment flow&lt;/em&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;不過，從這裡可以清楚地看到，DevOps「向 agile 陣營取經」的元素，多半集中在對「加速部署速度」有直接助益的工具元素上。所以，只是一種選擇性的取經。&lt;/p&gt;
+
+&lt;p&gt;另一方面，DevOps 本身也沒有停留在「只向 agile 陣營取經」的階段，仍繼續吸納其他領域的優點。尤其 DevOps 也著重最後一哩路的 &amp;ldquo;Ops&amp;rdquo; 這一端，因此，也向其他國度取經：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;DevOps also benefits from an astounding convergence of philosophical management movements, such as &lt;em&gt;Lean Startup&lt;/em&gt;, &lt;em&gt;Innovation Culture&lt;/em&gt;, &lt;em&gt;Toyota Kata&lt;/em&gt;, &lt;em&gt;Rugged Computing&lt;/em&gt;, and the &lt;em&gt;Velocity community&lt;/em&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;有趣的是，近年來，許多人再度向日本學習。Agile 陣營的 Kanban 是一例，DevOps 也師法許多 Lean 精神及作法。DevOps 要角 John Willis 甚至還寫了一篇文章 &amp;ldquo;&lt;a href=&#34;http://itrevolution.com/japanese-words-for-devops-practitioners/&#34;&gt;Japanese Terms For DevOps Practitioners&lt;/a&gt;&amp;rdquo; 來介紹這些源自日本的時髦詞彙呢。&lt;/p&gt;
+
+&lt;p&gt;巨變的年代，或許正如作者所說：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;All of these mutually reinforce each other, creating the conditions of a &lt;em&gt;powerful coalition of forces&lt;/em&gt; that can accelerate DevOps adoption.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;好的東西，會互相吸引，互相融合。屆時，或許就沒有什麼考古的必要；我泥中有你，你泥中有我。就像柯仁傑在〈&lt;a href=&#34;http://kojenchieh.pixnet.net/blog/post/381131219-%E6%95%8F%E6%8D%B7%E5%92%8C%E7%B2%BE%E5%AF%A6%E7%9A%84%E9%97%9C%E4%BF%82-%281%29&#34;&gt;敏捷和精實的關係 (1)&lt;/a&gt;〉一文所說：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;早期敏捷愛好者受到精實的觀念的影響，因此在敏捷世界中也常常出現精實製造的說法。&lt;/p&gt;
+
+&lt;p&gt;所以敏捷跟精實兩者，在軟體開發世界中已經是混合在一起。如果你在實施敏捷，其實代表你也是在套用精實，兩者是無法很清楚地分開來。&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+      
+    </item>
+    
+    <item>
       <title>電腦界的隱喻：組態管理</title>
       <link>//:/post/2016/03/metaphor-in-cm/</link>
       <pubDate>Wed, 02 Mar 2016 08:00:00 +0800</pubDate>
