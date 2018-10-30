@@ -352,14 +352,14 @@ if (!doNotTrack) {
 
 <p>以 Apache 為例，如果你是透過 <code>apt-get install apache2</code> 來安裝，可看到它是以 <code>www-data</code> 的身份來執行 worker process：</p>
 
-<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">% ps aux | grep apache2
+<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">$ ps aux | grep apache2
 root      2734  0.0  0.5  73368  2628 ?        Ss   04:36   0:00 /usr/sbin/apache2 -k start
 www-data  2737  0.0  0.4 362532  2240 ?        Sl   04:36   0:00 /usr/sbin/apache2 -k start
 www-data  2738  0.0  0.4 362532  2240 ?        Sl   04:36   0:00 /usr/sbin/apache2 -k start</code></pre></div>
 
 <p>以 Nginx 為例，如果你是透過 <code>apt-get install nginx</code> 來安裝，可看到它也是以 <code>www-data</code> 的身份來執行 worker process：</p>
 
-<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">% ps aux | grep nginx
+<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">$ ps aux | grep nginx
 root      3313  0.0  0.2  85884  1340 ?        Ss   04:44   0:00 nginx: master process /usr/sbin/nginx
 www-data  3314  0.0  0.3  86228  1768 ?        S    04:44   0:00 nginx: worker process
 www-data  3315  0.0  0.3  86228  1768 ?        S    04:44   0:00 nginx: worker process
@@ -368,23 +368,24 @@ www-data  3317  0.0  0.3  86228  1768 ?        S    04:44   0:00 nginx: worker p
 
 <p>以 MySQL 為例，<span class="redactor-invisible-space">如果你是透過 <code>apt-get install mysql-server</code> 來安裝，可看到它是以 <code>mysql</code> 的身份來執行：</span></p>
 
-<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">% ps aux | grep mysql
+<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">$ ps aux | grep mysql
 mysql     7004  0.5  8.8 623920 44536 ?        Ssl  04:48   0:00 /usr/sbin/mysqld</code></pre></div>
 
 <p>從以上三個經典案例，可以歸納出一個小結論：「他們都<strong>盡可能不以 root 身分執行</strong>。」</p>
 
 <p>這些 <code>www-data</code> 及 <code>mysql</code> 帳號，甚至沒有登入的權力：</p>
 
-<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">% cat /etc/passwd | egrep &#39;(mysql|www-data)&#39;
+<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">$ cat /etc/passwd | egrep &#39;(mysql|www-data)&#39;
 www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
 mysql:x:109:116:MySQL Server,,,:/nonexistent:/bin/false
-% cat /etc/group  | egrep &#39;(mysql|www-data)&#39;
+
+$ cat /etc/group  | egrep &#39;(mysql|www-data)&#39;
 www-data:x:33:
 mysql:x:116:</code></pre></div>
 
 <p>也沒有偷開 sudo 後門：</p>
 
-<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">% sudo cat /etc/sudoers
+<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">$ sudo cat /etc/sudoers
 Defaults    env_reset
 Defaults    mail_badpass
 Defaults    secure_path=&#34;/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin&#34;
@@ -468,9 +469,9 @@ root    ALL=(ALL:ALL) ALL
       
       <nav class="post-nav">
         
-          <a class="prev" href="/post/2016/06/upgrade-adult-thinking-part2/">
+          <a class="prev" href="/post/2016/03/lean-perspective-of-multitasking/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">轉大人，Part 2</span>
+            <span class="prev-text nav-default">多工切換：有趣的 Lean 觀點</span>
             <span class="prev-text nav-mobile">上一篇</span>
           </a>
         

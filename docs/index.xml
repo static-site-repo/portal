@@ -972,6 +972,79 @@
     </item>
     
     <item>
+      <title>多工切換：有趣的 Lean 觀點</title>
+      <link>//:/post/2016/03/lean-perspective-of-multitasking/</link>
+      <pubDate>Tue, 29 Mar 2016 08:00:00 +0800</pubDate>
+      
+      <guid>//:/post/2016/03/lean-perspective-of-multitasking/</guid>
+      
+        <description>&lt;p&gt;系統思考，全局思考，是困難的；即使是貌似常識的場域，亦然。&lt;/p&gt;
+
+&lt;p&gt;最近在看 &lt;a href=&#34;https://www.books.com.tw/products/0010662172&#34;&gt;&lt;em&gt;Lean Thinking&lt;/em&gt;&lt;/a&gt; 原典時，感觸更深。&lt;/p&gt;
+
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//:/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34; style=&#34;max-width:15em&#34;&gt;
+  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//:/img/2016/03/lean-thinking.jpg&#34; alt=&#34;精實革命 (Lean Thinking)&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//:/img/2016/03/lean-thinking.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;精實革命 (Lean Thinking)&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;&lt;em&gt;Lean Thinking&lt;/em&gt; 倡議小批量 (small batch)、單件流 (one piece flow) 工作方式；這種工作方式，會觸及到多工、工作切換的議題。&lt;/p&gt;
+
+&lt;p&gt;以常識來說，多工、工作切換，代價是 context switch 的 overhead。因此，近代敏捷開發方法論，總是希望在制度設計上盡量降低工作切換：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;當知識工作者有三件或四件以上的工作要做，他們花費在工作切換時，所需重新設定工作模式的時間，會比實際花費在每件工作上的時間還要來的長。
+&amp;mdash; 《&lt;a href=&#34;http://www.books.com.tw/products/0010549884&#34;&gt;笑談軟體工程：敏捷開發法的逆襲&lt;/a&gt;》 p.180&lt;/p&gt;
+
+&lt;p&gt;多工是一種浪費，給員工同時間分配多種工作是專案產生浪費的一個根源。軟體開發人員每次在轉換工作時都會浪費大量的調換時間，因為他必須調整思路以便投入新的任務流程。當然，若是你同時參與多個開&lt;br /&gt;
+發團隊的話，自然會造成更多的停頓，從而引起更多的任務調換而浪費更多時間。
+&amp;mdash; 《&lt;a href=&#34;http://www.books.com.tw/products/0010669225&#34;&gt;精實開發與看板方法&lt;/a&gt;》 p.11&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;原本我也把它當成不證自明的常識。不過，偶然看到 &lt;em&gt;Lean Thinking&lt;/em&gt; 提到的一項實驗，大大顛覆我的成見。&lt;/p&gt;
+
+&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+
+&lt;p&gt;先看一段 Ron Pereira 根據 &lt;em&gt;Lean Thinking&lt;/em&gt; 書中所提的實驗，錄的一段影片：&lt;/p&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/Bi9R1Hqr8dI&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;單一動作，反覆做，練成不經大腦思考的機械式反應時，理論上，單一動作的效率會極大化。這也是科學管理之夫泰勒的觀點。&lt;/p&gt;
+
+&lt;p&gt;所以，看了這段實驗，真是令人咋舌。&lt;/p&gt;
+
+&lt;p&gt;兩年後，他又重做了一次實驗：&lt;/p&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/Dr67i5SdXiM&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;實驗設計上，瑕疵當然很多，就連隨機對照實驗都沒做。不過，個人認為，實驗設計完美與否，並不是此例想彰顯的重點。它想彰顯的，都在第一段影片的小標上。&lt;/p&gt;
+
+&lt;p&gt;我們當然可以坐下來徹底分析：違反直覺的第二種方法，為什麼反而比較快（儘管這可能只是後見之明）。不過，這實驗已經突顯一件事：「工作切換」這件事情的影響，可能需要重新思考；不能只從微觀的局部角度，更要從整體、flow 的角度去檢視。&lt;/p&gt;
+
+&lt;p&gt;單純以「工作切換」這件事，換個 Lean Thinking 思維角度，就能得出違反直覺的結果。天知道還有多少尚未被推翻的「不證自明的常識」呢？&lt;/p&gt;
+
+&lt;p&gt;整體 vs 局部的判斷，委實不能等閒視之呀。&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
       <title>POLP：最小權限原則</title>
       <link>//:/post/2016/03/polp-intro/</link>
       <pubDate>Tue, 15 Mar 2016 08:00:00 +0800</pubDate>
@@ -1013,14 +1086,14 @@
 
 &lt;p&gt;以 Apache 為例，如果你是透過 &lt;code&gt;apt-get install apache2&lt;/code&gt; 來安裝，可看到它是以 &lt;code&gt;www-data&lt;/code&gt; 的身份來執行 worker process：&lt;/p&gt;
 
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;% ps aux | grep apache2
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;$ ps aux | grep apache2
 root      2734  0.0  0.5  73368  2628 ?        Ss   04:36   0:00 /usr/sbin/apache2 -k start
 www-data  2737  0.0  0.4 362532  2240 ?        Sl   04:36   0:00 /usr/sbin/apache2 -k start
 www-data  2738  0.0  0.4 362532  2240 ?        Sl   04:36   0:00 /usr/sbin/apache2 -k start&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;以 Nginx 為例，如果你是透過 &lt;code&gt;apt-get install nginx&lt;/code&gt; 來安裝，可看到它也是以 &lt;code&gt;www-data&lt;/code&gt; 的身份來執行 worker process：&lt;/p&gt;
 
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;% ps aux | grep nginx
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;$ ps aux | grep nginx
 root      3313  0.0  0.2  85884  1340 ?        Ss   04:44   0:00 nginx: master process /usr/sbin/nginx
 www-data  3314  0.0  0.3  86228  1768 ?        S    04:44   0:00 nginx: worker process
 www-data  3315  0.0  0.3  86228  1768 ?        S    04:44   0:00 nginx: worker process
@@ -1029,23 +1102,24 @@ www-data  3317  0.0  0.3  86228  1768 ?        S    04:44   0:00 nginx: worker p
 
 &lt;p&gt;以 MySQL 為例，&lt;span class=&#34;redactor-invisible-space&#34;&gt;如果你是透過 &lt;code&gt;apt-get install mysql-server&lt;/code&gt; 來安裝，可看到它是以 &lt;code&gt;mysql&lt;/code&gt; 的身份來執行：&lt;/span&gt;&lt;/p&gt;
 
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;% ps aux | grep mysql
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;$ ps aux | grep mysql
 mysql     7004  0.5  8.8 623920 44536 ?        Ssl  04:48   0:00 /usr/sbin/mysqld&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;從以上三個經典案例，可以歸納出一個小結論：「他們都&lt;strong&gt;盡可能不以 root 身分執行&lt;/strong&gt;。」&lt;/p&gt;
 
 &lt;p&gt;這些 &lt;code&gt;www-data&lt;/code&gt; 及 &lt;code&gt;mysql&lt;/code&gt; 帳號，甚至沒有登入的權力：&lt;/p&gt;
 
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;% cat /etc/passwd | egrep &amp;#39;(mysql|www-data)&amp;#39;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;$ cat /etc/passwd | egrep &amp;#39;(mysql|www-data)&amp;#39;
 www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
 mysql:x:109:116:MySQL Server,,,:/nonexistent:/bin/false
-% cat /etc/group  | egrep &amp;#39;(mysql|www-data)&amp;#39;
+
+$ cat /etc/group  | egrep &amp;#39;(mysql|www-data)&amp;#39;
 www-data:x:33:
 mysql:x:116:&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;也沒有偷開 sudo 後門：&lt;/p&gt;
 
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;% sudo cat /etc/sudoers
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;$ sudo cat /etc/sudoers
 Defaults    env_reset
 Defaults    mail_badpass
 Defaults    secure_path=&amp;#34;/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin&amp;#34;
@@ -1382,9 +1456,9 @@ root    ALL=(ALL:ALL) ALL
 
 &lt;p&gt;如果組織文化已經做好改變的準備了，流程、工具該怎麼起步呢？&lt;/p&gt;
 
-&lt;p&gt;Bryan 在大人學講座【&lt;a href=&#34;https://shop.darencademy.com/product/view/id/57&#34;&gt;尋找天賦與熱情的系統化做法&lt;/a&gt;】曾提到一個觀點：「&lt;strong&gt;世界是圓的，找到立足點就是頂點。&lt;/strong&gt;」&lt;/p&gt;
+&lt;p&gt;Bryan 在大人學講座【&lt;a href=&#34;https://shop.darencademy.com/product/view/id/57&#34;&gt;尋找天賦與熱情的系統化做法&lt;/a&gt;】曾提到一個觀點：「世界是圓的，找到立足點就是頂點。」&lt;/p&gt;
 
-&lt;p&gt;我也想照樣照句：「&lt;strong&gt;DevOps 是圓的，找到立足點就是頂點。&lt;/strong&gt;」&lt;/p&gt;
+&lt;p&gt;我也想照樣照句：「DevOps 是圓的，找到立足點就是頂點。」&lt;/p&gt;
 
 &lt;p&gt;我不太信奉放諸四海皆準的方法論、roadmap、步驟。而且，DevOps 真的是圓的，從任何一個契合組織現況的角度切入，都有機會逐步把整塊 DevOps 拼圖補齊。&lt;/p&gt;
 

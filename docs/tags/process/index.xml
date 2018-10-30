@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Lean on Potioneer&#39;s Essays</title>
-    <link>//:/tags/lean/</link>
-    <description>Recent content in Lean on Potioneer&#39;s Essays</description>
+    <title>Process on Potioneer&#39;s Essays</title>
+    <link>//:/tags/process/</link>
+    <description>Recent content in Process on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <lastBuildDate>Tue, 29 Mar 2016 08:00:00 +0800</lastBuildDate>
     
-	<atom:link href="//:/tags/lean/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="//:/tags/process/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -20,17 +20,6 @@
       <description>&lt;p&gt;系統思考，全局思考，是困難的；即使是貌似常識的場域，亦然。&lt;/p&gt;
 
 &lt;p&gt;最近在看 &lt;a href=&#34;https://www.books.com.tw/products/0010662172&#34;&gt;&lt;em&gt;Lean Thinking&lt;/em&gt;&lt;/a&gt; 原典時，感觸更深。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>DevOps 核心元素的考古溯源</title>
-      <link>//:/post/2016/03/origin-of-devops-elements/</link>
-      <pubDate>Mon, 07 Mar 2016 08:00:00 +0800</pubDate>
-      
-      <guid>//:/post/2016/03/origin-of-devops-elements/</guid>
-      <description>&lt;p&gt;DevOps 和 Agile 的關係是什麼？DevOps 是源自 Agile 的嗎？&lt;/p&gt;
-
-&lt;p&gt;我在〈&lt;a href=&#34;//:/post/2016/01/devops-goals-in-a-nutshell/&#34;&gt;一句話囊括 DevOps 的目標&lt;/a&gt;〉文中曾經簡略提過：&lt;/p&gt;</description>
     </item>
     
   </channel>
