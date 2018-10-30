@@ -972,6 +972,133 @@
     </item>
     
     <item>
+      <title>POLP：最小權限原則</title>
+      <link>//:/post/2016/03/polp-intro/</link>
+      <pubDate>Tue, 15 Mar 2016 08:00:00 +0800</pubDate>
+      
+      <guid>//:/post/2016/03/polp-intro/</guid>
+      
+        <description>&lt;p&gt;在我開的 &lt;a href=&#34;http://get.soft-arch.net/ansible/&#34;&gt;Ansible Workshop&lt;/a&gt; 中，不管是課前的【許願池】，還是課程現場的 Q&amp;amp;A，總有一個熱門議題：「如何確保系統是安全的？」&lt;/p&gt;
+
+&lt;p&gt;這是大哉問，不是單獨一門組態管理課就能探討到令人滿意的地步（資安也不是我所擅長的⋯⋯）。不過，被問到的次數太多了，我還是給個簡單的導引吧。&lt;/p&gt;
+
+&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+
+&lt;p&gt;系統安全有許多層次。以 &lt;a href=&#34;https://www.safaribooksonline.com/library/view/learning-linux-security/9781771374194/&#34;&gt;&lt;em&gt;Learning Linux Security&lt;/em&gt;&lt;/a&gt; 教學課程的大綱來看，至少涵蓋幾個層次：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Booting：作業系統開機環節&lt;/li&gt;
+&lt;li&gt;Kernel：作業系統核心&lt;/li&gt;
+&lt;li&gt;Services：典型系統服務&lt;/li&gt;
+&lt;li&gt;Users and permissions：帳號及權限&lt;/li&gt;
+&lt;li&gt;Firewalls：防火牆&lt;/li&gt;
+&lt;li&gt;Logging and log management：日誌管理&lt;/li&gt;
+&lt;li&gt;Intrusion detection and prevention：入侵偵測及預防&lt;/li&gt;
+&lt;li&gt;Utilities：診斷工具&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;各個環節，都有各自專門知識及輔助工具（我就說這是大哉問吧⋯⋯）。這些都是傳統 admin 或 ops 的責任區。&lt;/p&gt;
+
+&lt;p&gt;不過，即使不是專業的 ops，身為一位 dev，至少有兩點是自己的責任區，需要好好掌握的。&lt;/p&gt;
+
+&lt;p&gt;首先是 &lt;strong&gt;Users and permissions 環節&lt;/strong&gt;。近年來流行的軟體設計方式，部署時，常常不會 100% 寄生在 Apache、Nginx、Tomcat 這些 application container 底下，而是像 PHP 的 &lt;a href=&#34;http://php-fpm.org/&#34;&gt;FPM 模式&lt;/a&gt;、Python 的 &lt;a href=&#34;http://gunicorn.org/&#34;&gt;Gunicorn 模式&lt;/a&gt;、Ruby 的 &lt;a href=&#34;http://unicorn.bogomips.org/&#34;&gt;Unicorn 模式&lt;/a&gt;，有一個或多個協同作業的 process；甚至像 Node.js 或 Java 硬漢，往往不假外力，直接就把程式本身設計成 daemon 了。此時，開發者就不能逃避，必須考慮如何設定該軟體的帳號及權限，包括 process 的 UID、GID，以及相關的檔案目錄存取權限。&lt;/p&gt;
+
+&lt;p&gt;其次是 &lt;strong&gt;Services 環節&lt;/strong&gt;。以 daemon 形式存在的軟體，通常會安裝成 service，透過 &lt;a href=&#34;https://en.wikipedia.org/wiki/Init&#34;&gt;SysV init&lt;/a&gt;、&lt;a href=&#34;https://en.wikipedia.org/wiki/Upstart&#34;&gt;Upstart&lt;/a&gt; 或 &lt;a href=&#34;https://en.wikipedia.org/wiki/Systemd&#34;&gt;systemd&lt;/a&gt; 等機制啟動與管理。這時，也必須連帶把前述的帳號權限處理好。有潔癖的，甚至還會加掛 &lt;a href=&#34;https://en.wikipedia.org/wiki/Chroot&#34;&gt;chroot&lt;/a&gt;、&lt;a href=&#34;https://en.wikipedia.org/wiki/AppArmor&#34;&gt;AppArmor&lt;/a&gt;、&lt;a href=&#34;https://en.wikipedia.org/wiki/Security-Enhanced_Linux&#34;&gt;SELinux&lt;/a&gt; 等嚇人的保護機制。&lt;/p&gt;
+
+&lt;p&gt;對於帳號權限不知道該如何設定的人，通常最好的方式是：觀摩別人是怎麼做的，尤其是經典級的 services。&lt;/p&gt;
+
+&lt;p&gt;我們就在 Ubuntu 14.04 裡面，好好觀摩一下吧。&lt;/p&gt;
+
+&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+
+&lt;p&gt;以 Apache 為例，如果你是透過 &lt;code&gt;apt-get install apache2&lt;/code&gt; 來安裝，可看到它是以 &lt;code&gt;www-data&lt;/code&gt; 的身份來執行 worker process：&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;% ps aux | grep apache2
+root      2734  0.0  0.5  73368  2628 ?        Ss   04:36   0:00 /usr/sbin/apache2 -k start
+www-data  2737  0.0  0.4 362532  2240 ?        Sl   04:36   0:00 /usr/sbin/apache2 -k start
+www-data  2738  0.0  0.4 362532  2240 ?        Sl   04:36   0:00 /usr/sbin/apache2 -k start&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;以 Nginx 為例，如果你是透過 &lt;code&gt;apt-get install nginx&lt;/code&gt; 來安裝，可看到它也是以 &lt;code&gt;www-data&lt;/code&gt; 的身份來執行 worker process：&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;% ps aux | grep nginx
+root      3313  0.0  0.2  85884  1340 ?        Ss   04:44   0:00 nginx: master process /usr/sbin/nginx
+www-data  3314  0.0  0.3  86228  1768 ?        S    04:44   0:00 nginx: worker process
+www-data  3315  0.0  0.3  86228  1768 ?        S    04:44   0:00 nginx: worker process
+www-data  3316  0.0  0.3  86228  1768 ?        S    04:44   0:00 nginx: worker process
+www-data  3317  0.0  0.3  86228  1768 ?        S    04:44   0:00 nginx: worker process&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;以 MySQL 為例，&lt;span class=&#34;redactor-invisible-space&#34;&gt;如果你是透過 &lt;code&gt;apt-get install mysql-server&lt;/code&gt; 來安裝，可看到它是以 &lt;code&gt;mysql&lt;/code&gt; 的身份來執行：&lt;/span&gt;&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;% ps aux | grep mysql
+mysql     7004  0.5  8.8 623920 44536 ?        Ssl  04:48   0:00 /usr/sbin/mysqld&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;從以上三個經典案例，可以歸納出一個小結論：「他們都&lt;strong&gt;盡可能不以 root 身分執行&lt;/strong&gt;。」&lt;/p&gt;
+
+&lt;p&gt;這些 &lt;code&gt;www-data&lt;/code&gt; 及 &lt;code&gt;mysql&lt;/code&gt; 帳號，甚至沒有登入的權力：&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;% cat /etc/passwd | egrep &amp;#39;(mysql|www-data)&amp;#39;
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+mysql:x:109:116:MySQL Server,,,:/nonexistent:/bin/false
+% cat /etc/group  | egrep &amp;#39;(mysql|www-data)&amp;#39;
+www-data:x:33:
+mysql:x:116:&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;也沒有偷開 sudo 後門：&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;% sudo cat /etc/sudoers
+Defaults    env_reset
+Defaults    mail_badpass
+Defaults    secure_path=&amp;#34;/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin&amp;#34;
+# User privilege specification
+root    ALL=(ALL:ALL) ALL
+# Members of the admin group may gain root privileges
+%admin ALL=(ALL) ALL
+# Allow members of group sudo to execute any command
+%sudo    ALL=(ALL:ALL) ALL&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;所以，這些經典級的服務，他們都非常自制，極度限縮自己的權力。&lt;/p&gt;
+
+&lt;p&gt;用更有學問的說法：他們都遵循&lt;strong&gt;最小權限原則&lt;/strong&gt; (&lt;em&gt;principle of least privilege&lt;/em&gt;; POLP)。&lt;/p&gt;
+
+&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+
+&lt;p&gt;維基百科提到 POLP 的&lt;a href=&#34;https://en.wikipedia.org/wiki/Principle_of_least_privilege#History&#34;&gt;歷史淵源&lt;/a&gt;，可追溯至 1974 年：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Every program and every privileged user of the system should operate using the least amount of privilege necessary to complete the job.&lt;/p&gt;
+
+&lt;p&gt;— &lt;a href=&#34;https://en.wikipedia.org/wiki/Jerome_H._Saltzer&#34;&gt;Jerome Saltzer&lt;/a&gt;, &lt;a href=&#34;https://en.wikipedia.org/wiki/Communications_of_the_ACM&#34;&gt;&lt;em&gt;Communications of the ACM&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;可見這算是歷久彌新的原則了。&lt;/p&gt;
+
+&lt;p&gt;如果要將 POLP 套用到目前流行的 web application，我引述 &lt;em&gt;Secure Your Node.js Web Application&lt;/em&gt; 一書的&lt;a href=&#34;http://www.safaribooksonline.com/a/secure-your-nodejs/1159941/&#34;&gt;說法&lt;/a&gt;：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;From our web application standpoint, we have the following rules:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;The web application should not be run with root privileges. It should instead use a limited account that has access to only the required resources.&lt;/li&gt;
+&lt;li&gt;The database account should not be a root account. The account should have limited privileges over the database tables.&lt;/li&gt;
+&lt;li&gt;The users of the web application should be given the minimum set of privileges they need.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;也引述《Ruby on Rails 實戰聖經》的&lt;a href=&#34;https://ihower.tw/rails4/deployment.html&#34;&gt;說法&lt;/a&gt;：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;設定伺服器部署使用者&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;習慣上我們會在伺服器上開一個專門的帳號，用來放 Rails 應用程式：&lt;code&gt;sudo adduser --disabled-password deploy&lt;/code&gt; ⋯⋯&lt;/p&gt;
+
+&lt;p&gt;本機執行 &lt;code&gt;cap deploy:check&lt;/code&gt;，就會自動登入遠端的伺服器，在登入的帳號下新建 current、releases 和 shared 這三個目錄。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;所以，回頭檢視一下自己的軟體部署流程，有沒有遵循&lt;strong&gt;最小權限原則&lt;/strong&gt;吧！&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
       <title>DevOps 核心元素的考古溯源</title>
       <link>//:/post/2016/03/origin-of-devops-elements/</link>
       <pubDate>Mon, 07 Mar 2016 08:00:00 +0800</pubDate>
