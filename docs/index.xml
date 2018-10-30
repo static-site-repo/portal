@@ -1048,9 +1048,11 @@
 
 &lt;p&gt;演講的投影片在此，希望對大家有所幫助：&lt;/p&gt;
 
-&lt;iframe src=&#34;//www.slideshare.net/slideshow/embed_code/key/nrN9AX9bcRD5MA&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; scrolling=&#34;no&#34; style=&#34;border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;&#34; allowfullscreen=&#34;&#34; width=&#34;595&#34; height=&#34;485&#34; frameborder=&#34;0&#34;&gt;&lt;/iframe&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;//www.slideshare.net/williamyeh/agile-devops&#34;&gt;有了 Agile，為什麼還要有 DevOps？&lt;/a&gt;&lt;/strong&gt; from &lt;strong&gt;&lt;a href=&#34;//www.slideshare.net/williamyeh&#34;&gt;William Yeh&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;//www.slideshare.net/williamyeh/agile-devops&#34;&gt;有了 Agile，為什麼還要有 DevOps？&lt;/a&gt;&lt;/strong&gt;
+&lt;iframe
+  style=&#34;width: 100%; height: 500px;&#34; frameborder=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; scrolling=&#34;no&#34;
+  src=&#34;http://www.slideshare.net/slideshow/embed_code/61628527?rel=0&#34; allowfullscreen webkitallowfullscreen mozallowfullscreen&gt; &lt;/iframe&gt;
+&lt;br&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;p&gt;現場實況錄影在此，全長整整 2 小時，請享用：&lt;/p&gt;
 
