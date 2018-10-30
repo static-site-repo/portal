@@ -38,6 +38,13 @@
   </url>
   
   <url>
+    <loc>//:/post/2016/05/devops-a-lean-perspective/</loc>
+    <lastmod>2016-05-03T08:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>//:/post/2016/04/learn-process-mgmt-by-game/</loc>
     <lastmod>2016-04-23T08:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -163,13 +170,6 @@
   </url>
   
   <url>
-    <loc>//:/categories/course/</loc>
-    <lastmod>2016-08-29T07:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>//:/tags/course/</loc>
     <lastmod>2016-04-23T08:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -177,8 +177,15 @@
   </url>
   
   <url>
+    <loc>//:/categories/course/</loc>
+    <lastmod>2016-08-29T07:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>//:/tags/devops/</loc>
-    <lastmod>2016-04-22T08:00:00+08:00</lastmod>
+    <lastmod>2016-05-03T08:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -206,7 +213,7 @@
   
   <url>
     <loc>//:/tags/lean/</loc>
-    <lastmod>2016-04-22T08:00:00+08:00</lastmod>
+    <lastmod>2016-05-03T08:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -263,6 +270,13 @@
   <url>
     <loc>//:/tags/security/</loc>
     <lastmod>2016-03-15T08:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//:/tags/speech/</loc>
+    <lastmod>2016-05-03T08:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

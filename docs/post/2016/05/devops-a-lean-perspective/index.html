@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>向遊戲學習 - Potioneer&#39;s Essays</title>
+  <title>有了 Agile，為什麼還要有 DevOps？ - Potioneer&#39;s Essays</title>
   
 
 <meta name="renderer" content="webkit" />
@@ -25,8 +25,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="William Yeh" />
-  <meta name="description" content="前一篇文章〈向工廠管理致敬〉提到，最近為了準備一場 Agile/DevOps 演講，我特地研讀了數本原典，希望能對某些核心的思考元素來一場溯源之旅。
-啃原典，其實還有另一個原因：為了好好替今天要去大玩特玩的小火車遊戲⋯⋯喔，不，是為了替今天要專程去上的一門【102 流程設計與跨部門溝通】課程預作準備。
+  <meta name="description" content="今晚，受 Agile Community Taiwan 之邀，在 Agile Meetup Taipei 給了一場演講：【有了 Agile，為什麼還要有 DevOps？】
 " />
 
 
@@ -38,7 +37,7 @@
 <meta name="generator" content="Hugo 0.50" />
 
 
-<link rel="canonical" href="//:/post/2016/04/learn-process-mgmt-by-game/" />
+<link rel="canonical" href="//:/post/2016/05/devops-a-lean-perspective/" />
 
 
 
@@ -58,32 +57,26 @@
 
 
 
-<meta property="og:title" content="向遊戲學習" />
-<meta property="og:description" content="前一篇文章〈向工廠管理致敬〉提到，最近為了準備一場 Agile/DevOps 演講，我特地研讀了數本原典，希望能對某些核心的思考元素來一場溯源之旅。
-
-啃原典，其實還有另一個原因：為了好好替今天要去大玩特玩的小火車遊戲⋯⋯喔，不，是為了替今天要專程去上的一門【102 流程設計與跨部門溝通】課程預作準備。" />
+<meta property="og:title" content="有了 Agile，為什麼還要有 DevOps？" />
+<meta property="og:description" content="今晚，受 Agile Community Taiwan 之邀，在 Agile Meetup Taipei 給了一場演講：【有了 Agile，為什麼還要有 DevOps？】" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="//:/post/2016/04/learn-process-mgmt-by-game/" /><meta property="article:published_time" content="2016-04-23T08:00:00&#43;08:00"/>
-<meta property="article:modified_time" content="2016-04-23T08:00:00&#43;08:00"/>
+<meta property="og:url" content="//:/post/2016/05/devops-a-lean-perspective/" /><meta property="article:published_time" content="2016-05-03T08:00:00&#43;08:00"/>
+<meta property="article:modified_time" content="2016-05-03T08:00:00&#43;08:00"/>
 
-<meta itemprop="name" content="向遊戲學習">
-<meta itemprop="description" content="前一篇文章〈向工廠管理致敬〉提到，最近為了準備一場 Agile/DevOps 演講，我特地研讀了數本原典，希望能對某些核心的思考元素來一場溯源之旅。
-
-啃原典，其實還有另一個原因：為了好好替今天要去大玩特玩的小火車遊戲⋯⋯喔，不，是為了替今天要專程去上的一門【102 流程設計與跨部門溝通】課程預作準備。">
+<meta itemprop="name" content="有了 Agile，為什麼還要有 DevOps？">
+<meta itemprop="description" content="今晚，受 Agile Community Taiwan 之邀，在 Agile Meetup Taipei 給了一場演講：【有了 Agile，為什麼還要有 DevOps？】">
 
 
-<meta itemprop="datePublished" content="2016-04-23T08:00:00&#43;08:00" />
-<meta itemprop="dateModified" content="2016-04-23T08:00:00&#43;08:00" />
-<meta itemprop="wordCount" content="1070">
+<meta itemprop="datePublished" content="2016-05-03T08:00:00&#43;08:00" />
+<meta itemprop="dateModified" content="2016-05-03T08:00:00&#43;08:00" />
+<meta itemprop="wordCount" content="754">
 
 
 
-<meta itemprop="keywords" content="process,gamification,course," />
+<meta itemprop="keywords" content="lean,devops,speech," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="向遊戲學習"/>
-<meta name="twitter:description" content="前一篇文章〈向工廠管理致敬〉提到，最近為了準備一場 Agile/DevOps 演講，我特地研讀了數本原典，希望能對某些核心的思考元素來一場溯源之旅。
-
-啃原典，其實還有另一個原因：為了好好替今天要去大玩特玩的小火車遊戲⋯⋯喔，不，是為了替今天要專程去上的一門【102 流程設計與跨部門溝通】課程預作準備。"/>
+<meta name="twitter:title" content="有了 Agile，為什麼還要有 DevOps？"/>
+<meta name="twitter:description" content="今晚，受 Agile Community Taiwan 之邀，在 Agile Meetup Taipei 給了一場演講：【有了 Agile，為什麼還要有 DevOps？】"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -287,18 +280,18 @@ if (!doNotTrack) {
           <article class="post bg-white">
     
     <header class="post-header">
-      <h1 class="post-title">向遊戲學習</h1>
+      <h1 class="post-title">有了 Agile，為什麼還要有 DevOps？</h1>
       
       <div class="post-meta">
-        <time datetime="2016-04-23" class="post-time">
-          2016-04-23
+        <time datetime="2016-05-03" class="post-time">
+          2016-05-03
         </time>
         <div class="post-category">
             <a href="//:/categories/management/"> Management </a>
             
           </div>
-        <span class="more-meta"> 約 1070 字 </span>
-          <span class="more-meta"> 預計閱讀 3 分鐘 </span>
+        <span class="more-meta"> 約 754 字 </span>
+          <span class="more-meta"> 預計閱讀 2 分鐘 </span>
 
         
         
@@ -317,113 +310,85 @@ if (!doNotTrack) {
 
     
     <div class="post-content">
-      <p>前一篇文章〈<a href="//:/post/2016/04/learn-from-plant-mgmt/">向工廠管理致敬</a>〉提到，最近為了準備一場 Agile/DevOps 演講，我特地研讀了數本原典，希望能對某些核心的思考元素來一場溯源之旅。</p>
-
-<p>啃原典，其實還有另一個原因：為了好好替今天要去大玩特玩的<strong>小火車遊戲</strong>⋯⋯喔，不，是為了替今天要專程去上的一門【<a href="https://www.projectup.net/activity/view/id/7689">102 流程設計與跨部門溝通</a>】課程預作準備。</p>
-
-<p>盯上這門課，其實已經很久了。只是這門課⋯⋯摘錄一段課程文案：「只有二十二個席次，因為道具很多，所以約每半年才開設一次公開班，錯過就要等很久了喔！」這是真的，上一梯次我時間不允許，所以後來緊盯著這一梯次開放報名的風吹草動，委實不易呀！</p>
-
-<p>上含金量這麼高的實作課程，不事先自我裝備一下，就太浪費了。</p>
-
-<p>當然啦，上課時，我還是盡量提醒自己要心態歸零，避免那些偷練的知識變成先入為主的反射思考，這樣才有更多 unknown unknown 可學。</p>
+      <p>今晚，受 Agile Community Taiwan 之邀，在 <a href="https://www.accupass.com/event/1604251622311845219210">Agile Meetup Taipei</a> 給了一場演講：【<a href="http://www.slideshare.net/williamyeh/agile-devops">有了 Agile，為什麼還要有 DevOps？</a>】</p>
 
 
 <link rel="stylesheet" href="/css/hugo-easy-gallery.css" />
 <div class="box" style="max-width:30em">
   <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
     <div class="img">
-      <img itemprop="thumbnail" src="/img/2016/04/102-opening.jpg" alt="102 - 開場白"/>
+      <img itemprop="thumbnail" src="/img/2016/05/devops-speech-cover.jpg" alt="演講現場自拍"/>
     </div>
-    <a href="/img/2016/04/102-opening.jpg" itemprop="contentUrl"></a>
+    <a href="/img/2016/05/devops-speech-cover.jpg" itemprop="contentUrl"></a>
       <figcaption>
-          <p>102 - 開場白</p>
+          <p>演講現場自拍</p>
       </figcaption>
   </figure>
 </div>
 
 
-<p>這門課，從實際的小火車遊戲中，讓我結結實實體會到書中講的一堆觀念：</p>
+<p>之所以會給這場演講，是因為之前在討論區、演講、講課時，總是會收到這類的 Q&amp;A：</p>
 
-<p>《<a href="http://www.books.com.tw/products/0010562789">目標</a>》書中講的 <a href="https://www.projectup.net/article/view/id/3124">TOC 聚焦五步驟</a>，是真的。</p>
+<ul>
+<li>DevOps 是不是在花大錢搞新技術？商業噱頭？</li>
+<li>DevOps 只是大雜燴？</li>
+<li>DevOps 只與 Agile 有關？</li>
+<li>DevOps 就是 Dev 把魔爪伸到 Ops 嗎？</li>
+<li>DevOps 需要改變文化嗎？</li>
+</ul>
 
-<p>《<a href="http://www.books.com.tw/products/0010662172">精實革命</a>》書中講的<a href="http://www.cardiff.ac.uk/lean/principles/">精實思考五原則</a>，是真的。</p>
+<p>林林總總，不是三言兩語就能回答得完整。雖然之前也寫了幾篇文章試著回答部分問題，但總是不夠全面。</p>
 
-<p><a href="https://en.wikipedia.org/wiki/Toyota_Production_System">豐田生產系統</a>所講究的現地現物、自働化、看板、防呆、5S、反省⋯⋯，是真的。</p>
+<p>為了一勞永逸，我試著用以下的角度，完整闡釋個人觀點：</p>
 
-<p>甚至連以前上 PMBOK 課程看到的一堆令人生厭的 <a href="http://www.pmexamsmartnotes.com/how-to-remember-ittos-of-all-47-pmbok-processes/">ITTO</a>，也看到在組織執掌分工下的真義。</p>
+<div class="shortcode-notice note">
+  <div class="shortcode-notice-title note">
+    
+      演講簡介
+    
+  </div>
+  <p>敏捷運動與 DevOps，有某些共同的淵源，但也有不同的偏重取向。</p>
 
-<p>所以，不要小看小孩子玩的小火車；道在屎溺，不可不察也！</p>
+<p>Agile 陣營的人，常會有個疑問：「聽起來，DevOps 好像只是把 Agile 觸角從 Dev 伸到 Ops 端，只是舊瓶裝新酒？」</p>
 
+<p>Waterfall 陣營的人，也常會有個疑問：「聽起來，DevOps 好像只是 Agile 那一票人搞出來的；我們 Waterfall 陣營是不玩這一套的。」</p>
 
+<p>真的是這樣嗎？</p>
 
-<div class="box" style="max-width:30em">
-  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-    <div class="img">
-      <img itemprop="thumbnail" src="/img/2016/04/102-scene-1.jpg" alt="102 - 第一回合"/>
-    </div>
-    <a href="/img/2016/04/102-scene-1.jpg" itemprop="contentUrl"></a>
-      <figcaption>
-          <p>102 - 第一回合</p>
-      </figcaption>
-  </figure>
+<p>本次活動會以一些小活動、一些小短片，帶領大家從 Lean Thinking 角度，重新審視軟體研發的 value stream。回歸 DevOps 的原點，你將能夠自己給出上述問題的答案。</p>
+
 </div>
 
 
-<p>整天課程分兩回合進行。第一回合是由學生自己構思方法、執行，並自行檢討；這一回合，講師都先不予提示。</p>
+<p>個人觀點，或許主觀，但至少給了一個出發點。尤其台灣似乎還沒有以較核心的 Lean Thinking 角度，好好探討 DevOps，乃至 Agile 的論述。看得到的，多半集中在「<a href="http://wiki.mbalib.com/zh-tw/%E4%B8%83%E5%A4%A7%E6%B5%AA%E8%B4%B9">消除七大浪費</a>」這種角度；但 Lean Thinking 的核心原則，並不只有這個而已。</p>
 
-<p>好精彩的第一回合！和一群各行各業臥虎藏龍的 22 名高手合作，過癮！</p>
+<p>我認為，軟體從業人員，有必要好好認識 Lean Thinking 的五大原則：</p>
 
-<p>儘管差一點點就達標，但我已經從過程中體會到 lean &amp; TOC 的某些原則。</p>
+<ol>
+<li>Value</li>
+<li>Value stream</li>
+<li>Flow</li>
+<li>Pull</li>
+<li>Perfection</li>
+</ol>
 
-<p>這的確是一場和高手合作，很能激盪出火花的體驗活動。也很高興自己貢獻的幾個流程及防呆手法，有派上用場。</p>
+<p>認識這五大原則，會打通 agile、Scrum、Kanban、DevOps 等新潮名詞的任督二脈。</p>
 
+<p>不過，Lean Thinking 有些地方，硬是直接說理，言者諄諄，聽者藐藐；最好的方法，還是從遊戲中親身體會。所以在演講現場，我也帶大家玩一場 The Dot Game 的「William 式變形版」。</p>
 
+<p><br/><br/></p>
 
-<div class="box" style="max-width:30em">
-  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-    <div class="img">
-      <img itemprop="thumbnail" src="/img/2016/04/102-scene-2.jpg" alt="102 - 第二回合"/>
-    </div>
-    <a href="/img/2016/04/102-scene-2.jpg" itemprop="contentUrl"></a>
-      <figcaption>
-          <p>102 - 第二回合</p>
-      </figcaption>
-  </figure>
-</div>
+<p>演講的投影片在此，希望對大家有所幫助：</p>
 
+<iframe src="//www.slideshare.net/slideshow/embed_code/key/nrN9AX9bcRD5MA" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen="" width="595" height="485" frameborder="0"></iframe>
 
-<p>等大家都提出檢討報告之後，講師才根據現場觀察，給予精準的提示。此刻，才端出這門課的壓箱寶：品質流程六大手法。</p>
+<p><strong><a href="//www.slideshare.net/williamyeh/agile-devops">有了 Agile，為什麼還要有 DevOps？</a></strong> from <strong><a href="//www.slideshare.net/williamyeh">William Yeh</a></strong></p>
 
-<p>醍醐灌頂後，大家再度自發地提出改善計畫，重新規劃流程，再進行第二回合：目標不只是達標，更要追求卓越，挑戰加分項目！</p>
-
-
-
-<div class="box" style="max-width:30em">
-  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-    <div class="img">
-      <img itemprop="thumbnail" src="/img/2016/04/102-certificate.jpg" alt="102 - 證書"/>
-    </div>
-    <a href="/img/2016/04/102-certificate.jpg" itemprop="contentUrl"></a>
-      <figcaption>
-          <p>102 - 證書</p>
-      </figcaption>
-  </figure>
-</div>
-
-
-<p>玩了一天小火車，收穫滿滿。</p>
-
-<p>正題有收穫，也趁機向 Joe &amp; Bryan 請教一些近日思考的疑點。我將把體驗到的思維角度運用在職場上（DevOps 其實非常需要這種綜觀全局的思考方式及流程改善）。</p>
-
-<p>除了正題收穫之外，也更確定了另一件事：如果想傳達的要點很多，那麼，設計活動時，要選擇在依存關係及統計波動上有某種複雜度的模擬案例（這也是《<a href="http://www.books.com.tw/products/0010562789">目標</a>》書中所提出的切入點）。</p>
-
-<p>敏捷陣營素以愛玩遊戲著稱。從今天的小火車遊戲中，我也偷學了一些遊戲設計的訣竅，希望以後能運用在團隊身上。</p>
-
-<p>最後，給一個 call to action：如果你也想親身體驗這麼好玩的遊戲，<a href="http://www.accupass.com/event/register/1602250738221767316794">最新梯次 <sup>9</sup>&frasl;<sub>03</sub> 已經開放報名</a>。</p>
+<p>現場實況錄影在此，全長整整 2 小時，請享用：</p>
 
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="//www.youtube.com/embed/DmG8VLQTobQ" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+  <iframe src="//www.youtube.com/embed/2j3eP55Oygw" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
     </div>
 
@@ -436,7 +401,7 @@ if (!doNotTrack) {
   </p>
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
-    <span class="item-content">2016-04-23</span>
+    <span class="item-content">2016-05-03</span>
   </p>
   
   <p class="copyright-item">
@@ -450,23 +415,23 @@ if (!doNotTrack) {
 
     <footer class="post-footer">
       <div class="post-tags">
-          <a href="//:/tags/process/">process</a>
-          <a href="//:/tags/gamification/">gamification</a>
-          <a href="//:/tags/course/">course</a>
+          <a href="//:/tags/lean/">lean</a>
+          <a href="//:/tags/devops/">devops</a>
+          <a href="//:/tags/speech/">speech</a>
           
         </div>
 
       
       <nav class="post-nav">
         
-          <a class="prev" href="/post/2016/05/devops-a-lean-perspective/">
+          <a class="prev" href="/post/2016/06/upgrade-adult-thinking-part2/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">有了 Agile，為什麼還要有 DevOps？</span>
+            <span class="prev-text nav-default">轉大人，Part 2</span>
             <span class="prev-text nav-mobile">上一篇</span>
           </a>
         
-          <a class="next" href="/post/2016/04/learn-from-plant-mgmt/">
-            <span class="next-text nav-default">向工廠管理致敬</span>
+          <a class="next" href="/post/2016/04/learn-process-mgmt-by-game/">
+            <span class="next-text nav-default">向遊戲學習</span>
             <span class="prev-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>
@@ -500,7 +465,7 @@ if (!doNotTrack) {
   <div id="disqus_thread"></div>
   <script type="text/javascript">
     var disqus_config = function () {
-      this.page.url = "//:/post/2016/04/learn-process-mgmt-by-game/";
+      this.page.url = "//:/post/2016/05/devops-a-lean-perspective/";
     };
     function load_disqus() {
       

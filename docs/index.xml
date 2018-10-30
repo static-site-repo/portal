@@ -972,6 +972,96 @@
     </item>
     
     <item>
+      <title>有了 Agile，為什麼還要有 DevOps？</title>
+      <link>//:/post/2016/05/devops-a-lean-perspective/</link>
+      <pubDate>Tue, 03 May 2016 08:00:00 +0800</pubDate>
+      
+      <guid>//:/post/2016/05/devops-a-lean-perspective/</guid>
+      
+        <description>&lt;p&gt;今晚，受 Agile Community Taiwan 之邀，在 &lt;a href=&#34;https://www.accupass.com/event/1604251622311845219210&#34;&gt;Agile Meetup Taipei&lt;/a&gt; 給了一場演講：【&lt;a href=&#34;http://www.slideshare.net/williamyeh/agile-devops&#34;&gt;有了 Agile，為什麼還要有 DevOps？&lt;/a&gt;】&lt;/p&gt;
+
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//:/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
+  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//:/img/2016/05/devops-speech-cover.jpg&#34; alt=&#34;演講現場自拍&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//:/img/2016/05/devops-speech-cover.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;演講現場自拍&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;之所以會給這場演講，是因為之前在討論區、演講、講課時，總是會收到這類的 Q&amp;amp;A：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;DevOps 是不是在花大錢搞新技術？商業噱頭？&lt;/li&gt;
+&lt;li&gt;DevOps 只是大雜燴？&lt;/li&gt;
+&lt;li&gt;DevOps 只與 Agile 有關？&lt;/li&gt;
+&lt;li&gt;DevOps 就是 Dev 把魔爪伸到 Ops 嗎？&lt;/li&gt;
+&lt;li&gt;DevOps 需要改變文化嗎？&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;林林總總，不是三言兩語就能回答得完整。雖然之前也寫了幾篇文章試著回答部分問題，但總是不夠全面。&lt;/p&gt;
+
+&lt;p&gt;為了一勞永逸，我試著用以下的角度，完整闡釋個人觀點：&lt;/p&gt;
+
+&lt;div class=&#34;shortcode-notice note&#34;&gt;
+  &lt;div class=&#34;shortcode-notice-title note&#34;&gt;
+    
+      演講簡介
+    
+  &lt;/div&gt;
+  &lt;p&gt;敏捷運動與 DevOps，有某些共同的淵源，但也有不同的偏重取向。&lt;/p&gt;
+
+&lt;p&gt;Agile 陣營的人，常會有個疑問：「聽起來，DevOps 好像只是把 Agile 觸角從 Dev 伸到 Ops 端，只是舊瓶裝新酒？」&lt;/p&gt;
+
+&lt;p&gt;Waterfall 陣營的人，也常會有個疑問：「聽起來，DevOps 好像只是 Agile 那一票人搞出來的；我們 Waterfall 陣營是不玩這一套的。」&lt;/p&gt;
+
+&lt;p&gt;真的是這樣嗎？&lt;/p&gt;
+
+&lt;p&gt;本次活動會以一些小活動、一些小短片，帶領大家從 Lean Thinking 角度，重新審視軟體研發的 value stream。回歸 DevOps 的原點，你將能夠自己給出上述問題的答案。&lt;/p&gt;
+
+&lt;/div&gt;
+
+
+&lt;p&gt;個人觀點，或許主觀，但至少給了一個出發點。尤其台灣似乎還沒有以較核心的 Lean Thinking 角度，好好探討 DevOps，乃至 Agile 的論述。看得到的，多半集中在「&lt;a href=&#34;http://wiki.mbalib.com/zh-tw/%E4%B8%83%E5%A4%A7%E6%B5%AA%E8%B4%B9&#34;&gt;消除七大浪費&lt;/a&gt;」這種角度；但 Lean Thinking 的核心原則，並不只有這個而已。&lt;/p&gt;
+
+&lt;p&gt;我認為，軟體從業人員，有必要好好認識 Lean Thinking 的五大原則：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Value&lt;/li&gt;
+&lt;li&gt;Value stream&lt;/li&gt;
+&lt;li&gt;Flow&lt;/li&gt;
+&lt;li&gt;Pull&lt;/li&gt;
+&lt;li&gt;Perfection&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;認識這五大原則，會打通 agile、Scrum、Kanban、DevOps 等新潮名詞的任督二脈。&lt;/p&gt;
+
+&lt;p&gt;不過，Lean Thinking 有些地方，硬是直接說理，言者諄諄，聽者藐藐；最好的方法，還是從遊戲中親身體會。所以在演講現場，我也帶大家玩一場 The Dot Game 的「William 式變形版」。&lt;/p&gt;
+
+&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+
+&lt;p&gt;演講的投影片在此，希望對大家有所幫助：&lt;/p&gt;
+
+&lt;iframe src=&#34;//www.slideshare.net/slideshow/embed_code/key/nrN9AX9bcRD5MA&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; scrolling=&#34;no&#34; style=&#34;border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;&#34; allowfullscreen=&#34;&#34; width=&#34;595&#34; height=&#34;485&#34; frameborder=&#34;0&#34;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;//www.slideshare.net/williamyeh/agile-devops&#34;&gt;有了 Agile，為什麼還要有 DevOps？&lt;/a&gt;&lt;/strong&gt; from &lt;strong&gt;&lt;a href=&#34;//www.slideshare.net/williamyeh&#34;&gt;William Yeh&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;現場實況錄影在此，全長整整 2 小時，請享用：&lt;/p&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/2j3eP55Oygw&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;</description>
+      
+    </item>
+    
+    <item>
       <title>向遊戲學習</title>
       <link>//:/post/2016/04/learn-process-mgmt-by-game/</link>
       <pubDate>Sat, 23 Apr 2016 08:00:00 +0800</pubDate>
@@ -1163,11 +1253,11 @@
 &lt;ol&gt;
 &lt;li&gt;&lt;a href=&#34;http://blog.sina.com.cn/s/blog_a4c01d4a0102vryc.html&#34;&gt;工廠的口號洞悉管理的缺失&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://blog.sina.com.cn/s/blog_a4c01d4a0102vryf.html&#34;&gt;一個作業站反映工廠穩不穩定&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://blog.sina.com.cn/s/blog_a4c01d4a0102vryi.html&#34;&gt;一眼看出沒有效率的工廠&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://blog.sina.com.cn/s/blog_a4c01d4a0102vryo.html&#34;&gt;工廠管理應該管什麼？&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://blog.sina.com.cn/s/blog_a4c01d4a0102vrzq.html&#34;&gt;工廠管理走一遭&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://blog.sina.com.cn/s/blog_a4c01d4a0102vs05.html&#34;&gt;「自動化」與「流水線」的迷失&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://blog.sina.com.cn/s/blog_a4c01d4a0102vs06.html&#34;&gt;工廠管理教戰守則（全文）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://willy0936.blogspot.com/2014/12/blog-post_4.html&#34;&gt;一眼看出沒有效率的工廠&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://willy0936.blogspot.com/2018/05/blog-post.html&#34;&gt;工廠管理到底應該管什麼？&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://willy0936.blogspot.com/2014/12/blog-post_8.html&#34;&gt;工廠管理走一遭&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://willy0936.blogspot.com/2014/12/blog-post_67.html&#34;&gt;「自動化」與「流水線」的迷失&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://willy0936.blogspot.com/2014/12/blog-post_72.html&#34;&gt;工廠管理教戰守則（全文）&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;簡直就是把 TOC、Lean、JIT 等原理重組統整的問答錄。極力建議看完上述原典的人，跟著這些問答錄，一起思辨、活用。&lt;/p&gt;
