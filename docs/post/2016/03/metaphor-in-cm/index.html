@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>一句話囊括 DevOps 的目標 - Potioneer&#39;s Essays</title>
+  <title>電腦界的隱喻：組態管理 - Potioneer&#39;s Essays</title>
   
 
 <meta name="renderer" content="webkit" />
@@ -25,8 +25,8 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="William Yeh" />
-  <meta name="description" content="TL;DR
-DevOps is a set of practices intended to reduce the time between committing a change to a system and the change being placed into normal production, while ensuring high quality. " />
+  <meta name="description" content="人類是很喜愛比喻／譬喻的。戰國時代的莊子愛用譬喻，常和莊子抬槓的惠施也愛譬喻，《說苑‧善說》甚至記載著這麼一段故事：
+" />
 
 
 
@@ -37,7 +37,7 @@ DevOps is a set of practices intended to reduce the time between committing a ch
 <meta name="generator" content="Hugo 0.50" />
 
 
-<link rel="canonical" href="//:/post/2016/01/devops-goals-in-a-nutshell/" />
+<link rel="canonical" href="//:/post/2016/03/metaphor-in-cm/" />
 
 
 
@@ -57,29 +57,26 @@ DevOps is a set of practices intended to reduce the time between committing a ch
 
 
 
-<meta property="og:title" content="一句話囊括 DevOps 的目標" />
-<meta property="og:description" content="TL;DR
-DevOps is a set of practices intended to reduce the time between committing a change to a system and the change being placed into normal production, while ensuring high quality. " />
+<meta property="og:title" content="電腦界的隱喻：組態管理" />
+<meta property="og:description" content="人類是很喜愛比喻／譬喻的。戰國時代的莊子愛用譬喻，常和莊子抬槓的惠施也愛譬喻，《說苑‧善說》甚至記載著這麼一段故事：" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="//:/post/2016/01/devops-goals-in-a-nutshell/" /><meta property="article:published_time" content="2016-01-29T08:00:00&#43;08:00"/>
-<meta property="article:modified_time" content="2016-01-29T08:00:00&#43;08:00"/>
+<meta property="og:url" content="//:/post/2016/03/metaphor-in-cm/" /><meta property="article:published_time" content="2016-03-02T08:00:00&#43;08:00"/>
+<meta property="article:modified_time" content="2016-03-02T08:00:00&#43;08:00"/>
 
-<meta itemprop="name" content="一句話囊括 DevOps 的目標">
-<meta itemprop="description" content="TL;DR
-DevOps is a set of practices intended to reduce the time between committing a change to a system and the change being placed into normal production, while ensuring high quality. ">
-
-
-<meta itemprop="datePublished" content="2016-01-29T08:00:00&#43;08:00" />
-<meta itemprop="dateModified" content="2016-01-29T08:00:00&#43;08:00" />
-<meta itemprop="wordCount" content="1297">
+<meta itemprop="name" content="電腦界的隱喻：組態管理">
+<meta itemprop="description" content="人類是很喜愛比喻／譬喻的。戰國時代的莊子愛用譬喻，常和莊子抬槓的惠施也愛譬喻，《說苑‧善說》甚至記載著這麼一段故事：">
 
 
+<meta itemprop="datePublished" content="2016-03-02T08:00:00&#43;08:00" />
+<meta itemprop="dateModified" content="2016-03-02T08:00:00&#43;08:00" />
+<meta itemprop="wordCount" content="1046">
 
-<meta itemprop="keywords" content="devops," />
+
+
+<meta itemprop="keywords" content="ansible,devops," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="一句話囊括 DevOps 的目標"/>
-<meta name="twitter:description" content="TL;DR
-DevOps is a set of practices intended to reduce the time between committing a change to a system and the change being placed into normal production, while ensuring high quality. "/>
+<meta name="twitter:title" content="電腦界的隱喻：組態管理"/>
+<meta name="twitter:description" content="人類是很喜愛比喻／譬喻的。戰國時代的莊子愛用譬喻，常和莊子抬槓的惠施也愛譬喻，《說苑‧善說》甚至記載著這麼一段故事："/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -283,17 +280,17 @@ if (!doNotTrack) {
           <article class="post bg-white">
     
     <header class="post-header">
-      <h1 class="post-title">一句話囊括 DevOps 的目標</h1>
+      <h1 class="post-title">電腦界的隱喻：組態管理</h1>
       
       <div class="post-meta">
-        <time datetime="2016-01-29" class="post-time">
-          2016-01-29
+        <time datetime="2016-03-02" class="post-time">
+          2016-03-02
         </time>
         <div class="post-category">
             <a href="//:/categories/tech/"> Tech </a>
             
           </div>
-        <span class="more-meta"> 約 1297 字 </span>
+        <span class="more-meta"> 約 1046 字 </span>
           <span class="more-meta"> 預計閱讀 3 分鐘 </span>
 
         
@@ -313,98 +310,59 @@ if (!doNotTrack) {
 
     
     <div class="post-content">
-      <p>TL;DR<br />
-<em>DevOps is a set of practices intended to reduce the time between committing a change to a system and the change being placed into normal production, while ensuring high quality.</em> </p>
-
-<p><br/><br/></p>
-
-<p>我在許多演講場合，都喜歡調侃 DevOps 百家爭鳴各言爾志的現況。尤其是像 XebiaLabs 的 &ldquo;<a href="https://xebialabs.com/periodic-table-of-devops-tools/">Periodic Table of DevOps Tools</a>&ldquo;，用化學元素週期表來類比，傳神極了！</p>
-
-<p>調侃歸調侃，但總還是得選一套說法當參考座標，議題定位才能明確。我也不喜歡太欠缺客觀性的打高空調調，尤其是涉及組織文化層面的論調。畢竟，DevOps 雖然和 agile 運動有歷史上的臍帶關係，但嚴格來說，沒有遵循《<a href="http://www.agilemanifesto.org/">敏捷宣言</a>》四大原則，也是能做 DevOps 的；硬是把兩個議題綁在一起，會限縮 DevOps 論述空間，很容易挑起 &ldquo;it doesn&rsquo;t work here&rdquo; 的防禦心態。</p>
-
-<p>推廣新觀念，就要從阻力最小的角度切入。</p>
-
-<p>因此，我在去年 12 月 Container Summit 2015 講〈<a href="http://www.slideshare.net/williamyeh/dockers-impact-on-the-devops-toolchain">擁抱或對抗？談 Docker 對傳統 DevOps 工具鏈的衝擊</a>〉時，首次搬出 Brian Brazil 在 &ldquo;<a href="http://www.robustperception.io/do-you-have-basic-infrastructure/">Do you have basic infrastructure?</a>&rdquo; 一文提出的三問句來破題：</p>
+      <p>人類是很喜愛比喻／譬喻的。戰國時代的莊子愛用譬喻，常和莊子抬槓的惠施也愛譬喻，《說苑‧善說》甚至記載著這麼一段故事：</p>
 
 <blockquote>
-<p>You need to know:<br />
-1. How to recreate your system<br />
-2. How to safely change your system<br />
-3. When something has gone wrong</p>
+<p>客謂梁王曰：「惠子之言事也，善譬。王使無譬則不能言矣。」王曰：「諾。」</p>
+
+<p>明日見， 謂惠子曰：「願先生言事則直言耳，無譬也。」惠子曰：「今有人於此而不知彈者，曰：『彈之狀何若？』應曰：『彈之狀如彈。』則諭乎？」王曰：「未諭也。」 「於是更應曰：『彈之狀如弓，而竹為弦』，則知乎？」王曰：「可知矣。」</p>
+
+<p>惠子曰：「夫說者固以其所知，喻其所不知，而使人知之。今王曰無譬，則不可矣。」 王曰：「善。」</p>
 </blockquote>
 
-<p>蘇格拉底式問句，不夾帶特定前提，不偷渡既定結論，很適合拿來引導團隊思考。因此，後來我在〈<a href="//:/post/2015/12/devops-1st-step/">DevOps 是圓的，找到立足點就是頂點</a>〉文章、在 <a href="http://get.soft-arch.net/ansible/">Ansible Workshop 課堂</a>上，也反覆用到這三問句。</p>
+<p>用譬喻反擊「無譬也」的要求，真是高招！</p>
 
-<p>不過，私心還是希望能有一個更直述、更目標導向的操作型定義。</p>
+<p>比喻／譬喻不只是修辭法，甚至是人類根深蒂固的認知媒介。認知語言學大師 George Lakoff 在 <a href="http://www.amazon.com/dp/0226468011/ref=cm_sw_r_tw_dp_yQP1wb1VDN24N"><em>Metaphors We Live By</em></a> 書中，如此闡述它的地位：</p>
 
-<p>找了很久，偶然在 2015 年 SEI 系列的新書 <a href="http://www.amazon.com/dp/0134049845/ref=cm_sw_r_tw_dp_bB.Qwb0FF6QRZ"><em>DevOps: A Software Architect&rsquo;s Perspective</em></a> 第一章，發現我想要的操作型定義了。</p>
+<blockquote>
+<p>Metaphor is not just a matter of language of mere words. We shall argue that, on the contrary, human <em><strong>thought processes</strong></em> are largely metaphorical.</p>
+</blockquote>
+
+<p>所以，每次看到有趣的隱喻，我都會特別留意，細細品味背後的巧思。</p>
+
+<p>電腦界也很愛用隱喻，甚至還會帶出成群的隱喻。</p>
+
+<p>Java 之名，取材自咖啡。JavaScript 雖然並非嫡傳血脈，但由它衍生出來的其他技術，有些就刻意以「咖啡」為隱喻。像美化 JavaScript 語法的 <a href="http://coffeescript.org/">CoffeeScript</a>、供 JavaScript 使用的測試框架 <a href="https://mochajs.org/">Mocha</a>，甚至連咖啡的對手：<a href="https://mochajs.org/">Chai</a> 都搬出來了。</p>
+
+<p>組態管理的四大工具，也是愛用隱喻的。</p>
+
+<p>Ansible 主要的隱喻是<strong>演戲</strong>。所以，在 Ansible 劇場中，策劃好的動作及姿勢叫做 <strong>play</strong>，集合起來就是 <strong>playbook</strong>（劇本）。人生就是戲，演不完的戲；在舞台上，每一台主機扮演一個或多個 <strong>role</strong>（角色），甚至還有天外飛來一筆的空降角色 —— 來自 <strong>galaxy</strong>（銀河系）。</p>
+
+<p>Chef 主要的隱喻是<strong>廚師</strong>。所以，在 Chef 世界中，珍藏厚厚的 <strong>cookbook</strong>（食譜），根據裡面記載的 <strong>recipe</strong>（料理步驟），用 <strong>knife</strong>（菜刀）做菜，也有一個 <strong>kitchen</strong>（廚房）可以實驗料理。</p>
+
+<p>Puppet 主要的隱喻是<strong>傀儡</strong>、<strong>偶戲</strong>。可惜的是，在 Puppet 舞台上出現的概念：manifest、resource、module、master、agent，似乎都沒有善用最初的隱喻。</p>
+
+<p>Salt 主要的隱喻是⋯⋯<strong>鹽</strong>。可惜的是，在 Salt 世界中出現的概念：salt state、formula、master、minion，似乎都沒有善用最初的隱喻。嗯，&rdquo;formula&rdquo; 字眼，勉強算有沾到邊。</p>
+
+<p>呃，我要修正前面那一句話：「組態管理的四大工具當中，Ansible 和 Chef 也是愛用隱喻的。」</p>
+
+<p>或許這也是我對 Ansible 及 Chef 比較有好感的原因吧。</p>
+
+<p>最後，如果你想對這四大工具有個快速的概念，可參考 Roland Wolters 製作的單頁掛圖：<a href="http://wall-skills.com/2015/configuration-management-ansible-salt-chef-puppet/">Tools for Configuration Management</a>。</p>
 
 
 <link rel="stylesheet" href="/css/hugo-easy-gallery.css" />
 <div class="box" style="max-width:30em">
   <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
     <div class="img">
-      <img itemprop="thumbnail" src="/img/2016/01/devops-from-architect-perspective.png" alt="DevOps: A Software Architect&#39;s Perspective"/>
+      <img itemprop="thumbnail" src="/img/2016/03/Ansible-Salt-Puppet-Chef-Wall-Skills.png" alt="Tools for Configuration Management"/>
     </div>
-    <a href="/img/2016/01/devops-from-architect-perspective.png" itemprop="contentUrl"></a>
+    <a href="/img/2016/03/Ansible-Salt-Puppet-Chef-Wall-Skills.png" itemprop="contentUrl"></a>
       <figcaption>
-          <p>DevOps: A Software Architect&#39;s Perspective</p>
+          <p>Tools for Configuration Management</p>
       </figcaption>
   </figure>
 </div>
-
-
-<p>SEI 這塊金字招牌，乍看之下會以為又要端出像 CMMI、PSP 那樣硬梆梆的東西。不過，瞄到書名當中有 &ldquo;A Software Architect&rsquo;s Perspective&rdquo; 字眼，就覺得應該比較貼近第一線的實務現場。</p>
-
-<p>他們的切入角度是：</p>
-
-<blockquote>
-<p>Our definition of DevOps focuses on the <strong>goals</strong>, rather than the <strong>means</strong>.</p>
-</blockquote>
-
-<p>很多時候，先聚焦在共有的目標上，會比過早陷入細部做法的爭論來得有用。</p>
-
-<p>從「目標」角度出發，再對 DevOps 下定義，更顯得客觀中立。畢竟，不管是大機構還是小團隊，不管背後採用哪一種軟體開發流程，都能接受以下這種 DevOps 目標：</p>
-
-<blockquote>
-<p>DevOps is a set of <em>practices</em> intended to <strong>reduce the time between committing a change to a system and the change being placed into normal production, while ensuring high quality</strong>.</p>
-</blockquote>
-
-<p>這跟前面那三問句是相互呼應的，只不過這一回用的是更直述、更目標導向的操作型定義。</p>
-
-<p>這段定義陳述，點出 DevOps 兩大目標：<strong>時間</strong>及<strong>品質</strong>：</p>
-
-<ul>
-<li>時間：在「commit change」到「上線營運生效」兩者之間的時間差，要盡量縮短到某個設定的水平之內。</li>
-<li>品質：不能只求上線生效，還要對品質把關，維持在某個設定的水平之上。</li>
-</ul>
-
-<p>弄清楚 DevOps 的目標後，再看 DevOps 圈子倡議的 practices，就不覺突兀：</p>
-
-<ol>
-<li>Treat Ops as first-class citizens from the point of view of requirements.</li>
-<li>Make Dev more responsible for relevant incident handling. These practices are intended to shorten the time between the observation of an error and the repair of that error.</li>
-<li>Enforce the deployment process used by all, including Dev and Ops personnel.</li>
-<li>Use continuous deployment.</li>
-<li>Develop infrastructure code, such as deployment scripts, with the same set of practices as application code.</li>
-</ol>
-
-<p>這五項 practices，都可以回溯到先前設定的 DevOps 兩大目標：時間及品質。</p>
-
-<p>當然啦，同一份目標，可能衍生出不同的實作手法；此時此刻公認的 best practices，也可能在不久就被推翻。書中建議我們可以根據幾點來評估：</p>
-
-<ol>
-<li><p><strong>What is the particular practice you are considering?</strong><br />
-這家 DevOps 百貨公司，大肆推銷的東西太多了，必須先針對組織的需求及現況加以評估、排序。</p></li>
-
-<li><p><strong>What other practices are implicit in the practice you are considering?</strong><br />
-某些措施有隱含的前提。譬如說，想實現 continuous deployment 之前，不可能不先做 continuous integration。</p></li>
-
-<li><p><strong>What is the culture of your business, and what are the ramifications of your adopting this particular DevOps practice?</strong><br />
-任何改變都有受到波及的對象，所以，想導入任何改變，都不能忽略組織及人性的抗拒力道。</p></li>
-</ol>
-
-<p>這就是 SEI 出版的書 <a href="http://www.amazon.com/dp/0134049845/ref=cm_sw_r_tw_dp_bB.Qwb0FF6QRZ"><em>DevOps: A Software Architect&rsquo;s Perspective</em></a> 當中的第一章，對於 DevOps 下的目標導向定義，以及隨之鋪陳的實踐手法及考量依據。</p>
     </div>
 
     
@@ -416,7 +374,7 @@ if (!doNotTrack) {
   </p>
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
-    <span class="item-content">2016-01-29</span>
+    <span class="item-content">2016-03-02</span>
   </p>
   
   <p class="copyright-item">
@@ -430,6 +388,7 @@ if (!doNotTrack) {
 
     <footer class="post-footer">
       <div class="post-tags">
+          <a href="//:/tags/ansible/">ansible</a>
           <a href="//:/tags/devops/">devops</a>
           
         </div>
@@ -437,14 +396,14 @@ if (!doNotTrack) {
       
       <nav class="post-nav">
         
-          <a class="prev" href="/post/2016/03/metaphor-in-cm/">
+          <a class="prev" href="/post/2016/06/upgrade-adult-thinking-part2/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">電腦界的隱喻：組態管理</span>
+            <span class="prev-text nav-default">轉大人，Part 2</span>
             <span class="prev-text nav-mobile">上一篇</span>
           </a>
         
-          <a class="next" href="/post/2015/12/devops-1st-step/">
-            <span class="next-text nav-default">DevOps 是圓的，找到立足點就是頂點</span>
+          <a class="next" href="/post/2016/01/devops-goals-in-a-nutshell/">
+            <span class="next-text nav-default">一句話囊括 DevOps 的目標</span>
             <span class="prev-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>
@@ -478,7 +437,7 @@ if (!doNotTrack) {
   <div id="disqus_thread"></div>
   <script type="text/javascript">
     var disqus_config = function () {
-      this.page.url = "//:/post/2016/01/devops-goals-in-a-nutshell/";
+      this.page.url = "//:/post/2016/03/metaphor-in-cm/";
     };
     function load_disqus() {
       

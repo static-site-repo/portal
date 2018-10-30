@@ -972,6 +972,69 @@
     </item>
     
     <item>
+      <title>電腦界的隱喻：組態管理</title>
+      <link>//:/post/2016/03/metaphor-in-cm/</link>
+      <pubDate>Wed, 02 Mar 2016 08:00:00 +0800</pubDate>
+      
+      <guid>//:/post/2016/03/metaphor-in-cm/</guid>
+      
+        <description>&lt;p&gt;人類是很喜愛比喻／譬喻的。戰國時代的莊子愛用譬喻，常和莊子抬槓的惠施也愛譬喻，《說苑‧善說》甚至記載著這麼一段故事：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;客謂梁王曰：「惠子之言事也，善譬。王使無譬則不能言矣。」王曰：「諾。」&lt;/p&gt;
+
+&lt;p&gt;明日見， 謂惠子曰：「願先生言事則直言耳，無譬也。」惠子曰：「今有人於此而不知彈者，曰：『彈之狀何若？』應曰：『彈之狀如彈。』則諭乎？」王曰：「未諭也。」 「於是更應曰：『彈之狀如弓，而竹為弦』，則知乎？」王曰：「可知矣。」&lt;/p&gt;
+
+&lt;p&gt;惠子曰：「夫說者固以其所知，喻其所不知，而使人知之。今王曰無譬，則不可矣。」 王曰：「善。」&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;用譬喻反擊「無譬也」的要求，真是高招！&lt;/p&gt;
+
+&lt;p&gt;比喻／譬喻不只是修辭法，甚至是人類根深蒂固的認知媒介。認知語言學大師 George Lakoff 在 &lt;a href=&#34;http://www.amazon.com/dp/0226468011/ref=cm_sw_r_tw_dp_yQP1wb1VDN24N&#34;&gt;&lt;em&gt;Metaphors We Live By&lt;/em&gt;&lt;/a&gt; 書中，如此闡述它的地位：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Metaphor is not just a matter of language of mere words. We shall argue that, on the contrary, human &lt;em&gt;&lt;strong&gt;thought processes&lt;/strong&gt;&lt;/em&gt; are largely metaphorical.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;所以，每次看到有趣的隱喻，我都會特別留意，細細品味背後的巧思。&lt;/p&gt;
+
+&lt;p&gt;電腦界也很愛用隱喻，甚至還會帶出成群的隱喻。&lt;/p&gt;
+
+&lt;p&gt;Java 之名，取材自咖啡。JavaScript 雖然並非嫡傳血脈，但由它衍生出來的其他技術，有些就刻意以「咖啡」為隱喻。像美化 JavaScript 語法的 &lt;a href=&#34;http://coffeescript.org/&#34;&gt;CoffeeScript&lt;/a&gt;、供 JavaScript 使用的測試框架 &lt;a href=&#34;https://mochajs.org/&#34;&gt;Mocha&lt;/a&gt;，甚至連咖啡的對手：&lt;a href=&#34;https://mochajs.org/&#34;&gt;Chai&lt;/a&gt; 都搬出來了。&lt;/p&gt;
+
+&lt;p&gt;組態管理的四大工具，也是愛用隱喻的。&lt;/p&gt;
+
+&lt;p&gt;Ansible 主要的隱喻是&lt;strong&gt;演戲&lt;/strong&gt;。所以，在 Ansible 劇場中，策劃好的動作及姿勢叫做 &lt;strong&gt;play&lt;/strong&gt;，集合起來就是 &lt;strong&gt;playbook&lt;/strong&gt;（劇本）。人生就是戲，演不完的戲；在舞台上，每一台主機扮演一個或多個 &lt;strong&gt;role&lt;/strong&gt;（角色），甚至還有天外飛來一筆的空降角色 —— 來自 &lt;strong&gt;galaxy&lt;/strong&gt;（銀河系）。&lt;/p&gt;
+
+&lt;p&gt;Chef 主要的隱喻是&lt;strong&gt;廚師&lt;/strong&gt;。所以，在 Chef 世界中，珍藏厚厚的 &lt;strong&gt;cookbook&lt;/strong&gt;（食譜），根據裡面記載的 &lt;strong&gt;recipe&lt;/strong&gt;（料理步驟），用 &lt;strong&gt;knife&lt;/strong&gt;（菜刀）做菜，也有一個 &lt;strong&gt;kitchen&lt;/strong&gt;（廚房）可以實驗料理。&lt;/p&gt;
+
+&lt;p&gt;Puppet 主要的隱喻是&lt;strong&gt;傀儡&lt;/strong&gt;、&lt;strong&gt;偶戲&lt;/strong&gt;。可惜的是，在 Puppet 舞台上出現的概念：manifest、resource、module、master、agent，似乎都沒有善用最初的隱喻。&lt;/p&gt;
+
+&lt;p&gt;Salt 主要的隱喻是⋯⋯&lt;strong&gt;鹽&lt;/strong&gt;。可惜的是，在 Salt 世界中出現的概念：salt state、formula、master、minion，似乎都沒有善用最初的隱喻。嗯，&amp;rdquo;formula&amp;rdquo; 字眼，勉強算有沾到邊。&lt;/p&gt;
+
+&lt;p&gt;呃，我要修正前面那一句話：「組態管理的四大工具當中，Ansible 和 Chef 也是愛用隱喻的。」&lt;/p&gt;
+
+&lt;p&gt;或許這也是我對 Ansible 及 Chef 比較有好感的原因吧。&lt;/p&gt;
+
+&lt;p&gt;最後，如果你想對這四大工具有個快速的概念，可參考 Roland Wolters 製作的單頁掛圖：&lt;a href=&#34;http://wall-skills.com/2015/configuration-management-ansible-salt-chef-puppet/&#34;&gt;Tools for Configuration Management&lt;/a&gt;。&lt;/p&gt;
+
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//:/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
+  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//:/img/2016/03/Ansible-Salt-Puppet-Chef-Wall-Skills.png&#34; alt=&#34;Tools for Configuration Management&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//:/img/2016/03/Ansible-Salt-Puppet-Chef-Wall-Skills.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Tools for Configuration Management&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;</description>
+      
+    </item>
+    
+    <item>
       <title>一句話囊括 DevOps 的目標</title>
       <link>//:/post/2016/01/devops-goals-in-a-nutshell/</link>
       <pubDate>Fri, 29 Jan 2016 08:00:00 +0800</pubDate>
