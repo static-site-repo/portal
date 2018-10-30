@@ -972,6 +972,108 @@
     </item>
     
     <item>
+      <title>一句話囊括 DevOps 的目標</title>
+      <link>//:/post/2016/01/devops-goals-in-a-nutshell/</link>
+      <pubDate>Fri, 29 Jan 2016 08:00:00 +0800</pubDate>
+      
+      <guid>//:/post/2016/01/devops-goals-in-a-nutshell/</guid>
+      
+        <description>&lt;p&gt;TL;DR&lt;br /&gt;
+&lt;em&gt;DevOps is a set of practices intended to reduce the time between committing a change to a system and the change being placed into normal production, while ensuring high quality.&lt;/em&gt; &lt;/p&gt;
+
+&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+
+&lt;p&gt;我在許多演講場合，都喜歡調侃 DevOps 百家爭鳴各言爾志的現況。尤其是像 XebiaLabs 的 &amp;ldquo;&lt;a href=&#34;https://xebialabs.com/periodic-table-of-devops-tools/&#34;&gt;Periodic Table of DevOps Tools&lt;/a&gt;&amp;ldquo;，用化學元素週期表來類比，傳神極了！&lt;/p&gt;
+
+&lt;p&gt;調侃歸調侃，但總還是得選一套說法當參考座標，議題定位才能明確。我也不喜歡太欠缺客觀性的打高空調調，尤其是涉及組織文化層面的論調。畢竟，DevOps 雖然和 agile 運動有歷史上的臍帶關係，但嚴格來說，沒有遵循《&lt;a href=&#34;http://www.agilemanifesto.org/&#34;&gt;敏捷宣言&lt;/a&gt;》四大原則，也是能做 DevOps 的；硬是把兩個議題綁在一起，會限縮 DevOps 論述空間，很容易挑起 &amp;ldquo;it doesn&amp;rsquo;t work here&amp;rdquo; 的防禦心態。&lt;/p&gt;
+
+&lt;p&gt;推廣新觀念，就要從阻力最小的角度切入。&lt;/p&gt;
+
+&lt;p&gt;因此，我在去年 12 月 Container Summit 2015 講〈&lt;a href=&#34;http://www.slideshare.net/williamyeh/dockers-impact-on-the-devops-toolchain&#34;&gt;擁抱或對抗？談 Docker 對傳統 DevOps 工具鏈的衝擊&lt;/a&gt;〉時，首次搬出 Brian Brazil 在 &amp;ldquo;&lt;a href=&#34;http://www.robustperception.io/do-you-have-basic-infrastructure/&#34;&gt;Do you have basic infrastructure?&lt;/a&gt;&amp;rdquo; 一文提出的三問句來破題：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;You need to know:&lt;br /&gt;
+1. How to recreate your system&lt;br /&gt;
+2. How to safely change your system&lt;br /&gt;
+3. When something has gone wrong&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;蘇格拉底式問句，不夾帶特定前提，不偷渡既定結論，很適合拿來引導團隊思考。因此，後來我在〈&lt;a href=&#34;//:/post/2015/12/devops-1st-step/&#34;&gt;DevOps 是圓的，找到立足點就是頂點&lt;/a&gt;〉文章、在 &lt;a href=&#34;http://get.soft-arch.net/ansible/&#34;&gt;Ansible Workshop 課堂&lt;/a&gt;上，也反覆用到這三問句。&lt;/p&gt;
+
+&lt;p&gt;不過，私心還是希望能有一個更直述、更目標導向的操作型定義。&lt;/p&gt;
+
+&lt;p&gt;找了很久，偶然在 2015 年 SEI 系列的新書 &lt;a href=&#34;http://www.amazon.com/dp/0134049845/ref=cm_sw_r_tw_dp_bB.Qwb0FF6QRZ&#34;&gt;&lt;em&gt;DevOps: A Software Architect&amp;rsquo;s Perspective&lt;/em&gt;&lt;/a&gt; 第一章，發現我想要的操作型定義了。&lt;/p&gt;
+
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//:/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
+  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//:/img/2016/01/devops-from-architect-perspective.png&#34; alt=&#34;DevOps: A Software Architect&amp;#39;s Perspective&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//:/img/2016/01/devops-from-architect-perspective.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;DevOps: A Software Architect&amp;#39;s Perspective&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;SEI 這塊金字招牌，乍看之下會以為又要端出像 CMMI、PSP 那樣硬梆梆的東西。不過，瞄到書名當中有 &amp;ldquo;A Software Architect&amp;rsquo;s Perspective&amp;rdquo; 字眼，就覺得應該比較貼近第一線的實務現場。&lt;/p&gt;
+
+&lt;p&gt;他們的切入角度是：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Our definition of DevOps focuses on the &lt;strong&gt;goals&lt;/strong&gt;, rather than the &lt;strong&gt;means&lt;/strong&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;很多時候，先聚焦在共有的目標上，會比過早陷入細部做法的爭論來得有用。&lt;/p&gt;
+
+&lt;p&gt;從「目標」角度出發，再對 DevOps 下定義，更顯得客觀中立。畢竟，不管是大機構還是小團隊，不管背後採用哪一種軟體開發流程，都能接受以下這種 DevOps 目標：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;DevOps is a set of &lt;em&gt;practices&lt;/em&gt; intended to &lt;strong&gt;reduce the time between committing a change to a system and the change being placed into normal production, while ensuring high quality&lt;/strong&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;這跟前面那三問句是相互呼應的，只不過這一回用的是更直述、更目標導向的操作型定義。&lt;/p&gt;
+
+&lt;p&gt;這段定義陳述，點出 DevOps 兩大目標：&lt;strong&gt;時間&lt;/strong&gt;及&lt;strong&gt;品質&lt;/strong&gt;：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;時間：在「commit change」到「上線營運生效」兩者之間的時間差，要盡量縮短到某個設定的水平之內。&lt;/li&gt;
+&lt;li&gt;品質：不能只求上線生效，還要對品質把關，維持在某個設定的水平之上。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;弄清楚 DevOps 的目標後，再看 DevOps 圈子倡議的 practices，就不覺突兀：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Treat Ops as first-class citizens from the point of view of requirements.&lt;/li&gt;
+&lt;li&gt;Make Dev more responsible for relevant incident handling. These practices are intended to shorten the time between the observation of an error and the repair of that error.&lt;/li&gt;
+&lt;li&gt;Enforce the deployment process used by all, including Dev and Ops personnel.&lt;/li&gt;
+&lt;li&gt;Use continuous deployment.&lt;/li&gt;
+&lt;li&gt;Develop infrastructure code, such as deployment scripts, with the same set of practices as application code.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;這五項 practices，都可以回溯到先前設定的 DevOps 兩大目標：時間及品質。&lt;/p&gt;
+
+&lt;p&gt;當然啦，同一份目標，可能衍生出不同的實作手法；此時此刻公認的 best practices，也可能在不久就被推翻。書中建議我們可以根據幾點來評估：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;What is the particular practice you are considering?&lt;/strong&gt;&lt;br /&gt;
+這家 DevOps 百貨公司，大肆推銷的東西太多了，必須先針對組織的需求及現況加以評估、排序。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;What other practices are implicit in the practice you are considering?&lt;/strong&gt;&lt;br /&gt;
+某些措施有隱含的前提。譬如說，想實現 continuous deployment 之前，不可能不先做 continuous integration。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;What is the culture of your business, and what are the ramifications of your adopting this particular DevOps practice?&lt;/strong&gt;&lt;br /&gt;
+任何改變都有受到波及的對象，所以，想導入任何改變，都不能忽略組織及人性的抗拒力道。&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;這就是 SEI 出版的書 &lt;a href=&#34;http://www.amazon.com/dp/0134049845/ref=cm_sw_r_tw_dp_bB.Qwb0FF6QRZ&#34;&gt;&lt;em&gt;DevOps: A Software Architect&amp;rsquo;s Perspective&lt;/em&gt;&lt;/a&gt; 當中的第一章，對於 DevOps 下的目標導向定義，以及隨之鋪陳的實踐手法及考量依據。&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
       <title>DevOps 是圓的，找到立足點就是頂點</title>
       <link>//:/post/2015/12/devops-1st-step/</link>
       <pubDate>Mon, 28 Dec 2015 08:00:00 +0800</pubDate>
