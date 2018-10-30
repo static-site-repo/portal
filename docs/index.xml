@@ -972,6 +972,93 @@
     </item>
     
     <item>
+      <title>向工廠管理致敬</title>
+      <link>//:/post/2016/04/learn-from-plant-mgmt/</link>
+      <pubDate>Fri, 22 Apr 2016 08:00:00 +0800</pubDate>
+      
+      <guid>//:/post/2016/04/learn-from-plant-mgmt/</guid>
+      
+        <description>&lt;p&gt;身為徹頭徹尾的軟體人，在軟體產業待久了，總會對「硬」一點的產業，尤其是製造業，有莫名的成見，以為他們是僵固的、反人性的。從 1972 年「&lt;a href=&#34;https://en.wikipedia.org/wiki/Software_crisis&#34;&gt;軟體危機&lt;/a&gt;」引發的論述當中，更加深軟體人的印象：製造業的經驗，是無法直接套用到軟體界的；我們是截然不同的國度。&lt;/p&gt;
+
+&lt;p&gt;不過，近十年來許多軟體界的流程改革，尤其是同屬 Agile 陣營的 Scrum 及 Kanban，居然有許多元素是從製造業&lt;del&gt;偷竊&lt;/del&gt;學習而來。譬如說，由 Toyota 引領風潮的 &lt;a href=&#34;https://en.wikipedia.org/wiki/Lean_manufacturing&#34;&gt;Lean Production&lt;/a&gt; 及 &lt;a href=&#34;https://en.wikipedia.org/wiki/Just-in-time_manufacturing&#34;&gt;JIT&lt;/a&gt;、從 &lt;a href=&#34;https://en.wikipedia.org/wiki/Theory_of_constraints&#34;&gt;TOC（限制理論）&lt;/a&gt; 學來的流程分析及改善手法，都是相關文獻最常引述的。&lt;/p&gt;
+
+&lt;p&gt;最近為了準備一場 Agile/DevOps 演講，特地研讀數本原典，對核心元素來一場溯源之旅：&lt;/p&gt;
+
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//:/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
+  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//:/img/2016/04/book-the-goals.jpg&#34; alt=&#34;目標&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//:/img/2016/04/book-the-goals.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;目標&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+
+
+
+&lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
+  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//:/img/2016/04/book-lean-revolution.jpg&#34; alt=&#34;精實方面的書籍&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//:/img/2016/04/book-lean-revolution.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;精實方面的書籍&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;溯源之旅，很充實，也很有趣。&lt;/p&gt;
+
+&lt;p&gt;一個有趣的觀察是，儘管 TOC 及 Lean/JIT 兩者有許多交集，合併服用的人也很多，但雙方的&lt;del&gt;本位主義者&lt;/del&gt;熱情擁護者卻常常各持己見。譬如說，《&lt;a href=&#34;http://www.books.com.tw/products/0010562789&#34;&gt;目標&lt;/a&gt;》審訂者在導讀中批評 JIT 的效用：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;八十年代，日本的「及時生產觀念」(JIT, Just In Time) 令日本製造業面貌一新，帶給美國莫大的威脅，一時間，美國企業在濃烈的危機感下，紛紛學習，並如法炮製，但效果始終有限。&lt;/p&gt;
+
+&lt;p&gt;作者高德拉特博士強烈地認為，單靠抄襲沒有用，一定要闖出一條優於 JIT 的路才行，況且，絕大部分企業根本沒有條件和資源作 JIT 所需的巨額投資。本書所描述的「鼓—緩衝—繩子」(drum—buffer—rope)、「緩衝管理」(buffer management) 及 TOC 的各種觀念，就被業界評為比 JIT 更實用和快速見效的方法，而且投資少。美國福特汽車的電子部在花鉅資實行了兩年 JIT 後，發覺產品的生產期只縮短了少許，落後日本仍然甚遠，於是決定改用 TOC，在一年內就遠遠拋離對手。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;而精實理論重鎮 &lt;a href=&#34;http://www.lean.org/&#34;&gt;LEI&lt;/a&gt; 出版的《&lt;a href=&#34;http://www.books.com.tw/products/0010339196&#34;&gt;學習觀察&lt;/a&gt;》，則批評 TOC 只有孤立效果，不是全面的改善：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;當我們在 1996 年秋初次發行《&lt;a href=&#34;http://www.books.com.tw/products/0010662172&#34;&gt;精實革命&lt;/a&gt;》時，我們敦促讀者要以大野耐一及豐田系統的其他開拓者的精神去「實踐它」。 [&amp;hellip;] 遺憾的是，我們發現採納我們循序漸進建議的人不多，往往在一頭鑽進消除浪費的工作之前，沒有認真地完成這關鍵的一步。&lt;/p&gt;
+
+&lt;p&gt;這種急進性的改善和令人失望的結果，使得精實又像另一個無疾而終的運動，過了一段日子就被束之高閣，取而代之是像「消除瓶頸」（根據「制約理論」）或者六標準差方案，或者其他種種改善專案。但是這些項目都帶來了同樣的結果，在某些孤立的部分戰勝了浪費，其中的一部分甚至很有成效，但他們都不能成功地全面改善。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;如果有機會安排他們齊聚一堂&lt;del&gt;鬥嘴&lt;/del&gt;交流，一定很有趣。&lt;/p&gt;
+
+&lt;p&gt;補充說明一下：高德拉特本人，對大野耐一可是推崇備至喔！&lt;/p&gt;
+
+&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+
+&lt;p&gt;看了原典，想再看看有現場實務經驗的教練，是如何統合運用這些原理，尤其是不預設立場、善於提問引導的教練。&lt;/p&gt;
+
+&lt;p&gt;《林俊哲的廠長教室》系列，就是如此趣味橫生的大補帖。尤其是〈工廠補習班〉系列文章：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.sina.com.cn/s/blog_a4c01d4a0102vryc.html&#34;&gt;工廠的口號洞悉管理的缺失&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.sina.com.cn/s/blog_a4c01d4a0102vryf.html&#34;&gt;一個作業站反映工廠穩不穩定&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.sina.com.cn/s/blog_a4c01d4a0102vryi.html&#34;&gt;一眼看出沒有效率的工廠&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.sina.com.cn/s/blog_a4c01d4a0102vryo.html&#34;&gt;工廠管理應該管什麼？&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.sina.com.cn/s/blog_a4c01d4a0102vrzq.html&#34;&gt;工廠管理走一遭&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.sina.com.cn/s/blog_a4c01d4a0102vs05.html&#34;&gt;「自動化」與「流水線」的迷失&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.sina.com.cn/s/blog_a4c01d4a0102vs06.html&#34;&gt;工廠管理教戰守則（全文）&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;簡直就是把 TOC、Lean、JIT 等原理重組統整的問答錄。極力建議看完上述原典的人，跟著這些問答錄，一起思辨、活用。&lt;/p&gt;
+
+&lt;p&gt;看完之後，我還要好好思考，是否適合套用在軟體研發管理身上⋯⋯&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
       <title>多工切換：有趣的 Lean 觀點</title>
       <link>//:/post/2016/03/lean-perspective-of-multitasking/</link>
       <pubDate>Tue, 29 Mar 2016 08:00:00 +0800</pubDate>
