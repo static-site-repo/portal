@@ -38,6 +38,20 @@
   </url>
   
   <url>
+    <loc>//:/post/2015/12/devops-1st-step/</loc>
+    <lastmod>2015-12-28T08:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>//:/post/2015/12/ci-effect/</loc>
+    <lastmod>2015-12-22T08:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>//:/post/2015/12/ci-no-turning-back/</loc>
     <lastmod>2015-12-21T08:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -54,6 +68,13 @@
   <url>
     <loc>//:/tags/agile/</loc>
     <lastmod>2018-10-25T12:22:16+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//:/tags/ansible/</loc>
+    <lastmod>2015-12-22T08:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -80,7 +101,7 @@
   
   <url>
     <loc>//:/tags/ci/</loc>
-    <lastmod>2015-12-21T08:00:00+08:00</lastmod>
+    <lastmod>2015-12-28T08:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -101,7 +122,14 @@
   
   <url>
     <loc>//:/tags/devops/</loc>
-    <lastmod>2015-12-21T08:00:00+08:00</lastmod>
+    <lastmod>2015-12-28T08:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//:/tags/docker/</loc>
+    <lastmod>2015-12-22T08:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -157,7 +185,14 @@
   
   <url>
     <loc>//:/categories/tech/</loc>
-    <lastmod>2015-12-21T08:00:00+08:00</lastmod>
+    <lastmod>2015-12-28T08:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//:/tags/testing/</loc>
+    <lastmod>2015-12-22T08:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
