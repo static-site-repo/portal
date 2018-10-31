@@ -28,11 +28,11 @@
 &lt;/div&gt;
 
 
-&lt;p&gt;很外行的愚見吧！畢竟，油畫的美感判準，與版畫的美感判準、攝影的美感判準，本來就有很大不同，不能草率化約在同一把尺來衡量高下境界。&lt;/p&gt;
+&lt;p&gt;很外行吧！畢竟，油畫的美感判準，與版畫的美感判準、攝影的美感判準，本來就有很大不同，不能草率化約在同一把尺來衡量高下境界。&lt;/p&gt;
 
 &lt;p&gt;把照片拍得像油畫，就能夠贏過油畫嗎？&lt;/p&gt;
 
-&lt;p&gt;美術媒材的選擇，是自由的；一旦擇定媒材，就要正視及尊重該媒材的運用手法、該媒材營造的世界觀，以及該媒材表現境界的判準。&lt;/p&gt;
+&lt;p&gt;我們有選擇美術媒材的自由。一旦擇定媒材，就要正視及尊重該媒材的運用手法、該媒材營造的世界觀，以及該媒材表現境界的判準。&lt;/p&gt;
 
 &lt;p&gt;軟體研發，亦然。&lt;/p&gt;
 
@@ -46,7 +46,7 @@
 
 &lt;h2 id=&#34;瀑布方法的判準&#34;&gt;瀑布方法的判準&lt;/h2&gt;
 
-&lt;p&gt;敏捷三叔公 David Ko 在〈&lt;a href=&#34;http://kojenchieh.pixnet.net/blog/post/465054452-%E5%8E%9F%E4%BE%86%E7%80%91%E5%B8%83%E8%80%81%E7%A5%96%E6%98%AF%E6%83%B3%E5%81%9A%E6%95%8F%E6%8D%B7%E5%95%8A&#34;&gt;原來瀑布老祖是想做敏捷啊&lt;/a&gt;〉考古文章中提到，瀑布式開發始祖 Winston W. Royce 當年的&lt;a href=&#34;https://dl.acm.org/citation.cfm?id=41801&#34;&gt;會議論文&lt;/a&gt;，其實提出了兩種想法，一種是後來被世人普遍稱為 waterfall 的版本，另一種則是帶些更務實風格的修正版。&lt;/p&gt;
+&lt;p&gt;敏捷三叔公 David Ko 在〈&lt;a href=&#34;http://kojenchieh.pixnet.net/blog/post/465054452-%E5%8E%9F%E4%BE%86%E7%80%91%E5%B8%83%E8%80%81%E7%A5%96%E6%98%AF%E6%83%B3%E5%81%9A%E6%95%8F%E6%8D%B7%E5%95%8A&#34;&gt;原來瀑布老祖是想做敏捷啊&lt;/a&gt;〉考古文章中指出，瀑布式開發始祖 Winston W. Royce 在 1970 年發表的&lt;a href=&#34;https://dl.acm.org/citation.cfm?id=41801&#34;&gt;會議論文&lt;/a&gt;中，總共提出兩種想法，一種是後來被世人普遍稱為&lt;del&gt;萬惡的&lt;/del&gt; waterfall 的版本，另一種則是帶些更務實風格的修正版。&lt;/p&gt;
 
 &lt;p&gt;兩種想法，背後的核心觀念，其實都是 &lt;a href=&#34;https://www.pmi.org/learning/library/phase-gate-processes-promising-complex-547&#34;&gt;phase gate&lt;/a&gt; 或 &lt;a href=&#34;https://wiki.mbalib.com/zh-tw/%E9%97%A8%E5%BE%84%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F&#34;&gt;stage gate&lt;/a&gt; 的 &amp;ldquo;&lt;strong&gt;gate&lt;/strong&gt;&amp;rdquo; 機制：&lt;/p&gt;
 
@@ -81,7 +81,7 @@
 
 &lt;p&gt;問題是：這個判準，合乎現實嗎？更進一步的問題是：是怎樣的世界觀，才會催生如此的判準？&lt;/p&gt;
 
-&lt;p&gt;Waterfall 的世界觀就是，萬事萬物，都有一個自然的線性執行順序。在這些自然的線性順序當中，會有一些關鍵的控制點，或者像《&lt;a href=&#34;https://www.kingstone.com.tw/book/book_page.asp?kmcode=2014940760328&#34;&gt;利潤的故事&lt;/a&gt;》所用的「地景的控制點」妙喻。這些「地景的控制點」，就是瀑布方法 phase gate 判準之所在。&lt;/p&gt;
+&lt;p&gt;Waterfall 的世界觀就是，萬事萬物，都有一個自然的線性執行順序。在這些自然的線性順序當中，會有一些關鍵的控制點，或者像《&lt;a href=&#34;https://www.kingstone.com.tw/book/book_page.asp?kmcode=2014940760328&#34;&gt;利潤的故事&lt;/a&gt;》所用的「地景的控制點」妙喻：「有些地方，就是比其他地方重要」。&lt;/p&gt;
 
 
 
@@ -98,9 +98,11 @@
 &lt;/div&gt;
 
 
+&lt;p&gt;這些「地景的控制點」，就是瀑布方法 phase gate 判準之所在。&lt;/p&gt;
+
 &lt;p&gt;不可否認，的確有人在這種方法論、世界觀、判準底下活得很好。認清這個判準，以及這個判準背後代表的方法論及世界觀，有助於你和這類人種互動。&lt;/p&gt;
 
-&lt;p&gt;或許更重要的是，你不同意這種方法論，卻又得與贊同者合作，你就應該在這些判準的層次上，&lt;del&gt;挑戰&lt;/del&gt;關心對方對這些判準的認知與實踐品質。&lt;/p&gt;
+&lt;p&gt;或許更重要的是，你不同意這種方法論，卻又得與這類人種合作，你就應該在這些判準的層次上，&lt;del&gt;挑戰&lt;/del&gt;關心對方對這些判準的認知與實踐品質。&lt;/p&gt;
 
 &lt;p&gt;在判準的層次動工，比各自表述的爭辯更有力。&lt;/p&gt;
 
@@ -118,9 +120,9 @@
 &lt;p&gt;在 Sprint 結束時，increment 是一種可檢視，完成的工作實體，並可支持經驗主義。&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;簡言之，Scrum 是以 increment 作為載具，藉以反映出透明性、檢視性、調適性這三大主張，藉以最大化可預測性及控制風險。&lt;/p&gt;
+&lt;p&gt;簡言之，Scrum 是以 increment 作為載具、「地景的控制點」，藉以反映出透明性、檢視性、調適性這三大主張，藉以最大化可預測性及控制風險。&lt;/p&gt;
 
-&lt;p&gt;並不是隨隨便便任何一個軟體中間狀態都夠資格稱為 &amp;ldquo;increment&amp;rdquo;，而是有標準的。Scrum 是很精簡的框架，將這標準交由團隊來定義 (DoD: definition of done)，但能否嚴守這個承諾共識，決定了 Scrum 實踐的成敗：&lt;/p&gt;
+&lt;p&gt;並不是隨隨便便任何一個軟體中間狀態都夠資格稱為 &amp;ldquo;increment&amp;rdquo;，而是有標準的。Scrum 是很精簡的框架，將這標準交由團隊來定義 (DoD; definition of done)，但能否嚴守這個承諾共識，決定了 Scrum 實踐的成敗：&lt;/p&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;Scrum Teams 用迭代和逐步 increment 的方式交付產品，將回饋的機會最大化。用逐步
@@ -151,7 +153,7 @@ increment 的方式交付「完成」的產品，可以確保一直提供一個�
 
 &lt;h2 id=&#34;kanban-的判準&#34;&gt;Kanban 的判準&lt;/h2&gt;
 
-&lt;p&gt;Kanban 是極度精簡的框架，甚至連「框架」都不太能夠稱得上。因此，他的判準很容易辨識，也很容易衡量，就是 Kanban 的核心規則：拉動系統 (pull)、WIP 限制。&lt;/p&gt;
+&lt;p&gt;Kanban 是極度精簡的框架，甚至連「框架」都不太能夠稱得上。因此，他的判準很容易辨識，也很容易衡量，那就是 Kanban 的核心規則：拉動系統 (pull)、WIP 限制。&lt;/p&gt;
 
 &lt;p&gt;問題是：這個判準，合乎現實嗎？更進一步的問題是：是怎樣的世界觀，才會催生如此的判準？&lt;/p&gt;
 
@@ -159,7 +161,7 @@ increment 的方式交付「完成」的產品，可以確保一直提供一個�
 
 &lt;p&gt;認清這個判準，以及這個判準背後代表的方法論及世界觀，有助於你掌握這個「入門毒藥」(gateway drug) &lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; 的殊勝之處，以及⋯⋯潛在的問題。 &lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 
-&lt;p&gt;或許更重要的是，你支持這種方法論，卻又得與反對者合作，你就應該在這些判準的層次上，盡一切努力守護這些判準的認知與實踐品質，並最大化這些判準的價值能見度。&lt;/p&gt;
+&lt;p&gt;或許更重要的是，你支持這種方法論，卻又得與反對者或不可知論者合作，你就應該在這些判準的層次上，盡一切努力守護這些判準的認知與實踐品質，並最大化這些判準的價值能見度。&lt;/p&gt;
 
 &lt;p&gt;在判準的層次動工，比各自表述的爭辯更有力。&lt;/p&gt;
 
