@@ -2,21 +2,198 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Potioneer&#39;s Essays</title>
-    <link>//:/</link>
+    <link>//william-yeh.net/</link>
     <description>Recent content on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Thu, 25 Oct 2018 12:22:16 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 31 Oct 2018 08:00:00 +0800</lastBuildDate>
     
-        <atom:link href="//:/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="//william-yeh.net/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>敏捷的判準</title>
+      <link>//william-yeh.net/post/2018/10/agile-criteria/</link>
+      <pubDate>Wed, 31 Oct 2018 08:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2018/10/agile-criteria/</guid>
+      
+        <description>&lt;p&gt;今年暑假，我第一次去台中的國美館，參觀 &lt;a href=&#34;https://www.ntmofa.gov.tw/information_1078_86836.html&#34;&gt;2018 年全國美術展&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;這年度盛會，分成油畫、水彩、版畫、水墨等十大類。大開眼界之餘，也不禁有個奇想：為什麼要分這麼多類別來競賽？為什麼不選出一個跨十大類別的首獎，就像武林盟主一樣？&lt;/p&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/nBlph7Vp92E&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;很外行的愚見吧！畢竟，油畫的美感判準，與版畫的美感判準、攝影的美感判準，本來就有很大不同，不能草率化約在同一把尺來衡量高下境界。&lt;/p&gt;
+
+&lt;p&gt;把照片拍得像油畫，就能夠贏過油畫嗎？&lt;/p&gt;
+
+&lt;p&gt;美術媒材的選擇，是自由的；一旦擇定媒材，就要正視及尊重該媒材的運用手法、該媒材營造的世界觀，以及該媒材表現境界的判準。&lt;/p&gt;
+
+&lt;p&gt;軟體研發，亦然。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2018/10/methodology-and-criteria/&#34;&gt;前一篇文章&lt;/a&gt;初步提到&lt;strong&gt;方法論&lt;/strong&gt;與&lt;strong&gt;判準&lt;/strong&gt;之間的關係，這一篇文章，就來繼續探討幾種常見軟體研發方法的判準。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;「多元典範的軟體開發取向」認為：我們可以視問題的性質，採取瀑布或敏捷軟體開發典範。&lt;/p&gt;
+
+&lt;p&gt;然而，採取某種典範，不但要說明自己的&lt;strong&gt;方法論立場&lt;/strong&gt;，而且要採用該一典範的&lt;strong&gt;方法論判準&lt;/strong&gt;。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;瀑布方法的判準&#34;&gt;瀑布方法的判準&lt;/h2&gt;
+
+&lt;p&gt;敏捷三叔公 David Ko 在〈&lt;a href=&#34;http://kojenchieh.pixnet.net/blog/post/465054452-%E5%8E%9F%E4%BE%86%E7%80%91%E5%B8%83%E8%80%81%E7%A5%96%E6%98%AF%E6%83%B3%E5%81%9A%E6%95%8F%E6%8D%B7%E5%95%8A&#34;&gt;原來瀑布老祖是想做敏捷啊&lt;/a&gt;〉考古文章中提到，瀑布式開發始祖 Winston W. Royce 當年的&lt;a href=&#34;https://dl.acm.org/citation.cfm?id=41801&#34;&gt;會議論文&lt;/a&gt;，其實提出了兩種想法，一種是後來被世人普遍稱為 waterfall 的版本，另一種則是帶些更務實風格的修正版。&lt;/p&gt;
+
+&lt;p&gt;兩種想法，背後的核心觀念，其實都是 &lt;a href=&#34;https://www.pmi.org/learning/library/phase-gate-processes-promising-complex-547&#34;&gt;phase gate&lt;/a&gt; 或 &lt;a href=&#34;https://wiki.mbalib.com/zh-tw/%E9%97%A8%E5%BE%84%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F&#34;&gt;stage gate&lt;/a&gt; 的 &amp;ldquo;&lt;strong&gt;gate&lt;/strong&gt;&amp;rdquo; 機制：&lt;/p&gt;
+
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
+  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/10/royce-1970.png&#34; alt=&#34;Royce 1970 - Managing the development of large software systems: concepts and techniques&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2018/10/royce-1970.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Royce 1970 - Managing the development of large software systems: concepts and techniques&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;以上圖來說，圓圈圈的部分，就是在各個階段 (phase/stage) 負責把關的守門員：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;PSR: Preliminary Software Review&lt;/li&gt;
+&lt;li&gt;CSR: Critical Software Review&lt;/li&gt;
+&lt;li&gt;FSAR: Final Software Acceptance Review&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;這就是瀑布方法論的判準。&lt;/p&gt;
+
+&lt;h3 id=&#34;合乎現實嗎&#34;&gt;合乎現實嗎？&lt;/h3&gt;
+
+&lt;p&gt;要走 waterfall 路線，就要弄清楚 waterfall 的判準，並致力於判準的實踐品質，這是將方法論落地實施的重要關鍵。&lt;/p&gt;
+
+&lt;p&gt;問題是：這個判準，合乎現實嗎？更進一步的問題是：是怎樣的世界觀，才會催生如此的判準？&lt;/p&gt;
+
+&lt;p&gt;Waterfall 的世界觀就是，萬事萬物，都有一個自然的線性執行順序。在這些自然的線性順序當中，會有一些關鍵的控制點，或者像《&lt;a href=&#34;https://www.kingstone.com.tw/book/book_page.asp?kmcode=2014940760328&#34;&gt;利潤的故事&lt;/a&gt;》所用的「地景的控制點」妙喻。這些「地景的控制點」，就是瀑布方法 phase gate 判準之所在。&lt;/p&gt;
+
+
+
+&lt;div class=&#34;box&#34; style=&#34;max-width:20em&#34;&gt;
+  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/10/control-point.jpg&#34; alt=&#34;地景的控制點&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2018/10/control-point.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;地景的控制點&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;不可否認，的確有人在這種方法論、世界觀、判準底下活得很好。認清這個判準，以及這個判準背後代表的方法論及世界觀，有助於你和這類人種互動。&lt;/p&gt;
+
+&lt;p&gt;或許更重要的是，你不同意這種方法論，卻又得與贊同者合作，你就應該在這些判準的層次上，&lt;del&gt;挑戰&lt;/del&gt;關心對方對這些判準的認知與實踐品質。&lt;/p&gt;
+
+&lt;p&gt;在判準的層次動工，比各自表述的爭辯更有力。&lt;/p&gt;
+
+&lt;h2 id=&#34;scrum-的判準&#34;&gt;Scrum 的判準&lt;/h2&gt;
+
+&lt;p&gt;儘管 Scrum 是很精簡的框架，但真正核心的判準，未必都被清楚地認知。&lt;/p&gt;
+
+&lt;p&gt;我個人認為，Scrum 的判準，就在於 &lt;strong&gt;increment&lt;/strong&gt;，或者更具體一點講：&lt;strong&gt;PSPI&lt;/strong&gt; (potentially shippable product increment)。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.scrumguides.org/&#34;&gt;&lt;em&gt;The Scrum Guide&lt;/em&gt;&lt;/a&gt; (2017 版) 說：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Scrum 使用迭代和逐步 increment 的方式，來最大化可預測性和控制風險。&lt;/p&gt;
+
+&lt;p&gt;在 Sprint 結束時，increment 是一種可檢視，完成的工作實體，並可支持經驗主義。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;簡言之，Scrum 是以 increment 作為載具，藉以反映出透明性、檢視性、調適性這三大主張，藉以最大化可預測性及控制風險。&lt;/p&gt;
+
+&lt;p&gt;並不是隨隨便便任何一個軟體中間狀態都夠資格稱為 &amp;ldquo;increment&amp;rdquo;，而是有標準的。Scrum 是很精簡的框架，將這標準交由團隊來定義 (DoD: definition of done)，但能否嚴守這個承諾共識，決定了 Scrum 實踐的成敗：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Scrum Teams 用迭代和逐步 increment 的方式交付產品，將回饋的機會最大化。用逐步
+increment 的方式交付「完成」的產品，可以確保一直提供一個潛在可用的產品版本。&lt;/p&gt;
+
+&lt;p&gt;真正執行的人員和檢視 increment 成果的人員，需要對「完成」之定義，有一個共同的認知。&lt;/p&gt;
+
+&lt;p&gt;在 Sprint 的最後，新的 increment 必須是「完成」的，這意味著它必須是可用的狀態，並符合 Scrum Team 對於「完成」之定義。&lt;/p&gt;
+
+&lt;p&gt;在 Sprint 過程中，對於品質的目標不可以降低。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;簡言之，Scrum 的判準，就在於 increment 的定義，以及能否在各個迭代過程中，捍衛並精進這個 increment 的整全狀態。&lt;/p&gt;
+
+&lt;h3 id=&#34;合乎現實嗎-1&#34;&gt;合乎現實嗎？&lt;/h3&gt;
+
+&lt;p&gt;要走 Scrum 路線，就要弄清楚 Scrum 的判準，並致力於判準的實踐品質，這是將方法論落地實施的重要關鍵。&lt;/p&gt;
+
+&lt;p&gt;問題是：這個判準，合乎現實嗎？更進一步的問題是：是怎樣的世界觀，才會催生如此的判準？&lt;/p&gt;
+
+&lt;p&gt;Scrum 的世界觀就是，萬事萬物，都有一個自然的生物成長順序。或嬰兒，或幼童，或成年，在每一個當下，必然都是整全的生命個體。&lt;/p&gt;
+
+&lt;p&gt;認清這個判準，以及這個判準背後代表的方法論及世界觀，有助於你與其他物種分別為聖。&lt;/p&gt;
+
+&lt;p&gt;或許更重要的是，你支持這種方法論，卻又得與反對者合作，你就應該在這些判準的層次上，盡一切努力守護這些判準的認知與實踐品質，並最大化這些判準的價值能見度。&lt;/p&gt;
+
+&lt;p&gt;在判準的層次動工，比各自表述的爭辯更有力。&lt;/p&gt;
+
+&lt;h2 id=&#34;kanban-的判準&#34;&gt;Kanban 的判準&lt;/h2&gt;
+
+&lt;p&gt;Kanban 是極度精簡的框架，甚至連「框架」都不太能夠稱得上。因此，他的判準很容易辨識，也很容易衡量，就是 Kanban 的核心規則：拉動系統 (pull)、WIP 限制。&lt;/p&gt;
+
+&lt;p&gt;問題是：這個判準，合乎現實嗎？更進一步的問題是：是怎樣的世界觀，才會催生如此的判準？&lt;/p&gt;
+
+&lt;p&gt;Kanban 的世界觀就是，萬事萬物，都有一個自然的流動順序。我們所該做的，就是讓這流動，以小批量的方式，毫無阻礙地順流而下。&lt;/p&gt;
+
+&lt;p&gt;認清這個判準，以及這個判準背後代表的方法論及世界觀，有助於你掌握這個「入門毒藥」(gateway drug) &lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; 的殊勝之處，以及⋯⋯潛在的問題。 &lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;p&gt;或許更重要的是，你支持這種方法論，卻又得與反對者合作，你就應該在這些判準的層次上，盡一切努力守護這些判準的認知與實踐品質，並最大化這些判準的價值能見度。&lt;/p&gt;
+
+&lt;p&gt;在判準的層次動工，比各自表述的爭辯更有力。&lt;/p&gt;
+
+&lt;h2 id=&#34;善用判準作為施力點&#34;&gt;善用判準作為施力點&lt;/h2&gt;
+
+&lt;p&gt;判準，是將方法論落地實施的重要關鍵，也是方法論歧見的槓桿解。&lt;/p&gt;
+
+&lt;p&gt;畢竟，方法論，甚至背後的世界觀，不是那麼容易就撼動得了。&lt;/p&gt;
+
+&lt;p&gt;試問：你對自己採用的軟體開發方法論，了解它的判準嗎？&lt;/p&gt;
+
+&lt;p&gt;試問：你對其他人採用的不一樣的軟體開發方法論，也了解它的判準嗎？&lt;/p&gt;
+
+&lt;p&gt;理解別人的判準，善用判準作為施力點，在判準的層次動工，比起辯論不同方法論之間的優劣，更有建設性，也更能推動事情的前進。&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;&lt;a href=&#34;http://kojenchieh.pixnet.net/blog/post/386166536-%E7%9C%8B%E6%9D%BF%E6%98%AF%E5%85%A5%E9%96%80%E6%AF%92%E8%97%A5-(gateway-drug)&#34;&gt;看板是入門毒藥 (gateway drug)&lt;/a&gt;
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:1&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;&lt;a href=&#34;http://teddy-chen-tw.blogspot.com/2017/06/blog-post_21.html&#34;&gt;為什麼看板方法適合控制與能力文化？&lt;/a&gt;
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:2&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description>
+      
+    </item>
+    
+    <item>
       <title>軟體開發，除了方法論，還有⋯⋯</title>
-      <link>//:/post/2018/10/methodology-and-criteria/</link>
+      <link>//william-yeh.net/post/2018/10/methodology-and-criteria/</link>
       <pubDate>Thu, 25 Oct 2018 12:22:16 +0800</pubDate>
       
-      <guid>//:/post/2018/10/methodology-and-criteria/</guid>
+      <guid>//william-yeh.net/post/2018/10/methodology-and-criteria/</guid>
       
         <description>&lt;p&gt;在某些人眼中，「敏捷」是狂熱份子聚集的邪教。&lt;/p&gt;
 
@@ -27,13 +204,13 @@
 &lt;p&gt;尤其在看過《&lt;a href=&#34;https://www.books.com.tw/products/0010791756&#34;&gt;社會科學的理路&lt;/a&gt;》之後，我領悟到一些根源問題及槓桿解。&lt;/p&gt;
 
 
-&lt;link rel=&#34;stylesheet&#34; href=&#34;//:/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
 &lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
   &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
     &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//:/img/2018/10/social-sci.jpg&#34; alt=&#34;圖一　《社會科學的理路》第一版 (2001) 及第四版 (2018)&#34;/&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/10/social-sci.jpg&#34; alt=&#34;圖一　《社會科學的理路》第一版 (2001) 及第四版 (2018)&#34;/&gt;
     &lt;/div&gt;
-    &lt;a href=&#34;//:/img/2018/10/social-sci.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2018/10/social-sci.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
       &lt;figcaption&gt;
           &lt;p&gt;圖一　《社會科學的理路》第一版 (2001) 及第四版 (2018)&lt;/p&gt;
       &lt;/figcaption&gt;
@@ -43,22 +220,26 @@
 
 &lt;h2 id=&#34;方法論形塑世界觀&#34;&gt;方法論形塑世界觀&lt;/h2&gt;
 
-&lt;p&gt;我們都在採用方法論，不管我們自覺或不自覺。&lt;/p&gt;
+&lt;p&gt;我們都在採用&lt;strong&gt;方法論&lt;/strong&gt;，不管我們自覺或不自覺。&lt;/p&gt;
 
 &lt;p&gt;瀑布模型是一種方法論，敏捷是一種方法論，Scrum 及 Kanban 則是敏捷方法論底下更具體的實踐作法。&lt;/p&gt;
 
-&lt;p&gt;為什麼會決定採取某一種方法論？原因可能很多，本文不予探討。本文想談的是，一旦採取某一種方法論，就會逐漸被該方法論所形塑的世界觀所包圍，以及接下來的連鎖效應——不管我們自覺或不自覺。&lt;/p&gt;
+&lt;p&gt;為什麼會決定採取某一種方法論？原因可能很多，本文不予探討。本文想談的是，採取某一種方法論，就會逐漸被該方法論所形塑的&lt;strong&gt;世界觀&lt;/strong&gt;所包圍，以及接下來的連鎖效應——不管我們自覺或不自覺。&lt;/p&gt;
 
-&lt;p&gt;《&lt;a href=&#34;https://www.books.com.tw/products/0010791756&#34;&gt;社會科學的理路&lt;/a&gt;》從科學哲學角度指出：&lt;/p&gt;
+&lt;p&gt;論到方法論及世界觀，我想要引述《&lt;a href=&#34;https://www.books.com.tw/products/0010791756&#34;&gt;社會科學的理路&lt;/a&gt;》的見解。&lt;/p&gt;
+
+&lt;p&gt;本書作者黃光國教授，是台灣社會心理學界的大老。他花了將近十年的工夫寫成本書第一版 (2001 年)，析論二十世紀發展出來的五種科學哲學主要典範之間的關聯。退休後推出的第四版 (2018 年)，將原本具有歷史意義的第一章整個抽換掉，很可惜，所以我仍然留著第一版。&lt;/p&gt;
+
+&lt;p&gt;《&lt;a href=&#34;https://www.books.com.tw/products/0010791756&#34;&gt;社會科學的理路&lt;/a&gt;》，從科學哲學角度指出：&lt;/p&gt;
 
 
 
 &lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
   &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
     &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//:/img/2018/10/paradigm.jpg&#34; alt=&#34;圖二　方法論與世界觀&#34;/&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/10/paradigm.jpg&#34; alt=&#34;圖二　方法論與世界觀&#34;/&gt;
     &lt;/div&gt;
-    &lt;a href=&#34;//:/img/2018/10/paradigm.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2018/10/paradigm.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
       &lt;figcaption&gt;
           &lt;p&gt;圖二　方法論與世界觀&lt;/p&gt;
       &lt;/figcaption&gt;
@@ -66,7 +247,7 @@
 &lt;/div&gt;
 
 
-&lt;p&gt;讓我們從「軟體開發流程」的角度來照樣造句吧！&lt;/p&gt;
+&lt;p&gt;看起來有點抽象，讓我們從「軟體開發流程」的角度來照樣造句，就會茅塞頓開：&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;任何一種&lt;strong&gt;軟體開發流程&lt;/strong&gt;所主張的「&lt;strong&gt;本體論／認識論／方法論&lt;/strong&gt;」，構成了該一開發流程的「&lt;strong&gt;世界觀&lt;/strong&gt;」，它在性質上是一種&lt;strong&gt;形而上學的預設&lt;/strong&gt;，是由軟體開發團隊的&lt;strong&gt;基本信念&lt;/strong&gt;所決定的。&lt;/p&gt;&lt;/li&gt;
@@ -74,7 +255,7 @@
 &lt;li&gt;&lt;p&gt;一個&lt;strong&gt;軟體開發者&lt;/strong&gt;，對於方法論的回答，必然會受到其「本體論／認識論」立場的&lt;strong&gt;限制&lt;/strong&gt;，而不能隨意選擇。當他決定採用某種方法論的時候，他也必須同時接受其「本體論／認識論」&lt;strong&gt;預設&lt;/strong&gt;。&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;所以，採取瀑布模式的人，採取敏捷模式的人，兩群人的世界觀，是非常不一樣的。&lt;/p&gt;
+&lt;p&gt;所以，採取瀑布模式的人，採取敏捷模式的人，兩群人的世界觀，以及信念、預設，是非常不一樣的。&lt;/p&gt;
 
 &lt;p&gt;想合作，或是想進一步改變對方，就得先認清這一點：你們的對話，是不同世界觀的對話。&lt;/p&gt;
 
@@ -84,18 +265,18 @@
 
 &lt;p&gt;不同方法論，有優劣之別嗎？&lt;/p&gt;
 
-&lt;p&gt;或許有，但更常見的是：不同方法論，各有擅長的場域。&lt;/p&gt;
+&lt;p&gt;或許有吧。但更常見的事實是：不同方法論，各有擅長的場域。&lt;/p&gt;
 
-&lt;p&gt;《&lt;a href=&#34;https://www.books.com.tw/products/0010791756&#34;&gt;社會科學的理路&lt;/a&gt;》從科學哲學角度指出：&lt;/p&gt;
+&lt;p&gt;《&lt;a href=&#34;https://www.books.com.tw/products/0010791756&#34;&gt;社會科學的理路&lt;/a&gt;》第一版的第一章，從科學哲學角度指出：&lt;/p&gt;
 
 
 
 &lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
   &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
     &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//:/img/2018/10/paradigm-criteria.jpg&#34; alt=&#34;圖三　典範的判準&#34;/&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/10/paradigm-criteria.jpg&#34; alt=&#34;圖三　典範的判準&#34;/&gt;
     &lt;/div&gt;
-    &lt;a href=&#34;//:/img/2018/10/paradigm-criteria.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2018/10/paradigm-criteria.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
       &lt;figcaption&gt;
           &lt;p&gt;圖三　典範的判準&lt;/p&gt;
       &lt;/figcaption&gt;
@@ -103,9 +284,9 @@
 &lt;/div&gt;
 
 
-&lt;p&gt;文中點出很重要的觀念：「判準」。&lt;/p&gt;
+&lt;p&gt;文中點出很重要的觀念：「&lt;strong&gt;判準&lt;/strong&gt;」。&lt;/p&gt;
 
-&lt;p&gt;讓我們再從「軟體開發流程」的角度來照樣造句吧！&lt;/p&gt;
+&lt;p&gt;看起來有點抽象，讓我們再從「軟體開發流程」的角度來照樣造句吧！&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;我是贊同「敏捷運動」的。然而，我卻認為：「敏捷／不敏捷」不能夠作為軟體開發流程好壞的&lt;strong&gt;判準&lt;/strong&gt;。&lt;/p&gt;&lt;/li&gt;
@@ -121,16 +302,26 @@
 
 &lt;p&gt;試問：你對其他人採用的不一樣的軟體開發方法論，也了解它的判準嗎？&lt;/p&gt;
 
-&lt;p&gt;先賣個關子。下一篇文章，再分別針對瀑布與敏捷取向，談談我所認為的方法論判準。&lt;/p&gt;</description>
+&lt;p&gt;先賣個關子。下一篇文章，再分別針對瀑布與敏捷取向，談談我所認為的方法論判準。&lt;/p&gt;
+
+&lt;div class=&#34;shortcode-notice note&#34;&gt;
+  &lt;div class=&#34;shortcode-notice-title note&#34;&gt;
+    
+      續集
+    
+  &lt;/div&gt;
+  &lt;p&gt;▷ &lt;a href=&#34;//william-yeh.net/post/2018/10/agile-criteria/&#34;&gt;敏捷的判準&lt;/a&gt;&lt;/p&gt;
+
+&lt;/div&gt;</description>
       
     </item>
     
     <item>
       <title>平凡人求生之道：別總是直球對決</title>
-      <link>//:/post/2016/08/lifetime-keywords/</link>
+      <link>//william-yeh.net/post/2016/08/lifetime-keywords/</link>
       <pubDate>Mon, 29 Aug 2016 07:00:00 +0800</pubDate>
       
-      <guid>//:/post/2016/08/lifetime-keywords/</guid>
+      <guid>//william-yeh.net/post/2016/08/lifetime-keywords/</guid>
       
         <description>&lt;p&gt;我們的人生，都走了許多冤枉路。回頭來看，總是希望能有系統化的方法，及早認清局勢，預作準備，以求更無懼於永不停歇的變局。&lt;/p&gt;
 
@@ -151,13 +342,13 @@
 &lt;p&gt;當年的「平凡人 Joe」，已經變成「不平凡的 Joe」。箇中心路歷程，及面對種種困境、選擇的取捨標準，是我想好好觀摩體會的。加上身為 J&amp;amp;B 的鐵粉，自然不想錯過這晉升大人的重要思路。&lt;/p&gt;
 
 
-&lt;link rel=&#34;stylesheet&#34; href=&#34;//:/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
 &lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
   &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
     &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//:/img/2016/08/s012-joe.jpg&#34; alt=&#34;S012 - 別總是直球對決&#34;/&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/08/s012-joe.jpg&#34; alt=&#34;S012 - 別總是直球對決&#34;/&gt;
     &lt;/div&gt;
-    &lt;a href=&#34;//:/img/2016/08/s012-joe.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2016/08/s012-joe.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
       &lt;figcaption&gt;
           &lt;p&gt;S012 - 別總是直球對決&lt;/p&gt;
       &lt;/figcaption&gt;
@@ -173,9 +364,9 @@
 &lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
   &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
     &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//:/img/2016/08/lifetime-keywords-0.png&#34; alt=&#34;30 個關鍵字&#34;/&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/08/lifetime-keywords-0.png&#34; alt=&#34;30 個關鍵字&#34;/&gt;
     &lt;/div&gt;
-    &lt;a href=&#34;//:/img/2016/08/lifetime-keywords-0.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2016/08/lifetime-keywords-0.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
       &lt;figcaption&gt;
           &lt;p&gt;30 個關鍵字&lt;/p&gt;
       &lt;/figcaption&gt;
@@ -191,9 +382,9 @@
 &lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
   &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
     &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//:/img/2016/08/lifetime-keywords-1-3.png&#34; alt=&#34;關鍵字 1~3&#34;/&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/08/lifetime-keywords-1-3.png&#34; alt=&#34;關鍵字 1~3&#34;/&gt;
     &lt;/div&gt;
-    &lt;a href=&#34;//:/img/2016/08/lifetime-keywords-1-3.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2016/08/lifetime-keywords-1-3.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
       &lt;figcaption&gt;
           &lt;p&gt;關鍵字 1~3&lt;/p&gt;
       &lt;/figcaption&gt;
@@ -202,16 +393,16 @@
 
 
 &lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;
-接下來四個關鍵字，讓我重溫之前在【&lt;a href=&#34;//:/post/2016/06/upgrade-adult-thinking-part2/&#34;&gt;A101 職場大人學：職場人際關係與優勢策略&lt;/a&gt;】課堂上受到的洗禮：&lt;/p&gt;
+接下來四個關鍵字，讓我重溫之前在【&lt;a href=&#34;//william-yeh.net/post/2016/06/upgrade-adult-thinking-part2/&#34;&gt;A101 職場大人學：職場人際關係與優勢策略&lt;/a&gt;】課堂上受到的洗禮：&lt;/p&gt;
 
 
 
 &lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
   &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
     &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//:/img/2016/08/lifetime-keywords-4-7.png&#34; alt=&#34;關鍵字 4~7&#34;/&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/08/lifetime-keywords-4-7.png&#34; alt=&#34;關鍵字 4~7&#34;/&gt;
     &lt;/div&gt;
-    &lt;a href=&#34;//:/img/2016/08/lifetime-keywords-4-7.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2016/08/lifetime-keywords-4-7.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
       &lt;figcaption&gt;
           &lt;p&gt;關鍵字 4~7&lt;/p&gt;
       &lt;/figcaption&gt;
@@ -227,9 +418,9 @@
 &lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
   &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
     &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//:/img/2016/08/lifetime-keywords-8-12.png&#34; alt=&#34;關鍵字 8~12&#34;/&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/08/lifetime-keywords-8-12.png&#34; alt=&#34;關鍵字 8~12&#34;/&gt;
     &lt;/div&gt;
-    &lt;a href=&#34;//:/img/2016/08/lifetime-keywords-8-12.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2016/08/lifetime-keywords-8-12.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
       &lt;figcaption&gt;
           &lt;p&gt;關鍵字 8~12&lt;/p&gt;
       &lt;/figcaption&gt;
@@ -245,9 +436,9 @@
 &lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
   &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
     &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//:/img/2016/08/lifetime-keywords-13-15.png&#34; alt=&#34;關鍵字 13~15&#34;/&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/08/lifetime-keywords-13-15.png&#34; alt=&#34;關鍵字 13~15&#34;/&gt;
     &lt;/div&gt;
-    &lt;a href=&#34;//:/img/2016/08/lifetime-keywords-13-15.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2016/08/lifetime-keywords-13-15.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
       &lt;figcaption&gt;
           &lt;p&gt;關鍵字 13~15&lt;/p&gt;
       &lt;/figcaption&gt;
@@ -263,9 +454,9 @@
 &lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
   &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
     &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//:/img/2016/08/lifetime-keywords-16-19.png&#34; alt=&#34;關鍵字 16~19&#34;/&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/08/lifetime-keywords-16-19.png&#34; alt=&#34;關鍵字 16~19&#34;/&gt;
     &lt;/div&gt;
-    &lt;a href=&#34;//:/img/2016/08/lifetime-keywords-16-19.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2016/08/lifetime-keywords-16-19.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
       &lt;figcaption&gt;
           &lt;p&gt;關鍵字 16~19&lt;/p&gt;
       &lt;/figcaption&gt;
@@ -281,9 +472,9 @@
 &lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
   &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
     &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//:/img/2016/08/lifetime-keywords-20-25.png&#34; alt=&#34;關鍵字 20~25&#34;/&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/08/lifetime-keywords-20-25.png&#34; alt=&#34;關鍵字 20~25&#34;/&gt;
     &lt;/div&gt;
-    &lt;a href=&#34;//:/img/2016/08/lifetime-keywords-20-25.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2016/08/lifetime-keywords-20-25.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
       &lt;figcaption&gt;
           &lt;p&gt;關鍵字 20~25&lt;/p&gt;
       &lt;/figcaption&gt;
@@ -313,9 +504,9 @@
 &lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
   &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
     &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//:/img/2016/08/lifetime-keywords-26-30.png&#34; alt=&#34;關鍵字 26~30&#34;/&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/08/lifetime-keywords-26-30.png&#34; alt=&#34;關鍵字 26~30&#34;/&gt;
     &lt;/div&gt;
-    &lt;a href=&#34;//:/img/2016/08/lifetime-keywords-26-30.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2016/08/lifetime-keywords-26-30.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
       &lt;figcaption&gt;
           &lt;p&gt;關鍵字 26~30&lt;/p&gt;
       &lt;/figcaption&gt;
@@ -339,10 +530,10 @@
     
     <item>
       <title>精讀 vs 泛讀</title>
-      <link>//:/post/2016/08/reading-vs-extensive-reading/</link>
+      <link>//william-yeh.net/post/2016/08/reading-vs-extensive-reading/</link>
       <pubDate>Tue, 02 Aug 2016 23:30:00 +0800</pubDate>
       
-      <guid>//:/post/2016/08/reading-vs-extensive-reading/</guid>
+      <guid>//william-yeh.net/post/2016/08/reading-vs-extensive-reading/</guid>
       
         <description>&lt;p&gt;每隔一陣子，就有「精讀」與「泛讀」孰優孰劣之辯論。&lt;/p&gt;
 
@@ -384,13 +575,13 @@
 &lt;p&gt;《如何閱讀一本書》這本 1940 年初版、1972 年增訂再版的陳年經典，的確配得「經典」之名。這些論述，不正是後來許許多多讀書方法的書籍反覆闡釋的閱讀角度嗎？&lt;/p&gt;
 
 
-&lt;link rel=&#34;stylesheet&#34; href=&#34;//:/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
 &lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
   &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
     &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//:/img/2016/08/on-reading.jpg&#34; alt=&#34;書籍閱讀法的書單&#34;/&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/08/on-reading.jpg&#34; alt=&#34;書籍閱讀法的書單&#34;/&gt;
     &lt;/div&gt;
-    &lt;a href=&#34;//:/img/2016/08/on-reading.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2016/08/on-reading.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
       &lt;figcaption&gt;
           &lt;p&gt;書籍閱讀法的書單&lt;/p&gt;
       &lt;/figcaption&gt;
@@ -439,9 +630,9 @@
 &lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
   &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
     &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//:/img/2016/08/photo-reading.jpg&#34; alt=&#34;影像閱讀法的五大步驟&#34;/&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/08/photo-reading.jpg&#34; alt=&#34;影像閱讀法的五大步驟&#34;/&gt;
     &lt;/div&gt;
-    &lt;a href=&#34;//:/img/2016/08/photo-reading.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2016/08/photo-reading.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
       &lt;figcaption&gt;
           &lt;p&gt;影像閱讀法的五大步驟&lt;/p&gt;
       &lt;/figcaption&gt;
@@ -561,10 +752,10 @@
     
     <item>
       <title>專業態度的養成</title>
-      <link>//:/post/2016/07/professional-attitude/</link>
+      <link>//william-yeh.net/post/2016/07/professional-attitude/</link>
       <pubDate>Sat, 30 Jul 2016 17:35:00 +0800</pubDate>
       
-      <guid>//:/post/2016/07/professional-attitude/</guid>
+      <guid>//william-yeh.net/post/2016/07/professional-attitude/</guid>
       
         <description>&lt;p&gt;最近在面試資深軟體工程師。幾次下來，對幾家公司培養出來的員工素質，有個概括印象了（或許也帶點偏見）。&lt;/p&gt;
 
@@ -653,13 +844,13 @@
 &lt;p&gt;沒騙你，真的光是目錄，就足以讓自己「低回留之，不能去云」。&lt;/p&gt;
 
 
-&lt;link rel=&#34;stylesheet&#34; href=&#34;//:/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
 &lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
   &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
     &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//:/img/2016/07/prof-attitude-books.jpg&#34; alt=&#34;專業態度的書籍&#34;/&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/07/prof-attitude-books.jpg&#34; alt=&#34;專業態度的書籍&#34;/&gt;
     &lt;/div&gt;
-    &lt;a href=&#34;//:/img/2016/07/prof-attitude-books.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2016/07/prof-attitude-books.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
       &lt;figcaption&gt;
           &lt;p&gt;專業態度的書籍&lt;/p&gt;
       &lt;/figcaption&gt;
@@ -678,7 +869,7 @@
 &lt;p&gt;如果實在懶得啃書，比較想上課的話，以下幾門課，都是大補帖！&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;關於換位思考：&lt;a href=&#34;https://www.darencademy.com/activity/view/id/15533&#34;&gt;A101 職場大人學&lt;/a&gt; （推薦文：&lt;a href=&#34;//:/post/2015/09/upgrade-adult-thinking/&#34;&gt;升級成大人版的思維作業系統&lt;/a&gt; &amp;amp; &lt;a href=&#34;//:/post/2016/06/upgrade-adult-thinking-part2/&#34;&gt;轉大人，Part 2&lt;/a&gt;）。&lt;/li&gt;
+&lt;li&gt;關於換位思考：&lt;a href=&#34;https://www.darencademy.com/activity/view/id/15533&#34;&gt;A101 職場大人學&lt;/a&gt; （推薦文：&lt;a href=&#34;//william-yeh.net/post/2015/09/upgrade-adult-thinking/&#34;&gt;升級成大人版的思維作業系統&lt;/a&gt; &amp;amp; &lt;a href=&#34;//william-yeh.net/post/2016/06/upgrade-adult-thinking-part2/&#34;&gt;轉大人，Part 2&lt;/a&gt;）。&lt;/li&gt;
 &lt;li&gt;關於系統思考：&lt;a href=&#34;https://www.projectup.net/activity/view/id/7689&#34;&gt;102 流程設計與跨部門溝通&lt;/a&gt; （推薦文：&lt;a href=&#34;http://school.soft-arch.net/blog/112281/learn-process-mgmt-by-game&#34;&gt;向遊戲學習&lt;/a&gt;）。&lt;/li&gt;
 &lt;li&gt;關於職涯：&lt;a href=&#34;https://www.darencademy.com/activity/view/id/16419&#34;&gt;A103 履歷優化實戰班&lt;/a&gt;。&lt;/li&gt;
 &lt;/ul&gt;
@@ -689,10 +880,10 @@
     
     <item>
       <title>轉大人，Part 2</title>
-      <link>//:/post/2016/06/upgrade-adult-thinking-part2/</link>
+      <link>//william-yeh.net/post/2016/06/upgrade-adult-thinking-part2/</link>
       <pubDate>Sat, 04 Jun 2016 09:54:00 +0800</pubDate>
       
-      <guid>//:/post/2016/06/upgrade-adult-thinking-part2/</guid>
+      <guid>//william-yeh.net/post/2016/06/upgrade-adult-thinking-part2/</guid>
       
         <description>
 
@@ -701,13 +892,13 @@
 &lt;p&gt;這就不得不佩服 J&amp;amp;B 取的「大人學」品牌名字，是多麼有遠見呀！&lt;/p&gt;
 
 
-&lt;link rel=&#34;stylesheet&#34; href=&#34;//:/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
 &lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
   &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
     &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//:/img/2016/06/child-vs-adult.jpg&#34; alt=&#34;小孩 vs 大人&#34;/&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/06/child-vs-adult.jpg&#34; alt=&#34;小孩 vs 大人&#34;/&gt;
     &lt;/div&gt;
-    &lt;a href=&#34;//:/img/2016/06/child-vs-adult.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2016/06/child-vs-adult.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
       &lt;figcaption&gt;
           &lt;p&gt;小孩 vs 大人&lt;/p&gt;
       &lt;/figcaption&gt;
@@ -734,9 +925,9 @@
 &lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
   &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
     &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//:/img/2016/06/a101-handouts.jpg&#34; alt=&#34;回訓&#34;/&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/06/a101-handouts.jpg&#34; alt=&#34;回訓&#34;/&gt;
     &lt;/div&gt;
-    &lt;a href=&#34;//:/img/2016/06/a101-handouts.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2016/06/a101-handouts.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
       &lt;figcaption&gt;
           &lt;p&gt;回訓&lt;/p&gt;
       &lt;/figcaption&gt;
@@ -758,7 +949,7 @@
 
 &lt;p&gt;回訓，仍然感受到強烈的衝擊，仍然是點頭如搗蒜（所以，Bryan 的 15 年功力，真是超強！再聽一次，仍然收穫滿滿）。&lt;/p&gt;
 
-&lt;p&gt;也很欣慰，原來自己已經不知不覺內化了某些部分。我沒有辜負去年在〈&lt;a href=&#34;//:/post/2015/09/upgrade-adult-thinking/&#34;&gt;升級成大人版的思維作業系統&lt;/a&gt;〉做的自我期許。&lt;/p&gt;
+&lt;p&gt;也很欣慰，原來自己已經不知不覺內化了某些部分。我沒有辜負去年在〈&lt;a href=&#34;//william-yeh.net/post/2015/09/upgrade-adult-thinking/&#34;&gt;升級成大人版的思維作業系統&lt;/a&gt;〉做的自我期許。&lt;/p&gt;
 
 &lt;h2 id=&#34;訴求-vs-需求-vs-目標&#34;&gt;訴求 vs 需求 vs 目標&lt;/h2&gt;
 
@@ -773,9 +964,9 @@
 &lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
   &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
     &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//:/img/2016/06/cloud-books.jpg&#34; alt=&#34;岸良裕司的書&#34;/&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/06/cloud-books.jpg&#34; alt=&#34;岸良裕司的書&#34;/&gt;
     &lt;/div&gt;
-    &lt;a href=&#34;//:/img/2016/06/cloud-books.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2016/06/cloud-books.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
       &lt;figcaption&gt;
           &lt;p&gt;岸良裕司的書&lt;/p&gt;
       &lt;/figcaption&gt;
@@ -798,9 +989,9 @@
 &lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
   &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
     &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//:/img/2016/06/loyalty-card.jpg&#34; alt=&#34;Bryan 集點卡&#34;/&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/06/loyalty-card.jpg&#34; alt=&#34;Bryan 集點卡&#34;/&gt;
     &lt;/div&gt;
-    &lt;a href=&#34;//:/img/2016/06/loyalty-card.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2016/06/loyalty-card.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
       &lt;figcaption&gt;
           &lt;p&gt;Bryan 集點卡&lt;/p&gt;
       &lt;/figcaption&gt;
@@ -833,9 +1024,9 @@
 &lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
   &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
     &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//:/img/2016/06/job-view.jpg&#34; alt=&#34;關於職場這個局&#34;/&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/06/job-view.jpg&#34; alt=&#34;關於職場這個局&#34;/&gt;
     &lt;/div&gt;
-    &lt;a href=&#34;//:/img/2016/06/job-view.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2016/06/job-view.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
       &lt;figcaption&gt;
           &lt;p&gt;關於職場這個局&lt;/p&gt;
       &lt;/figcaption&gt;
@@ -868,9 +1059,9 @@
 &lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
   &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
     &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//:/img/2016/06/toc-thinking-1.jpg&#34; /&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/06/toc-thinking-1.jpg&#34; /&gt;
     &lt;/div&gt;
-    &lt;a href=&#34;//:/img/2016/06/toc-thinking-1.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2016/06/toc-thinking-1.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
   &lt;/figure&gt;
 &lt;/div&gt;
 
@@ -879,9 +1070,9 @@
 &lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
   &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
     &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//:/img/2016/06/toc-thinking-2.jpg&#34; /&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/06/toc-thinking-2.jpg&#34; /&gt;
     &lt;/div&gt;
-    &lt;a href=&#34;//:/img/2016/06/toc-thinking-2.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2016/06/toc-thinking-2.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
   &lt;/figure&gt;
 &lt;/div&gt;
 &lt;/p&gt;
@@ -909,9 +1100,9 @@
 &lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
   &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
     &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//:/img/2016/06/surf.jpg&#34; alt=&#34;衝浪者的哲學&#34;/&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/06/surf.jpg&#34; alt=&#34;衝浪者的哲學&#34;/&gt;
     &lt;/div&gt;
-    &lt;a href=&#34;//:/img/2016/06/surf.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2016/06/surf.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
       &lt;figcaption&gt;
           &lt;p&gt;衝浪者的哲學&lt;/p&gt;
       &lt;/figcaption&gt;
@@ -952,9 +1143,9 @@
 &lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
   &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
     &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//:/img/2016/06/career-goals.jpg&#34; alt=&#34;三大目的&#34;/&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/06/career-goals.jpg&#34; alt=&#34;三大目的&#34;/&gt;
     &lt;/div&gt;
-    &lt;a href=&#34;//:/img/2016/06/career-goals.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2016/06/career-goals.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
       &lt;figcaption&gt;
           &lt;p&gt;三大目的&lt;/p&gt;
       &lt;/figcaption&gt;
@@ -973,10 +1164,10 @@
     
     <item>
       <title>從「改變」角度看《魔戒》</title>
-      <link>//:/post/2016/05/change-viewpoint-on-lord-of-rings/</link>
+      <link>//william-yeh.net/post/2016/05/change-viewpoint-on-lord-of-rings/</link>
       <pubDate>Wed, 25 May 2016 08:00:00 +0800</pubDate>
       
-      <guid>//:/post/2016/05/change-viewpoint-on-lord-of-rings/</guid>
+      <guid>//william-yeh.net/post/2016/05/change-viewpoint-on-lord-of-rings/</guid>
       
         <description>&lt;p&gt;今年一月，參加 &lt;a href=&#34;http://kojenchieh.pixnet.net/blog&#34;&gt;David Ko&lt;/a&gt; 舉辦的一場敏捷轉型活動，從中學到了一個有趣的分析工具：Lean Change Canvas。&lt;/p&gt;
 
@@ -992,13 +1183,13 @@
 &lt;p&gt;此外，也要找機會多演練、多思考，才會內化。於是，隔天我就在公司帶領小組討論任務時，現學現賣。數日後，也順便用在第二梯次 &lt;a href=&#34;http://get.soft-arch.net/ansible&#34;&gt;Ansible Workshop&lt;/a&gt; 課堂上：&lt;/p&gt;
 
 &lt;p&gt;
-&lt;link rel=&#34;stylesheet&#34; href=&#34;//:/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
 &lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
   &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
     &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//:/img/2016/05/lord-of-rings-example.jpg&#34; alt=&#34;Ansible Workshop 第二梯次&#34;/&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/05/lord-of-rings-example.jpg&#34; alt=&#34;Ansible Workshop 第二梯次&#34;/&gt;
     &lt;/div&gt;
-    &lt;a href=&#34;//:/img/2016/05/lord-of-rings-example.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2016/05/lord-of-rings-example.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
       &lt;figcaption&gt;
           &lt;p&gt;Ansible Workshop 第二梯次&lt;/p&gt;
       &lt;/figcaption&gt;
@@ -1028,21 +1219,21 @@ Quote: &lt;a href=&#34;https://twitter.com/brecht/status/686004657085231104&#34;
     
     <item>
       <title>有了 Agile，為什麼還要有 DevOps？</title>
-      <link>//:/post/2016/05/devops-a-lean-perspective/</link>
+      <link>//william-yeh.net/post/2016/05/devops-a-lean-perspective/</link>
       <pubDate>Tue, 03 May 2016 08:00:00 +0800</pubDate>
       
-      <guid>//:/post/2016/05/devops-a-lean-perspective/</guid>
+      <guid>//william-yeh.net/post/2016/05/devops-a-lean-perspective/</guid>
       
         <description>&lt;p&gt;今晚，受 Agile Community Taiwan 之邀，在 &lt;a href=&#34;https://www.accupass.com/event/1604251622311845219210&#34;&gt;Agile Meetup Taipei&lt;/a&gt; 給了一場演講：【&lt;a href=&#34;http://www.slideshare.net/williamyeh/agile-devops&#34;&gt;有了 Agile，為什麼還要有 DevOps？&lt;/a&gt;】&lt;/p&gt;
 
 
-&lt;link rel=&#34;stylesheet&#34; href=&#34;//:/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
 &lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
   &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
     &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//:/img/2016/05/devops-speech-cover.jpg&#34; alt=&#34;演講現場自拍&#34;/&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/05/devops-speech-cover.jpg&#34; alt=&#34;演講現場自拍&#34;/&gt;
     &lt;/div&gt;
-    &lt;a href=&#34;//:/img/2016/05/devops-speech-cover.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2016/05/devops-speech-cover.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
       &lt;figcaption&gt;
           &lt;p&gt;演講現場自拍&lt;/p&gt;
       &lt;/figcaption&gt;
@@ -1120,12 +1311,12 @@ Quote: &lt;a href=&#34;https://twitter.com/brecht/status/686004657085231104&#34;
     
     <item>
       <title>向遊戲學習</title>
-      <link>//:/post/2016/04/learn-process-mgmt-by-game/</link>
+      <link>//william-yeh.net/post/2016/04/learn-process-mgmt-by-game/</link>
       <pubDate>Sat, 23 Apr 2016 08:00:00 +0800</pubDate>
       
-      <guid>//:/post/2016/04/learn-process-mgmt-by-game/</guid>
+      <guid>//william-yeh.net/post/2016/04/learn-process-mgmt-by-game/</guid>
       
-        <description>&lt;p&gt;前一篇文章〈&lt;a href=&#34;//:/post/2016/04/learn-from-plant-mgmt/&#34;&gt;向工廠管理致敬&lt;/a&gt;〉提到，最近為了準備一場 Agile/DevOps 演講，我特地研讀了數本原典，希望能對某些核心的思考元素來一場溯源之旅。&lt;/p&gt;
+        <description>&lt;p&gt;前一篇文章〈&lt;a href=&#34;//william-yeh.net/post/2016/04/learn-from-plant-mgmt/&#34;&gt;向工廠管理致敬&lt;/a&gt;〉提到，最近為了準備一場 Agile/DevOps 演講，我特地研讀了數本原典，希望能對某些核心的思考元素來一場溯源之旅。&lt;/p&gt;
 
 &lt;p&gt;啃原典，其實還有另一個原因：為了好好替今天要去大玩特玩的&lt;strong&gt;小火車遊戲&lt;/strong&gt;⋯⋯喔，不，是為了替今天要專程去上的一門【&lt;a href=&#34;https://www.projectup.net/activity/view/id/7689&#34;&gt;102 流程設計與跨部門溝通&lt;/a&gt;】課程預作準備。&lt;/p&gt;
 
@@ -1136,13 +1327,13 @@ Quote: &lt;a href=&#34;https://twitter.com/brecht/status/686004657085231104&#34;
 &lt;p&gt;當然啦，上課時，我還是盡量提醒自己要心態歸零，避免那些偷練的知識變成先入為主的反射思考，這樣才有更多 unknown unknown 可學。&lt;/p&gt;
 
 
-&lt;link rel=&#34;stylesheet&#34; href=&#34;//:/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
 &lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
   &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
     &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//:/img/2016/04/102-opening.jpg&#34; alt=&#34;102 - 開場白&#34;/&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/04/102-opening.jpg&#34; alt=&#34;102 - 開場白&#34;/&gt;
     &lt;/div&gt;
-    &lt;a href=&#34;//:/img/2016/04/102-opening.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2016/04/102-opening.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
       &lt;figcaption&gt;
           &lt;p&gt;102 - 開場白&lt;/p&gt;
       &lt;/figcaption&gt;
@@ -1167,9 +1358,9 @@ Quote: &lt;a href=&#34;https://twitter.com/brecht/status/686004657085231104&#34;
 &lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
   &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
     &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//:/img/2016/04/102-scene-1.jpg&#34; alt=&#34;102 - 第一回合&#34;/&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/04/102-scene-1.jpg&#34; alt=&#34;102 - 第一回合&#34;/&gt;
     &lt;/div&gt;
-    &lt;a href=&#34;//:/img/2016/04/102-scene-1.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2016/04/102-scene-1.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
       &lt;figcaption&gt;
           &lt;p&gt;102 - 第一回合&lt;/p&gt;
       &lt;/figcaption&gt;
@@ -1190,9 +1381,9 @@ Quote: &lt;a href=&#34;https://twitter.com/brecht/status/686004657085231104&#34;
 &lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
   &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
     &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//:/img/2016/04/102-scene-2.jpg&#34; alt=&#34;102 - 第二回合&#34;/&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/04/102-scene-2.jpg&#34; alt=&#34;102 - 第二回合&#34;/&gt;
     &lt;/div&gt;
-    &lt;a href=&#34;//:/img/2016/04/102-scene-2.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2016/04/102-scene-2.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
       &lt;figcaption&gt;
           &lt;p&gt;102 - 第二回合&lt;/p&gt;
       &lt;/figcaption&gt;
@@ -1209,9 +1400,9 @@ Quote: &lt;a href=&#34;https://twitter.com/brecht/status/686004657085231104&#34;
 &lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
   &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
     &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//:/img/2016/04/102-certificate.jpg&#34; alt=&#34;102 - 證書&#34;/&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/04/102-certificate.jpg&#34; alt=&#34;102 - 證書&#34;/&gt;
     &lt;/div&gt;
-    &lt;a href=&#34;//:/img/2016/04/102-certificate.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2016/04/102-certificate.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
       &lt;figcaption&gt;
           &lt;p&gt;102 - 證書&lt;/p&gt;
       &lt;/figcaption&gt;
@@ -1238,10 +1429,10 @@ Quote: &lt;a href=&#34;https://twitter.com/brecht/status/686004657085231104&#34;
     
     <item>
       <title>向工廠管理致敬</title>
-      <link>//:/post/2016/04/learn-from-plant-mgmt/</link>
+      <link>//william-yeh.net/post/2016/04/learn-from-plant-mgmt/</link>
       <pubDate>Fri, 22 Apr 2016 08:00:00 +0800</pubDate>
       
-      <guid>//:/post/2016/04/learn-from-plant-mgmt/</guid>
+      <guid>//william-yeh.net/post/2016/04/learn-from-plant-mgmt/</guid>
       
         <description>&lt;p&gt;身為徹頭徹尾的軟體人，在軟體產業待久了，總會對「硬」一點的產業，尤其是製造業，有莫名的成見，以為他們是僵固的、反人性的。從 1972 年「&lt;a href=&#34;https://en.wikipedia.org/wiki/Software_crisis&#34;&gt;軟體危機&lt;/a&gt;」引發的論述當中，更加深軟體人的印象：製造業的經驗，是無法直接套用到軟體界的；我們是截然不同的國度。&lt;/p&gt;
 
@@ -1250,13 +1441,13 @@ Quote: &lt;a href=&#34;https://twitter.com/brecht/status/686004657085231104&#34;
 &lt;p&gt;最近為了準備一場 Agile/DevOps 演講，特地研讀數本原典，對核心元素來一場溯源之旅：&lt;/p&gt;
 
 
-&lt;link rel=&#34;stylesheet&#34; href=&#34;//:/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
 &lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
   &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
     &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//:/img/2016/04/book-the-goals.jpg&#34; alt=&#34;目標&#34;/&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/04/book-the-goals.jpg&#34; alt=&#34;目標&#34;/&gt;
     &lt;/div&gt;
-    &lt;a href=&#34;//:/img/2016/04/book-the-goals.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2016/04/book-the-goals.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
       &lt;figcaption&gt;
           &lt;p&gt;目標&lt;/p&gt;
       &lt;/figcaption&gt;
@@ -1269,9 +1460,9 @@ Quote: &lt;a href=&#34;https://twitter.com/brecht/status/686004657085231104&#34;
 &lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
   &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
     &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//:/img/2016/04/book-lean-revolution.jpg&#34; alt=&#34;精實方面的書籍&#34;/&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/04/book-lean-revolution.jpg&#34; alt=&#34;精實方面的書籍&#34;/&gt;
     &lt;/div&gt;
-    &lt;a href=&#34;//:/img/2016/04/book-lean-revolution.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2016/04/book-lean-revolution.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
       &lt;figcaption&gt;
           &lt;p&gt;精實方面的書籍&lt;/p&gt;
       &lt;/figcaption&gt;
@@ -1325,23 +1516,23 @@ Quote: &lt;a href=&#34;https://twitter.com/brecht/status/686004657085231104&#34;
     
     <item>
       <title>多工切換：有趣的 Lean 觀點</title>
-      <link>//:/post/2016/03/lean-perspective-of-multitasking/</link>
+      <link>//william-yeh.net/post/2016/03/lean-perspective-of-multitasking/</link>
       <pubDate>Tue, 29 Mar 2016 08:00:00 +0800</pubDate>
       
-      <guid>//:/post/2016/03/lean-perspective-of-multitasking/</guid>
+      <guid>//william-yeh.net/post/2016/03/lean-perspective-of-multitasking/</guid>
       
         <description>&lt;p&gt;系統思考，全局思考，是困難的；即使是貌似常識的場域，亦然。&lt;/p&gt;
 
 &lt;p&gt;最近在看 &lt;a href=&#34;https://www.books.com.tw/products/0010662172&#34;&gt;&lt;em&gt;Lean Thinking&lt;/em&gt;&lt;/a&gt; 原典時，感觸更深。&lt;/p&gt;
 
 
-&lt;link rel=&#34;stylesheet&#34; href=&#34;//:/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
 &lt;div class=&#34;box&#34; style=&#34;max-width:15em&#34;&gt;
   &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
     &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//:/img/2016/03/lean-thinking.jpg&#34; alt=&#34;精實革命 (Lean Thinking)&#34;/&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/03/lean-thinking.jpg&#34; alt=&#34;精實革命 (Lean Thinking)&#34;/&gt;
     &lt;/div&gt;
-    &lt;a href=&#34;//:/img/2016/03/lean-thinking.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2016/03/lean-thinking.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
       &lt;figcaption&gt;
           &lt;p&gt;精實革命 (Lean Thinking)&lt;/p&gt;
       &lt;/figcaption&gt;
@@ -1398,10 +1589,10 @@ Quote: &lt;a href=&#34;https://twitter.com/brecht/status/686004657085231104&#34;
     
     <item>
       <title>POLP：最小權限原則</title>
-      <link>//:/post/2016/03/polp-intro/</link>
+      <link>//william-yeh.net/post/2016/03/polp-intro/</link>
       <pubDate>Tue, 15 Mar 2016 08:00:00 +0800</pubDate>
       
-      <guid>//:/post/2016/03/polp-intro/</guid>
+      <guid>//william-yeh.net/post/2016/03/polp-intro/</guid>
       
         <description>&lt;p&gt;在我開的 &lt;a href=&#34;http://get.soft-arch.net/ansible/&#34;&gt;Ansible Workshop&lt;/a&gt; 中，不管是課前的【許願池】，還是課程現場的 Q&amp;amp;A，總有一個熱門議題：「如何確保系統是安全的？」&lt;/p&gt;
 
@@ -1526,14 +1717,14 @@ root    ALL=(ALL:ALL) ALL
     
     <item>
       <title>DevOps 核心元素的考古溯源</title>
-      <link>//:/post/2016/03/origin-of-devops-elements/</link>
+      <link>//william-yeh.net/post/2016/03/origin-of-devops-elements/</link>
       <pubDate>Mon, 07 Mar 2016 08:00:00 +0800</pubDate>
       
-      <guid>//:/post/2016/03/origin-of-devops-elements/</guid>
+      <guid>//william-yeh.net/post/2016/03/origin-of-devops-elements/</guid>
       
         <description>&lt;p&gt;DevOps 和 Agile 的關係是什麼？DevOps 是源自 Agile 的嗎？&lt;/p&gt;
 
-&lt;p&gt;我在〈&lt;a href=&#34;//:/post/2016/01/devops-goals-in-a-nutshell/&#34;&gt;一句話囊括 DevOps 的目標&lt;/a&gt;〉文中曾經簡略提過：&lt;/p&gt;
+&lt;p&gt;我在〈&lt;a href=&#34;//william-yeh.net/post/2016/01/devops-goals-in-a-nutshell/&#34;&gt;一句話囊括 DevOps 的目標&lt;/a&gt;〉文中曾經簡略提過：&lt;/p&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;DevOps 雖然和 agile 運動有歷史上的臍帶關係，但嚴格來說，沒有遵循《&lt;a href=&#34;http://www.agilemanifesto.org/&#34;&gt;敏捷宣言&lt;/a&gt;》四大原則，也是能做 DevOps 的；硬是把兩個議題綁在一起，會限縮 DevOps 論述空間⋯⋯&lt;/p&gt;
@@ -1550,13 +1741,13 @@ root    ALL=(ALL:ALL) ALL
 &lt;p&gt;終於，我從 &lt;a href=&#34;http://www.amazon.com/dp/0988262592/ref=cm_sw_r_tw_dp_a4p3wb0PSYY97&#34;&gt;&lt;em&gt;The Phoenix Project&lt;/em&gt;&lt;/a&gt; 書中找到想要的論述。&lt;/p&gt;
 
 
-&lt;link rel=&#34;stylesheet&#34; href=&#34;//:/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
 &lt;div class=&#34;box&#34; style=&#34;max-width:15em&#34;&gt;
   &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
     &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//:/img/2016/03/the-phoenix-project.png&#34; alt=&#34;The Phoenix Project&#34;/&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/03/the-phoenix-project.png&#34; alt=&#34;The Phoenix Project&#34;/&gt;
     &lt;/div&gt;
-    &lt;a href=&#34;//:/img/2016/03/the-phoenix-project.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2016/03/the-phoenix-project.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
       &lt;figcaption&gt;
           &lt;p&gt;The Phoenix Project&lt;/p&gt;
       &lt;/figcaption&gt;
@@ -1626,10 +1817,10 @@ root    ALL=(ALL:ALL) ALL
     
     <item>
       <title>電腦界的隱喻：組態管理</title>
-      <link>//:/post/2016/03/metaphor-in-cm/</link>
+      <link>//william-yeh.net/post/2016/03/metaphor-in-cm/</link>
       <pubDate>Wed, 02 Mar 2016 08:00:00 +0800</pubDate>
       
-      <guid>//:/post/2016/03/metaphor-in-cm/</guid>
+      <guid>//william-yeh.net/post/2016/03/metaphor-in-cm/</guid>
       
         <description>&lt;p&gt;人類是很喜愛比喻／譬喻的。戰國時代的莊子愛用譬喻，常和莊子抬槓的惠施也愛譬喻，《說苑‧善說》甚至記載著這麼一段故事：&lt;/p&gt;
 
@@ -1672,13 +1863,13 @@ root    ALL=(ALL:ALL) ALL
 &lt;p&gt;最後，如果你想對這四大工具有個快速的概念，可參考 Roland Wolters 製作的單頁掛圖：&lt;a href=&#34;http://wall-skills.com/2015/configuration-management-ansible-salt-chef-puppet/&#34;&gt;Tools for Configuration Management&lt;/a&gt;。&lt;/p&gt;
 
 
-&lt;link rel=&#34;stylesheet&#34; href=&#34;//:/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
 &lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
   &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
     &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//:/img/2016/03/Ansible-Salt-Puppet-Chef-Wall-Skills.png&#34; alt=&#34;Tools for Configuration Management&#34;/&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/03/Ansible-Salt-Puppet-Chef-Wall-Skills.png&#34; alt=&#34;Tools for Configuration Management&#34;/&gt;
     &lt;/div&gt;
-    &lt;a href=&#34;//:/img/2016/03/Ansible-Salt-Puppet-Chef-Wall-Skills.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2016/03/Ansible-Salt-Puppet-Chef-Wall-Skills.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
       &lt;figcaption&gt;
           &lt;p&gt;Tools for Configuration Management&lt;/p&gt;
       &lt;/figcaption&gt;
@@ -1689,10 +1880,10 @@ root    ALL=(ALL:ALL) ALL
     
     <item>
       <title>一句話囊括 DevOps 的目標</title>
-      <link>//:/post/2016/01/devops-goals-in-a-nutshell/</link>
+      <link>//william-yeh.net/post/2016/01/devops-goals-in-a-nutshell/</link>
       <pubDate>Fri, 29 Jan 2016 08:00:00 +0800</pubDate>
       
-      <guid>//:/post/2016/01/devops-goals-in-a-nutshell/</guid>
+      <guid>//william-yeh.net/post/2016/01/devops-goals-in-a-nutshell/</guid>
       
         <description>&lt;p&gt;TL;DR&lt;br /&gt;
 &lt;em&gt;DevOps is a set of practices intended to reduce the time between committing a change to a system and the change being placed into normal production, while ensuring high quality.&lt;/em&gt; &lt;/p&gt;
@@ -1714,20 +1905,20 @@ root    ALL=(ALL:ALL) ALL
 3. When something has gone wrong&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;蘇格拉底式問句，不夾帶特定前提，不偷渡既定結論，很適合拿來引導團隊思考。因此，後來我在〈&lt;a href=&#34;//:/post/2015/12/devops-1st-step/&#34;&gt;DevOps 是圓的，找到立足點就是頂點&lt;/a&gt;〉文章、在 &lt;a href=&#34;http://get.soft-arch.net/ansible/&#34;&gt;Ansible Workshop 課堂&lt;/a&gt;上，也反覆用到這三問句。&lt;/p&gt;
+&lt;p&gt;蘇格拉底式問句，不夾帶特定前提，不偷渡既定結論，很適合拿來引導團隊思考。因此，後來我在〈&lt;a href=&#34;//william-yeh.net/post/2015/12/devops-1st-step/&#34;&gt;DevOps 是圓的，找到立足點就是頂點&lt;/a&gt;〉文章、在 &lt;a href=&#34;http://get.soft-arch.net/ansible/&#34;&gt;Ansible Workshop 課堂&lt;/a&gt;上，也反覆用到這三問句。&lt;/p&gt;
 
 &lt;p&gt;不過，私心還是希望能有一個更直述、更目標導向的操作型定義。&lt;/p&gt;
 
 &lt;p&gt;找了很久，偶然在 2015 年 SEI 系列的新書 &lt;a href=&#34;http://www.amazon.com/dp/0134049845/ref=cm_sw_r_tw_dp_bB.Qwb0FF6QRZ&#34;&gt;&lt;em&gt;DevOps: A Software Architect&amp;rsquo;s Perspective&lt;/em&gt;&lt;/a&gt; 第一章，發現我想要的操作型定義了。&lt;/p&gt;
 
 
-&lt;link rel=&#34;stylesheet&#34; href=&#34;//:/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
 &lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
   &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
     &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//:/img/2016/01/devops-from-architect-perspective.png&#34; alt=&#34;DevOps: A Software Architect&amp;#39;s Perspective&#34;/&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/01/devops-from-architect-perspective.png&#34; alt=&#34;DevOps: A Software Architect&amp;#39;s Perspective&#34;/&gt;
     &lt;/div&gt;
-    &lt;a href=&#34;//:/img/2016/01/devops-from-architect-perspective.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2016/01/devops-from-architect-perspective.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
       &lt;figcaption&gt;
           &lt;p&gt;DevOps: A Software Architect&amp;#39;s Perspective&lt;/p&gt;
       &lt;/figcaption&gt;
@@ -1791,10 +1982,10 @@ root    ALL=(ALL:ALL) ALL
     
     <item>
       <title>DevOps 是圓的，找到立足點就是頂點</title>
-      <link>//:/post/2015/12/devops-1st-step/</link>
+      <link>//william-yeh.net/post/2015/12/devops-1st-step/</link>
       <pubDate>Mon, 28 Dec 2015 08:00:00 +0800</pubDate>
       
-      <guid>//:/post/2015/12/devops-1st-step/</guid>
+      <guid>//william-yeh.net/post/2015/12/devops-1st-step/</guid>
       
         <description>&lt;p&gt;自從 IT 相關媒體開始傳頌 2009 年蔚為經典的 Flickr 經驗 “&lt;a href=&#34;https://youtu.be/LdOe18KhtT4&#34;&gt;10+ Deploys per Day&lt;/a&gt;”、2014 年 Marissa Mayer 的鐵桿作風「&lt;a href=&#34;http://www.ithome.com.tw/news/99283&#34;&gt;沒有持續交付，專案不得上線，我不是在說笑&lt;/a&gt;」之後，頓時 DevOps 成為 IT 界新的焦慮源。我還聽說有高層在聽完兩天 &lt;a href=&#34;https://www.ithome.com.tw/article/98527&#34;&gt;DevOps 2015 研討會&lt;/a&gt;之後，回頭要求 IT 部門要師法 2009 年的 Flickr 做到「10+ Deploys per Day」。&lt;/p&gt;
 
@@ -1814,7 +2005,7 @@ root    ALL=(ALL:ALL) ALL
 
 &lt;p&gt;我不太信奉放諸四海皆準的方法論、roadmap、步驟。而且，DevOps 真的是圓的，從任何一個契合組織現況的角度切入，都有機會逐步把整塊 DevOps 拼圖補齊。&lt;/p&gt;
 
-&lt;p&gt;譬如說，如果你的組織是研發驅動的，或許從 CI 角度切入，阻力會比較小；這也是稍早兩篇文章〈&lt;a href=&#34;//:/post/2015/12/ci-no-turning-back/&#34;&gt;CI 是條不歸路&lt;/a&gt;〉、〈&lt;a href=&#34;//:/post/2015/12/ci-effect/&#34;&gt;CI 怎樣帶你遠離平庸？&lt;/a&gt;〉的論點。&lt;/p&gt;
+&lt;p&gt;譬如說，如果你的組織是研發驅動的，或許從 CI 角度切入，阻力會比較小；這也是稍早兩篇文章〈&lt;a href=&#34;//william-yeh.net/post/2015/12/ci-no-turning-back/&#34;&gt;CI 是條不歸路&lt;/a&gt;〉、〈&lt;a href=&#34;//william-yeh.net/post/2015/12/ci-effect/&#34;&gt;CI 怎樣帶你遠離平庸？&lt;/a&gt;〉的論點。&lt;/p&gt;
 
 &lt;p&gt;當然啦，並不是所有團隊都認為 CI 是他們的當務之急。此時，硬是要推銷 CI 理念或工具，不見得是上策。&lt;/p&gt;
 
@@ -1903,14 +2094,14 @@ root    ALL=(ALL:ALL) ALL
     
     <item>
       <title>CI 怎樣帶你遠離平庸？</title>
-      <link>//:/post/2015/12/ci-effect/</link>
+      <link>//william-yeh.net/post/2015/12/ci-effect/</link>
       <pubDate>Tue, 22 Dec 2015 08:00:00 +0800</pubDate>
       
-      <guid>//:/post/2015/12/ci-effect/</guid>
+      <guid>//william-yeh.net/post/2015/12/ci-effect/</guid>
       
         <description>
 
-&lt;p&gt;前天我的文章〈&lt;a href=&#34;//:/post/2015/12/ci-no-turning-back/&#34;&gt;CI 是條不歸路&lt;/a&gt;〉提到：「CI/CD/DevOps 既是條不歸路，更是大躍進之路：一旦踏出第一步，就注定你會不斷接觸&lt;strong&gt;『遠離平庸』&lt;/strong&gt;的新觀點、新技術。」&lt;/p&gt;
+&lt;p&gt;前天我的文章〈&lt;a href=&#34;//william-yeh.net/post/2015/12/ci-no-turning-back/&#34;&gt;CI 是條不歸路&lt;/a&gt;〉提到：「CI/CD/DevOps 既是條不歸路，更是大躍進之路：一旦踏出第一步，就注定你會不斷接觸&lt;strong&gt;『遠離平庸』&lt;/strong&gt;的新觀點、新技術。」&lt;/p&gt;
 
 &lt;p&gt;為了避免陳義過高，這篇文章就來講一個具體的軟體研發故事吧。&lt;/p&gt;
 
@@ -1937,13 +2128,13 @@ root    ALL=(ALL:ALL) ALL
 &lt;p&gt;CI 是&lt;strong&gt;高度客觀中立&lt;/strong&gt;、&lt;strong&gt;不帶感情&lt;/strong&gt;的守門員。它，幫我初步過濾一些攸關對錯、風格的 PR。於是，我可以優先禮貌性回應已經被 CI 初步打勾放行的 PR；至於被打叉叉的，那就&lt;del&gt;謝謝再聯絡&lt;/del&gt;等有充裕時間精力時再說：&lt;/p&gt;
 
 
-&lt;link rel=&#34;stylesheet&#34; href=&#34;//:/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
 &lt;div class=&#34;box&#34; &gt;
   &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
     &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//:/img/2015/12/ansible-prometheus-pr.png&#34; alt=&#34;Pull requests&#34;/&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2015/12/ansible-prometheus-pr.png&#34; alt=&#34;Pull requests&#34;/&gt;
     &lt;/div&gt;
-    &lt;a href=&#34;//:/img/2015/12/ansible-prometheus-pr.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2015/12/ansible-prometheus-pr.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
       &lt;figcaption&gt;
           &lt;p&gt;Pull requests&lt;/p&gt;
       &lt;/figcaption&gt;
@@ -1970,9 +2161,9 @@ root    ALL=(ALL:ALL) ALL
 &lt;div class=&#34;box&#34; &gt;
   &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
     &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//:/img/2015/12/pr-discussion.png&#34; alt=&#34;Discussion around a pull request&#34;/&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2015/12/pr-discussion.png&#34; alt=&#34;Discussion around a pull request&#34;/&gt;
     &lt;/div&gt;
-    &lt;a href=&#34;//:/img/2015/12/pr-discussion.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2015/12/pr-discussion.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
       &lt;figcaption&gt;
           &lt;p&gt;Discussion around a pull request&lt;/p&gt;
       &lt;/figcaption&gt;
@@ -1997,9 +2188,9 @@ root    ALL=(ALL:ALL) ALL
 &lt;div class=&#34;box&#34; &gt;
   &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
     &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//:/img/2015/12/github-graph.png&#34; alt=&#34;Network graph&#34;/&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2015/12/github-graph.png&#34; alt=&#34;Network graph&#34;/&gt;
     &lt;/div&gt;
-    &lt;a href=&#34;//:/img/2015/12/github-graph.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2015/12/github-graph.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
       &lt;figcaption&gt;
           &lt;p&gt;Network graph&lt;/p&gt;
       &lt;/figcaption&gt;
@@ -2020,9 +2211,9 @@ root    ALL=(ALL:ALL) ALL
 &lt;div class=&#34;box&#34; &gt;
   &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
     &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//:/img/2015/12/circleci-error.png&#34; /&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2015/12/circleci-error.png&#34; /&gt;
     &lt;/div&gt;
-    &lt;a href=&#34;//:/img/2015/12/circleci-error.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2015/12/circleci-error.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
   &lt;/figure&gt;
 &lt;/div&gt;
 
@@ -2034,9 +2225,9 @@ root    ALL=(ALL:ALL) ALL
 &lt;div class=&#34;box&#34; &gt;
   &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
     &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//:/img/2015/12/travisci-error.png&#34; /&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2015/12/travisci-error.png&#34; /&gt;
     &lt;/div&gt;
-    &lt;a href=&#34;//:/img/2015/12/travisci-error.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2015/12/travisci-error.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
   &lt;/figure&gt;
 &lt;/div&gt;
 
@@ -2066,10 +2257,10 @@ root    ALL=(ALL:ALL) ALL
     
     <item>
       <title>CI 是條不歸路</title>
-      <link>//:/post/2015/12/ci-no-turning-back/</link>
+      <link>//william-yeh.net/post/2015/12/ci-no-turning-back/</link>
       <pubDate>Mon, 21 Dec 2015 08:00:00 +0800</pubDate>
       
-      <guid>//:/post/2015/12/ci-no-turning-back/</guid>
+      <guid>//william-yeh.net/post/2015/12/ci-no-turning-back/</guid>
       
         <description>
 
@@ -2153,23 +2344,23 @@ root    ALL=(ALL:ALL) ALL
     
     <item>
       <title>升級成大人版的思維作業系統</title>
-      <link>//:/post/2015/09/upgrade-adult-thinking/</link>
+      <link>//william-yeh.net/post/2015/09/upgrade-adult-thinking/</link>
       <pubDate>Tue, 15 Sep 2015 23:02:00 +0800</pubDate>
       
-      <guid>//:/post/2015/09/upgrade-adult-thinking/</guid>
+      <guid>//william-yeh.net/post/2015/09/upgrade-adult-thinking/</guid>
       
         <description>&lt;p&gt;兩個週末【&lt;a href=&#34;https://shop.darencademy.com/product/view/id/28&#34;&gt;A101 職場人際關係與優勢策略工作坊&lt;/a&gt;】，一枚價值 14 PDU 的結業證書。雖然對沒有 PMP 證照企圖的我來說，帳面數字沒什麼用處；但獲得的，絕對遠遠超過這 14 PDU。&lt;/p&gt;
 
 &lt;p&gt;用 14 PDU 換來 Bryan 積蓄 15 年的內功，還有什麼更划算的事情呢？&lt;/p&gt;
 
 
-&lt;link rel=&#34;stylesheet&#34; href=&#34;//:/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
 &lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
   &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
     &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//:/img/2015/09/a101-certificate.jpg&#34; alt=&#34;A101 講義與結業證書&#34;/&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2015/09/a101-certificate.jpg&#34; alt=&#34;A101 講義與結業證書&#34;/&gt;
     &lt;/div&gt;
-    &lt;a href=&#34;//:/img/2015/09/a101-certificate.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2015/09/a101-certificate.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
       &lt;figcaption&gt;
           &lt;p&gt;A101 講義與結業證書&lt;/p&gt;
       &lt;/figcaption&gt;
@@ -2213,7 +2404,7 @@ root    ALL=(ALL:ALL) ALL
       續集
     
   &lt;/div&gt;
-  &lt;p&gt;▷ 九個月後的回訓心得：【&lt;a href=&#34;//:/post/2016/06/upgrade-adult-thinking-part2/&#34;&gt;轉大人，Part 2&lt;/a&gt;】&lt;/p&gt;
+  &lt;p&gt;▷ 九個月後的回訓心得：【&lt;a href=&#34;//william-yeh.net/post/2016/06/upgrade-adult-thinking-part2/&#34;&gt;轉大人，Part 2&lt;/a&gt;】&lt;/p&gt;
 
 &lt;/div&gt;</description>
       

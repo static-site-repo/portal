@@ -2,39 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Lean on Potioneer&#39;s Essays</title>
-    <link>//:/tags/lean/</link>
+    <link>//william-yeh.net/tags/lean/</link>
     <description>Recent content in Lean on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <lastBuildDate>Tue, 03 May 2016 08:00:00 +0800</lastBuildDate>
     
-	<atom:link href="//:/tags/lean/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="//william-yeh.net/tags/lean/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>有了 Agile，為什麼還要有 DevOps？</title>
-      <link>//:/post/2016/05/devops-a-lean-perspective/</link>
+      <link>//william-yeh.net/post/2016/05/devops-a-lean-perspective/</link>
       <pubDate>Tue, 03 May 2016 08:00:00 +0800</pubDate>
       
-      <guid>//:/post/2016/05/devops-a-lean-perspective/</guid>
+      <guid>//william-yeh.net/post/2016/05/devops-a-lean-perspective/</guid>
       <description>&lt;p&gt;今晚，受 Agile Community Taiwan 之邀，在 &lt;a href=&#34;https://www.accupass.com/event/1604251622311845219210&#34;&gt;Agile Meetup Taipei&lt;/a&gt; 給了一場演講：【&lt;a href=&#34;http://www.slideshare.net/williamyeh/agile-devops&#34;&gt;有了 Agile，為什麼還要有 DevOps？&lt;/a&gt;】&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>向工廠管理致敬</title>
-      <link>//:/post/2016/04/learn-from-plant-mgmt/</link>
+      <link>//william-yeh.net/post/2016/04/learn-from-plant-mgmt/</link>
       <pubDate>Fri, 22 Apr 2016 08:00:00 +0800</pubDate>
       
-      <guid>//:/post/2016/04/learn-from-plant-mgmt/</guid>
+      <guid>//william-yeh.net/post/2016/04/learn-from-plant-mgmt/</guid>
       <description>&lt;p&gt;身為徹頭徹尾的軟體人，在軟體產業待久了，總會對「硬」一點的產業，尤其是製造業，有莫名的成見，以為他們是僵固的、反人性的。從 1972 年「&lt;a href=&#34;https://en.wikipedia.org/wiki/Software_crisis&#34;&gt;軟體危機&lt;/a&gt;」引發的論述當中，更加深軟體人的印象：製造業的經驗，是無法直接套用到軟體界的；我們是截然不同的國度。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>多工切換：有趣的 Lean 觀點</title>
-      <link>//:/post/2016/03/lean-perspective-of-multitasking/</link>
+      <link>//william-yeh.net/post/2016/03/lean-perspective-of-multitasking/</link>
       <pubDate>Tue, 29 Mar 2016 08:00:00 +0800</pubDate>
       
-      <guid>//:/post/2016/03/lean-perspective-of-multitasking/</guid>
+      <guid>//william-yeh.net/post/2016/03/lean-perspective-of-multitasking/</guid>
       <description>&lt;p&gt;系統思考，全局思考，是困難的；即使是貌似常識的場域，亦然。&lt;/p&gt;
 
 &lt;p&gt;最近在看 &lt;a href=&#34;https://www.books.com.tw/products/0010662172&#34;&gt;&lt;em&gt;Lean Thinking&lt;/em&gt;&lt;/a&gt; 原典時，感觸更深。&lt;/p&gt;</description>
@@ -42,13 +42,13 @@
     
     <item>
       <title>DevOps 核心元素的考古溯源</title>
-      <link>//:/post/2016/03/origin-of-devops-elements/</link>
+      <link>//william-yeh.net/post/2016/03/origin-of-devops-elements/</link>
       <pubDate>Mon, 07 Mar 2016 08:00:00 +0800</pubDate>
       
-      <guid>//:/post/2016/03/origin-of-devops-elements/</guid>
+      <guid>//william-yeh.net/post/2016/03/origin-of-devops-elements/</guid>
       <description>&lt;p&gt;DevOps 和 Agile 的關係是什麼？DevOps 是源自 Agile 的嗎？&lt;/p&gt;
 
-&lt;p&gt;我在〈&lt;a href=&#34;//:/post/2016/01/devops-goals-in-a-nutshell/&#34;&gt;一句話囊括 DevOps 的目標&lt;/a&gt;〉文中曾經簡略提過：&lt;/p&gt;</description>
+&lt;p&gt;我在〈&lt;a href=&#34;//william-yeh.net/post/2016/01/devops-goals-in-a-nutshell/&#34;&gt;一句話囊括 DevOps 的目標&lt;/a&gt;〉文中曾經簡略提過：&lt;/p&gt;</description>
     </item>
     
   </channel>

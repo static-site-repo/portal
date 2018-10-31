@@ -1,338 +1,352 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<?xml-stylesheet type="text/xsl" href="//:/sitemap.xsl"?>
+<?xml-stylesheet type="text/xsl" href="//william-yeh.net/sitemap.xsl"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>//:/post/2018/10/methodology-and-criteria/</loc>
+    <loc>//william-yeh.net/post/2018/10/agile-criteria/</loc>
+    <lastmod>2018-10-31T08:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/post/2018/10/methodology-and-criteria/</loc>
     <lastmod>2018-10-25T12:22:16+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>//:/post/2016/08/lifetime-keywords/</loc>
+    <loc>//william-yeh.net/post/2016/08/lifetime-keywords/</loc>
     <lastmod>2016-08-29T07:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>//:/post/2016/08/reading-vs-extensive-reading/</loc>
+    <loc>//william-yeh.net/post/2016/08/reading-vs-extensive-reading/</loc>
     <lastmod>2016-08-02T23:30:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>//:/post/2016/07/professional-attitude/</loc>
+    <loc>//william-yeh.net/post/2016/07/professional-attitude/</loc>
     <lastmod>2016-07-30T17:35:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>//:/post/2016/06/upgrade-adult-thinking-part2/</loc>
+    <loc>//william-yeh.net/post/2016/06/upgrade-adult-thinking-part2/</loc>
     <lastmod>2016-06-04T09:54:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>//:/post/2016/05/change-viewpoint-on-lord-of-rings/</loc>
+    <loc>//william-yeh.net/post/2016/05/change-viewpoint-on-lord-of-rings/</loc>
     <lastmod>2016-05-25T08:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>//:/post/2016/05/devops-a-lean-perspective/</loc>
+    <loc>//william-yeh.net/post/2016/05/devops-a-lean-perspective/</loc>
     <lastmod>2016-05-03T08:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>//:/post/2016/04/learn-process-mgmt-by-game/</loc>
+    <loc>//william-yeh.net/post/2016/04/learn-process-mgmt-by-game/</loc>
     <lastmod>2016-04-23T08:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>//:/post/2016/04/learn-from-plant-mgmt/</loc>
+    <loc>//william-yeh.net/post/2016/04/learn-from-plant-mgmt/</loc>
     <lastmod>2016-04-22T08:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>//:/post/2016/03/lean-perspective-of-multitasking/</loc>
+    <loc>//william-yeh.net/post/2016/03/lean-perspective-of-multitasking/</loc>
     <lastmod>2016-03-29T08:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>//:/post/2016/03/polp-intro/</loc>
+    <loc>//william-yeh.net/post/2016/03/polp-intro/</loc>
     <lastmod>2016-03-15T08:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>//:/post/2016/03/origin-of-devops-elements/</loc>
+    <loc>//william-yeh.net/post/2016/03/origin-of-devops-elements/</loc>
     <lastmod>2016-03-07T08:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>//:/post/2016/03/metaphor-in-cm/</loc>
+    <loc>//william-yeh.net/post/2016/03/metaphor-in-cm/</loc>
     <lastmod>2016-03-02T08:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>//:/post/2016/01/devops-goals-in-a-nutshell/</loc>
+    <loc>//william-yeh.net/post/2016/01/devops-goals-in-a-nutshell/</loc>
     <lastmod>2016-01-29T08:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>//:/post/2015/12/devops-1st-step/</loc>
+    <loc>//william-yeh.net/post/2015/12/devops-1st-step/</loc>
     <lastmod>2015-12-28T08:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>//:/post/2015/12/ci-effect/</loc>
+    <loc>//william-yeh.net/post/2015/12/ci-effect/</loc>
     <lastmod>2015-12-22T08:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>//:/post/2015/12/ci-no-turning-back/</loc>
+    <loc>//william-yeh.net/post/2015/12/ci-no-turning-back/</loc>
     <lastmod>2015-12-21T08:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>//:/post/2015/09/upgrade-adult-thinking/</loc>
+    <loc>//william-yeh.net/post/2015/09/upgrade-adult-thinking/</loc>
     <lastmod>2015-09-15T23:02:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>//:/tags/agile/</loc>
-    <lastmod>2018-10-25T12:22:16+08:00</lastmod>
+    <loc>//william-yeh.net/tags/agile/</loc>
+    <lastmod>2018-10-31T08:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//:/tags/ansible/</loc>
+    <loc>//william-yeh.net/tags/ansible/</loc>
     <lastmod>2016-03-02T08:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//:/tags/book/</loc>
+    <loc>//william-yeh.net/tags/book/</loc>
     <lastmod>2018-10-25T12:22:16+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//:/tags/career/</loc>
+    <loc>//william-yeh.net/tags/career/</loc>
     <lastmod>2016-08-29T07:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//:/categories/</loc>
+    <loc>//william-yeh.net/categories/</loc>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//:/tags/change/</loc>
+    <loc>//william-yeh.net/tags/change/</loc>
     <lastmod>2016-05-25T08:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//:/tags/ci/</loc>
+    <loc>//william-yeh.net/tags/ci/</loc>
     <lastmod>2015-12-28T08:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//:/tags/communication/</loc>
+    <loc>//william-yeh.net/tags/communication/</loc>
     <lastmod>2016-06-04T09:54:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//:/tags/course/</loc>
+    <loc>//william-yeh.net/tags/course/</loc>
     <lastmod>2016-05-25T08:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//:/categories/course/</loc>
+    <loc>//william-yeh.net/categories/course/</loc>
     <lastmod>2016-08-29T07:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//:/tags/devops/</loc>
+    <loc>//william-yeh.net/tags/devops/</loc>
     <lastmod>2016-05-25T08:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//:/tags/docker/</loc>
+    <loc>//william-yeh.net/tags/docker/</loc>
     <lastmod>2015-12-22T08:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//:/tags/facilitation/</loc>
+    <loc>//william-yeh.net/tags/facilitation/</loc>
     <lastmod>2016-05-25T08:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//:/tags/gamification/</loc>
+    <loc>//william-yeh.net/tags/gamification/</loc>
     <lastmod>2016-04-23T08:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//:/tags/growth/</loc>
+    <loc>//william-yeh.net/tags/growth/</loc>
     <lastmod>2016-08-29T07:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//:/tags/lean/</loc>
+    <loc>//william-yeh.net/tags/kanban/</loc>
+    <lastmod>2018-10-31T08:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/lean/</loc>
     <lastmod>2016-05-03T08:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//:/categories/life/</loc>
+    <loc>//william-yeh.net/categories/life/</loc>
     <lastmod>2016-08-29T07:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//:/tags/linux/</loc>
+    <loc>//william-yeh.net/tags/linux/</loc>
     <lastmod>2016-03-15T08:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//:/categories/management/</loc>
-    <lastmod>2018-10-25T12:22:16+08:00</lastmod>
+    <loc>//william-yeh.net/categories/management/</loc>
+    <lastmod>2018-10-31T08:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//:/post/</loc>
-    <lastmod>2018-10-25T12:22:16+08:00</lastmod>
+    <loc>//william-yeh.net/post/</loc>
+    <lastmod>2018-10-31T08:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//:/</loc>
-    <lastmod>2018-10-25T12:22:16+08:00</lastmod>
+    <loc>//william-yeh.net/</loc>
+    <lastmod>2018-10-31T08:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//:/tags/process/</loc>
+    <loc>//william-yeh.net/tags/process/</loc>
     <lastmod>2016-04-23T08:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//:/tags/scrum/</loc>
-    <lastmod>2018-10-25T12:22:16+08:00</lastmod>
+    <loc>//william-yeh.net/tags/scrum/</loc>
+    <lastmod>2018-10-31T08:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//:/tags/security/</loc>
+    <loc>//william-yeh.net/tags/security/</loc>
     <lastmod>2016-03-15T08:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//:/tags/speech/</loc>
+    <loc>//william-yeh.net/tags/speech/</loc>
     <lastmod>2016-05-03T08:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//:/tags/</loc>
-    <lastmod>2018-10-25T12:22:16+08:00</lastmod>
+    <loc>//william-yeh.net/tags/</loc>
+    <lastmod>2018-10-31T08:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//:/categories/tech/</loc>
+    <loc>//william-yeh.net/categories/tech/</loc>
     <lastmod>2016-03-15T08:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//:/tags/testing/</loc>
+    <loc>//william-yeh.net/tags/testing/</loc>
     <lastmod>2015-12-22T08:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//:/tags/toc/</loc>
+    <loc>//william-yeh.net/tags/toc/</loc>
     <lastmod>2016-06-04T09:54:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//:/tags/waterfall/</loc>
-    <lastmod>2018-10-25T12:22:16+08:00</lastmod>
+    <loc>//william-yeh.net/tags/waterfall/</loc>
+    <lastmod>2018-10-31T08:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

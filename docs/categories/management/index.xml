@@ -2,21 +2,32 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Management on Potioneer&#39;s Essays</title>
-    <link>//:/categories/management/</link>
+    <link>//william-yeh.net/categories/management/</link>
     <description>Recent content in Management on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Thu, 25 Oct 2018 12:22:16 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 31 Oct 2018 08:00:00 +0800</lastBuildDate>
     
-	<atom:link href="//:/categories/management/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="//william-yeh.net/categories/management/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>敏捷的判準</title>
+      <link>//william-yeh.net/post/2018/10/agile-criteria/</link>
+      <pubDate>Wed, 31 Oct 2018 08:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2018/10/agile-criteria/</guid>
+      <description>&lt;p&gt;今年暑假，我第一次去台中的國美館，參觀 &lt;a href=&#34;https://www.ntmofa.gov.tw/information_1078_86836.html&#34;&gt;2018 年全國美術展&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;這年度盛會，分成油畫、水彩、版畫、水墨等十大類。大開眼界之餘，也不禁有個奇想：為什麼要分這麼多類別來競賽？為什麼不選出一個跨十大類別的首獎，就像武林盟主一樣？&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>軟體開發，除了方法論，還有⋯⋯</title>
-      <link>//:/post/2018/10/methodology-and-criteria/</link>
+      <link>//william-yeh.net/post/2018/10/methodology-and-criteria/</link>
       <pubDate>Thu, 25 Oct 2018 12:22:16 +0800</pubDate>
       
-      <guid>//:/post/2018/10/methodology-and-criteria/</guid>
+      <guid>//william-yeh.net/post/2018/10/methodology-and-criteria/</guid>
       <description>&lt;p&gt;在某些人眼中，「敏捷」是狂熱份子聚集的邪教。&lt;/p&gt;
 
 &lt;p&gt;或許是被困在守舊勢力太久了，敏捷信徒不只有改變世界的熱情，更有捨我其誰的急迫感。不過，在傳播理念或推動改變時，若操之過急，忽略對方所處的情境、歷史及歷程，就很難有建設性對話。在這守舊勢力龐大的世界，自然很容易陣亡。&lt;/p&gt;
@@ -28,10 +39,10 @@
     
     <item>
       <title>專業態度的養成</title>
-      <link>//:/post/2016/07/professional-attitude/</link>
+      <link>//william-yeh.net/post/2016/07/professional-attitude/</link>
       <pubDate>Sat, 30 Jul 2016 17:35:00 +0800</pubDate>
       
-      <guid>//:/post/2016/07/professional-attitude/</guid>
+      <guid>//william-yeh.net/post/2016/07/professional-attitude/</guid>
       <description>&lt;p&gt;最近在面試資深軟體工程師。幾次下來，對幾家公司培養出來的員工素質，有個概括印象了（或許也帶點偏見）。&lt;/p&gt;
 
 &lt;p&gt;一個最顛覆既定印象的心得是：不是在大公司就一定學得深，不是在新創就一定學得廣。&lt;/p&gt;
@@ -41,19 +52,19 @@
     
     <item>
       <title>轉大人，Part 2</title>
-      <link>//:/post/2016/06/upgrade-adult-thinking-part2/</link>
+      <link>//william-yeh.net/post/2016/06/upgrade-adult-thinking-part2/</link>
       <pubDate>Sat, 04 Jun 2016 09:54:00 +0800</pubDate>
       
-      <guid>//:/post/2016/06/upgrade-adult-thinking-part2/</guid>
+      <guid>//william-yeh.net/post/2016/06/upgrade-adult-thinking-part2/</guid>
       <description>在我所處的軟體研發圈中，最近也流行起「18+ Adult Manifesto」這種話題。 這就不得不佩服 J&amp;amp;B 取的「大人學」品牌名字，是多麼有遠見呀！ 小孩 vs 大</description>
     </item>
     
     <item>
       <title>從「改變」角度看《魔戒》</title>
-      <link>//:/post/2016/05/change-viewpoint-on-lord-of-rings/</link>
+      <link>//william-yeh.net/post/2016/05/change-viewpoint-on-lord-of-rings/</link>
       <pubDate>Wed, 25 May 2016 08:00:00 +0800</pubDate>
       
-      <guid>//:/post/2016/05/change-viewpoint-on-lord-of-rings/</guid>
+      <guid>//william-yeh.net/post/2016/05/change-viewpoint-on-lord-of-rings/</guid>
       <description>&lt;p&gt;今年一月，參加 &lt;a href=&#34;http://kojenchieh.pixnet.net/blog&#34;&gt;David Ko&lt;/a&gt; 舉辦的一場敏捷轉型活動，從中學到了一個有趣的分析工具：Lean Change Canvas。&lt;/p&gt;
 
 &lt;p&gt;知道了一個好東西，自然要追本溯源，加深加廣。便研讀相關資料：&lt;/p&gt;</description>
@@ -61,39 +72,39 @@
     
     <item>
       <title>有了 Agile，為什麼還要有 DevOps？</title>
-      <link>//:/post/2016/05/devops-a-lean-perspective/</link>
+      <link>//william-yeh.net/post/2016/05/devops-a-lean-perspective/</link>
       <pubDate>Tue, 03 May 2016 08:00:00 +0800</pubDate>
       
-      <guid>//:/post/2016/05/devops-a-lean-perspective/</guid>
+      <guid>//william-yeh.net/post/2016/05/devops-a-lean-perspective/</guid>
       <description>&lt;p&gt;今晚，受 Agile Community Taiwan 之邀，在 &lt;a href=&#34;https://www.accupass.com/event/1604251622311845219210&#34;&gt;Agile Meetup Taipei&lt;/a&gt; 給了一場演講：【&lt;a href=&#34;http://www.slideshare.net/williamyeh/agile-devops&#34;&gt;有了 Agile，為什麼還要有 DevOps？&lt;/a&gt;】&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>向遊戲學習</title>
-      <link>//:/post/2016/04/learn-process-mgmt-by-game/</link>
+      <link>//william-yeh.net/post/2016/04/learn-process-mgmt-by-game/</link>
       <pubDate>Sat, 23 Apr 2016 08:00:00 +0800</pubDate>
       
-      <guid>//:/post/2016/04/learn-process-mgmt-by-game/</guid>
-      <description>&lt;p&gt;前一篇文章〈&lt;a href=&#34;//:/post/2016/04/learn-from-plant-mgmt/&#34;&gt;向工廠管理致敬&lt;/a&gt;〉提到，最近為了準備一場 Agile/DevOps 演講，我特地研讀了數本原典，希望能對某些核心的思考元素來一場溯源之旅。&lt;/p&gt;
+      <guid>//william-yeh.net/post/2016/04/learn-process-mgmt-by-game/</guid>
+      <description>&lt;p&gt;前一篇文章〈&lt;a href=&#34;//william-yeh.net/post/2016/04/learn-from-plant-mgmt/&#34;&gt;向工廠管理致敬&lt;/a&gt;〉提到，最近為了準備一場 Agile/DevOps 演講，我特地研讀了數本原典，希望能對某些核心的思考元素來一場溯源之旅。&lt;/p&gt;
 
 &lt;p&gt;啃原典，其實還有另一個原因：為了好好替今天要去大玩特玩的&lt;strong&gt;小火車遊戲&lt;/strong&gt;⋯⋯喔，不，是為了替今天要專程去上的一門【&lt;a href=&#34;https://www.projectup.net/activity/view/id/7689&#34;&gt;102 流程設計與跨部門溝通&lt;/a&gt;】課程預作準備。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>向工廠管理致敬</title>
-      <link>//:/post/2016/04/learn-from-plant-mgmt/</link>
+      <link>//william-yeh.net/post/2016/04/learn-from-plant-mgmt/</link>
       <pubDate>Fri, 22 Apr 2016 08:00:00 +0800</pubDate>
       
-      <guid>//:/post/2016/04/learn-from-plant-mgmt/</guid>
+      <guid>//william-yeh.net/post/2016/04/learn-from-plant-mgmt/</guid>
       <description>&lt;p&gt;身為徹頭徹尾的軟體人，在軟體產業待久了，總會對「硬」一點的產業，尤其是製造業，有莫名的成見，以為他們是僵固的、反人性的。從 1972 年「&lt;a href=&#34;https://en.wikipedia.org/wiki/Software_crisis&#34;&gt;軟體危機&lt;/a&gt;」引發的論述當中，更加深軟體人的印象：製造業的經驗，是無法直接套用到軟體界的；我們是截然不同的國度。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>多工切換：有趣的 Lean 觀點</title>
-      <link>//:/post/2016/03/lean-perspective-of-multitasking/</link>
+      <link>//william-yeh.net/post/2016/03/lean-perspective-of-multitasking/</link>
       <pubDate>Tue, 29 Mar 2016 08:00:00 +0800</pubDate>
       
-      <guid>//:/post/2016/03/lean-perspective-of-multitasking/</guid>
+      <guid>//william-yeh.net/post/2016/03/lean-perspective-of-multitasking/</guid>
       <description>&lt;p&gt;系統思考，全局思考，是困難的；即使是貌似常識的場域，亦然。&lt;/p&gt;
 
 &lt;p&gt;最近在看 &lt;a href=&#34;https://www.books.com.tw/products/0010662172&#34;&gt;&lt;em&gt;Lean Thinking&lt;/em&gt;&lt;/a&gt; 原典時，感觸更深。&lt;/p&gt;</description>
@@ -101,10 +112,10 @@
     
     <item>
       <title>升級成大人版的思維作業系統</title>
-      <link>//:/post/2015/09/upgrade-adult-thinking/</link>
+      <link>//william-yeh.net/post/2015/09/upgrade-adult-thinking/</link>
       <pubDate>Tue, 15 Sep 2015 23:02:00 +0800</pubDate>
       
-      <guid>//:/post/2015/09/upgrade-adult-thinking/</guid>
+      <guid>//william-yeh.net/post/2015/09/upgrade-adult-thinking/</guid>
       <description>&lt;p&gt;兩個週末【&lt;a href=&#34;https://shop.darencademy.com/product/view/id/28&#34;&gt;A101 職場人際關係與優勢策略工作坊&lt;/a&gt;】，一枚價值 14 PDU 的結業證書。雖然對沒有 PMP 證照企圖的我來說，帳面數字沒什麼用處；但獲得的，絕對遠遠超過這 14 PDU。&lt;/p&gt;
 
 &lt;p&gt;用 14 PDU 換來 Bryan 積蓄 15 年的內功，還有什麼更划算的事情呢？&lt;/p&gt;</description>

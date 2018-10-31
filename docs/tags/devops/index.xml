@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Devops on Potioneer&#39;s Essays</title>
-    <link>//:/tags/devops/</link>
+    <link>//william-yeh.net/tags/devops/</link>
     <description>Recent content in Devops on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <lastBuildDate>Wed, 25 May 2016 08:00:00 +0800</lastBuildDate>
     
-	<atom:link href="//:/tags/devops/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="//william-yeh.net/tags/devops/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>從「改變」角度看《魔戒》</title>
-      <link>//:/post/2016/05/change-viewpoint-on-lord-of-rings/</link>
+      <link>//william-yeh.net/post/2016/05/change-viewpoint-on-lord-of-rings/</link>
       <pubDate>Wed, 25 May 2016 08:00:00 +0800</pubDate>
       
-      <guid>//:/post/2016/05/change-viewpoint-on-lord-of-rings/</guid>
+      <guid>//william-yeh.net/post/2016/05/change-viewpoint-on-lord-of-rings/</guid>
       <description>&lt;p&gt;今年一月，參加 &lt;a href=&#34;http://kojenchieh.pixnet.net/blog&#34;&gt;David Ko&lt;/a&gt; 舉辦的一場敏捷轉型活動，從中學到了一個有趣的分析工具：Lean Change Canvas。&lt;/p&gt;
 
 &lt;p&gt;知道了一個好東西，自然要追本溯源，加深加廣。便研讀相關資料：&lt;/p&gt;</description>
@@ -24,28 +24,28 @@
     
     <item>
       <title>有了 Agile，為什麼還要有 DevOps？</title>
-      <link>//:/post/2016/05/devops-a-lean-perspective/</link>
+      <link>//william-yeh.net/post/2016/05/devops-a-lean-perspective/</link>
       <pubDate>Tue, 03 May 2016 08:00:00 +0800</pubDate>
       
-      <guid>//:/post/2016/05/devops-a-lean-perspective/</guid>
+      <guid>//william-yeh.net/post/2016/05/devops-a-lean-perspective/</guid>
       <description>&lt;p&gt;今晚，受 Agile Community Taiwan 之邀，在 &lt;a href=&#34;https://www.accupass.com/event/1604251622311845219210&#34;&gt;Agile Meetup Taipei&lt;/a&gt; 給了一場演講：【&lt;a href=&#34;http://www.slideshare.net/williamyeh/agile-devops&#34;&gt;有了 Agile，為什麼還要有 DevOps？&lt;/a&gt;】&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>向工廠管理致敬</title>
-      <link>//:/post/2016/04/learn-from-plant-mgmt/</link>
+      <link>//william-yeh.net/post/2016/04/learn-from-plant-mgmt/</link>
       <pubDate>Fri, 22 Apr 2016 08:00:00 +0800</pubDate>
       
-      <guid>//:/post/2016/04/learn-from-plant-mgmt/</guid>
+      <guid>//william-yeh.net/post/2016/04/learn-from-plant-mgmt/</guid>
       <description>&lt;p&gt;身為徹頭徹尾的軟體人，在軟體產業待久了，總會對「硬」一點的產業，尤其是製造業，有莫名的成見，以為他們是僵固的、反人性的。從 1972 年「&lt;a href=&#34;https://en.wikipedia.org/wiki/Software_crisis&#34;&gt;軟體危機&lt;/a&gt;」引發的論述當中，更加深軟體人的印象：製造業的經驗，是無法直接套用到軟體界的；我們是截然不同的國度。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>POLP：最小權限原則</title>
-      <link>//:/post/2016/03/polp-intro/</link>
+      <link>//william-yeh.net/post/2016/03/polp-intro/</link>
       <pubDate>Tue, 15 Mar 2016 08:00:00 +0800</pubDate>
       
-      <guid>//:/post/2016/03/polp-intro/</guid>
+      <guid>//william-yeh.net/post/2016/03/polp-intro/</guid>
       <description>&lt;p&gt;在我開的 &lt;a href=&#34;http://get.soft-arch.net/ansible/&#34;&gt;Ansible Workshop&lt;/a&gt; 中，不管是課前的【許願池】，還是課程現場的 Q&amp;amp;A，總有一個熱門議題：「如何確保系統是安全的？」&lt;/p&gt;
 
 &lt;p&gt;這是大哉問，不是單獨一門組態管理課就能探討到令人滿意的地步（資安也不是我所擅長的⋯⋯）。不過，被問到的次數太多了，我還是給個簡單的導引吧。&lt;/p&gt;</description>
@@ -53,40 +53,40 @@
     
     <item>
       <title>DevOps 核心元素的考古溯源</title>
-      <link>//:/post/2016/03/origin-of-devops-elements/</link>
+      <link>//william-yeh.net/post/2016/03/origin-of-devops-elements/</link>
       <pubDate>Mon, 07 Mar 2016 08:00:00 +0800</pubDate>
       
-      <guid>//:/post/2016/03/origin-of-devops-elements/</guid>
+      <guid>//william-yeh.net/post/2016/03/origin-of-devops-elements/</guid>
       <description>&lt;p&gt;DevOps 和 Agile 的關係是什麼？DevOps 是源自 Agile 的嗎？&lt;/p&gt;
 
-&lt;p&gt;我在〈&lt;a href=&#34;//:/post/2016/01/devops-goals-in-a-nutshell/&#34;&gt;一句話囊括 DevOps 的目標&lt;/a&gt;〉文中曾經簡略提過：&lt;/p&gt;</description>
+&lt;p&gt;我在〈&lt;a href=&#34;//william-yeh.net/post/2016/01/devops-goals-in-a-nutshell/&#34;&gt;一句話囊括 DevOps 的目標&lt;/a&gt;〉文中曾經簡略提過：&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>電腦界的隱喻：組態管理</title>
-      <link>//:/post/2016/03/metaphor-in-cm/</link>
+      <link>//william-yeh.net/post/2016/03/metaphor-in-cm/</link>
       <pubDate>Wed, 02 Mar 2016 08:00:00 +0800</pubDate>
       
-      <guid>//:/post/2016/03/metaphor-in-cm/</guid>
+      <guid>//william-yeh.net/post/2016/03/metaphor-in-cm/</guid>
       <description>&lt;p&gt;人類是很喜愛比喻／譬喻的。戰國時代的莊子愛用譬喻，常和莊子抬槓的惠施也愛譬喻，《說苑‧善說》甚至記載著這麼一段故事：&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>一句話囊括 DevOps 的目標</title>
-      <link>//:/post/2016/01/devops-goals-in-a-nutshell/</link>
+      <link>//william-yeh.net/post/2016/01/devops-goals-in-a-nutshell/</link>
       <pubDate>Fri, 29 Jan 2016 08:00:00 +0800</pubDate>
       
-      <guid>//:/post/2016/01/devops-goals-in-a-nutshell/</guid>
+      <guid>//william-yeh.net/post/2016/01/devops-goals-in-a-nutshell/</guid>
       <description>&lt;p&gt;TL;DR&lt;br /&gt;
 &lt;em&gt;DevOps is a set of practices intended to reduce the time between committing a change to a system and the change being placed into normal production, while ensuring high quality.&lt;/em&gt; &lt;/p&gt;</description>
     </item>
     
     <item>
       <title>DevOps 是圓的，找到立足點就是頂點</title>
-      <link>//:/post/2015/12/devops-1st-step/</link>
+      <link>//william-yeh.net/post/2015/12/devops-1st-step/</link>
       <pubDate>Mon, 28 Dec 2015 08:00:00 +0800</pubDate>
       
-      <guid>//:/post/2015/12/devops-1st-step/</guid>
+      <guid>//william-yeh.net/post/2015/12/devops-1st-step/</guid>
       <description>&lt;p&gt;自從 IT 相關媒體開始傳頌 2009 年蔚為經典的 Flickr 經驗 “&lt;a href=&#34;https://youtu.be/LdOe18KhtT4&#34;&gt;10+ Deploys per Day&lt;/a&gt;”、2014 年 Marissa Mayer 的鐵桿作風「&lt;a href=&#34;http://www.ithome.com.tw/news/99283&#34;&gt;沒有持續交付，專案不得上線，我不是在說笑&lt;/a&gt;」之後，頓時 DevOps 成為 IT 界新的焦慮源。我還聽說有高層在聽完兩天 &lt;a href=&#34;https://www.ithome.com.tw/article/98527&#34;&gt;DevOps 2015 研討會&lt;/a&gt;之後，回頭要求 IT 部門要師法 2009 年的 Flickr 做到「10+ Deploys per Day」。&lt;/p&gt;
 
 &lt;p&gt;聽了很潮的新觀念，就訂不合理的 KPI，這也是「負能量」呀！&lt;/p&gt;</description>
@@ -94,19 +94,19 @@
     
     <item>
       <title>CI 怎樣帶你遠離平庸？</title>
-      <link>//:/post/2015/12/ci-effect/</link>
+      <link>//william-yeh.net/post/2015/12/ci-effect/</link>
       <pubDate>Tue, 22 Dec 2015 08:00:00 +0800</pubDate>
       
-      <guid>//:/post/2015/12/ci-effect/</guid>
+      <guid>//william-yeh.net/post/2015/12/ci-effect/</guid>
       <description>前天我的文章〈CI 是條不歸路〉提到：「CI/CD/DevOps 既是條不歸路，更是大躍進之路：一旦踏出第一步，就注定你會不斷接觸『遠離平庸』的</description>
     </item>
     
     <item>
       <title>CI 是條不歸路</title>
-      <link>//:/post/2015/12/ci-no-turning-back/</link>
+      <link>//william-yeh.net/post/2015/12/ci-no-turning-back/</link>
       <pubDate>Mon, 21 Dec 2015 08:00:00 +0800</pubDate>
       
-      <guid>//:/post/2015/12/ci-no-turning-back/</guid>
+      <guid>//william-yeh.net/post/2015/12/ci-no-turning-back/</guid>
       <description>今年九月初參加完 DevOps 2015 之後，有感而發，寫了兩則 tweets： 說實在的，打從 1999 年 Kent Beck 經典著作 Extreme Programming Explained 問世，整個軟體文化就被徹底分裂成兩個國度。以 agile</description>
     </item>
     
