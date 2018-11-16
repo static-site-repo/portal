@@ -6,10 +6,156 @@
     <description>Recent content on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Thu, 08 Nov 2018 08:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 15 Nov 2018 08:00:00 +0800</lastBuildDate>
     
         <atom:link href="//william-yeh.net/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Agile PMO</title>
+      <link>//william-yeh.net/post/2018/11/agile-pmo/</link>
+      <pubDate>Thu, 15 Nov 2018 08:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2018/11/agile-pmo/</guid>
+      
+        <description>
+
+&lt;p&gt;&amp;ldquo;Project&amp;rdquo; 一詞，儼然成為 agile 及 DevOps 圈子的禁語。&lt;/p&gt;
+
+&lt;p&gt;譬如說，敏捷祖師爺 Martin Fowler 的網站有一篇 &amp;ldquo;&lt;a href=&#34;https://martinfowler.com/articles/products-over-projects.html&#34;&gt;Products Over Projects&lt;/a&gt;&amp;rdquo; 文章，DevOps 巨著 &lt;a href=&#34;https://www.tenlong.com.tw/products/9787115480170&#34;&gt;&lt;em&gt;The DevOps Handbook&lt;/em&gt;&lt;/a&gt; 第 7.7 節的篇名叫做〈投資於服務和產品，而非專案〉。最近甚至還有一本新書，直接取名叫做 &lt;a href=&#34;https://itrevolution.com/book/project-to-product/&#34;&gt;&lt;em&gt;Project to Product&lt;/em&gt;&lt;/a&gt; 叫人棄暗投明呢。&lt;/p&gt;
+
+&lt;p&gt;見微知著。這個圈子，褒 product，貶 project，是政治正確的常模。&lt;/p&gt;
+
+&lt;p&gt;這個圈子，對於 &amp;ldquo;project&amp;rdquo; 反感，對於素來予人控制與監管印象的 &amp;ldquo;PMO&amp;rdquo; (Project Management Office，專案管理辦公室) &lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; 就更反感了。&lt;/p&gt;
+
+&lt;p&gt;但 PMO 真的與敏捷水火不容嗎？&lt;/p&gt;
+
+&lt;h2 id=&#34;敏捷陣營的聲音&#34;&gt;敏捷陣營的聲音&lt;/h2&gt;
+
+&lt;p&gt;聽聽看 Scrum 領域三位大神的說法吧。&lt;/p&gt;
+
+&lt;p&gt;頭兩位大神 &lt;a href=&#34;https://www.linkedin.com/in/jeffsutherland&#34;&gt;Jeff Sutherland&lt;/a&gt; 及 &lt;a href=&#34;https://kenschwaber.wordpress.com/&#34;&gt;Ken Schwaber&lt;/a&gt; 是 Scrum 發明人。他們合著一本小書《&lt;a href=&#34;https://www.books.com.tw/products/0010647604&#34;&gt;告別瀑布，擁抱 Scrum&lt;/a&gt;》，言簡意賅，完全是務實的經驗談。附錄Ｃ〈企業級敏捷攻略〉專門探討敏捷擴展的議題，難得看到兩位老爹發表與其他基本教義派不同的接地氣觀點。其中對於 &amp;ldquo;project&amp;rdquo; 的看法是：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Scrum 避免使用傳統的「類」瀑布式的專案&lt;strong&gt;計畫&lt;/strong&gt;，但是策略性的日常&lt;strong&gt;專案管理&lt;/strong&gt;的本質是堅定不移的。高級成員需要觀察每個團隊各自的 iteration 和發佈計畫，才能全面的評估整個專案所處的狀態。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;他們也進一步闡述遠光燈的觀點：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Scrum 是追求「近期可能性的藝術」，而不是詳細預測未來 6 到 12 個 sprints 內應該交付什麼的黑色藝術。但隨著團隊的擴大和增加，為了未來較遙遠的 sprint 做額外嚴謹的分析，將有助於避免日後需要對架構做過多的重構。為了能將系統架構未來可能的演變方向看得更清楚，進行額外的發布計畫也是合適的。因此，sprint 計畫會議中，可以「看看過去的幾個 sprint」，也可以進行一些「萬一」(what-if) 的計畫，如此將能夠協助團隊權衡產品待辦清單，並向發起者傳達一個更合理的願景和產品路線圖。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Ken Schwaber 創立的 &lt;a href=&#34;https://www.scrum.org&#34;&gt;Scrum.org&lt;/a&gt; 培訓機構，也刊登過一篇 &amp;ldquo;&lt;a href=&#34;https://www.scrum.org/resources/blog/agile-pmo&#34;&gt;The Agile PMO&lt;/a&gt;&amp;rdquo; 文章，說明他們對於 PMO 並未排斥。&lt;/p&gt;
+
+&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+
+&lt;p&gt;第三位大神 &lt;a href=&#34;https://www.scrumalliance.org/community/profile/mikecohn&#34;&gt;Mike Cohn&lt;/a&gt;，是 CSM/CSPO/CST 等認證的主辦機構 &lt;a href=&#34;https://www.scrumalliance.org/&#34;&gt;Scrum Alliance&lt;/a&gt; 的共同創辦人，著作等身，都是敏捷領域的經典 &lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;。最近也在他的機構 Mountain Goat Software 開辦很精彩的 &lt;a href=&#34;http://learn.mountaingoatsoftware.com/better-user-stories/&#34;&gt;&lt;em&gt;Better User Stories&lt;/em&gt;&lt;/a&gt; 線上課程，是非常活躍的 Scrum 培訓師。&lt;/p&gt;
+
+&lt;p&gt;在敏捷領域，Mike Cohn 雖然是祖師爺等級的人物，但不是基本教義派。譬如說，雖然 &amp;ldquo;project&amp;rdquo; 一詞儼然成為這圈子的禁語，但他可不這麼認為：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Projects provide a planning horizon that is longer than a sprint&amp;ndash;typically in the range of two to six months. This “definite beginning and end” that is focused on a “unique product, service or result” encourages product owners to select truly important things to work on rather than whatever some customer or salesperson screamed about yesterday.&lt;/p&gt;
+
+&lt;p&gt;I always encourage product owners and their teams to identify a milestone they are working toward that is longer than a single sprint.&lt;/p&gt;
+
+&lt;p&gt;Projects remain a useful construct. They provide a motivation to accomplish something grander than could be done in a single iteration.&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;mdash; &amp;ldquo;&lt;a href=&#34;https://www.mountaingoatsoftware.com/blog/is-it-time-to-stop-thinking-about-projects&#34;&gt;Is It Time to Stop Thinking about Projects?&lt;/a&gt;&amp;ldquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;畢竟 milestone 這種&lt;strong&gt;策略控制點&lt;/strong&gt;的設置與控制，原本就是專案管理知識體系的擅長之處。&lt;/p&gt;
+
+&lt;p&gt;他甚至鼓勵將傳統上 &lt;a href=&#34;https://www.pmi.org/pmbok-guide-standards&#34;&gt;PMBOK&lt;/a&gt; 重視的某些活動，引進敏捷開發的節奏中：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Becoming agile does not mean we need to throw out everything we&amp;rsquo;ve learned over the past 100 or so years of doing project management. Some things&amp;mdash;project kickoff meetings included&amp;mdash;remain valuable.&lt;/p&gt;
+
+&lt;p&gt;Risk management is not formally defined as part of agile frameworks like Scrum. And that’s understandable as a lot of risks do go away (or get exposed) with the short iterations common to agile. But there are still projects that benefit from lightweight but explicit risk management. I suggested starting that during the kickoff meeting.&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;mdash; &amp;ldquo;&lt;a href=&#34;https://www.mountaingoatsoftware.com/blog/advice-on-conducting-agile-project-kickoff-meetings&#34;&gt;Advice on Conducting Agile Project Kickoff Meetings&lt;/a&gt;&amp;ldquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;三位大師的論述，像極了《&lt;a href=&#34;https://zh.wikipedia.org/wiki/%E7%A5%9E%E9%B5%B0%E4%BF%A0%E4%BE%B6&#34;&gt;神鵰俠侶&lt;/a&gt;》中「不滯於物，草木竹石均可為劍」的境界，大師風範，令人佩服。&lt;/p&gt;
+
+&lt;h2 id=&#34;pmo-陣營的聲音&#34;&gt;PMO 陣營的聲音&lt;/h2&gt;
+
+&lt;p&gt;也來聽聽看 PMO 領域的說法吧。&lt;/p&gt;
+
+&lt;p&gt;PMO 並不是像敏捷基本教義派陣營口中那麼僵化守舊的。像 2013 年《&lt;a href=&#34;https://www.books.com.tw/products/CN11396791&#34;&gt;業務驅動的 PMO 最佳實踐&lt;/a&gt;》一書主張，有&lt;strong&gt;成熟敏銳度&lt;/strong&gt; (maturity acumen) 的 PMO，需要根據專案類型與管理方法兩個維度，將組織層級的專案管理分成四個象限，並以宏觀視野統籌處理：&lt;/p&gt;
+
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
+  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/11/org-pm-quadrant.jpg&#34; alt=&#34;組織範圍的專案管理&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2018/11/org-pm-quadrant.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;組織範圍的專案管理&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;至於最正宗的專案管理國際組織 &lt;a href=&#34;https://www.pmi.org/&#34;&gt;PMI&lt;/a&gt; 是怎麼想的呢？&lt;/p&gt;
+
+&lt;p&gt;在 &amp;ldquo;&lt;a href=&#34;https://www.pmi.org/learning/library/pmo-agile-transformation-6063&#34;&gt;An agile PMO transformation&lt;/a&gt;&amp;rdquo; 一文中，列舉 &amp;ldquo;agile PMO&amp;rdquo; 的「八要八不要」，並且主張：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;For many organizations, using the words “PMO” and “agile” in the same sentence could be considered an oxymoron. It may come as a surprise to expect the PMO to lead the agile transformation, but we think that &lt;em&gt;for organizations to reach the full potential of the approaches outlined in this update, such as managing the enterprise-level portfolio and creating stable teams, the PMO will need to be engaged and lead the way.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;If PMOs are ready and willing to transform, they can greatly influence the success of their organization&amp;rsquo;s agile transformation.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;可見，狀似傳統僵化的 PMO，其實也已經正視敏捷變革。因此，我們不時可看到新名詞 &amp;ldquo;agile PMO&amp;rdquo; 出現，連管顧公司也湊熱鬧湊出一個 &amp;ldquo;Lean-Agile PMO&amp;rdquo; 呢。&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;正名&#34;&gt;正名？&lt;/h2&gt;
+
+&lt;p&gt;敏捷陣營常會對 &amp;ldquo;agile PMO&amp;rdquo; 一詞嗤之以鼻，認為只是換湯不換藥。&lt;/p&gt;
+
+&lt;p&gt;因此，Mike Cohn 挑明地說，為了避免困擾，不妨考慮換個名字：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;A project management office (PMO) that is engaged in and supportive of transitioning to Scrum can be a tremendous boon.&lt;/p&gt;
+
+&lt;p&gt;Many PMOs choose to rename themselves to better match their revised role. Though there is no one standard name, I have heard these most frequently: &lt;em&gt;Scrum center of excellence&lt;/em&gt;, &lt;em&gt;Scrum competence center&lt;/em&gt;, &lt;em&gt;Scrum office&lt;/em&gt;, and &lt;em&gt;development support&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Many people have become cynical and suspicious of name changes and of well-crafted names. That cynicism will be directed at the PMO if it is renamed but remains otherwise unchanged. So, whatever it&amp;rsquo;s called, the PMO that supported the organization&amp;rsquo;s sequential development process will need to change more than just its name to succeed with Scrum.&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;mdash; &amp;ldquo;&lt;a href=&#34;https://www.mountaingoatsoftware.com/articles/the-roles-of-the-project-management-office-in-scrum&#34;&gt;The Roles of the Project Management Office in Scrum&lt;/a&gt;&amp;ldquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;至於崇尚極簡作風的 LeSS 陣營，則主張廢棄 &amp;ldquo;project&amp;rdquo; 或 &amp;ldquo;office&amp;rdquo; 字眼，改用 &amp;ldquo;Head of Product Group&amp;rdquo; 概念，以及 &amp;ldquo;&lt;a href=&#34;https://less.works/less/management/go-see.html&#34;&gt;Go See&lt;/a&gt;&amp;rdquo; 管理：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;No project/program organization or project/program management office (PMO). No support groups such as configuration management, continuous integration support, or “quality and process”.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Head of the Product Group&lt;/strong&gt; — Most LeSS organizations still have managers including a “head of product group.” They support the teams by Go See and help them remove obstacles and improve. LeSS organizations don’t have matrix structures and there are no “dotted-line” managers.&lt;/p&gt;
+
+&lt;p&gt;“Head of Product Group” is called differently in different organization, here we mean the hierarchical manager of all the teams.&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;mdash; LeSS &lt;a href=&#34;https://less.works/less/structure/organizational-structure.html&#34;&gt;Organizational Structure&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;看了這麼多論點，你認為 &amp;ldquo;agile PMO&amp;rdquo; 是噱頭嗎？&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;想在五分鐘之內快速了解 PMO 是什麼東西，可讀讀 Joe 寫的這篇文章：&lt;a href=&#34;https://www.projectup.net/article/view/id/9&#34;&gt;What is PMO&lt;/a&gt;。
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:1&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;Mike Cohn 在敏捷領域的名作：&lt;a href=&#34;https://www.amazon.com/gp/product/0321205685/&#34;&gt;&lt;em&gt;User Stories Applied: For Agile Software Development&lt;/em&gt;&lt;/a&gt; (2004)、&lt;a href=&#34;https://www.amazon.com/dp/0131479415&#34;&gt;&lt;em&gt;Agile Estimating and Planning&lt;/em&gt;&lt;/a&gt; (2005)、&lt;a href=&#34;https://www.amazon.com/gp/product/0321579364/&#34;&gt;&lt;em&gt;Succeeding with Agile: Software Development Using Scrum&lt;/em&gt;&lt;/a&gt; (2009)。
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:2&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;&lt;a href=&#34;https://www.forbes.com/sites/forbesfinancecouncil/2018/06/13/the-many-benefits-of-an-agile-pmo-what-you-should-know/&#34;&gt;The Many Benefits Of An Agile PMO: What You Should Know&lt;/a&gt;
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:3&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+      
+    </item>
     
     <item>
       <title>接班人計畫</title>
@@ -507,7 +653,6 @@
 
 &lt;p&gt;這年度盛會，分成油畫、水彩、版畫、水墨等十大類。大開眼界之餘，也不禁有個奇想：為什麼要分這麼多類別來競賽？為什麼不選出一個跨十大類別的首獎，就像武林盟主一樣？&lt;/p&gt;
 
-
 &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
   &lt;iframe src=&#34;//www.youtube.com/embed/nBlph7Vp92E&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
 &lt;/div&gt;
@@ -704,7 +849,6 @@ increment 的方式交付「完成」的產品，可以確保一直提供一個�
 &lt;p&gt;但這還只是表象。歧見，單靠對話仍不足以化解，更需要在方法論層次達到理解，方可進退有據。&lt;/p&gt;
 
 &lt;p&gt;尤其在看過《&lt;a href=&#34;https://www.books.com.tw/products/0010791756&#34;&gt;社會科學的理路&lt;/a&gt;》之後，我領悟到一些根源問題及槓桿解。&lt;/p&gt;
-
 
 &lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
 &lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
@@ -1048,8 +1192,7 @@ increment 的方式交付「完成」的產品，可以確保一直提供一個�
 &lt;blockquote&gt;
 &lt;p&gt;閱讀的速度並非只有單一的一種，重點在如何讀出&lt;strong&gt;不同的速度感&lt;/strong&gt;，知道在閱讀某種讀物時該用什麼樣的速度。&lt;/p&gt;
 
-&lt;p&gt;更好的秘方是：在閱讀一本書的時候，&lt;strong&gt;慢不該慢到不值得，快不該快到有損於滿足與理解。&lt;/strong&gt;
-&lt;/p&gt;
+&lt;p&gt;更好的秘方是：在閱讀一本書的時候，&lt;strong&gt;慢不該慢到不值得，快不該快到有損於滿足與理解。&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;快或慢，端看閱讀的當下，自我定位是在哪一層次：&lt;/p&gt;
@@ -1269,7 +1412,9 @@ increment 的方式交付「完成」的產品，可以確保一直提供一個�
 
 &lt;p&gt;重點仍在於自己。在於自己有沒有「&lt;strong&gt;系統思考&lt;/strong&gt;及&lt;strong&gt;換位思考&lt;/strong&gt;的&lt;strong&gt;自覺&lt;/strong&gt;及&lt;strong&gt;行動&lt;/strong&gt;」。&lt;/p&gt;
 
-&lt;p&gt;或者再濃縮成：在於「&lt;strong&gt;專業態度&lt;/strong&gt;」。&lt;/p&gt;
+&lt;p&gt;或者再濃縮成&lt;/p&gt;
+
+&lt;p&gt;：在於「&lt;strong&gt;專業態度&lt;/strong&gt;」。&lt;/p&gt;
 
 &lt;h2 id=&#34;專業-技能-vs-態度&#34;&gt;專業：技能 vs 態度&lt;/h2&gt;
 
@@ -1732,7 +1877,6 @@ Quote: &lt;a href=&#34;https://twitter.com/brecht/status/686004657085231104&#34;
       
         <description>&lt;p&gt;今晚，受 Agile Community Taiwan 之邀，在 &lt;a href=&#34;https://www.accupass.com/event/1604251622311845219210&#34;&gt;Agile Meetup Taipei&lt;/a&gt; 給了一場演講：【&lt;a href=&#34;http://www.slideshare.net/williamyeh/agile-devops&#34;&gt;有了 Agile，為什麼還要有 DevOps？&lt;/a&gt;】&lt;/p&gt;
 
-
 &lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
 &lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
   &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
@@ -1826,7 +1970,9 @@ Quote: &lt;a href=&#34;https://twitter.com/brecht/status/686004657085231104&#34;
 
 &lt;p&gt;啃原典，其實還有另一個原因：為了好好替今天要去大玩特玩的&lt;strong&gt;小火車遊戲&lt;/strong&gt;⋯⋯喔，不，是為了替今天要專程去上的一門【&lt;a href=&#34;https://www.projectup.net/activity/view/id/7689&#34;&gt;102 流程設計與跨部門溝通&lt;/a&gt;】課程預作準備。&lt;/p&gt;
 
-&lt;p&gt;盯上這門課，其實已經很久了。只是這門課⋯⋯摘錄一段課程文案：「只有二十二個席次，因為道具很多，所以約每半年才開設一次公開班，錯過就要等很久了喔！」這是真的，上一梯次我時間不允許，所以後來緊盯著這一梯次開放報名的風吹草動，委實不易呀！&lt;/p&gt;
+&lt;p&gt;盯上這門課，其實已經很久了&lt;/p&gt;
+
+&lt;p&gt;。只是這門課⋯⋯摘錄一段課程文案：「只有二十二個席次，因為道具很多，所以約每半年才開設一次公開班，錯過就要等很久了喔！」這是真的，上一梯次我時間不允許，所以後來緊盯著這一梯次開放報名的風吹草動，委實不易呀！&lt;/p&gt;
 
 &lt;p&gt;上含金量這麼高的實作課程，不事先自我裝備一下，就太浪費了。&lt;/p&gt;
 
@@ -1942,7 +2088,9 @@ Quote: &lt;a href=&#34;https://twitter.com/brecht/status/686004657085231104&#34;
       
         <description>&lt;p&gt;身為徹頭徹尾的軟體人，在軟體產業待久了，總會對「硬」一點的產業，尤其是製造業，有莫名的成見，以為他們是僵固的、反人性的。從 1972 年「&lt;a href=&#34;https://en.wikipedia.org/wiki/Software_crisis&#34;&gt;軟體危機&lt;/a&gt;」引發的論述當中，更加深軟體人的印象：製造業的經驗，是無法直接套用到軟體界的；我們是截然不同的國度。&lt;/p&gt;
 
-&lt;p&gt;不過，近十年來許多軟體界的流程改革，尤其是同屬 Agile 陣營的 Scrum 及 Kanban，居然有許多元素是從製造業&lt;del&gt;偷竊&lt;/del&gt;學習而來。譬如說，由 Toyota 引領風潮的 &lt;a href=&#34;https://en.wikipedia.org/wiki/Lean_manufacturing&#34;&gt;Lean Production&lt;/a&gt; 及 &lt;a href=&#34;https://en.wikipedia.org/wiki/Just-in-time_manufacturing&#34;&gt;JIT&lt;/a&gt;、從 &lt;a href=&#34;https://en.wikipedia.org/wiki/Theory_of_constraints&#34;&gt;TOC（限制理論）&lt;/a&gt; 學來的流程分析及改善手法，都是相關文獻最常引述的。&lt;/p&gt;
+&lt;p&gt;不過，近十年來許多軟體界的流程改革，尤其是同屬 Agile 陣營的 Scrum 及 Kanban，居然有許多元素是從製造業&lt;del&gt;偷竊&lt;/del&gt;學習而來。譬如說&lt;/p&gt;
+
+&lt;p&gt;，由 Toyota 引領風潮的 &lt;a href=&#34;https://en.wikipedia.org/wiki/Lean_manufacturing&#34;&gt;Lean Production&lt;/a&gt; 及 &lt;a href=&#34;https://en.wikipedia.org/wiki/Just-in-time_manufacturing&#34;&gt;JIT&lt;/a&gt;、從 &lt;a href=&#34;https://en.wikipedia.org/wiki/Theory_of_constraints&#34;&gt;TOC（限制理論）&lt;/a&gt; 學來的流程分析及改善手法，都是相關文獻最常引述的。&lt;/p&gt;
 
 &lt;p&gt;最近為了準備一場 Agile/DevOps 演講，特地研讀數本原典，對核心元素來一場溯源之旅：&lt;/p&gt;
 
@@ -2030,7 +2178,6 @@ Quote: &lt;a href=&#34;https://twitter.com/brecht/status/686004657085231104&#34;
         <description>&lt;p&gt;系統思考，全局思考，是困難的；即使是貌似常識的場域，亦然。&lt;/p&gt;
 
 &lt;p&gt;最近在看 &lt;a href=&#34;https://www.books.com.tw/products/0010662172&#34;&gt;&lt;em&gt;Lean Thinking&lt;/em&gt;&lt;/a&gt; 原典時，感觸更深。&lt;/p&gt;
-
 
 &lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
 &lt;div class=&#34;box&#34; style=&#34;max-width:15em&#34;&gt;
@@ -2392,7 +2539,7 @@ root    ALL=(ALL:ALL) ALL
       <guid>//william-yeh.net/post/2016/01/devops-goals-in-a-nutshell/</guid>
       
         <description>&lt;p&gt;TL;DR&lt;br /&gt;
-&lt;em&gt;DevOps is a set of practices intended to reduce the time between committing a change to a system and the change being placed into normal production, while ensuring high quality.&lt;/em&gt; &lt;/p&gt;
+&lt;em&gt;DevOps is a set of practices intended to reduce the time between committing a change to a system and the change being placed into normal production, while ensuring high quality.&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
 
@@ -2595,169 +2742,6 @@ root    ALL=(ALL:ALL) ALL
 &lt;p&gt;做了之後，自然就會發現：這是一條不歸路，&lt;strong&gt;你會不斷接觸『遠離平庸』的新觀點、新技術&lt;/strong&gt;。&lt;/p&gt;
 
 &lt;p&gt;你再也回不去過去那個老土砲的日子了。&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>CI 怎樣帶你遠離平庸？</title>
-      <link>//william-yeh.net/post/2015/12/ci-effect/</link>
-      <pubDate>Tue, 22 Dec 2015 08:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2015/12/ci-effect/</guid>
-      
-        <description>
-
-&lt;p&gt;前天我的文章〈&lt;a href=&#34;//william-yeh.net/post/2015/12/ci-no-turning-back/&#34;&gt;CI 是條不歸路&lt;/a&gt;〉提到：「CI/CD/DevOps 既是條不歸路，更是大躍進之路：一旦踏出第一步，就注定你會不斷接觸&lt;strong&gt;『遠離平庸』&lt;/strong&gt;的新觀點、新技術。」&lt;/p&gt;
-
-&lt;p&gt;為了避免陳義過高，這篇文章就來講一個具體的軟體研發故事吧。&lt;/p&gt;
-
-&lt;h2 id=&#34;護城河&#34;&gt;護城河&lt;/h2&gt;
-
-&lt;p&gt;我用 Ansible，也用 &lt;a href=&#34;https://prometheus.io/&#34;&gt;Prometheus&lt;/a&gt;，因此，我寫了一個 Ansible role &lt;a href=&#34;https://github.com/William-Yeh/ansible-prometheus&#34;&gt;&lt;code&gt;williamyeh.prometheus&lt;/code&gt;&lt;/a&gt; 來安裝 Prometheus。&lt;/p&gt;
-
-&lt;p&gt;上個禮拜，我隱約覺得對它感興趣的人似乎變多了，便好奇的去 GitHub 後台調數據來看，發現：&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;原來是被 Prometheus 官網列入 &amp;ldquo;&lt;a href=&#34;http://prometheus.io/docs/introduction/install/#using-configuration-management-systems&#34;&gt;Using configuration management systems&lt;/a&gt;&amp;rdquo; 清單了，難怪最近 PR 變多，品質更是超越其他幾家 CM 的例子。&lt;/p&gt;
-
-&lt;p&gt;&amp;mdash; Quote: &lt;a href=&#34;https://twitter.com/william_yeh/status/676897832071241728&#34;&gt;2015-12-16 Tweet&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;被 Prometheus 官方欽點了，能見度提高了，就表示，三不五時會有人提出 bug report，提出 feature request；甚至更勤勞一點的，可能直接就會送出 PR (pull request)。&lt;/p&gt;
-
-&lt;p&gt;面對 PR，其實要花很大的力氣去檢驗：檢驗對錯，檢驗風格，甚至 &lt;a href=&#34;https://en.wikipedia.org/wiki/The_Mythical_Man-Month#Conceptual_integrity&#34;&gt;conceptual integrity&lt;/a&gt;（語出《&lt;a href=&#34;https://en.wikipedia.org/wiki/The_Mythical_Man-Month&#34;&gt;人月神話&lt;/a&gt;》）。而且，對方既然已經很勤勞的送出 PR 了，他會預期你高度重視他的提案。&lt;/p&gt;
-
-&lt;p&gt;我需要一道&lt;strong&gt;護城河&lt;/strong&gt;，讓我不必每次都事必躬親，回應每一則 PR。&lt;/p&gt;
-
-&lt;p&gt;所幸我早就建立好&lt;strong&gt;個人的 discipline&lt;/strong&gt;：要替自己寫的 Ansible role 加上 CI。即使只是做一點點小小的 smoke test，總是聊勝於無。&lt;/p&gt;
-
-&lt;p&gt;CI 是&lt;strong&gt;高度客觀中立&lt;/strong&gt;、&lt;strong&gt;不帶感情&lt;/strong&gt;的守門員。它，幫我初步過濾一些攸關對錯、風格的 PR。於是，我可以優先禮貌性回應已經被 CI 初步打勾放行的 PR；至於被打叉叉的，那就&lt;del&gt;謝謝再聯絡&lt;/del&gt;等有充裕時間精力時再說：&lt;/p&gt;
-
-
-&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
-&lt;div class=&#34;box&#34; &gt;
-  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2015/12/ansible-prometheus-pr.png&#34; alt=&#34;Pull requests&#34;/&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2015/12/ansible-prometheus-pr.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-      &lt;figcaption&gt;
-          &lt;p&gt;Pull requests&lt;/p&gt;
-      &lt;/figcaption&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;
-
-
-&lt;p&gt;CI，小小的投資，大大的省事。&lt;/p&gt;
-
-&lt;h2 id=&#34;當-ansible-遇見-docker&#34;&gt;當 Ansible 遇見 Docker&lt;/h2&gt;
-
-&lt;p&gt;個人還有另一項執念：自己寫的 Ansible role，要盡可能支援多種 Linux distributions 環境。&lt;/p&gt;
-
-&lt;p&gt;這又是一條不歸路。&lt;/p&gt;
-
-&lt;p&gt;在本機端研發時，我可以用各種 Vagrant box 來模擬各種 Linux （譬如：&lt;a href=&#34;https://app.vagrantup.com/bento/boxes/centos-6.7&#34;&gt;bento/centos-6.7&lt;/a&gt;、&lt;a href=&#34;https://app.vagrantup.com/bento/boxes/centos-7.1&#34;&gt;bento/centos-7.1&lt;/a&gt;、&lt;a href=&#34;https://app.vagrantup.com/debian/boxes/jessie64&#34;&gt;debian/jessie64&lt;/a&gt;），但這沒辦法 scale 到正式的 CI 流程上。此刻 Travis CI 及 CircleCI 只提供 Ubuntu 12.04 及 14.04 兩種 instance，也沒支援 &lt;a href=&#34;http://kitchen.ci&#34;&gt;Test Kitchen&lt;/a&gt;。&lt;/p&gt;
-
-&lt;p&gt;所幸 Travis CI 和 CircleCI 都有支援 Docker，因此，我設計了 &lt;a href=&#34;https://github.com/William-Yeh/docker-ansible&#34;&gt;&lt;code&gt;williamyeh/ansible&lt;/code&gt;&lt;/a&gt; 這一系列的 Docker images，可在 Travis CI 及 CircleCI 上面模擬出 CentOS 6 &amp;amp; 7、Debian 7 &amp;amp; 8、Ubuntu 12.04 &amp;amp; 14.04 環境，來測試我的 Ansible roles。&lt;/p&gt;
-
-&lt;p&gt;這下子，我的 CI 護城河就更穩固了。CI 這位&lt;strong&gt;高度客觀中立&lt;/strong&gt;、&lt;strong&gt;不帶感情&lt;/strong&gt;的守門員，協助我冷靜面對以下這則算是大工程等級的 PR，不帶批判情緒的進行對話，一起搞定 CentOS/Ubuntu 雙系統：&lt;/p&gt;
-
-
-
-&lt;div class=&#34;box&#34; &gt;
-  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2015/12/pr-discussion.png&#34; alt=&#34;Discussion around a pull request&#34;/&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2015/12/pr-discussion.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-      &lt;figcaption&gt;
-          &lt;p&gt;Discussion around a pull request&lt;/p&gt;
-      &lt;/figcaption&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;
-
-
-&lt;p&gt;CI，小小的投資，大大的省事。&lt;/p&gt;
-
-&lt;p&gt;對我而言，原本 &lt;code&gt;williamyeh/ansible&lt;/code&gt; 只是為了其他目的而順帶設計出來的副產品。但由於 Ansible 官方已不再維護它的 Docker images；而在非官方版當中，我的 &lt;code&gt;williamyeh/ansible&lt;/code&gt; 下載量居冠（統計數據&lt;a href=&#34;https://hub.docker.com/search/?q=ansible&amp;amp;page=1&amp;amp;isAutomated=0&amp;amp;isOfficial=0&amp;amp;pullCount=1&amp;amp;starCount=0&#34;&gt;在此&lt;/a&gt;），也持續有人提出 feature request⋯⋯該說是無心插柳嗎？&lt;/p&gt;
-
-&lt;h2 id=&#34;吃自己的狗食&#34;&gt;吃自己的狗食&lt;/h2&gt;
-
-&lt;p&gt;再拿另一個很受歡迎的 Ansible role：&lt;a href=&#34;https://github.com/William-Yeh/ansible-oracle-java&#34;&gt;&lt;code&gt;williamyeh.oracle-java&lt;/code&gt;&lt;/a&gt; 為例。它在 Ansible Galaxy 已經得到 &lt;a href=&#34;https://galaxy.ansible.com/william-yeh/oracle-java&#34;&gt;4.8 的高分&lt;/a&gt;，是一個已經為人所知，甚至為人所用的元件。&lt;/p&gt;
-
-&lt;p&gt;因此，我必須維持良好的向後相容性，以對用戶負責。&lt;/p&gt;
-
-&lt;p&gt;也因此，連我自己想對原始程式做更動，也不敢貿然造次。必須遵守 &lt;a href=&#34;http://nvie.com/posts/a-successful-git-branching-model/&#34;&gt;Git Flow&lt;/a&gt; 或 &lt;a href=&#34;https://guides.github.com/introduction/flow/&#34;&gt;GitHub Flow&lt;/a&gt; 之類的 &lt;strong&gt;workflow discipline&lt;/strong&gt;，一樣要看 CI 這位&lt;strong&gt;高度客觀中立&lt;/strong&gt;、&lt;strong&gt;不帶感情&lt;/strong&gt;的守門員的臉色。&lt;/p&gt;
-
-
-
-&lt;div class=&#34;box&#34; &gt;
-  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2015/12/github-graph.png&#34; alt=&#34;Network graph&#34;/&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2015/12/github-graph.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-      &lt;figcaption&gt;
-          &lt;p&gt;Network graph&lt;/p&gt;
-      &lt;/figcaption&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;
-
-
-&lt;p&gt;專業，就是對自己也有 discipline。CI，就是&lt;strong&gt;強制幫助你建立 discipline&lt;/strong&gt;。&lt;/p&gt;
-
-&lt;h2 id=&#34;不要輕看-ci-的紅燈&#34;&gt;不要輕看 CI 的紅燈&lt;/h2&gt;
-
-&lt;p&gt;對這個 Ansible role，有一點我一直耿耿於懷：Travis CI 和 CircleCI 的測試結果，時好時壞。&lt;/p&gt;
-
-&lt;p&gt;像以下截圖顯示，同樣都是針對 &lt;code&gt;6598bed&lt;/code&gt; 這個 commit，Travis CI 一次就通過，但 CircleCI 居然會出現一堆紅燈。不死心的我，一直按 rebuild 好幾次，總算才出現綠燈：&lt;/p&gt;
-
-
-
-&lt;div class=&#34;box&#34; &gt;
-  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2015/12/circleci-error.png&#34; /&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2015/12/circleci-error.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;
-
-
-&lt;p&gt;奇怪的是，同樣都是針對 &lt;code&gt;a9c105e&lt;/code&gt; 這個 commit，這回 CircleCI 一次就通過，反倒是 Travis CI 出狀況：&lt;/p&gt;
-
-
-
-&lt;div class=&#34;box&#34; &gt;
-  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2015/12/travisci-error.png&#34; /&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2015/12/travisci-error.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;
-
-
-&lt;p&gt;前幾天，我終於忍不住出手。&lt;/p&gt;
-
-&lt;p&gt;反覆比對兩邊的 log，發現，Oracle 疑似會對 jdk 下載點做 rate limiting。每次 Travis CI 及 CircleCI 的 CI 大隊一啟動，Oracle 就惱了。&lt;/p&gt;
-
-&lt;p&gt;所以，不是我的 Ansible role 有問題，是 Oracle 太神經兮兮了。&lt;/p&gt;
-
-&lt;p&gt;怪罪 Oracle 於事無補，問題總得解決⋯⋯&lt;/p&gt;
-
-&lt;p&gt;為了解決這問題，我設計一個 prefetch 機制：只向 Oracle 抓一次需要的 rpm 及 tar.gz 檔案，存放在 role 的 &lt;code&gt;files&lt;/code&gt; 目錄裡面。如此一來，不僅避開 rate limiting 的限制，連帶的也降低整體的 build time，更讓整個 role 架構 refactor 得更乾淨。&lt;/p&gt;
-
-&lt;p&gt;CI，小小的投資，大大的省事。&lt;/p&gt;
-
-&lt;h2 id=&#34;卻顧所來徑&#34;&gt;卻顧所來徑&lt;/h2&gt;
-
-&lt;p&gt;這一切的一切，濫觴都只是一個小起步：要替自己寫的 Ansible role 加上 CI。&lt;/p&gt;
-
-&lt;p&gt;一旦踏出第一步，就注定你會不斷接觸&lt;strong&gt;『遠離平庸』&lt;/strong&gt;的新觀點、新技術。&lt;/p&gt;
-
-&lt;p&gt;你同意嗎？&lt;/p&gt;
-</description>
       
     </item>
     

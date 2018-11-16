@@ -3,6 +3,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>//william-yeh.net/post/2018/11/agile-pmo/</loc>
+    <lastmod>2018-11-15T08:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>//william-yeh.net/post/2018/11/succession-planning/</loc>
     <lastmod>2018-11-08T08:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -158,7 +165,7 @@
   
   <url>
     <loc>//william-yeh.net/tags/agile/</loc>
-    <lastmod>2018-11-01T08:00:00+08:00</lastmod>
+    <lastmod>2018-11-15T08:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -234,7 +241,7 @@
   
   <url>
     <loc>//william-yeh.net/tags/devops/</loc>
-    <lastmod>2016-05-25T08:00:00+08:00</lastmod>
+    <lastmod>2018-11-15T08:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -304,21 +311,28 @@
   
   <url>
     <loc>//william-yeh.net/categories/management/</loc>
-    <lastmod>2018-11-08T08:00:00+08:00</lastmod>
+    <lastmod>2018-11-15T08:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/pmo/</loc>
+    <lastmod>2018-11-15T08:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>//william-yeh.net/post/</loc>
-    <lastmod>2018-11-08T08:00:00+08:00</lastmod>
+    <lastmod>2018-11-15T08:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>//william-yeh.net/</loc>
-    <lastmod>2018-11-08T08:00:00+08:00</lastmod>
+    <lastmod>2018-11-15T08:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -326,6 +340,13 @@
   <url>
     <loc>//william-yeh.net/tags/process/</loc>
     <lastmod>2016-04-23T08:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/project-management/</loc>
+    <lastmod>2018-11-15T08:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -360,7 +381,7 @@
   
   <url>
     <loc>//william-yeh.net/tags/</loc>
-    <lastmod>2018-11-01T08:00:00+08:00</lastmod>
+    <lastmod>2018-11-15T08:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
