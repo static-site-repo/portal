@@ -55,13 +55,13 @@
 &lt;p&gt;在敏捷領域，Mike Cohn 雖然是祖師爺等級的人物，但不是基本教義派。譬如說，雖然 &amp;ldquo;project&amp;rdquo; 一詞儼然成為這圈子的禁語，但他可不這麼認為：&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;Projects provide a planning horizon that is longer than a sprint&amp;ndash;typically in the range of two to six months. This “definite beginning and end” that is focused on a “unique product, service or result” encourages product owners to select truly important things to work on rather than whatever some customer or salesperson screamed about yesterday.&lt;/p&gt;
+&lt;p&gt;Projects provide a planning horizon that is longer than a sprint&amp;mdash;typically in the range of two to six months. This “definite beginning and end” that is focused on a “unique product, service or result” encourages product owners to select truly important things to work on rather than whatever some customer or salesperson screamed about yesterday.&lt;/p&gt;
 
 &lt;p&gt;I always encourage product owners and their teams to identify a milestone they are working toward that is longer than a single sprint.&lt;/p&gt;
 
 &lt;p&gt;Projects remain a useful construct. They provide a motivation to accomplish something grander than could be done in a single iteration.&lt;/p&gt;
 
-&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;mdash; &amp;ldquo;&lt;a href=&#34;https://www.mountaingoatsoftware.com/blog/is-it-time-to-stop-thinking-about-projects&#34;&gt;Is It Time to Stop Thinking about Projects?&lt;/a&gt;&amp;ldquo;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;mdash; “&lt;a href=&#34;https://www.mountaingoatsoftware.com/blog/is-it-time-to-stop-thinking-about-projects&#34;&gt;Is It Time to Stop Thinking about Projects?&lt;/a&gt;”&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;畢竟 milestone 這種&lt;strong&gt;策略控制點&lt;/strong&gt;的設置與控制，原本就是專案管理知識體系的擅長之處。&lt;/p&gt;
@@ -73,7 +73,7 @@
 
 &lt;p&gt;Risk management is not formally defined as part of agile frameworks like Scrum. And that’s understandable as a lot of risks do go away (or get exposed) with the short iterations common to agile. But there are still projects that benefit from lightweight but explicit risk management. I suggested starting that during the kickoff meeting.&lt;/p&gt;
 
-&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;mdash; &amp;ldquo;&lt;a href=&#34;https://www.mountaingoatsoftware.com/blog/advice-on-conducting-agile-project-kickoff-meetings&#34;&gt;Advice on Conducting Agile Project Kickoff Meetings&lt;/a&gt;&amp;ldquo;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;mdash; “&lt;a href=&#34;https://www.mountaingoatsoftware.com/blog/advice-on-conducting-agile-project-kickoff-meetings&#34;&gt;Advice on Conducting Agile Project Kickoff Meetings&lt;/a&gt;”&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;三位大師的論述，像極了《&lt;a href=&#34;https://zh.wikipedia.org/wiki/%E7%A5%9E%E9%B5%B0%E4%BF%A0%E4%BE%B6&#34;&gt;神鵰俠侶&lt;/a&gt;》中「不滯於物，草木竹石均可為劍」的境界，大師風範，令人佩服。&lt;/p&gt;
@@ -124,7 +124,13 @@
 
 &lt;p&gt;Many people have become cynical and suspicious of name changes and of well-crafted names. That cynicism will be directed at the PMO if it is renamed but remains otherwise unchanged. So, whatever it&amp;rsquo;s called, the PMO that supported the organization&amp;rsquo;s sequential development process will need to change more than just its name to succeed with Scrum.&lt;/p&gt;
 
-&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;mdash; &amp;ldquo;&lt;a href=&#34;https://www.mountaingoatsoftware.com/articles/the-roles-of-the-project-management-office-in-scrum&#34;&gt;The Roles of the Project Management Office in Scrum&lt;/a&gt;&amp;ldquo;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;mdash; “&lt;a href=&#34;https://www.mountaingoatsoftware.com/articles/the-roles-of-the-project-management-office-in-scrum&#34;&gt;The Roles of the Project Management Office in Scrum&lt;/a&gt;”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;PMI 在 &lt;a href=&#34;https://www.pmi.org/pmbok-guide-standards/practice-guides/agile&#34;&gt;&lt;em&gt;Agile Practice Guide&lt;/em&gt;&lt;/a&gt; 第六章也提及 “&lt;strong&gt;center of excellence&lt;/strong&gt;” 一詞：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Some organizations have been transforming their PMOs into agile centers of excellence&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;至於崇尚極簡作風的 LeSS 陣營，則主張廢棄 &amp;ldquo;project&amp;rdquo; 或 &amp;ldquo;office&amp;rdquo; 字眼，改用 &amp;ldquo;Head of Product Group&amp;rdquo; 概念，以及 &amp;ldquo;&lt;a href=&#34;https://less.works/less/management/go-see.html&#34;&gt;Go See&lt;/a&gt;&amp;rdquo; 管理：&lt;/p&gt;
