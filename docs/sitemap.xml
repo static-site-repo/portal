@@ -3,6 +3,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>//william-yeh.net/post/2018/11/agile-value/</loc>
+    <lastmod>2018-11-27T08:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>//william-yeh.net/post/2018/11/agile-pmo/</loc>
     <lastmod>2018-11-15T08:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -165,7 +172,7 @@
   
   <url>
     <loc>//william-yeh.net/tags/agile/</loc>
-    <lastmod>2018-11-15T08:00:00+08:00</lastmod>
+    <lastmod>2018-11-27T08:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -311,7 +318,14 @@
   
   <url>
     <loc>//william-yeh.net/categories/management/</loc>
-    <lastmod>2018-11-15T08:00:00+08:00</lastmod>
+    <lastmod>2018-11-27T08:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/measurement/</loc>
+    <lastmod>2018-11-27T08:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -325,14 +339,14 @@
   
   <url>
     <loc>//william-yeh.net/post/</loc>
-    <lastmod>2018-11-15T08:00:00+08:00</lastmod>
+    <lastmod>2018-11-27T08:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>//william-yeh.net/</loc>
-    <lastmod>2018-11-15T08:00:00+08:00</lastmod>
+    <lastmod>2018-11-27T08:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -353,7 +367,7 @@
   
   <url>
     <loc>//william-yeh.net/tags/scrum/</loc>
-    <lastmod>2018-10-31T08:00:00+08:00</lastmod>
+    <lastmod>2018-11-27T08:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -381,7 +395,7 @@
   
   <url>
     <loc>//william-yeh.net/tags/</loc>
-    <lastmod>2018-11-15T08:00:00+08:00</lastmod>
+    <lastmod>2018-11-27T08:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

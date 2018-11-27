@@ -6,10 +6,33 @@
     <description>Recent content in Posts on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Thu, 15 Nov 2018 08:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 27 Nov 2018 08:00:00 +0800</lastBuildDate>
     
 	<atom:link href="//william-yeh.net/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>敏捷的價值與指標</title>
+      <link>//william-yeh.net/post/2018/11/agile-value/</link>
+      <pubDate>Tue, 27 Nov 2018 08:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2018/11/agile-value/</guid>
+      <description>&lt;p&gt;同溫層朋友提出一則有趣的&lt;a href=&#34;https://www.facebook.com/groups/179345672472/permalink/10156092663467473/&#34;&gt;提問&lt;/a&gt;：&lt;/p&gt;
+
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
+  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/11/agile-value-post.png&#34; alt=&#34;如何衡量敏捷的成效？ by Howie Yu (2018-11-23)&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2018/11/agile-value-post.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;如何衡量敏捷的成效？ by Howie Yu (2018-11-23)&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;</description>
+    </item>
     
     <item>
       <title>Agile PMO</title>
@@ -242,17 +265,6 @@
       <guid>//william-yeh.net/post/2016/01/devops-goals-in-a-nutshell/</guid>
       <description>&lt;p&gt;TL;DR&lt;br /&gt;
 &lt;em&gt;DevOps is a set of practices intended to reduce the time between committing a change to a system and the change being placed into normal production, while ensuring high quality.&lt;/em&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>DevOps 是圓的，找到立足點就是頂點</title>
-      <link>//william-yeh.net/post/2015/12/devops-1st-step/</link>
-      <pubDate>Mon, 28 Dec 2015 08:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2015/12/devops-1st-step/</guid>
-      <description>&lt;p&gt;自從 IT 相關媒體開始傳頌 2009 年蔚為經典的 Flickr 經驗 “&lt;a href=&#34;https://youtu.be/LdOe18KhtT4&#34;&gt;10+ Deploys per Day&lt;/a&gt;”、2014 年 Marissa Mayer 的鐵桿作風「&lt;a href=&#34;http://www.ithome.com.tw/news/99283&#34;&gt;沒有持續交付，專案不得上線，我不是在說笑&lt;/a&gt;」之後，頓時 DevOps 成為 IT 界新的焦慮源。我還聽說有高層在聽完兩天 &lt;a href=&#34;https://www.ithome.com.tw/article/98527&#34;&gt;DevOps 2015 研討會&lt;/a&gt;之後，回頭要求 IT 部門要師法 2009 年的 Flickr 做到「10+ Deploys per Day」。&lt;/p&gt;
-
-&lt;p&gt;聽了很潮的新觀念，就訂不合理的 KPI，這也是「負能量」呀！&lt;/p&gt;</description>
     </item>
     
   </channel>
