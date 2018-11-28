@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Tue, 27 Nov 2018 08:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 28 Nov 2018 08:00:00 +0800</lastBuildDate>
     
 	<atom:link href="//william-yeh.net/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>DevOps 的價值與指標</title>
+      <link>//william-yeh.net/post/2018/11/devops-value/</link>
+      <pubDate>Wed, 28 Nov 2018 08:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2018/11/devops-value/</guid>
+      <description>看完〈敏捷的價值與指標〉之後，很自然的會進一步追問：「那麼，什麼才是 DevOps 圈子所認定的價值，以及對應的指標，尤其是領先指標？」 這問題其實比較容易</description>
+    </item>
     
     <item>
       <title>敏捷的價值與指標</title>
@@ -255,16 +264,6 @@
       
       <guid>//william-yeh.net/post/2016/03/metaphor-in-cm/</guid>
       <description>&lt;p&gt;人類是很喜愛比喻／譬喻的。戰國時代的莊子愛用譬喻，常和莊子抬槓的惠施也愛譬喻，《說苑‧善說》甚至記載著這麼一段故事：&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>一句話囊括 DevOps 的目標</title>
-      <link>//william-yeh.net/post/2016/01/devops-goals-in-a-nutshell/</link>
-      <pubDate>Fri, 29 Jan 2016 08:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2016/01/devops-goals-in-a-nutshell/</guid>
-      <description>&lt;p&gt;TL;DR&lt;br /&gt;
-&lt;em&gt;DevOps is a set of practices intended to reduce the time between committing a change to a system and the change being placed into normal production, while ensuring high quality.&lt;/em&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>
