@@ -6,10 +6,89 @@
     <description>Recent content on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Wed, 28 Nov 2018 08:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 28 Nov 2018 23:00:00 +0800</lastBuildDate>
     
         <atom:link href="//william-yeh.net/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>「從 Ops 角度看 DevOps」的感想</title>
+      <link>//william-yeh.net/post/2018/11/opsdev-talk-18/</link>
+      <pubDate>Wed, 28 Nov 2018 23:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2018/11/opsdev-talk-18/</guid>
+      
+        <description>&lt;p&gt;在台灣（或許在其他地方也是），DevOps 的話語權，很大幅度都被 Dev 一方把持。我們很少聽到 Ops 一方的說法。&lt;/p&gt;
+
+&lt;p&gt;成功的改革，需要兼顧各方利益者的需求及痛點。隨著 DevOps 守備範圍日益擴大，這種失衡狀態必須改變。&lt;/p&gt;
+
+&lt;p&gt;今晚參加 &lt;a href=&#34;https://www.facebook.com/DevOpsTaiwan/&#34;&gt;DevOps Taiwan 社群&lt;/a&gt;舉辦的講座：【&lt;a href=&#34;https://devops.kktix.cc/events/meetup17-opsdev&#34;&gt;從 Ops 角度看 DevOps&lt;/a&gt;】，聽聽&lt;a href=&#34;https://www.facebook.com/roberthu.tw&#34;&gt;胡士亮 (Robert Hu)&lt;/a&gt; 從正統 Ops 角度來詮釋 DevOps，甚至 OpsDev，收穫頗大。&lt;/p&gt;
+
+&lt;p&gt;聽知識，聽心得，也聽熱情與願景。&lt;/p&gt;
+
+&lt;p&gt;也更確定自己設想的方向，是符合正統 Ops 下一步思維的：&lt;a href=&#34;https://dzone.com/articles/predictive-analytics-in-devops-applications-and-be&#34;&gt;predictive analysis&lt;/a&gt; &amp;amp; &lt;a href=&#34;https://www.bmc.com/blogs/what-is-aiops/&#34;&gt;AIOps&lt;/a&gt;。&lt;/p&gt;
+
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
+  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/11/opsdev-recap.jpg&#34; alt=&#34;OpsDev recap (from Robert Hu)&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2018/11/opsdev-recap.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;OpsDev recap (from Robert Hu)&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+
+&lt;p&gt;這場講座印象最深的觀念是：同一件事情，在某些時候，由 Dev 下手較好；在某些時候，卻是由 Ops 下手較好。所以，手握 Dev 及 Ops 雙邊武器，就有較大的選擇彈性。&lt;/p&gt;
+
+
+
+&lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
+  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/11/devops-vs-opsdev.jpg&#34; alt=&#34;DevOps vs. OpsDev (from Robert Hu)&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2018/11/devops-vs-opsdev.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;DevOps vs. OpsDev (from Robert Hu)&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;這就讓我想到，以前搞 microservices 時，如果不透過 &lt;a href=&#34;https://netflix.github.io/&#34;&gt;NetflixOSS&lt;/a&gt; 之類的 Dev 黑魔法，就很難做出那些瞠目結舌的機制。而現在，透過 &lt;a href=&#34;https://kubernetes.io/&#34;&gt;Kubernetes&lt;/a&gt; + &lt;a href=&#34;https://istio.io/&#34;&gt;Istio&lt;/a&gt; 之類的 nonintrusive Ops 黑魔法（或者更精準地說：&lt;a href=&#34;http://www.servicemesher.com/awesome-servicemesh/&#34;&gt;service mesh&lt;/a&gt;），就不必改變 Dev 的 coding 習慣。&lt;/p&gt;
+
+&lt;p&gt;譬如說：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://martinfowler.com/bliki/CircuitBreaker.html&#34;&gt;Circuit breaker&lt;/a&gt;：過去要靠 Java &lt;a href=&#34;https://martinfowler.com/bliki/CircuitBreaker.html&#34;&gt;Hystrix&lt;/a&gt;、C# &lt;a href=&#34;https://github.com/App-vNext/Polly&#34;&gt;Polly&lt;/a&gt;、Python &lt;a href=&#34;https://github.com/danielfm/pybreaker&#34;&gt;PyBreaker&lt;/a&gt; 這些程式語言程式庫的層次才能做到，現在，直接交給 &lt;a href=&#34;https://istio.io/docs/tasks/traffic-management/circuit-breaking/&#34;&gt;Istio&lt;/a&gt; 即可。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://microservices.io/patterns/observability/distributed-tracing.html&#34;&gt;Distributed tracing&lt;/a&gt;：過去要靠 Java &lt;a href=&#34;https://github.com/openzipkin/zipkin&#34;&gt;Zipkin&lt;/a&gt;、Java/C#/Python/etc &lt;a href=&#34;https://opentracing.io/&#34;&gt;OpenTracing&lt;/a&gt; 這些程式語言程式庫的層次才能做到，現在，直接交給 &lt;a href=&#34;https://istio.io/docs/tasks/telemetry/distributed-tracing/&#34;&gt;Istio&lt;/a&gt; 即可。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;這也意味著，好好掌握新一代的 Ops 技術，會促進內部協作，也會大幅拉大與競爭對手的差距——那些仍活在舊時代的 infra 對手們。&lt;/p&gt;
+
+&lt;p&gt;時代在進步，現在 Ops 已經不是只能拿冷兵器作戰的小步兵了，而是手持核武的將士——自我升級的鑰匙，在你手裡。&lt;/p&gt;
+
+&lt;p&gt;小小的感想。&lt;/p&gt;
+
+&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+
+&lt;p&gt;再次感謝 &lt;a href=&#34;https://www.facebook.com/roberthu.tw&#34;&gt;Robert Hu&lt;/a&gt; 這麼精彩的分享！&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;//www.slideshare.net/roberthutw/ops-devops-devops-from-ops-perspective&#34;&gt;從 Ops 角度看 DevOps&lt;/a&gt;&lt;/strong&gt;
+&lt;iframe
+  style=&#34;width: 100%; height: 500px;&#34; frameborder=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; scrolling=&#34;no&#34;
+  src=&#34;https://www.slideshare.net/slideshow/embed_code/124278498&#34; allowfullscreen webkitallowfullscreen mozallowfullscreen&gt; &lt;/iframe&gt;
+&lt;br&gt;&lt;br&gt;&lt;/p&gt;</description>
+      
+    </item>
     
     <item>
       <title>DevOps 的價值與指標</title>
@@ -2815,69 +2894,6 @@ root    ALL=(ALL:ALL) ALL
 
 &lt;p&gt;所以敏捷跟精實兩者，在軟體開發世界中已經是混合在一起。如果你在實施敏捷，其實代表你也是在套用精實，兩者是無法很清楚地分開來。&lt;/p&gt;
 &lt;/blockquote&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>電腦界的隱喻：組態管理</title>
-      <link>//william-yeh.net/post/2016/03/metaphor-in-cm/</link>
-      <pubDate>Wed, 02 Mar 2016 08:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2016/03/metaphor-in-cm/</guid>
-      
-        <description>&lt;p&gt;人類是很喜愛比喻／譬喻的。戰國時代的莊子愛用譬喻，常和莊子抬槓的惠施也愛譬喻，《說苑‧善說》甚至記載著這麼一段故事：&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;客謂梁王曰：「惠子之言事也，善譬。王使無譬則不能言矣。」王曰：「諾。」&lt;/p&gt;
-
-&lt;p&gt;明日見， 謂惠子曰：「願先生言事則直言耳，無譬也。」惠子曰：「今有人於此而不知彈者，曰：『彈之狀何若？』應曰：『彈之狀如彈。』則諭乎？」王曰：「未諭也。」 「於是更應曰：『彈之狀如弓，而竹為弦』，則知乎？」王曰：「可知矣。」&lt;/p&gt;
-
-&lt;p&gt;惠子曰：「夫說者固以其所知，喻其所不知，而使人知之。今王曰無譬，則不可矣。」 王曰：「善。」&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;用譬喻反擊「無譬也」的要求，真是高招！&lt;/p&gt;
-
-&lt;p&gt;比喻／譬喻不只是修辭法，甚至是人類根深蒂固的認知媒介。認知語言學大師 George Lakoff 在 &lt;a href=&#34;http://www.amazon.com/dp/0226468011/ref=cm_sw_r_tw_dp_yQP1wb1VDN24N&#34;&gt;&lt;em&gt;Metaphors We Live By&lt;/em&gt;&lt;/a&gt; 書中，如此闡述它的地位：&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Metaphor is not just a matter of language of mere words. We shall argue that, on the contrary, human &lt;em&gt;&lt;strong&gt;thought processes&lt;/strong&gt;&lt;/em&gt; are largely metaphorical.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;所以，每次看到有趣的隱喻，我都會特別留意，細細品味背後的巧思。&lt;/p&gt;
-
-&lt;p&gt;電腦界也很愛用隱喻，甚至還會帶出成群的隱喻。&lt;/p&gt;
-
-&lt;p&gt;Java 之名，取材自咖啡。JavaScript 雖然並非嫡傳血脈，但由它衍生出來的其他技術，有些就刻意以「咖啡」為隱喻。像美化 JavaScript 語法的 &lt;a href=&#34;http://coffeescript.org/&#34;&gt;CoffeeScript&lt;/a&gt;、供 JavaScript 使用的測試框架 &lt;a href=&#34;https://mochajs.org/&#34;&gt;Mocha&lt;/a&gt;，甚至連咖啡的對手：&lt;a href=&#34;https://mochajs.org/&#34;&gt;Chai&lt;/a&gt; 都搬出來了。&lt;/p&gt;
-
-&lt;p&gt;組態管理的四大工具，也是愛用隱喻的。&lt;/p&gt;
-
-&lt;p&gt;Ansible 主要的隱喻是&lt;strong&gt;演戲&lt;/strong&gt;。所以，在 Ansible 劇場中，策劃好的動作及姿勢叫做 &lt;strong&gt;play&lt;/strong&gt;，集合起來就是 &lt;strong&gt;playbook&lt;/strong&gt;（劇本）。人生就是戲，演不完的戲；在舞台上，每一台主機扮演一個或多個 &lt;strong&gt;role&lt;/strong&gt;（角色），甚至還有天外飛來一筆的空降角色 —— 來自 &lt;strong&gt;galaxy&lt;/strong&gt;（銀河系）。&lt;/p&gt;
-
-&lt;p&gt;Chef 主要的隱喻是&lt;strong&gt;廚師&lt;/strong&gt;。所以，在 Chef 世界中，珍藏厚厚的 &lt;strong&gt;cookbook&lt;/strong&gt;（食譜），根據裡面記載的 &lt;strong&gt;recipe&lt;/strong&gt;（料理步驟），用 &lt;strong&gt;knife&lt;/strong&gt;（菜刀）做菜，也有一個 &lt;strong&gt;kitchen&lt;/strong&gt;（廚房）可以實驗料理。&lt;/p&gt;
-
-&lt;p&gt;Puppet 主要的隱喻是&lt;strong&gt;傀儡&lt;/strong&gt;、&lt;strong&gt;偶戲&lt;/strong&gt;。可惜的是，在 Puppet 舞台上出現的概念：manifest、resource、module、master、agent，似乎都沒有善用最初的隱喻。&lt;/p&gt;
-
-&lt;p&gt;Salt 主要的隱喻是⋯⋯&lt;strong&gt;鹽&lt;/strong&gt;。可惜的是，在 Salt 世界中出現的概念：salt state、formula、master、minion，似乎都沒有善用最初的隱喻。嗯，&amp;rdquo;formula&amp;rdquo; 字眼，勉強算有沾到邊。&lt;/p&gt;
-
-&lt;p&gt;呃，我要修正前面那一句話：「組態管理的四大工具當中，Ansible 和 Chef 也是愛用隱喻的。」&lt;/p&gt;
-
-&lt;p&gt;或許這也是我對 Ansible 及 Chef 比較有好感的原因吧。&lt;/p&gt;
-
-&lt;p&gt;最後，如果你想對這四大工具有個快速的概念，可參考 Roland Wolters 製作的單頁掛圖：&lt;a href=&#34;http://wall-skills.com/2015/configuration-management-ansible-salt-chef-puppet/&#34;&gt;Tools for Configuration Management&lt;/a&gt;。&lt;/p&gt;
-
-
-&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
-&lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
-  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/03/Ansible-Salt-Puppet-Chef-Wall-Skills.png&#34; alt=&#34;Tools for Configuration Management&#34;/&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2016/03/Ansible-Salt-Puppet-Chef-Wall-Skills.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-      &lt;figcaption&gt;
-          &lt;p&gt;Tools for Configuration Management&lt;/p&gt;
-      &lt;/figcaption&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;</description>
       
     </item>
     

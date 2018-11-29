@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="zh-tw" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>「從 Ops 角度看 DevOps」的感想 - Potioneer&#39;s Essays</title>
+  
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="William Yeh" />
+  <meta name="description" content="在台灣（或許在其他地方也是），DevOps 的話語權，很大幅度都被 Dev 一方把持。我們很少聽到 Ops 一方的說法。
+成功的改革，需要兼顧各方利益者的需求及痛點。隨著 DevOps 守備範圍日益擴大，這種失衡狀態必須改變。
+今晚參加 DevOps Taiwan 社群舉辦的講座：【從 Ops 角度看 DevOps】，聽聽胡士亮 (Robert Hu) 從正統 Ops 角度來詮釋 DevOps，甚至 OpsDev，收穫頗大。
+聽知識，聽心得，也聽熱情與願景。
+" />
+
+
+
+
+<meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
+
+
+<meta name="generator" content="Hugo 0.52" />
+
+
+<link rel="canonical" href="//william-yeh.net/post/2018/11/opsdev-talk-18/" />
+
+
+
+<link rel="icon" href="/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+<link href="/dist/jane.min.css?v=2.7.0" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="「從 Ops 角度看 DevOps」的感想" />
+<meta property="og:description" content="在台灣（或許在其他地方也是），DevOps 的話語權，很大幅度都被 Dev 一方把持。我們很少聽到 Ops 一方的說法。
+
+成功的改革，需要兼顧各方利益者的需求及痛點。隨著 DevOps 守備範圍日益擴大，這種失衡狀態必須改變。
+
+今晚參加 DevOps Taiwan 社群舉辦的講座：【從 Ops 角度看 DevOps】，聽聽胡士亮 (Robert Hu) 從正統 Ops 角度來詮釋 DevOps，甚至 OpsDev，收穫頗大。
+
+聽知識，聽心得，也聽熱情與願景。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="//william-yeh.net/post/2018/11/opsdev-talk-18/" /><meta property="article:published_time" content="2018-11-28T23:00:00&#43;08:00"/>
+<meta property="article:modified_time" content="2018-11-28T23:00:00&#43;08:00"/>
+
+<meta itemprop="name" content="「從 Ops 角度看 DevOps」的感想">
+<meta itemprop="description" content="在台灣（或許在其他地方也是），DevOps 的話語權，很大幅度都被 Dev 一方把持。我們很少聽到 Ops 一方的說法。
+
+成功的改革，需要兼顧各方利益者的需求及痛點。隨著 DevOps 守備範圍日益擴大，這種失衡狀態必須改變。
+
+今晚參加 DevOps Taiwan 社群舉辦的講座：【從 Ops 角度看 DevOps】，聽聽胡士亮 (Robert Hu) 從正統 Ops 角度來詮釋 DevOps，甚至 OpsDev，收穫頗大。
+
+聽知識，聽心得，也聽熱情與願景。">
+
+
+<meta itemprop="datePublished" content="2018-11-28T23:00:00&#43;08:00" />
+<meta itemprop="dateModified" content="2018-11-28T23:00:00&#43;08:00" />
+<meta itemprop="wordCount" content="663">
+
+
+
+<meta itemprop="keywords" content="devops,service mesh,microservices," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="「從 Ops 角度看 DevOps」的感想"/>
+<meta name="twitter:description" content="在台灣（或許在其他地方也是），DevOps 的話語權，很大幅度都被 Dev 一方把持。我們很少聽到 Ops 一方的說法。
+
+成功的改革，需要兼顧各方利益者的需求及痛點。隨著 DevOps 守備範圍日益擴大，這種失衡狀態必須改變。
+
+今晚參加 DevOps Taiwan 社群舉辦的講座：【從 Ops 角度看 DevOps】，聽聽胡士亮 (Robert Hu) 從正統 Ops 角度來詮釋 DevOps，甚至 OpsDev，收穫頗大。
+
+聽知識，聽心得，也聽熱情與願景。"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-751859-3', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Potioneer&#39;s Essays</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="//william-yeh.net/">♜</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="//william-yeh.net/post/">Archives</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="//william-yeh.net/tags/">Tags</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="//william-yeh.net/categories/">Categories</a>
+          
+        
+      </li>
+    
+  </ul>
+</nav>
+
+
+  
+    
+
+
+
+
+
+
+  <link rel="stylesheet" href="/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/" class="logo">
+    
+      Potioneer&#39;s Essays
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="//william-yeh.net/">♜</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="//william-yeh.net/post/">Archives</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="//william-yeh.net/tags/">Tags</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="//william-yeh.net/categories/">Categories</a>
+          
+
+        
+
+      </li>
+    
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">「從 Ops 角度看 DevOps」的感想</h1>
+      
+      <div class="post-meta">
+        <time datetime="2018-11-28" class="post-time">
+          2018-11-28
+        </time>
+        <div class="post-category">
+            <a href="//william-yeh.net/categories/tech/"> tech </a>
+            
+          </div>
+        <span class="more-meta"> 約 663 字 </span>
+          <span class="more-meta"> 預計閱讀 2 分鐘 </span>
+
+        
+        
+          <span id="busuanzi_container_page_pv">
+            | 阅读 <span id="busuanzi_value_page_pv"></span>
+          </span>
+        
+
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    
+    <div class="post-content">
+      <p>在台灣（或許在其他地方也是），DevOps 的話語權，很大幅度都被 Dev 一方把持。我們很少聽到 Ops 一方的說法。</p>
+
+<p>成功的改革，需要兼顧各方利益者的需求及痛點。隨著 DevOps 守備範圍日益擴大，這種失衡狀態必須改變。</p>
+
+<p>今晚參加 <a href="https://www.facebook.com/DevOpsTaiwan/">DevOps Taiwan 社群</a>舉辦的講座：【<a href="https://devops.kktix.cc/events/meetup17-opsdev">從 Ops 角度看 DevOps</a>】，聽聽<a href="https://www.facebook.com/roberthu.tw">胡士亮 (Robert Hu)</a> 從正統 Ops 角度來詮釋 DevOps，甚至 OpsDev，收穫頗大。</p>
+
+<p>聽知識，聽心得，也聽熱情與願景。</p>
+
+<p>也更確定自己設想的方向，是符合正統 Ops 下一步思維的：<a href="https://dzone.com/articles/predictive-analytics-in-devops-applications-and-be">predictive analysis</a> &amp; <a href="https://www.bmc.com/blogs/what-is-aiops/">AIOps</a>。</p>
+
+
+<link rel="stylesheet" href="/css/hugo-easy-gallery.css" />
+<div class="box" style="max-width:30em">
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="/img/2018/11/opsdev-recap.jpg" alt="OpsDev recap (from Robert Hu)"/>
+    </div>
+    <a href="/img/2018/11/opsdev-recap.jpg" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>OpsDev recap (from Robert Hu)</p>
+      </figcaption>
+  </figure>
+</div>
+
+
+<p><br/><br/></p>
+
+<p>這場講座印象最深的觀念是：同一件事情，在某些時候，由 Dev 下手較好；在某些時候，卻是由 Ops 下手較好。所以，手握 Dev 及 Ops 雙邊武器，就有較大的選擇彈性。</p>
+
+
+
+<div class="box" style="max-width:30em">
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="/img/2018/11/devops-vs-opsdev.jpg" alt="DevOps vs. OpsDev (from Robert Hu)"/>
+    </div>
+    <a href="/img/2018/11/devops-vs-opsdev.jpg" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>DevOps vs. OpsDev (from Robert Hu)</p>
+      </figcaption>
+  </figure>
+</div>
+
+
+<p>這就讓我想到，以前搞 microservices 時，如果不透過 <a href="https://netflix.github.io/">NetflixOSS</a> 之類的 Dev 黑魔法，就很難做出那些瞠目結舌的機制。而現在，透過 <a href="https://kubernetes.io/">Kubernetes</a> + <a href="https://istio.io/">Istio</a> 之類的 nonintrusive Ops 黑魔法（或者更精準地說：<a href="http://www.servicemesher.com/awesome-servicemesh/">service mesh</a>），就不必改變 Dev 的 coding 習慣。</p>
+
+<p>譬如說：</p>
+
+<ul>
+<li><p><a href="https://martinfowler.com/bliki/CircuitBreaker.html">Circuit breaker</a>：過去要靠 Java <a href="https://martinfowler.com/bliki/CircuitBreaker.html">Hystrix</a>、C# <a href="https://github.com/App-vNext/Polly">Polly</a>、Python <a href="https://github.com/danielfm/pybreaker">PyBreaker</a> 這些程式語言程式庫的層次才能做到，現在，直接交給 <a href="https://istio.io/docs/tasks/traffic-management/circuit-breaking/">Istio</a> 即可。</p></li>
+
+<li><p><a href="https://microservices.io/patterns/observability/distributed-tracing.html">Distributed tracing</a>：過去要靠 Java <a href="https://github.com/openzipkin/zipkin">Zipkin</a>、Java/C#/Python/etc <a href="https://opentracing.io/">OpenTracing</a> 這些程式語言程式庫的層次才能做到，現在，直接交給 <a href="https://istio.io/docs/tasks/telemetry/distributed-tracing/">Istio</a> 即可。</p></li>
+</ul>
+
+<p>這也意味著，好好掌握新一代的 Ops 技術，會促進內部協作，也會大幅拉大與競爭對手的差距——那些仍活在舊時代的 infra 對手們。</p>
+
+<p>時代在進步，現在 Ops 已經不是只能拿冷兵器作戰的小步兵了，而是手持核武的將士——自我升級的鑰匙，在你手裡。</p>
+
+<p>小小的感想。</p>
+
+<p><br/><br/></p>
+
+<p>再次感謝 <a href="https://www.facebook.com/roberthu.tw">Robert Hu</a> 這麼精彩的分享！</p>
+
+<p><strong><a href="//www.slideshare.net/roberthutw/ops-devops-devops-from-ops-perspective">從 Ops 角度看 DevOps</a></strong>
+<iframe
+  style="width: 100%; height: 500px;" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"
+  src="https://www.slideshare.net/slideshow/embed_code/124278498" allowfullscreen webkitallowfullscreen mozallowfullscreen> </iframe>
+<br><br></p>
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">William Yeh</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2018-11-28</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">授權條款</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW" target="_blank">CC BY-NC-SA 4.0</a> (姓名標示-非商業性-相同方式分享 4.0 國際)</span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="//william-yeh.net/tags/devops/">devops</a>
+          <a href="//william-yeh.net/tags/service-mesh/">service mesh</a>
+          <a href="//william-yeh.net/tags/microservices/">microservices</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/post/2018/11/devops-value/">
+            <span class="next-text nav-default">DevOps 的價值與指標</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+  
+  
+
+  
+  
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= "William-Yeh/utterances-area"
+            issue-term="pathname"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
+  
+
+  
+
+  
+
+  <div class="disqus-comment">
+  <div class="disqus-button" id="load_disqus" onclick="load_disqus()">
+    顯示 Disqus 評論
+  </div>
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_config = function () {
+      this.page.url = "//william-yeh.net/post/2018/11/opsdev-talk-18/";
+    };
+    function load_disqus() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'potioneer';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+      $('#load_disqus').remove();
+    };
+  </script>
+  <noscript>Please enable JavaScript to view the
+    <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+  </noscript>
+  
+  </div>
+
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:william.pjyeh@gmail.com" rel="me noopener" class="iconfont icon-email"
+        title="email">
+      </a>
+      <a href="https://twitter.com/william_yeh" rel="me noopener" class="iconfont icon-twitter"
+        title="twitter" target="_blank">
+      </a>
+      <a href="https://www.facebook.com/william.yeh" rel="me noopener" class="iconfont icon-facebook"
+        title="facebook" target="_blank">
+      </a>
+      <a href="https://www.linkedin.com/in/pjyeh/" rel="me noopener" class="iconfont icon-linkedin"
+        title="linkedin" target="_blank">
+      </a>
+      <a href="https://github.com/william-yeh" rel="me noopener" class="iconfont icon-github"
+        title="github" target="_blank">
+      </a>
+      <a href="https://www.slideshare.net/williamyeh" rel="me noopener" class="iconfont icon-coding"
+        title="coding" target="_blank">
+      </a>
+  <a href="//william-yeh.net/index.xml" rel="noopener alternate" type="application/rss&#43;xml" class="iconfont icon-rss"
+    title="rss" target="_blank">
+  </a>
+  </div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+      2015 -
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span><span class="author">
+        William Yeh
+        
+      </span></span>
+
+  
+  
+    <span id="busuanzi_container">
+      访客数/访问量：<span id="busuanzi_value_site_uv"></span>/<span id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+<script type="text/javascript" src="/dist/jane.min.js?v=2.7.0"></script>
+
+
+
+
+
+  
+    <script type="text/javascript" src="/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
