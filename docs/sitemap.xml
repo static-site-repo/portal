@@ -3,6 +3,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>//william-yeh.net/post/2018/11/why-safe-over-less/</loc>
+    <lastmod>2018-11-30T15:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>//william-yeh.net/post/2018/11/opsdev-talk-18/</loc>
     <lastmod>2018-11-28T23:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -186,7 +193,7 @@
   
   <url>
     <loc>//william-yeh.net/tags/agile/</loc>
-    <lastmod>2018-11-28T08:00:00+08:00</lastmod>
+    <lastmod>2018-11-30T15:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -317,6 +324,13 @@
   </url>
   
   <url>
+    <loc>//william-yeh.net/tags/less/</loc>
+    <lastmod>2018-11-30T15:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>//william-yeh.net/categories/life/</loc>
     <lastmod>2016-08-29T07:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -332,7 +346,7 @@
   
   <url>
     <loc>//william-yeh.net/categories/management/</loc>
-    <lastmod>2018-11-28T08:00:00+08:00</lastmod>
+    <lastmod>2018-11-30T15:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -360,14 +374,14 @@
   
   <url>
     <loc>//william-yeh.net/post/</loc>
-    <lastmod>2018-11-28T23:00:00+08:00</lastmod>
+    <lastmod>2018-11-30T15:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>//william-yeh.net/</loc>
-    <lastmod>2018-11-28T23:00:00+08:00</lastmod>
+    <lastmod>2018-11-30T15:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -387,8 +401,15 @@
   </url>
   
   <url>
+    <loc>//william-yeh.net/tags/safe/</loc>
+    <lastmod>2018-11-30T15:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>//william-yeh.net/tags/scrum/</loc>
-    <lastmod>2018-11-27T08:00:00+08:00</lastmod>
+    <lastmod>2018-11-30T15:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -423,7 +444,7 @@
   
   <url>
     <loc>//william-yeh.net/tags/</loc>
-    <lastmod>2018-11-28T08:00:00+08:00</lastmod>
+    <lastmod>2018-11-30T15:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
