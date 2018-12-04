@@ -6,10 +6,25 @@
     <description>Recent content in Posts on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Fri, 30 Nov 2018 15:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 04 Dec 2018 08:00:00 +0800</lastBuildDate>
     
 	<atom:link href="//william-yeh.net/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Scrum 沒有明說的事：休耕期</title>
+      <link>//william-yeh.net/post/2018/12/fallow/</link>
+      <pubDate>Tue, 04 Dec 2018 08:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2018/12/fallow/</guid>
+      <description>&lt;p&gt;Scrum 的官方白皮書 &lt;a href=&#34;https://www.scrumguides.org/&#34;&gt;&lt;em&gt;The Scrum Guide&lt;/em&gt;&lt;/a&gt; 非常輕薄短小（像 &lt;a href=&#34;https://scrumguides.org/docs/scrumguide/v2017/2017-Scrum-Guide-US.pdf&#34;&gt;Nov 2017 版&lt;/a&gt;只有 19 頁），它的理念是：只制定最核心的原則、價值、角色、活動、產出物，其餘的則交給團隊根據經驗主義 &lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; 去調適出最適合自己的細節。&lt;/p&gt;
+
+&lt;p&gt;想當然爾，有很多事，Scrum 並沒有明說。&lt;/p&gt;
+
+&lt;p&gt;那麼，沒有明說的事，就不需要做、就不能做了嗎？做了，就違反 Scrum 嗎？&lt;/p&gt;
+
+&lt;p&gt;這是許多奉 &lt;a href=&#34;https://www.scrumguides.org/&#34;&gt;&lt;em&gt;The Scrum Guide&lt;/em&gt;&lt;/a&gt; 為圭臬的人，常有的盲點。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>為什麼 LeSS 這麼迷人，可是總是輸給 SAFe？</title>
@@ -257,17 +272,6 @@
       <description>&lt;p&gt;系統思考，全局思考，是困難的；即使是貌似常識的場域，亦然。&lt;/p&gt;
 
 &lt;p&gt;最近在看 &lt;a href=&#34;https://www.books.com.tw/products/0010662172&#34;&gt;&lt;em&gt;Lean Thinking&lt;/em&gt;&lt;/a&gt; 原典時，感觸更深。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>POLP：最小權限原則</title>
-      <link>//william-yeh.net/post/2016/03/polp-intro/</link>
-      <pubDate>Tue, 15 Mar 2016 08:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2016/03/polp-intro/</guid>
-      <description>&lt;p&gt;在我開的 &lt;a href=&#34;http://get.soft-arch.net/ansible/&#34;&gt;Ansible Workshop&lt;/a&gt; 中，不管是課前的【許願池】，還是課程現場的 Q&amp;amp;A，總有一個熱門議題：「如何確保系統是安全的？」&lt;/p&gt;
-
-&lt;p&gt;這是大哉問，不是單獨一門組態管理課就能探討到令人滿意的地步（資安也不是我所擅長的⋯⋯）。不過，被問到的次數太多了，我還是給個簡單的導引吧。&lt;/p&gt;</description>
     </item>
     
   </channel>

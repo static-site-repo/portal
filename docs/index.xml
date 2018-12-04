@@ -6,10 +6,150 @@
     <description>Recent content on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Fri, 30 Nov 2018 15:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 04 Dec 2018 08:00:00 +0800</lastBuildDate>
     
         <atom:link href="//william-yeh.net/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Scrum 沒有明說的事：休耕期</title>
+      <link>//william-yeh.net/post/2018/12/fallow/</link>
+      <pubDate>Tue, 04 Dec 2018 08:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2018/12/fallow/</guid>
+      
+        <description>&lt;p&gt;Scrum 的官方白皮書 &lt;a href=&#34;https://www.scrumguides.org/&#34;&gt;&lt;em&gt;The Scrum Guide&lt;/em&gt;&lt;/a&gt; 非常輕薄短小（像 &lt;a href=&#34;https://scrumguides.org/docs/scrumguide/v2017/2017-Scrum-Guide-US.pdf&#34;&gt;Nov 2017 版&lt;/a&gt;只有 19 頁），它的理念是：只制定最核心的原則、價值、角色、活動、產出物，其餘的則交給團隊根據經驗主義 &lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; 去調適出最適合自己的細節。&lt;/p&gt;
+
+&lt;p&gt;想當然爾，有很多事，Scrum 並沒有明說。&lt;/p&gt;
+
+&lt;p&gt;那麼，沒有明說的事，就不需要做、就不能做了嗎？做了，就違反 Scrum 嗎？&lt;/p&gt;
+
+&lt;p&gt;這是許多奉 &lt;a href=&#34;https://www.scrumguides.org/&#34;&gt;&lt;em&gt;The Scrum Guide&lt;/em&gt;&lt;/a&gt; 為圭臬的人，常有的盲點。&lt;/p&gt;
+
+&lt;h2 id=&#34;對-sprint-的誤解&#34;&gt;對 Sprint 的誤解&lt;/h2&gt;
+
+&lt;p&gt;譬如說，有人對 sprint 這種百米賽跑的壓力提出&lt;a href=&#34;https://www.facebook.com/groups/179345672472/permalink/10156062491697473/&#34;&gt;疑問&lt;/a&gt;：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Run scrum 一陣子了，有感覺到一些跟傳統軟體開發專案不一樣的壓力。以前這種方式對 team member 來說，會有淡季跟旺季的差別，所以大家比較好安排自己的休假，或者在淡季的時候安排一些 researching、training 的工作。&lt;/p&gt;
+
+&lt;p&gt;現在 run scrum 覺得每個 sprint 壓力都好大，每個 sprint 都好趕，都剛剛好在最後一刻達到 sprint goal。大家也會因為齊步走的關係，所以都不太好意思請長一點的假。以前一年可能最多面臨四次 milestone review 的壓力，現在是至少每四週都會面臨一次這種壓力，Scrum guide 又說 sprint 開始以後就是一個 sprint 接一個下去，中間不會有間斷，但我們真的好想暫停 0.5 個 sprint 讓大家喘口氣。&lt;/p&gt;
+
+&lt;p&gt;前輩們都怎麼處理休假問題跟這種持續性壓力的問題呢？&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Scrum 真的沒有「暫停」這件事嗎？&lt;/p&gt;
+
+&lt;p&gt;首先，回到 &lt;a href=&#34;https://www.scrumguides.org/&#34;&gt;&lt;em&gt;The Scrum Guide&lt;/em&gt;&lt;/a&gt; 原始文本，看看它是怎麼說的：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;The Sprint&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Sprints have consistent durations throughout a development effort. A new Sprint starts immediately after the conclusion of the previous Sprint.&lt;/p&gt;
+
+&lt;p&gt;Sprint 長度在整個開發過程中都是固定的，前一個
+Sprint 結束後，下一個新的 Sprint 立刻接著開始。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;如果只以形式主義來說，這些 sprints 的確好像是一棒接著一棒，棒棒相傳，不漏接，無止息。&lt;/p&gt;
+
+&lt;p&gt;再進一步思考 sprint 這個載具的原始目的——即所謂 &lt;strong&gt;sprint goal&lt;/strong&gt;，就可發現，goal 的意義，是由我們來賦予的。就連 &lt;em&gt;The Scrum Guide&lt;/em&gt; 都叫你要保持彈性，不要形式主義：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Each Sprint may be considered a project with no more than a one-month horizon. Like projects, Sprints are used to &lt;strong&gt;accomplish something&lt;/strong&gt;. Each Sprint has a &lt;strong&gt;goal&lt;/strong&gt; of what is to be built, a design and &lt;strong&gt;flexible plan&lt;/strong&gt; that will guide building it, the work, and the resultant product increment.&lt;/p&gt;
+
+&lt;p&gt;每個 Sprint 可視為一個不超過一個月的專案，如同其他專案一般，Sprint 是用來完成某些事情的。每個 Sprint 有著要打造些什麼的目標，而由一份設計和有&lt;strong&gt;彈性&lt;/strong&gt;的計畫來引導其打造的過程、工作與最後的產品 Increment。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Sprint goal 的意義，是由我們來賦予的。&lt;/p&gt;
+
+&lt;p&gt;你想賦予什麼意義呢？&lt;/p&gt;
+
+&lt;p&gt;市場探索，可不可以是一種 sprint goal 呢？用戶調研，可不可以是一種 sprint goal 呢？五日 &lt;a href=&#34;https://www.gv.com/sprint/&#34;&gt;design sprint&lt;/a&gt;，可不可以是一種 sprint goal 呢？&lt;/p&gt;
+
+&lt;p&gt;甚至有點離經叛道的講：恢復元氣，能不能算是一種 sprint goal 呢？&lt;/p&gt;
+
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
+  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/12/sprint-rest.png&#34; alt=&#34;地力需要恢復，人力也是。&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2018/12/sprint-rest.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;地力需要恢復，人力也是。&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+
+&lt;h2 id=&#34;休耕期&#34;&gt;休耕期&lt;/h2&gt;
+
+&lt;p&gt;恢復軟體本身的元氣，有一個更正式的名詞——&lt;strong&gt;休耕期&lt;/strong&gt; (fallow)。&lt;/p&gt;
+
+&lt;p&gt;在《&lt;a href=&#34;https://www.books.com.tw/products/0010511808&#34;&gt;編程的頂尖對話&lt;/a&gt;》中，大神 Douglas Crockford 如此解釋軟體研發領域的&lt;strong&gt;休耕期&lt;/strong&gt;觀點： &lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+
+
+&lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
+  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/12/fallow.jpg&#34; alt=&#34;軟體研發的休耕期&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2018/12/fallow.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;軟體研發的休耕期&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;大神 Douglas Crockford 毫不客氣挑明地講：「管理層很難看到這一點⋯⋯管理層很久之後才會發現。」&lt;/p&gt;
+
+&lt;p&gt;如果沒有這種特地保留起來的休耕期，那麼，重構、技術債的議題，幾乎註定會一直被推遲到比馬里亞納海溝還更低的順位。這將嚴重破壞 Scrum 的基石：&lt;a href=&#34;//william-yeh.net/post/2018/10/agile-criteria/#scrum-的判準&#34;&gt;PSPI&lt;/a&gt; &lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;。&lt;/p&gt;
+
+&lt;p&gt;敏捷陣營也有人呼應這種想法。像 Toronto Agile Conference 2017 有一場演講 “&lt;a href=&#34;https://www.youtube.com/watch?v=iJoLe0fnWKc&amp;amp;feature=youtu.be&amp;amp;t=54m2s&#34;&gt;Technical Debt Is a Systemic Problem, Not A Personal Failing&lt;/a&gt;”，用的是 &amp;ldquo;technical-debt sprints&amp;rdquo; 一詞，還畫出 CLD 呢：&lt;/p&gt;
+
+
+
+&lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
+  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/12/td-sprints.png&#34; alt=&#34;Technical-Debt Stories and Sprints&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2018/12/td-sprints.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Technical-Debt Stories and Sprints&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;「休耕期」觀念，不是出於傳統的 Scrum 論述，&lt;a href=&#34;https://www.scrumguides.org/&#34;&gt;&lt;em&gt;The Scrum Guide&lt;/em&gt;&lt;/a&gt; 也沒講，你認為它有違反 Scrum 嗎？&lt;/p&gt;
+
+&lt;h2 id=&#34;如何做&#34;&gt;如何做？&lt;/h2&gt;
+
+&lt;p&gt;那麼，該如何踏出第一步呢？或者更敏感地講：誰該去在貓脖子上掛鈴鐺？&lt;/p&gt;
+
+&lt;p&gt;大神 Douglas Crockford 說：「團隊應該知道什麼時候合適，管理層很久之後才會發現。」&lt;/p&gt;
+
+&lt;p&gt;所以，請先自問：你們有規律地跑 retrospective 嗎？在團隊層次，甚至在更大的組織層次？&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;&lt;a href=&#34;https://www.scrumguides.org/&#34;&gt;&lt;em&gt;The Scrum Guide&lt;/em&gt;&lt;/a&gt; 說：「Scrum 是立基於經驗導向的流程控制理論 (empirical process control theory)，或是經驗主義。經驗主義立論於知識來自於經驗和依照已知的資訊來下判斷。Scrum 使用迭代和逐步 increment 的方式，來最大化可預測性和控制風險。」
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:1&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;Douglas Crockford 在 CUSEC 2010 Keynote - &lt;a href=&#34;https://blogs.msdn.microsoft.com/cdndevs/2010/02/06/cusec-2010-keynote-douglas-crockford-the-software-crisis/&#34;&gt;The Software Crisis&lt;/a&gt; 這場演講主張：&amp;rsquo;Perhaps we should take advice from Exodus: &amp;ldquo;Plant and harvest crops for six years, but let the land rest and lie fallow during the seventh year.&amp;rdquo; Maybe do six sprints where you add new features, but on the seventh sprint, don’t add new features at all.&amp;rsquo;
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:2&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;我個人認為，Scrum 的判準，就在於 increment，以及能否在各個迭代過程中，捍衛並精進這個 increment 的整全狀態。詳見〈&lt;a href=&#34;//william-yeh.net/post/2018/10/agile-criteria/&#34;&gt;敏捷的判準&lt;/a&gt;〉一文。
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:3&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description>
+      
+    </item>
     
     <item>
       <title>為什麼 LeSS 這麼迷人，可是總是輸給 SAFe？</title>
@@ -1127,28 +1267,28 @@ emerge from &lt;strong&gt;self-organizing teams&lt;/strong&gt;.
 
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td&gt;1. 瞭解問題&lt;/td&gt;
+&lt;td&gt;⓵瞭解問題&lt;/td&gt;
 &lt;td&gt;你在解決什麼問題？&lt;/td&gt;
 &lt;td&gt;競爭對手是誰？&lt;/td&gt;
 &lt;td&gt;誰感到痛苦？&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
-&lt;td&gt;2. 定義解決方案&lt;/td&gt;
+&lt;td&gt;⓶定義解決方案&lt;/td&gt;
 &lt;td&gt;誰感到痛苦？&lt;/td&gt;
 &lt;td&gt;你將如何解決這些問題？&lt;/td&gt;
 &lt;td&gt;定價模型為何？&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
-&lt;td&gt;3. 定性驗證&lt;/td&gt;
+&lt;td&gt;⓷定性驗證&lt;/td&gt;
 &lt;td&gt;這項產品有什麼令人無法抗拒的地方嗎？&lt;/td&gt;
 &lt;td&gt;你有足夠的顧客嗎？&lt;/td&gt;
 &lt;td&gt;價格合適嗎？&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
-&lt;td&gt;4. 定量驗證&lt;/td&gt;
+&lt;td&gt;⓸定量驗證&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
@@ -2787,134 +2927,6 @@ Quote: &lt;a href=&#34;https://twitter.com/brecht/status/686004657085231104&#34;
 &lt;p&gt;單純以「工作切換」這件事，換個 Lean Thinking 思維角度，就能得出違反直覺的結果。天知道還有多少尚未被推翻的「不證自明的常識」呢？&lt;/p&gt;
 
 &lt;p&gt;整體 vs 局部的判斷，委實不能等閒視之呀。&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>POLP：最小權限原則</title>
-      <link>//william-yeh.net/post/2016/03/polp-intro/</link>
-      <pubDate>Tue, 15 Mar 2016 08:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2016/03/polp-intro/</guid>
-      
-        <description>&lt;p&gt;在我開的 &lt;a href=&#34;http://get.soft-arch.net/ansible/&#34;&gt;Ansible Workshop&lt;/a&gt; 中，不管是課前的【許願池】，還是課程現場的 Q&amp;amp;A，總有一個熱門議題：「如何確保系統是安全的？」&lt;/p&gt;
-
-&lt;p&gt;這是大哉問，不是單獨一門組態管理課就能探討到令人滿意的地步（資安也不是我所擅長的⋯⋯）。不過，被問到的次數太多了，我還是給個簡單的導引吧。&lt;/p&gt;
-
-&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
-
-&lt;p&gt;系統安全有許多層次。以 &lt;a href=&#34;https://www.safaribooksonline.com/library/view/learning-linux-security/9781771374194/&#34;&gt;&lt;em&gt;Learning Linux Security&lt;/em&gt;&lt;/a&gt; 教學課程的大綱來看，至少涵蓋幾個層次：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Booting：作業系統開機環節&lt;/li&gt;
-&lt;li&gt;Kernel：作業系統核心&lt;/li&gt;
-&lt;li&gt;Services：典型系統服務&lt;/li&gt;
-&lt;li&gt;Users and permissions：帳號及權限&lt;/li&gt;
-&lt;li&gt;Firewalls：防火牆&lt;/li&gt;
-&lt;li&gt;Logging and log management：日誌管理&lt;/li&gt;
-&lt;li&gt;Intrusion detection and prevention：入侵偵測及預防&lt;/li&gt;
-&lt;li&gt;Utilities：診斷工具&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;各個環節，都有各自專門知識及輔助工具（我就說這是大哉問吧⋯⋯）。這些都是傳統 admin 或 ops 的責任區。&lt;/p&gt;
-
-&lt;p&gt;不過，即使不是專業的 ops，身為一位 dev，至少有兩點是自己的責任區，需要好好掌握的。&lt;/p&gt;
-
-&lt;p&gt;首先是 &lt;strong&gt;Users and permissions 環節&lt;/strong&gt;。近年來流行的軟體設計方式，部署時，常常不會 100% 寄生在 Apache、Nginx、Tomcat 這些 application container 底下，而是像 PHP 的 &lt;a href=&#34;http://php-fpm.org/&#34;&gt;FPM 模式&lt;/a&gt;、Python 的 &lt;a href=&#34;http://gunicorn.org/&#34;&gt;Gunicorn 模式&lt;/a&gt;、Ruby 的 &lt;a href=&#34;http://unicorn.bogomips.org/&#34;&gt;Unicorn 模式&lt;/a&gt;，有一個或多個協同作業的 process；甚至像 Node.js 或 Java 硬漢，往往不假外力，直接就把程式本身設計成 daemon 了。此時，開發者就不能逃避，必須考慮如何設定該軟體的帳號及權限，包括 process 的 UID、GID，以及相關的檔案目錄存取權限。&lt;/p&gt;
-
-&lt;p&gt;其次是 &lt;strong&gt;Services 環節&lt;/strong&gt;。以 daemon 形式存在的軟體，通常會安裝成 service，透過 &lt;a href=&#34;https://en.wikipedia.org/wiki/Init&#34;&gt;SysV init&lt;/a&gt;、&lt;a href=&#34;https://en.wikipedia.org/wiki/Upstart&#34;&gt;Upstart&lt;/a&gt; 或 &lt;a href=&#34;https://en.wikipedia.org/wiki/Systemd&#34;&gt;systemd&lt;/a&gt; 等機制啟動與管理。這時，也必須連帶把前述的帳號權限處理好。有潔癖的，甚至還會加掛 &lt;a href=&#34;https://en.wikipedia.org/wiki/Chroot&#34;&gt;chroot&lt;/a&gt;、&lt;a href=&#34;https://en.wikipedia.org/wiki/AppArmor&#34;&gt;AppArmor&lt;/a&gt;、&lt;a href=&#34;https://en.wikipedia.org/wiki/Security-Enhanced_Linux&#34;&gt;SELinux&lt;/a&gt; 等嚇人的保護機制。&lt;/p&gt;
-
-&lt;p&gt;對於帳號權限不知道該如何設定的人，通常最好的方式是：觀摩別人是怎麼做的，尤其是經典級的 services。&lt;/p&gt;
-
-&lt;p&gt;我們就在 Ubuntu 14.04 裡面，好好觀摩一下吧。&lt;/p&gt;
-
-&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
-
-&lt;p&gt;以 Apache 為例，如果你是透過 &lt;code&gt;apt-get install apache2&lt;/code&gt; 來安裝，可看到它是以 &lt;code&gt;www-data&lt;/code&gt; 的身份來執行 worker process：&lt;/p&gt;
-
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;$ ps aux | grep apache2
-root      2734  0.0  0.5  73368  2628 ?        Ss   04:36   0:00 /usr/sbin/apache2 -k start
-www-data  2737  0.0  0.4 362532  2240 ?        Sl   04:36   0:00 /usr/sbin/apache2 -k start
-www-data  2738  0.0  0.4 362532  2240 ?        Sl   04:36   0:00 /usr/sbin/apache2 -k start&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;以 Nginx 為例，如果你是透過 &lt;code&gt;apt-get install nginx&lt;/code&gt; 來安裝，可看到它也是以 &lt;code&gt;www-data&lt;/code&gt; 的身份來執行 worker process：&lt;/p&gt;
-
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;$ ps aux | grep nginx
-root      3313  0.0  0.2  85884  1340 ?        Ss   04:44   0:00 nginx: master process /usr/sbin/nginx
-www-data  3314  0.0  0.3  86228  1768 ?        S    04:44   0:00 nginx: worker process
-www-data  3315  0.0  0.3  86228  1768 ?        S    04:44   0:00 nginx: worker process
-www-data  3316  0.0  0.3  86228  1768 ?        S    04:44   0:00 nginx: worker process
-www-data  3317  0.0  0.3  86228  1768 ?        S    04:44   0:00 nginx: worker process&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;以 MySQL 為例，&lt;span class=&#34;redactor-invisible-space&#34;&gt;如果你是透過 &lt;code&gt;apt-get install mysql-server&lt;/code&gt; 來安裝，可看到它是以 &lt;code&gt;mysql&lt;/code&gt; 的身份來執行：&lt;/span&gt;&lt;/p&gt;
-
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;$ ps aux | grep mysql
-mysql     7004  0.5  8.8 623920 44536 ?        Ssl  04:48   0:00 /usr/sbin/mysqld&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;從以上三個經典案例，可以歸納出一個小結論：「他們都&lt;strong&gt;盡可能不以 root 身分執行&lt;/strong&gt;。」&lt;/p&gt;
-
-&lt;p&gt;這些 &lt;code&gt;www-data&lt;/code&gt; 及 &lt;code&gt;mysql&lt;/code&gt; 帳號，甚至沒有登入的權力：&lt;/p&gt;
-
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;$ cat /etc/passwd | egrep &amp;#39;(mysql|www-data)&amp;#39;
-www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
-mysql:x:109:116:MySQL Server,,,:/nonexistent:/bin/false
-
-$ cat /etc/group  | egrep &amp;#39;(mysql|www-data)&amp;#39;
-www-data:x:33:
-mysql:x:116:&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;也沒有偷開 sudo 後門：&lt;/p&gt;
-
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;$ sudo cat /etc/sudoers
-Defaults    env_reset
-Defaults    mail_badpass
-Defaults    secure_path=&amp;#34;/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin&amp;#34;
-# User privilege specification
-root    ALL=(ALL:ALL) ALL
-# Members of the admin group may gain root privileges
-%admin ALL=(ALL) ALL
-# Allow members of group sudo to execute any command
-%sudo    ALL=(ALL:ALL) ALL&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;所以，這些經典級的服務，他們都非常自制，極度限縮自己的權力。&lt;/p&gt;
-
-&lt;p&gt;用更有學問的說法：他們都遵循&lt;strong&gt;最小權限原則&lt;/strong&gt; (&lt;em&gt;principle of least privilege&lt;/em&gt;; POLP)。&lt;/p&gt;
-
-&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
-
-&lt;p&gt;維基百科提到 POLP 的&lt;a href=&#34;https://en.wikipedia.org/wiki/Principle_of_least_privilege#History&#34;&gt;歷史淵源&lt;/a&gt;，可追溯至 1974 年：&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Every program and every privileged user of the system should operate using the least amount of privilege necessary to complete the job.&lt;/p&gt;
-
-&lt;p&gt;— &lt;a href=&#34;https://en.wikipedia.org/wiki/Jerome_H._Saltzer&#34;&gt;Jerome Saltzer&lt;/a&gt;, &lt;a href=&#34;https://en.wikipedia.org/wiki/Communications_of_the_ACM&#34;&gt;&lt;em&gt;Communications of the ACM&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;可見這算是歷久彌新的原則了。&lt;/p&gt;
-
-&lt;p&gt;如果要將 POLP 套用到目前流行的 web application，我引述 &lt;em&gt;Secure Your Node.js Web Application&lt;/em&gt; 一書的&lt;a href=&#34;http://www.safaribooksonline.com/a/secure-your-nodejs/1159941/&#34;&gt;說法&lt;/a&gt;：&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;From our web application standpoint, we have the following rules:&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;The web application should not be run with root privileges. It should instead use a limited account that has access to only the required resources.&lt;/li&gt;
-&lt;li&gt;The database account should not be a root account. The account should have limited privileges over the database tables.&lt;/li&gt;
-&lt;li&gt;The users of the web application should be given the minimum set of privileges they need.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;也引述《Ruby on Rails 實戰聖經》的&lt;a href=&#34;https://ihower.tw/rails4/deployment.html&#34;&gt;說法&lt;/a&gt;：&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;設定伺服器部署使用者&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;習慣上我們會在伺服器上開一個專門的帳號，用來放 Rails 應用程式：&lt;code&gt;sudo adduser --disabled-password deploy&lt;/code&gt; ⋯⋯&lt;/p&gt;
-
-&lt;p&gt;本機執行 &lt;code&gt;cap deploy:check&lt;/code&gt;，就會自動登入遠端的伺服器，在登入的帳號下新建 current、releases 和 shared 這三個目錄。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;所以，回頭檢視一下自己的軟體部署流程，有沒有遵循&lt;strong&gt;最小權限原則&lt;/strong&gt;吧！&lt;/p&gt;</description>
       
     </item>
     
