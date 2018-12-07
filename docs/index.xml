@@ -6,10 +6,133 @@
     <description>Recent content on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Tue, 04 Dec 2018 08:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 07 Dec 2018 13:00:00 +0800</lastBuildDate>
     
         <atom:link href="//william-yeh.net/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>改變／改革：流程與衡量指標</title>
+      <link>//william-yeh.net/post/2018/12/process-and-metrics/</link>
+      <pubDate>Fri, 07 Dec 2018 13:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2018/12/process-and-metrics/</guid>
+      
+        <description>
+
+&lt;p&gt;改革，很不容易；摧毀改革，卻很簡單。知名的&lt;a href=&#34;//william-yeh.net/post/2016/06/change-framework/&#34;&gt;改革框架&lt;/a&gt;，莫不注重改革的整合與固化。&lt;/p&gt;
+
+&lt;p&gt;敏捷亦然。&lt;/p&gt;
+
+&lt;p&gt;敏捷三叔公 David Ko 在 Scrum 社群裡&lt;a href=&#34;https://www.facebook.com/groups/179345672472/permalink/10156121996637473/&#34;&gt;轉貼&lt;/a&gt;了一篇&lt;a href=&#34;https://mp.weixin.qq.com/s/p8pDpC80iOMSY28SWSeZyg&#34;&gt;文章&lt;/a&gt;，一則可悲的故事：&lt;/p&gt;
+
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
+  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/12/agile-fever.png&#34; alt=&#34;慢慢的，公司内敏捷的热度就退了.....&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2018/12/agile-fever.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;慢慢的，公司内敏捷的热度就退了.....&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+
+&lt;blockquote&gt;
+&lt;p&gt;时隔一年后，我偶然路过他们的办公区，才发现一切并没有照着 “理所当然” 发展，而是都恢复了原样。&lt;/p&gt;
+
+&lt;p&gt;团队成员坐在各自的工位上埋头工作，他们不再聚集在白板前。项目经理每周一将工作分配好，并定期检查状态。工作区气氛严肃而沉闷，一个似乎是 Leader 的人大声训斥着员工，指责他反复犯同样的错误。&lt;/p&gt;
+
+&lt;p&gt;似乎，敏捷从未来过。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;看著這故事，頓時讓我聯想到&lt;a href=&#34;https://en.wikipedia.org/wiki/Eliyahu_M._Goldratt&#34;&gt;高德拉特&lt;/a&gt;的《&lt;a href=&#34;https://www.books.com.tw/products/0010562789&#34;&gt;目標&lt;/a&gt;》。&lt;/p&gt;
+
+&lt;h2 id=&#34;好的商業小說-需要對等的識讀力&#34;&gt;好的商業小說，需要對等的識讀力&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Eliyahu_M._Goldratt&#34;&gt;高德拉特&lt;/a&gt;《&lt;a href=&#34;https://www.books.com.tw/products/0010562789&#34;&gt;目標&lt;/a&gt;》一書，最為人所知的，不外乎是&lt;a href=&#34;https://www.projectup.net/article/view/id/3124&#34;&gt;聚焦五步驟&lt;/a&gt;與 &lt;a href=&#34;https://wiki.mbalib.com/zh-tw/%E9%BC%93-%E7%BC%93%E5%86%B2-%E7%BB%B3%E6%B3%95&#34;&gt;DBR 法&lt;/a&gt;，或者再戲謔一點說，是可憐的&lt;a href=&#34;http://designerica.cc/2017/09/5-focusing-steps/&#34;&gt;賀比&lt;/a&gt;老兄。&lt;/p&gt;
+
+&lt;p&gt;從功利主義角度來讀這本書，求仙丹妙藥，固然有所收穫；但是，如果只知道這個角度，可謂買櫝還珠。&lt;/p&gt;
+
+&lt;p&gt;你知道高德拉特這本 1984 年初試啼聲之作，有一位共同作者 &lt;a href=&#34;http://www.jeffcox.com/&#34;&gt;Jeff Cox&lt;/a&gt;，一位專業小說家嗎？&lt;/p&gt;
+
+&lt;p&gt;找正牌小說家當共同作者，可想而知，高德拉特不只想要文以載道，更希望增添真實商業環境的複雜性，以及人性。否則，直接寫成商管書籍就好了，為什麼要拐彎抹角大費周章寫成商業小說呢？ &lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;p&gt;《&lt;a href=&#34;https://www.books.com.tw/products/0010562789&#34;&gt;目標&lt;/a&gt;》所陳述的故事及種種轉折，還有很多值得深入思考的地方 &lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt; 。今天我只談其中的一段獨白與一段對話，很少被人提到的橋段。&lt;/p&gt;
+
+&lt;h2 id=&#34;伏筆&#34;&gt;伏筆&lt;/h2&gt;
+
+&lt;p&gt;在書中，主角羅哥 (Alex Rogo) 是優尼公司白靈頓鎮的工廠廠長。他與工廠財務長劉梧 (Lou)、生產經理唐納凡 (Bob Donovan) 等人，努力拯救工廠的經營危機。&lt;/p&gt;
+
+&lt;p&gt;他們終於立下了顯赫戰功，主角羅哥升官，將要執掌三個工廠的事業部。因此，他們認真反思過去三個月跌跌撞撞的過程，試圖歸納出可複製的成功因素。《目標》第 32～40 章，充滿這類機鋒對話；&lt;a href=&#34;https://www.projectup.net/article/view/id/3124&#34;&gt;聚焦五步驟&lt;/a&gt;就是在這思辨交鋒過程中總結出來的。&lt;/p&gt;
+
+&lt;p&gt;不過，《目標》第 32～40 章，其實還隱藏一個重要的改革訣竅。這個訣竅，埋在兩個伏筆上面，分別是一段獨白與一段對話：&lt;/p&gt;
+
+&lt;p&gt;❶ 在第 40 章，羅哥有一段內心獨白：「唐納凡說得對，劉梧對&lt;strong&gt;衡量指標&lt;/strong&gt;簡直有一種偏執。」這是第一個哏。&lt;/p&gt;
+
+&lt;p&gt;❷ 在第 36 章，羅哥對唐納凡說了一句話：「假如劉梧對&lt;strong&gt;衡量指標&lt;/strong&gt;很執著，那麼你（唐納凡）一定是對&lt;strong&gt;流程&lt;/strong&gt;很執著了。」這是第二個哏。&lt;/p&gt;
+
+&lt;p&gt;你能體會為什麼高德拉特會刻意埋這兩個所謂偏執、執著的伏筆嗎？&lt;/p&gt;
+
+&lt;p&gt;我也是不斷反思改革的成與敗，才漸漸體會到這伏筆的精妙。&lt;/p&gt;
+
+&lt;h2 id=&#34;敏捷-亦然&#34;&gt;敏捷，亦然&lt;/h2&gt;
+
+&lt;p&gt;敏捷轉型，既然是一種改變／改革，也會遵循類似的軌跡。&lt;/p&gt;
+
+&lt;p&gt;像前面那篇&lt;a href=&#34;https://mp.weixin.qq.com/s/p8pDpC80iOMSY28SWSeZyg&#34;&gt;文章&lt;/a&gt;最後提出三點「想讓改變不再是一陣風」的建議：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;改变考核机制，在改变的初期调低原有 KPI 指标，增加对辅助工具（敏捷，精益或其他方法）的使用情况的考核。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;在改变过程中，发现对组织有益的流程，要加入到 KPI 中，变为日常考核的一部分。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;给所有好的 “动因” 以正向的反馈，即使结果看起来没那么炫目。&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;這三點建議，豈不正好與《目標》第 32～40 章的&lt;strong&gt;流程&lt;/strong&gt;與&lt;strong&gt;衡量指標&lt;/strong&gt;兩大伏筆相互呼應嗎？&lt;/p&gt;
+
+&lt;p&gt;看到這裡，不禁對埋哏的高德拉特肅然起敬。《目標》第 32～40 章，真的值得用思辨的大腦多讀幾遍呀。&lt;/p&gt;
+
+&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+
+&lt;p&gt;改變／改革要固化，需要內外兼修。其中，流程與衡量指標，是關鍵的外在要素。因此，除了擘劃&lt;a href=&#34;//william-yeh.net/post/2016/06/change-framework/&#34;&gt;改變的框架&lt;/a&gt;，別忘了也要設置適當的衡量指標。&lt;/p&gt;
+
+&lt;p&gt;衡量指標是兩面刃，要謹慎，尤其是均衡感。&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34;&gt;3&lt;/a&gt;&lt;/sup&gt; 掌握到均衡感，將能促進改變／改革的固化。&lt;/p&gt;
+
+&lt;div class=&#34;shortcode-notice note&#34;&gt;
+  &lt;div class=&#34;shortcode-notice-title note&#34;&gt;
+    
+      系列文章
+    
+  &lt;/div&gt;
+  &lt;p&gt;❶ &lt;a href=&#34;//william-yeh.net/post/2016/06/change-framework/&#34;&gt;改變的框架&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;❷ 改變／改革：流程與衡量指標&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;div class=&#34;footnotes&#34;&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;順便也講一下個人感想：用故事，甚至連載小說來文以載道，不錯；但是，如果你不是文豪，請找位責任編輯，或是找正牌小說家當共同作者。
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:1&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;&lt;a href=&#34;https://willy0936.blogspot.com/&#34;&gt;林俊哲&lt;/a&gt;的〈&lt;a href=&#34;https://willy0936.blogspot.com/2018/06/blog-post_22.html&#34;&gt;《廠長的聖經》 - 目標內容十三問&lt;/a&gt;〉一文，對於《目標》有很精彩的提問與剖析。
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:2&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;針對衡量指標的均衡感，請參考我的兩篇文章：〈&lt;a href=&#34;//william-yeh.net/post/2018/11/agile-value/&#34;&gt;敏捷的價值與指標&lt;/a&gt;〉與〈&lt;a href=&#34;//william-yeh.net/post/2018/11/devops-value/&#34;&gt;DevOps 的價值與指標&lt;/a&gt;〉。
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:3&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+      
+    </item>
     
     <item>
       <title>Scrum 沒有明說的事：休耕期</title>
@@ -2398,6 +2521,19 @@ increment 的方式交付「完成」的產品，可以確保一直提供一個�
 &lt;p&gt;理論歸理論，實際歸實際。一堆改變框架，足以讓自己好好消化吸收運用了。&lt;/p&gt;
 
 &lt;p&gt;大人之路，就是一段華麗的冒險呀！&lt;/p&gt;
+
+&lt;div class=&#34;shortcode-notice note&#34;&gt;
+  &lt;div class=&#34;shortcode-notice-title note&#34;&gt;
+    
+      系列文章
+    
+  &lt;/div&gt;
+  &lt;p&gt;❶ 改變的框架&lt;/p&gt;
+
+&lt;p&gt;❷ &lt;a href=&#34;//william-yeh.net/post/2018/12/process-and-metrics/&#34;&gt;改變／改革：流程與衡量指標&lt;/a&gt;&lt;/p&gt;
+
+&lt;/div&gt;
+
 &lt;div class=&#34;footnotes&#34;&gt;
 
 &lt;hr /&gt;
@@ -3024,126 +3160,6 @@ increment 的方式交付「完成」的產品，可以確保一直提供一個�
 
 &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
   &lt;iframe src=&#34;//www.youtube.com/embed/2j3eP55Oygw&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>向遊戲學習</title>
-      <link>//william-yeh.net/post/2016/04/learn-process-mgmt-by-game/</link>
-      <pubDate>Sat, 23 Apr 2016 08:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2016/04/learn-process-mgmt-by-game/</guid>
-      
-        <description>&lt;p&gt;前一篇文章〈&lt;a href=&#34;//william-yeh.net/post/2016/04/learn-from-plant-mgmt/&#34;&gt;向工廠管理致敬&lt;/a&gt;〉提到，最近為了準備一場 Agile/DevOps 演講，我特地研讀了數本原典，希望能對某些核心的思考元素來一場溯源之旅。&lt;/p&gt;
-
-&lt;p&gt;啃原典，其實還有另一個原因：為了好好替今天要去大玩特玩的&lt;strong&gt;小火車遊戲&lt;/strong&gt;⋯⋯喔，不，是為了替今天要專程去上的一門【&lt;a href=&#34;https://www.projectup.net/activity/view/id/7689&#34;&gt;102 流程設計與跨部門溝通&lt;/a&gt;】課程預作準備。&lt;/p&gt;
-
-&lt;p&gt;盯上這門課，其實已經很久了&lt;/p&gt;
-
-&lt;p&gt;。只是這門課⋯⋯摘錄一段課程文案：「只有二十二個席次，因為道具很多，所以約每半年才開設一次公開班，錯過就要等很久了喔！」這是真的，上一梯次我時間不允許，所以後來緊盯著這一梯次開放報名的風吹草動，委實不易呀！&lt;/p&gt;
-
-&lt;p&gt;上含金量這麼高的實作課程，不事先自我裝備一下，就太浪費了。&lt;/p&gt;
-
-&lt;p&gt;當然啦，上課時，我還是盡量提醒自己要心態歸零，避免那些偷練的知識變成先入為主的反射思考，這樣才有更多 unknown unknown 可學。&lt;/p&gt;
-
-
-&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
-&lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
-  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/04/102-opening.jpg&#34; alt=&#34;102 - 開場白&#34;/&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2016/04/102-opening.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-      &lt;figcaption&gt;
-          &lt;p&gt;102 - 開場白&lt;/p&gt;
-      &lt;/figcaption&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;
-
-
-&lt;p&gt;這門課，從實際的小火車遊戲中，讓我結結實實體會到書中講的一堆觀念：&lt;/p&gt;
-
-&lt;p&gt;《&lt;a href=&#34;http://www.books.com.tw/products/0010562789&#34;&gt;目標&lt;/a&gt;》書中講的 &lt;a href=&#34;https://www.projectup.net/article/view/id/3124&#34;&gt;TOC 聚焦五步驟&lt;/a&gt;，是真的。&lt;/p&gt;
-
-&lt;p&gt;《&lt;a href=&#34;http://www.books.com.tw/products/0010662172&#34;&gt;精實革命&lt;/a&gt;》書中講的&lt;a href=&#34;http://www.cardiff.ac.uk/lean/principles/&#34;&gt;精實思考五原則&lt;/a&gt;，是真的。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Toyota_Production_System&#34;&gt;豐田生產系統&lt;/a&gt;所講究的現地現物、自働化、看板、防呆、5S、反省⋯⋯，是真的。&lt;/p&gt;
-
-&lt;p&gt;甚至連以前上 PMBOK 課程看到的一堆令人生厭的 &lt;a href=&#34;http://www.pmexamsmartnotes.com/how-to-remember-ittos-of-all-47-pmbok-processes/&#34;&gt;ITTO&lt;/a&gt;，也看到在組織執掌分工下的真義。&lt;/p&gt;
-
-&lt;p&gt;所以，不要小看小孩子玩的小火車；道在屎溺，不可不察也！&lt;/p&gt;
-
-
-
-&lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
-  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/04/102-scene-1.jpg&#34; alt=&#34;102 - 第一回合&#34;/&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2016/04/102-scene-1.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-      &lt;figcaption&gt;
-          &lt;p&gt;102 - 第一回合&lt;/p&gt;
-      &lt;/figcaption&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;
-
-
-&lt;p&gt;整天課程分兩回合進行。第一回合是由學生自己構思方法、執行，並自行檢討；這一回合，講師都先不予提示。&lt;/p&gt;
-
-&lt;p&gt;好精彩的第一回合！和一群各行各業臥虎藏龍的 22 名高手合作，過癮！&lt;/p&gt;
-
-&lt;p&gt;儘管差一點點就達標，但我已經從過程中體會到 lean &amp;amp; TOC 的某些原則。&lt;/p&gt;
-
-&lt;p&gt;這的確是一場和高手合作，很能激盪出火花的體驗活動。也很高興自己貢獻的幾個流程及防呆手法，有派上用場。&lt;/p&gt;
-
-
-
-&lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
-  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/04/102-scene-2.jpg&#34; alt=&#34;102 - 第二回合&#34;/&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2016/04/102-scene-2.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-      &lt;figcaption&gt;
-          &lt;p&gt;102 - 第二回合&lt;/p&gt;
-      &lt;/figcaption&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;
-
-
-&lt;p&gt;等大家都提出檢討報告之後，講師才根據現場觀察，給予精準的提示。此刻，才端出這門課的壓箱寶：品質流程六大手法。&lt;/p&gt;
-
-&lt;p&gt;醍醐灌頂後，大家再度自發地提出改善計畫，重新規劃流程，再進行第二回合：目標不只是達標，更要追求卓越，挑戰加分項目！&lt;/p&gt;
-
-
-
-&lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
-  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/04/102-certificate.jpg&#34; alt=&#34;102 - 證書&#34;/&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2016/04/102-certificate.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-      &lt;figcaption&gt;
-          &lt;p&gt;102 - 證書&lt;/p&gt;
-      &lt;/figcaption&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;
-
-
-&lt;p&gt;玩了一天小火車，收穫滿滿。&lt;/p&gt;
-
-&lt;p&gt;正題有收穫，也趁機向 Joe &amp;amp; Bryan 請教一些近日思考的疑點。我將把體驗到的思維角度運用在職場上（DevOps 其實非常需要這種綜觀全局的思考方式及流程改善）。&lt;/p&gt;
-
-&lt;p&gt;除了正題收穫之外，也更確定了另一件事：如果想傳達的要點很多，那麼，設計活動時，要選擇在依存關係及統計波動上有某種複雜度的模擬案例（這也是《&lt;a href=&#34;http://www.books.com.tw/products/0010562789&#34;&gt;目標&lt;/a&gt;》書中所提出的切入點）。&lt;/p&gt;
-
-&lt;p&gt;敏捷陣營素以愛玩遊戲著稱。從今天的小火車遊戲中，我也偷學了一些遊戲設計的訣竅，希望以後能運用在團隊身上。&lt;/p&gt;
-
-&lt;p&gt;最後，給一個 call to action：如果你也想親身體驗這麼好玩的遊戲，&lt;a href=&#34;http://www.accupass.com/event/register/1602250738221767316794&#34;&gt;最新梯次 &lt;sup&gt;9&lt;/sup&gt;&amp;frasl;&lt;sub&gt;03&lt;/sub&gt; 已經開放報名&lt;/a&gt;。&lt;/p&gt;
-
-
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;//www.youtube.com/embed/DmG8VLQTobQ&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
 &lt;/div&gt;</description>
       
     </item>
