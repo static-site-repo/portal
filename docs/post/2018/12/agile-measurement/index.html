@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="zh-tw" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>為了精準估算，你必須付出什麼代價？ - Potioneer&#39;s Essays</title>
+  
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="William Yeh" />
+  <meta name="description" content="   開場對話
+   研發團隊，常會被問到一個問題：
+ 「請問一下，這個Ａ功能，大概要多久才能完成？」
+ 這個問題，不會因為你跑的是敏捷，就自動免疫。
+那麼，身為經過敏捷思維洗禮的人，該如何做出合宜的應對？
+我在 Agile Tour Kaohsiung 2018 開辦一場 2.5 小時的工作坊，帶領大家親自體驗這個議題。
+不過，這個題材的背後，其實還有三段故事。
+故事，要從一年半前講起。
+" />
+
+
+
+
+<meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
+
+
+<meta name="generator" content="Hugo 0.52" />
+
+
+<link rel="canonical" href="//william-yeh.net/post/2018/12/agile-measurement/" />
+
+
+
+<link rel="icon" href="/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+<link href="/dist/jane.min.css?v=2.7.0" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="為了精準估算，你必須付出什麼代價？" />
+<meta property="og:description" content="
+
+  
+    
+      
+    
+    
+      
+          開場對話
+      
+  
+
+
+
+研發團隊，常會被問到一個問題：
+
+
+「請問一下，這個Ａ功能，大概要多久才能完成？」
+
+
+這個問題，不會因為你跑的是敏捷，就自動免疫。
+
+那麼，身為經過敏捷思維洗禮的人，該如何做出合宜的應對？
+
+我在 Agile Tour Kaohsiung 2018 開辦一場 2.5 小時的工作坊，帶領大家親自體驗這個議題。
+
+不過，這個題材的背後，其實還有三段故事。
+
+故事，要從一年半前講起。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="//william-yeh.net/post/2018/12/agile-measurement/" /><meta property="article:published_time" content="2018-12-19T08:00:00&#43;08:00"/>
+<meta property="article:modified_time" content="2018-12-19T08:00:00&#43;08:00"/>
+
+<meta itemprop="name" content="為了精準估算，你必須付出什麼代價？">
+<meta itemprop="description" content="
+
+  
+    
+      
+    
+    
+      
+          開場對話
+      
+  
+
+
+
+研發團隊，常會被問到一個問題：
+
+
+「請問一下，這個Ａ功能，大概要多久才能完成？」
+
+
+這個問題，不會因為你跑的是敏捷，就自動免疫。
+
+那麼，身為經過敏捷思維洗禮的人，該如何做出合宜的應對？
+
+我在 Agile Tour Kaohsiung 2018 開辦一場 2.5 小時的工作坊，帶領大家親自體驗這個議題。
+
+不過，這個題材的背後，其實還有三段故事。
+
+故事，要從一年半前講起。">
+
+
+<meta itemprop="datePublished" content="2018-12-19T08:00:00&#43;08:00" />
+<meta itemprop="dateModified" content="2018-12-19T08:00:00&#43;08:00" />
+<meta itemprop="wordCount" content="1681">
+
+
+
+<meta itemprop="keywords" content="agile,measurement,course,facilitation,book," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="為了精準估算，你必須付出什麼代價？"/>
+<meta name="twitter:description" content="
+
+  
+    
+      
+    
+    
+      
+          開場對話
+      
+  
+
+
+
+研發團隊，常會被問到一個問題：
+
+
+「請問一下，這個Ａ功能，大概要多久才能完成？」
+
+
+這個問題，不會因為你跑的是敏捷，就自動免疫。
+
+那麼，身為經過敏捷思維洗禮的人，該如何做出合宜的應對？
+
+我在 Agile Tour Kaohsiung 2018 開辦一場 2.5 小時的工作坊，帶領大家親自體驗這個議題。
+
+不過，這個題材的背後，其實還有三段故事。
+
+故事，要從一年半前講起。"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-751859-3', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Potioneer&#39;s Essays</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="//william-yeh.net/">♜</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="//william-yeh.net/post/">Archives</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="//william-yeh.net/tags/">Tags</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="//william-yeh.net/categories/">Categories</a>
+          
+        
+      </li>
+    
+  </ul>
+</nav>
+
+
+  
+    
+
+
+
+
+
+
+  <link rel="stylesheet" href="/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/" class="logo">
+    
+      Potioneer&#39;s Essays
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="//william-yeh.net/">♜</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="//william-yeh.net/post/">Archives</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="//william-yeh.net/tags/">Tags</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="//william-yeh.net/categories/">Categories</a>
+          
+
+        
+
+      </li>
+    
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">為了精準估算，你必須付出什麼代價？</h1>
+      
+      <div class="post-meta">
+        <time datetime="2018-12-19" class="post-time">
+          2018-12-19
+        </time>
+        <div class="post-category">
+            <a href="//william-yeh.net/categories/management/"> management </a>
+            
+          </div>
+        <span class="more-meta"> 約 1681 字 </span>
+          <span class="more-meta"> 預計閱讀 4 分鐘 </span>
+
+        
+        
+          <span id="busuanzi_container_page_pv">
+            | 阅读 <span id="busuanzi_value_page_pv"></span>
+          </span>
+        
+
+        
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目錄</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#第一段故事-結構化流程">第一段故事：結構化流程</a></li>
+<li><a href="#第二段故事-衡量">第二段故事：衡量</a></li>
+<li><a href="#第三段故事-pdca">第三段故事：PDCA</a></li>
+<li><a href="#未央歌">未央歌</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      <link rel="stylesheet" href="/css/hugo-easy-gallery.css" />
+<div class="box" style="max-width:30em">
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="/img/2018/12/dilbert-measurement.jpg" alt="開場對話"/>
+    </div>
+    <a href="/img/2018/12/dilbert-measurement.jpg" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>開場對話</p>
+      </figcaption>
+  </figure>
+</div>
+
+
+<p>研發團隊，常會被問到一個問題：</p>
+
+<blockquote>
+<p>「請問一下，這個Ａ功能，大概要多久才能完成？」</p>
+</blockquote>
+
+<p>這個問題，不會因為你跑的是敏捷，就自動免疫。</p>
+
+<p>那麼，身為經過敏捷思維洗禮的人，該如何做出合宜的應對？</p>
+
+<p>我在 <a href="https://agilekaohsiung.kktix.cc/events/agiletourkaohsiung2018">Agile Tour Kaohsiung 2018</a> 開辦一場 2.5 小時的工作坊，帶領大家親自體驗這個議題。</p>
+
+<p>不過，這個題材的背後，其實還有三段故事。</p>
+
+<p>故事，要從一年半前講起。</p>
+
+<h2 id="第一段故事-結構化流程">第一段故事：結構化流程</h2>
+
+<p>一年半前，我曾提過一個心願：</p>
+
+<blockquote>
+<p>我想用<strong>結構化的 Sprint Planning 流程</strong>，讓錨定效應、以關係為中心、目的型談判自然發生，讓參與其中的人，逐漸在刻意不遮掩的建設性衝突中，潛移默化。<sup class="footnote-ref" id="fnref:1"><a href="#fn:1">1</a></sup></p>
+</blockquote>
+
+<p>這個心願，即使我今年已經將自己的招牌課程【敏捷原理與團隊塑造】進化到二日版 <sup class="footnote-ref" id="fnref:2"><a href="#fn:2">2</a></sup>，也都還未能夠實現。要完整實現，恐怕得擴充至二天半，甚至三日版。</p>
+
+<p>這是一個小缺憾。</p>
+
+<p>年底正好有個在 <a href="https://agilekaohsiung.kktix.cc/events/agiletourkaohsiung2018">Agile Tour Kaohsiung 2018</a> 舉辦工作坊的機會，我就來小試一下心中設想的「結構化的 Sprint Planning 流程」，以後再看看有沒有機會將這次經驗併入招牌課程。</p>
+
+<h2 id="第二段故事-衡量">第二段故事：衡量</h2>
+
+<p>設計工作坊，要先定義好最核心的體驗內容。</p>
+
+<p>Sprint planning，或者 release planning，都有一個共同議題：<strong>衡量</strong>。正好這陣子我一直在研究這類衡量、指標等相關議題 <sup class="footnote-ref" id="fnref:3"><a href="#fn:3">3</a></sup>，便將工作坊的題目訂為【為了精準估算，你必須付出什麼代價？】。</p>
+
+<p>核心的體驗內容決定好了，體驗的動線，則以《<a href="https://www.books.com.tw/products/0010622743">如何衡量萬事萬物</a>》這本書做為參考標的。</p>
+
+
+
+<div class="box" style="max-width:30em">
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="/img/2018/12/how-to-measure-anything.jpg" alt="如何衡量萬事萬物"/>
+    </div>
+    <a href="/img/2018/12/how-to-measure-anything.jpg" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>如何衡量萬事萬物</p>
+      </figcaption>
+  </figure>
+</div>
+
+
+<p>第一次看到這本書名，是在《<a href="https://www.books.com.tw/products/0010738675">精實企業</a>》及《<a href="https://www.books.com.tw/products/0010580487">精實執行</a>》。當時只覺得可以從中借用到一些衡量妙法，像是<a href="https://en.wikipedia.org/wiki/Fermi_problem">費米推論</a>之類的。</p>
+
+<p>萬萬沒想到，這簡直是改變三觀的奇書。恰好又跟我這陣子在系統閱讀的主軸相吻合，讀來可說是點頭如搗蒜。</p>
+
+<p>看懂這本書，內化並實踐，有助於從根本解決一些盤根錯節的敏捷持久落地的企業面難題。</p>
+
+<p>初步啃完這本奇書，就花了我十七個小時。十七小時的心得，在短短的 2.5 小時的工作坊是無法盡數展現出來的，我只能先揀選一個雖粗淺但稱得上是全貌的流程，作為工作坊的體驗主動線。</p>
+
+
+
+<div class="box" style="max-width:30em">
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="/img/2018/12/aie-flow.png" alt="AIE 通用衡量方法"/>
+    </div>
+    <a href="/img/2018/12/aie-flow.png" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>AIE 通用衡量方法</p>
+      </figcaption>
+  </figure>
+</div>
+
+
+<h2 id="第三段故事-pdca">第三段故事：PDCA</h2>
+
+<p>核心的體驗內容決定好了，體驗的動線也決定好了，就剩下體驗的劇本了。</p>
+
+<p>既然要辦的是工作坊，重點自然不是說教，而是體驗，而且是能成為肌肉記憶的體驗。</p>
+
+<p>這一點比較簡單。自從經過【<a href="https://www.projectup.net/activity/view/id/16498">體驗式課程的遊戲設計與操作實務</a>】的洗禮 <sup class="footnote-ref" id="fnref:4"><a href="#fn:4">4</a></sup>，我的招牌課程【敏捷原理與團隊塑造】調整成「<strong>高速高頻率 PDCA 循環</strong>」的風格，獲得不錯的迴響，已成為自己的拿手招術。</p>
+
+<p>因此，我決定這次的工作坊，也比照辦理。</p>
+
+
+
+<div class="box" style="max-width:30em">
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="/img/2018/12/speech-1215.png" alt="高速高頻率 PDCA 循環"/>
+    </div>
+    <a href="/img/2018/12/speech-1215.png" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>高速高頻率 PDCA 循環</p>
+      </figcaption>
+  </figure>
+</div>
+
+
+<p>在敏捷世界裡，不管是 sprint planning 還是 release planning，都很強調全員參與。因此，我的工作坊劇本也設計要全員參與，以反應真實情況：</p>
+
+<blockquote>
+<p>在這兩個半小時的體驗活動中，我會用真實案例的改編版本，帶大家體驗 Sprint Planning 及 Backlog Refinement 的核心要素。不管你是 PO、PM、UX、RD、QA，都能從活動中親自體認到，我們到底有沒有必要追求精準的估算？以及，萬一真的有必要，我們又該做什麼樣的準備？</p>
+</blockquote>
+
+<p>分組方法有很多，有安全穩當的，也有刺激難以掌控的。當天在 <a href="https://agilekaohsiung.kktix.cc/events/agiletourkaohsiung2018">Agile Tour Kaohsiung 2018</a> 活動現場，看到大家非常專業，我便臨時起意，將現場人士分成三大組：Scrum Master 組、PO 組、developer 組。</p>
+
+<p>這是非常冒險的決定。</p>
+
+
+
+<div class="box" style="max-width:30em">
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="/img/2018/12/measurement-groups.png" alt="分組"/>
+    </div>
+    <a href="/img/2018/12/measurement-groups.png" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>分組</p>
+      </figcaption>
+  </figure>
+</div>
+
+
+<p>整場 2.5 小時的活動，有笑聲，有<del>吵架聲</del>激辯聲，也有嚴肅的制憲大會——像極了真實的職場情境：</p>
+
+
+
+<div class="box" style="max-width:30em">
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="/img/2018/12/process-meeting.png" alt="流程會議"/>
+    </div>
+    <a href="/img/2018/12/process-meeting.png" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>流程會議</p>
+      </figcaption>
+  </figure>
+</div>
+
+
+<p>感謝超強的參與者，尤其是始料未及的 Scrum Master 組，讓我這場首發的工作坊，得到超出我預期的效果／笑果。</p>
+
+<p>「<strong>高速高頻率 PDCA 循環</strong>」風格，在這 2.5 小時中，應該算是嚴格貫徹了。</p>
+
+<h2 id="未央歌">未央歌</h2>
+
+<p>一年半前許下的心願「<strong>結構化的 Sprint Planning 流程</strong>」，這次 2.5 小時的工作坊，大約實現了六成。</p>
+
+<p>要完全實現，全程可能要 3 小時。</p>
+
+<p>在改版成功之前，先貼出這場 2.5 小時 Workshop 可公開的部分。</p>
+
+<iframe
+  style="width: 100%; height: 500px;" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"
+  src="https://www.slideshare.net/slideshow/embed_code/125954954" allowfullscreen webkitallowfullscreen mozallowfullscreen> </iframe>
+<br><br>
+
+<p>下一步呢？請靜待吧。</p>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:1">我在〈<a href="https://school.soft-arch.net/blog/10559/sprint-planning-as-negotiation">以談判角度看 Sprint Planning</a>〉文章中，談到我對高品質的 Sprint Planning 有著不一樣的願景。
+ <a class="footnote-return" href="#fnref:1"><sup>[return]</sup></a></li>
+<li id="fn:2">今年我將自己的招牌課程【敏捷原理與團隊塑造】升級成【二日精修版】，承載更多我想傳達的核心理念。最近剛結束的公開班是 <a href="https://school.soft-arch.net/blog/16072/board-game-creation">2018-09-13～09-14</a> 這一梯次。
+ <a class="footnote-return" href="#fnref:2"><sup>[return]</sup></a></li>
+<li id="fn:3">這陣子研究衡量、指標等相關議題，相關心得請見〈<a href="//william-yeh.net/post/2018/11/agile-value/">敏捷的價值與指標</a>〉、〈<a href="//william-yeh.net/post/2018/11/devops-value/">DevOps 的價值與指標</a>〉、〈<a href="//william-yeh.net/post/2018/12/process-and-metrics/">改變／改革：流程與衡量指標</a>〉等文。
+ <a class="footnote-return" href="#fnref:3"><sup>[return]</sup></a></li>
+<li id="fn:4">詳見〈<a href="https://school.soft-arch.net/blog/16072/board-game-creation">三週生出一款新桌遊，一段奇幻旅程</a>〉一文。
+ <a class="footnote-return" href="#fnref:4"><sup>[return]</sup></a></li>
+</ol>
+</div>
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">William Yeh</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2018-12-19</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">授權條款</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW" target="_blank">CC BY-NC-SA 4.0</a> (姓名標示-非商業性-相同方式分享 4.0 國際)</span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="//william-yeh.net/tags/agile/">agile</a>
+          <a href="//william-yeh.net/tags/measurement/">measurement</a>
+          <a href="//william-yeh.net/tags/course/">course</a>
+          <a href="//william-yeh.net/tags/facilitation/">facilitation</a>
+          <a href="//william-yeh.net/tags/book/">book</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/post/2018/12/process-and-metrics/">
+            <span class="next-text nav-default">改變／改革：流程與衡量指標</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+  
+  
+
+  
+  
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= "William-Yeh/utterances-area"
+            issue-term="pathname"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
+  
+
+  
+
+  
+
+  <div class="disqus-comment">
+  <div class="disqus-button" id="load_disqus" onclick="load_disqus()">
+    顯示 Disqus 評論
+  </div>
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_config = function () {
+      this.page.url = "//william-yeh.net/post/2018/12/agile-measurement/";
+    };
+    function load_disqus() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'potioneer';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+      $('#load_disqus').remove();
+    };
+  </script>
+  <noscript>Please enable JavaScript to view the
+    <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+  </noscript>
+  
+  </div>
+
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:william.pjyeh@gmail.com" rel="me noopener" class="iconfont icon-email"
+        title="email">
+      </a>
+      <a href="https://twitter.com/william_yeh" rel="me noopener" class="iconfont icon-twitter"
+        title="twitter" target="_blank">
+      </a>
+      <a href="https://www.facebook.com/william.yeh" rel="me noopener" class="iconfont icon-facebook"
+        title="facebook" target="_blank">
+      </a>
+      <a href="https://www.linkedin.com/in/pjyeh/" rel="me noopener" class="iconfont icon-linkedin"
+        title="linkedin" target="_blank">
+      </a>
+      <a href="https://github.com/william-yeh" rel="me noopener" class="iconfont icon-github"
+        title="github" target="_blank">
+      </a>
+      <a href="https://www.slideshare.net/williamyeh" rel="me noopener" class="iconfont icon-coding"
+        title="coding" target="_blank">
+      </a>
+  <a href="//william-yeh.net/index.xml" rel="noopener alternate" type="application/rss&#43;xml" class="iconfont icon-rss"
+    title="rss" target="_blank">
+  </a>
+  </div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+      2015 -
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span><span class="author">
+        William Yeh
+        
+      </span></span>
+
+  
+  
+    <span id="busuanzi_container">
+      访客数/访问量：<span id="busuanzi_value_site_uv"></span>/<span id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+<script type="text/javascript" src="/dist/jane.min.js?v=2.7.0"></script>
+
+
+
+
+
+  
+    <script type="text/javascript" src="/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -6,10 +6,47 @@
     <description>Recent content in Management on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Fri, 07 Dec 2018 13:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 19 Dec 2018 08:00:00 +0800</lastBuildDate>
     
 	<atom:link href="//william-yeh.net/categories/management/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>為了精準估算，你必須付出什麼代價？</title>
+      <link>//william-yeh.net/post/2018/12/agile-measurement/</link>
+      <pubDate>Wed, 19 Dec 2018 08:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2018/12/agile-measurement/</guid>
+      <description>&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
+  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/12/dilbert-measurement.jpg&#34; alt=&#34;開場對話&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2018/12/dilbert-measurement.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;開場對話&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;研發團隊，常會被問到一個問題：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;「請問一下，這個Ａ功能，大概要多久才能完成？」&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;這個問題，不會因為你跑的是敏捷，就自動免疫。&lt;/p&gt;
+
+&lt;p&gt;那麼，身為經過敏捷思維洗禮的人，該如何做出合宜的應對？&lt;/p&gt;
+
+&lt;p&gt;我在 &lt;a href=&#34;https://agilekaohsiung.kktix.cc/events/agiletourkaohsiung2018&#34;&gt;Agile Tour Kaohsiung 2018&lt;/a&gt; 開辦一場 2.5 小時的工作坊，帶領大家親自體驗這個議題。&lt;/p&gt;
+
+&lt;p&gt;不過，這個題材的背後，其實還有三段故事。&lt;/p&gt;
+
+&lt;p&gt;故事，要從一年半前講起。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>改變／改革：流程與衡量指標</title>
@@ -253,17 +290,6 @@
       <description>&lt;p&gt;身為徹頭徹尾的軟體人，在軟體產業待久了，總會對「硬」一點的產業，尤其是製造業，有莫名的成見，以為他們是僵固的、反人性的。從 1972 年「&lt;a href=&#34;https://en.wikipedia.org/wiki/Software_crisis&#34;&gt;軟體危機&lt;/a&gt;」引發的論述當中，更加深軟體人的印象：製造業的經驗，是無法直接套用到軟體界的；我們是截然不同的國度。&lt;/p&gt;
 
 &lt;p&gt;不過，近十年來許多軟體界的流程改革，尤其是同屬 Agile 陣營的 Scrum 及 Kanban，居然有許多元素是從製造業&lt;del&gt;偷竊&lt;/del&gt;學習而來。譬如說&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>多工切換：有趣的 Lean 觀點</title>
-      <link>//william-yeh.net/post/2016/03/lean-perspective-of-multitasking/</link>
-      <pubDate>Tue, 29 Mar 2016 08:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2016/03/lean-perspective-of-multitasking/</guid>
-      <description>&lt;p&gt;系統思考，全局思考，是困難的；即使是貌似常識的場域，亦然。&lt;/p&gt;
-
-&lt;p&gt;最近在看 &lt;a href=&#34;https://www.books.com.tw/products/0010662172&#34;&gt;&lt;em&gt;Lean Thinking&lt;/em&gt;&lt;/a&gt; 原典時，感觸更深。&lt;/p&gt;</description>
     </item>
     
   </channel>
