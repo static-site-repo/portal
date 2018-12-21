@@ -832,7 +832,7 @@ Sprint 結束後，下一個新的 Sprint 立刻接著開始。&lt;/p&gt;
 &lt;p&gt;發現，裡面正好有特地提到技術債議題。特地摘錄於此：&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;軟體開發必須在&lt;strong&gt;技術債&lt;/strong&gt;變得讓 Nexus 不可接受前，找出並解析依賴關係。缺乏透明度時不可能有效指引 Nexus 有效地將風險最小化並將價值最大化。&lt;/p&gt;
+&lt;p&gt;軟體開發必須在&lt;strong&gt;技術債&lt;/strong&gt;變得讓 Nexus 不可接受前，找出並解析依賴關係。若缺乏透明度，不可能有效指引 Nexus 有效地將風險最小化並將價值最大化。&lt;/p&gt;
 
 &lt;p&gt;Software must be developed so that dependencies are detected and resolved before &lt;strong&gt;technical debt&lt;/strong&gt; becomes unacceptable to the Nexus. A lack of complete transparency will make it impossible to guide a Nexus effectively to minimize risk and maximize value.&lt;/p&gt;
 &lt;/blockquote&gt;
