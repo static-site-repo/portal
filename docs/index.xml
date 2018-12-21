@@ -818,6 +818,27 @@ Sprint 結束後，下一個新的 Sprint 立刻接著開始。&lt;/p&gt;
 &lt;p&gt;大神 Douglas Crockford 說：「團隊應該知道什麼時候合適，管理層很久之後才會發現。」&lt;/p&gt;
 
 &lt;p&gt;所以，請先自問：你們有規律地跑 retrospective 嗎？在團隊層次，甚至在更大的組織層次？&lt;/p&gt;
+
+&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+
+&lt;div class=&#34;shortcode-notice note&#34;&gt;
+  &lt;div class=&#34;shortcode-notice-title note&#34;&gt;
+    
+      2018-12-21 補充
+    
+  &lt;/div&gt;
+  &lt;p&gt;我參加 Scrum.org 在台北舉辦的 &lt;a href=&#34;https://www.eventbrite.co.uk/e/scrumon-tickets-51310998578&#34;&gt;#ScrumOn&lt;/a&gt; 活動。經過六十分鐘 &lt;a href=&#34;https://www.scrum.org/professional-scrum-master-i-certification&#34;&gt;PSM I&lt;/a&gt; 洗禮，以及敏捷專家學會 Percy 的推坑，特地去查閱 &lt;a href=&#34;https://www.scrum.org/resources/nexus-guide&#34;&gt;&lt;em&gt;Nexus Guide&lt;/em&gt;&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;發現，裡面正好有特地提到技術債議題。特地摘錄於此：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;軟體開發必須在&lt;strong&gt;技術債&lt;/strong&gt;變得讓 Nexus 不可接受前，找出並解析依賴關係。缺乏透明度時不可能有效指引 Nexus 有效地將風險最小化並將價值最大化。&lt;/p&gt;
+
+&lt;p&gt;Software must be developed so that dependencies are detected and resolved before &lt;strong&gt;technical debt&lt;/strong&gt; becomes unacceptable to the Nexus. A lack of complete transparency will make it impossible to guide a Nexus effectively to minimize risk and maximize value.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;/div&gt;
+
 &lt;div class=&#34;footnotes&#34;&gt;
 
 &lt;hr /&gt;
@@ -1018,15 +1039,13 @@ emerge from &lt;strong&gt;self-organizing teams&lt;/strong&gt;.
 
 &lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
 
-&lt;div class=&#34;shortcode-notice info&#34;&gt;
-  &lt;div class=&#34;shortcode-notice-title info&#34;&gt;
+&lt;div class=&#34;shortcode-notice note&#34;&gt;
+  &lt;div class=&#34;shortcode-notice-title note&#34;&gt;
     
-      info
+      2018-11-29 補充
     
   &lt;/div&gt;
-  &lt;p&gt;2018-11-29 補充：&lt;/p&gt;
-
-&lt;p&gt;剛剛看完一場 live online training “&lt;a href=&#34;https://www.safaribooksonline.com/live-training/courses/istio-on-kubernetes-enter-the-service-mesh/0636920221357/&#34;&gt;Istio on Kubernetes: Enter the Service Mesh&lt;/a&gt;”，其中有一段話說得好，可作為文章的註腳：&lt;/p&gt;
+  &lt;p&gt;剛剛看完一場 live online training “&lt;a href=&#34;https://www.safaribooksonline.com/live-training/courses/istio-on-kubernetes-enter-the-service-mesh/0636920221357/&#34;&gt;Istio on Kubernetes: Enter the Service Mesh&lt;/a&gt;”，其中有一段話說得好，可作為文章的註腳：&lt;/p&gt;
 
 &lt;p&gt;“The first generation of microservices was primarily shaped by &lt;a href=&#34;https://netflix.github.io/&#34;&gt;Netflix OSS&lt;/a&gt; and leveraged by numerous &lt;a href=&#34;https://spring.io/projects/spring-cloud&#34;&gt;Spring Cloud&lt;/a&gt; annotations sprinkled all throughout your business logic. The next generation of cloud native apps and microservices will leverage &lt;strong&gt;sidecars&lt;/strong&gt; and a &lt;strong&gt;service mesh&lt;/strong&gt;.”&lt;/p&gt;
 
