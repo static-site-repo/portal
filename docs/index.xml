@@ -20,7 +20,7 @@
       
         <description>&lt;p&gt;最近重新溫習近二十年的老書《&lt;a href=&#34;https://www.books.com.tw/products/0010202911&#34;&gt;從 A 到 A+&lt;/a&gt;》，啟發頗多。&lt;/p&gt;
 
-&lt;p&gt;《從 A 到 A+》作者們的實證研究方法很嚴謹。他們從 1965～1995 年名列 Fortune 500 的企業名單中，挑選「十五年累計股票報酬率」超越股市整體表現三倍以上，且不受產業循環影響的企業，研究這些績優公司從「優秀」到「卓越」的關鍵因素。最後，作者們提出「&lt;a href=&#34;https://www.jimcollins.com/concepts/the-flywheel.html&#34;&gt;飛輪效應&lt;/a&gt;」來統一解釋他們的發現：&lt;/p&gt;
+&lt;p&gt;《從 A 到 A+》作者們的實證研究方法很嚴謹 &lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;。他們從 1965～1995 年名列 Fortune 500 的企業名單中，挑選「十五年累計股票報酬率」超越股市整體表現三倍以上，且不受產業循環影響的企業，研究這些績優公司從「優秀」到「卓越」的關鍵因素。最後，作者們提出「&lt;a href=&#34;https://www.jimcollins.com/concepts/the-flywheel.html&#34;&gt;飛輪效應&lt;/a&gt;」來統一解釋他們的發現：&lt;/p&gt;
 
 
 &lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
@@ -37,7 +37,7 @@
 &lt;/div&gt;
 
 
-&lt;p&gt;某方面來說，Scrum 滿符合《從 A 到 A+》所講的飛輪效應。&lt;/p&gt;
+&lt;p&gt;某方面來說，軟體研發圈講究的 Scrum，還滿符合《從 A 到 A+》所講的飛輪效應。&lt;/p&gt;
 
 &lt;h2 id=&#34;飛輪的比喻&#34;&gt;飛輪的比喻&lt;/h2&gt;
 
@@ -103,7 +103,7 @@
 &lt;p&gt;如果你是很有領袖魅力的強人，應該花時間好好想一想，領袖魅力是資產，也是負債。你性格上的優點也可能埋下了問題的種子，員工會自動過濾資訊，不讓你接觸到殘酷的真相。你仍然可以克服領袖魅力帶來的問題，但是必須有充分的自覺，長期投注心力注意這個問題。&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;這，是不是跟 Scrum 的 sprint review 及 sprint retrospective) 所講究的重點，有異曲同工之妙呢？&lt;/p&gt;
+&lt;p&gt;這，是不是跟 Scrum 的 sprint review 及 sprint retrospective 所講究的重點，有異曲同工之妙呢？&lt;/p&gt;
 
 &lt;h2 id=&#34;刺蝟原則&#34;&gt;刺蝟原則&lt;/h2&gt;
 
@@ -165,6 +165,24 @@
 
 &lt;p&gt;這，是不是跟 Scrum 的 DoD (definition of done) 品質紀律，甚至&lt;a href=&#34;https://agilemanifesto.org/principles.html&#34;&gt;敏捷原則&lt;/a&gt;第九條 &amp;ldquo;Continuous attention to technical excellence and good design enhances agility.&amp;rdquo; 所揭櫫的重點，有異曲同工之妙呢？&lt;/p&gt;
 
+&lt;h2 id=&#34;按部就班&#34;&gt;按部就班&lt;/h2&gt;
+
+&lt;p&gt;《從 A 到 A+》的後記，在回答「我應該從什麼地方開始做起？」問題時，如此提醒：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;首先，熟讀所有的發現。切記，不能單靠其中任何一項發現來造就卓越的企業，你必須把它當成一體，照著我們的架構，按部就班一一實施整套做法。&lt;/p&gt;
+
+&lt;p&gt;本書循序漸進的陳述架構，正好符合我們所觀察到的企業做法和步驟，因此，本書的結構就是你們的最佳指南。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;這，是不是跟 Scrum 兩位發明人在《&lt;a href=&#34;https://www.books.com.tw/products/0010647604&#34;&gt;告別瀑布，擁抱敏捷&lt;/a&gt;》所提的警告，有異曲同工之妙呢？&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Scrum 不是可以被隨意修改，來迎合既有企業文化的流程，反而是應該調整企業文化來適應 Scrum。&lt;/p&gt;
+
+&lt;p&gt;如果沒有用 Scrum 來建立敏捷、透明的開發環境，那隱藏的問題將會一直留在企業內損害企業的利益。那就失去了使用 Scrum 最主要的好處。&lt;/p&gt;
+&lt;/blockquote&gt;
+
 &lt;h2 id=&#34;持續的改進&#34;&gt;持續的改進&lt;/h2&gt;
 
 &lt;p&gt;《從 A 到 A+》第八章在談到飛輪效應時，有這麼一段語重心長的觀察：&lt;/p&gt;
@@ -177,7 +195,16 @@
 
 &lt;p&gt;這麼美好的飛輪，要啟動，關鍵在於「有了適當的條件」。&lt;/p&gt;
 
-&lt;p&gt;如果從 Scrum 角度來看，你認為，什麼是所謂的「適當的條件」呢？這是值得你我深思的大哉問。&lt;/p&gt;</description>
+&lt;p&gt;如果從 Scrum 角度來看，你認為，什麼是所謂的「適當的條件」呢？這是值得你我深思的大哉問。&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;《&lt;a href=&#34;https://www.books.com.tw/products/0010202911&#34;&gt;從 A 到 A+&lt;/a&gt;》附錄一說明作者們採取的研究方法及篩選過程：①根據 1965～1995 年 Fortune 500 名單，從所有美國公司中選出 1,435 家公司，②根據平均複合投資人報酬率，從 1,435 家公司到 126 家公司，③根據累積股票報酬率，訂出 11 則淘汰標準，從 126 家公司到 19 家公司。
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:1&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description>
       
     </item>
     
