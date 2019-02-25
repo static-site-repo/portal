@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kubernetes on Potioneer&#39;s Essays</title>
+    <link>//william-yeh.net/tags/kubernetes/</link>
+    <description>Recent content in Kubernetes on Potioneer&#39;s Essays</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Mon, 25 Feb 2019 12:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="//william-yeh.net/tags/kubernetes/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Kubernetes Best Practices 資料</title>
+      <link>//william-yeh.net/post/2019/02/k8s-best-practice/</link>
+      <pubDate>Mon, 25 Feb 2019 12:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2019/02/k8s-best-practice/</guid>
+      <description>&lt;p&gt;Kubernetes 演化速度令人驚訝。彈性之大，令人聯想到當年  Perl 圈子奉為圭臬的 &lt;a href=&#34;https://en.wikipedia.org/wiki/There%27s_more_than_one_way_to_do_it&#34;&gt;TIMTOWTDI&lt;/a&gt; 口號。&lt;/p&gt;
+
+&lt;p&gt;選擇過多也會帶來問題。發展到某個階段，也該適時沈澱收斂出較佳的實務建議準則。&lt;/p&gt;
+
+&lt;p&gt;因此，我稍微搜尋一下相關的 best practice 資料，作為參考。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>「從 Ops 角度看 DevOps」的感想</title>
+      <link>//william-yeh.net/post/2018/11/opsdev-talk-18/</link>
+      <pubDate>Wed, 28 Nov 2018 23:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2018/11/opsdev-talk-18/</guid>
+      <description>&lt;p&gt;在台灣（或許在其他地方也是），DevOps 的話語權，很大幅度都被 Dev 一方把持。我們很少聽到 Ops 一方的說法。&lt;/p&gt;
+
+&lt;p&gt;成功的改革，需要兼顧各方利益者的需求及痛點。隨著 DevOps 守備範圍日益擴大，這種失衡狀態必須改變。&lt;/p&gt;
+
+&lt;p&gt;今晚參加 &lt;a href=&#34;https://www.facebook.com/DevOpsTaiwan/&#34;&gt;DevOps Taiwan 社群&lt;/a&gt;舉辦的講座：【&lt;a href=&#34;https://devops.kktix.cc/events/meetup17-opsdev&#34;&gt;從 Ops 角度看 DevOps&lt;/a&gt;】，聽聽&lt;a href=&#34;https://www.facebook.com/roberthu.tw&#34;&gt;胡士亮 (Robert Hu)&lt;/a&gt; 從正統 Ops 角度來詮釋 DevOps，甚至 OpsDev，收穫頗大。&lt;/p&gt;
+
+&lt;p&gt;聽知識，聽心得，也聽熱情與願景。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

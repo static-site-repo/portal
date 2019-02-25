@@ -6,10 +6,23 @@
     <description>Recent content in Devops on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Thu, 17 Jan 2019 15:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 25 Feb 2019 12:00:00 +0800</lastBuildDate>
     
 	<atom:link href="//william-yeh.net/tags/devops/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Kubernetes Best Practices 資料</title>
+      <link>//william-yeh.net/post/2019/02/k8s-best-practice/</link>
+      <pubDate>Mon, 25 Feb 2019 12:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2019/02/k8s-best-practice/</guid>
+      <description>&lt;p&gt;Kubernetes 演化速度令人驚訝。彈性之大，令人聯想到當年  Perl 圈子奉為圭臬的 &lt;a href=&#34;https://en.wikipedia.org/wiki/There%27s_more_than_one_way_to_do_it&#34;&gt;TIMTOWTDI&lt;/a&gt; 口號。&lt;/p&gt;
+
+&lt;p&gt;選擇過多也會帶來問題。發展到某個階段，也該適時沈澱收斂出較佳的實務建議準則。&lt;/p&gt;
+
+&lt;p&gt;因此，我稍微搜尋一下相關的 best practice 資料，作為參考。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>年假可讀的軟體領域輕讀物</title>

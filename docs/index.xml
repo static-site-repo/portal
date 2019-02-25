@@ -6,10 +6,72 @@
     <description>Recent content on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sat, 19 Jan 2019 10:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 25 Feb 2019 12:00:00 +0800</lastBuildDate>
     
         <atom:link href="//william-yeh.net/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Kubernetes Best Practices 資料</title>
+      <link>//william-yeh.net/post/2019/02/k8s-best-practice/</link>
+      <pubDate>Mon, 25 Feb 2019 12:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2019/02/k8s-best-practice/</guid>
+      
+        <description>&lt;p&gt;Kubernetes 演化速度令人驚訝。彈性之大，令人聯想到當年  Perl 圈子奉為圭臬的 &lt;a href=&#34;https://en.wikipedia.org/wiki/There%27s_more_than_one_way_to_do_it&#34;&gt;TIMTOWTDI&lt;/a&gt; 口號。&lt;/p&gt;
+
+&lt;p&gt;選擇過多也會帶來問題。發展到某個階段，也該適時沈澱收斂出較佳的實務建議準則。&lt;/p&gt;
+
+&lt;p&gt;因此，我稍微搜尋一下相關的 best practice 資料，作為參考。&lt;/p&gt;
+
+&lt;h2 id=&#34;整體建議&#34;&gt;整體建議&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://dzone.com/articles/top-5-kubernetes-best-practices-from-sandeep-dines&#34;&gt;Top 5 Kubernetes Best Practices From Sandeep Dinesh (Google)&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://www.slideshare.net/BillLiu31/kubernetes-best-practices&#34;&gt;Kubernetes best practices&lt;/a&gt; by Bill Liu&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;iframe
+  style=&#34;width: 100%; height: 500px;&#34; frameborder=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; scrolling=&#34;no&#34;
+  src=&#34;https://www.slideshare.net/slideshow/embed_code/78464702&#34; allowfullscreen webkitallowfullscreen mozallowfullscreen&gt; &lt;/iframe&gt;
+&lt;br&gt;&lt;br&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://medium.com/google-cloud/kubernetes-best-practices-8d5cd03446e2&#34;&gt;Kubernetes Best Practices&lt;/a&gt; by Daz Wilkin&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://blog.openshift.com/kubernetes-application-operator-basics/&#34;&gt;Kubernetes Application Operator Basics&lt;/a&gt; by Michael Hausenblas&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;資源設定建議&#34;&gt;資源設定建議&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://kubernetes.io/docs/concepts/configuration/overview/&#34;&gt;Configuration Best Practices&lt;/a&gt; by Kubernetes&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://www.replex.io/blog/9-best-practices-and-examples-for-working-with-kubernetes-labels&#34;&gt;9 Best Practices and Examples for Working with Kubernetes Labels&lt;/a&gt; by Hasham Haider&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://kubernetes.io/docs/concepts/overview/working-with-objects/common-labels/&#34;&gt;Recommended Labels&lt;/a&gt; by Kubernetes&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://kubernetes.io/blog/2016/08/kubernetes-namespaces-use-cases-insights/&#34;&gt;Kubernetes Namespaces: use cases and insights&lt;/a&gt; by Mike Altarace &amp;amp; Daz Wilkin&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;套件管理建議&#34;&gt;套件管理建議&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://helm.sh/docs/chart_best_practices/&#34;&gt;The Chart Best Practices Guide&lt;/a&gt; by Helm&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;資安建議&#34;&gt;資安建議&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://dev.to/petermbenjamin/kubernetes-security-best-practices-hlk&#34;&gt;Kubernetes Security Best-Practices&lt;/a&gt; by Peter Benjamin&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://www.cncf.io/blog/2019/01/14/9-kubernetes-security-best-practices-everyone-must-follow/&#34;&gt;9 Kubernetes Security Best Practices Everyone Must Follow&lt;/a&gt; by CNCF&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://rancher.com/blog/2019/2019-01-17-101-more-kubernetes-security-best-practices/&#34;&gt;101 More Security Best Practices for Kubernetes&lt;/a&gt; by Adrian Goins&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+      
+    </item>
     
     <item>
       <title>技術領導者微培訓</title>
@@ -3132,218 +3194,6 @@ increment 的方式交付「完成」的產品，可以確保一直提供一個�
 &lt;p&gt;❸ &lt;a href=&#34;//william-yeh.net/post/2018/11/lean-startup-criteria/&#34;&gt;Lean Startup 的判準&lt;/a&gt;&lt;/p&gt;
 
 &lt;/div&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>平凡人求生之道：別總是直球對決</title>
-      <link>//william-yeh.net/post/2016/08/lifetime-keywords/</link>
-      <pubDate>Mon, 29 Aug 2016 07:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2016/08/lifetime-keywords/</guid>
-      
-        <description>&lt;p&gt;我們的人生，都走了許多冤枉路。回頭來看，總是希望能有系統化的方法，及早認清局勢，預作準備，以求更無懼於永不停歇的變局。&lt;/p&gt;
-
-&lt;p&gt;這是我常常在尋覓的思維方法。&lt;/p&gt;
-
-&lt;p&gt;雖然 Joe 在【&lt;a href=&#34;https://shop.darencademy.com/product/view/id/66&#34;&gt;大人學講座12：別總是直球對決：人生難題的系統思考法&lt;/a&gt;】的文案自謙：&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Joe，因為從小就不是功課好的學生、甚至在求學過程自國小開始就深覺不適應。所以很早他就理解，如果只是跟著大部分人走的道路，自己很可能毫無競爭力並終將一事無成。所以成長過程，一直就在思考並探索自己還有甚麼別的選擇？有沒有辦法避開人多的路線，而另闢蹊徑？&lt;/p&gt;
-
-&lt;p&gt;透過 6 段故事、搭配 30 個人生關鍵字，讓你提升策略思考力、讓你更有能力面對後續的每個人生挑戰！&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;但許多時候，健步如飛、如履平地的天才，不見得容易被平凡人仿效；平凡人所跌的跤，及之後逆轉勝的經驗，反而更具參考價值。&lt;/p&gt;
-
-&lt;p&gt;Joe，就有這麼值得參考的逆轉勝故事。&lt;/p&gt;
-
-&lt;p&gt;當年的「平凡人 Joe」，已經變成「不平凡的 Joe」。箇中心路歷程，及面對種種困境、選擇的取捨標準，是我想好好觀摩體會的。加上身為 J&amp;amp;B 的鐵粉，自然不想錯過這晉升大人的重要思路。&lt;/p&gt;
-
-
-&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
-&lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
-  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/08/s012-joe.jpg&#34; alt=&#34;S012 - 別總是直球對決&#34;/&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2016/08/s012-joe.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-      &lt;figcaption&gt;
-          &lt;p&gt;S012 - 別總是直球對決&lt;/p&gt;
-      &lt;/figcaption&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;
-
-
-&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;
-整整三個小時的講座，環繞在這 30 個關鍵字：&lt;/p&gt;
-
-
-
-&lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
-  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/08/lifetime-keywords-0.png&#34; alt=&#34;30 個關鍵字&#34;/&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2016/08/lifetime-keywords-0.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-      &lt;figcaption&gt;
-          &lt;p&gt;30 個關鍵字&lt;/p&gt;
-      &lt;/figcaption&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;
-
-
-&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;
-其中，前三個關鍵字，讓天真爛漫的生涯學童，及早面對沒有標準答案的現實世界。正確的認知，才能進一步激發跳出框架的動力：&lt;/p&gt;
-
-
-
-&lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
-  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/08/lifetime-keywords-1-3.png&#34; alt=&#34;關鍵字 1~3&#34;/&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2016/08/lifetime-keywords-1-3.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-      &lt;figcaption&gt;
-          &lt;p&gt;關鍵字 1~3&lt;/p&gt;
-      &lt;/figcaption&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;
-
-
-&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;
-接下來四個關鍵字，讓我重溫之前在【&lt;a href=&#34;//william-yeh.net/post/2016/06/upgrade-adult-thinking-part2/&#34;&gt;A101 職場大人學：職場人際關係與優勢策略&lt;/a&gt;】課堂上受到的洗禮：&lt;/p&gt;
-
-
-
-&lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
-  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/08/lifetime-keywords-4-7.png&#34; alt=&#34;關鍵字 4~7&#34;/&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2016/08/lifetime-keywords-4-7.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-      &lt;figcaption&gt;
-          &lt;p&gt;關鍵字 4~7&lt;/p&gt;
-      &lt;/figcaption&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;
-
-
-&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;
-接下來五個關鍵字，重點濃縮了 Joe &amp;amp; Bryan 在許多文章及課程一再強調的「認清局勢」觀點：&lt;/p&gt;
-
-
-
-&lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
-  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/08/lifetime-keywords-8-12.png&#34; alt=&#34;關鍵字 8~12&#34;/&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2016/08/lifetime-keywords-8-12.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-      &lt;figcaption&gt;
-          &lt;p&gt;關鍵字 8~12&lt;/p&gt;
-      &lt;/figcaption&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;
-
-
-&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;
-接下來三個關鍵字，讓我回想起 Bryan 那仍令人回味不已的【&lt;a href=&#34;https://shop.darencademy.com/product/view/id/57&#34;&gt;大人學講座03 : 尋找天賦與熱情的系統化做法&lt;/a&gt;】（我要回去複習一下 Bryan 講的「礦場主人的矩陣」了）：&lt;/p&gt;
-
-
-
-&lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
-  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/08/lifetime-keywords-13-15.png&#34; alt=&#34;關鍵字 13~15&#34;/&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2016/08/lifetime-keywords-13-15.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-      &lt;figcaption&gt;
-          &lt;p&gt;關鍵字 13~15&lt;/p&gt;
-      &lt;/figcaption&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;
-
-
-&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;
-接下來四個關鍵字，很像《&lt;a href=&#34;http://www.books.com.tw/products/0010641668?loc=P_asb_001&#34;&gt;三年後，你的工作還在嗎？&lt;/a&gt;》的重點濃縮：&lt;/p&gt;
-
-
-
-&lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
-  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/08/lifetime-keywords-16-19.png&#34; alt=&#34;關鍵字 16~19&#34;/&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2016/08/lifetime-keywords-16-19.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-      &lt;figcaption&gt;
-          &lt;p&gt;關鍵字 16~19&lt;/p&gt;
-      &lt;/figcaption&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;
-
-
-&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;
-接下來六個關鍵字，對我來說，是很重的當頭棒喝。多少次我們都陷在競逐的潮流裡，忘卻某些似拙實巧的道理？有些事，欲速則不達呀！&lt;/p&gt;
-
-
-
-&lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
-  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/08/lifetime-keywords-20-25.png&#34; alt=&#34;關鍵字 20~25&#34;/&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2016/08/lifetime-keywords-20-25.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-      &lt;figcaption&gt;
-          &lt;p&gt;關鍵字 20~25&lt;/p&gt;
-      &lt;/figcaption&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;
-
-
-&lt;p&gt;&lt;br/&gt;&lt;br/&gt;
-聽著這五段 Joe 從小到大的故事，提煉出來的 25 個關鍵字，可能會誤以為這只是心靈雞湯（不過，就算是心靈雞湯，也是熬了四十年的原汁原味上等雞湯喔）。不過，更神奇的是，Joe 緊接著用第六段故事，現身說法，證明這 25 個關鍵字，不只是用在個人生涯成長，居然還可以用來搶下一個大型的系統導入案！&lt;/p&gt;
-
-&lt;p&gt;真是太不可思議了！這豈不正像周星馳電影《食神》裡面的摺凳一樣嗎？「好摺凳！摺凳的奧妙之處，它可以藏在民居之中，隨手可得，還可以坐著它來隱藏殺機，就算被警察抓了也告不了你，真不愧為七大武器之首！」&lt;/p&gt;
-
-&lt;p&gt;這摺凳，和我之前看的 Joe &amp;amp; Bryan 部落格文章、專書、大人學及專案管理課程，相互呼應，容易消化。心中更隱隱覺得，這與我這陣子研究取材的「變革」主題，有許多可相互參酌之處。好的心智框架，委實妙用無窮。&lt;/p&gt;
-
-&lt;p&gt;這 25 枚關鍵字，我收下了。&lt;/p&gt;
-
-&lt;p&gt;&lt;br/&gt;
-&amp;hellip; &amp;hellip;
-&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
-
-&lt;p&gt;最後五個關鍵字，是整段講座的總結。看似單純，甚至古板蠢笨，但卻是非常踏實的人生哲學，寧靜而致遠。&lt;/p&gt;
-
-&lt;p&gt;尤其是最後一個關鍵字，一秀出來，所有的人都驚呆了：&lt;/p&gt;
-
-
-
-&lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
-  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/08/lifetime-keywords-26-30.png&#34; alt=&#34;關鍵字 26~30&#34;/&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2016/08/lifetime-keywords-26-30.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-      &lt;figcaption&gt;
-          &lt;p&gt;關鍵字 26~30&lt;/p&gt;
-      &lt;/figcaption&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;
-
-
-&lt;p&gt;如果直接把這個字端出來，大概百分之兩百的觀眾都會當場大喊：「我又不是來這裡聽心海羅盤的⋯⋯」。不過，花了 180 分鐘，聽了六段故事，蒐集了 30 個「別總是直球對決」的關鍵字，就會覺得這是肺腑之言。沒有置身現場，很難體會這種久違的感動。&lt;/p&gt;
-
-&lt;p&gt;回頭來看，這 30 個關鍵字，的確都是從「心存善念」為出發點，沒有什麼鑽營算計他人的成分，的的確確都是王道、正道。&lt;/p&gt;
-
-&lt;p&gt;我們有多久沒有相信單純的「善」的力量，而競逐於鑽營取巧？&lt;/p&gt;
-
-&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
-
-&lt;p&gt;收下這 30 枚關鍵字，以後遇到自己或他人的人生難題，我會回想這六段故事裡面的主人翁 Joe，是如何痛苦掙扎、如何認清局勢、如何壯士斷腕、如何砍掉重練、如何潛龍勿用利見大人終日乾乾，相信一定能夠喚起沈睡已久的變化球、慢速球、伸卡球、曲球。&lt;/p&gt;
-
-&lt;p&gt;人生，除了「直球對決」之外，其實還有更好的選擇呀。&lt;/p&gt;</description>
       
     </item>
     
