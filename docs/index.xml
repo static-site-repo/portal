@@ -6,10 +6,176 @@
     <description>Recent content on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Mon, 25 Feb 2019 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 14 Mar 2019 08:00:00 +0800</lastBuildDate>
     
         <atom:link href="//william-yeh.net/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>在 Windows 上復刻 Mac 使用習慣</title>
+      <link>//william-yeh.net/post/2019/03/wsl-cmder-zsh/</link>
+      <pubDate>Thu, 14 Mar 2019 08:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2019/03/wsl-cmder-zsh/</guid>
+      
+        <description>&lt;p&gt;改用 Mac 已經六年了。現在要再回頭碰 Windows，還真有點不習慣。&lt;/p&gt;
+
+&lt;p&gt;這年頭，許多軟體其實都有 Mac 及 Windows 版了：Chrome、Firefox、Slack、Evernote、Dropbox、VSCode……最大的差別，應該是終端機命令列工具。&lt;/p&gt;
+
+&lt;p&gt;上古時代，需要靠 &lt;a href=&#34;https://www.cygwin.com/&#34;&gt;Cygwin&lt;/a&gt; 或 &lt;a href=&#34;http://www.mingw.org/&#34;&gt;MinGW&lt;/a&gt; 方案，才能勉強湊出一點點 Unix 的命令列感覺，但地雷超級多，難以作為嚴肅用途。後來，到了 2015 年，從保哥那邊知道有 &lt;a href=&#34;https://cmder.net/&#34;&gt;Cmder&lt;/a&gt; 這個好物 &lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，微軟又於 2016 年推出 &lt;a href=&#34;https://docs.microsoft.com/en-us/windows/wsl/&#34;&gt;WSL (Windows Subsystem for Linux)&lt;/a&gt; 機制，Windows 這邊似乎出現曙光，對 Unix 命令列愛好者展現出久違的吸引力。&lt;/p&gt;
+
+&lt;p&gt;為了在 Windows 10 上面復刻我的 Mac 的體驗：&lt;a href=&#34;https://www.iterm2.com/&#34;&gt;iTerm2&lt;/a&gt; + &lt;a href=&#34;https://www.zsh.org/&#34;&gt;Zsh&lt;/a&gt; + &lt;a href=&#34;https://ohmyz.sh/&#34;&gt;Oh My ZSH&lt;/a&gt;，我試了幾天，把步驟整理如下。&lt;/p&gt;
+
+&lt;h2 id=&#34;wsl&#34;&gt;WSL&lt;/h2&gt;
+
+&lt;p&gt;請根據保哥的文章〈&lt;a href=&#34;https://blog.miniasp.com/post/2019/02/01/Useful-tool-WSL-Windows-Subsystem-for-Linux&#34;&gt;介紹好用工具：WSL (Windows Subsystem for Linux)&lt;/a&gt;〉進行以下步驟：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;安裝 WSL。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;安裝一個 Linux distribution。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;第一次執行 WSL，並設定 Linux 的帳號密碼。&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;zsh-oh-my-zsh&#34;&gt;Zsh + Oh My ZSH&lt;/h2&gt;
+
+&lt;p&gt;在 WSL 中安裝 zsh 及 oh-my-zsh：&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;% sudo apt-get install zsh
+
+% sudo sh -c &amp;#34;$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&amp;#34;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;將 zsh 設為內定 shell：&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;% chsh -s $(which zsh)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id=&#34;cmder&#34;&gt;Cmder&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://cmder.net/&#34;&gt;Cmder&lt;/a&gt; 有「完整版」及「迷你版」兩種安裝方式。有了 WSL 之後，msysgit 可以退場，因此我們只需安裝 Cmder 迷你版。&lt;/p&gt;
+
+&lt;p&gt;用 Chocolatey 套件管理工具安裝比較簡單：&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;C:\&amp;gt; choco install cmdermini&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;細節請見 &lt;a href=&#34;https://chocolatey.org/packages/cmdermini&#34;&gt;https://chocolatey.org/packages/cmdermini&lt;/a&gt; 。&lt;/p&gt;
+
+&lt;h2 id=&#34;整合-cmder-與-wsl&#34;&gt;整合 Cmder 與 WSL&lt;/h2&gt;
+
+&lt;p&gt;為了讓 Cmder 以 WSL + Zsh 模式啟動，我們需要新增一個 Cmder 的 &amp;ldquo;Startup / Tasks&amp;rdquo;。&lt;/p&gt;
+
+&lt;p&gt;譬如說，我們可新增一個名叫 &lt;code&gt;{WSL::zsh}&lt;/code&gt; 的 task，將 command 寫成：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;set &amp;quot;PATH=%ConEmuBaseDirShort%\wsl;%PATH%&amp;quot; &amp;amp; %ConEmuBaseDirShort%\conemu-cyg-64.exe --wsl -C~ -cur_console:p:t:&amp;quot;zsh&amp;quot; -t zsh -l
+&lt;/code&gt;&lt;/pre&gt;
+
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
+  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2019/03/cmder-wsl-zsh.png&#34; alt=&#34;新增 Cmder 啟動設定&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2019/03/cmder-wsl-zsh.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;新增 Cmder 啟動設定&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;存檔完畢，以後只要以 &lt;code&gt;{WSL::zsh}&lt;/code&gt; 模式啟動，Cmder 就會自動套用 WSL + zsh 組態。&lt;/p&gt;
+
+&lt;p&gt;進一步的設定細節，請參考 &lt;a href=&#34;https://conemu.github.io/en/BashOnWindows.html&#34;&gt;https://conemu.github.io/en/BashOnWindows.html&lt;/a&gt; 一文。&lt;/p&gt;
+
+&lt;h2 id=&#34;設定-cmder-熱鍵&#34;&gt;設定 Cmder 熱鍵&lt;/h2&gt;
+
+&lt;p&gt;為了復刻出類似 Mac + iTerm2 的使用習慣，此刻，我會花一點時間調整 Cmder 熱鍵設定。&lt;/p&gt;
+
+&lt;p&gt;如果你也感興趣，請參考保哥的文章〈&lt;a href=&#34;https://blog.miniasp.com/post/2015/09/27/Useful-tool-Cmder&#34;&gt;介紹好用工具：Cmder (具有 Linux 溫度的 Windows 命令提示字元工具)&lt;/a&gt;〉進行熱鍵設定。&lt;/p&gt;
+
+&lt;h2 id=&#34;檔案系統&#34;&gt;檔案系統&lt;/h2&gt;
+
+&lt;p&gt;我習慣將 Windows 的 D: 作為文件儲存專用區。&lt;/p&gt;
+
+&lt;p&gt;預設情況下，WSL 會將 D: 掛載在 &lt;code&gt;/mnt/d&lt;/code&gt;，檔案系統則是 DrvFs：&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;% mount -l
+rootfs on / type lxfs (rw,noatime)
+none on /dev type tmpfs (rw,noatime,mode=755)
+sysfs on /sys type sysfs (rw,nosuid,nodev,noexec,noatime)
+proc on /proc type proc (rw,nosuid,nodev,noexec,noatime)
+devpts on /dev/pts type devpts (rw,nosuid,noexec,noatime,gid=5,mode=620)
+none on /run type tmpfs (rw,nosuid,noexec,noatime,mode=755)
+none on /run/lock type tmpfs (rw,nosuid,nodev,noexec,noatime)
+none on /run/shm type tmpfs (rw,nosuid,nodev,noatime)
+none on /run/user type tmpfs (rw,nosuid,nodev,noexec,noatime,mode=755) binfmt_misc on /proc/sys/fs/binfmt_misc type binfmt_misc (rw,noatime)
+D: on /mnt/d type drvfs (rw,noatime,uid=1000,gid=1000,case=off)
+C: on /mnt/c type drvfs (rw,noatime,uid=1000,gid=1000,case=off)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;不過，因為某些複雜的原因 &lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;，我們必須重新設定 &lt;code&gt;/mnt/d&lt;/code&gt; 的 mount 參數，才能讓 Linux 的檔案讀寫權限正常運作。&lt;/p&gt;
+
+&lt;p&gt;我們先卸載 &lt;code&gt;/mnt/d&lt;/code&gt;，再用夾帶 &lt;code&gt;metadata&lt;/code&gt; 的方式重新掛載它：&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;% sudo umount /mnt/d
+
+% sudo mount -t drvfs D: /mnt/d -o metadata,uid=1000,gid=1000,umask=22,fmask=111&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;先查看是否成功:&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;% mount -l
+rootfs on / type lxfs (rw,noatime)
+none on /dev type tmpfs (rw,noatime,mode=755)
+sysfs on /sys type sysfs (rw,nosuid,nodev,noexec,noatime)
+proc on /proc type proc (rw,nosuid,nodev,noexec,noatime)
+devpts on /dev/pts type devpts (rw,nosuid,noexec,noatime,gid=5,mode=620)
+none on /run type tmpfs (rw,nosuid,noexec,noatime,mode=755)
+none on /run/lock type tmpfs (rw,nosuid,nodev,noexec,noatime)
+none on /run/shm type tmpfs (rw,nosuid,nodev,noatime)
+none on /run/user type tmpfs (rw,nosuid,nodev,noexec,noatime,mode=755) binfmt_misc on /proc/sys/fs/binfmt_misc type binfmt_misc (rw,noatime)
+D: on /mnt/d type drvfs (rw,relatime,uid=1000,gid=1000,umask=22,fmask=111,metadata,case=off)
+C: on /mnt/c type drvfs (rw,noatime,uid=1000,gid=1000,case=off)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;如果成功了，請記得將這設定寫進 &lt;code&gt;/etc/fstab&lt;/code&gt; 裡面，下次 WSL 啟動時就會自動生效：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;D: /mnt/d drvfs rw,relatime,uid=1000,gid=1000,metadata,umask=22,fmask=111 0 0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;docker-與-kubernetes&#34;&gt;Docker 與 Kubernetes&lt;/h2&gt;
+
+&lt;p&gt;雖然保哥的文章推薦在 WSL 裡的 Linux 再安裝一份 Docker engine &lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;，但我比較傾向&lt;strong&gt;不要&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;p&gt;我比較傾向上官林傑的作法，讓 WSL 直接連接到 Docker Desktop for Windows 身上。請根據上官林傑的文章〈&lt;a href=&#34;https://medium.com/@ericsk/%E5%9C%A8-windows-subsystem-for-li
+nux-wsl-%E4%B8%8B%E4%BD%BF%E7%94%A8-windows-%E4%B8%8A%E7%9A%84-docker-engine-8dc0040ca240&#34;&gt;在 Windows Subsystem for Linux (WSL) 下使用 Windows 上的 Docker Engine&lt;/a&gt;〉，做好必要的設定，並在 WSL 裡面設好這些 alias 及環境變數：&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;export DOCKER_HOST=&amp;#34;tcp://localhost:2375&amp;#34;
+
+alias docker=docker.exe                    
+alias docker-compose=docker-compose.exe    
+alias kubectl=kubectl.exe                  &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;也別忘了，要將 Windows 上面的 Kubernetes 設定連接過來：&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;% ls -s /mnt/c/Users/xxx/.kube/config ~/.kube/config&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;好了，現在已經復刻一部分 Mac 的使用習慣了。是該要好好享受一下這種混血環境了。&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;保哥於 2015 年九月舉辦過【&lt;a href=&#34;https://www.accupass.com/event/1509231111031581814500&#34;&gt;打造一個具有 Linux 溫度的 Windows 命令提示字元工具&lt;/a&gt;】線上講座，也寫了〈&lt;a href=&#34;https://blog.miniasp.com/post/2015/09/27/Useful-tool-Cmder&#34;&gt;介紹好用工具：Cmder&lt;/a&gt;〉一文。
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:1&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;關於 WSL DrvFs 的 metadata 權限設定細節，請參考這三篇文章：“&lt;a href=&#34;https://blogs.msdn.microsoft.com/commandline/2018/01/12/chmod-chown-wsl-improvements/&#34;&gt;Chmod/Chown WSL Improvements&lt;/a&gt;”、“&lt;a href=&#34;https://www.brianketelsen.com/going-overboard-with-wsl-metadata/&#34;&gt;Going Overboard with WSL metadata&lt;/a&gt;”、〈&lt;a href=&#34;https://segmentfault.com/a/1190000016677670&#34;&gt;WSL 配置指北：打造 Windows 最强命令行&lt;/a&gt;〉。
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:2&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;保哥的文章〈&lt;a href=&#34;https://blog.miniasp.com/post/2018/06/15/My-Windows-Subsystem-for-Linux-WSL-Setup-2018&#34;&gt;我的 Windows Subsystem for Linux (WSL) 終極開發人員配置 - 2018 版&lt;/a&gt;〉。
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:3&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description>
+      
+    </item>
     
     <item>
       <title>Kubernetes Best Practices 資料</title>
@@ -3064,137 +3230,6 @@ increment 的方式交付「完成」的產品，可以確保一直提供一個�
 &lt;li id=&#34;fn:2&#34;&gt;&lt;a href=&#34;http://teddy-chen-tw.blogspot.com/2017/06/blog-post_21.html&#34;&gt;為什麼看板方法適合控制與能力文化？&lt;/a&gt;
  &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:2&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>軟體開發，除了方法論，還有⋯⋯</title>
-      <link>//william-yeh.net/post/2018/10/methodology-and-criteria/</link>
-      <pubDate>Thu, 25 Oct 2018 12:22:16 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2018/10/methodology-and-criteria/</guid>
-      
-        <description>&lt;p&gt;在某些人眼中，「敏捷」是狂熱份子聚集的邪教。&lt;/p&gt;
-
-&lt;p&gt;或許是被困在守舊勢力太久了，敏捷信徒不只有改變世界的熱情，更有捨我其誰的急迫感。不過，在傳播理念或推動改變時，若操之過急，忽略對方所處的情境、歷史及歷程，就很難有建設性對話。在這守舊勢力龐大的世界，自然很容易陣亡。&lt;/p&gt;
-
-&lt;p&gt;但這還只是表象。歧見，單靠對話仍不足以化解，更需要在方法論層次達到理解，方可進退有據。&lt;/p&gt;
-
-&lt;p&gt;尤其在看過《&lt;a href=&#34;https://www.books.com.tw/products/0010791756&#34;&gt;社會科學的理路&lt;/a&gt;》之後，我領悟到一些根源問題及槓桿解。&lt;/p&gt;
-
-&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
-&lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
-  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/10/social-sci.jpg&#34; alt=&#34;圖一　《社會科學的理路》第一版 (2001) 及第四版 (2018)&#34;/&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2018/10/social-sci.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-      &lt;figcaption&gt;
-          &lt;p&gt;圖一　《社會科學的理路》第一版 (2001) 及第四版 (2018)&lt;/p&gt;
-      &lt;/figcaption&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;
-
-
-&lt;h2 id=&#34;方法論形塑世界觀&#34;&gt;方法論形塑世界觀&lt;/h2&gt;
-
-&lt;p&gt;我們都在採用&lt;strong&gt;方法論&lt;/strong&gt;，不管我們自覺或不自覺。&lt;/p&gt;
-
-&lt;p&gt;瀑布模型是一種方法論，敏捷是一種方法論，Scrum 及 Kanban 則是敏捷方法論底下更具體的實踐作法。&lt;/p&gt;
-
-&lt;p&gt;為什麼會決定採取某一種方法論？原因可能很多，本文不予探討。本文想談的是，採取某一種方法論，就會逐漸被該方法論所形塑的&lt;strong&gt;世界觀&lt;/strong&gt;所包圍，以及接下來的連鎖效應——不管我們自覺或不自覺。&lt;/p&gt;
-
-&lt;p&gt;論到方法論及世界觀，我想要引述《&lt;a href=&#34;https://www.books.com.tw/products/0010791756&#34;&gt;社會科學的理路&lt;/a&gt;》的見解。&lt;/p&gt;
-
-&lt;p&gt;本書作者黃光國教授，是台灣社會心理學界的大老。他花了將近十年的工夫寫成本書第一版 (2001 年)，析論二十世紀發展出來的五種科學哲學主要典範之間的關聯。退休後推出的第四版 (2018 年)，將原本具有歷史意義的第一章整個抽換掉，很可惜，所以我仍然留著第一版。&lt;/p&gt;
-
-&lt;p&gt;《&lt;a href=&#34;https://www.books.com.tw/products/0010791756&#34;&gt;社會科學的理路&lt;/a&gt;》，從科學哲學角度指出：&lt;/p&gt;
-
-
-
-&lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
-  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/10/paradigm.jpg&#34; alt=&#34;圖二　方法論與世界觀&#34;/&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2018/10/paradigm.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-      &lt;figcaption&gt;
-          &lt;p&gt;圖二　方法論與世界觀&lt;/p&gt;
-      &lt;/figcaption&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;
-
-
-&lt;p&gt;看起來有點抽象，讓我們從「軟體開發流程」的角度來照樣造句，就會茅塞頓開：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;任何一種&lt;strong&gt;軟體開發流程&lt;/strong&gt;所主張的「&lt;strong&gt;本體論／認識論／方法論&lt;/strong&gt;」，構成了該一開發流程的「&lt;strong&gt;世界觀&lt;/strong&gt;」，它在性質上是一種&lt;strong&gt;形而上學的預設&lt;/strong&gt;，是由軟體開發團隊的&lt;strong&gt;基本信念&lt;/strong&gt;所決定的。&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;一個&lt;strong&gt;軟體開發者&lt;/strong&gt;，對於方法論的回答，必然會受到其「本體論／認識論」立場的&lt;strong&gt;限制&lt;/strong&gt;，而不能隨意選擇。當他決定採用某種方法論的時候，他也必須同時接受其「本體論／認識論」&lt;strong&gt;預設&lt;/strong&gt;。&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;所以，採取瀑布模式的人，採取敏捷模式的人，兩群人的世界觀，以及信念、預設，是非常不一樣的。&lt;/p&gt;
-
-&lt;p&gt;想合作，或是想進一步改變對方，就得先認清這一點：你們的對話，是不同世界觀的對話。&lt;/p&gt;
-
-&lt;h2 id=&#34;方法論之外-還有判準&#34;&gt;方法論之外，還有判準&lt;/h2&gt;
-
-&lt;p&gt;瀑布模型是一種方法論，敏捷是一種方法論。&lt;/p&gt;
-
-&lt;p&gt;不同方法論，有優劣之別嗎？&lt;/p&gt;
-
-&lt;p&gt;或許有吧。但更常見的事實是：不同方法論，各有擅長的場域。&lt;/p&gt;
-
-&lt;p&gt;《&lt;a href=&#34;https://www.books.com.tw/products/0010791756&#34;&gt;社會科學的理路&lt;/a&gt;》第一版的第一章，從科學哲學角度指出：&lt;/p&gt;
-
-
-
-&lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
-  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/10/paradigm-criteria.jpg&#34; alt=&#34;圖三　典範的判準&#34;/&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2018/10/paradigm-criteria.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-      &lt;figcaption&gt;
-          &lt;p&gt;圖三　典範的判準&lt;/p&gt;
-      &lt;/figcaption&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;
-
-
-&lt;p&gt;文中點出很重要的觀念：「&lt;strong&gt;判準&lt;/strong&gt;」。&lt;/p&gt;
-
-&lt;p&gt;看起來有點抽象，讓我們再從「軟體開發流程」的角度來照樣造句吧！&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;我是贊同「敏捷運動」的。然而，我卻認為：「敏捷／不敏捷」不能夠作為軟體開發流程好壞的&lt;strong&gt;判準&lt;/strong&gt;。&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;我主張的「多元典範的軟體開發取向」認為：我們可以視問題的性質，採取瀑布或敏捷軟體開發典範。然而，採取某種典範，不但要說明自己的&lt;strong&gt;方法論立場&lt;/strong&gt;，而且要採用該一典範的&lt;strong&gt;方法論判準&lt;/strong&gt;。&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;在我看來，軟體開發而沒有判準，是非常不可思議之事。&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;判準，是將方法論落地實施的重要關鍵，也是方法論歧見的槓桿解。&lt;/p&gt;
-
-&lt;p&gt;試問：你對自己採用的軟體開發方法論，了解它的判準嗎？&lt;/p&gt;
-
-&lt;p&gt;試問：你對其他人採用的不一樣的軟體開發方法論，也了解它的判準嗎？&lt;/p&gt;
-
-&lt;p&gt;先賣個關子。下一篇文章，再分別針對瀑布與敏捷取向，談談我所認為的方法論判準。&lt;/p&gt;
-
-&lt;div class=&#34;shortcode-notice note&#34;&gt;
-  &lt;div class=&#34;shortcode-notice-title note&#34;&gt;
-    
-      系列文章
-    
-  &lt;/div&gt;
-  &lt;p&gt;❶ 軟體開發，除了方法論，還有⋯⋯&lt;/p&gt;
-
-&lt;p&gt;❷ &lt;a href=&#34;//william-yeh.net/post/2018/10/agile-criteria/&#34;&gt;敏捷的判準&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;❸ &lt;a href=&#34;//william-yeh.net/post/2018/11/lean-startup-criteria/&#34;&gt;Lean Startup 的判準&lt;/a&gt;&lt;/p&gt;
-
 &lt;/div&gt;</description>
       
     </item>

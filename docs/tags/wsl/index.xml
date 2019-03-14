@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Wsl on Potioneer&#39;s Essays</title>
+    <link>//william-yeh.net/tags/wsl/</link>
+    <description>Recent content in Wsl on Potioneer&#39;s Essays</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Thu, 14 Mar 2019 08:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="//william-yeh.net/tags/wsl/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>在 Windows 上復刻 Mac 使用習慣</title>
+      <link>//william-yeh.net/post/2019/03/wsl-cmder-zsh/</link>
+      <pubDate>Thu, 14 Mar 2019 08:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2019/03/wsl-cmder-zsh/</guid>
+      <description>&lt;p&gt;改用 Mac 已經六年了。現在要再回頭碰 Windows，還真有點不習慣。&lt;/p&gt;
+
+&lt;p&gt;這年頭，許多軟體其實都有 Mac 及 Windows 版了：Chrome、Firefox、Slack、Evernote、Dropbox、VSCode……最大的差別，應該是終端機命令列工具。&lt;/p&gt;
+
+&lt;p&gt;上古時代，需要靠 &lt;a href=&#34;https://www.cygwin.com/&#34;&gt;Cygwin&lt;/a&gt; 或 &lt;a href=&#34;http://www.mingw.org/&#34;&gt;MinGW&lt;/a&gt; 方案，才能勉強湊出一點點 Unix 的命令列感覺，但地雷超級多，難以作為嚴肅用途。後來，到了 2015 年，從保哥那邊知道有 &lt;a href=&#34;https://cmder.net/&#34;&gt;Cmder&lt;/a&gt; 這個好物 &lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，微軟又於 2016 年推出 &lt;a href=&#34;https://docs.microsoft.com/en-us/windows/wsl/&#34;&gt;WSL (Windows Subsystem for Linux)&lt;/a&gt; 機制，Windows 這邊似乎出現曙光，對 Unix 命令列愛好者展現出久違的吸引力。&lt;/p&gt;
+
+&lt;p&gt;為了在 Windows 10 上面復刻我的 Mac 的體驗：&lt;a href=&#34;https://www.iterm2.com/&#34;&gt;iTerm2&lt;/a&gt; + &lt;a href=&#34;https://www.zsh.org/&#34;&gt;Zsh&lt;/a&gt; + &lt;a href=&#34;https://ohmyz.sh/&#34;&gt;Oh My ZSH&lt;/a&gt;，我試了幾天，把步驟整理如下。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
