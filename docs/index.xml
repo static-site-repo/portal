@@ -156,7 +156,7 @@ alias kubectl=kubectl.exe                  &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;也別忘了，要將 Windows 上面的 Kubernetes 設定連接過來：&lt;/p&gt;
 
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;% ls -s /mnt/c/Users/xxx/.kube/config ~/.kube/config&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;% ln -s /mnt/c/Users/xxx/.kube/config ~/.kube/config&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
 
