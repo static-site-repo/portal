@@ -85,7 +85,7 @@
 
 <meta itemprop="datePublished" content="2019-03-14T08:00:00&#43;08:00" />
 <meta itemprop="dateModified" content="2019-03-14T08:00:00&#43;08:00" />
-<meta itemprop="wordCount" content="1410">
+<meta itemprop="wordCount" content="1525">
 
 
 
@@ -312,8 +312,8 @@ if (!doNotTrack) {
             <a href="//william-yeh.net/categories/tech/"> tech </a>
             
           </div>
-        <span class="more-meta"> 約 1410 字 </span>
-          <span class="more-meta"> 預計閱讀 3 分鐘 </span>
+        <span class="more-meta"> 約 1525 字 </span>
+          <span class="more-meta"> 預計閱讀 4 分鐘 </span>
 
         
         
@@ -383,6 +383,8 @@ if (!doNotTrack) {
 
 <div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">% chsh -s $(which zsh)</code></pre></div>
 
+<p>如果你的 zsh theme 含有許多特殊的符號字元，請順便安裝 <a href="https://github.com/powerline/fonts">Powerline</a> 系列字型。</p>
+
 <h2 id="cmder">Cmder</h2>
 
 <p><a href="https://cmder.net/">Cmder</a> 有「完整版」及「迷你版」兩種安裝方式。有了 WSL 之後，msysgit 可以退場，因此，我們只需安裝 Cmder 迷你版。</p>
@@ -423,9 +425,24 @@ if (!doNotTrack) {
 
 <h2 id="設定-cmder-熱鍵">設定 Cmder 熱鍵</h2>
 
-<p>為了復刻出類似 Mac + iTerm2 的使用習慣，此刻，我會花一點時間調整 Cmder 熱鍵設定。</p>
+<p>為了復刻出類似 Mac + iTerm2 的使用習慣，我會花一些時間調整 Cmder 熱鍵設定。請參考保哥的文章〈<a href="https://blog.miniasp.com/post/2015/09/27/Useful-tool-Cmder">介紹好用工具：Cmder (具有 Linux 溫度的 Windows 命令提示字元工具)</a>〉進行熱鍵設定。</p>
 
-<p>如果你也感興趣，請參考保哥的文章〈<a href="https://blog.miniasp.com/post/2015/09/27/Useful-tool-Cmder">介紹好用工具：Cmder (具有 Linux 溫度的 Windows 命令提示字元工具)</a>〉進行熱鍵設定。</p>
+<p>在 Windows 與 WSL 之間進行複製貼上的剪貼簿操作時，常會遇到換行問題。此時我也會順便將 Ctrl-V 組合鍵的 “Paste mode #2” 設定成  “Multi lines” <sup class="footnote-ref" id="fnref:2"><a href="#fn:2">2</a></sup>：</p>
+
+
+
+<div class="box" style="max-width:30em">
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="/img/2019/03/cmder-paste.png" alt="調整 Cmder 剪貼簿的換行處理方式"/>
+    </div>
+    <a href="/img/2019/03/cmder-paste.png" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>調整 Cmder 剪貼簿的換行處理方式</p>
+      </figcaption>
+  </figure>
+</div>
+
 
 <h2 id="檔案系統">檔案系統</h2>
 
@@ -446,7 +463,7 @@ none on /run/user type tmpfs (rw,nosuid,nodev,noexec,noatime,mode=755) binfmt_mi
 D: on /mnt/d type drvfs (rw,noatime,uid=1000,gid=1000,case=off)
 C: on /mnt/c type drvfs (rw,noatime,uid=1000,gid=1000,case=off)</code></pre></div>
 
-<p>不過，因為某些複雜的原因 <sup class="footnote-ref" id="fnref:2"><a href="#fn:2">2</a></sup>，我們必須重新設定 <code>/mnt/d</code> 的 mount 參數，才能讓 Linux 的檔案讀寫權限正常運作。</p>
+<p>不過，因為某些複雜的原因 <sup class="footnote-ref" id="fnref:3"><a href="#fn:3">3</a></sup>，我們必須重新設定 <code>/mnt/d</code> 的 mount 參數，才能讓 Linux 的檔案讀寫權限正常運作。</p>
 
 <p>我們先卸載 <code>/mnt/d</code>，再用夾帶 <code>metadata</code> 的方式重新掛載它：</p>
 
@@ -476,7 +493,7 @@ C: on /mnt/c type drvfs (rw,noatime,uid=1000,gid=1000,case=off)</code></pre></di
 
 <h2 id="docker-與-kubernetes">Docker 與 Kubernetes</h2>
 
-<p>雖然保哥的文章推薦在 WSL 裡的 Linux 再安裝一份 Docker engine <sup class="footnote-ref" id="fnref:3"><a href="#fn:3">3</a></sup>，但我比較傾向<strong>不要</strong>。</p>
+<p>雖然保哥的文章推薦在 WSL 裡的 Linux 再安裝一份 Docker engine <sup class="footnote-ref" id="fnref:4"><a href="#fn:4">4</a></sup>，但我比較傾向<strong>不要</strong>。</p>
 
 <p>我比較傾向共用既有資源的作法，讓 WSL 直接連接到 Docker Desktop for Windows 身上。請根據上官林傑的文章〈<a href="https://medium.com/@ericsk/%E5%9C%A8-windows-subsystem-for-li
 nux-wsl-%E4%B8%8B%E4%BD%BF%E7%94%A8-windows-%E4%B8%8A%E7%9A%84-docker-engine-8dc0040ca240">在 Windows Subsystem for Linux (WSL) 下使用 Windows 上的 Docker Engine</a>〉，做好必要的設定，並在 WSL 裡面設好這些 alias 及環境變數：</p>
@@ -501,10 +518,12 @@ alias kubectl=kubectl.exe                  </code></pre></div>
 <ol>
 <li id="fn:1">保哥於 2015 年九月舉辦過【<a href="https://www.accupass.com/event/1509231111031581814500">打造一個具有 Linux 溫度的 Windows 命令提示字元工具</a>】線上講座，也寫了〈<a href="https://blog.miniasp.com/post/2015/09/27/Useful-tool-Cmder">介紹好用工具：Cmder</a>〉一文。
  <a class="footnote-return" href="#fnref:1"><sup>[return]</sup></a></li>
-<li id="fn:2">關於 WSL DrvFs 的 metadata 權限設定細節，請參考這三篇文章：“<a href="https://blogs.msdn.microsoft.com/commandline/2018/01/12/chmod-chown-wsl-improvements/">Chmod/Chown WSL Improvements</a>”、“<a href="https://www.brianketelsen.com/going-overboard-with-wsl-metadata/">Going Overboard with WSL metadata</a>”、〈<a href="https://segmentfault.com/a/1190000016677670">WSL 配置指北：打造 Windows 最强命令行</a>〉。
+<li id="fn:2">Cmder 的剪貼簿設定細節，請見 <a href="https://conemu.github.io/en/SettingsPaste.html">https://conemu.github.io/en/SettingsPaste.html</a> 。
  <a class="footnote-return" href="#fnref:2"><sup>[return]</sup></a></li>
-<li id="fn:3">保哥的文章〈<a href="https://blog.miniasp.com/post/2018/06/15/My-Windows-Subsystem-for-Linux-WSL-Setup-2018">我的 Windows Subsystem for Linux (WSL) 終極開發人員配置 - 2018 版</a>〉。
+<li id="fn:3">關於 WSL DrvFs 的 metadata 權限設定細節，請參考這三篇文章：“<a href="https://blogs.msdn.microsoft.com/commandline/2018/01/12/chmod-chown-wsl-improvements/">Chmod/Chown WSL Improvements</a>”、“<a href="https://www.brianketelsen.com/going-overboard-with-wsl-metadata/">Going Overboard with WSL metadata</a>”、〈<a href="https://segmentfault.com/a/1190000016677670">WSL 配置指北：打造 Windows 最强命令行</a>〉。
  <a class="footnote-return" href="#fnref:3"><sup>[return]</sup></a></li>
+<li id="fn:4">保哥的文章〈<a href="https://blog.miniasp.com/post/2018/06/15/My-Windows-Subsystem-for-Linux-WSL-Setup-2018">我的 Windows Subsystem for Linux (WSL) 終極開發人員配置 - 2018 版</a>〉。
+ <a class="footnote-return" href="#fnref:4"><sup>[return]</sup></a></li>
 </ol>
 </div>
     </div>
