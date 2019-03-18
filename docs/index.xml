@@ -160,16 +160,31 @@ C: on /mnt/c type drvfs (rw,noatime,uid=1000,gid=1000,case=off)&lt;/code&gt;&lt;
 
 &lt;h2 id=&#34;docker-與-kubernetes&#34;&gt;Docker 與 Kubernetes&lt;/h2&gt;
 
-&lt;p&gt;雖然保哥的文章推薦在 WSL 裡的 Linux 再安裝一份 Docker engine &lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;，但我比較傾向&lt;strong&gt;不要&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;雖然保哥的文章推薦在 WSL 裡的 Linux 再安裝一份 Docker engine &lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;，但我比較傾向&lt;strong&gt;不要&lt;/strong&gt;。我比較傾向共用既有資源，讓 WSL 直接連接到 Docker Desktop for Windows 身上。&lt;/p&gt;
 
-&lt;p&gt;我比較傾向共用既有資源的作法，讓 WSL 直接連接到 Docker Desktop for Windows 身上。請根據上官林傑的文章〈&lt;a href=&#34;https://medium.com/@ericsk/%E5%9C%A8-windows-subsystem-for-li
-nux-wsl-%E4%B8%8B%E4%BD%BF%E7%94%A8-windows-%E4%B8%8A%E7%9A%84-docker-engine-8dc0040ca240&#34;&gt;在 Windows Subsystem for Linux (WSL) 下使用 Windows 上的 Docker Engine&lt;/a&gt;〉，做好必要的設定，並在 WSL 裡面設好這些 alias 及環境變數：&lt;/p&gt;
+&lt;p&gt;請先根據上官林傑的文章〈&lt;a href=&#34;https://medium.com/@ericsk/%E5%9C%A8-windows-subsystem-for-li
+nux-wsl-%E4%B8%8B%E4%BD%BF%E7%94%A8-windows-%E4%B8%8A%E7%9A%84-docker-engine-8dc0040ca240&#34;&gt;在 Windows Subsystem for Linux (WSL) 下使用 Windows 上的 Docker Engine&lt;/a&gt;〉，做好必要的設定，但請先省略其中的 alias 步驟（稍後會說明為什麼）：&lt;/p&gt;
 
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;export DOCKER_HOST=&amp;#34;tcp://localhost:2375&amp;#34;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;打開 Docker Desktop for Windows 的 &amp;ldquo;Expose daemon on tcp://localhost:2375 without TLS.&amp;rdquo; 選項。&lt;/p&gt;&lt;/li&gt;
 
-alias docker=docker.exe                    
-alias docker-compose=docker-compose.exe    
-alias kubectl=kubectl.exe                  &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;li&gt;&lt;p&gt;在 WSL 裡設定 &lt;code&gt;DOCKER_HOST&lt;/code&gt; 環境變數：&lt;br/&gt;
+&lt;code&gt;export DOCKER_HOST=&amp;quot;tcp://localhost:2375&amp;quot;&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;在 WSL 裡 &lt;code&gt;sudo visudo&lt;/code&gt; 以下環境變數：&lt;br/&gt;
+&lt;code&gt;Defaults env_keep += &amp;quot;DOCKER_HOST&amp;quot;&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;上述文章建議透過 &lt;code&gt;alias docker=docker.exe&lt;/code&gt; 的方式來使用 Docker Desktop for Windows 的 docker client。不過，這些 alias 未必都能在 script 中展開 &lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34;&gt;5&lt;/a&gt;&lt;/sup&gt; ——有鬆綁的方法，但我不喜歡破例。我比較傾向在 WSL 裡建立符號連結：&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;% sudo ln -s &amp;#34;/mnt/c/Program Files/Docker/Docker/resources/bin/docker.exe&amp;#34; \
+    /usr/local/bin/docker
+
+% sudo ln -s &amp;#34;/mnt/c/Program Files/Docker/Docker/resources/bin/docker-compose.exe&amp;#34; \
+    /usr/local/bin/docker-compose
+
+% sudo ln -s &amp;#34;/mnt/c/Program Files/Docker/Docker/resources/bin/kubectl.exe&amp;#34; \
+    /usr/local/bin/kubectl               &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;也別忘了，要將 Windows 上面的 Kubernetes 設定連接過來：&lt;/p&gt;
 
@@ -191,6 +206,8 @@ alias kubectl=kubectl.exe                  &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
  &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:3&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li id=&#34;fn:4&#34;&gt;保哥的文章〈&lt;a href=&#34;https://blog.miniasp.com/post/2018/06/15/My-Windows-Subsystem-for-Linux-WSL-Setup-2018&#34;&gt;我的 Windows Subsystem for Linux (WSL) 終極開發人員配置 - 2018 版&lt;/a&gt;〉。
  &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:4&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:5&#34;&gt;Bash 的行為是：“Aliases are not expanded when the shell is not interactive, unless…”，請參考 “&lt;a href=&#34;https://unix.stackexchange.com/questions/1496/why-doesnt-my-bash-script-recognize-aliases&#34;&gt;Why doesn&amp;rsquo;t my Bash script recognize aliases?&lt;/a&gt;” 這類文章。
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:5&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;</description>
       
