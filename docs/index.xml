@@ -6,10 +6,192 @@
     <description>Recent content on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Thu, 14 Mar 2019 08:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 29 Mar 2019 23:00:00 +0800</lastBuildDate>
     
         <atom:link href="//william-yeh.net/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Nginx Ingress 與 Ambassador 簡易性能比較</title>
+      <link>//william-yeh.net/post/2019/03/ingress-vs-ambassador/</link>
+      <pubDate>Fri, 29 Mar 2019 23:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2019/03/ingress-vs-ambassador/</guid>
+      
+        <description>&lt;p&gt;API gateway 是微服務環境，甚至 service mesh 的要角 &lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;。&lt;/p&gt;
+
+&lt;p&gt;在 Kubernetes 上面，API gateway 選項眾多。有像 HAProxy 及 Nginx 這些石器時代老傢伙跨足過來，也有打從一開始就走 cloud native 路線的後起之秀。&lt;/p&gt;
+
+&lt;p&gt;該如何選擇？&lt;/p&gt;
+
+&lt;p&gt;根據 Steven Acreman 寫的 &lt;a href=&#34;https://kubedex.com/ingress/&#34;&gt;Ingress 評比文章&lt;/a&gt;的看法：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;The safest choice is &lt;a href=&#34;https://kubernetes.github.io/ingress-nginx/&#34;&gt;ingress-nginx&lt;/a&gt;&lt;/em&gt;. This is the one that most people use and it’s extremely reliable. Before you begin I’d recommend you read this blog to get ahead of some of the problems you may encounter.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;My vote for the coolest ingress definitely goes to &lt;a href=&#34;https://www.getambassador.io/&#34;&gt;Ambassador&lt;/a&gt;.&lt;/em&gt;  If you’re just running standard http based micro services and fancy living on the bleeding edge then you should definitely get Istio, Ambassador and Jaeger setup as a proof of concept.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;進一步研讀 Ambassador 相關資料 &lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;，發現他們鎖定的 service mesh 路線很合我的胃口，站在 &lt;a href=&#34;https://www.envoyproxy.io/&#34;&gt;Envoy&lt;/a&gt; 巨人肩膀上更是聰明。不過，理論歸理論，我想親自試試看現在的 Ambassador 是否堪當大任？&lt;/p&gt;
+
+&lt;p&gt;初步，我只先拿 &lt;a href=&#34;https://kubernetes.github.io/ingress-nginx/&#34;&gt;ingress-nginx&lt;/a&gt; 這個所謂的 “the safest choice” 作簡單的性能比較。將來有機會再進行更徹底的 chaos monkey 測試。&lt;/p&gt;
+
+&lt;h2 id=&#34;實驗環境&#34;&gt;實驗環境&lt;/h2&gt;
+
+&lt;p&gt;為了簡化實驗步驟，我直接採用 Google Cloud Platform 的 &lt;a href=&#34;https://cloud.google.com/kubernetes-engine/&#34;&gt;GKE&lt;/a&gt;。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Kubernetes 版本：1.11.7-gke.12&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Node：2 台 &lt;a href=&#34;https://cloud.google.com/compute/docs/machine-types#standard_machine_types&#34;&gt;n1-standard-1&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;我選用的標靶軟體是 &lt;a href=&#34;https://github.com/GoogleCloudPlatform/kubernetes-engine-samples/tree/master/hello-app&#34;&gt;hello-app&lt;/a&gt;，分別用以下兩種 API gateway 來對外提供服務介面：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Nginx ingress 版本：0.23.0&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Ambassador 版本：0.52.0&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;最後，我利用 &lt;a href=&#34;https://github.com/William-Yeh/docker-boom&#34;&gt;boom&lt;/a&gt; 進行簡單的壓力測試。&lt;/p&gt;
+
+&lt;h2 id=&#34;nginx-ingress&#34;&gt;Nginx ingress&lt;/h2&gt;
+
+&lt;p&gt;為了簡單起見，我直接套用以下這份 Qwiklabs 的全部步驟：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.qwiklabs.com/focuses/872?parent=catalog&#34;&gt;GSP181 - NGINX Ingress Controller on Google Kubernetes Engine&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;照著做完後，Nginx ingress 會在 GKE 開放一個公開的 http 服務存取點。&lt;/p&gt;
+
+&lt;p&gt;我們可以先用 &lt;code&gt;kubectl get services&lt;/code&gt; 查看 API gateway 的 public IP 位址。假設是 &lt;code&gt;35.222.12.84&lt;/code&gt; 的話，這個服務路徑則是 &lt;code&gt;http://35.222.12.84/hello/&lt;/code&gt;。&lt;/p&gt;
+
+&lt;h2 id=&#34;ambassador&#34;&gt;Ambassador&lt;/h2&gt;
+
+&lt;p&gt;首先，仿造前面的 Qwiklabs 步驟，在 GKE 上建立起相同規模的 k8s cluster。也執行一份 &lt;a href=&#34;https://gist.githubusercontent.com/William-Yeh/0aab709e450b4442614ef87b0250260b/raw/daba0ba7e6b5561ec9af51a3ea020c79e572e34e/hello-app-service.yaml&#34;&gt;hello-app service&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;為了安裝 Ambassador，我們需要開啟 GKE 權限：&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;% kubectl create clusterrolebinding my-cluster-admin-binding  \
+    --clusterrole=cluster-admin  \
+    --user=$(gcloud info --format=&amp;#34;value(config.account)&amp;#34;)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;接下來，就是正常的 Ambassador 安裝步驟：&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;% kubectl create -f http://bit.ly/2UmsPuE&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;此刻，我們終於可以透過 Ambassador，替 hello-app 設定 API gateway 規則：&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;% kubectl create -f https://bit.ly/2YyZzjO&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;照著做完後，Ambassador 會在 GKE 開放一個公開的 http 服務存取點。&lt;/p&gt;
+
+&lt;p&gt;我們可以先用 &lt;code&gt;kubectl get services&lt;/code&gt; 查看 API gateway 的 public IP 位址。假設是 &lt;code&gt;35.224.99.169&lt;/code&gt; 的話，這個服務路徑則是 &lt;code&gt;http://35.224.99.169/hello2/&lt;/code&gt;。&lt;/p&gt;
+
+&lt;h2 id=&#34;簡單的壓測&#34;&gt;簡單的壓測&lt;/h2&gt;
+
+&lt;p&gt;為了簡單起見，我在 GCP 的 &lt;a href=&#34;https://cloud.google.com/shell/?hl=zh-tw&#34;&gt;Cloud Shell&lt;/a&gt; 進行壓測。我會對 Nginx ingress 及 Ambassador 兩種情況，各送出一萬個 API 存取要求。&lt;/p&gt;
+
+&lt;p&gt;針對 Nginx ingress 的情況進行測試：&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;% docker run --rm  williamyeh/boom  \
+    -n 10000 -c 100  http://35.222.12.84/hello/
+
+Summary:
+  Total:        16.2312 secs
+  Slowest:      0.3252 secs
+  Fastest:      0.1568 secs
+  Average:      0.1616 secs
+  Requests/sec: 616.0963
+  Total data:   660000 bytes
+  Size/request: 66 bytes
+
+Status code distribution:
+  [200] 10000 responses
+
+Response time histogram:
+  0.157 [1]     |
+  0.174 [9803]  |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  0.190 [96]    |
+  0.207 [0]     |
+  0.224 [0]     |
+  0.241 [0]     |
+  0.258 [0]     |
+  0.275 [0]     |
+  0.292 [0]     |
+  0.308 [0]     |
+  0.325 [100]   |
+
+Latency distribution:
+  10% in 0.1576 secs
+  25% in 0.1583 secs
+  50% in 0.1593 secs
+  75% in 0.1608 secs
+  90% in 0.1632 secs
+  95% in 0.1661 secs
+  99% in 0.3152 secs&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;針對 Ambassador 的情況進行測試：&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;% docker run --rm  williamyeh/boom  \
+    -n 10000 -c 100  http://35.224.99.169/hello2/
+
+Summary:
+  Total:        16.8132 secs
+  Slowest:      0.3857 secs
+  Fastest:      0.1571 secs
+  Average:      0.1662 secs
+  Requests/sec: 594.7715
+  Total data:   660000 bytes
+  Size/request: 66 bytes
+
+Status code distribution:
+  [200] 10000 responses
+
+Response time histogram:
+  0.157 [1]     |
+  0.180 [9595]  |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  0.203 [304]   |∎
+  0.226 [0]     |
+  0.249 [0]     |
+  0.271 [0]     |
+  0.294 [0]     |
+  0.317 [0]     |
+  0.340 [0]     |
+  0.363 [8]     |
+  0.386 [92]    |
+
+Latency distribution:
+  10% in 0.1596 secs
+  25% in 0.1607 secs
+  50% in 0.1623 secs
+  75% in 0.1656 secs
+  90% in 0.1717 secs
+  95% in 0.1786 secs
+  99% in 0.3596 secs&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;儘管不夠嚴謹，但仍可以約略看出 Ambassador 的性能已經逼近 Nginx ingress。以才兩歲半的 Envoy &lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;、才滿兩歲的 Ambassador &lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34;&gt;4&lt;/a&gt;&lt;/sup&gt; 來說，已經很不容易了。&lt;/p&gt;
+
+&lt;p&gt;這是一個值得開始嘗試的好物。&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;對於 API gateway 來龍去脈感興趣的，可參考 Ricky 的文章〈&lt;a href=&#34;https://rickhw.github.io/2018/01/24/AWS/Study-Notes-Overview-API-Gateway/&#34;&gt;Overview API Gateway&lt;/a&gt;〉、Andrew 的文章〈&lt;a href=&#34;https://columns.chicken-house.net/2017/07/11/microservice8-case-study-p3/&#34;&gt;架構師觀點 - 轉移到微服務架構的經驗分享 (Part 3)&lt;/a&gt;〉。
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:1&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;對於 Ambassador 早期發展歷程感興趣的，可參考他們寫的這兩篇文章：“&lt;a href=&#34;https://medium.com/@datawire/building-ambassador-an-open-source-api-gateway-on-kubernetes-and-envoy-33637a9fa6f8&#34;&gt;Building Ambassador, an Open Source API Gateway on Kubernetes and Envoy&lt;/a&gt;” 及 “&lt;a href=&#34;https://blog.getambassador.io/kubernetes-ingress-nodeport-load-balancers-and-ingress-controllers-6e29f1c44f2d&#34;&gt;Kubernetes Ingress 101: NodePort, Load Balancers, and Ingress Controllers&lt;/a&gt;”。
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:2&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;Envoy &lt;a href=&#34;https://github.com/envoyproxy/envoy/tree/v1.0.0&#34;&gt;1.0.0 版&lt;/a&gt;發布日期為 2016 年 9 月。
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:3&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:4&#34;&gt;Ambassador &lt;a href=&#34;https://github.com/datawire/ambassador/blob/master/CHANGELOG.md&#34;&gt;0.1.3 版&lt;/a&gt;發布日期為 2017 年 3 月。
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:4&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description>
+      
+    </item>
     
     <item>
       <title>在 Windows 上復刻 Mac 使用習慣</title>
@@ -3063,210 +3245,6 @@ emerge from &lt;strong&gt;self-organizing teams&lt;/strong&gt;.
 &lt;/div&gt;
 
 </description>
-      
-    </item>
-    
-    <item>
-      <title>敏捷的判準</title>
-      <link>//william-yeh.net/post/2018/10/agile-criteria/</link>
-      <pubDate>Wed, 31 Oct 2018 08:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2018/10/agile-criteria/</guid>
-      
-        <description>&lt;p&gt;今年暑假，我第一次去台中的國美館，參觀 &lt;a href=&#34;https://www.ntmofa.gov.tw/information_1078_86836.html&#34;&gt;2018 年全國美術展&lt;/a&gt;。&lt;/p&gt;
-
-&lt;p&gt;這年度盛會，分成油畫、水彩、版畫、水墨等十大類。大開眼界之餘，也不禁有個奇想：為什麼要分這麼多類別來競賽？為什麼不選出一個跨十大類別的首獎，就像武林盟主一樣？&lt;/p&gt;
-
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;//www.youtube.com/embed/nBlph7Vp92E&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-
-
-&lt;p&gt;很外行吧！畢竟，油畫的美感判準，與版畫的美感判準、攝影的美感判準，本來就有很大不同，不能草率化約在同一把尺來衡量高下境界。&lt;/p&gt;
-
-&lt;p&gt;把照片拍得像油畫，就能夠贏過油畫嗎？&lt;/p&gt;
-
-&lt;p&gt;我們有選擇美術媒材的自由。一旦擇定媒材，就要正視及尊重該媒材的運用手法、該媒材營造的世界觀，以及該媒材表現境界的判準。&lt;/p&gt;
-
-&lt;p&gt;軟體開發，亦然。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2018/10/methodology-and-criteria/&#34;&gt;前一篇文章&lt;/a&gt;初步提到&lt;strong&gt;方法論&lt;/strong&gt;與&lt;strong&gt;判準&lt;/strong&gt;之間的關係，這一篇文章，就來繼續探討幾種常見軟體研發方法的判準。&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;「多元典範的軟體開發取向」認為：我們可以視問題的性質，採取瀑布或敏捷軟體開發典範。&lt;/p&gt;
-
-&lt;p&gt;然而，採取某種典範，不但要說明自己的&lt;strong&gt;方法論立場&lt;/strong&gt;，而且要採用該一典範的&lt;strong&gt;方法論判準&lt;/strong&gt;。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&#34;瀑布方法的判準&#34;&gt;瀑布方法的判準&lt;/h2&gt;
-
-&lt;p&gt;敏捷三叔公 David Ko 在〈&lt;a href=&#34;http://kojenchieh.pixnet.net/blog/post/465054452-%E5%8E%9F%E4%BE%86%E7%80%91%E5%B8%83%E8%80%81%E7%A5%96%E6%98%AF%E6%83%B3%E5%81%9A%E6%95%8F%E6%8D%B7%E5%95%8A&#34;&gt;原來瀑布老祖是想做敏捷啊&lt;/a&gt;〉考古文章中指出，瀑布式開發始祖 Winston W. Royce 在 1970 年發表的&lt;a href=&#34;https://dl.acm.org/citation.cfm?id=41801&#34;&gt;會議論文&lt;/a&gt;中，總共提出兩種想法，一種是後來被世人普遍稱為&lt;del&gt;萬惡的&lt;/del&gt; waterfall 的版本，另一種則是帶些更務實風格的修正版。&lt;/p&gt;
-
-&lt;p&gt;兩種想法，背後的核心觀念，其實都是 &lt;a href=&#34;https://www.pmi.org/learning/library/phase-gate-processes-promising-complex-547&#34;&gt;phase gate&lt;/a&gt; 或 &lt;a href=&#34;https://wiki.mbalib.com/zh-tw/%E9%97%A8%E5%BE%84%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F&#34;&gt;stage gate&lt;/a&gt; 的 &amp;ldquo;&lt;strong&gt;gate&lt;/strong&gt;&amp;rdquo; 機制：&lt;/p&gt;
-
-
-&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
-&lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
-  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/10/royce-1970.png&#34; alt=&#34;Royce 1970 - Managing the development of large software systems: concepts and techniques&#34;/&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2018/10/royce-1970.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-      &lt;figcaption&gt;
-          &lt;p&gt;Royce 1970 - Managing the development of large software systems: concepts and techniques&lt;/p&gt;
-      &lt;/figcaption&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;
-
-
-&lt;p&gt;以上圖來說，圓圈圈的部分，就是在各個階段 (phase/stage) 負責把關的守門員：&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;PSR: Preliminary Software Review&lt;/li&gt;
-&lt;li&gt;CSR: Critical Software Review&lt;/li&gt;
-&lt;li&gt;FSAR: Final Software Acceptance Review&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;這就是瀑布方法論的判準。&lt;/p&gt;
-
-&lt;h3 id=&#34;合乎現實嗎&#34;&gt;合乎現實嗎？&lt;/h3&gt;
-
-&lt;p&gt;要走 waterfall 路線，就要弄清楚 waterfall 的判準，並致力於判準的實踐品質，這是將方法論落地實施的重要關鍵。&lt;/p&gt;
-
-&lt;p&gt;問題是：這個判準，合乎現實嗎？更進一步的問題是：是怎樣的世界觀，才會催生如此的判準？&lt;/p&gt;
-
-&lt;p&gt;Waterfall 的世界觀就是，萬事萬物，都有一個自然的、可預測的線性執行順序。在這些自然的線性順序當中，會有一些關鍵的控制點，或者像《&lt;a href=&#34;https://www.kingstone.com.tw/book/book_page.asp?kmcode=2014940760328&#34;&gt;利潤的故事&lt;/a&gt;》所用的「地景的控制點」妙喻：「有些地方，就是比其他地方重要」。&lt;/p&gt;
-
-
-
-&lt;div class=&#34;box&#34; style=&#34;max-width:20em&#34;&gt;
-  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/10/control-point.jpg&#34; alt=&#34;地景的控制點&#34;/&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2018/10/control-point.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-      &lt;figcaption&gt;
-          &lt;p&gt;地景的控制點&lt;/p&gt;
-      &lt;/figcaption&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;
-
-
-&lt;p&gt;這些「地景的控制點」，就是瀑布方法 phase gate 判準之所在。&lt;/p&gt;
-
-&lt;p&gt;不可否認，的確有人在這種方法論、世界觀、判準底下活得很好。認清這個判準，以及這個判準背後代表的方法論及世界觀，有助於你和這類人種互動。&lt;/p&gt;
-
-&lt;p&gt;或許更重要的是，你不同意這種方法論，卻又得與這類人種合作，你就應該在這些判準的層次上，&lt;del&gt;挑戰&lt;/del&gt;關心對方對這些判準的認知與實踐品質。&lt;/p&gt;
-
-&lt;p&gt;在判準的層次動工，比各自表述的爭辯更有力。&lt;/p&gt;
-
-&lt;h2 id=&#34;scrum-的判準&#34;&gt;Scrum 的判準&lt;/h2&gt;
-
-&lt;p&gt;儘管 Scrum 是很精簡的框架，但真正核心的判準，未必都被清楚地認知。&lt;/p&gt;
-
-&lt;p&gt;我個人認為，Scrum 的判準，就在於 &lt;strong&gt;increment&lt;/strong&gt;，或者更具體一點講：&lt;strong&gt;PSPI&lt;/strong&gt; (potentially shippable product increment)。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://www.scrumguides.org/&#34;&gt;&lt;em&gt;The Scrum Guide&lt;/em&gt;&lt;/a&gt; (2017 版) 說：&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Scrum 使用迭代和逐步 increment 的方式，來最大化可預測性和控制風險。&lt;/p&gt;
-
-&lt;p&gt;在 Sprint 結束時，increment 是一種可檢視，完成的工作實體，並可支持經驗主義。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;簡言之，Scrum 是以 increment 作為載具、「地景的控制點」，藉以反映出透明性、檢視性、調適性這三大主張，藉以最大化可預測性及控制風險。&lt;/p&gt;
-
-&lt;p&gt;並不是隨隨便便任何一個軟體中間狀態都夠資格稱為 &amp;ldquo;increment&amp;rdquo;，而是有標準的。Scrum 是很精簡的框架，將這標準交由團隊來定義 (DoD; definition of done)，但能否嚴守這個承諾共識，決定了 Scrum 實踐的成敗：&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Scrum Teams 用迭代和逐步 increment 的方式交付產品，將回饋的機會最大化。用逐步
-increment 的方式交付「完成」的產品，可以確保一直提供一個潛在可用的產品版本。&lt;/p&gt;
-
-&lt;p&gt;真正執行的人員和檢視 increment 成果的人員，需要對「完成」之定義，有一個共同的認知。&lt;/p&gt;
-
-&lt;p&gt;在 Sprint 的最後，新的 increment 必須是「完成」的，這意味著它必須是可用的狀態，並符合 Scrum Team 對於「完成」之定義。&lt;/p&gt;
-
-&lt;p&gt;在 Sprint 過程中，對於品質的目標不可以降低。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;簡言之，Scrum 的判準，就在於 increment 的定義，以及能否在各個迭代過程中，捍衛並精進這個 increment 的整全狀態。&lt;/p&gt;
-
-&lt;h3 id=&#34;合乎現實嗎-1&#34;&gt;合乎現實嗎？&lt;/h3&gt;
-
-&lt;p&gt;要走 Scrum 路線，就要弄清楚 Scrum 的判準，並致力於判準的實踐品質，這是將方法論落地實施的重要關鍵。&lt;/p&gt;
-
-&lt;p&gt;問題是：這個判準，合乎現實嗎？更進一步的問題是：是怎樣的世界觀，才會催生如此的判準？&lt;/p&gt;
-
-&lt;p&gt;Scrum 的世界觀就是，萬事萬物，都有一個自然的生物成長順序。或嬰兒，或幼童，或成年，在每一個當下，必然都是整全的生命個體。&lt;/p&gt;
-
-&lt;p&gt;認清這個判準，以及這個判準背後代表的方法論及世界觀，有助於你與其他物種分別為聖。&lt;/p&gt;
-
-&lt;p&gt;或許更重要的是，你支持這種方法論，卻又得與反對者合作，你就應該在這些判準的層次上，盡一切努力守護這些判準的認知與實踐品質，並最大化這些判準的價值能見度。&lt;/p&gt;
-
-&lt;p&gt;在判準的層次動工，比各自表述的爭辯更有力。&lt;/p&gt;
-
-&lt;div class=&#34;shortcode-notice note&#34;&gt;
-  &lt;div class=&#34;shortcode-notice-title note&#34;&gt;
-    
-      2019-02-11 補充
-    
-  &lt;/div&gt;
-  &lt;p&gt;Mike Cohn 在新文章 &lt;a href=&#34;https://www.mountaingoatsoftware.com/blog/why-agile-teams-put-so-much-emphasis-on-being-done-each-iteration&#34;&gt;&lt;em&gt;Why Agile Teams Put So Much Emphasis on Being Done Each Iteration&lt;/em&gt;&lt;/a&gt; 中，對這論點做了更詳細的說明。&lt;/p&gt;
-
-&lt;/div&gt;
-
-
-&lt;h2 id=&#34;kanban-的判準&#34;&gt;Kanban 的判準&lt;/h2&gt;
-
-&lt;p&gt;Kanban 是極度精簡的框架，甚至連「框架」都不太能夠稱得上。因此，他的判準很容易辨識，也很容易衡量，那就是 Kanban 的核心規則：拉動系統 (pull)、WIP 限制。&lt;/p&gt;
-
-&lt;p&gt;問題是：這個判準，合乎現實嗎？更進一步的問題是：是怎樣的世界觀，才會催生如此的判準？&lt;/p&gt;
-
-&lt;p&gt;Kanban 的世界觀就是，萬事萬物，都有一個自然的流動順序。我們所該做的，就是讓這流動，以小批量的方式，毫無阻礙地順流而下。&lt;/p&gt;
-
-&lt;p&gt;認清這個判準，以及這個判準背後代表的方法論及世界觀，有助於你掌握這個「入門毒藥」(gateway drug) &lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; 的殊勝之處，以及⋯⋯潛在的問題。 &lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-
-&lt;p&gt;或許更重要的是，你支持這種方法論，卻又得與反對者或不可知論者合作，你就應該在這些判準的層次上，盡一切努力守護這些判準的認知與實踐品質，並最大化這些判準的價值能見度。&lt;/p&gt;
-
-&lt;p&gt;在判準的層次動工，比各自表述的爭辯更有力。&lt;/p&gt;
-
-&lt;h2 id=&#34;善用判準作為施力點&#34;&gt;善用判準作為施力點&lt;/h2&gt;
-
-&lt;p&gt;判準，是將方法論落地實施的重要關鍵，也是方法論歧見的槓桿解。&lt;/p&gt;
-
-&lt;p&gt;畢竟，方法論，甚至背後的世界觀，不是那麼容易就撼動得了。&lt;/p&gt;
-
-&lt;p&gt;試問：你對自己採用的軟體開發方法論，了解它的判準嗎？&lt;/p&gt;
-
-&lt;p&gt;試問：你對其他人採用的不一樣的軟體開發方法論，也了解它的判準嗎？&lt;/p&gt;
-
-&lt;p&gt;理解別人的判準，善用判準作為施力點，在判準的層次動工，比起辯論不同方法論之間的優劣，更有建設性，也更能推動事情的前進。&lt;/p&gt;
-
-&lt;div class=&#34;shortcode-notice note&#34;&gt;
-  &lt;div class=&#34;shortcode-notice-title note&#34;&gt;
-    
-      系列文章
-    
-  &lt;/div&gt;
-  &lt;p&gt;❶ &lt;a href=&#34;//william-yeh.net/post/2018/10/methodology-and-criteria/&#34;&gt;軟體開發，除了方法論，還有⋯⋯&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;❷ 敏捷的判準&lt;/p&gt;
-
-&lt;p&gt;❸ &lt;a href=&#34;//william-yeh.net/post/2018/11/lean-startup-criteria/&#34;&gt;Lean Startup 的判準&lt;/a&gt;&lt;/p&gt;
-
-&lt;/div&gt;
-
-&lt;div class=&#34;footnotes&#34;&gt;
-
-&lt;hr /&gt;
-
-&lt;ol&gt;
-&lt;li id=&#34;fn:1&#34;&gt;&lt;a href=&#34;http://kojenchieh.pixnet.net/blog/post/386166536-%E7%9C%8B%E6%9D%BF%E6%98%AF%E5%85%A5%E9%96%80%E6%AF%92%E8%97%A5-(gateway-drug)&#34;&gt;看板是入門毒藥 (gateway drug)&lt;/a&gt;
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:1&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li id=&#34;fn:2&#34;&gt;&lt;a href=&#34;http://teddy-chen-tw.blogspot.com/2017/06/blog-post_21.html&#34;&gt;為什麼看板方法適合控制與能力文化？&lt;/a&gt;
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:2&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;</description>
       
     </item>
     

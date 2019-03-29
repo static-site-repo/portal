@@ -6,10 +6,23 @@
     <description>Recent content in Tech on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Thu, 14 Mar 2019 08:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 29 Mar 2019 23:00:00 +0800</lastBuildDate>
     
 	<atom:link href="//william-yeh.net/categories/tech/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Nginx Ingress 與 Ambassador 簡易性能比較</title>
+      <link>//william-yeh.net/post/2019/03/ingress-vs-ambassador/</link>
+      <pubDate>Fri, 29 Mar 2019 23:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2019/03/ingress-vs-ambassador/</guid>
+      <description>&lt;p&gt;API gateway 是微服務環境，甚至 service mesh 的要角 &lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;。&lt;/p&gt;
+
+&lt;p&gt;在 Kubernetes 上面，API gateway 選項眾多。有像 HAProxy 及 Nginx 這些石器時代老傢伙跨足過來，也有打從一開始就走 cloud native 路線的後起之秀。&lt;/p&gt;
+
+&lt;p&gt;該如何選擇？&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>在 Windows 上復刻 Mac 使用習慣</title>
