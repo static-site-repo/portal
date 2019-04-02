@@ -6,10 +6,101 @@
     <description>Recent content on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Fri, 29 Mar 2019 23:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 02 Apr 2019 16:00:00 +0800</lastBuildDate>
     
         <atom:link href="//william-yeh.net/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>給 RD 的 Kubernetes 初體驗</title>
+      <link>//william-yeh.net/courses/cloudsummit2019/</link>
+      <pubDate>Tue, 02 Apr 2019 16:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/courses/cloudsummit2019/</guid>
+      
+        <description>
+
+&lt;h2 id=&#34;課程簡介&#34;&gt;課程簡介&lt;/h2&gt;
+
+&lt;p&gt;Kubernetes 是目前雲端環境的顯學。可是，傳統的程式，並不是原封不動搬上去，就能夠自動享受 Kubernetes 所宣稱的種種好處。&lt;/p&gt;
+
+&lt;p&gt;新的環境，不僅需要新的 Ops 思維，也需要新的 Dev 思維。我們將以一個半小時的時間，從軟體研發者的角度，探討軟體的設計該做哪些最起碼的改變，從實作中體驗 Kubernetes 引進的新觀念及新效益。&lt;/p&gt;
+
+&lt;h2 id=&#34;課程目標&#34;&gt;課程目標&lt;/h2&gt;
+
+&lt;p&gt;從實例中體驗，傳統 web 應用程式在搬上 Kubernetes 時，可能會經歷哪些架構面的調整，才能享受新架構的效益：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;容器化&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;微服務&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;組態管理&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;API gateway&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;多重環境管理：本機端與雲端（以 GKE 為例）&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;課程架構&#34;&gt;課程架構&lt;/h2&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;主題&lt;/th&gt;
+&lt;th&gt;內容簡介&lt;/th&gt;
+&lt;th&gt;類型&lt;/th&gt;
+&lt;th&gt;時間(分)&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;1. 基本觀念&lt;/td&gt;
+&lt;td&gt;快速介紹 Kubernetes 基本觀念&lt;/td&gt;
+&lt;td&gt;簡報介紹&lt;/td&gt;
+&lt;td&gt;10&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;2. 本機端實作&lt;/td&gt;
+&lt;td&gt;移植 web 軟體至本機端 Kubernetes&lt;/td&gt;
+&lt;td&gt;實機操作&lt;/td&gt;
+&lt;td&gt;50&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;3. 雲端實作&lt;/td&gt;
+&lt;td&gt;將 Kubernetes 成果送上雲端&lt;/td&gt;
+&lt;td&gt;實機操作&lt;/td&gt;
+&lt;td&gt;20&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;4. 總結&lt;/td&gt;
+&lt;td&gt;Kubernetes 微服務要點總結&lt;/td&gt;
+&lt;td&gt;簡報介紹&lt;/td&gt;
+&lt;td&gt;10&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&#34;注意事項&#34;&gt;注意事項&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;須具備簡單的 Web 前後端觀念。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;須具備 Docker、Docker Compose、git 基本操作能力。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;請先在自備筆電中安裝 &lt;a href=&#34;https://www.docker.com/products/docker-desktop&#34;&gt;Docker Desktop&lt;/a&gt;，並開啟其中的 Kubernetes 功能。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;本課程有一部分實作活動會使用 Google Kubernetes Engine (GKE) 及 Container Registry (GCR) 服務。為了讓現場體驗活動順暢，請學員事先申請好 &lt;a href=&#34;https://cloud.google.com/&#34;&gt;Google Cloud Platform&lt;/a&gt; 帳號，並自主練習約 45 分鐘的 “&lt;a href=&#34;https://www.qwiklabs.com/focuses/2794?parent=catalog&#34;&gt;A Tour of Qwiklabs and the Google Cloud Platform&lt;/a&gt;” 免費活動，確保你在來到活動現場之前，就已熟悉 &lt;a href=&#34;https://cloud.google.com/shell/&#34;&gt;Google Cloud Shell&lt;/a&gt; 的操作環境。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;本課程會提供適當的 Google Cloud Platform 使用額度，感謝 Google Taiwan 熱情贊助。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+      
+    </item>
     
     <item>
       <title>Nginx Ingress 與 Ambassador 簡易性能比較</title>
@@ -3080,171 +3171,6 @@ emerge from &lt;strong&gt;self-organizing teams&lt;/strong&gt;.
 &lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
 
 &lt;p&gt;兩本有趣的私房書，給大家參考。&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Lean Startup 的判準</title>
-      <link>//william-yeh.net/post/2018/11/lean-startup-criteria/</link>
-      <pubDate>Thu, 01 Nov 2018 08:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2018/11/lean-startup-criteria/</guid>
-      
-        <description>
-
-&lt;p&gt;《商業周刊》第 1615 期，有一篇總編輯的話〈&lt;a href=&#34;https://www.businessweekly.com.tw/magazine/Article_mag_page.aspx?id=68134&#34;&gt;拖鞋戰法，先做了再修！&lt;/a&gt;〉：&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;網路時代的敏捷開發法，強調「先做了再修改」，中心思想不是「預測」(predict)，而是「順應」(adapt)，讓市場告訴你如何改變。因此「先做出可用、但不完美的產品」後，直接拿到市場測試，根據顧客意見，再回頭修改，反覆這個循環，直到產品上市。&lt;/p&gt;
-
-&lt;p&gt;在快時代下，過去強調「凡事先想透徹」的戰法出現破綻，步伐顯得沉重，而「先做了再改」的敏捷戰法則相對靈活。講到這裡，快低頭看看，你穿的是皮鞋還是拖鞋？&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;這下子 PO/PdM 可高興了，拿此文所謂「拖鞋戰法」當立論基礎，向團隊臃腫的 Scrum/Kanban DoD 磨刀霍霍。這也在&lt;a href=&#34;https://www.facebook.com/groups/179345672472/&#34;&gt;台灣 Scrum 社群&lt;/a&gt;引發熱烈&lt;a href=&#34;https://www.facebook.com/groups/179345672472/permalink/10156032174387473/&#34;&gt;討論&lt;/a&gt;。&lt;/p&gt;
-
-&lt;p&gt;我留的評論是：&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;其實，這仍然是方法論&lt;strong&gt;判準&lt;/strong&gt;的老問題。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;敏捷有許多流派，不是只有 Scrum 才叫正宗，不是只有 Kanban 才叫適用。&lt;/p&gt;
-
-&lt;p&gt;某些 PO 心中所想的，其實既不是 Scrum 也不是 Kanban，而是 lean startup（精實創業）——儘管他們自己也不知道。&lt;/p&gt;
-
-&lt;p&gt;選錯方法論，選錯判準，自然扞格不入。&lt;/p&gt;
-
-&lt;p&gt;先搞清楚 PO 內心真正要的方法論，搞清楚這方法論背後的世界觀，搞清楚判準，才能進行&lt;del&gt;攻防&lt;/del&gt;對話。&lt;/p&gt;
-
-&lt;h2 id=&#34;lean-startup-的源流&#34;&gt;Lean Startup 的源流&lt;/h2&gt;
-
-&lt;p&gt;Lean startup 路線，比較正式的起源，據 Steve Blank 在哈佛商業評論〈&lt;a href=&#34;https://www.hbrtaiwan.com/article_content_AR0002324.html&#34;&gt;精實創業改變全世界&lt;/a&gt;〉所述：&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;2004 年，我投資一家由艾瑞克．萊斯 (Eric Ries) 和威爾．哈維 (Will Harvey) 成立的新創公司，並提出一個但書，我堅持他們必須上我的課，我才會投資。&lt;/p&gt;
-
-&lt;p&gt;艾瑞克很快就發現，科技產業傳統採行的「瀑布式開發法」那種線性開發方式，應該改為反覆修正、敏捷回應的開發方式。艾瑞克也看出這套新創業準則，與大家耳熟能詳的、豐田「精實生產」系統之間的共同點，因此，將這套結合顧客開發與敏捷反應的方法稱為「精實創業」。&lt;/p&gt;
-
-&lt;p&gt;這些工具因為一連串的暢銷書，而逐漸廣為人知。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;2011 年，Eric Ries 總結自身及他人經驗，出版《&lt;a href=&#34;https://www.books.com.tw/products/0010768288&#34;&gt;精實創業&lt;/a&gt;》一書，替這種路線正式定調。身為教父，他也策展了一系列經典之作：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;《&lt;a href=&#34;https://www.books.com.tw/products/0010580487&#34;&gt;精實執行&lt;/a&gt;》&lt;/li&gt;
-&lt;li&gt;《&lt;a href=&#34;https://www.books.com.tw/products/0010753559&#34;&gt;快成長時代&lt;/a&gt;》&lt;/li&gt;
-&lt;li&gt;《&lt;a href=&#34;https://www.tenlong.com.tw/products/9787115405319&#34;&gt;精益客戶開發&lt;/a&gt;》&lt;/li&gt;
-&lt;li&gt;《&lt;a href=&#34;https://www.books.com.tw/products/CN11206479&#34;&gt;精益數據分析&lt;/a&gt;》&lt;/li&gt;
-&lt;li&gt;《&lt;a href=&#34;https://www.books.com.tw/products/0010756527&#34;&gt;精實 UX 設計&lt;/a&gt;》&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Lean startup 理念貌似常識，但若真的要有正確不偏頗的理解，這些輕薄短小的書都是必備讀物，勿等閒視之。&lt;/p&gt;
-
-&lt;h2 id=&#34;lean-startup-的判準&#34;&gt;Lean Startup 的判準&lt;/h2&gt;
-
-&lt;p&gt;Lean startup 在執行時，的確常會與 Scrum 或 Kanban 混搭。像《&lt;a href=&#34;https://www.books.com.tw/products/0010580487&#34;&gt;精實執行&lt;/a&gt;》第二版第 13 章如此建議：&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;控制你的功能管線，限制同時間被處理的功能數量，並且僅於你已驗證過所部署之功能具有正面或負面的影響之後（亦即，產生經驗學習），才著手處理新功能。進行這項工作的好方法，就是運用 Kanban。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;但在方法論層面，仍然該有所區辨，尤其會涉及到接下來要談的嚴肅話題：判準。&lt;/p&gt;
-
-&lt;p&gt;Lean startup 理念貌似常識，但真正核心的判準，未必都被清楚地認知。&lt;/p&gt;
-
-&lt;p&gt;我個人認為，lean startup 的判準，就是 Ash Maurya 在《&lt;a href=&#34;https://www.books.com.tw/products/0010580487&#34;&gt;精實執行&lt;/a&gt;》書中所勾勒的三大風險、四大階段。如果以 Ash Maurya 發明的精實畫布 (lean canvas) 攤開來看：&lt;/p&gt;
-
-
-&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
-&lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
-  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/11/lean-startup-risk.jpg&#34; alt=&#34;《精實執行》有系統地消除三大風險&#34;/&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2018/11/lean-startup-risk.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-      &lt;figcaption&gt;
-          &lt;p&gt;《精實執行》有系統地消除三大風險&lt;/p&gt;
-      &lt;/figcaption&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;
-
-
-&lt;p&gt;三大風險、四大階段，彼此的判讀基準如下：&lt;/p&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;階段&lt;/th&gt;
-&lt;th&gt;產品風險&lt;/th&gt;
-&lt;th&gt;顧客風險&lt;/th&gt;
-&lt;th&gt;市場風險&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;⓵瞭解問題&lt;/td&gt;
-&lt;td&gt;你在解決什麼問題？&lt;/td&gt;
-&lt;td&gt;競爭對手是誰？&lt;/td&gt;
-&lt;td&gt;誰感到痛苦？&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;⓶定義解決方案&lt;/td&gt;
-&lt;td&gt;誰感到痛苦？&lt;/td&gt;
-&lt;td&gt;你將如何解決這些問題？&lt;/td&gt;
-&lt;td&gt;定價模型為何？&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;⓷定性驗證&lt;/td&gt;
-&lt;td&gt;這項產品有什麼令人無法抗拒的地方嗎？&lt;/td&gt;
-&lt;td&gt;你有足夠的顧客嗎？&lt;/td&gt;
-&lt;td&gt;價格合適嗎？&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;⓸定量驗證&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;至於 lean canvas 的各個空格，該如何制訂質性與量化的指標，就得量身定做了。&lt;/p&gt;
-
-&lt;p&gt;看到這裡，你認為本文開頭所提到的「拖鞋戰法」，是落在 lean startup 哪一個格子呢？&lt;/p&gt;
-
-&lt;h3 id=&#34;合乎現實嗎&#34;&gt;合乎現實嗎？&lt;/h3&gt;
-
-&lt;p&gt;要走 lean startup 路線，就要弄清楚 lean startup 的判準，並致力於判準的實踐品質，這是將方法論落地實施的重要關鍵。&lt;/p&gt;
-
-&lt;p&gt;問題是：這個判準，合乎現實嗎？更進一步的問題是：是怎樣的世界觀，才會催生如此的判準？&lt;/p&gt;
-
-&lt;p&gt;Lean startup 的世界觀就是，我們對萬事萬物的認知，充斥仍待驗證的粗糙假設。能用最少的投入成本，降低最多的不確定性，就是最好的學習。&lt;/p&gt;
-
-&lt;p&gt;認清這個判準，以及這個判準背後代表的方法論及世界觀，有助於你成為高性價比的策略執行家。&lt;/p&gt;
-
-&lt;p&gt;或許更重要的是，你支持這種方法論，卻又得與一知半解者合作，你就應該在這些判準的層次上，盡一切努力守護這些判準的認知與實踐品質，並最大化這些判準的價值能見度。&lt;/p&gt;
-
-&lt;p&gt;在判準的層次動工，比各自表述的爭辯更有力。&lt;/p&gt;
-
-&lt;div class=&#34;shortcode-notice note&#34;&gt;
-  &lt;div class=&#34;shortcode-notice-title note&#34;&gt;
-    
-      系列文章
-    
-  &lt;/div&gt;
-  &lt;p&gt;❶ &lt;a href=&#34;//william-yeh.net/post/2018/10/methodology-and-criteria/&#34;&gt;軟體開發，除了方法論，還有⋯⋯&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;❷ &lt;a href=&#34;//william-yeh.net/post/2018/10/agile-criteria/&#34;&gt;敏捷的判準&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;❸ Lean Startup 的判準&lt;/p&gt;
-
-&lt;/div&gt;
-
-</description>
       
     </item>
     

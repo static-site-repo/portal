@@ -3,6 +3,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>//william-yeh.net/courses/cloudsummit2019/</loc>
+    <lastmod>2019-04-02T16:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>//william-yeh.net/post/2019/03/ingress-vs-ambassador/</loc>
     <lastmod>2019-03-29T23:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -366,6 +373,13 @@
   </url>
   
   <url>
+    <loc>//william-yeh.net/courses/</loc>
+    <lastmod>2019-04-02T16:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>//william-yeh.net/tags/criteria/</loc>
     <lastmod>2018-11-02T08:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -374,7 +388,7 @@
   
   <url>
     <loc>//william-yeh.net/tags/devops/</loc>
-    <lastmod>2019-03-29T23:00:00+08:00</lastmod>
+    <lastmod>2019-04-02T16:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -430,7 +444,7 @@
   
   <url>
     <loc>//william-yeh.net/tags/kubernetes/</loc>
-    <lastmod>2019-03-29T23:00:00+08:00</lastmod>
+    <lastmod>2019-04-02T16:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -493,7 +507,7 @@
   
   <url>
     <loc>//william-yeh.net/tags/microservices/</loc>
-    <lastmod>2019-03-29T23:00:00+08:00</lastmod>
+    <lastmod>2019-04-02T16:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -514,7 +528,7 @@
   
   <url>
     <loc>//william-yeh.net/</loc>
-    <lastmod>2019-03-29T23:00:00+08:00</lastmod>
+    <lastmod>2019-04-02T16:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -591,7 +605,7 @@
   
   <url>
     <loc>//william-yeh.net/categories/tech/</loc>
-    <lastmod>2019-03-29T23:00:00+08:00</lastmod>
+    <lastmod>2019-04-02T16:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

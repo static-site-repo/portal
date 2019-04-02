@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Courses on Potioneer&#39;s Essays</title>
+    <link>//william-yeh.net/courses/</link>
+    <description>Recent content in Courses on Potioneer&#39;s Essays</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Tue, 02 Apr 2019 16:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="//william-yeh.net/courses/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>給 RD 的 Kubernetes 初體驗</title>
+      <link>//william-yeh.net/courses/cloudsummit2019/</link>
+      <pubDate>Tue, 02 Apr 2019 16:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/courses/cloudsummit2019/</guid>
+      <description>課程簡介 Kubernetes 是目前雲端環境的顯學。可是，傳統的程式，並不是原封不動搬上去，就能夠自動享受 Kubernetes 所宣稱的種種好處。 新的環境，不僅需要新的 Ops 思維，也需</description>
+    </item>
+    
+  </channel>
+</rss>
