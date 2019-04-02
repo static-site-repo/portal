@@ -95,8 +95,6 @@
 &lt;li&gt;&lt;p&gt;請先在自備筆電中安裝 &lt;a href=&#34;https://www.docker.com/products/docker-desktop&#34;&gt;Docker Desktop&lt;/a&gt;，並開啟其中的 Kubernetes 功能。&lt;/p&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;本課程有一部分實作活動會使用 Google Kubernetes Engine (GKE) 及 Container Registry (GCR) 服務。為了讓現場體驗活動順暢，請學員事先申請好 &lt;a href=&#34;https://cloud.google.com/&#34;&gt;Google Cloud Platform&lt;/a&gt; 帳號，並自主練習約 45 分鐘的 “&lt;a href=&#34;https://www.qwiklabs.com/focuses/2794?parent=catalog&#34;&gt;A Tour of Qwiklabs and the Google Cloud Platform&lt;/a&gt;” 免費活動，確保你在來到活動現場之前，就已熟悉 &lt;a href=&#34;https://cloud.google.com/shell/&#34;&gt;Google Cloud Shell&lt;/a&gt; 的操作環境。&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;本課程會提供適當的 Google Cloud Platform 使用額度，感謝 Google Taiwan 熱情贊助。&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
       
