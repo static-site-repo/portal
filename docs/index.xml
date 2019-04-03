@@ -20,6 +20,12 @@
       
         <description>
 
+&lt;p&gt;&lt;strong&gt;活動名稱&lt;/strong&gt;：給 RD 的 Kubernetes 初體驗&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;時間&lt;/strong&gt;：2019-05-15 (三) / 11:00&amp;ndash;12:30&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;會議&lt;/strong&gt;：&lt;a href=&#34;https://cloudsummit.ithome.com.tw/&#34;&gt;台灣雲端大會 (Cloud Summit 2019)&lt;/a&gt;&lt;/p&gt;
+
 &lt;h2 id=&#34;課程簡介&#34;&gt;課程簡介&lt;/h2&gt;
 
 &lt;p&gt;Kubernetes 是目前雲端環境的顯學。可是，傳統的程式，並不是原封不動搬上去，就能夠自動享受 Kubernetes 所宣稱的種種好處。&lt;/p&gt;
@@ -87,11 +93,17 @@
 
 &lt;h2 id=&#34;注意事項&#34;&gt;注意事項&lt;/h2&gt;
 
+&lt;h3 id=&#34;學員能力要求&#34;&gt;學員能力要求&lt;/h3&gt;
+
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;須具備簡單的 Web 前後端觀念。&lt;/p&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;須具備 Docker、Docker Compose、git 基本操作能力。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
+&lt;h3 id=&#34;學員需知&#34;&gt;學員需知&lt;/h3&gt;
+
+&lt;ul&gt;
 &lt;li&gt;&lt;p&gt;請先在自備筆電中安裝 &lt;a href=&#34;https://www.docker.com/products/docker-desktop&#34;&gt;Docker Desktop&lt;/a&gt;，並開啟其中的 Kubernetes 功能。&lt;/p&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;本課程有一部分實作活動會使用 Google Kubernetes Engine (GKE) 及 Container Registry (GCR) 服務。為了讓現場體驗活動順暢，請學員事先申請好 &lt;a href=&#34;https://cloud.google.com/&#34;&gt;Google Cloud Platform&lt;/a&gt; 帳號，並自主練習約 45 分鐘的 “&lt;a href=&#34;https://www.qwiklabs.com/focuses/2794?parent=catalog&#34;&gt;A Tour of Qwiklabs and the Google Cloud Platform&lt;/a&gt;” 免費活動，確保你在來到活動現場之前，就已熟悉 &lt;a href=&#34;https://cloud.google.com/shell/&#34;&gt;Google Cloud Shell&lt;/a&gt; 的操作環境。&lt;/p&gt;&lt;/li&gt;
