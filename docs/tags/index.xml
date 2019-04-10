@@ -6,94 +6,13 @@
     <description>Recent content in Tags on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Thu, 17 Jan 2019 15:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 02 Apr 2019 16:00:00 +0800</lastBuildDate>
     
 	<atom:link href="//william-yeh.net/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Agile</title>
-      <link>//william-yeh.net/tags/agile/</link>
-      <pubDate>Thu, 17 Jan 2019 15:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/tags/agile/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ansible</title>
-      <link>//william-yeh.net/tags/ansible/</link>
-      <pubDate>Wed, 02 Mar 2016 08:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/tags/ansible/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Book</title>
-      <link>//william-yeh.net/tags/book/</link>
-      <pubDate>Sat, 19 Jan 2019 10:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/tags/book/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Career</title>
-      <link>//william-yeh.net/tags/career/</link>
-      <pubDate>Sat, 19 Jan 2019 10:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/tags/career/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Change</title>
-      <link>//william-yeh.net/tags/change/</link>
-      <pubDate>Fri, 02 Nov 2018 08:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/tags/change/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ci</title>
-      <link>//william-yeh.net/tags/ci/</link>
-      <pubDate>Mon, 28 Dec 2015 08:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/tags/ci/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Communication</title>
-      <link>//william-yeh.net/tags/communication/</link>
-      <pubDate>Sat, 04 Jun 2016 09:54:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/tags/communication/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Course</title>
-      <link>//william-yeh.net/tags/course/</link>
-      <pubDate>Sat, 19 Jan 2019 10:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/tags/course/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Criteria</title>
-      <link>//william-yeh.net/tags/criteria/</link>
-      <pubDate>Fri, 02 Nov 2018 08:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/tags/criteria/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Devops</title>
+      <title>devops</title>
       <link>//william-yeh.net/tags/devops/</link>
       <pubDate>Tue, 02 Apr 2019 16:00:00 +0800</pubDate>
       
@@ -102,70 +21,7 @@
     </item>
     
     <item>
-      <title>Docker</title>
-      <link>//william-yeh.net/tags/docker/</link>
-      <pubDate>Tue, 22 Dec 2015 08:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/tags/docker/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Facilitation</title>
-      <link>//william-yeh.net/tags/facilitation/</link>
-      <pubDate>Mon, 24 Dec 2018 08:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/tags/facilitation/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Fallow</title>
-      <link>//william-yeh.net/tags/fallow/</link>
-      <pubDate>Tue, 04 Dec 2018 08:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/tags/fallow/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Gamification</title>
-      <link>//william-yeh.net/tags/gamification/</link>
-      <pubDate>Sat, 23 Apr 2016 08:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/tags/gamification/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Growth</title>
-      <link>//william-yeh.net/tags/growth/</link>
-      <pubDate>Mon, 29 Aug 2016 07:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/tags/growth/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Kanban</title>
-      <link>//william-yeh.net/tags/kanban/</link>
-      <pubDate>Wed, 31 Oct 2018 08:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/tags/kanban/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Kotter</title>
-      <link>//william-yeh.net/tags/kotter/</link>
-      <pubDate>Tue, 28 Jun 2016 08:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/tags/kotter/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Kubernetes</title>
+      <title>kubernetes</title>
       <link>//william-yeh.net/tags/kubernetes/</link>
       <pubDate>Tue, 02 Apr 2019 16:00:00 +0800</pubDate>
       
@@ -174,7 +30,61 @@
     </item>
     
     <item>
-      <title>Leadership</title>
+      <title>microservices</title>
+      <link>//william-yeh.net/tags/microservices/</link>
+      <pubDate>Tue, 02 Apr 2019 16:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/tags/microservices/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>service mesh</title>
+      <link>//william-yeh.net/tags/service-mesh/</link>
+      <pubDate>Fri, 29 Mar 2019 23:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/tags/service-mesh/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>wsl</title>
+      <link>//william-yeh.net/tags/wsl/</link>
+      <pubDate>Thu, 14 Mar 2019 08:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/tags/wsl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>book</title>
+      <link>//william-yeh.net/tags/book/</link>
+      <pubDate>Sat, 19 Jan 2019 10:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/tags/book/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>career</title>
+      <link>//william-yeh.net/tags/career/</link>
+      <pubDate>Sat, 19 Jan 2019 10:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/tags/career/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>course</title>
+      <link>//william-yeh.net/tags/course/</link>
+      <pubDate>Sat, 19 Jan 2019 10:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/tags/course/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>leadership</title>
       <link>//william-yeh.net/tags/leadership/</link>
       <pubDate>Sat, 19 Jan 2019 10:00:00 +0800</pubDate>
       
@@ -183,11 +93,101 @@
     </item>
     
     <item>
-      <title>Lean</title>
-      <link>//william-yeh.net/tags/lean/</link>
-      <pubDate>Thu, 01 Nov 2018 08:00:00 +0800</pubDate>
+      <title>succession</title>
+      <link>//william-yeh.net/tags/succession/</link>
+      <pubDate>Sat, 19 Jan 2019 10:00:00 +0800</pubDate>
       
-      <guid>//william-yeh.net/tags/lean/</guid>
+      <guid>//william-yeh.net/tags/succession/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>training</title>
+      <link>//william-yeh.net/tags/training/</link>
+      <pubDate>Sat, 19 Jan 2019 10:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/tags/training/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>agile</title>
+      <link>//william-yeh.net/tags/agile/</link>
+      <pubDate>Thu, 17 Jan 2019 15:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/tags/agile/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>scrum</title>
+      <link>//william-yeh.net/tags/scrum/</link>
+      <pubDate>Fri, 11 Jan 2019 08:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/tags/scrum/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>facilitation</title>
+      <link>//william-yeh.net/tags/facilitation/</link>
+      <pubDate>Mon, 24 Dec 2018 08:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/tags/facilitation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>measurement</title>
+      <link>//william-yeh.net/tags/measurement/</link>
+      <pubDate>Thu, 20 Dec 2018 08:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/tags/measurement/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>satir</title>
+      <link>//william-yeh.net/tags/satir/</link>
+      <pubDate>Thu, 20 Dec 2018 08:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/tags/satir/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>process</title>
+      <link>//william-yeh.net/tags/process/</link>
+      <pubDate>Fri, 07 Dec 2018 13:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/tags/process/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>toc</title>
+      <link>//william-yeh.net/tags/toc/</link>
+      <pubDate>Fri, 07 Dec 2018 13:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/tags/toc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>fallow</title>
+      <link>//william-yeh.net/tags/fallow/</link>
+      <pubDate>Tue, 04 Dec 2018 08:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/tags/fallow/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tech debt</title>
+      <link>//william-yeh.net/tags/tech-debt/</link>
+      <pubDate>Tue, 04 Dec 2018 08:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/tags/tech-debt/</guid>
       <description></description>
     </item>
     

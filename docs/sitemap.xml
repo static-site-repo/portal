@@ -1,6 +1,53 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <?xml-stylesheet type="text/xsl" href="//william-yeh.net/sitemap.xsl"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>//william-yeh.net/categories/</loc>
+    <lastmod>2019-04-02T16:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/courses/</loc>
+    <lastmod>2019-04-02T16:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/</loc>
+    <lastmod>2019-04-02T16:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/</loc>
+    <lastmod>2019-04-02T16:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/categories/tech/</loc>
+    <lastmod>2019-04-02T16:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/devops/</loc>
+    <lastmod>2019-04-02T16:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/kubernetes/</loc>
+    <lastmod>2019-04-02T16:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/microservices/</loc>
+    <lastmod>2019-04-02T16:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
   
   <url>
     <loc>//william-yeh.net/courses/cloudsummit2019/</loc>
@@ -14,6 +61,24 @@
     <lastmod>2019-03-29T23:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/post/</loc>
+    <lastmod>2019-03-29T23:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/service-mesh/</loc>
+    <lastmod>2019-03-29T23:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/wsl/</loc>
+    <lastmod>2019-03-14T08:00:00+08:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -31,10 +96,58 @@
   </url>
   
   <url>
+    <loc>//william-yeh.net/tags/book/</loc>
+    <lastmod>2019-01-19T10:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/career/</loc>
+    <lastmod>2019-01-19T10:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/course/</loc>
+    <lastmod>2019-01-19T10:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/leadership/</loc>
+    <lastmod>2019-01-19T10:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/categories/management/</loc>
+    <lastmod>2019-01-19T10:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/succession/</loc>
+    <lastmod>2019-01-19T10:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/training/</loc>
+    <lastmod>2019-01-19T10:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>//william-yeh.net/post/2019/01/tech-leader-reading/</loc>
     <lastmod>2019-01-19T10:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/agile/</loc>
+    <lastmod>2019-01-17T15:00:00+08:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -52,10 +165,22 @@
   </url>
   
   <url>
+    <loc>//william-yeh.net/tags/scrum/</loc>
+    <lastmod>2019-01-11T08:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>//william-yeh.net/post/2019/01/field-battle-only/</loc>
     <lastmod>2019-01-03T13:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/facilitation/</loc>
+    <lastmod>2018-12-24T08:00:00+08:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -73,10 +198,40 @@
   </url>
   
   <url>
+    <loc>//william-yeh.net/categories/life/</loc>
+    <lastmod>2018-12-20T08:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/measurement/</loc>
+    <lastmod>2018-12-20T08:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/satir/</loc>
+    <lastmod>2018-12-20T08:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>//william-yeh.net/post/2018/12/agile-measurement/</loc>
     <lastmod>2018-12-19T08:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/process/</loc>
+    <lastmod>2018-12-07T13:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/toc/</loc>
+    <lastmod>2018-12-07T13:00:00+08:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -91,6 +246,30 @@
     <lastmod>2018-12-04T08:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/fallow/</loc>
+    <lastmod>2018-12-04T08:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/tech-debt/</loc>
+    <lastmod>2018-12-04T08:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/less/</loc>
+    <lastmod>2018-11-30T15:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/safe/</loc>
+    <lastmod>2018-11-30T15:00:00+08:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -129,10 +308,34 @@
   </url>
   
   <url>
+    <loc>//william-yeh.net/tags/pmo/</loc>
+    <lastmod>2018-11-15T08:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/project-management/</loc>
+    <lastmod>2018-11-15T08:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>//william-yeh.net/post/2018/11/succession-planning/</loc>
     <lastmod>2018-11-08T08:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/change/</loc>
+    <lastmod>2018-11-02T08:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/criteria/</loc>
+    <lastmod>2018-11-02T08:00:00+08:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -150,6 +353,24 @@
   </url>
   
   <url>
+    <loc>//william-yeh.net/tags/lean/</loc>
+    <lastmod>2018-11-01T08:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/kanban/</loc>
+    <lastmod>2018-10-31T08:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/waterfall/</loc>
+    <lastmod>2018-10-31T08:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>//william-yeh.net/post/2018/10/agile-criteria/</loc>
     <lastmod>2018-10-31T08:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -164,10 +385,40 @@
   </url>
   
   <url>
+    <loc>//william-yeh.net/categories/course/</loc>
+    <lastmod>2016-08-29T07:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/growth/</loc>
+    <lastmod>2016-08-29T07:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>//william-yeh.net/post/2016/08/lifetime-keywords/</loc>
     <lastmod>2016-08-29T07:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/mac/</loc>
+    <lastmod>2016-08-22T08:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/speech/</loc>
+    <lastmod>2016-08-22T08:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/tools/</loc>
+    <lastmod>2016-08-22T08:00:00+08:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -192,6 +443,12 @@
   </url>
   
   <url>
+    <loc>//william-yeh.net/tags/kotter/</loc>
+    <lastmod>2016-06-28T08:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>//william-yeh.net/post/2016/06/change-framework/</loc>
     <lastmod>2016-06-28T08:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -203,6 +460,12 @@
     <lastmod>2016-06-21T08:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/communication/</loc>
+    <lastmod>2016-06-04T09:54:00+08:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -224,6 +487,12 @@
     <lastmod>2016-05-03T08:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/gamification/</loc>
+    <lastmod>2016-04-23T08:00:00+08:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -255,10 +524,28 @@
   </url>
   
   <url>
+    <loc>//william-yeh.net/tags/linux/</loc>
+    <lastmod>2016-03-15T08:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/security/</loc>
+    <lastmod>2016-03-15T08:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>//william-yeh.net/post/2016/03/origin-of-devops-elements/</loc>
     <lastmod>2016-03-07T08:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/ansible/</loc>
+    <lastmod>2016-03-02T08:00:00+08:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -283,10 +570,28 @@
   </url>
   
   <url>
+    <loc>//william-yeh.net/tags/ci/</loc>
+    <lastmod>2015-12-28T08:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>//william-yeh.net/post/2015/12/ci-effect/</loc>
     <lastmod>2015-12-22T08:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/docker/</loc>
+    <lastmod>2015-12-22T08:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/testing/</loc>
+    <lastmod>2015-12-22T08:00:00+08:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -301,362 +606,6 @@
     <lastmod>2015-09-15T23:02:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/tags/agile/</loc>
-    <lastmod>2019-01-17T15:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/tags/ansible/</loc>
-    <lastmod>2016-03-02T08:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/tags/book/</loc>
-    <lastmod>2019-01-19T10:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/tags/career/</loc>
-    <lastmod>2019-01-19T10:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/categories/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/tags/change/</loc>
-    <lastmod>2018-11-02T08:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/tags/ci/</loc>
-    <lastmod>2015-12-28T08:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/tags/communication/</loc>
-    <lastmod>2016-06-04T09:54:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/tags/course/</loc>
-    <lastmod>2019-01-19T10:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/categories/course/</loc>
-    <lastmod>2016-08-29T07:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/courses/</loc>
-    <lastmod>2019-04-02T16:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/tags/criteria/</loc>
-    <lastmod>2018-11-02T08:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/tags/devops/</loc>
-    <lastmod>2019-04-02T16:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/tags/docker/</loc>
-    <lastmod>2015-12-22T08:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/tags/facilitation/</loc>
-    <lastmod>2018-12-24T08:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/tags/fallow/</loc>
-    <lastmod>2018-12-04T08:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/tags/gamification/</loc>
-    <lastmod>2016-04-23T08:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/tags/growth/</loc>
-    <lastmod>2016-08-29T07:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/tags/kanban/</loc>
-    <lastmod>2018-10-31T08:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/tags/kotter/</loc>
-    <lastmod>2016-06-28T08:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/tags/kubernetes/</loc>
-    <lastmod>2019-04-02T16:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/tags/leadership/</loc>
-    <lastmod>2019-01-19T10:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/tags/lean/</loc>
-    <lastmod>2018-11-01T08:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/tags/less/</loc>
-    <lastmod>2018-11-30T15:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/categories/life/</loc>
-    <lastmod>2018-12-20T08:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/tags/linux/</loc>
-    <lastmod>2016-03-15T08:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/tags/mac/</loc>
-    <lastmod>2016-08-22T08:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/categories/management/</loc>
-    <lastmod>2019-01-19T10:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/tags/measurement/</loc>
-    <lastmod>2018-12-20T08:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/tags/microservices/</loc>
-    <lastmod>2019-04-02T16:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/tags/pmo/</loc>
-    <lastmod>2018-11-15T08:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/post/</loc>
-    <lastmod>2019-03-29T23:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/</loc>
-    <lastmod>2019-04-02T16:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/tags/process/</loc>
-    <lastmod>2018-12-07T13:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/tags/project-management/</loc>
-    <lastmod>2018-11-15T08:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/tags/safe/</loc>
-    <lastmod>2018-11-30T15:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/tags/satir/</loc>
-    <lastmod>2018-12-20T08:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/tags/scrum/</loc>
-    <lastmod>2019-01-11T08:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/tags/security/</loc>
-    <lastmod>2016-03-15T08:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/tags/service-mesh/</loc>
-    <lastmod>2019-03-29T23:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/tags/speech/</loc>
-    <lastmod>2016-08-22T08:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/tags/succession/</loc>
-    <lastmod>2019-01-19T10:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/tags/</loc>
-    <lastmod>2019-01-17T15:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/categories/tech/</loc>
-    <lastmod>2019-04-02T16:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/tags/tech-debt/</loc>
-    <lastmod>2018-12-04T08:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/tags/testing/</loc>
-    <lastmod>2015-12-22T08:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/tags/toc/</loc>
-    <lastmod>2018-12-07T13:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/tags/tools/</loc>
-    <lastmod>2016-08-22T08:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/tags/training/</loc>
-    <lastmod>2019-01-19T10:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/tags/waterfall/</loc>
-    <lastmod>2018-10-31T08:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/tags/wsl/</loc>
-    <lastmod>2019-03-14T08:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
   </url>
   
 </urlset>
