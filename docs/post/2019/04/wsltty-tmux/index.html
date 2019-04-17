@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>年假可讀的軟體領域輕讀物 - Potioneer&#39;s Essays</title>
+  <title>WSLtty &#43; tmux 組合技 - Potioneer&#39;s Essays</title>
   
 
 <meta name="renderer" content="webkit" />
@@ -25,7 +25,10 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="William Yeh" />
-  <meta name="description" content="中午時，非 RD 的同事請我推薦適合泛軟體產業從業人員的五份輕讀物，可在春節連續假期時好好補血。 年假，自然不方便啃太過於生硬艱澀、理論宏偉的讀物。" />
+  <meta name="description" content="在 Windows 10 上面使用 WSL 已經一個月了1。小狀況也就罷了，但 Cmder 不夠穩定的顯示邏輯卻最讓我頭痛，在視窗尺寸變化時，無法正確處理字元位置。更令人費解的是，即使是其他狀似更華麗（也更耗資源）的替代方案，也仍然有這些問題2。
+既然酷炫的終端機競品問題多多，乾脆回歸極簡的 WSLtty3，並混搭 tmux4 來彌補。可惜，畢竟是組合技，無法完全複製 Mac 的 iTerm2 使用經驗。
+此事古難全。
+" />
 
 
 
@@ -36,7 +39,7 @@
 <meta name="generator" content="Hugo 0.55.1" />
 
 
-<link rel="canonical" href="//william-yeh.net/post/2019/01/soft-reading-list/" />
+<link rel="canonical" href="//william-yeh.net/post/2019/04/wsltty-tmux/" />
 
 
 
@@ -56,27 +59,39 @@
 
 
 
-<meta property="og:title" content="年假可讀的軟體領域輕讀物" />
-<meta property="og:description" content="中午時，非 RD 的同事請我推薦適合泛軟體產業從業人員的五份輕讀物，可在春節連續假期時好好補血。 年假，自然不方便啃太過於生硬艱澀、理論宏偉的讀物。" />
+<meta property="og:title" content="WSLtty &#43; tmux 組合技" />
+<meta property="og:description" content="在 Windows 10 上面使用 WSL 已經一個月了1。小狀況也就罷了，但 Cmder 不夠穩定的顯示邏輯卻最讓我頭痛，在視窗尺寸變化時，無法正確處理字元位置。更令人費解的是，即使是其他狀似更華麗（也更耗資源）的替代方案，也仍然有這些問題2。
+
+既然酷炫的終端機競品問題多多，乾脆回歸極簡的 WSLtty3，並混搭 tmux4 來彌補。可惜，畢竟是組合技，無法完全複製 Mac 的 iTerm2 使用經驗。
+
+此事古難全。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="//william-yeh.net/post/2019/01/soft-reading-list/" />
-<meta property="article:published_time" content="2019-01-17T15:00:00&#43;08:00"/>
-<meta property="article:modified_time" content="2019-01-17T15:00:00&#43;08:00"/>
+<meta property="og:url" content="//william-yeh.net/post/2019/04/wsltty-tmux/" />
+<meta property="article:published_time" content="2019-04-17T22:00:00&#43;08:00"/>
+<meta property="article:modified_time" content="2019-04-17T22:00:00&#43;08:00"/>
 
-<meta itemprop="name" content="年假可讀的軟體領域輕讀物">
-<meta itemprop="description" content="中午時，非 RD 的同事請我推薦適合泛軟體產業從業人員的五份輕讀物，可在春節連續假期時好好補血。 年假，自然不方便啃太過於生硬艱澀、理論宏偉的讀物。">
+<meta itemprop="name" content="WSLtty &#43; tmux 組合技">
+<meta itemprop="description" content="在 Windows 10 上面使用 WSL 已經一個月了1。小狀況也就罷了，但 Cmder 不夠穩定的顯示邏輯卻最讓我頭痛，在視窗尺寸變化時，無法正確處理字元位置。更令人費解的是，即使是其他狀似更華麗（也更耗資源）的替代方案，也仍然有這些問題2。
 
+既然酷炫的終端機競品問題多多，乾脆回歸極簡的 WSLtty3，並混搭 tmux4 來彌補。可惜，畢竟是組合技，無法完全複製 Mac 的 iTerm2 使用經驗。
 
-<meta itemprop="datePublished" content="2019-01-17T15:00:00&#43;08:00" />
-<meta itemprop="dateModified" content="2019-01-17T15:00:00&#43;08:00" />
-<meta itemprop="wordCount" content="1070">
-
+此事古難全。">
 
 
-<meta itemprop="keywords" content="agile,devops,book," />
+<meta itemprop="datePublished" content="2019-04-17T22:00:00&#43;08:00" />
+<meta itemprop="dateModified" content="2019-04-17T22:00:00&#43;08:00" />
+<meta itemprop="wordCount" content="0">
+
+
+
+<meta itemprop="keywords" content="wsl," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="年假可讀的軟體領域輕讀物"/>
-<meta name="twitter:description" content="中午時，非 RD 的同事請我推薦適合泛軟體產業從業人員的五份輕讀物，可在春節連續假期時好好補血。 年假，自然不方便啃太過於生硬艱澀、理論宏偉的讀物。"/>
+<meta name="twitter:title" content="WSLtty &#43; tmux 組合技"/>
+<meta name="twitter:description" content="在 Windows 10 上面使用 WSL 已經一個月了1。小狀況也就罷了，但 Cmder 不夠穩定的顯示邏輯卻最讓我頭痛，在視窗尺寸變化時，無法正確處理字元位置。更令人費解的是，即使是其他狀似更華麗（也更耗資源）的替代方案，也仍然有這些問題2。
+
+既然酷炫的終端機競品問題多多，乾脆回歸極簡的 WSLtty3，並混搭 tmux4 來彌補。可惜，畢竟是組合技，無法完全複製 Mac 的 iTerm2 使用經驗。
+
+此事古難全。"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -280,18 +295,18 @@ if (!doNotTrack) {
           <article class="post bg-white">
     
     <header class="post-header">
-      <h1 class="post-title">年假可讀的軟體領域輕讀物</h1>
+      <h1 class="post-title">WSLtty &#43; tmux 組合技</h1>
       
       <div class="post-meta">
-        <time datetime="2019-01-17" class="post-time">
-          2019-01-17
+        <time datetime="2019-04-17" class="post-time">
+          2019-04-17
         </time>
         <div class="post-category">
-            <a href="//william-yeh.net/categories/management/"> management </a>
+            <a href="//william-yeh.net/categories/tech/"> tech </a>
             
           </div>
-        <span class="more-meta"> 約 1070 字 </span>
-          <span class="more-meta"> 預計閱讀 3 分鐘 </span>
+        <span class="more-meta"> 約 0 字 </span>
+          <span class="more-meta"> 預計閱讀 0 分鐘 </span>
 
         
         
@@ -307,85 +322,103 @@ if (!doNotTrack) {
 
     
     
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目錄</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#wsltty-剪貼簿">WSLtty 剪貼簿</a></li>
+<li><a href="#tmux-與-zsh">Tmux 與 zsh</a></li>
+<li><a href="#tmux-的-pane">Tmux 的 pane</a></li>
+<li><a href="#tmux-plugin-manager">Tmux Plugin Manager</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
 
     
     <div class="post-content">
-      
+      <p>在 Windows 10 上面使用 WSL 已經一個月了<sup class="footnote-ref" id="fnref:1"><a href="#fn:1">1</a></sup>。小狀況也就罷了，但 <a href="https://cmder.net/">Cmder</a> 不夠穩定的顯示邏輯卻最讓我頭痛，在視窗尺寸變化時，無法正確處理字元位置。更令人費解的是，即使是其他狀似更華麗（也更耗資源）的替代方案，也仍然有這些問題<sup class="footnote-ref" id="fnref:2"><a href="#fn:2">2</a></sup>。</p>
 
-<p>中午時，非 RD 的同事請我推薦適合泛軟體產業從業人員的五份輕讀物，可在春節連續假期時好好補血。</p>
+<p>既然酷炫的終端機競品問題多多，乾脆回歸極簡的 WSLtty<sup class="footnote-ref" id="fnref:3"><a href="#fn:3">3</a></sup>，並混搭 tmux<sup class="footnote-ref" id="fnref:4"><a href="#fn:4">4</a></sup> 來彌補。可惜，畢竟是組合技，無法完全複製 Mac 的 iTerm2 使用經驗。</p>
 
-<p>年假，自然不方便啃太過於生硬艱澀、理論宏偉的讀物。我挑選這五份輕讀物：四本書，一組網路系列文章。敘事風格親切，高潮迭起，應該可以帶來不少啟發。</p>
+<p>此事古難全。</p>
 
-<h2 id="it-實境小說">IT 實境小說</h2>
+<h2 id="wsltty-剪貼簿">WSLtty 剪貼簿</h2>
 
-<p>《<a href="https://www.books.com.tw/products/0010765203">鳳凰專案</a>》，體會一下研發、維運、行銷、安控、財務等部門相互掣肘的慘劇，以及如何以 DevOps「三步工作法」來解決的戲劇性發展。</p>
+<p>在 X Window 或 Mac 的終端機，只要按下滑鼠右鍵就能夠 paste 文字。如果在 WSLtty 上也想這麼玩，請在 <code>%APPDATA%\wsltty\config</code> 設定檔加上這一行：</p>
 
-<blockquote>
-<p>你還沒有達到解決專案可交付成果、故障處理、審計合規等問題所需要的那種對工作的理解程度。在你對工作的內涵有更好的理解之前，任何關於控制工作的討論都會讓你茫然無措。正所謂：夏蟲不可語冰。</p>
-</blockquote>
+<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">RightClickAction=paste</code></pre></div>
 
-<h2 id="敏捷神話">敏捷神話</h2>
+<h2 id="tmux-與-zsh">Tmux 與 zsh</h2>
 
-<p>《<a href="https://www.books.com.tw/products/0010785434">Scrum：用一半的時間做兩倍的事</a>》，不要被聳動的書名騙了，這是本不吹牛不浮誇的好書。這本由 Scrum 發明人之一 Jeff Sutherland 所寫的書，揭露 Scrum 發展過程中的軼事。讀了之後，你會領會更多 Scrum 規則背後的精神。</p>
+<p>啟動 tmux 時，似乎並不會根據 <code>/etc/passwd</code> 的資訊來喚起自訂的 shell，而是一律喚起 bash。</p>
 
-<blockquote>
-<p>我在書中提及，Scrum 源自於豐田生產系統，以及空戰的 OODA 循環。你會在接下來的內容中看到，從開發價格實惠、每加侖汽油能跑一百哩的車子，到協助美國聯邦調查局 (FBI) 建立 21 世紀的資料庫系統，任何東西都可以用 Scrum 來打造。</p>
-</blockquote>
+<p>解決方法是，在 <code>~/.tmux.conf</code> 加上這一行：</p>
 
-<h2 id="跨出框架-需要練習">跨出框架，需要練習</h2>
+<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">set-option -g default-shell /bin/zsh</code></pre></div>
 
-<p>《<a href="https://www.books.com.tw/products/0010789923">Pepper 開發者從 0 到 1 的創新工作法</a>》，讓不是創業家、自由工作者、研究者的平凡上班族，也能習得具體的創新做法。你可以看到開發出 <a href="https://zh.wikipedia.org/wiki/Pepper_(%E6%A9%9F%E5%99%A8%E4%BA%BA)">Pepper</a> 人型機器人的 <a href="https://www.linkedin.com/in/kanamehayashi">Kaname Hayashi</a>，是如何有紀律地自我要求刻意練習。</p>
+<h2 id="tmux-的-pane">Tmux 的 pane</h2>
 
-<blockquote>
-<p>從 0 到 1 需要的不是「才能」，而是「練習」。</p>
-</blockquote>
+<p>在 tmux 新增 pane 或 window 時，不會自動帶入目前的目錄 <code>$PWD</code>，而是帶入 <code>$HOME</code>。預設的組合鍵 <code>&lt;prefix&gt; %</code> 及 <code>&lt;prefix&gt; &quot;</code> 難記又難按，也很令人頭痛。</p>
 
-<h2 id="外國月亮">外國月亮</h2>
+<p>因此，我綜合多人的做法<sup class="footnote-ref" id="fnref:5"><a href="#fn:5">5</a></sup>，解決目錄問題，換成好記好按的組合鍵，更可用方向鍵來切換 pane：</p>
 
-<p>《<a href="https://www.books.com.tw/products/0010796709">給力</a>》，軟體／媒體科技業巨頭 Netflix 獨一無二的企業文化，但不要驟下「國情不合」的結論。多讀幾次，試著感受適度的低情境 (low context)、直接否定 (direct negative feedback)、平權式領導 (egalitarian) 風格有什麼殊勝之處。</p>
+<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">unbind &#39;&#34;&#39;
+unbind &#39;%&#39;
+bind &#39;|&#39; split-window -h -c &#39;#{pane_current_path}&#39;
+bind &#39;-&#39; split-window -v -c &#39;#{pane_current_path}&#39;
+bind c   new-window      -c &#39;#{pane_current_path}&#39;
 
-<blockquote>
-<p>留住員工、使員工高度投入的方法，應該是招募對此計劃興趣濃厚、且傾向在同一工作待上很長時間的人才，而不是靠著提供他們四種加味水及設置員工睡眠艙來留住他們。</p>
-</blockquote>
+# switch panes using Alt-arrow without prefix
+bind -n M-Left  select-pane -L
+bind -n M-Right select-pane -R
+bind -n M-Up    select-pane -U
+bind -n M-Down  select-pane -D</code></pre></div>
 
-<h2 id="是技術-也是藝術">是技術，也是藝術</h2>
+<h2 id="tmux-plugin-manager">Tmux Plugin Manager</h2>
 
-<p>這原本是<a href="//william-yeh.net/post/2018/12/practice-of-managers/">【主管的修練】讀書會</a>的輔助讀物，但單獨抽出來閱讀，也行。</p>
+<p>Tmux 設定太多了，就有人寫了外掛管理系統 <a href="https://github.com/tmux-plugins/tpm">Tmux Plugin Manager</a>。雖然目前我還用不到，但還是先安裝，以備不時之需。</p>
 
-<p>系列文 / 專案管理的藝術</p>
+<p>首先，下載 TPM：</p>
 
-<ul>
-<li>⓪ <a href="https://www.projectup.net/article/view/id/260">決策的平衡點</a></li>
-<li>① <a href="https://www.projectup.net/article/view/id/259">拉高視野、見林但不見樹</a></li>
-<li>② <a href="https://www.projectup.net/article/view/id/258">平衡需求、但別想討好所有人</a></li>
-<li>③ <a href="https://www.projectup.net/article/view/id/256">重點掌握、如何抓大放小</a></li>
-<li>④ <a href="https://www.projectup.net/article/view/id/255">主動發現、弭禍於無形之中</a></li>
-<li>⑤ <a href="https://www.projectup.net/article/view/id/253">醜話先說，對事但不對人</a></li>
-<li>⑥ <a href="https://www.projectup.net/article/view/id/251">品質管制、追求標準、一致、與穩定</a></li>
-<li>⑦ <a href="https://www.projectup.net/article/view/id/69">降低流言、合適的訊息分享</a></li>
-<li>⑧ <a href="https://www.projectup.net/article/view/id/68">沒有英雄、人員培育與接班計畫</a></li>
-<li>⑨ <a href="https://www.projectup.net/article/view/id/67">避免發散、一切都跟收斂有關</a></li>
-<li>⑩ <a href="https://www.projectup.net/article/view/id/65">歷史借鏡、能重複應用的才有價值</a></li>
-</ul>
+<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">% git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm</code></pre></div>
 
-<p><br><br></p>
+<p>將以下幾行加到 <code>.tmux.conf</code> 最後面：</p>
 
-<p>過完年，再來一場討論會吧。</p>
+<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext"># List of plugins
+set -g @plugin &#39;tmux-plugins/tpm&#39;
+set -g @plugin &#39;tmux-plugins/tmux-sensible&#39;
 
-<div class="shortcode-notice note">
-  <div class="shortcode-notice-title note">
-    
-      補充
-    
-  </div>
-  
+# Initialize TMUX plugin manager
+# (keep this line at the very bottom of tmux.conf)
+run -b &#39;~/.tmux/plugins/tpm/tpm&#39;</code></pre></div>
 
-<p>好友 <a href="https://www.facebook.com/91agile/">91 (Joey)</a> 隨後也發表了另一份春節期間的推薦讀物。分成三大類：① 輕讀物，② 重一點，需要系列性連串看完的書，③ 想趁著連假，消化一下大部頭的書。</p>
+<p><br/><br/></p>
 
-<p>意者，請去看看那份<a href="https://www.facebook.com/91agile/posts/1110269312481019">清單</a>。</p>
+<p>Tmux 還有很多高段的功能，以後有需要再研究吧。</p>
 
-<p></div></p>
+<p>如此這般拼湊起來，雖然還不能完全複刻 Mac 的 iTerm2 使用經驗，但也已經算是可以接受了。當然啦，私心還是希望 Cmder 或 Hyper 能夠好好解決顯示問題，就不必動用 tmux 了。</p>
+<div class="footnotes">
 
+<hr />
+
+<ol>
+<li id="fn:1">這段故事，詳見〈<a href="//william-yeh.net/post/2019/03/wsl-cmder-zsh/">在 Windows 上復刻 Mac 使用習慣</a>〉一文。
+ <a class="footnote-return" href="#fnref:1"><sup>[return]</sup></a></li>
+<li id="fn:2">關於其他更華麗，卻也更耗資源的 Windows 終端機方案，可參考這幾篇介紹文章：〈<a href="https://github.com/spencerwooo/dowww">在 Windows 上面用 WSL 优雅开发</a>〉、〈<a href="https://nickjanetakis.com/blog/conemu-vs-hyper-vs-terminus-vs-mobaxterm-terminator-vs-ubuntu-wsl">ConEmu vs Hyper vs Terminus vs MobaXTerm Terminator vs Ubuntu WSL</a>〉。
+ <a class="footnote-return" href="#fnref:2"><sup>[return]</sup></a></li>
+<li id="fn:3">關於 <a href="https://github.com/mintty/wsltty">WSLtty</a>，可參考保哥的〈<a href="https://blog.miniasp.com/post/2019/02/09/Useful-tool-WSLtty-Mintty-as-a-terminal-for-WSL">介紹好用工具：WSLtty (Mintty as a terminal for WSL)</a>〉一文。
+ <a class="footnote-return" href="#fnref:3"><sup>[return]</sup></a></li>
+<li id="fn:4">關於 <a href="https://github.com/tmux/tmux">tmux</a>，可參考這幾篇介紹文章：〈<a href="https://5xruby.tw/posts/tmux/">tmux ，不只是 terminal multiplexer</a>〉、〈<a href="https://andyyou.github.io/2017/11/27/tmux-notes/">tmux 快速入門筆記</a>〉、〈<a href="https://larrylu.blog/tmux-33a24e595fbc">終端機 session 管理神器 — tmux</a>〉。
+ <a class="footnote-return" href="#fnref:4"><sup>[return]</sup></a></li>
+<li id="fn:5">Shubham 提供的<a href="https://unix.stackexchange.com/a/247449">做法</a>，可讓新開的 pane 及 window 保持在目前所在的目錄。Ham Vocke 的<a href="https://www.hamvocke.com/blog/a-guide-to-customizing-your-tmux-conf/">文章</a>也介紹幾種有趣的 tmux 設定。
+ <a class="footnote-return" href="#fnref:5"><sup>[return]</sup></a></li>
+</ol>
+</div>
     </div>
 
     
@@ -397,7 +430,7 @@ if (!doNotTrack) {
   </p>
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
-    <span class="item-content">2019-01-17</span>
+    <span class="item-content">2019-04-17</span>
   </p>
   
   <p class="copyright-item">
@@ -411,23 +444,16 @@ if (!doNotTrack) {
 
     <footer class="post-footer">
       <div class="post-tags">
-          <a href="//william-yeh.net/tags/agile/">agile</a>
-          <a href="//william-yeh.net/tags/devops/">devops</a>
-          <a href="//william-yeh.net/tags/book/">book</a>
+          <a href="//william-yeh.net/tags/wsl/">wsl</a>
           
         </div>
 
       
       <nav class="post-nav">
         
-          <a class="prev" href="/post/2019/01/tech-leader-reading/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">技術領導者微培訓</span>
-            <span class="prev-text nav-mobile">上一篇</span>
-          </a>
         
-          <a class="next" href="/post/2019/01/scrum-good-to-great/">
-            <span class="next-text nav-default">Scrum 與《從 A 到 A&#43;》</span>
+          <a class="next" href="/post/2019/03/ingress-vs-ambassador/">
+            <span class="next-text nav-default">Nginx Ingress 與 Ambassador 簡易性能比較</span>
             <span class="prev-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>
@@ -461,7 +487,7 @@ if (!doNotTrack) {
   <div id="disqus_thread"></div>
   <script type="text/javascript">
     var disqus_config = function () {
-      this.page.url = "//william-yeh.net/post/2019/01/soft-reading-list/";
+      this.page.url = "//william-yeh.net/post/2019/04/wsltty-tmux/";
     };
     function load_disqus() {
       

@@ -5,10 +5,98 @@
     <description>Recent content on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Tue, 02 Apr 2019 16:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 17 Apr 2019 22:00:00 +0800</lastBuildDate>
     
         <atom:link href="//william-yeh.net/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>WSLtty &#43; tmux 組合技</title>
+      <link>//william-yeh.net/post/2019/04/wsltty-tmux/</link>
+      <pubDate>Wed, 17 Apr 2019 22:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2019/04/wsltty-tmux/</guid>
+      
+        <description>&lt;p&gt;在 Windows 10 上面使用 WSL 已經一個月了&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;。小狀況也就罷了，但 &lt;a href=&#34;https://cmder.net/&#34;&gt;Cmder&lt;/a&gt; 不夠穩定的顯示邏輯卻最讓我頭痛，在視窗尺寸變化時，無法正確處理字元位置。更令人費解的是，即使是其他狀似更華麗（也更耗資源）的替代方案，也仍然有這些問題&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;。&lt;/p&gt;
+
+&lt;p&gt;既然酷炫的終端機競品問題多多，乾脆回歸極簡的 WSLtty&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;，並混搭 tmux&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34;&gt;4&lt;/a&gt;&lt;/sup&gt; 來彌補。可惜，畢竟是組合技，無法完全複製 Mac 的 iTerm2 使用經驗。&lt;/p&gt;
+
+&lt;p&gt;此事古難全。&lt;/p&gt;
+
+&lt;h2 id=&#34;wsltty-剪貼簿&#34;&gt;WSLtty 剪貼簿&lt;/h2&gt;
+
+&lt;p&gt;在 X Window 或 Mac 的終端機，只要按下滑鼠右鍵就能夠 paste 文字。如果在 WSLtty 上也想這麼玩，請在 &lt;code&gt;%APPDATA%\wsltty\config&lt;/code&gt; 設定檔加上這一行：&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;RightClickAction=paste&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id=&#34;tmux-與-zsh&#34;&gt;Tmux 與 zsh&lt;/h2&gt;
+
+&lt;p&gt;啟動 tmux 時，似乎並不會根據 &lt;code&gt;/etc/passwd&lt;/code&gt; 的資訊來喚起自訂的 shell，而是一律喚起 bash。&lt;/p&gt;
+
+&lt;p&gt;解決方法是，在 &lt;code&gt;~/.tmux.conf&lt;/code&gt; 加上這一行：&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;set-option -g default-shell /bin/zsh&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id=&#34;tmux-的-pane&#34;&gt;Tmux 的 pane&lt;/h2&gt;
+
+&lt;p&gt;在 tmux 新增 pane 或 window 時，不會自動帶入目前的目錄 &lt;code&gt;$PWD&lt;/code&gt;，而是帶入 &lt;code&gt;$HOME&lt;/code&gt;。預設的組合鍵 &lt;code&gt;&amp;lt;prefix&amp;gt; %&lt;/code&gt; 及 &lt;code&gt;&amp;lt;prefix&amp;gt; &amp;quot;&lt;/code&gt; 難記又難按，也很令人頭痛。&lt;/p&gt;
+
+&lt;p&gt;因此，我綜合多人的做法&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34;&gt;5&lt;/a&gt;&lt;/sup&gt;，解決目錄問題，換成好記好按的組合鍵，更可用方向鍵來切換 pane：&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;unbind &amp;#39;&amp;#34;&amp;#39;
+unbind &amp;#39;%&amp;#39;
+bind &amp;#39;|&amp;#39; split-window -h -c &amp;#39;#{pane_current_path}&amp;#39;
+bind &amp;#39;-&amp;#39; split-window -v -c &amp;#39;#{pane_current_path}&amp;#39;
+bind c   new-window      -c &amp;#39;#{pane_current_path}&amp;#39;
+
+# switch panes using Alt-arrow without prefix
+bind -n M-Left  select-pane -L
+bind -n M-Right select-pane -R
+bind -n M-Up    select-pane -U
+bind -n M-Down  select-pane -D&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id=&#34;tmux-plugin-manager&#34;&gt;Tmux Plugin Manager&lt;/h2&gt;
+
+&lt;p&gt;Tmux 設定太多了，就有人寫了外掛管理系統 &lt;a href=&#34;https://github.com/tmux-plugins/tpm&#34;&gt;Tmux Plugin Manager&lt;/a&gt;。雖然目前我還用不到，但還是先安裝，以備不時之需。&lt;/p&gt;
+
+&lt;p&gt;首先，下載 TPM：&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;% git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;將以下幾行加到 &lt;code&gt;.tmux.conf&lt;/code&gt; 最後面：&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;# List of plugins
+set -g @plugin &amp;#39;tmux-plugins/tpm&amp;#39;
+set -g @plugin &amp;#39;tmux-plugins/tmux-sensible&amp;#39;
+
+# Initialize TMUX plugin manager
+# (keep this line at the very bottom of tmux.conf)
+run -b &amp;#39;~/.tmux/plugins/tpm/tpm&amp;#39;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+
+&lt;p&gt;Tmux 還有很多高段的功能，以後有需要再研究吧。&lt;/p&gt;
+
+&lt;p&gt;如此這般拼湊起來，雖然還不能完全複刻 Mac 的 iTerm2 使用經驗，但也已經算是可以接受了。當然啦，私心還是希望 Cmder 或 Hyper 能夠好好解決顯示問題，就不必動用 tmux 了。&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;這段故事，詳見〈&lt;a href=&#34;//william-yeh.net/post/2019/03/wsl-cmder-zsh/&#34;&gt;在 Windows 上復刻 Mac 使用習慣&lt;/a&gt;〉一文。
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:1&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;關於其他更華麗，卻也更耗資源的 Windows 終端機方案，可參考這幾篇介紹文章：〈&lt;a href=&#34;https://github.com/spencerwooo/dowww&#34;&gt;在 Windows 上面用 WSL 优雅开发&lt;/a&gt;〉、〈&lt;a href=&#34;https://nickjanetakis.com/blog/conemu-vs-hyper-vs-terminus-vs-mobaxterm-terminator-vs-ubuntu-wsl&#34;&gt;ConEmu vs Hyper vs Terminus vs MobaXTerm Terminator vs Ubuntu WSL&lt;/a&gt;〉。
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:2&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;關於 &lt;a href=&#34;https://github.com/mintty/wsltty&#34;&gt;WSLtty&lt;/a&gt;，可參考保哥的〈&lt;a href=&#34;https://blog.miniasp.com/post/2019/02/09/Useful-tool-WSLtty-Mintty-as-a-terminal-for-WSL&#34;&gt;介紹好用工具：WSLtty (Mintty as a terminal for WSL)&lt;/a&gt;〉一文。
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:3&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:4&#34;&gt;關於 &lt;a href=&#34;https://github.com/tmux/tmux&#34;&gt;tmux&lt;/a&gt;，可參考這幾篇介紹文章：〈&lt;a href=&#34;https://5xruby.tw/posts/tmux/&#34;&gt;tmux ，不只是 terminal multiplexer&lt;/a&gt;〉、〈&lt;a href=&#34;https://andyyou.github.io/2017/11/27/tmux-notes/&#34;&gt;tmux 快速入門筆記&lt;/a&gt;〉、〈&lt;a href=&#34;https://larrylu.blog/tmux-33a24e595fbc&#34;&gt;終端機 session 管理神器 — tmux&lt;/a&gt;〉。
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:4&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:5&#34;&gt;Shubham 提供的&lt;a href=&#34;https://unix.stackexchange.com/a/247449&#34;&gt;做法&lt;/a&gt;，可讓新開的 pane 及 window 保持在目前所在的目錄。Ham Vocke 的&lt;a href=&#34;https://www.hamvocke.com/blog/a-guide-to-customizing-your-tmux-conf/&#34;&gt;文章&lt;/a&gt;也介紹幾種有趣的 tmux 設定。
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:5&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description>
+      
+    </item>
     
     <item>
       <title>給 RD 的 Kubernetes 初體驗</title>
@@ -477,6 +565,18 @@ nux-wsl-%E4%B8%8B%E4%BD%BF%E7%94%A8-windows-%E4%B8%8A%E7%9A%84-docker-engine-8dc
 &lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;p&gt;好了，現在已經復刻一部分 Mac 的使用習慣了。是該要好好享受一下這種混血環境了。&lt;/p&gt;
+
+&lt;div class=&#34;shortcode-notice note&#34;&gt;
+  &lt;div class=&#34;shortcode-notice-title note&#34;&gt;
+    
+      2019-04-17 後續發展
+    
+  &lt;/div&gt;
+  
+
+&lt;p&gt;使用了一個月，不太能夠忍受 Cmder 不夠穩定的顯示邏輯：在視窗尺寸變化時，無法正確處理字元位置。因此，我改用〈&lt;a href=&#34;//william-yeh.net/post/2019/04/wsltty-tmux/&#34;&gt;WSLtty + tmux 組合技&lt;/a&gt;〉。&lt;/p&gt;
+
+&lt;p&gt;&lt;/div&gt;&lt;/p&gt;
 &lt;div class=&#34;footnotes&#34;&gt;
 
 &lt;hr /&gt;
