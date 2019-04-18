@@ -3,26 +3,63 @@
   
   <url>
     <loc>//william-yeh.net/categories/</loc>
-    <lastmod>2019-04-17T22:00:00+08:00</lastmod>
+    <lastmod>2019-04-18T23:00:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>//william-yeh.net/post/</loc>
-    <lastmod>2019-04-17T22:00:00+08:00</lastmod>
+    <lastmod>2019-04-18T23:00:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>//william-yeh.net/</loc>
-    <lastmod>2019-04-17T22:00:00+08:00</lastmod>
+    <lastmod>2019-04-18T23:00:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>//william-yeh.net/tags/</loc>
-    <lastmod>2019-04-17T22:00:00+08:00</lastmod>
+    <lastmod>2019-04-18T23:00:00+08:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/ansible/</loc>
+    <lastmod>2019-04-18T23:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/devops/</loc>
+    <lastmod>2019-04-18T23:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/categories/tech/</loc>
+    <lastmod>2019-04-18T23:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/vagrant/</loc>
+    <lastmod>2019-04-18T23:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/wsl/</loc>
+    <lastmod>2019-04-18T23:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/post/2019/04/wsl-ansible-vagrant/</loc>
+    <lastmod>2019-04-18T23:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -33,25 +70,13 @@
   </url>
   
   <url>
-    <loc>//william-yeh.net/categories/tech/</loc>
-    <lastmod>2019-04-17T22:00:00+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/tags/wsl/</loc>
+    <loc>//william-yeh.net/tags/tmux/</loc>
     <lastmod>2019-04-17T22:00:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>//william-yeh.net/courses/</loc>
-    <lastmod>2019-04-02T16:00:00+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/tags/devops/</loc>
     <lastmod>2019-04-02T16:00:00+08:00</lastmod>
     <priority>0</priority>
   </url>
@@ -547,12 +572,6 @@
     <lastmod>2016-03-07T08:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/tags/ansible/</loc>
-    <lastmod>2016-03-02T08:00:00+08:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>

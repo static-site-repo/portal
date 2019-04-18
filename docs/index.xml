@@ -5,10 +5,138 @@
     <description>Recent content on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Wed, 17 Apr 2019 22:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 18 Apr 2019 23:00:00 +0800</lastBuildDate>
     
         <atom:link href="//william-yeh.net/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>在 WSL 裡使用 Ansible &#43; Vagrant</title>
+      <link>//william-yeh.net/post/2019/04/wsl-ansible-vagrant/</link>
+      <pubDate>Thu, 18 Apr 2019 23:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2019/04/wsl-ansible-vagrant/</guid>
+      
+        <description>&lt;p&gt;既然要開始在 Windows 上沿用 Mac 及 Unix 的命令列工具習慣&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，免不了要處理 &lt;a href=&#34;https://github.com/ansible/ansible&#34;&gt;Ansible&lt;/a&gt; 及 &lt;a href=&#34;https://www.vagrantup.com/&#34;&gt;Vagrant&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;雖然這兩個軟體都有對應的 Windows 版本，但據我以前的經驗，卡卡的，有許多小地雷；畢竟這些發跡自泛 Unix 家族的軟體，不是那麼容易無縫移植到對命令列不友善的 Windows 家族。&lt;/p&gt;
+
+&lt;p&gt;如今 Windows 已經有 &lt;a href=&#34;https://docs.microsoft.com/en-us/windows/wsl/&#34;&gt;WSL (Windows Subsystem for Linux)&lt;/a&gt; 機制，是否可以更無痛享用 Ansible 及 Vagrant 呢？&lt;/p&gt;
+
+&lt;p&gt;可以的。&lt;/p&gt;
+
+&lt;p&gt;大體而言，我們會兵分二路：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;在 Windows 上，會安裝 &lt;a href=&#34;https://www.virtualbox.org/&#34;&gt;VirtualBox&lt;/a&gt;。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;在 WSL 上，會安裝 &lt;a href=&#34;https://www.vagrantup.com/&#34;&gt;Vagrant&lt;/a&gt; 及 &lt;a href=&#34;https://github.com/ansible/ansible&#34;&gt;Ansible&lt;/a&gt;。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;虛擬機選項一-virtualbox&#34;&gt;虛擬機選項一：VirtualBox&lt;/h2&gt;
+
+&lt;p&gt;用慣 Mac 或 Linux 的人，可能會想沿用 &lt;a href=&#34;https://www.virtualbox.org/&#34;&gt;VirtualBox&lt;/a&gt; 虛擬機軟體。畢竟 VirtualBox 是同屬開源生態系的一員，和其他開源軟體的相容性最高。&lt;/p&gt;
+
+&lt;p&gt;你可以直接去官方網站&lt;a href=&#34;https://www.virtualbox.org/wiki/Downloads&#34;&gt;下載&lt;/a&gt;安裝檔（VirtualBox 本體，以及 VirtualBox Extension Pack），或是直接透過 Chocolatey 套件管理工具來&lt;a href=&#34;https://chocolatey.org/packages/virtualbox&#34;&gt;安裝&lt;/a&gt;：&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;C:\&amp;gt; choco install virtualbox&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;安裝完後，還有一關要克服。&lt;/p&gt;
+
+&lt;p&gt;一般來說，在同一個 host OS 上，同一時間，只能有一個底層虛擬機制存在（除非有像「巢狀虛擬化」之類的黑魔法……吧？）。因此，VirtualBox 無法與 Windows 官方欽定的 Hyper-V 機制同時並存，一山不容二虎&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;。&lt;/p&gt;
+
+&lt;p&gt;如果決定要使用 VirtualBox，請用管理者權限執行以下命令，暫時關閉 Hyper-V 功能&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;：&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;C:&amp;gt; dism.exe /Online /Disable-Feature:Microsoft-Hyper-V
+
+C:&amp;gt; bcdedit /set hypervisorlaunchtype off&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;這麼做的缺點是：由於 Docker Desktop for Windows 會用到 Hyper-V 機制，所以，關閉了 Hyper-V，等於是關閉了 Docker Desktop 的使用權。如果稍後還想使用 Docker Desktop，就得手動恢復 Hyper-V 功能：&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;C:&amp;gt; dism.exe /Online /Enable-Feature:Microsoft-Hyper-V-All
+
+C:&amp;gt; bcdedit /set hypervisorlaunchtype auto&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;你可能需要在 Hyper-V 與 VirtualBox 模式之間來回切換，也需要重新開機。&lt;/p&gt;
+
+&lt;h2 id=&#34;虛擬機選項二-hyper-v&#34;&gt;虛擬機選項二：Hyper-V&lt;/h2&gt;
+
+&lt;p&gt;在 Windows 上面玩 VirtualBox 這麼麻煩，換成 Hyper-V 會不會比較省事？&lt;/p&gt;
+
+&lt;p&gt;很可惜，我在 &amp;ldquo;Hyper-V Administrators&amp;rdquo; 這一關觸礁了。嘗試一些可能的解法&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;，都無效。&lt;/p&gt;
+
+&lt;p&gt;真的有需要時，再回來研究吧。&lt;/p&gt;
+
+&lt;h2 id=&#34;vagrant&#34;&gt;Vagrant&lt;/h2&gt;
+
+&lt;p&gt;直接比照 Linux 安裝 Vagrant 的方法。&lt;/p&gt;
+
+&lt;p&gt;請在 WSL 底下，直接去官方網站&lt;a href=&#34;https://www.vagrantup.com/downloads.html&#34;&gt;下載&lt;/a&gt;安裝檔，或是用 Apt 之類的套件管理系統來安裝。&lt;/p&gt;
+
+&lt;p&gt;安裝完畢，請根據官方網站的&lt;a href=&#34;https://www.vagrantup.com/docs/other/wsl.html&#34;&gt;建議&lt;/a&gt;設定環境變數。尤其是 &lt;code&gt;VAGRANT_WSL_ENABLE_WINDOWS_ACCESS&lt;/code&gt; 這一項：&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;export VAGRANT_WSL_ENABLE_WINDOWS_ACCESS=&amp;#34;1&amp;#34;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id=&#34;ansible&#34;&gt;Ansible&lt;/h2&gt;
+
+&lt;p&gt;直接比照 Linux 安裝 Ansible 的方法。&lt;/p&gt;
+
+&lt;p&gt;請在 WSL 底下，照著官方網站的&lt;a href=&#34;https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html#installing-the-control-machine&#34;&gt;安裝步驟&lt;/a&gt;來執行。譬如說，在 Debian/Ubuntu 系列下，可以用 Apt 套件管理系統來安裝。&lt;/p&gt;
+
+&lt;h2 id=&#34;ansible-vagrant&#34;&gt;Ansible + Vagrant&lt;/h2&gt;
+
+&lt;p&gt;現在，試試看把 Ansible 和 Vagrant 結合起來！&lt;/p&gt;
+
+&lt;p&gt;先準備好 &lt;code&gt;Vagrantfile&lt;/code&gt; 檔案：&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-ruby&#34; data-lang=&#34;ruby&#34;&gt;&lt;span class=&#34;no&#34;&gt;Vagrant&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;configure&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;do&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;config&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;
+  &lt;span class=&#34;n&#34;&gt;config&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;vm&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;box&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;bento/ubuntu-18.04&amp;#34;&lt;/span&gt;
+
+  &lt;span class=&#34;n&#34;&gt;config&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;vm&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;network&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;forwarded_port&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;ss&#34;&gt;guest&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;80&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;ss&#34;&gt;host&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;8080&lt;/span&gt;
+
+  &lt;span class=&#34;n&#34;&gt;config&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;vm&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;provision&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;ansible&amp;#34;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;do&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ansible&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;
+     &lt;span class=&#34;n&#34;&gt;ansible&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;compatibility_mode&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;2.0&amp;#34;&lt;/span&gt;
+     &lt;span class=&#34;c1&#34;&gt;#ansible.verbose = &amp;#34;vvv&amp;#34;&lt;/span&gt;
+     &lt;span class=&#34;n&#34;&gt;ansible&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;playbook&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;playbook.yml&amp;#34;&lt;/span&gt;
+     &lt;span class=&#34;n&#34;&gt;ansible&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;become&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;kp&#34;&gt;true&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+
+&lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;還有 Ansible 的 &lt;code&gt;playbook.yml&lt;/code&gt; 檔案：&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yml&#34; data-lang=&#34;yml&#34;&gt;-&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;hosts&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;all&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;become&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kc&#34;&gt;true&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;tasks&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;-&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;name&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;install&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;nginx&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;      &lt;/span&gt;apt&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;name=nginx&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;state=present&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;update_cache=yes&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;試著啟動看看：&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;% vagrant up&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;如果一切順利，你可以在 &lt;code&gt;http://localhost:8080/&lt;/code&gt; 看到 Nginx 歡迎畫面。&lt;/p&gt;
+
+&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+
+&lt;p&gt;在 Docker + Kubernetes 時代，用到 Ansible 的機會愈來愈少了，Vagrant 更是如此；不過，保有這種工具，在處理還來不及跟上腳步的舊系統仍然很管用。因此，花一點功夫湊出堪用的組合，希望能有順手的 WSL 環境。&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;這段故事，詳見〈&lt;a href=&#34;//william-yeh.net/post/2019/03/wsl-cmder-zsh/&#34;&gt;在 Windows 上復刻 Mac 使用習慣&lt;/a&gt;〉一文。
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:1&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;技術上來說，Hyper-V 是屬於 type-1 hypervisor，VirtualBox 是屬於 type-2 hypervisor。詳見維基百科 &amp;ldquo;&lt;a href=&#34;https://en.wikipedia.org/wiki/Hypervisor&#34;&gt;Hypervisor&lt;/a&gt;&amp;rdquo; 條目。
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:2&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;在 Windows 上關閉 Hyper-V 機制，請參考以下文章：“&lt;a href=&#34;https://www.sysprobs.com/solved-vt-x-is-not-available-verr-vmx-no-vmx-in-windows-10-virtualbox&#34;&gt;(Solved) VT-x is Not Available (verr_vmx_no_vmx) in Windows 10 – but Available for Oracle VirtualBox&lt;/a&gt;”、〈&lt;a href=&#34;https://blog.csdn.net/imilano/article/details/83038682&#34;&gt;Win10 10月更新 VirtualBox VT-x is not available (VERR_VMX_NO_VMX). 解决&lt;/a&gt;〉、“&lt;a href=&#34;https://forums.virtualbox.org/viewtopic.php?f=38&amp;amp;t=89791&#34;&gt;[Solved] VT-x is not available (VERR_VMX_NO_VMX)&lt;/a&gt;”。
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:3&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:4&#34;&gt;當 Vagrant 在使用 Hyper-V 時，會出現 &amp;ldquo;Hyper-V Administrators&amp;rdquo; 權限問題。我嘗試以下幾篇文章，可惜仍未解決：“&lt;a href=&#34;https://github.com/hashicorp/vagrant/issues/4503&#34;&gt;Vagrant issue #378&lt;/a&gt;”、“&lt;a href=&#34;https://blogs.msdn.microsoft.com/virtual_pc_guy/2014/06/11/allowing-non-administrators-to-control-hyper-vupdated/&#34;&gt;Allowing non-Administrators to control Hyper-V–Updated&lt;/a&gt;”、“&lt;a href=&#34;https://dev.to/nicolus/getting-homestead-to-play-nice-with-hyper-v-4202&#34;&gt;Getting Homestead to play nice with Hyper-V&lt;/a&gt;”。
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:4&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description>
+      
+    </item>
     
     <item>
       <title>WSLtty &#43; tmux 組合技</title>
@@ -85,7 +213,7 @@ run -b &amp;#39;~/.tmux/plugins/tpm/tpm&amp;#39;&lt;/code&gt;&lt;/pre&gt;&lt;/di
 &lt;ol&gt;
 &lt;li id=&#34;fn:1&#34;&gt;這段故事，詳見〈&lt;a href=&#34;//william-yeh.net/post/2019/03/wsl-cmder-zsh/&#34;&gt;在 Windows 上復刻 Mac 使用習慣&lt;/a&gt;〉一文。
  &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:1&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li id=&#34;fn:2&#34;&gt;關於其他更華麗，卻也更耗資源的 Windows 終端機方案，可參考這幾篇介紹文章：〈&lt;a href=&#34;https://github.com/spencerwooo/dowww&#34;&gt;在 Windows 上面用 WSL 优雅开发&lt;/a&gt;〉、〈&lt;a href=&#34;https://nickjanetakis.com/blog/conemu-vs-hyper-vs-terminus-vs-mobaxterm-terminator-vs-ubuntu-wsl&#34;&gt;ConEmu vs Hyper vs Terminus vs MobaXTerm Terminator vs Ubuntu WSL&lt;/a&gt;〉。
+&lt;li id=&#34;fn:2&#34;&gt;關於其他更華麗，卻也更耗資源的 Windows 終端機方案，可參考這幾篇介紹文章：〈&lt;a href=&#34;https://github.com/spencerwooo/dowww&#34;&gt;在 Windows 上面用 WSL 优雅开发&lt;/a&gt;〉、“&lt;a href=&#34;https://nickjanetakis.com/blog/conemu-vs-hyper-vs-terminus-vs-mobaxterm-terminator-vs-ubuntu-wsl&#34;&gt;ConEmu vs Hyper vs Terminus vs MobaXTerm Terminator vs Ubuntu WSL&lt;/a&gt;”。
  &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:2&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li id=&#34;fn:3&#34;&gt;關於 &lt;a href=&#34;https://github.com/mintty/wsltty&#34;&gt;WSLtty&lt;/a&gt;，可參考保哥的〈&lt;a href=&#34;https://blog.miniasp.com/post/2019/02/09/Useful-tool-WSLtty-Mintty-as-a-terminal-for-WSL&#34;&gt;介紹好用工具：WSLtty (Mintty as a terminal for WSL)&lt;/a&gt;〉一文。
  &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:3&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;

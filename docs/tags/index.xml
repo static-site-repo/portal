@@ -6,26 +6,53 @@
     <description>Recent content in Tags on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Wed, 17 Apr 2019 22:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 18 Apr 2019 23:00:00 +0800</lastBuildDate>
     
 	<atom:link href="//william-yeh.net/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>wsl</title>
-      <link>//william-yeh.net/tags/wsl/</link>
-      <pubDate>Wed, 17 Apr 2019 22:00:00 +0800</pubDate>
+      <title>ansible</title>
+      <link>//william-yeh.net/tags/ansible/</link>
+      <pubDate>Thu, 18 Apr 2019 23:00:00 +0800</pubDate>
       
-      <guid>//william-yeh.net/tags/wsl/</guid>
+      <guid>//william-yeh.net/tags/ansible/</guid>
       <description></description>
     </item>
     
     <item>
       <title>devops</title>
       <link>//william-yeh.net/tags/devops/</link>
-      <pubDate>Tue, 02 Apr 2019 16:00:00 +0800</pubDate>
+      <pubDate>Thu, 18 Apr 2019 23:00:00 +0800</pubDate>
       
       <guid>//william-yeh.net/tags/devops/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vagrant</title>
+      <link>//william-yeh.net/tags/vagrant/</link>
+      <pubDate>Thu, 18 Apr 2019 23:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/tags/vagrant/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>wsl</title>
+      <link>//william-yeh.net/tags/wsl/</link>
+      <pubDate>Thu, 18 Apr 2019 23:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/tags/wsl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tmux</title>
+      <link>//william-yeh.net/tags/tmux/</link>
+      <pubDate>Wed, 17 Apr 2019 22:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/tags/tmux/</guid>
       <description></description>
     </item>
     
@@ -161,33 +188,6 @@
       <pubDate>Fri, 07 Dec 2018 13:00:00 +0800</pubDate>
       
       <guid>//william-yeh.net/tags/process/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>toc</title>
-      <link>//william-yeh.net/tags/toc/</link>
-      <pubDate>Fri, 07 Dec 2018 13:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/tags/toc/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>fallow</title>
-      <link>//william-yeh.net/tags/fallow/</link>
-      <pubDate>Tue, 04 Dec 2018 08:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/tags/fallow/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>tech debt</title>
-      <link>//william-yeh.net/tags/tech-debt/</link>
-      <pubDate>Tue, 04 Dec 2018 08:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/tags/tech-debt/</guid>
       <description></description>
     </item>
     
