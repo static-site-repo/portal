@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>docker on Potioneer&#39;s Essays</title>
-    <link>//william-yeh.net/tags/docker/</link>
-    <description>Recent content in docker on Potioneer&#39;s Essays</description>
+    <title>istio on Potioneer&#39;s Essays</title>
+    <link>//william-yeh.net/tags/istio/</link>
+    <description>Recent content in istio on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <lastBuildDate>Fri, 19 Apr 2019 23:00:00 +0800</lastBuildDate>
     
-	<atom:link href="//william-yeh.net/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="//william-yeh.net/tags/istio/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -24,15 +24,6 @@
 &lt;p&gt;我發現，光是這些場次，就得花很大力氣去消化、實驗與應用。&lt;/p&gt;
 
 &lt;p&gt;我們這些所謂的「台港團」會在 GCPUG Taipei 舉辦一場&lt;a href=&#34;https://www.meetup.com/GCPUG-Taipei/events/260555968/&#34;&gt;分享會&lt;/a&gt;。因為自己不克參加，便以這篇文章，針對我鎖定的核心議題：Istio，做一番重點摘要，以饗讀者。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>CI 怎樣帶你遠離平庸？</title>
-      <link>//william-yeh.net/post/2015/12/ci-effect/</link>
-      <pubDate>Tue, 22 Dec 2015 08:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2015/12/ci-effect/</guid>
-      <description>前天我的文章〈CI 是條不歸路〉提到：「CI/CD/DevOps 既是條不歸路，更是大躍進之路：一旦踏出第一步，就注定你會不斷接觸『遠離平庸』的</description>
     </item>
     
   </channel>

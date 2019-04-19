@@ -3,42 +3,79 @@
   
   <url>
     <loc>//william-yeh.net/categories/</loc>
-    <lastmod>2019-04-18T23:00:00+08:00</lastmod>
+    <lastmod>2019-04-19T23:00:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
+    <loc>//william-yeh.net/post/2019/04/next19-istio/</loc>
+    <lastmod>2019-04-19T23:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>//william-yeh.net/post/</loc>
-    <lastmod>2019-04-18T23:00:00+08:00</lastmod>
+    <lastmod>2019-04-19T23:00:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>//william-yeh.net/</loc>
-    <lastmod>2019-04-18T23:00:00+08:00</lastmod>
+    <lastmod>2019-04-19T23:00:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>//william-yeh.net/tags/</loc>
-    <lastmod>2019-04-18T23:00:00+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/tags/ansible/</loc>
-    <lastmod>2019-04-18T23:00:00+08:00</lastmod>
+    <lastmod>2019-04-19T23:00:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>//william-yeh.net/tags/devops/</loc>
-    <lastmod>2019-04-18T23:00:00+08:00</lastmod>
+    <lastmod>2019-04-19T23:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/docker/</loc>
+    <lastmod>2019-04-19T23:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/istio/</loc>
+    <lastmod>2019-04-19T23:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/kubernetes/</loc>
+    <lastmod>2019-04-19T23:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/microservices/</loc>
+    <lastmod>2019-04-19T23:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/service-mesh/</loc>
+    <lastmod>2019-04-19T23:00:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>//william-yeh.net/categories/tech/</loc>
+    <lastmod>2019-04-19T23:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/ansible/</loc>
     <lastmod>2019-04-18T23:00:00+08:00</lastmod>
     <priority>0</priority>
   </url>
@@ -82,18 +119,6 @@
   </url>
   
   <url>
-    <loc>//william-yeh.net/tags/kubernetes/</loc>
-    <lastmod>2019-04-02T16:00:00+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/tags/microservices/</loc>
-    <lastmod>2019-04-02T16:00:00+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>//william-yeh.net/courses/cloudsummit2019/</loc>
     <lastmod>2019-04-02T16:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -105,12 +130,6 @@
     <lastmod>2019-03-29T23:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/tags/service-mesh/</loc>
-    <lastmod>2019-03-29T23:00:00+08:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -606,12 +625,6 @@
     <lastmod>2015-12-22T08:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/tags/docker/</loc>
-    <lastmod>2015-12-22T08:00:00+08:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
