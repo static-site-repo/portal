@@ -6,10 +6,27 @@
     <description>Recent content in kubernetes on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Fri, 19 Apr 2019 23:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 17 May 2019 12:00:00 +0800</lastBuildDate>
     
 	<atom:link href="//william-yeh.net/tags/kubernetes/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Kubernetes 的入門認知與導入策略</title>
+      <link>//william-yeh.net/post/2019/05/k8s-lab/</link>
+      <pubDate>Fri, 17 May 2019 12:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2019/05/k8s-lab/</guid>
+      <description>&lt;p&gt;前天我在 &lt;a href=&#34;https://cloudsummit.ithome.com.tw/&#34;&gt;2019 台灣雲端大會&lt;/a&gt;帶了兩個場次，一個是現場實作場次，一個是經驗分享演講：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Lab / &lt;a href=&#34;https://github.com/William-Yeh/workshop-cloud2019&#34;&gt;給 RD 的 Kubernetes 初體驗&lt;/a&gt; (90 minutes)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Speech / &lt;a href=&#34;https://www.slideshare.net/williamyeh/when-dotnetmeetskubernetes-145557464&#34;&gt;當 .NET 遇到 Kubernetes&lt;/a&gt; (30 minutes)&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;兩個場次，一言以蔽之，都圍繞在 Kubernetes 的入門認知與導入策略上。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Next &#39;19 的 Istio 場次重點摘要</title>

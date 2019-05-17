@@ -6,10 +6,27 @@
     <description>Recent content in devops on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Fri, 19 Apr 2019 23:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 17 May 2019 12:00:00 +0800</lastBuildDate>
     
 	<atom:link href="//william-yeh.net/tags/devops/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Kubernetes 的入門認知與導入策略</title>
+      <link>//william-yeh.net/post/2019/05/k8s-lab/</link>
+      <pubDate>Fri, 17 May 2019 12:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2019/05/k8s-lab/</guid>
+      <description>&lt;p&gt;前天我在 &lt;a href=&#34;https://cloudsummit.ithome.com.tw/&#34;&gt;2019 台灣雲端大會&lt;/a&gt;帶了兩個場次，一個是現場實作場次，一個是經驗分享演講：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Lab / &lt;a href=&#34;https://github.com/William-Yeh/workshop-cloud2019&#34;&gt;給 RD 的 Kubernetes 初體驗&lt;/a&gt; (90 minutes)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Speech / &lt;a href=&#34;https://www.slideshare.net/williamyeh/when-dotnetmeetskubernetes-145557464&#34;&gt;當 .NET 遇到 Kubernetes&lt;/a&gt; (30 minutes)&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;兩個場次，一言以蔽之，都圍繞在 Kubernetes 的入門認知與導入策略上。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Next &#39;19 的 Istio 場次重點摘要</title>
@@ -217,15 +234,6 @@
       
       <guid>//william-yeh.net/post/2015/12/ci-effect/</guid>
       <description>前天我的文章〈CI 是條不歸路〉提到：「CI/CD/DevOps 既是條不歸路，更是大躍進之路：一旦踏出第一步，就注定你會不斷接觸『遠離平庸』的</description>
-    </item>
-    
-    <item>
-      <title>CI 是條不歸路</title>
-      <link>//william-yeh.net/post/2015/12/ci-no-turning-back/</link>
-      <pubDate>Mon, 21 Dec 2015 08:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2015/12/ci-no-turning-back/</guid>
-      <description>今年九月初參加完 DevOps 2015 之後，有感而發，寫了兩則 tweets： 說實在的，打從 1999 年 Kent Beck 經典著作 Extreme Programming Explained 問世，整個軟體文化就被徹底分裂成兩個國度。以 agile</description>
     </item>
     
   </channel>
