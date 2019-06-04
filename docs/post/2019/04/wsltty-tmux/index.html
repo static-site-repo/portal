@@ -36,7 +36,7 @@
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.55.5" />
+<meta name="generator" content="Hugo 0.55.6" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2019/04/wsltty-tmux/" />
@@ -80,7 +80,7 @@
 
 <meta itemprop="datePublished" content="2019-04-17T22:00:00&#43;08:00" />
 <meta itemprop="dateModified" content="2019-04-17T22:00:00&#43;08:00" />
-<meta itemprop="wordCount" content="892">
+<meta itemprop="wordCount" content="959">
 
 
 
@@ -305,7 +305,7 @@ if (!doNotTrack) {
             <a href="//william-yeh.net/categories/tech/"> tech </a>
             
           </div>
-        <span class="more-meta"> 約 892 字 </span>
+        <span class="more-meta"> 約 959 字 </span>
           <span class="more-meta"> 預計閱讀 2 分鐘 </span>
 
         
@@ -363,17 +363,24 @@ if (!doNotTrack) {
 
 <h2 id="tmux-的-pane">Tmux 的 pane</h2>
 
-<p>在 tmux 新增 pane 或 window 時，不會自動帶入目前的目錄 <code>$PWD</code>，而是帶入 <code>$HOME</code>。預設的組合鍵 <code>&lt;prefix&gt; %</code> 及 <code>&lt;prefix&gt; &quot;</code> 難記又難按，也很令人頭痛。</p>
+<p>用慣 iTerm2 的我，對 tmux 的 pane 功能不太習慣。</p>
+
+<p>譬如說，在 tmux 新增 pane 或 window 時，不會自動帶入目前的目錄 <code>$PWD</code>，而是一律帶入 <code>$HOME</code>，很不方便。Tmux 預設的組合鍵 <code>&lt;prefix&gt; %</code> 及 <code>&lt;prefix&gt; &quot;</code> 難記又難按，也很令人頭痛。</p>
 
 <p>因此，我綜合多人的做法<sup class="footnote-ref" id="fnref:5"><a href="#fn:5">5</a></sup>，解決目錄問題，換成好記好按的組合鍵，更可用方向鍵來切換 pane：</p>
 
-<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">unbind &#39;&#34;&#39;
-unbind &#39;%&#39;
-bind &#39;|&#39; split-window -h -c &#39;#{pane_current_path}&#39;
-bind &#39;-&#39; split-window -v -c &#39;#{pane_current_path}&#39;
-bind c   new-window      -c &#39;#{pane_current_path}&#39;
+<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext"># Create new window (tab) with current path
+unbind c
+bind -n M-t new-window -c &#39;#{pane_current_path}&#39;  # mimic for iTerm2 habit
 
-# switch panes using Alt-arrow without prefix
+# Split panes with current path
+# @see https://unix.stackexchange.com/a/247449
+unbind &#39;&#34;&#39;
+unbind &#39;%&#39;
+bind -n M-d split-window -h -c &#39;#{pane_current_path}&#39;  # Split panes horizontal
+bind -n M-D split-window -v -c &#39;#{pane_current_path}&#39;  # Split panes vertically
+
+# Switch panes using Alt-arrow without prefix
 bind -n M-Left  select-pane -L
 bind -n M-Right select-pane -R
 bind -n M-Up    select-pane -U

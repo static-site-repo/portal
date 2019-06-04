@@ -576,17 +576,24 @@ C:&amp;gt; bcdedit /set hypervisorlaunchtype auto&lt;/code&gt;&lt;/pre&gt;&lt;/d
 
 &lt;h2 id=&#34;tmux-的-pane&#34;&gt;Tmux 的 pane&lt;/h2&gt;
 
-&lt;p&gt;在 tmux 新增 pane 或 window 時，不會自動帶入目前的目錄 &lt;code&gt;$PWD&lt;/code&gt;，而是帶入 &lt;code&gt;$HOME&lt;/code&gt;。預設的組合鍵 &lt;code&gt;&amp;lt;prefix&amp;gt; %&lt;/code&gt; 及 &lt;code&gt;&amp;lt;prefix&amp;gt; &amp;quot;&lt;/code&gt; 難記又難按，也很令人頭痛。&lt;/p&gt;
+&lt;p&gt;用慣 iTerm2 的我，對 tmux 的 pane 功能不太習慣。&lt;/p&gt;
+
+&lt;p&gt;譬如說，在 tmux 新增 pane 或 window 時，不會自動帶入目前的目錄 &lt;code&gt;$PWD&lt;/code&gt;，而是一律帶入 &lt;code&gt;$HOME&lt;/code&gt;，很不方便。Tmux 預設的組合鍵 &lt;code&gt;&amp;lt;prefix&amp;gt; %&lt;/code&gt; 及 &lt;code&gt;&amp;lt;prefix&amp;gt; &amp;quot;&lt;/code&gt; 難記又難按，也很令人頭痛。&lt;/p&gt;
 
 &lt;p&gt;因此，我綜合多人的做法&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34;&gt;5&lt;/a&gt;&lt;/sup&gt;，解決目錄問題，換成好記好按的組合鍵，更可用方向鍵來切換 pane：&lt;/p&gt;
 
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;unbind &amp;#39;&amp;#34;&amp;#39;
-unbind &amp;#39;%&amp;#39;
-bind &amp;#39;|&amp;#39; split-window -h -c &amp;#39;#{pane_current_path}&amp;#39;
-bind &amp;#39;-&amp;#39; split-window -v -c &amp;#39;#{pane_current_path}&amp;#39;
-bind c   new-window      -c &amp;#39;#{pane_current_path}&amp;#39;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;# Create new window (tab) with current path
+unbind c
+bind -n M-t new-window -c &amp;#39;#{pane_current_path}&amp;#39;  # mimic for iTerm2 habit
 
-# switch panes using Alt-arrow without prefix
+# Split panes with current path
+# @see https://unix.stackexchange.com/a/247449
+unbind &amp;#39;&amp;#34;&amp;#39;
+unbind &amp;#39;%&amp;#39;
+bind -n M-d split-window -h -c &amp;#39;#{pane_current_path}&amp;#39;  # Split panes horizontal
+bind -n M-D split-window -v -c &amp;#39;#{pane_current_path}&amp;#39;  # Split panes vertically
+
+# Switch panes using Alt-arrow without prefix
 bind -n M-Left  select-pane -L
 bind -n M-Right select-pane -R
 bind -n M-Up    select-pane -U
