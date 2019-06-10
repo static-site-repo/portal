@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="zh-tw" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Inotify in Containers - Potioneer&#39;s Essays</title>
+  
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="William Yeh" />
+  <meta name="description" content="It is usually necessary to watch for any changes in file systems, both in development and in production modes. For example, in the development mode Webpack can watch files and recompile whenever they change; in the production mode Consul Template can watch runtime configs and invoke specific applications whenever they change. These are well-known scenarios in the traditional world. How about the container world? Do they behave the same in" />
+
+
+
+
+<meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
+
+
+<meta name="generator" content="Hugo 0.55.6" />
+
+
+<link rel="canonical" href="//william-yeh.net/post/2019/06/inotify-in-containers/" />
+
+
+
+<link rel="icon" href="/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+<link href="/dist/jane.min.css?v=2.7.0" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="Inotify in Containers" />
+<meta property="og:description" content="It is usually necessary to watch for any changes in file systems, both in development and in production modes. For example, in the development mode Webpack can watch files and recompile whenever they change; in the production mode Consul Template can watch runtime configs and invoke specific applications whenever they change. These are well-known scenarios in the traditional world. How about the container world? Do they behave the same in" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="//william-yeh.net/post/2019/06/inotify-in-containers/" />
+<meta property="article:published_time" content="2019-06-10T18:00:00&#43;08:00"/>
+<meta property="article:modified_time" content="2019-06-10T18:00:00&#43;08:00"/>
+
+<meta itemprop="name" content="Inotify in Containers">
+<meta itemprop="description" content="It is usually necessary to watch for any changes in file systems, both in development and in production modes. For example, in the development mode Webpack can watch files and recompile whenever they change; in the production mode Consul Template can watch runtime configs and invoke specific applications whenever they change. These are well-known scenarios in the traditional world. How about the container world? Do they behave the same in">
+
+
+<meta itemprop="datePublished" content="2019-06-10T18:00:00&#43;08:00" />
+<meta itemprop="dateModified" content="2019-06-10T18:00:00&#43;08:00" />
+<meta itemprop="wordCount" content="714">
+
+
+
+<meta itemprop="keywords" content="devops,docker,kubernetes,inotify," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Inotify in Containers"/>
+<meta name="twitter:description" content="It is usually necessary to watch for any changes in file systems, both in development and in production modes. For example, in the development mode Webpack can watch files and recompile whenever they change; in the production mode Consul Template can watch runtime configs and invoke specific applications whenever they change. These are well-known scenarios in the traditional world. How about the container world? Do they behave the same in"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-751859-3', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Potioneer&#39;s Essays</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="//william-yeh.net/">♜</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="//william-yeh.net/post/">Archives</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="//william-yeh.net/tags/">Tags</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="//william-yeh.net/categories/">Categories</a>
+          
+        
+      </li>
+    
+  </ul>
+</nav>
+
+
+  
+    
+
+
+
+
+
+
+  <link rel="stylesheet" href="/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/" class="logo">
+    
+      Potioneer&#39;s Essays
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="//william-yeh.net/">♜</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="//william-yeh.net/post/">Archives</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="//william-yeh.net/tags/">Tags</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="//william-yeh.net/categories/">Categories</a>
+          
+
+        
+
+      </li>
+    
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">Inotify in Containers</h1>
+      
+      <div class="post-meta">
+        <time datetime="2019-06-10" class="post-time">
+          2019-06-10
+        </time>
+        <div class="post-category">
+            <a href="//william-yeh.net/categories/tech/"> tech </a>
+            
+          </div>
+        <span class="more-meta"> 約 714 字 </span>
+          <span class="more-meta"> 預計閱讀 2 分鐘 </span>
+
+        
+        
+          <span id="busuanzi_container_page_pv">
+            | 阅读 <span id="busuanzi_value_page_pv"></span>
+          </span>
+        
+
+        
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目錄</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#experiment-setting">Experiment setting</a></li>
+<li><a href="#group-a-native-mode">Group A: native mode</a></li>
+<li><a href="#group-b-and-c-container-mode">Group B and C: container mode</a></li>
+<li><a href="#group-d-k8s-mode">Group D: K8s mode</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      
+
+<p>It is usually necessary to watch for any changes in file systems, both in development and in production modes. For example, in the development mode <a href="https://webpack.js.org/">Webpack</a> can watch files and recompile whenever they change; in the production mode <a href="https://github.com/hashicorp/consul-template">Consul Template</a> can watch runtime configs and invoke specific applications whenever they change.</p>
+
+<p>These are well-known scenarios in the traditional world.  How about the container world? Do they behave the same in the new container world?</p>
+
+<p>I&rsquo;ve occasionally found that something behave differently in the container world. To clarify this I&rsquo;ve conducted a series of experiments. In this article I&rsquo;m going to explain the experiments and preliminary findings.  All experiment materials can be found in the <a href="https://github.com/William-Yeh/fswatch">fswatch</a> repo.</p>
+
+<h2 id="experiment-setting">Experiment setting</h2>
+
+<p>I&rsquo;ve divided the experiments into 4 groups.</p>
+
+<ul>
+<li><p>Group A (experiment 1 to 3) is the traditional native mode: run native apps in their native host operating systems, respectively. This is considered as the control group.</p></li>
+
+<li><p>Group B (experiment 4 to 6) is the Linux container mode: run the same containerized Linux app in 3 different host operating systems.</p></li>
+
+<li><p>Group C (experiment 7) is the Windows container mode: run the containerized Windows app in the Windows operating system.</p></li>
+
+<li><p>Group D (experiment 8) is the Kubernetes mode: run the containerized Linux app in Kubernetes.</p></li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>Host OS</th>
+<th>App run as<br/>native app</th>
+<th>App run as<br/>Linux Container</th>
+<th>App run as<br/>Windows Container</th>
+<th>‖</th>
+<th>App run in<br/>K8s (Linux Container)</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Linux</td>
+<td><a href="https://github.com/William-Yeh/fswatch/tree/master/test-matrix/1_native_linux">1</a></td>
+<td><a href="https://github.com/William-Yeh/fswatch/blob/master/test-matrix/4_host_linux_container_linux">4</a></td>
+<td>N/A</td>
+<td>‖</td>
+<td><a href="https://github.com/William-Yeh/fswatch/blob/master/test-matrix/8_k8s_linux">8</a></td>
+</tr>
+
+<tr>
+<td>Mac</td>
+<td><a href="https://github.com/William-Yeh/fswatch/tree/master/test-matrix/2_native_mac">2</a></td>
+<td><a href="https://github.com/William-Yeh/fswatch/blob/master/test-matrix/5_host_mac_container_linux">5</a></td>
+<td>N/A</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>Windows</td>
+<td><a href="https://github.com/William-Yeh/fswatch/blob/master/test-matrix/3_native_win">3</a></td>
+<td><a href="https://github.com/William-Yeh/fswatch/blob/master/test-matrix/6_host_win_container_linux">6</a> (LCOW)</td>
+<td><a href="https://github.com/William-Yeh/fswatch/blob/master/test-matrix/7_host_win_container_win">7</a> (WCOW)</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="group-a-native-mode">Group A: native mode</h2>
+
+<p>Let&rsquo;s start with the native mode as the control group. We&rsquo;ll see how it works in the traditional world of Linux, Mac, and Windows.</p>
+
+<p>To make life easier, I&rsquo;m using the <a href="https://github.com/fsnotify/fsnotify">fsnotify</a> library to unify a variety of underlying operating system APIs (e.g., <a href="https://en.wikipedia.org/wiki/Inotify"><code>inotify</code></a> in Linux, <a href="https://en.wikipedia.org/wiki/Kqueue"><code>kqueue</code></a> in macOS, and <a href="https://docs.microsoft.com/en-us/windows/desktop/api/winbase/nf-winbase-readdirectorychangesw"><code>ReadDirectoryChangesW</code></a> in Windows).  Statically-linked binaries for the 3 platforms are generated with the Go compiler 1.12.5:</p>
+
+<ul>
+<li>2,943,200 (bytes) <code>fswatch-linux-x86_64</code></li>
+<li>2,861,360 (bytes) <code>fswatch-mac</code></li>
+<li>2,914,304 (bytes) <code>fswatch-x86_64.exe</code></li>
+</ul>
+
+<p>These experiments are easy to try by yourself. Take experiment <a href="https://github.com/William-Yeh/fswatch/tree/master/test-matrix/1_native_linux">1</a> &ldquo;run native Linux app in Linux host OS&rdquo; for example:</p>
+
+<p><a href="https://asciinema.org/a/250732"><img src="https://asciinema.org/a/250732.svg" alt="asciicast" /></a></p>
+
+<p>In this group, changes in the file system can be tracked successfully by their native API mechanisms, respectively.</p>
+
+<h2 id="group-b-and-c-container-mode">Group B and C: container mode</h2>
+
+<p>Containers make things a little bit complicated.</p>
+
+<p>TL;DR: <em>The LCOW version doesn&rsquo;t work well.</em></p>
+
+<p>When there&rsquo;s a mismatch between host OS and container, <code>inotify</code> may not work well.</p>
+
+<p>Take experiment <a href="https://github.com/William-Yeh/fswatch/blob/master/test-matrix/6_host_win_container_linux">6</a> (LCOW) &ldquo;run containerized Linux app in Windows host OS&rdquo; for example. The <a href="https://docs.docker.com/docker-for-windows/troubleshoot/#inotify-on-shared-drives-does-not-work">document</a> for Docker Desktop for Windows has a warning for us:</p>
+
+<blockquote>
+<p><strong>Inotify on shared drives does not work</strong></p>
+
+<p>Currently, <code>inotify</code> does not work on Docker Desktop for Windows. This becomes evident, for example, when an application needs to read/write to a container across a mounted drive. Instead of relying on filesystem <code>inotify</code>, we recommend using polling features for your framework or programming language.</p>
+</blockquote>
+
+<p>For Windows users, <code>inotify</code> works well in the WCOW mode (experiment <a href="https://github.com/William-Yeh/fswatch/blob/master/test-matrix/7_host_win_container_win">7</a>).</p>
+
+<p>On the other hand, Mac users are luckier.  Docker Desktop for Mac doesn&rsquo;t have much trouble here (experiment <a href="https://github.com/William-Yeh/fswatch/blob/master/test-matrix/5_host_mac_container_linux">5</a>) thanks to excellent implementation of <strong>osxfs</strong>.  See &ldquo;<a href="https://docs.docker.com/docker-for-mac/osxfs/">File system sharing (osxfs)</a>&rdquo; and &ldquo;<a href="https://docs.docker.com/docker-for-mac/osxfs-caching/">Performance tuning for volume mounts (shared filesystems)</a>&rdquo; articles for more information.</p>
+
+<blockquote>
+<p><strong>File system events</strong></p>
+
+<p>Most <code>inotify</code> events are supported in bind mounts, and likely <code>dnotify</code> and <code>fanotify</code> (though they have not been tested) are also supported. This means that file system events from macOS are sent into containers and trigger any listening processes there.</p>
+</blockquote>
+
+<h2 id="group-d-k8s-mode">Group D: K8s mode</h2>
+
+<p>How about Kubernetes?  Does <code>inotify</code> work well with the ConfigMap?</p>
+
+<p>Below is the demo for experiment <a href="https://github.com/William-Yeh/fswatch/blob/master/test-matrix/8_k8s_linux">8</a>:</p>
+
+<p><a href="https://asciinema.org/a/250736"><img src="https://asciinema.org/a/250736.svg" alt="asciicast" /></a></p>
+
+<p>As you can see in this demo, any changes in the ConfigMap will propagate to related pods in a couple of seconds, and <code>inotify</code> will detect this event as well. <sup class="footnote-ref" id="fnref:1"><a href="#fn:1">1</a></sup></p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>The <code>inotify</code> mechanism works in the container and Kubernetes world, except for the LCOW case.</p>
+
+<p>If such a feature is needed in the LCOW setting, maybe you have to seek another workaround workflow; e.g., put <code>inotify</code> mechanism outside the container, and propagate the event explicitly into the containers if any.  This is exactly what <a href="https://skaffold.dev/">Skaffold</a> is doing.</p>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:1">Another analysis of ConfigMap hot-reload can be found in the article by Jimmy Song: “<a href="https://jimmysong.io/kubernetes-handbook/concepts/configmap-hot-update.html">ConfigMap 的热更新</a>”.
+ <a class="footnote-return" href="#fnref:1"><sup>[return]</sup></a></li>
+</ol>
+</div>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">William Yeh</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2019-06-10</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">授權條款</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW" target="_blank">CC BY-NC-SA 4.0</a> (姓名標示-非商業性-相同方式分享 4.0 國際)</span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="//william-yeh.net/tags/devops/">devops</a>
+          <a href="//william-yeh.net/tags/docker/">docker</a>
+          <a href="//william-yeh.net/tags/kubernetes/">kubernetes</a>
+          <a href="//william-yeh.net/tags/inotify/">inotify</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/post/2019/05/k8s-lab/">
+            <span class="next-text nav-default">Kubernetes 的入門認知與導入策略</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+  
+  
+
+  
+  
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= "William-Yeh/utterances-area"
+            issue-term="pathname"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
+  
+
+  
+
+  
+
+  <div class="disqus-comment">
+  <div class="disqus-button" id="load_disqus" onclick="load_disqus()">
+    顯示 Disqus 評論
+  </div>
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_config = function () {
+      this.page.url = "//william-yeh.net/post/2019/06/inotify-in-containers/";
+    };
+    function load_disqus() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'potioneer';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+      $('#load_disqus').remove();
+    };
+  </script>
+  <noscript>Please enable JavaScript to view the
+    <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+  </noscript>
+  
+  </div>
+
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:william.pjyeh@gmail.com" rel="me noopener" class="iconfont icon-email"
+        title="email">
+      </a>
+      <a href="https://twitter.com/william_yeh" rel="me noopener" class="iconfont icon-twitter"
+        title="twitter" target="_blank">
+      </a>
+      <a href="https://www.facebook.com/william.yeh" rel="me noopener" class="iconfont icon-facebook"
+        title="facebook" target="_blank">
+      </a>
+      <a href="https://www.linkedin.com/in/pjyeh/" rel="me noopener" class="iconfont icon-linkedin"
+        title="linkedin" target="_blank">
+      </a>
+      <a href="https://github.com/william-yeh" rel="me noopener" class="iconfont icon-github"
+        title="github" target="_blank">
+      </a>
+      <a href="https://www.slideshare.net/williamyeh" rel="me noopener" class="iconfont icon-coding"
+        title="coding" target="_blank">
+      </a>
+  <a href="//william-yeh.net/index.xml" rel="noopener alternate" type="application/rss&#43;xml" class="iconfont icon-rss"
+    title="rss" target="_blank">
+  </a>
+  </div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+      2015 -
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span><span class="author">
+        William Yeh
+        
+      </span></span>
+
+  
+  
+    <span id="busuanzi_container">
+      访客数/访问量：<span id="busuanzi_value_site_uv"></span>/<span id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+<script type="text/javascript" src="/dist/jane.min.js?v=2.7.0"></script>
+
+
+
+
+
+  
+    <script type="text/javascript" src="/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

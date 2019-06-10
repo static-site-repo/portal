@@ -6,10 +6,19 @@
     <description>Recent content in kubernetes on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Fri, 17 May 2019 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 10 Jun 2019 18:00:00 +0800</lastBuildDate>
     
 	<atom:link href="//william-yeh.net/tags/kubernetes/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Inotify in Containers</title>
+      <link>//william-yeh.net/post/2019/06/inotify-in-containers/</link>
+      <pubDate>Mon, 10 Jun 2019 18:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2019/06/inotify-in-containers/</guid>
+      <description>It is usually necessary to watch for any changes in file systems, both in development and in production modes. For example, in the development mode Webpack can watch files and recompile whenever they change; in the production mode Consul Template can watch runtime configs and invoke specific applications whenever they change. These are well-known scenarios in the traditional world. How about the container world? Do they behave the same in</description>
+    </item>
     
     <item>
       <title>Kubernetes 的入門認知與導入策略</title>

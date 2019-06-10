@@ -5,10 +5,153 @@
     <description>Recent content on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Fri, 17 May 2019 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 10 Jun 2019 18:00:00 +0800</lastBuildDate>
     
         <atom:link href="//william-yeh.net/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Inotify in Containers</title>
+      <link>//william-yeh.net/post/2019/06/inotify-in-containers/</link>
+      <pubDate>Mon, 10 Jun 2019 18:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2019/06/inotify-in-containers/</guid>
+      
+        <description>
+
+&lt;p&gt;It is usually necessary to watch for any changes in file systems, both in development and in production modes. For example, in the development mode &lt;a href=&#34;https://webpack.js.org/&#34;&gt;Webpack&lt;/a&gt; can watch files and recompile whenever they change; in the production mode &lt;a href=&#34;https://github.com/hashicorp/consul-template&#34;&gt;Consul Template&lt;/a&gt; can watch runtime configs and invoke specific applications whenever they change.&lt;/p&gt;
+
+&lt;p&gt;These are well-known scenarios in the traditional world.  How about the container world? Do they behave the same in the new container world?&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ve occasionally found that something behave differently in the container world. To clarify this I&amp;rsquo;ve conducted a series of experiments. In this article I&amp;rsquo;m going to explain the experiments and preliminary findings.  All experiment materials can be found in the &lt;a href=&#34;https://github.com/William-Yeh/fswatch&#34;&gt;fswatch&lt;/a&gt; repo.&lt;/p&gt;
+
+&lt;h2 id=&#34;experiment-setting&#34;&gt;Experiment setting&lt;/h2&gt;
+
+&lt;p&gt;I&amp;rsquo;ve divided the experiments into 4 groups.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Group A (experiment 1 to 3) is the traditional native mode: run native apps in their native host operating systems, respectively. This is considered as the control group.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Group B (experiment 4 to 6) is the Linux container mode: run the same containerized Linux app in 3 different host operating systems.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Group C (experiment 7) is the Windows container mode: run the containerized Windows app in the Windows operating system.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Group D (experiment 8) is the Kubernetes mode: run the containerized Linux app in Kubernetes.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Host OS&lt;/th&gt;
+&lt;th&gt;App run as&lt;br/&gt;native app&lt;/th&gt;
+&lt;th&gt;App run as&lt;br/&gt;Linux Container&lt;/th&gt;
+&lt;th&gt;App run as&lt;br/&gt;Windows Container&lt;/th&gt;
+&lt;th&gt;‖&lt;/th&gt;
+&lt;th&gt;App run in&lt;br/&gt;K8s (Linux Container)&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Linux&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://github.com/William-Yeh/fswatch/tree/master/test-matrix/1_native_linux&#34;&gt;1&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://github.com/William-Yeh/fswatch/blob/master/test-matrix/4_host_linux_container_linux&#34;&gt;4&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;N/A&lt;/td&gt;
+&lt;td&gt;‖&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://github.com/William-Yeh/fswatch/blob/master/test-matrix/8_k8s_linux&#34;&gt;8&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Mac&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://github.com/William-Yeh/fswatch/tree/master/test-matrix/2_native_mac&#34;&gt;2&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://github.com/William-Yeh/fswatch/blob/master/test-matrix/5_host_mac_container_linux&#34;&gt;5&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;N/A&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Windows&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://github.com/William-Yeh/fswatch/blob/master/test-matrix/3_native_win&#34;&gt;3&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://github.com/William-Yeh/fswatch/blob/master/test-matrix/6_host_win_container_linux&#34;&gt;6&lt;/a&gt; (LCOW)&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://github.com/William-Yeh/fswatch/blob/master/test-matrix/7_host_win_container_win&#34;&gt;7&lt;/a&gt; (WCOW)&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&#34;group-a-native-mode&#34;&gt;Group A: native mode&lt;/h2&gt;
+
+&lt;p&gt;Let&amp;rsquo;s start with the native mode as the control group. We&amp;rsquo;ll see how it works in the traditional world of Linux, Mac, and Windows.&lt;/p&gt;
+
+&lt;p&gt;To make life easier, I&amp;rsquo;m using the &lt;a href=&#34;https://github.com/fsnotify/fsnotify&#34;&gt;fsnotify&lt;/a&gt; library to unify a variety of underlying operating system APIs (e.g., &lt;a href=&#34;https://en.wikipedia.org/wiki/Inotify&#34;&gt;&lt;code&gt;inotify&lt;/code&gt;&lt;/a&gt; in Linux, &lt;a href=&#34;https://en.wikipedia.org/wiki/Kqueue&#34;&gt;&lt;code&gt;kqueue&lt;/code&gt;&lt;/a&gt; in macOS, and &lt;a href=&#34;https://docs.microsoft.com/en-us/windows/desktop/api/winbase/nf-winbase-readdirectorychangesw&#34;&gt;&lt;code&gt;ReadDirectoryChangesW&lt;/code&gt;&lt;/a&gt; in Windows).  Statically-linked binaries for the 3 platforms are generated with the Go compiler 1.12.5:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;2,943,200 (bytes) &lt;code&gt;fswatch-linux-x86_64&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;2,861,360 (bytes) &lt;code&gt;fswatch-mac&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;2,914,304 (bytes) &lt;code&gt;fswatch-x86_64.exe&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;These experiments are easy to try by yourself. Take experiment &lt;a href=&#34;https://github.com/William-Yeh/fswatch/tree/master/test-matrix/1_native_linux&#34;&gt;1&lt;/a&gt; &amp;ldquo;run native Linux app in Linux host OS&amp;rdquo; for example:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://asciinema.org/a/250732&#34;&gt;&lt;img src=&#34;https://asciinema.org/a/250732.svg&#34; alt=&#34;asciicast&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;In this group, changes in the file system can be tracked successfully by their native API mechanisms, respectively.&lt;/p&gt;
+
+&lt;h2 id=&#34;group-b-and-c-container-mode&#34;&gt;Group B and C: container mode&lt;/h2&gt;
+
+&lt;p&gt;Containers make things a little bit complicated.&lt;/p&gt;
+
+&lt;p&gt;TL;DR: &lt;em&gt;The LCOW version doesn&amp;rsquo;t work well.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;When there&amp;rsquo;s a mismatch between host OS and container, &lt;code&gt;inotify&lt;/code&gt; may not work well.&lt;/p&gt;
+
+&lt;p&gt;Take experiment &lt;a href=&#34;https://github.com/William-Yeh/fswatch/blob/master/test-matrix/6_host_win_container_linux&#34;&gt;6&lt;/a&gt; (LCOW) &amp;ldquo;run containerized Linux app in Windows host OS&amp;rdquo; for example. The &lt;a href=&#34;https://docs.docker.com/docker-for-windows/troubleshoot/#inotify-on-shared-drives-does-not-work&#34;&gt;document&lt;/a&gt; for Docker Desktop for Windows has a warning for us:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Inotify on shared drives does not work&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Currently, &lt;code&gt;inotify&lt;/code&gt; does not work on Docker Desktop for Windows. This becomes evident, for example, when an application needs to read/write to a container across a mounted drive. Instead of relying on filesystem &lt;code&gt;inotify&lt;/code&gt;, we recommend using polling features for your framework or programming language.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;For Windows users, &lt;code&gt;inotify&lt;/code&gt; works well in the WCOW mode (experiment &lt;a href=&#34;https://github.com/William-Yeh/fswatch/blob/master/test-matrix/7_host_win_container_win&#34;&gt;7&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;On the other hand, Mac users are luckier.  Docker Desktop for Mac doesn&amp;rsquo;t have much trouble here (experiment &lt;a href=&#34;https://github.com/William-Yeh/fswatch/blob/master/test-matrix/5_host_mac_container_linux&#34;&gt;5&lt;/a&gt;) thanks to excellent implementation of &lt;strong&gt;osxfs&lt;/strong&gt;.  See &amp;ldquo;&lt;a href=&#34;https://docs.docker.com/docker-for-mac/osxfs/&#34;&gt;File system sharing (osxfs)&lt;/a&gt;&amp;rdquo; and &amp;ldquo;&lt;a href=&#34;https://docs.docker.com/docker-for-mac/osxfs-caching/&#34;&gt;Performance tuning for volume mounts (shared filesystems)&lt;/a&gt;&amp;rdquo; articles for more information.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;File system events&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Most &lt;code&gt;inotify&lt;/code&gt; events are supported in bind mounts, and likely &lt;code&gt;dnotify&lt;/code&gt; and &lt;code&gt;fanotify&lt;/code&gt; (though they have not been tested) are also supported. This means that file system events from macOS are sent into containers and trigger any listening processes there.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;group-d-k8s-mode&#34;&gt;Group D: K8s mode&lt;/h2&gt;
+
+&lt;p&gt;How about Kubernetes?  Does &lt;code&gt;inotify&lt;/code&gt; work well with the ConfigMap?&lt;/p&gt;
+
+&lt;p&gt;Below is the demo for experiment &lt;a href=&#34;https://github.com/William-Yeh/fswatch/blob/master/test-matrix/8_k8s_linux&#34;&gt;8&lt;/a&gt;:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://asciinema.org/a/250736&#34;&gt;&lt;img src=&#34;https://asciinema.org/a/250736.svg&#34; alt=&#34;asciicast&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;As you can see in this demo, any changes in the ConfigMap will propagate to related pods in a couple of seconds, and &lt;code&gt;inotify&lt;/code&gt; will detect this event as well. &lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;The &lt;code&gt;inotify&lt;/code&gt; mechanism works in the container and Kubernetes world, except for the LCOW case.&lt;/p&gt;
+
+&lt;p&gt;If such a feature is needed in the LCOW setting, maybe you have to seek another workaround workflow; e.g., put &lt;code&gt;inotify&lt;/code&gt; mechanism outside the container, and propagate the event explicitly into the containers if any.  This is exactly what &lt;a href=&#34;https://skaffold.dev/&#34;&gt;Skaffold&lt;/a&gt; is doing.&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;Another analysis of ConfigMap hot-reload can be found in the article by Jimmy Song: “&lt;a href=&#34;https://jimmysong.io/kubernetes-handbook/concepts/configmap-hot-update.html&#34;&gt;ConfigMap 的热更新&lt;/a&gt;”.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:1&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+      
+    </item>
     
     <item>
       <title>Kubernetes 的入門認知與導入策略</title>
