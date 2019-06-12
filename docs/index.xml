@@ -135,6 +135,26 @@
 
 &lt;p&gt;As you can see in this demo, any changes in the ConfigMap will propagate to related pods in a couple of seconds, and &lt;code&gt;inotify&lt;/code&gt; will detect this event as well. &lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 
+&lt;h3 id=&#34;caution-about-symbolic-links&#34;&gt;Caution about symbolic links&lt;/h3&gt;
+
+&lt;p&gt;In such situation, however, you should use &lt;code&gt;inotify&lt;/code&gt; to watch for &lt;em&gt;directories&lt;/em&gt; instead of merely for &lt;em&gt;files&lt;/em&gt;.  It is because Kubernetes may use symbolic links to point to versioned ConfigMap volumes, and &lt;code&gt;inotify&lt;/code&gt; doesn&amp;rsquo;t work well with such symbolic links. &lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s retry the demo, but this time we&amp;rsquo;ll focus on the directory layout from the pod&amp;rsquo;s point of view.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://asciinema.org/a/251141&#34;&gt;&lt;img src=&#34;https://asciinema.org/a/251141.svg&#34; alt=&#34;asciicast&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The demo at &lt;a href=&#34;https://asciinema.org/a/251141?t=1:55&#34;&gt;1:55&lt;/a&gt; shows the directory layout from the pod&amp;rsquo;s point of view:&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;/mnt/site # ls -al
+total 12
+drwxrwxrwx    3 root  root   4096 Jun 12 06:19 .
+drwxr-xr-x    1 root  root   4096 Jun 12 06:19 ..
+drwxr-xr-x    2 root  root   4096 Jun 12 06:19 ..2019_06_12_06_19_15.187277003
+lrwxrwxrwx    1 root  root     31 Jun 12 06:19 ..data -&amp;gt; ..2019_06_12_06_19_15.187277003
+lrwxrwxrwx    1 root  root     15 Jun 12 06:19 main.css -&amp;gt; ..data/main.css&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Simply put, things go well if you&amp;rsquo;re inside the pod and watch for &lt;code&gt;/mnt/site&lt;/code&gt; directory, but may not go well if you try to watch for a specific file &lt;code&gt;/mnt/site/main.css&lt;/code&gt; since it is internally a symbolic link managed by Kubernetes.&lt;/p&gt;
+
 &lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
 
 &lt;p&gt;The &lt;code&gt;inotify&lt;/code&gt; mechanism works in the container and Kubernetes world, except for the LCOW case.&lt;/p&gt;
@@ -147,6 +167,8 @@
 &lt;ol&gt;
 &lt;li id=&#34;fn:1&#34;&gt;Another analysis of ConfigMap hot-reload can be found in the article by Jimmy Song: “&lt;a href=&#34;https://jimmysong.io/kubernetes-handbook/concepts/configmap-hot-update.html&#34;&gt;ConfigMap 的热更新&lt;/a&gt;”.
  &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:1&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;&lt;a href=&#34;https://stackoverflow.com/questions/28769503/use-inotify-to-watch-a-file-with-multiple-symlinks&#34;&gt;Use INotify to watch a file with multiple symlinks&lt;/a&gt;
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:2&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
 </description>
