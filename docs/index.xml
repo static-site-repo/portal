@@ -281,6 +281,18 @@ lrwxrwxrwx    1 root  root     15 Jun 12 06:19 main.css -&amp;gt; ..data/main.cs
 
 &lt;p&gt;可惜，一個半小時的時間還是太短了，最後面 30 分鐘其實是在趕進度，跳過了一些原本應該仔細講解的環節（譬如：ConfigMap、label &amp;amp; selector、ephemeral vs static external IP 的區分⋯⋯）。我再考慮另外找個社群的場子，辦一次較完整的 workshop 吧。完整的，應該會需要 2.5～3 小時。&lt;/p&gt;
 
+&lt;div class=&#34;shortcode-notice note&#34;&gt;
+  &lt;div class=&#34;shortcode-notice-title note&#34;&gt;
+    
+      2019-06-16 補充
+    
+  &lt;/div&gt;
+  
+
+&lt;p&gt;一個月後，應 &lt;a href=&#34;https://www.meetup.com/GCPUG-Taipei/events/261797460/&#34;&gt;GCPUG Taipei&lt;/a&gt; 之邀，我辦了一場 3+1 小時的 Workshop，&lt;a href=&#34;https://www.slideshare.net/williamyeh/rd-kubernetes-gcpug-2019-06/&#34;&gt;投影片&lt;/a&gt;及&lt;a href=&#34;https://github.com/William-Yeh/workshop-gcpug201906/&#34;&gt;實作範例&lt;/a&gt;都有更新。&lt;/p&gt;
+
+&lt;p&gt;&lt;/div&gt;&lt;/p&gt;
+
 &lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
 
 &lt;p&gt;希望這一場演講，一場實作工作坊，對大家有助益。&lt;/p&gt;

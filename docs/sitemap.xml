@@ -33,6 +33,12 @@
   </url>
   
   <url>
+    <loc>//william-yeh.net/categories/tech/</loc>
+    <lastmod>2019-06-10T18:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>//william-yeh.net/tags/devops/</loc>
     <lastmod>2019-06-10T18:00:00+08:00</lastmod>
     <priority>0</priority>
@@ -52,12 +58,6 @@
   
   <url>
     <loc>//william-yeh.net/tags/kubernetes/</loc>
-    <lastmod>2019-06-10T18:00:00+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/categories/tech/</loc>
     <lastmod>2019-06-10T18:00:00+08:00</lastmod>
     <priority>0</priority>
   </url>
