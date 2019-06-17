@@ -49,7 +49,18 @@
 
 &lt;p&gt;&lt;a href=&#34;https://asciinema.org/a/251666&#34;&gt;&lt;img src=&#34;https://asciinema.org/a/251666.svg&#34; alt=&#34;asciicast&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;Good!  Inotifywait detects the changes and sends &lt;code&gt;HUP&lt;/code&gt; signals to Nginx as long as you correctly mount the &lt;code&gt;nginx-config&lt;/code&gt; ConfigMap as &lt;code&gt;/etc/nginx/&lt;/code&gt; directory for the pod.&lt;/p&gt;
+&lt;p&gt;Good!  Inotifywait detects the changes and sends &lt;code&gt;HUP&lt;/code&gt; signals to Nginx as long as you correctly mount the &lt;code&gt;nginx-config&lt;/code&gt; ConfigMap as &lt;code&gt;/etc/nginx/&lt;/code&gt; directory for the pod.  See the &lt;a href=&#34;https://github.com/William-Yeh/configmap-auto-reload/blob/master/inotifywait-example/watch-nginx.sh#L13-L22&#34;&gt;code snippet&lt;/a&gt;:&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;if [[ &amp;#34;$(inotifywatch -e modify,create,delete,move -t 15 /etc/nginx/ 2&amp;gt;&amp;amp;1)&amp;#34; =~ filename ]]; then
+    echo &amp;#34;Try to verify updated nginx config...&amp;#34;
+    nginx -t
+    if [ $? -ne 0 ]; then
+        echo &amp;#34;ERROR: New configuration is invalid!!&amp;#34;
+    else
+        echo &amp;#34;Reloading nginx with new config...&amp;#34;
+        nginx -s reload
+    fi
+fi;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;DISCLAIMER: it&amp;rsquo;s just for demo; not a robust implementation. For more examples, see &lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34;&gt;5&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
 
@@ -63,7 +74,7 @@
 
 &lt;p&gt;&lt;a href=&#34;https://asciinema.org/a/251670&#34;&gt;&lt;img src=&#34;https://asciinema.org/a/251670.svg&#34; alt=&#34;asciicast&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;Perfect!  Nginx pods get rolling updated by Reloader as long as you annotate the Nginx deployment with &lt;code&gt;configmap.reloader.stakater.com/reload&lt;/code&gt; (see the &lt;a href=&#34;https://github.com/William-Yeh/configmap-auto-reload/blob/master/reloader-example/nginx-service.yml#L25-L26&#34;&gt;source code&lt;/a&gt;):&lt;/p&gt;
+&lt;p&gt;Perfect!  Nginx pods get rolling updated by Reloader as long as you annotate the Nginx deployment with &lt;code&gt;configmap.reloader.stakater.com/reload&lt;/code&gt;.  See the &lt;a href=&#34;https://github.com/William-Yeh/configmap-auto-reload/blob/master/reloader-example/nginx-service.yml#L25-L26&#34;&gt;code snippet&lt;/a&gt;:&lt;/p&gt;
 
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;apiVersion: apps/v1
 kind: Deployment
