@@ -33,7 +33,11 @@
 
 &lt;p&gt;&lt;a href=&#34;https://asciinema.org/a/251179&#34;&gt;&lt;img src=&#34;https://asciinema.org/a/251179.svg&#34; alt=&#34;asciicast&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;Perfect!  Traefik auto-reloads itself as long as you correctly mount the &lt;code&gt;traefik-config&lt;/code&gt; ConfigMap as &lt;code&gt;/etc/traefik/&lt;/code&gt; directory for the pod.&lt;/p&gt;
+&lt;p&gt;Perfect!  Traefik auto-reloads itself as long as you correctly mount the &lt;code&gt;traefik-config&lt;/code&gt; ConfigMap as &lt;code&gt;/etc/traefik/&lt;/code&gt; directory for the pod.  Here&amp;rsquo;s the related &lt;a href=&#34;https://github.com/William-Yeh/configmap-auto-reload/blob/master/traefik-example/traefik-config.yml#L11-L13&#34;&gt;code snippet&lt;/a&gt;:&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;[file]
+watch = true
+directory = &amp;#34;/etc/traefik/&amp;#34;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h2 id=&#34;external-signals&#34;&gt;External signals&lt;/h2&gt;
 
@@ -49,7 +53,7 @@
 
 &lt;p&gt;&lt;a href=&#34;https://asciinema.org/a/251666&#34;&gt;&lt;img src=&#34;https://asciinema.org/a/251666.svg&#34; alt=&#34;asciicast&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;Good!  Inotifywait detects the changes and sends &lt;code&gt;HUP&lt;/code&gt; signals to Nginx as long as you correctly mount the &lt;code&gt;nginx-config&lt;/code&gt; ConfigMap as &lt;code&gt;/etc/nginx/&lt;/code&gt; directory for the pod.  Here&amp;rsquo;s the related&lt;a href=&#34;https://github.com/William-Yeh/configmap-auto-reload/blob/master/inotifywait-example/watch-nginx.sh#L13-L22&#34;&gt;code snippet&lt;/a&gt;:&lt;/p&gt;
+&lt;p&gt;Good!  Inotifywait detects the changes and sends &lt;code&gt;HUP&lt;/code&gt; signals to Nginx as long as you correctly mount the &lt;code&gt;nginx-config&lt;/code&gt; ConfigMap as &lt;code&gt;/etc/nginx/&lt;/code&gt; directory for the pod.  Here&amp;rsquo;s the related &lt;a href=&#34;https://github.com/William-Yeh/configmap-auto-reload/blob/master/inotifywait-example/watch-nginx.sh#L13-L22&#34;&gt;code snippet&lt;/a&gt;:&lt;/p&gt;
 
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;if [[ &amp;#34;$(inotifywatch -e modify,create,delete,move -t 15 /etc/nginx/ 2&amp;gt;&amp;amp;1)&amp;#34; =~ filename ]]; then
     echo &amp;#34;Try to verify updated nginx config...&amp;#34;
