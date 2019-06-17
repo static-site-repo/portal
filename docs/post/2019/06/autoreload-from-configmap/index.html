@@ -75,7 +75,7 @@ To clarify this I&rsquo;ve conducted a series of experiments. In this article I&
 
 <meta itemprop="datePublished" content="2019-06-17T17:00:00&#43;08:00" />
 <meta itemprop="dateModified" content="2019-06-17T17:00:00&#43;08:00" />
-<meta itemprop="wordCount" content="482">
+<meta itemprop="wordCount" content="497">
 
 
 
@@ -298,7 +298,7 @@ if (!doNotTrack) {
             <a href="//william-yeh.net/categories/tech/"> tech </a>
             
           </div>
-        <span class="more-meta"> 約 482 字 </span>
+        <span class="more-meta"> 約 497 字 </span>
           <span class="more-meta"> 預計閱讀 3 分鐘 </span>
 
         
@@ -376,11 +376,20 @@ if (!doNotTrack) {
 
 <p><a href="https://github.com/stakater/Reloader">Reloader</a> is a generic solution for Kubernetes. With the help of it, pods can be restarted whenever related ConfigMap has changed.</p>
 
-<p>See the <a href="https://github.com/William-Yeh/configmap-auto-reload/tree/master/reloader-example">reloader-example</a>.</p>
+<p>See the <a href="https://github.com/William-Yeh/configmap-auto-reload/tree/master/reloader-example">reloader-example</a>:</p>
 
 <p><a href="https://asciinema.org/a/251670"><img src="https://asciinema.org/a/251670.svg" alt="asciicast" /></a></p>
 
-<p>Perfect!  Nginx pods get rolling updated by Reloader as long as you annotate the Nginx deployment with <code>configmap.reloader.stakater.com/reload</code>.</p>
+<p>Perfect!  Nginx pods get rolling updated by Reloader as long as you annotate the Nginx deployment with <code>configmap.reloader.stakater.com/reload</code> (see the <a href="https://github.com/William-Yeh/configmap-auto-reload/blob/master/reloader-example/nginx-service.yml#L25-L26">source code</a>):</p>
+
+<pre><code>apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx
+  annotations:
+    configmap.reloader.stakater.com/reload: &quot;nginx-config&quot;
+  ...
+</code></pre>
 
 <h2 id="conclusion">Conclusion</h2>
 

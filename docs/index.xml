@@ -59,11 +59,20 @@
 
 &lt;p&gt;&lt;a href=&#34;https://github.com/stakater/Reloader&#34;&gt;Reloader&lt;/a&gt; is a generic solution for Kubernetes. With the help of it, pods can be restarted whenever related ConfigMap has changed.&lt;/p&gt;
 
-&lt;p&gt;See the &lt;a href=&#34;https://github.com/William-Yeh/configmap-auto-reload/tree/master/reloader-example&#34;&gt;reloader-example&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;See the &lt;a href=&#34;https://github.com/William-Yeh/configmap-auto-reload/tree/master/reloader-example&#34;&gt;reloader-example&lt;/a&gt;:&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://asciinema.org/a/251670&#34;&gt;&lt;img src=&#34;https://asciinema.org/a/251670.svg&#34; alt=&#34;asciicast&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;Perfect!  Nginx pods get rolling updated by Reloader as long as you annotate the Nginx deployment with &lt;code&gt;configmap.reloader.stakater.com/reload&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Perfect!  Nginx pods get rolling updated by Reloader as long as you annotate the Nginx deployment with &lt;code&gt;configmap.reloader.stakater.com/reload&lt;/code&gt; (see the &lt;a href=&#34;https://github.com/William-Yeh/configmap-auto-reload/blob/master/reloader-example/nginx-service.yml#L25-L26&#34;&gt;source code&lt;/a&gt;):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx
+  annotations:
+    configmap.reloader.stakater.com/reload: &amp;quot;nginx-config&amp;quot;
+  ...
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
 
