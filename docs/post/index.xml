@@ -6,10 +6,21 @@
     <description>Recent content in Posts on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Mon, 17 Jun 2019 14:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 17 Jun 2019 17:00:00 +0800</lastBuildDate>
     
 	<atom:link href="//william-yeh.net/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Auto-Reload from ConfigMap</title>
+      <link>//william-yeh.net/post/2019/06/autoreload-from-configmap/</link>
+      <pubDate>Mon, 17 Jun 2019 17:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2019/06/autoreload-from-configmap/</guid>
+      <description>My previous article &amp;ldquo;Inotify in Containers&amp;rdquo; has demonstrated that when ConfigMap is mounted as directories, any changes in the ConfigMap will propagate to related pods, and can be detected with inotify-like APIs.
+A follow-up question might be: what should a well-behaved application react to this trigger accordingly? What if it&amp;rsquo;s a ill-designed application?
+To clarify this I&amp;rsquo;ve conducted a series of experiments. In this article I&amp;rsquo;m going to explain the experiments and preliminary findings.</description>
+    </item>
     
     <item>
       <title>Containers and Environment Variables</title>
@@ -296,21 +307,6 @@
       
       <guid>//william-yeh.net/post/2018/11/why-safe-over-less/</guid>
       <description>在一篇 Terry &amp;amp; Ruddy 對話紀錄中，看到一系列有趣的 LeSS vs. SAFe 討論： 「為什麼 LeSS 這麼迷人，可是總是輸給 SAFe？」 「SAFe 是敏捷跟辦公室政治作出了完美的妥協</description>
-    </item>
-    
-    <item>
-      <title>「從 Ops 角度看 DevOps」的感想</title>
-      <link>//william-yeh.net/post/2018/11/opsdev-talk-18/</link>
-      <pubDate>Wed, 28 Nov 2018 23:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2018/11/opsdev-talk-18/</guid>
-      <description>&lt;p&gt;在台灣（或許在其他地方也是），DevOps 的話語權，很大幅度都被 Dev 一方把持。我們很少聽到 Ops 一方的說法。&lt;/p&gt;
-
-&lt;p&gt;成功的改革，需要兼顧各方利益者的需求及痛點。隨著 DevOps 守備範圍日益擴大，這種失衡狀態必須改變。&lt;/p&gt;
-
-&lt;p&gt;今晚參加 &lt;a href=&#34;https://www.facebook.com/DevOpsTaiwan/&#34;&gt;DevOps Taiwan 社群&lt;/a&gt;舉辦的講座：【&lt;a href=&#34;https://devops.kktix.cc/events/meetup17-opsdev&#34;&gt;從 Ops 角度看 DevOps&lt;/a&gt;】，聽聽&lt;a href=&#34;https://www.facebook.com/roberthu.tw&#34;&gt;胡士亮 (Robert Hu)&lt;/a&gt; 從正統 Ops 角度來詮釋 DevOps，甚至 OpsDev，收穫頗大。&lt;/p&gt;
-
-&lt;p&gt;聽知識，聽心得，也聽熱情與願景。&lt;/p&gt;</description>
     </item>
     
   </channel>

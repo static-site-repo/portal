@@ -6,10 +6,21 @@
     <description>Recent content in tech on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Mon, 17 Jun 2019 14:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 17 Jun 2019 17:00:00 +0800</lastBuildDate>
     
 	<atom:link href="//william-yeh.net/categories/tech/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Auto-Reload from ConfigMap</title>
+      <link>//william-yeh.net/post/2019/06/autoreload-from-configmap/</link>
+      <pubDate>Mon, 17 Jun 2019 17:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2019/06/autoreload-from-configmap/</guid>
+      <description>My previous article &amp;ldquo;Inotify in Containers&amp;rdquo; has demonstrated that when ConfigMap is mounted as directories, any changes in the ConfigMap will propagate to related pods, and can be detected with inotify-like APIs.
+A follow-up question might be: what should a well-behaved application react to this trigger accordingly? What if it&amp;rsquo;s a ill-designed application?
+To clarify this I&amp;rsquo;ve conducted a series of experiments. In this article I&amp;rsquo;m going to explain the experiments and preliminary findings.</description>
+    </item>
     
     <item>
       <title>Containers and Environment Variables</title>
@@ -231,15 +242,6 @@
       
       <guid>//william-yeh.net/post/2015/12/ci-effect/</guid>
       <description>前天我的文章〈CI 是條不歸路〉提到：「CI/CD/DevOps 既是條不歸路，更是大躍進之路：一旦踏出第一步，就注定你會不斷接觸『遠離平庸』的</description>
-    </item>
-    
-    <item>
-      <title>CI 是條不歸路</title>
-      <link>//william-yeh.net/post/2015/12/ci-no-turning-back/</link>
-      <pubDate>Mon, 21 Dec 2015 08:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2015/12/ci-no-turning-back/</guid>
-      <description>今年九月初參加完 DevOps 2015 之後，有感而發，寫了兩則 tweets： 說實在的，打從 1999 年 Kent Beck 經典著作 Extreme Programming Explained 問世，整個軟體文化就被徹底分裂成兩個國度。以 agile</description>
     </item>
     
   </channel>

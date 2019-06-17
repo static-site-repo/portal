@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Containers and Environment Variables - Potioneer&#39;s Essays</title>
+  <title>Auto-Reload from ConfigMap - Potioneer&#39;s Essays</title>
   
 
 <meta name="renderer" content="webkit" />
@@ -25,7 +25,9 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="William Yeh" />
-  <meta name="description" content="My previous article &amp;ldquo;Inotify in Containers&amp;rdquo; has demonstrated that when ConfigMap is mounted as directories, any changes in the ConfigMap will propagate to related pods. A follow-up question might be: what if the ConfigMap is mounted as environment variables? Some said that the answer is NO in Kubernetes1; even in the old Docker world2. Therefore, I&amp;rsquo;d like to begin with a simple experiment to try to answer the question: After" />
+  <meta name="description" content="My previous article &amp;ldquo;Inotify in Containers&amp;rdquo; has demonstrated that when ConfigMap is mounted as directories, any changes in the ConfigMap will propagate to related pods, and can be detected with inotify-like APIs.
+A follow-up question might be: what should a well-behaved application react to this trigger accordingly? What if it&amp;rsquo;s a ill-designed application?
+To clarify this I&amp;rsquo;ve conducted a series of experiments. In this article I&amp;rsquo;m going to explain the experiments and preliminary findings." />
 
 
 
@@ -36,7 +38,7 @@
 <meta name="generator" content="Hugo 0.55.6" />
 
 
-<link rel="canonical" href="//william-yeh.net/post/2019/06/containers-and-env/" />
+<link rel="canonical" href="//william-yeh.net/post/2019/06/autoreload-from-configmap/" />
 
 
 
@@ -56,27 +58,33 @@
 
 
 
-<meta property="og:title" content="Containers and Environment Variables" />
-<meta property="og:description" content="My previous article &ldquo;Inotify in Containers&rdquo; has demonstrated that when ConfigMap is mounted as directories, any changes in the ConfigMap will propagate to related pods. A follow-up question might be: what if the ConfigMap is mounted as environment variables? Some said that the answer is NO in Kubernetes1; even in the old Docker world2. Therefore, I&rsquo;d like to begin with a simple experiment to try to answer the question: After" />
+<meta property="og:title" content="Auto-Reload from ConfigMap" />
+<meta property="og:description" content="My previous article &ldquo;Inotify in Containers&rdquo; has demonstrated that when ConfigMap is mounted as directories, any changes in the ConfigMap will propagate to related pods, and can be detected with inotify-like APIs.
+A follow-up question might be: what should a well-behaved application react to this trigger accordingly? What if it&rsquo;s a ill-designed application?
+To clarify this I&rsquo;ve conducted a series of experiments. In this article I&rsquo;m going to explain the experiments and preliminary findings." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="//william-yeh.net/post/2019/06/containers-and-env/" />
-<meta property="article:published_time" content="2019-06-17T14:00:00&#43;08:00"/>
-<meta property="article:modified_time" content="2019-06-17T14:00:00&#43;08:00"/>
+<meta property="og:url" content="//william-yeh.net/post/2019/06/autoreload-from-configmap/" />
+<meta property="article:published_time" content="2019-06-17T17:00:00&#43;08:00"/>
+<meta property="article:modified_time" content="2019-06-17T17:00:00&#43;08:00"/>
 
-<meta itemprop="name" content="Containers and Environment Variables">
-<meta itemprop="description" content="My previous article &ldquo;Inotify in Containers&rdquo; has demonstrated that when ConfigMap is mounted as directories, any changes in the ConfigMap will propagate to related pods. A follow-up question might be: what if the ConfigMap is mounted as environment variables? Some said that the answer is NO in Kubernetes1; even in the old Docker world2. Therefore, I&rsquo;d like to begin with a simple experiment to try to answer the question: After">
-
-
-<meta itemprop="datePublished" content="2019-06-17T14:00:00&#43;08:00" />
-<meta itemprop="dateModified" content="2019-06-17T14:00:00&#43;08:00" />
-<meta itemprop="wordCount" content="203">
+<meta itemprop="name" content="Auto-Reload from ConfigMap">
+<meta itemprop="description" content="My previous article &ldquo;Inotify in Containers&rdquo; has demonstrated that when ConfigMap is mounted as directories, any changes in the ConfigMap will propagate to related pods, and can be detected with inotify-like APIs.
+A follow-up question might be: what should a well-behaved application react to this trigger accordingly? What if it&rsquo;s a ill-designed application?
+To clarify this I&rsquo;ve conducted a series of experiments. In this article I&rsquo;m going to explain the experiments and preliminary findings.">
 
 
+<meta itemprop="datePublished" content="2019-06-17T17:00:00&#43;08:00" />
+<meta itemprop="dateModified" content="2019-06-17T17:00:00&#43;08:00" />
+<meta itemprop="wordCount" content="482">
 
-<meta itemprop="keywords" content="devops,docker,kubernetes,configmap," />
+
+
+<meta itemprop="keywords" content="devops,docker,kubernetes,inotify,configmap," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Containers and Environment Variables"/>
-<meta name="twitter:description" content="My previous article &ldquo;Inotify in Containers&rdquo; has demonstrated that when ConfigMap is mounted as directories, any changes in the ConfigMap will propagate to related pods. A follow-up question might be: what if the ConfigMap is mounted as environment variables? Some said that the answer is NO in Kubernetes1; even in the old Docker world2. Therefore, I&rsquo;d like to begin with a simple experiment to try to answer the question: After"/>
+<meta name="twitter:title" content="Auto-Reload from ConfigMap"/>
+<meta name="twitter:description" content="My previous article &ldquo;Inotify in Containers&rdquo; has demonstrated that when ConfigMap is mounted as directories, any changes in the ConfigMap will propagate to related pods, and can be detected with inotify-like APIs.
+A follow-up question might be: what should a well-behaved application react to this trigger accordingly? What if it&rsquo;s a ill-designed application?
+To clarify this I&rsquo;ve conducted a series of experiments. In this article I&rsquo;m going to explain the experiments and preliminary findings."/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -280,7 +288,7 @@ if (!doNotTrack) {
           <article class="post bg-white">
     
     <header class="post-header">
-      <h1 class="post-title">Containers and Environment Variables</h1>
+      <h1 class="post-title">Auto-Reload from ConfigMap</h1>
       
       <div class="post-meta">
         <time datetime="2019-06-17" class="post-time">
@@ -290,8 +298,8 @@ if (!doNotTrack) {
             <a href="//william-yeh.net/categories/tech/"> tech </a>
             
           </div>
-        <span class="more-meta"> 約 203 字 </span>
-          <span class="more-meta"> 預計閱讀 1 分鐘 </span>
+        <span class="more-meta"> 約 482 字 </span>
+          <span class="more-meta"> 預計閱讀 3 分鐘 </span>
 
         
         
@@ -307,22 +315,80 @@ if (!doNotTrack) {
 
     
     
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目錄</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#built-in-auto-reloading">Built-in auto-reloading</a></li>
+<li><a href="#external-signals">External signals</a></li>
+<li><a href="#pod-rollout">Pod rollout</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
 
     
     <div class="post-content">
-      <p>My previous article &ldquo;<a href="//william-yeh.net/post/2019/06/inotify-in-containers/">Inotify in Containers</a>&rdquo; has demonstrated that when ConfigMap is mounted as <em>directories</em>, any changes in the ConfigMap will propagate to related pods.</p>
+      
 
-<p>A follow-up question might be: what if the ConfigMap is mounted as <em>environment variables</em>?</p>
+<p>My previous article &ldquo;<a href="//william-yeh.net/post/2019/06/inotify-in-containers/">Inotify in Containers</a>&rdquo; has demonstrated that when ConfigMap is mounted as directories, any changes in the ConfigMap will propagate to related pods, and can be detected with <code>inotify</code>-like APIs.</p>
 
-<p>Some said that the answer is NO in Kubernetes<sup class="footnote-ref" id="fnref:1"><a href="#fn:1">1</a></sup>; even in the old Docker world<sup class="footnote-ref" id="fnref:2"><a href="#fn:2">2</a></sup>.  Therefore, I&rsquo;d like to begin with a simple experiment to try to answer the question: After a container starts, will it see any changes of environment variables?</p>
+<p>A follow-up question might be: what should a well-behaved application react to this trigger accordingly? What if it&rsquo;s a ill-designed application?</p>
 
-<p>The experiment material is available at <a href="https://github.com/William-Yeh/container-and-env">https://github.com/William-Yeh/container-and-env</a> together with a simple demo:</p>
+<p>To clarify this I&rsquo;ve conducted a series of experiments. In this article I&rsquo;m going to explain the experiments and preliminary findings.  All experiment materials can be found in the <a href="https://github.com/William-Yeh/configmap-auto-reload">configmap-auto-reload</a> repo.</p>
 
-<p><a href="https://asciinema.org/a/252073"><img src="https://asciinema.org/a/252073.svg" alt="asciicast" /></a></p>
+<h2 id="built-in-auto-reloading">Built-in auto-reloading</h2>
 
-<p>It is obvious in the demo that the changes of environment variables will not affect already-running processes inside the containers, let alone pods in the Kubernetes world.</p>
+<p>Some applications (e.g., <a href="https://traefik.io/">Traefik</a>) are smart enough to gracefully reload themselves whenever they detect any configuration changes without downtime.  Will this work with Kubernetes ConfigMap?</p>
 
-<p>To simply put, if you want ConfigMap to propagate its changes to related pods, mount the ConfigMap as <em>directories</em>, not <em>environment variables</em>.</p>
+<p>See the <a href="https://github.com/William-Yeh/configmap-auto-reload/tree/master/traefik-example">traefik-example</a> demo:</p>
+
+<p><a href="https://asciinema.org/a/251179"><img src="https://asciinema.org/a/251179.svg" alt="asciicast" /></a></p>
+
+<p>Perfect!  Traefik auto-reloads itself as long as you correctly mount the <code>traefik-config</code> ConfigMap as <code>/etc/traefik/</code> directory for the pod.</p>
+
+<h2 id="external-signals">External signals</h2>
+
+<p>Some applications can <em>reload</em> configurations; but not <em>auto-reload</em>. Instead, they reload their configurations when they are <em>told</em> to do so.  For example, when Nginx receives a <code>HUP</code> signal (<code>nginx -s reload</code>) <sup class="footnote-ref" id="fnref:1"><a href="#fn:1">1</a></sup>, and when Apache HTTP Server receives a <code>HUP</code> signal (<code>apache -k restart</code>) or <code>USR1</code> signal (<code>apache -k graceful</code>) <sup class="footnote-ref" id="fnref:2"><a href="#fn:2">2</a></sup>, they will reload new configurations without downtime.</p>
+
+<p>Who should be the <code>HUP</code> signal sender in Kubernetes?</p>
+
+<p>Before Docker and Kubernetes rule the world, there were plenty of such tools, e.g., <a href="https://github.com/rvoicilas/inotify-tools">inotify-tools</a> and <a href="https://github.com/kimmobrunfeldt/chokidar-cli">Chokidar cli</a>.  People used them to watch for changes in specified directories and to invoke dedicated actions accordingly (including sending signals, of course).</p>
+
+<p>Will this combo trick work with Kubernetes ConfigMap?</p>
+
+<p>See the <a href="https://github.com/William-Yeh/configmap-auto-reload/tree/master/inotifywait-example">inotifywait-example</a> demo:</p>
+
+<p><a href="https://asciinema.org/a/251666"><img src="https://asciinema.org/a/251666.svg" alt="asciicast" /></a></p>
+
+<p>Good!  Inotifywait detects the changes and sends <code>HUP</code> signals to Nginx as long as you correctly mount the <code>nginx-config</code> ConfigMap as <code>/etc/nginx/</code> directory for the pod.</p>
+
+<p>DISCLAIMER: it&rsquo;s just for demo; not a robust implementation. For more examples, see <sup class="footnote-ref" id="fnref:3"><a href="#fn:3">3</a></sup><sup class="footnote-ref" id="fnref:4"><a href="#fn:4">4</a></sup><sup class="footnote-ref" id="fnref:5"><a href="#fn:5">5</a></sup>.</p>
+
+<h2 id="pod-rollout">Pod rollout</h2>
+
+<p>Some applications do not have any configuration reloading mechanism. What should we do? Maybe the only reasonable way is to rollout their running instances, and just spawn new ones with the new configurations.</p>
+
+<p><a href="https://github.com/stakater/Reloader">Reloader</a> is a generic solution for Kubernetes. With the help of it, pods can be restarted whenever related ConfigMap has changed.</p>
+
+<p>See the <a href="https://github.com/William-Yeh/configmap-auto-reload/tree/master/reloader-example">reloader-example</a>.</p>
+
+<p><a href="https://asciinema.org/a/251670"><img src="https://asciinema.org/a/251670.svg" alt="asciicast" /></a></p>
+
+<p>Perfect!  Nginx pods get rolling updated by Reloader as long as you annotate the Nginx deployment with <code>configmap.reloader.stakater.com/reload</code>.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>If your application is smart enough to gracefully reload itself whenever it detects any configuration changes, it continues working well with ConfigMap in Kubernetes.</p>
+
+<p>If not so smart, an easier approach is to use automatic tools (e.g., <a href="https://github.com/stakater/Reloader">Reloader</a>) to rolling update related pods.</p>
+
+<p>I will not recommend the watch+signal approach (e.g., <a href="https://github.com/rvoicilas/inotify-tools">inotify-tools</a>). It is prone to error and zombie processes.</p>
 
 <div class="shortcode-notice note">
   <div class="shortcode-notice-title note">
@@ -334,9 +400,9 @@ if (!doNotTrack) {
 
 <p>❶ <a href="//william-yeh.net/post/2019/06/inotify-in-containers/">Inotify in Containers</a></p>
 
-<p>❷ Containers and Environment Variables</p>
+<p>❷ <a href="//william-yeh.net/post/2019/06/containers-and-env/">Containers and Environment Variables</a></p>
 
-<p>➌ <a href="//william-yeh.net/post/2019/06/autoreload-from-configmap/">Auto-Reload from ConfigMap</a></p>
+<p>➌ Auto-Reload from ConfigMap</p>
 
 <p></div></p>
 <div class="footnotes">
@@ -344,10 +410,16 @@ if (!doNotTrack) {
 <hr />
 
 <ol>
-<li id="fn:1">An analysis of ConfigMap hot-reload can be found in the article by Jimmy Song: “<a href="https://jimmysong.io/kubernetes-handbook/concepts/configmap-hot-update.html">ConfigMap 的热更新</a>”.
+<li id="fn:1">Nginx official document: <a href="http://nginx.org/en/docs/control.html">Controlling nginx</a>
  <a class="footnote-return" href="#fnref:1"><sup>[return]</sup></a></li>
-<li id="fn:2">A good Q&amp;A in Stack Overflow: <a href="https://stackoverflow.com/a/54412751/714426">Reload configuration when env variable has changed</a>.
+<li id="fn:2">Apache official document: <a href="https://httpd.apache.org/docs/2.4/stopping.html">Stopping and Restarting Apache HTTP Server</a>
  <a class="footnote-return" href="#fnref:2"><sup>[return]</sup></a></li>
+<li id="fn:3">An implementation worth studying: <a href="https://github.com/rosskukulinski/nginx-kubernetes-reload">https://github.com/rosskukulinski/nginx-kubernetes-reload</a>
+ <a class="footnote-return" href="#fnref:3"><sup>[return]</sup></a></li>
+<li id="fn:4">Q&amp;A in Stack Overflow: <a href="https://stackoverflow.com/questions/41031170/nginx-reload-configuration-best-practice">Nginx Reload Configuration Best Practice</a>
+ <a class="footnote-return" href="#fnref:4"><sup>[return]</sup></a></li>
+<li id="fn:5"><a href="https://github.com/telephone/nginx-watch">https://github.com/telephone/nginx-watch</a>
+ <a class="footnote-return" href="#fnref:5"><sup>[return]</sup></a></li>
 </ol>
 </div>
 
@@ -379,6 +451,7 @@ if (!doNotTrack) {
           <a href="//william-yeh.net/tags/devops/">devops</a>
           <a href="//william-yeh.net/tags/docker/">docker</a>
           <a href="//william-yeh.net/tags/kubernetes/">kubernetes</a>
+          <a href="//william-yeh.net/tags/inotify/">inotify</a>
           <a href="//william-yeh.net/tags/configmap/">configmap</a>
           
         </div>
@@ -386,14 +459,9 @@ if (!doNotTrack) {
       
       <nav class="post-nav">
         
-          <a class="prev" href="/post/2019/06/autoreload-from-configmap/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Auto-Reload from ConfigMap</span>
-            <span class="prev-text nav-mobile">上一篇</span>
-          </a>
         
-          <a class="next" href="/post/2019/06/inotify-in-containers/">
-            <span class="next-text nav-default">Inotify in Containers</span>
+          <a class="next" href="/post/2019/06/containers-and-env/">
+            <span class="next-text nav-default">Containers and Environment Variables</span>
             <span class="prev-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>
@@ -427,7 +495,7 @@ if (!doNotTrack) {
   <div id="disqus_thread"></div>
   <script type="text/javascript">
     var disqus_config = function () {
-      this.page.url = "//william-yeh.net/post/2019/06/containers-and-env/";
+      this.page.url = "//william-yeh.net/post/2019/06/autoreload-from-configmap/";
     };
     function load_disqus() {
       
