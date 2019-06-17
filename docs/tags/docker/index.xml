@@ -17,7 +17,7 @@
       <pubDate>Mon, 17 Jun 2019 14:00:00 +0800</pubDate>
       
       <guid>//william-yeh.net/post/2019/06/containers-and-env/</guid>
-      <description>My previous article &amp;ldquo;Inotify in Containers&amp;rdquo; has demostrated that when ConfigMap is mounted as directories, any changes in the ConfigMap will propagate to related pods. A follow-up question might be: what if the ConfigMap is mounted as environment variables? Some said that the answer is NO in Kubernetes1; even in the old Docker world2. Therefore, I&amp;rsquo;d like to begin with a simple experiment to try to answer the question: After</description>
+      <description>My previous article &amp;ldquo;Inotify in Containers&amp;rdquo; has demonstrated that when ConfigMap is mounted as directories, any changes in the ConfigMap will propagate to related pods. A follow-up question might be: what if the ConfigMap is mounted as environment variables? Some said that the answer is NO in Kubernetes1; even in the old Docker world2. Therefore, I&amp;rsquo;d like to begin with a simple experiment to try to answer the question: After</description>
     </item>
     
     <item>

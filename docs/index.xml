@@ -17,7 +17,7 @@
       
       <guid>//william-yeh.net/post/2019/06/containers-and-env/</guid>
       
-        <description>&lt;p&gt;My previous article &amp;ldquo;&lt;a href=&#34;//william-yeh.net/post/2019/06/inotify-in-containers/&#34;&gt;Inotify in Containers&lt;/a&gt;&amp;rdquo; has demostrated that when ConfigMap is mounted as &lt;em&gt;directories&lt;/em&gt;, any changes in the ConfigMap will propagate to related pods.&lt;/p&gt;
+        <description>&lt;p&gt;My previous article &amp;ldquo;&lt;a href=&#34;//william-yeh.net/post/2019/06/inotify-in-containers/&#34;&gt;Inotify in Containers&lt;/a&gt;&amp;rdquo; has demonstrated that when ConfigMap is mounted as &lt;em&gt;directories&lt;/em&gt;, any changes in the ConfigMap will propagate to related pods.&lt;/p&gt;
 
 &lt;p&gt;A follow-up question might be: what if the ConfigMap is mounted as &lt;em&gt;environment variables&lt;/em&gt;?&lt;/p&gt;
 
