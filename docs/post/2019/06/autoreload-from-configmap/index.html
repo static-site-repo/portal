@@ -382,14 +382,13 @@ if (!doNotTrack) {
 
 <p>Perfect!  Nginx pods get rolling updated by Reloader as long as you annotate the Nginx deployment with <code>configmap.reloader.stakater.com/reload</code> (see the <a href="https://github.com/William-Yeh/configmap-auto-reload/blob/master/reloader-example/nginx-service.yml#L25-L26">source code</a>):</p>
 
-<pre><code>apiVersion: apps/v1
+<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nginx
   annotations:
-    configmap.reloader.stakater.com/reload: &quot;nginx-config&quot;
-  ...
-</code></pre>
+    configmap.reloader.stakater.com/reload: &#34;nginx-config&#34;
+  ...</code></pre></div>
 
 <h2 id="conclusion">Conclusion</h2>
 
