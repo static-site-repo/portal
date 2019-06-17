@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>彙整 - Potioneer&#39;s Essays</title>
+  <title>Containers and Environment Variables - Potioneer&#39;s Essays</title>
   
 
 <meta name="renderer" content="webkit" />
@@ -25,7 +25,8 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="William Yeh" />
-  <meta name="description" content="敏捷魔藥師 (Agile Potioneer)。會說 90% 的工匠語言，會說 70% 的總管語言，正在努力提升 30% 的行腳商人語言。" />
+  <meta name="description" content="My previous article &amp;ldquo;Inotify in Containers&amp;rdquo; has demostrated that when ConfigMap is mounted as directories, any changes in the ConfigMap will propagate to related pods. A follow-up question might be: what if the ConfigMap is mounted as environment variables? Some said that the answer is NO in Kubernetes1; even in the old Docker world2. Therefore, I&amp;rsquo;d like to begin with a simple experiment to try to answer the question: After" />
+
 
 
 
@@ -35,8 +36,7 @@
 <meta name="generator" content="Hugo 0.55.6" />
 
 
-<link rel="canonical" href="//william-yeh.net/post/" />
-<link href="//william-yeh.net/post/index.xml" rel="alternate" type="application/rss+xml" title="Potioneer&#39;s Essays" />
+<link rel="canonical" href="//william-yeh.net/post/2019/06/containers-and-env/" />
 
 
 
@@ -56,19 +56,27 @@
 
 
 
-<meta property="og:title" content="Posts" />
-<meta property="og:description" content="敏捷魔藥師 (Agile Potioneer)。會說 90% 的工匠語言，會說 70% 的總管語言，正在努力提升 30% 的行腳商人語言。" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="//william-yeh.net/post/" />
+<meta property="og:title" content="Containers and Environment Variables" />
+<meta property="og:description" content="My previous article &ldquo;Inotify in Containers&rdquo; has demostrated that when ConfigMap is mounted as directories, any changes in the ConfigMap will propagate to related pods. A follow-up question might be: what if the ConfigMap is mounted as environment variables? Some said that the answer is NO in Kubernetes1; even in the old Docker world2. Therefore, I&rsquo;d like to begin with a simple experiment to try to answer the question: After" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="//william-yeh.net/post/2019/06/containers-and-env/" />
+<meta property="article:published_time" content="2019-06-17T14:00:00&#43;08:00"/>
+<meta property="article:modified_time" content="2019-06-17T14:00:00&#43;08:00"/>
 
-<meta property="og:updated_time" content="2019-06-17T14:00:00&#43;08:00"/>
+<meta itemprop="name" content="Containers and Environment Variables">
+<meta itemprop="description" content="My previous article &ldquo;Inotify in Containers&rdquo; has demostrated that when ConfigMap is mounted as directories, any changes in the ConfigMap will propagate to related pods. A follow-up question might be: what if the ConfigMap is mounted as environment variables? Some said that the answer is NO in Kubernetes1; even in the old Docker world2. Therefore, I&rsquo;d like to begin with a simple experiment to try to answer the question: After">
 
-<meta itemprop="name" content="Posts">
-<meta itemprop="description" content="敏捷魔藥師 (Agile Potioneer)。會說 90% 的工匠語言，會說 70% 的總管語言，正在努力提升 30% 的行腳商人語言。">
 
+<meta itemprop="datePublished" content="2019-06-17T14:00:00&#43;08:00" />
+<meta itemprop="dateModified" content="2019-06-17T14:00:00&#43;08:00" />
+<meta itemprop="wordCount" content="199">
+
+
+
+<meta itemprop="keywords" content="devops,docker,kubernetes," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Posts"/>
-<meta name="twitter:description" content="敏捷魔藥師 (Agile Potioneer)。會說 90% 的工匠語言，會說 70% 的總管語言，正在努力提升 30% 的行腳商人語言。"/>
+<meta name="twitter:title" content="Containers and Environment Variables"/>
+<meta name="twitter:description" content="My previous article &ldquo;Inotify in Containers&rdquo; has demostrated that when ConfigMap is mounted as directories, any changes in the ConfigMap will propagate to related pods. A follow-up question might be: what if the ConfigMap is mounted as environment variables? Some said that the answer is NO in Kubernetes1; even in the old Docker world2. Therefore, I&rsquo;d like to begin with a simple experiment to try to answer the question: After"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -269,590 +277,168 @@ if (!doNotTrack) {
     <main id="main" class="main bg-llight">
       <div class="content-wrapper">
         <div id="content" class="content container">
-          
-<section id="archive" class="archive">
+          <article class="post bg-white">
     
-      <div class="collection-title">
-        <h2 class="archive-year">2019</h2>
+    <header class="post-header">
+      <h1 class="post-title">Containers and Environment Variables</h1>
+      
+      <div class="post-meta">
+        <time datetime="2019-06-17" class="post-time">
+          2019-06-17
+        </time>
+        <div class="post-category">
+            <a href="//william-yeh.net/categories/tech/"> tech </a>
+            
+          </div>
+        <span class="more-meta"> 約 199 字 </span>
+          <span class="more-meta"> 預計閱讀 1 分鐘 </span>
+
+        
+        
+          <span id="busuanzi_container_page_pv">
+            | 阅读 <span id="busuanzi_value_page_pv"></span>
+          </span>
+        
+
+        
+        
       </div>
+    </header>
 
-    <div class="archive-post">
-      <time datetime="2019-03-29" class="archive-post-time">
-        2019-03-29
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/2019/03/ingress-vs-ambassador/" class="archive-post-link">
-          Nginx Ingress 與 Ambassador 簡易性能比較
-        </a>
-      </span>
-    </div>
+    
     
 
-    <div class="archive-post">
-      <time datetime="2019-03-14" class="archive-post-time">
-        2019-03-14
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/2019/03/wsl-cmder-zsh/" class="archive-post-link">
-          在 Windows 上復刻 Mac 使用習慣
-        </a>
-      </span>
+    
+    <div class="post-content">
+      <p>My previous article &ldquo;<a href="//william-yeh.net/post/2019/06/inotify-in-containers/">Inotify in Containers</a>&rdquo; has demostrated that when ConfigMap is mounted as <em>directories</em>, any changes in the ConfigMap will propagate to related pods.</p>
+
+<p>A follow-up question might be: what if the ConfigMap is mounted as <em>environment variables</em>?</p>
+
+<p>Some said that the answer is NO in Kubernetes<sup class="footnote-ref" id="fnref:1"><a href="#fn:1">1</a></sup>; even in the old Docker world<sup class="footnote-ref" id="fnref:2"><a href="#fn:2">2</a></sup>.  Therefore, I&rsquo;d like to begin with a simple experiment to try to answer the question: After a container starts, will it see any changes of environment variables?</p>
+
+<p>The experiment material is available at <a href="https://github.com/William-Yeh/container-and-env">https://github.com/William-Yeh/container-and-env</a> together with a simple demo:</p>
+
+<p><a href="https://asciinema.org/a/252073"><img src="https://asciinema.org/a/252073.svg" alt="asciicast" /></a></p>
+
+<p>It is obvious in the demo that the changes of environment variables will not affect already-running processes inside the containers, let alone pods in the Kubernetes world.</p>
+
+<p>To simply put, if you want ConfigMap to propagate its changes to related pods, mount the ConfigMap as <em>directories</em>, not <em>environment variables</em>.</p>
+
+<div class="shortcode-notice note">
+  <div class="shortcode-notice-title note">
+    
+      Series of Articles
+    
+  </div>
+  
+
+<p>❶ <a href="//william-yeh.net/post/2019/06/inotify-in-containers/">Inotify in Containers</a></p>
+
+<p>❷ Containers and Environment Variables</p>
+
+<p></div></p>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:1">An analysis of ConfigMap hot-reload can be found in the article by Jimmy Song: “<a href="https://jimmysong.io/kubernetes-handbook/concepts/configmap-hot-update.html">ConfigMap 的热更新</a>”.
+ <a class="footnote-return" href="#fnref:1"><sup>[return]</sup></a></li>
+<li id="fn:2">A good Q&amp;A in Stack Overflow: <a href="https://stackoverflow.com/a/54412751/714426">Reload configuration when env variable has changed</a>.
+ <a class="footnote-return" href="#fnref:2"><sup>[return]</sup></a></li>
+</ol>
+</div>
+
     </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">William Yeh</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2019-06-17</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">授權條款</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW" target="_blank">CC BY-NC-SA 4.0</a> (姓名標示-非商業性-相同方式分享 4.0 國際)</span>
+  </p>
+</div>
+
+    
     
 
-    <div class="archive-post">
-      <time datetime="2019-02-25" class="archive-post-time">
-        2019-02-25
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/2019/02/k8s-best-practice/" class="archive-post-link">
-          Kubernetes Best Practices 資料
-        </a>
-      </span>
-    </div></section>
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="//william-yeh.net/tags/devops/">devops</a>
+          <a href="//william-yeh.net/tags/docker/">docker</a>
+          <a href="//william-yeh.net/tags/kubernetes/">kubernetes</a>
+          
+        </div>
 
-
-
-
-
-
-  
-  
-  
-
-  
-  
-
-  
-  
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/post/2019/06/inotify-in-containers/">
+            <span class="next-text nav-default">Inotify in Containers</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
 
   
   
 
   
   
-
-    <nav class="pagination">
-      <ul>
-
-      
-      
-      <li><a href="/post/">««</a></li>
-      
-
-      
-      
-      <li><a href="/post/page/2/">«</a></li>
-      
-
-      
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-              
-            
-
-          
-          
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/post/">
-              1
-            </a>
-          </li>
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-              
-            
-
-          
-          
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/post/page/2/">
-              2
-            </a>
-          </li>
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-              
-            
-
-          
-          
-          
-
-        
-        
-
-        
-        
-          <li class="active">
-            <a href="/post/page/3/">
-              3
-            </a>
-          </li>
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-              
-            
-
-          
-          
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/post/page/4/">
-              4
-            </a>
-          </li>
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-              
-            
-
-          
-          
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/post/page/5/">
-              5
-            </a>
-          </li>
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-              
-            
-
-          
-          
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/post/page/6/">
-              6
-            </a>
-          </li>
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-              
-            
-
-          
-          
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/post/page/7/">
-              7
-            </a>
-          </li>
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-              
-            
-
-          
-          
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/post/page/8/">
-              8
-            </a>
-          </li>
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-              
-            
-
-          
-          
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/post/page/9/">
-              9
-            </a>
-          </li>
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-              
-            
-
-          
-          
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/post/page/10/">
-              10
-            </a>
-          </li>
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-              
-            
-
-          
-          
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/post/page/11/">
-              11
-            </a>
-          </li>
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-              
-            
-
-          
-          
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/post/page/12/">
-              12
-            </a>
-          </li>
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-              
-            
-
-          
-          
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/post/page/13/">
-              13
-            </a>
-          </li>
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-
-          
-          
-          
-
-        
-        
-
-        
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-
-          
-          
-          
-
-        
-        
-
-        
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-
-          
-          
-          
-
-        
-        
-
-        
-        
-
-      
-
-      
-      
-      <li><a href="/post/page/4/">»</a></li>
-      
-
-      
-      
-      <li><a href="/post/page/16/">»»</a></li>
-      
-
-      </ul>
-    </nav>
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= "William-Yeh/utterances-area"
+            issue-term="pathname"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
   
 
+  
 
+  
 
+  <div class="disqus-comment">
+  <div class="disqus-button" id="load_disqus" onclick="load_disqus()">
+    顯示 Disqus 評論
+  </div>
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_config = function () {
+      this.page.url = "//william-yeh.net/post/2019/06/containers-and-env/";
+    };
+    function load_disqus() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
 
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'potioneer';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+      $('#load_disqus').remove();
+    };
+  </script>
+  <noscript>Please enable JavaScript to view the
+    <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+  </noscript>
+  
+  </div>
 
         </div>
       </div>

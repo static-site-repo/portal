@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Mon, 10 Jun 2019 18:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 17 Jun 2019 14:00:00 +0800</lastBuildDate>
     
 	<atom:link href="//william-yeh.net/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Containers and Environment Variables</title>
+      <link>//william-yeh.net/post/2019/06/containers-and-env/</link>
+      <pubDate>Mon, 17 Jun 2019 14:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2019/06/containers-and-env/</guid>
+      <description>My previous article &amp;ldquo;Inotify in Containers&amp;rdquo; has demostrated that when ConfigMap is mounted as directories, any changes in the ConfigMap will propagate to related pods. A follow-up question might be: what if the ConfigMap is mounted as environment variables? Some said that the answer is NO in Kubernetes1; even in the old Docker world2. Therefore, I&amp;rsquo;d like to begin with a simple experiment to try to answer the question: After</description>
+    </item>
     
     <item>
       <title>Inotify in Containers</title>
@@ -302,15 +311,6 @@
 &lt;p&gt;今晚參加 &lt;a href=&#34;https://www.facebook.com/DevOpsTaiwan/&#34;&gt;DevOps Taiwan 社群&lt;/a&gt;舉辦的講座：【&lt;a href=&#34;https://devops.kktix.cc/events/meetup17-opsdev&#34;&gt;從 Ops 角度看 DevOps&lt;/a&gt;】，聽聽&lt;a href=&#34;https://www.facebook.com/roberthu.tw&#34;&gt;胡士亮 (Robert Hu)&lt;/a&gt; 從正統 Ops 角度來詮釋 DevOps，甚至 OpsDev，收穫頗大。&lt;/p&gt;
 
 &lt;p&gt;聽知識，聽心得，也聽熱情與願景。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>DevOps 的價值與指標</title>
-      <link>//william-yeh.net/post/2018/11/devops-value/</link>
-      <pubDate>Wed, 28 Nov 2018 08:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2018/11/devops-value/</guid>
-      <description>看完〈敏捷的價值與指標〉之後，很自然的會進一步追問：「那麼，什麼才是 DevOps 圈子所認定的價值，以及對應的指標，尤其是領先指標？」 這問題其實比較容易</description>
     </item>
     
   </channel>

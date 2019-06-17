@@ -69,7 +69,7 @@
 
 <meta itemprop="datePublished" content="2019-06-10T18:00:00&#43;08:00" />
 <meta itemprop="dateModified" content="2019-06-10T18:00:00&#43;08:00" />
-<meta itemprop="wordCount" content="899">
+<meta itemprop="wordCount" content="928">
 
 
 
@@ -290,7 +290,7 @@ if (!doNotTrack) {
             <a href="//william-yeh.net/categories/tech/"> tech </a>
             
           </div>
-        <span class="more-meta"> 約 899 字 </span>
+        <span class="more-meta"> 約 928 字 </span>
           <span class="more-meta"> 預計閱讀 2 分鐘 </span>
 
         
@@ -473,6 +473,22 @@ lrwxrwxrwx    1 root  root     15 Jun 12 06:19 main.css -&gt; ..data/main.css</c
 <p>The <code>inotify</code> mechanism works in the container and Kubernetes world, except for the LCOW case.</p>
 
 <p>If such a feature is needed in the LCOW setting, maybe you have to seek another workaround workflow; e.g., put <code>inotify</code> mechanism outside the container, and propagate the event explicitly into the containers if any.  This is exactly what <a href="https://skaffold.dev/">Skaffold</a> is doing.</p>
+
+<p>Also note that <code>inotify</code> works better when ConfigMap is mounted as directories, rather than as merely files.</p>
+
+<div class="shortcode-notice note">
+  <div class="shortcode-notice-title note">
+    
+      Series of Articles
+    
+  </div>
+  
+
+<p>❶ Inotify in Containers</p>
+
+<p>❷ <a href="//william-yeh.net/post/2019/06/containers-and-env/">Containers and Environment Variables</a></p>
+
+<p></div></p>
 <div class="footnotes">
 
 <hr />
@@ -520,6 +536,11 @@ lrwxrwxrwx    1 root  root     15 Jun 12 06:19 main.css -&gt; ..data/main.css</c
       
       <nav class="post-nav">
         
+          <a class="prev" href="/post/2019/06/containers-and-env/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Containers and Environment Variables</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
         
           <a class="next" href="/post/2019/05/k8s-lab/">
             <span class="next-text nav-default">Kubernetes 的入門認知與導入策略</span>

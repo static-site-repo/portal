@@ -6,10 +6,19 @@
     <description>Recent content in devops on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Mon, 10 Jun 2019 18:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 17 Jun 2019 14:00:00 +0800</lastBuildDate>
     
 	<atom:link href="//william-yeh.net/tags/devops/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Containers and Environment Variables</title>
+      <link>//william-yeh.net/post/2019/06/containers-and-env/</link>
+      <pubDate>Mon, 17 Jun 2019 14:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2019/06/containers-and-env/</guid>
+      <description>My previous article &amp;ldquo;Inotify in Containers&amp;rdquo; has demostrated that when ConfigMap is mounted as directories, any changes in the ConfigMap will propagate to related pods. A follow-up question might be: what if the ConfigMap is mounted as environment variables? Some said that the answer is NO in Kubernetes1; even in the old Docker world2. Therefore, I&amp;rsquo;d like to begin with a simple experiment to try to answer the question: After</description>
+    </item>
     
     <item>
       <title>Inotify in Containers</title>
@@ -223,17 +232,6 @@
       <guid>//william-yeh.net/post/2016/01/devops-goals-in-a-nutshell/</guid>
       <description>&lt;p&gt;TL;DR&lt;br /&gt;
 &lt;em&gt;DevOps is a set of practices intended to reduce the time between committing a change to a system and the change being placed into normal production, while ensuring high quality.&lt;/em&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>DevOps 是圓的，找到立足點就是頂點</title>
-      <link>//william-yeh.net/post/2015/12/devops-1st-step/</link>
-      <pubDate>Mon, 28 Dec 2015 08:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2015/12/devops-1st-step/</guid>
-      <description>&lt;p&gt;自從 IT 相關媒體開始傳頌 2009 年蔚為經典的 Flickr 經驗 “&lt;a href=&#34;https://youtu.be/LdOe18KhtT4&#34;&gt;10+ Deploys per Day&lt;/a&gt;”、2014 年 Marissa Mayer 的鐵桿作風「&lt;a href=&#34;http://www.ithome.com.tw/news/99283&#34;&gt;沒有持續交付，專案不得上線，我不是在說笑&lt;/a&gt;」之後，頓時 DevOps 成為 IT 界新的焦慮源。我還聽說有高層在聽完兩天 &lt;a href=&#34;https://www.ithome.com.tw/article/98527&#34;&gt;DevOps 2015 研討會&lt;/a&gt;之後，回頭要求 IT 部門要師法 2009 年的 Flickr 做到「10+ Deploys per Day」。&lt;/p&gt;
-
-&lt;p&gt;聽了很潮的新觀念，就訂不合理的 KPI，這也是「負能量」呀！&lt;/p&gt;</description>
     </item>
     
   </channel>

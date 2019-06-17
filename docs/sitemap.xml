@@ -3,7 +3,56 @@
   
   <url>
     <loc>//william-yeh.net/categories/</loc>
-    <lastmod>2019-06-10T18:00:00+08:00</lastmod>
+    <lastmod>2019-06-17T14:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/post/2019/06/containers-and-env/</loc>
+    <lastmod>2019-06-17T14:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/post/</loc>
+    <lastmod>2019-06-17T14:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/</loc>
+    <lastmod>2019-06-17T14:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/</loc>
+    <lastmod>2019-06-17T14:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/devops/</loc>
+    <lastmod>2019-06-17T14:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/docker/</loc>
+    <lastmod>2019-06-17T14:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/kubernetes/</loc>
+    <lastmod>2019-06-17T14:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/categories/tech/</loc>
+    <lastmod>2019-06-17T14:00:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -15,49 +64,7 @@
   </url>
   
   <url>
-    <loc>//william-yeh.net/post/</loc>
-    <lastmod>2019-06-10T18:00:00+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/</loc>
-    <lastmod>2019-06-10T18:00:00+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/tags/</loc>
-    <lastmod>2019-06-10T18:00:00+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/categories/tech/</loc>
-    <lastmod>2019-06-10T18:00:00+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/tags/devops/</loc>
-    <lastmod>2019-06-10T18:00:00+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/tags/docker/</loc>
-    <lastmod>2019-06-10T18:00:00+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>//william-yeh.net/tags/inotify/</loc>
-    <lastmod>2019-06-10T18:00:00+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/tags/kubernetes/</loc>
     <lastmod>2019-06-10T18:00:00+08:00</lastmod>
     <priority>0</priority>
   </url>
