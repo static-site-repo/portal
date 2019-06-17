@@ -145,11 +145,11 @@ metadata:
 
 &lt;p&gt;Some said that the answer is NO in Kubernetes&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;; even in the old Docker world&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;.  Therefore, I&amp;rsquo;d like to begin with a simple experiment to try to answer the question: After a container starts, will it see any changes of environment variables?&lt;/p&gt;
 
-&lt;p&gt;The experiment material is available at &lt;a href=&#34;https://github.com/William-Yeh/container-and-env&#34;&gt;https://github.com/William-Yeh/container-and-env&lt;/a&gt; together with a simple demo:&lt;/p&gt;
+&lt;p&gt;The experiment material is available at &lt;a href=&#34;https://github.com/William-Yeh/container-and-env&#34;&gt;https://github.com/William-Yeh/container-and-env&lt;/a&gt; , and here&amp;rsquo;s a simple demo:&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://asciinema.org/a/252073&#34;&gt;&lt;img src=&#34;https://asciinema.org/a/252073.svg&#34; alt=&#34;asciicast&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;It is obvious in the demo that the changes of environment variables will not affect already-running processes inside the containers, let alone pods in the Kubernetes world.&lt;/p&gt;
+&lt;p&gt;It is obvious in the demo that the changes of environment variables will not affect already-running processes inside the containers &amp;mdash; let alone pods in the Kubernetes world.&lt;/p&gt;
 
 &lt;p&gt;To simply put, if you want ConfigMap to propagate its changes to related pods, mount the ConfigMap as &lt;em&gt;directories&lt;/em&gt;, not &lt;em&gt;environment variables&lt;/em&gt;.&lt;/p&gt;
 
@@ -194,7 +194,7 @@ metadata:
 
 &lt;p&gt;It is usually necessary to watch for any changes in file systems, both in development and in production modes. For example, in the development mode &lt;a href=&#34;https://webpack.js.org/&#34;&gt;Webpack&lt;/a&gt; can watch files and recompile whenever they change; in the production mode &lt;a href=&#34;https://github.com/hashicorp/consul-template&#34;&gt;Consul Template&lt;/a&gt; can watch runtime configs and invoke specific applications whenever they change.&lt;/p&gt;
 
-&lt;p&gt;These are well-known scenarios in the traditional world.  How about the container world? Do they behave the same in the new container world?&lt;/p&gt;
+&lt;p&gt;These are well-known scenarios in traditional pre-container world.  How about the container world? Do they behave the same in the new container world?&lt;/p&gt;
 
 &lt;p&gt;I&amp;rsquo;ve occasionally found that something behave differently in the container world. To clarify this I&amp;rsquo;ve conducted a series of experiments. In this article I&amp;rsquo;m going to explain the experiments and preliminary findings.  All experiment materials can be found in the &lt;a href=&#34;https://github.com/William-Yeh/fswatch&#34;&gt;fswatch&lt;/a&gt; repo.&lt;/p&gt;
 

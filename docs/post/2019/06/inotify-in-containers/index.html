@@ -25,7 +25,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="William Yeh" />
-  <meta name="description" content="It is usually necessary to watch for any changes in file systems, both in development and in production modes. For example, in the development mode Webpack can watch files and recompile whenever they change; in the production mode Consul Template can watch runtime configs and invoke specific applications whenever they change. These are well-known scenarios in the traditional world. How about the container world? Do they behave the same in" />
+  <meta name="description" content="It is usually necessary to watch for any changes in file systems, both in development and in production modes. For example, in the development mode Webpack can watch files and recompile whenever they change; in the production mode Consul Template can watch runtime configs and invoke specific applications whenever they change. These are well-known scenarios in traditional pre-container world. How about the container world? Do they behave the same in" />
 
 
 
@@ -57,14 +57,14 @@
 
 
 <meta property="og:title" content="Inotify in Containers" />
-<meta property="og:description" content="It is usually necessary to watch for any changes in file systems, both in development and in production modes. For example, in the development mode Webpack can watch files and recompile whenever they change; in the production mode Consul Template can watch runtime configs and invoke specific applications whenever they change. These are well-known scenarios in the traditional world. How about the container world? Do they behave the same in" />
+<meta property="og:description" content="It is usually necessary to watch for any changes in file systems, both in development and in production modes. For example, in the development mode Webpack can watch files and recompile whenever they change; in the production mode Consul Template can watch runtime configs and invoke specific applications whenever they change. These are well-known scenarios in traditional pre-container world. How about the container world? Do they behave the same in" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="//william-yeh.net/post/2019/06/inotify-in-containers/" />
 <meta property="article:published_time" content="2019-06-10T18:00:00&#43;08:00"/>
 <meta property="article:modified_time" content="2019-06-10T18:00:00&#43;08:00"/>
 
 <meta itemprop="name" content="Inotify in Containers">
-<meta itemprop="description" content="It is usually necessary to watch for any changes in file systems, both in development and in production modes. For example, in the development mode Webpack can watch files and recompile whenever they change; in the production mode Consul Template can watch runtime configs and invoke specific applications whenever they change. These are well-known scenarios in the traditional world. How about the container world? Do they behave the same in">
+<meta itemprop="description" content="It is usually necessary to watch for any changes in file systems, both in development and in production modes. For example, in the development mode Webpack can watch files and recompile whenever they change; in the production mode Consul Template can watch runtime configs and invoke specific applications whenever they change. These are well-known scenarios in traditional pre-container world. How about the container world? Do they behave the same in">
 
 
 <meta itemprop="datePublished" content="2019-06-10T18:00:00&#43;08:00" />
@@ -76,7 +76,7 @@
 <meta itemprop="keywords" content="devops,docker,kubernetes,inotify,configmap," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Inotify in Containers"/>
-<meta name="twitter:description" content="It is usually necessary to watch for any changes in file systems, both in development and in production modes. For example, in the development mode Webpack can watch files and recompile whenever they change; in the production mode Consul Template can watch runtime configs and invoke specific applications whenever they change. These are well-known scenarios in the traditional world. How about the container world? Do they behave the same in"/>
+<meta name="twitter:description" content="It is usually necessary to watch for any changes in file systems, both in development and in production modes. For example, in the development mode Webpack can watch files and recompile whenever they change; in the production mode Consul Template can watch runtime configs and invoke specific applications whenever they change. These are well-known scenarios in traditional pre-container world. How about the container world? Do they behave the same in"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -334,7 +334,7 @@ if (!doNotTrack) {
 
 <p>It is usually necessary to watch for any changes in file systems, both in development and in production modes. For example, in the development mode <a href="https://webpack.js.org/">Webpack</a> can watch files and recompile whenever they change; in the production mode <a href="https://github.com/hashicorp/consul-template">Consul Template</a> can watch runtime configs and invoke specific applications whenever they change.</p>
 
-<p>These are well-known scenarios in the traditional world.  How about the container world? Do they behave the same in the new container world?</p>
+<p>These are well-known scenarios in traditional pre-container world.  How about the container world? Do they behave the same in the new container world?</p>
 
 <p>I&rsquo;ve occasionally found that something behave differently in the container world. To clarify this I&rsquo;ve conducted a series of experiments. In this article I&rsquo;m going to explain the experiments and preliminary findings.  All experiment materials can be found in the <a href="https://github.com/William-Yeh/fswatch">fswatch</a> repo.</p>
 

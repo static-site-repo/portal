@@ -28,7 +28,7 @@ To clarify this I&amp;rsquo;ve conducted a series of experiments. In this articl
       <pubDate>Mon, 10 Jun 2019 18:00:00 +0800</pubDate>
       
       <guid>//william-yeh.net/post/2019/06/inotify-in-containers/</guid>
-      <description>It is usually necessary to watch for any changes in file systems, both in development and in production modes. For example, in the development mode Webpack can watch files and recompile whenever they change; in the production mode Consul Template can watch runtime configs and invoke specific applications whenever they change. These are well-known scenarios in the traditional world. How about the container world? Do they behave the same in</description>
+      <description>It is usually necessary to watch for any changes in file systems, both in development and in production modes. For example, in the development mode Webpack can watch files and recompile whenever they change; in the production mode Consul Template can watch runtime configs and invoke specific applications whenever they change. These are well-known scenarios in traditional pre-container world. How about the container world? Do they behave the same in</description>
     </item>
     
   </channel>

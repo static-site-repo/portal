@@ -69,7 +69,7 @@
 
 <meta itemprop="datePublished" content="2019-06-17T14:00:00&#43;08:00" />
 <meta itemprop="dateModified" content="2019-06-17T14:00:00&#43;08:00" />
-<meta itemprop="wordCount" content="203">
+<meta itemprop="wordCount" content="205">
 
 
 
@@ -290,7 +290,7 @@ if (!doNotTrack) {
             <a href="//william-yeh.net/categories/tech/"> tech </a>
             
           </div>
-        <span class="more-meta"> 約 203 字 </span>
+        <span class="more-meta"> 約 205 字 </span>
           <span class="more-meta"> 預計閱讀 1 分鐘 </span>
 
         
@@ -316,11 +316,11 @@ if (!doNotTrack) {
 
 <p>Some said that the answer is NO in Kubernetes<sup class="footnote-ref" id="fnref:1"><a href="#fn:1">1</a></sup>; even in the old Docker world<sup class="footnote-ref" id="fnref:2"><a href="#fn:2">2</a></sup>.  Therefore, I&rsquo;d like to begin with a simple experiment to try to answer the question: After a container starts, will it see any changes of environment variables?</p>
 
-<p>The experiment material is available at <a href="https://github.com/William-Yeh/container-and-env">https://github.com/William-Yeh/container-and-env</a> together with a simple demo:</p>
+<p>The experiment material is available at <a href="https://github.com/William-Yeh/container-and-env">https://github.com/William-Yeh/container-and-env</a> , and here&rsquo;s a simple demo:</p>
 
 <p><a href="https://asciinema.org/a/252073"><img src="https://asciinema.org/a/252073.svg" alt="asciicast" /></a></p>
 
-<p>It is obvious in the demo that the changes of environment variables will not affect already-running processes inside the containers, let alone pods in the Kubernetes world.</p>
+<p>It is obvious in the demo that the changes of environment variables will not affect already-running processes inside the containers &mdash; let alone pods in the Kubernetes world.</p>
 
 <p>To simply put, if you want ConfigMap to propagate its changes to related pods, mount the ConfigMap as <em>directories</em>, not <em>environment variables</em>.</p>
 
