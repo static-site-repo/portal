@@ -27,7 +27,8 @@
 <meta name="author" content="William Yeh" />
   <meta name="description" content="My previous article &amp;ldquo;Inotify in Containers&amp;rdquo; has demonstrated that when ConfigMap is mounted as directories, any changes in the ConfigMap will propagate to related pods, and can be detected with inotify-like APIs.
 A follow-up question might be: what should a well-behaved application react to this trigger accordingly? What if it&amp;rsquo;s a ill-designed application?
-To clarify this I&amp;rsquo;ve conducted a series of experiments. In this article I&amp;rsquo;m going to explain the experiments and preliminary findings." />
+To clarify this I&amp;rsquo;ve conducted a series of experiments for 3 possible configmap-reloading strategies:
+ Built-in auto-reloading apps External signals Pod rollout  In this article I&amp;rsquo;m going to explain the experiments and preliminary findings." />
 
 
 
@@ -61,7 +62,8 @@ To clarify this I&amp;rsquo;ve conducted a series of experiments. In this articl
 <meta property="og:title" content="Auto-Reload from ConfigMap" />
 <meta property="og:description" content="My previous article &ldquo;Inotify in Containers&rdquo; has demonstrated that when ConfigMap is mounted as directories, any changes in the ConfigMap will propagate to related pods, and can be detected with inotify-like APIs.
 A follow-up question might be: what should a well-behaved application react to this trigger accordingly? What if it&rsquo;s a ill-designed application?
-To clarify this I&rsquo;ve conducted a series of experiments. In this article I&rsquo;m going to explain the experiments and preliminary findings." />
+To clarify this I&rsquo;ve conducted a series of experiments for 3 possible configmap-reloading strategies:
+ Built-in auto-reloading apps External signals Pod rollout  In this article I&rsquo;m going to explain the experiments and preliminary findings." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="//william-yeh.net/post/2019/06/autoreload-from-configmap/" />
 <meta property="article:published_time" content="2019-06-17T17:00:00&#43;08:00"/>
@@ -70,12 +72,13 @@ To clarify this I&rsquo;ve conducted a series of experiments. In this article I&
 <meta itemprop="name" content="Auto-Reload from ConfigMap">
 <meta itemprop="description" content="My previous article &ldquo;Inotify in Containers&rdquo; has demonstrated that when ConfigMap is mounted as directories, any changes in the ConfigMap will propagate to related pods, and can be detected with inotify-like APIs.
 A follow-up question might be: what should a well-behaved application react to this trigger accordingly? What if it&rsquo;s a ill-designed application?
-To clarify this I&rsquo;ve conducted a series of experiments. In this article I&rsquo;m going to explain the experiments and preliminary findings.">
+To clarify this I&rsquo;ve conducted a series of experiments for 3 possible configmap-reloading strategies:
+ Built-in auto-reloading apps External signals Pod rollout  In this article I&rsquo;m going to explain the experiments and preliminary findings.">
 
 
 <meta itemprop="datePublished" content="2019-06-17T17:00:00&#43;08:00" />
 <meta itemprop="dateModified" content="2019-06-17T17:00:00&#43;08:00" />
-<meta itemprop="wordCount" content="562">
+<meta itemprop="wordCount" content="619">
 
 
 
@@ -84,7 +87,8 @@ To clarify this I&rsquo;ve conducted a series of experiments. In this article I&
 <meta name="twitter:title" content="Auto-Reload from ConfigMap"/>
 <meta name="twitter:description" content="My previous article &ldquo;Inotify in Containers&rdquo; has demonstrated that when ConfigMap is mounted as directories, any changes in the ConfigMap will propagate to related pods, and can be detected with inotify-like APIs.
 A follow-up question might be: what should a well-behaved application react to this trigger accordingly? What if it&rsquo;s a ill-designed application?
-To clarify this I&rsquo;ve conducted a series of experiments. In this article I&rsquo;m going to explain the experiments and preliminary findings."/>
+To clarify this I&rsquo;ve conducted a series of experiments for 3 possible configmap-reloading strategies:
+ Built-in auto-reloading apps External signals Pod rollout  In this article I&rsquo;m going to explain the experiments and preliminary findings."/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -298,7 +302,7 @@ if (!doNotTrack) {
             <a href="//william-yeh.net/categories/tech/"> tech </a>
             
           </div>
-        <span class="more-meta"> 約 562 字 </span>
+        <span class="more-meta"> 約 619 字 </span>
           <span class="more-meta"> 預計閱讀 3 分鐘 </span>
 
         
@@ -322,7 +326,7 @@ if (!doNotTrack) {
 <ul>
 <li>
 <ul>
-<li><a href="#built-in-auto-reloading">Built-in auto-reloading</a></li>
+<li><a href="#built-in-auto-reloading-apps">Built-in auto-reloading apps</a></li>
 <li><a href="#external-signals">External signals</a></li>
 <li><a href="#pod-rollout">Pod rollout</a></li>
 <li><a href="#conclusion">Conclusion</a></li>
@@ -340,9 +344,17 @@ if (!doNotTrack) {
 
 <p>A follow-up question might be: what should a well-behaved application react to this trigger accordingly? What if it&rsquo;s a ill-designed application?</p>
 
-<p>To clarify this I&rsquo;ve conducted a series of experiments. In this article I&rsquo;m going to explain the experiments and preliminary findings.  All experiment materials can be found in the <a href="https://github.com/William-Yeh/configmap-auto-reload">configmap-auto-reload</a> repo.</p>
+<p>To clarify this I&rsquo;ve conducted a series of experiments for 3 possible configmap-reloading  strategies:</p>
 
-<h2 id="built-in-auto-reloading">Built-in auto-reloading</h2>
+<ul>
+<li>Built-in auto-reloading apps</li>
+<li>External signals</li>
+<li>Pod rollout</li>
+</ul>
+
+<p>In this article I&rsquo;m going to explain the experiments and preliminary findings.  All experiment materials can be found in the <a href="https://github.com/William-Yeh/configmap-auto-reload">configmap-auto-reload</a> repo.</p>
+
+<h2 id="built-in-auto-reloading-apps">Built-in auto-reloading apps</h2>
 
 <p>Some applications (e.g., <a href="https://traefik.io/">Traefik</a>) are smart enough to gracefully reload themselves whenever they detect any configuration changes without downtime.  Will this work with Kubernetes ConfigMap?</p>
 
@@ -364,6 +376,21 @@ directory = &#34;/etc/traefik/&#34;</code></pre></div>
 
 <p>Before Docker and Kubernetes rule the world, there were plenty of such tools, e.g., <a href="https://github.com/rvoicilas/inotify-tools">inotify-tools</a> and <a href="https://github.com/kimmobrunfeldt/chokidar-cli">Chokidar cli</a>.  People used them to watch for changes in specified directories and to invoke dedicated actions accordingly (including sending signals, of course).</p>
 
+
+<link rel="stylesheet" href="/css/hugo-easy-gallery.css" />
+<div class="box" style="max-width:30em">
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="/img/2019/06/inotifywait.png" alt="Combo trick: Inotifywait &#43; Nginx"/>
+    </div>
+    <a href="/img/2019/06/inotifywait.png" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>Combo trick: Inotifywait &#43; Nginx</p>
+      </figcaption>
+  </figure>
+</div>
+
+
 <p>Will this combo trick work with Kubernetes ConfigMap?</p>
 
 <p>See the <a href="https://github.com/William-Yeh/configmap-auto-reload/tree/master/inotifywait-example">inotifywait-example</a> demo:</p>
@@ -384,6 +411,8 @@ directory = &#34;/etc/traefik/&#34;</code></pre></div>
 fi;</code></pre></div>
 
 <p>DISCLAIMER: it&rsquo;s just for demo; not a robust implementation. For more examples, see <sup class="footnote-ref" id="fnref:3"><a href="#fn:3">3</a></sup><sup class="footnote-ref" id="fnref:4"><a href="#fn:4">4</a></sup><sup class="footnote-ref" id="fnref:5"><a href="#fn:5">5</a></sup>.</p>
+
+<p>CAUTION: it is against the best practice of &ldquo;one process per container&rdquo; policy.<sup class="footnote-ref" id="fnref:6"><a href="#fn:6">6</a></sup>  If you really want to use this combo trick, try to model it as &ldquo;multiple containers within a single pod.&rdquo;</p>
 
 <h2 id="pod-rollout">Pod rollout</h2>
 
@@ -443,6 +472,8 @@ metadata:
  <a class="footnote-return" href="#fnref:4"><sup>[return]</sup></a></li>
 <li id="fn:5"><a href="https://github.com/telephone/nginx-watch">https://github.com/telephone/nginx-watch</a>
  <a class="footnote-return" href="#fnref:5"><sup>[return]</sup></a></li>
+<li id="fn:6"><a href="https://cloud.google.com/solutions/best-practices-for-building-containers">Best practices for building containers</a>.
+ <a class="footnote-return" href="#fnref:6"><sup>[return]</sup></a></li>
 </ol>
 </div>
 
