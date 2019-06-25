@@ -126,7 +126,7 @@ drwxr-xr-x    1 root     root          4096 Jun 25 03:45 ..
 -rwxr-xr-x    1 root     root            57 Jun 24 08:03 file-644.txt  
 -rwxr-xr-x    1 root     root            84 Jun 24 08:03 script-755.sh&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;However, the ⑹ skaffold experiment shows the &lt;em&gt;worth&lt;/em&gt; result:&lt;/p&gt;
+&lt;p&gt;However, the ⑹ skaffold experiment shows the &lt;em&gt;worst&lt;/em&gt; result:&lt;/p&gt;
 
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;C:\&amp;gt; skaffold-windows-amd64.exe build
 Generating tags...
