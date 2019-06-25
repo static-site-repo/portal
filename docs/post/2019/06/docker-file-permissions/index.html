@@ -25,7 +25,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="William Yeh" />
-  <meta name="description" content="Recently I&amp;rsquo;ve found something very strange about Linux file permissions when the Docker images are built on Windows hosts.1 Therefore, I&amp;rsquo;ve conducted a suite of test cases to investigate whether file permissions are preserved with Docker &amp;amp; Skaffold toolchains. All experiment materials are available in the container-chmod repo. % git clone https://github.com/William-Yeh/container-chmod.git Experiment setting The experiment is composed of a few files with typical Unix-style file permissions: . ├─" />
+  <meta name="description" content="Currently Linux containers are still more popular than Windows containers. And Windows users often need to use Linux containers even from their Windows computers. Recently I&amp;rsquo;ve found something very strange about Linux-style file permissions when the Docker images are built from Windows hosts.1 Therefore, I&amp;rsquo;ve conducted a suite of test cases to investigate whether file permissions are preserved with Docker &amp;amp; Skaffold toolchains. All experiment materials are available in the" />
 
 
 
@@ -57,26 +57,26 @@
 
 
 <meta property="og:title" content="Docker File Permissions on Windows" />
-<meta property="og:description" content="Recently I&rsquo;ve found something very strange about Linux file permissions when the Docker images are built on Windows hosts.1 Therefore, I&rsquo;ve conducted a suite of test cases to investigate whether file permissions are preserved with Docker &amp; Skaffold toolchains. All experiment materials are available in the container-chmod repo. % git clone https://github.com/William-Yeh/container-chmod.git Experiment setting The experiment is composed of a few files with typical Unix-style file permissions: . ├─" />
+<meta property="og:description" content="Currently Linux containers are still more popular than Windows containers. And Windows users often need to use Linux containers even from their Windows computers. Recently I&rsquo;ve found something very strange about Linux-style file permissions when the Docker images are built from Windows hosts.1 Therefore, I&rsquo;ve conducted a suite of test cases to investigate whether file permissions are preserved with Docker &amp; Skaffold toolchains. All experiment materials are available in the" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="//william-yeh.net/post/2019/06/docker-file-permissions/" />
 <meta property="article:published_time" content="2019-06-24T12:00:00&#43;08:00"/>
 <meta property="article:modified_time" content="2019-06-24T12:00:00&#43;08:00"/>
 
 <meta itemprop="name" content="Docker File Permissions on Windows">
-<meta itemprop="description" content="Recently I&rsquo;ve found something very strange about Linux file permissions when the Docker images are built on Windows hosts.1 Therefore, I&rsquo;ve conducted a suite of test cases to investigate whether file permissions are preserved with Docker &amp; Skaffold toolchains. All experiment materials are available in the container-chmod repo. % git clone https://github.com/William-Yeh/container-chmod.git Experiment setting The experiment is composed of a few files with typical Unix-style file permissions: . ├─">
+<meta itemprop="description" content="Currently Linux containers are still more popular than Windows containers. And Windows users often need to use Linux containers even from their Windows computers. Recently I&rsquo;ve found something very strange about Linux-style file permissions when the Docker images are built from Windows hosts.1 Therefore, I&rsquo;ve conducted a suite of test cases to investigate whether file permissions are preserved with Docker &amp; Skaffold toolchains. All experiment materials are available in the">
 
 
 <meta itemprop="datePublished" content="2019-06-24T12:00:00&#43;08:00" />
 <meta itemprop="dateModified" content="2019-06-24T12:00:00&#43;08:00" />
-<meta itemprop="wordCount" content="769">
+<meta itemprop="wordCount" content="797">
 
 
 
 <meta itemprop="keywords" content="devops,docker,wsl,skaffold," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Docker File Permissions on Windows"/>
-<meta name="twitter:description" content="Recently I&rsquo;ve found something very strange about Linux file permissions when the Docker images are built on Windows hosts.1 Therefore, I&rsquo;ve conducted a suite of test cases to investigate whether file permissions are preserved with Docker &amp; Skaffold toolchains. All experiment materials are available in the container-chmod repo. % git clone https://github.com/William-Yeh/container-chmod.git Experiment setting The experiment is composed of a few files with typical Unix-style file permissions: . ├─"/>
+<meta name="twitter:description" content="Currently Linux containers are still more popular than Windows containers. And Windows users often need to use Linux containers even from their Windows computers. Recently I&rsquo;ve found something very strange about Linux-style file permissions when the Docker images are built from Windows hosts.1 Therefore, I&rsquo;ve conducted a suite of test cases to investigate whether file permissions are preserved with Docker &amp; Skaffold toolchains. All experiment materials are available in the"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -290,7 +290,7 @@ if (!doNotTrack) {
             <a href="//william-yeh.net/categories/tech/"> tech </a>
             
           </div>
-        <span class="more-meta"> 約 769 字 </span>
+        <span class="more-meta"> 約 797 字 </span>
           <span class="more-meta"> 預計閱讀 2 分鐘 </span>
 
         
@@ -329,13 +329,15 @@ if (!doNotTrack) {
     <div class="post-content">
       
 
-<p>Recently I&rsquo;ve found something very strange about Linux file permissions when the Docker images are built on Windows hosts.<sup class="footnote-ref" id="fnref:1"><a href="#fn:1">1</a></sup> Therefore, I&rsquo;ve conducted a suite of test cases to investigate whether file permissions are preserved with Docker &amp; <a href="https://skaffold.dev/">Skaffold</a> toolchains. All experiment materials are available in the <a href="https://github.com/William-Yeh/container-chmod">container-chmod</a> repo.</p>
+<p>Currently Linux containers are still more popular than Windows containers. And Windows users often need to use Linux containers even from their Windows computers.</p>
+
+<p>Recently I&rsquo;ve found something very strange about Linux-style file permissions when the Docker images are built from Windows hosts.<sup class="footnote-ref" id="fnref:1"><a href="#fn:1">1</a></sup> Therefore, I&rsquo;ve conducted a suite of test cases to investigate whether file permissions are preserved with Docker &amp; <a href="https://skaffold.dev/">Skaffold</a> toolchains. All experiment materials are available in the <a href="https://github.com/William-Yeh/container-chmod">container-chmod</a> repo.</p>
 
 <div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">% git clone https://github.com/William-Yeh/container-chmod.git</code></pre></div>
 
 <h2 id="experiment-setting">Experiment setting</h2>
 
-<p>The experiment is composed of a few files with typical Unix-style file permissions:</p>
+<p>The experiments are composed of a few files with typical Unix-style file permissions:</p>
 
 <div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">.
 ├── skaffold.yaml
@@ -356,7 +358,7 @@ if (!doNotTrack) {
 <li><p>To build image with <code>skaffold build</code> command (Skaffold v0.32.0).</p></li>
 </ol>
 
-<p>And we&rsquo;ll conduct the experiment in the following environment settings:</p>
+<p>And we&rsquo;ll conduct the experiments in the following environment settings:</p>
 
 <table>
 <thead>
@@ -469,7 +471,7 @@ drwxr-xr-x    1 root     root          4096 Jun 25 03:53 ..
 
 <h2 id="conclusion">Conclusion</h2>
 
-<p>To build Linux containers with different host OS, docker cli, and Skaffold toolchains, different Unix-style file permissions will be generated in the Docker images:</p>
+<p>Different Unix-style file permissions will be generated in the Docker images when building Linux containers with different combination of host operating systems, docker cli, and Skaffold toolchains:</p>
 
 <table>
 <thead>
@@ -516,9 +518,9 @@ drwxr-xr-x    1 root     root          4096 Jun 25 03:53 ..
 <p>My suggestions for building Linux images are:</p>
 
 <ul>
-<li><p>If your applications require adequate file permissions (especially the <code>'x'</code>) and you cannot control the build toolchains to use, be sure to modify your <code>Dockerfile</code> accordingly.</p></li>
+<li><p>If your applications require adequate file permissions (especially the <code>'x'</code>) and you cannot completely control the build toolchains to use, be sure to modify your <code>Dockerfile</code> accordingly.</p></li>
 
-<li><p>If you can control the whole toolchains to use (e.g., in the CI/CD pipeline), stick to the Linux ones.</p></li>
+<li><p>If you can control the whole toolchains to use (e.g., in the CI/CD pipeline), stick with the Linux ones.</p></li>
 </ul>
 <div class="footnotes">
 

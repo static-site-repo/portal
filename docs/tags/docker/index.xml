@@ -17,7 +17,7 @@
       <pubDate>Mon, 24 Jun 2019 12:00:00 +0800</pubDate>
       
       <guid>//william-yeh.net/post/2019/06/docker-file-permissions/</guid>
-      <description>Recently I&amp;rsquo;ve found something very strange about Linux file permissions when the Docker images are built on Windows hosts.1 Therefore, I&amp;rsquo;ve conducted a suite of test cases to investigate whether file permissions are preserved with Docker &amp;amp; Skaffold toolchains. All experiment materials are available in the container-chmod repo. % git clone https://github.com/William-Yeh/container-chmod.git Experiment setting The experiment is composed of a few files with typical Unix-style file permissions: . ├─</description>
+      <description>Currently Linux containers are still more popular than Windows containers. And Windows users often need to use Linux containers even from their Windows computers. Recently I&amp;rsquo;ve found something very strange about Linux-style file permissions when the Docker images are built from Windows hosts.1 Therefore, I&amp;rsquo;ve conducted a suite of test cases to investigate whether file permissions are preserved with Docker &amp;amp; Skaffold toolchains. All experiment materials are available in the</description>
     </item>
     
     <item>
