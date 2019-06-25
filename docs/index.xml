@@ -113,7 +113,7 @@ drwxr-xr-x    1 root     root          4096 Jun 24 22:30 ..
 
 &lt;h2 id=&#34;pure-windows-⑤-⑹&#34;&gt;Pure Windows: ⑤ ⑹&lt;/h2&gt;
 
-&lt;p&gt;What if a Windows user sticks with pure-Windows toolchains?&lt;/p&gt;
+&lt;p&gt;What if a Windows user sticks with pure-Windows toolchains, i.e., use traditional Command Prompt (cmd) to connect to Docker Desktop for Windows?&lt;/p&gt;
 
 &lt;p&gt;The ⑤ docker-cli experiment shows the same result as in previous ③ &lt;code&gt;&#39;-rwxr-xr-x&#39;&lt;/code&gt; permission:&lt;/p&gt;
 
