@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="zh-tw" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Docker File Permissions on Windows - Potioneer&#39;s Essays</title>
+  
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="William Yeh" />
+  <meta name="description" content="Recently I&amp;rsquo;ve found something very strange about Linux file permissions when the Docker images are built on Windows hosts.1 Therefore, I&amp;rsquo;ve conducted a suite of test cases to investigate whether file permissions are preserved with Docker &amp;amp; Skaffold toolchains. All experiment materials are available in the container-chmod repo. Experiment setting The experiment is composed of a few files with typical Unix-style file permissions: . ├── skaffold.yaml └─" />
+
+
+
+
+<meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
+
+
+<meta name="generator" content="Hugo 0.55.6" />
+
+
+<link rel="canonical" href="//william-yeh.net/post/2019/06/docker-file-permissions/" />
+
+
+
+<link rel="icon" href="/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+<link href="/dist/jane.min.css?v=2.7.0" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="Docker File Permissions on Windows" />
+<meta property="og:description" content="Recently I&rsquo;ve found something very strange about Linux file permissions when the Docker images are built on Windows hosts.1 Therefore, I&rsquo;ve conducted a suite of test cases to investigate whether file permissions are preserved with Docker &amp; Skaffold toolchains. All experiment materials are available in the container-chmod repo. Experiment setting The experiment is composed of a few files with typical Unix-style file permissions: . ├── skaffold.yaml └─" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="//william-yeh.net/post/2019/06/docker-file-permissions/" />
+<meta property="article:published_time" content="2019-06-24T12:00:00&#43;08:00"/>
+<meta property="article:modified_time" content="2019-06-24T12:00:00&#43;08:00"/>
+
+<meta itemprop="name" content="Docker File Permissions on Windows">
+<meta itemprop="description" content="Recently I&rsquo;ve found something very strange about Linux file permissions when the Docker images are built on Windows hosts.1 Therefore, I&rsquo;ve conducted a suite of test cases to investigate whether file permissions are preserved with Docker &amp; Skaffold toolchains. All experiment materials are available in the container-chmod repo. Experiment setting The experiment is composed of a few files with typical Unix-style file permissions: . ├── skaffold.yaml └─">
+
+
+<meta itemprop="datePublished" content="2019-06-24T12:00:00&#43;08:00" />
+<meta itemprop="dateModified" content="2019-06-24T12:00:00&#43;08:00" />
+<meta itemprop="wordCount" content="752">
+
+
+
+<meta itemprop="keywords" content="devops,docker,wsl,skaffold," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Docker File Permissions on Windows"/>
+<meta name="twitter:description" content="Recently I&rsquo;ve found something very strange about Linux file permissions when the Docker images are built on Windows hosts.1 Therefore, I&rsquo;ve conducted a suite of test cases to investigate whether file permissions are preserved with Docker &amp; Skaffold toolchains. All experiment materials are available in the container-chmod repo. Experiment setting The experiment is composed of a few files with typical Unix-style file permissions: . ├── skaffold.yaml └─"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-751859-3', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Potioneer&#39;s Essays</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="//william-yeh.net/">♜</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="//william-yeh.net/post/">Archives</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="//william-yeh.net/tags/">Tags</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="//william-yeh.net/categories/">Categories</a>
+          
+        
+      </li>
+    
+  </ul>
+</nav>
+
+
+  
+    
+
+
+
+
+
+
+  <link rel="stylesheet" href="/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/" class="logo">
+    
+      Potioneer&#39;s Essays
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="//william-yeh.net/">♜</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="//william-yeh.net/post/">Archives</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="//william-yeh.net/tags/">Tags</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="//william-yeh.net/categories/">Categories</a>
+          
+
+        
+
+      </li>
+    
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">Docker File Permissions on Windows</h1>
+      
+      <div class="post-meta">
+        <time datetime="2019-06-24" class="post-time">
+          2019-06-24
+        </time>
+        <div class="post-category">
+            <a href="//william-yeh.net/categories/tech/"> tech </a>
+            
+          </div>
+        <span class="more-meta"> 約 752 字 </span>
+          <span class="more-meta"> 預計閱讀 2 分鐘 </span>
+
+        
+        
+          <span id="busuanzi_container_page_pv">
+            | 阅读 <span id="busuanzi_value_page_pv"></span>
+          </span>
+        
+
+        
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目錄</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#experiment-setting">Experiment setting</a></li>
+<li><a href="#macos-➊-➋">macOS: ➊ ➋</a></li>
+<li><a href="#wsl-③-➍">WSL: ③ ➍</a></li>
+<li><a href="#pure-windows-⑤-⑹">Pure Windows: ⑤ ⑹</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      
+
+<p>Recently I&rsquo;ve found something very strange about Linux file permissions when the Docker images are built on Windows hosts.<sup class="footnote-ref" id="fnref:1"><a href="#fn:1">1</a></sup> Therefore, I&rsquo;ve conducted a suite of test cases to investigate whether file permissions are preserved with Docker &amp; <a href="https://skaffold.dev/">Skaffold</a> toolchains. All experiment materials are available in the <a href="https://github.com/William-Yeh/container-chmod">container-chmod</a> repo.</p>
+
+<h2 id="experiment-setting">Experiment setting</h2>
+
+<p>The experiment is composed of a few files with typical Unix-style file permissions:</p>
+
+<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">.
+├── skaffold.yaml
+└── src
+    ├── Dockerfile
+    ├── file-644.txt
+    └── script-755.sh
+
+-rw-r--r-- 1 william  70 Jun 24 17:01 Dockerfile
+-rw-r--r-- 1 william  57 Jun 24 15:17 file-644.txt
+-rwxr-xr-x 1 william  84 Jun 24 15:19 script-755.sh</code></pre></div>
+
+<p>There are two ways to build the image:</p>
+
+<ol>
+<li><p>To build Linux containers with <code>docker build</code> command (Docker Engine 18.09.2).</p></li>
+
+<li><p>To build Linux containers with <code>skaffold build</code> command (Skaffold v0.32.0).</p></li>
+</ol>
+
+<p>And we&rsquo;ll conduct the experiment in the following environment settings:</p>
+
+<table>
+<thead>
+<tr>
+<th>Host</th>
+<th>Built w/ Docker CLI</th>
+<th>Built w/ Skaffold (WSL version)</th>
+<th>Built w/ Skaffold (host version)</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>macOS</td>
+<td>➊</td>
+<td>N/A</td>
+<td>➋</td>
+</tr>
+
+<tr>
+<td>WSL + Docker Desktop for Windows</td>
+<td>③</td>
+<td>➍</td>
+<td>N/A</td>
+</tr>
+
+<tr>
+<td>Windows</td>
+<td>⑤</td>
+<td>N/A</td>
+<td>⑹</td>
+</tr>
+</tbody>
+</table>
+
+<p>Will all experiments correctly display the file listing?</p>
+
+<h2 id="macos-➊-➋">macOS: ➊ ➋</h2>
+
+<p>Let&rsquo;s begin with macOS, which acts as the control group.</p>
+
+<p><a href="https://asciinema.org/a/253423"><img src="https://asciinema.org/a/253423.svg" alt="asciicast" /></a></p>
+
+<p>Perfect! All Unix-style file permissions are set correctly.</p>
+
+<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">total 20                                                                        
+drwxr-xr-x    1 root     root          4096 Jun 24 22:30 .                      
+drwxr-xr-x    1 root     root          4096 Jun 24 22:30 ..                     
+-rw-r--r--    1 root     root            70 Jun 24 22:18 Dockerfile             
+-rw-r--r--    1 root     root            57 Jun 24 22:18 file-644.txt           
+-rwxr-xr-x    1 root     root            84 Jun 24 22:18 script-755.sh          </code></pre></div>
+
+<h2 id="wsl-③-➍">WSL: ③ ➍</h2>
+
+<p>On Windows, my preference is to use WSL to connect to Docker Desktop for Windows.<sup class="footnote-ref" id="fnref:2"><a href="#fn:2">2</a></sup>  Will this combination work well with Unix-style file permissions?</p>
+
+<p>Below are experiments conducted on WSL:</p>
+
+<p><a href="https://asciinema.org/a/253450"><img src="https://asciinema.org/a/253450.svg" alt="asciicast" /></a></p>
+
+<p>As shown in this demo, the ➍ skaffold experiment works quite well on WSL. The ③ docker-cli experiment works, though not the best-possible Unix-style file permissions:<sup class="footnote-ref" id="fnref:3"><a href="#fn:3">3</a></sup></p>
+
+<blockquote>
+<p>SECURITY WARNING: You are building a Docker image from Windows against a non-Windows Docker host. All files and directories added to build context will have <code>'-rwxr-xr-x'</code> permissions. It is recommended to double check and reset permissions for sensitive files and directories.</p>
+</blockquote>
+
+<h2 id="pure-windows-⑤-⑹">Pure Windows: ⑤ ⑹</h2>
+
+<p>What if a Windows user sticks with pure-Windows toolchains?</p>
+
+<p>The ⑤ docker-cli experiment shows the same result as in previous ③ <code>'-rwxr-xr-x'</code> permission:</p>
+
+<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">C:\&gt; docker run -it test-docker                                           
+File permission (script-755.sh) should be: 755  rwxr-xr-x              
+total 20                                                               
+drwxr-xr-x    1 root     root          4096 Jun 25 03:45 .             
+drwxr-xr-x    1 root     root          4096 Jun 25 03:45 ..            
+-rwxr-xr-x    1 root     root            70 Jun 25 03:44 Dockerfile    
+-rwxr-xr-x    1 root     root            57 Jun 24 08:03 file-644.txt  
+-rwxr-xr-x    1 root     root            84 Jun 24 08:03 script-755.sh</code></pre></div>
+
+<p>However, the ⑹ skaffold experiment shows the <em>worth</em> result:</p>
+
+<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">C:\&gt; skaffold-windows-amd64.exe build
+Generating tags...
+ - test-skaffold -&gt; test-skaffold:dbe377c
+Tags generated in 228.0023ms
+Starting build...
+Found [docker-for-desktop] context, using local docker daemon.
+Building [test-skaffold]...
+Sending build context to Docker daemon  4.096kB
+Step 1/4 : FROM alpine:3.9.4
+...
+
+
+C:\&gt; docker run -it 25997136449a
+docker: Error response from daemon: OCI runtime create failed: container_linux.go:344:
+starting container process caused &#34;exec: \&#34;/app/script-755.sh\&#34;: permission denied&#34;: unknown.
+
+
+C:\&gt; docker run -it 25997136449a  ls -al
+total 20
+drwxr-xr-x    1 root     root          4096 Jun 25 03:51 .
+drwxr-xr-x    1 root     root          4096 Jun 25 03:53 ..
+-rw-rw-rw-    1 root     root            70 Jun 25 03:44 Dockerfile
+-rw-rw-rw-    1 root     root            57 Jun 24 08:03 file-644.txt
+-rw-rw-rw-    1 root     root            84 Jun 24 08:03 script-755.sh</code></pre></div>
+
+<p>As shown in the demo, Skaffold blindly sets all the file permissions as <code>'-rw-rw-rw-'</code>, eliminating the <code>'x'</code> permission required for the <code>script-755.sh</code> script file.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>To build Linux containers with different host OS, docker cli, and Skaffold toolchains, different Unix-style file permissions will be generated in the Docker images:</p>
+
+<table>
+<thead>
+<tr>
+<th>Host</th>
+<th>Built w/ Docker CLI</th>
+<th>Built w/ Skaffold (WSL version)</th>
+<th>Built w/ Skaffold (host version)</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>macOS</td>
+<td>➊</td>
+<td>N/A</td>
+<td>➋</td>
+</tr>
+
+<tr>
+<td>WSL + Docker Desktop for Windows</td>
+<td>③</td>
+<td>➍</td>
+<td>N/A</td>
+</tr>
+
+<tr>
+<td>Windows</td>
+<td>⑤</td>
+<td>N/A</td>
+<td>⑹</td>
+</tr>
+</tbody>
+</table>
+
+<p>Results:</p>
+
+<ul>
+<li>Best results: ➊ ➋ ➍</li>
+<li>Acceptable results: ③ ⑤</li>
+<li>Unacceptable results: ⑹</li>
+</ul>
+
+<p>My suggestions for building Linux images are:</p>
+
+<ul>
+<li><p>If your applications require adequate file permissions (especially the <code>'x'</code>) and you cannot control the build toolchains to use, be sure to modify your <code>Dockerfile</code> accordingly.</p></li>
+
+<li><p>If you can control the whole toolchains to use (e.g., in the CI/CD pipeline), stick to the Linux ones.</p></li>
+</ul>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:1">There is also an issue about this in Skaffold: <a href="https://github.com/GoogleContainerTools/skaffold/issues/1470">Issue #1470: Permission denied through skaffold</a>
+ <a class="footnote-return" href="#fnref:1"><sup>[return]</sup></a></li>
+<li id="fn:2">See my article “<a href="//william-yeh.net/post/2019/03/wsl-cmder-zsh/">在 Windows 上復刻 Mac 使用習慣</a>”.
+ <a class="footnote-return" href="#fnref:2"><sup>[return]</sup></a></li>
+<li id="fn:3">See <a href="https://github.com/moby/moby/issues/20397#issuecomment-185471832">thaJeztah&rsquo;s comment on GitHub</a> about this.
+ <a class="footnote-return" href="#fnref:3"><sup>[return]</sup></a></li>
+</ol>
+</div>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">William Yeh</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2019-06-24</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">授權條款</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW" target="_blank">CC BY-NC-SA 4.0</a> (姓名標示-非商業性-相同方式分享 4.0 國際)</span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="//william-yeh.net/tags/devops/">devops</a>
+          <a href="//william-yeh.net/tags/docker/">docker</a>
+          <a href="//william-yeh.net/tags/wsl/">wsl</a>
+          <a href="//william-yeh.net/tags/skaffold/">skaffold</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/post/2019/06/autoreload-from-configmap/">
+            <span class="next-text nav-default">Auto-Reload from ConfigMap</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+  
+  
+
+  
+  
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= "William-Yeh/utterances-area"
+            issue-term="pathname"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
+  
+
+  
+
+  
+
+  <div class="disqus-comment">
+  <div class="disqus-button" id="load_disqus" onclick="load_disqus()">
+    顯示 Disqus 評論
+  </div>
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_config = function () {
+      this.page.url = "//william-yeh.net/post/2019/06/docker-file-permissions/";
+    };
+    function load_disqus() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'potioneer';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+      $('#load_disqus').remove();
+    };
+  </script>
+  <noscript>Please enable JavaScript to view the
+    <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+  </noscript>
+  
+  </div>
+
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:william.pjyeh@gmail.com" rel="me noopener" class="iconfont icon-email"
+        title="email">
+      </a>
+      <a href="https://twitter.com/william_yeh" rel="me noopener" class="iconfont icon-twitter"
+        title="twitter" target="_blank">
+      </a>
+      <a href="https://www.facebook.com/william.yeh" rel="me noopener" class="iconfont icon-facebook"
+        title="facebook" target="_blank">
+      </a>
+      <a href="https://www.linkedin.com/in/pjyeh/" rel="me noopener" class="iconfont icon-linkedin"
+        title="linkedin" target="_blank">
+      </a>
+      <a href="https://github.com/william-yeh" rel="me noopener" class="iconfont icon-github"
+        title="github" target="_blank">
+      </a>
+      <a href="https://www.slideshare.net/williamyeh" rel="me noopener" class="iconfont icon-coding"
+        title="coding" target="_blank">
+      </a>
+  <a href="//william-yeh.net/index.xml" rel="noopener alternate" type="application/rss&#43;xml" class="iconfont icon-rss"
+    title="rss" target="_blank">
+  </a>
+  </div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+      2015 -
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span><span class="author">
+        William Yeh
+        
+      </span></span>
+
+  
+  
+    <span id="busuanzi_container">
+      访客数/访问量：<span id="busuanzi_value_site_uv"></span>/<span id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+<script type="text/javascript" src="/dist/jane.min.js?v=2.7.0"></script>
+
+
+
+
+
+  
+    <script type="text/javascript" src="/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

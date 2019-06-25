@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Mon, 17 Jun 2019 17:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 24 Jun 2019 12:00:00 +0800</lastBuildDate>
     
 	<atom:link href="//william-yeh.net/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Docker File Permissions on Windows</title>
+      <link>//william-yeh.net/post/2019/06/docker-file-permissions/</link>
+      <pubDate>Mon, 24 Jun 2019 12:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2019/06/docker-file-permissions/</guid>
+      <description>Recently I&amp;rsquo;ve found something very strange about Linux file permissions when the Docker images are built on Windows hosts.1 Therefore, I&amp;rsquo;ve conducted a suite of test cases to investigate whether file permissions are preserved with Docker &amp;amp; Skaffold toolchains. All experiment materials are available in the container-chmod repo. Experiment setting The experiment is composed of a few files with typical Unix-style file permissions: . ├── skaffold.yaml └─</description>
+    </item>
     
     <item>
       <title>Auto-Reload from ConfigMap</title>
@@ -299,15 +308,6 @@ To clarify this I&amp;rsquo;ve conducted a series of experiments for 3 possible 
 &lt;p&gt;那麼，沒有明說的事，就不需要做、就不能做了嗎？做了，就違反 Scrum 嗎？&lt;/p&gt;
 
 &lt;p&gt;這是許多奉 &lt;a href=&#34;https://www.scrumguides.org/&#34;&gt;&lt;em&gt;The Scrum Guide&lt;/em&gt;&lt;/a&gt; 為圭臬的人，常有的盲點。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>為什麼 LeSS 這麼迷人，可是總是輸給 SAFe？</title>
-      <link>//william-yeh.net/post/2018/11/why-safe-over-less/</link>
-      <pubDate>Fri, 30 Nov 2018 15:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2018/11/why-safe-over-less/</guid>
-      <description>在一篇 Terry &amp;amp; Ruddy 對話紀錄中，看到一系列有趣的 LeSS vs. SAFe 討論： 「為什麼 LeSS 這麼迷人，可是總是輸給 SAFe？」 「SAFe 是敏捷跟辦公室政治作出了完美的妥協</description>
     </item>
     
   </channel>
