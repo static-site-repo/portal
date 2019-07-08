@@ -85,7 +85,7 @@
 
 <meta itemprop="datePublished" content="2019-03-14T08:00:00&#43;08:00" />
 <meta itemprop="dateModified" content="2019-03-14T08:00:00&#43;08:00" />
-<meta itemprop="wordCount" content="1811">
+<meta itemprop="wordCount" content="1879">
 
 
 
@@ -312,7 +312,7 @@ if (!doNotTrack) {
             <a href="//william-yeh.net/categories/tech/"> tech </a>
             
           </div>
-        <span class="more-meta"> 約 1811 字 </span>
+        <span class="more-meta"> 約 1879 字 </span>
           <span class="more-meta"> 預計閱讀 4 分鐘 </span>
 
         
@@ -493,10 +493,10 @@ C: on /mnt/c type drvfs (rw,noatime,uid=1000,gid=1000,case=off)</code></pre></di
 
 <h2 id="docker-與-kubernetes">Docker 與 Kubernetes</h2>
 
-<p>雖然保哥的文章推薦在 WSL 裡的 Linux 再安裝一份 Docker engine <sup class="footnote-ref" id="fnref:4"><a href="#fn:4">4</a></sup>，但我比較傾向<strong>不要</strong>。我比較傾向共用既有資源，讓 WSL 直接連接到 Docker Desktop for Windows 身上。</p>
+<p>雖然保哥的文章推薦在 WSL 裡的 Linux 再安裝一份 Docker engine <sup class="footnote-ref" id="fnref:4"><a href="#fn:4">4</a></sup>，但我比較傾向<strong>不要</strong>。我比較傾向共用既有資源，讓 WSL 直接連接到 Docker Desktop for Windows 身上。畢竟，在同一台電腦上，要維護兩套 Docker engine，太累了。</p>
 
-<p>我建議：參考上官林傑的文章〈<a href="https://medium.com/@ericsk/%E5%9C%A8-windows-subsystem-for-li
-nux-wsl-%E4%B8%8B%E4%BD%BF%E7%94%A8-windows-%E4%B8%8A%E7%9A%84-docker-engine-8dc0040ca240">在 Windows Subsystem for Linux (WSL) 下使用 Windows 上的 Docker Engine</a>〉，做好必要的設定，但請先省略其中的 alias 步驟（稍後會說明為什麼）。簡單來說，請先進行這三步驟：</p>
+<p>我參考上官林傑的文章〈<a href="https://medium.com/@ericsk/%E5%9C%A8-windows-subsystem-for-li
+nux-wsl-%E4%B8%8B%E4%BD%BF%E7%94%A8-windows-%E4%B8%8A%E7%9A%84-docker-engine-8dc0040ca240">在 Windows Subsystem for Linux (WSL) 下使用 Windows 上的 Docker Engine</a>〉，做好必要的設定，但省略文中提到的 alias 步驟（稍後會說明為什麼）。簡單來說，請先進行這三步驟：</p>
 
 <ol>
 <li><p>打開 Docker Desktop for Windows 的 &ldquo;Expose daemon on tcp://localhost:2375 without TLS.&rdquo; 選項。</p></li>
@@ -508,16 +508,25 @@ nux-wsl-%E4%B8%8B%E4%BD%BF%E7%94%A8-windows-%E4%B8%8A%E7%9A%84-docker-engine-8dc
 <code>Defaults env_keep += &quot;DOCKER_HOST&quot;</code></p></li>
 </ol>
 
-<p>上述文章建議透過 <code>alias docker=docker.exe</code> 的方式來使用 Docker Desktop for Windows 的 docker client。不過，這些 alias 未必都能在 script 中展開 <sup class="footnote-ref" id="fnref:5"><a href="#fn:5">5</a></sup> ——有鬆綁的方法，但我不喜歡破例。我比較傾向在 WSL 裡建立符號連結：</p>
+<p>上述文章建議透過 <code>alias docker=docker.exe</code> 的方式來使用 Docker Desktop for Windows 的 docker client。不過，這些 alias 未必都能在 script 中展開 <sup class="footnote-ref" id="fnref:5"><a href="#fn:5">5</a></sup> ——有鬆綁的方法，但我不喜歡破例。我比較傾向在 WSL 裡用簡單的 wrapper script 來處理。</p>
 
-<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">% sudo ln -s &#34;/mnt/c/Program Files/Docker/Docker/resources/bin/docker.exe&#34; \
-    /usr/local/bin/docker
+<p>首先是 <code>/usr/local/bin/docker</code> 檔案：</p>
 
-% sudo ln -s &#34;/mnt/c/Program Files/Docker/Docker/resources/bin/docker-compose.exe&#34; \
-    /usr/local/bin/docker-compose
+<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">#!/bin/bash
 
-% sudo ln -s &#34;/mnt/c/Program Files/Docker/Docker/resources/bin/kubectl.exe&#34; \
-    /usr/local/bin/kubectl               </code></pre></div>
+# allow WSL to have access to Docker Desktop for Windows
+exec  &#34;/mnt/c/Program Files/Docker/Docker/resources/bin/docker.exe&#34;  &#34;$@&#34;</code></pre></div>
+
+<p>其次是 <code>/usr/local/bin/docker-compose</code> 檔案：</p>
+
+<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">#!/bin/bash
+
+# allow WSL to have access to Docker Desktop for Windows
+exec  &#34;/mnt/c/Program Files/Docker/Docker/resources/bin/docker-compose.exe&#34;  &#34;$@&#34;</code></pre></div>
+
+<p>別忘記打開它們的 <code>'x'</code> 權限：</p>
+
+<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">% sudo chmod a+x  /usr/local/bin/docker  /usr/local/bin/docker-compose</code></pre></div>
 
 <p>也別忘了，要將 Windows 上面的 Kubernetes 設定連接過來：</p>
 
