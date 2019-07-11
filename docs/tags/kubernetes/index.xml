@@ -6,10 +6,21 @@
     <description>Recent content in kubernetes on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Mon, 17 Jun 2019 17:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 11 Jul 2019 17:00:00 +0800</lastBuildDate>
     
 	<atom:link href="//william-yeh.net/tags/kubernetes/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>CKAD (Certified Kubernetes Application Developer) 相關資料</title>
+      <link>//william-yeh.net/post/2019/07/ckad-materials/</link>
+      <pubDate>Thu, 11 Jul 2019 17:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2019/07/ckad-materials/</guid>
+      <description>&lt;p&gt;Linux Foundation 旗下的 &lt;a href=&#34;https://www.cncf.io/&#34;&gt;CNCF (Cloud Native Computing Foundation)&lt;/a&gt; 提供兩個與 Kubernetes 相關的個人技術檢定：偏維運的 &lt;a href=&#34;https://www.cncf.io/certification/cka/&#34;&gt;CKA (Certified Kubernetes Administrator)&lt;/a&gt;，以及偏研發的 &lt;a href=&#34;https://www.cncf.io/certification/ckad/&#34;&gt;CKAD (Certified Kubernetes Application Developer)&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;其中，CKAD 與我關注的範圍、與我設計的工作坊最接近，便想進一步瞭解它的細節。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Auto-Reload from ConfigMap</title>

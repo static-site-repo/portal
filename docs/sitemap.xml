@@ -2,8 +2,57 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>//william-yeh.net/post/2019/07/ckad-materials/</loc>
+    <lastmod>2019-07-11T17:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>//william-yeh.net/categories/</loc>
-    <lastmod>2019-06-24T12:00:00+08:00</lastmod>
+    <lastmod>2019-07-11T17:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/post/</loc>
+    <lastmod>2019-07-11T17:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/</loc>
+    <lastmod>2019-07-11T17:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/</loc>
+    <lastmod>2019-07-11T17:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/categories/tech/</loc>
+    <lastmod>2019-07-11T17:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/course/</loc>
+    <lastmod>2019-07-11T17:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/devops/</loc>
+    <lastmod>2019-07-11T17:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/kubernetes/</loc>
+    <lastmod>2019-07-11T17:00:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -15,30 +64,6 @@
   </url>
   
   <url>
-    <loc>//william-yeh.net/post/</loc>
-    <lastmod>2019-06-24T12:00:00+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/</loc>
-    <lastmod>2019-06-24T12:00:00+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/tags/</loc>
-    <lastmod>2019-06-24T12:00:00+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/tags/devops/</loc>
-    <lastmod>2019-06-24T12:00:00+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>//william-yeh.net/tags/docker/</loc>
     <lastmod>2019-06-24T12:00:00+08:00</lastmod>
     <priority>0</priority>
@@ -46,12 +71,6 @@
   
   <url>
     <loc>//william-yeh.net/tags/skaffold/</loc>
-    <lastmod>2019-06-24T12:00:00+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/categories/tech/</loc>
     <lastmod>2019-06-24T12:00:00+08:00</lastmod>
     <priority>0</priority>
   </url>
@@ -82,12 +101,6 @@
   </url>
   
   <url>
-    <loc>//william-yeh.net/tags/kubernetes/</loc>
-    <lastmod>2019-06-17T17:00:00+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>//william-yeh.net/post/2019/06/containers-and-env/</loc>
     <lastmod>2019-06-17T14:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -106,12 +119,6 @@
     <lastmod>2019-05-17T12:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/tags/course/</loc>
-    <lastmod>2019-05-17T12:00:00+08:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -206,6 +213,12 @@
   </url>
   
   <url>
+    <loc>//william-yeh.net/categories/management/</loc>
+    <lastmod>2019-01-19T10:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>//william-yeh.net/tags/book/</loc>
     <lastmod>2019-01-19T10:00:00+08:00</lastmod>
     <priority>0</priority>
@@ -219,12 +232,6 @@
   
   <url>
     <loc>//william-yeh.net/tags/leadership/</loc>
-    <lastmod>2019-01-19T10:00:00+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/categories/management/</loc>
     <lastmod>2019-01-19T10:00:00+08:00</lastmod>
     <priority>0</priority>
   </url>
