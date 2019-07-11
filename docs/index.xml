@@ -21,6 +21,21 @@
 
 &lt;p&gt;其中，CKAD 與我關注的範圍、與我設計的工作坊最接近，便想進一步瞭解它的細節。&lt;/p&gt;
 
+
+
+&lt;div class=&#34;box&#34; style=&#34;max-width:15em&#34;&gt;
+  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2019/07/kubernetes-ckad-color.png&#34; alt=&#34;CKAD logo&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2019/07/kubernetes-ckad-color.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;CKAD logo&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+
 &lt;p&gt;根據官方資料，CKAD 的 &lt;a href=&#34;https://github.com/cncf/curriculum&#34;&gt;curriculum&lt;/a&gt; 只有列出檢定考試的主題與比例，並沒有列出具體的讀物。目前看到最接近「欽定本」地位的 CKAD 檢定準備教材，就屬 Linux Foundation 製作的 &lt;a href=&#34;https://training.linuxfoundation.org/training/kubernetes-for-developers/&#34;&gt;LDF259&lt;/a&gt; 線上課程了——全長 35 小時，$299 美金。&lt;/p&gt;
 
 &lt;p&gt;不過，是否還有其他選擇？&lt;/p&gt;

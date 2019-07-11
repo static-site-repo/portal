@@ -33,12 +33,6 @@
   </url>
   
   <url>
-    <loc>//william-yeh.net/categories/tech/</loc>
-    <lastmod>2019-07-11T17:00:00+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>//william-yeh.net/tags/course/</loc>
     <lastmod>2019-07-11T17:00:00+08:00</lastmod>
     <priority>0</priority>
@@ -52,6 +46,12 @@
   
   <url>
     <loc>//william-yeh.net/tags/kubernetes/</loc>
+    <lastmod>2019-07-11T17:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/categories/tech/</loc>
     <lastmod>2019-07-11T17:00:00+08:00</lastmod>
     <priority>0</priority>
   </url>
@@ -213,12 +213,6 @@
   </url>
   
   <url>
-    <loc>//william-yeh.net/categories/management/</loc>
-    <lastmod>2019-01-19T10:00:00+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>//william-yeh.net/tags/book/</loc>
     <lastmod>2019-01-19T10:00:00+08:00</lastmod>
     <priority>0</priority>
@@ -232,6 +226,12 @@
   
   <url>
     <loc>//william-yeh.net/tags/leadership/</loc>
+    <lastmod>2019-01-19T10:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/categories/management/</loc>
     <lastmod>2019-01-19T10:00:00+08:00</lastmod>
     <priority>0</priority>
   </url>
