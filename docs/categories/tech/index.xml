@@ -6,10 +6,21 @@
     <description>Recent content in tech on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Thu, 11 Jul 2019 17:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 31 Jul 2019 13:00:00 +0800</lastBuildDate>
     
 	<atom:link href="//william-yeh.net/categories/tech/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Volume Resizing Mechanism in Kubernetes</title>
+      <link>//william-yeh.net/post/2019/07/k8s-vol-resizing/</link>
+      <pubDate>Wed, 31 Jul 2019 13:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2019/07/k8s-vol-resizing/</guid>
+      <description>&lt;p&gt;Non-stop storage scaling (vertical or horizontal scaling) is essential in a data-intensive system, database servers in particular.&lt;/p&gt;
+
+&lt;p&gt;Is it possible in Kubernetes?&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>CKAD (Certified Kubernetes Application Developer) 相關資料</title>
@@ -249,16 +260,6 @@ To clarify this I&amp;rsquo;ve conducted a series of experiments for 3 possible 
       
       <guid>//william-yeh.net/post/2016/03/metaphor-in-cm/</guid>
       <description>&lt;p&gt;人類是很喜愛比喻／譬喻的。戰國時代的莊子愛用譬喻，常和莊子抬槓的惠施也愛譬喻，《說苑‧善說》甚至記載著這麼一段故事：&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>一句話囊括 DevOps 的目標</title>
-      <link>//william-yeh.net/post/2016/01/devops-goals-in-a-nutshell/</link>
-      <pubDate>Fri, 29 Jan 2016 08:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2016/01/devops-goals-in-a-nutshell/</guid>
-      <description>&lt;p&gt;TL;DR&lt;br /&gt;
-&lt;em&gt;DevOps is a set of practices intended to reduce the time between committing a change to a system and the change being placed into normal production, while ensuring high quality.&lt;/em&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

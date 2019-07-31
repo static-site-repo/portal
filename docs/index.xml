@@ -5,10 +5,411 @@
     <description>Recent content on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Thu, 11 Jul 2019 17:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 31 Jul 2019 13:00:00 +0800</lastBuildDate>
     
         <atom:link href="//william-yeh.net/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Volume Resizing Mechanism in Kubernetes</title>
+      <link>//william-yeh.net/post/2019/07/k8s-vol-resizing/</link>
+      <pubDate>Wed, 31 Jul 2019 13:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2019/07/k8s-vol-resizing/</guid>
+      
+        <description>&lt;p&gt;Non-stop storage scaling (vertical or horizontal scaling) is essential in a data-intensive system, database servers in particular.&lt;/p&gt;
+
+&lt;p&gt;Is it possible in Kubernetes?&lt;/p&gt;
+
+&lt;p&gt;In Kubernetes v1.11 the &lt;em&gt;persistent volume expansion&lt;/em&gt; feature is being promoted to beta and enabled by default.&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; There is also a nontrivial real-world use case for this: &lt;a href=&#34;https://strimzi.io/&#34;&gt;Strimzi Kafka operator&lt;/a&gt;. Strimzi merely builds on top of existing Kubernetes &lt;a href=&#34;https://kubernetes.io/docs/concepts/storage/storage-classes/&#34;&gt;storage class&lt;/a&gt; mechanism to grow the storage of Kafka cluster.&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt; Therefore, the volume resizing feature is not exclusively available for Strimzi and Kafka. You can put this feature into your own application as long as you learn the mechanism.&lt;/p&gt;
+
+&lt;p&gt;To get a concrete knowledge of the volume resizing, I&amp;rsquo;ve conducted a simple experiment on GCP and GKE. The experiment tries to answer the following questions:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Does volume resizing really work in Kubernetes?&lt;/li&gt;
+&lt;li&gt;Is the resizing process non-stop?&lt;/li&gt;
+&lt;li&gt;Are data still persistent after resizing?&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;All experiment materials are available in the &lt;a href=&#34;https://github.com/William-Yeh/vol-resize&#34;&gt;vol-resize&lt;/a&gt; repo, for your convenience.&lt;/p&gt;
+
+&lt;h2 id=&#34;about-the-sample-app&#34;&gt;About the sample app&lt;/h2&gt;
+
+&lt;p&gt;A sample app &lt;a href=&#34;https://github.com/William-Yeh/vol-resize/blob/master/voltest.sh&#34;&gt;voltest.sh&lt;/a&gt; will be used for the whole experiment.&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34;&gt;3&lt;/a&gt;&lt;/sup&gt; It displays the size of available disk spaces in the specified mount point (as the 1st argument), and also records the data continuously in the specified output file (as the 2nd argument; default to &lt;code&gt;&amp;quot;data&amp;quot;&lt;/code&gt;).&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s see how it works. Assume that we are in the &lt;code&gt;/home&lt;/code&gt; directory, with available disk space about 4.5 GB:&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;% pwd
+/home
+%
+% df -h
+Filesystem      Size  Used Avail Use% Mounted on
+overlay          41G   32G  8.2G  80% /
+tmpfs            64M     0   64M   0% /dev
+tmpfs           848M     0  848M   0% /sys/fs/cgroup
+/dev/sda1        41G   32G  8.2G  80% /root
+/dev/sdb1       4.8G   38M  4.5G   1% /home
+overlayfs       1.0M  160K  864K  16% /etc/ssh/keys
+shm              64M     0   64M   0% /dev/shm
+overlayfs       1.0M  160K  864K  16% /etc/ssh/ssh_host_dsa_key
+tmpfs           848M  736K  847M   1% /run/metrics
+tmpfs           848M     0  848M   0% /run/google/devshell&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;At first run, it shows the space of current directory and records them continuously in the &lt;code&gt;data&lt;/code&gt; file within the same directory:&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;% docker run -it  -v $(pwd):/mnt  williamyeh/voltest  /mnt
+---&amp;gt; Checking /mnt/data
+1 : 4.5G
+2 : 4.5G
+3 : 4.5G
+4 : 4.5G
+5 : 4.5G
+6 : 4.5G
+7 : 4.5G
+8 : 4.5G
+9 : 4.5G
+10 : 4.5G
+11 : 4.5G
+12 : 4.5G
+^C
+%&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Interrupt the execution at 12 on purpose, and run again. You&amp;rsquo;ll see that it picks up the last serial number 12 and continues counting:&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;% docker run -it  -v $(pwd):/mnt  williamyeh/voltest  /mnt
+---&amp;gt; Checking /mnt/data
+13 : 4.5G
+14 : 4.5G
+15 : 4.5G
+16 : 4.5G
+17 : 4.5G
+18 : 4.5G
+19 : 4.5G
+20 : 4.5G
+21 : 4.5G
+22 : 4.5G
+23 : 4.5G
+^C
+%&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Now the &lt;code&gt;data&lt;/code&gt; file should have 23 lines of records:&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;% cat data
+1 : 4.5G
+2 : 4.5G
+3 : 4.5G
+4 : 4.5G
+5 : 4.5G
+6 : 4.5G
+7 : 4.5G
+8 : 4.5G
+9 : 4.5G
+10 : 4.5G
+11 : 4.5G
+12 : 4.5G
+13 : 4.5G
+14 : 4.5G
+15 : 4.5G
+16 : 4.5G
+17 : 4.5G
+18 : 4.5G
+19 : 4.5G
+20 : 4.5G
+21 : 4.5G
+22 : 4.5G
+23 : 4.5G
+%&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;In the following experiment we&amp;rsquo;ll use the app and the data file to answer the 3 questions:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;em&gt;Does volume resizing really work in Kubernetes?&lt;/em&gt; Just inspect the disk spaces it displays.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;em&gt;Is the resizing process non-stop?&lt;/em&gt; Just inspect the screen output.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;em&gt;Are data still persistent after resizing?&lt;/em&gt; Just inspect the content of data file.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Ready?&lt;/p&gt;
+
+&lt;h2 id=&#34;experiment-part-1-initial-size&#34;&gt;Experiment part 1: initial size&lt;/h2&gt;
+
+&lt;p&gt;The experiment is conducted on GCP and GKE. However, it should apply to other cloud Kubernetes platforms as well, with minor modification.&lt;/p&gt;
+
+&lt;p&gt;➊ Clone the experiment repo to your workspace or Cloud Shell:&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;% git clone https://github.com/William-Yeh/vol-resize.git&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;➋ Prepare a Kubernetes cluster in GKE.&lt;/p&gt;
+
+&lt;p&gt;➌ Create a 20GB persistent disk named &lt;code&gt;voltest&lt;/code&gt;.  For example, the following command will create such a persistent disk in the us-central1-a zone:&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;% gcloud compute disks create         \
+    --size=20GB --zone=us-central1-a  \
+    voltest&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Check if the underlying persistent disk is created:&lt;/p&gt;
+
+
+
+&lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
+  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2019/07/pd-20gb.png&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2019/07/pd-20gb.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;➍ We need a storage class with &lt;code&gt;allowVolumeExpansion&lt;/code&gt; enabled. The manifest file &lt;a href=&#34;https://github.com/William-Yeh/vol-resize/blob/master/expansion-ss.yml&#34;&gt;expansion-ss.yml&lt;/a&gt; is provided as follows:&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: expansion
+parameters:
+  type: pd-standard
+provisioner: kubernetes.io/gce-pd
+allowVolumeExpansion: true
+reclaimPolicy: Delete&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Create a storage class &lt;code&gt;expansion&lt;/code&gt; for this:&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;% kubectl apply -f expansion-ss.yml&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;➎ We need a PV manifest file &lt;a href=&#34;https://github.com/William-Yeh/vol-resize/blob/master/voltest-pv.yml&#34;&gt;voltest-pv.yml&lt;/a&gt; to associate it with the existing persistent disk just created before:&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: voltest
+spec:
+  storageClassName: &amp;#34;expansion&amp;#34;
+  accessModes:
+    - ReadWriteOnce
+  capacity:
+    storage: 20Gi
+  gcePersistentDisk:
+    pdName: voltest
+    fsType: ext4&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Create the persistent volume &lt;code&gt;voltest&lt;/code&gt; now:&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;% kubectl apply -f voltest-pv.yml
+persistentvolume/voltest created
+% kubectl get pv
+NAME      CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS      CLAIM   STORAGECLASS   REASON   AGE
+voltest   20Gi       RWO            Retain           Available           expansion               8s&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Note that the &lt;code&gt;voltest&lt;/code&gt; PV is in &amp;ldquo;Available&amp;rdquo; status.&lt;/p&gt;
+
+&lt;p&gt;➏ We need a PVC manifest file &lt;a href=&#34;https://github.com/William-Yeh/vol-resize/blob/master/voltest-pvc.yml&#34;&gt;voltest-pvc.yml&lt;/a&gt; to claim the PV:&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: voltest
+spec:
+  volumeName: voltest
+  storageClassName: &amp;#34;expansion&amp;#34;
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 20Gi&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Claim the persistent volume now:&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;% kubectl apply -f voltest-pvc.yml
+persistentvolumeclaim/voltest created
+
+% kubectl get pvc
+NAME      STATUS   VOLUME    CAPACITY   ACCESS MODES   STORAGECLASS   AGE
+voltest   Bound    voltest   20Gi       RWO            expansion      11s
+
+% kubectl get pv
+NAME      CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM             STORAGECLASS   REASON   AGE
+voltest   20Gi       RWO            Retain           Bound    default/voltest   expansion               13m&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Note that the &lt;code&gt;voltest&lt;/code&gt; PV/PVC pair is in &amp;ldquo;Bound&amp;rdquo; status.&lt;/p&gt;
+
+&lt;p&gt;➐ We need a manifest file &lt;a href=&#34;https://github.com/William-Yeh/vol-resize/blob/master/voltest-app.yml&#34;&gt;voltest-app.yml&lt;/a&gt; for our sample app to access the PV/PVC:&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;apiVersion: apps/v1
+kind: Deployment
+...
+spec:
+  replicas: 1
+  ...
+  template:   # pod definition
+    ...
+    spec:
+      containers:
+        - name: voltest
+          image: williamyeh/voltest
+          volumeMounts:
+            - mountPath: &amp;#34;/mnt&amp;#34;
+              name: voltest
+
+      volumes:
+        - name: voltest
+          persistentVolumeClaim:
+            claimName: voltest&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Invoke the sample app now:&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;% kubectl apply -f voltest-app.yml&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Open another terminal pane to watch the logs continuously:&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;% kubectl logs -f deployment/voltest
+---&amp;gt; Checking /mnt/data
+1 : 20G
+2 : 20G
+3 : 20G
+4 : 20G
+5 : 20G
+6 : 20G
+7 : 20G
+8 : 20G
+9 : 20G
+10 : 20G
+11 : 20G
+12 : 20G
+...&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Quite familiar output. Everything works fine.&lt;/p&gt;
+
+&lt;p&gt;Keep the logs running. We&amp;rsquo;ll see it again and again.&lt;/p&gt;
+
+&lt;h2 id=&#34;experiment-part-2-resizing&#34;&gt;Experiment part 2: resizing&lt;/h2&gt;
+
+&lt;p&gt;Now we&amp;rsquo;re about to resize the volume.&lt;/p&gt;
+
+&lt;p&gt;➊ Edit the &lt;code&gt;voltest&lt;/code&gt; PVC:&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;% kubectl edit pvc/voltest&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;➋ Change the value of &lt;code&gt;spec.resources.requests.storage&lt;/code&gt; from &lt;code&gt;20Gi&lt;/code&gt; to &lt;code&gt;100Gi&lt;/code&gt;. Save, and exit.&lt;/p&gt;
+
+&lt;p&gt;➌ Check if the logs are still being generated, and the content of the logs.&lt;/p&gt;
+
+&lt;p&gt;➍ Check the size of underlying persistent disk. It should be expanded to 100 GB now.&lt;/p&gt;
+
+
+
+&lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
+  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2019/07/pd-100gb.png&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2019/07/pd-100gb.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;➎ Check if the PV/PVC are both expanded:&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;% kubectl get pv
+NAME      CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM             STORAGECLASS   REASON   AGE
+voltest   100Gi      RWO            Retain           Bound    default/voltest   expansion               45m
+
+% kubectl get pvc
+NAME      STATUS   VOLUME    CAPACITY   ACCESS MODES   STORAGECLASS   AGE
+voltest   Bound    voltest   20Gi       RWO            expansion      32m&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;PV is expanded to 100 GB, but PVC not yet. In other words, &lt;em&gt;block storage volume&lt;/em&gt; is expanded, but &lt;em&gt;file system&lt;/em&gt; is not yet. The reason is described in the “&lt;a href=&#34;https://kubernetes.io/blog/2018/07/12/resizing-persistent-volumes-using-kubernetes/&#34;&gt;Resizing Persistent Volumes using Kubernetes&lt;/a&gt;” article:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&amp;ldquo;Once underlying volume has been expanded by the storage provider, then the PersistentVolume object will reflect the updated size and the PVC will have the &lt;code&gt;FileSystemResizePending&lt;/code&gt; condition.&amp;rdquo;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&amp;ldquo;File system expansion must be triggered by terminating the pod using the volume [&amp;hellip;] then pod that uses the PVC can be restarted to finish file system resizing on the node.&amp;rdquo;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;For now the question &lt;em&gt;&amp;ldquo;2. Is the resizing process non-stop?&amp;rdquo;&lt;/em&gt; should be obviously answered. Let&amp;rsquo;s move on to handle the &lt;code&gt;FileSystemResizePending&lt;/code&gt; condition by restarting the related pods.&lt;/p&gt;
+
+&lt;h2 id=&#34;experiment-part-3-restart-the-pod&#34;&gt;Experiment part 3: restart the pod&lt;/h2&gt;
+
+&lt;p&gt;➊ Kill the pod, and let deployment restart a new pod for us (&lt;code&gt;replicas=1&lt;/code&gt;):&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;% kubectl get pods
+NAME                      READY   STATUS    RESTARTS   AGE
+voltest-d88ff8c49-66wk2   1/1     Running   0          23m
+
+% kubectl delete pod voltest-d88ff8c49-66wk2&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;➋ Watch the logs! Our sample app will see the &lt;em&gt;file system expansion&lt;/em&gt; progress on the fly:&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;13465 : 20G
+13466 : 20G
+13467 : 20G
+13468 : 24G
+13469 : 30G
+13470 : 30G
+13471 : 30G
+13472 : 30G
+13473 : 30G
+13474 : 42G
+13475 : 77G
+13476 : 99G
+13477 : 99G
+13478 : 99G
+13479 : 99G
+13480 : 99G
+13481 : 99G
+13482 : 99G&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;➌ Check if the PV/PVC are both expanded:&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;% kubectl get pv
+NAME      CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM             STORAGECLASS   REASON   AGE
+voltest   100Gi      RWO            Retain           Bound    default/voltest   expansion               57m
+
+% kubectl get pvc
+NAME      STATUS   VOLUME    CAPACITY   ACCESS MODES   STORAGECLASS   AGE
+voltest   Bound    voltest   100Gi      RWO            expansion      44m&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;For now the remaining questions &lt;em&gt;“1. Does volume resizing really work in Kubernetes?”&lt;/em&gt; and &lt;em&gt;“3. Are data still persistent after resizing?”&lt;/em&gt; should be obviously answered.&lt;/p&gt;
+
+&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;As can be seen in this experiment, all you have to do to grow the PV/PVC are:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Preparation&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Use Kubernetes ≥ 1.11.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Set &lt;code&gt;allowVolumeExpansion: true&lt;/code&gt; for your &lt;a href=&#34;https://kubernetes.io/docs/concepts/storage/storage-classes/&#34;&gt;storage class&lt;/a&gt;, and choose an appropriate underlying &lt;a href=&#34;https://kubernetes.io/docs/concepts/storage/volumes/#types-of-volumes&#34;&gt;provisioner&lt;/a&gt; (storage provider).&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Use the storage class in your PV and PVC.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Expansion&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Increase the PVC &lt;code&gt;spec.resources.requests.storage&lt;/code&gt; value.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Restart the related pods.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Kubernetes 1.11 also introduces an alpha feature called &lt;em&gt;online file system expansion&lt;/em&gt;. You can track its progress in the Kubernetes CSI Developer Documentation &amp;ldquo;&lt;a href=&#34;https://kubernetes-csi.github.io/docs/volume-expansion.html&#34;&gt;Volume Expansion&lt;/a&gt;&amp;rdquo;.&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;You may use the volume resizing feature since Kubernetes 1.11. Read the article published by kubernetes.io in more detail: “&lt;a href=&#34;https://kubernetes.io/blog/2018/07/12/resizing-persistent-volumes-using-kubernetes/&#34;&gt;Resizing Persistent Volumes using Kubernetes&lt;/a&gt;”.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:1&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;To know more about how Strimzi implements the volume resizing for Kafka, read these articles: “&lt;a href=&#34;https://strimzi.io/2019/07/08/persistent-storage-improvements.html&#34;&gt;Persistent storage improvements&lt;/a&gt;” and “&lt;a href=&#34;https://strimzi.io/2019/02/28/resizing-persistent-volumes.html&#34;&gt;Resizing persistent volumes with Strimzi&lt;/a&gt;”.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:2&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;The Docker image for this &lt;a href=&#34;https://github.com/William-Yeh/vol-resize/blob/master/voltest.sh&#34;&gt;voltest.sh&lt;/a&gt; app is available in &lt;code&gt;williamyeh/voltest&lt;/code&gt; for your convenience.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:3&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description>
+      
+    </item>
     
     <item>
       <title>CKAD (Certified Kubernetes Application Developer) 相關資料</title>

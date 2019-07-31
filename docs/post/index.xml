@@ -6,10 +6,21 @@
     <description>Recent content in Posts on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Thu, 11 Jul 2019 17:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 31 Jul 2019 13:00:00 +0800</lastBuildDate>
     
 	<atom:link href="//william-yeh.net/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Volume Resizing Mechanism in Kubernetes</title>
+      <link>//william-yeh.net/post/2019/07/k8s-vol-resizing/</link>
+      <pubDate>Wed, 31 Jul 2019 13:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2019/07/k8s-vol-resizing/</guid>
+      <description>&lt;p&gt;Non-stop storage scaling (vertical or horizontal scaling) is essential in a data-intensive system, database servers in particular.&lt;/p&gt;
+
+&lt;p&gt;Is it possible in Kubernetes?&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>CKAD (Certified Kubernetes Application Developer) 相關資料</title>
@@ -311,15 +322,6 @@ To clarify this I&amp;rsquo;ve conducted a series of experiments for 3 possible 
 &lt;p&gt;不過，這個題材的背後，其實還有三段故事。&lt;/p&gt;
 
 &lt;p&gt;故事，要從一年半前講起。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>改變／改革：流程與衡量指標</title>
-      <link>//william-yeh.net/post/2018/12/process-and-metrics/</link>
-      <pubDate>Fri, 07 Dec 2018 13:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2018/12/process-and-metrics/</guid>
-      <description>改革，很不容易；摧毀改革，卻很簡單。知名的改革框架，莫不注重改革的整合與固化。 敏捷亦然。 敏捷三叔公 David Ko 在 Scrum 社群裡轉貼了一篇文章，一則可悲的故</description>
     </item>
     
   </channel>
