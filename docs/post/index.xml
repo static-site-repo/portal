@@ -6,10 +6,27 @@
     <description>Recent content in Posts on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Wed, 31 Jul 2019 13:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 04 Dec 2019 22:00:00 +0800</lastBuildDate>
     
 	<atom:link href="//william-yeh.net/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>技術面試的小觀點</title>
+      <link>//william-yeh.net/post/2019/12/tech-interview/</link>
+      <pubDate>Wed, 04 Dec 2019 22:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2019/12/tech-interview/</guid>
+      <description>&lt;p&gt;年底，人才流動的旺季。&lt;/p&gt;
+
+&lt;p&gt;這陣子，經手一堆履歷，更面試超過十場，深深覺得，若多一點人懂得&lt;strong&gt;面試&lt;/strong&gt;的遊戲規則，甚至更廣義的&lt;strong&gt;職場&lt;/strong&gt;遊戲規則，將是賓主盡歡的美事。&lt;/p&gt;
+
+&lt;p&gt;Bryan &lt;a href=&#34;https://www.facebook.com/bryan.yao.1/posts/2666223613434413&#34;&gt;說得好&lt;/a&gt;：「求職過程投入越多，越能理解這個遊戲規則，也對自己的目標更清晰！」&lt;/p&gt;
+
+&lt;p&gt;我們或許都沒有前衛到像 Netflix《&lt;a href=&#34;https://www.books.com.tw/products/0010796709&#34;&gt;給力&lt;/a&gt;》那樣「鼓勵員工經常去面試別家公司的工作」，但說實話，多一些面試與被面試的經歷，的確能夠更掌握遊戲規則，也會衝擊到自己原先的浪漫幻想，降低美麗的錯誤，將自己導向更務實的定位。&lt;/p&gt;
+
+&lt;p&gt;面試與被面試都經歷過不少的我，想針對這陣子的所見所聞，分享一些個人的觀點。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Volume Resizing Mechanism in Kubernetes</title>
@@ -288,40 +305,6 @@ To clarify this I&amp;rsquo;ve conducted a series of experiments for 3 possible 
 &lt;p&gt;如果說 &lt;a href=&#34;https://school.soft-arch.net/blog/6676/2016-retrospective&#34;&gt;2016&lt;/a&gt; 和 &lt;a href=&#34;https://school.soft-arch.net/blog/13083/2017-retrospective&#34;&gt;2017&lt;/a&gt; 都是華麗冒險年，那麼，2018 對我來說，是收攝靜觀的一年。&lt;/p&gt;
 
 &lt;p&gt;去除一些不便揭露的事情，以下是簡單的回顧。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>為了精準估算，你必須付出什麼代價？</title>
-      <link>//william-yeh.net/post/2018/12/agile-measurement/</link>
-      <pubDate>Wed, 19 Dec 2018 08:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2018/12/agile-measurement/</guid>
-      <description>&lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
-  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/12/dilbert-measurement.jpg&#34; alt=&#34;開場對話&#34;/&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2018/12/dilbert-measurement.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-      &lt;figcaption&gt;
-          &lt;p&gt;開場對話&lt;/p&gt;
-      &lt;/figcaption&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;
-
-
-&lt;p&gt;研發團隊，常會被問到一個問題：&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;「請問一下，這個Ａ功能，大概要多久才能完成？」&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;這個問題，不會因為你跑的是敏捷，就自動免疫。那麼，身為經過敏捷思維洗禮的人，該如何做出合宜的應對？&lt;/p&gt;
-
-&lt;p&gt;我在 &lt;a href=&#34;https://agilekaohsiung.kktix.cc/events/agiletourkaohsiung2018&#34;&gt;Agile Tour Kaohsiung 2018&lt;/a&gt; 開辦一場 2.5 小時的工作坊，帶領大家親自體驗這個議題。&lt;/p&gt;
-
-&lt;p&gt;不過，這個題材的背後，其實還有三段故事。&lt;/p&gt;
-
-&lt;p&gt;故事，要從一年半前講起。&lt;/p&gt;</description>
     </item>
     
   </channel>

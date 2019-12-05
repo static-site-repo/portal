@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="zh-tw" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>技術面試的小觀點 - Potioneer&#39;s Essays</title>
+  
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="William Yeh" />
+  <meta name="description" content="年底，人才流動的旺季。
+這陣子，經手一堆履歷，更面試超過十場，深深覺得，若多一點人懂得面試的遊戲規則，甚至更廣義的職場遊戲規則，將是賓主盡歡的美事。
+Bryan 說得好：「求職過程投入越多，越能理解這個遊戲規則，也對自己的目標更清晰！」
+我們或許都沒有前衛到像 Netflix《給力》那樣「鼓勵員工經常去面試別家公司的工作」，但說實話，多一些面試與被面試的經歷，的確能夠更掌握遊戲規則，也會衝擊到自己原先的浪漫幻想，降低美麗的錯誤，將自己導向更務實的定位。
+面試與被面試都經歷過不少的我，想針對這陣子的所見所聞，分享一些個人的觀點。
+" />
+
+
+
+
+<meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
+
+
+<meta name="generator" content="Hugo 0.55.6" />
+
+
+<link rel="canonical" href="//william-yeh.net/post/2019/12/tech-interview/" />
+
+
+
+<link rel="icon" href="/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+<link href="/dist/jane.min.css?v=2.7.0" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="技術面試的小觀點" />
+<meta property="og:description" content="年底，人才流動的旺季。
+
+這陣子，經手一堆履歷，更面試超過十場，深深覺得，若多一點人懂得面試的遊戲規則，甚至更廣義的職場遊戲規則，將是賓主盡歡的美事。
+
+Bryan 說得好：「求職過程投入越多，越能理解這個遊戲規則，也對自己的目標更清晰！」
+
+我們或許都沒有前衛到像 Netflix《給力》那樣「鼓勵員工經常去面試別家公司的工作」，但說實話，多一些面試與被面試的經歷，的確能夠更掌握遊戲規則，也會衝擊到自己原先的浪漫幻想，降低美麗的錯誤，將自己導向更務實的定位。
+
+面試與被面試都經歷過不少的我，想針對這陣子的所見所聞，分享一些個人的觀點。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="//william-yeh.net/post/2019/12/tech-interview/" />
+<meta property="article:published_time" content="2019-12-04T22:00:00&#43;08:00"/>
+<meta property="article:modified_time" content="2019-12-04T22:00:00&#43;08:00"/>
+
+<meta itemprop="name" content="技術面試的小觀點">
+<meta itemprop="description" content="年底，人才流動的旺季。
+
+這陣子，經手一堆履歷，更面試超過十場，深深覺得，若多一點人懂得面試的遊戲規則，甚至更廣義的職場遊戲規則，將是賓主盡歡的美事。
+
+Bryan 說得好：「求職過程投入越多，越能理解這個遊戲規則，也對自己的目標更清晰！」
+
+我們或許都沒有前衛到像 Netflix《給力》那樣「鼓勵員工經常去面試別家公司的工作」，但說實話，多一些面試與被面試的經歷，的確能夠更掌握遊戲規則，也會衝擊到自己原先的浪漫幻想，降低美麗的錯誤，將自己導向更務實的定位。
+
+面試與被面試都經歷過不少的我，想針對這陣子的所見所聞，分享一些個人的觀點。">
+
+
+<meta itemprop="datePublished" content="2019-12-04T22:00:00&#43;08:00" />
+<meta itemprop="dateModified" content="2019-12-04T22:00:00&#43;08:00" />
+<meta itemprop="wordCount" content="3050">
+
+
+
+<meta itemprop="keywords" content="interview,career," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="技術面試的小觀點"/>
+<meta name="twitter:description" content="年底，人才流動的旺季。
+
+這陣子，經手一堆履歷，更面試超過十場，深深覺得，若多一點人懂得面試的遊戲規則，甚至更廣義的職場遊戲規則，將是賓主盡歡的美事。
+
+Bryan 說得好：「求職過程投入越多，越能理解這個遊戲規則，也對自己的目標更清晰！」
+
+我們或許都沒有前衛到像 Netflix《給力》那樣「鼓勵員工經常去面試別家公司的工作」，但說實話，多一些面試與被面試的經歷，的確能夠更掌握遊戲規則，也會衝擊到自己原先的浪漫幻想，降低美麗的錯誤，將自己導向更務實的定位。
+
+面試與被面試都經歷過不少的我，想針對這陣子的所見所聞，分享一些個人的觀點。"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-751859-3', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Potioneer&#39;s Essays</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="//william-yeh.net/">♜</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="//william-yeh.net/post/">Archives</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="//william-yeh.net/tags/">Tags</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="//william-yeh.net/categories/">Categories</a>
+          
+        
+      </li>
+    
+  </ul>
+</nav>
+
+
+  
+    
+
+
+
+
+
+
+  <link rel="stylesheet" href="/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/" class="logo">
+    
+      Potioneer&#39;s Essays
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="//william-yeh.net/">♜</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="//william-yeh.net/post/">Archives</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="//william-yeh.net/tags/">Tags</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="//william-yeh.net/categories/">Categories</a>
+          
+
+        
+
+      </li>
+    
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">技術面試的小觀點</h1>
+      
+      <div class="post-meta">
+        <time datetime="2019-12-04" class="post-time">
+          2019-12-04
+        </time>
+        <div class="post-category">
+            <a href="//william-yeh.net/categories/tech/"> tech </a>
+            
+          </div>
+        <span class="more-meta"> 約 3050 字 </span>
+          <span class="more-meta"> 預計閱讀 7 分鐘 </span>
+
+        
+        
+          <span id="busuanzi_container_page_pv">
+            | 阅读 <span id="busuanzi_value_page_pv"></span>
+          </span>
+        
+
+        
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目錄</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#刷題">刷題</a></li>
+<li><a href="#kata-心態">Kata 心態</a></li>
+<li><a href="#行為面談">行為面談</a></li>
+<li><a href="#馬拉松">馬拉松</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      <p>年底，人才流動的旺季。</p>
+
+<p>這陣子，經手一堆履歷，更面試超過十場，深深覺得，若多一點人懂得<strong>面試</strong>的遊戲規則，甚至更廣義的<strong>職場</strong>遊戲規則，將是賓主盡歡的美事。</p>
+
+<p>Bryan <a href="https://www.facebook.com/bryan.yao.1/posts/2666223613434413">說得好</a>：「求職過程投入越多，越能理解這個遊戲規則，也對自己的目標更清晰！」</p>
+
+<p>我們或許都沒有前衛到像 Netflix《<a href="https://www.books.com.tw/products/0010796709">給力</a>》那樣「鼓勵員工經常去面試別家公司的工作」，但說實話，多一些面試與被面試的經歷，的確能夠更掌握遊戲規則，也會衝擊到自己原先的浪漫幻想，降低美麗的錯誤，將自己導向更務實的定位。</p>
+
+<p>面試與被面試都經歷過不少的我，想針對這陣子的所見所聞，分享一些個人的觀點。</p>
+
+<h2 id="刷題">刷題</h2>
+
+<p>以前我對刷題之舉是很不屑一顧的。總覺得這不是每位軟體工程師都需要去嘗試的。</p>
+
+<p>不過，就如同程天縱在〈<a href="https://tuna.press/?p=9978">自己爬上巨人的肩膀：踏入職場的艱辛旅程</a>〉一文對美國軟體研發界的觀察：</p>
+
+<blockquote>
+<p>在十年前的 2009 年，只要會寫軟體，甚至不需要經驗，學校一畢業就可以很容易的找到工作。</p>
+
+<p>但近十年來，大量中國和印度的留學生來到了美國，專攻互聯網、軟體開發、算法、人工智慧、大數據分析、雲計算等等領域，使得就業競爭越發激烈。尤其川普總統上任以後，緊縮了綠卡和移民的名額，導致美國留學申請的門檻更加提高了。</p>
+
+<p>因此，過去簡單的、走形式的面試問題和技術測試，難度就越來越高了；尤其網路和社群的普及，考過的題目立刻被分享在網上。因此，各個徵才企業就不斷的更新題庫、甚至提高難度。於是，<a href="https://leetcode.com/">LeetCode</a> 網站上的題目，幾乎都是要去面試的軟體工程師必「做」、必「背」的。</p>
+</blockquote>
+
+<p>典型的滾雪球的軍備競賽，正增強迴路。</p>
+
+<p>這就是美國軟體研發重鎮的遊戲規則。</p>
+
+<p>台灣，雖然還沒有發展出如此激烈的競爭態勢，但相對低薪太久了，優秀人才思遷外流，精明外商也在台設置研發據點就地搶人，導致刷題風氣也開始在某些小圈子裡盛行。像這次 <a href="https://ithelp.ithome.com.tw/announces/48">iT 邦幫忙鐵人賽</a>就有兩位以 LeetCode 為主題的得獎者，其中一位甚至還在別處開設<a href="https://hiskio.com/courses/319">線上課程</a>教人 LeetCode 解題呢。</p>
+
+<p>當然啦，刷題網站不只可拿來操練演算法，據我所知，同溫層當中也有些人拿這類刷題素材做為 TDD kata。最有名的例子就是 <a href="https://dotblogs.com.tw/hatelove/series/1?qq=LeetCode%2520%E7%B7%B4%E5%8A%9F%E6%88%BF">91</a> 了。</p>
+
+<p>因此，我開始修正對於刷題網站的觀點。我會視情況，用兩種解題心態來看待它們：</p>
+
+<ol>
+<li><p>Kata 心態。借用刷題素材，熟悉新的程式語言及標準程式庫，或是磨練 TDD 之類的技法。此時的重點在於「型」的固化與內化，不在於演算法的錙銖必較，因此，要有「可能暫時過不了刷題評分系統」的心理準備。</p></li>
+
+<li><p>演算法複雜度優化心態。我建議，盡量自我要求，不要驟然追求速解，該用類似 <a href="https://www.amazon.com/dp/069111966X"><em>How to Solve It</em></a> 或 <a href="https://www.amazon.com/dp/0201120372"><em>Introduction to Algorithms: A Creative Approach</em></a> 之類的逐步推演思路，有系統地闡述，才能鍛鍊出通用的解題思路，不至於淪為「背解法」。</p></li>
+</ol>
+
+<p>（似乎該拿來練一下了⋯⋯）</p>
+
+<h2 id="kata-心態">Kata 心態</h2>
+
+<p>Kata 心態，不只是拿來面對刷題素材，更應該拿來用在更廣泛的地方。</p>
+
+<p>尤其是軟體架構。</p>
+
+<p>雖然我們常說：不要重複造輪子，但這不代表：我們連造輪子的能力都不去操練。</p>
+
+<p>譬如說，當你學到分散式系統、微服務架構時，會不會試著甩開別人包得好好的現成框架，改而像 <a href="https://columns.chicken-house.net/">Andrew</a> 那樣自我練習，從頭開始構築方案？ <sup class="footnote-ref" id="fnref:1"><a href="#fn:1">1</a></sup></p>
+
+<blockquote>
+<p>有興趣的話，趁這次機會，用簡化過的 POC 環境來練習看看吧！POC 的好處是你可以專注在問題本身，盡可能地排除其他環境或是框架帶來的干擾，讓你專心地思考問題本身該怎麼解決。也只有 POC，你才能有機會觀察到實際測試的統計數據與評分，讓你比較與改善的過程可以更加科學。  <br/> &nbsp;&nbsp;&nbsp; &mdash; 〈<a href="https://columns.chicken-house.net/2019/08/30/scheduling-practices/">後端工程師必備: 排程任務的處理機制練習</a>〉</p>
+</blockquote>
+
+<p>譬如說，當你學到最近當紅的 DDD 及 clean architecture，會不會試著甩開別人包得好好的現成框架，改而像這次 <a href="https://ithelp.ithome.com.tw/announces/48">iT 邦幫忙鐵人賽</a>的優選作品〈<a href="https://ithelp.ithome.com.tw/users/20111997/ironman/2730">Think in Domain-Driven Design</a>〉那樣，試著從頭開始構築方案？</p>
+
+<p>造輪子的能力，是否曾經刻苦磨練過，在面談時很難隱藏。</p>
+
+<p>身體學會的，誰也帶不走。</p>
+
+<h2 id="行為面談">行為面談</h2>
+
+<p><strong>行為面談法</strong> (behavioral interview) 是許多招募專家推薦的面談策略，搭配 <strong>STAR</strong> (situation, task, action, result) 問題設計，可以挖掘到很深的層次。<sup class="footnote-ref" id="fnref:2"><a href="#fn:2">2</a></sup></p>
+
+<p>行為面談，對於「被面談」的人來說，挑戰性自不在話下；但是，對於「面試官」來說，也不是很輕鬆的差事。事前的設計要花時間，甚至得客製化；就連面談當下的引導、追溯與紀錄，甚至事後的歸納整理與評斷，都非常費神。</p>
+
+<p>這一直困擾著我。</p>
+
+<p>所幸，後來受到《<a href="https://www.books.com.tw/products/0010811254">Amazon 的人為什麼這麼厲害？</a>》的啟發，對行為面談法多了些把握。</p>
+
+<p><br/><br/></p>
+
+<p>《<a href="https://www.books.com.tw/products/0010811254">Amazon 的人為什麼這麼厲害？</a>》作者佐藤將之是日本亞馬遜創始成員，服務了 15 年。他的現身說法，應該頗具代表性。</p>
+
+<p>本書試著以 Amazon 角度，回答一個關鍵問題：</p>
+
+<blockquote>
+<p>到了面試的時候，面試官會注意應徵者的哪些特質呢？</p>
+
+<p>用一句話來說，就是對象是否具備「<strong>我們的領導力準則</strong>」(<a href="https://www.aboutamazon.com/working-at-amazon/our-leadership-principles">our leadership principles; OLP</a>) 特質。</p>
+</blockquote>
+
+<p>很多企業的 vision/mission/values 是寫給華爾街看的。漂亮的話人人會說，怎麼知道是不是玩真的？</p>
+
+<p>Amazon 的做法很有趣：在面試當中察驗。</p>
+
+
+<link rel="stylesheet" href="/css/hugo-easy-gallery.css" />
+<div class="box" style="max-width:30em">
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="/img/2019/12/olp14.jpg" alt="Amazon 14 OLP"/>
+    </div>
+    <a href="/img/2019/12/olp14.jpg" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>Amazon 14 OLP</p>
+      </figcaption>
+  </figure>
+</div>
+
+
+<p>《<a href="https://www.books.com.tw/products/0010811254">Amazon 的人為什麼這麼厲害？</a>》解釋 OLP 在面試時扮演吃重的角色：</p>
+
+<blockquote>
+<p>OLP 也會實際在面試時採用。對亞馬遜來說，徵才面試的目的，是深入探究面試者在過去的工作過程中如何發現 OLP。換句話說，亞馬遜不會只看技能或成績，還會看面試者是否能加速亞馬遜的成長，而重要的判斷基準就是這套領導力準則。</p>
+
+<p>第一關面試會由招募經理進行，人事部也會視情況面試。負責第二關的面試官，都會事先從招聘經理那裡收到以下請託：「一對一面試時，希望特別針對這個重點提問。」這個重點也是 OLP 中的其中一項。</p>
+
+<p>面試官在詳閱履歷表後，便會依照事前收到的要求，思考要發問的問題，與應徵者一對一面試。</p>
+</blockquote>
+
+<p>針對 OLP 的具體提問方式，其實就跟行為面談法的精神相同：</p>
+
+<blockquote>
+<p>亞馬遜的招聘面試非常注重<strong>邏輯</strong>，應該有不少應徵者在面試過程中覺得「被追問到底」。這是因為在面試過程中，面試官必須<strong>具體</strong>的詢問「基於什麼樣的想法，做了什麼事，如何成功的⋯⋯」，並將其<strong>記錄</strong>下來。</p>
+
+<p>不問「這是⋯⋯？」或「是否⋯⋯？」等封閉式問句，而是用 <strong>5W1H</strong> 來提問。</p>
+
+<p>經常有應徵者在履歷表上過度誇耀自己的實績，這時若能深入發掘：「如何思考，並具體採取了什麼行動？」就能不被對方的職稱所動搖，看出應徵者的實力。</p>
+</blockquote>
+
+<p><br/><br/></p>
+
+<p>我從這本書學到，要把行為面談法連繫到企業的核心價值觀。</p>
+
+<p>更重要的是，要自己融會出一套，與核心價值聯繫起來的 STAR 架構，不管是面試還是被面試。</p>
+
+<p>同樣的，這需要操練。</p>
+
+<h2 id="馬拉松">馬拉松</h2>
+
+<p>程天縱在〈<a href="https://tuna.press/?p=9978">自己爬上巨人的肩膀：踏入職場的艱辛旅程</a>〉一文提到：</p>
+
+<blockquote>
+<p>在美國最夢幻的僱主就是「FLAG」四家企業：Facebook 、LinkedIn、Amazon、Google。這四家企業招聘軟體工程師都非常慎重，進入門檻也都非常的高。</p>
+
+<p>這些公司的面試，都要經過四、五輪的電話面試、線上技術測試、視訊面試和測驗，最糟糕的是，時間拖得非常長，前後有長到兩、三個月的。</p>
+</blockquote>
+
+<p>《<a href="https://www.books.com.tw/products/0010811254">Amazon 的人為什麼這麼厲害？</a>》也自嘲：</p>
+
+<blockquote>
+<p>人力仲介業界常說亞馬遜的招聘面試會「搞死仲介」，因為他們向亞馬遜推薦的人才都很難被錄用，所以常會抱怨：「已經不知道該推薦誰才好了」。只不過，我們的想法是「寧缺勿濫」，內部有招聘優秀人才的基本思維及穩健機制。</p>
+
+<p>第一關面試會由招聘經理進行。⋯⋯</p>
+
+<p>第二關面試可以說很有亞馬遜的風格。首先是人數，最多會從公司內部召集五名面試官，皆為其他部門的管理者階層。這群面試官之中，肯定會包含一位稱為「抬桿者」(bar raiser)  <sup class="footnote-ref" id="fnref:3"><a href="#fn:3">3</a></sup> 的人物。第二關面試也是一對一，每次約 40~45 分鐘，最多要進行五場。</p>
+</blockquote>
+
+<p>我並不盲目鼓吹這種過五關斬六將的風格。不過，如果你遇到這樣的機會，請把握，如果這是值得的。</p>
+
+<p>請保持向著標竿直跑的勇氣與耐心吧。</p>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:1">對於軟體架構 kata 感興趣的，請拿 Andrew 的【<a href="https://columns.chicken-house.net/categories/#%E7%B3%BB%E5%88%97%E6%96%87%E7%AB%A0:%20%E6%9E%B6%E6%A7%8B%E9%9D%A2%E8%A9%A6%E9%A1%8C">架構面試題</a>】系列文章來挑戰看看吧！
+ <a class="footnote-return" href="#fnref:1"><sup>[return]</sup></a></li>
+<li id="fn:2">對於<strong>行為面談法</strong> (behavioral interview) 感興趣的，可讀讀知名獵頭 Lynn 所寫的〈<a href="http://www.lynncareers.com/2017/09/behavioralinterview.html">【面試的藝術】行為面試，現正進行中</a>〉一文。
+ <a class="footnote-return" href="#fnref:2"><sup>[return]</sup></a></li>
+<li id="fn:3">「抬桿者」(bar raiser) 是 Amazon 很獨特的用人思維。請參考〈<a href="https://bookzone.cwgv.com.tw/topic/details/6007">亞馬遜如何挑選人才？</a>〉一文。
+ <a class="footnote-return" href="#fnref:3"><sup>[return]</sup></a></li>
+</ol>
+</div>
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">William Yeh</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2019-12-04</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">授權條款</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW" target="_blank">CC BY-NC-SA 4.0</a> (姓名標示-非商業性-相同方式分享 4.0 國際)</span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="//william-yeh.net/tags/interview/">interview</a>
+          <a href="//william-yeh.net/tags/career/">career</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/post/2019/07/k8s-vol-resizing/">
+            <span class="next-text nav-default">Volume Resizing Mechanism in Kubernetes</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+  
+  
+
+  
+  
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= "William-Yeh/utterances-area"
+            issue-term="pathname"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
+  
+
+  
+
+  
+
+  <div class="disqus-comment">
+  <div class="disqus-button" id="load_disqus" onclick="load_disqus()">
+    顯示 Disqus 評論
+  </div>
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_config = function () {
+      this.page.url = "//william-yeh.net/post/2019/12/tech-interview/";
+    };
+    function load_disqus() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'potioneer';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+      $('#load_disqus').remove();
+    };
+  </script>
+  <noscript>Please enable JavaScript to view the
+    <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+  </noscript>
+  
+  </div>
+
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:william.pjyeh@gmail.com" rel="me noopener" class="iconfont icon-email"
+        title="email">
+      </a>
+      <a href="https://twitter.com/william_yeh" rel="me noopener" class="iconfont icon-twitter"
+        title="twitter" target="_blank">
+      </a>
+      <a href="https://www.facebook.com/william.yeh" rel="me noopener" class="iconfont icon-facebook"
+        title="facebook" target="_blank">
+      </a>
+      <a href="https://www.linkedin.com/in/pjyeh/" rel="me noopener" class="iconfont icon-linkedin"
+        title="linkedin" target="_blank">
+      </a>
+      <a href="https://github.com/william-yeh" rel="me noopener" class="iconfont icon-github"
+        title="github" target="_blank">
+      </a>
+      <a href="https://www.slideshare.net/williamyeh" rel="me noopener" class="iconfont icon-coding"
+        title="coding" target="_blank">
+      </a>
+  <a href="//william-yeh.net/index.xml" rel="noopener alternate" type="application/rss&#43;xml" class="iconfont icon-rss"
+    title="rss" target="_blank">
+  </a>
+  </div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+      2015 -
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span><span class="author">
+        William Yeh
+        
+      </span></span>
+
+  
+  
+    <span id="busuanzi_container">
+      访客数/访问量：<span id="busuanzi_value_site_uv"></span>/<span id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+<script type="text/javascript" src="/dist/jane.min.js?v=2.7.0"></script>
+
+
+
+
+
+  
+    <script type="text/javascript" src="/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
