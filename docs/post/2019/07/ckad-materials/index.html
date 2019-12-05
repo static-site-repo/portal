@@ -36,7 +36,7 @@
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.55.6" />
+<meta name="generator" content="Hugo 0.60.1" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2019/07/ckad-materials/" />
@@ -61,9 +61,7 @@
 
 <meta property="og:title" content="CKAD (Certified Kubernetes Application Developer) 相關資料" />
 <meta property="og:description" content="Linux Foundation 旗下的 CNCF (Cloud Native Computing Foundation) 提供兩個與 Kubernetes 相關的個人技術檢定：偏維運的 CKA (Certified Kubernetes Administrator)，以及偏研發的 CKAD (Certified Kubernetes Application Developer)。
-
 其中，CKAD 與我關注的範圍、與我設計的工作坊最接近，便想進一步瞭解它的細節。
-
 
 
 
@@ -79,14 +77,11 @@
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="//william-yeh.net/post/2019/07/ckad-materials/" />
-<meta property="article:published_time" content="2019-07-11T17:00:00&#43;08:00"/>
-<meta property="article:modified_time" content="2019-07-11T17:00:00&#43;08:00"/>
-
+<meta property="article:published_time" content="2019-07-11T17:00:00+08:00" />
+<meta property="article:modified_time" content="2019-07-11T17:00:00+08:00" />
 <meta itemprop="name" content="CKAD (Certified Kubernetes Application Developer) 相關資料">
 <meta itemprop="description" content="Linux Foundation 旗下的 CNCF (Cloud Native Computing Foundation) 提供兩個與 Kubernetes 相關的個人技術檢定：偏維運的 CKA (Certified Kubernetes Administrator)，以及偏研發的 CKAD (Certified Kubernetes Application Developer)。
-
 其中，CKAD 與我關注的範圍、與我設計的工作坊最接近，便想進一步瞭解它的細節。
-
 
 
 
@@ -100,21 +95,16 @@
       
   
 ">
-
-
 <meta itemprop="datePublished" content="2019-07-11T17:00:00&#43;08:00" />
 <meta itemprop="dateModified" content="2019-07-11T17:00:00&#43;08:00" />
-<meta itemprop="wordCount" content="1036">
+<meta itemprop="wordCount" content="1048">
 
 
 
-<meta itemprop="keywords" content="devops,course,kubernetes," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="devops,course,kubernetes," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="CKAD (Certified Kubernetes Application Developer) 相關資料"/>
 <meta name="twitter:description" content="Linux Foundation 旗下的 CNCF (Cloud Native Computing Foundation) 提供兩個與 Kubernetes 相關的個人技術檢定：偏維運的 CKA (Certified Kubernetes Administrator)，以及偏研發的 CKAD (Certified Kubernetes Application Developer)。
-
 其中，CKAD 與我關注的範圍、與我設計的工作坊最接近，便想進一步瞭解它的細節。
-
 
 
 
@@ -341,7 +331,7 @@ if (!doNotTrack) {
             <a href="//william-yeh.net/categories/tech/"> tech </a>
             
           </div>
-        <span class="more-meta"> 約 1036 字 </span>
+        <span class="more-meta"> 約 1048 字 </span>
           <span class="more-meta"> 預計閱讀 3 分鐘 </span>
 
         
@@ -362,15 +352,12 @@ if (!doNotTrack) {
   <h2 class="post-toc-title">文章目錄</h2>
   <div class="post-toc-content">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#實惠的線上課程">實惠的線上課程</a></li>
-<li><a href="#牛刀小試">牛刀小試</a></li>
-<li><a href="#官方文件">官方文件</a></li>
-<li><a href="#前人經驗">前人經驗</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#heading">實惠的線上課程</a></li>
+    <li><a href="#heading1">牛刀小試</a></li>
+    <li><a href="#heading2">官方文件</a></li>
+    <li><a href="#heading3">前人經驗</a></li>
+  </ul>
 </nav>
   </div>
 </div>
@@ -378,9 +365,7 @@ if (!doNotTrack) {
     
     <div class="post-content">
       <p>Linux Foundation 旗下的 <a href="https://www.cncf.io/">CNCF (Cloud Native Computing Foundation)</a> 提供兩個與 Kubernetes 相關的個人技術檢定：偏維運的 <a href="https://www.cncf.io/certification/cka/">CKA (Certified Kubernetes Administrator)</a>，以及偏研發的 <a href="https://www.cncf.io/certification/ckad/">CKAD (Certified Kubernetes Application Developer)</a>。</p>
-
 <p>其中，CKAD 與我關注的範圍、與我設計的工作坊最接近，便想進一步瞭解它的細節。</p>
-
 
 <link rel="stylesheet" href="/css/hugo-easy-gallery.css" />
 <div class="box" style="max-width:15em">
@@ -395,71 +380,53 @@ if (!doNotTrack) {
   </figure>
 </div>
 
-
 <p>根據官方資料，CKAD 的 <a href="https://github.com/cncf/curriculum">curriculum</a> 只有列出檢定考試的主題與比例，並沒有列出具體的應考讀物。目前看到最接近「欽定本」地位的 CKAD 檢定準備教材，就屬 Linux Foundation 製作的 <a href="https://training.linuxfoundation.org/training/kubernetes-for-developers/">LDF259</a> 線上課程了——全長 35 小時，$299 美金。</p>
-
 <p>不過，是否還有其他選擇？</p>
-
-<h2 id="實惠的線上課程">實惠的線上課程</h2>
-
+<h2 id="heading">實惠的線上課程</h2>
 <p>我在 Udemy 找到一份新台幣 $390 的線上課程 <a href="https://www.udemy.com/course/certified-kubernetes-application-developer/">Kubernetes Certified Application Developer (CKAD) with Tests</a>。花十幾分鐘試過它的預覽單元，發現它的內容很扎實，實作練習也很活潑，應該滿適合從實作中學習的人，從過程中發現不足之處，再去找相關資料補強。</p>
-
 <p>即使我對 Kubernetes 已經有一定的掌握程度，也有設計實作教材的能力，但我還是喜歡以它作為配套。</p>
-
 <p>這會是我的 CKAD 首推材料。我建議，即使不購買這份教材，也請花十幾分鐘把它的預覽單元全都走過一遍。</p>
-
-<h2 id="牛刀小試">牛刀小試</h2>
-
-<p>根據 <a href="https://training.linuxfoundation.org/go/cka-ckad-candidate-handbook">CKAD 線上考試規定</a>，應考時，不能使用紙張或數位筆記軟體 <sup class="footnote-ref" id="fnref:1"><a href="#fn:1">1</a></sup>。因此，這場檢定，很大幅度在考核肌肉記憶，以及 <a href="https://kubernetes.io/docs/">kubernetes.io/docs/</a> 官方文件查找能力。</p>
-
+<h2 id="heading1">牛刀小試</h2>
+<p>根據 <a href="https://training.linuxfoundation.org/go/cka-ckad-candidate-handbook">CKAD 線上考試規定</a>，應考時，不能使用紙張或數位筆記軟體 <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>。因此，這場檢定，很大幅度在考核肌肉記憶，以及 <a href="https://kubernetes.io/docs/">kubernetes.io/docs/</a> 官方文件查找能力。</p>
 <p>既然遊戲規則訂成這樣，我們就該先體驗一下這有多麼殘酷。呵。</p>
-
 <p>我建議，如果你曾經有過一點點 Kubernetes 經驗，此刻，請先去 <a href="https://github.com/dgkanatsios/CKAD-exercises">dgkanatsios/CKAD-exercises</a> 挑戰看看你的肌肉記憶。儘管這不是官方釋出的模擬試題，但牛刀小試一番，接受洗禮，或是打擊，總是好的。</p>
-
-<h2 id="官方文件">官方文件</h2>
-
+<h2 id="heading2">官方文件</h2>
 <p>經過以上的洗禮，知道自己不足之處，就可以開始啟動特訓之旅。</p>
-
-<p>根據 <a href="https://training.linuxfoundation.org/go/cka-ckad-candidate-handbook">CKAD 線上考試規定</a>，應考時，你不能向 Google 求助；你能用瀏覽器查找的文件，只有 Kubernetes 官方文件 <sup class="footnote-ref" id="fnref:2"><a href="#fn:2">2</a></sup>。</p>
-
+<p>根據 <a href="https://training.linuxfoundation.org/go/cka-ckad-candidate-handbook">CKAD 線上考試規定</a>，應考時，你不能向 Google 求助；你能用瀏覽器查找的文件，只有 Kubernetes 官方文件 <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>。</p>
 <p>因此，請盡快熟悉以下幾個限定的參考資料來源：</p>
-
 <ul>
 <li><a href="https://kubernetes.io/docs/">https://kubernetes.io/docs/</a></li>
 <li><a href="https://github.com/kubernetes/">https://github.com/kubernetes/</a></li>
 <li><a href="https://kubernetes.io/blog/">https://kubernetes.io/blog/</a></li>
 </ul>
-
 <p>也請從現在開始自我要求，不論在其他任何地方看到的資料，都請務必回到以上官方欽定的參考資料所在地，逐一找出可與之對應的關鍵字、章節、語法規格、範例。</p>
-
 <p>這是 CKAD 應考時，你唯一的浮木舟。即使你並未志在 CKAD，這仍然是很好的習慣。</p>
-
-<h2 id="前人經驗">前人經驗</h2>
-
+<h2 id="heading3">前人經驗</h2>
 <p>有了以上的心理建設，接下來，就可以用健康心態欣賞一下前人的經驗：</p>
-
 <ul>
-<li><p><a href="https://ottodeng.io/post/ckad-exam/">CKAD Exam</a> on Jul 9, 2018.</p></li>
-
-<li><p><a href="https://medium.com/@ikaboubi/my-feedback-about-cka-and-ckad-e82a35585fe9">My Feedback about CKA and CKAD</a> on Jun 4, 2018.</p></li>
-
-<li><p><a href="https://medium.com/chotot/tips-tricks-to-pass-certified-kubernetes-application-developer-ckad-exam-67c9e1b32e6e">Tips to pass Certified Kubernetes Application Developer (CKAD) exam</a> on Dec 15, 2018.</p></li>
+<li>
+<p><a href="https://ottodeng.io/post/ckad-exam/">CKAD Exam</a> on Jul 9, 2018.</p>
+</li>
+<li>
+<p><a href="https://medium.com/@ikaboubi/my-feedback-about-cka-and-ckad-e82a35585fe9">My Feedback about CKA and CKAD</a> on Jun 4, 2018.</p>
+</li>
+<li>
+<p><a href="https://medium.com/chotot/tips-tricks-to-pass-certified-kubernetes-application-developer-ckad-exam-67c9e1b32e6e">Tips to pass Certified Kubernetes Application Developer (CKAD) exam</a> on Dec 15, 2018.</p>
+</li>
 </ul>
-
-<p><br><br></p>
-
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <p>感謝你花了幾分鐘，讀完由一位沒參加過 CKAD 的人所整理的這篇文章。</p>
-<div class="footnotes">
-
-<hr />
-
+<section class="footnotes" role="doc-endnotes">
+<hr>
 <ol>
-<li id="fn:1"><a href="https://training.linuxfoundation.org/go/cka-ckad-candidate-handbook">CKA/CKAD Candidate Handbook</a> v1.20 提到：“The following resources are forbidden during the exam: Use of devices other than the exam desktop; Notes;  Documentation; Notepads (other than what’s provided within the exam browser tab); Course manuals [&hellip;]”
- <a class="footnote-return" href="#fnref:1"><sup>[return]</sup></a></li>
-<li id="fn:2"><a href="https://training.linuxfoundation.org/go/cka-ckad-candidate-handbook">CKA/CKAD Candidate Handbook</a> v1.20 提到：“You are permitted to use your Chrome or Chromium browser to open one additional tab in order to access assets at <a href="https://kubernetes.io/docs/">https://kubernetes.io/docs/</a> and its subdomain, <a href="https://github.com/kubernetes/">https://github.com/kubernetes/</a> and its subdomains, or <a href="https://kubernetes.io/blog/">https://kubernetes.io/blog/</a>. No other tabs may be opened and no other sites may be navigated to. The allowed sites above may contain links that point to external sites. It is the responsibility of the candidate not to click on any links that cause them to navigate to a domain that is not allowed.”
- <a class="footnote-return" href="#fnref:2"><sup>[return]</sup></a></li>
+<li id="fn:1" role="doc-endnote">
+<p><a href="https://training.linuxfoundation.org/go/cka-ckad-candidate-handbook">CKA/CKAD Candidate Handbook</a> v1.20 提到：“The following resources are forbidden during the exam: Use of devices other than the exam desktop; Notes;  Documentation; Notepads (other than what’s provided within the exam browser tab); Course manuals [&hellip;]”<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#8617;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p><a href="https://training.linuxfoundation.org/go/cka-ckad-candidate-handbook">CKA/CKAD Candidate Handbook</a> v1.20 提到：“You are permitted to use your Chrome or Chromium browser to open one additional tab in order to access assets at <a href="https://kubernetes.io/docs/">https://kubernetes.io/docs/</a> and its subdomain, <a href="https://github.com/kubernetes/">https://github.com/kubernetes/</a> and its subdomains, or <a href="https://kubernetes.io/blog/">https://kubernetes.io/blog/</a>. No other tabs may be opened and no other sites may be navigated to. The allowed sites above may contain links that point to external sites. It is the responsibility of the candidate not to click on any links that cause them to navigate to a domain that is not allowed.”<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#8617;</a></p>
+</li>
 </ol>
-</div>
+</section>
     </div>
 
     

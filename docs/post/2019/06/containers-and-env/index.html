@@ -25,7 +25,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="William Yeh" />
-  <meta name="description" content="My previous article &amp;ldquo;Inotify in Containers&amp;rdquo; has demonstrated that when ConfigMap is mounted as directories, any changes in the ConfigMap will propagate to related pods. A follow-up question might be: what if the ConfigMap is mounted as environment variables? Some said that the answer is NO in Kubernetes1; even in the old Docker world2. Therefore, I&amp;rsquo;d like to begin with a simple experiment to try to answer the question: After" />
+  <meta name="description" content="My previous article &amp;ldquo;Inotify in Containers&amp;rdquo; has demonstrated that when ConfigMap is mounted as directories, any changes in the ConfigMap will propagate to related pods. A follow-up question might be: what if the ConfigMap is mounted as environment variables? Some said that the answer is NO in Kubernetes1; even in the old Docker world2. Therefore, I&#39;d like to begin with a simple experiment to try to answer the question: After" />
 
 
 
@@ -33,7 +33,7 @@
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.55.6" />
+<meta name="generator" content="Hugo 0.60.1" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2019/06/containers-and-env/" />
@@ -57,26 +57,22 @@
 
 
 <meta property="og:title" content="Containers and Environment Variables" />
-<meta property="og:description" content="My previous article &ldquo;Inotify in Containers&rdquo; has demonstrated that when ConfigMap is mounted as directories, any changes in the ConfigMap will propagate to related pods. A follow-up question might be: what if the ConfigMap is mounted as environment variables? Some said that the answer is NO in Kubernetes1; even in the old Docker world2. Therefore, I&rsquo;d like to begin with a simple experiment to try to answer the question: After" />
+<meta property="og:description" content="My previous article &ldquo;Inotify in Containers&rdquo; has demonstrated that when ConfigMap is mounted as directories, any changes in the ConfigMap will propagate to related pods. A follow-up question might be: what if the ConfigMap is mounted as environment variables? Some said that the answer is NO in Kubernetes1; even in the old Docker world2. Therefore, I&#39;d like to begin with a simple experiment to try to answer the question: After" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="//william-yeh.net/post/2019/06/containers-and-env/" />
-<meta property="article:published_time" content="2019-06-17T14:00:00&#43;08:00"/>
-<meta property="article:modified_time" content="2019-06-17T14:00:00&#43;08:00"/>
-
+<meta property="article:published_time" content="2019-06-17T14:00:00+08:00" />
+<meta property="article:modified_time" content="2019-06-17T14:00:00+08:00" />
 <meta itemprop="name" content="Containers and Environment Variables">
-<meta itemprop="description" content="My previous article &ldquo;Inotify in Containers&rdquo; has demonstrated that when ConfigMap is mounted as directories, any changes in the ConfigMap will propagate to related pods. A follow-up question might be: what if the ConfigMap is mounted as environment variables? Some said that the answer is NO in Kubernetes1; even in the old Docker world2. Therefore, I&rsquo;d like to begin with a simple experiment to try to answer the question: After">
-
-
+<meta itemprop="description" content="My previous article &ldquo;Inotify in Containers&rdquo; has demonstrated that when ConfigMap is mounted as directories, any changes in the ConfigMap will propagate to related pods. A follow-up question might be: what if the ConfigMap is mounted as environment variables? Some said that the answer is NO in Kubernetes1; even in the old Docker world2. Therefore, I&#39;d like to begin with a simple experiment to try to answer the question: After">
 <meta itemprop="datePublished" content="2019-06-17T14:00:00&#43;08:00" />
 <meta itemprop="dateModified" content="2019-06-17T14:00:00&#43;08:00" />
-<meta itemprop="wordCount" content="205">
+<meta itemprop="wordCount" content="210">
 
 
 
-<meta itemprop="keywords" content="devops,docker,kubernetes,configmap," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="devops,docker,kubernetes,configmap," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Containers and Environment Variables"/>
-<meta name="twitter:description" content="My previous article &ldquo;Inotify in Containers&rdquo; has demonstrated that when ConfigMap is mounted as directories, any changes in the ConfigMap will propagate to related pods. A follow-up question might be: what if the ConfigMap is mounted as environment variables? Some said that the answer is NO in Kubernetes1; even in the old Docker world2. Therefore, I&rsquo;d like to begin with a simple experiment to try to answer the question: After"/>
+<meta name="twitter:description" content="My previous article &ldquo;Inotify in Containers&rdquo; has demonstrated that when ConfigMap is mounted as directories, any changes in the ConfigMap will propagate to related pods. A follow-up question might be: what if the ConfigMap is mounted as environment variables? Some said that the answer is NO in Kubernetes1; even in the old Docker world2. Therefore, I&#39;d like to begin with a simple experiment to try to answer the question: After"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -290,7 +286,7 @@ if (!doNotTrack) {
             <a href="//william-yeh.net/categories/tech/"> tech </a>
             
           </div>
-        <span class="more-meta"> 約 205 字 </span>
+        <span class="more-meta"> 約 210 字 </span>
           <span class="more-meta"> 預計閱讀 1 分鐘 </span>
 
         
@@ -311,45 +307,31 @@ if (!doNotTrack) {
     
     <div class="post-content">
       <p>My previous article &ldquo;<a href="//william-yeh.net/post/2019/06/inotify-in-containers/">Inotify in Containers</a>&rdquo; has demonstrated that when ConfigMap is mounted as <em>directories</em>, any changes in the ConfigMap will propagate to related pods.</p>
-
 <p>A follow-up question might be: what if the ConfigMap is mounted as <em>environment variables</em>?</p>
-
-<p>Some said that the answer is NO in Kubernetes<sup class="footnote-ref" id="fnref:1"><a href="#fn:1">1</a></sup>; even in the old Docker world<sup class="footnote-ref" id="fnref:2"><a href="#fn:2">2</a></sup>.  Therefore, I&rsquo;d like to begin with a simple experiment to try to answer the question: After a container starts, will it see any changes of environment variables?</p>
-
-<p>The experiment material is available at <a href="https://github.com/William-Yeh/container-and-env">https://github.com/William-Yeh/container-and-env</a> , and here&rsquo;s a simple demo:</p>
-
-<p><a href="https://asciinema.org/a/252073"><img src="https://asciinema.org/a/252073.svg" alt="asciicast" /></a></p>
-
+<p>Some said that the answer is NO in Kubernetes<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>; even in the old Docker world<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>.  Therefore, I'd like to begin with a simple experiment to try to answer the question: After a container starts, will it see any changes of environment variables?</p>
+<p>The experiment material is available at <a href="https://github.com/William-Yeh/container-and-env">https://github.com/William-Yeh/container-and-env</a> , and here's a simple demo:</p>
+<p><a href="https://asciinema.org/a/252073"><img src="https://asciinema.org/a/252073.svg" alt="asciicast"></a></p>
 <p>It is obvious in the demo that the changes of environment variables will not affect already-running processes inside the containers &mdash; let alone pods in the Kubernetes world.</p>
-
 <p>To simply put, if you want ConfigMap to propagate its changes to related pods, mount the ConfigMap as <em>directories</em>, not <em>environment variables</em>.</p>
-
-<div class="shortcode-notice note">
-  <div class="shortcode-notice-title note">
-    
-      Series of Articles
-    
-  </div>
-  
-
+<!-- raw HTML omitted -->
+<pre><code>  Series of Articles
+</code></pre>
+<!-- raw HTML omitted -->
 <p>❶ <a href="//william-yeh.net/post/2019/06/inotify-in-containers/">Inotify in Containers</a></p>
-
 <p>❷ Containers and Environment Variables</p>
-
 <p>➌ <a href="//william-yeh.net/post/2019/06/autoreload-from-configmap/">Auto-Reload from ConfigMap</a></p>
-
-<p></div></p>
-<div class="footnotes">
-
-<hr />
-
+<!-- raw HTML omitted -->
+<section class="footnotes" role="doc-endnotes">
+<hr>
 <ol>
-<li id="fn:1">An analysis of ConfigMap hot-reload can be found in the article by Jimmy Song: “<a href="https://jimmysong.io/kubernetes-handbook/concepts/configmap-hot-update.html">ConfigMap 的热更新</a>”.
- <a class="footnote-return" href="#fnref:1"><sup>[return]</sup></a></li>
-<li id="fn:2">A good Q&amp;A in Stack Overflow: <a href="https://stackoverflow.com/a/54412751/714426">Reload configuration when env variable has changed</a>.
- <a class="footnote-return" href="#fnref:2"><sup>[return]</sup></a></li>
+<li id="fn:1" role="doc-endnote">
+<p>An analysis of ConfigMap hot-reload can be found in the article by Jimmy Song: “<a href="https://jimmysong.io/kubernetes-handbook/concepts/configmap-hot-update.html">ConfigMap 的热更新</a>”.<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#8617;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p>A good Q&amp;A in Stack Overflow: <a href="https://stackoverflow.com/a/54412751/714426">Reload configuration when env variable has changed</a>.<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#8617;</a></p>
+</li>
 </ol>
-</div>
+</section>
 
     </div>
 

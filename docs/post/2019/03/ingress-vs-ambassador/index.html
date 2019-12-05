@@ -36,7 +36,7 @@
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.55.6" />
+<meta name="generator" content="Hugo 0.60.1" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2019/03/ingress-vs-ambassador/" />
@@ -61,36 +61,26 @@
 
 <meta property="og:title" content="Nginx Ingress 與 Ambassador 簡易性能比較" />
 <meta property="og:description" content="API gateway 是微服務環境，甚至 service mesh 的要角 1。
-
 在 Kubernetes 上面，API gateway 選項眾多。有像 HAProxy 及 Nginx 這些石器時代老傢伙跨足過來，也有打從一開始就走 cloud native 路線的後起之秀。
-
 該如何選擇？" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="//william-yeh.net/post/2019/03/ingress-vs-ambassador/" />
-<meta property="article:published_time" content="2019-03-29T23:00:00&#43;08:00"/>
-<meta property="article:modified_time" content="2019-03-29T23:00:00&#43;08:00"/>
-
+<meta property="article:published_time" content="2019-03-29T23:00:00+08:00" />
+<meta property="article:modified_time" content="2019-03-29T23:00:00+08:00" />
 <meta itemprop="name" content="Nginx Ingress 與 Ambassador 簡易性能比較">
 <meta itemprop="description" content="API gateway 是微服務環境，甚至 service mesh 的要角 1。
-
 在 Kubernetes 上面，API gateway 選項眾多。有像 HAProxy 及 Nginx 這些石器時代老傢伙跨足過來，也有打從一開始就走 cloud native 路線的後起之秀。
-
 該如何選擇？">
-
-
 <meta itemprop="datePublished" content="2019-03-29T23:00:00&#43;08:00" />
 <meta itemprop="dateModified" content="2019-03-29T23:00:00&#43;08:00" />
-<meta itemprop="wordCount" content="1406">
+<meta itemprop="wordCount" content="1430">
 
 
 
-<meta itemprop="keywords" content="devops,kubernetes,microservices,service mesh," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="devops,kubernetes,microservices,service mesh," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Nginx Ingress 與 Ambassador 簡易性能比較"/>
 <meta name="twitter:description" content="API gateway 是微服務環境，甚至 service mesh 的要角 1。
-
 在 Kubernetes 上面，API gateway 選項眾多。有像 HAProxy 及 Nginx 這些石器時代老傢伙跨足過來，也有打從一開始就走 cloud native 路線的後起之秀。
-
 該如何選擇？"/>
 
 <!--[if lte IE 9]>
@@ -305,7 +295,7 @@ if (!doNotTrack) {
             <a href="//william-yeh.net/categories/tech/"> tech </a>
             
           </div>
-        <span class="more-meta"> 約 1406 字 </span>
+        <span class="more-meta"> 約 1430 字 </span>
           <span class="more-meta"> 預計閱讀 3 分鐘 </span>
 
         
@@ -326,99 +316,70 @@ if (!doNotTrack) {
   <h2 class="post-toc-title">文章目錄</h2>
   <div class="post-toc-content">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#實驗環境">實驗環境</a></li>
-<li><a href="#nginx-ingress">Nginx ingress</a></li>
-<li><a href="#ambassador">Ambassador</a></li>
-<li><a href="#簡單的壓測">簡單的壓測</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#heading">實驗環境</a></li>
+    <li><a href="#nginx-ingress">Nginx ingress</a></li>
+    <li><a href="#ambassador">Ambassador</a></li>
+    <li><a href="#heading1">簡單的壓測</a></li>
+  </ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      <p>API gateway 是微服務環境，甚至 service mesh 的要角 <sup class="footnote-ref" id="fnref:1"><a href="#fn:1">1</a></sup>。</p>
-
+      <p>API gateway 是微服務環境，甚至 service mesh 的要角 <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>。</p>
 <p>在 Kubernetes 上面，API gateway 選項眾多。有像 HAProxy 及 Nginx 這些石器時代老傢伙跨足過來，也有打從一開始就走 cloud native 路線的後起之秀。</p>
-
 <p>該如何選擇？</p>
-
 <p>根據 Steven Acreman 寫的 <a href="https://kubedex.com/ingress/">Ingress 評比文章</a>的看法：</p>
-
 <blockquote>
 <p><em>The safest choice is <a href="https://kubernetes.github.io/ingress-nginx/">ingress-nginx</a></em>. This is the one that most people use and it’s extremely reliable. Before you begin I’d recommend you read this blog to get ahead of some of the problems you may encounter.</p>
-
 <p><em>My vote for the coolest ingress definitely goes to <a href="https://www.getambassador.io/">Ambassador</a>.</em>  If you’re just running standard http based micro services and fancy living on the bleeding edge then you should definitely get Istio, Ambassador and Jaeger setup as a proof of concept.</p>
 </blockquote>
-
-<p>進一步研讀 Ambassador 相關資料 <sup class="footnote-ref" id="fnref:2"><a href="#fn:2">2</a></sup>，發現他們鎖定的 service mesh 路線很合我的胃口，站在 <a href="https://www.envoyproxy.io/">Envoy</a> 巨人肩膀上更是聰明。不過，理論歸理論，我想親自試試看現在的 Ambassador 是否堪當大任？</p>
-
+<p>進一步研讀 Ambassador 相關資料 <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>，發現他們鎖定的 service mesh 路線很合我的胃口，站在 <a href="https://www.envoyproxy.io/">Envoy</a> 巨人肩膀上更是聰明。不過，理論歸理論，我想親自試試看現在的 Ambassador 是否堪當大任？</p>
 <p>初步，我只先拿 <a href="https://kubernetes.github.io/ingress-nginx/">ingress-nginx</a> 這個所謂的 “the safest choice” 作簡單的性能比較。將來有機會再進行更徹底的 chaos monkey 測試。</p>
-
-<h2 id="實驗環境">實驗環境</h2>
-
+<h2 id="heading">實驗環境</h2>
 <p>為了簡化實驗步驟，我直接採用 Google Cloud Platform 的 <a href="https://cloud.google.com/kubernetes-engine/">GKE</a>。</p>
-
 <ul>
-<li><p>Kubernetes 版本：1.11.7-gke.12</p></li>
-
-<li><p>Node：2 台 <a href="https://cloud.google.com/compute/docs/machine-types#standard_machine_types">n1-standard-1</a></p></li>
+<li>
+<p>Kubernetes 版本：1.11.7-gke.12</p>
+</li>
+<li>
+<p>Node：2 台 <a href="https://cloud.google.com/compute/docs/machine-types#standard_machine_types">n1-standard-1</a></p>
+</li>
 </ul>
-
 <p>我選用的標靶軟體是 <a href="https://github.com/GoogleCloudPlatform/kubernetes-engine-samples/tree/master/hello-app">hello-app</a>，分別用以下兩種 API gateway 來對外提供服務介面：</p>
-
 <ul>
-<li><p>Nginx ingress 版本：0.23.0</p></li>
-
-<li><p>Ambassador 版本：0.52.0</p></li>
+<li>
+<p>Nginx ingress 版本：0.23.0</p>
+</li>
+<li>
+<p>Ambassador 版本：0.52.0</p>
+</li>
 </ul>
-
 <p>最後，我利用 <a href="https://github.com/William-Yeh/docker-boom">boom</a> 進行簡單的壓力測試。</p>
-
 <h2 id="nginx-ingress">Nginx ingress</h2>
-
 <p>為了簡單起見，我直接套用以下這份 Qwiklabs 的全部步驟：</p>
-
 <ul>
 <li><a href="https://www.qwiklabs.com/focuses/872?parent=catalog">GSP181 - NGINX Ingress Controller on Google Kubernetes Engine</a></li>
 </ul>
-
 <p>照著做完後，Nginx ingress 會在 GKE 開放一個公開的 http 服務存取點。</p>
-
 <p>我們可以先用 <code>kubectl get services</code> 查看 API gateway 的 public IP 位址。假設是 <code>35.222.12.84</code> 的話，這個服務路徑則是 <code>http://35.222.12.84/hello/</code>。</p>
-
 <h2 id="ambassador">Ambassador</h2>
-
 <p>首先，仿造前面的 Qwiklabs 步驟，在 GKE 上建立起相同規模的 k8s cluster。也執行一份 <a href="https://gist.githubusercontent.com/William-Yeh/0aab709e450b4442614ef87b0250260b/raw/daba0ba7e6b5561ec9af51a3ea020c79e572e34e/hello-app-service.yaml">hello-app service</a>。</p>
-
 <p>為了安裝 Ambassador，我們需要開啟 GKE 權限：</p>
-
 <div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">% kubectl create clusterrolebinding my-cluster-admin-binding  \
     --clusterrole=cluster-admin  \
     --user=$(gcloud info --format=&#34;value(config.account)&#34;)</code></pre></div>
-
 <p>接下來，就是正常的 Ambassador 安裝步驟：</p>
-
 <div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">% kubectl create -f http://bit.ly/2UmsPuE</code></pre></div>
-
 <p>此刻，我們終於可以透過 Ambassador，替 hello-app 設定 API gateway 規則：</p>
-
 <div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">% kubectl create -f https://bit.ly/2YyZzjO</code></pre></div>
-
 <p>照著做完後，Ambassador 會在 GKE 開放一個公開的 http 服務存取點。</p>
-
 <p>我們可以先用 <code>kubectl get services</code> 查看 API gateway 的 public IP 位址。假設是 <code>35.224.99.169</code> 的話，這個服務路徑則是 <code>http://35.224.99.169/hello2/</code>。</p>
-
-<h2 id="簡單的壓測">簡單的壓測</h2>
-
+<h2 id="heading1">簡單的壓測</h2>
 <p>為了簡單起見，我在 GCP 的 <a href="https://cloud.google.com/shell/?hl=zh-tw">Cloud Shell</a> 進行壓測。我會對 Nginx ingress 及 Ambassador 兩種情況，各送出一萬個 API 存取要求。</p>
-
 <p>針對 Nginx ingress 的情況進行測試：</p>
-
 <div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">% docker run --rm  williamyeh/boom  \
     -n 10000 -c 100  http://35.222.12.84/hello/
 
@@ -455,9 +416,7 @@ Latency distribution:
   90% in 0.1632 secs
   95% in 0.1661 secs
   99% in 0.3152 secs</code></pre></div>
-
 <p>針對 Ambassador 的情況進行測試：</p>
-
 <div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">% docker run --rm  williamyeh/boom  \
     -n 10000 -c 100  http://35.224.99.169/hello2/
 
@@ -494,25 +453,25 @@ Latency distribution:
   90% in 0.1717 secs
   95% in 0.1786 secs
   99% in 0.3596 secs</code></pre></div>
-
-<p>儘管不夠嚴謹，但仍可以約略看出 Ambassador 的性能已經逼近 Nginx ingress。以才兩歲半的 Envoy <sup class="footnote-ref" id="fnref:3"><a href="#fn:3">3</a></sup>、才滿兩歲的 Ambassador <sup class="footnote-ref" id="fnref:4"><a href="#fn:4">4</a></sup> 來說，已經很不容易了。</p>
-
+<p>儘管不夠嚴謹，但仍可以約略看出 Ambassador 的性能已經逼近 Nginx ingress。以才兩歲半的 Envoy <sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>、才滿兩歲的 Ambassador <sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup> 來說，已經很不容易了。</p>
 <p>這是一個值得開始嘗試的好物。</p>
-<div class="footnotes">
-
-<hr />
-
+<section class="footnotes" role="doc-endnotes">
+<hr>
 <ol>
-<li id="fn:1">對於 API gateway 來龍去脈感興趣的，可參考 Ricky 的文章〈<a href="https://rickhw.github.io/2018/01/24/AWS/Study-Notes-Overview-API-Gateway/">Overview API Gateway</a>〉、Andrew 的文章〈<a href="https://columns.chicken-house.net/2017/07/11/microservice8-case-study-p3/">架構師觀點 - 轉移到微服務架構的經驗分享 (Part 3)</a>〉。
- <a class="footnote-return" href="#fnref:1"><sup>[return]</sup></a></li>
-<li id="fn:2">對於 Ambassador 早期發展歷程感興趣的，可參考他們寫的這兩篇文章：“<a href="https://medium.com/@datawire/building-ambassador-an-open-source-api-gateway-on-kubernetes-and-envoy-33637a9fa6f8">Building Ambassador, an Open Source API Gateway on Kubernetes and Envoy</a>” 及 “<a href="https://blog.getambassador.io/kubernetes-ingress-nodeport-load-balancers-and-ingress-controllers-6e29f1c44f2d">Kubernetes Ingress 101: NodePort, Load Balancers, and Ingress Controllers</a>”。
- <a class="footnote-return" href="#fnref:2"><sup>[return]</sup></a></li>
-<li id="fn:3">Envoy <a href="https://github.com/envoyproxy/envoy/tree/v1.0.0">1.0.0 版</a>發布日期為 2016 年 9 月。
- <a class="footnote-return" href="#fnref:3"><sup>[return]</sup></a></li>
-<li id="fn:4">Ambassador <a href="https://github.com/datawire/ambassador/blob/master/CHANGELOG.md">0.1.3 版</a>發布日期為 2017 年 3 月。
- <a class="footnote-return" href="#fnref:4"><sup>[return]</sup></a></li>
+<li id="fn:1" role="doc-endnote">
+<p>對於 API gateway 來龍去脈感興趣的，可參考 Ricky 的文章〈<a href="https://rickhw.github.io/2018/01/24/AWS/Study-Notes-Overview-API-Gateway/">Overview API Gateway</a>〉、Andrew 的文章〈<a href="https://columns.chicken-house.net/2017/07/11/microservice8-case-study-p3/">架構師觀點 - 轉移到微服務架構的經驗分享 (Part 3)</a>〉。<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#8617;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p>對於 Ambassador 早期發展歷程感興趣的，可參考他們寫的這兩篇文章：“<a href="https://medium.com/@datawire/building-ambassador-an-open-source-api-gateway-on-kubernetes-and-envoy-33637a9fa6f8">Building Ambassador, an Open Source API Gateway on Kubernetes and Envoy</a>” 及 “<a href="https://blog.getambassador.io/kubernetes-ingress-nodeport-load-balancers-and-ingress-controllers-6e29f1c44f2d">Kubernetes Ingress 101: NodePort, Load Balancers, and Ingress Controllers</a>”。<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#8617;</a></p>
+</li>
+<li id="fn:3" role="doc-endnote">
+<p>Envoy <a href="https://github.com/envoyproxy/envoy/tree/v1.0.0">1.0.0 版</a>發布日期為 2016 年 9 月。<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#8617;</a></p>
+</li>
+<li id="fn:4" role="doc-endnote">
+<p>Ambassador <a href="https://github.com/datawire/ambassador/blob/master/CHANGELOG.md">0.1.3 版</a>發布日期為 2017 年 3 月。<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#8617;</a></p>
+</li>
 </ol>
-</div>
+</section>
     </div>
 
     

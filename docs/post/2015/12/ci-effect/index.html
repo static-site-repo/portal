@@ -25,7 +25,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="William Yeh" />
-  <meta name="description" content="前天我的文章〈CI 是條不歸路〉提到：「CI/CD/DevOps 既是條不歸路，更是大躍進之路：一旦踏出第一步，就注定你會不斷接觸『遠離平庸』的" />
+  <meta name="description" content="前天我的文章〈CI 是條不歸路〉提到：「CI/CD/DevOps 既是條不歸路，更是大躍進之路：一旦踏出第一步，就注定你會不斷接觸**『遠離平庸" />
 
 
 
@@ -33,7 +33,7 @@
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.55.6" />
+<meta name="generator" content="Hugo 0.60.1" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2015/12/ci-effect/" />
@@ -57,26 +57,22 @@
 
 
 <meta property="og:title" content="CI 怎樣帶你遠離平庸？" />
-<meta property="og:description" content="前天我的文章〈CI 是條不歸路〉提到：「CI/CD/DevOps 既是條不歸路，更是大躍進之路：一旦踏出第一步，就注定你會不斷接觸『遠離平庸』的" />
+<meta property="og:description" content="前天我的文章〈CI 是條不歸路〉提到：「CI/CD/DevOps 既是條不歸路，更是大躍進之路：一旦踏出第一步，就注定你會不斷接觸**『遠離平庸" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="//william-yeh.net/post/2015/12/ci-effect/" />
-<meta property="article:published_time" content="2015-12-22T08:00:00&#43;08:00"/>
-<meta property="article:modified_time" content="2015-12-22T08:00:00&#43;08:00"/>
-
+<meta property="article:published_time" content="2015-12-22T08:00:00+08:00" />
+<meta property="article:modified_time" content="2015-12-22T08:00:00+08:00" />
 <meta itemprop="name" content="CI 怎樣帶你遠離平庸？">
-<meta itemprop="description" content="前天我的文章〈CI 是條不歸路〉提到：「CI/CD/DevOps 既是條不歸路，更是大躍進之路：一旦踏出第一步，就注定你會不斷接觸『遠離平庸』的">
-
-
+<meta itemprop="description" content="前天我的文章〈CI 是條不歸路〉提到：「CI/CD/DevOps 既是條不歸路，更是大躍進之路：一旦踏出第一步，就注定你會不斷接觸**『遠離平庸">
 <meta itemprop="datePublished" content="2015-12-22T08:00:00&#43;08:00" />
 <meta itemprop="dateModified" content="2015-12-22T08:00:00&#43;08:00" />
-<meta itemprop="wordCount" content="1735">
+<meta itemprop="wordCount" content="1743">
 
 
 
-<meta itemprop="keywords" content="agile,devops,ci,testing,ansible,docker," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="agile,devops,ci,testing,ansible,docker," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="CI 怎樣帶你遠離平庸？"/>
-<meta name="twitter:description" content="前天我的文章〈CI 是條不歸路〉提到：「CI/CD/DevOps 既是條不歸路，更是大躍進之路：一旦踏出第一步，就注定你會不斷接觸『遠離平庸』的"/>
+<meta name="twitter:description" content="前天我的文章〈CI 是條不歸路〉提到：「CI/CD/DevOps 既是條不歸路，更是大躍進之路：一旦踏出第一步，就注定你會不斷接觸**『遠離平庸"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -290,7 +286,7 @@ if (!doNotTrack) {
             <a href="//william-yeh.net/categories/tech/"> Tech </a>
             
           </div>
-        <span class="more-meta"> 約 1735 字 </span>
+        <span class="more-meta"> 約 1743 字 </span>
           <span class="more-meta"> 預計閱讀 4 分鐘 </span>
 
         
@@ -310,34 +306,20 @@ if (!doNotTrack) {
 
     
     <div class="post-content">
-      
-
-<p>前天我的文章〈<a href="//william-yeh.net/post/2015/12/ci-no-turning-back/">CI 是條不歸路</a>〉提到：「CI/CD/DevOps 既是條不歸路，更是大躍進之路：一旦踏出第一步，就注定你會不斷接觸<strong>『遠離平庸』</strong>的新觀點、新技術。」</p>
-
+      <p>前天我的文章〈<a href="//william-yeh.net/post/2015/12/ci-no-turning-back/">CI 是條不歸路</a>〉提到：「CI/CD/DevOps 既是條不歸路，更是大躍進之路：一旦踏出第一步，就注定你會不斷接觸**『遠離平庸』**的新觀點、新技術。」</p>
 <p>為了避免陳義過高，這篇文章就來講一個具體的軟體研發故事吧。</p>
-
-<h2 id="護城河">護城河</h2>
-
+<h2 id="heading">護城河</h2>
 <p>我用 Ansible，也用 <a href="https://prometheus.io/">Prometheus</a>，因此，我寫了一個 Ansible role <a href="https://github.com/William-Yeh/ansible-prometheus"><code>williamyeh.prometheus</code></a> 來安裝 Prometheus。</p>
-
 <p>上個禮拜，我隱約覺得對它感興趣的人似乎變多了，便好奇的去 GitHub 後台調數據來看，發現：</p>
-
 <blockquote>
 <p>原來是被 Prometheus 官網列入 &ldquo;<a href="http://prometheus.io/docs/introduction/install/#using-configuration-management-systems">Using configuration management systems</a>&rdquo; 清單了，難怪最近 PR 變多，品質更是超越其他幾家 CM 的例子。</p>
-
 <p>&mdash; Quote: <a href="https://twitter.com/william_yeh/status/676897832071241728">2015-12-16 Tweet</a></p>
 </blockquote>
-
 <p>被 Prometheus 官方欽點了，能見度提高了，就表示，三不五時會有人提出 bug report，提出 feature request；甚至更勤勞一點的，可能直接就會送出 PR (pull request)。</p>
-
 <p>面對 PR，其實要花很大的力氣去檢驗：檢驗對錯，檢驗風格，甚至 <a href="https://en.wikipedia.org/wiki/The_Mythical_Man-Month#Conceptual_integrity">conceptual integrity</a>（語出《<a href="https://en.wikipedia.org/wiki/The_Mythical_Man-Month">人月神話</a>》）。而且，對方既然已經很勤勞的送出 PR 了，他會預期你高度重視他的提案。</p>
-
 <p>我需要一道<strong>護城河</strong>，讓我不必每次都事必躬親，回應每一則 PR。</p>
-
 <p>所幸我早就建立好<strong>個人的 discipline</strong>：要替自己寫的 Ansible role 加上 CI。即使只是做一點點小小的 smoke test，總是聊勝於無。</p>
-
 <p>CI 是<strong>高度客觀中立</strong>、<strong>不帶感情</strong>的守門員。它，幫我初步過濾一些攸關對錯、風格的 PR。於是，我可以優先禮貌性回應已經被 CI 初步打勾放行的 PR；至於被打叉叉的，那就<del>謝謝再聯絡</del>等有充裕時間精力時再說：</p>
-
 
 <link rel="stylesheet" href="/css/hugo-easy-gallery.css" />
 <div class="box" >
@@ -352,21 +334,13 @@ if (!doNotTrack) {
   </figure>
 </div>
 
-
 <p>CI，小小的投資，大大的省事。</p>
-
-<h2 id="當-ansible-遇見-docker">當 Ansible 遇見 Docker</h2>
-
+<h2 id="-ansible--docker">當 Ansible 遇見 Docker</h2>
 <p>個人還有另一項執念：自己寫的 Ansible role，要盡可能支援多種 Linux distributions 環境。</p>
-
 <p>這又是一條不歸路。</p>
-
 <p>在本機端研發時，我可以用各種 Vagrant box 來模擬各種 Linux （譬如：<a href="https://app.vagrantup.com/bento/boxes/centos-6.7">bento/centos-6.7</a>、<a href="https://app.vagrantup.com/bento/boxes/centos-7.1">bento/centos-7.1</a>、<a href="https://app.vagrantup.com/debian/boxes/jessie64">debian/jessie64</a>），但這沒辦法 scale 到正式的 CI 流程上。此刻 Travis CI 及 CircleCI 只提供 Ubuntu 12.04 及 14.04 兩種 instance，也沒支援 <a href="http://kitchen.ci">Test Kitchen</a>。</p>
-
 <p>所幸 Travis CI 和 CircleCI 都有支援 Docker，因此，我設計了 <a href="https://github.com/William-Yeh/docker-ansible"><code>williamyeh/ansible</code></a> 這一系列的 Docker images，可在 Travis CI 及 CircleCI 上面模擬出 CentOS 6 &amp; 7、Debian 7 &amp; 8、Ubuntu 12.04 &amp; 14.04 環境，來測試我的 Ansible roles。</p>
-
 <p>這下子，我的 CI 護城河就更穩固了。CI 這位<strong>高度客觀中立</strong>、<strong>不帶感情</strong>的守門員，協助我冷靜面對以下這則算是大工程等級的 PR，不帶批判情緒的進行對話，一起搞定 CentOS/Ubuntu 雙系統：</p>
-
 
 
 <div class="box" >
@@ -381,19 +355,12 @@ if (!doNotTrack) {
   </figure>
 </div>
 
-
 <p>CI，小小的投資，大大的省事。</p>
-
 <p>對我而言，原本 <code>williamyeh/ansible</code> 只是為了其他目的而順帶設計出來的副產品。但由於 Ansible 官方已不再維護它的 Docker images；而在非官方版當中，我的 <code>williamyeh/ansible</code> 下載量居冠（統計數據<a href="https://hub.docker.com/search/?q=ansible&amp;page=1&amp;isAutomated=0&amp;isOfficial=0&amp;pullCount=1&amp;starCount=0">在此</a>），也持續有人提出 feature request⋯⋯該說是無心插柳嗎？</p>
-
-<h2 id="吃自己的狗食">吃自己的狗食</h2>
-
+<h2 id="heading1">吃自己的狗食</h2>
 <p>再拿另一個很受歡迎的 Ansible role：<a href="https://github.com/William-Yeh/ansible-oracle-java"><code>williamyeh.oracle-java</code></a> 為例。它在 Ansible Galaxy 已經得到 <a href="https://galaxy.ansible.com/william-yeh/oracle-java">4.8 的高分</a>，是一個已經為人所知，甚至為人所用的元件。</p>
-
 <p>因此，我必須維持良好的向後相容性，以對用戶負責。</p>
-
 <p>也因此，連我自己想對原始程式做更動，也不敢貿然造次。必須遵守 <a href="http://nvie.com/posts/a-successful-git-branching-model/">Git Flow</a> 或 <a href="https://guides.github.com/introduction/flow/">GitHub Flow</a> 之類的 <strong>workflow discipline</strong>，一樣要看 CI 這位<strong>高度客觀中立</strong>、<strong>不帶感情</strong>的守門員的臉色。</p>
-
 
 
 <div class="box" >
@@ -408,15 +375,10 @@ if (!doNotTrack) {
   </figure>
 </div>
 
-
 <p>專業，就是對自己也有 discipline。CI，就是<strong>強制幫助你建立 discipline</strong>。</p>
-
-<h2 id="不要輕看-ci-的紅燈">不要輕看 CI 的紅燈</h2>
-
+<h2 id="-ci-">不要輕看 CI 的紅燈</h2>
 <p>對這個 Ansible role，有一點我一直耿耿於懷：Travis CI 和 CircleCI 的測試結果，時好時壞。</p>
-
 <p>像以下截圖顯示，同樣都是針對 <code>6598bed</code> 這個 commit，Travis CI 一次就通過，但 CircleCI 居然會出現一堆紅燈。不死心的我，一直按 rebuild 好幾次，總算才出現綠燈：</p>
-
 
 
 <div class="box" >
@@ -428,9 +390,7 @@ if (!doNotTrack) {
   </figure>
 </div>
 
-
 <p>奇怪的是，同樣都是針對 <code>a9c105e</code> 這個 commit，這回 CircleCI 一次就通過，反倒是 Travis CI 出狀況：</p>
-
 
 
 <div class="box" >
@@ -442,25 +402,15 @@ if (!doNotTrack) {
   </figure>
 </div>
 
-
 <p>前幾天，我終於忍不住出手。</p>
-
 <p>反覆比對兩邊的 log，發現，Oracle 疑似會對 jdk 下載點做 rate limiting。每次 Travis CI 及 CircleCI 的 CI 大隊一啟動，Oracle 就惱了。</p>
-
 <p>所以，不是我的 Ansible role 有問題，是 Oracle 太神經兮兮了。</p>
-
 <p>怪罪 Oracle 於事無補，問題總得解決⋯⋯</p>
-
 <p>為了解決這問題，我設計一個 prefetch 機制：只向 Oracle 抓一次需要的 rpm 及 tar.gz 檔案，存放在 role 的 <code>files</code> 目錄裡面。如此一來，不僅避開 rate limiting 的限制，連帶的也降低整體的 build time，更讓整個 role 架構 refactor 得更乾淨。</p>
-
 <p>CI，小小的投資，大大的省事。</p>
-
-<h2 id="卻顧所來徑">卻顧所來徑</h2>
-
+<h2 id="heading2">卻顧所來徑</h2>
 <p>這一切的一切，濫觴都只是一個小起步：要替自己寫的 Ansible role 加上 CI。</p>
-
-<p>一旦踏出第一步，就注定你會不斷接觸<strong>『遠離平庸』</strong>的新觀點、新技術。</p>
-
+<p>一旦踏出第一步，就注定你會不斷接觸**『遠離平庸』**的新觀點、新技術。</p>
 <p>你同意嗎？</p>
 
     </div>

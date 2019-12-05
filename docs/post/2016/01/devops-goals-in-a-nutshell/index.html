@@ -35,7 +35,7 @@ DevOps is a set of practices intended to reduce the time between committing a ch
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.55.6" />
+<meta name="generator" content="Hugo 0.60.1" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2016/01/devops-goals-in-a-nutshell/" />
@@ -63,22 +63,18 @@ DevOps is a set of practices intended to reduce the time between committing a ch
 DevOps is a set of practices intended to reduce the time between committing a change to a system and the change being placed into normal production, while ensuring high quality." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="//william-yeh.net/post/2016/01/devops-goals-in-a-nutshell/" />
-<meta property="article:published_time" content="2016-01-29T08:00:00&#43;08:00"/>
-<meta property="article:modified_time" content="2016-01-29T08:00:00&#43;08:00"/>
-
+<meta property="article:published_time" content="2016-01-29T08:00:00+08:00" />
+<meta property="article:modified_time" content="2016-01-29T08:00:00+08:00" />
 <meta itemprop="name" content="一句話囊括 DevOps 的目標">
 <meta itemprop="description" content="TL;DR
 DevOps is a set of practices intended to reduce the time between committing a change to a system and the change being placed into normal production, while ensuring high quality.">
-
-
 <meta itemprop="datePublished" content="2016-01-29T08:00:00&#43;08:00" />
 <meta itemprop="dateModified" content="2016-01-29T08:00:00&#43;08:00" />
-<meta itemprop="wordCount" content="1297">
+<meta itemprop="wordCount" content="1293">
 
 
 
-<meta itemprop="keywords" content="devops,book," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="devops,book," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="一句話囊括 DevOps 的目標"/>
 <meta name="twitter:description" content="TL;DR
 DevOps is a set of practices intended to reduce the time between committing a change to a system and the change being placed into normal production, while ensuring high quality."/>
@@ -295,7 +291,7 @@ if (!doNotTrack) {
             <a href="//william-yeh.net/categories/tech/"> Tech </a>
             
           </div>
-        <span class="more-meta"> 約 1297 字 </span>
+        <span class="more-meta"> 約 1293 字 </span>
           <span class="more-meta"> 預計閱讀 3 分鐘 </span>
 
         
@@ -315,32 +311,24 @@ if (!doNotTrack) {
 
     
     <div class="post-content">
-      <p>TL;DR<br />
+      <p>TL;DR<br>
 <em>DevOps is a set of practices intended to reduce the time between committing a change to a system and the change being placed into normal production, while ensuring high quality.</em></p>
-
-<p><br/><br/></p>
-
-<p>我在許多演講場合，都喜歡調侃 DevOps 百家爭鳴各言爾志的現況。尤其是像 XebiaLabs 的 &ldquo;<a href="https://xebialabs.com/periodic-table-of-devops-tools/">Periodic Table of DevOps Tools</a>&ldquo;，用化學元素週期表來類比，傳神極了！</p>
-
-<p>調侃歸調侃，但總還是得選一套說法當參考座標，議題定位才能明確。我也不喜歡太欠缺客觀性的打高空調調，尤其是涉及組織文化層面的論調。畢竟，DevOps 雖然和 agile 運動有歷史上的臍帶關係，但嚴格來說，沒有遵循《<a href="http://www.agilemanifesto.org/">敏捷宣言</a>》四大原則，也是能做 DevOps 的；硬是把兩個議題綁在一起，會限縮 DevOps 論述空間，很容易挑起 &ldquo;it doesn&rsquo;t work here&rdquo; 的防禦心態。</p>
-
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p>我在許多演講場合，都喜歡調侃 DevOps 百家爭鳴各言爾志的現況。尤其是像 XebiaLabs 的 &ldquo;<a href="https://xebialabs.com/periodic-table-of-devops-tools/">Periodic Table of DevOps Tools</a>&quot;，用化學元素週期表來類比，傳神極了！</p>
+<p>調侃歸調侃，但總還是得選一套說法當參考座標，議題定位才能明確。我也不喜歡太欠缺客觀性的打高空調調，尤其是涉及組織文化層面的論調。畢竟，DevOps 雖然和 agile 運動有歷史上的臍帶關係，但嚴格來說，沒有遵循《<a href="http://www.agilemanifesto.org/">敏捷宣言</a>》四大原則，也是能做 DevOps 的；硬是把兩個議題綁在一起，會限縮 DevOps 論述空間，很容易挑起 &ldquo;it doesn't work here&rdquo; 的防禦心態。</p>
 <p>推廣新觀念，就要從阻力最小的角度切入。</p>
-
 <p>因此，我在去年 12 月 Container Summit 2015 講〈<a href="http://www.slideshare.net/williamyeh/dockers-impact-on-the-devops-toolchain">擁抱或對抗？談 Docker 對傳統 DevOps 工具鏈的衝擊</a>〉時，首次搬出 Brian Brazil 在 &ldquo;<a href="http://www.robustperception.io/do-you-have-basic-infrastructure/">Do you have basic infrastructure?</a>&rdquo; 一文提出的三問句來破題：</p>
-
 <blockquote>
-<p>You need to know:<br />
-1. How to recreate your system<br />
-2. How to safely change your system<br />
-3. When something has gone wrong</p>
+<p>You need to know:</p>
+<ol>
+<li>How to recreate your system</li>
+<li>How to safely change your system</li>
+<li>When something has gone wrong</li>
+</ol>
 </blockquote>
-
 <p>蘇格拉底式問句，不夾帶特定前提，不偷渡既定結論，很適合拿來引導團隊思考。因此，後來我在〈<a href="//william-yeh.net/post/2015/12/devops-1st-step/">DevOps 是圓的，找到立足點就是頂點</a>〉文章、在 <a href="http://get.soft-arch.net/ansible/">Ansible Workshop 課堂</a>上，也反覆用到這三問句。</p>
-
 <p>不過，私心還是希望能有一個更直述、更目標導向的操作型定義。</p>
-
-<p>找了很久，偶然在 2015 年 SEI 系列的新書 <a href="http://www.amazon.com/dp/0134049845/ref=cm_sw_r_tw_dp_bB.Qwb0FF6QRZ"><em>DevOps: A Software Architect&rsquo;s Perspective</em></a> 第一章，發現我想要的操作型定義了。</p>
-
+<p>找了很久，偶然在 2015 年 SEI 系列的新書 <a href="http://www.amazon.com/dp/0134049845/ref=cm_sw_r_tw_dp_bB.Qwb0FF6QRZ"><em>DevOps: A Software Architect's Perspective</em></a> 第一章，發現我想要的操作型定義了。</p>
 
 <link rel="stylesheet" href="/css/hugo-easy-gallery.css" />
 <div class="box" style="max-width:30em">
@@ -355,34 +343,23 @@ if (!doNotTrack) {
   </figure>
 </div>
 
-
-<p>SEI 這塊金字招牌，乍看之下會以為又要端出像 CMMI、PSP 那樣硬梆梆的東西。不過，瞄到書名當中有 &ldquo;A Software Architect&rsquo;s Perspective&rdquo; 字眼，就覺得應該比較貼近第一線的實務現場。</p>
-
+<p>SEI 這塊金字招牌，乍看之下會以為又要端出像 CMMI、PSP 那樣硬梆梆的東西。不過，瞄到書名當中有 &ldquo;A Software Architect's Perspective&rdquo; 字眼，就覺得應該比較貼近第一線的實務現場。</p>
 <p>他們的切入角度是：</p>
-
 <blockquote>
 <p>Our definition of DevOps focuses on the <strong>goals</strong>, rather than the <strong>means</strong>.</p>
 </blockquote>
-
 <p>很多時候，先聚焦在共有的目標上，會比過早陷入細部做法的爭論來得有用。</p>
-
 <p>從「目標」角度出發，再對 DevOps 下定義，更顯得客觀中立。畢竟，不管是大機構還是小團隊，不管背後採用哪一種軟體開發流程，都能接受以下這種 DevOps 目標：</p>
-
 <blockquote>
 <p>DevOps is a set of <em>practices</em> intended to <strong>reduce the time between committing a change to a system and the change being placed into normal production, while ensuring high quality</strong>.</p>
 </blockquote>
-
 <p>這跟前面那三問句是相互呼應的，只不過這一回用的是更直述、更目標導向的操作型定義。</p>
-
 <p>這段定義陳述，點出 DevOps 兩大目標：<strong>時間</strong>及<strong>品質</strong>：</p>
-
 <ul>
 <li>時間：在「commit change」到「上線營運生效」兩者之間的時間差，要盡量縮短到某個設定的水平之內。</li>
 <li>品質：不能只求上線生效，還要對品質把關，維持在某個設定的水平之上。</li>
 </ul>
-
 <p>弄清楚 DevOps 的目標後，再看 DevOps 圈子倡議的 practices，就不覺突兀：</p>
-
 <ol>
 <li>Treat Ops as first-class citizens from the point of view of requirements.</li>
 <li>Make Dev more responsible for relevant incident handling. These practices are intended to shorten the time between the observation of an error and the repair of that error.</li>
@@ -390,23 +367,23 @@ if (!doNotTrack) {
 <li>Use continuous deployment.</li>
 <li>Develop infrastructure code, such as deployment scripts, with the same set of practices as application code.</li>
 </ol>
-
 <p>這五項 practices，都可以回溯到先前設定的 DevOps 兩大目標：時間及品質。</p>
-
 <p>當然啦，同一份目標，可能衍生出不同的實作手法；此時此刻公認的 best practices，也可能在不久就被推翻。書中建議我們可以根據幾點來評估：</p>
-
 <ol>
-<li><p><strong>What is the particular practice you are considering?</strong><br />
-這家 DevOps 百貨公司，大肆推銷的東西太多了，必須先針對組織的需求及現況加以評估、排序。</p></li>
-
-<li><p><strong>What other practices are implicit in the practice you are considering?</strong><br />
-某些措施有隱含的前提。譬如說，想實現 continuous deployment 之前，不可能不先做 continuous integration。</p></li>
-
-<li><p><strong>What is the culture of your business, and what are the ramifications of your adopting this particular DevOps practice?</strong><br />
-任何改變都有受到波及的對象，所以，想導入任何改變，都不能忽略組織及人性的抗拒力道。</p></li>
+<li>
+<p><strong>What is the particular practice you are considering?</strong><br>
+這家 DevOps 百貨公司，大肆推銷的東西太多了，必須先針對組織的需求及現況加以評估、排序。</p>
+</li>
+<li>
+<p><strong>What other practices are implicit in the practice you are considering?</strong><br>
+某些措施有隱含的前提。譬如說，想實現 continuous deployment 之前，不可能不先做 continuous integration。</p>
+</li>
+<li>
+<p><strong>What is the culture of your business, and what are the ramifications of your adopting this particular DevOps practice?</strong><br>
+任何改變都有受到波及的對象，所以，想導入任何改變，都不能忽略組織及人性的抗拒力道。</p>
+</li>
 </ol>
-
-<p>這就是 SEI 出版的書 <a href="http://www.amazon.com/dp/0134049845/ref=cm_sw_r_tw_dp_bB.Qwb0FF6QRZ"><em>DevOps: A Software Architect&rsquo;s Perspective</em></a> 當中的第一章，對於 DevOps 下的目標導向定義，以及隨之鋪陳的實踐手法及考量依據。</p>
+<p>這就是 SEI 出版的書 <a href="http://www.amazon.com/dp/0134049845/ref=cm_sw_r_tw_dp_bB.Qwb0FF6QRZ"><em>DevOps: A Software Architect's Perspective</em></a> 當中的第一章，對於 DevOps 下的目標導向定義，以及隨之鋪陳的實踐手法及考量依據。</p>
     </div>
 
     

@@ -36,7 +36,7 @@
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.55.6" />
+<meta name="generator" content="Hugo 0.60.1" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2019/04/wsltty-tmux/" />
@@ -61,36 +61,26 @@
 
 <meta property="og:title" content="WSLtty &#43; tmux 組合技" />
 <meta property="og:description" content="在 Windows 10 上面使用 WSL 已經一個月了1。小狀況也就罷了，但 Cmder 不夠穩定的顯示邏輯卻最讓我頭痛，在視窗尺寸變化時，無法正確處理字元位置。更令人費解的是，即使是其他狀似更華麗（也更耗資源）的替代方案，也仍然有這些問題2。
-
 既然酷炫的終端機競品問題多多，乾脆回歸極簡的 WSLtty3，並混搭 tmux4 來彌補。可惜，畢竟是組合技，無法完全複製 Mac 的 iTerm2 使用經驗。
-
 此事古難全。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="//william-yeh.net/post/2019/04/wsltty-tmux/" />
-<meta property="article:published_time" content="2019-04-17T22:00:00&#43;08:00"/>
-<meta property="article:modified_time" content="2019-04-17T22:00:00&#43;08:00"/>
-
+<meta property="article:published_time" content="2019-04-17T22:00:00+08:00" />
+<meta property="article:modified_time" content="2019-04-17T22:00:00+08:00" />
 <meta itemprop="name" content="WSLtty &#43; tmux 組合技">
 <meta itemprop="description" content="在 Windows 10 上面使用 WSL 已經一個月了1。小狀況也就罷了，但 Cmder 不夠穩定的顯示邏輯卻最讓我頭痛，在視窗尺寸變化時，無法正確處理字元位置。更令人費解的是，即使是其他狀似更華麗（也更耗資源）的替代方案，也仍然有這些問題2。
-
 既然酷炫的終端機競品問題多多，乾脆回歸極簡的 WSLtty3，並混搭 tmux4 來彌補。可惜，畢竟是組合技，無法完全複製 Mac 的 iTerm2 使用經驗。
-
 此事古難全。">
-
-
 <meta itemprop="datePublished" content="2019-04-17T22:00:00&#43;08:00" />
 <meta itemprop="dateModified" content="2019-04-17T22:00:00&#43;08:00" />
-<meta itemprop="wordCount" content="959">
+<meta itemprop="wordCount" content="989">
 
 
 
-<meta itemprop="keywords" content="wsl,tmux," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="wsl,tmux," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="WSLtty &#43; tmux 組合技"/>
 <meta name="twitter:description" content="在 Windows 10 上面使用 WSL 已經一個月了1。小狀況也就罷了，但 Cmder 不夠穩定的顯示邏輯卻最讓我頭痛，在視窗尺寸變化時，無法正確處理字元位置。更令人費解的是，即使是其他狀似更華麗（也更耗資源）的替代方案，也仍然有這些問題2。
-
 既然酷炫的終端機競品問題多多，乾脆回歸極簡的 WSLtty3，並混搭 tmux4 來彌補。可惜，畢竟是組合技，無法完全複製 Mac 的 iTerm2 使用經驗。
-
 此事古難全。"/>
 
 <!--[if lte IE 9]>
@@ -305,7 +295,7 @@ if (!doNotTrack) {
             <a href="//william-yeh.net/categories/tech/"> tech </a>
             
           </div>
-        <span class="more-meta"> 約 959 字 </span>
+        <span class="more-meta"> 約 989 字 </span>
           <span class="more-meta"> 預計閱讀 2 分鐘 </span>
 
         
@@ -326,49 +316,32 @@ if (!doNotTrack) {
   <h2 class="post-toc-title">文章目錄</h2>
   <div class="post-toc-content">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#wsltty-剪貼簿">WSLtty 剪貼簿</a></li>
-<li><a href="#tmux-與-zsh">Tmux 與 zsh</a></li>
-<li><a href="#tmux-的-pane">Tmux 的 pane</a></li>
-<li><a href="#tmux-plugin-manager">Tmux Plugin Manager</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#wsltty-">WSLtty 剪貼簿</a></li>
+    <li><a href="#tmux--zsh">Tmux 與 zsh</a></li>
+    <li><a href="#tmux--pane">Tmux 的 pane</a></li>
+    <li><a href="#tmux-plugin-manager">Tmux Plugin Manager</a></li>
+  </ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      <p>在 Windows 10 上面使用 WSL 已經一個月了<sup class="footnote-ref" id="fnref:1"><a href="#fn:1">1</a></sup>。小狀況也就罷了，但 <a href="https://cmder.net/">Cmder</a> 不夠穩定的顯示邏輯卻最讓我頭痛，在視窗尺寸變化時，無法正確處理字元位置。更令人費解的是，即使是其他狀似更華麗（也更耗資源）的替代方案，也仍然有這些問題<sup class="footnote-ref" id="fnref:2"><a href="#fn:2">2</a></sup>。</p>
-
-<p>既然酷炫的終端機競品問題多多，乾脆回歸極簡的 WSLtty<sup class="footnote-ref" id="fnref:3"><a href="#fn:3">3</a></sup>，並混搭 tmux<sup class="footnote-ref" id="fnref:4"><a href="#fn:4">4</a></sup> 來彌補。可惜，畢竟是組合技，無法完全複製 Mac 的 iTerm2 使用經驗。</p>
-
+      <p>在 Windows 10 上面使用 WSL 已經一個月了<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>。小狀況也就罷了，但 <a href="https://cmder.net/">Cmder</a> 不夠穩定的顯示邏輯卻最讓我頭痛，在視窗尺寸變化時，無法正確處理字元位置。更令人費解的是，即使是其他狀似更華麗（也更耗資源）的替代方案，也仍然有這些問題<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>。</p>
+<p>既然酷炫的終端機競品問題多多，乾脆回歸極簡的 WSLtty<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>，並混搭 tmux<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup> 來彌補。可惜，畢竟是組合技，無法完全複製 Mac 的 iTerm2 使用經驗。</p>
 <p>此事古難全。</p>
-
-<h2 id="wsltty-剪貼簿">WSLtty 剪貼簿</h2>
-
+<h2 id="wsltty-">WSLtty 剪貼簿</h2>
 <p>在 X Window 或 Mac 的終端機，只要按下滑鼠右鍵就能夠 paste 文字。如果在 WSLtty 上也想這麼玩，請在 <code>%APPDATA%\wsltty\config</code> 設定檔加上這一行：</p>
-
 <div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">RightClickAction=paste</code></pre></div>
-
-<h2 id="tmux-與-zsh">Tmux 與 zsh</h2>
-
+<h2 id="tmux--zsh">Tmux 與 zsh</h2>
 <p>啟動 tmux 時，似乎並不會根據 <code>/etc/passwd</code> 的資訊來喚起自訂的 shell，而是一律喚起 bash。</p>
-
 <p>解決方法是，在 <code>~/.tmux.conf</code> 加上這一行：</p>
-
 <div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">set-option -g default-shell /bin/zsh</code></pre></div>
-
-<h2 id="tmux-的-pane">Tmux 的 pane</h2>
-
+<h2 id="tmux--pane">Tmux 的 pane</h2>
 <p>用慣 iTerm2 的我，對 tmux 的 pane 功能不太習慣。</p>
-
 <p>譬如說，在 tmux 新增 pane 或 window 時，不會自動帶入目前的目錄 <code>$PWD</code>，而是一律帶入 <code>$HOME</code>，很不方便。Tmux 預設的組合鍵 <code>&lt;prefix&gt; %</code> 及 <code>&lt;prefix&gt; &quot;</code> 難記又難按，也很令人頭痛。</p>
-
-<p>因此，我綜合多人的做法<sup class="footnote-ref" id="fnref:5"><a href="#fn:5">5</a></sup>，解決目錄問題，換成好記好按的組合鍵，更可用方向鍵來切換 pane：</p>
-
+<p>因此，我綜合多人的做法<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup>，解決目錄問題，換成好記好按的組合鍵，更可用方向鍵來切換 pane：</p>
 <div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext"># Create new window (tab) with current path
 unbind c
 bind -n M-t new-window -c &#39;#{pane_current_path}&#39;  # mimic for iTerm2 habit
@@ -385,17 +358,11 @@ bind -n M-Left  select-pane -L
 bind -n M-Right select-pane -R
 bind -n M-Up    select-pane -U
 bind -n M-Down  select-pane -D</code></pre></div>
-
 <h2 id="tmux-plugin-manager">Tmux Plugin Manager</h2>
-
 <p>Tmux 設定太多了，就有人寫了外掛管理系統 <a href="https://github.com/tmux-plugins/tpm">Tmux Plugin Manager</a>。雖然目前我還用不到，但還是先安裝，以備不時之需。</p>
-
 <p>首先，下載 TPM：</p>
-
 <div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">% git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm</code></pre></div>
-
 <p>將以下幾行加到 <code>.tmux.conf</code> 最後面：</p>
-
 <div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext"># List of plugins
 set -g @plugin &#39;tmux-plugins/tpm&#39;
 set -g @plugin &#39;tmux-plugins/tmux-sensible&#39;
@@ -403,29 +370,29 @@ set -g @plugin &#39;tmux-plugins/tmux-sensible&#39;
 # Initialize TMUX plugin manager
 # (keep this line at the very bottom of tmux.conf)
 run -b &#39;~/.tmux/plugins/tpm/tpm&#39;</code></pre></div>
-
-<p><br/><br/></p>
-
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <p>Tmux 還有很多高段的功能，以後有需要再研究吧。</p>
-
 <p>如此這般拼湊起來，雖然還不能完全複刻 Mac 的 iTerm2 使用經驗，但也已經算是可以接受了。當然啦，私心還是希望 Cmder 或 Hyper 能夠好好解決顯示問題，就不必動用 tmux 了。</p>
-<div class="footnotes">
-
-<hr />
-
+<section class="footnotes" role="doc-endnotes">
+<hr>
 <ol>
-<li id="fn:1">這段故事，詳見〈<a href="//william-yeh.net/post/2019/03/wsl-cmder-zsh/">在 Windows 上復刻 Mac 使用習慣</a>〉一文。
- <a class="footnote-return" href="#fnref:1"><sup>[return]</sup></a></li>
-<li id="fn:2">關於其他更華麗，卻也更耗資源的 Windows 終端機方案，可參考這幾篇介紹文章：〈<a href="https://github.com/spencerwooo/dowww">在 Windows 上面用 WSL 优雅开发</a>〉、“<a href="https://nickjanetakis.com/blog/conemu-vs-hyper-vs-terminus-vs-mobaxterm-terminator-vs-ubuntu-wsl">ConEmu vs Hyper vs Terminus vs MobaXTerm Terminator vs Ubuntu WSL</a>”。
- <a class="footnote-return" href="#fnref:2"><sup>[return]</sup></a></li>
-<li id="fn:3">關於 <a href="https://github.com/mintty/wsltty">WSLtty</a>，可參考保哥的〈<a href="https://blog.miniasp.com/post/2019/02/09/Useful-tool-WSLtty-Mintty-as-a-terminal-for-WSL">介紹好用工具：WSLtty (Mintty as a terminal for WSL)</a>〉一文。
- <a class="footnote-return" href="#fnref:3"><sup>[return]</sup></a></li>
-<li id="fn:4">關於 <a href="https://github.com/tmux/tmux">tmux</a>，可參考這幾篇介紹文章：〈<a href="https://5xruby.tw/posts/tmux/">tmux ，不只是 terminal multiplexer</a>〉、〈<a href="https://andyyou.github.io/2017/11/27/tmux-notes/">tmux 快速入門筆記</a>〉、〈<a href="https://larrylu.blog/tmux-33a24e595fbc">終端機 session 管理神器 — tmux</a>〉。
- <a class="footnote-return" href="#fnref:4"><sup>[return]</sup></a></li>
-<li id="fn:5">Shubham 提供的<a href="https://unix.stackexchange.com/a/247449">做法</a>，可讓新開的 pane 及 window 保持在目前所在的目錄。Ham Vocke 的<a href="https://www.hamvocke.com/blog/a-guide-to-customizing-your-tmux-conf/">文章</a>也介紹幾種有趣的 tmux 設定。
- <a class="footnote-return" href="#fnref:5"><sup>[return]</sup></a></li>
+<li id="fn:1" role="doc-endnote">
+<p>這段故事，詳見〈<a href="//william-yeh.net/post/2019/03/wsl-cmder-zsh/">在 Windows 上復刻 Mac 使用習慣</a>〉一文。<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#8617;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p>關於其他更華麗，卻也更耗資源的 Windows 終端機方案，可參考這幾篇介紹文章：〈<a href="https://github.com/spencerwooo/dowww">在 Windows 上面用 WSL 优雅开发</a>〉、“<a href="https://nickjanetakis.com/blog/conemu-vs-hyper-vs-terminus-vs-mobaxterm-terminator-vs-ubuntu-wsl">ConEmu vs Hyper vs Terminus vs MobaXTerm Terminator vs Ubuntu WSL</a>”。<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#8617;</a></p>
+</li>
+<li id="fn:3" role="doc-endnote">
+<p>關於 <a href="https://github.com/mintty/wsltty">WSLtty</a>，可參考保哥的〈<a href="https://blog.miniasp.com/post/2019/02/09/Useful-tool-WSLtty-Mintty-as-a-terminal-for-WSL">介紹好用工具：WSLtty (Mintty as a terminal for WSL)</a>〉一文。<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#8617;</a></p>
+</li>
+<li id="fn:4" role="doc-endnote">
+<p>關於 <a href="https://github.com/tmux/tmux">tmux</a>，可參考這幾篇介紹文章：〈<a href="https://5xruby.tw/posts/tmux/">tmux ，不只是 terminal multiplexer</a>〉、〈<a href="https://andyyou.github.io/2017/11/27/tmux-notes/">tmux 快速入門筆記</a>〉、〈<a href="https://larrylu.blog/tmux-33a24e595fbc">終端機 session 管理神器 — tmux</a>〉。<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#8617;</a></p>
+</li>
+<li id="fn:5" role="doc-endnote">
+<p>Shubham 提供的<a href="https://unix.stackexchange.com/a/247449">做法</a>，可讓新開的 pane 及 window 保持在目前所在的目錄。Ham Vocke 的<a href="https://www.hamvocke.com/blog/a-guide-to-customizing-your-tmux-conf/">文章</a>也介紹幾種有趣的 tmux 設定。<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#8617;</a></p>
+</li>
 </ol>
-</div>
+</section>
     </div>
 
     
