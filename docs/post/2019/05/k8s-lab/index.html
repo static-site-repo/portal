@@ -26,8 +26,8 @@
 
 <meta name="author" content="William Yeh" />
   <meta name="description" content="前天我在 2019 台灣雲端大會帶了兩個場次，一個是現場實作場次，一個是經驗分享演講：
-  Lab / 給 RD 的 Kubernetes 初體驗 (90 minutes)
-  Speech / 當 .NET 遇到 Kubernetes (30 minutes)
+ Lab / 給 RD 的 Kubernetes 初體驗 (90 minutes)
+ Speech / 當 .NET 遇到 Kubernetes (30 minutes)
   兩個場次，一言以蔽之，都圍繞在 Kubernetes 的入門認知與導入策略上。
 " />
 
@@ -37,7 +37,7 @@
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.60.1" />
+<meta name="generator" content="Hugo 0.55.6" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2019/05/k8s-lab/" />
@@ -66,39 +66,40 @@
 
 Lab / 給 RD 的 Kubernetes 初體驗 (90 minutes)
 
-
 Speech / 當 .NET 遇到 Kubernetes (30 minutes)
 
 
 兩個場次，一言以蔽之，都圍繞在 Kubernetes 的入門認知與導入策略上。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="//william-yeh.net/post/2019/05/k8s-lab/" />
-<meta property="article:published_time" content="2019-05-17T12:00:00+08:00" />
-<meta property="article:modified_time" content="2019-05-17T12:00:00+08:00" />
+<meta property="article:published_time" content="2019-05-17T12:00:00&#43;08:00"/>
+<meta property="article:modified_time" content="2019-05-17T12:00:00&#43;08:00"/>
+
 <meta itemprop="name" content="Kubernetes 的入門認知與導入策略">
 <meta itemprop="description" content="前天我在 2019 台灣雲端大會帶了兩個場次，一個是現場實作場次，一個是經驗分享演講：
 
 
 Lab / 給 RD 的 Kubernetes 初體驗 (90 minutes)
 
-
 Speech / 當 .NET 遇到 Kubernetes (30 minutes)
 
 
 兩個場次，一言以蔽之，都圍繞在 Kubernetes 的入門認知與導入策略上。">
+
+
 <meta itemprop="datePublished" content="2019-05-17T12:00:00&#43;08:00" />
 <meta itemprop="dateModified" content="2019-05-17T12:00:00&#43;08:00" />
-<meta itemprop="wordCount" content="1202">
+<meta itemprop="wordCount" content="1190">
 
 
 
-<meta itemprop="keywords" content="devops,course,microservices,kubernetes,docker," /><meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="devops,course,microservices,kubernetes,docker," />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Kubernetes 的入門認知與導入策略"/>
 <meta name="twitter:description" content="前天我在 2019 台灣雲端大會帶了兩個場次，一個是現場實作場次，一個是經驗分享演講：
 
 
 Lab / 給 RD 的 Kubernetes 初體驗 (90 minutes)
-
 
 Speech / 當 .NET 遇到 Kubernetes (30 minutes)
 
@@ -317,7 +318,7 @@ if (!doNotTrack) {
             <a href="//william-yeh.net/categories/tech/"> tech </a>
             
           </div>
-        <span class="more-meta"> 約 1202 字 </span>
+        <span class="more-meta"> 約 1190 字 </span>
           <span class="more-meta"> 預計閱讀 3 分鐘 </span>
 
         
@@ -338,107 +339,130 @@ if (!doNotTrack) {
     
     <div class="post-content">
       <p>前天我在 <a href="https://cloudsummit.ithome.com.tw/">2019 台灣雲端大會</a>帶了兩個場次，一個是現場實作場次，一個是經驗分享演講：</p>
+
 <ul>
-<li>
-<p>Lab / <a href="https://github.com/William-Yeh/workshop-cloud2019">給 RD 的 Kubernetes 初體驗</a> (90 minutes)</p>
-</li>
-<li>
-<p>Speech / <a href="https://www.slideshare.net/williamyeh/when-dotnetmeetskubernetes-145557464">當 .NET 遇到 Kubernetes</a> (30 minutes)</p>
-</li>
+<li><p>Lab / <a href="https://github.com/William-Yeh/workshop-cloud2019">給 RD 的 Kubernetes 初體驗</a> (90 minutes)</p></li>
+
+<li><p>Speech / <a href="https://www.slideshare.net/williamyeh/when-dotnetmeetskubernetes-145557464">當 .NET 遇到 Kubernetes</a> (30 minutes)</p></li>
 </ul>
+
 <p>兩個場次，一言以蔽之，都圍繞在 Kubernetes 的入門認知與導入策略上。</p>
-<h2 id="-kubernetes-">以「問題解決」角度看 Kubernetes 導入</h2>
+
+<h2 id="以-問題解決-角度看-kubernetes-導入">以「問題解決」角度看 Kubernetes 導入</h2>
+
 <p>〈<a href="https://www.slideshare.net/williamyeh/when-dotnetmeetskubernetes-145557464">當 .NET 遇到 Kubernetes</a>〉這場演講，是以「問題解決」的角度，探討導入 Kubernetes 的困難與策略，尤其是針對 .NET 族群。</p>
+
 <iframe
   style="width: 100%; height: 500px;" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"
   src="https://www.slideshare.net/slideshow/embed_code/145557464" allowfullscreen webkitallowfullscreen mozallowfullscreen> </iframe>
 <br><br>
+
 <p>整場演講的脈絡如下：</p>
+
 <p>① 為什麼要導入 Kubernetes？</p>
+
 <ul>
 <li>我們的現況是什麼？</li>
 <li>外面的世界已經是什麼樣子？</li>
 <li>不正視差距，會有什麼影響？</li>
 </ul>
+
 <p>② 為什麼還 <strong>不</strong> 導入 Kubernetes？</p>
+
 <p>我嘗試用<a href="https://www.behaviormodel.org/">法格行為模型</a> (B=MAP) 來歸類問題原因：</p>
+
 <ul>
 <li><strong>M</strong>otivation / 我們真的認識 Kubernetes 真實的利益是什麼嗎？</li>
 <li><strong>A</strong>bility / 正確認識技術核心、外在因素、內在因素，才能正確評估我們的技術能力是否已經提升到足以擁抱 Kubernetes 的地步。</li>
 <li><strong>P</strong>rompt / 是否有臨門一腳的驅動力？</li>
 </ul>
+
 <p>③ 有什麼建議的導入選項？</p>
-<p>我發現 Prajakta Joshi 的演講 &ldquo;<a href="https://cloud.withgoogle.com/next/sf/sessions?session=NET206">Strategies for Bringing Kubernetes, Istio, Traffic Director, and Envoy to Brownfield with Walmart, Google, Tetrate</a>&rdquo; <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> 已經給了很好的建議。因此，我引述她的論點，建議大家可以採用兩種路徑：(a) Container first and mesh next，(b) Mesh first and container next。</p>
+
+<p>我發現 Prajakta Joshi 的演講 &ldquo;<a href="https://cloud.withgoogle.com/next/sf/sessions?session=NET206">Strategies for Bringing Kubernetes, Istio, Traffic Director, and Envoy to Brownfield with Walmart, Google, Tetrate</a>&rdquo; <sup class="footnote-ref" id="fnref:1"><a href="#fn:1">1</a></sup> 已經給了很好的建議。因此，我引述她的論點，建議大家可以採用兩種路徑：(a) Container first and mesh next，(b) Mesh first and container next。</p>
+
 <p>我這場演講有開放錄影。等上線了，我會再補上連結。</p>
-<h2 id="rd--kubernetes">RD 也需要略懂 Kubernetes</h2>
+
+<h2 id="rd-也需要略懂-kubernetes">RD 也需要略懂 Kubernetes</h2>
+
 <p>Kubernetes 是目前雲端環境的顯學。可是，傳統的程式，並不是原封不動搬上去，就能夠自動享受 Kubernetes 所宣稱的種種好處。新的環境，不僅需要新的 Ops 思維，也需要新的 Dev 思維。</p>
+
 <p>我設計〈<a href="https://github.com/William-Yeh/workshop-cloud2019">給 RD 的 Kubernetes 初體驗</a>〉工作坊，嘗試以一個半小時的時間，從軟體研發者的角度，探討軟體的設計該做哪些最起碼的改變，並從實作中體驗 Kubernetes 引進的新觀念及新效益。</p>
+
 <p>我希望能夠讓學員從實例中體驗，傳統 web 應用程式在搬上 Kubernetes 時，可能會經歷哪些架構面的調整，才能享受新架構的效益。</p>
-<p>我試圖不只是 demo，也不只是讓大家能無腦照著做，還試圖進行一些觀念講解。短短一個半小時，野心太大，只好割捨原本已經準備好的 API Gateway 例子 <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>，集中在以下課題：</p>
+
+<p>我試圖不只是 demo，也不只是讓大家能無腦照著做，還試圖進行一些觀念講解。短短一個半小時，野心太大，只好割捨原本已經準備好的 API Gateway 例子 <sup class="footnote-ref" id="fnref:2"><a href="#fn:2">2</a></sup>，集中在以下課題：</p>
+
 <ul>
 <li>容器化</li>
 <li>微服務</li>
 <li>組態管理</li>
 <li>多重環境管理：本機端與雲端（以 GKE 為例）</li>
 </ul>
+
 <iframe
   style="width: 100%; height: 500px;" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"
   src="https://www.slideshare.net/slideshow/embed_code/145761572" allowfullscreen webkitallowfullscreen mozallowfullscreen> </iframe>
 <br><br>
+
 <p><a href="https://github.com/William-Yeh/workshop-cloud2019">範例程式</a>也以迭代演進的形式，逐步添加 Kubernetes 功能，呼應〈<a href="https://www.slideshare.net/williamyeh/when-dotnetmeetskubernetes-145557464">當 .NET 遇到 Kubernetes</a>〉演講所提出的 &ldquo;Container first and mesh next&rdquo; 導入策略。</p>
+
 <p>Container:</p>
+
 <ul>
-<li>
-<p>1.0: Extracted from Microsoft Docs.</p>
-</li>
-<li>
-<p>2.0: Dockerize the app with simple Dockerfile and docker-compose.yml.</p>
-</li>
-<li>
-<p>3.0: Separate frontend and backend into 2 distinct containers.</p>
-</li>
+<li><p>1.0: Extracted from Microsoft Docs.</p></li>
+
+<li><p>2.0: Dockerize the app with simple Dockerfile and docker-compose.yml.</p></li>
+
+<li><p>3.0: Separate frontend and backend into 2 distinct containers.</p></li>
 </ul>
+
 <p>Kubernetes:</p>
+
 <ul>
-<li>
-<p>4.0: Support Kubernetes (locally).</p>
-</li>
-<li>
-<p>4.1: Use Kubernetes dashboard.</p>
-</li>
-<li>
-<p>5.0: Support ConfigMap and naming convention.</p>
-</li>
+<li><p>4.0: Support Kubernetes (locally).</p></li>
+
+<li><p>4.1: Use Kubernetes dashboard.</p></li>
+
+<li><p>5.0: Support ConfigMap and naming convention.</p></li>
 </ul>
+
 <p>Cloud（感謝<a href="https://tw.linkedin.com/in/ericsk">上官林傑</a>大力支援 Google Cloud 的 redeem coupon）：</p>
+
 <ul>
-<li>
-<p>6.0: Support Kubernetes on the cloud (GKE for example).</p>
-</li>
-<li>
-<p>7.0: Support canary release.</p>
-</li>
+<li><p>6.0: Support Kubernetes on the cloud (GKE for example).</p></li>
+
+<li><p>7.0: Support canary release.</p></li>
 </ul>
+
 <p>可惜，一個半小時的時間還是太短了，最後面 30 分鐘其實是在趕進度，跳過了一些原本應該仔細講解的環節（譬如：ConfigMap、label &amp; selector、ephemeral vs static external IP 的區分⋯⋯）。我再考慮另外找個社群的場子，辦一次較完整的 workshop 吧。完整的，應該會需要 2.5～3 小時。</p>
-<!-- raw HTML omitted -->
-<pre><code>  2019-06-16 補充
-</code></pre>
-<!-- raw HTML omitted -->
+
+<div class="shortcode-notice note">
+  <div class="shortcode-notice-title note">
+    
+      2019-06-16 補充
+    
+  </div>
+  
+
 <p>一個月後，應 <a href="https://www.meetup.com/GCPUG-Taipei/events/261797460/">GCPUG Taipei</a> 之邀，我辦了一場 3+1 小時的 Workshop，<a href="https://www.slideshare.net/williamyeh/rd-kubernetes-gcpug-2019-06/">投影片</a>及<a href="https://github.com/William-Yeh/workshop-gcpug201906/">實作範例</a>都有更新。</p>
-<!-- raw HTML omitted -->
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+
+<p></div></p>
+
+<p><br/><br/></p>
+
 <p>希望這一場演講，一場實作工作坊，對大家有助益。</p>
-<section class="footnotes" role="doc-endnotes">
-<hr>
+<div class="footnotes">
+
+<hr />
+
 <ol>
-<li id="fn:1" role="doc-endnote">
-<p>我在〈<a href="//william-yeh.net/post/2019/04/next19-istio/">Next ’19 的 Istio 場次重點摘要</a>〉一文中，有介紹 Prajakta Joshi 在 Google Cloud Next ’19 另一場精彩的演講。<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#8617;</a></p>
-</li>
-<li id="fn:2" role="doc-endnote">
-<p>關於 Kubernetes 的 API gateway，請參考〈<a href="//william-yeh.net/post/2019/03/ingress-vs-ambassador/">Nginx Ingress 與 Ambassador 簡易性能比較</a>〉一文。<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#8617;</a></p>
-</li>
+<li id="fn:1">我在〈<a href="//william-yeh.net/post/2019/04/next19-istio/">Next ’19 的 Istio 場次重點摘要</a>〉一文中，有介紹 Prajakta Joshi 在 Google Cloud Next ’19 另一場精彩的演講。
+ <a class="footnote-return" href="#fnref:1"><sup>[return]</sup></a></li>
+<li id="fn:2">關於 Kubernetes 的 API gateway，請參考〈<a href="//william-yeh.net/post/2019/03/ingress-vs-ambassador/">Nginx Ingress 與 Ambassador 簡易性能比較</a>〉一文。
+ <a class="footnote-return" href="#fnref:2"><sup>[return]</sup></a></li>
 </ol>
-</section>
+</div>
     </div>
 
     

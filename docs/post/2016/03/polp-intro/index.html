@@ -35,7 +35,7 @@
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.60.1" />
+<meta name="generator" content="Hugo 0.55.6" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2016/03/polp-intro/" />
@@ -60,23 +60,30 @@
 
 <meta property="og:title" content="POLP：最小權限原則" />
 <meta property="og:description" content="在我開的 Ansible Workshop 中，不管是課前的【許願池】，還是課程現場的 Q&amp;A，總有一個熱門議題：「如何確保系統是安全的？」
+
 這是大哉問，不是單獨一門組態管理課就能探討到令人滿意的地步（資安也不是我所擅長的⋯⋯）。不過，被問到的次數太多了，我還是給個簡單的導引吧。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="//william-yeh.net/post/2016/03/polp-intro/" />
-<meta property="article:published_time" content="2016-03-15T08:00:00+08:00" />
-<meta property="article:modified_time" content="2016-03-15T08:00:00+08:00" />
+<meta property="article:published_time" content="2016-03-15T08:00:00&#43;08:00"/>
+<meta property="article:modified_time" content="2016-03-15T08:00:00&#43;08:00"/>
+
 <meta itemprop="name" content="POLP：最小權限原則">
 <meta itemprop="description" content="在我開的 Ansible Workshop 中，不管是課前的【許願池】，還是課程現場的 Q&amp;A，總有一個熱門議題：「如何確保系統是安全的？」
+
 這是大哉問，不是單獨一門組態管理課就能探討到令人滿意的地步（資安也不是我所擅長的⋯⋯）。不過，被問到的次數太多了，我還是給個簡單的導引吧。">
+
+
 <meta itemprop="datePublished" content="2016-03-15T08:00:00&#43;08:00" />
 <meta itemprop="dateModified" content="2016-03-15T08:00:00&#43;08:00" />
 <meta itemprop="wordCount" content="1527">
 
 
 
-<meta itemprop="keywords" content="devops,security,linux," /><meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="devops,security,linux," />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="POLP：最小權限原則"/>
 <meta name="twitter:description" content="在我開的 Ansible Workshop 中，不管是課前的【許願池】，還是課程現場的 Q&amp;A，總有一個熱門議題：「如何確保系統是安全的？」
+
 這是大哉問，不是單獨一門組態管理課就能探討到令人滿意的地步（資安也不是我所擅長的⋯⋯）。不過，被問到的次數太多了，我還是給個簡單的導引吧。"/>
 
 <!--[if lte IE 9]>
@@ -312,9 +319,13 @@ if (!doNotTrack) {
     
     <div class="post-content">
       <p>在我開的 <a href="http://get.soft-arch.net/ansible/">Ansible Workshop</a> 中，不管是課前的【許願池】，還是課程現場的 Q&amp;A，總有一個熱門議題：「如何確保系統是安全的？」</p>
+
 <p>這是大哉問，不是單獨一門組態管理課就能探討到令人滿意的地步（資安也不是我所擅長的⋯⋯）。不過，被問到的次數太多了，我還是給個簡單的導引吧。</p>
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+
+<p><br/><br/></p>
+
 <p>系統安全有許多層次。以 <a href="https://www.safaribooksonline.com/library/view/learning-linux-security/9781771374194/"><em>Learning Linux Security</em></a> 教學課程的大綱來看，至少涵蓋幾個層次：</p>
+
 <ul>
 <li>Booting：作業系統開機環節</li>
 <li>Kernel：作業系統核心</li>
@@ -325,30 +336,46 @@ if (!doNotTrack) {
 <li>Intrusion detection and prevention：入侵偵測及預防</li>
 <li>Utilities：診斷工具</li>
 </ul>
+
 <p>各個環節，都有各自專門知識及輔助工具（我就說這是大哉問吧⋯⋯）。這些都是傳統 admin 或 ops 的責任區。</p>
+
 <p>不過，即使不是專業的 ops，身為一位 dev，至少有兩點是自己的責任區，需要好好掌握的。</p>
+
 <p>首先是 <strong>Users and permissions 環節</strong>。近年來流行的軟體設計方式，部署時，常常不會 100% 寄生在 Apache、Nginx、Tomcat 這些 application container 底下，而是像 PHP 的 <a href="http://php-fpm.org/">FPM 模式</a>、Python 的 <a href="http://gunicorn.org/">Gunicorn 模式</a>、Ruby 的 <a href="http://unicorn.bogomips.org/">Unicorn 模式</a>，有一個或多個協同作業的 process；甚至像 Node.js 或 Java 硬漢，往往不假外力，直接就把程式本身設計成 daemon 了。此時，開發者就不能逃避，必須考慮如何設定該軟體的帳號及權限，包括 process 的 UID、GID，以及相關的檔案目錄存取權限。</p>
+
 <p>其次是 <strong>Services 環節</strong>。以 daemon 形式存在的軟體，通常會安裝成 service，透過 <a href="https://en.wikipedia.org/wiki/Init">SysV init</a>、<a href="https://en.wikipedia.org/wiki/Upstart">Upstart</a> 或 <a href="https://en.wikipedia.org/wiki/Systemd">systemd</a> 等機制啟動與管理。這時，也必須連帶把前述的帳號權限處理好。有潔癖的，甚至還會加掛 <a href="https://en.wikipedia.org/wiki/Chroot">chroot</a>、<a href="https://en.wikipedia.org/wiki/AppArmor">AppArmor</a>、<a href="https://en.wikipedia.org/wiki/Security-Enhanced_Linux">SELinux</a> 等嚇人的保護機制。</p>
+
 <p>對於帳號權限不知道該如何設定的人，通常最好的方式是：觀摩別人是怎麼做的，尤其是經典級的 services。</p>
+
 <p>我們就在 Ubuntu 14.04 裡面，好好觀摩一下吧。</p>
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+
+<p><br/><br/></p>
+
 <p>以 Apache 為例，如果你是透過 <code>apt-get install apache2</code> 來安裝，可看到它是以 <code>www-data</code> 的身份來執行 worker process：</p>
+
 <div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">$ ps aux | grep apache2
 root      2734  0.0  0.5  73368  2628 ?        Ss   04:36   0:00 /usr/sbin/apache2 -k start
 www-data  2737  0.0  0.4 362532  2240 ?        Sl   04:36   0:00 /usr/sbin/apache2 -k start
 www-data  2738  0.0  0.4 362532  2240 ?        Sl   04:36   0:00 /usr/sbin/apache2 -k start</code></pre></div>
+
 <p>以 Nginx 為例，如果你是透過 <code>apt-get install nginx</code> 來安裝，可看到它也是以 <code>www-data</code> 的身份來執行 worker process：</p>
+
 <div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">$ ps aux | grep nginx
 root      3313  0.0  0.2  85884  1340 ?        Ss   04:44   0:00 nginx: master process /usr/sbin/nginx
 www-data  3314  0.0  0.3  86228  1768 ?        S    04:44   0:00 nginx: worker process
 www-data  3315  0.0  0.3  86228  1768 ?        S    04:44   0:00 nginx: worker process
 www-data  3316  0.0  0.3  86228  1768 ?        S    04:44   0:00 nginx: worker process
 www-data  3317  0.0  0.3  86228  1768 ?        S    04:44   0:00 nginx: worker process</code></pre></div>
-<p>以 MySQL 為例，<!-- raw HTML omitted -->如果你是透過 <code>apt-get install mysql-server</code> 來安裝，可看到它是以 <code>mysql</code> 的身份來執行：<!-- raw HTML omitted --></p>
+
+<p>以 MySQL 為例，<span class="redactor-invisible-space">如果你是透過 <code>apt-get install mysql-server</code> 來安裝，可看到它是以 <code>mysql</code> 的身份來執行：</span></p>
+
 <div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">$ ps aux | grep mysql
 mysql     7004  0.5  8.8 623920 44536 ?        Ssl  04:48   0:00 /usr/sbin/mysqld</code></pre></div>
+
 <p>從以上三個經典案例，可以歸納出一個小結論：「他們都<strong>盡可能不以 root 身分執行</strong>。」</p>
+
 <p>這些 <code>www-data</code> 及 <code>mysql</code> 帳號，甚至沒有登入的權力：</p>
+
 <div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">$ cat /etc/passwd | egrep &#39;(mysql|www-data)&#39;
 www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
 mysql:x:109:116:MySQL Server,,,:/nonexistent:/bin/false
@@ -356,7 +383,9 @@ mysql:x:109:116:MySQL Server,,,:/nonexistent:/bin/false
 $ cat /etc/group  | egrep &#39;(mysql|www-data)&#39;
 www-data:x:33:
 mysql:x:116:</code></pre></div>
+
 <p>也沒有偷開 sudo 後門：</p>
+
 <div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">$ sudo cat /etc/sudoers
 Defaults    env_reset
 Defaults    mail_badpass
@@ -367,30 +396,45 @@ root    ALL=(ALL:ALL) ALL
 %admin ALL=(ALL) ALL
 # Allow members of group sudo to execute any command
 %sudo    ALL=(ALL:ALL) ALL</code></pre></div>
+
 <p>所以，這些經典級的服務，他們都非常自制，極度限縮自己的權力。</p>
+
 <p>用更有學問的說法：他們都遵循<strong>最小權限原則</strong> (<em>principle of least privilege</em>; POLP)。</p>
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+
+<p><br/><br/></p>
+
 <p>維基百科提到 POLP 的<a href="https://en.wikipedia.org/wiki/Principle_of_least_privilege#History">歷史淵源</a>，可追溯至 1974 年：</p>
+
 <blockquote>
 <p>Every program and every privileged user of the system should operate using the least amount of privilege necessary to complete the job.</p>
+
 <p>— <a href="https://en.wikipedia.org/wiki/Jerome_H._Saltzer">Jerome Saltzer</a>, <a href="https://en.wikipedia.org/wiki/Communications_of_the_ACM"><em>Communications of the ACM</em></a></p>
 </blockquote>
+
 <p>可見這算是歷久彌新的原則了。</p>
+
 <p>如果要將 POLP 套用到目前流行的 web application，我引述 <em>Secure Your Node.js Web Application</em> 一書的<a href="http://www.safaribooksonline.com/a/secure-your-nodejs/1159941/">說法</a>：</p>
+
 <blockquote>
 <p>From our web application standpoint, we have the following rules:</p>
+
 <ol>
 <li>The web application should not be run with root privileges. It should instead use a limited account that has access to only the required resources.</li>
 <li>The database account should not be a root account. The account should have limited privileges over the database tables.</li>
 <li>The users of the web application should be given the minimum set of privileges they need.</li>
 </ol>
 </blockquote>
+
 <p>也引述《Ruby on Rails 實戰聖經》的<a href="https://ihower.tw/rails4/deployment.html">說法</a>：</p>
+
 <blockquote>
 <p><strong>設定伺服器部署使用者</strong></p>
+
 <p>習慣上我們會在伺服器上開一個專門的帳號，用來放 Rails 應用程式：<code>sudo adduser --disabled-password deploy</code> ⋯⋯</p>
+
 <p>本機執行 <code>cap deploy:check</code>，就會自動登入遠端的伺服器，在登入的帳號下新建 current、releases 和 shared 這三個目錄。</p>
 </blockquote>
+
 <p>所以，回頭檢視一下自己的軟體部署流程，有沒有遵循<strong>最小權限原則</strong>吧！</p>
     </div>
 

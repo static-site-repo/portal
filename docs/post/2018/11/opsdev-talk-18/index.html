@@ -37,7 +37,7 @@
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.60.1" />
+<meta name="generator" content="Hugo 0.55.6" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2018/11/opsdev-talk-18/" />
@@ -62,29 +62,42 @@
 
 <meta property="og:title" content="「從 Ops 角度看 DevOps」的感想" />
 <meta property="og:description" content="在台灣（或許在其他地方也是），DevOps 的話語權，很大幅度都被 Dev 一方把持。我們很少聽到 Ops 一方的說法。
+
 成功的改革，需要兼顧各方利益者的需求及痛點。隨著 DevOps 守備範圍日益擴大，這種失衡狀態必須改變。
+
 今晚參加 DevOps Taiwan 社群舉辦的講座：【從 Ops 角度看 DevOps】，聽聽胡士亮 (Robert Hu) 從正統 Ops 角度來詮釋 DevOps，甚至 OpsDev，收穫頗大。
+
 聽知識，聽心得，也聽熱情與願景。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="//william-yeh.net/post/2018/11/opsdev-talk-18/" />
-<meta property="article:published_time" content="2018-11-28T23:00:00+08:00" />
-<meta property="article:modified_time" content="2018-11-28T23:00:00+08:00" />
+<meta property="article:published_time" content="2018-11-28T23:00:00&#43;08:00"/>
+<meta property="article:modified_time" content="2018-11-28T23:00:00&#43;08:00"/>
+
 <meta itemprop="name" content="「從 Ops 角度看 DevOps」的感想">
 <meta itemprop="description" content="在台灣（或許在其他地方也是），DevOps 的話語權，很大幅度都被 Dev 一方把持。我們很少聽到 Ops 一方的說法。
+
 成功的改革，需要兼顧各方利益者的需求及痛點。隨著 DevOps 守備範圍日益擴大，這種失衡狀態必須改變。
+
 今晚參加 DevOps Taiwan 社群舉辦的講座：【從 Ops 角度看 DevOps】，聽聽胡士亮 (Robert Hu) 從正統 Ops 角度來詮釋 DevOps，甚至 OpsDev，收穫頗大。
+
 聽知識，聽心得，也聽熱情與願景。">
+
+
 <meta itemprop="datePublished" content="2018-11-28T23:00:00&#43;08:00" />
 <meta itemprop="dateModified" content="2018-11-28T23:00:00&#43;08:00" />
 <meta itemprop="wordCount" content="759">
 
 
 
-<meta itemprop="keywords" content="devops,service mesh,microservices,kubernetes," /><meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="devops,service mesh,microservices,kubernetes," />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="「從 Ops 角度看 DevOps」的感想"/>
 <meta name="twitter:description" content="在台灣（或許在其他地方也是），DevOps 的話語權，很大幅度都被 Dev 一方把持。我們很少聽到 Ops 一方的說法。
+
 成功的改革，需要兼顧各方利益者的需求及痛點。隨著 DevOps 守備範圍日益擴大，這種失衡狀態必須改變。
+
 今晚參加 DevOps Taiwan 社群舉辦的講座：【從 Ops 角度看 DevOps】，聽聽胡士亮 (Robert Hu) 從正統 Ops 角度來詮釋 DevOps，甚至 OpsDev，收穫頗大。
+
 聽知識，聽心得，也聽熱情與願景。"/>
 
 <!--[if lte IE 9]>
@@ -320,10 +333,15 @@ if (!doNotTrack) {
     
     <div class="post-content">
       <p>在台灣（或許在其他地方也是），DevOps 的話語權，很大幅度都被 Dev 一方把持。我們很少聽到 Ops 一方的說法。</p>
+
 <p>成功的改革，需要兼顧各方利益者的需求及痛點。隨著 DevOps 守備範圍日益擴大，這種失衡狀態必須改變。</p>
+
 <p>今晚參加 <a href="https://www.facebook.com/DevOpsTaiwan/">DevOps Taiwan 社群</a>舉辦的講座：【<a href="https://devops.kktix.cc/events/meetup17-opsdev">從 Ops 角度看 DevOps</a>】，聽聽<a href="https://www.facebook.com/roberthu.tw">胡士亮 (Robert Hu)</a> 從正統 Ops 角度來詮釋 DevOps，甚至 OpsDev，收穫頗大。</p>
+
 <p>聽知識，聽心得，也聽熱情與願景。</p>
+
 <p>也更確定自己設想的方向，是符合正統 Ops 下一步思維的：<a href="https://dzone.com/articles/predictive-analytics-in-devops-applications-and-be">predictive analysis</a> &amp; <a href="https://www.bmc.com/blogs/what-is-aiops/">AIOps</a>。</p>
+
 
 <link rel="stylesheet" href="/css/hugo-easy-gallery.css" />
 <div class="box" style="max-width:30em">
@@ -338,8 +356,11 @@ if (!doNotTrack) {
   </figure>
 </div>
 
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+
+<p><br/><br/></p>
+
 <p>這場講座印象最深的觀念是：同一件事情，在某些時候，由 Dev 下手較好；在某些時候，卻是由 Ops 下手較好。所以，手握 Dev 及 Ops 雙邊武器，就有較大的選擇彈性。</p>
+
 
 
 <div class="box" style="max-width:30em">
@@ -354,34 +375,48 @@ if (!doNotTrack) {
   </figure>
 </div>
 
+
 <p>這就讓我想到，以前搞 microservices 時，如果不透過 <a href="https://netflix.github.io/">NetflixOSS</a> 之類的 Dev 黑魔法，就很難做出那些瞠目結舌的機制。而現在，透過 <a href="https://kubernetes.io/">Kubernetes</a> + <a href="https://istio.io/">Istio</a> 之類的 nonintrusive Ops 黑魔法（或者更精準地說：<a href="http://www.servicemesher.com/awesome-servicemesh/">service mesh</a>），就不必改變 Dev 的 coding 習慣。</p>
+
 <p>譬如說：</p>
+
 <ul>
-<li>
-<p><a href="https://martinfowler.com/bliki/CircuitBreaker.html">Circuit breaker</a>：過去要靠 Java <a href="https://martinfowler.com/bliki/CircuitBreaker.html">Hystrix</a>、C# <a href="https://github.com/App-vNext/Polly">Polly</a>、Python <a href="https://github.com/danielfm/pybreaker">PyBreaker</a> 這些程式語言程式庫的層次才能做到，現在，直接交給 <a href="https://istio.io/docs/tasks/traffic-management/circuit-breaking/">Istio</a> 即可。</p>
-</li>
-<li>
-<p><a href="https://microservices.io/patterns/observability/distributed-tracing.html">Distributed tracing</a>：過去要靠 Java <a href="https://github.com/openzipkin/zipkin">Zipkin</a>、Java/C#/Python/etc <a href="https://opentracing.io/">OpenTracing</a> 這些程式語言程式庫的層次才能做到，現在，直接交給 <a href="https://istio.io/docs/tasks/telemetry/distributed-tracing/">Istio</a> 即可。</p>
-</li>
+<li><p><a href="https://martinfowler.com/bliki/CircuitBreaker.html">Circuit breaker</a>：過去要靠 Java <a href="https://martinfowler.com/bliki/CircuitBreaker.html">Hystrix</a>、C# <a href="https://github.com/App-vNext/Polly">Polly</a>、Python <a href="https://github.com/danielfm/pybreaker">PyBreaker</a> 這些程式語言程式庫的層次才能做到，現在，直接交給 <a href="https://istio.io/docs/tasks/traffic-management/circuit-breaking/">Istio</a> 即可。</p></li>
+
+<li><p><a href="https://microservices.io/patterns/observability/distributed-tracing.html">Distributed tracing</a>：過去要靠 Java <a href="https://github.com/openzipkin/zipkin">Zipkin</a>、Java/C#/Python/etc <a href="https://opentracing.io/">OpenTracing</a> 這些程式語言程式庫的層次才能做到，現在，直接交給 <a href="https://istio.io/docs/tasks/telemetry/distributed-tracing/">Istio</a> 即可。</p></li>
 </ul>
+
 <p>這也意味著，好好掌握新一代的 Ops 技術，會促進內部協作，也會大幅拉大與競爭對手的差距——那些仍活在舊時代的 infra 對手們。</p>
+
 <p>時代在進步，現在 Ops 已經不是只能拿冷兵器作戰的小步兵了，而是手持核武的將士——自我升級的鑰匙，在你手裡。</p>
+
 <p>小小的感想。</p>
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+
+<p><br/><br/></p>
+
 <p>再次感謝 <a href="https://www.facebook.com/roberthu.tw">Robert Hu</a> 這麼精彩的分享！</p>
+
 <p><strong><a href="//www.slideshare.net/roberthutw/ops-devops-devops-from-ops-perspective">從 Ops 角度看 DevOps</a></strong>
 <iframe
   style="width: 100%; height: 500px;" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"
   src="https://www.slideshare.net/slideshow/embed_code/124278498" allowfullscreen webkitallowfullscreen mozallowfullscreen> </iframe>
 <br><br></p>
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
-<!-- raw HTML omitted -->
-<pre><code>  2018-11-29 補充
-</code></pre>
-<!-- raw HTML omitted -->
+
+<p><br/><br/></p>
+
+<div class="shortcode-notice note">
+  <div class="shortcode-notice-title note">
+    
+      2018-11-29 補充
+    
+  </div>
+  
+
 <p>剛剛看完一場 live online training “<a href="https://www.safaribooksonline.com/live-training/courses/istio-on-kubernetes-enter-the-service-mesh/0636920221357/">Istio on Kubernetes: Enter the Service Mesh</a>”，其中有一段話說得好，可作為文章的註腳：</p>
+
 <p>“The first generation of microservices was primarily shaped by <a href="https://netflix.github.io/">Netflix OSS</a> and leveraged by numerous <a href="https://spring.io/projects/spring-cloud">Spring Cloud</a> annotations sprinkled all throughout your business logic. The next generation of cloud native apps and microservices will leverage <strong>sidecars</strong> and a <strong>service mesh</strong>.”</p>
-<!-- raw HTML omitted -->
+
+<p></div></p>
     </div>
 
     

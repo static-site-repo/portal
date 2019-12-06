@@ -33,7 +33,7 @@
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.60.1" />
+<meta name="generator" content="Hugo 0.55.6" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2015/12/ci-no-turning-back/" />
@@ -60,17 +60,21 @@
 <meta property="og:description" content="今年九月初參加完 DevOps 2015 之後，有感而發，寫了兩則 tweets： 說實在的，打從 1999 年 Kent Beck 經典著作 Extreme Programming Explained 問世，整個軟體文化就被徹底分裂成兩個國度。以 agile" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="//william-yeh.net/post/2015/12/ci-no-turning-back/" />
-<meta property="article:published_time" content="2015-12-21T08:00:00+08:00" />
-<meta property="article:modified_time" content="2015-12-21T08:00:00+08:00" />
+<meta property="article:published_time" content="2015-12-21T08:00:00&#43;08:00"/>
+<meta property="article:modified_time" content="2015-12-21T08:00:00&#43;08:00"/>
+
 <meta itemprop="name" content="CI 是條不歸路">
 <meta itemprop="description" content="今年九月初參加完 DevOps 2015 之後，有感而發，寫了兩則 tweets： 說實在的，打從 1999 年 Kent Beck 經典著作 Extreme Programming Explained 問世，整個軟體文化就被徹底分裂成兩個國度。以 agile">
+
+
 <meta itemprop="datePublished" content="2015-12-21T08:00:00&#43;08:00" />
 <meta itemprop="dateModified" content="2015-12-21T08:00:00&#43;08:00" />
-<meta itemprop="wordCount" content="1333">
+<meta itemprop="wordCount" content="1321">
 
 
 
-<meta itemprop="keywords" content="agile,devops,ci," /><meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="agile,devops,ci," />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="CI 是條不歸路"/>
 <meta name="twitter:description" content="今年九月初參加完 DevOps 2015 之後，有感而發，寫了兩則 tweets： 說實在的，打從 1999 年 Kent Beck 經典著作 Extreme Programming Explained 問世，整個軟體文化就被徹底分裂成兩個國度。以 agile"/>
 
@@ -286,7 +290,7 @@ if (!doNotTrack) {
             <a href="//william-yeh.net/categories/tech/"> Tech </a>
             
           </div>
-        <span class="more-meta"> 約 1333 字 </span>
+        <span class="more-meta"> 約 1321 字 </span>
           <span class="more-meta"> 預計閱讀 3 分鐘 </span>
 
         
@@ -306,54 +310,81 @@ if (!doNotTrack) {
 
     
     <div class="post-content">
-      <p>今年九月初參加完 <a href="https://www.ithome.com.tw/article/98527">DevOps 2015</a> 之後，有感而發，寫了兩則 tweets：</p>
+      
+
+<p>今年九月初參加完 <a href="https://www.ithome.com.tw/article/98527">DevOps 2015</a> 之後，有感而發，寫了兩則 tweets：</p>
+
 <blockquote>
-<p>說實在的，打從 1999 年 Kent Beck 經典著作 <em>Extreme Programming Explained</em> 問世，整個軟體文化就被徹底分裂成<strong>兩個國度</strong>。以 agile best practices 出發的國度，不斷演化至另一個國度難以企及的高度。<!-- raw HTML omitted -->
+<p>說實在的，打從 1999 年 Kent Beck 經典著作 <em>Extreme Programming Explained</em> 問世，整個軟體文化就被徹底分裂成<strong>兩個國度</strong>。以 agile best practices 出發的國度，不斷演化至另一個國度難以企及的高度。<br/>
 &mdash; Quote: <a href="https://twitter.com/william_yeh/status/639246537151803392">2015-09-03 Tweet #1</a></p>
 </blockquote>
-<!-- raw HTML omitted -->
+
+<p><br/></p>
+
 <blockquote>
-<p>這個時代，如果還覺得 DevOps 是 mission impossible，可以說，連 1999 年的<strong>小團隊水準</strong>都達不到。或許該回頭蹲馬步，好好思考 <em>Extreme Programming Explained</em> 裡面講的幾個 best practices，有哪些可以嘗試看看。<!-- raw HTML omitted -->
+<p>這個時代，如果還覺得 DevOps 是 mission impossible，可以說，連 1999 年的<strong>小團隊水準</strong>都達不到。或許該回頭蹲馬步，好好思考 <em>Extreme Programming Explained</em> 裡面講的幾個 best practices，有哪些可以嘗試看看。<br/>
 &mdash; Quote: <a href="https://twitter.com/william_yeh/status/639247547307986947">2015-09-03 Tweet #2</a></p>
 </blockquote>
+
 <p><a href="http://www.amazon.com/dp/0321278658/ref=cm_sw_r_tw_dp_UMaEwb1ZRMGT1"><em>Extreme Programming Explained</em></a> 書中列的 best practices 很多。有些與組織文化及流程息息相關，不見得一開始就能說服眾人採用。其中，我覺得最立竿見影的，與組織文化流程互斥最少的，就是這兩項：</p>
+
 <ul>
 <li>Ten-Minute Build</li>
 <li>Continuous Integration</li>
 </ul>
+
 <p>說來容易，做起來可也得花一番工夫。但這世界上，有些<strong>打地基</strong>的事，不做，就像不會基本代數，就註定與微積分的境界絕緣。</p>
+
 <p>CI，就是幫助你打好地基，開啟另一扇窗的手法。</p>
-<h2 id="heading">打地基的切入點</h2>
+
+<h2 id="打地基的切入點">打地基的切入點</h2>
+
 <p>初入這個新國度的人，面對 <a href="https://en.wikipedia.org/wiki/Agile_software_development">Agile</a>、<a href="https://en.wikipedia.org/wiki/Continuous_integration">CI</a>、<a href="https://en.wikipedia.org/wiki/Continuous_delivery">CD</a>、<a href="https://en.wikipedia.org/wiki/DevOps">DevOps</a>、<a href="https://en.wikipedia.org/wiki/Scrum_%28software_development%29">Scrum</a>、<a href="https://en.wikipedia.org/wiki/Test-driven_development">TDD</a>⋯⋯太多神奇咒語，容易一頭霧水，搞不清楚優先順序。</p>
+
 <p>我不認為有放諸四海皆準的萬靈丹特效藥。如果真的要挑出一項切入手法，就從 <a href="https://en.wikipedia.org/wiki/Continuous_integration">CI</a> 開始吧。</p>
+
 <p><a href="https://en.wikipedia.org/wiki/Continuous_integration">CI (continuous integration)</a>，是一條不會過度陷入工具至上的 &ldquo;<a href="https://en.wikipedia.org/wiki/Cargo_cult">cargo cult</a>&rdquo; 迷思，又能從某些角度有效撼動既有的流程制度。難怪梅姐 (Marissa Mayer) 會選擇用這條角度切入：</p>
+
 <blockquote>
-<p>「沒有持續交付 (Continuous Delivery)，專案不得上線，我不是在說笑。」Yahoo 執行長 Marissa Mayer 的宣言。<br>
+<p>「沒有持續交付 (Continuous Delivery)，專案不得上線，我不是在說笑。」Yahoo 執行長 Marissa Mayer 的宣言。<br />
 &mdash; Quote: <a href="http://www.ithome.com.tw/news/99283">【誰說大象不能實現 DevOps】雅虎 97% 專案擁抱持續交付的關鍵</a></p>
 </blockquote>
+
 <p>CI，不管你選用的是當紅的自架工具 <a href="https://jenkins.io/">Jenkins</a>，或託管給 <a href="https://travis-ci.org/">Travis CI</a>（OSS 專案可免費使用），重點是：請踏出第一步。</p>
+
 <p>這不只是行動的第一步，也是照妖鏡、試金石。</p>
+
 <p>初步嘗試 CI，一定會踩到地雷；但你不是第一個踩雷的。我推薦過的好書《<a href="http://www.books.com.tw/products/0010549884">笑談軟體工程：敏捷開發法的逆襲</a>》，就徹底討論過該議題了。摘錄一段當時的推薦文：</p>
+
 <blockquote>
-<p>作者感慨：「在臺灣很多試圖採用敏捷方法但卻槓龜的團隊，缺少『<strong>追求技術卓越</strong>』的精神很有可能是一個主要的原因。」譬如說，如果沒有扎實的「自動化測試」及「持續整合」工夫，那麼，逐漸累積的「測試債」會讓 sprint 制度破功。當然啦，扎實的基本功並非一蹴可幾，作者也勉勵看過本書卻認為自己辦不到的人：「要『傻的願意相信書本裡所說的』，不要在尚未嘗試之前就先否定。」你願意開始嘗試嗎？<br>
+<p>作者感慨：「在臺灣很多試圖採用敏捷方法但卻槓龜的團隊，缺少『<strong>追求技術卓越</strong>』的精神很有可能是一個主要的原因。」譬如說，如果沒有扎實的「自動化測試」及「持續整合」工夫，那麼，逐漸累積的「測試債」會讓 sprint 制度破功。當然啦，扎實的基本功並非一蹴可幾，作者也勉勵看過本書卻認為自己辦不到的人：「要『傻的願意相信書本裡所說的』，不要在尚未嘗試之前就先否定。」你願意開始嘗試嗎？<br />
 &mdash; Quote: <a href="https://www.ithome.com.tw/tech/88496">iThome 2012年 iT人必看的好書</a></p>
 </blockquote>
+
 <p>手頭沒這本書的，不妨看看以下幾則文章：</p>
+
 <ul>
 <li><a href="http://teddy-chen-tw.blogspot.tw/2011/03/ten-minute-build.html">Ten-Minute Build</a></li>
 <li><a href="http://teddy-chen-tw.blogspot.tw/2012/07/blog-post.html">開發人員應遵循的七項持續整合要領</a></li>
 <li><a href="http://teddy-chen-tw.blogspot.tw/2012/07/blog-post_04.html">持續整合工程師應遵循的十項要領（上）</a></li>
 <li><a href="http://teddy-chen-tw.blogspot.tw/2012/07/blog-post_05.html">持續整合工程師應遵循的十項要領（下）</a></li>
 </ul>
+
 <p>不過，對「聰明人」來說，「<strong>傻得願意相信</strong>」可能是頭一個要面對的關卡吧。</p>
+
 <p>能否面對該面對的關卡，決定你能否躍遷到更高的層次：</p>
+
 <blockquote>
 <p>CI/CD/DevOps 既是條不歸路，更是大躍進之路：一旦踏出第一步，就注定你會不斷接觸<strong>遠離平庸</strong>的新觀點、新技術。</p>
+
 <p>至於背後是不是跑 agile，反而不那麼絕對了。</p>
-<p>屢屢從自己與別人演講、教育訓練、Q&amp;A 中歸納出來的心法……<br>
+
+<p>屢屢從自己與別人演講、教育訓練、Q&amp;A 中歸納出來的心法……<br />
 &mdash; Quote: <a href="https://twitter.com/william_yeh/status/678524911351029760">2015-12-21 Tweet</a></p>
 </blockquote>
+
 <p>再強調一次：<strong>一旦踏出第一步，就注定你會不斷接觸「遠離平庸」的新觀點、新技術。</strong></p>
+
 <p>所以，為了呼應剛剛的感想，在新梯次的 <a href="http://get.soft-arch.net/ansible">Ansible Workshop</a>，乾脆帶大家用 Travis CI + Docker 玩一下 CI/CD 好了。因為從今年五個梯次 <a href="https://github.com/William-Yeh/docker-workshop">Docker Workshop</a> 的經驗看來，滿意度最高的實作任務，一直都是 GitHub → Docker Hub 這一段 CI 動線⋯⋯</p>
 
     </div>

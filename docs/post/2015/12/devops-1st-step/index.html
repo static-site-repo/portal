@@ -35,7 +35,7 @@
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.60.1" />
+<meta name="generator" content="Hugo 0.55.6" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2015/12/devops-1st-step/" />
@@ -60,23 +60,30 @@
 
 <meta property="og:title" content="DevOps 是圓的，找到立足點就是頂點" />
 <meta property="og:description" content="自從 IT 相關媒體開始傳頌 2009 年蔚為經典的 Flickr 經驗 “10&#43; Deploys per Day”、2014 年 Marissa Mayer 的鐵桿作風「沒有持續交付，專案不得上線，我不是在說笑」之後，頓時 DevOps 成為 IT 界新的焦慮源。我還聽說有高層在聽完兩天 DevOps 2015 研討會之後，回頭要求 IT 部門要師法 2009 年的 Flickr 做到「10&#43; Deploys per Day」。
+
 聽了很潮的新觀念，就訂不合理的 KPI，這也是「負能量」呀！" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="//william-yeh.net/post/2015/12/devops-1st-step/" />
-<meta property="article:published_time" content="2015-12-28T08:00:00+08:00" />
-<meta property="article:modified_time" content="2015-12-28T08:00:00+08:00" />
+<meta property="article:published_time" content="2015-12-28T08:00:00&#43;08:00"/>
+<meta property="article:modified_time" content="2015-12-28T08:00:00&#43;08:00"/>
+
 <meta itemprop="name" content="DevOps 是圓的，找到立足點就是頂點">
 <meta itemprop="description" content="自從 IT 相關媒體開始傳頌 2009 年蔚為經典的 Flickr 經驗 “10&#43; Deploys per Day”、2014 年 Marissa Mayer 的鐵桿作風「沒有持續交付，專案不得上線，我不是在說笑」之後，頓時 DevOps 成為 IT 界新的焦慮源。我還聽說有高層在聽完兩天 DevOps 2015 研討會之後，回頭要求 IT 部門要師法 2009 年的 Flickr 做到「10&#43; Deploys per Day」。
+
 聽了很潮的新觀念，就訂不合理的 KPI，這也是「負能量」呀！">
+
+
 <meta itemprop="datePublished" content="2015-12-28T08:00:00&#43;08:00" />
 <meta itemprop="dateModified" content="2015-12-28T08:00:00&#43;08:00" />
 <meta itemprop="wordCount" content="1805">
 
 
 
-<meta itemprop="keywords" content="devops,ci," /><meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="devops,ci," />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="DevOps 是圓的，找到立足點就是頂點"/>
 <meta name="twitter:description" content="自從 IT 相關媒體開始傳頌 2009 年蔚為經典的 Flickr 經驗 “10&#43; Deploys per Day”、2014 年 Marissa Mayer 的鐵桿作風「沒有持續交付，專案不得上線，我不是在說笑」之後，頓時 DevOps 成為 IT 界新的焦慮源。我還聽說有高層在聽完兩天 DevOps 2015 研討會之後，回頭要求 IT 部門要師法 2009 年的 Flickr 做到「10&#43; Deploys per Day」。
+
 聽了很潮的新觀念，就訂不合理的 KPI，這也是「負能量」呀！"/>
 
 <!--[if lte IE 9]>
@@ -312,12 +319,15 @@ if (!doNotTrack) {
   <h2 class="post-toc-title">文章目錄</h2>
   <div class="post-toc-content">
     <nav id="TableOfContents">
-  <ul>
-    <li><a href="#heading">起點</a></li>
-    <li><a href="#heading1">原點</a></li>
-    <li><a href="#heading2">立足點很多，只等你起步</a></li>
-    <li><a href="#heading3">不要妄想一步登天，先累積小小的成功</a></li>
-  </ul>
+<ul>
+<li>
+<ul>
+<li><a href="#起點">起點</a></li>
+<li><a href="#原點">原點</a></li>
+<li><a href="#立足點很多-只等你起步">立足點很多，只等你起步</a></li>
+<li><a href="#不要妄想一步登天-先累積小小的成功">不要妄想一步登天，先累積小小的成功</a></li>
+</ul></li>
+</ul>
 </nav>
   </div>
 </div>
@@ -325,43 +335,62 @@ if (!doNotTrack) {
     
     <div class="post-content">
       <p>自從 IT 相關媒體開始傳頌 2009 年蔚為經典的 Flickr 經驗 “<a href="https://youtu.be/LdOe18KhtT4">10+ Deploys per Day</a>”、2014 年 Marissa Mayer 的鐵桿作風「<a href="http://www.ithome.com.tw/news/99283">沒有持續交付，專案不得上線，我不是在說笑</a>」之後，頓時 DevOps 成為 IT 界新的焦慮源。我還聽說有高層在聽完兩天 <a href="https://www.ithome.com.tw/article/98527">DevOps 2015 研討會</a>之後，回頭要求 IT 部門要師法 2009 年的 Flickr 做到「10+ Deploys per Day」。</p>
+
 <p>聽了很潮的新觀念，就訂不合理的 KPI，這也是「負能量」呀！</p>
+
 <p>本質上，DevOps 是一種文化運動。文化不挪動，流程、工具也無法落地生效。</p>
+
 <p>如果組織文化充滿壁壘分明的界線，缺少從錯誤中學習的不指責氛圍，只盲目崇尚數字管理、成效管理，那就很難用健康的心態去嘗試新的流程及工具，進而受益。</p>
-<h2 id="heading">起點</h2>
+
+<h2 id="起點">起點</h2>
+
 <p>如果組織文化已經做好改變的準備了，流程、工具該怎麼起步呢？</p>
+
 <p>Bryan 在大人學講座【<a href="https://shop.darencademy.com/product/view/id/57">尋找天賦與熱情的系統化做法</a>】曾提到一個觀點：「世界是圓的，找到立足點就是頂點。」</p>
+
 <p>我也想照樣照句：「DevOps 是圓的，找到立足點就是頂點。」</p>
+
 <p>我不太信奉放諸四海皆準的方法論、roadmap、步驟。而且，DevOps 真的是圓的，從任何一個契合組織現況的角度切入，都有機會逐步把整塊 DevOps 拼圖補齊。</p>
+
 <p>譬如說，如果你的組織是研發驅動的，或許從 CI 角度切入，阻力會比較小；這也是稍早兩篇文章〈<a href="//william-yeh.net/post/2015/12/ci-no-turning-back/">CI 是條不歸路</a>〉、〈<a href="//william-yeh.net/post/2015/12/ci-effect/">CI 怎樣帶你遠離平庸？</a>〉的論點。</p>
+
 <p>當然啦，並不是所有團隊都認為 CI 是他們的當務之急。此時，硬是要推銷 CI 理念或工具，不見得是上策。</p>
+
 <p>另一個我常拿來進行個案研討的蘇格拉底式問句，是從「<strong>DevOps 的原點</strong>」來提問。</p>
-<h2 id="heading1">原點</h2>
+
+<h2 id="原點">原點</h2>
+
 <p>DevOps 的原點是什麼？</p>
+
 <p>我很喜歡引述 Brian Brazil 在 &ldquo;<a href="http://www.robustperception.io/do-you-have-basic-infrastructure/">Do you have basic infrastructure?</a> 一文的觀點。他提到軟體的基礎架構 (infrastructure)，或大或小，或新或舊，總是要面對以下三則基本問題：</p>
+
 <ol>
-<li>
-<p><strong>How to recreate your system</strong></p>
-</li>
-<li>
-<p><strong>How to safely change your system</strong></p>
-</li>
-<li>
-<p><strong>When something has gone wrong</strong></p>
-</li>
+<li><p><strong>How to recreate your system</strong></p></li>
+
+<li><p><strong>How to safely change your system</strong></p></li>
+
+<li><p><strong>When something has gone wrong</strong></p></li>
 </ol>
+
 <p>好好面對這三個問題，不僅讓 DevOps 的核心議題變得無比清晰，更讓團隊自己理出當務之急切身之痛，而不是靠外部<del>名嘴</del>顧問的通靈神諭。</p>
-<h2 id="heading2">立足點很多，只等你起步</h2>
+
+<h2 id="立足點很多-只等你起步">立足點很多，只等你起步</h2>
+
 <p>這三個問題，好好搞定，其實已經碰觸到許多 DevOps 技術層面的議題了。</p>
+
 <p>譬如說，【1. How to recreate your system】至少涉及這些議題：</p>
+
 <ul>
 <li>如何從原始碼變成可執行的軟體？</li>
 <li>如何確定軟體已經是可發佈的品質？</li>
 <li>如何備妥軟體的執行環境？</li>
 <li>如何自動化上述事項？自動化到什麼程度？</li>
 </ul>
+
 <p>如果選擇從這裡出發，你就會接觸到 build automation、acceptance test、configuration management 等技術。</p>
+
 <p>【2. How to safely change your system】至少涉及這些議題：</p>
+
 <ul>
 <li>如何管控原始碼變更？</li>
 <li>如何管控執行環境變更？</li>
@@ -369,8 +398,11 @@ if (!doNotTrack) {
 <li>如何管控新版軟體的部署？</li>
 <li>如何自動化上述事項？自動化到什麼程度？</li>
 </ul>
+
 <p>如果選擇從這裡出發，你就會接觸到 Git/GitHub/GitLab flow、configuration management、test automation、continuous integration、continuous deployment 等技術。</p>
+
 <p>【3. When something has gone wrong】至少涉及這些議題：</p>
+
 <ul>
 <li>如何知道系統出了狀況？</li>
 <li>怎麼樣才叫做「系統出了狀況」？有哪些質化量化指標？</li>
@@ -380,17 +412,29 @@ if (!doNotTrack) {
 <li>怎樣集中處理？</li>
 <li>如何自動化上述事項？自動化到什麼程度？</li>
 </ul>
+
 <p>如果選擇從這裡出發，你就會接觸到 metrics aggregation、log aggregation、real-time monitoring/dashboard/alert、canary deployment 等技術。</p>
+
 <p>然後，你從任何一個立足點出發，解決切身之痛，嚐到甜美果實之後，一定會順便對其他相關議題有興趣嘗試、有信心搞定。至於文化議題，也會搭配著碰到。</p>
+
 <p>譬如說，我的 <a href="http://get.soft-arch.net/ansible/">Ansible Workshop 課程</a>，就是從第一類問題當中的 &ldquo;configuration management&rdquo; 小課題出發，進而發展到 GitHub flow、CI、test automation、canary deployment 等第二、第三類問題。</p>
+
 <p>這就是文章開頭講的「DevOps 是圓的，找到立足點就是頂點。」</p>
-<h2 id="heading3">不要妄想一步登天，先累積小小的成功</h2>
+
+<h2 id="不要妄想一步登天-先累積小小的成功">不要妄想一步登天，先累積小小的成功</h2>
+
 <p>有人認為，小團隊、新團隊包袱小，身兼數職是常態，無部門界線，先天上就比較容易導入 DevOps 流程。</p>
+
 <p>但也有人認為，大團隊、老團隊分工細密，各人有各自精深的專職技能，先天上比較容易執行一個個高度專業要求的 DevOps 元素。</p>
+
 <p>不同環境，看待 DevOps，各有不同的優勢與劣勢。所以，停止抱怨吧。</p>
+
 <p>導入 DevOps，請先回到 DevOps 的原點。</p>
+
 <p>我建議，先好好檢視上述的三個問題，嚴肅思考哪些是目前的痛點，哪些是容易有早期成功的項目。然後，賦予團隊充分的嘗試錯誤空間，下手去做。</p>
+
 <p>做了之後，自然就會發現：這是一條不歸路，<strong>你會不斷接觸『遠離平庸』的新觀點、新技術</strong>。</p>
+
 <p>你再也回不去過去那個老土砲的日子了。</p>
     </div>
 

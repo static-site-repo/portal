@@ -34,7 +34,7 @@
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.60.1" />
+<meta name="generator" content="Hugo 0.55.6" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2016/03/metaphor-in-cm/" />
@@ -61,17 +61,21 @@
 <meta property="og:description" content="人類是很喜愛比喻／譬喻的。戰國時代的莊子愛用譬喻，常和莊子抬槓的惠施也愛譬喻，《說苑‧善說》甚至記載著這麼一段故事：" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="//william-yeh.net/post/2016/03/metaphor-in-cm/" />
-<meta property="article:published_time" content="2016-03-02T08:00:00+08:00" />
-<meta property="article:modified_time" content="2016-03-02T08:00:00+08:00" />
+<meta property="article:published_time" content="2016-03-02T08:00:00&#43;08:00"/>
+<meta property="article:modified_time" content="2016-03-02T08:00:00&#43;08:00"/>
+
 <meta itemprop="name" content="電腦界的隱喻：組態管理">
 <meta itemprop="description" content="人類是很喜愛比喻／譬喻的。戰國時代的莊子愛用譬喻，常和莊子抬槓的惠施也愛譬喻，《說苑‧善說》甚至記載著這麼一段故事：">
+
+
 <meta itemprop="datePublished" content="2016-03-02T08:00:00&#43;08:00" />
 <meta itemprop="dateModified" content="2016-03-02T08:00:00&#43;08:00" />
 <meta itemprop="wordCount" content="1046">
 
 
 
-<meta itemprop="keywords" content="ansible,devops," /><meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="ansible,devops," />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="電腦界的隱喻：組態管理"/>
 <meta name="twitter:description" content="人類是很喜愛比喻／譬喻的。戰國時代的莊子愛用譬喻，常和莊子抬槓的惠施也愛譬喻，《說苑‧善說》甚至記載著這麼一段故事："/>
 
@@ -308,27 +312,45 @@ if (!doNotTrack) {
     
     <div class="post-content">
       <p>人類是很喜愛比喻／譬喻的。戰國時代的莊子愛用譬喻，常和莊子抬槓的惠施也愛譬喻，《說苑‧善說》甚至記載著這麼一段故事：</p>
+
 <blockquote>
 <p>客謂梁王曰：「惠子之言事也，善譬。王使無譬則不能言矣。」王曰：「諾。」</p>
+
 <p>明日見， 謂惠子曰：「願先生言事則直言耳，無譬也。」惠子曰：「今有人於此而不知彈者，曰：『彈之狀何若？』應曰：『彈之狀如彈。』則諭乎？」王曰：「未諭也。」 「於是更應曰：『彈之狀如弓，而竹為弦』，則知乎？」王曰：「可知矣。」</p>
+
 <p>惠子曰：「夫說者固以其所知，喻其所不知，而使人知之。今王曰無譬，則不可矣。」 王曰：「善。」</p>
 </blockquote>
+
 <p>用譬喻反擊「無譬也」的要求，真是高招！</p>
+
 <p>比喻／譬喻不只是修辭法，甚至是人類根深蒂固的認知媒介。認知語言學大師 George Lakoff 在 <a href="http://www.amazon.com/dp/0226468011/ref=cm_sw_r_tw_dp_yQP1wb1VDN24N"><em>Metaphors We Live By</em></a> 書中，如此闡述它的地位：</p>
+
 <blockquote>
 <p>Metaphor is not just a matter of language of mere words. We shall argue that, on the contrary, human <em><strong>thought processes</strong></em> are largely metaphorical.</p>
 </blockquote>
+
 <p>所以，每次看到有趣的隱喻，我都會特別留意，細細品味背後的巧思。</p>
+
 <p>電腦界也很愛用隱喻，甚至還會帶出成群的隱喻。</p>
+
 <p>Java 之名，取材自咖啡。JavaScript 雖然並非嫡傳血脈，但由它衍生出來的其他技術，有些就刻意以「咖啡」為隱喻。像美化 JavaScript 語法的 <a href="http://coffeescript.org/">CoffeeScript</a>、供 JavaScript 使用的測試框架 <a href="https://mochajs.org/">Mocha</a>，甚至連咖啡的對手：<a href="https://mochajs.org/">Chai</a> 都搬出來了。</p>
+
 <p>組態管理的四大工具，也是愛用隱喻的。</p>
+
 <p>Ansible 主要的隱喻是<strong>演戲</strong>。所以，在 Ansible 劇場中，策劃好的動作及姿勢叫做 <strong>play</strong>，集合起來就是 <strong>playbook</strong>（劇本）。人生就是戲，演不完的戲；在舞台上，每一台主機扮演一個或多個 <strong>role</strong>（角色），甚至還有天外飛來一筆的空降角色 —— 來自 <strong>galaxy</strong>（銀河系）。</p>
+
 <p>Chef 主要的隱喻是<strong>廚師</strong>。所以，在 Chef 世界中，珍藏厚厚的 <strong>cookbook</strong>（食譜），根據裡面記載的 <strong>recipe</strong>（料理步驟），用 <strong>knife</strong>（菜刀）做菜，也有一個 <strong>kitchen</strong>（廚房）可以實驗料理。</p>
+
 <p>Puppet 主要的隱喻是<strong>傀儡</strong>、<strong>偶戲</strong>。可惜的是，在 Puppet 舞台上出現的概念：manifest、resource、module、master、agent，似乎都沒有善用最初的隱喻。</p>
-<p>Salt 主要的隱喻是⋯⋯<strong>鹽</strong>。可惜的是，在 Salt 世界中出現的概念：salt state、formula、master、minion，似乎都沒有善用最初的隱喻。嗯，&ldquo;formula&rdquo; 字眼，勉強算有沾到邊。</p>
+
+<p>Salt 主要的隱喻是⋯⋯<strong>鹽</strong>。可惜的是，在 Salt 世界中出現的概念：salt state、formula、master、minion，似乎都沒有善用最初的隱喻。嗯，&rdquo;formula&rdquo; 字眼，勉強算有沾到邊。</p>
+
 <p>呃，我要修正前面那一句話：「組態管理的四大工具當中，Ansible 和 Chef 也是愛用隱喻的。」</p>
+
 <p>或許這也是我對 Ansible 及 Chef 比較有好感的原因吧。</p>
+
 <p>最後，如果你想對這四大工具有個快速的概念，可參考 Roland Wolters 製作的單頁掛圖：<a href="http://wall-skills.com/2015/configuration-management-ansible-salt-chef-puppet/">Tools for Configuration Management</a>。</p>
+
 
 <link rel="stylesheet" href="/css/hugo-easy-gallery.css" />
 <div class="box" style="max-width:30em">

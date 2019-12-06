@@ -33,7 +33,7 @@
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.60.1" />
+<meta name="generator" content="Hugo 0.55.6" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2019/06/inotify-in-containers/" />
@@ -60,17 +60,21 @@
 <meta property="og:description" content="It is usually necessary to watch for any changes in file systems, both in development and in production modes. For example, in the development mode Webpack can watch files and recompile whenever they change; in the production mode Consul Template can watch runtime configs and invoke specific applications whenever they change. These are well-known scenarios in traditional pre-container world. How about the container world? Do they behave the same in" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="//william-yeh.net/post/2019/06/inotify-in-containers/" />
-<meta property="article:published_time" content="2019-06-10T18:00:00+08:00" />
-<meta property="article:modified_time" content="2019-06-10T18:00:00+08:00" />
+<meta property="article:published_time" content="2019-06-10T18:00:00&#43;08:00"/>
+<meta property="article:modified_time" content="2019-06-10T18:00:00&#43;08:00"/>
+
 <meta itemprop="name" content="Inotify in Containers">
 <meta itemprop="description" content="It is usually necessary to watch for any changes in file systems, both in development and in production modes. For example, in the development mode Webpack can watch files and recompile whenever they change; in the production mode Consul Template can watch runtime configs and invoke specific applications whenever they change. These are well-known scenarios in traditional pre-container world. How about the container world? Do they behave the same in">
+
+
 <meta itemprop="datePublished" content="2019-06-10T18:00:00&#43;08:00" />
 <meta itemprop="dateModified" content="2019-06-10T18:00:00&#43;08:00" />
-<meta itemprop="wordCount" content="936">
+<meta itemprop="wordCount" content="931">
 
 
 
-<meta itemprop="keywords" content="devops,docker,kubernetes,inotify,configmap," /><meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="devops,docker,kubernetes,inotify,configmap," />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Inotify in Containers"/>
 <meta name="twitter:description" content="It is usually necessary to watch for any changes in file systems, both in development and in production modes. For example, in the development mode Webpack can watch files and recompile whenever they change; in the production mode Consul Template can watch runtime configs and invoke specific applications whenever they change. These are well-known scenarios in traditional pre-container world. How about the container world? Do they behave the same in"/>
 
@@ -286,7 +290,7 @@ if (!doNotTrack) {
             <a href="//william-yeh.net/categories/tech/"> tech </a>
             
           </div>
-        <span class="more-meta"> 約 936 字 </span>
+        <span class="more-meta"> 約 931 字 </span>
           <span class="more-meta"> 預計閱讀 2 分鐘 </span>
 
         
@@ -307,53 +311,59 @@ if (!doNotTrack) {
   <h2 class="post-toc-title">文章目錄</h2>
   <div class="post-toc-content">
     <nav id="TableOfContents">
-  <ul>
-    <li><a href="#experiment-setting">Experiment setting</a></li>
-    <li><a href="#group-a-native-mode">Group A: native mode</a></li>
-    <li><a href="#group-b-and-c-container-mode">Group B and C: container mode</a></li>
-    <li><a href="#group-d-k8s-mode">Group D: K8s mode</a>
-      <ul>
-        <li><a href="#caution-about-symbolic-links">Caution about symbolic links</a></li>
-      </ul>
-    </li>
-    <li><a href="#conclusion">Conclusion</a></li>
-  </ul>
+<ul>
+<li>
+<ul>
+<li><a href="#experiment-setting">Experiment setting</a></li>
+<li><a href="#group-a-native-mode">Group A: native mode</a></li>
+<li><a href="#group-b-and-c-container-mode">Group B and C: container mode</a></li>
+<li><a href="#group-d-k8s-mode">Group D: K8s mode</a>
+<ul>
+<li><a href="#caution-about-symbolic-links">Caution about symbolic links</a></li>
+</ul></li>
+<li><a href="#conclusion">Conclusion</a></li>
+</ul></li>
+</ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      <p>It is usually necessary to watch for any changes in file systems, both in development and in production modes. For example, in the development mode <a href="https://webpack.js.org/">Webpack</a> can watch files and recompile whenever they change; in the production mode <a href="https://github.com/hashicorp/consul-template">Consul Template</a> can watch runtime configs and invoke specific applications whenever they change.</p>
+      
+
+<p>It is usually necessary to watch for any changes in file systems, both in development and in production modes. For example, in the development mode <a href="https://webpack.js.org/">Webpack</a> can watch files and recompile whenever they change; in the production mode <a href="https://github.com/hashicorp/consul-template">Consul Template</a> can watch runtime configs and invoke specific applications whenever they change.</p>
+
 <p>These are well-known scenarios in traditional pre-container world.  How about the container world? Do they behave the same in the new container world?</p>
-<p>I've occasionally found that something behave differently in the container world. To clarify this I've conducted a series of experiments. In this article I'm going to explain the experiments and preliminary findings.  All experiment materials are available in the <a href="https://github.com/William-Yeh/fswatch">fswatch</a> repo.</p>
+
+<p>I&rsquo;ve occasionally found that something behave differently in the container world. To clarify this I&rsquo;ve conducted a series of experiments. In this article I&rsquo;m going to explain the experiments and preliminary findings.  All experiment materials are available in the <a href="https://github.com/William-Yeh/fswatch">fswatch</a> repo.</p>
+
 <h2 id="experiment-setting">Experiment setting</h2>
-<p>I've divided the experiments into 4 groups.</p>
+
+<p>I&rsquo;ve divided the experiments into 4 groups.</p>
+
 <ul>
-<li>
-<p>Group A (experiment 1 to 3) is the traditional native mode: run native apps in their native host operating systems, respectively. This is considered as the control group.</p>
-</li>
-<li>
-<p>Group B (experiment 4 to 6) is the Linux container mode: run the same containerized Linux app in 3 different host operating systems.</p>
-</li>
-<li>
-<p>Group C (experiment 7) is the Windows container mode: run the containerized Windows app in the Windows operating system.</p>
-</li>
-<li>
-<p>Group D (experiment 8) is the Kubernetes mode: run the containerized Linux app in Kubernetes.</p>
-</li>
+<li><p>Group A (experiment 1 to 3) is the traditional native mode: run native apps in their native host operating systems, respectively. This is considered as the control group.</p></li>
+
+<li><p>Group B (experiment 4 to 6) is the Linux container mode: run the same containerized Linux app in 3 different host operating systems.</p></li>
+
+<li><p>Group C (experiment 7) is the Windows container mode: run the containerized Windows app in the Windows operating system.</p></li>
+
+<li><p>Group D (experiment 8) is the Kubernetes mode: run the containerized Linux app in Kubernetes.</p></li>
 </ul>
+
 <table>
 <thead>
 <tr>
 <th>Host OS</th>
-<th>App run as<!-- raw HTML omitted -->native app</th>
-<th>App run as<!-- raw HTML omitted -->Linux Container</th>
-<th>App run as<!-- raw HTML omitted -->Windows Container</th>
+<th>App run as<br/>native app</th>
+<th>App run as<br/>Linux Container</th>
+<th>App run as<br/>Windows Container</th>
 <th>‖</th>
-<th>App run in<!-- raw HTML omitted -->K8s (Linux Container)</th>
+<th>App run in<br/>K8s (Linux Container)</th>
 </tr>
 </thead>
+
 <tbody>
 <tr>
 <td>Linux</td>
@@ -363,6 +373,7 @@ if (!doNotTrack) {
 <td>‖</td>
 <td><a href="https://github.com/William-Yeh/fswatch/blob/master/test-matrix/8_k8s_linux">8</a></td>
 </tr>
+
 <tr>
 <td>Mac</td>
 <td><a href="https://github.com/William-Yeh/fswatch/tree/master/test-matrix/2_native_mac">2</a></td>
@@ -371,6 +382,7 @@ if (!doNotTrack) {
 <td></td>
 <td></td>
 </tr>
+
 <tr>
 <td>Windows</td>
 <td><a href="https://github.com/William-Yeh/fswatch/blob/master/test-matrix/3_native_win">3</a></td>
@@ -381,42 +393,71 @@ if (!doNotTrack) {
 </tr>
 </tbody>
 </table>
+
 <h2 id="group-a-native-mode">Group A: native mode</h2>
-<p>Let's start with the native mode as the control group. We'll see how it works in the traditional world of Linux, Mac, and Windows.</p>
-<p>To make life easier, I'm using the <a href="https://github.com/fsnotify/fsnotify">fsnotify</a> library to unify a variety of underlying operating system APIs (e.g., <a href="https://en.wikipedia.org/wiki/Inotify"><code>inotify</code></a> in Linux, <a href="https://en.wikipedia.org/wiki/Kqueue"><code>kqueue</code></a> in macOS, and <a href="https://docs.microsoft.com/en-us/windows/desktop/api/winbase/nf-winbase-readdirectorychangesw"><code>ReadDirectoryChangesW</code></a> in Windows).  Statically-linked binaries for the 3 platforms are generated with the Go compiler 1.12.5:</p>
+
+<p>Let&rsquo;s start with the native mode as the control group. We&rsquo;ll see how it works in the traditional world of Linux, Mac, and Windows.</p>
+
+<p>To make life easier, I&rsquo;m using the <a href="https://github.com/fsnotify/fsnotify">fsnotify</a> library to unify a variety of underlying operating system APIs (e.g., <a href="https://en.wikipedia.org/wiki/Inotify"><code>inotify</code></a> in Linux, <a href="https://en.wikipedia.org/wiki/Kqueue"><code>kqueue</code></a> in macOS, and <a href="https://docs.microsoft.com/en-us/windows/desktop/api/winbase/nf-winbase-readdirectorychangesw"><code>ReadDirectoryChangesW</code></a> in Windows).  Statically-linked binaries for the 3 platforms are generated with the Go compiler 1.12.5:</p>
+
 <ul>
 <li>2,943,200 (bytes) <code>fswatch-linux-x86_64</code></li>
 <li>2,861,360 (bytes) <code>fswatch-mac</code></li>
 <li>2,914,304 (bytes) <code>fswatch-x86_64.exe</code></li>
 </ul>
+
 <p>These experiments are easy to try by yourself. Take experiment <a href="https://github.com/William-Yeh/fswatch/tree/master/test-matrix/1_native_linux">1</a> &ldquo;run native Linux app in Linux host OS&rdquo; for example:</p>
-<p><a href="https://asciinema.org/a/250732"><img src="https://asciinema.org/a/250732.svg" alt="asciicast"></a></p>
+
+<p><a href="https://asciinema.org/a/250732"><img src="https://asciinema.org/a/250732.svg" alt="asciicast" /></a></p>
+
 <p>In this group, changes in the file system can be tracked successfully by their native API mechanisms, respectively.</p>
+
 <h2 id="group-b-and-c-container-mode">Group B and C: container mode</h2>
+
 <p>Containers make things a little bit complicated.</p>
-<p>TL;DR: <em>The LCOW version doesn't work well.</em></p>
-<p>When there's a mismatch between host OS and container, <code>inotify</code> may not work well.</p>
+
+<p>TL;DR: <em>The LCOW version doesn&rsquo;t work well.</em></p>
+
+<p>When there&rsquo;s a mismatch between host OS and container, <code>inotify</code> may not work well.</p>
+
 <p>Take experiment <a href="https://github.com/William-Yeh/fswatch/blob/master/test-matrix/6_host_win_container_linux">6</a> (LCOW) &ldquo;run containerized Linux app in Windows host OS&rdquo; for example. The <a href="https://docs.docker.com/docker-for-windows/troubleshoot/#inotify-on-shared-drives-does-not-work">document</a> for Docker Desktop for Windows has a warning for us:</p>
+
 <blockquote>
 <p><strong>Inotify on shared drives does not work</strong></p>
+
 <p>Currently, <code>inotify</code> does not work on Docker Desktop for Windows. This becomes evident, for example, when an application needs to read/write to a container across a mounted drive. Instead of relying on filesystem <code>inotify</code>, we recommend using polling features for your framework or programming language.</p>
 </blockquote>
+
 <p>For Windows users, <code>inotify</code> works well in the WCOW mode (experiment <a href="https://github.com/William-Yeh/fswatch/blob/master/test-matrix/7_host_win_container_win">7</a>).</p>
-<p>On the other hand, Mac users are luckier.  Docker Desktop for Mac doesn't have much trouble here (experiment <a href="https://github.com/William-Yeh/fswatch/blob/master/test-matrix/5_host_mac_container_linux">5</a>) thanks to excellent implementation of <strong>osxfs</strong>.  See &ldquo;<a href="https://docs.docker.com/docker-for-mac/osxfs/">File system sharing (osxfs)</a>&rdquo; and &ldquo;<a href="https://docs.docker.com/docker-for-mac/osxfs-caching/">Performance tuning for volume mounts (shared filesystems)</a>&rdquo; articles for more information.</p>
+
+<p>On the other hand, Mac users are luckier.  Docker Desktop for Mac doesn&rsquo;t have much trouble here (experiment <a href="https://github.com/William-Yeh/fswatch/blob/master/test-matrix/5_host_mac_container_linux">5</a>) thanks to excellent implementation of <strong>osxfs</strong>.  See &ldquo;<a href="https://docs.docker.com/docker-for-mac/osxfs/">File system sharing (osxfs)</a>&rdquo; and &ldquo;<a href="https://docs.docker.com/docker-for-mac/osxfs-caching/">Performance tuning for volume mounts (shared filesystems)</a>&rdquo; articles for more information.</p>
+
 <blockquote>
 <p><strong>File system events</strong></p>
+
 <p>Most <code>inotify</code> events are supported in bind mounts, and likely <code>dnotify</code> and <code>fanotify</code> (though they have not been tested) are also supported. This means that file system events from macOS are sent into containers and trigger any listening processes there.</p>
 </blockquote>
+
 <h2 id="group-d-k8s-mode">Group D: K8s mode</h2>
+
 <p>How about Kubernetes?  Does <code>inotify</code> work well with the ConfigMap?</p>
+
 <p>Below is the demo for experiment <a href="https://github.com/William-Yeh/fswatch/blob/master/test-matrix/8_k8s_linux">8</a>:</p>
-<p><a href="https://asciinema.org/a/250736"><img src="https://asciinema.org/a/250736.svg" alt="asciicast"></a></p>
-<p>As you can see in this demo, any changes in the ConfigMap will propagate to related pods in a couple of seconds, and <code>inotify</code> will detect this event as well. <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+
+<p><a href="https://asciinema.org/a/250736"><img src="https://asciinema.org/a/250736.svg" alt="asciicast" /></a></p>
+
+<p>As you can see in this demo, any changes in the ConfigMap will propagate to related pods in a couple of seconds, and <code>inotify</code> will detect this event as well. <sup class="footnote-ref" id="fnref:1"><a href="#fn:1">1</a></sup></p>
+
 <h3 id="caution-about-symbolic-links">Caution about symbolic links</h3>
-<p>In such situation, however, you should use <code>inotify</code> to watch for <em>directories</em> instead of merely for <em>files</em>.  It is because Kubernetes may use symbolic links to point to versioned ConfigMap volumes, and <code>inotify</code> doesn't work well with such symbolic links. <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></p>
-<p>Let's retry the demo, but this time we'll focus on the directory layout from the pod's point of view.</p>
-<p><a href="https://asciinema.org/a/251141"><img src="https://asciinema.org/a/251141.svg" alt="asciicast"></a></p>
-<p>The demo from <a href="https://asciinema.org/a/251141?t=0:38">0:38</a> to 1:55 shows the directory layout from the pod's point of view:</p>
+
+<p>In such situation, however, you should use <code>inotify</code> to watch for <em>directories</em> instead of merely for <em>files</em>.  It is because Kubernetes may use symbolic links to point to versioned ConfigMap volumes, and <code>inotify</code> doesn&rsquo;t work well with such symbolic links. <sup class="footnote-ref" id="fnref:2"><a href="#fn:2">2</a></sup></p>
+
+<p>Let&rsquo;s retry the demo, but this time we&rsquo;ll focus on the directory layout from the pod&rsquo;s point of view.</p>
+
+<p><a href="https://asciinema.org/a/251141"><img src="https://asciinema.org/a/251141.svg" alt="asciicast" /></a></p>
+
+<p>The demo from <a href="https://asciinema.org/a/251141?t=0:38">0:38</a> to 1:55 shows the directory layout from the pod&rsquo;s point of view:</p>
+
 <div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">/mnt/site # ls -al
 total 12
 drwxrwxrwx    3 root  root   4096 Jun 12 06:19 .
@@ -424,30 +465,43 @@ drwxr-xr-x    1 root  root   4096 Jun 12 06:19 ..
 drwxr-xr-x    2 root  root   4096 Jun 12 06:19 ..2019_06_12_06_19_15.187277003
 lrwxrwxrwx    1 root  root     31 Jun 12 06:19 ..data -&gt; ..2019_06_12_06_19_15.187277003
 lrwxrwxrwx    1 root  root     15 Jun 12 06:19 main.css -&gt; ..data/main.css</code></pre></div>
-<p>Simply put, things go well if you're inside the pod and watch for <code>/mnt/site</code> directory, but may not go well if you try to watch for a specific file <code>/mnt/site/main.css</code> since it is internally a symbolic link managed by Kubernetes.</p>
+
+<p>Simply put, things go well if you&rsquo;re inside the pod and watch for <code>/mnt/site</code> directory, but may not go well if you try to watch for a specific file <code>/mnt/site/main.css</code> since it is internally a symbolic link managed by Kubernetes.</p>
+
 <h2 id="conclusion">Conclusion</h2>
+
 <p>The <code>inotify</code> mechanism works in the container and Kubernetes world, except for the LCOW case.</p>
+
 <p>If such a feature is needed in the LCOW setting, maybe you have to seek another workaround workflow; e.g., put <code>inotify</code> mechanism outside the container, and propagate the event explicitly into the containers if any.  This is exactly what <a href="https://skaffold.dev/">Skaffold</a> is doing.</p>
+
 <p>Also note that <code>inotify</code> works better when ConfigMap is mounted as directories, rather than as merely files.</p>
-<!-- raw HTML omitted -->
-<pre><code>  Series of Articles
-</code></pre>
-<!-- raw HTML omitted -->
+
+<div class="shortcode-notice note">
+  <div class="shortcode-notice-title note">
+    
+      Series of Articles
+    
+  </div>
+  
+
 <p>❶ Inotify in Containers</p>
+
 <p>❷ <a href="//william-yeh.net/post/2019/06/containers-and-env/">Containers and Environment Variables</a></p>
+
 <p>➌ <a href="//william-yeh.net/post/2019/06/autoreload-from-configmap/">Auto-Reload from ConfigMap</a></p>
-<!-- raw HTML omitted -->
-<section class="footnotes" role="doc-endnotes">
-<hr>
+
+<p></div></p>
+<div class="footnotes">
+
+<hr />
+
 <ol>
-<li id="fn:1" role="doc-endnote">
-<p>Another analysis of ConfigMap hot-reload can be found in the article by Jimmy Song: “<a href="https://jimmysong.io/kubernetes-handbook/concepts/configmap-hot-update.html">ConfigMap 的热更新</a>”.<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#8617;</a></p>
-</li>
-<li id="fn:2" role="doc-endnote">
-<p><a href="https://stackoverflow.com/questions/28769503/use-inotify-to-watch-a-file-with-multiple-symlinks">Use INotify to watch a file with multiple symlinks</a><a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#8617;</a></p>
-</li>
+<li id="fn:1">Another analysis of ConfigMap hot-reload can be found in the article by Jimmy Song: “<a href="https://jimmysong.io/kubernetes-handbook/concepts/configmap-hot-update.html">ConfigMap 的热更新</a>”.
+ <a class="footnote-return" href="#fnref:1"><sup>[return]</sup></a></li>
+<li id="fn:2"><a href="https://stackoverflow.com/questions/28769503/use-inotify-to-watch-a-file-with-multiple-symlinks">Use INotify to watch a file with multiple symlinks</a>
+ <a class="footnote-return" href="#fnref:2"><sup>[return]</sup></a></li>
 </ol>
-</section>
+</div>
 
     </div>
 
