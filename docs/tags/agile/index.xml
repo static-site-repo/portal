@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>agile on Potioneer&#39;s Essays</title>
@@ -27,13 +27,13 @@
       
       <guid>//william-yeh.net/post/2019/01/scrum-good-to-great/</guid>
       <description>&lt;p&gt;最近重新溫習近二十年的老書《&lt;a href=&#34;https://www.books.com.tw/products/0010202911&#34;&gt;從 A 到 A+&lt;/a&gt;》，啟發頗多。&lt;/p&gt;
-
-&lt;p&gt;《從 A 到 A+》作者們的實證研究方法很嚴謹 &lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;。他們從 1965～1995 年名列 Fortune 500 的企業名單中，挑選「十五年累計股票報酬率」超越股市整體表現三倍以上，且不受產業循環影響的企業，研究這些績優公司從「優秀」到「卓越」的關鍵因素。最後，作者們提出「&lt;a href=&#34;https://www.jimcollins.com/concepts/the-flywheel.html&#34;&gt;飛輪效應&lt;/a&gt;」來統一解釋他們的發現：&lt;/p&gt;
-
+&lt;p&gt;《從 A 到 A+》作者們的實證研究方法很嚴謹 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;。他們從 1965～1995 年名列 Fortune 500 的企業名單中，挑選「十五年累計股票報酬率」超越股市整體表現三倍以上，且不受產業循環影響的企業，研究這些績優公司從「優秀」到「卓越」的關鍵因素。最後，作者們提出「&lt;a href=&#34;https://www.jimcollins.com/concepts/the-flywheel.html&#34;&gt;飛輪效應&lt;/a&gt;」來統一解釋他們的發現：&lt;/p&gt;
 
 
-&lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
-  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
     &lt;div class=&#34;img&#34;&gt;
       &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2019/01/flywheel.jpg&#34; alt=&#34;飛輪效應&#34;/&gt;
     &lt;/div&gt;
@@ -43,7 +43,6 @@
       &lt;/figcaption&gt;
   &lt;/figure&gt;
 &lt;/div&gt;
-
 
 &lt;p&gt;某方面來說，軟體研發圈講究的 Scrum，還滿符合《從 A 到 A+》所講的飛輪效應。&lt;/p&gt;</description>
     </item>
@@ -55,9 +54,7 @@
       
       <guid>//william-yeh.net/post/2018/12/2018-retrospective/</guid>
       <description>&lt;p&gt;到了年終，又開始要做個總回顧，再對來年許願。&lt;/p&gt;
-
 &lt;p&gt;如果說 &lt;a href=&#34;https://school.soft-arch.net/blog/6676/2016-retrospective&#34;&gt;2016&lt;/a&gt; 和 &lt;a href=&#34;https://school.soft-arch.net/blog/13083/2017-retrospective&#34;&gt;2017&lt;/a&gt; 都是華麗冒險年，那麼，2018 對我來說，是收攝靜觀的一年。&lt;/p&gt;
-
 &lt;p&gt;去除一些不便揭露的事情，以下是簡單的回顧。&lt;/p&gt;</description>
     </item>
     
@@ -67,8 +64,10 @@
       <pubDate>Wed, 19 Dec 2018 08:00:00 +0800</pubDate>
       
       <guid>//william-yeh.net/post/2018/12/agile-measurement/</guid>
-      <description>&lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
-  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+      <description>&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
     &lt;div class=&#34;img&#34;&gt;
       &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/12/dilbert-measurement.jpg&#34; alt=&#34;開場對話&#34;/&gt;
     &lt;/div&gt;
@@ -79,19 +78,13 @@
   &lt;/figure&gt;
 &lt;/div&gt;
 
-
 &lt;p&gt;研發團隊，常會被問到一個問題：&lt;/p&gt;
-
 &lt;blockquote&gt;
 &lt;p&gt;「請問一下，這個Ａ功能，大概要多久才能完成？」&lt;/p&gt;
 &lt;/blockquote&gt;
-
 &lt;p&gt;這個問題，不會因為你跑的是敏捷，就自動免疫。那麼，身為經過敏捷思維洗禮的人，該如何做出合宜的應對？&lt;/p&gt;
-
 &lt;p&gt;我在 &lt;a href=&#34;https://agilekaohsiung.kktix.cc/events/agiletourkaohsiung2018&#34;&gt;Agile Tour Kaohsiung 2018&lt;/a&gt; 開辦一場 2.5 小時的工作坊，帶領大家親自體驗這個議題。&lt;/p&gt;
-
 &lt;p&gt;不過，這個題材的背後，其實還有三段故事。&lt;/p&gt;
-
 &lt;p&gt;故事，要從一年半前講起。&lt;/p&gt;</description>
     </item>
     
@@ -110,12 +103,9 @@
       <pubDate>Tue, 04 Dec 2018 08:00:00 +0800</pubDate>
       
       <guid>//william-yeh.net/post/2018/12/fallow/</guid>
-      <description>&lt;p&gt;Scrum 的官方白皮書 &lt;a href=&#34;https://www.scrumguides.org/&#34;&gt;&lt;em&gt;The Scrum Guide&lt;/em&gt;&lt;/a&gt; 非常輕薄短小（像 &lt;a href=&#34;https://scrumguides.org/docs/scrumguide/v2017/2017-Scrum-Guide-US.pdf&#34;&gt;Nov 2017 版&lt;/a&gt;只有 19 頁），它的理念是：只制定最核心的原則、價值、角色、活動、產出物，其餘的則交給團隊根據經驗主義 &lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; 去調適出最適合自己的細節。&lt;/p&gt;
-
+      <description>&lt;p&gt;Scrum 的官方白皮書 &lt;a href=&#34;https://www.scrumguides.org/&#34;&gt;&lt;em&gt;The Scrum Guide&lt;/em&gt;&lt;/a&gt; 非常輕薄短小（像 &lt;a href=&#34;https://scrumguides.org/docs/scrumguide/v2017/2017-Scrum-Guide-US.pdf&#34;&gt;Nov 2017 版&lt;/a&gt;只有 19 頁），它的理念是：只制定最核心的原則、價值、角色、活動、產出物，其餘的則交給團隊根據經驗主義 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; 去調適出最適合自己的細節。&lt;/p&gt;
 &lt;p&gt;想當然爾，有很多事，Scrum 並沒有明說。&lt;/p&gt;
-
 &lt;p&gt;那麼，沒有明說的事，就不需要做、就不能做了嗎？做了，就違反 Scrum 嗎？&lt;/p&gt;
-
 &lt;p&gt;這是許多奉 &lt;a href=&#34;https://www.scrumguides.org/&#34;&gt;&lt;em&gt;The Scrum Guide&lt;/em&gt;&lt;/a&gt; 為圭臬的人，常有的盲點。&lt;/p&gt;</description>
     </item>
     
@@ -146,9 +136,10 @@
       <description>&lt;p&gt;同溫層朋友提出一則有趣的&lt;a href=&#34;https://www.facebook.com/groups/179345672472/permalink/10156092663467473/&#34;&gt;提問&lt;/a&gt;：&lt;/p&gt;
 
 
-
-&lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
-  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
     &lt;div class=&#34;img&#34;&gt;
       &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/11/agile-value-post.png&#34; alt=&#34;如何衡量敏捷的成效？ by Howie Yu (2018-11-23)&#34;/&gt;
     &lt;/div&gt;
@@ -185,7 +176,6 @@
       
       <guid>//william-yeh.net/post/2018/10/agile-criteria/</guid>
       <description>&lt;p&gt;今年暑假，我第一次去台中的國美館，參觀 &lt;a href=&#34;https://www.ntmofa.gov.tw/information_1078_86836.html&#34;&gt;2018 年全國美術展&lt;/a&gt;。&lt;/p&gt;
-
 &lt;p&gt;這年度盛會，分成油畫、水彩、版畫、水墨等十大類。大開眼界之餘，也不禁有個奇想：為什麼要分這麼多類別來競賽？為什麼不選出一個跨十大類別的首獎，就像武林盟主一樣？&lt;/p&gt;</description>
     </item>
     
@@ -196,11 +186,8 @@
       
       <guid>//william-yeh.net/post/2018/10/methodology-and-criteria/</guid>
       <description>&lt;p&gt;在某些人眼中，「敏捷」是狂熱份子聚集的邪教。&lt;/p&gt;
-
 &lt;p&gt;或許是被困在守舊勢力太久了，敏捷信徒不只有改變世界的熱情，更有捨我其誰的急迫感。不過，在傳播理念或推動改變時，若操之過急，忽略對方所處的情境、歷史及歷程，就很難有建設性對話。在這守舊勢力龐大的世界，自然很容易陣亡。&lt;/p&gt;
-
 &lt;p&gt;但這還只是表象。歧見，單靠對話仍不足以化解，更需要在方法論層次達到理解，方可進退有據。&lt;/p&gt;
-
 &lt;p&gt;尤其在看過《&lt;a href=&#34;https://www.books.com.tw/products/0010791756&#34;&gt;社會科學的理路&lt;/a&gt;》之後，我領悟到一些根源問題及槓桿解。&lt;/p&gt;</description>
     </item>
     
@@ -211,7 +198,6 @@
       
       <guid>//william-yeh.net/post/2016/05/change-viewpoint-on-lord-of-rings/</guid>
       <description>&lt;p&gt;今年一月，參加 &lt;a href=&#34;http://kojenchieh.pixnet.net/blog&#34;&gt;David Ko&lt;/a&gt; 舉辦的一場敏捷轉型活動，從中學到了一個有趣的分析工具：Lean Change Canvas。&lt;/p&gt;
-
 &lt;p&gt;知道了一個好東西，自然要追本溯源，加深加廣。便研讀相關資料：&lt;/p&gt;</description>
     </item>
     
@@ -222,7 +208,6 @@
       
       <guid>//william-yeh.net/post/2016/04/learn-from-plant-mgmt/</guid>
       <description>&lt;p&gt;身為徹頭徹尾的軟體人，在軟體產業待久了，總會對「硬」一點的產業，尤其是製造業，有莫名的成見，以為他們是僵固的、反人性的。從 1972 年「&lt;a href=&#34;https://en.wikipedia.org/wiki/Software_crisis&#34;&gt;軟體危機&lt;/a&gt;」引發的論述當中，更加深軟體人的印象：製造業的經驗，是無法直接套用到軟體界的；我們是截然不同的國度。&lt;/p&gt;
-
 &lt;p&gt;不過，近十年來許多軟體界的流程改革，尤其是同屬 Agile 陣營的 Scrum 及 Kanban，居然有許多元素是從製造業&lt;del&gt;偷竊&lt;/del&gt;學習而來。譬如說&lt;/p&gt;</description>
     </item>
     
@@ -233,7 +218,6 @@
       
       <guid>//william-yeh.net/post/2016/03/lean-perspective-of-multitasking/</guid>
       <description>&lt;p&gt;系統思考，全局思考，是困難的；即使是貌似常識的場域，亦然。&lt;/p&gt;
-
 &lt;p&gt;最近在看 &lt;a href=&#34;https://www.books.com.tw/products/0010662172&#34;&gt;&lt;em&gt;Lean Thinking&lt;/em&gt;&lt;/a&gt; 原典時，感觸更深。&lt;/p&gt;</description>
     </item>
     
@@ -244,7 +228,6 @@
       
       <guid>//william-yeh.net/post/2016/03/origin-of-devops-elements/</guid>
       <description>&lt;p&gt;DevOps 和 Agile 的關係是什麼？DevOps 是源自 Agile 的嗎？&lt;/p&gt;
-
 &lt;p&gt;我在〈&lt;a href=&#34;//william-yeh.net/post/2016/01/devops-goals-in-a-nutshell/&#34;&gt;一句話囊括 DevOps 的目標&lt;/a&gt;〉文中曾經簡略提過：&lt;/p&gt;</description>
     </item>
     
@@ -254,7 +237,7 @@
       <pubDate>Tue, 22 Dec 2015 08:00:00 +0800</pubDate>
       
       <guid>//william-yeh.net/post/2015/12/ci-effect/</guid>
-      <description>前天我的文章〈CI 是條不歸路〉提到：「CI/CD/DevOps 既是條不歸路，更是大躍進之路：一旦踏出第一步，就注定你會不斷接觸『遠離平庸』的</description>
+      <description>前天我的文章〈CI 是條不歸路〉提到：「CI/CD/DevOps 既是條不歸路，更是大躍進之路：一旦踏出第一步，就注定你會不斷接觸**『遠離平庸</description>
     </item>
     
     <item>

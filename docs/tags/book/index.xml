@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>book on Potioneer&#39;s Essays</title>
@@ -18,7 +18,6 @@
       
       <guid>//william-yeh.net/post/2019/01/tech-leader-reading/</guid>
       <description>&lt;p&gt;最近，我們研發組織有幅度不算小的變動，某些技術人會被要求承擔更多的技術領導責任。&lt;/p&gt;
-
 &lt;p&gt;不過，正如&lt;a href=&#34;https://en.wikipedia.org/wiki/Gerald_Weinberg&#34;&gt;溫伯格&lt;/a&gt;大師在《&lt;a href=&#34;https://www.books.com.tw/products/0010467750&#34;&gt;領導者，該想什麼？&lt;/a&gt;》所說，技術人常會面臨天人交戰：&lt;/p&gt;</description>
     </item>
     
@@ -38,13 +37,13 @@
       
       <guid>//william-yeh.net/post/2019/01/scrum-good-to-great/</guid>
       <description>&lt;p&gt;最近重新溫習近二十年的老書《&lt;a href=&#34;https://www.books.com.tw/products/0010202911&#34;&gt;從 A 到 A+&lt;/a&gt;》，啟發頗多。&lt;/p&gt;
-
-&lt;p&gt;《從 A 到 A+》作者們的實證研究方法很嚴謹 &lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;。他們從 1965～1995 年名列 Fortune 500 的企業名單中，挑選「十五年累計股票報酬率」超越股市整體表現三倍以上，且不受產業循環影響的企業，研究這些績優公司從「優秀」到「卓越」的關鍵因素。最後，作者們提出「&lt;a href=&#34;https://www.jimcollins.com/concepts/the-flywheel.html&#34;&gt;飛輪效應&lt;/a&gt;」來統一解釋他們的發現：&lt;/p&gt;
-
+&lt;p&gt;《從 A 到 A+》作者們的實證研究方法很嚴謹 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;。他們從 1965～1995 年名列 Fortune 500 的企業名單中，挑選「十五年累計股票報酬率」超越股市整體表現三倍以上，且不受產業循環影響的企業，研究這些績優公司從「優秀」到「卓越」的關鍵因素。最後，作者們提出「&lt;a href=&#34;https://www.jimcollins.com/concepts/the-flywheel.html&#34;&gt;飛輪效應&lt;/a&gt;」來統一解釋他們的發現：&lt;/p&gt;
 
 
-&lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
-  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
     &lt;div class=&#34;img&#34;&gt;
       &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2019/01/flywheel.jpg&#34; alt=&#34;飛輪效應&#34;/&gt;
     &lt;/div&gt;
@@ -54,7 +53,6 @@
       &lt;/figcaption&gt;
   &lt;/figure&gt;
 &lt;/div&gt;
-
 
 &lt;p&gt;某方面來說，軟體研發圈講究的 Scrum，還滿符合《從 A 到 A+》所講的飛輪效應。&lt;/p&gt;</description>
     </item>
@@ -66,13 +64,13 @@
       
       <guid>//william-yeh.net/post/2019/01/field-battle-only/</guid>
       <description>&lt;p&gt;去年十二月，接連把超讚的兩本書讀完。&lt;/p&gt;
-
 &lt;p&gt;《&lt;a href=&#34;https://www.books.com.tw/products/0010802878&#34;&gt;什麼才是經營最難的事&lt;/a&gt;》較偏草創期的戰鬥智慧，《&lt;a href=&#34;https://www.books.com.tw/products/0010796709&#34;&gt;給力&lt;/a&gt;》較偏成長期的經營智慧。兩種規模，兩種思維，激盪我許多想法。&lt;/p&gt;
 
 
-
-&lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
-  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
     &lt;div class=&#34;img&#34;&gt;
       &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2019/01/powerful-and-hard-things.jpg&#34; alt=&#34;兩種極端的好書&#34;/&gt;
     &lt;/div&gt;
@@ -91,12 +89,9 @@
       
       <guid>//william-yeh.net/post/2018/12/practice-of-managers/</guid>
       <description>&lt;p&gt;稍早草擬的〈&lt;a href=&#34;//william-yeh.net/post/2018/11/succession-planning/&#34;&gt;接班人計畫&lt;/a&gt;〉偏向一對一的培訓。&lt;/p&gt;
-
 &lt;p&gt;若是一對多呢？&lt;/p&gt;
-
 &lt;p&gt;於是乎，就有了這份企劃：【主管的修練】讀書會。&lt;/p&gt;
-
-&lt;p&gt;這一部分是模仿《&lt;a href=&#34;https://www.kingstone.com.tw/book/book_page.asp?kmcode=2014940760328&#34;&gt;利潤的故事&lt;/a&gt;》的做法 &lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，尤其是&lt;a href=&#34;https://wiki.mbalib.com/zh-tw/%E8%A9%B9%E5%A7%86%E6%96%AF%C2%B7%E9%9F%A6%E4%BC%AF%C2%B7%E6%89%AC&#34;&gt;楊傑美&lt;/a&gt;的「前端載入」方法。但我還融入剛學到的 &lt;a href=&#34;http://www.liberatingstructures.com/&#34;&gt;liberating structures&lt;/a&gt; 等技巧 &lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;。改成速讀 + 互動討論的形式，應該既緊湊又有趣吧。&lt;/p&gt;</description>
+&lt;p&gt;這一部分是模仿《&lt;a href=&#34;https://www.kingstone.com.tw/book/book_page.asp?kmcode=2014940760328&#34;&gt;利潤的故事&lt;/a&gt;》的做法 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，尤其是&lt;a href=&#34;https://wiki.mbalib.com/zh-tw/%E8%A9%B9%E5%A7%86%E6%96%AF%C2%B7%E9%9F%A6%E4%BC%AF%C2%B7%E6%89%AC&#34;&gt;楊傑美&lt;/a&gt;的「前端載入」方法。但我還融入剛學到的 &lt;a href=&#34;http://www.liberatingstructures.com/&#34;&gt;liberating structures&lt;/a&gt; 等技巧 &lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;。改成速讀 + 互動討論的形式，應該既緊湊又有趣吧。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -105,8 +100,10 @@
       <pubDate>Wed, 19 Dec 2018 08:00:00 +0800</pubDate>
       
       <guid>//william-yeh.net/post/2018/12/agile-measurement/</guid>
-      <description>&lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
-  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+      <description>&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
     &lt;div class=&#34;img&#34;&gt;
       &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/12/dilbert-measurement.jpg&#34; alt=&#34;開場對話&#34;/&gt;
     &lt;/div&gt;
@@ -117,19 +114,13 @@
   &lt;/figure&gt;
 &lt;/div&gt;
 
-
 &lt;p&gt;研發團隊，常會被問到一個問題：&lt;/p&gt;
-
 &lt;blockquote&gt;
 &lt;p&gt;「請問一下，這個Ａ功能，大概要多久才能完成？」&lt;/p&gt;
 &lt;/blockquote&gt;
-
 &lt;p&gt;這個問題，不會因為你跑的是敏捷，就自動免疫。那麼，身為經過敏捷思維洗禮的人，該如何做出合宜的應對？&lt;/p&gt;
-
 &lt;p&gt;我在 &lt;a href=&#34;https://agilekaohsiung.kktix.cc/events/agiletourkaohsiung2018&#34;&gt;Agile Tour Kaohsiung 2018&lt;/a&gt; 開辦一場 2.5 小時的工作坊，帶領大家親自體驗這個議題。&lt;/p&gt;
-
 &lt;p&gt;不過，這個題材的背後，其實還有三段故事。&lt;/p&gt;
-
 &lt;p&gt;故事，要從一年半前講起。&lt;/p&gt;</description>
     </item>
     
@@ -139,8 +130,10 @@
       <pubDate>Thu, 08 Nov 2018 08:00:00 +0800</pubDate>
       
       <guid>//william-yeh.net/post/2018/11/succession-planning/</guid>
-      <description>&lt;div class=&#34;box&#34; style=&#34;max-width:30em&#34;&gt;
-  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+      <description>&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
     &lt;div class=&#34;img&#34;&gt;
       &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/11/the-nigmatic-1068159-unsplash.jpg&#34; /&gt;
     &lt;/div&gt;
@@ -148,11 +141,8 @@
   &lt;/figure&gt;
 &lt;/div&gt;
 
-
-&lt;p&gt;彼得・杜拉克説：經理人的基本任務，除了平衡長短期的需要外，最重要的就是培養下一代的經理人。&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-
-&lt;p&gt;諾爾・提區説：成功組織會贏，贏在它的領導人不斷栽培組織上下每個層級的其他領導人。&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-
+&lt;p&gt;彼得・杜拉克説：經理人的基本任務，除了平衡長短期的需要外，最重要的就是培養下一代的經理人。&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;諾爾・提區説：成功組織會贏，贏在它的領導人不斷栽培組織上下每個層級的其他領導人。&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;p&gt;其實我很早就在默默做這件事了。畢竟以長遠來看，&lt;strong&gt;堅實的中階主管層，決定一個組織能走得多久多遠&lt;/strong&gt;。&lt;/p&gt;</description>
     </item>
     
@@ -163,11 +153,8 @@
       
       <guid>//william-yeh.net/post/2018/11/peak-at-enterprise-value/</guid>
       <description>&lt;p&gt;如何選人？&lt;/p&gt;
-
 &lt;p&gt;我有一篇舊文〈&lt;a href=&#34;//william-yeh.net/post/2016/07/professional-attitude/&#34;&gt;專業態度的養成&lt;/a&gt;〉是針對中低階領域的提問重點；善用這些切入點，可挖掘出人才潛力股。這也是年度績效面談時，我會提問的重點之一。&lt;/p&gt;
-
 &lt;p&gt;那麼，中高階領域呢？如何選領導者，選團隊，或者更廣泛一點講：如何選公司？&lt;/p&gt;
-
 &lt;p&gt;我有兩個私房切入點，剛好是兩本書教我的。&lt;/p&gt;</description>
     </item>
     
@@ -187,11 +174,8 @@
       
       <guid>//william-yeh.net/post/2018/10/methodology-and-criteria/</guid>
       <description>&lt;p&gt;在某些人眼中，「敏捷」是狂熱份子聚集的邪教。&lt;/p&gt;
-
 &lt;p&gt;或許是被困在守舊勢力太久了，敏捷信徒不只有改變世界的熱情，更有捨我其誰的急迫感。不過，在傳播理念或推動改變時，若操之過急，忽略對方所處的情境、歷史及歷程，就很難有建設性對話。在這守舊勢力龐大的世界，自然很容易陣亡。&lt;/p&gt;
-
 &lt;p&gt;但這還只是表象。歧見，單靠對話仍不足以化解，更需要在方法論層次達到理解，方可進退有據。&lt;/p&gt;
-
 &lt;p&gt;尤其在看過《&lt;a href=&#34;https://www.books.com.tw/products/0010791756&#34;&gt;社會科學的理路&lt;/a&gt;》之後，我領悟到一些根源問題及槓桿解。&lt;/p&gt;</description>
     </item>
     
@@ -202,12 +186,9 @@
       
       <guid>//william-yeh.net/post/2016/08/reading-vs-extensive-reading/</guid>
       <description>&lt;p&gt;每隔一陣子，就有「精讀」與「泛讀」孰優孰劣之辯論。&lt;/p&gt;
-
 &lt;p&gt;其實，就像陳年經典《&lt;a href=&#34;http://www.books.com.tw/products/0010226097&#34;&gt;如何閱讀一本書&lt;/a&gt;》所說，兩種技巧都很需要：&lt;/p&gt;
-
 &lt;blockquote&gt;
 &lt;p&gt;閱讀的速度並非只有單一的一種，重點在如何讀出&lt;strong&gt;不同的速度感&lt;/strong&gt;，知道在閱讀某種讀物時該用什麼樣的速度。&lt;/p&gt;
-
 &lt;p&gt;更好的秘方是：在閱讀一本書的時候，&lt;strong&gt;慢不該慢到不值得，快不該快到有損於滿足與理解。&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;</description>
     </item>
@@ -219,11 +200,8 @@
       
       <guid>//william-yeh.net/post/2016/07/professional-attitude/</guid>
       <description>&lt;p&gt;最近在面試資深軟體工程師。幾次下來，對幾家公司培養出來的員工素質，有個概括印象了（或許也帶點偏見）。&lt;/p&gt;
-
 &lt;p&gt;一個最顛覆既定印象的心得是：不是在大公司就一定學得深，不是在新創就一定學得廣。&lt;/p&gt;
-
 &lt;p&gt;重點仍在於自己。在於自己有沒有「&lt;strong&gt;系統思考&lt;/strong&gt;及&lt;strong&gt;換位思考&lt;/strong&gt;的&lt;strong&gt;自覺&lt;/strong&gt;及&lt;strong&gt;行動&lt;/strong&gt;」。&lt;/p&gt;
-
 &lt;p&gt;或者再濃縮成：在於「&lt;strong&gt;專業態度&lt;/strong&gt;」。&lt;/p&gt;</description>
     </item>
     
@@ -243,7 +221,6 @@
       
       <guid>//william-yeh.net/post/2016/03/lean-perspective-of-multitasking/</guid>
       <description>&lt;p&gt;系統思考，全局思考，是困難的；即使是貌似常識的場域，亦然。&lt;/p&gt;
-
 &lt;p&gt;最近在看 &lt;a href=&#34;https://www.books.com.tw/products/0010662172&#34;&gt;&lt;em&gt;Lean Thinking&lt;/em&gt;&lt;/a&gt; 原典時，感觸更深。&lt;/p&gt;</description>
     </item>
     
@@ -254,7 +231,6 @@
       
       <guid>//william-yeh.net/post/2016/03/origin-of-devops-elements/</guid>
       <description>&lt;p&gt;DevOps 和 Agile 的關係是什麼？DevOps 是源自 Agile 的嗎？&lt;/p&gt;
-
 &lt;p&gt;我在〈&lt;a href=&#34;//william-yeh.net/post/2016/01/devops-goals-in-a-nutshell/&#34;&gt;一句話囊括 DevOps 的目標&lt;/a&gt;〉文中曾經簡略提過：&lt;/p&gt;</description>
     </item>
     
@@ -264,7 +240,7 @@
       <pubDate>Fri, 29 Jan 2016 08:00:00 +0800</pubDate>
       
       <guid>//william-yeh.net/post/2016/01/devops-goals-in-a-nutshell/</guid>
-      <description>&lt;p&gt;TL;DR&lt;br /&gt;
+      <description>&lt;p&gt;TL;DR&lt;br&gt;
 &lt;em&gt;DevOps is a set of practices intended to reduce the time between committing a change to a system and the change being placed into normal production, while ensuring high quality.&lt;/em&gt;&lt;/p&gt;</description>
     </item>
     
