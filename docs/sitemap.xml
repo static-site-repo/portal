@@ -2,42 +2,84 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>//william-yeh.net/post/2019/12/2019-retrospective/</loc>
+    <lastmod>2019-12-26T23:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/agile/</loc>
+    <lastmod>2019-12-26T23:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/book/</loc>
+    <lastmod>2019-12-26T23:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>//william-yeh.net/tags/career/</loc>
-    <lastmod>2019-12-04T22:00:00+08:00</lastmod>
+    <lastmod>2019-12-26T23:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>//william-yeh.net/categories/</loc>
-    <lastmod>2019-12-04T22:00:00+08:00</lastmod>
+    <lastmod>2019-12-26T23:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>//william-yeh.net/tags/interview/</loc>
-    <lastmod>2019-12-04T22:00:00+08:00</lastmod>
+    <loc>//william-yeh.net/tags/course/</loc>
+    <lastmod>2019-12-26T23:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/categories/life/</loc>
+    <lastmod>2019-12-26T23:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>//william-yeh.net/post/</loc>
-    <lastmod>2019-12-04T22:00:00+08:00</lastmod>
+    <lastmod>2019-12-26T23:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>//william-yeh.net/</loc>
-    <lastmod>2019-12-04T22:00:00+08:00</lastmod>
+    <lastmod>2019-12-26T23:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/religion/</loc>
+    <lastmod>2019-12-26T23:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>//william-yeh.net/tags/</loc>
+    <lastmod>2019-12-26T23:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/interview/</loc>
     <lastmod>2019-12-04T22:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -80,13 +122,6 @@
   
   <url>
     <loc>//william-yeh.net/post/2019/07/ckad-materials/</loc>
-    <lastmod>2019-07-11T17:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/tags/course/</loc>
     <lastmod>2019-07-11T17:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -261,13 +296,6 @@
   </url>
   
   <url>
-    <loc>//william-yeh.net/tags/book/</loc>
-    <lastmod>2019-01-19T10:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>//william-yeh.net/tags/leadership/</loc>
     <lastmod>2019-01-19T10:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -298,13 +326,6 @@
   <url>
     <loc>//william-yeh.net/post/2019/01/tech-leader-reading/</loc>
     <lastmod>2019-01-19T10:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/tags/agile/</loc>
-    <lastmod>2019-01-17T15:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -353,13 +374,6 @@
   
   <url>
     <loc>//william-yeh.net/post/2018/12/2018-retrospective/</loc>
-    <lastmod>2018-12-20T08:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/categories/life/</loc>
     <lastmod>2018-12-20T08:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
