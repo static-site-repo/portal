@@ -31,7 +31,7 @@
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.60.1" />
+<meta name="generator" content="Hugo 0.62.0" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2015/12/ci-effect/" />
@@ -52,7 +52,7 @@
 
 
 
-<link rel="stylesheet" href="/sass/jane.min.af20b78e95c84de86b00a0242a4a77bd2601700e1b250edf27537d957ac0041d.css" integrity="sha256-ryC3jpXITehrAKAkKkp3vSYBcA4bJQ7fJ1N9lXrABB0=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.0995afa14b62cd93e93cfc066b646c4c17a3eddca0e9d52a1d9dcf5d90aaacd3.css" integrity="sha256-CZWvoUtizZPpPPwGa2RsTBej7dyg6dUqHZ3PXZCqrNM=" media="screen" crossorigin="anonymous">
 
 
 
@@ -370,7 +370,7 @@ if (!doNotTrack) {
 
 <p>CI，小小的投資，大大的省事。</p>
 <p>對我而言，原本 <code>williamyeh/ansible</code> 只是為了其他目的而順帶設計出來的副產品。但由於 Ansible 官方已不再維護它的 Docker images；而在非官方版當中，我的 <code>williamyeh/ansible</code> 下載量居冠（統計數據<a href="https://hub.docker.com/search/?q=ansible&amp;page=1&amp;isAutomated=0&amp;isOfficial=0&amp;pullCount=1&amp;starCount=0">在此</a>），也持續有人提出 feature request⋯⋯該說是無心插柳嗎？</p>
-<h2 id="heading1">吃自己的狗食</h2>
+<h2 id="heading-1">吃自己的狗食</h2>
 <p>再拿另一個很受歡迎的 Ansible role：<a href="https://github.com/William-Yeh/ansible-oracle-java"><code>williamyeh.oracle-java</code></a> 為例。它在 Ansible Galaxy 已經得到 <a href="https://galaxy.ansible.com/william-yeh/oracle-java">4.8 的高分</a>，是一個已經為人所知，甚至為人所用的元件。</p>
 <p>因此，我必須維持良好的向後相容性，以對用戶負責。</p>
 <p>也因此，連我自己想對原始程式做更動，也不敢貿然造次。必須遵守 <a href="http://nvie.com/posts/a-successful-git-branching-model/">Git Flow</a> 或 <a href="https://guides.github.com/introduction/flow/">GitHub Flow</a> 之類的 <strong>workflow discipline</strong>，一樣要看 CI 這位<strong>高度客觀中立</strong>、<strong>不帶感情</strong>的守門員的臉色。</p>
@@ -424,7 +424,7 @@ if (!doNotTrack) {
 <p>怪罪 Oracle 於事無補，問題總得解決⋯⋯</p>
 <p>為了解決這問題，我設計一個 prefetch 機制：只向 Oracle 抓一次需要的 rpm 及 tar.gz 檔案，存放在 role 的 <code>files</code> 目錄裡面。如此一來，不僅避開 rate limiting 的限制，連帶的也降低整體的 build time，更讓整個 role 架構 refactor 得更乾淨。</p>
 <p>CI，小小的投資，大大的省事。</p>
-<h2 id="heading2">卻顧所來徑</h2>
+<h2 id="heading-2">卻顧所來徑</h2>
 <p>這一切的一切，濫觴都只是一個小起步：要替自己寫的 Ansible role 加上 CI。</p>
 <p>一旦踏出第一步，就注定你會不斷接觸**『遠離平庸』**的新觀點、新技術。</p>
 <p>你同意嗎？</p>
