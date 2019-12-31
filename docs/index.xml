@@ -240,6 +240,22 @@
 &lt;p&gt;K8s，固然是在 DevOps 與 cloud native 相關領域集其大成的霸主，站在巨人肩膀上，乍看之下可增加一甲子功力。不過，讓我們誠實一點吧：你的功力，真的因此而徒增一甲子了嗎？&lt;/p&gt;
 &lt;p&gt;譬如說，K8s 發明人之一 &lt;a href=&#34;https://www.linkedin.com/in/brendan-burns-487aa590/&#34;&gt;Brendan Burns&lt;/a&gt; 寫了一本有趣的小書《&lt;a href=&#34;https://www.tenlong.com.tw/products/9789865020774&#34;&gt;分散式系統設計：可擴展、可靠服務的樣式和範例&lt;/a&gt;》，大量運用 K8s 示範現代分散式系統中重要的泛用模式，是非常精要的 K8s 應用指南。那麼，試問：K8s 用了好一陣子的你，能夠像 Brendan Burns 這樣在 cloud native 領域將 K8s 揮灑自如嗎？&lt;/p&gt;
 &lt;p&gt;如果不能，那麼，問題出在哪裡呢？&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2019/12/piano.jpg&#34; alt=&#34;外行與內行的差別 (from 琴之森 Vol 16)&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2019/12/piano.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;外行與內行的差別 (from 琴之森 Vol 16)&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
 &lt;p&gt;雖然我們常說：不要重複造輪子，但這並不代表，我們連造輪子的能力都不去操練。&lt;/p&gt;
 &lt;p&gt;與其一直沈迷於熱鬧的 DevOps toolchains，不如回頭重新蹲馬步，回歸扎實的技術本質。&lt;/p&gt;
 &lt;p&gt;「重劍無鋒，大巧不工。」&lt;/p&gt;
@@ -367,7 +383,7 @@
 &lt;p&gt;詳見我於 Agile Summit 2018 發表的演講：〈&lt;a href=&#34;https://www.slideshare.net/williamyeh/agile-transition-a-toc-perspective&#34;&gt;從限制理論角度談敏捷導入階段&lt;/a&gt;〉 &lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:4&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;有趣的是，日本人對於經典的 5W1H 似乎情有獨鍾，出了幾本專書：《&lt;a href=&#34;https://www.books.com.tw/products/0010826002&#34;&gt;5W1H 超強思考術：你的所有問題，都可以靠 5W1H 解決！&lt;/a&gt;》、《&lt;a href=&#34;https://www.books.com.tw/products/0010840745&#34;&gt;5W1H 經典思考法：容易獲得成果的人都在用&lt;/a&gt;》。 &lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;很多人視 5W1H 為過氣的老調。有趣的是，日本人對於經典的 5W1H 似乎情有獨鍾，出了幾本專書：《&lt;a href=&#34;https://www.books.com.tw/products/0010826002&#34;&gt;5W1H 超強思考術：你的所有問題，都可以靠 5W1H 解決！&lt;/a&gt;》、《&lt;a href=&#34;https://www.books.com.tw/products/0010840745&#34;&gt;5W1H 經典思考法：容易獲得成果的人都在用&lt;/a&gt;》。 &lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:5&#34; role=&#34;doc-endnote&#34;&gt;
 &lt;p&gt;引述 LeSS 的 &amp;ldquo;&lt;a href=&#34;https://less.works/less/structure/scrummaster.html&#34;&gt;Scrum Master focus over time&lt;/a&gt;&amp;rdquo; 觀點：&amp;ldquo;LeSS adoptions often involve large codebases with lots of archaic and messy legacy code; applying modern practices on them is challenging. The focus on development practices stays high as it will only become harder and harder to improve the teams even further.&amp;rdquo; &lt;a href=&#34;#fnref:5&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
