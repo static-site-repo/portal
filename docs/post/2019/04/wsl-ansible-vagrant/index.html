@@ -35,7 +35,7 @@
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.60.1" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2019/04/wsl-ansible-vagrant/" />
@@ -56,7 +56,7 @@
 
 
 
-<link rel="stylesheet" href="/sass/jane.min.0995afa14b62cd93e93cfc066b646c4c17a3eddca0e9d52a1d9dcf5d90aaacd3.css" integrity="sha256-CZWvoUtizZPpPPwGa2RsTBej7dyg6dUqHZ3PXZCqrNM=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.af20b78e95c84de86b00a0242a4a77bd2601700e1b250edf27537d957ac0041d.css" integrity="sha256-ryC3jpXITehrAKAkKkp3vSYBcA4bJQ7fJ1N9lXrABB0=" media="screen" crossorigin="anonymous">
 
 
 
@@ -78,7 +78,7 @@
 可以的。">
 <meta itemprop="datePublished" content="2019-04-18T23:00:00&#43;08:00" />
 <meta itemprop="dateModified" content="2019-04-18T23:00:00&#43;08:00" />
-<meta itemprop="wordCount" content="1283">
+<meta itemprop="wordCount" content="1307">
 
 
 
@@ -310,7 +310,7 @@ if (!doNotTrack) {
             <a href="//william-yeh.net/categories/tech/"> tech </a>
             
           </div>
-        <span class="more-meta"> 約 1283 字 </span>
+        <span class="more-meta"> 約 1307 字 </span>
           <span class="more-meta"> 預計閱讀 3 分鐘 </span>
 
         
@@ -333,7 +333,7 @@ if (!doNotTrack) {
     <nav id="TableOfContents">
   <ul>
     <li><a href="#virtualbox">虛擬機選項一：VirtualBox</a></li>
-    <li><a href="#hyper-v">虛擬機選項二：Hyper-V</a></li>
+    <li><a href="#hyperv">虛擬機選項二：Hyper-V</a></li>
     <li><a href="#vagrant">Vagrant</a></li>
     <li><a href="#ansible">Ansible</a></li>
     <li><a href="#ansible--vagrant">Ansible + Vagrant</a></li>
@@ -372,7 +372,7 @@ C:&gt; bcdedit /set hypervisorlaunchtype off</code></pre></div>
 
 C:&gt; bcdedit /set hypervisorlaunchtype auto</code></pre></div>
 <p>你可能需要在 Hyper-V 與 VirtualBox 模式之間來回切換，也需要重新開機。</p>
-<h2 id="hyper-v">虛擬機選項二：Hyper-V</h2>
+<h2 id="hyperv">虛擬機選項二：Hyper-V</h2>
 <p>在 Windows 上面玩 VirtualBox 這麼麻煩，換成 Hyper-V 會不會比較省事？</p>
 <p>很可惜，我在 &ldquo;Hyper-V Administrators&rdquo; 這一關觸礁了。嘗試一些可能的解法<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup>，都無效。</p>
 <p>真的有需要時，再回來研究吧。</p>
@@ -415,16 +415,16 @@ C:&gt; bcdedit /set hypervisorlaunchtype auto</code></pre></div>
 <hr>
 <ol>
 <li id="fn:1" role="doc-endnote">
-<p>這段故事，詳見〈<a href="//william-yeh.net/post/2019/03/wsl-cmder-zsh/">在 Windows 上復刻 Mac 使用習慣</a>〉一文。 <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>這段故事，詳見〈<a href="//william-yeh.net/post/2019/03/wsl-cmder-zsh/">在 Windows 上復刻 Mac 使用習慣</a>〉一文。<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#8617;</a></p>
 </li>
 <li id="fn:2" role="doc-endnote">
-<p>技術上來說，Hyper-V 是屬於 type-1 hypervisor，VirtualBox 是屬於 type-2 hypervisor。詳見維基百科 &ldquo;<a href="https://en.wikipedia.org/wiki/Hypervisor">Hypervisor</a>&rdquo; 條目。 <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>技術上來說，Hyper-V 是屬於 type-1 hypervisor，VirtualBox 是屬於 type-2 hypervisor。詳見維基百科 &ldquo;<a href="https://en.wikipedia.org/wiki/Hypervisor">Hypervisor</a>&rdquo; 條目。<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#8617;</a></p>
 </li>
 <li id="fn:3" role="doc-endnote">
-<p>在 Windows 上關閉 Hyper-V 機制，請參考以下文章：“<a href="https://www.sysprobs.com/solved-vt-x-is-not-available-verr-vmx-no-vmx-in-windows-10-virtualbox">(Solved) VT-x is Not Available (verr_vmx_no_vmx) in Windows 10 – but Available for Oracle VirtualBox</a>”、〈<a href="https://blog.csdn.net/imilano/article/details/83038682">Win10 10月更新 VirtualBox VT-x is not available (VERR_VMX_NO_VMX). 解决</a>〉、“<a href="https://forums.virtualbox.org/viewtopic.php?f=38&amp;t=89791">[Solved] VT-x is not available (VERR_VMX_NO_VMX)</a>”。 <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>在 Windows 上關閉 Hyper-V 機制，請參考以下文章：“<a href="https://www.sysprobs.com/solved-vt-x-is-not-available-verr-vmx-no-vmx-in-windows-10-virtualbox">(Solved) VT-x is Not Available (verr_vmx_no_vmx) in Windows 10 – but Available for Oracle VirtualBox</a>”、〈<a href="https://blog.csdn.net/imilano/article/details/83038682">Win10 10月更新 VirtualBox VT-x is not available (VERR_VMX_NO_VMX). 解决</a>〉、“<a href="https://forums.virtualbox.org/viewtopic.php?f=38&amp;t=89791">[Solved] VT-x is not available (VERR_VMX_NO_VMX)</a>”。<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#8617;</a></p>
 </li>
 <li id="fn:4" role="doc-endnote">
-<p>當 Vagrant 在使用 Hyper-V 時，會出現 &ldquo;Hyper-V Administrators&rdquo; 權限問題。我嘗試以下幾篇文章，可惜仍未解決：“<a href="https://github.com/hashicorp/vagrant/issues/4503">Vagrant issue #378</a>”、“<a href="https://blogs.msdn.microsoft.com/virtual_pc_guy/2014/06/11/allowing-non-administrators-to-control-hyper-vupdated/">Allowing non-Administrators to control Hyper-V–Updated</a>”、“<a href="https://dev.to/nicolus/getting-homestead-to-play-nice-with-hyper-v-4202">Getting Homestead to play nice with Hyper-V</a>”。 <a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>當 Vagrant 在使用 Hyper-V 時，會出現 &ldquo;Hyper-V Administrators&rdquo; 權限問題。我嘗試以下幾篇文章，可惜仍未解決：“<a href="https://github.com/hashicorp/vagrant/issues/4503">Vagrant issue #378</a>”、“<a href="https://blogs.msdn.microsoft.com/virtual_pc_guy/2014/06/11/allowing-non-administrators-to-control-hyper-vupdated/">Allowing non-Administrators to control Hyper-V–Updated</a>”、“<a href="https://dev.to/nicolus/getting-homestead-to-play-nice-with-hyper-v-4202">Getting Homestead to play nice with Hyper-V</a>”。<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#8617;</a></p>
 </li>
 </ol>
 </section>
@@ -658,7 +658,7 @@ C:&gt; bcdedit /set hypervisorlaunchtype auto</code></pre></div>
     &copy;
     
       2015 -
-    2019
+    2020
     <span class="heart">
       
       <i class="iconfont">

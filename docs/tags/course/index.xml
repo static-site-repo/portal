@@ -21,7 +21,7 @@
 &lt;p&gt;如果說 &lt;a href=&#34;//william-yeh.net/post/2018/12/2018-retrospective/&#34;&gt;2018&lt;/a&gt; 是收攝靜觀的一年，那麼，2019 可謂驚滔駭浪了。做對了一些事，也犯下許多蠢事。&lt;/p&gt;
 &lt;p&gt;到了年終，又開始要做個總回顧，再對來年許願。去除一些不便揭露的事情，以下是簡單的回顧。&lt;/p&gt;
 
-&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+
 &lt;div class=&#34;box&#34;&gt;
 &lt;figure  itemprop=&#34;associatedMedia&#34;
   itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
@@ -46,7 +46,7 @@
       <description>&lt;p&gt;Linux Foundation 旗下的 &lt;a href=&#34;https://www.cncf.io/&#34;&gt;CNCF (Cloud Native Computing Foundation)&lt;/a&gt; 提供兩個與 Kubernetes 相關的個人技術檢定：偏維運的 &lt;a href=&#34;https://www.cncf.io/certification/cka/&#34;&gt;CKA (Certified Kubernetes Administrator)&lt;/a&gt;，以及偏研發的 &lt;a href=&#34;https://www.cncf.io/certification/ckad/&#34;&gt;CKAD (Certified Kubernetes Application Developer)&lt;/a&gt;。&lt;/p&gt;
 &lt;p&gt;其中，CKAD 與我關注的範圍、與我設計的工作坊最接近，便想進一步瞭解它的細節。&lt;/p&gt;
 
-&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+
 &lt;div class=&#34;box&#34;&gt;
 &lt;figure  itemprop=&#34;associatedMedia&#34;
   itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
@@ -119,8 +119,7 @@
       <pubDate>Wed, 19 Dec 2018 08:00:00 +0800</pubDate>
       
       <guid>//william-yeh.net/post/2018/12/agile-measurement/</guid>
-      <description>&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
-&lt;div class=&#34;box&#34;&gt;
+      <description>&lt;div class=&#34;box&#34;&gt;
 &lt;figure  itemprop=&#34;associatedMedia&#34;
   itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
   style=&#34;max-width:30em&#34; &gt;
@@ -150,8 +149,7 @@
       <pubDate>Thu, 08 Nov 2018 08:00:00 +0800</pubDate>
       
       <guid>//william-yeh.net/post/2018/11/succession-planning/</guid>
-      <description>&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
-&lt;div class=&#34;box&#34;&gt;
+      <description>&lt;div class=&#34;box&#34;&gt;
 &lt;figure  itemprop=&#34;associatedMedia&#34;
   itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
   style=&#34;max-width:30em&#34; &gt;
