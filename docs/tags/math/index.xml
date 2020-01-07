@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>math on Potioneer&#39;s Essays</title>
+    <link>//william-yeh.net/tags/math/</link>
+    <description>Recent content in math on Potioneer&#39;s Essays</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Tue, 09 Aug 2016 08:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="//william-yeh.net/tags/math/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>演算法也有不神祕的一面（下集）</title>
+      <link>//william-yeh.net/post/2016/08/on-algorithm-myth/</link>
+      <pubDate>Tue, 09 Aug 2016 08:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2016/08/on-algorithm-myth/</guid>
+      <description>記得高中時，建中電研社社刊有一則笑話： 如果高斯 (Gauss) 小學時就學程式設計，他可能就懶得發明等差級數公式了，他會直接坐在電腦前，輸入： sum := 0 for i := 1</description>
+    </item>
+    
+    <item>
+      <title>運算思維其實一點也不神祕（上集）</title>
+      <link>//william-yeh.net/post/2016/08/on-computational-thinking/</link>
+      <pubDate>Mon, 08 Aug 2016 08:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2016/08/on-computational-thinking/</guid>
+      <description>遠見雜誌 2016/04 的專題〈22 億人玩程式，擁抱跨界力〉一連數篇專文，提到許多驚人的趨勢： 程式設計的趨勢 因此，如〈資訊科技教育、課綱制訂與後續發展〉一</description>
+    </item>
+    
+  </channel>
+</rss>
