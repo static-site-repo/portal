@@ -65,6 +65,13 @@
   </url>
   
   <url>
+    <loc>//william-yeh.net/tags/principle/</loc>
+    <lastmod>2019-12-26T23:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>//william-yeh.net/tags/religion/</loc>
     <lastmod>2019-12-26T23:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -620,6 +627,20 @@
   <url>
     <loc>//william-yeh.net/post/2016/08/presenter-tools/</loc>
     <lastmod>2016-08-22T08:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/programming/</loc>
+    <lastmod>2016-08-10T08:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/post/2016/08/on-handwriting/</loc>
+    <lastmod>2016-08-10T08:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
