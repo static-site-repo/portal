@@ -93,6 +93,13 @@
   </url>
   
   <url>
+    <loc>//william-yeh.net/tags/recruitment/</loc>
+    <lastmod>2019-12-04T22:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>//william-yeh.net/categories/tech/</loc>
     <lastmod>2019-12-04T22:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -583,14 +590,21 @@
   </url>
   
   <url>
-    <loc>//william-yeh.net/categories/course/</loc>
-    <lastmod>2016-08-29T07:00:00+08:00</lastmod>
+    <loc>//william-yeh.net/tags/growth/</loc>
+    <lastmod>2016-12-27T08:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>//william-yeh.net/tags/growth/</loc>
+    <loc>//william-yeh.net/post/2016/12/game-frame/</loc>
+    <lastmod>2016-12-27T08:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/categories/course/</loc>
     <lastmod>2016-08-29T07:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
