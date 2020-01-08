@@ -31,7 +31,7 @@
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.60.1" />
+<meta name="generator" content="Hugo 0.62.2" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2015/12/ci-effect/" />
@@ -52,7 +52,7 @@
 
 
 
-<link rel="stylesheet" href="/sass/jane.min.af20b78e95c84de86b00a0242a4a77bd2601700e1b250edf27537d957ac0041d.css" integrity="sha256-ryC3jpXITehrAKAkKkp3vSYBcA4bJQ7fJ1N9lXrABB0=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.0995afa14b62cd93e93cfc066b646c4c17a3eddca0e9d52a1d9dcf5d90aaacd3.css" integrity="sha256-CZWvoUtizZPpPPwGa2RsTBej7dyg6dUqHZ3PXZCqrNM=" media="screen" crossorigin="anonymous">
 
 
 
@@ -319,7 +319,7 @@ if (!doNotTrack) {
     <div class="post-content">
       <p>前天我的文章〈<a href="//william-yeh.net/post/2015/12/ci-no-turning-back/">CI 是條不歸路</a>〉提到：「CI/CD/DevOps 既是條不歸路，更是大躍進之路：一旦踏出第一步，就注定你會不斷接觸**『遠離平庸』**的新觀點、新技術。」</p>
 <p>為了避免陳義過高，這篇文章就來講一個具體的軟體研發故事吧。</p>
-<h2 id="heading">護城河</h2>
+<h2 id="護城河">護城河</h2>
 <p>我用 Ansible，也用 <a href="https://prometheus.io/">Prometheus</a>，因此，我寫了一個 Ansible role <a href="https://github.com/William-Yeh/ansible-prometheus"><code>williamyeh.prometheus</code></a> 來安裝 Prometheus。</p>
 <p>上個禮拜，我隱約覺得對它感興趣的人似乎變多了，便好奇的去 GitHub 後台調數據來看，發現：</p>
 <blockquote>
@@ -347,7 +347,7 @@ if (!doNotTrack) {
 </div>
 
 <p>CI，小小的投資，大大的省事。</p>
-<h2 id="-ansible--docker">當 Ansible 遇見 Docker</h2>
+<h2 id="當-ansible-遇見-docker">當 Ansible 遇見 Docker</h2>
 <p>個人還有另一項執念：自己寫的 Ansible role，要盡可能支援多種 Linux distributions 環境。</p>
 <p>這又是一條不歸路。</p>
 <p>在本機端研發時，我可以用各種 Vagrant box 來模擬各種 Linux （譬如：<a href="https://app.vagrantup.com/bento/boxes/centos-6.7">bento/centos-6.7</a>、<a href="https://app.vagrantup.com/bento/boxes/centos-7.1">bento/centos-7.1</a>、<a href="https://app.vagrantup.com/debian/boxes/jessie64">debian/jessie64</a>），但這沒辦法 scale 到正式的 CI 流程上。此刻 Travis CI 及 CircleCI 只提供 Ubuntu 12.04 及 14.04 兩種 instance，也沒支援 <a href="http://kitchen.ci">Test Kitchen</a>。</p>
@@ -370,7 +370,7 @@ if (!doNotTrack) {
 
 <p>CI，小小的投資，大大的省事。</p>
 <p>對我而言，原本 <code>williamyeh/ansible</code> 只是為了其他目的而順帶設計出來的副產品。但由於 Ansible 官方已不再維護它的 Docker images；而在非官方版當中，我的 <code>williamyeh/ansible</code> 下載量居冠（統計數據<a href="https://hub.docker.com/search/?q=ansible&amp;page=1&amp;isAutomated=0&amp;isOfficial=0&amp;pullCount=1&amp;starCount=0">在此</a>），也持續有人提出 feature request⋯⋯該說是無心插柳嗎？</p>
-<h2 id="heading1">吃自己的狗食</h2>
+<h2 id="吃自己的狗食">吃自己的狗食</h2>
 <p>再拿另一個很受歡迎的 Ansible role：<a href="https://github.com/William-Yeh/ansible-oracle-java"><code>williamyeh.oracle-java</code></a> 為例。它在 Ansible Galaxy 已經得到 <a href="https://galaxy.ansible.com/william-yeh/oracle-java">4.8 的高分</a>，是一個已經為人所知，甚至為人所用的元件。</p>
 <p>因此，我必須維持良好的向後相容性，以對用戶負責。</p>
 <p>也因此，連我自己想對原始程式做更動，也不敢貿然造次。必須遵守 <a href="http://nvie.com/posts/a-successful-git-branching-model/">Git Flow</a> 或 <a href="https://guides.github.com/introduction/flow/">GitHub Flow</a> 之類的 <strong>workflow discipline</strong>，一樣要看 CI 這位<strong>高度客觀中立</strong>、<strong>不帶感情</strong>的守門員的臉色。</p>
@@ -390,7 +390,7 @@ if (!doNotTrack) {
 </div>
 
 <p>專業，就是對自己也有 discipline。CI，就是<strong>強制幫助你建立 discipline</strong>。</p>
-<h2 id="-ci-">不要輕看 CI 的紅燈</h2>
+<h2 id="不要輕看-ci-的紅燈">不要輕看 CI 的紅燈</h2>
 <p>對這個 Ansible role，有一點我一直耿耿於懷：Travis CI 和 CircleCI 的測試結果，時好時壞。</p>
 <p>像以下截圖顯示，同樣都是針對 <code>6598bed</code> 這個 commit，Travis CI 一次就通過，但 CircleCI 居然會出現一堆紅燈。不死心的我，一直按 rebuild 好幾次，總算才出現綠燈：</p>
 
@@ -424,7 +424,7 @@ if (!doNotTrack) {
 <p>怪罪 Oracle 於事無補，問題總得解決⋯⋯</p>
 <p>為了解決這問題，我設計一個 prefetch 機制：只向 Oracle 抓一次需要的 rpm 及 tar.gz 檔案，存放在 role 的 <code>files</code> 目錄裡面。如此一來，不僅避開 rate limiting 的限制，連帶的也降低整體的 build time，更讓整個 role 架構 refactor 得更乾淨。</p>
 <p>CI，小小的投資，大大的省事。</p>
-<h2 id="heading2">卻顧所來徑</h2>
+<h2 id="卻顧所來徑">卻顧所來徑</h2>
 <p>這一切的一切，濫觴都只是一個小起步：要替自己寫的 Ansible role 加上 CI。</p>
 <p>一旦踏出第一步，就注定你會不斷接觸**『遠離平庸』**的新觀點、新技術。</p>
 <p>你同意嗎？</p>

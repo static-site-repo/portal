@@ -34,7 +34,7 @@ To clarify this I&#39;ve conducted a series of experiments for 3 possible config
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.60.1" />
+<meta name="generator" content="Hugo 0.62.2" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2019/06/autoreload-from-configmap/" />
@@ -55,7 +55,7 @@ To clarify this I&#39;ve conducted a series of experiments for 3 possible config
 
 
 
-<link rel="stylesheet" href="/sass/jane.min.af20b78e95c84de86b00a0242a4a77bd2601700e1b250edf27537d957ac0041d.css" integrity="sha256-ryC3jpXITehrAKAkKkp3vSYBcA4bJQ7fJ1N9lXrABB0=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.0995afa14b62cd93e93cfc066b646c4c17a3eddca0e9d52a1d9dcf5d90aaacd3.css" integrity="sha256-CZWvoUtizZPpPPwGa2RsTBej7dyg6dUqHZ3PXZCqrNM=" media="screen" crossorigin="anonymous">
 
 
 
@@ -77,7 +77,7 @@ To clarify this I&#39;ve conducted a series of experiments for 3 possible config
  Built-in auto-reloading apps External signals Pod rollout  In this article I&#39;m going to explain the experiments and preliminary findings.">
 <meta itemprop="datePublished" content="2019-06-17T17:00:00&#43;08:00" />
 <meta itemprop="dateModified" content="2019-06-17T17:00:00&#43;08:00" />
-<meta itemprop="wordCount" content="612">
+<meta itemprop="wordCount" content="618">
 
 
 
@@ -309,7 +309,7 @@ if (!doNotTrack) {
             <a href="//william-yeh.net/categories/tech/"> tech </a>
             
           </div>
-        <span class="more-meta"> 約 612 字 </span>
+        <span class="more-meta"> 約 618 字 </span>
           <span class="more-meta"> 預計閱讀 3 分鐘 </span>
 
         
@@ -331,7 +331,7 @@ if (!doNotTrack) {
   <div class="post-toc-content">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#builtin-autoreloading-apps">Built-in auto-reloading apps</a></li>
+    <li><a href="#built-in-auto-reloading-apps">Built-in auto-reloading apps</a></li>
     <li><a href="#external-signals">External signals</a></li>
     <li><a href="#pod-rollout">Pod rollout</a></li>
     <li><a href="#conclusion">Conclusion</a></li>
@@ -351,7 +351,7 @@ if (!doNotTrack) {
 <li>Pod rollout</li>
 </ul>
 <p>In this article I'm going to explain the experiments and preliminary findings.  All experiment materials are available in the <a href="https://github.com/William-Yeh/configmap-auto-reload">configmap-auto-reload</a> repo.</p>
-<h2 id="builtin-autoreloading-apps">Built-in auto-reloading apps</h2>
+<h2 id="built-in-auto-reloading-apps">Built-in auto-reloading apps</h2>
 <p>Some applications (e.g., <a href="https://traefik.io/">Traefik</a>) are smart enough to gracefully reload themselves whenever they detect any configuration changes without downtime.  Will this work with Kubernetes ConfigMap?</p>
 <p>See the <a href="https://github.com/William-Yeh/configmap-auto-reload/tree/master/traefik-example">traefik-example</a> demo:</p>
 <p><a href="https://asciinema.org/a/251179"><img src="https://asciinema.org/a/251179.svg" alt="asciicast"></a></p>
@@ -424,22 +424,22 @@ metadata:
 <hr>
 <ol>
 <li id="fn:1" role="doc-endnote">
-<p>Nginx official document: <a href="http://nginx.org/en/docs/control.html">Controlling nginx</a><a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#8617;</a></p>
+<p>Nginx official document: <a href="http://nginx.org/en/docs/control.html">Controlling nginx</a> <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:2" role="doc-endnote">
-<p>Apache official document: <a href="https://httpd.apache.org/docs/2.4/stopping.html">Stopping and Restarting Apache HTTP Server</a><a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#8617;</a></p>
+<p>Apache official document: <a href="https://httpd.apache.org/docs/2.4/stopping.html">Stopping and Restarting Apache HTTP Server</a> <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:3" role="doc-endnote">
-<p>An implementation worth studying: <a href="https://github.com/rosskukulinski/nginx-kubernetes-reload">https://github.com/rosskukulinski/nginx-kubernetes-reload</a><a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#8617;</a></p>
+<p>An implementation worth studying: <a href="https://github.com/rosskukulinski/nginx-kubernetes-reload">https://github.com/rosskukulinski/nginx-kubernetes-reload</a> <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:4" role="doc-endnote">
-<p>Q&amp;A in Stack Overflow: <a href="https://stackoverflow.com/questions/41031170/nginx-reload-configuration-best-practice">Nginx Reload Configuration Best Practice</a><a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#8617;</a></p>
+<p>Q&amp;A in Stack Overflow: <a href="https://stackoverflow.com/questions/41031170/nginx-reload-configuration-best-practice">Nginx Reload Configuration Best Practice</a> <a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:5" role="doc-endnote">
-<p><a href="https://github.com/telephone/nginx-watch">https://github.com/telephone/nginx-watch</a><a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#8617;</a></p>
+<p><a href="https://github.com/telephone/nginx-watch">https://github.com/telephone/nginx-watch</a> <a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:6" role="doc-endnote">
-<p><a href="https://cloud.google.com/solutions/best-practices-for-building-containers">Best practices for building containers</a>.<a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#8617;</a></p>
+<p><a href="https://cloud.google.com/solutions/best-practices-for-building-containers">Best practices for building containers</a>. <a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </section>

@@ -35,7 +35,7 @@
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.60.1" />
+<meta name="generator" content="Hugo 0.62.2" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2019/03/wsl-cmder-zsh/" />
@@ -56,7 +56,7 @@
 
 
 
-<link rel="stylesheet" href="/sass/jane.min.af20b78e95c84de86b00a0242a4a77bd2601700e1b250edf27537d957ac0041d.css" integrity="sha256-ryC3jpXITehrAKAkKkp3vSYBcA4bJQ7fJ1N9lXrABB0=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.0995afa14b62cd93e93cfc066b646c4c17a3eddca0e9d52a1d9dcf5d90aaacd3.css" integrity="sha256-CZWvoUtizZPpPPwGa2RsTBej7dyg6dUqHZ3PXZCqrNM=" media="screen" crossorigin="anonymous">
 
 
 
@@ -78,7 +78,7 @@
 為了在 Windows 10 上面復刻我的 Mac 的體驗：iTerm2 &#43; Zsh &#43; Oh My ZSH，我試了幾天，把步驟整理如下。">
 <meta itemprop="datePublished" content="2019-03-14T08:00:00&#43;08:00" />
 <meta itemprop="dateModified" content="2019-03-14T08:00:00&#43;08:00" />
-<meta itemprop="wordCount" content="2007">
+<meta itemprop="wordCount" content="1977">
 
 
 
@@ -310,8 +310,8 @@ if (!doNotTrack) {
             <a href="//william-yeh.net/categories/tech/"> tech </a>
             
           </div>
-        <span class="more-meta"> 約 2007 字 </span>
-          <span class="more-meta"> 預計閱讀 5 分鐘 </span>
+        <span class="more-meta"> 約 1977 字 </span>
+          <span class="more-meta"> 預計閱讀 4 分鐘 </span>
 
         
         
@@ -335,10 +335,10 @@ if (!doNotTrack) {
     <li><a href="#wsl">WSL</a></li>
     <li><a href="#zsh--oh-my-zsh">Zsh + Oh My ZSH</a></li>
     <li><a href="#cmder">Cmder</a></li>
-    <li><a href="#-cmder--wsl">整合 Cmder 與 WSL</a></li>
-    <li><a href="#-cmder-">設定 Cmder 熱鍵</a></li>
-    <li><a href="#heading">檔案系統</a></li>
-    <li><a href="#docker--kubernetes">Docker 與 Kubernetes</a></li>
+    <li><a href="#整合-cmder-與-wsl">整合 Cmder 與 WSL</a></li>
+    <li><a href="#設定-cmder-熱鍵">設定 Cmder 熱鍵</a></li>
+    <li><a href="#檔案系統">檔案系統</a></li>
+    <li><a href="#docker-與-kubernetes">Docker 與 Kubernetes</a></li>
   </ul>
 </nav>
   </div>
@@ -376,7 +376,7 @@ if (!doNotTrack) {
 <p>用 Chocolatey 套件管理工具安裝比較簡單：</p>
 <div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">C:\&gt; choco install cmdermini</code></pre></div>
 <p>細節請見 <a href="https://chocolatey.org/packages/cmdermini">https://chocolatey.org/packages/cmdermini</a> 。</p>
-<h2 id="-cmder--wsl">整合 Cmder 與 WSL</h2>
+<h2 id="整合-cmder-與-wsl">整合 Cmder 與 WSL</h2>
 <p>為了讓 Cmder 以 WSL + Zsh 模式啟動，我們需要新增一個 Cmder 的 &ldquo;Startup / Tasks&rdquo;。</p>
 <p>譬如說，我們可新增一個名叫 <code>{WSL::zsh}</code> 的 task，將 command 寫成：</p>
 <pre><code>set &quot;PATH=%ConEmuBaseDirShort%\wsl;%PATH%&quot; &amp; %ConEmuBaseDirShort%\conemu-cyg-64.exe --wsl -C~ -cur_console:p:t:&quot;zsh&quot; -t zsh -l
@@ -398,7 +398,7 @@ if (!doNotTrack) {
 
 <p>存檔完畢，以後只要以 <code>{WSL::zsh}</code> 模式啟動，Cmder 就會自動套用 WSL + zsh 組態。</p>
 <p>進一步的設定細節，請參考 <a href="https://conemu.github.io/en/BashOnWindows.html">https://conemu.github.io/en/BashOnWindows.html</a> 一文。</p>
-<h2 id="-cmder-">設定 Cmder 熱鍵</h2>
+<h2 id="設定-cmder-熱鍵">設定 Cmder 熱鍵</h2>
 <p>為了復刻出類似 Mac + iTerm2 的使用習慣，我會花一些時間調整 Cmder 熱鍵設定。請參考保哥的文章〈<a href="https://blog.miniasp.com/post/2015/09/27/Useful-tool-Cmder">介紹好用工具：Cmder (具有 Linux 溫度的 Windows 命令提示字元工具)</a>〉進行熱鍵設定。</p>
 <p>在 Windows 與 WSL 之間進行複製貼上的剪貼簿操作時，常會遇到換行問題。此時我也會順便將 Ctrl-V 組合鍵的 “Paste mode #2” 設定成  “Multi lines” <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>：</p>
 
@@ -417,7 +417,7 @@ if (!doNotTrack) {
   </figure>
 </div>
 
-<h2 id="heading">檔案系統</h2>
+<h2 id="檔案系統">檔案系統</h2>
 <p>我習慣將 Windows 的 D: 作為文件儲存專用區。</p>
 <p>預設情況下，WSL 會將 D: 掛載在 <code>/mnt/d</code>，檔案系統則是 DrvFs：</p>
 <div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">% mount -l
@@ -452,7 +452,7 @@ D: on /mnt/d type drvfs (rw,relatime,uid=1000,gid=1000,umask=22,fmask=111,metada
 C: on /mnt/c type drvfs (rw,noatime,uid=1000,gid=1000,case=off)</code></pre></div>
 <p>如果成功了，請記得將這設定寫進 <code>/etc/fstab</code> 裡面，下次 WSL 啟動時就會自動生效：</p>
 <pre><code>D: /mnt/d drvfs rw,relatime,uid=1000,gid=1000,metadata,umask=22,fmask=111 0 0
-</code></pre><h2 id="docker--kubernetes">Docker 與 Kubernetes</h2>
+</code></pre><h2 id="docker-與-kubernetes">Docker 與 Kubernetes</h2>
 <p>雖然保哥的文章推薦在 WSL 裡的 Linux 再安裝一份 Docker engine <sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup>，但我比較傾向<strong>不要</strong>。我比較傾向共用既有資源，讓 WSL 直接連接到 Docker Desktop for Windows 身上。畢竟，在同一台電腦上，要維護兩套 Docker engine，太累了。</p>
 <p>我參考上官林傑的文章〈[在 Windows Subsystem for Linux (WSL) 下使用 Windows 上的 Docker Engine](<a href="https://medium.com/@ericsk/%E5%9C%A8-windows-subsystem-for-li">https://medium.com/@ericsk/%E5%9C%A8-windows-subsystem-for-li</a>
 nux-wsl-%E4%B8%8B%E4%BD%BF%E7%94%A8-windows-%E4%B8%8A%E7%9A%84-docker-engine-8dc0040ca240)〉，做好必要的設定，但省略文中提到的 alias 步驟（稍後會說明為什麼）。簡單來說，請先進行這三步驟：</p>
@@ -496,19 +496,19 @@ exec  &#34;/mnt/c/Program Files/Docker/Docker/resources/bin/docker-compose.exe&#
 <hr>
 <ol>
 <li id="fn:1" role="doc-endnote">
-<p>保哥於 2015 年九月舉辦過【<a href="https://www.accupass.com/event/1509231111031581814500">打造一個具有 Linux 溫度的 Windows 命令提示字元工具</a>】線上講座，也寫了〈<a href="https://blog.miniasp.com/post/2015/09/27/Useful-tool-Cmder">介紹好用工具：Cmder</a>〉一文。<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#8617;</a></p>
+<p>保哥於 2015 年九月舉辦過【<a href="https://www.accupass.com/event/1509231111031581814500">打造一個具有 Linux 溫度的 Windows 命令提示字元工具</a>】線上講座，也寫了〈<a href="https://blog.miniasp.com/post/2015/09/27/Useful-tool-Cmder">介紹好用工具：Cmder</a>〉一文。 <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:2" role="doc-endnote">
-<p>Cmder 的剪貼簿設定細節，請見 <a href="https://conemu.github.io/en/SettingsPaste.html">https://conemu.github.io/en/SettingsPaste.html</a> 。<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#8617;</a></p>
+<p>Cmder 的剪貼簿設定細節，請見 <a href="https://conemu.github.io/en/SettingsPaste.html">https://conemu.github.io/en/SettingsPaste.html</a> 。 <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:3" role="doc-endnote">
-<p>關於 WSL DrvFs 的 metadata 權限設定細節，請參考這三篇文章：“<a href="https://blogs.msdn.microsoft.com/commandline/2018/01/12/chmod-chown-wsl-improvements/">Chmod/Chown WSL Improvements</a>”、“<a href="https://www.brianketelsen.com/going-overboard-with-wsl-metadata/">Going Overboard with WSL metadata</a>”、〈<a href="https://segmentfault.com/a/1190000016677670">WSL 配置指北：打造 Windows 最强命令行</a>〉。<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#8617;</a></p>
+<p>關於 WSL DrvFs 的 metadata 權限設定細節，請參考這三篇文章：“<a href="https://blogs.msdn.microsoft.com/commandline/2018/01/12/chmod-chown-wsl-improvements/">Chmod/Chown WSL Improvements</a>”、“<a href="https://www.brianketelsen.com/going-overboard-with-wsl-metadata/">Going Overboard with WSL metadata</a>”、〈<a href="https://segmentfault.com/a/1190000016677670">WSL 配置指北：打造 Windows 最强命令行</a>〉。 <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:4" role="doc-endnote">
-<p>保哥的文章〈<a href="https://blog.miniasp.com/post/2018/06/15/My-Windows-Subsystem-for-Linux-WSL-Setup-2018">我的 Windows Subsystem for Linux (WSL) 終極開發人員配置 - 2018 版</a>〉。<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#8617;</a></p>
+<p>保哥的文章〈<a href="https://blog.miniasp.com/post/2018/06/15/My-Windows-Subsystem-for-Linux-WSL-Setup-2018">我的 Windows Subsystem for Linux (WSL) 終極開發人員配置 - 2018 版</a>〉。 <a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:5" role="doc-endnote">
-<p>Bash 的行為是：“Aliases are not expanded when the shell is not interactive, unless…”，請參考 “<a href="https://unix.stackexchange.com/questions/1496/why-doesnt-my-bash-script-recognize-aliases">Why doesn't my Bash script recognize aliases?</a>” 這類文章。<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#8617;</a></p>
+<p>Bash 的行為是：“Aliases are not expanded when the shell is not interactive, unless…”，請參考 “<a href="https://unix.stackexchange.com/questions/1496/why-doesnt-my-bash-script-recognize-aliases">Why doesn't my Bash script recognize aliases?</a>” 這類文章。 <a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </section>

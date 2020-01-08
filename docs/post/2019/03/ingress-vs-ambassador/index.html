@@ -34,7 +34,7 @@
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.60.1" />
+<meta name="generator" content="Hugo 0.62.2" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2019/03/ingress-vs-ambassador/" />
@@ -55,7 +55,7 @@
 
 
 
-<link rel="stylesheet" href="/sass/jane.min.af20b78e95c84de86b00a0242a4a77bd2601700e1b250edf27537d957ac0041d.css" integrity="sha256-ryC3jpXITehrAKAkKkp3vSYBcA4bJQ7fJ1N9lXrABB0=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.0995afa14b62cd93e93cfc066b646c4c17a3eddca0e9d52a1d9dcf5d90aaacd3.css" integrity="sha256-CZWvoUtizZPpPPwGa2RsTBej7dyg6dUqHZ3PXZCqrNM=" media="screen" crossorigin="anonymous">
 
 
 
@@ -75,7 +75,7 @@
 該如何選擇？">
 <meta itemprop="datePublished" content="2019-03-29T23:00:00&#43;08:00" />
 <meta itemprop="dateModified" content="2019-03-29T23:00:00&#43;08:00" />
-<meta itemprop="wordCount" content="1430">
+<meta itemprop="wordCount" content="1406">
 
 
 
@@ -306,7 +306,7 @@ if (!doNotTrack) {
             <a href="//william-yeh.net/categories/tech/"> tech </a>
             
           </div>
-        <span class="more-meta"> 約 1430 字 </span>
+        <span class="more-meta"> 約 1406 字 </span>
           <span class="more-meta"> 預計閱讀 3 分鐘 </span>
 
         
@@ -328,10 +328,10 @@ if (!doNotTrack) {
   <div class="post-toc-content">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#heading">實驗環境</a></li>
+    <li><a href="#實驗環境">實驗環境</a></li>
     <li><a href="#nginx-ingress">Nginx ingress</a></li>
     <li><a href="#ambassador">Ambassador</a></li>
-    <li><a href="#heading1">簡單的壓測</a></li>
+    <li><a href="#簡單的壓測">簡單的壓測</a></li>
   </ul>
 </nav>
   </div>
@@ -349,7 +349,7 @@ if (!doNotTrack) {
 </blockquote>
 <p>進一步研讀 Ambassador 相關資料 <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>，發現他們鎖定的 service mesh 路線很合我的胃口，站在 <a href="https://www.envoyproxy.io/">Envoy</a> 巨人肩膀上更是聰明。不過，理論歸理論，我想親自試試看現在的 Ambassador 是否堪當大任？</p>
 <p>初步，我只先拿 <a href="https://kubernetes.github.io/ingress-nginx/">ingress-nginx</a> 這個所謂的 “the safest choice” 作簡單的性能比較。將來有機會再進行更徹底的 chaos monkey 測試。</p>
-<h2 id="heading">實驗環境</h2>
+<h2 id="實驗環境">實驗環境</h2>
 <p>為了簡化實驗步驟，我直接採用 Google Cloud Platform 的 <a href="https://cloud.google.com/kubernetes-engine/">GKE</a>。</p>
 <ul>
 <li>
@@ -388,7 +388,7 @@ if (!doNotTrack) {
 <div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">% kubectl create -f https://bit.ly/2YyZzjO</code></pre></div>
 <p>照著做完後，Ambassador 會在 GKE 開放一個公開的 http 服務存取點。</p>
 <p>我們可以先用 <code>kubectl get services</code> 查看 API gateway 的 public IP 位址。假設是 <code>35.224.99.169</code> 的話，這個服務路徑則是 <code>http://35.224.99.169/hello2/</code>。</p>
-<h2 id="heading1">簡單的壓測</h2>
+<h2 id="簡單的壓測">簡單的壓測</h2>
 <p>為了簡單起見，我在 GCP 的 <a href="https://cloud.google.com/shell/?hl=zh-tw">Cloud Shell</a> 進行壓測。我會對 Nginx ingress 及 Ambassador 兩種情況，各送出一萬個 API 存取要求。</p>
 <p>針對 Nginx ingress 的情況進行測試：</p>
 <div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">% docker run --rm  williamyeh/boom  \
@@ -470,16 +470,16 @@ Latency distribution:
 <hr>
 <ol>
 <li id="fn:1" role="doc-endnote">
-<p>對於 API gateway 來龍去脈感興趣的，可參考 Ricky 的文章〈<a href="https://rickhw.github.io/2018/01/24/AWS/Study-Notes-Overview-API-Gateway/">Overview API Gateway</a>〉、Andrew 的文章〈<a href="https://columns.chicken-house.net/2017/07/11/microservice8-case-study-p3/">架構師觀點 - 轉移到微服務架構的經驗分享 (Part 3)</a>〉。<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#8617;</a></p>
+<p>對於 API gateway 來龍去脈感興趣的，可參考 Ricky 的文章〈<a href="https://rickhw.github.io/2018/01/24/AWS/Study-Notes-Overview-API-Gateway/">Overview API Gateway</a>〉、Andrew 的文章〈<a href="https://columns.chicken-house.net/2017/07/11/microservice8-case-study-p3/">架構師觀點 - 轉移到微服務架構的經驗分享 (Part 3)</a>〉。 <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:2" role="doc-endnote">
-<p>對於 Ambassador 早期發展歷程感興趣的，可參考他們寫的這兩篇文章：“<a href="https://medium.com/@datawire/building-ambassador-an-open-source-api-gateway-on-kubernetes-and-envoy-33637a9fa6f8">Building Ambassador, an Open Source API Gateway on Kubernetes and Envoy</a>” 及 “<a href="https://blog.getambassador.io/kubernetes-ingress-nodeport-load-balancers-and-ingress-controllers-6e29f1c44f2d">Kubernetes Ingress 101: NodePort, Load Balancers, and Ingress Controllers</a>”。<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#8617;</a></p>
+<p>對於 Ambassador 早期發展歷程感興趣的，可參考他們寫的這兩篇文章：“<a href="https://medium.com/@datawire/building-ambassador-an-open-source-api-gateway-on-kubernetes-and-envoy-33637a9fa6f8">Building Ambassador, an Open Source API Gateway on Kubernetes and Envoy</a>” 及 “<a href="https://blog.getambassador.io/kubernetes-ingress-nodeport-load-balancers-and-ingress-controllers-6e29f1c44f2d">Kubernetes Ingress 101: NodePort, Load Balancers, and Ingress Controllers</a>”。 <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:3" role="doc-endnote">
-<p>Envoy <a href="https://github.com/envoyproxy/envoy/tree/v1.0.0">1.0.0 版</a>發布日期為 2016 年 9 月。<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#8617;</a></p>
+<p>Envoy <a href="https://github.com/envoyproxy/envoy/tree/v1.0.0">1.0.0 版</a>發布日期為 2016 年 9 月。 <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:4" role="doc-endnote">
-<p>Ambassador <a href="https://github.com/datawire/ambassador/blob/master/CHANGELOG.md">0.1.3 版</a>發布日期為 2017 年 3 月。<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#8617;</a></p>
+<p>Ambassador <a href="https://github.com/datawire/ambassador/blob/master/CHANGELOG.md">0.1.3 版</a>發布日期為 2017 年 3 月。 <a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </section>
