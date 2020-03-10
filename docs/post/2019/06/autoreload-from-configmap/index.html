@@ -24,9 +24,9 @@
 
 <meta name="author" content="William Yeh" />
   <meta name="description" content="My previous article &amp;ldquo;Inotify in Containers&amp;rdquo; has demonstrated that when ConfigMap is mounted as directories, any changes in the ConfigMap will propagate to related pods, and can be detected with inotify-like APIs.
-A follow-up question might be: what should a well-behaved application react to this trigger accordingly? What if it&#39;s a ill-designed application?
-To clarify this I&#39;ve conducted a series of experiments for 3 possible configmap-reloading strategies:
- Built-in auto-reloading apps External signals Pod rollout  In this article I&#39;m going to explain the experiments and preliminary findings." />
+A follow-up question might be: what should a well-behaved application react to this trigger accordingly? What if it&amp;rsquo;s a ill-designed application?
+To clarify this I&amp;rsquo;ve conducted a series of experiments for 3 possible configmap-reloading strategies:
+ Built-in auto-reloading apps External signals Pod rollout  In this article I&amp;rsquo;m going to explain the experiments and preliminary findings." />
 
 
 
@@ -34,7 +34,7 @@ To clarify this I&#39;ve conducted a series of experiments for 3 possible config
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.62.2" />
+<meta name="generator" content="Hugo 0.67.0" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2019/06/autoreload-from-configmap/" />
@@ -55,7 +55,7 @@ To clarify this I&#39;ve conducted a series of experiments for 3 possible config
 
 
 
-<link rel="stylesheet" href="/sass/jane.min.0995afa14b62cd93e93cfc066b646c4c17a3eddca0e9d52a1d9dcf5d90aaacd3.css" integrity="sha256-CZWvoUtizZPpPPwGa2RsTBej7dyg6dUqHZ3PXZCqrNM=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.fa3d941d1d0e0ddc985804227feabffea55c89883eb0af34e0532a7ae9135151.css" integrity="sha256-&#43;j2UHR0ODdyYWAQif&#43;q//qVciYg&#43;sK804FMqeukTUVE=" media="screen" crossorigin="anonymous">
 
 
 
@@ -63,18 +63,18 @@ To clarify this I&#39;ve conducted a series of experiments for 3 possible config
 
 <meta property="og:title" content="Auto-Reload from ConfigMap" />
 <meta property="og:description" content="My previous article &ldquo;Inotify in Containers&rdquo; has demonstrated that when ConfigMap is mounted as directories, any changes in the ConfigMap will propagate to related pods, and can be detected with inotify-like APIs.
-A follow-up question might be: what should a well-behaved application react to this trigger accordingly? What if it&#39;s a ill-designed application?
-To clarify this I&#39;ve conducted a series of experiments for 3 possible configmap-reloading strategies:
- Built-in auto-reloading apps External signals Pod rollout  In this article I&#39;m going to explain the experiments and preliminary findings." />
+A follow-up question might be: what should a well-behaved application react to this trigger accordingly? What if it&rsquo;s a ill-designed application?
+To clarify this I&rsquo;ve conducted a series of experiments for 3 possible configmap-reloading strategies:
+ Built-in auto-reloading apps External signals Pod rollout  In this article I&rsquo;m going to explain the experiments and preliminary findings." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="//william-yeh.net/post/2019/06/autoreload-from-configmap/" />
 <meta property="article:published_time" content="2019-06-17T17:00:00+08:00" />
 <meta property="article:modified_time" content="2019-06-17T17:00:00+08:00" />
 <meta itemprop="name" content="Auto-Reload from ConfigMap">
 <meta itemprop="description" content="My previous article &ldquo;Inotify in Containers&rdquo; has demonstrated that when ConfigMap is mounted as directories, any changes in the ConfigMap will propagate to related pods, and can be detected with inotify-like APIs.
-A follow-up question might be: what should a well-behaved application react to this trigger accordingly? What if it&#39;s a ill-designed application?
-To clarify this I&#39;ve conducted a series of experiments for 3 possible configmap-reloading strategies:
- Built-in auto-reloading apps External signals Pod rollout  In this article I&#39;m going to explain the experiments and preliminary findings.">
+A follow-up question might be: what should a well-behaved application react to this trigger accordingly? What if it&rsquo;s a ill-designed application?
+To clarify this I&rsquo;ve conducted a series of experiments for 3 possible configmap-reloading strategies:
+ Built-in auto-reloading apps External signals Pod rollout  In this article I&rsquo;m going to explain the experiments and preliminary findings.">
 <meta itemprop="datePublished" content="2019-06-17T17:00:00&#43;08:00" />
 <meta itemprop="dateModified" content="2019-06-17T17:00:00&#43;08:00" />
 <meta itemprop="wordCount" content="618">
@@ -84,9 +84,9 @@ To clarify this I&#39;ve conducted a series of experiments for 3 possible config
 <meta itemprop="keywords" content="devops,docker,kubernetes,inotify,configmap," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Auto-Reload from ConfigMap"/>
 <meta name="twitter:description" content="My previous article &ldquo;Inotify in Containers&rdquo; has demonstrated that when ConfigMap is mounted as directories, any changes in the ConfigMap will propagate to related pods, and can be detected with inotify-like APIs.
-A follow-up question might be: what should a well-behaved application react to this trigger accordingly? What if it&#39;s a ill-designed application?
-To clarify this I&#39;ve conducted a series of experiments for 3 possible configmap-reloading strategies:
- Built-in auto-reloading apps External signals Pod rollout  In this article I&#39;m going to explain the experiments and preliminary findings."/>
+A follow-up question might be: what should a well-behaved application react to this trigger accordingly? What if it&rsquo;s a ill-designed application?
+To clarify this I&rsquo;ve conducted a series of experiments for 3 possible configmap-reloading strategies:
+ Built-in auto-reloading apps External signals Pod rollout  In this article I&rsquo;m going to explain the experiments and preliminary findings."/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -343,19 +343,19 @@ if (!doNotTrack) {
     
     <div class="post-content">
       <p>My previous article &ldquo;<a href="//william-yeh.net/post/2019/06/inotify-in-containers/">Inotify in Containers</a>&rdquo; has demonstrated that when ConfigMap is mounted as directories, any changes in the ConfigMap will propagate to related pods, and can be detected with <code>inotify</code>-like APIs.</p>
-<p>A follow-up question might be: what should a well-behaved application react to this trigger accordingly? What if it's a ill-designed application?</p>
-<p>To clarify this I've conducted a series of experiments for 3 possible configmap-reloading  strategies:</p>
+<p>A follow-up question might be: what should a well-behaved application react to this trigger accordingly? What if it&rsquo;s a ill-designed application?</p>
+<p>To clarify this I&rsquo;ve conducted a series of experiments for 3 possible configmap-reloading  strategies:</p>
 <ul>
 <li>Built-in auto-reloading apps</li>
 <li>External signals</li>
 <li>Pod rollout</li>
 </ul>
-<p>In this article I'm going to explain the experiments and preliminary findings.  All experiment materials are available in the <a href="https://github.com/William-Yeh/configmap-auto-reload">configmap-auto-reload</a> repo.</p>
+<p>In this article I&rsquo;m going to explain the experiments and preliminary findings.  All experiment materials are available in the <a href="https://github.com/William-Yeh/configmap-auto-reload">configmap-auto-reload</a> repo.</p>
 <h2 id="built-in-auto-reloading-apps">Built-in auto-reloading apps</h2>
 <p>Some applications (e.g., <a href="https://traefik.io/">Traefik</a>) are smart enough to gracefully reload themselves whenever they detect any configuration changes without downtime.  Will this work with Kubernetes ConfigMap?</p>
 <p>See the <a href="https://github.com/William-Yeh/configmap-auto-reload/tree/master/traefik-example">traefik-example</a> demo:</p>
 <p><a href="https://asciinema.org/a/251179"><img src="https://asciinema.org/a/251179.svg" alt="asciicast"></a></p>
-<p>Perfect!  Traefik auto-reloads itself as long as you correctly mount the <code>traefik-config</code> ConfigMap as <code>/etc/traefik/</code> directory for the pod.  Here's the related <a href="https://github.com/William-Yeh/configmap-auto-reload/blob/master/traefik-example/traefik-config.yml#L11-L13">code snippet</a>:</p>
+<p>Perfect!  Traefik auto-reloads itself as long as you correctly mount the <code>traefik-config</code> ConfigMap as <code>/etc/traefik/</code> directory for the pod.  Here&rsquo;s the related <a href="https://github.com/William-Yeh/configmap-auto-reload/blob/master/traefik-example/traefik-config.yml#L11-L13">code snippet</a>:</p>
 <div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">[file]
 watch = true
 directory = &#34;/etc/traefik/&#34;</code></pre></div>
@@ -382,7 +382,7 @@ directory = &#34;/etc/traefik/&#34;</code></pre></div>
 <p>Will this combo trick work with Kubernetes ConfigMap?</p>
 <p>See the <a href="https://github.com/William-Yeh/configmap-auto-reload/tree/master/inotifywait-example">inotifywait-example</a> demo:</p>
 <p><a href="https://asciinema.org/a/251666"><img src="https://asciinema.org/a/251666.svg" alt="asciicast"></a></p>
-<p>Good!  Inotifywait detects the changes and sends <code>HUP</code> signals to Nginx as long as you correctly mount the <code>nginx-config</code> ConfigMap as <code>/etc/nginx/</code> directory for the pod.  Here's the related <a href="https://github.com/William-Yeh/configmap-auto-reload/blob/master/inotifywait-example/watch-nginx.sh#L13-L22">code snippet</a>:</p>
+<p>Good!  Inotifywait detects the changes and sends <code>HUP</code> signals to Nginx as long as you correctly mount the <code>nginx-config</code> ConfigMap as <code>/etc/nginx/</code> directory for the pod.  Here&rsquo;s the related <a href="https://github.com/William-Yeh/configmap-auto-reload/blob/master/inotifywait-example/watch-nginx.sh#L13-L22">code snippet</a>:</p>
 <div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">if [[ &#34;$(inotifywatch -e modify,create,delete,move -t 15 /etc/nginx/ 2&gt;&amp;1)&#34; =~ filename ]]; then
     echo &#34;Try to verify updated nginx config...&#34;
     nginx -t
@@ -393,14 +393,14 @@ directory = &#34;/etc/traefik/&#34;</code></pre></div>
         nginx -s reload
     fi
 fi;</code></pre></div>
-<p>DISCLAIMER: it's just for demo; not a robust implementation. For more examples, see <sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup><sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup><sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup>.</p>
+<p>DISCLAIMER: it&rsquo;s just for demo; not a robust implementation. For more examples, see <sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup><sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup><sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup>.</p>
 <p>CAUTION: it is against the best practice of &ldquo;one process per container&rdquo; policy.<sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup>  If you really want to use this combo trick, try to model it as &ldquo;multiple containers within a single pod.&rdquo;</p>
 <h2 id="pod-rollout">Pod rollout</h2>
 <p>Some applications do not have any configuration reloading mechanism. What should we do? Maybe the only reasonable way is to rollout their running instances, and just spawn new ones with the new configurations.</p>
 <p><a href="https://github.com/stakater/Reloader">Reloader</a> is a generic solution for Kubernetes. With the help of it, pods can be restarted whenever related ConfigMap has changed.</p>
 <p>See the <a href="https://github.com/William-Yeh/configmap-auto-reload/tree/master/reloader-example">reloader-example</a>:</p>
 <p><a href="https://asciinema.org/a/251670"><img src="https://asciinema.org/a/251670.svg" alt="asciicast"></a></p>
-<p>Perfect!  Nginx pods get rolling updated by Reloader as long as you annotate the Nginx deployment with <code>configmap.reloader.stakater.com/reload</code>.  Here's the related <a href="https://github.com/William-Yeh/configmap-auto-reload/blob/master/reloader-example/nginx-service.yml#L25-L26">code snippet</a>:</p>
+<p>Perfect!  Nginx pods get rolling updated by Reloader as long as you annotate the Nginx deployment with <code>configmap.reloader.stakater.com/reload</code>.  Here&rsquo;s the related <a href="https://github.com/William-Yeh/configmap-auto-reload/blob/master/reloader-example/nginx-service.yml#L25-L26">code snippet</a>:</p>
 <div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">apiVersion: apps/v1
 kind: Deployment
 metadata:

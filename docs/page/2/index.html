@@ -30,7 +30,7 @@
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.62.2" />
+<meta name="generator" content="Hugo 0.67.0" />
 
 
 <link rel="canonical" href="//william-yeh.net/" />
@@ -51,7 +51,7 @@
 
 
 
-<link rel="stylesheet" href="/sass/jane.min.0995afa14b62cd93e93cfc066b646c4c17a3eddca0e9d52a1d9dcf5d90aaacd3.css" integrity="sha256-CZWvoUtizZPpPPwGa2RsTBej7dyg6dUqHZ3PXZCqrNM=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.fa3d941d1d0e0ddc985804227feabffea55c89883eb0af34e0532a7ae9135151.css" integrity="sha256-&#43;j2UHR0ODdyYWAQif&#43;q//qVciYg&#43;sK804FMqeukTUVE=" media="screen" crossorigin="anonymous">
 
 
 
@@ -61,7 +61,7 @@
 <meta property="og:description" content="敏捷魔藥師 (Agile Potioneer)。會說 90% 的工匠語言，會說 70% 的總管語言，正在努力提升 30% 的行腳商人語言。" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="//william-yeh.net/" />
-<meta property="og:updated_time" content="2020-01-08T22:30:00+08:00" />
+<meta property="og:updated_time" content="2020-03-10T23:00:00+08:00" />
 <meta itemprop="name" content="Potioneer&#39;s Essays">
 <meta itemprop="description" content="敏捷魔藥師 (Agile Potioneer)。會說 90% 的工匠語言，會說 70% 的總管語言，正在努力提升 30% 的行腳商人語言。"><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Potioneer&#39;s Essays"/>
@@ -287,6 +287,58 @@ if (!doNotTrack) {
   <header class="post-header">
     <h1 class="post-title">
       
+      <a class="post-link" href="/post/2019/07/ckad-materials/">CKAD (Certified Kubernetes Application Developer) 相關資料</a>
+    </h1>
+    
+    <div class="post-meta">
+      <time datetime="2019-07-11" class="post-time">
+        2019-07-11
+      </time>
+      <div class="post-category">
+          <a href="//william-yeh.net/categories/tech/"> tech </a>
+          
+        </div>
+      <span class="more-meta"> 約 1036 字 </span>
+      <span class="more-meta"> 預計閱讀 3 分鐘 </span>
+      
+      
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    
+    <div class="post-summary">
+      <p>Linux Foundation 旗下的 <a href="https://www.cncf.io/">CNCF (Cloud Native Computing Foundation)</a> 提供兩個與 Kubernetes 相關的個人技術檢定：偏維運的 <a href="https://www.cncf.io/certification/cka/">CKA (Certified Kubernetes Administrator)</a>，以及偏研發的 <a href="https://www.cncf.io/certification/ckad/">CKAD (Certified Kubernetes Application Developer)</a>。</p>
+<p>其中，CKAD 與我關注的範圍、與我設計的工作坊最接近，便想進一步瞭解它的細節。</p>
+
+<link rel="stylesheet" href="/css/hugo-easy-gallery.css" />
+<div class="box">
+<figure  itemprop="associatedMedia"
+  itemscope itemtype="http://schema.org/ImageObject" 
+  style="max-width:15em" >
+    <div class="img">
+      <img itemprop="thumbnail" src="/img/2019/07/kubernetes-ckad-color.png" alt="CKAD logo"/>
+    </div>
+    <a href="/img/2019/07/kubernetes-ckad-color.png" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>CKAD logo</p>
+      </figcaption>
+  </figure>
+</div>
+    </div>
+    <div class="read-more">
+      <a href="/post/2019/07/ckad-materials/" class="read-more-link">閱讀全文</a>
+    </div>
+    
+  </div>
+</article>
+
+  
+    <article class="post bg-white">
+  <header class="post-header">
+    <h1 class="post-title">
+      
       <a class="post-link" href="/post/2019/06/docker-file-permissions/">Docker File Permissions on Windows</a>
     </h1>
     
@@ -310,7 +362,7 @@ if (!doNotTrack) {
     
     <div class="post-summary">
       <p>Currently Linux containers are still more popular than Windows containers. And Windows users often need to use Linux containers even from their Windows computers.</p>
-<p>Recently I've found something very strange about Linux-style file permissions when the Docker images are built from Windows hosts.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> Therefore, I've conducted a suite of test cases to investigate whether file permissions are preserved with Docker &amp; <a href="https://skaffold.dev/">Skaffold</a> toolchains. All experiment materials are available in the <a href="https://github.com/William-Yeh/container-chmod">container-chmod</a> repo.</p>
+<p>Recently I&rsquo;ve found something very strange about Linux-style file permissions when the Docker images are built from Windows hosts.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> Therefore, I&rsquo;ve conducted a suite of test cases to investigate whether file permissions are preserved with Docker &amp; <a href="https://skaffold.dev/">Skaffold</a> toolchains. All experiment materials are available in the <a href="https://github.com/William-Yeh/container-chmod">container-chmod</a> repo.</p>
     </div>
     <div class="read-more">
       <a href="/post/2019/06/docker-file-permissions/" class="read-more-link">閱讀全文</a>
@@ -347,9 +399,9 @@ if (!doNotTrack) {
     
     <div class="post-summary">
       My previous article &ldquo;Inotify in Containers&rdquo; has demonstrated that when ConfigMap is mounted as directories, any changes in the ConfigMap will propagate to related pods, and can be detected with inotify-like APIs.
-A follow-up question might be: what should a well-behaved application react to this trigger accordingly? What if it's a ill-designed application?
-To clarify this I've conducted a series of experiments for 3 possible configmap-reloading strategies:
- Built-in auto-reloading apps External signals Pod rollout  In this article I'm going to explain the experiments and preliminary findings.
+A follow-up question might be: what should a well-behaved application react to this trigger accordingly? What if it&rsquo;s a ill-designed application?
+To clarify this I&rsquo;ve conducted a series of experiments for 3 possible configmap-reloading strategies:
+ Built-in auto-reloading apps External signals Pod rollout  In this article I&rsquo;m going to explain the experiments and preliminary findings.
     </div>
     <div class="read-more">
       <a href="/post/2019/06/autoreload-from-configmap/" class="read-more-link">閱讀全文</a>
@@ -385,7 +437,7 @@ To clarify this I've conducted a series of experiments for 3 possible configmap-
   <div class="post-content">
     
     <div class="post-summary">
-      My previous article &ldquo;Inotify in Containers&rdquo; has demonstrated that when ConfigMap is mounted as directories, any changes in the ConfigMap will propagate to related pods. A follow-up question might be: what if the ConfigMap is mounted as environment variables? Some said that the answer is NO in Kubernetes1; even in the old Docker world2. Therefore, I'd like to begin with a simple experiment to try to answer the question: After
+      My previous article &ldquo;Inotify in Containers&rdquo; has demonstrated that when ConfigMap is mounted as directories, any changes in the ConfigMap will propagate to related pods. A follow-up question might be: what if the ConfigMap is mounted as environment variables? Some said that the answer is NO in Kubernetes1; even in the old Docker world2. Therefore, I&rsquo;d like to begin with a simple experiment to try to answer the question: After
     </div>
     <div class="read-more">
       <a href="/post/2019/06/containers-and-env/" class="read-more-link">閱讀全文</a>
@@ -425,51 +477,6 @@ To clarify this I've conducted a series of experiments for 3 possible configmap-
     </div>
     <div class="read-more">
       <a href="/post/2019/06/inotify-in-containers/" class="read-more-link">閱讀全文</a>
-    </div>
-    
-  </div>
-</article>
-
-  
-    <article class="post bg-white">
-  <header class="post-header">
-    <h1 class="post-title">
-      
-      <a class="post-link" href="/post/2019/05/k8s-lab/">Kubernetes 的入門認知與導入策略</a>
-    </h1>
-    
-    <div class="post-meta">
-      <time datetime="2019-05-17" class="post-time">
-        2019-05-17
-      </time>
-      <div class="post-category">
-          <a href="//william-yeh.net/categories/tech/"> tech </a>
-          
-        </div>
-      <span class="more-meta"> 約 1190 字 </span>
-      <span class="more-meta"> 預計閱讀 3 分鐘 </span>
-      
-      
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    
-    <div class="post-summary">
-      <p>前天我在 <a href="https://cloudsummit.ithome.com.tw/">2019 台灣雲端大會</a>帶了兩個場次，一個是現場實作場次，一個是經驗分享演講：</p>
-<ul>
-<li>
-<p>Lab / <a href="https://github.com/William-Yeh/workshop-cloud2019">給 RD 的 Kubernetes 初體驗</a> (90 minutes)</p>
-</li>
-<li>
-<p>Speech / <a href="https://www.slideshare.net/williamyeh/when-dotnetmeetskubernetes-145557464">當 .NET 遇到 Kubernetes</a> (30 minutes)</p>
-</li>
-</ul>
-<p>兩個場次，一言以蔽之，都圍繞在 Kubernetes 的入門認知與導入策略上。</p>
-    </div>
-    <div class="read-more">
-      <a href="/post/2019/05/k8s-lab/" class="read-more-link">閱讀全文</a>
     </div>
     
   </div>

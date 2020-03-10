@@ -6,10 +6,37 @@
     <description>Recent content in Tags on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Wed, 08 Jan 2020 22:30:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 10 Mar 2020 23:00:00 +0800</lastBuildDate>
     
 	<atom:link href="//william-yeh.net/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>database</title>
+      <link>//william-yeh.net/tags/database/</link>
+      <pubDate>Tue, 10 Mar 2020 23:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/tags/database/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ddd</title>
+      <link>//william-yeh.net/tags/ddd/</link>
+      <pubDate>Tue, 10 Mar 2020 23:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/tags/ddd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>microservice</title>
+      <link>//william-yeh.net/tags/microservice/</link>
+      <pubDate>Tue, 10 Mar 2020 23:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/tags/microservice/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>book</title>
@@ -161,33 +188,6 @@
       <pubDate>Fri, 17 May 2019 12:00:00 +0800</pubDate>
       
       <guid>//william-yeh.net/tags/microservices/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>istio</title>
-      <link>//william-yeh.net/tags/istio/</link>
-      <pubDate>Fri, 19 Apr 2019 23:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/tags/istio/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>service mesh</title>
-      <link>//william-yeh.net/tags/service-mesh/</link>
-      <pubDate>Fri, 19 Apr 2019 23:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/tags/service-mesh/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>ansible</title>
-      <link>//william-yeh.net/tags/ansible/</link>
-      <pubDate>Thu, 18 Apr 2019 23:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/tags/ansible/</guid>
       <description></description>
     </item>
     

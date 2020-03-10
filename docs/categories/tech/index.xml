@@ -6,10 +6,23 @@
     <description>Recent content in tech on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Wed, 04 Dec 2019 22:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 10 Mar 2020 23:00:00 +0800</lastBuildDate>
     
 	<atom:link href="//william-yeh.net/categories/tech/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Idempotency Key：原理與實測</title>
+      <link>//william-yeh.net/post/2020/03/idempotency-key-test/</link>
+      <pubDate>Tue, 10 Mar 2020 23:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2020/03/idempotency-key-test/</guid>
+      <description>&lt;p&gt;最近幾年，在微服務打滾的人，不時會遇到神祕的 &amp;ldquo;idempotency key&amp;rdquo; 字眼。本文爬梳 idempotency key 的技術背景，探討運作流程，並分析資料庫的實作選項。&lt;/p&gt;
+&lt;h2 id=&#34;idempotency-冪等性&#34;&gt;Idempotency 冪等性&lt;/h2&gt;
+&lt;p&gt;在 API 服務中，常常需要留意 idempotency（冪等性）。&lt;/p&gt;
+&lt;p&gt;名詞：idempotency，形容詞：idempotent。&lt;/p&gt;
+&lt;p&gt;&amp;ldquo;Idempotency&amp;rdquo; 這字眼源自數學。維基百科是這麼解釋 &amp;ldquo;&lt;a href=&#34;https://en.wikipedia.org/wiki/Idempotence#Idempotent_functions&#34;&gt;idempotent function&lt;/a&gt;&amp;rdquo; 的：&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>技術面試的小觀點</title>
@@ -66,7 +79,7 @@
       
       <guid>//william-yeh.net/post/2019/06/docker-file-permissions/</guid>
       <description>&lt;p&gt;Currently Linux containers are still more popular than Windows containers. And Windows users often need to use Linux containers even from their Windows computers.&lt;/p&gt;
-&lt;p&gt;Recently I&#39;ve found something very strange about Linux-style file permissions when the Docker images are built from Windows hosts.&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; Therefore, I&#39;ve conducted a suite of test cases to investigate whether file permissions are preserved with Docker &amp;amp; &lt;a href=&#34;https://skaffold.dev/&#34;&gt;Skaffold&lt;/a&gt; toolchains. All experiment materials are available in the &lt;a href=&#34;https://github.com/William-Yeh/container-chmod&#34;&gt;container-chmod&lt;/a&gt; repo.&lt;/p&gt;</description>
+&lt;p&gt;Recently I&amp;rsquo;ve found something very strange about Linux-style file permissions when the Docker images are built from Windows hosts.&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; Therefore, I&amp;rsquo;ve conducted a suite of test cases to investigate whether file permissions are preserved with Docker &amp;amp; &lt;a href=&#34;https://skaffold.dev/&#34;&gt;Skaffold&lt;/a&gt; toolchains. All experiment materials are available in the &lt;a href=&#34;https://github.com/William-Yeh/container-chmod&#34;&gt;container-chmod&lt;/a&gt; repo.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -76,9 +89,9 @@
       
       <guid>//william-yeh.net/post/2019/06/autoreload-from-configmap/</guid>
       <description>My previous article &amp;ldquo;Inotify in Containers&amp;rdquo; has demonstrated that when ConfigMap is mounted as directories, any changes in the ConfigMap will propagate to related pods, and can be detected with inotify-like APIs.
-A follow-up question might be: what should a well-behaved application react to this trigger accordingly? What if it&#39;s a ill-designed application?
-To clarify this I&#39;ve conducted a series of experiments for 3 possible configmap-reloading strategies:
- Built-in auto-reloading apps External signals Pod rollout  In this article I&#39;m going to explain the experiments and preliminary findings.</description>
+A follow-up question might be: what should a well-behaved application react to this trigger accordingly? What if it&amp;rsquo;s a ill-designed application?
+To clarify this I&amp;rsquo;ve conducted a series of experiments for 3 possible configmap-reloading strategies:
+ Built-in auto-reloading apps External signals Pod rollout  In this article I&amp;rsquo;m going to explain the experiments and preliminary findings.</description>
     </item>
     
     <item>
@@ -87,7 +100,7 @@ To clarify this I&#39;ve conducted a series of experiments for 3 possible config
       <pubDate>Mon, 17 Jun 2019 14:00:00 +0800</pubDate>
       
       <guid>//william-yeh.net/post/2019/06/containers-and-env/</guid>
-      <description>My previous article &amp;ldquo;Inotify in Containers&amp;rdquo; has demonstrated that when ConfigMap is mounted as directories, any changes in the ConfigMap will propagate to related pods. A follow-up question might be: what if the ConfigMap is mounted as environment variables? Some said that the answer is NO in Kubernetes1; even in the old Docker world2. Therefore, I&#39;d like to begin with a simple experiment to try to answer the question: After</description>
+      <description>My previous article &amp;ldquo;Inotify in Containers&amp;rdquo; has demonstrated that when ConfigMap is mounted as directories, any changes in the ConfigMap will propagate to related pods. A follow-up question might be: what if the ConfigMap is mounted as environment variables? Some said that the answer is NO in Kubernetes1; even in the old Docker world2. Therefore, I&amp;rsquo;d like to begin with a simple experiment to try to answer the question: After</description>
     </item>
     
     <item>
@@ -232,15 +245,6 @@ To clarify this I&#39;ve conducted a series of experiments for 3 possible config
       
       <guid>//william-yeh.net/post/2016/08/devops-a-toc-perspective/</guid>
       <description>自從寫了〈DevOps 核心元素的考古溯源〉一文，我就很想找個機會，好好闡釋 DevOps 的重要源頭：Lean Thinking。這個願望，在五月初那次兩個</description>
-    </item>
-    
-    <item>
-      <title>練字與程式設計</title>
-      <link>//william-yeh.net/post/2016/08/on-handwriting/</link>
-      <pubDate>Wed, 10 Aug 2016 08:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2016/08/on-handwriting/</guid>
-      <description>參考線 最近常常需要利用便利貼或紙筆思考。看了看筆跡，覺得⋯⋯呃，該開始重新練字了。 現在市面上看得到的範例及風格，比起只有張炳煌《硬筆書法》的</description>
     </item>
     
   </channel>

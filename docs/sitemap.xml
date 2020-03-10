@@ -2,6 +2,69 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>//william-yeh.net/categories/</loc>
+    <lastmod>2020-03-10T23:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/database/</loc>
+    <lastmod>2020-03-10T23:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/ddd/</loc>
+    <lastmod>2020-03-10T23:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/post/2020/03/idempotency-key-test/</loc>
+    <lastmod>2020-03-10T23:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/microservice/</loc>
+    <lastmod>2020-03-10T23:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/post/</loc>
+    <lastmod>2020-03-10T23:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/</loc>
+    <lastmod>2020-03-10T23:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/</loc>
+    <lastmod>2020-03-10T23:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/categories/tech/</loc>
+    <lastmod>2020-03-10T23:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>//william-yeh.net/tags/book/</loc>
     <lastmod>2020-01-08T22:30:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -10,13 +73,6 @@
   
   <url>
     <loc>//william-yeh.net/tags/career/</loc>
-    <lastmod>2020-01-08T22:30:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/categories/</loc>
     <lastmod>2020-01-08T22:30:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -51,28 +107,7 @@
   </url>
   
   <url>
-    <loc>//william-yeh.net/post/</loc>
-    <lastmod>2020-01-08T22:30:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/</loc>
-    <lastmod>2020-01-08T22:30:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>//william-yeh.net/tags/recruitment/</loc>
-    <lastmod>2020-01-08T22:30:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/tags/</loc>
     <lastmod>2020-01-08T22:30:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -116,13 +151,6 @@
   <url>
     <loc>//william-yeh.net/tags/religion/</loc>
     <lastmod>2019-12-26T23:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/categories/tech/</loc>
-    <lastmod>2019-12-04T22:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
