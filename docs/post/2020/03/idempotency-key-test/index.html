@@ -80,7 +80,7 @@ Idempotency 冪等性
 &ldquo;Idempotency&rdquo; 這字眼源自數學。維基百科是這麼解釋 &ldquo;idempotent function&rdquo; 的：">
 <meta itemprop="datePublished" content="2020-03-10T23:00:00&#43;08:00" />
 <meta itemprop="dateModified" content="2020-03-10T23:00:00&#43;08:00" />
-<meta itemprop="wordCount" content="4229">
+<meta itemprop="wordCount" content="4257">
 
 
 
@@ -313,7 +313,7 @@ if (!doNotTrack) {
             <a href="//william-yeh.net/categories/tech/"> tech </a>
             
           </div>
-        <span class="more-meta"> 約 4229 字 </span>
+        <span class="more-meta"> 約 4257 字 </span>
           <span class="more-meta"> 預計閱讀 9 分鐘 </span>
 
         
@@ -342,6 +342,7 @@ if (!doNotTrack) {
     <li><a href="#識別碼由誰來產生">識別碼，由誰來產生？</a></li>
     <li><a href="#idempotency-key-的生成">Idempotency key 的生成</a></li>
     <li><a href="#idempotency-key-的儲存">Idempotency key 的儲存</a></li>
+    <li><a href="#致謝">致謝</a></li>
   </ul>
 </nav>
   </div>
@@ -705,6 +706,9 @@ if (!doNotTrack) {
 <p>執行速度差異不大。至於索引結構，則是 uuid v1 顯著偏高，而 uuid v4 與 snowflake 無太大差異。</p>
 <p>綜合以上實驗，PostgreSQL 的 <code>uuid</code> 效能十分優異，足堪大任。我建議：如果你的 idempotency key 想要是亂數，可以直接把 uuid v4 存在 <code>uuid</code> 欄位中；如果你的 idempotency key 想要是單調遞增數值，不妨考慮把 snowflake 存在 <code>bigint</code> 欄位中。</p>
 <p>如果你用的是其他資料庫系統，此處的建議不見得適用，請自行實驗。</p>
+<h2 id="致謝">致謝</h2>
+<p>實驗設計過程中，從 Carousell 同事得到許多建議，特此致謝。</p>
+<p><a href="https://careers.carousell.com/">We&rsquo;re hiring!</a></p>
 <section class="footnotes" role="doc-endnotes">
 <hr>
 <ol>

@@ -374,6 +374,9 @@
 &lt;p&gt;執行速度差異不大。至於索引結構，則是 uuid v1 顯著偏高，而 uuid v4 與 snowflake 無太大差異。&lt;/p&gt;
 &lt;p&gt;綜合以上實驗，PostgreSQL 的 &lt;code&gt;uuid&lt;/code&gt; 效能十分優異，足堪大任。我建議：如果你的 idempotency key 想要是亂數，可以直接把 uuid v4 存在 &lt;code&gt;uuid&lt;/code&gt; 欄位中；如果你的 idempotency key 想要是單調遞增數值，不妨考慮把 snowflake 存在 &lt;code&gt;bigint&lt;/code&gt; 欄位中。&lt;/p&gt;
 &lt;p&gt;如果你用的是其他資料庫系統，此處的建議不見得適用，請自行實驗。&lt;/p&gt;
+&lt;h2 id=&#34;致謝&#34;&gt;致謝&lt;/h2&gt;
+&lt;p&gt;實驗設計過程中，從 Carousell 同事得到許多建議，特此致謝。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://careers.carousell.com/&#34;&gt;We&amp;rsquo;re hiring!&lt;/a&gt;&lt;/p&gt;
 &lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
 &lt;hr&gt;
 &lt;ol&gt;
