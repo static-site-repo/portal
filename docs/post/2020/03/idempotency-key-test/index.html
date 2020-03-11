@@ -80,7 +80,7 @@ Idempotency 冪等性
 &ldquo;Idempotency&rdquo; 這字眼源自數學。維基百科是這麼解釋 &ldquo;idempotent function&rdquo; 的：">
 <meta itemprop="datePublished" content="2020-03-10T23:00:00&#43;08:00" />
 <meta itemprop="dateModified" content="2020-03-10T23:00:00&#43;08:00" />
-<meta itemprop="wordCount" content="4257">
+<meta itemprop="wordCount" content="4668">
 
 
 
@@ -313,8 +313,8 @@ if (!doNotTrack) {
             <a href="//william-yeh.net/categories/tech/"> tech </a>
             
           </div>
-        <span class="more-meta"> 約 4257 字 </span>
-          <span class="more-meta"> 預計閱讀 9 分鐘 </span>
+        <span class="more-meta"> 約 4668 字 </span>
+          <span class="more-meta"> 預計閱讀 10 分鐘 </span>
 
         
         
@@ -336,6 +336,7 @@ if (!doNotTrack) {
     <nav id="TableOfContents">
   <ul>
     <li><a href="#idempotency-冪等性">Idempotency 冪等性</a></li>
+    <li><a href="#non-idempotent-操作有必要存在嗎">Non-idempotent 操作有必要存在嗎？</a></li>
     <li><a href="#http-的-idempotency-規範">HTTP 的 idempotency 規範</a></li>
     <li><a href="#web-api-的-idempotency-問題">Web API 的 idempotency 問題</a></li>
     <li><a href="#向-tcp-取經">向 TCP 取經</a></li>
@@ -387,11 +388,35 @@ if (!doNotTrack) {
 <span class="nx">inventory</span><span class="p">.</span><span class="nf">SetQuantity</span><span class="p">(</span><span class="nx">item</span><span class="p">,</span> <span class="nx">num</span><span class="p">)</span>
 <span class="nx">inventory</span><span class="p">.</span><span class="nf">SetQuantity</span><span class="p">(</span><span class="nx">item</span><span class="p">,</span> <span class="nx">num</span><span class="p">)</span>
 </code></pre></div><p>反之，像以下這些動作，呼叫 1 次的效果，與呼叫 <em>N</em> 次的效果會<strong>不一樣</strong>，即可稱為是 non-idempotent：</p>
-<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="c1">//num = inventory.GetQuantity(item)  // 起初庫存量為 100
+<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="cm">/*...*/</span>                              <span class="c1">// 起初庫存量為 100
 </span><span class="c1"></span><span class="nx">inventory</span><span class="p">.</span><span class="nf">DecreaseQuantity</span><span class="p">(</span><span class="nx">item</span><span class="p">)</span>     <span class="c1">// 庫存量會變成 99
 </span><span class="c1"></span><span class="nx">inventory</span><span class="p">.</span><span class="nf">DecreaseQuantity</span><span class="p">(</span><span class="nx">item</span><span class="p">)</span>     <span class="c1">// 庫存量會變成 98
 </span><span class="c1"></span><span class="nx">inventory</span><span class="p">.</span><span class="nf">DecreaseQuantity</span><span class="p">(</span><span class="nx">item</span><span class="p">)</span>     <span class="c1">// 庫存量會變成 97
-</span></code></pre></div><h2 id="http-的-idempotency-規範">HTTP 的 idempotency 規範</h2>
+</span></code></pre></div><h2 id="non-idempotent-操作有必要存在嗎">Non-idempotent 操作有必要存在嗎？</h2>
+<p>在 <a href="https://en.wikipedia.org/wiki/Functional_programming">functional programming</a> 思潮下，immutability 及 idempotency 似乎才是政治正確之舉。</p>
+<p>Non-idempotent 的操作，真的有必要存在嗎？</p>
+<p>譬如說，即使沒有 non-idempotent 的 <code>DecreaseQuantity</code>，我們仍可透過 idempotent 的 <code>SetQuantity</code> 來達到一樣的效果：</p>
+<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">num</span> <span class="p">=</span> <span class="nx">inventory</span><span class="p">.</span><span class="nf">GetQuantity</span><span class="p">(</span><span class="nx">item</span><span class="p">)</span>       <span class="c1">// 起初庫存量為 100
+</span><span class="c1"></span>
+<span class="nx">numTarget</span> <span class="o">:=</span> <span class="nx">num</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="nx">inventory</span><span class="p">.</span><span class="nf">SetQuantity</span><span class="p">(</span><span class="nx">item</span><span class="p">,</span> <span class="nx">numTarget</span><span class="p">)</span>  <span class="c1">// 庫存量會變成 99
+</span><span class="c1"></span>
+<span class="nx">numTarget</span><span class="o">--</span>
+<span class="nx">inventory</span><span class="p">.</span><span class="nf">SetQuantity</span><span class="p">(</span><span class="nx">item</span><span class="p">,</span> <span class="nx">numTarget</span><span class="p">)</span>  <span class="c1">// 庫存量會變成 98
+</span><span class="c1"></span>
+<span class="nx">numTarget</span><span class="o">--</span>
+<span class="nx">inventory</span><span class="p">.</span><span class="nf">SetQuantity</span><span class="p">(</span><span class="nx">item</span><span class="p">,</span> <span class="nx">numTarget</span><span class="p">)</span>  <span class="c1">// 庫存量會變成 97
+</span></code></pre></div><p>如此一來，是否真的沒有必要再留下 non-idempotent 的 <code>DecreaseQuantity</code>？至少有兩件事需要思考：</p>
+<ol>
+<li>
+<p>語意層面的改變。原本 <code>DecreaseQuantity</code> 的簽名，並沒有「庫存量」這一欄，也就是說，client 並不需要知道「目前庫存量」，即可進行「庫存量減一」。如果改寫成 <code>SetQuantity</code> 版本，簽名不同，多了「庫存量」欄位，換句話說，原本不必知道的「庫存量」內容，現在就必須透露出來了——這改變了原本「庫存量減一」的操作語意。</p>
+</li>
+<li>
+<p>同步問題。同一時間，萬一有別人也在透過這個新方法改動「庫存量」，就會發生 race condition。</p>
+</li>
+</ol>
+<p>因此，某些時候，non-idempotency 可能無法完全迴避。</p>
+<h2 id="http-的-idempotency-規範">HTTP 的 idempotency 規範</h2>
 <p>HTTP 對於 idempotency 有一些規範。像 HTTP/1.1 的規格書 <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html#sec9.1.2">§9.1.2</a> 就指出：</p>
 <blockquote>
 <p>Methods can also have the property of &ldquo;idempotence&rdquo; in that (aside from error or expiration issues) the side-effects of <em>N</em> &gt; 0 identical requests is the same as for a single request. The methods <code>GET</code>, <code>HEAD</code>, <code>PUT</code> and <code>DELETE</code> share this property. Also, the methods <code>OPTIONS</code> and <code>TRACE</code> SHOULD NOT have side effects, and so are inherently idempotent.</p>
