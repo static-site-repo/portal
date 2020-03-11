@@ -365,7 +365,7 @@ if (!doNotTrack) {
 <li>如果 <em>f</em> 是 idempotent，就代表：對 <em>f</em>(<em>x</em>) 執行 1 次產生的效果，與執行 <em>N</em> 次產生的效果，完全一樣。</li>
 </ul>
 <p>譬如說，如果有一個管理商品庫存的服務：</p>
-<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">type</span> <span class="nx">Item</span> <span class="kd">interface</span> <span class="p">{</span><span class="cm">/*...*/</span><span class="p">}</span>
+<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">type</span> <span class="nx">Item</span> <span class="kd">struct</span> <span class="p">{</span><span class="cm">/*...*/</span><span class="p">}</span>
 
 <span class="kd">type</span> <span class="nx">ItemInventory</span> <span class="kd">interface</span> <span class="p">{</span>
 	<span class="kd">func</span> <span class="nf">GetQuantity</span><span class="p">(</span><span class="nx">item</span> <span class="nx">Item</span><span class="p">)</span> <span class="kt">int</span>       <span class="c1">// 查詢庫存量   
