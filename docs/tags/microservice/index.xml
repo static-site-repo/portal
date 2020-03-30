@@ -6,10 +6,20 @@
     <description>Recent content in microservice on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Tue, 10 Mar 2020 23:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 30 Mar 2020 22:30:00 +0800</lastBuildDate>
     
 	<atom:link href="//william-yeh.net/tags/microservice/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>gRPC Load Balancing in Kubernetes</title>
+      <link>//william-yeh.net/post/2020/03/grpc-load-balancing/</link>
+      <pubDate>Mon, 30 Mar 2020 22:30:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2020/03/grpc-load-balancing/</guid>
+      <description>&lt;p&gt;Kubernetes 有個很方便的地方：只要修改 deployment 的 &lt;code&gt;spec.replicas&lt;/code&gt; 數字，就能橫向擴展 pod，以應付更大的流量負載需求。&lt;/p&gt;
+&lt;p&gt;這一招，對於 stateless 的 HTTP 服務很管用，也是 Kubernetes 入門教學愛用的例子。但是，對於 &lt;a href=&#34;https://grpc.io/&#34;&gt;gRPC&lt;/a&gt; 呢？&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Idempotency Key：原理與實測</title>

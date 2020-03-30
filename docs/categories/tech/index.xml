@@ -6,10 +6,20 @@
     <description>Recent content in tech on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Tue, 10 Mar 2020 23:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 30 Mar 2020 22:30:00 +0800</lastBuildDate>
     
 	<atom:link href="//william-yeh.net/categories/tech/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>gRPC Load Balancing in Kubernetes</title>
+      <link>//william-yeh.net/post/2020/03/grpc-load-balancing/</link>
+      <pubDate>Mon, 30 Mar 2020 22:30:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2020/03/grpc-load-balancing/</guid>
+      <description>&lt;p&gt;Kubernetes 有個很方便的地方：只要修改 deployment 的 &lt;code&gt;spec.replicas&lt;/code&gt; 數字，就能橫向擴展 pod，以應付更大的流量負載需求。&lt;/p&gt;
+&lt;p&gt;這一招，對於 stateless 的 HTTP 服務很管用，也是 Kubernetes 入門教學愛用的例子。但是，對於 &lt;a href=&#34;https://grpc.io/&#34;&gt;gRPC&lt;/a&gt; 呢？&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Idempotency Key：原理與實測</title>
@@ -236,15 +246,6 @@ To clarify this I&amp;rsquo;ve conducted a series of experiments for 3 possible 
       
       <guid>//william-yeh.net/post/2016/08/presenter-tools/</guid>
       <description>自從去年一月看了 ihower 的〈講個秘訣：技術簡報的好用工具〉之後，我才想到，身為 Mac 用戶，我好像太疏於好好整頓自己的電腦，讓我在簡報時更順暢。於是，經</description>
-    </item>
-    
-    <item>
-      <title>從限制理論看 DevOps</title>
-      <link>//william-yeh.net/post/2016/08/devops-a-toc-perspective/</link>
-      <pubDate>Wed, 17 Aug 2016 23:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2016/08/devops-a-toc-perspective/</guid>
-      <description>自從寫了〈DevOps 核心元素的考古溯源〉一文，我就很想找個機會，好好闡釋 DevOps 的重要源頭：Lean Thinking。這個願望，在五月初那次兩個</description>
     </item>
     
   </channel>

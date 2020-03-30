@@ -6,10 +6,307 @@
     <description>Recent content on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Tue, 10 Mar 2020 23:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 30 Mar 2020 22:30:00 +0800</lastBuildDate>
     
         <atom:link href="//william-yeh.net/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>gRPC Load Balancing in Kubernetes</title>
+      <link>//william-yeh.net/post/2020/03/grpc-load-balancing/</link>
+      <pubDate>Mon, 30 Mar 2020 22:30:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2020/03/grpc-load-balancing/</guid>
+      
+        <description>&lt;p&gt;Kubernetes 有個很方便的地方：只要修改 deployment 的 &lt;code&gt;spec.replicas&lt;/code&gt; 數字，就能橫向擴展 pod，以應付更大的流量負載需求。&lt;/p&gt;
+&lt;p&gt;這一招，對於 stateless 的 HTTP 服務很管用，也是 Kubernetes 入門教學愛用的例子。但是，對於 &lt;a href=&#34;https://grpc.io/&#34;&gt;gRPC&lt;/a&gt; 呢？&lt;/p&gt;
+&lt;p&gt;gRPC 是以 &lt;a href=&#34;https://en.wikipedia.org/wiki/HTTP/2&#34;&gt;HTTP/2&lt;/a&gt; 作為傳輸協定，而 HTTP/2 的特點是持久連線：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;One connection per origin&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;all HTTP/2 connections are persistent, and only one connection per origin is required, which offers numerous performance benefits.     &amp;ndash; &lt;a href=&#34;https://developers.google.com/web/fundamentals/performance/http2&#34;&gt;Introduction to HTTP/2&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;既然 gRPC 會盡可能維持既有連線，不會傻傻地一直斷線與重連，那麼，當 Kubernetes 橫向擴展 pod 了，gRPC 流量是否也能順便平均分散到新長出來的 pod 身上，還是死咬著原本的連線不放？&lt;/p&gt;
+&lt;p&gt;做個簡單的實驗吧。&lt;/p&gt;
+&lt;h2 id=&#34;實驗環境&#34;&gt;實驗環境&lt;/h2&gt;
+&lt;p&gt;實驗程式放在 &lt;a href=&#34;https://github.com/William-Yeh/grpc-lb&#34;&gt;https://github.com/William-Yeh/grpc-lb&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;實驗所需環境：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Go 1.14 以上。&lt;/li&gt;
+&lt;li&gt;Kubernetes 1.14 以上。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://skaffold.dev/&#34;&gt;Skaffold&lt;/a&gt; 1.6.0 以上。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://linkerd.io/&#34;&gt;Linkerd&lt;/a&gt; 2.7.0 以上。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;實驗進行之前，請先編譯所需的執行檔及容器映像檔：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# Generate native binaries in `out` directory:&lt;/span&gt; 
+./build.sh
+
+&lt;span class=&#34;c1&#34;&gt;# Generate Docker images:&lt;/span&gt;
+skaffold build
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;會產生以下程式：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;執行檔 &lt;code&gt;out/server&lt;/code&gt; &amp;amp; 映像檔 &lt;code&gt;addr-server&lt;/code&gt;：接收 HTTP 及 gRPC 連線，傳回自己的 IP 位址。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;執行檔 &lt;code&gt;client-http&lt;/code&gt; &amp;amp; 映像檔 &lt;code&gt;addr-client-http&lt;/code&gt;：透過 HTTP 查詢 server 位址。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;執行檔 &lt;code&gt;client-grpc&lt;/code&gt; &amp;amp; 映像檔 &lt;code&gt;addr-client-grpc&lt;/code&gt;：透過 gRPC 查詢 server 位址。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;實驗一純-kubernetes-模式&#34;&gt;實驗一：純 Kubernetes 模式&lt;/h2&gt;
+&lt;p&gt;首先實驗看看，若 server 程式跑在 Kubernetes 裡，除了 HTTP 流量會自動負載均衡之外，是否 gRPC 流量也享有同等待遇。&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2020/03/demo-1.png&#34; alt=&#34;實驗一：純 K8s 模式的佈局&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2020/03/demo-1.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;實驗一：純 K8s 模式的佈局&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;為了方便一眼看出整體狀況，請將終端機面板配置如下：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2020/03/demo-k8s-1.png&#34; alt=&#34;實驗一：終端機建議配置&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2020/03/demo-k8s-1.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;實驗一：終端機建議配置&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;請依照以下步驟進行實驗：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;建立 &lt;code&gt;grpc-lb&lt;/code&gt; namespace：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl create ns grpc-lb
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在 &lt;code&gt;grpc-lb&lt;/code&gt; 裡執行 server，此時 &lt;code&gt;spec.replicas&lt;/code&gt; 為 &lt;code&gt;1&lt;/code&gt;：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;skaffold dev  -n grpc-lb
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;執行 client-http，透過 HTTP 連線到 server：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;out/client-http  http://127.0.0.1:30080/addr
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;執行 client-grpc，透過 gRPC 連線到 server：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;out/client-grpc  localhost:30051
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;因為現在 server pod 只有一個，所以 client-http 及 client-grpc 都只會連線到同一個 IP 位址（即此例的 &lt;code&gt;10.1.0.8&lt;/code&gt;）。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;  &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;現在，讓我們把 server pod 的 &lt;code&gt;spec.replicas&lt;/code&gt; 數字擴展成 &lt;code&gt;5&lt;/code&gt;：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl scale -n grpc-lb &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;  --replicas&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;5&lt;/span&gt;  deployment/addr-server
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;如下圖所示，當 server pod 數目從 1 變成 5，Kubernetes 的確開始將 HTTP 流量平均分配到 5 個 pods 身上（即此例的 &lt;code&gt;10.1.0.8&lt;/code&gt; ～ &lt;code&gt;10.1.0.12&lt;/code&gt;）。可是 gRPC 流量卻仍然綁在舊的那一個 pod 身上（即此例的 &lt;code&gt;10.1.0.8&lt;/code&gt;）。&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2020/03/demo-k8s-2.png&#34; alt=&#34;實驗一：gRPC 流量並未平均分配&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2020/03/demo-k8s-2.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;實驗一：gRPC 流量並未平均分配&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;可見，Kubernetes 並沒有對 gRPC 進行負載均衡。&lt;/p&gt;
+&lt;p&gt;為什麼？&lt;/p&gt;
+&lt;h2 id=&#34;l4-vs-l7-負載均衡&#34;&gt;L4 vs L7 負載均衡&lt;/h2&gt;
+&lt;p&gt;根據 &amp;ldquo;&lt;a href=&#34;https://blog.nobugware.com/post/2019/kubernetes_mesh_network_load_balancing_grpc_services/&#34;&gt;gRPC Load Balancing inside Kubernetes&lt;/a&gt;&amp;rdquo; 一文所述，Kubernetes 原生的負載均衡機制，是建立在 L4：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;When you create a Service in Kubernetes, it creates a &lt;strong&gt;layer 4&lt;/strong&gt; proxy and load balance connections to your pods using iptables, the service endpoint is one IP and a port hiding your real pods.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;因此，對於不具備真正持久連線的 HTTP 來說，Kubernetes 原生的 L4 負載均衡機制足以應付 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;；但是，對於真正具有持久連線的 gRPC，L4 就行不通了。&lt;/p&gt;
+&lt;p&gt;文中列出三種解決方法：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Client 端的負載均衡：叫 client 維持一個 gRPC connection pool，主動與每一個 gRPC server pods 都維持連線。缺點是：必須修改 client 程式碼，也暴露 server pods 的一些內部細節。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Kubernetes edge 端的負載均衡：透過 ingress 之類的機制。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Kubernetes service mesh：透過 sidecar 之類的機制。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;為了簡單起見，我參考 Kubernetes 官網文章 &amp;ldquo;&lt;a href=&#34;https://kubernetes.io/blog/2018/11/07/grpc-load-balancing-on-kubernetes-without-tears/&#34;&gt;gRPC Load Balancing on Kubernetes without Tears&lt;/a&gt;&amp;rdquo; 的做法，用 Linkerd 2 這個 service mesh 方案來實驗。&lt;/p&gt;
+&lt;h2 id=&#34;實驗二service-mesh-模式&#34;&gt;實驗二：Service mesh 模式&lt;/h2&gt;
+&lt;p&gt;根據 Linkerd 官網 &lt;a href=&#34;https://linkerd.io/2/faq/#whats-the-difference-between-linkerd-1x-and-2x&#34;&gt;FAQ&lt;/a&gt; 所述：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Linkerd 1.x is built on the “Twitter stack”: Finagle, Netty, Scala, and the JVM.&lt;/p&gt;
+&lt;p&gt;Linkerd 2.x is built in Rust and Go. It is significantly faster and lighter weight than 1.x, but currently only supports Kubernetes.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Linkerd 2 比前一版有長足的進步，又是 &lt;a href=&#34;https://smi-spec.io/&#34;&gt;SMI&lt;/a&gt; 陣營的一員，頗值得一試。&lt;/p&gt;
+&lt;h3 id=&#34;linkerd-前置作業&#34;&gt;Linkerd 前置作業&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;安裝 Linkerd 2 到現行的 Kubernetes cluster：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# Install&lt;/span&gt;
+linkerd install &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; kubectl apply -f -
+
+&lt;span class=&#34;c1&#34;&gt;# Check&lt;/span&gt;
+linkerd check
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;先刪掉舊的 &lt;code&gt;grpc-lb&lt;/code&gt; namespace:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl delete ns grpc-lb
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;建立新的 &lt;code&gt;grpc-lb&lt;/code&gt; namespace，並注入 Linkerd：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl apply -f ns.yml
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;檢查一下 &lt;code&gt;grpc-lb&lt;/code&gt; namespace 的 data plane 是否正常：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;linkerd -n grpc-lb check --proxy
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;我們把 &lt;code&gt;grpc-lb&lt;/code&gt; namespace 圈成一塊 service mesh 疆域。如果一切順利，在 &lt;code&gt;grpc-lb&lt;/code&gt; namespace 裡面的東西，會自動被 Linkerd 接管——包括 gRPC 負載均衡。&lt;/p&gt;
+&lt;h3 id=&#34;replicas--1&#34;&gt;Replicas = 1&lt;/h3&gt;
+&lt;p&gt;首先實驗看看，若我們將 addr-client-grpc 與 server 都放在 service mesh 疆域內，兩者間的 gRPC 流量是否會自動負載均衡。我也保留一份舊的 client-grpc 故意「&lt;strong&gt;不&lt;/strong&gt;」讓它跑在 Kubernetes 裡面，作為對照組。&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2020/03/demo-2.png&#34; alt=&#34;實驗二：K8s service mesh 模式的佈局&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2020/03/demo-2.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;實驗二：K8s service mesh 模式的佈局&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;為了方便一眼看出整體狀況，請將終端機面板配置如下：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2020/03/demo-mesh-1.png&#34; alt=&#34;實驗二：終端機建議配置&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2020/03/demo-mesh-1.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;實驗二：終端機建議配置&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;請依照以下步驟進行實驗：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;移掉 &lt;code&gt;skaffold.yaml&lt;/code&gt; 這一行的註解符號：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;k&#34;&gt;deploy&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;kubectl&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;manifests&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;      &lt;/span&gt;- server.yml&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;      &lt;/span&gt;&lt;span class=&#34;c&#34;&gt;#- client-grpc.yml  ← 請讓這一行生效！&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在 &lt;code&gt;grpc-lb&lt;/code&gt; namespace 裡執行 addr-client-grpc 及 server，此時 server 的 &lt;code&gt;spec.replicas&lt;/code&gt; 為 &lt;code&gt;1&lt;/code&gt;：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;skaffold dev  -n grpc-lb
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;等前一個步驟跑到穩定狀態之後，在 Kubernetes 外面也執行一份舊的 client-grpc 作為對照組：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;out/client-grpc  localhost:30051
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;此時，因為 server pod 只有一個，所以，位於 service mesh 疆域內的 addr-client-grpc 及疆域外的 client-grpc 都只會連線到同一個 IP 位址（即此例的 &lt;code&gt;10.1.0.71&lt;/code&gt;）。&lt;/p&gt;
+&lt;h3 id=&#34;replicas--5&#34;&gt;Replicas = 5&lt;/h3&gt;
+&lt;p&gt;一切就緒，讓我們把 server pod 的 &lt;code&gt;spec.replicas&lt;/code&gt; 數字擴展成 &lt;code&gt;5&lt;/code&gt;：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl scale -n grpc-lb &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;  --replicas&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;5&lt;/span&gt;  deployment/addr-server
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;如下圖所示，當 server pod 數目從 1 變成 5，Kubernetes 的確開始將 service mesh 疆域內 addr-client-grpc 產生的 gRPC 流量平均分配到 5 個 pods 身上（即此例的 &lt;code&gt;10.1.0.71&lt;/code&gt; ～ &lt;code&gt;10.1.0.75&lt;/code&gt;）。可是「&lt;strong&gt;不&lt;/strong&gt;」位於 service mesh 疆域的 client-grpc 產生的 gRPC 流量，就仍然綁在舊的那一個 pod 身上（即此例的 &lt;code&gt;10.1.0.71&lt;/code&gt;）。&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2020/03/demo-mesh-2.png&#34; alt=&#34;實驗二：gRPC 流量分配狀況&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2020/03/demo-mesh-2.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;實驗二：gRPC 流量分配狀況&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&#34;linkerd-儀表板&#34;&gt;Linkerd 儀表板&lt;/h3&gt;
+&lt;p&gt;讓我們看看酷炫一點的東西吧！請用以下命令打開 Linkerd 儀表板：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;linkerd dashboard &lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;請切換到 &lt;code&gt;grpc-lb&lt;/code&gt; namespace，觀察三個角色之間的網路互連架構，並檢視一些效率指標。如下圖所示，Linkerd 2.7.0 對於 gRPC load balancing 的表現很不錯，即使打開 mesh sidecar，P99 latency 也仍然壓在 10ms 左右的水準：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2020/03/dashboard-1.png&#34; alt=&#34;實驗二：Topology&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2020/03/dashboard-1.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;實驗二：Topology&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;從下圖也可以看到 5 個 server pods 都有輪流服務到 addr-client-grpc。其中，最後一個 pod 比較可憐，湊巧服務到獨佔連線的外部 client-grpc：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2020/03/dashboard-2.png&#34; alt=&#34;實驗二：gRPC 負載均衡的數據&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2020/03/dashboard-2.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;實驗二：gRPC 負載均衡的數據&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;  &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;簡單的實驗，示範在 Kubernetes 裡，可以透過 service mesh 替 gRPC 加上負載均衡機制。&lt;/p&gt;
+&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;嚴格來說，HTTP/1.1 的 keep alive 機制，或多或少會影響到 Kubernetes 的負載均衡效果。不過正如&lt;a href=&#34;https://en.wikipedia.org/wiki/HTTP_persistent_connection#HTTP_1.1&#34;&gt;維基百科&lt;/a&gt;所說，許多 Web server 本來就會針對 HTTP 設定較短的 timeout 以避免副作用。若真的要在 Web 上進行持久連線，一般都會建議改走 &lt;a href=&#34;https://en.wikipedia.org/wiki/WebSocket&#34;&gt;WebSocket&lt;/a&gt; 路線。 &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;</description>
+      
+    </item>
     
     <item>
       <title>Idempotency Key：原理與實測</title>
@@ -3245,64 +3542,6 @@ exec  &amp;#34;/mnt/c/Program Files/Docker/Docker/resources/bin/docker-compose.e
 &lt;p&gt;從《&lt;a href=&#34;https://www.books.com.tw/products/0010467750&#34;&gt;領導者，該想什麼？&lt;/a&gt;》書中不時可看出，&lt;a href=&#34;https://en.wikipedia.org/wiki/Gerald_Weinberg&#34;&gt;溫伯格&lt;/a&gt;受到&lt;a href=&#34;https://en.wikipedia.org/wiki/Virginia_Satir&#34;&gt;薩提爾&lt;/a&gt;的影響很深。請再讀讀《&lt;a href=&#34;https://www.books.com.tw/products/0010694726&#34;&gt;激發員工潛力的薩提爾教練模式&lt;/a&gt;》及《&lt;a href=&#34;https://www.books.com.tw/products/0010770522&#34;&gt;薩提爾的對話練習&lt;/a&gt;》兩本書，以進一步了解如何在職場上運用薩提爾模式。或者，直接去上薩提爾課程吧！&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>年假可讀的軟體領域輕讀物</title>
-      <link>//william-yeh.net/post/2019/01/soft-reading-list/</link>
-      <pubDate>Thu, 17 Jan 2019 15:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2019/01/soft-reading-list/</guid>
-      
-        <description>&lt;p&gt;中午時，非 RD 的同事請我推薦適合泛軟體產業從業人員的五份輕讀物，可在春節連續假期時好好補血。&lt;/p&gt;
-&lt;p&gt;年假，自然不方便啃太過於生硬艱澀、理論宏偉的讀物。我挑選這五份輕讀物：四本書，一組網路系列文章。敘事風格親切，高潮迭起，應該可以帶來不少啟發。&lt;/p&gt;
-&lt;h2 id=&#34;it-實境小說&#34;&gt;IT 實境小說&lt;/h2&gt;
-&lt;p&gt;《&lt;a href=&#34;https://www.books.com.tw/products/0010765203&#34;&gt;鳳凰專案&lt;/a&gt;》，體會一下研發、維運、行銷、安控、財務等部門相互掣肘的慘劇，以及如何以 DevOps「三步工作法」來解決的戲劇性發展。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;你還沒有達到解決專案可交付成果、故障處理、審計合規等問題所需要的那種對工作的理解程度。在你對工作的內涵有更好的理解之前，任何關於控制工作的討論都會讓你茫然無措。正所謂：夏蟲不可語冰。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&#34;敏捷神話&#34;&gt;敏捷神話&lt;/h2&gt;
-&lt;p&gt;《&lt;a href=&#34;https://www.books.com.tw/products/0010785434&#34;&gt;Scrum：用一半的時間做兩倍的事&lt;/a&gt;》，不要被聳動的書名騙了，這是本不吹牛不浮誇的好書。這本由 Scrum 發明人之一 Jeff Sutherland 所寫的書，揭露 Scrum 發展過程中的軼事。讀了之後，你會領會更多 Scrum 規則背後的精神。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;我在書中提及，Scrum 源自於豐田生產系統，以及空戰的 OODA 循環。你會在接下來的內容中看到，從開發價格實惠、每加侖汽油能跑一百哩的車子，到協助美國聯邦調查局 (FBI) 建立 21 世紀的資料庫系統，任何東西都可以用 Scrum 來打造。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&#34;跨出框架需要練習&#34;&gt;跨出框架，需要練習&lt;/h2&gt;
-&lt;p&gt;《&lt;a href=&#34;https://www.books.com.tw/products/0010789923&#34;&gt;Pepper 開發者從 0 到 1 的創新工作法&lt;/a&gt;》，讓不是創業家、自由工作者、研究者的平凡上班族，也能習得具體的創新做法。你可以看到開發出 &lt;a href=&#34;https://zh.wikipedia.org/wiki/Pepper_(%E6%A9%9F%E5%99%A8%E4%BA%BA)&#34;&gt;Pepper&lt;/a&gt; 人型機器人的 &lt;a href=&#34;https://www.linkedin.com/in/kanamehayashi&#34;&gt;Kaname Hayashi&lt;/a&gt;，是如何有紀律地自我要求刻意練習。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;從 0 到 1 需要的不是「才能」，而是「練習」。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&#34;外國月亮&#34;&gt;外國月亮&lt;/h2&gt;
-&lt;p&gt;《&lt;a href=&#34;https://www.books.com.tw/products/0010796709&#34;&gt;給力&lt;/a&gt;》，軟體／媒體科技業巨頭 Netflix 獨一無二的企業文化，但不要驟下「國情不合」的結論。多讀幾次，試著感受適度的低情境 (low context)、直接否定 (direct negative feedback)、平權式領導 (egalitarian) 風格有什麼殊勝之處。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;留住員工、使員工高度投入的方法，應該是招募對此計劃興趣濃厚、且傾向在同一工作待上很長時間的人才，而不是靠著提供他們四種加味水及設置員工睡眠艙來留住他們。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&#34;是技術也是藝術&#34;&gt;是技術，也是藝術&lt;/h2&gt;
-&lt;p&gt;這原本是&lt;a href=&#34;//william-yeh.net/post/2018/12/practice-of-managers/&#34;&gt;【主管的修練】讀書會&lt;/a&gt;的輔助讀物，但單獨抽出來閱讀，也行。&lt;/p&gt;
-&lt;p&gt;系列文 / 專案管理的藝術&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;⓪ &lt;a href=&#34;https://www.projectup.net/article/view/id/260&#34;&gt;決策的平衡點&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;① &lt;a href=&#34;https://www.projectup.net/article/view/id/259&#34;&gt;拉高視野、見林但不見樹&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;② &lt;a href=&#34;https://www.projectup.net/article/view/id/258&#34;&gt;平衡需求、但別想討好所有人&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;③ &lt;a href=&#34;https://www.projectup.net/article/view/id/256&#34;&gt;重點掌握、如何抓大放小&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;④ &lt;a href=&#34;https://www.projectup.net/article/view/id/255&#34;&gt;主動發現、弭禍於無形之中&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;⑤ &lt;a href=&#34;https://www.projectup.net/article/view/id/253&#34;&gt;醜話先說，對事但不對人&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;⑥ &lt;a href=&#34;https://www.projectup.net/article/view/id/251&#34;&gt;品質管制、追求標準、一致、與穩定&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;⑦ &lt;a href=&#34;https://www.projectup.net/article/view/id/69&#34;&gt;降低流言、合適的訊息分享&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;⑧ &lt;a href=&#34;https://www.projectup.net/article/view/id/68&#34;&gt;沒有英雄、人員培育與接班計畫&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;⑨ &lt;a href=&#34;https://www.projectup.net/article/view/id/67&#34;&gt;避免發散、一切都跟收斂有關&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;⑩ &lt;a href=&#34;https://www.projectup.net/article/view/id/65&#34;&gt;歷史借鏡、能重複應用的才有價值&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;過完年，再來一場討論會吧。&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;pre&gt;&lt;code&gt;  補充
-&lt;/code&gt;&lt;/pre&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;p&gt;好友 &lt;a href=&#34;https://www.facebook.com/91agile/&#34;&gt;91 (Joey)&lt;/a&gt; 隨後也發表了另一份春節期間的推薦讀物。分成三大類：① 輕讀物，② 重一點，需要系列性連串看完的書，③ 想趁著連假，消化一下大部頭的書。&lt;/p&gt;
-&lt;p&gt;意者，請去看看那份&lt;a href=&#34;https://www.facebook.com/91agile/posts/1110269312481019&#34;&gt;清單&lt;/a&gt;。&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
-</description>
       
     </item>
     
