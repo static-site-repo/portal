@@ -72,7 +72,7 @@
 這一招，對於 stateless 的 HTTP 服務很管用，也是 Kubernetes 入門教學愛用的例子。但是，對於 gRPC 呢？">
 <meta itemprop="datePublished" content="2020-03-30T22:30:00&#43;08:00" />
 <meta itemprop="dateModified" content="2020-03-30T22:30:00&#43;08:00" />
-<meta itemprop="wordCount" content="2160">
+<meta itemprop="wordCount" content="2217">
 
 
 
@@ -302,7 +302,7 @@ if (!doNotTrack) {
             <a href="//william-yeh.net/categories/tech/"> tech </a>
             
           </div>
-        <span class="more-meta"> 約 2160 字 </span>
+        <span class="more-meta"> 約 2217 字 </span>
           <span class="more-meta"> 預計閱讀 5 分鐘 </span>
 
         
@@ -474,7 +474,7 @@ skaffold build
 <p>Kubernetes service mesh：透過 sidecar 之類的機制。</p>
 </li>
 </ol>
-<p>為了簡單起見，我參考 Kubernetes 官網文章 &ldquo;<a href="https://kubernetes.io/blog/2018/11/07/grpc-load-balancing-on-kubernetes-without-tears/">gRPC Load Balancing on Kubernetes without Tears</a>&rdquo; 的做法，用 Linkerd 2 這個 service mesh 方案來實驗。</p>
+<p>為了簡單起見，我參考 Kubernetes 官網文章 &ldquo;<a href="https://kubernetes.io/blog/2018/11/07/grpc-load-balancing-on-kubernetes-without-tears/">gRPC Load Balancing on Kubernetes without Tears</a>&rdquo; 的做法，用 Linkerd 2 這個 service mesh 方案來實驗。 <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></p>
 <h2 id="實驗二service-mesh-模式">實驗二：Service mesh 模式</h2>
 <p>根據 Linkerd 官網 <a href="https://linkerd.io/2/faq/#whats-the-difference-between-linkerd-1x-and-2x">FAQ</a> 所述：</p>
 <blockquote>
@@ -626,6 +626,9 @@ linkerd check
 <ol>
 <li id="fn:1" role="doc-endnote">
 <p>嚴格來說，HTTP/1.1 的 keep alive 機制，或多或少會影響到 Kubernetes 的負載均衡效果。不過正如<a href="https://en.wikipedia.org/wiki/HTTP_persistent_connection#HTTP_1.1">維基百科</a>所說，許多 Web server 本來就會針對 HTTP 設定較短的 timeout 以避免副作用。若真的要在 Web 上進行持久連線，一般都會建議改走 <a href="https://en.wikipedia.org/wiki/WebSocket">WebSocket</a> 路線。 <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p>有在玩 <a href="https://istio.io/">Istio</a> 的朋友，可以參考〈<a href="https://medium.com/getamis/istio-%E5%9F%BA%E7%A4%8E-grpc-%E8%B2%A0%E8%BC%89%E5%9D%87%E8%A1%A1-d4be0d49ee07">Istio 基礎 — gRPC 負載均衡</a>〉一文的做法。不過，比較起來，Istio 設定上會比 Linkerd 複雜。 <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </section>

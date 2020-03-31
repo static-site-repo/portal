@@ -150,7 +150,7 @@ skaffold build
 &lt;p&gt;Kubernetes service mesh：透過 sidecar 之類的機制。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;為了簡單起見，我參考 Kubernetes 官網文章 &amp;ldquo;&lt;a href=&#34;https://kubernetes.io/blog/2018/11/07/grpc-load-balancing-on-kubernetes-without-tears/&#34;&gt;gRPC Load Balancing on Kubernetes without Tears&lt;/a&gt;&amp;rdquo; 的做法，用 Linkerd 2 這個 service mesh 方案來實驗。&lt;/p&gt;
+&lt;p&gt;為了簡單起見，我參考 Kubernetes 官網文章 &amp;ldquo;&lt;a href=&#34;https://kubernetes.io/blog/2018/11/07/grpc-load-balancing-on-kubernetes-without-tears/&#34;&gt;gRPC Load Balancing on Kubernetes without Tears&lt;/a&gt;&amp;rdquo; 的做法，用 Linkerd 2 這個 service mesh 方案來實驗。 &lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;h2 id=&#34;實驗二service-mesh-模式&#34;&gt;實驗二：Service mesh 模式&lt;/h2&gt;
 &lt;p&gt;根據 Linkerd 官網 &lt;a href=&#34;https://linkerd.io/2/faq/#whats-the-difference-between-linkerd-1x-and-2x&#34;&gt;FAQ&lt;/a&gt; 所述：&lt;/p&gt;
 &lt;blockquote&gt;
@@ -302,6 +302,9 @@ linkerd check
 &lt;ol&gt;
 &lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
 &lt;p&gt;嚴格來說，HTTP/1.1 的 keep alive 機制，或多或少會影響到 Kubernetes 的負載均衡效果。不過正如&lt;a href=&#34;https://en.wikipedia.org/wiki/HTTP_persistent_connection#HTTP_1.1&#34;&gt;維基百科&lt;/a&gt;所說，許多 Web server 本來就會針對 HTTP 設定較短的 timeout 以避免副作用。若真的要在 Web 上進行持久連線，一般都會建議改走 &lt;a href=&#34;https://en.wikipedia.org/wiki/WebSocket&#34;&gt;WebSocket&lt;/a&gt; 路線。 &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;有在玩 &lt;a href=&#34;https://istio.io/&#34;&gt;Istio&lt;/a&gt; 的朋友，可以參考〈&lt;a href=&#34;https://medium.com/getamis/istio-%E5%9F%BA%E7%A4%8E-grpc-%E8%B2%A0%E8%BC%89%E5%9D%87%E8%A1%A1-d4be0d49ee07&#34;&gt;Istio 基礎 — gRPC 負載均衡&lt;/a&gt;〉一文的做法。不過，比較起來，Istio 設定上會比 Linkerd 複雜。 &lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;</description>
