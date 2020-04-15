@@ -6,10 +6,404 @@
     <description>Recent content on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Mon, 30 Mar 2020 22:30:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 14 Apr 2020 22:00:00 +0800</lastBuildDate>
     
         <atom:link href="//william-yeh.net/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>gRPC 測試工具</title>
+      <link>//william-yeh.net/post/2020/04/grpc-testing-tools/</link>
+      <pubDate>Tue, 14 Apr 2020 22:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2020/04/grpc-testing-tools/</guid>
+      
+        <description>&lt;p&gt;RESTful API 時代，我們有許多簡單好用的測試工具：有酷炫的 &lt;a href=&#34;https://www.postman.com/&#34;&gt;Postman&lt;/a&gt;，有命令列控愛用的 &lt;a href=&#34;https://httpie.org/&#34;&gt;HTTPie&lt;/a&gt;，當然也有硬漢必備的萬用瑞士刀 &lt;a href=&#34;https://curl.haxx.se/&#34;&gt;curl&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;那麼，gRPC 呢？&lt;/p&gt;
+&lt;p&gt;這篇文章介紹兩個好用的小工具：&lt;a href=&#34;https://github.com/fullstorydev/grpcurl&#34;&gt;gRPCurl&lt;/a&gt; 及 &lt;a href=&#34;https://github.com/bojand/ghz&#34;&gt;ghz&lt;/a&gt;，一個是輸入輸出介面測試工具，另一個是壓測工具，也順便介紹一些簡化測試的技巧。&lt;/p&gt;
+&lt;h2 id=&#34;待測程式&#34;&gt;待測程式&lt;/h2&gt;
+&lt;p&gt;待測程式放在 &lt;a href=&#34;https://github.com/William-Yeh/grpcurl-and-ghz-demo&#34;&gt;https://github.com/William-Yeh/grpcurl-and-ghz-demo&lt;/a&gt;&lt;/p&gt;
+&lt;details&gt;
+  &lt;summary style=&#34;background-color:#f5f5f5;border:1px solid #ccc;padding:5px;&#34;&gt;
+    檔案簡介：
+    
+  &lt;/summary&gt;
+  
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;.
+├── README.md
+├── build.sh                 ← 編譯命令
+├── go.mod
+├── go.sum
+├── out                      ← 編譯後的可執行檔
+│   ├── server
+│   └── server-new
+├── routeguide               ← gRPC 介面定義；原封不動取自 &amp;#34;gRPC-Go&amp;#34; 專案
+│   ├── route_guide.pb.go
+│   └── route_guide.proto
+├── server                   ← server 程式；原封不動取自 &amp;#34;gRPC-Go&amp;#34; 專案
+│   └── server.go
+├── server-new               ← 由我修改過的新版 server 程式
+│   └── server-new.go
+├── testdata.dat             ← 給 gRPCurl 的測試資料
+└── testdata.json            ← 給 ghz 的測試資料&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/details&gt;
+
+&lt;p&gt;為了方便起見，我挑選 &amp;ldquo;&lt;a href=&#34;https://github.com/grpc/grpc-go&#34;&gt;gRPC-Go&lt;/a&gt;&amp;rdquo; 專案裡面的 &amp;ldquo;&lt;a href=&#34;https://github.com/grpc/grpc-go/tree/master/examples/route_guide&#34;&gt;the route guide server and client&lt;/a&gt;&amp;rdquo; 範例做為待測程式。&lt;/p&gt;
+&lt;p&gt;這隻 server 程式透過 gRPC 提供 &lt;code&gt;RouteGuide&lt;/code&gt; 服務，我們這次只會測試其中的 &lt;code&gt;RecordRoute&lt;/code&gt; 呼叫。以下是從 gRPC 介面定義檔 &lt;a href=&#34;https://github.com/William-Yeh/grpcurl-and-ghz-demo/blob/master/routeguide/route_guide.proto&#34;&gt;&lt;code&gt;route_guide.proto&lt;/code&gt;&lt;/a&gt; 摘錄我們會用到的部份：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-proto&#34; data-lang=&#34;proto&#34;&gt;&lt;span class=&#34;kn&#34;&gt;package&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;routeguide&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;service&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;RouteGuide&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;//...
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;// A client-to-server streaming RPC.
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;//
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;// Accepts a stream of Points on a route being traversed, returning a
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;// RouteSummary when traversal is completed.
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;k&#34;&gt;rpc&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;RecordRoute&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;stream&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Point&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;returns&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;RouteSummary&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{}&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;message&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;Point&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;kt&#34;&gt;int32&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;latitude&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;kt&#34;&gt;int32&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;longitude&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;message&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;RouteSummary&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;kt&#34;&gt;int32&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;point_count&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;kt&#34;&gt;int32&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;feature_count&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;kt&#34;&gt;int32&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;distance&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;kt&#34;&gt;int32&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;elapsed_time&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;//...
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;我也針對 server 程式小改三個地方，弄出另一個 server-new 程式：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ diff  server/server.go  server-new/server-new.go
+42a43
+&amp;gt; 	&lt;span class=&#34;s2&#34;&gt;&amp;#34;google.golang.org/grpc/reflection&amp;#34;&lt;/span&gt;
+55c56
+&amp;lt; 	&lt;span class=&#34;nv&#34;&gt;port&lt;/span&gt;       &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; flag.Int&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;port&amp;#34;&lt;/span&gt;, 10000, &lt;span class=&#34;s2&#34;&gt;&amp;#34;The server port&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+---
+&amp;gt; 	&lt;span class=&#34;nv&#34;&gt;port&lt;/span&gt;       &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; flag.Int&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;port&amp;#34;&lt;/span&gt;, 20000, &lt;span class=&#34;s2&#34;&gt;&amp;#34;The server port&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+243a245,248
+&amp;gt;
+&amp;gt; 	// Register reflection service on gRPC server.
+&amp;gt; 	reflection.Register&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;grpcServer&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;簡單來說，新舊兩版的差別是：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;舊版 server 的 gRPC port = 10000，新版 server-new 則是 20000。&lt;/li&gt;
+&lt;li&gt;新版 server-new 支援 &lt;a href=&#34;https://github.com/grpc/grpc/blob/master/doc/server-reflection.md&#34;&gt;server reflection&lt;/a&gt; 功能。稍後會再說明這是什麼。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;實驗環境&#34;&gt;實驗環境&lt;/h2&gt;
+&lt;p&gt;實驗所需環境：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Go 1.14 以上。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/fullstorydev/grpcurl&#34;&gt;gRPCurl&lt;/a&gt; 1.5.0 以上。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/bojand/ghz&#34;&gt;ghz&lt;/a&gt; 0.51.0 以上。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;先來編譯程式：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ ./build.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;成功後，會在 &lt;code&gt;out&lt;/code&gt; 目錄拿到兩份執行檔：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;out/server&lt;/code&gt;：原封不動來自 &amp;ldquo;gRPC-Go&amp;rdquo; 專案的 server 程式。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;out/server-new&lt;/code&gt;：由我小小修改過的新程式。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;進行實驗時，建議將你的終端機配置成這樣：&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2020/04/grpcurl-demo-layout.png&#34; alt=&#34;終端機建議配置&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2020/04/grpcurl-demo-layout.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;終端機建議配置&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;然後，請分別啟動 &lt;code&gt;out/server&lt;/code&gt; 及 &lt;code&gt;out/server-new&lt;/code&gt; 程式：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 舊程式，跑在 10000 port&lt;/span&gt;
+$ out/server
+
+&lt;span class=&#34;c1&#34;&gt;# 新程式，跑在 20000 port&lt;/span&gt;
+$ out/server-new
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;一切就緒，準備要來測試它們了。&lt;/p&gt;
+&lt;h2 id=&#34;實驗一搭配-proto-檔&#34;&gt;實驗一：搭配 proto 檔&lt;/h2&gt;
+&lt;p&gt;先針對舊版的 server 來實驗。&lt;/p&gt;
+&lt;h3 id=&#34;grpcurl&#34;&gt;gRPCurl&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/fullstorydev/grpcurl&#34;&gt;gRPCurl&lt;/a&gt;，顧名思義，是在向硬漢必備的萬用瑞士刀 &lt;a href=&#34;https://curl.haxx.se/&#34;&gt;curl&lt;/a&gt; 致敬。不妨將它視為 gRPC 版的 curl。&lt;/p&gt;
+&lt;p&gt;gRPCurl 使用上最主要的差別是，因應 gRPC 的特性，必須餵給它 proto 檔案，才會知道該如何封裝訊息格式。&lt;/p&gt;
+&lt;p&gt;譬如說，我們可將 proto 檔案的路徑寫在 &lt;code&gt;-import-path&lt;/code&gt; 中、將 proto 檔案名稱寫在 &lt;code&gt;-proto&lt;/code&gt; 中、將參數寫在 &lt;code&gt;-d&lt;/code&gt; 中，再呼叫 server 的遠端程序：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ grpcurl -plaintext  &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;    -d &lt;span class=&#34;s1&#34;&gt;&amp;#39;{&amp;#34;latitude&amp;#34;:-460000000,&amp;#34;longitude&amp;#34;:-1160000000} {&amp;#34;latitude&amp;#34;:720000000,&amp;#34;longitude&amp;#34;:-540000000}&amp;#39;&lt;/span&gt; &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;    -import-path ./routeguide        &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;    -proto       route_guide.proto   &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;    127.0.0.1:10000                  &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;    routeguide.RouteGuide.RecordRoute
+
+&lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+  &lt;span class=&#34;s2&#34;&gt;&amp;#34;pointCount&amp;#34;&lt;/span&gt;: 2,
+  &lt;span class=&#34;s2&#34;&gt;&amp;#34;distance&amp;#34;&lt;/span&gt;: &lt;span class=&#34;m&#34;&gt;13975745&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;我們也可將事先備妥的資料檔餵給 gRPCurl。像是含有 100 筆資料的 &lt;code&gt;testdata.dat&lt;/code&gt;：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ grpcurl -plaintext -d &lt;span class=&#34;s1&#34;&gt;&amp;#39;@&amp;#39;&lt;/span&gt;            &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;    -import-path ./routeguide          &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;    -proto       route_guide.proto     &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;    127.0.0.1:10000                    &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;    routeguide.RouteGuide.RecordRoute  &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;  &amp;lt; testdata.dat
+
+&lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+  &lt;span class=&#34;s2&#34;&gt;&amp;#34;pointCount&amp;#34;&lt;/span&gt;: 100,
+  &lt;span class=&#34;s2&#34;&gt;&amp;#34;distance&amp;#34;&lt;/span&gt;: &lt;span class=&#34;m&#34;&gt;1003784333&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;ghz&#34;&gt;ghz&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/bojand/ghz&#34;&gt;ghz&lt;/a&gt; 壓測工具，是這麼自我介紹的：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Simple gRPC benchmarking and load testing tool inspired by &lt;a href=&#34;https://github.com/rakyll/hey/&#34;&gt;hey&lt;/a&gt; and &lt;a href=&#34;https://github.com/fullstorydev/grpcurl&#34;&gt;grpcurl&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;所以，從命令列參數及統計結果上，都可看出它們的影響。&lt;/p&gt;
+&lt;p&gt;譬如說，我們可將 proto 檔案的路徑寫在 &lt;code&gt;--import-path&lt;/code&gt; 中、將 proto 檔案名稱寫在 &lt;code&gt;--proto&lt;/code&gt; 中、將參數寫在 &lt;code&gt;--data&lt;/code&gt; 中，再呼叫 server 的遠端程序：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ ghz --insecure  -z 20s  &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;      --data &lt;span class=&#34;s1&#34;&gt;&amp;#39;[{&amp;#34;latitude&amp;#34;:-460000000,&amp;#34;longitude&amp;#34;:-1160000000},{&amp;#34;latitude&amp;#34;:720000000,&amp;#34;longitude&amp;#34;:-540000000}]&amp;#39;&lt;/span&gt; &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;      --import-paths ./routeguide         &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;      --proto        route_guide.proto    &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;      --call routeguide.RouteGuide.RecordRoute  &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;      127.0.0.1:10000
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;details&gt;
+  &lt;summary style=&#34;background-color:#f5f5f5;border:1px solid #ccc;padding:5px;&#34;&gt;
+    壓測 20 秒，結果如下：
+    
+  &lt;/summary&gt;
+  
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;Summary:
+  Count:        548082
+  Total:        20.00 s
+  Slowest:      50.36 ms
+  Fastest:      0.12 ms
+  Average:      1.74 ms
+  Requests/sec: 27403.72
+
+Response time histogram:
+  0.123 [1]     |
+  5.147 [543463]        |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  10.170 [4297] |
+  15.194 [271]  |
+  20.217 [8]    |
+  25.241 [3]    |
+  30.264 [1]    |
+  35.288 [0]    |
+  40.311 [0]    |
+  45.335 [0]    |
+  50.358 [1]    |
+
+Latency distribution:
+  10 % in 0.90 ms
+  25 % in 1.21 ms
+  50 % in 1.58 ms
+  75 % in 2.04 ms
+  90 % in 2.66 ms
+  95 % in 3.24 ms
+  99 % in 4.93 ms
+
+Status code distribution:
+  [Canceled]      33 responses
+  [Unavailable]   4 responses
+  [OK]            548045 responses
+
+Error distribution:
+  [33]   rpc error: code = Canceled desc = grpc: the client connection is closing
+  [4]    rpc error: code = Unavailable desc = transport is closing&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/details&gt;
+
+&lt;p&gt;同樣的，我們也可將事先備妥的資料檔餵給 ghz。像是含有 100 筆資料的 &lt;code&gt;testdata.json&lt;/code&gt;：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ ghz --insecure --data&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;@  -z 20s  &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;      --import-paths ./routeguide         &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;      --proto        route_guide.proto    &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;      --call routeguide.RouteGuide.RecordRoute  &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;      127.0.0.1:10000  &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;  &amp;lt; testdata.json
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;details&gt;
+  &lt;summary style=&#34;background-color:#f5f5f5;border:1px solid #ccc;padding:5px;&#34;&gt;
+    壓測 20 秒，結果如下：
+    
+  &lt;/summary&gt;
+  
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;Summary:
+  Count:        788680
+  Total:        20.00 s
+  Slowest:      28.02 ms
+  Fastest:      0.13 ms
+  Average:      1.23 ms
+  Requests/sec: 39432.62
+
+Response time histogram:
+  0.126 [1]     |
+  2.915 [772021]        |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  5.705 [15003] |∎
+  8.495 [1000]  |
+  11.285 [458]  |
+  14.074 [95]   |
+  16.864 [10]   |
+  19.654 [12]   |
+  22.444 [3]    |
+  25.233 [5]    |
+  28.023 [40]   |
+
+Latency distribution:
+  10 % in 0.65 ms
+  25 % in 0.86 ms
+  50 % in 1.11 ms
+  75 % in 1.42 ms
+  90 % in 1.88 ms
+  95 % in 2.30 ms
+  99 % in 3.57 ms
+
+Status code distribution:
+  [OK]         788648 responses
+  [Canceled]   32 responses
+
+Error distribution:
+  [32]   rpc error: code = Canceled desc = grpc: the client connection is closing&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/details&gt;
+
+&lt;h2 id=&#34;實驗二不需搭配-proto-檔&#34;&gt;實驗二：不需搭配 proto 檔&lt;/h2&gt;
+&lt;p&gt;使用前，每次都要先備妥待測程式的 proto 檔，其實也滿麻煩的。萬一複雜的 proto 檔案又去 import 其他 proto 檔 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，可能就得條列一堆 &lt;code&gt;-import-path&lt;/code&gt; 或 &lt;code&gt;--import-path&lt;/code&gt; 命令列參數給 gRPCurl 及 ghz。&lt;/p&gt;
+&lt;p&gt;有沒有省力一點的方法？&lt;/p&gt;
+&lt;p&gt;有的，就是透過 &lt;a href=&#34;https://github.com/grpc/grpc/blob/master/doc/server-reflection.md&#34;&gt;server reflection&lt;/a&gt; 功能。&lt;/p&gt;
+&lt;h3 id=&#34;server-reflection&#34;&gt;Server reflection&lt;/h3&gt;
+&lt;p&gt;我以這次的範例程式 server-new 為例，說明如何加上 server reflection 功能。&lt;/p&gt;
+&lt;p&gt;首先，請加上 &lt;a href=&#34;https://pkg.go.dev/google.golang.org/grpc/reflection?tab=doc&#34;&gt;&lt;code&gt;google.golang.org/grpc/reflection&lt;/code&gt;&lt;/a&gt; 套件：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;google.golang.org/grpc/reflection&amp;#34;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;接著，在 &lt;code&gt;grpcServer.Serve&lt;/code&gt; 之前，呼叫 &lt;code&gt;reflection.Register&lt;/code&gt;：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span class=&#34;nx&#34;&gt;grpcServer&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;grpc&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;NewServer&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;opts&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;...&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;c1&#34;&gt;//...
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;c1&#34;&gt;// Register reflection service on gRPC server.
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;reflection&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Register&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;grpcServer&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+
+&lt;span class=&#34;nx&#34;&gt;grpcServer&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Serve&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;lis&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;只需要這兩個步驟，你的 gRPC 程式本身就具有 server reflection 功能，對方不再需要 proto 檔案就能直接進行遠端呼叫。&lt;/p&gt;
+&lt;p&gt;針對新版的 server-new 來實驗看看吧。&lt;/p&gt;
+&lt;h3 id=&#34;grpcurl-1&#34;&gt;gRPCurl&lt;/h3&gt;
+&lt;p&gt;我們可用 &lt;code&gt;list&lt;/code&gt; 指令查詢 server-new 提供哪些服務：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ grpcurl -plaintext  127.0.0.1:20000  list
+
+grpc.reflection.v1alpha.ServerReflection
+routeguide.RouteGuide
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;可用 &lt;code&gt;describe&lt;/code&gt; 指令進一步查詢 server-new 提供服務的介面：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ grpcurl -plaintext  127.0.0.1:20000  describe
+
+grpc.reflection.v1alpha.ServerReflection is a service:
+service ServerReflection &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+  rpc ServerReflectionInfo &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt; stream .grpc.reflection.v1alpha.ServerReflectionRequest &lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; returns &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt; stream .grpc.reflection.v1alpha.ServerReflectionResponse &lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+routeguide.RouteGuide is a service:
+service RouteGuide &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+  rpc GetFeature &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt; .routeguide.Point &lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; returns &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt; .routeguide.Feature &lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+  rpc ListFeatures &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt; .routeguide.Rectangle &lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; returns &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt; stream .routeguide.Feature &lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+  rpc RecordRoute &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt; stream .routeguide.Point &lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; returns &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt; .routeguide.RouteSummary &lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+  rpc RouteChat &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt; stream .routeguide.RouteNote &lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; returns &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt; stream .routeguide.RouteNote &lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;可看出，gRPCurl 不需要 proto 檔案，就能直接與 server-new 溝通。&lt;/p&gt;
+&lt;p&gt;最後，讓我們將含有 100 筆資料的 &lt;code&gt;testdata.dat&lt;/code&gt; 餵給 gRPCurl 來測：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ grpcurl -plaintext -d &lt;span class=&#34;s1&#34;&gt;&amp;#39;@&amp;#39;&lt;/span&gt; &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;    127.0.0.1:20000         &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;    routeguide.RouteGuide.RecordRoute  &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;  &amp;lt; testdata.dat
+
+&lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+  &lt;span class=&#34;s2&#34;&gt;&amp;#34;pointCount&amp;#34;&lt;/span&gt;: 100,
+  &lt;span class=&#34;s2&#34;&gt;&amp;#34;distance&amp;#34;&lt;/span&gt;: &lt;span class=&#34;m&#34;&gt;1003784333&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;有了 server reflection 功能，是不是方便多了？如果你有權修改原始程式，這是值得好好考慮的，可讓測試工作輕鬆一點。&lt;/p&gt;
+&lt;p&gt;當然啦，你可以考慮在 production 環境&lt;strong&gt;關掉&lt;/strong&gt;這功能；但在測試環境中，這真的很方便。&lt;/p&gt;
+&lt;h3 id=&#34;ghz-1&#34;&gt;ghz&lt;/h3&gt;
+&lt;p&gt;儘管 server reflection 通常不會在 production 環境啟用，不過我還是很好奇：server reflection 對執行效率的影響有多少？&lt;/p&gt;
+&lt;p&gt;用 ghz 試試看吧！&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ ghz --insecure --data&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;@  -z 20s  &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;      --call routeguide.RouteGuide.RecordRoute  &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;      127.0.0.1:20000  &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;  &amp;lt; testdata.json
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;details&gt;
+  &lt;summary style=&#34;background-color:#f5f5f5;border:1px solid #ccc;padding:5px;&#34;&gt;
+    壓測 20 秒，結果如下：
+    
+  &lt;/summary&gt;
+  
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;Summary:
+  Count:        826524
+  Total:        20.00 s
+  Slowest:      19.79 ms
+  Fastest:      0.12 ms
+  Average:      1.17 ms
+  Requests/sec: 41317.73
+
+Response time histogram:
+  0.118 [1]     |
+  2.085 [776730]        |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  4.052 [45892] |∎∎
+  6.019 [3018]  |
+  7.986 [550]   |
+  9.953 [112]   |
+  11.920 [74]   |
+  13.887 [51]   |
+  15.854 [37]   |
+  17.821 [17]   |
+  19.788 [1]    |
+
+Latency distribution:
+  10 % in 0.62 ms
+  25 % in 0.82 ms
+  50 % in 1.06 ms
+  75 % in 1.36 ms
+  90 % in 1.80 ms
+  95 % in 2.20 ms
+  99 % in 3.38 ms
+
+Status code distribution:
+  [OK]            826483 responses
+  [Canceled]      40 responses
+  [Unavailable]   1 responses
+
+Error distribution:
+  [40]   rpc error: code = Canceled desc = grpc: the client connection is closing
+  [1]    rpc error: code = Unavailable desc = transport is closing&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/details&gt;
+
+&lt;p&gt;雖然這還不算非常嚴謹的實驗，但可看出，&lt;strong&gt;沒有&lt;/strong&gt; server reflection 功能的 server 版本，與&lt;strong&gt;有&lt;/strong&gt;此功能的 server-new 版本，執行效率沒有顯著差異。&lt;/p&gt;
+&lt;p&gt;因此，server reflection 功能，值得嘗試。&lt;/p&gt;
+&lt;h2 id=&#34;總結&#34;&gt;總結&lt;/h2&gt;
+&lt;p&gt;本篇文章，介紹兩個好用的 gRPC 測試小工具：輸入輸出介面測試工具 &lt;a href=&#34;https://github.com/fullstorydev/grpcurl&#34;&gt;gRPCurl&lt;/a&gt;，以及壓測工具 &lt;a href=&#34;https://github.com/bojand/ghz&#34;&gt;ghz&lt;/a&gt;。最後並推薦 &lt;a href=&#34;https://github.com/grpc/grpc/blob/master/doc/server-reflection.md&#34;&gt;server reflection&lt;/a&gt; 功能來簡化 gRPC 測試工作。&lt;/p&gt;
+&lt;p&gt;ghz 也有 web 介面，目前是 beta 狀態。有興趣的，請去 &lt;a href=&#34;https://ghz.sh/&#34;&gt;ghz 官網&lt;/a&gt;看看。&lt;/p&gt;
+&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;Proto 檔案也可以 import 其他 proto 檔。詳見 &lt;a href=&#34;https://developers.google.com/protocol-buffers/docs/proto3#importing-definitions&#34;&gt;https://developers.google.com/protocol-buffers/docs/proto3#importing-definitions&lt;/a&gt; &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;</description>
+      
+    </item>
     
     <item>
       <title>gRPC Load Balancing in Kubernetes</title>
@@ -3345,206 +3739,6 @@ exec  &amp;#34;/mnt/c/Program Files/Docker/Docker/resources/bin/docker-compose.e
 &lt;p&gt;&lt;a href=&#34;https://rancher.com/blog/2019/2019-01-17-101-more-kubernetes-security-best-practices/&#34;&gt;101 More Security Best Practices for Kubernetes&lt;/a&gt; by Adrian Goins&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>技術領導者微培訓</title>
-      <link>//william-yeh.net/post/2019/01/tech-leader-reading/</link>
-      <pubDate>Sat, 19 Jan 2019 10:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2019/01/tech-leader-reading/</guid>
-      
-        <description>&lt;p&gt;最近，我們研發組織有幅度不算小的變動，某些技術人會被要求承擔更多的技術領導責任。&lt;/p&gt;
-&lt;p&gt;不過，正如&lt;a href=&#34;https://en.wikipedia.org/wiki/Gerald_Weinberg&#34;&gt;溫伯格&lt;/a&gt;大師在《&lt;a href=&#34;https://www.books.com.tw/products/0010467750&#34;&gt;領導者，該想什麼？&lt;/a&gt;》所說，技術人常會面臨天人交戰：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;儘管學校教育告訴我說，每一個好公民都應該負起領導責任，但痛苦經歷讓我害怕擔任任何領導者的角色。我學會盡可能推卻成為領導者的機會。面對領導的問題，我常假裝它是不存在的。為保證我永遠不會涉及到需要運用領導技能的場合，我選擇電腦軟體作為我的職業。&lt;/p&gt;
-&lt;p&gt;事情發展非我所願。每當我在所負責的技術性工作上有出色表現時，同事就知道要對我更加尊敬，似乎把我當成他們的領導者。沒有人勉強我當領導者，是我自己陷入這樣一個矛盾的情境。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;為了讓過渡階段更順暢，雖然我在這裡只剩下很短的時間能夠幫忙了，但還是想略盡棉薄之力。&lt;/p&gt;
-&lt;p&gt;以下是我的【技術領導者微培訓】企劃案。&lt;/p&gt;
-&lt;h2 id=&#34;培訓目標&#34;&gt;培訓目標&lt;/h2&gt;
-&lt;p&gt;引述《&lt;a href=&#34;https://www.books.com.tw/products/0010467750&#34;&gt;領導者，該想什麼？&lt;/a&gt;》第一章的列表，只要你對以下課題感到疑惑，這本書、這門課，對你應該都會有些幫助：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;領導者真的那麼愚蠢嗎？有時他們的確給人那種印象嗎？&lt;/li&gt;
-&lt;li&gt;我能成為領導者，但不要像一般領導者那樣嗎？&lt;/li&gt;
-&lt;li&gt;我能一面當領導者，一面繼續提升我的技術能力嗎？&lt;/li&gt;
-&lt;li&gt;一個毫無技術背景的人，有可能在技術界成為領導者嗎？&lt;/li&gt;
-&lt;li&gt;一旦成為領導者，我必須犧牲多少技術專業能力？&lt;/li&gt;
-&lt;li&gt;我能得到多少回報？&lt;/li&gt;
-&lt;li&gt;如果我是領導者，我需要擺出上司架式，對屬下頤指氣使嗎？&lt;/li&gt;
-&lt;li&gt;我能藉由讀書習得領導技能嗎？&lt;/li&gt;
-&lt;li&gt;我還可以從何處學習成為領導者呢？&lt;/li&gt;
-&lt;li&gt;為何人們視我為領導者，而我卻不認為自己是領導者呢？&lt;/li&gt;
-&lt;li&gt;為何我自認為很能幹，人們卻不把我當成領導者呢？&lt;/li&gt;
-&lt;li&gt;倘若我不想承擔領導責任，又如何？&lt;/li&gt;
-&lt;li&gt;到底什麼是領導？&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;這本書、這門課，沒辦法讓你一夕之間脫胎換骨，但能給你經過證實可行的方向。能獲得多少，端看你認真投入的程度、誠實面對自己的態度、敏銳觀察及切實反思的職場人紀律。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;如果他們的態度不夠嚴謹，那麼我建議他們做的任何事情，都是在浪費我的時間。 (p. 122)&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
-&lt;div class=&#34;box&#34;&gt;
-&lt;figure  itemprop=&#34;associatedMedia&#34;
-  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
-  style=&#34;max-width:30em&#34; &gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2019/01/tech-leader-book.png&#34; alt=&#34;Becoming a Technical Leader&#34;/&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2019/01/tech-leader-book.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-      &lt;figcaption&gt;
-          &lt;p&gt;Becoming a Technical Leader&lt;/p&gt;
-      &lt;/figcaption&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&#34;進度&#34;&gt;進度&lt;/h2&gt;
-&lt;p&gt;請依照指定進度，先自行&lt;strong&gt;想辦法&lt;/strong&gt;閱讀指定讀物《&lt;a href=&#34;https://www.books.com.tw/products/0010467750&#34;&gt;領導者，該想什麼？&lt;/a&gt;》，並填寫學習單。&lt;/p&gt;
-&lt;h3 id=&#34;第一週領導概說&#34;&gt;第一週／領導概說&lt;/h3&gt;
-&lt;p&gt;閱讀進度：第一章～第五章。&lt;/p&gt;
-&lt;p&gt;學習單：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;準備一張清單，列舉說明哪些情境因為你的出現，使得他人的生產力因而「提升」。請準備另一張清單，列舉說明哪些情境因為你的出現，使得他人的生產力因而「下降」。你能找出這兩類情境的差異之處，並能分辨出它們的特色嗎？列出這張清單，能讓你更認識自己，及更認識讓你獲得授權的環境嗎？ (pp. 41&amp;ndash;42)&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;根據前一個問題所準備的兩張清單內容來看，你是所屬團體的&lt;strong&gt;資產&lt;/strong&gt;還是&lt;strong&gt;負債&lt;/strong&gt;？ (p. 42)&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;你帶一組人做事，用什麼方法促使成員從不同角度檢討目前執行情形？獨自一人做事時，你又用什麼方法自我檢討？有任何途徑可幫助你改善目前自我檢討的方法嗎？ (p. 68)&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;下一次帶一組人執行任務，列出你在行使領導技能時所做的所有事情。若未能列出至少十件事，請你再做一遍該任務，一直做到為了完成一個任務，至少要做十件有助於領導的事。列出此份清單後，試著將它們依&lt;strong&gt;瞭解問題&lt;/strong&gt;、&lt;strong&gt;控制點子的流通&lt;/strong&gt;、&lt;strong&gt;維持品質&lt;/strong&gt;分門別類。分類後，能看得出你的領導風格傾向於其中一類嗎？你做的哪些事無法歸類到這三類？ (p. 68)&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;你多久沒有登上一個新的&lt;strong&gt;高原期&lt;/strong&gt;了？你還在享受目前位於高原期的好日子嗎？為順利攀登下一個高原期，你做了哪些準備？ (p. 82)&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;你上一次針對職業生涯做重大改變，到現在有多久的時間了？在整個過程中，令你印象最深刻的事情或感受是什麼？ (p. 97)&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;最近一次你熟識的人做了重大職業改變，你的反應為何？你有沒有藉此機會想到自身處境？ (p. 97)&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&#34;第二週創新&#34;&gt;第二週／創新&lt;/h3&gt;
-&lt;p&gt;閱讀進度：第六章～第九章。&lt;/p&gt;
-&lt;p&gt;學習單：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;至少閱讀一本你所景仰人物的自傳。在日記裡寫下該自傳中最讓你感到驚訝的事，以及最讓你感動的情節。 (p. 129)&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;你想出很多點子，後來怎麼樣了？大多數都實現了嗎？有多少點子因為創新程度不夠而胎死腹中？有多少點子因為環境不支援而被迫消失？領導不當或領導能力不足，是你犯該錯誤的主因嗎？何種訓練有助於提升你在上述案例行使領導技能的品質？ (改編合併自 p. 140 &amp;amp; p. 141)&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;你是否讓成功的事實變成繼續前進的絆腳石？如果你超越了目前的成就，哪些東西會跟著改變？你會怎麼做？ (p. 156)&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;你記得職業生涯中最淒慘的一段經歷嗎？你難以承受的是什麼？你如何從人生的最低潮走出來？你學到了什麼功課？再遇到人生低潮時，你會用不同方式處理嗎？ (p. 156)&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;和他人打交道時，他們瞭解你的動機嗎？你希望他們瞭解你的動機嗎？你如何確認他們是否瞭解你的動機？ (p. 156)&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;畫出你的&lt;strong&gt;事業線&lt;/strong&gt;。可能的話，找一位或多位朋友分享你的經歷，和他們討論你的人生起伏。記得將事業線延伸到未來。設想它是一部電影或一部小說，你會取什麼樣的名字？你希望由何人擔任這部電影的主角？ (p. 156)&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&#34;第三週動機&#34;&gt;第三週／動機&lt;/h3&gt;
-&lt;p&gt;閱讀進度：第十章～第十五章。&lt;/p&gt;
-&lt;p&gt;學習單：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;試著回想你最近做過的一些蠢事。別人發現你做了那些蠢事，你作何反應？在追求攀登職涯高峰的過程中，你的&lt;strong&gt;自我防禦心理&lt;/strong&gt;越來越重或越來越輕？對於你採取的自我防禦作為，你如何處置它們？ (p. 174)&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;你曾否將事務置於人之上，現在你後悔了？你曾否將人置於事務之上，現在你後悔了？ (p. 187)&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;玩遊戲的時候，你對得分較有興趣，還是對遊戲本身較有興趣？玩團隊遊戲的時候，你對團隊的得分較在意？還是對自己的得分較在意？這兩種心態，如何影響你貢獻力量於團隊，對於團隊成績有何影響？如果是團隊工作呢？ (p. 225)&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;你是否曾在某團隊中毫無貢獻？當你察覺到這一點時，你的感受是什麼？ (p. 239)&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;回憶最近一次你進行&lt;strong&gt;力量交易&lt;/strong&gt;遭逢失敗的事例。你從這次交易中學到什麼？你能否以現在的新觀點從那件事再學習？ (p. 239)&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;哪些在你內心運作的事，你努力不顯現於外？你知道其中運作的情形嗎？如果你將這些精力用在別處，結果將如何？ (p. 239)&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&#34;第四週組織&#34;&gt;第四週／組織&lt;/h3&gt;
-&lt;p&gt;閱讀進度：第十六章～第十九章。&lt;/p&gt;
-&lt;p&gt;學習單：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;在目前的工作環境裡，你擁有幾種不同的力量？你如何將這些力量轉換為更有效用的型態？你如何運用轉換得來的力量？ (p. 252)&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;如果你在團隊中擔任決策者，你如何判知自己表現良好？你是否紀錄決策內容，並在事後檢視？你是否詢問團隊成員，這項決策對他們有何影響？如果你沒問，原因是什麼？ (p. 264)&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;你是否因組織缺乏效率受獎勵？或給予缺乏效率的組織獎勵？你能否創造一個相反的工作環境？ (p. 273)&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;列一張清單，寫出你可以&lt;strong&gt;觀察&lt;/strong&gt;並&lt;strong&gt;實驗&lt;/strong&gt;組織運作的各個機會。再列一張清單，寫出你可以觀察並實驗，但你未加以利用的各個機會。你能否從第二張清單中挑出一個項目，找出未利用的原因，然後清除？ (p. 284)&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;回想一下你是否有下述經驗：全力以赴的時候，卻被認為沒有盡力。當時你有何感受？你是否為自己辯護？結果如何？ (p. 285)&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;回想某次，你認為某人沒有做出貢獻的情況。你是否能解讀為，在那種情況下，他已經盡力而為？當時那個人試圖解決什麼問題？下次再發生類似狀況時，你能否找出原因？ (p. 285)&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&#34;第五週轉變&#34;&gt;第五週／轉變&lt;/h3&gt;
-&lt;p&gt;閱讀進度：第二十章～第二十四章。&lt;/p&gt;
-&lt;p&gt;學習單：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;上次新主管上任時，你首先注意到他哪一點？你花多少時間才信任這位新主管？他的哪一項動作獲得你的信任？哪一項動作減少你的信任？你積極和新主管配合，還是奮力和新主管作對？為什麼？ (p. 299)&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;如果你預先知道你將接受某項考驗，你的情緒反應如何？如果你突然發現自己將接受考驗，你的情緒反應又是如何？兩者有何不同？是否有可以相互借鏡之處？ (p. 311)&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;你的工作環境是否有持續發生的衝突？你能否想出三種改變&lt;strong&gt;組織&lt;/strong&gt;的方式，以避免這些衝突？或是三種改變&lt;strong&gt;人際關係&lt;/strong&gt;的方式？哪一種型態適合你發揮長處？哪一種型態你運作起來較順手？ (p. 311)&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;你能否舉出三位同事，能給予你技術能力方面的指導？如果你想不出來，你為什麼還在這家公司上班？如果你有三位老師，你如何善用這項資源？ (p. 321)&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;這一年來，你參加過哪些課程、讀過哪些書？這些對於你的技術能力和領導能力有何助益？你從中是否能學得更多？未來一年，你計畫參加哪些課程、讀哪些書？你應該做哪些事前準備，以獲益更多？ (p. 322)&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;你能否忍受無所事事的時間？你是否有時間審視你的周遭，審視你自己，以找出沒有更多時間的原因？為什麼沒有充裕的時間？如果確實沒有時間，請停止閱讀，開始檢討。 (p. 331)&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;檢視你的&lt;strong&gt;個人支援網絡&lt;/strong&gt;的成員名單。哪些人你願意維持良好關係，以繼續獲得支援？這份名單在哪個部分顯得不足，必須加以補強？ (p. 343)&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;上課前&#34;&gt;上課前&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;瀏覽學習單。&lt;/li&gt;
-&lt;li&gt;速讀：每一份指定讀物，請在不超過 2 小時之內速讀完畢第一次。&lt;/li&gt;
-&lt;li&gt;填寫學習單。&lt;/li&gt;
-&lt;li&gt;如有時間，可再回頭重讀細讀內容。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;上課時&#34;&gt;上課時&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;攜帶學習單。&lt;/li&gt;
-&lt;li&gt;以 &lt;a href=&#34;http://www.liberatingstructures.com/&#34;&gt;liberating structures&lt;/a&gt; 及互動討論方式，進行個案研討。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;有些個案討論有隱私性考量，為促成坦誠討論，參與者需宣誓對現場討論內容保密 (咦)。&lt;/p&gt;
-&lt;h2 id=&#34;全部課程結束後&#34;&gt;全部課程結束後&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;從頭再看一次過去寫的學習單。這陣子，你有什麼改變了嗎？&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;從《&lt;a href=&#34;https://www.books.com.tw/products/0010467750&#34;&gt;領導者，該想什麼？&lt;/a&gt;》書中不時可看出，&lt;a href=&#34;https://en.wikipedia.org/wiki/Gerald_Weinberg&#34;&gt;溫伯格&lt;/a&gt;受到&lt;a href=&#34;https://en.wikipedia.org/wiki/Virginia_Satir&#34;&gt;薩提爾&lt;/a&gt;的影響很深。請再讀讀《&lt;a href=&#34;https://www.books.com.tw/products/0010694726&#34;&gt;激發員工潛力的薩提爾教練模式&lt;/a&gt;》及《&lt;a href=&#34;https://www.books.com.tw/products/0010770522&#34;&gt;薩提爾的對話練習&lt;/a&gt;》兩本書，以進一步了解如何在職場上運用薩提爾模式。或者，直接去上薩提爾課程吧！&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;</description>
       
     </item>
     

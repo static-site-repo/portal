@@ -6,10 +6,21 @@
     <description>Recent content in Posts on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Mon, 30 Mar 2020 22:30:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 14 Apr 2020 22:00:00 +0800</lastBuildDate>
     
 	<atom:link href="//william-yeh.net/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>gRPC 測試工具</title>
+      <link>//william-yeh.net/post/2020/04/grpc-testing-tools/</link>
+      <pubDate>Tue, 14 Apr 2020 22:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2020/04/grpc-testing-tools/</guid>
+      <description>&lt;p&gt;RESTful API 時代，我們有許多簡單好用的測試工具：有酷炫的 &lt;a href=&#34;https://www.postman.com/&#34;&gt;Postman&lt;/a&gt;，有命令列控愛用的 &lt;a href=&#34;https://httpie.org/&#34;&gt;HTTPie&lt;/a&gt;，當然也有硬漢必備的萬用瑞士刀 &lt;a href=&#34;https://curl.haxx.se/&#34;&gt;curl&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;那麼，gRPC 呢？&lt;/p&gt;
+&lt;p&gt;這篇文章介紹兩個好用的小工具：&lt;a href=&#34;https://github.com/fullstorydev/grpcurl&#34;&gt;gRPCurl&lt;/a&gt; 及 &lt;a href=&#34;https://github.com/bojand/ghz&#34;&gt;ghz&lt;/a&gt;，一個是輸入輸出介面測試工具，另一個是壓測工具，也順便介紹一些簡化測試的技巧。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>gRPC Load Balancing in Kubernetes</title>
@@ -255,15 +266,6 @@ To clarify this I&amp;rsquo;ve conducted a series of experiments for 3 possible 
       <guid>//william-yeh.net/post/2019/01/tech-leader-reading/</guid>
       <description>&lt;p&gt;最近，我們研發組織有幅度不算小的變動，某些技術人會被要求承擔更多的技術領導責任。&lt;/p&gt;
 &lt;p&gt;不過，正如&lt;a href=&#34;https://en.wikipedia.org/wiki/Gerald_Weinberg&#34;&gt;溫伯格&lt;/a&gt;大師在《&lt;a href=&#34;https://www.books.com.tw/products/0010467750&#34;&gt;領導者，該想什麼？&lt;/a&gt;》所說，技術人常會面臨天人交戰：&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>年假可讀的軟體領域輕讀物</title>
-      <link>//william-yeh.net/post/2019/01/soft-reading-list/</link>
-      <pubDate>Thu, 17 Jan 2019 15:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2019/01/soft-reading-list/</guid>
-      <description>中午時，非 RD 的同事請我推薦適合泛軟體產業從業人員的五份輕讀物，可在春節連續假期時好好補血。 年假，自然不方便啃太過於生硬艱澀、理論宏偉的讀物。</description>
     </item>
     
   </channel>

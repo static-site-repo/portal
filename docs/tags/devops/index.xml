@@ -6,10 +6,21 @@
     <description>Recent content in devops on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Mon, 30 Mar 2020 22:30:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 14 Apr 2020 22:00:00 +0800</lastBuildDate>
     
 	<atom:link href="//william-yeh.net/tags/devops/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>gRPC 測試工具</title>
+      <link>//william-yeh.net/post/2020/04/grpc-testing-tools/</link>
+      <pubDate>Tue, 14 Apr 2020 22:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2020/04/grpc-testing-tools/</guid>
+      <description>&lt;p&gt;RESTful API 時代，我們有許多簡單好用的測試工具：有酷炫的 &lt;a href=&#34;https://www.postman.com/&#34;&gt;Postman&lt;/a&gt;，有命令列控愛用的 &lt;a href=&#34;https://httpie.org/&#34;&gt;HTTPie&lt;/a&gt;，當然也有硬漢必備的萬用瑞士刀 &lt;a href=&#34;https://curl.haxx.se/&#34;&gt;curl&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;那麼，gRPC 呢？&lt;/p&gt;
+&lt;p&gt;這篇文章介紹兩個好用的小工具：&lt;a href=&#34;https://github.com/fullstorydev/grpcurl&#34;&gt;gRPCurl&lt;/a&gt; 及 &lt;a href=&#34;https://github.com/bojand/ghz&#34;&gt;ghz&lt;/a&gt;，一個是輸入輸出介面測試工具，另一個是壓測工具，也順便介紹一些簡化測試的技巧。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>gRPC Load Balancing in Kubernetes</title>
@@ -224,15 +235,6 @@ To clarify this I&amp;rsquo;ve conducted a series of experiments for 3 possible 
       
       <guid>//william-yeh.net/post/2016/08/back-to-the-origin/</guid>
       <description>老子曰：「五色令人目盲，五音令人耳聾。」 所以，最近我越來越喜歡從原始定義或目標下手。 原理通了，邏輯通了，再加一點點創意及想像力，很多東西都是</description>
-    </item>
-    
-    <item>
-      <title>《鳳凰專案》私房標題</title>
-      <link>//william-yeh.net/post/2016/06/phoenix-proj-titles/</link>
-      <pubDate>Tue, 21 Jun 2016 08:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2016/06/phoenix-proj-titles/</guid>
-      <description>The Phoenix Project（中譯本《鳳凰專案》）作者如是說： Dr. Eliyahu Goldratt wrote his seminal book, The Goal: A Process of Ongoing Improvement, in 1984. [&amp;hellip;] My coauthors and I studied this book for nearly a decade, getting ready to write The Phoenix Project. In many ways, I view our book as an</description>
     </item>
     
   </channel>

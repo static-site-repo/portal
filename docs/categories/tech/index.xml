@@ -6,10 +6,21 @@
     <description>Recent content in tech on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Mon, 30 Mar 2020 22:30:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 14 Apr 2020 22:00:00 +0800</lastBuildDate>
     
 	<atom:link href="//william-yeh.net/categories/tech/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>gRPC 測試工具</title>
+      <link>//william-yeh.net/post/2020/04/grpc-testing-tools/</link>
+      <pubDate>Tue, 14 Apr 2020 22:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2020/04/grpc-testing-tools/</guid>
+      <description>&lt;p&gt;RESTful API 時代，我們有許多簡單好用的測試工具：有酷炫的 &lt;a href=&#34;https://www.postman.com/&#34;&gt;Postman&lt;/a&gt;，有命令列控愛用的 &lt;a href=&#34;https://httpie.org/&#34;&gt;HTTPie&lt;/a&gt;，當然也有硬漢必備的萬用瑞士刀 &lt;a href=&#34;https://curl.haxx.se/&#34;&gt;curl&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;那麼，gRPC 呢？&lt;/p&gt;
+&lt;p&gt;這篇文章介紹兩個好用的小工具：&lt;a href=&#34;https://github.com/fullstorydev/grpcurl&#34;&gt;gRPCurl&lt;/a&gt; 及 &lt;a href=&#34;https://github.com/bojand/ghz&#34;&gt;ghz&lt;/a&gt;，一個是輸入輸出介面測試工具，另一個是壓測工具，也順便介紹一些簡化測試的技巧。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>gRPC Load Balancing in Kubernetes</title>
@@ -237,15 +248,6 @@ To clarify this I&amp;rsquo;ve conducted a series of experiments for 3 possible 
       
       <guid>//william-yeh.net/post/2018/11/devops-value/</guid>
       <description>看完〈敏捷的價值與指標〉之後，很自然的會進一步追問：「那麼，什麼才是 DevOps 圈子所認定的價值，以及對應的指標，尤其是領先指標？」 這問題其實比較容易</description>
-    </item>
-    
-    <item>
-      <title>簡報者的小工具</title>
-      <link>//william-yeh.net/post/2016/08/presenter-tools/</link>
-      <pubDate>Mon, 22 Aug 2016 08:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2016/08/presenter-tools/</guid>
-      <description>自從去年一月看了 ihower 的〈講個秘訣：技術簡報的好用工具〉之後，我才想到，身為 Mac 用戶，我好像太疏於好好整頓自己的電腦，讓我在簡報時更順暢。於是，經</description>
     </item>
     
   </channel>

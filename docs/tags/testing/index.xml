@@ -6,10 +6,21 @@
     <description>Recent content in testing on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Tue, 22 Dec 2015 08:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 14 Apr 2020 22:00:00 +0800</lastBuildDate>
     
 	<atom:link href="//william-yeh.net/tags/testing/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>gRPC 測試工具</title>
+      <link>//william-yeh.net/post/2020/04/grpc-testing-tools/</link>
+      <pubDate>Tue, 14 Apr 2020 22:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2020/04/grpc-testing-tools/</guid>
+      <description>&lt;p&gt;RESTful API 時代，我們有許多簡單好用的測試工具：有酷炫的 &lt;a href=&#34;https://www.postman.com/&#34;&gt;Postman&lt;/a&gt;，有命令列控愛用的 &lt;a href=&#34;https://httpie.org/&#34;&gt;HTTPie&lt;/a&gt;，當然也有硬漢必備的萬用瑞士刀 &lt;a href=&#34;https://curl.haxx.se/&#34;&gt;curl&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;那麼，gRPC 呢？&lt;/p&gt;
+&lt;p&gt;這篇文章介紹兩個好用的小工具：&lt;a href=&#34;https://github.com/fullstorydev/grpcurl&#34;&gt;gRPCurl&lt;/a&gt; 及 &lt;a href=&#34;https://github.com/bojand/ghz&#34;&gt;ghz&lt;/a&gt;，一個是輸入輸出介面測試工具，另一個是壓測工具，也順便介紹一些簡化測試的技巧。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>CI 怎樣帶你遠離平庸？</title>
