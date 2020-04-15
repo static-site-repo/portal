@@ -75,7 +75,7 @@
 這篇文章介紹兩個好用的小工具：gRPCurl 及 ghz，一個是輸入輸出介面測試工具，另一個是壓測工具，也順便介紹一些簡化測試的技巧。">
 <meta itemprop="datePublished" content="2020-04-14T22:00:00&#43;08:00" />
 <meta itemprop="dateModified" content="2020-04-14T22:00:00&#43;08:00" />
-<meta itemprop="wordCount" content="2452">
+<meta itemprop="wordCount" content="2522">
 
 
 
@@ -306,8 +306,8 @@ if (!doNotTrack) {
             <a href="//william-yeh.net/categories/tech/"> tech </a>
             
           </div>
-        <span class="more-meta"> 約 2452 字 </span>
-          <span class="more-meta"> 預計閱讀 5 分鐘 </span>
+        <span class="more-meta"> 約 2522 字 </span>
+          <span class="more-meta"> 預計閱讀 6 分鐘 </span>
 
         
         
@@ -639,7 +639,7 @@ Error distribution:
 
 grpc.reflection.v1alpha.ServerReflection
 routeguide.RouteGuide
-</code></pre></div><p>可用 <code>describe</code> 指令進一步查詢 server-new 提供服務的介面：</p>
+</code></pre></div><p>可用 <code>describe</code> 指令查詢 server-new 提供服務的介面：</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ grpcurl -plaintext  127.0.0.1:20000  describe
 
 grpc.reflection.v1alpha.ServerReflection is a service:
@@ -653,8 +653,16 @@ service RouteGuide <span class="o">{</span>
   rpc RecordRoute <span class="o">(</span> stream .routeguide.Point <span class="o">)</span> returns <span class="o">(</span> .routeguide.RouteSummary <span class="o">)</span><span class="p">;</span>
   rpc RouteChat <span class="o">(</span> stream .routeguide.RouteNote <span class="o">)</span> returns <span class="o">(</span> stream .routeguide.RouteNote <span class="o">)</span><span class="p">;</span>
 <span class="o">}</span>
-</code></pre></div><p>可看出，gRPCurl 不需要 proto 檔案，就能直接與 server-new 溝通。</p>
-<p>最後，讓我們將含有 100 筆資料的 <code>testdata.dat</code> 餵給 gRPCurl 來測：</p>
+</code></pre></div><p>可用 <code>describe</code> 指令進一步查詢某參數的具體格式：</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ grpcurl -plaintext  127.0.0.1:20000  describe .routeguide.Point
+
+routeguide.Point is a message:
+message Point <span class="o">{</span>
+  int32 <span class="nv">latitude</span> <span class="o">=</span> 1<span class="p">;</span>
+  int32 <span class="nv">longitude</span> <span class="o">=</span> 2<span class="p">;</span>
+<span class="o">}</span>
+</code></pre></div><p>可看出，gRPCurl 不需要 proto 檔案，就能直接向 server-new 查詢遠端呼叫所需知道的介面細節。</p>
+<p>最後，讓我們將含有 100 筆資料的 <code>testdata.dat</code> 餵給 gRPCurl 來測測看：</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ grpcurl -plaintext -d <span class="s1">&#39;@&#39;</span> <span class="se">\
 </span><span class="se"></span>    127.0.0.1:20000         <span class="se">\
 </span><span class="se"></span>    routeguide.RouteGuide.RecordRoute  <span class="se">\
@@ -667,7 +675,7 @@ service RouteGuide <span class="o">{</span>
 </code></pre></div><p>有了 server reflection 功能，是不是方便多了？如果你有權修改原始程式，這是值得好好考慮的，可讓測試工作輕鬆一點。</p>
 <p>當然啦，你可以考慮在 production 環境<strong>關掉</strong>這功能；但在測試環境中，這真的很方便。</p>
 <h3 id="ghz-1">ghz</h3>
-<p>儘管 server reflection 通常不會在 production 環境啟用，不過我還是很好奇：server reflection 對執行效率的影響有多少？</p>
+<p>儘管 server reflection 通常不會在 production 環境啟用，不過我還是很好奇：server reflection 對執行效率的影響有多少？尤其是涉及 marshalling。</p>
 <p>用 ghz 試試看吧！</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ ghz --insecure --data<span class="o">=</span>@  -z 20s  <span class="se">\
 </span><span class="se"></span>      --call routeguide.RouteGuide.RecordRoute  <span class="se">\
