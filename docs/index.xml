@@ -136,7 +136,7 @@
 &lt;/div&gt;
 
 &lt;p&gt;如此一來，寶貴的螢幕可視區域，只放絕對必要的資訊，就能多擺幾張卡片（是的，是的，我知道這是 bad smell 啦⋯⋯）。&lt;/p&gt;
-&lt;p&gt;不過，Jira 本身已經夠笨重了，甚至連 Jira 本身的熱鍵都會不時失效；若再搭配像暴力猴這類 script 式外掛，可能會不夠穩定。如果你想要穩定一點的方案，或者不想透過熱鍵切換，只想一勞永逸眼不見為淨，不防考慮改用 &lt;a href=&#34;https://userstyles.org/&#34;&gt;Stylish&lt;/a&gt; 之類的東西，自動套用：&lt;/p&gt;
+&lt;p&gt;不過，Jira 本身已經夠笨重了，甚至連 Jira 本身的熱鍵都會不時失效；若再搭配像暴力猴這類 script 式外掛，可能會不夠穩定。如果你想要穩定一點的方案，或者不想透過熱鍵切換，只想一勞永逸眼不見為淨，不妨考慮改用 &lt;a href=&#34;https://userstyles.org/&#34;&gt;Stylish&lt;/a&gt; 之類的東西，自動套用：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-css&#34; data-lang=&#34;css&#34;&gt;&lt;span class=&#34;c&#34;&gt;/* For horizontal headers */&lt;/span&gt;
  &lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nc&#34;&gt;css-e2mdyo&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;#&lt;/span&gt;&lt;span class=&#34;nn&#34;&gt;ghx-header&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
     &lt;span class=&#34;k&#34;&gt;display&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;none&lt;/span&gt; &lt;span class=&#34;cp&#34;&gt;!important&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
