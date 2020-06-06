@@ -6,10 +6,23 @@
     <description>Recent content in Posts on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Tue, 14 Apr 2020 22:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 06 Jun 2020 08:00:00 +0800</lastBuildDate>
     
 	<atom:link href="//william-yeh.net/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Jira Board Hacks</title>
+      <link>//william-yeh.net/post/2020/06/jira-board-hacks/</link>
+      <pubDate>Sat, 06 Jun 2020 08:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2020/06/jira-board-hacks/</guid>
+      <description>&lt;h2 id=&#34;實體看板&#34;&gt;實體看板&lt;/h2&gt;
+&lt;p&gt;在導入 Scrum 時，我偏好實體看板。&lt;/p&gt;
+&lt;p&gt;實體看板容易 zoom in/out，利於適時切換俯瞰與細節視角，不需過度的數字管理。&lt;/p&gt;
+&lt;p&gt;實體看板的空間共時性，容易塑造團隊的一體感。&lt;/p&gt;
+&lt;p&gt;實體看板彈性大，能以最小成本，讓團隊在敏捷路上不斷嘗試與調整。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>gRPC 測試工具</title>
@@ -256,16 +269,6 @@ To clarify this I&amp;rsquo;ve conducted a series of experiments for 3 possible 
       <description>&lt;p&gt;Kubernetes 演化速度令人驚訝。彈性之大，令人聯想到當年  Perl 圈子奉為圭臬的 &lt;a href=&#34;https://en.wikipedia.org/wiki/There%27s_more_than_one_way_to_do_it&#34;&gt;TIMTOWTDI&lt;/a&gt; 口號。&lt;/p&gt;
 &lt;p&gt;選擇過多也會帶來問題。發展到某個階段，也該適時沈澱收斂出較佳的實務建議準則。&lt;/p&gt;
 &lt;p&gt;因此，我稍微搜尋一下相關資料，作為參考。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>技術領導者微培訓</title>
-      <link>//william-yeh.net/post/2019/01/tech-leader-reading/</link>
-      <pubDate>Sat, 19 Jan 2019 10:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2019/01/tech-leader-reading/</guid>
-      <description>&lt;p&gt;最近，我們研發組織有幅度不算小的變動，某些技術人會被要求承擔更多的技術領導責任。&lt;/p&gt;
-&lt;p&gt;不過，正如&lt;a href=&#34;https://en.wikipedia.org/wiki/Gerald_Weinberg&#34;&gt;溫伯格&lt;/a&gt;大師在《&lt;a href=&#34;https://www.books.com.tw/products/0010467750&#34;&gt;領導者，該想什麼？&lt;/a&gt;》所說，技術人常會面臨天人交戰：&lt;/p&gt;</description>
     </item>
     
   </channel>

@@ -6,10 +6,23 @@
     <description>Recent content in management on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Wed, 08 Jan 2020 22:30:00 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 06 Jun 2020 08:00:00 +0800</lastBuildDate>
     
 	<atom:link href="//william-yeh.net/categories/management/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Jira Board Hacks</title>
+      <link>//william-yeh.net/post/2020/06/jira-board-hacks/</link>
+      <pubDate>Sat, 06 Jun 2020 08:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2020/06/jira-board-hacks/</guid>
+      <description>&lt;h2 id=&#34;實體看板&#34;&gt;實體看板&lt;/h2&gt;
+&lt;p&gt;在導入 Scrum 時，我偏好實體看板。&lt;/p&gt;
+&lt;p&gt;實體看板容易 zoom in/out，利於適時切換俯瞰與細節視角，不需過度的數字管理。&lt;/p&gt;
+&lt;p&gt;實體看板的空間共時性，容易塑造團隊的一體感。&lt;/p&gt;
+&lt;p&gt;實體看板彈性大，能以最小成本，讓團隊在敏捷路上不斷嘗試與調整。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>求職，別忘了突出你的亮點</title>
@@ -282,15 +295,6 @@
       
       <guid>//william-yeh.net/post/2016/12/game-frame/</guid>
       <description>遊戲化 我第一次看到將「遊戲化」概念運用到職場上的點子，是在《加入遊戲因子，解決各種問題》這本有趣的書： 遊戲的十個組成要素 第二次看到將「遊戲化</description>
-    </item>
-    
-    <item>
-      <title>從限制理論看 DevOps</title>
-      <link>//william-yeh.net/post/2016/08/devops-a-toc-perspective/</link>
-      <pubDate>Wed, 17 Aug 2016 23:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2016/08/devops-a-toc-perspective/</guid>
-      <description>自從寫了〈DevOps 核心元素的考古溯源〉一文，我就很想找個機會，好好闡釋 DevOps 的重要源頭：Lean Thinking。這個願望，在五月初那次兩個</description>
     </item>
     
   </channel>

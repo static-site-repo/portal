@@ -6,10 +6,189 @@
     <description>Recent content on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Tue, 14 Apr 2020 22:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 06 Jun 2020 08:00:00 +0800</lastBuildDate>
     
         <atom:link href="//william-yeh.net/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Jira Board Hacks</title>
+      <link>//william-yeh.net/post/2020/06/jira-board-hacks/</link>
+      <pubDate>Sat, 06 Jun 2020 08:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2020/06/jira-board-hacks/</guid>
+      
+        <description>&lt;h2 id=&#34;實體看板&#34;&gt;實體看板&lt;/h2&gt;
+&lt;p&gt;在導入 Scrum 時，我偏好實體看板。&lt;/p&gt;
+&lt;p&gt;實體看板容易 zoom in/out，利於適時切換俯瞰與細節視角，不需過度的數字管理。&lt;/p&gt;
+&lt;p&gt;實體看板的空間共時性，容易塑造團隊的一體感。&lt;/p&gt;
+&lt;p&gt;實體看板彈性大，能以最小成本，讓團隊在敏捷路上不斷嘗試與調整。&lt;/p&gt;
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2020/06/physical-kanban.png&#34; alt=&#34;實體看板&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2020/06/physical-kanban.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;實體看板&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;不過，在重視數字管理的組織，或是有 remote 成員存在的組織，恐怕不得不面對數位化電子看板的存在。輕量級的如 &lt;a href=&#34;https://trello.com/&#34;&gt;Trello&lt;/a&gt;，重量級的如 &lt;a href=&#34;https://www.atlassian.com/software/jira&#34;&gt;Jira&lt;/a&gt;，不管並存抑或取代，都得學著與之共舞。&lt;/p&gt;
+&lt;p&gt;說實在的，為了迎合管理視角，電子看板犧牲許多實體敏捷性。萬一真的不能不採用，我們還是得學著發揮它的優點，並設法降低它的負面影響。&lt;/p&gt;
+&lt;p&gt;以下我會介紹幾個小技巧，讓我過去一個禮拜在透過 Jira 引導 daily stand-up 時，找回部份實體看板的手感。&lt;/p&gt;
+&lt;h2 id=&#34;jira-的泳道縮放&#34;&gt;Jira 的泳道縮放&lt;/h2&gt;
+&lt;p&gt;Daily stand-up 一開始，我習慣先站在更全局的角度鳥瞰：將卡片全都收縮起來，只留下泳道 (swimlane)。畢竟，與 sprint goal 最直接對應的，是 swimlane，而非個別卡片。&lt;/p&gt;
+&lt;p&gt;我會先用 Jira 熱鍵 &lt;code&gt;z&lt;/code&gt; 隱藏側邊欄，用 Jira 熱鍵 &lt;code&gt;-&lt;/code&gt; 收縮泳道：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2020/06/jira-board-collapse.png&#34; alt=&#34;Jira 看板，泳道視角&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2020/06/jira-board-collapse.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Jira 看板，泳道視角&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;接下來，再逐一展開個別泳道來進行探討：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2020/06/jira-swimlane-one.png&#34; alt=&#34;Jira 看板，泳道局部展開&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2020/06/jira-swimlane-one.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Jira 看板，泳道局部展開&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;jira-的全局卡片視角&#34;&gt;Jira 的全局卡片視角&lt;/h2&gt;
+&lt;p&gt;為了迎合管理視角，Jira 的每一張卡片，塞了非常多資訊：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:20em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2020/06/jira-card.png&#34; alt=&#34;Jira card&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2020/06/jira-card.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Jira card&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;這其實並不算是問題——如果單獨只看一張、兩張卡片的話。&lt;/p&gt;
+&lt;p&gt;聽出我的弦外之音了嗎？&lt;/p&gt;
+&lt;p&gt;問題在於：若將所有卡片全都陳列在看板上，會發現，卡片佔用的總面積，與實際展現出來有意義的資訊總量，不符合比例原則。&lt;/p&gt;
+&lt;p&gt;個別卡片已經太佔空間了，更糟糕的是，能夠擺放卡片的看板區域，也被別人偷偷霸佔。&lt;/p&gt;
+&lt;p&gt;以我的 13.3 英吋螢幕為例。寶貴的螢幕可視區域中，最上面是一堆置頂區域：先是一排選單，再來是好幾排大標題，接下來才輪到一排看板的進度欄。經過這一輪置頂空間爭奪戰，1/5 空間被吃掉了，剩下來的看板空間，能夠在同一頁完整秀出來的卡片，最多只有 12 張；想看更多，只得往下捲動：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2020/06/jira-board-before.png&#34; alt=&#34;手術前的 Jira 看板，空間利用率甚低。&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2020/06/jira-board-before.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;手術前的 Jira 看板，空間利用率甚低。&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;需要一直捲動的看板，如何給人全局觀？&lt;/p&gt;
+&lt;p&gt;簡言之，Jira 缺少許多軟體常見的 &amp;ldquo;Zen mode&amp;rdquo; 或 &amp;ldquo;Presentation mode&amp;rdquo;。我希望，當卡片太多時（我知道這是 bad smell 啦⋯⋯），能夠一鍵隱藏不必要的置頂區域，隱藏不必要的卡片欄位，譬如說，只秀出卡片標題。&lt;/p&gt;
+&lt;p&gt;用&lt;a href=&#34;https://violentmonkey.github.io/&#34;&gt;暴力猴&lt;/a&gt;之類的東西就辦得到。我寫了一隻簡單的 userscript：&lt;a href=&#34;https://greasyfork.org/en/scripts/404806-atlassian-jira-cleaner-rapid-board&#34;&gt;Atlassian JIRA - Cleaner Rapid Board&lt;/a&gt;，透過它，只要一鍵（預設為 &lt;code&gt;Ctrl&lt;/code&gt;-&lt;code&gt;H&lt;/code&gt;），就能切換成較清爽的全局視角：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2020/06/jira-board-after.png&#34; alt=&#34;手術後的 Jira 看板，空間利用率提高了。&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2020/06/jira-board-after.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;手術後的 Jira 看板，空間利用率提高了。&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;如此一來，寶貴的螢幕可視區域，只放絕對必要的資訊，就能多擺幾張卡片（是的，是的，我知道這是 bad smell 啦⋯⋯）。&lt;/p&gt;
+&lt;p&gt;不過，Jira 本身已經夠笨重了，甚至連 Jira 本身的熱鍵都會不時失效；若再搭配像暴力猴這類 script 式外掛，可能會不夠穩定。如果你想要穩定一點的方案，或者不想透過熱鍵切換，只想一勞永逸眼不見為淨，不防考慮改用 &lt;a href=&#34;https://userstyles.org/&#34;&gt;Stylish&lt;/a&gt; 之類的東西，自動套用：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-css&#34; data-lang=&#34;css&#34;&gt;&lt;span class=&#34;c&#34;&gt;/* For horizontal headers */&lt;/span&gt;
+ &lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nc&#34;&gt;css-e2mdyo&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;#&lt;/span&gt;&lt;span class=&#34;nn&#34;&gt;ghx-header&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;display&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;none&lt;/span&gt; &lt;span class=&#34;cp&#34;&gt;!important&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+&lt;span class=&#34;c&#34;&gt;/* For card fields */&lt;/span&gt;
+ &lt;span class=&#34;nt&#34;&gt;section&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nc&#34;&gt;ghx-extra-fields&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nt&#34;&gt;div&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nc&#34;&gt;ghx-row&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nc&#34;&gt;ghx-highlighted-field&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;display&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;none&lt;/span&gt; &lt;span class=&#34;cp&#34;&gt;!important&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;jira-的聚焦卡片視角&#34;&gt;Jira 的聚焦卡片視角&lt;/h2&gt;
+&lt;p&gt;在 daily stand-up 進行時，常常需要讓大家知道「我們現在正在討論某一張卡片」。&lt;/p&gt;
+&lt;p&gt;在 Jira 裡，我們可以對某一張卡片原地拖曳一下下，就會有類似的視覺聚焦效果：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2020/06/jira-focus-by-drag.png&#34; alt=&#34;原地拖曳卡片&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2020/06/jira-focus-by-drag.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;原地拖曳卡片&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;不過，視覺效果還有很大的改善空間，而且⋯⋯需要一直維持拖曳狀態，手指頭會累。&lt;/p&gt;
+&lt;p&gt;你可以改用 &lt;a href=&#34;https://www.logitech.com/zh-tw/product/spotlight-presentation-remote&#34;&gt;Logitech SPOTLIGHT&lt;/a&gt; 簡報器的聚光燈效果，視覺效果一流，但缺點一樣是手指頭需要一直按著簡報器按鈕，聚光燈會晃動，大拇指會疲累。你也可以試著用我以前在〈&lt;a href=&#34;//william-yeh.net/post/2016/08/presenter-tools/&#34;&gt;簡報者的小工具&lt;/a&gt;〉一文介紹過的 &lt;a href=&#34;https://boinx.com/mousepose/&#34;&gt;Mouseposé&lt;/a&gt; 軟體，手指頭就不必一直按著不放，聚光燈也會穩穩的固定不動：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2020/06/jira-focus-by-mousepose.png&#34; alt=&#34;透過 Mouseposé 聚焦特定卡片&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2020/06/jira-focus-by-mousepose.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;透過 Mouseposé 聚焦特定卡片&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;電子看板犧牲許多實體敏捷性。&lt;/p&gt;
+&lt;p&gt;本文介紹幾則 Jira 電子看板的小技巧，有些是 Jira 本身就有提供的，有些則是透過其他軟體輔助。希望透過這些工具，加上適度的引導技巧，能夠更接近實體看板的手感。&lt;/p&gt;</description>
+      
+    </item>
     
     <item>
       <title>gRPC 測試工具</title>
@@ -2132,7 +2311,7 @@ voltest   Bound    voltest   100Gi      RWO            expansion      44m&lt;/co
 &lt;p&gt;Restart the related pods.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Kubernetes 1.11 also introduces an alpha feature called &lt;em&gt;online file system expansion&lt;/em&gt;. You can track its progress in the Kubernetes CSI Developer Documentation &amp;ldquo;&lt;a href=&#34;https://kubernetes-csi.github.io/docs/volume-expansion.html&#34;&gt;Volume Expansion&lt;/a&gt;&amp;quot;.&lt;/p&gt;
+&lt;p&gt;Kubernetes 1.11 also introduces an alpha feature called &lt;em&gt;online file system expansion&lt;/em&gt;. You can track its progress in the Kubernetes CSI Developer Documentation &amp;ldquo;&lt;a href=&#34;https://kubernetes-csi.github.io/docs/volume-expansion.html&#34;&gt;Volume Expansion&lt;/a&gt;&amp;rdquo;.&lt;/p&gt;
 &lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
 &lt;hr&gt;
 &lt;ol&gt;
@@ -3681,72 +3860,6 @@ exec  &amp;#34;/mnt/c/Program Files/Docker/Docker/resources/bin/docker-compose.e
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Kubernetes Best Practices 資料</title>
-      <link>//william-yeh.net/post/2019/02/k8s-best-practice/</link>
-      <pubDate>Mon, 25 Feb 2019 12:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2019/02/k8s-best-practice/</guid>
-      
-        <description>&lt;p&gt;Kubernetes 演化速度令人驚訝。彈性之大，令人聯想到當年  Perl 圈子奉為圭臬的 &lt;a href=&#34;https://en.wikipedia.org/wiki/There%27s_more_than_one_way_to_do_it&#34;&gt;TIMTOWTDI&lt;/a&gt; 口號。&lt;/p&gt;
-&lt;p&gt;選擇過多也會帶來問題。發展到某個階段，也該適時沈澱收斂出較佳的實務建議準則。&lt;/p&gt;
-&lt;p&gt;因此，我稍微搜尋一下相關資料，作為參考。&lt;/p&gt;
-&lt;p&gt;（這應該會是一份需要常常更新的文件）&lt;/p&gt;
-&lt;h2 id=&#34;整體建議&#34;&gt;整體建議&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://dzone.com/articles/top-5-kubernetes-best-practices-from-sandeep-dines&#34;&gt;Top 5 Kubernetes Best Practices From Sandeep Dinesh (Google)&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.slideshare.net/BillLiu31/kubernetes-best-practices&#34;&gt;Kubernetes best practices&lt;/a&gt; by Bill Liu&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;iframe
-  style=&#34;width: 100%; height: 500px;&#34; frameborder=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; scrolling=&#34;no&#34;
-  src=&#34;https://www.slideshare.net/slideshow/embed_code/78464702&#34; allowfullscreen webkitallowfullscreen mozallowfullscreen&gt; &lt;/iframe&gt;
-&lt;br&gt;&lt;br&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://medium.com/google-cloud/kubernetes-best-practices-8d5cd03446e2&#34;&gt;Kubernetes Best Practices&lt;/a&gt; by Daz Wilkin&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://blog.openshift.com/kubernetes-application-operator-basics/&#34;&gt;Kubernetes Application Operator Basics&lt;/a&gt; by Michael Hausenblas&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;資源設定建議&#34;&gt;資源設定建議&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://kubernetes.io/docs/concepts/configuration/overview/&#34;&gt;Configuration Best Practices&lt;/a&gt; by Kubernetes&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.replex.io/blog/9-best-practices-and-examples-for-working-with-kubernetes-labels&#34;&gt;9 Best Practices and Examples for Working with Kubernetes Labels&lt;/a&gt; by Hasham Haider&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://kubernetes.io/docs/concepts/overview/working-with-objects/common-labels/&#34;&gt;Recommended Labels&lt;/a&gt; by Kubernetes&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://kubernetes.io/blog/2016/08/kubernetes-namespaces-use-cases-insights/&#34;&gt;Kubernetes Namespaces: use cases and insights&lt;/a&gt; by Mike Altarace &amp;amp; Daz Wilkin&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;套件管理建議&#34;&gt;套件管理建議&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://helm.sh/docs/chart_best_practices/&#34;&gt;The Chart Best Practices Guide&lt;/a&gt; by Helm&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;資安建議&#34;&gt;資安建議&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://dev.to/petermbenjamin/kubernetes-security-best-practices-hlk&#34;&gt;Kubernetes Security Best-Practices&lt;/a&gt; by Peter Benjamin&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.cncf.io/blog/2019/01/14/9-kubernetes-security-best-practices-everyone-must-follow/&#34;&gt;9 Kubernetes Security Best Practices Everyone Must Follow&lt;/a&gt; by CNCF&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://rancher.com/blog/2019/2019-01-17-101-more-kubernetes-security-best-practices/&#34;&gt;101 More Security Best Practices for Kubernetes&lt;/a&gt; by Adrian Goins&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;</description>
       
     </item>
     
