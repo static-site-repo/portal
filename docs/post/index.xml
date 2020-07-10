@@ -6,10 +6,22 @@
     <description>Recent content in Posts on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sat, 06 Jun 2020 08:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 09 Jul 2020 23:00:00 +0800</lastBuildDate>
     
 	<atom:link href="//william-yeh.net/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Travis CI 虛擬機的地雷</title>
+      <link>//william-yeh.net/post/2020/07/travisci-hacks/</link>
+      <pubDate>Thu, 09 Jul 2020 23:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2020/07/travisci-hacks/</guid>
+      <description>&lt;p&gt;我算是 &lt;a href=&#34;https://travis-ci.org/&#34;&gt;Travis CI&lt;/a&gt; 的老用戶了。&lt;/p&gt;
+&lt;p&gt;以前 Travis CI 很慢，對 Docker 不友善，又很難 debug，讓我一度將重心轉移到後起之秀 &lt;a href=&#34;https://circleci.com/&#34;&gt;CircleCI&lt;/a&gt;。後來自從 Travis CI 向 CircleCI 看齊，讓我們能夠 ssh 進去虛擬機 debug，兩者的差距已經逐漸縮小。所以，我自己的重要專案，總是盡量同時掛上 Travis CI 及 CircleCI，讓 CI pipeline 的核心在某種程度上也能盡量 reproducible 不被 lock in。&lt;/p&gt;
+&lt;p&gt;Travis CI 也提供許多常見的程式語言及伺服器軟體，以方便做 CI 測試。我個人的習慣是，盡量不去使用這些功能，而是直接用 Docker 或 Docker Compose 版本，以降低對於 Travis CI 的依賴（尤其我還要兼顧 CircleCI）。&lt;/p&gt;
+&lt;p&gt;不過，如果是與人合作的專案，就得顧及其他人的習慣。我在使用 Travis CI 提供的伺服器軟體 Postgres、Cassandra、RabbitMQ 時，遇到一些雷，特地記錄下來，供有類似困擾的人參考。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Jira Board Hacks</title>
@@ -258,17 +270,6 @@ To clarify this I&amp;rsquo;ve conducted a series of experiments for 3 possible 
 &lt;p&gt;這年頭，許多軟體其實都有 Mac 及 Windows 版了：Chrome、Firefox、Slack、Evernote、Dropbox、VSCode……最大的差別，應該是終端機命令列工具。&lt;/p&gt;
 &lt;p&gt;上古時代，需要靠 &lt;a href=&#34;https://www.cygwin.com/&#34;&gt;Cygwin&lt;/a&gt; 或 &lt;a href=&#34;http://www.mingw.org/&#34;&gt;MinGW&lt;/a&gt; 方案，才能勉強湊出一點點 Unix 的命令列感覺，但地雷超級多，難以作為嚴肅用途。後來，到了 2015 年，從保哥那邊知道有 &lt;a href=&#34;https://cmder.net/&#34;&gt;Cmder&lt;/a&gt; 這個好物 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，微軟又於 2016 年推出 &lt;a href=&#34;https://docs.microsoft.com/en-us/windows/wsl/&#34;&gt;WSL (Windows Subsystem for Linux)&lt;/a&gt; 機制，Windows 這邊似乎出現曙光，對 Unix 命令列愛好者展現出久違的吸引力。&lt;/p&gt;
 &lt;p&gt;為了在 Windows 10 上面復刻我的 Mac 的體驗：&lt;a href=&#34;https://www.iterm2.com/&#34;&gt;iTerm2&lt;/a&gt; + &lt;a href=&#34;https://www.zsh.org/&#34;&gt;Zsh&lt;/a&gt; + &lt;a href=&#34;https://ohmyz.sh/&#34;&gt;Oh My ZSH&lt;/a&gt;，我試了幾天，把步驟整理如下。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Kubernetes Best Practices 資料</title>
-      <link>//william-yeh.net/post/2019/02/k8s-best-practice/</link>
-      <pubDate>Mon, 25 Feb 2019 12:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2019/02/k8s-best-practice/</guid>
-      <description>&lt;p&gt;Kubernetes 演化速度令人驚訝。彈性之大，令人聯想到當年  Perl 圈子奉為圭臬的 &lt;a href=&#34;https://en.wikipedia.org/wiki/There%27s_more_than_one_way_to_do_it&#34;&gt;TIMTOWTDI&lt;/a&gt; 口號。&lt;/p&gt;
-&lt;p&gt;選擇過多也會帶來問題。發展到某個階段，也該適時沈澱收斂出較佳的實務建議準則。&lt;/p&gt;
-&lt;p&gt;因此，我稍微搜尋一下相關資料，作為參考。&lt;/p&gt;</description>
     </item>
     
   </channel>

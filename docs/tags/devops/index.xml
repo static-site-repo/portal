@@ -6,10 +6,22 @@
     <description>Recent content in devops on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Tue, 14 Apr 2020 22:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 09 Jul 2020 23:00:00 +0800</lastBuildDate>
     
 	<atom:link href="//william-yeh.net/tags/devops/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Travis CI 虛擬機的地雷</title>
+      <link>//william-yeh.net/post/2020/07/travisci-hacks/</link>
+      <pubDate>Thu, 09 Jul 2020 23:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2020/07/travisci-hacks/</guid>
+      <description>&lt;p&gt;我算是 &lt;a href=&#34;https://travis-ci.org/&#34;&gt;Travis CI&lt;/a&gt; 的老用戶了。&lt;/p&gt;
+&lt;p&gt;以前 Travis CI 很慢，對 Docker 不友善，又很難 debug，讓我一度將重心轉移到後起之秀 &lt;a href=&#34;https://circleci.com/&#34;&gt;CircleCI&lt;/a&gt;。後來自從 Travis CI 向 CircleCI 看齊，讓我們能夠 ssh 進去虛擬機 debug，兩者的差距已經逐漸縮小。所以，我自己的重要專案，總是盡量同時掛上 Travis CI 及 CircleCI，讓 CI pipeline 的核心在某種程度上也能盡量 reproducible 不被 lock in。&lt;/p&gt;
+&lt;p&gt;Travis CI 也提供許多常見的程式語言及伺服器軟體，以方便做 CI 測試。我個人的習慣是，盡量不去使用這些功能，而是直接用 Docker 或 Docker Compose 版本，以降低對於 Travis CI 的依賴（尤其我還要兼顧 CircleCI）。&lt;/p&gt;
+&lt;p&gt;不過，如果是與人合作的專案，就得顧及其他人的習慣。我在使用 Travis CI 提供的伺服器軟體 Postgres、Cassandra、RabbitMQ 時，遇到一些雷，特地記錄下來，供有類似困擾的人參考。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>gRPC 測試工具</title>
@@ -226,15 +238,6 @@ To clarify this I&amp;rsquo;ve conducted a series of experiments for 3 possible 
       
       <guid>//william-yeh.net/post/2017/10/devops-a-system-dynamics-perspective/</guid>
       <description>自從去年在〈有了 Agile，為什麼還要有 DevOps？〉及〈從限制理論看 DevOps〉兩場演講中，分別以 lean thinking 及 theory of constraints (TOC) 兩個角度探討 DevOps 之後，心</description>
-    </item>
-    
-    <item>
-      <title>從限制理論看 DevOps</title>
-      <link>//william-yeh.net/post/2016/08/devops-a-toc-perspective/</link>
-      <pubDate>Wed, 17 Aug 2016 23:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2016/08/devops-a-toc-perspective/</guid>
-      <description>自從寫了〈DevOps 核心元素的考古溯源〉一文，我就很想找個機會，好好闡釋 DevOps 的重要源頭：Lean Thinking。這個願望，在五月初那次兩個</description>
     </item>
     
   </channel>

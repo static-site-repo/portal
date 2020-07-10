@@ -6,10 +6,157 @@
     <description>Recent content on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sat, 06 Jun 2020 08:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 09 Jul 2020 23:00:00 +0800</lastBuildDate>
     
         <atom:link href="//william-yeh.net/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Travis CI 虛擬機的地雷</title>
+      <link>//william-yeh.net/post/2020/07/travisci-hacks/</link>
+      <pubDate>Thu, 09 Jul 2020 23:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2020/07/travisci-hacks/</guid>
+      
+        <description>&lt;p&gt;我算是 &lt;a href=&#34;https://travis-ci.org/&#34;&gt;Travis CI&lt;/a&gt; 的老用戶了。&lt;/p&gt;
+&lt;p&gt;以前 Travis CI 很慢，對 Docker 不友善，又很難 debug，讓我一度將重心轉移到後起之秀 &lt;a href=&#34;https://circleci.com/&#34;&gt;CircleCI&lt;/a&gt;。後來自從 Travis CI 向 CircleCI 看齊，讓我們能夠 ssh 進去虛擬機 debug，兩者的差距已經逐漸縮小。所以，我自己的重要專案，總是盡量同時掛上 Travis CI 及 CircleCI，讓 CI pipeline 的核心在某種程度上也能盡量 reproducible 不被 lock in。&lt;/p&gt;
+&lt;p&gt;Travis CI 也提供許多常見的程式語言及伺服器軟體，以方便做 CI 測試。我個人的習慣是，盡量不去使用這些功能，而是直接用 Docker 或 Docker Compose 版本，以降低對於 Travis CI 的依賴（尤其我還要兼顧 CircleCI）。&lt;/p&gt;
+&lt;p&gt;不過，如果是與人合作的專案，就得顧及其他人的習慣。我在使用 Travis CI 提供的伺服器軟體 Postgres、Cassandra、RabbitMQ 時，遇到一些雷，特地記錄下來，供有類似困擾的人參考。&lt;/p&gt;
+&lt;h2 id=&#34;虛擬機版本&#34;&gt;虛擬機版本&lt;/h2&gt;
+&lt;p&gt;在 &lt;code&gt;.travis.yml&lt;/code&gt; 檔案裡面可以指定 CI 虛擬機的 Ubuntu 版本&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;。若不特別指定，以現在（2020 年七月）來說，預設版本會是 Ubuntu 16.04 LTS，代號為 &lt;strong&gt;Xenial&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;我遇到一些專案，&lt;code&gt;.travis.yml&lt;/code&gt; 指定的是代號為 &lt;strong&gt;Trusty&lt;/strong&gt; 的 Ubuntu 14.04 LTS。由於 Trusty 的官方保固期限已於 2019-04 到期&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;，理論上來說，至少應該要升級到 2021-04 才到期的 Xenial 版，才比較安全。&lt;/p&gt;
+&lt;p&gt;事情並沒想像中那麼簡單。&lt;/p&gt;
+&lt;p&gt;我以兩個 repo 來示範：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;使用 Trusty 虛擬機的專案：&lt;a href=&#34;https://github.com/William-Yeh/test-travisci-trusty&#34;&gt;test-travisci-trusty&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;使用 Xenial 虛擬機的專案：&lt;a href=&#34;https://github.com/William-Yeh/test-travisci-xenial&#34;&gt;test-travisci-xenial&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;譬如說，在原本使用 Trusty 的專案中跑得好好的 &lt;a href=&#34;https://github.com/William-Yeh/test-travisci-trusty/blob/master/.travis.yml&#34;&gt;.travis.yml 檔&lt;/a&gt;，如果不假思索直接&lt;a href=&#34;https://github.com/William-Yeh/test-travisci-xenial/tree/0.1&#34;&gt;照搬&lt;/a&gt;到使用 Xenial 的專案，一下子就&lt;a href=&#34;https://travis-ci.org/github/William-Yeh/test-travisci-xenial/builds/706399580&#34;&gt;卡住&lt;/a&gt;了：&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2020/07/travisci-failure.png&#34; alt=&#34;Travis CI Xenial 噴出錯誤&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2020/07/travisci-failure.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Travis CI Xenial 噴出錯誤&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;非常詭異。反覆實驗，總算找出需要修改的三個地方。&lt;/p&gt;
+&lt;h2 id=&#34;postgres&#34;&gt;Postgres&lt;/h2&gt;
+&lt;p&gt;使用 Trusty 虛擬機時，照著 Travis CI 官方指南及問題排除文件，我們可以順利安裝不同版本的 Postgres：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;官方指南：&lt;a href=&#34;https://docs.travis-ci.com/user/database-setup/#using-a-different-postgresql-version&#34;&gt;Setting up Databases and Services - Using a different PostgreSQL Version&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Authentication 問題：&lt;a href=&#34;https://github.com/travis-ci/travis-ci/issues/9624&#34;&gt;Issue #9624&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;換成 Xenial 虛擬機時，不知為何，Postgres 的 port 居然靜悄悄地換成了 5432，而且沒有文件直接明講。&lt;/p&gt;
+&lt;p&gt;解決之道很簡單，直接修改相對應的變數：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2020/07/diff-postgres.png&#34; alt=&#34;Postgres 修改之處&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2020/07/diff-postgres.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Postgres 修改之處&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;你也可以直接點選&lt;a href=&#34;https://www.diffchecker.com/186oQ7pu&#34;&gt;這裡&lt;/a&gt;剪貼相關的設定內容。&lt;/p&gt;
+&lt;h2 id=&#34;cassandra&#34;&gt;Cassandra&lt;/h2&gt;
+&lt;p&gt;使用 Trusty 虛擬機時，照著 Travis CI 官方指南，我們可以順利安裝不同版本的 Cassandra：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;官方指南：&lt;a href=&#34;https://docs.travis-ci.com/user/database-setup/#cassandra&#34;&gt;Setting up Databases and Services - Cassandra&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;換成 Xenial 虛擬機時，不知為何，Cassandra 不再是 Travis CI 直接提供的資料庫了，而且沒有文件直接明講。&lt;/p&gt;
+&lt;p&gt;解決之道是自力救濟，自己下載，自己安裝&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2020/07/diff-cassandra.png&#34; alt=&#34;Cassandra 修改之處&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2020/07/diff-cassandra.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Cassandra 修改之處&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;你也可以直接點選&lt;a href=&#34;https://www.diffchecker.com/T3Xyacxp&#34;&gt;這裡&lt;/a&gt;剪貼相關的設定內容。&lt;/p&gt;
+&lt;h2 id=&#34;rabbitmq&#34;&gt;RabbitMQ&lt;/h2&gt;
+&lt;p&gt;使用 Trusty 虛擬機時，照著 Travis CI 官方指南及 Stack Overflow 問答庫，我們可以順利安裝 RabbitMQ 以及常用的 rabbitmqadmin 設定工具：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;官方指南：&lt;a href=&#34;https://docs.travis-ci.com/user/database-setup/#rabbitmq&#34;&gt;Setting up Databases and Services - RabbitMQ&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Stack Overflow 問答：&lt;a href=&#34;https://stackoverflow.com/q/52107517/714426&#34;&gt;Declaring rabbitmq exchanges in travis build setup&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;換成 Xenial 虛擬機時，這次官方文件總算有特別提醒對應的修改&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;。可惜 Travis CI 只做了一半，少安裝常見的 &lt;a href=&#34;https://www.rabbitmq.com/management.html&#34;&gt;RabbitMQ Management Plugin&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;解決之道是自力救濟，自己下載，自己安裝：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2020/07/diff-rabbitmq.png&#34; alt=&#34;Cassandra 修改之處&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2020/07/diff-rabbitmq.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Cassandra 修改之處&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;你也可以直接點選&lt;a href=&#34;https://www.diffchecker.com/fp9mOgUx&#34;&gt;這裡&lt;/a&gt;剪貼相關的設定內容。&lt;/p&gt;
+&lt;h2 id=&#34;結語&#34;&gt;結語&lt;/h2&gt;
+&lt;p&gt;代號為 Xenial 的 Ubuntu 16.04，官方保固期將於 2021-04 到期，若升級到代號為 Bionic，官方保固期到 2023-04 的 Ubuntu 18.04，免不了又要經歷一輪類似的修改。&lt;/p&gt;
+&lt;p&gt;據我目前初步測試，Travis CI 的 Bionic 虛擬機會遇到更多雷（難怪 Travis CI 目前仍然預設為 Xenial）。如果沒有其他考量，我還是強烈建議，直接用 Docker 或 Docker Compose 去設定 CI 所需動用的程式語言及伺服器軟體，以降低對於 Travis CI 的依賴，甚至預留轉換至 &lt;a href=&#34;https://circleci.com/&#34;&gt;CircleCI&lt;/a&gt; 或 &lt;a href=&#34;https://github.com/features/actions&#34;&gt;GitHub Actions&lt;/a&gt; 的彈性。&lt;/p&gt;
+&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;Travis CI 支援許多虛擬機，完整列表請見 &amp;ldquo;&lt;a href=&#34;https://docs.travis-ci.com/user/reference/overview/&#34;&gt;Build Environment Overview&lt;/a&gt;&amp;rdquo; 一文。 &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;在 &lt;a href=&#34;https://en.wikipedia.org/wiki/Ubuntu_version_history&#34;&gt;Ubuntu version history&lt;/a&gt; 文件中，詳列了 Ubuntu 各版本代號及官方保固期限。 &lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;我參考 &lt;a href=&#34;https://github.com/aio-libs/aiocassandra&#34;&gt;aiocassandra 專案&lt;/a&gt;的設定，將 Cassandra 安裝在 Travis CI 的 Xenial 虛擬機上：https://github.com/aio-libs/aiocassandra/blob/master/.travis.yml &lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:4&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;可能也是在官方論壇收到 &amp;ldquo;&lt;a href=&#34;https://travis-ci.community/t/rabbitmq-on-xenial/1827&#34;&gt;RabbitMQ on Xenial&lt;/a&gt;&amp;rdquo; 這則提問，Travis CI 才會把這一段解法放進官方文件吧。 &lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;</description>
+      
+    </item>
     
     <item>
       <title>Jira Board Hacks</title>
@@ -3692,182 +3839,6 @@ Latency distribution:
 &lt;/li&gt;
 &lt;li id=&#34;fn:4&#34; role=&#34;doc-endnote&#34;&gt;
 &lt;p&gt;Ambassador &lt;a href=&#34;https://github.com/datawire/ambassador/blob/master/CHANGELOG.md&#34;&gt;0.1.3 版&lt;/a&gt;發布日期為 2017 年 3 月。 &lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/section&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>在 Windows 上復刻 Mac 使用習慣</title>
-      <link>//william-yeh.net/post/2019/03/wsl-cmder-zsh/</link>
-      <pubDate>Thu, 14 Mar 2019 08:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2019/03/wsl-cmder-zsh/</guid>
-      
-        <description>&lt;p&gt;改用 Mac 已經六年了。現在要再回頭碰 Windows，還真有點不習慣。&lt;/p&gt;
-&lt;p&gt;這年頭，許多軟體其實都有 Mac 及 Windows 版了：Chrome、Firefox、Slack、Evernote、Dropbox、VSCode……最大的差別，應該是終端機命令列工具。&lt;/p&gt;
-&lt;p&gt;上古時代，需要靠 &lt;a href=&#34;https://www.cygwin.com/&#34;&gt;Cygwin&lt;/a&gt; 或 &lt;a href=&#34;http://www.mingw.org/&#34;&gt;MinGW&lt;/a&gt; 方案，才能勉強湊出一點點 Unix 的命令列感覺，但地雷超級多，難以作為嚴肅用途。後來，到了 2015 年，從保哥那邊知道有 &lt;a href=&#34;https://cmder.net/&#34;&gt;Cmder&lt;/a&gt; 這個好物 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，微軟又於 2016 年推出 &lt;a href=&#34;https://docs.microsoft.com/en-us/windows/wsl/&#34;&gt;WSL (Windows Subsystem for Linux)&lt;/a&gt; 機制，Windows 這邊似乎出現曙光，對 Unix 命令列愛好者展現出久違的吸引力。&lt;/p&gt;
-&lt;p&gt;為了在 Windows 10 上面復刻我的 Mac 的體驗：&lt;a href=&#34;https://www.iterm2.com/&#34;&gt;iTerm2&lt;/a&gt; + &lt;a href=&#34;https://www.zsh.org/&#34;&gt;Zsh&lt;/a&gt; + &lt;a href=&#34;https://ohmyz.sh/&#34;&gt;Oh My ZSH&lt;/a&gt;，我試了幾天，把步驟整理如下。&lt;/p&gt;
-&lt;h2 id=&#34;wsl&#34;&gt;WSL&lt;/h2&gt;
-&lt;p&gt;請根據保哥的文章〈&lt;a href=&#34;https://blog.miniasp.com/post/2019/02/01/Useful-tool-WSL-Windows-Subsystem-for-Linux&#34;&gt;介紹好用工具：WSL (Windows Subsystem for Linux)&lt;/a&gt;〉進行以下步驟：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;安裝 WSL。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;安裝一個 Linux distribution。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;第一次執行 WSL，並設定 Linux 的帳號密碼。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;zsh--oh-my-zsh&#34;&gt;Zsh + Oh My ZSH&lt;/h2&gt;
-&lt;p&gt;在 WSL 中安裝 zsh 及 oh-my-zsh：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;% sudo apt-get install zsh
-
-% sudo sh -c &amp;#34;$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&amp;#34;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;將 zsh 設為內定 shell：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;% chsh -s $(which zsh)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;如果你的 zsh theme 含有許多特殊的符號字元，請順便安裝 &lt;a href=&#34;https://github.com/powerline/fonts&#34;&gt;Powerline&lt;/a&gt; 系列字型。&lt;/p&gt;
-&lt;h2 id=&#34;cmder&#34;&gt;Cmder&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://cmder.net/&#34;&gt;Cmder&lt;/a&gt; 有「完整版」及「迷你版」兩種安裝方式。有了 WSL 之後，msysgit 可以退場，因此，我們只需安裝 Cmder 迷你版。&lt;/p&gt;
-&lt;p&gt;用 Chocolatey 套件管理工具安裝比較簡單：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;C:\&amp;gt; choco install cmdermini&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;細節請見 &lt;a href=&#34;https://chocolatey.org/packages/cmdermini&#34;&gt;https://chocolatey.org/packages/cmdermini&lt;/a&gt; 。&lt;/p&gt;
-&lt;h2 id=&#34;整合-cmder-與-wsl&#34;&gt;整合 Cmder 與 WSL&lt;/h2&gt;
-&lt;p&gt;為了讓 Cmder 以 WSL + Zsh 模式啟動，我們需要新增一個 Cmder 的 &amp;ldquo;Startup / Tasks&amp;rdquo;。&lt;/p&gt;
-&lt;p&gt;譬如說，我們可新增一個名叫 &lt;code&gt;{WSL::zsh}&lt;/code&gt; 的 task，將 command 寫成：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;set &amp;quot;PATH=%ConEmuBaseDirShort%\wsl;%PATH%&amp;quot; &amp;amp; %ConEmuBaseDirShort%\conemu-cyg-64.exe --wsl -C~ -cur_console:p:t:&amp;quot;zsh&amp;quot; -t zsh -l
-&lt;/code&gt;&lt;/pre&gt;
-&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
-&lt;div class=&#34;box&#34;&gt;
-&lt;figure  itemprop=&#34;associatedMedia&#34;
-  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
-  style=&#34;max-width:30em&#34; &gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2019/03/cmder-wsl-zsh.png&#34; alt=&#34;新增 Cmder 啟動設定&#34;/&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2019/03/cmder-wsl-zsh.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-      &lt;figcaption&gt;
-          &lt;p&gt;新增 Cmder 啟動設定&lt;/p&gt;
-      &lt;/figcaption&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;
-
-&lt;p&gt;存檔完畢，以後只要以 &lt;code&gt;{WSL::zsh}&lt;/code&gt; 模式啟動，Cmder 就會自動套用 WSL + zsh 組態。&lt;/p&gt;
-&lt;p&gt;進一步的設定細節，請參考 &lt;a href=&#34;https://conemu.github.io/en/BashOnWindows.html&#34;&gt;https://conemu.github.io/en/BashOnWindows.html&lt;/a&gt; 一文。&lt;/p&gt;
-&lt;h2 id=&#34;設定-cmder-熱鍵&#34;&gt;設定 Cmder 熱鍵&lt;/h2&gt;
-&lt;p&gt;為了復刻出類似 Mac + iTerm2 的使用習慣，我會花一些時間調整 Cmder 熱鍵設定。請參考保哥的文章〈&lt;a href=&#34;https://blog.miniasp.com/post/2015/09/27/Useful-tool-Cmder&#34;&gt;介紹好用工具：Cmder (具有 Linux 溫度的 Windows 命令提示字元工具)&lt;/a&gt;〉進行熱鍵設定。&lt;/p&gt;
-&lt;p&gt;在 Windows 與 WSL 之間進行複製貼上的剪貼簿操作時，常會遇到換行問題。此時我也會順便將 Ctrl-V 組合鍵的 “Paste mode #2” 設定成  “Multi lines” &lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;：&lt;/p&gt;
-
-
-&lt;div class=&#34;box&#34;&gt;
-&lt;figure  itemprop=&#34;associatedMedia&#34;
-  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
-  style=&#34;max-width:30em&#34; &gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2019/03/cmder-paste.png&#34; alt=&#34;調整 Cmder 剪貼簿的換行處理方式&#34;/&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2019/03/cmder-paste.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-      &lt;figcaption&gt;
-          &lt;p&gt;調整 Cmder 剪貼簿的換行處理方式&lt;/p&gt;
-      &lt;/figcaption&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&#34;檔案系統&#34;&gt;檔案系統&lt;/h2&gt;
-&lt;p&gt;我習慣將 Windows 的 D: 作為文件儲存專用區。&lt;/p&gt;
-&lt;p&gt;預設情況下，WSL 會將 D: 掛載在 &lt;code&gt;/mnt/d&lt;/code&gt;，檔案系統則是 DrvFs：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;% mount -l
-rootfs on / type lxfs (rw,noatime)
-none on /dev type tmpfs (rw,noatime,mode=755)
-sysfs on /sys type sysfs (rw,nosuid,nodev,noexec,noatime)
-proc on /proc type proc (rw,nosuid,nodev,noexec,noatime)
-devpts on /dev/pts type devpts (rw,nosuid,noexec,noatime,gid=5,mode=620)
-none on /run type tmpfs (rw,nosuid,noexec,noatime,mode=755)
-none on /run/lock type tmpfs (rw,nosuid,nodev,noexec,noatime)
-none on /run/shm type tmpfs (rw,nosuid,nodev,noatime)
-none on /run/user type tmpfs (rw,nosuid,nodev,noexec,noatime,mode=755) binfmt_misc on /proc/sys/fs/binfmt_misc type binfmt_misc (rw,noatime)
-D: on /mnt/d type drvfs (rw,noatime,uid=1000,gid=1000,case=off)
-C: on /mnt/c type drvfs (rw,noatime,uid=1000,gid=1000,case=off)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;不過，因為某些複雜的原因 &lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;，我們必須重新設定 &lt;code&gt;/mnt/d&lt;/code&gt; 的 mount 參數，才能讓 Linux 的檔案讀寫權限正常運作。&lt;/p&gt;
-&lt;p&gt;我們先卸載 &lt;code&gt;/mnt/d&lt;/code&gt;，再用夾帶 &lt;code&gt;metadata&lt;/code&gt; 的方式重新掛載它：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;% sudo umount /mnt/d
-
-% sudo mount -t drvfs D: /mnt/d -o metadata,uid=1000,gid=1000,umask=22,fmask=111&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;先查看是否成功:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;% mount -l
-rootfs on / type lxfs (rw,noatime)
-none on /dev type tmpfs (rw,noatime,mode=755)
-sysfs on /sys type sysfs (rw,nosuid,nodev,noexec,noatime)
-proc on /proc type proc (rw,nosuid,nodev,noexec,noatime)
-devpts on /dev/pts type devpts (rw,nosuid,noexec,noatime,gid=5,mode=620)
-none on /run type tmpfs (rw,nosuid,noexec,noatime,mode=755)
-none on /run/lock type tmpfs (rw,nosuid,nodev,noexec,noatime)
-none on /run/shm type tmpfs (rw,nosuid,nodev,noatime)
-none on /run/user type tmpfs (rw,nosuid,nodev,noexec,noatime,mode=755) binfmt_misc on /proc/sys/fs/binfmt_misc type binfmt_misc (rw,noatime)
-D: on /mnt/d type drvfs (rw,relatime,uid=1000,gid=1000,umask=22,fmask=111,metadata,case=off)
-C: on /mnt/c type drvfs (rw,noatime,uid=1000,gid=1000,case=off)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;如果成功了，請記得將這設定寫進 &lt;code&gt;/etc/fstab&lt;/code&gt; 裡面，下次 WSL 啟動時就會自動生效：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;D: /mnt/d drvfs rw,relatime,uid=1000,gid=1000,metadata,umask=22,fmask=111 0 0
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;docker-與-kubernetes&#34;&gt;Docker 與 Kubernetes&lt;/h2&gt;
-&lt;p&gt;雖然保哥的文章推薦在 WSL 裡的 Linux 再安裝一份 Docker engine &lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;，但我比較傾向&lt;strong&gt;不要&lt;/strong&gt;。我比較傾向共用既有資源，讓 WSL 直接連接到 Docker Desktop for Windows 身上。畢竟，在同一台電腦上，要維護兩套 Docker engine，太累了。&lt;/p&gt;
-&lt;p&gt;我參考上官林傑的文章〈[在 Windows Subsystem for Linux (WSL) 下使用 Windows 上的 Docker Engine](&lt;a href=&#34;https://medium.com/@ericsk/%E5%9C%A8-windows-subsystem-for-li&#34;&gt;https://medium.com/@ericsk/%E5%9C%A8-windows-subsystem-for-li&lt;/a&gt;
-nux-wsl-%E4%B8%8B%E4%BD%BF%E7%94%A8-windows-%E4%B8%8A%E7%9A%84-docker-engine-8dc0040ca240)〉，做好必要的設定，但省略文中提到的 alias 步驟（稍後會說明為什麼）。簡單來說，請先進行這三步驟：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;打開 Docker Desktop for Windows 的 &amp;ldquo;Expose daemon on tcp://localhost:2375 without TLS.&amp;rdquo; 選項。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;在 WSL 裡設定 &lt;code&gt;DOCKER_HOST&lt;/code&gt; 環境變數：&lt;!-- raw HTML omitted --&gt;
-&lt;code&gt;export DOCKER_HOST=&amp;quot;tcp://localhost:2375&amp;quot;&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;在 WSL 裡 &lt;code&gt;sudo visudo&lt;/code&gt; 以下環境變數：&lt;!-- raw HTML omitted --&gt;
-&lt;code&gt;Defaults env_keep += &amp;quot;DOCKER_HOST&amp;quot;&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;上述文章建議透過 &lt;code&gt;alias docker=docker.exe&lt;/code&gt; 的方式來使用 Docker Desktop for Windows 的 docker client。不過，這些 alias 未必都能在 script 中展開 &lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt; ——有鬆綁的方法，但我不喜歡破例。我比較傾向在 WSL 裡用簡單的 wrapper script 來處理。&lt;/p&gt;
-&lt;p&gt;首先是 &lt;code&gt;/usr/local/bin/docker&lt;/code&gt; 檔案：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;#!/bin/bash
-
-# allow WSL to have access to Docker Desktop for Windows
-exec  &amp;#34;/mnt/c/Program Files/Docker/Docker/resources/bin/docker.exe&amp;#34;  &amp;#34;$@&amp;#34;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;其次是 &lt;code&gt;/usr/local/bin/docker-compose&lt;/code&gt; 檔案：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;#!/bin/bash
-
-# allow WSL to have access to Docker Desktop for Windows
-exec  &amp;#34;/mnt/c/Program Files/Docker/Docker/resources/bin/docker-compose.exe&amp;#34;  &amp;#34;$@&amp;#34;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;別忘記打開它們的 &lt;code&gt;&#39;x&#39;&lt;/code&gt; 權限：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;% sudo chmod a+x  /usr/local/bin/docker  /usr/local/bin/docker-compose&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;也別忘了，要將 Windows 上面的 Kubernetes 設定連接過來：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;% ln -s /mnt/c/Users/xxx/.kube/config ~/.kube/config&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;好了，現在已經復刻一部分 Mac 的使用習慣了。是該要好好享受一下這種混血環境了。&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;pre&gt;&lt;code&gt;  2019-04-17 後續發展
-&lt;/code&gt;&lt;/pre&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;p&gt;使用了一個月，不太能夠忍受 Cmder 不夠穩定的顯示邏輯：在視窗尺寸變化時，無法正確處理字元位置。因此，我改用〈&lt;a href=&#34;//william-yeh.net/post/2019/04/wsltty-tmux/&#34;&gt;WSLtty + tmux 組合技&lt;/a&gt;〉。&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
-&lt;hr&gt;
-&lt;ol&gt;
-&lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;保哥於 2015 年九月舉辦過【&lt;a href=&#34;https://www.accupass.com/event/1509231111031581814500&#34;&gt;打造一個具有 Linux 溫度的 Windows 命令提示字元工具&lt;/a&gt;】線上講座，也寫了〈&lt;a href=&#34;https://blog.miniasp.com/post/2015/09/27/Useful-tool-Cmder&#34;&gt;介紹好用工具：Cmder&lt;/a&gt;〉一文。 &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;Cmder 的剪貼簿設定細節，請見 &lt;a href=&#34;https://conemu.github.io/en/SettingsPaste.html&#34;&gt;https://conemu.github.io/en/SettingsPaste.html&lt;/a&gt; 。 &lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:3&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;關於 WSL DrvFs 的 metadata 權限設定細節，請參考這三篇文章：“&lt;a href=&#34;https://blogs.msdn.microsoft.com/commandline/2018/01/12/chmod-chown-wsl-improvements/&#34;&gt;Chmod/Chown WSL Improvements&lt;/a&gt;”、“&lt;a href=&#34;https://www.brianketelsen.com/going-overboard-with-wsl-metadata/&#34;&gt;Going Overboard with WSL metadata&lt;/a&gt;”、〈&lt;a href=&#34;https://segmentfault.com/a/1190000016677670&#34;&gt;WSL 配置指北：打造 Windows 最强命令行&lt;/a&gt;〉。 &lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:4&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;保哥的文章〈&lt;a href=&#34;https://blog.miniasp.com/post/2018/06/15/My-Windows-Subsystem-for-Linux-WSL-Setup-2018&#34;&gt;我的 Windows Subsystem for Linux (WSL) 終極開發人員配置 - 2018 版&lt;/a&gt;〉。 &lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:5&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;Bash 的行為是：“Aliases are not expanded when the shell is not interactive, unless…”，請參考 “&lt;a href=&#34;https://unix.stackexchange.com/questions/1496/why-doesnt-my-bash-script-recognize-aliases&#34;&gt;Why doesn&amp;rsquo;t my Bash script recognize aliases?&lt;/a&gt;” 這類文章。 &lt;a href=&#34;#fnref:5&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;</description>
