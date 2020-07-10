@@ -6,10 +6,53 @@
     <description>Recent content on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Thu, 09 Jul 2020 23:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 10 Jul 2020 08:00:00 +0800</lastBuildDate>
     
         <atom:link href="//william-yeh.net/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Go Best Practices</title>
+      <link>//william-yeh.net/post/2020/07/golang-best-practices/</link>
+      <pubDate>Fri, 10 Jul 2020 08:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2020/07/golang-best-practices/</guid>
+      
+        <description>&lt;p&gt;今年一月，換到一家以 Go 為主力語言的公司。&lt;/p&gt;
+&lt;p&gt;習慣了 Java 紀律，一碰到 Go 的自由奔放，不禁想尋求一些 best practices 與 patterns。&lt;/p&gt;
+&lt;p&gt;以前我曾蒐集過一份 Go Best Practices 清單。浸潤 Go 半年後，再回頭看這些內容，當初不甚明瞭之處，竟然也懂了許多。便想重新整理一次，並加上個人的短評。&lt;/p&gt;
+&lt;h2 id=&#34;語言基礎&#34;&gt;語言基礎&lt;/h2&gt;
+&lt;p&gt;▷ &lt;a href=&#34;https://golang.org/doc/effective_go.html&#34;&gt;&lt;strong&gt;Effective Go&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;自從 1991 年 &lt;a href=&#34;https://www.amazon.com/dp/0321334876&#34;&gt;&lt;em&gt;Effective C++&lt;/em&gt;&lt;/a&gt; 橫空出世，以後任何書敢冠上 &amp;ldquo;Effective&amp;rdquo; 之名，幾乎都是重量級的保證。&lt;/p&gt;
+&lt;p&gt;“&lt;a href=&#34;https://golang.org/doc/effective_go.html&#34;&gt;Effective Go&lt;/a&gt;” 這份文件，雖然篇幅還沒充實到足以成為一本書，但內容名副其實，原汁原味道出 Go 的核心風格，是非常好的入門補充讀物。&lt;/p&gt;
+&lt;h2 id=&#34;package-命名與組織&#34;&gt;Package 命名與組織&lt;/h2&gt;
+&lt;p&gt;▷ &lt;a href=&#34;https://rakyll.org/style-packages/&#34;&gt;&lt;strong&gt;Style guideline for Go packages&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;這篇短文可以幫助你學會「正統」的 Go package 風格。&lt;/p&gt;
+&lt;h2 id=&#34;中小規模的程式結構&#34;&gt;中小規模的程式結構&lt;/h2&gt;
+&lt;p&gt;知名輕量級框架 &lt;a href=&#34;https://gokit.io/&#34;&gt;Go kit&lt;/a&gt; 作者 &lt;a href=&#34;https://github.com/peterbourgon&#34;&gt;Peter Bourgon&lt;/a&gt; 分享過許多實務經驗，其中這兩篇文章很值得一讀：&lt;/p&gt;
+&lt;p&gt;▷ &lt;a href=&#34;https://peter.bourgon.org/go-best-practices-2016/&#34;&gt;&lt;strong&gt;Go best practices, six years in&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;▷ &lt;a href=&#34;https://peter.bourgon.org/go-for-industrial-programming/&#34;&gt;&lt;strong&gt;Go for Industrial Programming&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;或許是因為我們公司自建的 Go 微服務框架 &lt;a href=&#34;https://github.com/carousell/Orion&#34;&gt;Orion&lt;/a&gt; &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，骨幹結構非常接近 Go kit，所以我對這兩篇文章非常有感。&lt;/p&gt;
+&lt;h2 id=&#34;專案佈局&#34;&gt;專案佈局&lt;/h2&gt;
+&lt;p&gt;其他程式語言的經驗愈多，愈容易把 &lt;del&gt;&lt;del&gt;不良習慣&lt;/del&gt;&lt;/del&gt; 不搭配的習慣帶進 Go 來，尤其是專案佈局風格。&lt;/p&gt;
+&lt;p&gt;在 Go 裡，通常最簡單的專案佈局方式是：你選用哪一個主框架，就遵照著它建議的佈局。&lt;/p&gt;
+&lt;p&gt;不過，如果用的是像 &lt;a href=&#34;https://github.com/gin-gonic/gin&#34;&gt;Gin&lt;/a&gt; 這種超輕量的迷你框架，或者根本沒有套用任何框架，那麼，以下這一篇文章、一份範例，是很好的起點：&lt;/p&gt;
+&lt;p&gt;▷ &lt;a href=&#34;https://medium.com/@benbjohnson/standard-package-layout-7cdbc8391fc1&#34;&gt;&lt;strong&gt;Standard Package Layout&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;▷ &lt;a href=&#34;https://github.com/golang-standards/project-layout&#34;&gt;&lt;strong&gt;Standard Go Project Layout&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;即使你信仰 &lt;a href=&#34;https://en.wikipedia.org/wiki/Domain-driven_design&#34;&gt;DDD (domain driven design)&lt;/a&gt; 或 &lt;a href=&#34;https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html&#34;&gt;clean architecture&lt;/a&gt; 路線，也盡量不要不假思索將其他語言的實踐風格直接照搬過來——你會寫出很醜陋的 Go 程式。&lt;/p&gt;
+&lt;h2 id=&#34;design-patterns&#34;&gt;Design Patterns&lt;/h2&gt;
+&lt;p&gt;▷ &lt;a href=&#34;https://crazybber.github.io/awesome-patterns/&#34;&gt;&lt;strong&gt;awesome-patterns&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;熟悉 design patterns 的人，可從這裡得到用 Go 實作的靈感。&lt;/p&gt;
+&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;關於 Orion，詳見〈&lt;a href=&#34;https://medium.com/carousell-insider/%E5%9C%A8%E6%97%8B%E8%BD%89%E6%8B%8D%E8%B3%A3-carousell-%E4%B8%80%E5%B9%B4%E7%9C%8B%E5%88%B0%E7%9A%84%E5%BE%8C%E7%AB%AF%E6%9E%B6%E6%A7%8B-%E6%8C%91%E6%88%B0%E8%88%87%E7%94%9F%E6%B4%BB-a0a12ef90cc0#bd44&#34;&gt;在旋轉拍賣 Carousell 一年看到的後端架構、挑戰與生活&lt;/a&gt;〉一文。 &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;</description>
+      
+    </item>
     
     <item>
       <title>Travis CI 虛擬機的地雷</title>
@@ -3688,160 +3731,6 @@ run -b &amp;#39;~/.tmux/plugins/tpm/tpm&amp;#39;&lt;/code&gt;&lt;/pre&gt;&lt;/di
 &lt;/li&gt;
 &lt;/ul&gt;
 </description>
-      
-    </item>
-    
-    <item>
-      <title>Nginx Ingress 與 Ambassador 簡易性能比較</title>
-      <link>//william-yeh.net/post/2019/03/ingress-vs-ambassador/</link>
-      <pubDate>Fri, 29 Mar 2019 23:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2019/03/ingress-vs-ambassador/</guid>
-      
-        <description>&lt;p&gt;API gateway 是微服務環境，甚至 service mesh 的要角 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;。&lt;/p&gt;
-&lt;p&gt;在 Kubernetes 上面，API gateway 選項眾多。有像 HAProxy 及 Nginx 這些石器時代老傢伙跨足過來，也有打從一開始就走 cloud native 路線的後起之秀。&lt;/p&gt;
-&lt;p&gt;該如何選擇？&lt;/p&gt;
-&lt;p&gt;根據 Steven Acreman 寫的 &lt;a href=&#34;https://kubedex.com/ingress/&#34;&gt;Ingress 評比文章&lt;/a&gt;的看法：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;em&gt;The safest choice is &lt;a href=&#34;https://kubernetes.github.io/ingress-nginx/&#34;&gt;ingress-nginx&lt;/a&gt;&lt;/em&gt;. This is the one that most people use and it’s extremely reliable. Before you begin I’d recommend you read this blog to get ahead of some of the problems you may encounter.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;My vote for the coolest ingress definitely goes to &lt;a href=&#34;https://www.getambassador.io/&#34;&gt;Ambassador&lt;/a&gt;.&lt;/em&gt;  If you’re just running standard http based micro services and fancy living on the bleeding edge then you should definitely get Istio, Ambassador and Jaeger setup as a proof of concept.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;進一步研讀 Ambassador 相關資料 &lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;，發現他們鎖定的 service mesh 路線很合我的胃口，站在 &lt;a href=&#34;https://www.envoyproxy.io/&#34;&gt;Envoy&lt;/a&gt; 巨人肩膀上更是聰明。不過，理論歸理論，我想親自試試看現在的 Ambassador 是否堪當大任？&lt;/p&gt;
-&lt;p&gt;初步，我只先拿 &lt;a href=&#34;https://kubernetes.github.io/ingress-nginx/&#34;&gt;ingress-nginx&lt;/a&gt; 這個所謂的 “the safest choice” 作簡單的性能比較。將來有機會再進行更徹底的 chaos monkey 測試。&lt;/p&gt;
-&lt;h2 id=&#34;實驗環境&#34;&gt;實驗環境&lt;/h2&gt;
-&lt;p&gt;為了簡化實驗步驟，我直接採用 Google Cloud Platform 的 &lt;a href=&#34;https://cloud.google.com/kubernetes-engine/&#34;&gt;GKE&lt;/a&gt;。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Kubernetes 版本：1.11.7-gke.12&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Node：2 台 &lt;a href=&#34;https://cloud.google.com/compute/docs/machine-types#standard_machine_types&#34;&gt;n1-standard-1&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;我選用的標靶軟體是 &lt;a href=&#34;https://github.com/GoogleCloudPlatform/kubernetes-engine-samples/tree/master/hello-app&#34;&gt;hello-app&lt;/a&gt;，分別用以下兩種 API gateway 來對外提供服務介面：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Nginx ingress 版本：0.23.0&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Ambassador 版本：0.52.0&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;最後，我利用 &lt;a href=&#34;https://github.com/William-Yeh/docker-boom&#34;&gt;boom&lt;/a&gt; 進行簡單的壓力測試。&lt;/p&gt;
-&lt;h2 id=&#34;nginx-ingress&#34;&gt;Nginx ingress&lt;/h2&gt;
-&lt;p&gt;為了簡單起見，我直接套用以下這份 Qwiklabs 的全部步驟：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.qwiklabs.com/focuses/872?parent=catalog&#34;&gt;GSP181 - NGINX Ingress Controller on Google Kubernetes Engine&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;照著做完後，Nginx ingress 會在 GKE 開放一個公開的 http 服務存取點。&lt;/p&gt;
-&lt;p&gt;我們可以先用 &lt;code&gt;kubectl get services&lt;/code&gt; 查看 API gateway 的 public IP 位址。假設是 &lt;code&gt;35.222.12.84&lt;/code&gt; 的話，這個服務路徑則是 &lt;code&gt;http://35.222.12.84/hello/&lt;/code&gt;。&lt;/p&gt;
-&lt;h2 id=&#34;ambassador&#34;&gt;Ambassador&lt;/h2&gt;
-&lt;p&gt;首先，仿造前面的 Qwiklabs 步驟，在 GKE 上建立起相同規模的 k8s cluster。也執行一份 &lt;a href=&#34;https://gist.githubusercontent.com/William-Yeh/0aab709e450b4442614ef87b0250260b/raw/daba0ba7e6b5561ec9af51a3ea020c79e572e34e/hello-app-service.yaml&#34;&gt;hello-app service&lt;/a&gt;。&lt;/p&gt;
-&lt;p&gt;為了安裝 Ambassador，我們需要開啟 GKE 權限：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;% kubectl create clusterrolebinding my-cluster-admin-binding  \
-    --clusterrole=cluster-admin  \
-    --user=$(gcloud info --format=&amp;#34;value(config.account)&amp;#34;)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;接下來，就是正常的 Ambassador 安裝步驟：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;% kubectl create -f http://bit.ly/2UmsPuE&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;此刻，我們終於可以透過 Ambassador，替 hello-app 設定 API gateway 規則：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;% kubectl create -f https://bit.ly/2YyZzjO&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;照著做完後，Ambassador 會在 GKE 開放一個公開的 http 服務存取點。&lt;/p&gt;
-&lt;p&gt;我們可以先用 &lt;code&gt;kubectl get services&lt;/code&gt; 查看 API gateway 的 public IP 位址。假設是 &lt;code&gt;35.224.99.169&lt;/code&gt; 的話，這個服務路徑則是 &lt;code&gt;http://35.224.99.169/hello2/&lt;/code&gt;。&lt;/p&gt;
-&lt;h2 id=&#34;簡單的壓測&#34;&gt;簡單的壓測&lt;/h2&gt;
-&lt;p&gt;為了簡單起見，我在 GCP 的 &lt;a href=&#34;https://cloud.google.com/shell/?hl=zh-tw&#34;&gt;Cloud Shell&lt;/a&gt; 進行壓測。我會對 Nginx ingress 及 Ambassador 兩種情況，各送出一萬個 API 存取要求。&lt;/p&gt;
-&lt;p&gt;針對 Nginx ingress 的情況進行測試：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;% docker run --rm  williamyeh/boom  \
-    -n 10000 -c 100  http://35.222.12.84/hello/
-
-Summary:
-  Total:        16.2312 secs
-  Slowest:      0.3252 secs
-  Fastest:      0.1568 secs
-  Average:      0.1616 secs
-  Requests/sec: 616.0963
-  Total data:   660000 bytes
-  Size/request: 66 bytes
-
-Status code distribution:
-  [200] 10000 responses
-
-Response time histogram:
-  0.157 [1]     |
-  0.174 [9803]  |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
-  0.190 [96]    |
-  0.207 [0]     |
-  0.224 [0]     |
-  0.241 [0]     |
-  0.258 [0]     |
-  0.275 [0]     |
-  0.292 [0]     |
-  0.308 [0]     |
-  0.325 [100]   |
-
-Latency distribution:
-  10% in 0.1576 secs
-  25% in 0.1583 secs
-  50% in 0.1593 secs
-  75% in 0.1608 secs
-  90% in 0.1632 secs
-  95% in 0.1661 secs
-  99% in 0.3152 secs&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;針對 Ambassador 的情況進行測試：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;% docker run --rm  williamyeh/boom  \
-    -n 10000 -c 100  http://35.224.99.169/hello2/
-
-Summary:
-  Total:        16.8132 secs
-  Slowest:      0.3857 secs
-  Fastest:      0.1571 secs
-  Average:      0.1662 secs
-  Requests/sec: 594.7715
-  Total data:   660000 bytes
-  Size/request: 66 bytes
-
-Status code distribution:
-  [200] 10000 responses
-
-Response time histogram:
-  0.157 [1]     |
-  0.180 [9595]  |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
-  0.203 [304]   |∎
-  0.226 [0]     |
-  0.249 [0]     |
-  0.271 [0]     |
-  0.294 [0]     |
-  0.317 [0]     |
-  0.340 [0]     |
-  0.363 [8]     |
-  0.386 [92]    |
-
-Latency distribution:
-  10% in 0.1596 secs
-  25% in 0.1607 secs
-  50% in 0.1623 secs
-  75% in 0.1656 secs
-  90% in 0.1717 secs
-  95% in 0.1786 secs
-  99% in 0.3596 secs&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;儘管不夠嚴謹，但仍可以約略看出 Ambassador 的性能已經逼近 Nginx ingress。以才兩歲半的 Envoy &lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;、才滿兩歲的 Ambassador &lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt; 來說，已經很不容易了。&lt;/p&gt;
-&lt;p&gt;這是一個值得開始嘗試的好物。&lt;/p&gt;
-&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
-&lt;hr&gt;
-&lt;ol&gt;
-&lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;對於 API gateway 來龍去脈感興趣的，可參考 Ricky 的文章〈&lt;a href=&#34;https://rickhw.github.io/2018/01/24/AWS/Study-Notes-Overview-API-Gateway/&#34;&gt;Overview API Gateway&lt;/a&gt;〉、Andrew 的文章〈&lt;a href=&#34;https://columns.chicken-house.net/2017/07/11/microservice8-case-study-p3/&#34;&gt;架構師觀點 - 轉移到微服務架構的經驗分享 (Part 3)&lt;/a&gt;〉。 &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;對於 Ambassador 早期發展歷程感興趣的，可參考他們寫的這兩篇文章：“&lt;a href=&#34;https://medium.com/@datawire/building-ambassador-an-open-source-api-gateway-on-kubernetes-and-envoy-33637a9fa6f8&#34;&gt;Building Ambassador, an Open Source API Gateway on Kubernetes and Envoy&lt;/a&gt;” 及 “&lt;a href=&#34;https://blog.getambassador.io/kubernetes-ingress-nodeport-load-balancers-and-ingress-controllers-6e29f1c44f2d&#34;&gt;Kubernetes Ingress 101: NodePort, Load Balancers, and Ingress Controllers&lt;/a&gt;”。 &lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:3&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;Envoy &lt;a href=&#34;https://github.com/envoyproxy/envoy/tree/v1.0.0&#34;&gt;1.0.0 版&lt;/a&gt;發布日期為 2016 年 9 月。 &lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:4&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;Ambassador &lt;a href=&#34;https://github.com/datawire/ambassador/blob/master/CHANGELOG.md&#34;&gt;0.1.3 版&lt;/a&gt;發布日期為 2017 年 3 月。 &lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/section&gt;</description>
       
     </item>
     
