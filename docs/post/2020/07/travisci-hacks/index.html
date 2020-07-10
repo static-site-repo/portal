@@ -24,8 +24,8 @@
 
 <meta name="author" content="William Yeh" />
   <meta name="description" content="我算是 Travis CI 的老用戶了。
-以前 Travis CI 很慢，對 Docker 不友善，又很難 debug，讓我一度將重心轉移到後起之秀 CircleCI。後來自從 Travis CI 向 CircleCI 看齊，讓我們能夠 ssh 進去虛擬機 debug，兩者的差距已經逐漸縮小。所以，我自己的重要專案，總是盡量同時掛上 Travis CI 及 CircleCI，讓 CI pipeline 的核心在某種程度上也能盡量 reproducible 不被 lock in。
-Travis CI 也提供許多常見的程式語言及伺服器軟體，以方便做 CI 測試。我個人的習慣是，盡量不去使用這些功能，而是直接用 Docker 或 Docker Compose 版本，以降低對於 Travis CI 的依賴（尤其我還要兼顧 CircleCI）。
+以前 Travis CI 很慢，對 Docker 不友善，又很難 debug，讓我一度將重心轉移到後起之秀 CircleCI。後來 Travis CI 向 CircleCI 看齊，讓我們能夠 ssh 進去虛擬機 debug，兩者的差距已經逐漸縮小。所以，我自己的重要專案，總是盡量同時掛上 Travis CI 及 CircleCI，讓 CI pipeline 的核心在某種程度上也能盡量 reproducible 不被 lock in。
+Travis CI 也提供許多常見的程式語言及伺服器軟體，以方便做 CI 測試。我個人的習慣是，盡量不去使用這些功能，而是直接用 Docker 或 Docker Compose 來組裝，以降低對於 Travis CI 的依賴（尤其我還要兼顧 CircleCI）。
 不過，如果是與人合作的專案，就得顧及其他人的習慣。我在使用 Travis CI 提供的伺服器軟體 Postgres、Cassandra、RabbitMQ 時，遇到一些雷，特地記錄下來，供有類似困擾的人參考。
 " />
 
@@ -64,8 +64,8 @@ Travis CI 也提供許多常見的程式語言及伺服器軟體，以方便做 
 
 <meta property="og:title" content="Travis CI 虛擬機的地雷" />
 <meta property="og:description" content="我算是 Travis CI 的老用戶了。
-以前 Travis CI 很慢，對 Docker 不友善，又很難 debug，讓我一度將重心轉移到後起之秀 CircleCI。後來自從 Travis CI 向 CircleCI 看齊，讓我們能夠 ssh 進去虛擬機 debug，兩者的差距已經逐漸縮小。所以，我自己的重要專案，總是盡量同時掛上 Travis CI 及 CircleCI，讓 CI pipeline 的核心在某種程度上也能盡量 reproducible 不被 lock in。
-Travis CI 也提供許多常見的程式語言及伺服器軟體，以方便做 CI 測試。我個人的習慣是，盡量不去使用這些功能，而是直接用 Docker 或 Docker Compose 版本，以降低對於 Travis CI 的依賴（尤其我還要兼顧 CircleCI）。
+以前 Travis CI 很慢，對 Docker 不友善，又很難 debug，讓我一度將重心轉移到後起之秀 CircleCI。後來 Travis CI 向 CircleCI 看齊，讓我們能夠 ssh 進去虛擬機 debug，兩者的差距已經逐漸縮小。所以，我自己的重要專案，總是盡量同時掛上 Travis CI 及 CircleCI，讓 CI pipeline 的核心在某種程度上也能盡量 reproducible 不被 lock in。
+Travis CI 也提供許多常見的程式語言及伺服器軟體，以方便做 CI 測試。我個人的習慣是，盡量不去使用這些功能，而是直接用 Docker 或 Docker Compose 來組裝，以降低對於 Travis CI 的依賴（尤其我還要兼顧 CircleCI）。
 不過，如果是與人合作的專案，就得顧及其他人的習慣。我在使用 Travis CI 提供的伺服器軟體 Postgres、Cassandra、RabbitMQ 時，遇到一些雷，特地記錄下來，供有類似困擾的人參考。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="//william-yeh.net/post/2020/07/travisci-hacks/" />
@@ -73,20 +73,20 @@ Travis CI 也提供許多常見的程式語言及伺服器軟體，以方便做 
 <meta property="article:modified_time" content="2020-07-09T23:00:00+08:00" />
 <meta itemprop="name" content="Travis CI 虛擬機的地雷">
 <meta itemprop="description" content="我算是 Travis CI 的老用戶了。
-以前 Travis CI 很慢，對 Docker 不友善，又很難 debug，讓我一度將重心轉移到後起之秀 CircleCI。後來自從 Travis CI 向 CircleCI 看齊，讓我們能夠 ssh 進去虛擬機 debug，兩者的差距已經逐漸縮小。所以，我自己的重要專案，總是盡量同時掛上 Travis CI 及 CircleCI，讓 CI pipeline 的核心在某種程度上也能盡量 reproducible 不被 lock in。
-Travis CI 也提供許多常見的程式語言及伺服器軟體，以方便做 CI 測試。我個人的習慣是，盡量不去使用這些功能，而是直接用 Docker 或 Docker Compose 版本，以降低對於 Travis CI 的依賴（尤其我還要兼顧 CircleCI）。
+以前 Travis CI 很慢，對 Docker 不友善，又很難 debug，讓我一度將重心轉移到後起之秀 CircleCI。後來 Travis CI 向 CircleCI 看齊，讓我們能夠 ssh 進去虛擬機 debug，兩者的差距已經逐漸縮小。所以，我自己的重要專案，總是盡量同時掛上 Travis CI 及 CircleCI，讓 CI pipeline 的核心在某種程度上也能盡量 reproducible 不被 lock in。
+Travis CI 也提供許多常見的程式語言及伺服器軟體，以方便做 CI 測試。我個人的習慣是，盡量不去使用這些功能，而是直接用 Docker 或 Docker Compose 來組裝，以降低對於 Travis CI 的依賴（尤其我還要兼顧 CircleCI）。
 不過，如果是與人合作的專案，就得顧及其他人的習慣。我在使用 Travis CI 提供的伺服器軟體 Postgres、Cassandra、RabbitMQ 時，遇到一些雷，特地記錄下來，供有類似困擾的人參考。">
 <meta itemprop="datePublished" content="2020-07-09T23:00:00&#43;08:00" />
 <meta itemprop="dateModified" content="2020-07-09T23:00:00&#43;08:00" />
-<meta itemprop="wordCount" content="1510">
+<meta itemprop="wordCount" content="1505">
 
 
 
 <meta itemprop="keywords" content="devops,ci," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Travis CI 虛擬機的地雷"/>
 <meta name="twitter:description" content="我算是 Travis CI 的老用戶了。
-以前 Travis CI 很慢，對 Docker 不友善，又很難 debug，讓我一度將重心轉移到後起之秀 CircleCI。後來自從 Travis CI 向 CircleCI 看齊，讓我們能夠 ssh 進去虛擬機 debug，兩者的差距已經逐漸縮小。所以，我自己的重要專案，總是盡量同時掛上 Travis CI 及 CircleCI，讓 CI pipeline 的核心在某種程度上也能盡量 reproducible 不被 lock in。
-Travis CI 也提供許多常見的程式語言及伺服器軟體，以方便做 CI 測試。我個人的習慣是，盡量不去使用這些功能，而是直接用 Docker 或 Docker Compose 版本，以降低對於 Travis CI 的依賴（尤其我還要兼顧 CircleCI）。
+以前 Travis CI 很慢，對 Docker 不友善，又很難 debug，讓我一度將重心轉移到後起之秀 CircleCI。後來 Travis CI 向 CircleCI 看齊，讓我們能夠 ssh 進去虛擬機 debug，兩者的差距已經逐漸縮小。所以，我自己的重要專案，總是盡量同時掛上 Travis CI 及 CircleCI，讓 CI pipeline 的核心在某種程度上也能盡量 reproducible 不被 lock in。
+Travis CI 也提供許多常見的程式語言及伺服器軟體，以方便做 CI 測試。我個人的習慣是，盡量不去使用這些功能，而是直接用 Docker 或 Docker Compose 來組裝，以降低對於 Travis CI 的依賴（尤其我還要兼顧 CircleCI）。
 不過，如果是與人合作的專案，就得顧及其他人的習慣。我在使用 Travis CI 提供的伺服器軟體 Postgres、Cassandra、RabbitMQ 時，遇到一些雷，特地記錄下來，供有類似困擾的人參考。"/>
 
 <!--[if lte IE 9]>
@@ -310,7 +310,7 @@ if (!doNotTrack) {
             <a href="//william-yeh.net/categories/tech/"> tech </a>
             
           </div>
-        <span class="more-meta"> 約 1510 字 </span>
+        <span class="more-meta"> 約 1505 字 </span>
           <span class="more-meta"> 預計閱讀 4 分鐘 </span>
 
         
@@ -345,8 +345,8 @@ if (!doNotTrack) {
     
     <div class="post-content">
       <p>我算是 <a href="https://travis-ci.org/">Travis CI</a> 的老用戶了。</p>
-<p>以前 Travis CI 很慢，對 Docker 不友善，又很難 debug，讓我一度將重心轉移到後起之秀 <a href="https://circleci.com/">CircleCI</a>。後來自從 Travis CI 向 CircleCI 看齊，讓我們能夠 ssh 進去虛擬機 debug，兩者的差距已經逐漸縮小。所以，我自己的重要專案，總是盡量同時掛上 Travis CI 及 CircleCI，讓 CI pipeline 的核心在某種程度上也能盡量 reproducible 不被 lock in。</p>
-<p>Travis CI 也提供許多常見的程式語言及伺服器軟體，以方便做 CI 測試。我個人的習慣是，盡量不去使用這些功能，而是直接用 Docker 或 Docker Compose 版本，以降低對於 Travis CI 的依賴（尤其我還要兼顧 CircleCI）。</p>
+<p>以前 Travis CI 很慢，對 Docker 不友善，又很難 debug，讓我一度將重心轉移到後起之秀 <a href="https://circleci.com/">CircleCI</a>。後來 Travis CI 向 CircleCI 看齊，讓我們能夠 ssh 進去虛擬機 debug，兩者的差距已經逐漸縮小。所以，我自己的重要專案，總是盡量同時掛上 Travis CI 及 CircleCI，讓 CI pipeline 的核心在某種程度上也能盡量 reproducible 不被 lock in。</p>
+<p>Travis CI 也提供許多常見的程式語言及伺服器軟體，以方便做 CI 測試。我個人的習慣是，盡量不去使用這些功能，而是直接用 Docker 或 Docker Compose 來組裝，以降低對於 Travis CI 的依賴（尤其我還要兼顧 CircleCI）。</p>
 <p>不過，如果是與人合作的專案，就得顧及其他人的習慣。我在使用 Travis CI 提供的伺服器軟體 Postgres、Cassandra、RabbitMQ 時，遇到一些雷，特地記錄下來，供有類似困擾的人參考。</p>
 <h2 id="虛擬機版本">虛擬機版本</h2>
 <p>在 <code>.travis.yml</code> 檔案裡面可以指定 CI 虛擬機的 Ubuntu 版本<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>。若不特別指定，以現在（2020 年七月）來說，預設版本會是 Ubuntu 16.04 LTS，代號為 <strong>Xenial</strong>。</p>
@@ -442,8 +442,8 @@ if (!doNotTrack) {
 <p>Stack Overflow 問答：<a href="https://stackoverflow.com/q/52107517/714426">Declaring rabbitmq exchanges in travis build setup</a></p>
 </li>
 </ul>
-<p>換成 Xenial 虛擬機時，這次官方文件總算有特別提醒對應的修改<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup>。可惜 Travis CI 只做了一半，少安裝常見的 <a href="https://www.rabbitmq.com/management.html">RabbitMQ Management Plugin</a>。</p>
-<p>解決之道是自力救濟，自己下載，自己安裝：</p>
+<p>換成 Xenial 虛擬機時，這次官方文件總算有特別提醒對應的修改<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup>。可惜 Travis CI 只做了一半，忘了啟動常見的 <a href="https://www.rabbitmq.com/management.html">RabbitMQ Management Plugin</a>。</p>
+<p>解決之道是自力救濟，自己開啟：</p>
 
 
 <div class="box">
