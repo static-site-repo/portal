@@ -6,10 +6,100 @@
     <description>Recent content on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Fri, 10 Jul 2020 08:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 29 Jul 2020 22:00:00 +0800</lastBuildDate>
     
         <atom:link href="//william-yeh.net/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Essence of Scrum: Product Backlog Refinement</title>
+      <link>//william-yeh.net/post/2020/07/pbr-in-a-nutshell/</link>
+      <pubDate>Wed, 29 Jul 2020 22:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2020/07/pbr-in-a-nutshell/</guid>
+      
+        <description>&lt;h2 id=&#34;preface-of-the-series&#34;&gt;Preface of the series&lt;/h2&gt;
+&lt;p&gt;The series of &amp;ldquo;Essence of Scrum&amp;rdquo; articles tries to identify the essence of Scrum elements (e.g., events and artifacts) so that:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;the core can be understood without much effort.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;the feeling overwhelmed can be reduced.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;the gradual adoption is more possible.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Of course, my elaboration of &amp;ldquo;essence&amp;rdquo; is very subjective. Follow the advice at your own risk.&lt;/p&gt;
+&lt;h2 id=&#34;in-a-nutshell&#34;&gt;In a nutshell&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Product backlog refinement (PBR)&lt;/strong&gt; is a Scrum event in which the &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Scrum Team&lt;/span&gt;
+ properly &lt;strong&gt;orders&lt;/strong&gt; and &lt;strong&gt;breaks down&lt;/strong&gt; &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Product Backlog&lt;/span&gt;
+ so that the &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Development Team&lt;/span&gt;
+ feels confident enough about the top &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Product Backlog Items&lt;/span&gt;
+ to take them into a Sprint.&lt;/p&gt;
+&lt;h2 id=&#34;input&#34;&gt;Input&lt;/h2&gt;
+&lt;p&gt;Essential:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Product Backlog&lt;/span&gt;
+ that is roughly ordered according to product roadmap and expectations of stakeholders.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;output&#34;&gt;Output&lt;/h2&gt;
+&lt;p&gt;Essential:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Product Backlog&lt;/span&gt;
+ that is both &lt;strong&gt;ordered&lt;/strong&gt;&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; and &lt;strong&gt;granularity gradient&lt;/strong&gt;&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Better:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;A &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Product Backlog&lt;/span&gt;
+ that has the property of &lt;strong&gt;ODDE&lt;/strong&gt; (ordered, dynamic, detailed appropriate, and estimated)&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The top &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Product Backlog Items&lt;/span&gt;
+ meet the &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Definition of Ready&lt;/span&gt;
+ criteria&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt; defined and evolved by the &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Scrum Team&lt;/span&gt;
+.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;tools&#34;&gt;Tools&lt;/h2&gt;
+&lt;p&gt;Essential:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Order&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Break down&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Better:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;SPIDR (Spike, Paths, Interfaces, Data, and Rules)&lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;&amp;ldquo;Priority&amp;rdquo; is the term used in the &lt;em&gt;&lt;a href=&#34;https://www.scrumguides.org/scrum-guide.html&#34;&gt;Scrum Guide&lt;/a&gt;&lt;/em&gt; 2010: &lt;em&gt;&amp;ldquo;Product Backlog is sorted in order of priority&amp;rdquo;&lt;/em&gt; (p.6). But the term was changed to &amp;ldquo;order&amp;rdquo; in 2011: &lt;em&gt;&amp;ldquo;Product Backlog management includes: [&amp;hellip;] Ordering the items in the Product Backlog to best achieve goals and missions&amp;rdquo;&lt;/em&gt; (p.5). See the article &amp;ldquo;&lt;a href=&#34;https://www.scrum.org/resources/ordered-not-prioritized&#34;&gt;Ordered Not Prioritized&lt;/a&gt;&amp;rdquo; for more details. &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;The &lt;em&gt;&lt;a href=&#34;https://www.scrumguides.org/scrum-guide.html&#34;&gt;Scrum Guide&lt;/a&gt;&lt;/em&gt; 2017 says: &lt;em&gt;&amp;ldquo;Higher ordered Product Backlog items are usually clearer and more detailed than lower ordered ones. More precise estimates are made based on the greater clarity and increased detail; the lower the order, the less detail&amp;rdquo;&lt;/em&gt; (p.15). See &amp;ldquo;&lt;a href=&#34;http://scrumbook.org.datasenter.no/value-stream/product-backlog/granularity-gradient.html&#34;&gt;Granularity Gradient&lt;/a&gt;&amp;rdquo; for more details. &lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.scrumalliance.org/community/profile/dteng&#34;&gt;Daniel Teng&lt;/a&gt; proposed the ODDE properties (ordered, dynamic, detailed appropriate, and estimated) for product backlog. See the article &amp;ldquo;&lt;a href=&#34;http://www.danielteng.com/2014/06/27/odde-product-backlog/&#34;&gt;ODDE 的 Product Backlog&lt;/a&gt;&amp;rdquo; for more details. &lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:4&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;http://scrumbook.org/value-stream/product-backlog/definition-of-ready.html&#34;&gt;Definition of Ready&lt;/a&gt; &lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:5&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.scrumalliance.org/community/profile/mikecohn&#34;&gt;Mike Cohn&lt;/a&gt; proposed the SPIDR approach (spike, paths, interfaces, data, and rules) for breaking down user stories. Watch the &amp;ldquo;&lt;a href=&#34;https://www.mountaingoatsoftware.com/exclusive/spidr-video&#34;&gt;Stop Wasting Time Splitting Stories&lt;/a&gt;&amp;rdquo; video for more details. &lt;a href=&#34;#fnref:5&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
+</description>
+      
+    </item>
     
     <item>
       <title>Go Best Practices</title>
@@ -3636,101 +3726,6 @@ run -b &amp;#39;~/.tmux/plugins/tpm/tpm&amp;#39;&lt;/code&gt;&lt;/pre&gt;&lt;/di
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>給 RD 的 Kubernetes 初體驗</title>
-      <link>//william-yeh.net/courses/cloudsummit2019/</link>
-      <pubDate>Tue, 02 Apr 2019 16:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/courses/cloudsummit2019/</guid>
-      
-        <description>&lt;p&gt;&lt;strong&gt;活動名稱&lt;/strong&gt;：給 RD 的 Kubernetes 初體驗&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;時間&lt;/strong&gt;：2019-05-15 (三) / 11:00&amp;ndash;12:30&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;會議&lt;/strong&gt;：&lt;a href=&#34;https://cloudsummit.ithome.com.tw/&#34;&gt;台灣雲端大會 (Cloud Summit 2019)&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;課程簡介&#34;&gt;課程簡介&lt;/h2&gt;
-&lt;p&gt;Kubernetes 是目前雲端環境的顯學。可是，傳統的程式，並不是原封不動搬上去，就能夠自動享受 Kubernetes 所宣稱的種種好處。&lt;/p&gt;
-&lt;p&gt;新的環境，不僅需要新的 Ops 思維，也需要新的 Dev 思維。我們將以一個半小時的時間，從軟體研發者的角度，探討軟體的設計該做哪些最起碼的改變，從實作中體驗 Kubernetes 引進的新觀念及新效益。&lt;/p&gt;
-&lt;h2 id=&#34;課程目標&#34;&gt;課程目標&lt;/h2&gt;
-&lt;p&gt;從實例中體驗，傳統 web 應用程式在搬上 Kubernetes 時，可能會經歷哪些架構面的調整，才能享受新架構的效益：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;容器化&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;微服務&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;組態管理&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;API gateway&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;多重環境管理：本機端與雲端（以 GKE 為例）&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;課程架構&#34;&gt;課程架構&lt;/h2&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;主題&lt;/th&gt;
-&lt;th&gt;內容簡介&lt;/th&gt;
-&lt;th&gt;類型&lt;/th&gt;
-&lt;th&gt;時間(分)&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;1. 基本觀念&lt;/td&gt;
-&lt;td&gt;快速介紹 Kubernetes 基本觀念&lt;/td&gt;
-&lt;td&gt;簡報介紹&lt;/td&gt;
-&lt;td&gt;10&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;2. 本機端實作&lt;/td&gt;
-&lt;td&gt;移植 web 軟體至本機端 Kubernetes&lt;/td&gt;
-&lt;td&gt;實機操作&lt;/td&gt;
-&lt;td&gt;50&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;3. 雲端實作&lt;/td&gt;
-&lt;td&gt;將 Kubernetes 成果送上雲端&lt;/td&gt;
-&lt;td&gt;實機操作&lt;/td&gt;
-&lt;td&gt;20&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;4. 總結&lt;/td&gt;
-&lt;td&gt;Kubernetes 微服務要點總結&lt;/td&gt;
-&lt;td&gt;簡報介紹&lt;/td&gt;
-&lt;td&gt;10&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&#34;注意事項&#34;&gt;注意事項&lt;/h2&gt;
-&lt;h3 id=&#34;學員能力要求&#34;&gt;學員能力要求&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;須具備簡單的 Web 前後端觀念。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;須具備 Docker、Docker Compose、git 基本操作能力。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;學員需知&#34;&gt;學員需知&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;請先在自備筆電中安裝 &lt;a href=&#34;https://www.docker.com/products/docker-desktop&#34;&gt;Docker Desktop&lt;/a&gt;，並開啟其中的 Kubernetes 功能。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;本課程有一部分實作活動會使用 Google Kubernetes Engine (GKE) 及 Container Registry (GCR) 服務。為了讓現場體驗活動順暢，請學員事先申請好 &lt;a href=&#34;https://cloud.google.com/&#34;&gt;Google Cloud Platform&lt;/a&gt; 帳號，並自主練習約 45 分鐘的 “&lt;a href=&#34;https://www.qwiklabs.com/focuses/2794?parent=catalog&#34;&gt;A Tour of Qwiklabs and the Google Cloud Platform&lt;/a&gt;” 免費活動，確保你在來到活動現場之前，就已熟悉 &lt;a href=&#34;https://cloud.google.com/shell/&#34;&gt;Google Cloud Shell&lt;/a&gt; 的操作環境。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;本實機操作課程由【Google Developers 贊助】。如果你是第一次用 GCP account 或還在 Free Trial 期間內，請繼續用 Free Trial 來操作；如果你已經是正式的 account，活動現場將提供你足夠額度的 coupon 來使用。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-</description>
       
     </item>
     

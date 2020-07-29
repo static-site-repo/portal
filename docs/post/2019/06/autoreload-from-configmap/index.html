@@ -34,7 +34,7 @@ To clarify this I&amp;rsquo;ve conducted a series of experiments for 3 possible 
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.73.0" />
+<meta name="generator" content="Hugo 0.74.3" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2019/06/autoreload-from-configmap/" />
@@ -75,13 +75,14 @@ To clarify this I&rsquo;ve conducted a series of experiments for 3 possible conf
 A follow-up question might be: what should a well-behaved application react to this trigger accordingly? What if it&rsquo;s a ill-designed application?
 To clarify this I&rsquo;ve conducted a series of experiments for 3 possible configmap-reloading strategies:
  Built-in auto-reloading apps External signals Pod rollout  In this article I&rsquo;m going to explain the experiments and preliminary findings.">
-<meta itemprop="datePublished" content="2019-06-17T17:00:00&#43;08:00" />
-<meta itemprop="dateModified" content="2019-06-17T17:00:00&#43;08:00" />
+<meta itemprop="datePublished" content="2019-06-17T17:00:00+08:00" />
+<meta itemprop="dateModified" content="2019-06-17T17:00:00+08:00" />
 <meta itemprop="wordCount" content="618">
 
 
 
-<meta itemprop="keywords" content="devops,docker,kubernetes,inotify,configmap," /><meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="devops,docker,kubernetes,inotify,configmap," />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Auto-Reload from ConfigMap"/>
 <meta name="twitter:description" content="My previous article &ldquo;Inotify in Containers&rdquo; has demonstrated that when ConfigMap is mounted as directories, any changes in the ConfigMap will propagate to related pods, and can be detected with inotify-like APIs.
 A follow-up question might be: what should a well-behaved application react to this trigger accordingly? What if it&rsquo;s a ill-designed application?
