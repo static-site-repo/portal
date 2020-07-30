@@ -31,7 +31,25 @@
 &lt;p&gt;the gradual adoption is more possible.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Of course, my elaboration of &amp;ldquo;essence&amp;rdquo; is very subjective. Follow the advice at your own risk.&lt;/p&gt;
+&lt;p&gt;My elaboration of &amp;ldquo;essence&amp;rdquo; is very subjective. Follow the advice at your own risk.&lt;/p&gt;
+&lt;p&gt;Main references for the whole series:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;&lt;a href=&#34;https://www.scrumguides.org/&#34;&gt;The Scrum Guide&lt;/a&gt;&lt;/em&gt; by Ken Schwaber and Jeff Sutherland.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;&lt;a href=&#34;http://scrumbook.org/&#34;&gt;A Scrum Book: The Spirit of the Game&lt;/a&gt;&lt;/em&gt; by Jeff Sutherland, James O. Coplien, et al.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;&lt;a href=&#34;https://www.scrumstudy.com/sbokguide&#34;&gt;A Guide to the Scrum Body of Knowledge (SBOK® Guide)&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;&lt;a href=&#34;https://less.works/less/framework/index&#34;&gt;LeSS Framework&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;The first article discusses the &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Product Backlog Refinement&lt;/span&gt;
+ (PBR).&lt;/p&gt;
 &lt;h2 id=&#34;in-a-nutshell&#34;&gt;In a nutshell&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;Product backlog refinement (PBR)&lt;/strong&gt; is a Scrum event in which the &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Scrum Team&lt;/span&gt;
  properly &lt;strong&gt;orders&lt;/strong&gt; and &lt;strong&gt;breaks down&lt;/strong&gt; &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Product Backlog&lt;/span&gt;
@@ -41,8 +59,13 @@
 &lt;h2 id=&#34;input&#34;&gt;Input&lt;/h2&gt;
 &lt;p&gt;Essential:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;A &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Product Backlog&lt;/span&gt;
- that is roughly ordered according to product roadmap and expectations of stakeholders.&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Short-term strategy statement (e.g., product roadmap, impact mapping, user story mapping).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;A &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Product Backlog&lt;/span&gt;
+ that is roughly ordered according to product roadmap and expectations of stakeholders.&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;output&#34;&gt;Output&lt;/h2&gt;
 &lt;p&gt;Essential:&lt;/p&gt;
@@ -75,16 +98,21 @@
 &lt;/ul&gt;
 &lt;p&gt;Better:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;SPIDR (Spike, Paths, Interfaces, Data, and Rules)&lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;SPIDR (Spike, Paths, Interfaces, Data, and Rules)&lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Techniques for enabling specification&lt;sup id=&#34;fnref:6&#34;&gt;&lt;a href=&#34;#fn:6&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;6&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
 &lt;hr&gt;
 &lt;ol&gt;
 &lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;&amp;ldquo;Priority&amp;rdquo; is the term used in the &lt;em&gt;&lt;a href=&#34;https://www.scrumguides.org/scrum-guide.html&#34;&gt;Scrum Guide&lt;/a&gt;&lt;/em&gt; 2010: &lt;em&gt;&amp;ldquo;Product Backlog is sorted in order of priority&amp;rdquo;&lt;/em&gt; (p.6). But the term was changed to &amp;ldquo;order&amp;rdquo; in 2011: &lt;em&gt;&amp;ldquo;Product Backlog management includes: [&amp;hellip;] Ordering the items in the Product Backlog to best achieve goals and missions&amp;rdquo;&lt;/em&gt; (p.5). See the article &amp;ldquo;&lt;a href=&#34;https://www.scrum.org/resources/ordered-not-prioritized&#34;&gt;Ordered Not Prioritized&lt;/a&gt;&amp;rdquo; for more details. &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&amp;ldquo;Priority&amp;rdquo; is the term used in the &lt;em&gt;&lt;a href=&#34;https://www.scrumguides.org/&#34;&gt;Scrum Guide&lt;/a&gt;&lt;/em&gt; 2010: &lt;em&gt;&amp;ldquo;Product Backlog is sorted in order of priority&amp;rdquo;&lt;/em&gt; (p.6). But the term was changed to &amp;ldquo;order&amp;rdquo; in 2011: &lt;em&gt;&amp;ldquo;Product Backlog management includes: [&amp;hellip;] Ordering the items in the Product Backlog to best achieve goals and missions&amp;rdquo;&lt;/em&gt; (p.5). See the article &amp;ldquo;&lt;a href=&#34;https://www.scrum.org/resources/ordered-not-prioritized&#34;&gt;Ordered Not Prioritized&lt;/a&gt;&amp;rdquo; for more details. &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;The &lt;em&gt;&lt;a href=&#34;https://www.scrumguides.org/scrum-guide.html&#34;&gt;Scrum Guide&lt;/a&gt;&lt;/em&gt; 2017 says: &lt;em&gt;&amp;ldquo;Higher ordered Product Backlog items are usually clearer and more detailed than lower ordered ones. More precise estimates are made based on the greater clarity and increased detail; the lower the order, the less detail&amp;rdquo;&lt;/em&gt; (p.15). See &amp;ldquo;&lt;a href=&#34;http://scrumbook.org.datasenter.no/value-stream/product-backlog/granularity-gradient.html&#34;&gt;Granularity Gradient&lt;/a&gt;&amp;rdquo; for more details. &lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;a href=&#34;https://www.scrumguides.org/&#34;&gt;The Scrum Guide&lt;/a&gt;&lt;/em&gt; 2017 says: &lt;em&gt;&amp;ldquo;Higher ordered Product Backlog items are usually clearer and more detailed than lower ordered ones. More precise estimates are made based on the greater clarity and increased detail; the lower the order, the less detail&amp;rdquo;&lt;/em&gt; (p.15). See &amp;ldquo;&lt;a href=&#34;http://scrumbook.org.datasenter.no/value-stream/product-backlog/granularity-gradient.html&#34;&gt;Granularity Gradient&lt;/a&gt;&amp;rdquo; for more details. &lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:3&#34; role=&#34;doc-endnote&#34;&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.scrumalliance.org/community/profile/dteng&#34;&gt;Daniel Teng&lt;/a&gt; proposed the ODDE properties (ordered, dynamic, detailed appropriate, and estimated) for product backlog. See the article &amp;ldquo;&lt;a href=&#34;http://www.danielteng.com/2014/06/27/odde-product-backlog/&#34;&gt;ODDE 的 Product Backlog&lt;/a&gt;&amp;rdquo; for more details. &lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
@@ -95,9 +123,11 @@
 &lt;li id=&#34;fn:5&#34; role=&#34;doc-endnote&#34;&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.scrumalliance.org/community/profile/mikecohn&#34;&gt;Mike Cohn&lt;/a&gt; proposed the SPIDR approach (spike, paths, interfaces, data, and rules) for breaking down user stories. Watch the &amp;ldquo;&lt;a href=&#34;https://www.mountaingoatsoftware.com/exclusive/spidr-video&#34;&gt;Stop Wasting Time Splitting Stories&lt;/a&gt;&amp;rdquo; video for more details. &lt;a href=&#34;#fnref:5&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
+&lt;li id=&#34;fn:6&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;http://scrumbook.org/value-stream/product-backlog/enabling-specification.html&#34;&gt;Enabling specification&lt;/a&gt; &lt;a href=&#34;#fnref:6&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
-&lt;/section&gt;
-</description>
+&lt;/section&gt;</description>
       
     </item>
     
