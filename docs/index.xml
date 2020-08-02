@@ -6,10 +6,108 @@
     <description>Recent content on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Wed, 29 Jul 2020 22:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 02 Aug 2020 16:00:00 +0800</lastBuildDate>
     
         <atom:link href="//william-yeh.net/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Essence of Scrum: Daily Scrum</title>
+      <link>//william-yeh.net/post/2020/08/daily-scrum-in-a-nutshell/</link>
+      <pubDate>Sun, 02 Aug 2020 16:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2020/08/daily-scrum-in-a-nutshell/</guid>
+      
+        <description>&lt;p&gt;This article discusses the essence of &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Daily Scrum&lt;/span&gt;
+.&lt;/p&gt;
+&lt;h2 id=&#34;in-a-nutshell&#34;&gt;In a nutshell&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Daily Scrum&lt;/strong&gt; is a time-boxed daily event in which the &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Development Team&lt;/span&gt;
+ gathers together to quickly inspect current performance and to identify necessary actions in order to increase the confidence in achieving the &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Goal&lt;/span&gt;
+.&lt;/p&gt;
+&lt;h2 id=&#34;output&#34;&gt;Output&lt;/h2&gt;
+&lt;p&gt;Essential:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Updated confidence in the &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Goal&lt;/span&gt;
+ based in evidence.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Updated plans for achieving the &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Goal&lt;/span&gt;
+.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;input&#34;&gt;Input&lt;/h2&gt;
+&lt;p&gt;Essential:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Up-to-date &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint&lt;/span&gt;
+ performance status.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Evidence.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;tools-and-techniques&#34;&gt;Tools and Techniques&lt;/h2&gt;
+&lt;p&gt;Essential:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Time-box facilitation techniques.&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Three questions.&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt; I suggest iterating based on &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Backlog Items&lt;/span&gt;
+ instead of persons:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;To brief what the &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Development Team&lt;/span&gt;
+ has moved toward the &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Goal&lt;/span&gt;
+ since the last &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Daily Scrum&lt;/span&gt;
+.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;To brief what the &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Development Team&lt;/span&gt;
+ plans to do toward the &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Goal&lt;/span&gt;
+ today.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;To identify potential risks that affect the ability to achieve the &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Goal&lt;/span&gt;
+.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Better:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Visualized &lt;a href=&#34;http://scrumbook.org/value-stream/information-radiator.html&#34;&gt;information radiators&lt;/a&gt; (e.g., Scrum board, Kanban board).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+
+&lt;div class=&#34;shortcode-notice note&#34;&gt;
+  &lt;div class=&#34;shortcode-notice-title note&#34;&gt;
+    
+      &amp;#39;Essence of Scrum&amp;#39; Series
+    
+  &lt;/div&gt;
+  &lt;p&gt;❶ &lt;a href=&#34;//william-yeh.net/post/2020/07/pbr-in-a-nutshell/&#34;&gt;Product Backlog Refinement&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❷ Daily Scrum&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;The &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Daily Scrum&lt;/span&gt;
+ is typically time-boxed to avoid diving into implementation details. &lt;em&gt;&lt;a href=&#34;https://www.scrumguides.org/&#34;&gt;The Scrum Guide&lt;/a&gt;&lt;/em&gt; even defines it as &amp;ldquo;a &lt;strong&gt;15-minute&lt;/strong&gt; time-boxed event.&amp;rdquo; &lt;em&gt;&lt;a href=&#34;http://scrumbook.org/&#34;&gt;A Scrum Book: The Spirit of the Game&lt;/a&gt;&lt;/em&gt; also suggests that &amp;ldquo;this meeting is for replanning and decision-making, not for problem-solving. Strictly time-box the meeting to keep focus on the daily plan and to avoid robbing time from development.&amp;rdquo; &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;Traditionally &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Daily Scrum&lt;/span&gt;
+ is for each person to take turns to speak up the &amp;ldquo;&lt;a href=&#34;https://www.agilealliance.org/glossary/three-qs&#34;&gt;three questions&lt;/a&gt;&amp;rdquo;. For example, &lt;em&gt;&lt;a href=&#34;https://www.scrumguides.org/&#34;&gt;The Scrum Guide&lt;/a&gt;&lt;/em&gt; 2013 version said that &amp;ldquo;During the meeting, the Development Team members explain: [&amp;hellip;]&amp;rdquo; This may imply micro-management, however.  In 2017 version it was rephrased in a less prescriptive style as &amp;ldquo;Some Development Teams will use questions, some will be more discussion based. Here is an example of what might be used: [&amp;hellip;]&amp;rdquo; &lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
+</description>
+      
+    </item>
     
     <item>
       <title>Essence of Scrum: Product Backlog Refinement</title>
@@ -55,7 +153,8 @@
  properly &lt;strong&gt;orders&lt;/strong&gt; and &lt;strong&gt;breaks down&lt;/strong&gt; &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Product Backlog&lt;/span&gt;
  so that the &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Development Team&lt;/span&gt;
  feels confident enough about the top &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Product Backlog Items&lt;/span&gt;
- to take them into a Sprint.&lt;/p&gt;
+ to take them into a &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint&lt;/span&gt;
+.&lt;/p&gt;
 &lt;h2 id=&#34;output&#34;&gt;Output&lt;/h2&gt;
 &lt;p&gt;Essential:&lt;/p&gt;
 &lt;ul&gt;
@@ -86,7 +185,7 @@
  that is roughly ordered according to product roadmap and expectations of stakeholders.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;tools&#34;&gt;Tools&lt;/h2&gt;
+&lt;h2 id=&#34;tools-and-techniques&#34;&gt;Tools and Techniques&lt;/h2&gt;
 &lt;p&gt;Essential:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -105,6 +204,19 @@
 &lt;p&gt;Techniques for enabling specification&lt;sup id=&#34;fnref:6&#34;&gt;&lt;a href=&#34;#fn:6&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;6&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+
+&lt;div class=&#34;shortcode-notice note&#34;&gt;
+  &lt;div class=&#34;shortcode-notice-title note&#34;&gt;
+    
+      &amp;#39;Essence of Scrum&amp;#39; Series
+    
+  &lt;/div&gt;
+  &lt;p&gt;❶ Product Backlog Refinement&lt;/p&gt;
+&lt;p&gt;❷ &lt;a href=&#34;//william-yeh.net/post/2020/08/daily-scrum-in-a-nutshell/&#34;&gt;Daily Scrum&lt;/a&gt;&lt;/p&gt;
+
+&lt;/div&gt;
+
 &lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
 &lt;hr&gt;
 &lt;ol&gt;
@@ -2984,14 +3096,19 @@ metadata:
 &lt;p&gt;If your application is smart enough to gracefully reload itself whenever it detects any configuration changes, it continues working well with ConfigMap in Kubernetes.&lt;/p&gt;
 &lt;p&gt;If not so smart, an easier approach is to use automatic tools (e.g., &lt;a href=&#34;https://github.com/stakater/Reloader&#34;&gt;Reloader&lt;/a&gt;) to rolling update related pods.&lt;/p&gt;
 &lt;p&gt;I will not recommend the watch+signal approach (e.g., &lt;a href=&#34;https://github.com/rvoicilas/inotify-tools&#34;&gt;inotify-tools&lt;/a&gt;). It is prone to error and zombie processes.&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;pre&gt;&lt;code&gt;  Series of Articles
-&lt;/code&gt;&lt;/pre&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;p&gt;❶ &lt;a href=&#34;//william-yeh.net/post/2019/06/inotify-in-containers/&#34;&gt;Inotify in Containers&lt;/a&gt;&lt;/p&gt;
+
+&lt;div class=&#34;shortcode-notice note&#34;&gt;
+  &lt;div class=&#34;shortcode-notice-title note&#34;&gt;
+    
+      Series of Articles
+    
+  &lt;/div&gt;
+  &lt;p&gt;❶ &lt;a href=&#34;//william-yeh.net/post/2019/06/inotify-in-containers/&#34;&gt;Inotify in Containers&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;❷ &lt;a href=&#34;//william-yeh.net/post/2019/06/containers-and-env/&#34;&gt;Containers and Environment Variables&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;➌ Auto-Reload from ConfigMap&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
+
+&lt;/div&gt;
+
 &lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
 &lt;hr&gt;
 &lt;ol&gt;
@@ -3033,14 +3150,19 @@ metadata:
 &lt;p&gt;&lt;a href=&#34;https://asciinema.org/a/252073&#34;&gt;&lt;img src=&#34;https://asciinema.org/a/252073.svg&#34; alt=&#34;asciicast&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;It is obvious in the demo that the changes of environment variables will not affect already-running processes inside the containers &amp;mdash; let alone pods in the Kubernetes world.&lt;/p&gt;
 &lt;p&gt;To simply put, if you want ConfigMap to propagate its changes to related pods, mount the ConfigMap as &lt;em&gt;directories&lt;/em&gt;, not &lt;em&gt;environment variables&lt;/em&gt;.&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;pre&gt;&lt;code&gt;  Series of Articles
-&lt;/code&gt;&lt;/pre&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;p&gt;❶ &lt;a href=&#34;//william-yeh.net/post/2019/06/inotify-in-containers/&#34;&gt;Inotify in Containers&lt;/a&gt;&lt;/p&gt;
+
+&lt;div class=&#34;shortcode-notice note&#34;&gt;
+  &lt;div class=&#34;shortcode-notice-title note&#34;&gt;
+    
+      Series of Articles
+    
+  &lt;/div&gt;
+  &lt;p&gt;❶ &lt;a href=&#34;//william-yeh.net/post/2019/06/inotify-in-containers/&#34;&gt;Inotify in Containers&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;❷ Containers and Environment Variables&lt;/p&gt;
 &lt;p&gt;➌ &lt;a href=&#34;//william-yeh.net/post/2019/06/autoreload-from-configmap/&#34;&gt;Auto-Reload from ConfigMap&lt;/a&gt;&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
+
+&lt;/div&gt;
+
 &lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
 &lt;hr&gt;
 &lt;ol&gt;
@@ -3168,14 +3290,19 @@ lrwxrwxrwx    1 root  root     15 Jun 12 06:19 main.css -&amp;gt; ..data/main.cs
 &lt;p&gt;The &lt;code&gt;inotify&lt;/code&gt; mechanism works in the container and Kubernetes world, except for the LCOW case.&lt;/p&gt;
 &lt;p&gt;If such a feature is needed in the LCOW setting, maybe you have to seek another workaround workflow; e.g., put &lt;code&gt;inotify&lt;/code&gt; mechanism outside the container, and propagate the event explicitly into the containers if any.  This is exactly what &lt;a href=&#34;https://skaffold.dev/&#34;&gt;Skaffold&lt;/a&gt; is doing.&lt;/p&gt;
 &lt;p&gt;Also note that &lt;code&gt;inotify&lt;/code&gt; works better when ConfigMap is mounted as directories, rather than as merely files.&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;pre&gt;&lt;code&gt;  Series of Articles
-&lt;/code&gt;&lt;/pre&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;p&gt;❶ Inotify in Containers&lt;/p&gt;
+
+&lt;div class=&#34;shortcode-notice note&#34;&gt;
+  &lt;div class=&#34;shortcode-notice-title note&#34;&gt;
+    
+      Series of Articles
+    
+  &lt;/div&gt;
+  &lt;p&gt;❶ Inotify in Containers&lt;/p&gt;
 &lt;p&gt;❷ &lt;a href=&#34;//william-yeh.net/post/2019/06/containers-and-env/&#34;&gt;Containers and Environment Variables&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;➌ &lt;a href=&#34;//william-yeh.net/post/2019/06/autoreload-from-configmap/&#34;&gt;Auto-Reload from ConfigMap&lt;/a&gt;&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
+
+&lt;/div&gt;
+
 &lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
 &lt;hr&gt;
 &lt;ol&gt;
@@ -3281,12 +3408,17 @@ lrwxrwxrwx    1 root  root     15 Jun 12 06:19 main.css -&amp;gt; ..data/main.cs
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;可惜，一個半小時的時間還是太短了，最後面 30 分鐘其實是在趕進度，跳過了一些原本應該仔細講解的環節（譬如：ConfigMap、label &amp;amp; selector、ephemeral vs static external IP 的區分⋯⋯）。我再考慮另外找個社群的場子，辦一次較完整的 workshop 吧。完整的，應該會需要 2.5～3 小時。&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;pre&gt;&lt;code&gt;  2019-06-16 補充
-&lt;/code&gt;&lt;/pre&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;p&gt;一個月後，應 &lt;a href=&#34;https://www.meetup.com/GCPUG-Taipei/events/261797460/&#34;&gt;GCPUG Taipei&lt;/a&gt; 之邀，我辦了一場 3+1 小時的 Workshop，&lt;a href=&#34;https://www.slideshare.net/williamyeh/rd-kubernetes-gcpug-2019-06/&#34;&gt;投影片&lt;/a&gt;及&lt;a href=&#34;https://github.com/William-Yeh/workshop-gcpug201906/&#34;&gt;實作範例&lt;/a&gt;都有更新。&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
+
+&lt;div class=&#34;shortcode-notice note&#34;&gt;
+  &lt;div class=&#34;shortcode-notice-title note&#34;&gt;
+    
+      2019-06-16 補充
+    
+  &lt;/div&gt;
+  &lt;p&gt;一個月後，應 &lt;a href=&#34;https://www.meetup.com/GCPUG-Taipei/events/261797460/&#34;&gt;GCPUG Taipei&lt;/a&gt; 之邀，我辦了一場 3+1 小時的 Workshop，&lt;a href=&#34;https://www.slideshare.net/williamyeh/rd-kubernetes-gcpug-2019-06/&#34;&gt;投影片&lt;/a&gt;及&lt;a href=&#34;https://github.com/William-Yeh/workshop-gcpug201906/&#34;&gt;實作範例&lt;/a&gt;都有更新。&lt;/p&gt;
+
+&lt;/div&gt;
+
 &lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;p&gt;希望這一場演講，一場實作工作坊，對大家有助益。&lt;/p&gt;
 &lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
@@ -3569,13 +3701,18 @@ lrwxrwxrwx    1 root  root     15 Jun 12 06:19 main.css -&amp;gt; ..data/main.cs
 &lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;p&gt;這麼多乾貨，值得花點力氣好好消化。&lt;/p&gt;
 &lt;h2 id=&#34;投影片&#34;&gt;投影片&lt;/h2&gt;
+
+&lt;div class=&#34;shortcode-notice note&#34;&gt;
+  &lt;div class=&#34;shortcode-notice-title note&#34;&gt;
+    
+      2019-07-02 補充
+    
+  &lt;/div&gt;
+  &lt;p&gt;兩個月後，應 GCPUG Taipei 之邀，我還是在 &lt;a href=&#34;https://www.meetup.com/GCPUG-Taipei/events/262584153/&#34;&gt;Meetup #48&lt;/a&gt; 給了一場分享。投影片在此：&lt;/p&gt;
 &lt;!-- raw HTML omitted --&gt;
-&lt;pre&gt;&lt;code&gt;  2019-07-02 補充
-&lt;/code&gt;&lt;/pre&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;p&gt;兩個月後，應 GCPUG Taipei 之邀，我還是在 &lt;a href=&#34;https://www.meetup.com/GCPUG-Taipei/events/262584153/&#34;&gt;Meetup #48&lt;/a&gt; 給了一場分享。投影片在此：&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
+
+&lt;/div&gt;
+
 &lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
 &lt;hr&gt;
 &lt;ol&gt;
@@ -3678,81 +3815,6 @@ C:&amp;gt; bcdedit /set hypervisorlaunchtype auto&lt;/code&gt;&lt;/pre&gt;&lt;/d
 &lt;/li&gt;
 &lt;li id=&#34;fn:4&#34; role=&#34;doc-endnote&#34;&gt;
 &lt;p&gt;當 Vagrant 在使用 Hyper-V 時，會出現 &amp;ldquo;Hyper-V Administrators&amp;rdquo; 權限問題。我嘗試以下幾篇文章，可惜仍未解決：“&lt;a href=&#34;https://github.com/hashicorp/vagrant/issues/4503&#34;&gt;Vagrant issue #378&lt;/a&gt;”、“&lt;a href=&#34;https://blogs.msdn.microsoft.com/virtual_pc_guy/2014/06/11/allowing-non-administrators-to-control-hyper-vupdated/&#34;&gt;Allowing non-Administrators to control Hyper-V–Updated&lt;/a&gt;”、“&lt;a href=&#34;https://dev.to/nicolus/getting-homestead-to-play-nice-with-hyper-v-4202&#34;&gt;Getting Homestead to play nice with Hyper-V&lt;/a&gt;”。 &lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/section&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>WSLtty &#43; tmux 組合技</title>
-      <link>//william-yeh.net/post/2019/04/wsltty-tmux/</link>
-      <pubDate>Wed, 17 Apr 2019 22:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2019/04/wsltty-tmux/</guid>
-      
-        <description>&lt;p&gt;在 Windows 10 上面使用 WSL 已經一個月了&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;。小狀況也就罷了，但 &lt;a href=&#34;https://cmder.net/&#34;&gt;Cmder&lt;/a&gt; 不夠穩定的顯示邏輯卻最讓我頭痛，在視窗尺寸變化時，無法正確處理字元位置。更令人費解的是，即使是其他狀似更華麗（也更耗資源）的替代方案，也仍然有這些問題&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;。&lt;/p&gt;
-&lt;p&gt;既然酷炫的終端機競品問題多多，乾脆回歸極簡的 WSLtty&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;，並混搭 tmux&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt; 來彌補。可惜，畢竟是組合技，無法完全複製 Mac 的 iTerm2 使用經驗。&lt;/p&gt;
-&lt;p&gt;此事古難全。&lt;/p&gt;
-&lt;h2 id=&#34;wsltty-剪貼簿&#34;&gt;WSLtty 剪貼簿&lt;/h2&gt;
-&lt;p&gt;在 X Window 或 Mac 的終端機，只要按下滑鼠右鍵就能夠 paste 文字。如果在 WSLtty 上也想這麼玩，請在 &lt;code&gt;%APPDATA%\wsltty\config&lt;/code&gt; 設定檔加上這一行：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;RightClickAction=paste&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2 id=&#34;tmux-與-zsh&#34;&gt;Tmux 與 zsh&lt;/h2&gt;
-&lt;p&gt;啟動 tmux 時，似乎並不會根據 &lt;code&gt;/etc/passwd&lt;/code&gt; 的資訊來喚起自訂的 shell，而是一律喚起 bash。&lt;/p&gt;
-&lt;p&gt;解決方法是，在 &lt;code&gt;~/.tmux.conf&lt;/code&gt; 加上這一行：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;set-option -g default-shell /bin/zsh&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2 id=&#34;tmux-的-pane&#34;&gt;Tmux 的 pane&lt;/h2&gt;
-&lt;p&gt;用慣 iTerm2 的我，對 tmux 的 pane 功能不太習慣。&lt;/p&gt;
-&lt;p&gt;譬如說，在 tmux 新增 pane 或 window 時，不會自動帶入目前的目錄 &lt;code&gt;$PWD&lt;/code&gt;，而是一律帶入 &lt;code&gt;$HOME&lt;/code&gt;，很不方便。Tmux 預設的組合鍵 &lt;code&gt;&amp;lt;prefix&amp;gt; %&lt;/code&gt; 及 &lt;code&gt;&amp;lt;prefix&amp;gt; &amp;quot;&lt;/code&gt; 難記又難按，也很令人頭痛。&lt;/p&gt;
-&lt;p&gt;因此，我綜合多人的做法&lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt;，解決目錄問題，換成好記好按的組合鍵，更可用方向鍵來切換 pane：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;# Create new window (tab) with current path
-unbind c
-bind -n M-t new-window -c &amp;#39;#{pane_current_path}&amp;#39;  # mimic for iTerm2 habit
-
-# Split panes with current path
-# @see https://unix.stackexchange.com/a/247449
-unbind &amp;#39;&amp;#34;&amp;#39;
-unbind &amp;#39;%&amp;#39;
-bind -n M-d split-window -h -c &amp;#39;#{pane_current_path}&amp;#39;  # Split panes horizontal
-bind -n M-D split-window -v -c &amp;#39;#{pane_current_path}&amp;#39;  # Split panes vertically
-
-# Switch panes using Alt-arrow without prefix
-bind -n M-Left  select-pane -L
-bind -n M-Right select-pane -R
-bind -n M-Up    select-pane -U
-bind -n M-Down  select-pane -D&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2 id=&#34;tmux-plugin-manager&#34;&gt;Tmux Plugin Manager&lt;/h2&gt;
-&lt;p&gt;Tmux 設定太多了，就有人寫了外掛管理系統 &lt;a href=&#34;https://github.com/tmux-plugins/tpm&#34;&gt;Tmux Plugin Manager&lt;/a&gt;。雖然目前我還用不到，但還是先安裝，以備不時之需。&lt;/p&gt;
-&lt;p&gt;首先，下載 TPM：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;% git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;將以下幾行加到 &lt;code&gt;.tmux.conf&lt;/code&gt; 最後面：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;# List of plugins
-set -g @plugin &amp;#39;tmux-plugins/tpm&amp;#39;
-set -g @plugin &amp;#39;tmux-plugins/tmux-sensible&amp;#39;
-
-# Initialize TMUX plugin manager
-# (keep this line at the very bottom of tmux.conf)
-run -b &amp;#39;~/.tmux/plugins/tpm/tpm&amp;#39;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;Tmux 還有很多高段的功能，以後有需要再研究吧。&lt;/p&gt;
-&lt;p&gt;如此這般拼湊起來，雖然還不能完全複刻 Mac 的 iTerm2 使用經驗，但也已經算是可以接受了。當然啦，私心還是希望 Cmder 或 Hyper 能夠好好解決顯示問題，就不必動用 tmux 了。&lt;/p&gt;
-&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
-&lt;hr&gt;
-&lt;ol&gt;
-&lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;這段故事，詳見〈&lt;a href=&#34;//william-yeh.net/post/2019/03/wsl-cmder-zsh/&#34;&gt;在 Windows 上復刻 Mac 使用習慣&lt;/a&gt;〉一文。 &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;關於其他更華麗，卻也更耗資源的 Windows 終端機方案，可參考這幾篇介紹文章：〈&lt;a href=&#34;https://github.com/spencerwooo/dowww&#34;&gt;在 Windows 上面用 WSL 优雅开发&lt;/a&gt;〉、“&lt;a href=&#34;https://nickjanetakis.com/blog/conemu-vs-hyper-vs-terminus-vs-mobaxterm-terminator-vs-ubuntu-wsl&#34;&gt;ConEmu vs Hyper vs Terminus vs MobaXTerm Terminator vs Ubuntu WSL&lt;/a&gt;”。 &lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:3&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;關於 &lt;a href=&#34;https://github.com/mintty/wsltty&#34;&gt;WSLtty&lt;/a&gt;，可參考保哥的〈&lt;a href=&#34;https://blog.miniasp.com/post/2019/02/09/Useful-tool-WSLtty-Mintty-as-a-terminal-for-WSL&#34;&gt;介紹好用工具：WSLtty (Mintty as a terminal for WSL)&lt;/a&gt;〉一文。 &lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:4&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;關於 &lt;a href=&#34;https://github.com/tmux/tmux&#34;&gt;tmux&lt;/a&gt;，可參考這幾篇介紹文章：〈&lt;a href=&#34;https://5xruby.tw/posts/tmux/&#34;&gt;tmux ，不只是 terminal multiplexer&lt;/a&gt;〉、〈&lt;a href=&#34;https://andyyou.github.io/2017/11/27/tmux-notes/&#34;&gt;tmux 快速入門筆記&lt;/a&gt;〉、〈&lt;a href=&#34;https://larrylu.blog/tmux-33a24e595fbc&#34;&gt;終端機 session 管理神器 — tmux&lt;/a&gt;〉。 &lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:5&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;Shubham 提供的&lt;a href=&#34;https://unix.stackexchange.com/a/247449&#34;&gt;做法&lt;/a&gt;，可讓新開的 pane 及 window 保持在目前所在的目錄。Ham Vocke 的&lt;a href=&#34;https://www.hamvocke.com/blog/a-guide-to-customizing-your-tmux-conf/&#34;&gt;文章&lt;/a&gt;也介紹幾種有趣的 tmux 設定。 &lt;a href=&#34;#fnref:5&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;</description>

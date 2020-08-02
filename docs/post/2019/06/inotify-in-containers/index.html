@@ -441,14 +441,19 @@ lrwxrwxrwx    1 root  root     15 Jun 12 06:19 main.css -&gt; ..data/main.css</c
 <p>The <code>inotify</code> mechanism works in the container and Kubernetes world, except for the LCOW case.</p>
 <p>If such a feature is needed in the LCOW setting, maybe you have to seek another workaround workflow; e.g., put <code>inotify</code> mechanism outside the container, and propagate the event explicitly into the containers if any.  This is exactly what <a href="https://skaffold.dev/">Skaffold</a> is doing.</p>
 <p>Also note that <code>inotify</code> works better when ConfigMap is mounted as directories, rather than as merely files.</p>
-<!-- raw HTML omitted -->
-<pre><code>  Series of Articles
-</code></pre>
-<!-- raw HTML omitted -->
-<p>❶ Inotify in Containers</p>
+
+<div class="shortcode-notice note">
+  <div class="shortcode-notice-title note">
+    
+      Series of Articles
+    
+  </div>
+  <p>❶ Inotify in Containers</p>
 <p>❷ <a href="//william-yeh.net/post/2019/06/containers-and-env/">Containers and Environment Variables</a></p>
 <p>➌ <a href="//william-yeh.net/post/2019/06/autoreload-from-configmap/">Auto-Reload from ConfigMap</a></p>
-<!-- raw HTML omitted -->
+
+</div>
+
 <section class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
