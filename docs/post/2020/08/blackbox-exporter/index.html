@@ -72,7 +72,7 @@
 本文介紹一個好用的 Prometheus 官方工具：Blackbox exporter，可以省下手刻 curl 腳本的工夫。我也順便介紹一些踩過的雷。">
 <meta itemprop="datePublished" content="2020-08-07T08:00:00+08:00" />
 <meta itemprop="dateModified" content="2020-08-07T08:00:00+08:00" />
-<meta itemprop="wordCount" content="2444">
+<meta itemprop="wordCount" content="2442">
 
 
 
@@ -303,7 +303,7 @@ if (!doNotTrack) {
             <a href="//william-yeh.net/categories/tech/"> tech </a>
             
           </div>
-        <span class="more-meta"> 約 2444 字 </span>
+        <span class="more-meta"> 約 2442 字 </span>
           <span class="more-meta"> 預計閱讀 5 分鐘 </span>
 
         
@@ -327,7 +327,7 @@ if (!doNotTrack) {
   <ul>
     <li><a href="#健康狀況的揭露方式">健康狀況的揭露方式</a></li>
     <li><a href="#blackbox-exporter-分工架構">Blackbox exporter 分工架構</a></li>
-    <li><a href="#blackbox-exporter-第一次上手">Blackbox exporter 第一次上手</a></li>
+    <li><a href="#blackbox-exporter-初體驗">Blackbox exporter 初體驗</a></li>
     <li><a href="#ipv6ipv4-問題">IPv6/IPv4 問題</a></li>
     <li><a href="#auth">Auth</a></li>
     <li><a href="#參考資料">參考資料</a></li>
@@ -381,7 +381,7 @@ tcp_probe、dns_probe、icmp_probe，即使面對「不完全揭露」自身健�
 </div>
 
 <p>所以，一開始，我們會先試著寫好 <code>blackbox.yml</code> 設定檔，先測試 Blackbox exporter 能正常運作，之後才去串接 Prometheus。</p>
-<h2 id="blackbox-exporter-第一次上手">Blackbox exporter 第一次上手</h2>
+<h2 id="blackbox-exporter-初體驗">Blackbox exporter 初體驗</h2>
 <p>官方提供的<a href="https://github.com/prometheus/blackbox_exporter/blob/master/blackbox.yml">陽春版 <code>blackbox.yml</code> 設定檔</a>展示了一些常見的 blackbox exporter 模組 (module)，很適合初次上手之用：</p>
 <div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="c"># https://github.com/prometheus/blackbox_exporter/blob/master/blackbox.yml</span><span class="w">
 </span><span class="w"></span><span class="k">modules</span><span class="p">:</span><span class="w">

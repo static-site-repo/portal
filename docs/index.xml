@@ -61,7 +61,7 @@ tcp_probe、dns_probe、icmp_probe，即使面對「不完全揭露」自身健�
 &lt;/div&gt;
 
 &lt;p&gt;所以，一開始，我們會先試著寫好 &lt;code&gt;blackbox.yml&lt;/code&gt; 設定檔，先測試 Blackbox exporter 能正常運作，之後才去串接 Prometheus。&lt;/p&gt;
-&lt;h2 id=&#34;blackbox-exporter-第一次上手&#34;&gt;Blackbox exporter 第一次上手&lt;/h2&gt;
+&lt;h2 id=&#34;blackbox-exporter-初體驗&#34;&gt;Blackbox exporter 初體驗&lt;/h2&gt;
 &lt;p&gt;官方提供的&lt;a href=&#34;https://github.com/prometheus/blackbox_exporter/blob/master/blackbox.yml&#34;&gt;陽春版 &lt;code&gt;blackbox.yml&lt;/code&gt; 設定檔&lt;/a&gt;展示了一些常見的 blackbox exporter 模組 (module)，很適合初次上手之用：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;c&#34;&gt;# https://github.com/prometheus/blackbox_exporter/blob/master/blackbox.yml&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;modules&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
