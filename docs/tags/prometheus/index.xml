@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>prometheus on Potioneer&#39;s Essays</title>
+    <link>//william-yeh.net/tags/prometheus/</link>
+    <description>Recent content in prometheus on Potioneer&#39;s Essays</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Fri, 07 Aug 2020 08:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="//william-yeh.net/tags/prometheus/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Blackbox Exporter 小記</title>
+      <link>//william-yeh.net/post/2020/08/blackbox-exporter/</link>
+      <pubDate>Fri, 07 Aug 2020 08:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2020/08/blackbox-exporter/</guid>
+      <description>&lt;p&gt;在用 &lt;a href=&#34;https://prometheus.io/&#34;&gt;Prometheus&lt;/a&gt; + &lt;a href=&#34;https://grafana.com/&#34;&gt;Grafana&lt;/a&gt; 監控自家服務的同時，我們也會想用同一套系統去監控第三方服務。&lt;/p&gt;
+&lt;p&gt;本文介紹一個好用的 Prometheus 官方工具：&lt;a href=&#34;https://github.com/prometheus/blackbox_exporter&#34;&gt;Blackbox exporter&lt;/a&gt;，可以省下手刻 curl 腳本的工夫。我也順便介紹一些踩過的雷。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

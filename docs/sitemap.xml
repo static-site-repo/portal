@@ -2,14 +2,70 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>//william-yeh.net/tags/agile/</loc>
-    <lastmod>2020-08-02T16:00:00+08:00</lastmod>
+    <loc>//william-yeh.net/post/2020/08/blackbox-exporter/</loc>
+    <lastmod>2020-08-07T08:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>//william-yeh.net/categories/</loc>
+    <lastmod>2020-08-07T08:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/devops/</loc>
+    <lastmod>2020-08-07T08:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/monitoring/</loc>
+    <lastmod>2020-08-07T08:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/post/</loc>
+    <lastmod>2020-08-07T08:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/</loc>
+    <lastmod>2020-08-07T08:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/prometheus/</loc>
+    <lastmod>2020-08-07T08:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/</loc>
+    <lastmod>2020-08-07T08:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/categories/tech/</loc>
+    <lastmod>2020-08-07T08:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/agile/</loc>
     <lastmod>2020-08-02T16:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -30,20 +86,6 @@
   </url>
   
   <url>
-    <loc>//william-yeh.net/post/</loc>
-    <lastmod>2020-08-02T16:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/</loc>
-    <lastmod>2020-08-02T16:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>//william-yeh.net/tags/process/</loc>
     <lastmod>2020-08-02T16:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -52,13 +94,6 @@
   
   <url>
     <loc>//william-yeh.net/tags/scrum/</loc>
-    <lastmod>2020-08-02T16:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/tags/</loc>
     <lastmod>2020-08-02T16:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -93,21 +128,7 @@
   </url>
   
   <url>
-    <loc>//william-yeh.net/categories/tech/</loc>
-    <lastmod>2020-07-10T08:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>//william-yeh.net/tags/ci/</loc>
-    <lastmod>2020-07-09T23:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/tags/devops/</loc>
     <lastmod>2020-07-09T23:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

@@ -6,10 +6,334 @@
     <description>Recent content on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sun, 02 Aug 2020 16:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 07 Aug 2020 08:00:00 +0800</lastBuildDate>
     
         <atom:link href="//william-yeh.net/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Blackbox Exporter 小記</title>
+      <link>//william-yeh.net/post/2020/08/blackbox-exporter/</link>
+      <pubDate>Fri, 07 Aug 2020 08:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2020/08/blackbox-exporter/</guid>
+      
+        <description>&lt;p&gt;在用 &lt;a href=&#34;https://prometheus.io/&#34;&gt;Prometheus&lt;/a&gt; + &lt;a href=&#34;https://grafana.com/&#34;&gt;Grafana&lt;/a&gt; 監控自家服務的同時，我們也會想用同一套系統去監控第三方服務。&lt;/p&gt;
+&lt;p&gt;本文介紹一個好用的 Prometheus 官方工具：&lt;a href=&#34;https://github.com/prometheus/blackbox_exporter&#34;&gt;Blackbox exporter&lt;/a&gt;，可以省下手刻 curl 腳本的工夫。我也順便介紹一些踩過的雷。&lt;/p&gt;
+&lt;h2 id=&#34;健康狀況的揭露方式&#34;&gt;健康狀況的揭露方式&lt;/h2&gt;
+&lt;p&gt;第三方服務的健康狀況，有不同的自我揭露方式：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;API：像 Google Cloud 有提供 &lt;a href=&#34;https://status.cloud.google.com/incidents.json&#34;&gt;json endpoint&lt;/a&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Feed：像 AWS 有提供 &lt;a href=&#34;https://status.aws.amazon.com/&#34;&gt;RSS feed&lt;/a&gt;，Google Cloud 有 &lt;a href=&#34;https://status.cloud.google.com/feed.atom&#34;&gt;RSS feed&lt;/a&gt;，Stripe 有 &lt;a href=&#34;https://twitter.com/stripestatus&#34;&gt;Twitter @stripestatus&lt;/a&gt; 及 &lt;a href=&#34;https://status.stripe.com/current/atom.xml&#34;&gt;RSS feed&lt;/a&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;網頁：像 AWS 有提供 &lt;a href=&#34;https://status.aws.amazon.com/&#34;&gt;Service Health Dashboard&lt;/a&gt; 網頁，Google Cloud 有 &lt;a href=&#34;https://status.cloud.google.com/&#34;&gt;Status Dashboard&lt;/a&gt; 網頁，Stripe 有 &lt;a href=&#34;https://status.stripe.com/&#34;&gt;System Status&lt;/a&gt; 網頁。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;統包服務：像 &lt;a href=&#34;https://www.pingdom.com/&#34;&gt;Pingdom&lt;/a&gt;、&lt;a href=&#34;https://downdetector.sg/&#34;&gt;Downdetector&lt;/a&gt; 可以一站通吃想監控的第三方服務群。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;不完全揭露。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;針對這些林林總總的揭露方式，&lt;a href=&#34;https://github.com/prometheus/blackbox_exporter&#34;&gt;Blackbox exporter&lt;/a&gt; 提供幾種 &lt;a href=&#34;https://github.com/prometheus/blackbox_exporter/blob/master/CONFIGURATION.md&#34;&gt;prober&lt;/a&gt;：http_probe、
+tcp_probe、dns_probe、icmp_probe，即使面對「不完全揭露」自身健康狀況的第三方服務，還是可以在某些程度上間接採集他們的健康狀況，只要你留意這個「採集」的舉動沒有副作用。&lt;/p&gt;
+&lt;h2 id=&#34;blackbox-exporter-分工架構&#34;&gt;Blackbox exporter 分工架構&lt;/h2&gt;
+&lt;p&gt;在 &lt;a href=&#34;https://prometheus.io/&#34;&gt;Prometheus&lt;/a&gt; 微服務架構中，是讓各種 exporter 先去 probe 各自責任區內的 metrics，再讓 Prometheus 透過 HTTP 去 scrape 這些 exporter 採集到的 metrics。&lt;/p&gt;
+&lt;p&gt;基於這個分工體系，&lt;a href=&#34;https://github.com/prometheus/blackbox_exporter&#34;&gt;Blackbox exporter&lt;/a&gt; 負責去 probe 第三方服務的健康狀況，再提供一個 &lt;code&gt;/probe&lt;/code&gt; 介面讓 Prometheus 去蒐集匯總 metrics。&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2020/08/blackbox-exporter-architecture.png&#34; alt=&#34;Blackbox exporter 分工架構&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2020/08/blackbox-exporter-architecture.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Blackbox exporter 分工架構&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;所以，一開始，我們會先試著寫好 &lt;code&gt;blackbox.yml&lt;/code&gt; 設定檔，先測試 Blackbox exporter 能正常運作，之後才去串接 Prometheus。&lt;/p&gt;
+&lt;h2 id=&#34;blackbox-exporter-第一次上手&#34;&gt;Blackbox exporter 第一次上手&lt;/h2&gt;
+&lt;p&gt;官方提供的&lt;a href=&#34;https://github.com/prometheus/blackbox_exporter/blob/master/blackbox.yml&#34;&gt;陽春版 &lt;code&gt;blackbox.yml&lt;/code&gt; 設定檔&lt;/a&gt;展示了一些常見的 blackbox exporter 模組 (module)，很適合初次上手之用：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;c&#34;&gt;# https://github.com/prometheus/blackbox_exporter/blob/master/blackbox.yml&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;modules&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;http_2xx&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;prober&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;http&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;http_post_2xx&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;prober&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;http&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;http&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;      &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;method&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;POST&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;c&#34;&gt;#...&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;其中，最常用的應該是 http_2xx 模組了。如果你只需要用到這模組，可以不必準備 &lt;code&gt;blackbox.yml&lt;/code&gt; 設定檔。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;我們可以先&lt;a href=&#34;https://github.com/prometheus/blackbox_exporter/releases&#34;&gt;下載&lt;/a&gt;並啟動 Blackbox exporter:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ ./blackbox_exporter
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;預設情況下，Blackbox exporter 會透過 port 9115 提供探測服務。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;現在，讓我們透過 Blackbox exporter 內建的 http_2xx 模組，探測 github.com 的健康狀況：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ curl &lt;span class=&#34;s1&#34;&gt;&amp;#39;localhost:9115/probe?target=github.com&amp;amp;module=http_2xx&amp;#39;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;或是乾脆省略掉預設的 http_2xx 模組名稱：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ curl &lt;span class=&#34;s1&#34;&gt;&amp;#39;localhost:9115/probe?target=github.com&amp;#39;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;details&gt;
+  &lt;summary style=&#34;background-color:#f5f5f5;border:1px solid #ccc;padding:5px;&#34;&gt;
+    透過 Blackbox exporter 探測 github.com 的輸出結果
+    
+  &lt;/summary&gt;
+  &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plain&#34; data-lang=&#34;plain&#34;&gt;# HELP probe_dns_lookup_time_seconds Returns the time taken for probe dns lookup in seconds
+# TYPE probe_dns_lookup_time_seconds gauge
+probe_dns_lookup_time_seconds 0.057117535
+# HELP probe_duration_seconds Returns how long the probe took to complete in seconds
+# TYPE probe_duration_seconds gauge
+probe_duration_seconds 1.833592006
+# HELP probe_failed_due_to_regex Indicates if probe failed due to regex
+# TYPE probe_failed_due_to_regex gauge
+probe_failed_due_to_regex 0
+# HELP probe_http_content_length Length of http content response
+# TYPE probe_http_content_length gauge
+probe_http_content_length -1
+# HELP probe_http_duration_seconds Duration of http request by phase, summed over all redirects
+# TYPE probe_http_duration_seconds gauge
+probe_http_duration_seconds{phase=&amp;#34;connect&amp;#34;} 0.425883281
+probe_http_duration_seconds{phase=&amp;#34;processing&amp;#34;} 0.433015322
+probe_http_duration_seconds{phase=&amp;#34;resolve&amp;#34;} 0.086735632
+probe_http_duration_seconds{phase=&amp;#34;tls&amp;#34;} 0.443000784
+probe_http_duration_seconds{phase=&amp;#34;transfer&amp;#34;} 0.663546262
+# HELP probe_http_redirects The number of redirects
+# TYPE probe_http_redirects gauge
+probe_http_redirects 1
+# HELP probe_http_ssl Indicates if SSL was used for the final redirect
+# TYPE probe_http_ssl gauge
+probe_http_ssl 1
+# HELP probe_http_status_code Response HTTP status code
+# TYPE probe_http_status_code gauge
+probe_http_status_code 200
+# HELP probe_http_uncompressed_body_length Length of uncompressed response body
+# TYPE probe_http_uncompressed_body_length gauge
+probe_http_uncompressed_body_length 137503
+# HELP probe_http_version Returns the version of HTTP of the probe response
+# TYPE probe_http_version gauge
+probe_http_version 1.1
+# HELP probe_ip_addr_hash Specifies the hash of IP address. It&amp;#39;s useful to detect if the IP address changes.
+# TYPE probe_ip_addr_hash gauge
+probe_ip_addr_hash 2.436894991e+09
+# HELP probe_ip_protocol Specifies whether probe ip protocol is IP4 or IP6
+# TYPE probe_ip_protocol gauge
+probe_ip_protocol 4
+# HELP probe_ssl_earliest_cert_expiry Returns earliest SSL cert expiry in unixtime
+# TYPE probe_ssl_earliest_cert_expiry gauge
+probe_ssl_earliest_cert_expiry 1.652184e+09
+# HELP probe_ssl_last_chain_expiry_timestamp_seconds Returns last SSL chain expiry in timestamp seconds
+# TYPE probe_ssl_last_chain_expiry_timestamp_seconds gauge
+probe_ssl_last_chain_expiry_timestamp_seconds 1.652184e+09
+# HELP probe_success Displays whether or not the probe was a success
+# TYPE probe_success gauge
+probe_success 1
+# HELP probe_tls_version_info Contains the TLS version used
+# TYPE probe_tls_version_info gauge
+probe_tls_version_info{version=&amp;#34;TLS 1.3&amp;#34;} 1
+~ % curl &amp;#39;localhost:9115/probe?target=github.com&amp;amp;module=http_2xx&amp;#39;
+# HELP probe_dns_lookup_time_seconds Returns the time taken for probe dns lookup in seconds
+# TYPE probe_dns_lookup_time_seconds gauge
+probe_dns_lookup_time_seconds 0.025288617
+# HELP probe_duration_seconds Returns how long the probe took to complete in seconds
+# TYPE probe_duration_seconds gauge
+probe_duration_seconds 1.776282033
+# HELP probe_failed_due_to_regex Indicates if probe failed due to regex
+# TYPE probe_failed_due_to_regex gauge
+probe_failed_due_to_regex 0
+# HELP probe_http_content_length Length of http content response
+# TYPE probe_http_content_length gauge
+probe_http_content_length -1
+# HELP probe_http_duration_seconds Duration of http request by phase, summed over all redirects
+# TYPE probe_http_duration_seconds gauge
+probe_http_duration_seconds{phase=&amp;#34;connect&amp;#34;} 0.414948208
+probe_http_duration_seconds{phase=&amp;#34;processing&amp;#34;} 0.42066351300000004
+probe_http_duration_seconds{phase=&amp;#34;resolve&amp;#34;} 0.038381098
+probe_http_duration_seconds{phase=&amp;#34;tls&amp;#34;} 0.465243547
+probe_http_duration_seconds{phase=&amp;#34;transfer&amp;#34;} 0.65392713
+# HELP probe_http_redirects The number of redirects
+# TYPE probe_http_redirects gauge
+probe_http_redirects 1
+# HELP probe_http_ssl Indicates if SSL was used for the final redirect
+# TYPE probe_http_ssl gauge
+probe_http_ssl 1
+# HELP probe_http_status_code Response HTTP status code
+# TYPE probe_http_status_code gauge
+probe_http_status_code 200
+# HELP probe_http_uncompressed_body_length Length of uncompressed response body
+# TYPE probe_http_uncompressed_body_length gauge
+probe_http_uncompressed_body_length 137509
+# HELP probe_http_version Returns the version of HTTP of the probe response
+# TYPE probe_http_version gauge
+probe_http_version 1.1
+# HELP probe_ip_addr_hash Specifies the hash of IP address. It&amp;#39;s useful to detect if the IP address changes.
+# TYPE probe_ip_addr_hash gauge
+probe_ip_addr_hash 1.664977422e+09
+# HELP probe_ip_protocol Specifies whether probe ip protocol is IP4 or IP6
+# TYPE probe_ip_protocol gauge
+probe_ip_protocol 4
+# HELP probe_ssl_earliest_cert_expiry Returns earliest SSL cert expiry in unixtime
+# TYPE probe_ssl_earliest_cert_expiry gauge
+probe_ssl_earliest_cert_expiry 1.652184e+09
+# HELP probe_ssl_last_chain_expiry_timestamp_seconds Returns last SSL chain expiry in timestamp seconds
+# TYPE probe_ssl_last_chain_expiry_timestamp_seconds gauge
+probe_ssl_last_chain_expiry_timestamp_seconds 1.652184e+09
+# HELP probe_success Displays whether or not the probe was a success
+# TYPE probe_success gauge
+probe_success 1
+# HELP probe_tls_version_info Contains the TLS version used
+# TYPE probe_tls_version_info gauge
+probe_tls_version_info{version=&amp;#34;TLS 1.3&amp;#34;} 1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/details&gt;
+
+&lt;p&gt;大部分情況下，我們只需要看其中的 &lt;code&gt;probe_success&lt;/code&gt; 這項 gauge 指標：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plain&#34; data-lang=&#34;plain&#34;&gt;# HELP probe_success Displays whether or not the probe was a success
+# TYPE probe_success gauge
+probe_success 1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;請用 Blackbox exporter 去戳戳看其他網站吧。&lt;/p&gt;
+&lt;h2 id=&#34;ipv6ipv4-問題&#34;&gt;IPv6/IPv4 問題&lt;/h2&gt;
+&lt;p&gt;如果用 Blackbox exporter 去探測 google.com，會得到很奇怪的結果：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ curl &lt;span class=&#34;s1&#34;&gt;&amp;#39;localhost:9115/probe?target=google.com&amp;#39;&lt;/span&gt;
+
+&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;略&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
+&lt;span class=&#34;c1&#34;&gt;# HELP probe_ip_protocol Specifies whether probe ip protocol is IP4 or IP6&lt;/span&gt;
+&lt;span class=&#34;c1&#34;&gt;# TYPE probe_ip_protocol gauge&lt;/span&gt;
+probe_ip_protocol &lt;span class=&#34;m&#34;&gt;6&lt;/span&gt;
+&lt;span class=&#34;c1&#34;&gt;# HELP probe_success Displays whether or not the probe was a success&lt;/span&gt;
+&lt;span class=&#34;c1&#34;&gt;# TYPE probe_success gauge&lt;/span&gt;
+probe_success &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;打開 debug 模式查查看：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ curl &lt;span class=&#34;s1&#34;&gt;&amp;#39;localhost:9115/probe?target=google.com&amp;amp;debug=true&amp;#39;&lt;/span&gt;
+
+Logs &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; the probe:
+&lt;span class=&#34;nv&#34;&gt;ts&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;2020-08-07T07:42:43.560461Z &lt;span class=&#34;nv&#34;&gt;caller&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;main.go:304 &lt;span class=&#34;nv&#34;&gt;module&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;http_2xx &lt;span class=&#34;nv&#34;&gt;target&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;google.com &lt;span class=&#34;nv&#34;&gt;level&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;info &lt;span class=&#34;nv&#34;&gt;msg&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;Beginning probe&amp;#34;&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;probe&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;http &lt;span class=&#34;nv&#34;&gt;timeout_seconds&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;119.5
+&lt;span class=&#34;nv&#34;&gt;ts&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;2020-08-07T07:42:43.561257Z &lt;span class=&#34;nv&#34;&gt;caller&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;http.go:323 &lt;span class=&#34;nv&#34;&gt;module&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;http_2xx &lt;span class=&#34;nv&#34;&gt;target&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;google.com &lt;span class=&#34;nv&#34;&gt;level&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;info &lt;span class=&#34;nv&#34;&gt;msg&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;Resolving target address&amp;#34;&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;ip_protocol&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;ip6
+&lt;span class=&#34;nv&#34;&gt;ts&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;2020-08-07T07:42:43.573101Z &lt;span class=&#34;nv&#34;&gt;caller&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;http.go:323 &lt;span class=&#34;nv&#34;&gt;module&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;http_2xx &lt;span class=&#34;nv&#34;&gt;target&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;google.com &lt;span class=&#34;nv&#34;&gt;level&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;info &lt;span class=&#34;nv&#34;&gt;msg&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;Resolved target address&amp;#34;&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;ip&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;2404:6800:4008:801::200e
+&lt;span class=&#34;nv&#34;&gt;ts&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;2020-08-07T07:42:43.57317Z &lt;span class=&#34;nv&#34;&gt;caller&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;client.go:252 &lt;span class=&#34;nv&#34;&gt;module&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;http_2xx &lt;span class=&#34;nv&#34;&gt;target&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;google.com &lt;span class=&#34;nv&#34;&gt;level&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;info &lt;span class=&#34;nv&#34;&gt;msg&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;Making HTTP request&amp;#34;&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;url&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;http://&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;2404:6800:4008:801::200e&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;host&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;google.com
+&lt;span class=&#34;nv&#34;&gt;ts&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;2020-08-07T07:42:43.573276Z &lt;span class=&#34;nv&#34;&gt;caller&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;main.go:119 &lt;span class=&#34;nv&#34;&gt;module&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;http_2xx &lt;span class=&#34;nv&#34;&gt;target&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;google.com &lt;span class=&#34;nv&#34;&gt;level&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;error &lt;span class=&#34;nv&#34;&gt;msg&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;Error for HTTP request&amp;#34;&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;err&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;Get \&amp;#34;http://[2404:6800:4008:801::200e]\&amp;#34;: dial tcp [2404:6800:4008:801::200e]:80: connect: no route to host&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;略&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;從上面的 log 可看到，Blackbox exporter 試圖透過 IPv6 連線到 google.com，導致錯誤。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;Prometheus 核心成員 Brian Brazil 在 &amp;ldquo;&lt;a href=&#34;https://www.robustperception.io/checking-for-http-200s-with-the-blackbox-exporter&#34;&gt;Checking for HTTP 200s with the Blackbox Exporter&lt;/a&gt;&amp;rdquo; 文章說明這問題的原因及解法：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;You may see a surprising failure if you don&amp;rsquo;t have a working IPv6 setup, as the Blackbox exporter will prefer an IPv6 address if one is returned by DNS.&lt;/p&gt;
+&lt;p&gt;You can adjust this behaviour by adding &lt;code&gt;preferred_ip_protocol: &amp;quot;ip4&amp;quot;&lt;/code&gt; to the module&amp;rsquo;s configuration.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;所以，我會在 &lt;code&gt;blackbox.yml&lt;/code&gt; 設定檔當中，增加另一個模組，取一個好記的名字：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;k&#34;&gt;modules&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# module: expect http_2xx, with ip4&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;http_2xx_with_ip4&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;prober&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;http&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;timeout&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;5s&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;http&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;      &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;preferred_ip_protocol&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;ip4&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;c&#34;&gt;#...&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;然後，重啟 Blackbox exporter，記得要餵給它新的設定檔：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ ./blackbox_exporter --config.file&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;./blackbox.yml
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;這次，讓我們改用新增的模組去探測 google.com：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ curl &lt;span class=&#34;s1&#34;&gt;&amp;#39;localhost:9115/probe?target=google.com&amp;amp;module=http_2xx_with_ip4&amp;#39;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;這次，總算可以看到正常的 &lt;code&gt;probe_success&lt;/code&gt; 了：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plain&#34; data-lang=&#34;plain&#34;&gt;# HELP probe_ip_protocol Specifies whether probe ip protocol is IP4 or IP6
+# TYPE probe_ip_protocol gauge
+probe_ip_protocol 4
+# HELP probe_success Displays whether or not the probe was a success
+# TYPE probe_success gauge
+probe_success 1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;auth&#34;&gt;Auth&lt;/h2&gt;
+&lt;p&gt;某些第三方服務的 HTTP 端點需要夾帶 auth 相關欄位。&lt;/p&gt;
+&lt;p&gt;像 &lt;a href=&#34;https://stripe.com/docs/api/authentication?lang=curl&#34;&gt;Stripe API 文件&lt;/a&gt;就說：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Authentication to the API is performed via HTTP Basic Auth. Provide your API key as the basic auth username value. You do not need to provide a password.&lt;/p&gt;
+&lt;p&gt;If you need to authenticate via bearer auth (e.g., for a cross-origin request), use &lt;code&gt;-H &amp;quot;Authorization: Bearer sk_test_4eC39HqLyjWDarjtT1zdp7dc&amp;quot;&lt;/code&gt; instead of &lt;code&gt;-u sk_test_4eC39HqLyjWDarjtT1zdp7dc&lt;/code&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;那麼，這段 auth 資訊該放到 &lt;code&gt;prometheus.yml&lt;/code&gt; 還是 &lt;code&gt;blackbox.yml&lt;/code&gt; 設定檔？畢竟與 basic_auth 相關的設定內容，在 &lt;a href=&#34;https://prometheus.io/docs/prometheus/latest/configuration/configuration/#scrape_config&#34;&gt;Prometheus 設定文件&lt;/a&gt;及 &lt;a href=&#34;https://github.com/prometheus/blackbox_exporter/blob/master/CONFIGURATION.md#http_probe&#34;&gt;Blackbox exporter 設定文件&lt;/a&gt;都出現過。&lt;/p&gt;
+&lt;p&gt;動手實驗看看吧！&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;實驗程式放在 &lt;a href=&#34;https://github.com/William-Yeh/blackbox-exporter-demo&#34;&gt;https://github.com/William-Yeh/blackbox-exporter-demo&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;實驗所需環境：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Docker 19.03.12 以上。&lt;/li&gt;
+&lt;li&gt;Docker Compose 1.26.2 以上。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;我設計了兩個 Prometheus job，分別對應到兩種不同的 basic_auth 擺放位置：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Prometheus Job&lt;/th&gt;
+&lt;th&gt;prometheus.yml&lt;/th&gt;
+&lt;th&gt;blackbox.yml&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://github.com/William-Yeh/blackbox-exporter-demo/blob/04cbedfd1b3c035bead29d0b8ecedbbfe137ddac/prometheus.yml#L46&#34;&gt;stripe-healthcheck&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;✓ &lt;a href=&#34;https://github.com/William-Yeh/blackbox-exporter-demo/blob/04cbedfd1b3c035bead29d0b8ecedbbfe137ddac/blackbox.yml#L24-L25&#34;&gt;basic_auth&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://github.com/William-Yeh/blackbox-exporter-demo/blob/04cbedfd1b3c035bead29d0b8ecedbbfe137ddac/prometheus.yml#L63&#34;&gt;stripe-healthcheck-wrong-config&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;✓ &lt;a href=&#34;https://github.com/William-Yeh/blackbox-exporter-demo/blob/04cbedfd1b3c035bead29d0b8ecedbbfe137ddac/prometheus.yml#L68-L69&#34;&gt;basic_auth&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;一切準備就緒，來試試看哪一種寫法才是對的吧。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;請用 Docker Compose 執行：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ docker-compose up
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;請用瀏覽器打開 &lt;a href=&#34;http://localhost:9090/&#34;&gt;http://localhost:9090/&lt;/a&gt; 進入 Prometheus 儀表板：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2020/08/blackbox-exporter-screenshot.png&#34; alt=&#34;用 Prometheus 觀看 Blackbox exporter 採集到的內容&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2020/08/blackbox-exporter-screenshot.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;用 Prometheus 觀看 Blackbox exporter 採集到的內容&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;事實證明，&lt;a href=&#34;https://github.com/William-Yeh/blackbox-exporter-demo/blob/04cbedfd1b3c035bead29d0b8ecedbbfe137ddac/prometheus.yml#L63&#34;&gt;stripe-healthcheck-wrong-config&lt;/a&gt; 這一組的寫法是錯誤的，要學 &lt;a href=&#34;https://github.com/William-Yeh/blackbox-exporter-demo/blob/04cbedfd1b3c035bead29d0b8ecedbbfe137ddac/prometheus.yml#L46&#34;&gt;stripe-healthcheck&lt;/a&gt; 這一組將 basic_auth 擺到 &lt;a href=&#34;https://github.com/William-Yeh/blackbox-exporter-demo/blob/04cbedfd1b3c035bead29d0b8ecedbbfe137ddac/blackbox.yml#L24-L25&#34;&gt;blackbox.yml&lt;/a&gt; 裡面才對。&lt;/p&gt;
+&lt;p&gt;這是我踩過的雷。&lt;/p&gt;
+&lt;h2 id=&#34;參考資料&#34;&gt;參考資料&lt;/h2&gt;
+&lt;p&gt;Blackbox exporter 並不難，麻煩的是要找到好範例&lt;del&gt;來偷抄&lt;/del&gt;。&lt;/p&gt;
+&lt;p&gt;關於 Blackbox exporter 的部份：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;設定檔說明：&lt;a href=&#34;https://github.com/prometheus/blackbox_exporter/blob/master/CONFIGURATION.md&#34;&gt;Blackbox exporter configuration&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;較完整的&lt;a href=&#34;https://github.com/prometheus/blackbox_exporter/blob/master/example.yml&#34;&gt;設定檔範例&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;關於 Prometheus 的部份：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://prometheus.io/docs/guides/multi-target-exporter/&#34;&gt;Understanding and using the multi-target exporter pattern&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;整體 &lt;a href=&#34;https://prometheus.io/docs/prometheus/latest/configuration/configuration/&#34;&gt;Configuration&lt;/a&gt; 說明&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description>
+      
+    </item>
     
     <item>
       <title>Essence of Scrum: Daily Scrum</title>
@@ -633,6 +957,7 @@
 &lt;p&gt;這篇文章介紹兩個好用的小工具：&lt;a href=&#34;https://github.com/fullstorydev/grpcurl&#34;&gt;gRPCurl&lt;/a&gt; 及 &lt;a href=&#34;https://github.com/bojand/ghz&#34;&gt;ghz&lt;/a&gt;，一個是輸入輸出介面測試工具，另一個是壓測工具，也順便介紹一些簡化測試的技巧。&lt;/p&gt;
 &lt;h2 id=&#34;待測程式&#34;&gt;待測程式&lt;/h2&gt;
 &lt;p&gt;待測程式放在 &lt;a href=&#34;https://github.com/William-Yeh/grpcurl-and-ghz-demo&#34;&gt;https://github.com/William-Yeh/grpcurl-and-ghz-demo&lt;/a&gt;&lt;/p&gt;
+
 &lt;details&gt;
   &lt;summary style=&#34;background-color:#f5f5f5;border:1px solid #ccc;padding:5px;&#34;&gt;
     檔案簡介：
@@ -789,7 +1114,8 @@ $ out/server-new
 &lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;      --proto        route_guide.proto    &lt;span class=&#34;se&#34;&gt;\
 &lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;      --call routeguide.RouteGuide.RecordRoute  &lt;span class=&#34;se&#34;&gt;\
 &lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;      127.0.0.1:10000
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;details&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;details&gt;
   &lt;summary style=&#34;background-color:#f5f5f5;border:1px solid #ccc;padding:5px;&#34;&gt;
     壓測 20 秒，結果如下：
     
@@ -845,7 +1171,8 @@ Error distribution:
 &lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;      --call routeguide.RouteGuide.RecordRoute  &lt;span class=&#34;se&#34;&gt;\
 &lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;      127.0.0.1:10000  &lt;span class=&#34;se&#34;&gt;\
 &lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;  &amp;lt; testdata.json
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;details&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;details&gt;
   &lt;summary style=&#34;background-color:#f5f5f5;border:1px solid #ccc;padding:5px;&#34;&gt;
     壓測 20 秒，結果如下：
     
@@ -958,7 +1285,8 @@ message Point &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;      --call routeguide.RouteGuide.RecordRoute  &lt;span class=&#34;se&#34;&gt;\
 &lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;      127.0.0.1:20000  &lt;span class=&#34;se&#34;&gt;\
 &lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;  &amp;lt; testdata.json
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;details&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;details&gt;
   &lt;summary style=&#34;background-color:#f5f5f5;border:1px solid #ccc;padding:5px;&#34;&gt;
     壓測 20 秒，結果如下：
     
@@ -1409,9 +1737,13 @@ linkerd check
 &lt;h2 id=&#34;web-api-的-idempotency-問題&#34;&gt;Web API 的 idempotency 問題&lt;/h2&gt;
 &lt;p&gt;前面的 Go 程式碼講的是 in process 場景。環境單純，沒有太多失敗、重試的未知狀況，不會有太大的 idempotency 問題。如果換成 out of process 場景，環境不再單純，網路環境不可靠，另一頭的通訊對象也不見得是穩定的，失敗、重試的未知狀況勢必增加，idempotency 就變成不得不去正視的議題。&lt;/p&gt;
 &lt;p&gt;譬如說，如果把管理商品庫存服務實作成 RESTful API：&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;
+
+&lt;details&gt;
+  &lt;summary style=&#34;background-color:#f5f5f5;border:1px solid #ccc;padding:5px;&#34;&gt;
+    Go &amp;#43; Gin 實作的 RESTful API 例子
+    
+  &lt;/summary&gt;
+  &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;
 	&lt;span class=&#34;s&#34;&gt;&amp;#34;github.com/gin-gonic/gin&amp;#34;&lt;/span&gt;
 	&lt;span class=&#34;s&#34;&gt;&amp;#34;strconv&amp;#34;&lt;/span&gt;
 &lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
@@ -1444,7 +1776,9 @@ linkerd check
 
 	&lt;span class=&#34;nx&#34;&gt;router&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Run&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
 &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;!-- raw HTML omitted --&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/details&gt;
+
 &lt;p&gt;對於原本就是 idempotent 的 &lt;code&gt;GetQuantity&lt;/code&gt; 和 &lt;code&gt;SetQuantity&lt;/code&gt; 操作來說，換成 RESTful 版本並沒什麼問題。像以下這個例子中，Client 在 🅐 步驟向 Server 呼叫 query quantity 操作時，只要該資料沒被別人改動到，這個 🅐 步驟不管重試多少次，得到的結果都會是一樣的。&lt;/p&gt;
 
 &lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
@@ -3719,100 +4053,6 @@ lrwxrwxrwx    1 root  root     15 Jun 12 06:19 main.css -&amp;gt; ..data/main.cs
 &lt;/li&gt;
 &lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
 &lt;p&gt;Apigee 於 2016 年被 Google 併購。詳見〈&lt;a href=&#34;https://www.ithome.com.tw/news/108342&#34;&gt;Google 以 6.25 億美元收購 Apigee，強化 API 管理服務&lt;/a&gt;〉一文。 &lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/section&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>在 WSL 裡使用 Ansible &#43; Vagrant</title>
-      <link>//william-yeh.net/post/2019/04/wsl-ansible-vagrant/</link>
-      <pubDate>Thu, 18 Apr 2019 23:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2019/04/wsl-ansible-vagrant/</guid>
-      
-        <description>&lt;p&gt;既然要開始在 Windows 上沿用 Mac 及 Unix 的命令列工具習慣&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，免不了要處理 &lt;a href=&#34;https://github.com/ansible/ansible&#34;&gt;Ansible&lt;/a&gt; 及 &lt;a href=&#34;https://www.vagrantup.com/&#34;&gt;Vagrant&lt;/a&gt;。&lt;/p&gt;
-&lt;p&gt;雖然這兩個軟體都有對應的 Windows 版本，但據我以前的經驗，卡卡的，有許多小地雷；畢竟這些發跡自泛 Unix 家族的軟體，不是那麼容易無縫移植到對命令列不友善的 Windows 家族。&lt;/p&gt;
-&lt;p&gt;如今 Windows 已經有 &lt;a href=&#34;https://docs.microsoft.com/en-us/windows/wsl/&#34;&gt;WSL (Windows Subsystem for Linux)&lt;/a&gt; 機制，是否可以更無痛享用 Ansible 及 Vagrant 呢？&lt;/p&gt;
-&lt;p&gt;可以的。&lt;/p&gt;
-&lt;p&gt;大體而言，我們會兵分二路：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;在 Windows 上，會安裝 &lt;a href=&#34;https://www.virtualbox.org/&#34;&gt;VirtualBox&lt;/a&gt;。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;在 WSL 上，會安裝 &lt;a href=&#34;https://www.vagrantup.com/&#34;&gt;Vagrant&lt;/a&gt; 及 &lt;a href=&#34;https://github.com/ansible/ansible&#34;&gt;Ansible&lt;/a&gt;。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;虛擬機選項一virtualbox&#34;&gt;虛擬機選項一：VirtualBox&lt;/h2&gt;
-&lt;p&gt;用慣 Mac 或 Linux 的人，可能會想沿用 &lt;a href=&#34;https://www.virtualbox.org/&#34;&gt;VirtualBox&lt;/a&gt; 虛擬機軟體。畢竟 VirtualBox 是同屬開源生態系的一員，和其他開源軟體的相容性最高。&lt;/p&gt;
-&lt;p&gt;你可以直接去官方網站&lt;a href=&#34;https://www.virtualbox.org/wiki/Downloads&#34;&gt;下載&lt;/a&gt;安裝檔（VirtualBox 本體，以及 VirtualBox Extension Pack），或是直接透過 Chocolatey 套件管理工具來&lt;a href=&#34;https://chocolatey.org/packages/virtualbox&#34;&gt;安裝&lt;/a&gt;：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;C:\&amp;gt; choco install virtualbox&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;安裝完後，還有一關要克服。&lt;/p&gt;
-&lt;p&gt;一般來說，在同一個 host OS 上，同一時間，只能有一個底層虛擬機制存在（除非有像「巢狀虛擬化」之類的黑魔法……吧？）。因此，VirtualBox 無法與 Windows 官方欽定的 Hyper-V 機制同時並存，一山不容二虎&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;。&lt;/p&gt;
-&lt;p&gt;如果決定要使用 VirtualBox，請用管理者權限執行以下命令，暫時關閉 Hyper-V 功能&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;C:&amp;gt; dism.exe /Online /Disable-Feature:Microsoft-Hyper-V
-
-C:&amp;gt; bcdedit /set hypervisorlaunchtype off&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;這麼做的缺點是：由於 Docker Desktop for Windows 會用到 Hyper-V 機制，所以，關閉了 Hyper-V，等於是關閉了 Docker Desktop 的使用權。如果稍後還想使用 Docker Desktop，就得手動恢復 Hyper-V 功能：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;C:&amp;gt; dism.exe /Online /Enable-Feature:Microsoft-Hyper-V-All
-
-C:&amp;gt; bcdedit /set hypervisorlaunchtype auto&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;你可能需要在 Hyper-V 與 VirtualBox 模式之間來回切換，也需要重新開機。&lt;/p&gt;
-&lt;h2 id=&#34;虛擬機選項二hyper-v&#34;&gt;虛擬機選項二：Hyper-V&lt;/h2&gt;
-&lt;p&gt;在 Windows 上面玩 VirtualBox 這麼麻煩，換成 Hyper-V 會不會比較省事？&lt;/p&gt;
-&lt;p&gt;很可惜，我在 &amp;ldquo;Hyper-V Administrators&amp;rdquo; 這一關觸礁了。嘗試一些可能的解法&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;，都無效。&lt;/p&gt;
-&lt;p&gt;真的有需要時，再回來研究吧。&lt;/p&gt;
-&lt;h2 id=&#34;vagrant&#34;&gt;Vagrant&lt;/h2&gt;
-&lt;p&gt;直接比照 Linux 安裝 Vagrant 的方法。&lt;/p&gt;
-&lt;p&gt;請在 WSL 底下，直接去官方網站&lt;a href=&#34;https://www.vagrantup.com/downloads.html&#34;&gt;下載&lt;/a&gt;安裝檔，或是用 Apt 之類的套件管理系統來安裝。&lt;/p&gt;
-&lt;p&gt;安裝完畢，請根據官方網站的&lt;a href=&#34;https://www.vagrantup.com/docs/other/wsl.html&#34;&gt;建議&lt;/a&gt;設定環境變數。尤其是 &lt;code&gt;VAGRANT_WSL_ENABLE_WINDOWS_ACCESS&lt;/code&gt; 這一項：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;export VAGRANT_WSL_ENABLE_WINDOWS_ACCESS=&amp;#34;1&amp;#34;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2 id=&#34;ansible&#34;&gt;Ansible&lt;/h2&gt;
-&lt;p&gt;直接比照 Linux 安裝 Ansible 的方法。&lt;/p&gt;
-&lt;p&gt;請在 WSL 底下，照著官方網站的&lt;a href=&#34;https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html#installing-the-control-machine&#34;&gt;安裝步驟&lt;/a&gt;來執行。譬如說，在 Debian/Ubuntu 系列下，可以用 Apt 套件管理系統來安裝。&lt;/p&gt;
-&lt;h2 id=&#34;ansible--vagrant&#34;&gt;Ansible + Vagrant&lt;/h2&gt;
-&lt;p&gt;現在，試試看把 Ansible 和 Vagrant 結合起來！&lt;/p&gt;
-&lt;p&gt;先準備好 &lt;code&gt;Vagrantfile&lt;/code&gt; 檔案：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-ruby&#34; data-lang=&#34;ruby&#34;&gt;&lt;span class=&#34;no&#34;&gt;Vagrant&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;configure&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;do&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;config&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;
-  &lt;span class=&#34;n&#34;&gt;config&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;vm&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;box&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;bento/ubuntu-18.04&amp;#34;&lt;/span&gt;
-
-  &lt;span class=&#34;n&#34;&gt;config&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;vm&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;network&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;forwarded_port&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;ss&#34;&gt;guest&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;80&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;ss&#34;&gt;host&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;8080&lt;/span&gt;
-
-  &lt;span class=&#34;n&#34;&gt;config&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;vm&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;provision&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;ansible&amp;#34;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;do&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ansible&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;
-     &lt;span class=&#34;n&#34;&gt;ansible&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;compatibility_mode&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;2.0&amp;#34;&lt;/span&gt;
-     &lt;span class=&#34;c1&#34;&gt;#ansible.verbose = &amp;#34;vvv&amp;#34;&lt;/span&gt;
-     &lt;span class=&#34;n&#34;&gt;ansible&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;playbook&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;playbook.yml&amp;#34;&lt;/span&gt;
-     &lt;span class=&#34;n&#34;&gt;ansible&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;become&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;kp&#34;&gt;true&lt;/span&gt;
-  &lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
-
-&lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;還有 Ansible 的 &lt;code&gt;playbook.yml&lt;/code&gt; 檔案：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yml&#34; data-lang=&#34;yml&#34;&gt;- &lt;span class=&#34;k&#34;&gt;hosts&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;all&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;become&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kc&#34;&gt;true&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;tasks&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;- &lt;span class=&#34;k&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;install&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;nginx&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;      &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;apt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;name=nginx&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;state=present&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;update_cache=yes&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;試著啟動看看：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;% vagrant up&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;如果一切順利，你可以在 &lt;code&gt;http://localhost:8080/&lt;/code&gt; 看到 Nginx 歡迎畫面。&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;在 Docker + Kubernetes 時代，用到 Ansible 的機會愈來愈少了，Vagrant 更是如此；不過，保有這種工具，在處理還來不及跟上腳步的舊系統仍然很管用。因此，花一點功夫湊出堪用的組合，希望能有順手的 WSL 環境。&lt;/p&gt;
-&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
-&lt;hr&gt;
-&lt;ol&gt;
-&lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;這段故事，詳見〈&lt;a href=&#34;//william-yeh.net/post/2019/03/wsl-cmder-zsh/&#34;&gt;在 Windows 上復刻 Mac 使用習慣&lt;/a&gt;〉一文。 &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;技術上來說，Hyper-V 是屬於 type-1 hypervisor，VirtualBox 是屬於 type-2 hypervisor。詳見維基百科 &amp;ldquo;&lt;a href=&#34;https://en.wikipedia.org/wiki/Hypervisor&#34;&gt;Hypervisor&lt;/a&gt;&amp;rdquo; 條目。 &lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:3&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;在 Windows 上關閉 Hyper-V 機制，請參考以下文章：“&lt;a href=&#34;https://www.sysprobs.com/solved-vt-x-is-not-available-verr-vmx-no-vmx-in-windows-10-virtualbox&#34;&gt;(Solved) VT-x is Not Available (verr_vmx_no_vmx) in Windows 10 – but Available for Oracle VirtualBox&lt;/a&gt;”、〈&lt;a href=&#34;https://blog.csdn.net/imilano/article/details/83038682&#34;&gt;Win10 10月更新 VirtualBox VT-x is not available (VERR_VMX_NO_VMX). 解决&lt;/a&gt;〉、“&lt;a href=&#34;https://forums.virtualbox.org/viewtopic.php?f=38&amp;amp;t=89791&#34;&gt;[Solved] VT-x is not available (VERR_VMX_NO_VMX)&lt;/a&gt;”。 &lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:4&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;當 Vagrant 在使用 Hyper-V 時，會出現 &amp;ldquo;Hyper-V Administrators&amp;rdquo; 權限問題。我嘗試以下幾篇文章，可惜仍未解決：“&lt;a href=&#34;https://github.com/hashicorp/vagrant/issues/4503&#34;&gt;Vagrant issue #378&lt;/a&gt;”、“&lt;a href=&#34;https://blogs.msdn.microsoft.com/virtual_pc_guy/2014/06/11/allowing-non-administrators-to-control-hyper-vupdated/&#34;&gt;Allowing non-Administrators to control Hyper-V–Updated&lt;/a&gt;”、“&lt;a href=&#34;https://dev.to/nicolus/getting-homestead-to-play-nice-with-hyper-v-4202&#34;&gt;Getting Homestead to play nice with Hyper-V&lt;/a&gt;”。 &lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;</description>

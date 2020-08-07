@@ -357,6 +357,7 @@ if (!doNotTrack) {
 <p>這篇文章介紹兩個好用的小工具：<a href="https://github.com/fullstorydev/grpcurl">gRPCurl</a> 及 <a href="https://github.com/bojand/ghz">ghz</a>，一個是輸入輸出介面測試工具，另一個是壓測工具，也順便介紹一些簡化測試的技巧。</p>
 <h2 id="待測程式">待測程式</h2>
 <p>待測程式放在 <a href="https://github.com/William-Yeh/grpcurl-and-ghz-demo">https://github.com/William-Yeh/grpcurl-and-ghz-demo</a></p>
+
 <details>
   <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
     檔案簡介：
@@ -513,7 +514,8 @@ $ out/server-new
 </span><span class="se"></span>      --proto        route_guide.proto    <span class="se">\
 </span><span class="se"></span>      --call routeguide.RouteGuide.RecordRoute  <span class="se">\
 </span><span class="se"></span>      127.0.0.1:10000
-</code></pre></div><details>
+</code></pre></div>
+<details>
   <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
     壓測 20 秒，結果如下：
     
@@ -569,7 +571,8 @@ Error distribution:
 </span><span class="se"></span>      --call routeguide.RouteGuide.RecordRoute  <span class="se">\
 </span><span class="se"></span>      127.0.0.1:10000  <span class="se">\
 </span><span class="se"></span>  &lt; testdata.json
-</code></pre></div><details>
+</code></pre></div>
+<details>
   <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
     壓測 20 秒，結果如下：
     
@@ -682,7 +685,8 @@ message Point <span class="o">{</span>
 </span><span class="se"></span>      --call routeguide.RouteGuide.RecordRoute  <span class="se">\
 </span><span class="se"></span>      127.0.0.1:20000  <span class="se">\
 </span><span class="se"></span>  &lt; testdata.json
-</code></pre></div><details>
+</code></pre></div>
+<details>
   <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
     壓測 20 秒，結果如下：
     

@@ -6,10 +6,20 @@
     <description>Recent content in Posts on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sun, 02 Aug 2020 16:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 07 Aug 2020 08:00:00 +0800</lastBuildDate>
     
 	<atom:link href="//william-yeh.net/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Blackbox Exporter 小記</title>
+      <link>//william-yeh.net/post/2020/08/blackbox-exporter/</link>
+      <pubDate>Fri, 07 Aug 2020 08:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2020/08/blackbox-exporter/</guid>
+      <description>&lt;p&gt;在用 &lt;a href=&#34;https://prometheus.io/&#34;&gt;Prometheus&lt;/a&gt; + &lt;a href=&#34;https://grafana.com/&#34;&gt;Grafana&lt;/a&gt; 監控自家服務的同時，我們也會想用同一套系統去監控第三方服務。&lt;/p&gt;
+&lt;p&gt;本文介紹一個好用的 Prometheus 官方工具：&lt;a href=&#34;https://github.com/prometheus/blackbox_exporter&#34;&gt;Blackbox exporter&lt;/a&gt;，可以省下手刻 curl 腳本的工夫。我也順便介紹一些踩過的雷。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Essence of Scrum: Daily Scrum</title>
@@ -270,18 +280,6 @@ To clarify this I&amp;rsquo;ve conducted a series of experiments for 3 possible 
 &lt;p&gt;這場大會，同一時段就有近 30 場專題演講同時進行，議程滿滿，勢必得做取捨。基於工作需要及個人興趣，我主要選擇與容器相關的場次：service mesh、Windows containers、混合雲、資安實務。&lt;/p&gt;
 &lt;p&gt;我發現，光是這些場次，就得花很大力氣去消化、實驗與應用。&lt;/p&gt;
 &lt;p&gt;我們這些所謂的「台港團」會在 GCPUG Taipei 舉辦一場&lt;a href=&#34;https://www.meetup.com/GCPUG-Taipei/events/260555968/&#34;&gt;分享會&lt;/a&gt;。因為自己不克參加，便以這篇文章，針對我鎖定的核心議題：Istio，做一番重點摘要，以饗讀者。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>在 WSL 裡使用 Ansible &#43; Vagrant</title>
-      <link>//william-yeh.net/post/2019/04/wsl-ansible-vagrant/</link>
-      <pubDate>Thu, 18 Apr 2019 23:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2019/04/wsl-ansible-vagrant/</guid>
-      <description>&lt;p&gt;既然要開始在 Windows 上沿用 Mac 及 Unix 的命令列工具習慣&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，免不了要處理 &lt;a href=&#34;https://github.com/ansible/ansible&#34;&gt;Ansible&lt;/a&gt; 及 &lt;a href=&#34;https://www.vagrantup.com/&#34;&gt;Vagrant&lt;/a&gt;。&lt;/p&gt;
-&lt;p&gt;雖然這兩個軟體都有對應的 Windows 版本，但據我以前的經驗，卡卡的，有許多小地雷；畢竟這些發跡自泛 Unix 家族的軟體，不是那麼容易無縫移植到對命令列不友善的 Windows 家族。&lt;/p&gt;
-&lt;p&gt;如今 Windows 已經有 &lt;a href=&#34;https://docs.microsoft.com/en-us/windows/wsl/&#34;&gt;WSL (Windows Subsystem for Linux)&lt;/a&gt; 機制，是否可以更無痛享用 Ansible 及 Vagrant 呢？&lt;/p&gt;
-&lt;p&gt;可以的。&lt;/p&gt;</description>
     </item>
     
   </channel>

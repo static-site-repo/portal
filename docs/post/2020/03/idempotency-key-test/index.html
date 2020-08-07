@@ -80,7 +80,7 @@ Idempotency 冪等性
 &ldquo;Idempotency&rdquo; 這字眼源自數學。維基百科是這麼解釋 &ldquo;idempotent function&rdquo; 的：">
 <meta itemprop="datePublished" content="2020-03-10T23:00:00+08:00" />
 <meta itemprop="dateModified" content="2020-03-10T23:00:00+08:00" />
-<meta itemprop="wordCount" content="4668">
+<meta itemprop="wordCount" content="4678">
 
 
 
@@ -314,7 +314,7 @@ if (!doNotTrack) {
             <a href="//william-yeh.net/categories/tech/"> tech </a>
             
           </div>
-        <span class="more-meta"> 約 4668 字 </span>
+        <span class="more-meta"> 約 4678 字 </span>
           <span class="more-meta"> 預計閱讀 10 分鐘 </span>
 
         
@@ -431,9 +431,13 @@ if (!doNotTrack) {
 <h2 id="web-api-的-idempotency-問題">Web API 的 idempotency 問題</h2>
 <p>前面的 Go 程式碼講的是 in process 場景。環境單純，沒有太多失敗、重試的未知狀況，不會有太大的 idempotency 問題。如果換成 out of process 場景，環境不再單純，網路環境不可靠，另一頭的通訊對象也不見得是穩定的，失敗、重試的未知狀況勢必增加，idempotency 就變成不得不去正視的議題。</p>
 <p>譬如說，如果把管理商品庫存服務實作成 RESTful API：</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">import</span> <span class="p">(</span>
+
+<details>
+  <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+    Go &#43; Gin 實作的 RESTful API 例子
+    
+  </summary>
+  <div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">import</span> <span class="p">(</span>
 	<span class="s">&#34;github.com/gin-gonic/gin&#34;</span>
 	<span class="s">&#34;strconv&#34;</span>
 <span class="p">)</span>
@@ -466,7 +470,9 @@ if (!doNotTrack) {
 
 	<span class="nx">router</span><span class="p">.</span><span class="nf">Run</span><span class="p">()</span>
 <span class="p">}</span>
-</code></pre></div><!-- raw HTML omitted -->
+</code></pre></div>
+</details>
+
 <p>對於原本就是 idempotent 的 <code>GetQuantity</code> 和 <code>SetQuantity</code> 操作來說，換成 RESTful 版本並沒什麼問題。像以下這個例子中，Client 在 🅐 步驟向 Server 呼叫 query quantity 操作時，只要該資料沒被別人改動到，這個 🅐 步驟不管重試多少次，得到的結果都會是一樣的。</p>
 
 <link rel="stylesheet" href="/css/hugo-easy-gallery.css" />
