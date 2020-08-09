@@ -6,10 +6,184 @@
     <description>Recent content on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Fri, 07 Aug 2020 08:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 09 Aug 2020 13:00:00 +0800</lastBuildDate>
     
         <atom:link href="//william-yeh.net/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Essence of Scrum: Sprint Planning</title>
+      <link>//william-yeh.net/post/2020/08/sprint-planning-in-a-nutshell/</link>
+      <pubDate>Sun, 09 Aug 2020 13:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2020/08/sprint-planning-in-a-nutshell/</guid>
+      
+        <description>&lt;p&gt;This article discusses the essence of &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Planning&lt;/span&gt;
+.&lt;/p&gt;
+&lt;h2 id=&#34;in-a-nutshell&#34;&gt;In a nutshell&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Sprint Planning&lt;/strong&gt; is a time-boxed&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; event in which the &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Scrum Team&lt;/span&gt;
+ defines the &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Goal&lt;/span&gt;
+ and makes a feasible plan for the goal, to the best knowledge, information and belief of the team.&lt;/p&gt;
+&lt;h2 id=&#34;output&#34;&gt;Output&lt;/h2&gt;
+&lt;p&gt;Essential:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Goal&lt;/span&gt;
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;A feasible plan for achieving the &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Goal&lt;/span&gt;
+&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Backlog Items&lt;/span&gt;
+ with the property of &lt;strong&gt;INVEST&lt;/strong&gt; (Independent, Negotiable, Valuable, Estimable, Small, Testable)&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Better:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A coherent &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Goal&lt;/span&gt;
+&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt; and expectation for the outcome to be seen at &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Review&lt;/span&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;input&#34;&gt;Input&lt;/h2&gt;
+&lt;p&gt;Essential:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Strategy breakdown (e.g., product roadmap, &lt;a href=&#34;https://www.whatmatters.com/faqs/okr-meaning-definition-example/&#34;&gt;OKR&lt;/a&gt;, &lt;a href=&#34;https://en.wikipedia.org/wiki/OGSM&#34;&gt;OGSM&lt;/a&gt;, &lt;a href=&#34;https://www.impactmapping.org/&#34;&gt;impact mapping&lt;/a&gt;, &lt;a href=&#34;https://www.jpattonassociates.com/user-story-mapping/&#34;&gt;user story mapping&lt;/a&gt;).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;A &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Product Backlog&lt;/span&gt;
+ that has been refined during &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Product Backlog Refinement&lt;/span&gt;
+ and adapted during previous &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Review&lt;/span&gt;
+&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Action items created during previous &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Retrospective&lt;/span&gt;
+&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Influences&lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Better:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The top &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Product Backlog Items&lt;/span&gt;
+ meet the &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Definition of Ready&lt;/span&gt;
+ criteria&lt;sup id=&#34;fnref:6&#34;&gt;&lt;a href=&#34;#fn:6&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;6&lt;/a&gt;&lt;/sup&gt; defined and evolved by the &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Scrum Team&lt;/span&gt;
+.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;tools-and-techniques&#34;&gt;Tools and Techniques&lt;/h2&gt;
+&lt;p&gt;Essential:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Short-term strategic planning statements in brief&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Judgment to &lt;strong&gt;balance&lt;/strong&gt; a variety of needs and goals&lt;sup id=&#34;fnref:7&#34;&gt;&lt;a href=&#34;#fn:7&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;7&lt;/a&gt;&lt;/sup&gt;, especially &amp;ldquo;whole product focus&amp;rdquo;&lt;sup id=&#34;fnref:8&#34;&gt;&lt;a href=&#34;#fn:8&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;8&lt;/a&gt;&lt;/sup&gt; and technical excellence&lt;sup id=&#34;fnref:9&#34;&gt;&lt;a href=&#34;#fn:9&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;9&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Logical approach to ordering items&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Logical approach to breaking down items&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Estimation in proper granularity&lt;sup id=&#34;fnref:10&#34;&gt;&lt;a href=&#34;#fn:10&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;10&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Encouraging a focus on the team rather than individuals.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Better:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Two parts planning&lt;sup id=&#34;fnref:11&#34;&gt;&lt;a href=&#34;#fn:11&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;11&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;SPIDR (Spike, Paths, Interfaces, Data, and Rules)&lt;sup id=&#34;fnref:12&#34;&gt;&lt;a href=&#34;#fn:12&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;12&lt;/a&gt;&lt;/sup&gt; (should be used in &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Product Backlog Refinement&lt;/span&gt;
+)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Techniques for enabling specification&lt;sup id=&#34;fnref:13&#34;&gt;&lt;a href=&#34;#fn:13&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;13&lt;/a&gt;&lt;/sup&gt; (should be used in &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Product Backlog Refinement&lt;/span&gt;
+)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Visualized &lt;a href=&#34;http://scrumbook.org/value-stream/information-radiator.html&#34;&gt;information radiators&lt;/a&gt; (e.g., Scrum board, Kanban board).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Self-organizing instead of being conducted solely by &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Scrum Master&lt;/span&gt;
+.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+
+&lt;div class=&#34;shortcode-notice note&#34;&gt;
+  &lt;div class=&#34;shortcode-notice-title note&#34;&gt;
+    
+      &amp;#39;Essence of Scrum&amp;#39; Series
+    
+  &lt;/div&gt;
+  &lt;p&gt;❶ &lt;a href=&#34;//william-yeh.net/post/2020/07/pbr-in-a-nutshell/&#34;&gt;Product Backlog Refinement&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❷ &lt;a href=&#34;//william-yeh.net/post/2020/08/daily-scrum-in-a-nutshell/&#34;&gt;Daily Scrum&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❸ Sprint Planning&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;&lt;em&gt;&lt;a href=&#34;https://www.scrumguides.org/&#34;&gt;The Scrum Guide&lt;/a&gt;&lt;/em&gt; says that &lt;em&gt;&amp;ldquo;Sprint Planning is time-boxed to a maximum of eight hours for a one-month Sprint. For shorter Sprints, the event is usually shorter. [&amp;hellip;] The Scrum Master teaches the Scrum Team to keep it within the time-box.&amp;quot;&lt;/em&gt; &lt;em&gt;&lt;a href=&#34;http://scrumbook.org/&#34;&gt;A Scrum Book&lt;/a&gt;&lt;/em&gt; suggests that &lt;em&gt;&amp;ldquo;It is important that Sprint Planning allow time for enough design to create a well-understood Sprint Backlog. But the planning should be time-boxed. A rule of thumb is that the event should take no more than four hours for a two-week Sprint and proportionally less for shorter Sprints. If it takes longer, it takes longer—but seek kaizen opportunities to reduce the amount of time to plan and to correspondingly increase the time spent on building product.&amp;quot;&lt;/em&gt; &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.agilealliance.org/glossary/invest/&#34;&gt;Agile Alliance&lt;/a&gt; says that &lt;em&gt;&amp;ldquo;The acronym INVEST helps to remember a widely accepted set of criteria, or checklist, to assess the quality of a user story.&amp;quot;&lt;/em&gt;  Read Bob Hartman&amp;rsquo;s article &amp;ldquo;&lt;a href=&#34;https://agileforall.com/new-to-agile-invest-in-good-user-stories/&#34;&gt;New to agile? INVEST in good user stories&lt;/a&gt;&amp;rdquo; for more info. &lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;Scrum works better when it is considered an enabling engine toward a coherent goal rather than just a collection of work packages by chance. &lt;em&gt;&lt;a href=&#34;https://www.scrumguides.org/&#34;&gt;The Scrum Guide&lt;/a&gt;&lt;/em&gt; says that &lt;em&gt;&amp;ldquo;the &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Goal&lt;/span&gt;
+ can be any other coherence that causes the Development Team to work together rather than on separate initiatives.&amp;quot;&lt;/em&gt;  &lt;em&gt;&lt;a href=&#34;http://scrumbook.org/&#34;&gt;A Scrum Book&lt;/a&gt;&lt;/em&gt; says that &lt;em&gt;&amp;ldquo;The Scrum Team can use the &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Goal&lt;/span&gt;
+ to frame the selection of PBIs for the Sprint but in some sense the &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Goal&lt;/span&gt;
+ is more important even than the sum of the individual PBIs.&amp;quot;&lt;/em&gt;  Roman Pichler says in his article &amp;ldquo;&lt;a href=&#34;https://www.romanpichler.com/blog/sprint-goal-template/&#34;&gt;A Template for formulating great sprint goals&lt;/a&gt;&amp;rdquo; that &lt;em&gt;&amp;ldquo;your sprint goal should differ from your user stories. The goal explains the why it is a good idea to carry out the sprint an implement the stories. The user stories enable you to reach the goal. It’s a common mistake to confuse the two.&amp;quot;&lt;/em&gt; &lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:4&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;&lt;em&gt;&lt;a href=&#34;https://www.scrumguides.org/&#34;&gt;The Scrum Guide&lt;/a&gt;&lt;/em&gt; 2017 puts more emphasis on the follow-up actions for &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Retrospective&lt;/span&gt;
+: &lt;em&gt;&amp;ldquo;The Sprint Backlog [&amp;hellip;] To ensure continuous improvement, it includes at least one high priority way in which the team works, identified in the previous Retrospective meeting.&amp;quot;&lt;/em&gt; (p.16) &lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:5&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;&lt;em&gt;&lt;a href=&#34;https://www.scrumguides.org/&#34;&gt;The Scrum Guide&lt;/a&gt;&lt;/em&gt; says that &lt;em&gt;&amp;ldquo;Each Sprint may be considered a project with no more than a one-month horizon&amp;rdquo;&lt;/em&gt; (p.9).  In this regard, a sprint cannot be immune from influences discussed in the &lt;a href=&#34;https://www.pmi.org/pmbok-guide-standards&#34;&gt;&lt;em&gt;PMBOK Guide&lt;/em&gt;&lt;/a&gt;, such as enterprise environmental factors and organizational process assets. &lt;a href=&#34;#fnref:5&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:6&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;http://scrumbook.org/value-stream/product-backlog/definition-of-ready.html&#34;&gt;Definition of Ready&lt;/a&gt; &lt;a href=&#34;#fnref:6&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:7&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Peter_Drucker&#34;&gt;Peter Drucker&lt;/a&gt; emphasized in his book &lt;a href=&#34;https://www.amazon.com/dp/0060878975&#34;&gt;&lt;em&gt;The Practice of Management&lt;/em&gt;&lt;/a&gt; (pp. 62-63, 87) that &lt;em&gt;&amp;ldquo;To manage a business is to balance a variety of needs and goals. This requires judgment. The search for the one objective is essentially a search for a magic formula that will make judgment unnecessary. But the attempt to replace judgment by formula is always irrational; all that can be done is to make judgment possible by narrowing its range and the available alternatives, giving it clear focus, a sound foundation in facts and reliable measurements of the effects and validity of actions and decisions. And this, by the very nature of business enterprise, requires multiple objectives. [&amp;hellip;] Yet, there is no formula for doing the job. Each business requires its own balance—and it may require a different balance at different times.&amp;quot;&lt;/em&gt; &lt;a href=&#34;#fnref:7&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:8&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;The definition of &amp;ldquo;product&amp;rdquo; by the &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Scrum Team&lt;/span&gt;
+ has also defined what is in scope and what is by default out of scope for the team. For example, what parts of Ops should be handled by the &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Scrum Team&lt;/span&gt;
+? LeSS advocates a &lt;a href=&#34;https://less.works/less/framework/product&#34;&gt;broader product definition&lt;/a&gt; and a “&lt;a href=&#34;https://less.works/less/principles/whole-product-focus&#34;&gt;whole product focus&lt;/a&gt;” point of view: &lt;em&gt;&amp;ldquo;Whenever there is a choice to optimize a team output or the whole product, we always chose the whole product. [&amp;hellip;] In many large product development groups, getting everyone to focus on the whole product instead of their individual parts/tasks/specialization is one of the hardest parts of scaling Scrum. Always keep a whole product focus, keep reminding everyone there is no value in separate parts or half-working parts.&amp;quot;&lt;/em&gt; &lt;a href=&#34;#fnref:8&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:9&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;&amp;ldquo;&lt;a href=&#34;https://agilemanifesto.org/principles.html&#34;&gt;Principles behind the Agile Manifesto&lt;/a&gt;&amp;rdquo; emphasizes that &lt;em&gt;“Continuous attention to technical excellence and good design enhances agility.”&lt;/em&gt; LeSS identifies several areas of &lt;a href=&#34;https://less.works/less/technical-excellence/index&#34;&gt;technical excellence&lt;/a&gt;. &lt;a href=&#34;#fnref:9&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:10&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.scrumalliance.org/community/profile/mikecohn&#34;&gt;Mike Cohn&lt;/a&gt; discusses different levels of estimation activities in his article &amp;ldquo;&lt;a href=&#34;https://www.mountaingoatsoftware.com/blog/why-agile-teams-should-estimate-at-two-different-levels&#34;&gt;Why Agile Teams Should Estimate at Two Different Levels&lt;/a&gt;.&amp;rdquo; &lt;a href=&#34;#fnref:10&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:11&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;It is common to divide the &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Planning&lt;/span&gt;
+ into 2 parts. Here is a good quote from &lt;a href=&#34;https://less.works/less/framework/sprint-planning-one&#34;&gt;LeSS&lt;/a&gt;: &lt;em&gt;&amp;quot;&lt;strong&gt;Sprint Planning One&lt;/strong&gt; focuses on selection of ready items from those offered by the Product Owner, wrapping up lingering questions, and definition of the Sprint Goal. &lt;strong&gt;Sprint Planning Two&lt;/strong&gt; focuses on creating a plan of work to get to ‘done’ for each item. The items and plan of action or tasks comprise the Sprint Backlog.&amp;quot;&lt;/em&gt; &lt;a href=&#34;#fnref:11&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:12&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.scrumalliance.org/community/profile/mikecohn&#34;&gt;Mike Cohn&lt;/a&gt; proposed the SPIDR approach (spike, paths, interfaces, data, and rules) for breaking down user stories. Watch the &amp;ldquo;&lt;a href=&#34;https://www.mountaingoatsoftware.com/exclusive/spidr-video&#34;&gt;Stop Wasting Time Splitting Stories&lt;/a&gt;&amp;rdquo; video for more details. &lt;a href=&#34;#fnref:12&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:13&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;http://scrumbook.org/value-stream/product-backlog/enabling-specification.html&#34;&gt;Enabling specification&lt;/a&gt; &lt;a href=&#34;#fnref:13&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
+</description>
+      
+    </item>
     
     <item>
       <title>Blackbox Exporter 小記</title>
@@ -30,7 +204,7 @@
 &lt;p&gt;Feed：像 AWS 有提供 &lt;a href=&#34;https://status.aws.amazon.com/&#34;&gt;RSS feed&lt;/a&gt;，Google Cloud 有 &lt;a href=&#34;https://status.cloud.google.com/feed.atom&#34;&gt;RSS feed&lt;/a&gt;，Stripe 有 &lt;a href=&#34;https://twitter.com/stripestatus&#34;&gt;Twitter @stripestatus&lt;/a&gt; 及 &lt;a href=&#34;https://status.stripe.com/current/atom.xml&#34;&gt;RSS feed&lt;/a&gt;。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;網頁：像 AWS 有提供 &lt;a href=&#34;https://status.aws.amazon.com/&#34;&gt;Service Health Dashboard&lt;/a&gt; 網頁，Google Cloud 有 &lt;a href=&#34;https://status.cloud.google.com/&#34;&gt;Status Dashboard&lt;/a&gt; 網頁，Stripe 有 &lt;a href=&#34;https://status.stripe.com/&#34;&gt;System Status&lt;/a&gt; 網頁。&lt;/p&gt;
+&lt;p&gt;網頁：像 AWS 有提供 &lt;a href=&#34;https://status.aws.amazon.com/&#34;&gt;Service Health Dashboard&lt;/a&gt; 網頁，Google Cloud 有 &lt;a href=&#34;https://status.cloud.google.com/&#34;&gt;Status Dashboard&lt;/a&gt; 網頁，Stripe 有 &lt;a href=&#34;https://status.stripe.com/&#34;&gt;System Status&lt;/a&gt; 網頁。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;統包服務：像 &lt;a href=&#34;https://www.pingdom.com/&#34;&gt;Pingdom&lt;/a&gt;、&lt;a href=&#34;https://downdetector.sg/&#34;&gt;Downdetector&lt;/a&gt; 可以一站通吃想監控的第三方服務群。&lt;/p&gt;
@@ -403,7 +577,7 @@ probe_success 1
 &lt;p&gt;Visualized &lt;a href=&#34;http://scrumbook.org/value-stream/information-radiator.html&#34;&gt;information radiators&lt;/a&gt; (e.g., Scrum board, Kanban board).&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Self-organized instead of conducted solely by &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Scrum Master&lt;/span&gt;
+&lt;p&gt;Self-organizing instead of being conducted solely by &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Scrum Master&lt;/span&gt;
 .&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -417,6 +591,7 @@ probe_success 1
   &lt;/div&gt;
   &lt;p&gt;❶ &lt;a href=&#34;//william-yeh.net/post/2020/07/pbr-in-a-nutshell/&#34;&gt;Product Backlog Refinement&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;❷ Daily Scrum&lt;/p&gt;
+&lt;p&gt;❸ &lt;a href=&#34;//william-yeh.net/post/2020/08/sprint-planning-in-a-nutshell/&#34;&gt;Sprint Planning&lt;/a&gt;&lt;/p&gt;
 
 &lt;/div&gt;
 
@@ -425,11 +600,11 @@ probe_success 1
 &lt;ol&gt;
 &lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
 &lt;p&gt;The &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Daily Scrum&lt;/span&gt;
- is typically time-boxed to avoid diving into implementation details. &lt;em&gt;&lt;a href=&#34;https://www.scrumguides.org/&#34;&gt;The Scrum Guide&lt;/a&gt;&lt;/em&gt; even defines it as &amp;ldquo;a &lt;strong&gt;15-minute&lt;/strong&gt; time-boxed event.&amp;rdquo; &lt;em&gt;&lt;a href=&#34;http://scrumbook.org/&#34;&gt;A Scrum Book: The Spirit of the Game&lt;/a&gt;&lt;/em&gt; also suggests that &amp;ldquo;this meeting is for replanning and decision-making, not for problem-solving. Strictly time-box the meeting to keep focus on the daily plan and to avoid robbing time from development.&amp;rdquo; &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+ is typically time-boxed to avoid diving into implementation details. &lt;em&gt;&lt;a href=&#34;https://www.scrumguides.org/&#34;&gt;The Scrum Guide&lt;/a&gt;&lt;/em&gt; even defines it as &amp;ldquo;a &lt;strong&gt;15-minute&lt;/strong&gt; time-boxed event.&amp;rdquo; &lt;em&gt;&lt;a href=&#34;http://scrumbook.org/&#34;&gt;A Scrum Book: The Spirit of the Game&lt;/a&gt;&lt;/em&gt; also suggests that &lt;em&gt;&amp;ldquo;this meeting is for replanning and decision-making, not for problem-solving. Strictly time-box the meeting to keep focus on the daily plan and to avoid robbing time from development.&amp;quot;&lt;/em&gt; &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
 &lt;p&gt;Traditionally &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Daily Scrum&lt;/span&gt;
- is for each person to take turns to speak up the &amp;ldquo;&lt;a href=&#34;https://www.agilealliance.org/glossary/three-qs&#34;&gt;three questions&lt;/a&gt;&amp;rdquo;. For example, &lt;em&gt;&lt;a href=&#34;https://www.scrumguides.org/&#34;&gt;The Scrum Guide&lt;/a&gt;&lt;/em&gt; 2013 version said that &amp;ldquo;During the meeting, the Development Team members explain: [&amp;hellip;]&amp;rdquo; This may imply micro-management, however.  In 2017 version it was rephrased in a less prescriptive style as &amp;ldquo;Some Development Teams will use questions, some will be more discussion based. Here is an example of what might be used: [&amp;hellip;]&amp;rdquo; &lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+ is for each person to take turns to speak up the &amp;ldquo;&lt;a href=&#34;https://www.agilealliance.org/glossary/three-qs&#34;&gt;three questions&lt;/a&gt;&amp;rdquo;. For example, &lt;em&gt;&lt;a href=&#34;https://www.scrumguides.org/&#34;&gt;The Scrum Guide&lt;/a&gt;&lt;/em&gt; 2013 version said that &lt;em&gt;&amp;ldquo;During the meeting, the Development Team members explain: [&amp;hellip;]&amp;quot;&lt;/em&gt; This may imply micro-management, however.  In 2017 version it was rephrased in a less prescriptive style as &lt;em&gt;&amp;ldquo;Some Development Teams will use questions, some will be more discussion based. Here is an example of what might be used: [&amp;hellip;].&amp;quot;&lt;/em&gt; &lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;
@@ -461,10 +636,13 @@ probe_success 1
 &lt;p&gt;Main references for the whole series:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;em&gt;&lt;a href=&#34;https://www.scrumguides.org/&#34;&gt;The Scrum Guide&lt;/a&gt;&lt;/em&gt; by Ken Schwaber and Jeff Sutherland.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;a href=&#34;https://www.scrumguides.org/&#34;&gt;The Scrum Guide&lt;/a&gt;&lt;/em&gt; by Ken Schwaber and Jeff Sutherland&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;em&gt;&lt;a href=&#34;http://scrumbook.org/&#34;&gt;A Scrum Book: The Spirit of the Game&lt;/a&gt;&lt;/em&gt; by Jeff Sutherland, James O. Coplien, et al.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://agilemanifesto.org/&#34;&gt;Manifesto for Agile Software Development&lt;/a&gt; and &lt;a href=&#34;https://agilemanifesto.org/principles.html&#34;&gt;Principles behind the Agile Manifesto&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;em&gt;&lt;a href=&#34;https://www.scrumstudy.com/sbokguide&#34;&gt;A Guide to the Scrum Body of Knowledge (SBOK® Guide)&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
@@ -486,8 +664,19 @@ probe_success 1
 &lt;h2 id=&#34;output&#34;&gt;Output&lt;/h2&gt;
 &lt;p&gt;Essential:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;A &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Product Backlog&lt;/span&gt;
- that is both &lt;strong&gt;ordered&lt;/strong&gt;&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; and &lt;strong&gt;granularity gradient&lt;/strong&gt;&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;.&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;A &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Product Backlog&lt;/span&gt;
+ that is both &lt;strong&gt;ordered&lt;/strong&gt;&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; and &lt;strong&gt;granularity gradient&lt;/strong&gt;&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Ordered according to product roadmap and expectations of stakeholders.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Granularity gradient according to confidence of the &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Scrum Team&lt;/span&gt;
+.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Better:&lt;/p&gt;
 &lt;ul&gt;
@@ -506,7 +695,7 @@ probe_success 1
 &lt;p&gt;Essential:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;Logical strategy breakdown (e.g., product roadmap, impact mapping, user story mapping).&lt;/p&gt;
+&lt;p&gt;Strategy breakdown (e.g., product roadmap, &lt;a href=&#34;https://www.whatmatters.com/faqs/okr-meaning-definition-example/&#34;&gt;OKR&lt;/a&gt;, &lt;a href=&#34;https://en.wikipedia.org/wiki/OGSM&#34;&gt;OGSM&lt;/a&gt;, &lt;a href=&#34;https://www.impactmapping.org/&#34;&gt;impact mapping&lt;/a&gt;, &lt;a href=&#34;https://www.jpattonassociates.com/user-story-mapping/&#34;&gt;user story mapping&lt;/a&gt;).&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;A &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Product Backlog&lt;/span&gt;
@@ -517,22 +706,25 @@ probe_success 1
 &lt;p&gt;Essential:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;Short-term strategy statement in brief&lt;/p&gt;
+&lt;p&gt;Short-term strategic planning statements in brief&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Order&lt;/p&gt;
+&lt;p&gt;Logical approach to ordering items&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Break down&lt;/p&gt;
+&lt;p&gt;Logical approach to breaking down items&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Estimation in proper granularity&lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Better:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;SPIDR (Spike, Paths, Interfaces, Data, and Rules)&lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;SPIDR (Spike, Paths, Interfaces, Data, and Rules)&lt;sup id=&#34;fnref:6&#34;&gt;&lt;a href=&#34;#fn:6&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;6&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Techniques for enabling specification&lt;sup id=&#34;fnref:6&#34;&gt;&lt;a href=&#34;#fn:6&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;6&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;Techniques for enabling specification&lt;sup id=&#34;fnref:7&#34;&gt;&lt;a href=&#34;#fn:7&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;7&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
@@ -545,6 +737,7 @@ probe_success 1
   &lt;/div&gt;
   &lt;p&gt;❶ Product Backlog Refinement&lt;/p&gt;
 &lt;p&gt;❷ &lt;a href=&#34;//william-yeh.net/post/2020/08/daily-scrum-in-a-nutshell/&#34;&gt;Daily Scrum&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❸ &lt;a href=&#34;//william-yeh.net/post/2020/08/sprint-planning-in-a-nutshell/&#34;&gt;Sprint Planning&lt;/a&gt;&lt;/p&gt;
 
 &lt;/div&gt;
 
@@ -558,16 +751,19 @@ probe_success 1
 &lt;p&gt;&lt;em&gt;&lt;a href=&#34;https://www.scrumguides.org/&#34;&gt;The Scrum Guide&lt;/a&gt;&lt;/em&gt; 2017 says: &lt;em&gt;&amp;ldquo;Higher ordered Product Backlog items are usually clearer and more detailed than lower ordered ones. More precise estimates are made based on the greater clarity and increased detail; the lower the order, the less detail&amp;rdquo;&lt;/em&gt; (p.15). See &amp;ldquo;&lt;a href=&#34;http://scrumbook.org.datasenter.no/value-stream/product-backlog/granularity-gradient.html&#34;&gt;Granularity Gradient&lt;/a&gt;&amp;rdquo; for more details. &lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:3&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.scrumalliance.org/community/profile/dteng&#34;&gt;Daniel Teng&lt;/a&gt; proposed the ODDE properties (ordered, dynamic, detailed appropriate, and estimated) for product backlog. See the article &amp;ldquo;&lt;a href=&#34;http://www.danielteng.com/2014/06/27/odde-product-backlog/&#34;&gt;ODDE 的 Product Backlog&lt;/a&gt;&amp;rdquo; for more details. &lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.scrumalliance.org/community/profile/dteng&#34;&gt;Daniel Teng&lt;/a&gt; proposed the ODDE properties (ordered, dynamic, detailed appropriate, and estimated) for product backlog. See the article &amp;ldquo;&lt;a href=&#34;http://www.danielteng.com/2014/06/27/odde-product-backlog/&#34;&gt;ODDE 的 Product Backlog&lt;/a&gt;&amp;rdquo; (in Chinese) for more details. &lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:4&#34; role=&#34;doc-endnote&#34;&gt;
 &lt;p&gt;&lt;a href=&#34;http://scrumbook.org/value-stream/product-backlog/definition-of-ready.html&#34;&gt;Definition of Ready&lt;/a&gt; &lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:5&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.scrumalliance.org/community/profile/mikecohn&#34;&gt;Mike Cohn&lt;/a&gt; proposed the SPIDR approach (spike, paths, interfaces, data, and rules) for breaking down user stories. Watch the &amp;ldquo;&lt;a href=&#34;https://www.mountaingoatsoftware.com/exclusive/spidr-video&#34;&gt;Stop Wasting Time Splitting Stories&lt;/a&gt;&amp;rdquo; video for more details. &lt;a href=&#34;#fnref:5&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.scrumalliance.org/community/profile/mikecohn&#34;&gt;Mike Cohn&lt;/a&gt; discusses different levels of estimation activities in his article &amp;ldquo;&lt;a href=&#34;https://www.mountaingoatsoftware.com/blog/why-agile-teams-should-estimate-at-two-different-levels&#34;&gt;Why Agile Teams Should Estimate at Two Different Levels&lt;/a&gt;.&amp;rdquo; &lt;a href=&#34;#fnref:5&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:6&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;&lt;a href=&#34;http://scrumbook.org/value-stream/product-backlog/enabling-specification.html&#34;&gt;Enabling specification&lt;/a&gt; &lt;a href=&#34;#fnref:6&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.scrumalliance.org/community/profile/mikecohn&#34;&gt;Mike Cohn&lt;/a&gt; proposed the SPIDR approach (spike, paths, interfaces, data, and rules) for breaking down user stories. Watch the &amp;ldquo;&lt;a href=&#34;https://www.mountaingoatsoftware.com/exclusive/spidr-video&#34;&gt;Stop Wasting Time Splitting Stories&lt;/a&gt;&amp;rdquo; video for more details. &lt;a href=&#34;#fnref:6&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:7&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;http://scrumbook.org/value-stream/product-backlog/enabling-specification.html&#34;&gt;Enabling specification&lt;/a&gt; &lt;a href=&#34;#fnref:7&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;</description>
@@ -3770,298 +3966,6 @@ lrwxrwxrwx    1 root  root     15 Jun 12 06:19 main.css -&amp;gt; ..data/main.cs
 &lt;/li&gt;
 &lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
 &lt;p&gt;關於 Kubernetes 的 API gateway，請參考〈&lt;a href=&#34;//william-yeh.net/post/2019/03/ingress-vs-ambassador/&#34;&gt;Nginx Ingress 與 Ambassador 簡易性能比較&lt;/a&gt;〉一文。 &lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/section&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Next &#39;19 的 Istio 場次重點摘要</title>
-      <link>//william-yeh.net/post/2019/04/next19-istio/</link>
-      <pubDate>Fri, 19 Apr 2019 23:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2019/04/next19-istio/</guid>
-      
-        <description>&lt;p&gt;四月 9&amp;ndash;11 日去舊金山參加 Google Cloud 的 &lt;a href=&#34;https://cloud.withgoogle.com/next/sf/&#34;&gt;Next ’19&lt;/a&gt; 大會，收穫頗大。&lt;/p&gt;
-&lt;p&gt;這場大會，同一時段就有近 30 場專題演講同時進行，議程滿滿，勢必得做取捨。基於工作需要及個人興趣，我主要選擇與容器相關的場次：service mesh、Windows containers、混合雲、資安實務。&lt;/p&gt;
-&lt;p&gt;我發現，光是這些場次，就得花很大力氣去消化、實驗與應用。&lt;/p&gt;
-&lt;p&gt;我們這些所謂的「台港團」會在 GCPUG Taipei 舉辦一場&lt;a href=&#34;https://www.meetup.com/GCPUG-Taipei/events/260555968/&#34;&gt;分享會&lt;/a&gt;。因為自己不克參加，便以這篇文章，針對我鎖定的核心議題：Istio，做一番重點摘要，以饗讀者。&lt;/p&gt;
-&lt;p&gt;以下內容，不完全按照 Next ’19 的議程時間順序，而是依照我主觀的排列。&lt;/p&gt;
-&lt;p&gt;看完後，對於 Istio 應該就有不錯的全面認知了。&lt;/p&gt;
-&lt;h2 id=&#34;漸進式導入-istio&#34;&gt;漸進式導入 Istio&lt;/h2&gt;
-&lt;p&gt;很有意思的演講，很適合作為 Istio 入門。&lt;/p&gt;
-
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;https://www.youtube.com/embed/0cgTHQFXYPQ&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-
-&lt;p&gt;【演講】&lt;a href=&#34;https://cloud.withgoogle.com/next/sf/sessions?session=HYB102&#34;&gt;Incrementally Adopting Istio&lt;/a&gt;&lt;!-- raw HTML omitted --&gt;
-【重點摘要】&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://youtu.be/0cgTHQFXYPQ?t=3m20s&#34;&gt;3:20&lt;/a&gt; - 微服務面臨的挑戰。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://youtu.be/0cgTHQFXYPQ?t=6m18s&#34;&gt;6:18&lt;/a&gt; - Istio 的 control plane 三大元件，就是設計來一一對應這些問題的。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://youtu.be/0cgTHQFXYPQ?t=10m38s&#34;&gt;10:38&lt;/a&gt; - Istio 的 telemetry 機制。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://youtu.be/0cgTHQFXYPQ?t=11m42s&#34;&gt;11:42&lt;/a&gt; - Istio 的 traffic 管理機制。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://youtu.be/0cgTHQFXYPQ?t=15m10s&#34;&gt;15:10&lt;/a&gt; - Istio 的 security 機制。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://youtu.be/0cgTHQFXYPQ?t=16m27s&#34;&gt;16:27&lt;/a&gt; - 在 GKE 安裝 Istio 的方法及使用建議。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://youtu.be/0cgTHQFXYPQ?t=19m11s&#34;&gt;19:11&lt;/a&gt; - 接下來就是一系列的漸進式示範。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;istio-的-traffic宏觀角度&#34;&gt;Istio 的 Traffic：宏觀角度&lt;/h2&gt;
-&lt;p&gt;在 Istio + Envoy 體系中，是透過 control plane 的 Pilot 元件及 xDS 協定，去管理 data plane 的 Envoy 網路流量。&lt;/p&gt;
-&lt;p&gt;以此為基礎，Google Cloud 推出 &lt;a href=&#34;https://cloud.google.com/traffic-director/&#34;&gt;Traffic Director&lt;/a&gt; 服務，用統一的 control plane、透過同樣的 xDSv2 API，去管理 GCP 能觸及的 GKE、GCE，甚至自建的 Kubernetes cluster；也藉此處理 GCP 之專屬特性。&lt;/p&gt;
-&lt;p&gt;某種意義上，可以把 Traffic Director 視為將 Istio 的 Pilot 元件託管給 Google Cloud。&lt;/p&gt;
-&lt;p&gt;這場演講，儘管旨在&lt;del&gt;廣告&lt;/del&gt;宣傳 Google 自家的 Traffic Director 服務，但講員之一 Prajakta Joshi 非常厲害，對於一般性的 service mesh 觀念也介紹得非常生動。&lt;/p&gt;
-&lt;p&gt;這一場值得全程觀看。我僅摘錄部分重點。&lt;/p&gt;
-
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;https://www.youtube.com/embed/FUITCYMCEhU&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-
-&lt;p&gt;【演講】&lt;a href=&#34;https://cloud.withgoogle.com/next/sf/sessions?session=NET207&#34;&gt;Traffic Director and Envoy-Based L7 ILB for Production-Grade Service Mesh and Istio&lt;/a&gt;&lt;!-- raw HTML omitted --&gt;
-【重點摘要】&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://youtu.be/FUITCYMCEhU?t=1m21s&#34;&gt;1:21&lt;/a&gt; - 很中肯的觀點：將 service mesh 視為 “&lt;strong&gt;SDN for services&lt;/strong&gt;”。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://youtu.be/FUITCYMCEhU?t=4m45s&#34;&gt;4:45&lt;/a&gt; - Istio 簡介。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://youtu.be/FUITCYMCEhU?t=5m48s&#34;&gt;5:48&lt;/a&gt; - 介紹 Istio 的 Pilot 流量管理議題。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://youtu.be/FUITCYMCEhU?t=5m48s&#34;&gt;6:40&lt;/a&gt; - 正式介紹 Traffic Director。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://youtu.be/FUITCYMCEhU?t=14m45s&#34;&gt;14:45&lt;/a&gt; - Live demo: global load balancing。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://youtu.be/FUITCYMCEhU?t=23m45s&#34;&gt;23:45&lt;/a&gt; - 介紹 service mesh 流量控制的特色：“&lt;strong&gt;change traffic flow without changing code&lt;/strong&gt;”，以及 traffic splitting、traffic steering、fault injection、mirroring (shadowing)、load balancing、circuit breaking、outlier detection 等高檔特性。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://youtu.be/FUITCYMCEhU?t=29m39s&#34;&gt;29:39&lt;/a&gt; - Live demo: traffic splitting。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://youtu.be/FUITCYMCEhU?t=35m37s&#34;&gt;35:37&lt;/a&gt; - 預告 Traffic Director 的產品路線圖。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://youtu.be/FUITCYMCEhU?t=42m56s&#34;&gt;42:56&lt;/a&gt; - 某客戶的 monolith 階段性轉型經驗。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;講員 Prajakta Joshi 另一場演講 &amp;ldquo;&lt;a href=&#34;https://cloud.withgoogle.com/next/sf/sessions?session=NET206&#34;&gt;Strategies for Bringing Kubernetes, Istio, Traffic Director, and Envoy to Brownfield with Walmart, Google, Tetrate&lt;/a&gt;&amp;rdquo; 也很棒，可惜並未釋出投影片及錄影。精彩內容，就留在我的手機相簿裡面啦。&lt;/p&gt;
-&lt;h2 id=&#34;istio-的-traffic實踐角度&#34;&gt;Istio 的 Traffic：實踐角度&lt;/h2&gt;
-&lt;p&gt;我聽了 Megan O&amp;rsquo;Keefe 兩場硬底子的演講。&lt;/p&gt;
-&lt;p&gt;第一場演講，以大量實例現場展示 Istio 的 traffic rules。&lt;/p&gt;
-
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;https://www.youtube.com/embed/7cINRP0BFY8&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-
-&lt;p&gt;【演講】&lt;a href=&#34;https://cloud.withgoogle.com/next/sf/sessions?session=HYB201&#34;&gt;Istio in Production: Day 2 Traffic Routing&lt;/a&gt;&lt;!-- raw HTML omitted --&gt;
-【重點摘要】&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://youtu.be/7cINRP0BFY8?t=2m18s&#34;&gt;2:18&lt;/a&gt; - Istio 與 Envoy 簡介。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://youtu.be/7cINRP0BFY8?t=9m13s&#34;&gt;9:13&lt;/a&gt; - Live demo: rollout。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://youtu.be/7cINRP0BFY8?t=13m45s&#34;&gt;13:45&lt;/a&gt; - Live demo: content-based routing。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://youtu.be/7cINRP0BFY8?t=16m48s&#34;&gt;16:48&lt;/a&gt; - Live demo: circuit breaking。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://youtu.be/7cINRP0BFY8?t=20m46s&#34;&gt;20:46&lt;/a&gt; - Live demo: chaos testing。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://youtu.be/7cINRP0BFY8?t=24m48s&#34;&gt;24:48&lt;/a&gt; - Live demo: ingress and egress。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://youtu.be/7cINRP0BFY8?t=36m26s&#34;&gt;36:26&lt;/a&gt; - Istio 1.1 現況。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://youtu.be/7cINRP0BFY8?t=37m18s&#34;&gt;37:18&lt;/a&gt; - Istio 導入建議：“&lt;strong&gt;start slow and incrementally&lt;/strong&gt;”。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://youtu.be/7cINRP0BFY8?t=38m36s&#34;&gt;38:36&lt;/a&gt; - Istio 還能夠做什麼？&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;第二場演講，就更硬碰硬的處理 Istio 每天都可能遇到的幾個實踐問題，以及如何查找問題、解決問題的過程。三段 live demo，涵蓋 Istio control plane 的三大元件：Pilot、Mixer、Citadel，非常扎實。&lt;/p&gt;
-
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;https://www.youtube.com/embed/FbYBO7Pi2d8&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-
-&lt;p&gt;【演講】&lt;a href=&#34;https://cloud.withgoogle.com/next/sf/sessions?session=HYB303&#34;&gt;Debugging Istio: How to Fix a Broken Service Mesh&lt;/a&gt;&lt;!-- raw HTML omitted --&gt;
-【重點摘要】&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://youtu.be/FbYBO7Pi2d8?t=0m35s&#34;&gt;0:35&lt;/a&gt; - Service mesh 是要解決甚麼問題？Istio 的 control plane 就是設計來一一對應這些問題的。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://youtu.be/FbYBO7Pi2d8?t=2m54s&#34;&gt;2:54&lt;/a&gt; - 可是，Istio 又會連帶引入哪些複雜度？&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://youtu.be/FbYBO7Pi2d8?t=4m46s&#34;&gt;4:46&lt;/a&gt; - Live demo: traffic management.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://youtu.be/FbYBO7Pi2d8?t=20m47s&#34;&gt;20:47&lt;/a&gt; - Live demo: telemetry.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://youtu.be/FbYBO7Pi2d8?t=27m58s&#34;&gt;27:58&lt;/a&gt; - Live demo: security.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://youtu.be/FbYBO7Pi2d8?t=44m23s&#34;&gt;44:23&lt;/a&gt; - 除錯工具推薦清單。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;這兩場 Megan O&amp;rsquo;Keefe 的演講，雖然硬底子，卻十分具體，可操作性高，值得全程觀看。&lt;/p&gt;
-&lt;h2 id=&#34;從-sre-角度看-istio&#34;&gt;從 SRE 角度看 Istio&lt;/h2&gt;
-&lt;p&gt;這一場，只能說，非常非常非常精彩。&lt;/p&gt;
-&lt;p&gt;對於讀過 Google 的 &lt;a href=&#34;https://landing.google.com/sre/books/&#34;&gt;&lt;em&gt;SRE&lt;/em&gt;&lt;/a&gt; 一書的人來說，看到 SLO、error budget 之類的觀念，居然可以在 Istio 上面如此實現，真是大開眼界。&lt;/p&gt;
-
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;https://www.youtube.com/embed/AKh8uuVCpFI&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-
-&lt;p&gt;【演講】&lt;a href=&#34;https://cloud.withgoogle.com/next/sf/sessions?session=HYB309&#34;&gt;Understanding SLOs and Error Budgets With Istio&lt;/a&gt;&lt;!-- raw HTML omitted --&gt;
-【重點摘要】&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://youtu.be/AKh8uuVCpFI?t=1m40s&#34;&gt;1:40&lt;/a&gt; - SLI/SLO/SLA 基本觀念。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://youtu.be/AKh8uuVCpFI?t=7m41s&#34;&gt;7:41&lt;/a&gt; - &amp;ldquo;uptime&amp;rdquo; 的新觀點。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://youtu.be/AKh8uuVCpFI?t=9m04s&#34;&gt;9:04&lt;/a&gt; - 將 error budget 視為 “&lt;strong&gt;amount of SLOs you can spend&lt;/strong&gt;”。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://youtu.be/AKh8uuVCpFI?t=13m49s&#34;&gt;13:49&lt;/a&gt; - Live demo!&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://youtu.be/AKh8uuVCpFI?t=28m02s&#34;&gt;28:02&lt;/a&gt; - 客戶證言：Schlumberger 公司。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;把-vm-也帶進-service-mesh&#34;&gt;把 VM 也帶進 Service Mesh&lt;/h2&gt;
-&lt;p&gt;Service mesh 並不是容器的專利；古老的 VM 其實也可以納入治理體系。&lt;/p&gt;
-&lt;p&gt;透過 Istio 的 &lt;a href=&#34;https://istio.io/docs/setup/kubernetes/additional-setup/mesh-expansion/&#34;&gt;&lt;strong&gt;mesh expansion&lt;/strong&gt;&lt;/a&gt; 機制，VM 只要安裝 node agent 及 Envoy proxy，即可登記為 Kubernetes/Istio cluster 的 &lt;a href=&#34;https://istio.io/docs/reference/config/networking/v1alpha3/service-entry/&#34;&gt;service entry&lt;/a&gt; 資源，進行 service discovery 等互動。&lt;/p&gt;
-
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;https://www.youtube.com/embed/2czElo8a7FM&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-
-&lt;p&gt;【演講】&lt;a href=&#34;https://cloud.withgoogle.com/next/sf/sessions?session=HYB308&#34;&gt;Istio Service Mesh for VM Native&lt;/a&gt;&lt;!-- raw HTML omitted --&gt;
-【重點摘要】&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://youtu.be/2czElo8a7FM?t=8m0s&#34;&gt;8:00&lt;/a&gt; - 介紹 Istio 的 mesh expansion 機制。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://youtu.be/2czElo8a7FM?t=11m04s&#34;&gt;11:04&lt;/a&gt; - 具體步驟。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://youtu.be/2czElo8a7FM?t=13m23s&#34;&gt;13:23&lt;/a&gt; - Live demo!&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;windows-containers&#34;&gt;Windows Containers&lt;/h2&gt;
-&lt;p&gt;自從 3 月底 Kubernetes 1.14 宣布正式支援 Windows 之後&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，我就很期待到 Next ’19 現場眼見為憑。&lt;/p&gt;
-&lt;p&gt;這一場值得全程觀看。我僅摘錄部分重點。&lt;/p&gt;
-
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;https://www.youtube.com/embed/C4kW9uLmefU&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-
-&lt;p&gt;【演講】&lt;a href=&#34;https://cloud.withgoogle.com/next/sf/sessions?session=HYB108&#34;&gt;Windows Containers in Google Kubernetes Engine&lt;/a&gt;&lt;!-- raw HTML omitted --&gt;
-【重點摘要】&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://youtu.be/C4kW9uLmefU?t=7m50s&#34;&gt;7:50&lt;/a&gt; - &amp;ldquo;I have a dream&amp;hellip;&amp;rdquo;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://youtu.be/C4kW9uLmefU?t=12m15s&#34;&gt;12:15&lt;/a&gt; - Windows host OS and base image requirements&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://youtu.be/C4kW9uLmefU?t=17m23s&#34;&gt;17:23&lt;/a&gt; - Which to containerize?&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://youtu.be/C4kW9uLmefU?t=22m14s&#34;&gt;22:14&lt;/a&gt; - Kubernetes 1.14 stable supports Windows containers and Windows Server 2019&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://youtu.be/C4kW9uLmefU?t=25m44s&#34;&gt;25:44&lt;/a&gt; - Limitations for Windows containers (for now)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://youtu.be/C4kW9uLmefU?t=28m16s&#34;&gt;28:16&lt;/a&gt; - GKE &amp;ldquo;is working on supporting Windows containers&amp;rdquo; (preview now)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://youtu.be/C4kW9uLmefU?t=30m40s&#34;&gt;30:40&lt;/a&gt; - Live demo!&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://youtu.be/C4kW9uLmefU?t=37m0s&#34;&gt;37:00&lt;/a&gt; - Early Access Program (EAP)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;api-視角&#34;&gt;API 視角&lt;/h2&gt;
-&lt;p&gt;不管你想在容器化、微服務、service mesh 路線走到多遠，「API 管理」一直都是需要持續關注的一環。&lt;/p&gt;
-&lt;p&gt;針對這議題，Next ’19 是以 &lt;a href=&#34;https://cloud.google.com/apigee/&#34;&gt;Apigee&lt;/a&gt; 為主軸&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;，分別介紹 Apigee 如何與 service mesh 和 serverless 技術搭配運用。&lt;/p&gt;
-
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;https://www.youtube.com/embed/IblDMVwSSk4&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-
-&lt;p&gt;【演講】&lt;a href=&#34;https://cloud.withgoogle.com/next/sf/sessions?session=HYB319&#34;&gt;APIs, Microservices, and the Service Mesh&lt;/a&gt;&lt;!-- raw HTML omitted --&gt;
-【重點摘要】&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://youtu.be/IblDMVwSSk4?t=3m21s&#34;&gt;3:21&lt;/a&gt; - 介紹 mTLS。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://youtu.be/IblDMVwSSk4?t=7m06s&#34;&gt;7:06&lt;/a&gt; - 用 Istio 在 control plane 層次確保 mTLS 之類的 policy。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://youtu.be/IblDMVwSSk4?t=12m47s&#34;&gt;12:47&lt;/a&gt; - 介紹 service mesh 時代的 API 管理架構。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://youtu.be/IblDMVwSSk4?t=33m09s&#34;&gt;33:09&lt;/a&gt; - 什麼時候才需要 service mesh？&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;https://www.youtube.com/embed/7fcpwM-8qPo&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-
-&lt;p&gt;【演講】&lt;a href=&#34;https://cloud.withgoogle.com/next/sf/sessions?session=SVR102&#34;&gt;API Management for Serverless and Multi-Cloud&lt;/a&gt;&lt;!-- raw HTML omitted --&gt;
-【重點摘要】&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://youtu.be/7fcpwM-8qPo?t=13m35s&#34;&gt;13:35&lt;/a&gt; - 示範 Cloud Run 與 Apigee。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://youtu.be/7fcpwM-8qPo?t=24m15s&#34;&gt;24:15&lt;/a&gt; - 示範 Cloud Functions 與 Apigee。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;這麼多乾貨，值得花點力氣好好消化。&lt;/p&gt;
-&lt;h2 id=&#34;投影片&#34;&gt;投影片&lt;/h2&gt;
-
-&lt;div class=&#34;shortcode-notice note&#34;&gt;
-  &lt;div class=&#34;shortcode-notice-title note&#34;&gt;
-    
-      2019-07-02 補充
-    
-  &lt;/div&gt;
-  &lt;p&gt;兩個月後，應 GCPUG Taipei 之邀，我還是在 &lt;a href=&#34;https://www.meetup.com/GCPUG-Taipei/events/262584153/&#34;&gt;Meetup #48&lt;/a&gt; 給了一場分享。投影片在此：&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
-
-&lt;/div&gt;
-
-&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
-&lt;hr&gt;
-&lt;ol&gt;
-&lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;&lt;a href=&#34;https://kubernetes.io/blog/2019/03/25/kubernetes-1-14-release-announcement/&#34;&gt;Kubernetes 1.14: Production-level support for Windows Nodes, Kubectl Updates, Persistent Local Volumes GA&lt;/a&gt; &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;Apigee 於 2016 年被 Google 併購。詳見〈&lt;a href=&#34;https://www.ithome.com.tw/news/108342&#34;&gt;Google 以 6.25 億美元收購 Apigee，強化 API 管理服務&lt;/a&gt;〉一文。 &lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;</description>

@@ -6,10 +6,22 @@
     <description>Recent content in agile on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sun, 02 Aug 2020 16:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 09 Aug 2020 13:00:00 +0800</lastBuildDate>
     
 	<atom:link href="//william-yeh.net/tags/agile/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Essence of Scrum: Sprint Planning</title>
+      <link>//william-yeh.net/post/2020/08/sprint-planning-in-a-nutshell/</link>
+      <pubDate>Sun, 09 Aug 2020 13:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2020/08/sprint-planning-in-a-nutshell/</guid>
+      <description>This article discusses the essence of Sprint Planning .
+In a nutshell Sprint Planning is a time-boxed1 event in which the Scrum Team defines the Sprint Goal and makes a feasible plan for the goal, to the best knowledge, information and belief of the team.
+Output Essential:
+  Sprint Goal   A feasible plan for achieving the Sprint Goal   Sprint Backlog Items with the property of INVEST (Independent, Negotiable, Valuable, Estimable, Small, Testable)2</description>
+    </item>
     
     <item>
       <title>Essence of Scrum: Daily Scrum</title>
@@ -283,16 +295,6 @@ Output Essential:
       <guid>//william-yeh.net/post/2016/05/change-viewpoint-on-lord-of-rings/</guid>
       <description>&lt;p&gt;今年一月，參加 &lt;a href=&#34;http://kojenchieh.pixnet.net/blog&#34;&gt;David Ko&lt;/a&gt; 舉辦的一場敏捷轉型活動，從中學到了一個有趣的分析工具：Lean Change Canvas。&lt;/p&gt;
 &lt;p&gt;知道了一個好東西，自然要追本溯源，加深加廣。便研讀相關資料：&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>向工廠管理致敬</title>
-      <link>//william-yeh.net/post/2016/04/learn-from-plant-mgmt/</link>
-      <pubDate>Fri, 22 Apr 2016 08:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2016/04/learn-from-plant-mgmt/</guid>
-      <description>&lt;p&gt;身為徹頭徹尾的軟體人，在軟體產業待久了，總會對「硬」一點的產業，尤其是製造業，有莫名的成見，以為他們是僵固的、反人性的。從 1972 年「&lt;a href=&#34;https://en.wikipedia.org/wiki/Software_crisis&#34;&gt;軟體危機&lt;/a&gt;」引發的論述當中，更加深軟體人的印象：製造業的經驗，是無法直接套用到軟體界的；我們是截然不同的國度。&lt;/p&gt;
-&lt;p&gt;不過，近十年來許多軟體界的流程改革，尤其是同屬 Agile 陣營的 Scrum 及 Kanban，居然有許多元素是從製造業&lt;del&gt;偷竊&lt;/del&gt;學習而來。譬如說&lt;/p&gt;</description>
     </item>
     
   </channel>

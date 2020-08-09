@@ -6,10 +6,22 @@
     <description>Recent content in Posts on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Fri, 07 Aug 2020 08:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 09 Aug 2020 13:00:00 +0800</lastBuildDate>
     
 	<atom:link href="//william-yeh.net/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Essence of Scrum: Sprint Planning</title>
+      <link>//william-yeh.net/post/2020/08/sprint-planning-in-a-nutshell/</link>
+      <pubDate>Sun, 09 Aug 2020 13:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2020/08/sprint-planning-in-a-nutshell/</guid>
+      <description>This article discusses the essence of Sprint Planning .
+In a nutshell Sprint Planning is a time-boxed1 event in which the Scrum Team defines the Sprint Goal and makes a feasible plan for the goal, to the best knowledge, information and belief of the team.
+Output Essential:
+  Sprint Goal   A feasible plan for achieving the Sprint Goal   Sprint Backlog Items with the property of INVEST (Independent, Negotiable, Valuable, Estimable, Small, Testable)2</description>
+    </item>
     
     <item>
       <title>Blackbox Exporter 小記</title>
@@ -268,18 +280,6 @@ To clarify this I&amp;rsquo;ve conducted a series of experiments for 3 possible 
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;兩個場次，一言以蔽之，都圍繞在 Kubernetes 的入門認知與導入策略上。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Next &#39;19 的 Istio 場次重點摘要</title>
-      <link>//william-yeh.net/post/2019/04/next19-istio/</link>
-      <pubDate>Fri, 19 Apr 2019 23:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2019/04/next19-istio/</guid>
-      <description>&lt;p&gt;四月 9&amp;ndash;11 日去舊金山參加 Google Cloud 的 &lt;a href=&#34;https://cloud.withgoogle.com/next/sf/&#34;&gt;Next ’19&lt;/a&gt; 大會，收穫頗大。&lt;/p&gt;
-&lt;p&gt;這場大會，同一時段就有近 30 場專題演講同時進行，議程滿滿，勢必得做取捨。基於工作需要及個人興趣，我主要選擇與容器相關的場次：service mesh、Windows containers、混合雲、資安實務。&lt;/p&gt;
-&lt;p&gt;我發現，光是這些場次，就得花很大力氣去消化、實驗與應用。&lt;/p&gt;
-&lt;p&gt;我們這些所謂的「台港團」會在 GCPUG Taipei 舉辦一場&lt;a href=&#34;https://www.meetup.com/GCPUG-Taipei/events/260555968/&#34;&gt;分享會&lt;/a&gt;。因為自己不克參加，便以這篇文章，針對我鎖定的核心議題：Istio，做一番重點摘要，以饗讀者。&lt;/p&gt;</description>
     </item>
     
   </channel>
