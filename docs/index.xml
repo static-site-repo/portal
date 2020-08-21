@@ -6,10 +6,133 @@
     <description>Recent content on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sun, 09 Aug 2020 13:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 20 Aug 2020 08:00:00 +0800</lastBuildDate>
     
         <atom:link href="//william-yeh.net/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Essence of Scrum: Sprint Review</title>
+      <link>//william-yeh.net/post/2020/08/sprint-review-in-a-nutshell/</link>
+      <pubDate>Thu, 20 Aug 2020 08:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2020/08/sprint-review-in-a-nutshell/</guid>
+      
+        <description>&lt;p&gt;This article discusses the essence of &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Review&lt;/span&gt;
+.&lt;/p&gt;
+&lt;h2 id=&#34;in-a-nutshell&#34;&gt;In a nutshell&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Sprint Review&lt;/strong&gt; is a time-boxed&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; event in which the &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Scrum Team&lt;/span&gt;
+ and invited stakeholders inspect what has been &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Done&lt;/span&gt;
+ with respect to the &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Goal&lt;/span&gt;
+, gain insight into values, and adapt business strategy if necessary.&lt;/p&gt;
+&lt;h2 id=&#34;output&#34;&gt;Output&lt;/h2&gt;
+&lt;p&gt;Essential:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;An adapted &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Product Backlog&lt;/span&gt;
+&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;An adapted business strategy and roadmap&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Better:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Celebration&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;input&#34;&gt;Input&lt;/h2&gt;
+&lt;p&gt;Essential:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Goal&lt;/span&gt;
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;span style=&#34;font-variant: small-caps;&#34;&gt;Increment&lt;/span&gt;
+&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Better:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Feedback from real-world customers and markets&lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;tools-and-techniques&#34;&gt;Tools and Techniques&lt;/h2&gt;
+&lt;p&gt;Essential:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Self-organizing instead of being conducted solely by &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Scrum Master&lt;/span&gt;
+, &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Product Owner&lt;/span&gt;
+, or dedicated persons&lt;sup id=&#34;fnref:6&#34;&gt;&lt;a href=&#34;#fn:6&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;6&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Encouraging a focus on the &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Goal&lt;/span&gt;
+ rather than individual &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Backlog Items&lt;/span&gt;
+.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Encouraging a focus on the learning rather than just checking off &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Backlog Items&lt;/span&gt;
+.&lt;sup id=&#34;fnref:7&#34;&gt;&lt;a href=&#34;#fn:7&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;7&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Better:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Diverge-converge meeting pattern&lt;sup id=&#34;fnref:8&#34;&gt;&lt;a href=&#34;#fn:8&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;8&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+
+&lt;div class=&#34;shortcode-notice note&#34;&gt;
+  &lt;div class=&#34;shortcode-notice-title note&#34;&gt;
+    
+      &amp;#39;Essence of Scrum&amp;#39; Series
+    
+  &lt;/div&gt;
+  &lt;p&gt;❶ &lt;a href=&#34;//william-yeh.net/post/2020/07/pbr-in-a-nutshell/&#34;&gt;Product Backlog Refinement&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❷ &lt;a href=&#34;//william-yeh.net/post/2020/08/daily-scrum-in-a-nutshell/&#34;&gt;Daily Scrum&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❸ &lt;a href=&#34;//william-yeh.net/post/2020/08/sprint-planning-in-a-nutshell/&#34;&gt;Sprint Planning&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❹ Sprint Review&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;The &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Review&lt;/span&gt;
+ is intended to be an opportunity for learning, not a formal product launch presentation. &lt;em&gt;&lt;a href=&#34;https://www.scrumguides.org/&#34;&gt;The Scrum Guide&lt;/a&gt;&lt;/em&gt; says that &lt;em&gt;&amp;ldquo;This is an informal meeting, not a status meeting, and the presentation of the Increment is intended to elicit feedback and foster collaboration. [&amp;hellip;] The Scrum Master teaches everyone involved to keep it within the time-box.&amp;quot;&lt;/em&gt; &lt;em&gt;&lt;a href=&#34;http://scrumbook.org/&#34;&gt;A Scrum Book&lt;/a&gt;&lt;/em&gt; even emphasizes that &lt;em&gt;&amp;lsquo;The event should be time-boxed to a maximum of three hours. The focus is on assessing the product. The Development Team should not spend more than about 30 minutes specifically preparing for this event. Too often a team will prop up the product with temporary supporting structures to make it work well for the Sprint Review, or will spend time trying to “impress” the stakeholders with a sophisticated presentation. There is very little opportunity to be convincing here: the product stands on its own. The team demonstrates the product in an environment approximating that of an end user, without any special “demo support,” and without any props that could make the product appear better than it is. A good rule of thumb is: No PowerPoint® (unless your product is PowerPoint).&#39;&lt;/em&gt; &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;&lt;em&gt;&lt;a href=&#34;https://www.scrumguides.org/&#34;&gt;The Scrum Guide&lt;/a&gt;&lt;/em&gt; says that in the &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Review&lt;/span&gt;
+, &lt;em&gt;&amp;ldquo;The entire group collaborates on what to do next, so that the Sprint Review provides valuable input to subsequent Sprint Planning; [&amp;hellip;] Review of the timeline, budget, potential capabilities, and marketplace for the next anticipated releases of functionality or capability of the product.&amp;quot;&lt;/em&gt; &lt;em&gt;&lt;a href=&#34;http://scrumbook.org/&#34;&gt;A Scrum Book&lt;/a&gt;&lt;/em&gt; says that &lt;em&gt;&amp;ldquo;It is good for the &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Product Owner&lt;/span&gt;
+ to adopt a vulnerable posture and to hear whether the team endorses and trusts the decisions and directions by which he or she is directing the team, particularly with respect to the product direction and dealing with technical debt and product quality. This helps reinforce the Community of Trust.&amp;quot;&lt;/em&gt; &lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;&lt;em&gt;&lt;a href=&#34;http://scrumbook.org/&#34;&gt;A Scrum Book&lt;/a&gt;&lt;/em&gt; suggests that &lt;em&gt;&amp;ldquo;A Sprint Review is an opportunity for the team to reflect on their accomplishments during the past Sprint, which contributes to growth in Product Pride. A Sprint Review can be a form of celebration if the team reaches a particularly noteworthy goal, or just for the sake of celebrating now and then. A company in Finland would occasionally have a Sprint Review in a sauna, with good food and drink, going late into the evening. The event covered the perfunctory agenda items but the real focus was for the team to celebrate its work together. (Thanks to Jukka Järvelä for this story!).&amp;quot;&lt;/em&gt; &lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:4&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;&lt;em&gt;&lt;a href=&#34;https://www.scrumguides.org/&#34;&gt;The Scrum Guide&lt;/a&gt;&lt;/em&gt; uses the term &amp;ldquo;&lt;a href=&#34;https://www.scrumguides.org/scrum-guide.html#artifacts-increment&#34;&gt;&lt;span style=&#34;font-variant: small-caps;&#34;&gt;Increment&lt;/span&gt;
+&lt;/a&gt;&amp;rdquo; to refer to &lt;em&gt;&amp;ldquo;the sum of all the Product Backlog items completed during a Sprint and the value of the increments of all previous Sprints.&amp;quot;&lt;/em&gt; To be more precise, &lt;em&gt;&lt;a href=&#34;http://scrumbook.org/&#34;&gt;A Scrum Book&lt;/a&gt;&lt;/em&gt; uses the term &amp;ldquo;&lt;a href=&#34;http://scrumbook.org.datasenter.no/value-stream/regular-product-increment.html&#34;&gt;&lt;span style=&#34;font-variant: small-caps;&#34;&gt;Regular Product Increment&lt;/span&gt;
+&lt;/a&gt;&amp;rdquo;, and  &lt;a href=&#34;https://less.works/&#34;&gt;LeSS&lt;/a&gt; uses the term &amp;ldquo;&lt;a href=&#34;https://less.works/less/framework/potentially-shippable-product-increment&#34;&gt;&lt;span style=&#34;font-variant: small-caps;&#34;&gt;Potentially Shippable Product Increment&lt;/span&gt;
+&lt;/a&gt;&amp;rdquo; (often abbreviated as &amp;ldquo;PSPI&amp;rdquo;). &lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:5&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;&lt;em&gt;&lt;a href=&#34;https://www.amazon.com/dp/1492033510&#34;&gt;Agile for Everybody&lt;/a&gt;&lt;/em&gt; says that &lt;em&gt;&amp;lsquo;One of the many ways that organizational leaders often accidentally undermine Agile principles is to continue asking only company-centric questions, such as “Are we on time and on budget?” and “Has your manager approved this?” as opposed to customer-centric questions, such as “How do our customers feel about this change to the product?” One immediate and powerful sign that you’re on the right track is that leaders are asking customer-centric questions or, even better, referring directly to customer quotes and insights.&#39;&lt;/em&gt; &lt;a href=&#34;#fnref:5&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:6&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;&lt;em&gt;&lt;a href=&#34;https://www.scrumguides.org/&#34;&gt;The Scrum Guide&lt;/a&gt;&lt;/em&gt; says that &lt;em&gt;&amp;lsquo;The &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Development Team&lt;/span&gt;
+ demonstrates the work that it has &amp;ldquo;Done&amp;rdquo; and answers questions about the Increment.&#39;&lt;/em&gt;  &lt;em&gt;&lt;a href=&#34;http://scrumbook.org/&#34;&gt;A Scrum Book&lt;/a&gt;&lt;/em&gt; also says that &lt;em&gt;&amp;ldquo;The &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Development Team&lt;/span&gt;
+ demonstrates the functionality that was Done.&amp;quot;&lt;/em&gt; &lt;a href=&#34;#fnref:6&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:7&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://less.works/&#34;&gt;LeSS&lt;/a&gt; advocates the &amp;ldquo;Inspect-Adapt and &lt;em&gt;not&lt;/em&gt; Inspect-Accept&amp;rdquo; concept: &lt;em&gt;&amp;ldquo;The most common mistake in a Sprint Review is to focus on the Product Owner accepting items from the teams. This is a misunderstanding of the purpose of the Sprint Review and moves it away from &lt;a href=&#34;https://less.works/less/principles/empirical-process-control.html&#34;&gt;empirical process control&lt;/a&gt; towards finding blame. The Sprint Review is an opportunity for everyone to collaborate about the product.&amp;quot;&lt;/em&gt; &lt;a href=&#34;#fnref:7&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:8&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://less.works/&#34;&gt;LeSS&lt;/a&gt; advocates a bazaar-style Sprint Review: &lt;em&gt;&amp;ldquo;The Sprint Review is best conducted using a diverge-converge meeting pattern. During the diverge periods, use a bazaar. This is analogous to a science fair: A large room has multiple areas, each staffed by team representatives, where the items developed by a team are shown and discussed. Stakeholders visit areas of interest. During the converge periods, stakeholders summarize their opinions from the bazaar. A subset of items may be inspected on a common computer projector during this time, also.&amp;quot;&lt;/em&gt; &lt;a href=&#34;#fnref:8&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
+</description>
+      
+    </item>
     
     <item>
       <title>Essence of Scrum: Sprint Planning</title>
@@ -127,6 +250,7 @@
   &lt;p&gt;❶ &lt;a href=&#34;//william-yeh.net/post/2020/07/pbr-in-a-nutshell/&#34;&gt;Product Backlog Refinement&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;❷ &lt;a href=&#34;//william-yeh.net/post/2020/08/daily-scrum-in-a-nutshell/&#34;&gt;Daily Scrum&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;❸ Sprint Planning&lt;/p&gt;
+&lt;p&gt;❹ &lt;a href=&#34;//william-yeh.net/post/2020/08/sprint-review-in-a-nutshell/&#34;&gt;Sprint Review&lt;/a&gt;&lt;/p&gt;
 
 &lt;/div&gt;
 
@@ -593,6 +717,7 @@ probe_success 1
   &lt;p&gt;❶ &lt;a href=&#34;//william-yeh.net/post/2020/07/pbr-in-a-nutshell/&#34;&gt;Product Backlog Refinement&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;❷ Daily Scrum&lt;/p&gt;
 &lt;p&gt;❸ &lt;a href=&#34;//william-yeh.net/post/2020/08/sprint-planning-in-a-nutshell/&#34;&gt;Sprint Planning&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❹ &lt;a href=&#34;//william-yeh.net/post/2020/08/sprint-review-in-a-nutshell/&#34;&gt;Sprint Review&lt;/a&gt;&lt;/p&gt;
 
 &lt;/div&gt;
 
@@ -739,6 +864,7 @@ probe_success 1
   &lt;p&gt;❶ Product Backlog Refinement&lt;/p&gt;
 &lt;p&gt;❷ &lt;a href=&#34;//william-yeh.net/post/2020/08/daily-scrum-in-a-nutshell/&#34;&gt;Daily Scrum&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;❸ &lt;a href=&#34;//william-yeh.net/post/2020/08/sprint-planning-in-a-nutshell/&#34;&gt;Sprint Planning&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❹ &lt;a href=&#34;//william-yeh.net/post/2020/08/sprint-review-in-a-nutshell/&#34;&gt;Sprint Review&lt;/a&gt;&lt;/p&gt;
 
 &lt;/div&gt;
 
@@ -3853,123 +3979,6 @@ lrwxrwxrwx    1 root  root     15 Jun 12 06:19 main.css -&amp;gt; ..data/main.cs
 &lt;/ol&gt;
 &lt;/section&gt;
 </description>
-      
-    </item>
-    
-    <item>
-      <title>Kubernetes 的入門認知與導入策略</title>
-      <link>//william-yeh.net/post/2019/05/k8s-lab/</link>
-      <pubDate>Fri, 17 May 2019 12:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2019/05/k8s-lab/</guid>
-      
-        <description>&lt;p&gt;前天我在 &lt;a href=&#34;https://cloudsummit.ithome.com.tw/&#34;&gt;2019 台灣雲端大會&lt;/a&gt;帶了兩個場次，一個是現場實作場次，一個是經驗分享演講：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Lab / &lt;a href=&#34;https://github.com/William-Yeh/workshop-cloud2019&#34;&gt;給 RD 的 Kubernetes 初體驗&lt;/a&gt; (90 minutes)&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Speech / &lt;a href=&#34;https://www.slideshare.net/williamyeh/when-dotnetmeetskubernetes-145557464&#34;&gt;當 .NET 遇到 Kubernetes&lt;/a&gt; (30 minutes)&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;兩個場次，一言以蔽之，都圍繞在 Kubernetes 的入門認知與導入策略上。&lt;/p&gt;
-&lt;h2 id=&#34;以問題解決角度看-kubernetes-導入&#34;&gt;以「問題解決」角度看 Kubernetes 導入&lt;/h2&gt;
-&lt;p&gt;〈&lt;a href=&#34;https://www.slideshare.net/williamyeh/when-dotnetmeetskubernetes-145557464&#34;&gt;當 .NET 遇到 Kubernetes&lt;/a&gt;〉這場演講，是以「問題解決」的角度，探討導入 Kubernetes 的困難與策略，尤其是針對 .NET 族群。&lt;/p&gt;
-&lt;iframe
-  style=&#34;width: 100%; height: 500px;&#34; frameborder=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; scrolling=&#34;no&#34;
-  src=&#34;https://www.slideshare.net/slideshow/embed_code/145557464&#34; allowfullscreen webkitallowfullscreen mozallowfullscreen&gt; &lt;/iframe&gt;
-&lt;br&gt;&lt;br&gt;
-&lt;p&gt;整場演講的脈絡如下：&lt;/p&gt;
-&lt;p&gt;① 為什麼要導入 Kubernetes？&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;我們的現況是什麼？&lt;/li&gt;
-&lt;li&gt;外面的世界已經是什麼樣子？&lt;/li&gt;
-&lt;li&gt;不正視差距，會有什麼影響？&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;② 為什麼還 &lt;strong&gt;不&lt;/strong&gt; 導入 Kubernetes？&lt;/p&gt;
-&lt;p&gt;我嘗試用&lt;a href=&#34;https://www.behaviormodel.org/&#34;&gt;法格行為模型&lt;/a&gt; (B=MAP) 來歸類問題原因：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;M&lt;/strong&gt;otivation / 我們真的認識 Kubernetes 真實的利益是什麼嗎？&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;A&lt;/strong&gt;bility / 正確認識技術核心、外在因素、內在因素，才能正確評估我們的技術能力是否已經提升到足以擁抱 Kubernetes 的地步。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;P&lt;/strong&gt;rompt / 是否有臨門一腳的驅動力？&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;③ 有什麼建議的導入選項？&lt;/p&gt;
-&lt;p&gt;我發現 Prajakta Joshi 的演講 &amp;ldquo;&lt;a href=&#34;https://cloud.withgoogle.com/next/sf/sessions?session=NET206&#34;&gt;Strategies for Bringing Kubernetes, Istio, Traffic Director, and Envoy to Brownfield with Walmart, Google, Tetrate&lt;/a&gt;&amp;rdquo; &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; 已經給了很好的建議。因此，我引述她的論點，建議大家可以採用兩種路徑：(a) Container first and mesh next，(b) Mesh first and container next。&lt;/p&gt;
-&lt;p&gt;我這場演講有開放錄影。等上線了，我會再補上連結。&lt;/p&gt;
-&lt;h2 id=&#34;rd-也需要略懂-kubernetes&#34;&gt;RD 也需要略懂 Kubernetes&lt;/h2&gt;
-&lt;p&gt;Kubernetes 是目前雲端環境的顯學。可是，傳統的程式，並不是原封不動搬上去，就能夠自動享受 Kubernetes 所宣稱的種種好處。新的環境，不僅需要新的 Ops 思維，也需要新的 Dev 思維。&lt;/p&gt;
-&lt;p&gt;我設計〈&lt;a href=&#34;https://github.com/William-Yeh/workshop-cloud2019&#34;&gt;給 RD 的 Kubernetes 初體驗&lt;/a&gt;〉工作坊，嘗試以一個半小時的時間，從軟體研發者的角度，探討軟體的設計該做哪些最起碼的改變，並從實作中體驗 Kubernetes 引進的新觀念及新效益。&lt;/p&gt;
-&lt;p&gt;我希望能夠讓學員從實例中體驗，傳統 web 應用程式在搬上 Kubernetes 時，可能會經歷哪些架構面的調整，才能享受新架構的效益。&lt;/p&gt;
-&lt;p&gt;我試圖不只是 demo，也不只是讓大家能無腦照著做，還試圖進行一些觀念講解。短短一個半小時，野心太大，只好割捨原本已經準備好的 API Gateway 例子 &lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;，集中在以下課題：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;容器化&lt;/li&gt;
-&lt;li&gt;微服務&lt;/li&gt;
-&lt;li&gt;組態管理&lt;/li&gt;
-&lt;li&gt;多重環境管理：本機端與雲端（以 GKE 為例）&lt;/li&gt;
-&lt;/ul&gt;
-&lt;iframe
-  style=&#34;width: 100%; height: 500px;&#34; frameborder=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; scrolling=&#34;no&#34;
-  src=&#34;https://www.slideshare.net/slideshow/embed_code/145761572&#34; allowfullscreen webkitallowfullscreen mozallowfullscreen&gt; &lt;/iframe&gt;
-&lt;br&gt;&lt;br&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/William-Yeh/workshop-cloud2019&#34;&gt;範例程式&lt;/a&gt;也以迭代演進的形式，逐步添加 Kubernetes 功能，呼應〈&lt;a href=&#34;https://www.slideshare.net/williamyeh/when-dotnetmeetskubernetes-145557464&#34;&gt;當 .NET 遇到 Kubernetes&lt;/a&gt;〉演講所提出的 &amp;ldquo;Container first and mesh next&amp;rdquo; 導入策略。&lt;/p&gt;
-&lt;p&gt;Container:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;1.0: Extracted from Microsoft Docs.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;2.0: Dockerize the app with simple Dockerfile and docker-compose.yml.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;3.0: Separate frontend and backend into 2 distinct containers.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Kubernetes:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;4.0: Support Kubernetes (locally).&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;4.1: Use Kubernetes dashboard.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;5.0: Support ConfigMap and naming convention.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Cloud（感謝&lt;a href=&#34;https://tw.linkedin.com/in/ericsk&#34;&gt;上官林傑&lt;/a&gt;大力支援 Google Cloud 的 redeem coupon）：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;6.0: Support Kubernetes on the cloud (GKE for example).&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;7.0: Support canary release.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;可惜，一個半小時的時間還是太短了，最後面 30 分鐘其實是在趕進度，跳過了一些原本應該仔細講解的環節（譬如：ConfigMap、label &amp;amp; selector、ephemeral vs static external IP 的區分⋯⋯）。我再考慮另外找個社群的場子，辦一次較完整的 workshop 吧。完整的，應該會需要 2.5～3 小時。&lt;/p&gt;
-
-&lt;div class=&#34;shortcode-notice note&#34;&gt;
-  &lt;div class=&#34;shortcode-notice-title note&#34;&gt;
-    
-      2019-06-16 補充
-    
-  &lt;/div&gt;
-  &lt;p&gt;一個月後，應 &lt;a href=&#34;https://www.meetup.com/GCPUG-Taipei/events/261797460/&#34;&gt;GCPUG Taipei&lt;/a&gt; 之邀，我辦了一場 3+1 小時的 Workshop，&lt;a href=&#34;https://www.slideshare.net/williamyeh/rd-kubernetes-gcpug-2019-06/&#34;&gt;投影片&lt;/a&gt;及&lt;a href=&#34;https://github.com/William-Yeh/workshop-gcpug201906/&#34;&gt;實作範例&lt;/a&gt;都有更新。&lt;/p&gt;
-
-&lt;/div&gt;
-
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;希望這一場演講，一場實作工作坊，對大家有助益。&lt;/p&gt;
-&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
-&lt;hr&gt;
-&lt;ol&gt;
-&lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;我在〈&lt;a href=&#34;//william-yeh.net/post/2019/04/next19-istio/&#34;&gt;Next ’19 的 Istio 場次重點摘要&lt;/a&gt;〉一文中，有介紹 Prajakta Joshi 在 Google Cloud Next ’19 另一場精彩的演講。 &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;關於 Kubernetes 的 API gateway，請參考〈&lt;a href=&#34;//william-yeh.net/post/2019/03/ingress-vs-ambassador/&#34;&gt;Nginx Ingress 與 Ambassador 簡易性能比較&lt;/a&gt;〉一文。 &lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/section&gt;</description>
       
     </item>
     

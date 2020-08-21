@@ -6,10 +6,24 @@
     <description>Recent content in agile on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sun, 09 Aug 2020 13:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 20 Aug 2020 08:00:00 +0800</lastBuildDate>
     
 	<atom:link href="//william-yeh.net/tags/agile/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Essence of Scrum: Sprint Review</title>
+      <link>//william-yeh.net/post/2020/08/sprint-review-in-a-nutshell/</link>
+      <pubDate>Thu, 20 Aug 2020 08:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2020/08/sprint-review-in-a-nutshell/</guid>
+      <description>This article discusses the essence of Sprint Review .
+In a nutshell Sprint Review is a time-boxed1 event in which the Scrum Team and invited stakeholders inspect what has been Done with respect to the Sprint Goal , gain insight into values, and adapt business strategy if necessary.
+Output Essential:
+  An adapted Product Backlog   An adapted business strategy and roadmap2
+  Better:
+ Celebration3  Input Essential:</description>
+    </item>
     
     <item>
       <title>Essence of Scrum: Sprint Planning</title>
@@ -282,16 +296,6 @@ Output Essential:
       
       <guid>//william-yeh.net/post/2016/12/game-frame/</guid>
       <description>遊戲化 我第一次看到將「遊戲化」概念運用到職場上的點子，是在《加入遊戲因子，解決各種問題》這本有趣的書： 遊戲的十個組成要素 第二次看到將「遊戲化</description>
-    </item>
-    
-    <item>
-      <title>從「改變」角度看《魔戒》</title>
-      <link>//william-yeh.net/post/2016/05/change-viewpoint-on-lord-of-rings/</link>
-      <pubDate>Wed, 25 May 2016 08:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2016/05/change-viewpoint-on-lord-of-rings/</guid>
-      <description>&lt;p&gt;今年一月，參加 &lt;a href=&#34;http://kojenchieh.pixnet.net/blog&#34;&gt;David Ko&lt;/a&gt; 舉辦的一場敏捷轉型活動，從中學到了一個有趣的分析工具：Lean Change Canvas。&lt;/p&gt;
-&lt;p&gt;知道了一個好東西，自然要追本溯源，加深加廣。便研讀相關資料：&lt;/p&gt;</description>
     </item>
     
   </channel>

@@ -6,10 +6,24 @@
     <description>Recent content in Posts on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sun, 09 Aug 2020 13:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 20 Aug 2020 08:00:00 +0800</lastBuildDate>
     
 	<atom:link href="//william-yeh.net/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Essence of Scrum: Sprint Review</title>
+      <link>//william-yeh.net/post/2020/08/sprint-review-in-a-nutshell/</link>
+      <pubDate>Thu, 20 Aug 2020 08:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2020/08/sprint-review-in-a-nutshell/</guid>
+      <description>This article discusses the essence of Sprint Review .
+In a nutshell Sprint Review is a time-boxed1 event in which the Scrum Team and invited stakeholders inspect what has been Done with respect to the Sprint Goal , gain insight into values, and adapt business strategy if necessary.
+Output Essential:
+  An adapted Product Backlog   An adapted business strategy and roadmap2
+  Better:
+ Celebration3  Input Essential:</description>
+    </item>
     
     <item>
       <title>Essence of Scrum: Sprint Planning</title>
@@ -259,24 +273,6 @@ To clarify this I&amp;rsquo;ve conducted a series of experiments for 3 possible 
       
       <guid>//william-yeh.net/post/2019/06/inotify-in-containers/</guid>
       <description>It is usually necessary to watch for any changes in file systems, both in development and in production modes. For example, in the development mode Webpack can watch files and recompile whenever they change; in the production mode Consul Template can watch runtime configs and invoke specific applications whenever they change. These are well-known scenarios in traditional pre-container world. How about the container world? Do they behave the same in</description>
-    </item>
-    
-    <item>
-      <title>Kubernetes 的入門認知與導入策略</title>
-      <link>//william-yeh.net/post/2019/05/k8s-lab/</link>
-      <pubDate>Fri, 17 May 2019 12:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2019/05/k8s-lab/</guid>
-      <description>&lt;p&gt;前天我在 &lt;a href=&#34;https://cloudsummit.ithome.com.tw/&#34;&gt;2019 台灣雲端大會&lt;/a&gt;帶了兩個場次，一個是現場實作場次，一個是經驗分享演講：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Lab / &lt;a href=&#34;https://github.com/William-Yeh/workshop-cloud2019&#34;&gt;給 RD 的 Kubernetes 初體驗&lt;/a&gt; (90 minutes)&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Speech / &lt;a href=&#34;https://www.slideshare.net/williamyeh/when-dotnetmeetskubernetes-145557464&#34;&gt;當 .NET 遇到 Kubernetes&lt;/a&gt; (30 minutes)&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;兩個場次，一言以蔽之，都圍繞在 Kubernetes 的入門認知與導入策略上。&lt;/p&gt;</description>
     </item>
     
   </channel>
