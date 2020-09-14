@@ -6,10 +6,22 @@
     <description>Recent content in Posts on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Thu, 20 Aug 2020 08:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 13 Sep 2020 22:00:00 +0800</lastBuildDate>
     
 	<atom:link href="//william-yeh.net/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>從系統思考角度讀《目標》：第一～三章</title>
+      <link>//william-yeh.net/post/2020/09/systhinking-goal-ch01-03/</link>
+      <pubDate>Sun, 13 Sep 2020 22:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2020/09/systhinking-goal-ch01-03/</guid>
+      <description>&lt;h2 id=&#34;緣起&#34;&gt;緣起&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Eliyahu_M._Goldratt&#34;&gt;高德拉特&lt;/a&gt;系列著作是我的管理啟蒙書，《&lt;a href=&#34;http://www.books.com.tw/products/0010562789?loc=P_asb_001&#34;&gt;目標&lt;/a&gt;》更是每隔一陣子就會重讀的經典。&lt;/p&gt;
+&lt;p&gt;這次，我打算以系統思考 (systems thinking) 角度重讀。尤其是以我在【&lt;a href=&#34;//william-yeh.net/post/2018/06/sys-thinking-workshop/&#34;&gt;系統思考的四堂課&lt;/a&gt;】提出的「&lt;strong&gt;SLR·CPI 法&lt;/strong&gt;」來逐步分析。&lt;/p&gt;
+&lt;p&gt;土井英司在《&lt;a href=&#34;http://www.books.com.tw/products/0010762830&#34;&gt;一流的人讀書，都在哪裡畫線？&lt;/a&gt;》點出訣竅：&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Essence of Scrum: Sprint Review</title>
@@ -264,15 +276,6 @@ To clarify this I&amp;rsquo;ve conducted a series of experiments for 3 possible 
       
       <guid>//william-yeh.net/post/2019/06/containers-and-env/</guid>
       <description>My previous article &amp;ldquo;Inotify in Containers&amp;rdquo; has demonstrated that when ConfigMap is mounted as directories, any changes in the ConfigMap will propagate to related pods. A follow-up question might be: what if the ConfigMap is mounted as environment variables? Some said that the answer is NO in Kubernetes1; even in the old Docker world2. Therefore, I&amp;rsquo;d like to begin with a simple experiment to try to answer the question: After</description>
-    </item>
-    
-    <item>
-      <title>Inotify in Containers</title>
-      <link>//william-yeh.net/post/2019/06/inotify-in-containers/</link>
-      <pubDate>Mon, 10 Jun 2019 18:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2019/06/inotify-in-containers/</guid>
-      <description>It is usually necessary to watch for any changes in file systems, both in development and in production modes. For example, in the development mode Webpack can watch files and recompile whenever they change; in the production mode Consul Template can watch runtime configs and invoke specific applications whenever they change. These are well-known scenarios in traditional pre-container world. How about the container world? Do they behave the same in</description>
     </item>
     
   </channel>
