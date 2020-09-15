@@ -33,7 +33,7 @@
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.74.3" />
+<meta name="generator" content="Hugo 0.75.0" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2020/03/grpc-load-balancing/" />
@@ -362,7 +362,7 @@ if (!doNotTrack) {
 <li><a href="https://linkerd.io/">Linkerd</a> 2.7.0 以上。</li>
 </ul>
 <p>實驗進行之前，請先編譯所需的執行檔及容器映像檔：</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># Generate native binaries in `out` directory:</span> 
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># Generate native binaries in `out` directory: </span>
 ./build.sh
 
 <span class="c1"># Generate Docker images:</span>
@@ -546,10 +546,10 @@ linkerd check
 <ol>
 <li>
 <p>移掉 <code>skaffold.yaml</code> 這一行的註解符號：</p>
-<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="k">deploy</span><span class="p">:</span><span class="w">
-</span><span class="w">  </span><span class="k">kubectl</span><span class="p">:</span><span class="w">
-</span><span class="w">    </span><span class="k">manifests</span><span class="p">:</span><span class="w">
-</span><span class="w">      </span>- server.yml<span class="w">
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">deploy</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">kubectl</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">manifests</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span>- <span class="l">server.yml</span><span class="w">
 </span><span class="w">      </span><span class="c">#- client-grpc.yml  ← 請讓這一行生效！</span><span class="w">
 </span></code></pre></div></li>
 <li>

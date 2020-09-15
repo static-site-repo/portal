@@ -102,8 +102,20 @@
   &lt;/figure&gt;
 &lt;/div&gt;
 
+&lt;h2 id=&#34;poogi-聚焦五步驟&#34;&gt;POOGI 聚焦五步驟&lt;/h2&gt;
+&lt;p&gt;故事中羅哥的上司：事業部副總裁皮區 (Bill Peach)，雖然一出場就幫了個倒忙，但不以人廢言，有段教訓羅哥的話值得深思：「你已經有足夠的人手了！看在老天的分上，看看你們的效率！你還有很多改進的空間。先證明給我看你可以有效運用現有人力，否則就別哭訴人手不夠！」&lt;/p&gt;
+&lt;p&gt;這還滿符合 &lt;a href=&#34;https://www.tocinstitute.org/five-focusing-steps.html&#34;&gt;POOGI&lt;/a&gt; 的起手式：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Identify 確認瓶頸／限制／制約因素：「有效運用現有人力」的能力。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Exploit 決定如何充分運用瓶頸／限制／制約因素：「先證明給我看你可以有效運用現有人力」。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
 &lt;p&gt;&lt;!-- raw HTML omitted --&gt;  &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;其實，在喃喃自語中，主角羅哥已經開始隱隱觸及本質議題了，只是還沒站在適當的視角。所幸，神秘人物鐘納 (Jonah) 即將在《目標》第四章登場，藉由不斷質疑最根本的商業思維，引導羅哥去大膽質疑系統思考點出的本質議題。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;  &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;其實，在第二章的喃喃自語中，主角羅哥已經開始隱隱觸及本質議題了，只是還沒站在適當的視角。所幸，神秘人物鐘納 (Jonah) 即將在《目標》第四章登場，藉由不斷質疑最根本的商業思維，引導羅哥去大膽質疑系統思考點出的本質議題。&lt;/p&gt;
 &lt;p&gt;&lt;!-- raw HTML omitted --&gt;  &lt;!-- raw HTML omitted --&gt;  &lt;!-- raw HTML omitted --&gt;  &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 
 &lt;div class=&#34;shortcode-notice note&#34;&gt;
@@ -113,7 +125,7 @@
     
   &lt;/div&gt;
   &lt;p&gt;REFERENCES&lt;/p&gt;
-&lt;p&gt;　🅐 &lt;a href=&#34;https://en.wikipedia.org/wiki/Current_reality_tree_%28theory_of_constraints%29&#34;&gt;&lt;strong&gt;Current reality tree&lt;/strong&gt;&lt;/a&gt; (&lt;strong&gt;CRT&lt;/strong&gt;) is from the field of &lt;a href=&#34;https://en.wikipedia.org/wiki/Theory_of_constraints&#34;&gt;TOC&lt;/a&gt;&amp;rsquo;s &lt;a href=&#34;https://en.wikipedia.org/wiki/Thinking_processes_%28theory_of_constraints%29&#34;&gt;thinking processes&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;　🅐 &lt;a href=&#34;https://en.wikipedia.org/wiki/Current_reality_tree_%28theory_of_constraints%29&#34;&gt;&lt;strong&gt;Current reality tree&lt;/strong&gt;&lt;/a&gt; (&lt;strong&gt;CRT&lt;/strong&gt;) and &lt;a href=&#34;https://www.tocinstitute.org/five-focusing-steps.html&#34;&gt;&lt;strong&gt;POOGI&lt;/strong&gt;&lt;/a&gt; are from the field of &lt;a href=&#34;https://en.wikipedia.org/wiki/Theory_of_constraints&#34;&gt;TOC&lt;/a&gt;&amp;rsquo;s &lt;a href=&#34;https://en.wikipedia.org/wiki/Thinking_processes_%28theory_of_constraints%29&#34;&gt;thinking processes&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;　🅑 &lt;a href=&#34;https://en.wikipedia.org/wiki/Causal_loop_diagram&#34;&gt;&lt;strong&gt;Causal loop diagram&lt;/strong&gt;&lt;/a&gt; (&lt;strong&gt;CLD&lt;/strong&gt;) is from the field of &lt;a href=&#34;https://en.wikipedia.org/wiki/System_dynamics&#34;&gt;system dynamics&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;ARTICLES&lt;/p&gt;
 &lt;p&gt;　❶ 第一～三章&lt;/p&gt;
@@ -484,13 +496,13 @@ tcp_probe、dns_probe、icmp_probe，即使面對「不完全揭露」自身健�
 &lt;h2 id=&#34;blackbox-exporter-初體驗&#34;&gt;Blackbox exporter 初體驗&lt;/h2&gt;
 &lt;p&gt;官方提供的&lt;a href=&#34;https://github.com/prometheus/blackbox_exporter/blob/master/blackbox.yml&#34;&gt;陽春版 &lt;code&gt;blackbox.yml&lt;/code&gt; 設定檔&lt;/a&gt;展示了一些常見的 blackbox exporter 模組 (module)，很適合初次上手之用：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;c&#34;&gt;# https://github.com/prometheus/blackbox_exporter/blob/master/blackbox.yml&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;modules&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;http_2xx&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;prober&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;http&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;http_post_2xx&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;prober&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;http&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;http&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;      &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;method&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;POST&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;modules&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;http_2xx&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;prober&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;http&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;http_post_2xx&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;prober&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;http&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;http&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;      &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;method&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;POST&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;c&#34;&gt;#...&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;其中，最常用的應該是 http_2xx 模組了。如果你只需要用到這模組，可以不必準備 &lt;code&gt;blackbox.yml&lt;/code&gt; 設定檔。&lt;/p&gt;
 &lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
@@ -651,13 +663,13 @@ Logs &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; the probe:
 &lt;p&gt;You can adjust this behaviour by adding &lt;code&gt;preferred_ip_protocol: &amp;quot;ip4&amp;quot;&lt;/code&gt; to the module&amp;rsquo;s configuration.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;所以，我會在 &lt;code&gt;blackbox.yml&lt;/code&gt; 設定檔當中，增加另一個模組，取一個好記的名字：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;k&#34;&gt;modules&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;nt&#34;&gt;modules&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# module: expect http_2xx, with ip4&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;http_2xx_with_ip4&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;prober&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;http&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;timeout&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;5s&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;http&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;      &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;preferred_ip_protocol&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;ip4&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;http_2xx_with_ip4&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;prober&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;http&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;timeout&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;5s&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;http&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;      &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;preferred_ip_protocol&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;ip4&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;c&#34;&gt;#...&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;然後，重啟 Blackbox exporter，記得要餵給它新的設定檔：&lt;/p&gt;
@@ -1834,7 +1846,7 @@ Error distribution:
 &lt;li&gt;&lt;a href=&#34;https://linkerd.io/&#34;&gt;Linkerd&lt;/a&gt; 2.7.0 以上。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;實驗進行之前，請先編譯所需的執行檔及容器映像檔：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# Generate native binaries in `out` directory:&lt;/span&gt; 
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# Generate native binaries in `out` directory: &lt;/span&gt;
 ./build.sh
 
 &lt;span class=&#34;c1&#34;&gt;# Generate Docker images:&lt;/span&gt;
@@ -2018,10 +2030,10 @@ linkerd check
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;移掉 &lt;code&gt;skaffold.yaml&lt;/code&gt; 這一行的註解符號：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;k&#34;&gt;deploy&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;kubectl&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;manifests&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;      &lt;/span&gt;- server.yml&lt;span class=&#34;w&#34;&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;nt&#34;&gt;deploy&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;kubectl&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;manifests&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;      &lt;/span&gt;- &lt;span class=&#34;l&#34;&gt;server.yml&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;span class=&#34;w&#34;&gt;      &lt;/span&gt;&lt;span class=&#34;c&#34;&gt;#- client-grpc.yml  ← 請讓這一行生效！&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;

@@ -35,7 +35,7 @@
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.74.3" />
+<meta name="generator" content="Hugo 0.75.0" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2019/04/wsl-ansible-vagrant/" />
@@ -78,7 +78,7 @@
 可以的。">
 <meta itemprop="datePublished" content="2019-04-18T23:00:00+08:00" />
 <meta itemprop="dateModified" content="2019-04-18T23:00:00+08:00" />
-<meta itemprop="wordCount" content="1285">
+<meta itemprop="wordCount" content="1288">
 
 
 
@@ -311,7 +311,7 @@ if (!doNotTrack) {
             <a href="//william-yeh.net/categories/tech/"> tech </a>
             
           </div>
-        <span class="more-meta"> 約 1285 字 </span>
+        <span class="more-meta"> 約 1288 字 </span>
           <span class="more-meta"> 預計閱讀 3 分鐘 </span>
 
         
@@ -402,11 +402,11 @@ C:&gt; bcdedit /set hypervisorlaunchtype auto</code></pre></div>
 
 <span class="k">end</span></code></pre></div>
 <p>還有 Ansible 的 <code>playbook.yml</code> 檔案：</p>
-<div class="highlight"><pre class="chroma"><code class="language-yml" data-lang="yml">- <span class="k">hosts</span><span class="p">:</span><span class="w"> </span>all<span class="w">
-</span><span class="w">  </span><span class="k">become</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-</span><span class="w">  </span><span class="k">tasks</span><span class="p">:</span><span class="w">
-</span><span class="w">    </span>- <span class="k">name</span><span class="p">:</span><span class="w"> </span>install<span class="w"> </span>nginx<span class="w">
-</span><span class="w">      </span><span class="k">apt</span><span class="p">:</span><span class="w"> </span>name=nginx<span class="w"> </span>state=present<span class="w"> </span>update_cache=yes</code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-yml" data-lang="yml">- <span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l">all</span><span class="w">
+</span><span class="w">  </span><span class="nt">become</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="w">  </span><span class="nt">tasks</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">install nginx</span><span class="w">
+</span><span class="w">      </span><span class="nt">apt</span><span class="p">:</span><span class="w"> </span><span class="l">name=nginx state=present update_cache=yes</span></code></pre></div>
 <p>試著啟動看看：</p>
 <div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">% vagrant up</code></pre></div>
 <p>如果一切順利，你可以在 <code>http://localhost:8080/</code> 看到 Nginx 歡迎畫面。</p>

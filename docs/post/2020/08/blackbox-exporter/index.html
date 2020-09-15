@@ -33,7 +33,7 @@
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.74.3" />
+<meta name="generator" content="Hugo 0.75.0" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2020/08/blackbox-exporter/" />
@@ -384,13 +384,13 @@ tcp_probe、dns_probe、icmp_probe，即使面對「不完全揭露」自身健�
 <h2 id="blackbox-exporter-初體驗">Blackbox exporter 初體驗</h2>
 <p>官方提供的<a href="https://github.com/prometheus/blackbox_exporter/blob/master/blackbox.yml">陽春版 <code>blackbox.yml</code> 設定檔</a>展示了一些常見的 blackbox exporter 模組 (module)，很適合初次上手之用：</p>
 <div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="c"># https://github.com/prometheus/blackbox_exporter/blob/master/blackbox.yml</span><span class="w">
-</span><span class="w"></span><span class="k">modules</span><span class="p">:</span><span class="w">
-</span><span class="w">  </span><span class="k">http_2xx</span><span class="p">:</span><span class="w">
-</span><span class="w">    </span><span class="k">prober</span><span class="p">:</span><span class="w"> </span>http<span class="w">
-</span><span class="w">  </span><span class="k">http_post_2xx</span><span class="p">:</span><span class="w">
-</span><span class="w">    </span><span class="k">prober</span><span class="p">:</span><span class="w"> </span>http<span class="w">
-</span><span class="w">    </span><span class="k">http</span><span class="p">:</span><span class="w">
-</span><span class="w">      </span><span class="k">method</span><span class="p">:</span><span class="w"> </span>POST<span class="w">
+</span><span class="w"></span><span class="nt">modules</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">http_2xx</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">prober</span><span class="p">:</span><span class="w"> </span><span class="l">http</span><span class="w">
+</span><span class="w">  </span><span class="nt">http_post_2xx</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">prober</span><span class="p">:</span><span class="w"> </span><span class="l">http</span><span class="w">
+</span><span class="w">    </span><span class="nt">http</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span><span class="nt">method</span><span class="p">:</span><span class="w"> </span><span class="l">POST</span><span class="w">
 </span><span class="w">  </span><span class="c">#...</span><span class="w">
 </span></code></pre></div><p>其中，最常用的應該是 http_2xx 模組了。如果你只需要用到這模組，可以不必準備 <code>blackbox.yml</code> 設定檔。</p>
 <p><!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --></p>
@@ -551,13 +551,13 @@ Logs <span class="k">for</span> the probe:
 <p>You can adjust this behaviour by adding <code>preferred_ip_protocol: &quot;ip4&quot;</code> to the module&rsquo;s configuration.</p>
 </blockquote>
 <p>所以，我會在 <code>blackbox.yml</code> 設定檔當中，增加另一個模組，取一個好記的名字：</p>
-<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="k">modules</span><span class="p">:</span><span class="w">
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">modules</span><span class="p">:</span><span class="w">
 </span><span class="w">  </span><span class="c"># module: expect http_2xx, with ip4</span><span class="w">
-</span><span class="w">  </span><span class="k">http_2xx_with_ip4</span><span class="p">:</span><span class="w">
-</span><span class="w">    </span><span class="k">prober</span><span class="p">:</span><span class="w"> </span>http<span class="w">
-</span><span class="w">    </span><span class="k">timeout</span><span class="p">:</span><span class="w"> </span>5s<span class="w">
-</span><span class="w">    </span><span class="k">http</span><span class="p">:</span><span class="w">
-</span><span class="w">      </span><span class="k">preferred_ip_protocol</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;ip4&#34;</span><span class="w">
+</span><span class="w">  </span><span class="nt">http_2xx_with_ip4</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">prober</span><span class="p">:</span><span class="w"> </span><span class="l">http</span><span class="w">
+</span><span class="w">    </span><span class="nt">timeout</span><span class="p">:</span><span class="w"> </span><span class="l">5s</span><span class="w">
+</span><span class="w">    </span><span class="nt">http</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span><span class="nt">preferred_ip_protocol</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;ip4&#34;</span><span class="w">
 </span><span class="w">
 </span><span class="w">  </span><span class="c">#...</span><span class="w">
 </span></code></pre></div><p>然後，重啟 Blackbox exporter，記得要餵給它新的設定檔：</p>
