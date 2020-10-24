@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sun, 13 Sep 2020 22:00:00 +0800</lastBuildDate><atom:link href="//william-yeh.net/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 28 Sep 2020 14:00:00 +0800</lastBuildDate><atom:link href="//william-yeh.net/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>推薦序：讓 GitLab 成為數位轉型的重要推手</title>
+      <link>//william-yeh.net/post/2020/09/learning-gitlab-review/</link>
+      <pubDate>Mon, 28 Sep 2020 14:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2020/09/learning-gitlab-review/</guid>
+      <description>「如今的 GitLab 已經不是單純的 Git service，而是具備完整 workflow 的 DevOps platform。」 2019 年，我因爲工作需要，得開始研究 GitLab 某些功能。巧合的是，當時我</description>
+    </item>
+    
     <item>
       <title>從系統思考角度讀《目標》：第一～三章</title>
       <link>//william-yeh.net/post/2020/09/systhinking-goal-ch01-03/</link>
@@ -263,15 +272,6 @@ Output Essential:
 A follow-up question might be: what should a well-behaved application react to this trigger accordingly? What if it&amp;rsquo;s a ill-designed application?
 To clarify this I&amp;rsquo;ve conducted a series of experiments for 3 possible configmap-reloading strategies:
  Built-in auto-reloading apps External signals Pod rollout  In this article I&amp;rsquo;m going to explain the experiments and preliminary findings.</description>
-    </item>
-    
-    <item>
-      <title>Containers and Environment Variables</title>
-      <link>//william-yeh.net/post/2019/06/containers-and-env/</link>
-      <pubDate>Mon, 17 Jun 2019 14:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2019/06/containers-and-env/</guid>
-      <description>My previous article &amp;ldquo;Inotify in Containers&amp;rdquo; has demonstrated that when ConfigMap is mounted as directories, any changes in the ConfigMap will propagate to related pods. A follow-up question might be: what if the ConfigMap is mounted as environment variables? Some said that the answer is NO in Kubernetes1; even in the old Docker world2. Therefore, I&amp;rsquo;d like to begin with a simple experiment to try to answer the question: After</description>
     </item>
     
   </channel>

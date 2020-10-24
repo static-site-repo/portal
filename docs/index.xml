@@ -6,10 +6,54 @@
     <description>Recent content on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sun, 13 Sep 2020 22:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 28 Sep 2020 14:00:00 +0800</lastBuildDate>
     
         <atom:link href="//william-yeh.net/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>推薦序：讓 GitLab 成為數位轉型的重要推手</title>
+      <link>//william-yeh.net/post/2020/09/learning-gitlab-review/</link>
+      <pubDate>Mon, 28 Sep 2020 14:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2020/09/learning-gitlab-review/</guid>
+      
+        <description>&lt;p&gt;「如今的 GitLab 已經不是單純的 Git service，而是具備完整 workflow 的 DevOps platform。」&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt; 
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;2019 年，我因爲工作需要，得開始研究 GitLab 某些功能。巧合的是，當時我也正擔任「&lt;a href=&#34;https://ithelp.ithome.com.tw/2020ironman&#34;&gt;第 11 屆 iT 邦幫忙鐵人賽&lt;/a&gt;」評審，就在陳正瑋【&lt;a href=&#34;https://ithelp.ithome.com.tw/users/20120986/ironman/2733&#34;&gt;和艦長一起 30 天玩轉 GitLab&lt;/a&gt;】參賽文章中，學到我所需要知道的一切。&lt;/p&gt;
+&lt;p&gt;後來，陳正瑋的這系列文章不負眾望，榮獲 DevOps 組冠軍。&lt;/p&gt;
+&lt;p&gt;在頒獎典禮上，我鼓勵陳正瑋將這系列文章整理修潤，成為華文世界第一本 GitLab 專書。畢竟，我實在想不到有誰能夠比鐵人賽冠軍、GitLab 官方認證的 “GitLab Hero” 更適合做這件事的人。&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:15em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2020/09/learning-gitlab.jpg&#34; alt=&#34;跟著艦長學 GitLab&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2020/09/learning-gitlab.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;跟著艦長學 GitLab&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://chengweichen.com/&#34;&gt;陳正瑋&lt;/a&gt;，在業界暱稱為「艦長」。早在 2015 年，那個台灣對於 DevOps 還懞懞懂懂的年代，正瑋與一群熱血份子就率先成立 &lt;a href=&#34;https://devopstw.club/&#34;&gt;DevOps Taiwan 社群&lt;/a&gt;，舉辦 Meetup 及數屆 DevOpsDays Taipei 大會，對於推廣 DevOps 觀念及技術，有難以磨滅的貢獻。因此，他也一直被起鬨「支持正瑋無限期連任 DevOps Taiwan 社群組織者」。&lt;/p&gt;
+&lt;p&gt;有技術，有熱情，由他來詮釋 DevOps，我們是充滿信心的。&lt;/p&gt;
+&lt;p&gt;在這本《&lt;a href=&#34;https://www.tenlong.com.tw/products/9789864345311&#34;&gt;跟著艦長學 GitLab&lt;/a&gt;》書中，你並不會看到他一股腦推銷 GitLab 功能，而是不斷為文提醒讀者反思：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;我們真的需要這功能嗎？&lt;/li&gt;
+&lt;li&gt;我們真的準備好要進入這麼一個深不見底、看不到盡頭的技術坑嗎？&lt;/li&gt;
+&lt;li&gt;天有不測風雲，萬一 CI/CD 自動化系統出了問題，我們真的有手動處理的備案嗎？&lt;/li&gt;
+&lt;li&gt;我們真的有在做「持續整合」嗎？還是只是部分的「工作自動化」？&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;畢竟，如同正瑋一再提醒的：「DevOps 涉及文化、實踐方法及工具，企業組織必須從這三個層面多管齊下，才有機會成功實踐 DevOps。」這本書是起點，不是終點，希望大家除了學會 GitLab 這麼優異的 DevOps platform 之外，更能深刻探討 DevOps 背後的文化及實踐方法，讓 GitLab 成為數位轉型的重要推手。&lt;/p&gt;
+&lt;p&gt;  　   —— 敏捷魔藥師　葉秉哲 (William Yeh)&lt;/p&gt;
+</description>
+      
+    </item>
     
     <item>
       <title>從系統思考角度讀《目標》：第一～三章</title>
@@ -3930,48 +3974,6 @@ metadata:
 &lt;/li&gt;
 &lt;li id=&#34;fn:6&#34; role=&#34;doc-endnote&#34;&gt;
 &lt;p&gt;&lt;a href=&#34;https://cloud.google.com/solutions/best-practices-for-building-containers&#34;&gt;Best practices for building containers&lt;/a&gt;. &lt;a href=&#34;#fnref:6&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/section&gt;
-</description>
-      
-    </item>
-    
-    <item>
-      <title>Containers and Environment Variables</title>
-      <link>//william-yeh.net/post/2019/06/containers-and-env/</link>
-      <pubDate>Mon, 17 Jun 2019 14:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2019/06/containers-and-env/</guid>
-      
-        <description>&lt;p&gt;My previous article &amp;ldquo;&lt;a href=&#34;//william-yeh.net/post/2019/06/inotify-in-containers/&#34;&gt;Inotify in Containers&lt;/a&gt;&amp;rdquo; has demonstrated that when ConfigMap is mounted as &lt;em&gt;directories&lt;/em&gt;, any changes in the ConfigMap will propagate to related pods.&lt;/p&gt;
-&lt;p&gt;A follow-up question might be: what if the ConfigMap is mounted as &lt;em&gt;environment variables&lt;/em&gt;?&lt;/p&gt;
-&lt;p&gt;Some said that the answer is NO in Kubernetes&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;; even in the old Docker world&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;.  Therefore, I&amp;rsquo;d like to begin with a simple experiment to try to answer the question: After a container starts, will it see any changes of environment variables?&lt;/p&gt;
-&lt;p&gt;The experiment material is available at &lt;a href=&#34;https://github.com/William-Yeh/container-and-env&#34;&gt;https://github.com/William-Yeh/container-and-env&lt;/a&gt; , and here&amp;rsquo;s a simple demo:&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://asciinema.org/a/252073&#34;&gt;&lt;img src=&#34;https://asciinema.org/a/252073.svg&#34; alt=&#34;asciicast&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;It is obvious in the demo that the changes of environment variables will not affect already-running processes inside the containers &amp;mdash; let alone pods in the Kubernetes world.&lt;/p&gt;
-&lt;p&gt;To simply put, if you want ConfigMap to propagate its changes to related pods, mount the ConfigMap as &lt;em&gt;directories&lt;/em&gt;, not &lt;em&gt;environment variables&lt;/em&gt;.&lt;/p&gt;
-
-&lt;div class=&#34;shortcode-notice note&#34;&gt;
-  &lt;div class=&#34;shortcode-notice-title note&#34;&gt;
-    
-      Series of Articles
-    
-  &lt;/div&gt;
-  &lt;p&gt;❶ &lt;a href=&#34;//william-yeh.net/post/2019/06/inotify-in-containers/&#34;&gt;Inotify in Containers&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;❷ Containers and Environment Variables&lt;/p&gt;
-&lt;p&gt;➌ &lt;a href=&#34;//william-yeh.net/post/2019/06/autoreload-from-configmap/&#34;&gt;Auto-Reload from ConfigMap&lt;/a&gt;&lt;/p&gt;
-
-&lt;/div&gt;
-
-&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
-&lt;hr&gt;
-&lt;ol&gt;
-&lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;An analysis of ConfigMap hot-reload can be found in the article by Jimmy Song: “&lt;a href=&#34;https://jimmysong.io/kubernetes-handbook/concepts/configmap-hot-update.html&#34;&gt;ConfigMap 的热更新&lt;/a&gt;”. &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;A good Q&amp;amp;A in Stack Overflow: &lt;a href=&#34;https://stackoverflow.com/a/54412751/714426&#34;&gt;Reload configuration when env variable has changed&lt;/a&gt;. &lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;

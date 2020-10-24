@@ -6,7 +6,16 @@
     <description>Recent content in devops on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Fri, 07 Aug 2020 08:00:00 +0800</lastBuildDate><atom:link href="//william-yeh.net/tags/devops/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 28 Sep 2020 14:00:00 +0800</lastBuildDate><atom:link href="//william-yeh.net/tags/devops/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>推薦序：讓 GitLab 成為數位轉型的重要推手</title>
+      <link>//william-yeh.net/post/2020/09/learning-gitlab-review/</link>
+      <pubDate>Mon, 28 Sep 2020 14:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2020/09/learning-gitlab-review/</guid>
+      <description>「如今的 GitLab 已經不是單純的 Git service，而是具備完整 workflow 的 DevOps platform。」 2019 年，我因爲工作需要，得開始研究 GitLab 某些功能。巧合的是，當時我</description>
+    </item>
+    
     <item>
       <title>Blackbox Exporter 小記</title>
       <link>//william-yeh.net/post/2020/08/blackbox-exporter/</link>
@@ -226,15 +235,6 @@ To clarify this I&amp;rsquo;ve conducted a series of experiments for 3 possible 
       
       <guid>//william-yeh.net/post/2018/11/devops-value/</guid>
       <description>看完〈敏捷的價值與指標〉之後，很自然的會進一步追問：「那麼，什麼才是 DevOps 圈子所認定的價值，以及對應的指標，尤其是領先指標？」 這問題其實比較容易</description>
-    </item>
-    
-    <item>
-      <title>Agile PMO</title>
-      <link>//william-yeh.net/post/2018/11/agile-pmo/</link>
-      <pubDate>Thu, 15 Nov 2018 08:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2018/11/agile-pmo/</guid>
-      <description>&amp;ldquo;Project&amp;rdquo; 一詞，儼然成為 agile 及 DevOps 圈子的禁語。 譬如說，敏捷祖師爺 Martin Fowler 的網站有一篇 &amp;ldquo;Products Over Projects&amp;rdquo; 文章，DevOps 巨著 The DevOps Handbook 第 7.7 節的篇名叫做〈投資於服務和產品，而</description>
     </item>
     
   </channel>
