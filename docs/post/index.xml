@@ -6,7 +6,20 @@
     <description>Recent content in Posts on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Mon, 28 Sep 2020 14:00:00 +0800</lastBuildDate><atom:link href="//william-yeh.net/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 25 Oct 2020 10:00:00 +0800</lastBuildDate><atom:link href="//william-yeh.net/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>直拍橫打兩個月心得小記</title>
+      <link>//william-yeh.net/post/2020/10/reverse-penhold-backhand/</link>
+      <pubDate>Sun, 25 Oct 2020 10:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2020/10/reverse-penhold-backhand/</guid>
+      <description>&lt;h2 id=&#34;緣起&#34;&gt;緣起&lt;/h2&gt;
+&lt;p&gt;哥哥正式學桌球一年半載了，妹妹暑假時也開始正式上課。身為爸爸，為了避免太早被孩子們追上，除了找空檔與這群有上課的對打，也偷偷思索進步之道。&lt;/p&gt;
+&lt;p&gt;有一次，忘了帶自己的日直球拍去，又遇到有人邀約對打，便借教練的橫拍一用。突然發現，儘管我是直拍握法，但這橫拍打起來卻十分順手。&lt;/p&gt;
+&lt;p&gt;這擊球感實在難以忘懷。思之數日，突發奇想：索性嘗試看看中直、&lt;a href=&#34;https://baike.baidu.com/item/%E7%9B%B4%E6%8B%8D%E6%A8%AA%E6%89%93&#34;&gt;直拍橫打&lt;/a&gt;？&lt;/p&gt;
+&lt;p&gt;於是，中年，改變一下揮拍習慣。從日直換成⋯⋯&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>推薦序：讓 GitLab 成為數位轉型的重要推手</title>
       <link>//william-yeh.net/post/2020/09/learning-gitlab-review/</link>
@@ -265,18 +278,6 @@ Output Essential:
       <guid>//william-yeh.net/post/2019/06/docker-file-permissions/</guid>
       <description>&lt;p&gt;Currently Linux containers are still more popular than Windows containers. And Windows users often need to use Linux containers even from their Windows computers.&lt;/p&gt;
 &lt;p&gt;Recently I&amp;rsquo;ve found something very strange about Linux-style file permissions when the Docker images are built from Windows hosts.&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; Therefore, I&amp;rsquo;ve conducted a suite of test cases to investigate whether file permissions are preserved with Docker &amp;amp; &lt;a href=&#34;https://skaffold.dev/&#34;&gt;Skaffold&lt;/a&gt; toolchains. All experiment materials are available in the &lt;a href=&#34;https://github.com/William-Yeh/container-chmod&#34;&gt;container-chmod&lt;/a&gt; repo.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Auto-Reload from ConfigMap</title>
-      <link>//william-yeh.net/post/2019/06/autoreload-from-configmap/</link>
-      <pubDate>Mon, 17 Jun 2019 17:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2019/06/autoreload-from-configmap/</guid>
-      <description>My previous article &amp;ldquo;Inotify in Containers&amp;rdquo; has demonstrated that when ConfigMap is mounted as directories, any changes in the ConfigMap will propagate to related pods, and can be detected with inotify-like APIs.
-A follow-up question might be: what should a well-behaved application react to this trigger accordingly? What if it&amp;rsquo;s a ill-designed application?
-To clarify this I&amp;rsquo;ve conducted a series of experiments for 3 possible configmap-reloading strategies:
- Built-in auto-reloading apps External signals Pod rollout  In this article I&amp;rsquo;m going to explain the experiments and preliminary findings.</description>
     </item>
     
   </channel>
