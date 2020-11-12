@@ -6,7 +6,20 @@
     <description>Recent content in management on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sun, 13 Sep 2020 22:00:00 +0800</lastBuildDate><atom:link href="//william-yeh.net/categories/management/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 03 Oct 2020 10:00:00 +0800</lastBuildDate><atom:link href="//william-yeh.net/categories/management/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>值得你看門道的好書——《獨角獸專案》推薦序</title>
+      <link>//william-yeh.net/post/2020/10/unicorn-project-review/</link>
+      <pubDate>Sat, 03 Oct 2020 10:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2020/10/unicorn-project-review/</guid>
+      <description>&lt;p&gt;2011 年 8 月，瀏覽器之父 &lt;a href=&#34;https://en.wikipedia.org/wiki/Marc_Andreessen&#34;&gt;Marc Andreessen&lt;/a&gt; 曾在華爾街日報&lt;a href=&#34;https://online.wsj.com/article/SB10001424053111903480904576512250915629460.html&#34;&gt;評論&lt;/a&gt;道：「軟體正在蠶食整個世界」(software is eating the world)。&lt;/p&gt;
+&lt;p&gt;接下來這十年，果然如他所預言，世界徹底被軟體顛覆。各行業，如果不對軟體研發的重要思潮保持關注，就無法善用科技力量站在競爭力的最前線。&lt;/p&gt;
+&lt;p&gt;近十年，軟體研發界有兩大類重要思潮。在技術面，有大數據、機器學習、immutable infrastructure、微服務、容器、函式編程、資料流水線等；在流程面，則有敏捷開發、DevOps、自助服務、混亂工程、精實 UX 等。這些思潮，有些是新發明，有些則是文藝復興，甚至是跨界學習而來。&lt;/p&gt;
+&lt;p&gt;這些思潮，不只是純軟體界在乎，就連《&lt;a href=&#34;https://itrevolution.com/the-unicorn-project/&#34;&gt;獨角獸專案&lt;/a&gt;》這本小說的場景設定：汽車零件製造商暨零售商，影響一樣深遠。畢竟「軟體正在蠶食整個世界」。&lt;/p&gt;
+&lt;p&gt;某方面來說，《&lt;a href=&#34;https://www.tenlong.com.tw/products/9789865026653&#34;&gt;獨角獸專案&lt;/a&gt;》這本書，可謂 2010～2020 這個波瀾壯闊時代軟體研發界的具體縮影。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>從系統思考角度讀《目標》：第一～三章</title>
       <link>//william-yeh.net/post/2020/09/systhinking-goal-ch01-03/</link>
@@ -286,29 +299,6 @@ Output Essential:
       
       <guid>//william-yeh.net/post/2018/11/agile-pmo/</guid>
       <description>&amp;ldquo;Project&amp;rdquo; 一詞，儼然成為 agile 及 DevOps 圈子的禁語。 譬如說，敏捷祖師爺 Martin Fowler 的網站有一篇 &amp;ldquo;Products Over Projects&amp;rdquo; 文章，DevOps 巨著 The DevOps Handbook 第 7.7 節的篇名叫做〈投資於服務和產品，而</description>
-    </item>
-    
-    <item>
-      <title>接班人計畫</title>
-      <link>//william-yeh.net/post/2018/11/succession-planning/</link>
-      <pubDate>Thu, 08 Nov 2018 08:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2018/11/succession-planning/</guid>
-      <description>&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
-&lt;div class=&#34;box&#34;&gt;
-&lt;figure  itemprop=&#34;associatedMedia&#34;
-  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
-  style=&#34;max-width:30em&#34; &gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/11/the-nigmatic-1068159-unsplash.jpg&#34; /&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2018/11/the-nigmatic-1068159-unsplash.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;
-
-&lt;p&gt;彼得・杜拉克説：經理人的基本任務，除了平衡長短期的需要外，最重要的就是培養下一代的經理人。&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-&lt;p&gt;諾爾・提區説：成功組織會贏，贏在它的領導人不斷栽培組織上下每個層級的其他領導人。&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-&lt;p&gt;其實我很早就在默默做這件事了。畢竟以長遠來看，&lt;strong&gt;堅實的中階主管層，決定一個組織能走得多久多遠&lt;/strong&gt;。&lt;/p&gt;</description>
     </item>
     
   </channel>

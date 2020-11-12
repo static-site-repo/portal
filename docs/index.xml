@@ -404,6 +404,51 @@
     </item>
     
     <item>
+      <title>值得你看門道的好書——《獨角獸專案》推薦序</title>
+      <link>//william-yeh.net/post/2020/10/unicorn-project-review/</link>
+      <pubDate>Sat, 03 Oct 2020 10:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2020/10/unicorn-project-review/</guid>
+      
+        <description>&lt;p&gt;2011 年 8 月，瀏覽器之父 &lt;a href=&#34;https://en.wikipedia.org/wiki/Marc_Andreessen&#34;&gt;Marc Andreessen&lt;/a&gt; 曾在華爾街日報&lt;a href=&#34;https://online.wsj.com/article/SB10001424053111903480904576512250915629460.html&#34;&gt;評論&lt;/a&gt;道：「軟體正在蠶食整個世界」(software is eating the world)。&lt;/p&gt;
+&lt;p&gt;接下來這十年，果然如他所預言，世界徹底被軟體顛覆。各行業，如果不對軟體研發的重要思潮保持關注，就無法善用科技力量站在競爭力的最前線。&lt;/p&gt;
+&lt;p&gt;近十年，軟體研發界有兩大類重要思潮。在技術面，有大數據、機器學習、immutable infrastructure、微服務、容器、函式編程、資料流水線等；在流程面，則有敏捷開發、DevOps、自助服務、混亂工程、精實 UX 等。這些思潮，有些是新發明，有些則是文藝復興，甚至是跨界學習而來。&lt;/p&gt;
+&lt;p&gt;這些思潮，不只是純軟體界在乎，就連《&lt;a href=&#34;https://itrevolution.com/the-unicorn-project/&#34;&gt;獨角獸專案&lt;/a&gt;》這本小說的場景設定：汽車零件製造商暨零售商，影響一樣深遠。畢竟「軟體正在蠶食整個世界」。&lt;/p&gt;
+&lt;p&gt;某方面來說，《&lt;a href=&#34;https://www.tenlong.com.tw/products/9789865026653&#34;&gt;獨角獸專案&lt;/a&gt;》這本書，可謂 2010～2020 這個波瀾壯闊時代軟體研發界的具體縮影。&lt;/p&gt;
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:15em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2020/10/the-unicorn-project.png&#34; alt=&#34;獨角獸專案 (The Unicorn Project)&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2020/10/the-unicorn-project.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;獨角獸專案 (The Unicorn Project)&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;在這小說中，你可以看到在「無極限零件公司」這樣年營業額 40 億美元的製造商暨零售商中，行銷企劃部門、軟體研發部門、服務維運部門彼此爭功諉過的寫實場景。你會看到故事主角梅克辛如何在穀倉泥淖中獨自展開她的「英雄之旅」，與地下反抗軍合作，導入先進的軟體研發思潮。正當一切似乎漸入佳境時，居然還有一條懸疑支線在背後悄悄醞釀⋯⋯高潮迭起，頗有潛力改編成劇情片。&lt;/p&gt;
+&lt;p&gt;如果你是愛看熱鬧的小說族，你會喜歡它的。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;如果你是非技術人，「軟體正在蠶食整個世界」，於公於私，免不了必須與組織內外的技術人打交道。因此，這本書請不要走馬看花。請設身處地多讀幾次，增長同理心，瞭解這群愛說外星語的「外星人」的日常，有助於你和諧推動工作任務。尤其是新產品上線前的兵荒馬亂局面，請不吝對這群外星人多給些關愛的行動。&lt;/p&gt;
+&lt;p&gt;如果你是第一線的軟體研發者，這本寫實刻劃日常甘苦的書，能點燃或重燃你的熱情，像故事主角梅克辛及反抗軍一樣，用技術改變世界，至少改變公司。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;當然啦，內行看門道。這本奇書，並不止於小說，而是真正可以照表操課的。&lt;/p&gt;
+&lt;p&gt;如果你是技術經理人，在對劇情發展擊節讚歎之餘，不妨換位思考：換作是我，會如何決定優先順序？會如何設定領先指標？會如何協調目標衝突的相關部門？會如何兼顧近憂與遠慮？如何形塑適合 IT 滋長的企業文化？如何處理外部利害關係人的財務表現壓力？&lt;/p&gt;
+&lt;p&gt;在前一部姊妹作《&lt;a href=&#34;https://itrevolution.com/the-phoenix-project/&#34;&gt;鳳凰專案&lt;/a&gt;》中，神祕人物埃瑞克教導了&lt;a href=&#34;https://itrevolution.com/the-three-ways-principles-underpinning-devops/&#34;&gt;&lt;strong&gt;三步工作法&lt;/strong&gt;&lt;/a&gt;、&lt;strong&gt;四大類工作&lt;/strong&gt;，引導無極限零件公司的維運團隊走出裁撤危機，成為 IT 敏捷力的堅強後盾。如今，在這本《獨角獸專案》裡，埃瑞克以另一個神祕的碼頭酒吧酒保身分亮相，教導了企業經營的&lt;strong&gt;三層面&lt;/strong&gt;、&lt;strong&gt;四大區域顧客群&lt;/strong&gt;、系統與組織的&lt;a href=&#34;https://itrevolution.com/five-ideals-of-devops/&#34;&gt;&lt;strong&gt;五大理念&lt;/strong&gt;&lt;/a&gt;，引導無極限零件公司的研發團隊站在企業視角，以敏捷的 IT 能力驅動並翻轉整間公司的競爭力。&lt;/p&gt;
+&lt;p&gt;一言以蔽之，本書鎖定在敏捷性，尤其是企業敏捷性。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;這麼精彩的書，只讀一遍是不夠的。&lt;/p&gt;
+&lt;p&gt;我鼓勵讀者們，第一遍看熱鬧，第二遍看門道。第一遍速讀，先享受高潮起伏的劇情，並熟悉人物與關係。第二遍重讀時，請以「&lt;strong&gt;核心業務&lt;/strong&gt;與&lt;strong&gt;脈絡業務&lt;/strong&gt;」及「系統與組織的&lt;strong&gt;五大理念&lt;/strong&gt;」兩種觀點細讀，從頭分析故事的人事時地物及因果關係。經此一番系統思考，比起許多愛談高大上理念的敏捷、DevOps、數位轉型書籍，你將會有更深刻具體的領悟。&lt;/p&gt;
+&lt;p&gt;橫看成嶺側成峰，願你能從中獲益。&lt;/p&gt;
+&lt;p&gt; 　 　 　 　 　 　—— 敏捷魔藥師　葉秉哲 (William Yeh)　2020-10-03&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
       <title>推薦序：讓 GitLab 成為數位轉型的重要推手</title>
       <link>//william-yeh.net/post/2020/09/learning-gitlab-review/</link>
       <pubDate>Mon, 28 Sep 2020 14:00:00 +0800</pubDate>
@@ -3991,81 +4036,6 @@ voltest   Bound    voltest   100Gi      RWO            expansion      44m&lt;/co
 &lt;/li&gt;
 &lt;li id=&#34;fn:3&#34; role=&#34;doc-endnote&#34;&gt;
 &lt;p&gt;The Docker image for this &lt;a href=&#34;https://github.com/William-Yeh/vol-resize/blob/master/voltest.sh&#34;&gt;voltest.sh&lt;/a&gt; app is available in &lt;code&gt;williamyeh/voltest&lt;/code&gt; for your convenience. &lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/section&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>CKAD (Certified Kubernetes Application Developer) 相關資料</title>
-      <link>//william-yeh.net/post/2019/07/ckad-materials/</link>
-      <pubDate>Thu, 11 Jul 2019 17:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2019/07/ckad-materials/</guid>
-      
-        <description>&lt;p&gt;Linux Foundation 旗下的 &lt;a href=&#34;https://www.cncf.io/&#34;&gt;CNCF (Cloud Native Computing Foundation)&lt;/a&gt; 提供兩個與 Kubernetes 相關的個人技術檢定：偏維運的 &lt;a href=&#34;https://www.cncf.io/certification/cka/&#34;&gt;CKA (Certified Kubernetes Administrator)&lt;/a&gt;，以及偏研發的 &lt;a href=&#34;https://www.cncf.io/certification/ckad/&#34;&gt;CKAD (Certified Kubernetes Application Developer)&lt;/a&gt;。&lt;/p&gt;
-&lt;p&gt;其中，CKAD 與我關注的範圍、與我設計的工作坊最接近，便想進一步瞭解它的細節。&lt;/p&gt;
-
-&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
-&lt;div class=&#34;box&#34;&gt;
-&lt;figure  itemprop=&#34;associatedMedia&#34;
-  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
-  style=&#34;max-width:15em&#34; &gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2019/07/kubernetes-ckad-color.png&#34; alt=&#34;CKAD logo&#34;/&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2019/07/kubernetes-ckad-color.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-      &lt;figcaption&gt;
-          &lt;p&gt;CKAD logo&lt;/p&gt;
-      &lt;/figcaption&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;
-
-&lt;p&gt;根據官方資料，CKAD 的 &lt;a href=&#34;https://github.com/cncf/curriculum&#34;&gt;curriculum&lt;/a&gt; 只有列出檢定考試的主題與比例，並沒有列出具體的應考讀物。目前看到最接近「欽定本」地位的 CKAD 檢定準備教材，就屬 Linux Foundation 製作的 &lt;a href=&#34;https://training.linuxfoundation.org/training/kubernetes-for-developers/&#34;&gt;LDF259&lt;/a&gt; 線上課程了——全長 35 小時，$299 美金。&lt;/p&gt;
-&lt;p&gt;不過，是否還有其他選擇？&lt;/p&gt;
-&lt;h2 id=&#34;實惠的線上課程&#34;&gt;實惠的線上課程&lt;/h2&gt;
-&lt;p&gt;我在 Udemy 找到一份新台幣 $390 的線上課程 &lt;a href=&#34;https://www.udemy.com/course/certified-kubernetes-application-developer/&#34;&gt;Kubernetes Certified Application Developer (CKAD) with Tests&lt;/a&gt;。花十幾分鐘試過它的預覽單元，發現它的內容很扎實，實作練習也很活潑，應該滿適合從實作中學習的人，從過程中發現不足之處，再去找相關資料補強。&lt;/p&gt;
-&lt;p&gt;即使我對 Kubernetes 已經有一定的掌握程度，也有設計實作教材的能力，但我還是喜歡以它作為配套。&lt;/p&gt;
-&lt;p&gt;這會是我的 CKAD 首推材料。我建議，即使不購買這份教材，也請花十幾分鐘把它的預覽單元全都走過一遍。&lt;/p&gt;
-&lt;h2 id=&#34;牛刀小試&#34;&gt;牛刀小試&lt;/h2&gt;
-&lt;p&gt;根據 &lt;a href=&#34;https://training.linuxfoundation.org/go/cka-ckad-candidate-handbook&#34;&gt;CKAD 線上考試規定&lt;/a&gt;，應考時，不能使用紙張或數位筆記軟體 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;。因此，這場檢定，很大幅度在考核肌肉記憶，以及 &lt;a href=&#34;https://kubernetes.io/docs/&#34;&gt;kubernetes.io/docs/&lt;/a&gt; 官方文件查找能力。&lt;/p&gt;
-&lt;p&gt;既然遊戲規則訂成這樣，我們就該先體驗一下這有多麼殘酷。呵。&lt;/p&gt;
-&lt;p&gt;我建議，如果你曾經有過一點點 Kubernetes 經驗，此刻，請先去 &lt;a href=&#34;https://github.com/dgkanatsios/CKAD-exercises&#34;&gt;dgkanatsios/CKAD-exercises&lt;/a&gt; 挑戰看看你的肌肉記憶。儘管這不是官方釋出的模擬試題，但牛刀小試一番，接受洗禮，或是打擊，總是好的。&lt;/p&gt;
-&lt;h2 id=&#34;官方文件&#34;&gt;官方文件&lt;/h2&gt;
-&lt;p&gt;經過以上的洗禮，知道自己不足之處，就可以開始啟動特訓之旅。&lt;/p&gt;
-&lt;p&gt;根據 &lt;a href=&#34;https://training.linuxfoundation.org/go/cka-ckad-candidate-handbook&#34;&gt;CKAD 線上考試規定&lt;/a&gt;，應考時，你不能向 Google 求助；你能用瀏覽器查找的文件，只有 Kubernetes 官方文件 &lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;。&lt;/p&gt;
-&lt;p&gt;因此，請盡快熟悉以下幾個限定的參考資料來源：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://kubernetes.io/docs/&#34;&gt;https://kubernetes.io/docs/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/kubernetes/&#34;&gt;https://github.com/kubernetes/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://kubernetes.io/blog/&#34;&gt;https://kubernetes.io/blog/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;也請從現在開始自我要求，不論在其他任何地方看到的資料，都請務必回到以上官方欽定的參考資料所在地，逐一找出可與之對應的關鍵字、章節、語法規格、範例。&lt;/p&gt;
-&lt;p&gt;這是 CKAD 應考時，你唯一的浮木舟。即使你並未志在 CKAD，這仍然是很好的習慣。&lt;/p&gt;
-&lt;h2 id=&#34;前人經驗&#34;&gt;前人經驗&lt;/h2&gt;
-&lt;p&gt;有了以上的心理建設，接下來，就可以用健康心態欣賞一下前人的經驗：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://ottodeng.io/post/ckad-exam/&#34;&gt;CKAD Exam&lt;/a&gt; on Jul 9, 2018.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://medium.com/@ikaboubi/my-feedback-about-cka-and-ckad-e82a35585fe9&#34;&gt;My Feedback about CKA and CKAD&lt;/a&gt; on Jun 4, 2018.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://medium.com/chotot/tips-tricks-to-pass-certified-kubernetes-application-developer-ckad-exam-67c9e1b32e6e&#34;&gt;Tips to pass Certified Kubernetes Application Developer (CKAD) exam&lt;/a&gt; on Dec 15, 2018.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;感謝你花了幾分鐘，讀完由一位沒參加過 CKAD 的人所整理的這篇文章。&lt;/p&gt;
-&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
-&lt;hr&gt;
-&lt;ol&gt;
-&lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;&lt;a href=&#34;https://training.linuxfoundation.org/go/cka-ckad-candidate-handbook&#34;&gt;CKA/CKAD Candidate Handbook&lt;/a&gt; v1.20 提到：“The following resources are forbidden during the exam: Use of devices other than the exam desktop; Notes;  Documentation; Notepads (other than what’s provided within the exam browser tab); Course manuals [&amp;hellip;]” &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;&lt;a href=&#34;https://training.linuxfoundation.org/go/cka-ckad-candidate-handbook&#34;&gt;CKA/CKAD Candidate Handbook&lt;/a&gt; v1.20 提到：“You are permitted to use your Chrome or Chromium browser to open one additional tab in order to access assets at &lt;a href=&#34;https://kubernetes.io/docs/&#34;&gt;https://kubernetes.io/docs/&lt;/a&gt; and its subdomain, &lt;a href=&#34;https://github.com/kubernetes/&#34;&gt;https://github.com/kubernetes/&lt;/a&gt; and its subdomains, or &lt;a href=&#34;https://kubernetes.io/blog/&#34;&gt;https://kubernetes.io/blog/&lt;/a&gt;. No other tabs may be opened and no other sites may be navigated to. The allowed sites above may contain links that point to external sites. It is the responsibility of the candidate not to click on any links that cause them to navigate to a domain that is not allowed.” &lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;</description>
