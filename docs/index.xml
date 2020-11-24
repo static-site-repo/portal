@@ -681,7 +681,7 @@
 &lt;p&gt;Essential:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;Self-organizing instead of being conducted solely by &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Scrum Master&lt;/span&gt;
+&lt;p&gt;Self-managing instead of being conducted solely by &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Scrum Master&lt;/span&gt;
 , &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Product Owner&lt;/span&gt;
 , or dedicated persons&lt;sup id=&#34;fnref:6&#34;&gt;&lt;a href=&#34;#fn:6&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;6&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;/li&gt;
@@ -714,24 +714,36 @@
 
 &lt;/div&gt;
 
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+
+&lt;div class=&#34;shortcode-notice info&#34;&gt;
+  &lt;div class=&#34;shortcode-notice-title info&#34;&gt;
+    
+      2020-11-24 Memo
+    
+  &lt;/div&gt;
+  &lt;p&gt;The series of articles have been updated according to the 2020 revision of &lt;em&gt;&lt;a href=&#34;https://scrumguides.org/&#34;&gt;The Scrum Guide&lt;/a&gt;&lt;/em&gt; (published on Nov 2020).&lt;/p&gt;
+
+&lt;/div&gt;
+
 &lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
 &lt;hr&gt;
 &lt;ol&gt;
 &lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
 &lt;p&gt;The &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Review&lt;/span&gt;
- is intended to be an opportunity for learning, not a formal product launch presentation. &lt;em&gt;&lt;a href=&#34;https://www.scrumguides.org/&#34;&gt;The Scrum Guide&lt;/a&gt;&lt;/em&gt; says that &lt;em&gt;&amp;ldquo;This is an informal meeting, not a status meeting, and the presentation of the Increment is intended to elicit feedback and foster collaboration. [&amp;hellip;] The Scrum Master teaches everyone involved to keep it within the time-box.&amp;quot;&lt;/em&gt; &lt;em&gt;&lt;a href=&#34;http://scrumbook.org/&#34;&gt;A Scrum Book&lt;/a&gt;&lt;/em&gt; even emphasizes that &lt;em&gt;&amp;lsquo;The event should be time-boxed to a maximum of three hours. The focus is on assessing the product. The Development Team should not spend more than about 30 minutes specifically preparing for this event. Too often a team will prop up the product with temporary supporting structures to make it work well for the Sprint Review, or will spend time trying to “impress” the stakeholders with a sophisticated presentation. There is very little opportunity to be convincing here: the product stands on its own. The team demonstrates the product in an environment approximating that of an end user, without any special “demo support,” and without any props that could make the product appear better than it is. A good rule of thumb is: No PowerPoint® (unless your product is PowerPoint).&#39;&lt;/em&gt; &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+ is intended to be an opportunity for learning, not a formal product launch presentation.      &lt;em&gt;&lt;a href=&#34;https://scrumguides.org/&#34;&gt;The Scrum Guide&lt;/a&gt;&lt;/em&gt; 2017 says that &lt;em&gt;&amp;ldquo;This is an informal meeting, not a status meeting, and the presentation of the Increment is intended to elicit feedback and foster collaboration. [&amp;hellip;] The Scrum Master teaches everyone involved to keep it within the time-box.&amp;quot;&lt;/em&gt;     &lt;em&gt;&lt;a href=&#34;http://scrumbook.org/&#34;&gt;A Scrum Book&lt;/a&gt;&lt;/em&gt; even emphasizes that &lt;em&gt;&amp;lsquo;The event should be time-boxed to a maximum of three hours. The focus is on assessing the product. The Development Team should not spend more than about 30 minutes specifically preparing for this event. Too often a team will prop up the product with temporary supporting structures to make it work well for the Sprint Review, or will spend time trying to “impress” the stakeholders with a sophisticated presentation. There is very little opportunity to be convincing here: the product stands on its own. The team demonstrates the product in an environment approximating that of an end user, without any special “demo support,” and without any props that could make the product appear better than it is. A good rule of thumb is: No PowerPoint® (unless your product is PowerPoint).&#39;&lt;/em&gt; &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;&lt;em&gt;&lt;a href=&#34;https://www.scrumguides.org/&#34;&gt;The Scrum Guide&lt;/a&gt;&lt;/em&gt; says that in the &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Review&lt;/span&gt;
-, &lt;em&gt;&amp;ldquo;The entire group collaborates on what to do next, so that the Sprint Review provides valuable input to subsequent Sprint Planning; [&amp;hellip;] Review of the timeline, budget, potential capabilities, and marketplace for the next anticipated releases of functionality or capability of the product.&amp;quot;&lt;/em&gt; &lt;em&gt;&lt;a href=&#34;http://scrumbook.org/&#34;&gt;A Scrum Book&lt;/a&gt;&lt;/em&gt; says that &lt;em&gt;&amp;ldquo;It is good for the &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Product Owner&lt;/span&gt;
+&lt;p&gt;&lt;em&gt;&lt;a href=&#34;https://www.scrumguides.org/&#34;&gt;The Scrum Guide&lt;/a&gt;&lt;/em&gt; 2020 says that in the &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Review&lt;/span&gt;
+, &lt;em&gt;&amp;ldquo;During the event, the Scrum Team and stakeholders review what was accomplished in the Sprint and what has changed in their environment. Based on this information, attendees collaborate on what to do next. [&amp;hellip;] The Sprint Review is a working session and the Scrum Team should avoid limiting it to a presentation.&amp;quot;&lt;/em&gt;      &lt;em&gt;&lt;a href=&#34;http://scrumbook.org/&#34;&gt;A Scrum Book&lt;/a&gt;&lt;/em&gt; says that &lt;em&gt;&amp;ldquo;It is good for the &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Product Owner&lt;/span&gt;
  to adopt a vulnerable posture and to hear whether the team endorses and trusts the decisions and directions by which he or she is directing the team, particularly with respect to the product direction and dealing with technical debt and product quality. This helps reinforce the Community of Trust.&amp;quot;&lt;/em&gt; &lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:3&#34; role=&#34;doc-endnote&#34;&gt;
 &lt;p&gt;&lt;em&gt;&lt;a href=&#34;http://scrumbook.org/&#34;&gt;A Scrum Book&lt;/a&gt;&lt;/em&gt; suggests that &lt;em&gt;&amp;ldquo;A Sprint Review is an opportunity for the team to reflect on their accomplishments during the past Sprint, which contributes to growth in Product Pride. A Sprint Review can be a form of celebration if the team reaches a particularly noteworthy goal, or just for the sake of celebrating now and then. A company in Finland would occasionally have a Sprint Review in a sauna, with good food and drink, going late into the evening. The event covered the perfunctory agenda items but the real focus was for the team to celebrate its work together. (Thanks to Jukka Järvelä for this story!).&amp;quot;&lt;/em&gt; &lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:4&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;&lt;em&gt;&lt;a href=&#34;https://www.scrumguides.org/&#34;&gt;The Scrum Guide&lt;/a&gt;&lt;/em&gt; uses the term &amp;ldquo;&lt;a href=&#34;https://www.scrumguides.org/scrum-guide.html#artifacts-increment&#34;&gt;&lt;span style=&#34;font-variant: small-caps;&#34;&gt;Increment&lt;/span&gt;
-&lt;/a&gt;&amp;rdquo; to refer to &lt;em&gt;&amp;ldquo;the sum of all the Product Backlog items completed during a Sprint and the value of the increments of all previous Sprints.&amp;quot;&lt;/em&gt; To be more precise, &lt;em&gt;&lt;a href=&#34;http://scrumbook.org/&#34;&gt;A Scrum Book&lt;/a&gt;&lt;/em&gt; uses the term &amp;ldquo;&lt;a href=&#34;http://scrumbook.org.datasenter.no/value-stream/regular-product-increment.html&#34;&gt;&lt;span style=&#34;font-variant: small-caps;&#34;&gt;Regular Product Increment&lt;/span&gt;
+&lt;p&gt;&lt;em&gt;&lt;a href=&#34;https://scrumguides.org/&#34;&gt;The Scrum Guide&lt;/a&gt;&lt;/em&gt; uses the term &amp;ldquo;&lt;a href=&#34;https://www.scrumguides.org/scrum-guide.html#artifacts-increment&#34;&gt;&lt;span style=&#34;font-variant: small-caps;&#34;&gt;Increment&lt;/span&gt;
+&lt;/a&gt;&amp;rdquo; to refer to &lt;em&gt;&amp;ldquo;the sum of all the Product Backlog items completed during a Sprint and the value of the increments of all previous Sprints.&amp;quot;&lt;/em&gt;     To be more precise, &lt;em&gt;&lt;a href=&#34;http://scrumbook.org/&#34;&gt;A Scrum Book&lt;/a&gt;&lt;/em&gt; uses the term &amp;ldquo;&lt;a href=&#34;http://scrumbook.org.datasenter.no/value-stream/regular-product-increment.html&#34;&gt;&lt;span style=&#34;font-variant: small-caps;&#34;&gt;Regular Product Increment&lt;/span&gt;
 &lt;/a&gt;&amp;rdquo;, and  &lt;a href=&#34;https://less.works/&#34;&gt;LeSS&lt;/a&gt; uses the term &amp;ldquo;&lt;a href=&#34;https://less.works/less/framework/potentially-shippable-product-increment&#34;&gt;&lt;span style=&#34;font-variant: small-caps;&#34;&gt;Potentially Shippable Product Increment&lt;/span&gt;
 &lt;/a&gt;&amp;rdquo; (often abbreviated as &amp;ldquo;PSPI&amp;rdquo;). &lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
@@ -739,9 +751,8 @@
 &lt;p&gt;&lt;em&gt;&lt;a href=&#34;https://www.amazon.com/dp/1492033510&#34;&gt;Agile for Everybody&lt;/a&gt;&lt;/em&gt; says that &lt;em&gt;&amp;lsquo;One of the many ways that organizational leaders often accidentally undermine Agile principles is to continue asking only company-centric questions, such as “Are we on time and on budget?” and “Has your manager approved this?” as opposed to customer-centric questions, such as “How do our customers feel about this change to the product?” One immediate and powerful sign that you’re on the right track is that leaders are asking customer-centric questions or, even better, referring directly to customer quotes and insights.&#39;&lt;/em&gt; &lt;a href=&#34;#fnref:5&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:6&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;&lt;em&gt;&lt;a href=&#34;https://www.scrumguides.org/&#34;&gt;The Scrum Guide&lt;/a&gt;&lt;/em&gt; says that &lt;em&gt;&amp;lsquo;The &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Development Team&lt;/span&gt;
- demonstrates the work that it has &amp;ldquo;Done&amp;rdquo; and answers questions about the Increment.&#39;&lt;/em&gt;  &lt;em&gt;&lt;a href=&#34;http://scrumbook.org/&#34;&gt;A Scrum Book&lt;/a&gt;&lt;/em&gt; also says that &lt;em&gt;&amp;ldquo;The &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Development Team&lt;/span&gt;
- demonstrates the functionality that was Done.&amp;quot;&lt;/em&gt; &lt;a href=&#34;#fnref:6&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;a href=&#34;https://scrumguides.org/&#34;&gt;The Scrum Guide&lt;/a&gt;&lt;/em&gt; 2020 says that &lt;em&gt;&amp;ldquo;The &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Review&lt;/span&gt;
+ is a working session and the Scrum Team should avoid limiting it to a presentation.&amp;quot;&lt;/em&gt; &lt;a href=&#34;#fnref:6&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:7&#34; role=&#34;doc-endnote&#34;&gt;
 &lt;p&gt;&lt;a href=&#34;https://less.works/&#34;&gt;LeSS&lt;/a&gt; advocates the &amp;ldquo;Inspect-Adapt and &lt;em&gt;not&lt;/em&gt; Inspect-Accept&amp;rdquo; concept: &lt;em&gt;&amp;ldquo;The most common mistake in a Sprint Review is to focus on the Product Owner accepting items from the teams. This is a misunderstanding of the purpose of the Sprint Review and moves it away from &lt;a href=&#34;https://less.works/less/principles/empirical-process-control.html&#34;&gt;empirical process control&lt;/a&gt; towards finding blame. The Sprint Review is an opportunity for everyone to collaborate about the product.&amp;quot;&lt;/em&gt; &lt;a href=&#34;#fnref:7&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
@@ -856,7 +867,7 @@
 &lt;p&gt;Visualized &lt;a href=&#34;http://scrumbook.org/value-stream/information-radiator.html&#34;&gt;information radiators&lt;/a&gt; (e.g., Scrum board, Kanban board).&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Self-organizing instead of being conducted solely by &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Scrum Master&lt;/span&gt;
+&lt;p&gt;Self-managing instead of being conducted solely by &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Scrum Master&lt;/span&gt;
 .&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -879,28 +890,40 @@
 
 &lt;/div&gt;
 
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+
+&lt;div class=&#34;shortcode-notice info&#34;&gt;
+  &lt;div class=&#34;shortcode-notice-title info&#34;&gt;
+    
+      2020-11-24 Memo
+    
+  &lt;/div&gt;
+  &lt;p&gt;The series of articles have been updated according to the 2020 revision of &lt;em&gt;&lt;a href=&#34;https://scrumguides.org/&#34;&gt;The Scrum Guide&lt;/a&gt;&lt;/em&gt; (published on Nov 2020).&lt;/p&gt;
+
+&lt;/div&gt;
+
 &lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
 &lt;hr&gt;
 &lt;ol&gt;
 &lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;&lt;em&gt;&lt;a href=&#34;https://www.scrumguides.org/&#34;&gt;The Scrum Guide&lt;/a&gt;&lt;/em&gt; says that &lt;em&gt;&amp;ldquo;Sprint Planning is time-boxed to a maximum of eight hours for a one-month Sprint. For shorter Sprints, the event is usually shorter. [&amp;hellip;] The Scrum Master teaches the Scrum Team to keep it within the time-box.&amp;quot;&lt;/em&gt; &lt;em&gt;&lt;a href=&#34;http://scrumbook.org/&#34;&gt;A Scrum Book&lt;/a&gt;&lt;/em&gt; suggests that &lt;em&gt;&amp;ldquo;It is important that Sprint Planning allow time for enough design to create a well-understood Sprint Backlog. But the planning should be time-boxed. A rule of thumb is that the event should take no more than four hours for a two-week Sprint and proportionally less for shorter Sprints. If it takes longer, it takes longer—but seek kaizen opportunities to reduce the amount of time to plan and to correspondingly increase the time spent on building product.&amp;quot;&lt;/em&gt; &lt;a href=&#34;http://teddy-chen-tw.blogspot.com/&#34;&gt;Teddy Chen&lt;/a&gt; advocates in &lt;a href=&#34;http://teddy-chen-tw.blogspot.com/2012/01/scrum-6sprint-planning-meeting.html&#34;&gt;his article&lt;/a&gt; sticking to the timebox to avoid the &amp;ldquo;big up-front design&amp;rdquo; symptom. &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;a href=&#34;https://scrumguides.org/&#34;&gt;The Scrum Guide&lt;/a&gt;&lt;/em&gt; says that &lt;em&gt;&amp;ldquo;Sprint Planning is time-boxed to a maximum of eight hours for a one-month Sprint. For shorter Sprints, the event is usually shorter. [&amp;hellip;] The Scrum Master teaches the Scrum Team to keep it within the time-box.&amp;quot;&lt;/em&gt;      &lt;em&gt;&lt;a href=&#34;http://scrumbook.org/&#34;&gt;A Scrum Book&lt;/a&gt;&lt;/em&gt; suggests that &lt;em&gt;&amp;ldquo;It is important that Sprint Planning allow time for enough design to create a well-understood Sprint Backlog. But the planning should be time-boxed. A rule of thumb is that the event should take no more than four hours for a two-week Sprint and proportionally less for shorter Sprints. If it takes longer, it takes longer—but seek kaizen opportunities to reduce the amount of time to plan and to correspondingly increase the time spent on building product.&amp;quot;&lt;/em&gt;     &lt;a href=&#34;http://teddy-chen-tw.blogspot.com/&#34;&gt;Teddy Chen&lt;/a&gt; advocates in &lt;a href=&#34;http://teddy-chen-tw.blogspot.com/2012/01/scrum-6sprint-planning-meeting.html&#34;&gt;his article&lt;/a&gt; sticking to the timebox to avoid the &amp;ldquo;big up-front design&amp;rdquo; symptom. &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.agilealliance.org/glossary/invest/&#34;&gt;Agile Alliance&lt;/a&gt; says that &lt;em&gt;&amp;ldquo;The acronym INVEST helps to remember a widely accepted set of criteria, or checklist, to assess the quality of a user story.&amp;quot;&lt;/em&gt;  Read Bob Hartman&amp;rsquo;s article &amp;ldquo;&lt;a href=&#34;https://agileforall.com/new-to-agile-invest-in-good-user-stories/&#34;&gt;New to agile? INVEST in good user stories&lt;/a&gt;&amp;rdquo; for more info. &lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.agilealliance.org/glossary/invest/&#34;&gt;Agile Alliance&lt;/a&gt; says that &lt;em&gt;&amp;ldquo;The acronym INVEST helps to remember a widely accepted set of criteria, or checklist, to assess the quality of a user story.&amp;quot;&lt;/em&gt;      Read Bob Hartman&amp;rsquo;s article &amp;ldquo;&lt;a href=&#34;https://agileforall.com/new-to-agile-invest-in-good-user-stories/&#34;&gt;New to agile? INVEST in good user stories&lt;/a&gt;&amp;rdquo; for more info. &lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:3&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;Scrum works better when it is considered an enabling engine toward a coherent goal rather than just a collection of work packages by chance. &lt;em&gt;&lt;a href=&#34;https://www.scrumguides.org/&#34;&gt;The Scrum Guide&lt;/a&gt;&lt;/em&gt; says that &lt;em&gt;&amp;ldquo;the &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Goal&lt;/span&gt;
- can be any other coherence that causes the Development Team to work together rather than on separate initiatives.&amp;quot;&lt;/em&gt;  &lt;em&gt;&lt;a href=&#34;http://scrumbook.org/&#34;&gt;A Scrum Book&lt;/a&gt;&lt;/em&gt; says that &lt;em&gt;&amp;ldquo;The Scrum Team can use the &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Goal&lt;/span&gt;
+&lt;p&gt;Scrum works better when it is considered an enabling engine toward a coherent goal rather than just a collection of work packages by chance.      &lt;em&gt;&lt;a href=&#34;https://scrumguides.org/&#34;&gt;The Scrum Guide&lt;/a&gt;&lt;/em&gt; 2020 version says that &lt;em&gt;&amp;ldquo;the &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Goal&lt;/span&gt;
+ also creates coherence and focus, encouraging the Scrum Team to work together rather than on separate initiatives.&amp;quot;&lt;/em&gt;     &lt;em&gt;&lt;a href=&#34;http://scrumbook.org/&#34;&gt;A Scrum Book&lt;/a&gt;&lt;/em&gt; says that &lt;em&gt;&amp;ldquo;The Scrum Team can use the &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Goal&lt;/span&gt;
  to frame the selection of PBIs for the Sprint but in some sense the &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Goal&lt;/span&gt;
- is more important even than the sum of the individual PBIs.&amp;quot;&lt;/em&gt;  Roman Pichler says in his article &amp;ldquo;&lt;a href=&#34;https://www.romanpichler.com/blog/sprint-goal-template/&#34;&gt;A Template for formulating great sprint goals&lt;/a&gt;&amp;rdquo; that &lt;em&gt;&amp;ldquo;your sprint goal should differ from your user stories. The goal explains the why it is a good idea to carry out the sprint an implement the stories. The user stories enable you to reach the goal. It’s a common mistake to confuse the two.&amp;quot;&lt;/em&gt; &lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+ is more important even than the sum of the individual PBIs.&amp;quot;&lt;/em&gt;     Roman Pichler says in his article &amp;ldquo;&lt;a href=&#34;https://www.romanpichler.com/blog/sprint-goal-template/&#34;&gt;A Template for formulating great sprint goals&lt;/a&gt;&amp;rdquo; that &lt;em&gt;&amp;ldquo;your sprint goal should differ from your user stories. The goal explains the why it is a good idea to carry out the sprint an implement the stories. The user stories enable you to reach the goal. It’s a common mistake to confuse the two.&amp;quot;&lt;/em&gt; &lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:4&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;&lt;em&gt;&lt;a href=&#34;https://www.scrumguides.org/&#34;&gt;The Scrum Guide&lt;/a&gt;&lt;/em&gt; 2017 puts more emphasis on the follow-up actions for &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Retrospective&lt;/span&gt;
-: &lt;em&gt;&amp;ldquo;The Sprint Backlog [&amp;hellip;] To ensure continuous improvement, it includes at least one high priority way in which the team works, identified in the previous Retrospective meeting&amp;rdquo;&lt;/em&gt; (p.16). &lt;a href=&#34;https://www.linkedin.com/in/emersonmills&#34;&gt;Emerson Mills&lt;/a&gt; suggested in his &lt;a href=&#34;http://teddy-chen-tw.blogspot.com/2012/10/certified-scrummaster.html&#34;&gt;CSM class&lt;/a&gt; putting these identified technical improvements into &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Planning&lt;/span&gt;
+&lt;p&gt;&lt;em&gt;&lt;a href=&#34;https://scrumguides.org/&#34;&gt;The Scrum Guide&lt;/a&gt;&lt;/em&gt; 2017 puts more emphasis on the follow-up actions for &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Retrospective&lt;/span&gt;
+: &lt;em&gt;&amp;ldquo;To ensure continuous improvement, it (the Sprint Backlog) includes at least one high priority way in which the team works, identified in the previous Retrospective meeting&amp;rdquo;&lt;/em&gt; (p.16).    In 2020 version it is expressed in a more relaxed tone: &lt;em&gt;&amp;ldquo;The Scrum Team identifies the most helpful changes to improve its effectiveness. The most impactful improvements are addressed as soon as possible. They may even be added to the Sprint Backlog for the next Sprint.&amp;quot;&lt;/em&gt;     &lt;a href=&#34;https://www.linkedin.com/in/emersonmills&#34;&gt;Emerson Mills&lt;/a&gt; suggested in his &lt;a href=&#34;http://teddy-chen-tw.blogspot.com/2012/10/certified-scrummaster.html&#34;&gt;CSM class&lt;/a&gt; putting these identified technical improvements into &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Planning&lt;/span&gt;
  Part 2 (source: “&lt;a href=&#34;http://teddy-chen-tw.blogspot.com/2012/12/certified-scrummaster1.html&#34;&gt;我在第二次 Certified ScrumMaster 課程學到的事（1）&lt;/a&gt;”. &lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:5&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;&lt;em&gt;&lt;a href=&#34;https://www.scrumguides.org/&#34;&gt;The Scrum Guide&lt;/a&gt;&lt;/em&gt; says that &lt;em&gt;&amp;ldquo;Each Sprint may be considered a project with no more than a one-month horizon&amp;rdquo;&lt;/em&gt; (p.9).  In this regard, a sprint cannot be immune from influences discussed in the &lt;a href=&#34;https://www.pmi.org/pmbok-guide-standards&#34;&gt;&lt;em&gt;PMBOK Guide&lt;/em&gt;&lt;/a&gt;, such as enterprise environmental factors and organizational process assets. &lt;a href=&#34;#fnref:5&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;a href=&#34;https://scrumguides.org/&#34;&gt;The Scrum Guide&lt;/a&gt;&lt;/em&gt; 2017 says that &lt;em&gt;&amp;ldquo;Each Sprint may be considered a project with no more than a one-month horizon&amp;rdquo;&lt;/em&gt; (p.9).  In this regard, a sprint cannot be immune from influences discussed in the &lt;a href=&#34;https://www.pmi.org/pmbok-guide-standards&#34;&gt;&lt;em&gt;PMBOK Guide&lt;/em&gt;&lt;/a&gt;, such as enterprise environmental factors and organizational process assets. &lt;a href=&#34;#fnref:5&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:6&#34; role=&#34;doc-endnote&#34;&gt;
 &lt;p&gt;&lt;a href=&#34;http://scrumbook.org/value-stream/product-backlog/definition-of-ready.html&#34;&gt;Definition of Ready&lt;/a&gt; &lt;a href=&#34;#fnref:6&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
@@ -911,7 +934,7 @@
 &lt;li id=&#34;fn:8&#34; role=&#34;doc-endnote&#34;&gt;
 &lt;p&gt;The definition of &amp;ldquo;product&amp;rdquo; by the &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Scrum Team&lt;/span&gt;
  has also defined what is in scope and what is by default out of scope for the team. For example, what parts of Ops should be handled by the &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Scrum Team&lt;/span&gt;
-? LeSS advocates a &lt;a href=&#34;https://less.works/less/framework/product&#34;&gt;broader product definition&lt;/a&gt; and a “&lt;a href=&#34;https://less.works/less/principles/whole-product-focus&#34;&gt;whole product focus&lt;/a&gt;” point of view: &lt;em&gt;&amp;ldquo;Whenever there is a choice to optimize a team output or the whole product, we always chose the whole product. [&amp;hellip;] In many large product development groups, getting everyone to focus on the whole product instead of their individual parts/tasks/specialization is one of the hardest parts of scaling Scrum. Always keep a whole product focus, keep reminding everyone there is no value in separate parts or half-working parts.&amp;quot;&lt;/em&gt; &lt;a href=&#34;#fnref:8&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+?    LeSS advocates a &lt;a href=&#34;https://less.works/less/framework/product&#34;&gt;broader product definition&lt;/a&gt; and a “&lt;a href=&#34;https://less.works/less/principles/whole-product-focus&#34;&gt;whole product focus&lt;/a&gt;” point of view: &lt;em&gt;&amp;ldquo;Whenever there is a choice to optimize a team output or the whole product, we always chose the whole product. [&amp;hellip;] In many large product development groups, getting everyone to focus on the whole product instead of their individual parts/tasks/specialization is one of the hardest parts of scaling Scrum. Always keep a whole product focus, keep reminding everyone there is no value in separate parts or half-working parts.&amp;quot;&lt;/em&gt; &lt;a href=&#34;#fnref:8&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:9&#34; role=&#34;doc-endnote&#34;&gt;
 &lt;p&gt;&amp;ldquo;&lt;a href=&#34;https://agilemanifesto.org/principles.html&#34;&gt;Principles behind the Agile Manifesto&lt;/a&gt;&amp;rdquo; emphasizes that &lt;em&gt;“Continuous attention to technical excellence and good design enhances agility.”&lt;/em&gt; LeSS identifies several areas of &lt;a href=&#34;https://less.works/less/technical-excellence/index&#34;&gt;technical excellence&lt;/a&gt;. &lt;a href=&#34;#fnref:9&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
@@ -1269,8 +1292,8 @@ probe_success 1
         <description>&lt;p&gt;This article discusses the essence of &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Daily Scrum&lt;/span&gt;
 .&lt;/p&gt;
 &lt;h2 id=&#34;in-a-nutshell&#34;&gt;In a nutshell&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;Daily Scrum&lt;/strong&gt; is a time-boxed daily event in which the &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Development Team&lt;/span&gt;
- gathers together to quickly inspect current performance and to identify necessary actions in order to increase the confidence in achieving the &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Goal&lt;/span&gt;
+&lt;p&gt;&lt;strong&gt;Daily Scrum&lt;/strong&gt; is a time-boxed daily event in which the &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Developers&lt;/span&gt;
+ gather together to quickly inspect current performance and to identify necessary actions in order to increase the confidence in achieving the &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Goal&lt;/span&gt;
 .&lt;/p&gt;
 &lt;h2 id=&#34;output&#34;&gt;Output&lt;/h2&gt;
 &lt;p&gt;Essential:&lt;/p&gt;
@@ -1301,14 +1324,14 @@ probe_success 1
  instead of persons:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;To brief what the &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Development Team&lt;/span&gt;
- has moved toward the &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Goal&lt;/span&gt;
+&lt;p&gt;To brief what the &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Developers&lt;/span&gt;
+ have moved toward the &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Goal&lt;/span&gt;
  since the last &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Daily Scrum&lt;/span&gt;
 .&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;To brief what the &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Development Team&lt;/span&gt;
- plans to do toward the &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Goal&lt;/span&gt;
+&lt;p&gt;To brief what the &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Developers&lt;/span&gt;
+ plan to do toward the &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Goal&lt;/span&gt;
  today.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -1327,7 +1350,7 @@ probe_success 1
 &lt;p&gt;Visualized &lt;a href=&#34;http://scrumbook.org/value-stream/information-radiator.html&#34;&gt;information radiators&lt;/a&gt; (e.g., Scrum board, Kanban board).&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Self-organizing instead of being conducted solely by &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Scrum Master&lt;/span&gt;
+&lt;p&gt;Self-managing instead of being conducted solely by &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Scrum Master&lt;/span&gt;
 .&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -1346,16 +1369,28 @@ probe_success 1
 
 &lt;/div&gt;
 
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+
+&lt;div class=&#34;shortcode-notice info&#34;&gt;
+  &lt;div class=&#34;shortcode-notice-title info&#34;&gt;
+    
+      2020-11-24 Memo
+    
+  &lt;/div&gt;
+  &lt;p&gt;The series of articles have been updated according to the 2020 revision of &lt;em&gt;&lt;a href=&#34;https://scrumguides.org/&#34;&gt;The Scrum Guide&lt;/a&gt;&lt;/em&gt; (published on Nov 2020).&lt;/p&gt;
+
+&lt;/div&gt;
+
 &lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
 &lt;hr&gt;
 &lt;ol&gt;
 &lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
 &lt;p&gt;The &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Daily Scrum&lt;/span&gt;
- is typically time-boxed to avoid diving into implementation details. &lt;em&gt;&lt;a href=&#34;https://www.scrumguides.org/&#34;&gt;The Scrum Guide&lt;/a&gt;&lt;/em&gt; even defines it as &amp;ldquo;a &lt;strong&gt;15-minute&lt;/strong&gt; time-boxed event.&amp;rdquo; &lt;em&gt;&lt;a href=&#34;http://scrumbook.org/&#34;&gt;A Scrum Book: The Spirit of the Game&lt;/a&gt;&lt;/em&gt; also suggests that &lt;em&gt;&amp;ldquo;this meeting is for replanning and decision-making, not for problem-solving. Strictly time-box the meeting to keep focus on the daily plan and to avoid robbing time from development.&amp;quot;&lt;/em&gt; &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+ is typically time-boxed to avoid diving into implementation details.  &lt;em&gt;&lt;a href=&#34;https://www.scrumguides.org/&#34;&gt;The Scrum Guide&lt;/a&gt;&lt;/em&gt; even defines it as &amp;ldquo;a &lt;strong&gt;15-minute&lt;/strong&gt; time-boxed event.&amp;rdquo; &lt;em&gt;&lt;a href=&#34;http://scrumbook.org/&#34;&gt;A Scrum Book: The Spirit of the Game&lt;/a&gt;&lt;/em&gt; also suggests that &lt;em&gt;&amp;ldquo;this meeting is for replanning and decision-making, not for problem-solving. Strictly time-box the meeting to keep focus on the daily plan and to avoid robbing time from development.&amp;quot;&lt;/em&gt; &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
 &lt;p&gt;Traditionally &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Daily Scrum&lt;/span&gt;
- is for each person to take turns to speak up the &amp;ldquo;&lt;a href=&#34;https://www.agilealliance.org/glossary/three-qs&#34;&gt;three questions&lt;/a&gt;&amp;rdquo;. For example, &lt;em&gt;&lt;a href=&#34;https://www.scrumguides.org/&#34;&gt;The Scrum Guide&lt;/a&gt;&lt;/em&gt; 2013 version said that &lt;em&gt;&amp;ldquo;During the meeting, the Development Team members explain: [&amp;hellip;]&amp;quot;&lt;/em&gt; This may imply micro-management, however.  In 2017 version it was rephrased in a less prescriptive style as &lt;em&gt;&amp;ldquo;Some Development Teams will use questions, some will be more discussion based. Here is an example of what might be used: [&amp;hellip;].&amp;quot;&lt;/em&gt; &lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+ is for each person to take turns to speak up the &amp;ldquo;&lt;a href=&#34;https://www.agilealliance.org/glossary/three-qs&#34;&gt;three questions&lt;/a&gt;&amp;rdquo;. For example, &lt;em&gt;&lt;a href=&#34;https://scrumguides.org/&#34;&gt;The Scrum Guide&lt;/a&gt;&lt;/em&gt; 2013 version said that &lt;em&gt;&amp;ldquo;During the meeting, the Development Team members explain: [&amp;hellip;]&amp;quot;&lt;/em&gt; This may imply micro-management, however.      In 2017 version it was rephrased in a less prescriptive style as &lt;em&gt;&amp;ldquo;Some Development Teams will use questions, some will be more discussion based. Here is an example of what might be used: [&amp;hellip;].&amp;quot;&lt;/em&gt;      In 2020 version it was even simplified further as &lt;em&gt;&amp;ldquo;The Developers can select whatever structure and techniques they want, as long as their Daily Scrum focuses on progress toward the Sprint Goal and produces an actionable plan for the next day of work.&amp;quot;&lt;/em&gt; &lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;
@@ -1387,7 +1422,7 @@ probe_success 1
 &lt;p&gt;Main references for the whole series:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;em&gt;&lt;a href=&#34;https://www.scrumguides.org/&#34;&gt;The Scrum Guide&lt;/a&gt;&lt;/em&gt; by Ken Schwaber and Jeff Sutherland&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;a href=&#34;https://scrumguides.org/&#34;&gt;The Scrum Guide&lt;/a&gt;&lt;/em&gt; by Ken Schwaber and Jeff Sutherland&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;em&gt;&lt;a href=&#34;http://scrumbook.org/&#34;&gt;A Scrum Book: The Spirit of the Game&lt;/a&gt;&lt;/em&gt; by Jeff Sutherland, James O. Coplien, et al.&lt;/p&gt;
@@ -1396,20 +1431,21 @@ probe_success 1
 &lt;p&gt;&lt;a href=&#34;https://agilemanifesto.org/&#34;&gt;Manifesto for Agile Software Development&lt;/a&gt; and &lt;a href=&#34;https://agilemanifesto.org/principles.html&#34;&gt;Principles behind the Agile Manifesto&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;em&gt;&lt;a href=&#34;https://www.scrumstudy.com/sbokguide&#34;&gt;A Guide to the Scrum Body of Knowledge (SBOK® Guide)&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;del&gt;&lt;em&gt;&lt;a href=&#34;https://www.scrumstudy.com/sbokguide&#34;&gt;A Guide to the Scrum Body of Knowledge (SBOK® Guide)&lt;/a&gt;&lt;/em&gt;&lt;/del&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;em&gt;&lt;a href=&#34;https://less.works/less/framework/index&#34;&gt;LeSS Framework&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;p&gt;The first article discusses the &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Product Backlog Refinement&lt;/span&gt;
  (PBR).&lt;/p&gt;
 &lt;h2 id=&#34;in-a-nutshell&#34;&gt;In a nutshell&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;Product backlog refinement (PBR)&lt;/strong&gt; is a Scrum event in which the &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Scrum Team&lt;/span&gt;
  properly &lt;strong&gt;orders&lt;/strong&gt; and &lt;strong&gt;breaks down&lt;/strong&gt; &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Product Backlog&lt;/span&gt;
- so that the &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Development Team&lt;/span&gt;
- feels confident enough about the top &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Product Backlog Items&lt;/span&gt;
+ so that the &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Developers&lt;/span&gt;
+ feel confident enough about the top &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Product Backlog Items&lt;/span&gt;
  to take them into a &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint&lt;/span&gt;
 .&lt;/p&gt;
 &lt;h2 id=&#34;output&#34;&gt;Output&lt;/h2&gt;
@@ -1420,10 +1456,10 @@ probe_success 1
  that is both &lt;strong&gt;ordered&lt;/strong&gt;&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; and &lt;strong&gt;granularity gradient&lt;/strong&gt;&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;Ordered according to product roadmap and expectations of stakeholders.&lt;/p&gt;
+&lt;p&gt;Is ordered according to product roadmap and expectations of stakeholders.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Granularity gradient according to confidence of the &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Scrum Team&lt;/span&gt;
+&lt;p&gt;Is granularity gradient according to confidence of the &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Scrum Team&lt;/span&gt;
 .&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -1497,14 +1533,26 @@ probe_success 1
 
 &lt;/div&gt;
 
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+
+&lt;div class=&#34;shortcode-notice info&#34;&gt;
+  &lt;div class=&#34;shortcode-notice-title info&#34;&gt;
+    
+      2020-11-24 Memo
+    
+  &lt;/div&gt;
+  &lt;p&gt;The series of articles have been updated according to the 2020 revision of &lt;em&gt;&lt;a href=&#34;https://scrumguides.org/&#34;&gt;The Scrum Guide&lt;/a&gt;&lt;/em&gt; (published on Nov 2020).&lt;/p&gt;
+
+&lt;/div&gt;
+
 &lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
 &lt;hr&gt;
 &lt;ol&gt;
 &lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;&amp;ldquo;Priority&amp;rdquo; is the term used in the &lt;em&gt;&lt;a href=&#34;https://www.scrumguides.org/&#34;&gt;Scrum Guide&lt;/a&gt;&lt;/em&gt; 2010: &lt;em&gt;&amp;ldquo;Product Backlog is sorted in order of priority&amp;rdquo;&lt;/em&gt; (p.6). But the term was changed to &amp;ldquo;order&amp;rdquo; in 2011: &lt;em&gt;&amp;ldquo;Product Backlog management includes: [&amp;hellip;] Ordering the items in the Product Backlog to best achieve goals and missions&amp;rdquo;&lt;/em&gt; (p.5). See the article &amp;ldquo;&lt;a href=&#34;https://www.scrum.org/resources/ordered-not-prioritized&#34;&gt;Ordered Not Prioritized&lt;/a&gt;&amp;rdquo; for more details. &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&amp;ldquo;Priority&amp;rdquo; is the term used in the &lt;em&gt;&lt;a href=&#34;https://www.scrumguides.org/&#34;&gt;Scrum Guide&lt;/a&gt;&lt;/em&gt; 2010: &lt;em&gt;&amp;ldquo;Product Backlog is sorted in order of priority&amp;rdquo;&lt;/em&gt; (p.6).    But the term was changed to &amp;ldquo;order&amp;rdquo; in 2011: &lt;em&gt;&amp;ldquo;Product Backlog management includes: [&amp;hellip;] Ordering the items in the Product Backlog to best achieve goals and missions&amp;rdquo;&lt;/em&gt; (p.5).    See the article &amp;ldquo;&lt;a href=&#34;https://www.scrum.org/resources/ordered-not-prioritized&#34;&gt;Ordered Not Prioritized&lt;/a&gt;&amp;rdquo; for more details. &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;&lt;em&gt;&lt;a href=&#34;https://www.scrumguides.org/&#34;&gt;The Scrum Guide&lt;/a&gt;&lt;/em&gt; 2017 says: &lt;em&gt;&amp;ldquo;Higher ordered Product Backlog items are usually clearer and more detailed than lower ordered ones. More precise estimates are made based on the greater clarity and increased detail; the lower the order, the less detail&amp;rdquo;&lt;/em&gt; (p.15). See &amp;ldquo;&lt;a href=&#34;http://scrumbook.org.datasenter.no/value-stream/product-backlog/granularity-gradient.html&#34;&gt;Granularity Gradient&lt;/a&gt;&amp;rdquo; for more details. &lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;a href=&#34;https://www.scrumguides.org/&#34;&gt;The Scrum Guide&lt;/a&gt;&lt;/em&gt; 2017 says: &lt;em&gt;&amp;ldquo;Higher ordered Product Backlog items are usually clearer and more detailed than lower ordered ones. More precise estimates are made based on the greater clarity and increased detail; the lower the order, the less detail&amp;rdquo;&lt;/em&gt; (p.15).      See &amp;ldquo;&lt;a href=&#34;http://scrumbook.org.datasenter.no/value-stream/product-backlog/granularity-gradient.html&#34;&gt;Granularity Gradient&lt;/a&gt;&amp;rdquo; for more details. &lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:3&#34; role=&#34;doc-endnote&#34;&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.scrumalliance.org/community/profile/dteng&#34;&gt;Daniel Teng&lt;/a&gt; proposed the ODDE properties (ordered, dynamic, detailed appropriate, and estimated) for product backlog. See the article &amp;ldquo;&lt;a href=&#34;http://www.danielteng.com/2014/06/27/odde-product-backlog/&#34;&gt;ODDE 的 Product Backlog&lt;/a&gt;&amp;rdquo; (in Chinese) for more details. &lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
