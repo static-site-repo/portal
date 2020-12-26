@@ -6,7 +6,41 @@
     <description>Recent content in microservices on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Fri, 17 May 2019 12:00:00 +0800</lastBuildDate><atom:link href="//william-yeh.net/tags/microservices/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 14 Apr 2020 22:00:00 +0800</lastBuildDate><atom:link href="//william-yeh.net/tags/microservices/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>gRPC 測試工具</title>
+      <link>//william-yeh.net/post/2020/04/grpc-testing-tools/</link>
+      <pubDate>Tue, 14 Apr 2020 22:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2020/04/grpc-testing-tools/</guid>
+      <description>&lt;p&gt;RESTful API 時代，我們有許多簡單好用的測試工具：有酷炫的 &lt;a href=&#34;https://www.postman.com/&#34;&gt;Postman&lt;/a&gt;，有命令列控愛用的 &lt;a href=&#34;https://httpie.org/&#34;&gt;HTTPie&lt;/a&gt;，當然也有硬漢必備的萬用瑞士刀 &lt;a href=&#34;https://curl.haxx.se/&#34;&gt;curl&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;那麼，gRPC 呢？&lt;/p&gt;
+&lt;p&gt;這篇文章介紹兩個好用的小工具：&lt;a href=&#34;https://github.com/fullstorydev/grpcurl&#34;&gt;gRPCurl&lt;/a&gt; 及 &lt;a href=&#34;https://github.com/bojand/ghz&#34;&gt;ghz&lt;/a&gt;，一個是輸入輸出介面測試工具，另一個是壓測工具，也順便介紹一些簡化測試的技巧。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>gRPC Load Balancing in Kubernetes</title>
+      <link>//william-yeh.net/post/2020/03/grpc-load-balancing/</link>
+      <pubDate>Mon, 30 Mar 2020 22:30:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2020/03/grpc-load-balancing/</guid>
+      <description>&lt;p&gt;Kubernetes 有個很方便的地方：只要修改 deployment 的 &lt;code&gt;spec.replicas&lt;/code&gt; 數字，就能橫向擴展 pod，以應付更大的流量負載需求。&lt;/p&gt;
+&lt;p&gt;這一招，對於 stateless 的 HTTP 服務很管用，也是 Kubernetes 入門教學愛用的例子。但是，對於 &lt;a href=&#34;https://grpc.io/&#34;&gt;gRPC&lt;/a&gt; 呢？&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Idempotency Key：原理與實測</title>
+      <link>//william-yeh.net/post/2020/03/idempotency-key-test/</link>
+      <pubDate>Tue, 10 Mar 2020 23:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2020/03/idempotency-key-test/</guid>
+      <description>&lt;p&gt;最近幾年，在微服務打滾的人，不時會遇到神祕的 &amp;ldquo;idempotency key&amp;rdquo; 字眼。本文爬梳 idempotency key 的技術背景，探討運作流程，並分析資料庫的實作選項。&lt;/p&gt;
+&lt;h2 id=&#34;idempotency-冪等性&#34;&gt;Idempotency 冪等性&lt;/h2&gt;
+&lt;p&gt;在 API 服務中，常常需要留意 idempotency（冪等性）。&lt;/p&gt;
+&lt;p&gt;名詞：idempotency，形容詞：idempotent。&lt;/p&gt;
+&lt;p&gt;&amp;ldquo;Idempotency&amp;rdquo; 這字眼源自數學。維基百科是這麼解釋 &amp;ldquo;&lt;a href=&#34;https://en.wikipedia.org/wiki/Idempotence#Idempotent_functions&#34;&gt;idempotent function&lt;/a&gt;&amp;rdquo; 的：&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Kubernetes 的入門認知與導入策略</title>
       <link>//william-yeh.net/post/2019/05/k8s-lab/</link>

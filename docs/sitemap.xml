@@ -2,43 +2,106 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>//william-yeh.net/post/2020/12/2020-retrospective/</loc>
+    <lastmod>2020-12-25T13:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/agile/</loc>
+    <lastmod>2020-12-25T13:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/book/</loc>
+    <lastmod>2020-12-25T13:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/career/</loc>
+    <lastmod>2020-12-25T13:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>//william-yeh.net/categories/</loc>
-    <lastmod>2020-11-03T22:30:00+08:00</lastmod>
+    <lastmod>2020-12-25T13:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/coach/</loc>
+    <lastmod>2020-12-25T13:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/course/</loc>
+    <lastmod>2020-12-25T13:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/grpc/</loc>
+    <lastmod>2020-12-25T13:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>//william-yeh.net/categories/life/</loc>
-    <lastmod>2020-11-03T22:30:00+08:00</lastmod>
+    <lastmod>2020-12-25T13:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>//william-yeh.net/post/</loc>
-    <lastmod>2020-11-03T22:30:00+08:00</lastmod>
+    <lastmod>2020-12-25T13:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>//william-yeh.net/</loc>
-    <lastmod>2020-11-03T22:30:00+08:00</lastmod>
+    <lastmod>2020-12-25T13:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/principle/</loc>
+    <lastmod>2020-12-25T13:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/scrum/</loc>
+    <lastmod>2020-12-25T13:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>//william-yeh.net/tags/table-tennis/</loc>
-    <lastmod>2020-11-03T22:30:00+08:00</lastmod>
+    <lastmod>2020-12-25T13:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>//william-yeh.net/tags/</loc>
-    <lastmod>2020-11-03T22:30:00+08:00</lastmod>
+    <lastmod>2020-12-25T13:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -53,20 +116,6 @@
   <url>
     <loc>//william-yeh.net/post/2020/10/reverse-penhold-backhand/</loc>
     <lastmod>2020-10-25T10:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/tags/agile/</loc>
-    <lastmod>2020-10-03T10:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/tags/book/</loc>
-    <lastmod>2020-10-03T10:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -136,13 +185,6 @@
   
   <url>
     <loc>//william-yeh.net/tags/process/</loc>
-    <lastmod>2020-08-20T08:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/tags/scrum/</loc>
     <lastmod>2020-08-20T08:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -254,13 +296,6 @@
   </url>
   
   <url>
-    <loc>//william-yeh.net/tags/grpc/</loc>
-    <lastmod>2020-04-14T22:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>//william-yeh.net/post/2020/04/grpc-testing-tools/</loc>
     <lastmod>2020-04-14T22:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -268,7 +303,7 @@
   </url>
   
   <url>
-    <loc>//william-yeh.net/tags/microservice/</loc>
+    <loc>//william-yeh.net/tags/microservices/</loc>
     <lastmod>2020-04-14T22:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -317,13 +352,6 @@
   </url>
   
   <url>
-    <loc>//william-yeh.net/tags/career/</loc>
-    <lastmod>2020-01-08T22:30:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>//william-yeh.net/tags/growth/</loc>
     <lastmod>2020-01-08T22:30:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -353,20 +381,6 @@
   
   <url>
     <loc>//william-yeh.net/post/2019/12/2019-retrospective/</loc>
-    <lastmod>2019-12-26T23:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/tags/course/</loc>
-    <lastmod>2019-12-26T23:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/tags/principle/</loc>
     <lastmod>2019-12-26T23:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -465,13 +479,6 @@
   
   <url>
     <loc>//william-yeh.net/post/2019/05/k8s-lab/</loc>
-    <lastmod>2019-05-17T12:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/tags/microservices/</loc>
     <lastmod>2019-05-17T12:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

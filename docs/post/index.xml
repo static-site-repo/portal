@@ -6,7 +6,33 @@
     <description>Recent content in Posts on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Tue, 03 Nov 2020 22:30:00 +0800</lastBuildDate><atom:link href="//william-yeh.net/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 25 Dec 2020 13:00:00 +0800</lastBuildDate><atom:link href="//william-yeh.net/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2020 個人回顧</title>
+      <link>//william-yeh.net/post/2020/12/2020-retrospective/</link>
+      <pubDate>Fri, 25 Dec 2020 13:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2020/12/2020-retrospective/</guid>
+      <description>&lt;p&gt;年初，再多跨出舒適圈一步，換到另外一間外商。&lt;/p&gt;
+&lt;p&gt;如果說 &lt;a href=&#34;//william-yeh.net/post/2018/12/2018-retrospective/&#34;&gt;2018&lt;/a&gt; 是收攝靜觀的一年，&lt;a href=&#34;//william-yeh.net/post/2019/12/2019-retrospective/&#34;&gt;2019&lt;/a&gt; 是驚滔駭浪的一年，那麼，2020 算是兩者兼具。&lt;/p&gt;
+&lt;p&gt;到了年終，又開始要做個總回顧，再對來年許願。去除一些不便揭露的事情，以下是簡單的回顧。&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2020/12/national-forest.jpg&#34; alt=&#34;翠峰湖 (2020-08-13)&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2020/12/national-forest.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;翠峰湖 (2020-08-13)&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;</description>
+    </item>
+    
     <item>
       <title>教練與選手之間</title>
       <link>//william-yeh.net/post/2020/11/tt-coaches/</link>
@@ -257,16 +283,6 @@ Output Essential:
 &lt;p&gt;Bryan &lt;a href=&#34;https://www.facebook.com/bryan.yao.1/posts/2666223613434413&#34;&gt;說得好&lt;/a&gt;：「求職過程投入越多，越能理解這個遊戲規則，也對自己的目標更清晰！」&lt;/p&gt;
 &lt;p&gt;我們或許都沒有前衛到像 Netflix《&lt;a href=&#34;https://www.books.com.tw/products/0010796709&#34;&gt;給力&lt;/a&gt;》那樣「鼓勵員工經常去面試別家公司的工作」，但說實話，多一些面試與被面試的經歷，的確能夠更掌握遊戲規則，也會衝擊到自己原先的浪漫幻想，降低美麗的錯誤，將自己導向更務實的定位。&lt;/p&gt;
 &lt;p&gt;面試與被面試都經歷過不少的我，想針對這陣子的所見所聞，分享一些個人的觀點。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Volume Resizing Mechanism in Kubernetes</title>
-      <link>//william-yeh.net/post/2019/07/k8s-vol-resizing/</link>
-      <pubDate>Wed, 31 Jul 2019 13:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2019/07/k8s-vol-resizing/</guid>
-      <description>&lt;p&gt;Non-stop storage scaling (vertical or horizontal scaling) is essential in a data-intensive system, database servers in particular.&lt;/p&gt;
-&lt;p&gt;Is it possible in Kubernetes?&lt;/p&gt;</description>
     </item>
     
   </channel>
