@@ -2,14 +2,84 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>//william-yeh.net/post/2020/12/2020-retrospective/</loc>
-    <lastmod>2020-12-26T20:00:00+08:00</lastmod>
+    <loc>//william-yeh.net/tags/agile/</loc>
+    <lastmod>2021-03-17T20:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>//william-yeh.net/tags/agile/</loc>
+    <loc>//william-yeh.net/categories/</loc>
+    <lastmod>2021-03-17T20:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/coach/</loc>
+    <lastmod>2021-03-17T20:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/categories/management/</loc>
+    <lastmod>2021-03-17T20:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/post/</loc>
+    <lastmod>2021-03-17T20:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/</loc>
+    <lastmod>2021-03-17T20:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/scrum/</loc>
+    <lastmod>2021-03-17T20:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/succession/</loc>
+    <lastmod>2021-03-17T20:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/</loc>
+    <lastmod>2021-03-17T20:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/training/</loc>
+    <lastmod>2021-03-17T20:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/post/2021/03/train-new-scrum-master/</loc>
+    <lastmod>2021-03-17T20:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/post/2020/12/2020-retrospective/</loc>
     <lastmod>2020-12-26T20:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -24,20 +94,6 @@
   
   <url>
     <loc>//william-yeh.net/tags/career/</loc>
-    <lastmod>2020-12-26T20:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/categories/</loc>
-    <lastmod>2020-12-26T20:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/tags/coach/</loc>
     <lastmod>2020-12-26T20:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -65,20 +121,6 @@
   </url>
   
   <url>
-    <loc>//william-yeh.net/post/</loc>
-    <lastmod>2020-12-26T20:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/</loc>
-    <lastmod>2020-12-26T20:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>//william-yeh.net/tags/principle/</loc>
     <lastmod>2020-12-26T20:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -86,21 +128,7 @@
   </url>
   
   <url>
-    <loc>//william-yeh.net/tags/scrum/</loc>
-    <lastmod>2020-12-26T20:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>//william-yeh.net/tags/table-tennis/</loc>
-    <lastmod>2020-12-26T20:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/tags/</loc>
     <lastmod>2020-12-26T20:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -122,13 +150,6 @@
   
   <url>
     <loc>//william-yeh.net/tags/devops/</loc>
-    <lastmod>2020-10-03T10:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/categories/management/</loc>
     <lastmod>2020-10-03T10:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -577,20 +598,6 @@
   
   <url>
     <loc>//william-yeh.net/tags/leadership/</loc>
-    <lastmod>2019-01-19T10:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/tags/succession/</loc>
-    <lastmod>2019-01-19T10:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/tags/training/</loc>
     <lastmod>2019-01-19T10:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

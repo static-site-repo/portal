@@ -30,7 +30,7 @@
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.79.1" />
+<meta name="generator" content="Hugo 0.81.0" />
 
 
 <link rel="canonical" href="//william-yeh.net/" />
@@ -51,7 +51,7 @@
 
 
 
-<link rel="stylesheet" href="/sass/jane.min.fa3d941d1d0e0ddc985804227feabffea55c89883eb0af34e0532a7ae9135151.css" integrity="sha256-&#43;j2UHR0ODdyYWAQif&#43;q//qVciYg&#43;sK804FMqeukTUVE=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.3b89e17445140db2b240077653e323af93595d4ab5d2ef46029886eb36bf6588.css" integrity="sha256-O4nhdEUUDbKyQAd2U&#43;Mjr5NZXUq10u9GApiG6za/ZYg=" media="screen" crossorigin="anonymous">
 
 
 
@@ -61,10 +61,9 @@
 <meta property="og:description" content="敏捷魔藥師 (Agile Potioneer)。會說 90% 的工匠語言，會說 70% 的總管語言，正在努力提升 30% 的行腳商人語言。" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="//william-yeh.net/" />
-<meta property="og:updated_time" content="2020-12-26T20:00:00+08:00" />
+
 <meta itemprop="name" content="Potioneer&#39;s Essays">
-<meta itemprop="description" content="敏捷魔藥師 (Agile Potioneer)。會說 90% 的工匠語言，會說 70% 的總管語言，正在努力提升 30% 的行腳商人語言。">
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="description" content="敏捷魔藥師 (Agile Potioneer)。會說 90% 的工匠語言，會說 70% 的總管語言，正在努力提升 30% 的行腳商人語言。"><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Potioneer&#39;s Essays"/>
 <meta name="twitter:description" content="敏捷魔藥師 (Agile Potioneer)。會說 90% 的工匠語言，會說 70% 的總管語言，正在努力提升 30% 的行腳商人語言。"/>
 
@@ -288,6 +287,42 @@ if (!doNotTrack) {
   <header class="post-header">
     <h1 class="post-title">
       
+      <a class="post-link" href="/post/2019/06/containers-and-env/">Containers and Environment Variables</a>
+    </h1>
+    
+    <div class="post-meta">
+      <time datetime="2019-06-17" class="post-time">
+        2019-06-17
+      </time>
+      <div class="post-category">
+          <a href="//william-yeh.net/categories/tech/"> tech </a>
+          
+        </div>
+      <span class="more-meta"> 約 205 字 </span>
+      <span class="more-meta"> 預計閱讀 1 分鐘 </span>
+      
+      
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    
+    <div class="post-summary">
+      My previous article &ldquo;Inotify in Containers&rdquo; has demonstrated that when ConfigMap is mounted as directories, any changes in the ConfigMap will propagate to related pods. A follow-up question might be: what if the ConfigMap is mounted as environment variables? Some said that the answer is NO in Kubernetes1; even in the old Docker world2. Therefore, I&rsquo;d like to begin with a simple experiment to try to answer the question: After
+    </div>
+    <div class="read-more">
+      <a href="/post/2019/06/containers-and-env/" class="read-more-link">閱讀全文</a>
+    </div>
+    
+  </div>
+</article>
+
+  
+    <article class="post bg-white">
+  <header class="post-header">
+    <h1 class="post-title">
+      
       <a class="post-link" href="/post/2019/06/inotify-in-containers/">Inotify in Containers</a>
     </h1>
     
@@ -437,44 +472,6 @@ if (!doNotTrack) {
     </div>
     <div class="read-more">
       <a href="/post/2019/04/wsl-ansible-vagrant/" class="read-more-link">閱讀全文</a>
-    </div>
-    
-  </div>
-</article>
-
-  
-    <article class="post bg-white">
-  <header class="post-header">
-    <h1 class="post-title">
-      
-      <a class="post-link" href="/post/2019/04/wsltty-tmux/">WSLtty &#43; tmux 組合技</a>
-    </h1>
-    
-    <div class="post-meta">
-      <time datetime="2019-04-17" class="post-time">
-        2019-04-17
-      </time>
-      <div class="post-category">
-          <a href="//william-yeh.net/categories/tech/"> tech </a>
-          
-        </div>
-      <span class="more-meta"> 約 959 字 </span>
-      <span class="more-meta"> 預計閱讀 2 分鐘 </span>
-      
-      
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    
-    <div class="post-summary">
-      <p>在 Windows 10 上面使用 WSL 已經一個月了<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>。小狀況也就罷了，但 <a href="https://cmder.net/">Cmder</a> 不夠穩定的顯示邏輯卻最讓我頭痛，在視窗尺寸變化時，無法正確處理字元位置。更令人費解的是，即使是其他狀似更華麗（也更耗資源）的替代方案，也仍然有這些問題<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>。</p>
-<p>既然酷炫的終端機競品問題多多，乾脆回歸極簡的 WSLtty<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>，並混搭 tmux<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup> 來彌補。可惜，畢竟是組合技，無法完全複製 Mac 的 iTerm2 使用經驗。</p>
-<p>此事古難全。</p>
-    </div>
-    <div class="read-more">
-      <a href="/post/2019/04/wsltty-tmux/" class="read-more-link">閱讀全文</a>
     </div>
     
   </div>
@@ -1153,7 +1150,7 @@ if (!doNotTrack) {
     &copy;
     
       2015 -
-    2020
+    2021
     <span class="heart">
       
       <i class="iconfont">
