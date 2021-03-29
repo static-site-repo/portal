@@ -6,7 +6,16 @@
     <description>Recent content in devops on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sat, 03 Oct 2020 10:00:00 +0800</lastBuildDate><atom:link href="//william-yeh.net/tags/devops/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 28 Mar 2021 16:00:00 +0800</lastBuildDate><atom:link href="//william-yeh.net/tags/devops/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>從系統思考角度讀《獨角獸專案》</title>
+      <link>//william-yeh.net/post/2021/03/sys-thinking-unicorn-project/</link>
+      <pubDate>Sun, 28 Mar 2021 16:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2021/03/sys-thinking-unicorn-project/</guid>
+      <description>活動名稱：從系統思考角度讀《獨角獸專案》 時間：2021-05-28 (五) / ??:00&amp;ndash;??:30 會議：DevOpsDays Taipei 2021 課程簡介 《獨角獸專案》是本寫實刻劃</description>
+    </item>
+    
     <item>
       <title>值得你看門道的好書——《獨角獸專案》推薦序</title>
       <link>//william-yeh.net/post/2020/10/unicorn-project-review/</link>
@@ -158,7 +167,7 @@ To clarify this I&amp;rsquo;ve conducted a series of experiments for 3 possible 
       <pubDate>Fri, 17 May 2019 12:00:00 +0800</pubDate>
       
       <guid>//william-yeh.net/post/2019/05/k8s-lab/</guid>
-      <description>&lt;p&gt;前天我在 &lt;a href=&#34;https://cloudsummit.ithome.com.tw/&#34;&gt;2019 台灣雲端大會&lt;/a&gt;帶了兩個場次，一個是現場實作場次，一個是經驗分享演講：&lt;/p&gt;
+      <description>&lt;p&gt;前天我在 &lt;a href=&#34;https://cloudsummit.ithome.com.tw/2019/lab.html#0001&#34;&gt;2019 台灣雲端大會&lt;/a&gt;帶了兩個場次，一個是現場實作場次，一個是經驗分享演講：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;Lab / &lt;a href=&#34;https://github.com/William-Yeh/workshop-cloud2019&#34;&gt;給 RD 的 Kubernetes 初體驗&lt;/a&gt; (90 minutes)&lt;/p&gt;
@@ -196,11 +205,11 @@ To clarify this I&amp;rsquo;ve conducted a series of experiments for 3 possible 
     
     <item>
       <title>給 RD 的 Kubernetes 初體驗</title>
-      <link>//william-yeh.net/courses/cloudsummit2019/</link>
+      <link>//william-yeh.net/courses/k8s-workship-cloudsummit2019/</link>
       <pubDate>Tue, 02 Apr 2019 16:00:00 +0800</pubDate>
       
-      <guid>//william-yeh.net/courses/cloudsummit2019/</guid>
-      <description>活動名稱：給 RD 的 Kubernetes 初體驗 時間：2019-05-15 (三) / 11:00&amp;ndash;12:30 會議：台灣雲端大會 (Cloud Summit 2019) 課程簡介 Kubernetes 是目前雲端環境的顯學。可是，傳統的程式，並不是</description>
+      <guid>//william-yeh.net/courses/k8s-workship-cloudsummit2019/</guid>
+      <description>活動名稱：給 RD 的 Kubernetes 初體驗 時間：2019-05-15 (三) / 11:00&amp;ndash;12:30 會議：台灣雲端大會 (Cloud Edge Summit 2019) 課程簡介 Kubernetes 是目前雲端環境的顯學。可是，傳統的程式，並不</description>
     </item>
     
     <item>
@@ -232,18 +241,6 @@ To clarify this I&amp;rsquo;ve conducted a series of experiments for 3 possible 
       
       <guid>//william-yeh.net/post/2019/01/soft-reading-list/</guid>
       <description>中午時，非 RD 的同事請我推薦適合泛軟體產業從業人員的五份輕讀物，可在春節連續假期時好好補血。 年假，自然不方便啃太過於生硬艱澀、理論宏偉的讀物。</description>
-    </item>
-    
-    <item>
-      <title>「從 Ops 角度看 DevOps」的感想</title>
-      <link>//william-yeh.net/post/2018/11/opsdev-talk-18/</link>
-      <pubDate>Wed, 28 Nov 2018 23:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2018/11/opsdev-talk-18/</guid>
-      <description>&lt;p&gt;在台灣（或許在其他地方也是），DevOps 的話語權，很大幅度都被 Dev 一方把持。我們很少聽到 Ops 一方的說法。&lt;/p&gt;
-&lt;p&gt;成功的改革，需要兼顧各方利益者的需求及痛點。隨著 DevOps 守備範圍日益擴大，這種失衡狀態必須改變。&lt;/p&gt;
-&lt;p&gt;今晚參加 &lt;a href=&#34;https://www.facebook.com/DevOpsTaiwan/&#34;&gt;DevOps Taiwan 社群&lt;/a&gt;舉辦的講座：【&lt;a href=&#34;https://devops.kktix.cc/events/meetup17-opsdev&#34;&gt;從 Ops 角度看 DevOps&lt;/a&gt;】，聽聽&lt;a href=&#34;https://www.facebook.com/roberthu.tw&#34;&gt;胡士亮 (Robert Hu)&lt;/a&gt; 從正統 Ops 角度來詮釋 DevOps，甚至 OpsDev，收穫頗大。&lt;/p&gt;
-&lt;p&gt;聽知識，聽心得，也聽熱情與願景。&lt;/p&gt;</description>
     </item>
     
   </channel>

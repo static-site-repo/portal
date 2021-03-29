@@ -6,7 +6,16 @@
     <description>Recent content in course on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sat, 26 Dec 2020 20:00:00 +0800</lastBuildDate><atom:link href="//william-yeh.net/tags/course/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 28 Mar 2021 16:00:00 +0800</lastBuildDate><atom:link href="//william-yeh.net/tags/course/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>從系統思考角度讀《獨角獸專案》</title>
+      <link>//william-yeh.net/post/2021/03/sys-thinking-unicorn-project/</link>
+      <pubDate>Sun, 28 Mar 2021 16:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2021/03/sys-thinking-unicorn-project/</guid>
+      <description>活動名稱：從系統思考角度讀《獨角獸專案》 時間：2021-05-28 (五) / ??:00&amp;ndash;??:30 會議：DevOpsDays Taipei 2021 課程簡介 《獨角獸專案》是本寫實刻劃</description>
+    </item>
+    
     <item>
       <title>2020 個人回顧</title>
       <link>//william-yeh.net/post/2020/12/2020-retrospective/</link>
@@ -90,7 +99,7 @@
       <pubDate>Fri, 17 May 2019 12:00:00 +0800</pubDate>
       
       <guid>//william-yeh.net/post/2019/05/k8s-lab/</guid>
-      <description>&lt;p&gt;前天我在 &lt;a href=&#34;https://cloudsummit.ithome.com.tw/&#34;&gt;2019 台灣雲端大會&lt;/a&gt;帶了兩個場次，一個是現場實作場次，一個是經驗分享演講：&lt;/p&gt;
+      <description>&lt;p&gt;前天我在 &lt;a href=&#34;https://cloudsummit.ithome.com.tw/2019/lab.html#0001&#34;&gt;2019 台灣雲端大會&lt;/a&gt;帶了兩個場次，一個是現場實作場次，一個是經驗分享演講：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;Lab / &lt;a href=&#34;https://github.com/William-Yeh/workshop-cloud2019&#34;&gt;給 RD 的 Kubernetes 初體驗&lt;/a&gt; (90 minutes)&lt;/p&gt;

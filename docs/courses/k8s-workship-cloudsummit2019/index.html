@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Potioneer&#39;s Essays</title>
+  <title>給 RD 的 Kubernetes 初體驗 - Potioneer&#39;s Essays</title>
   
 
 <meta name="renderer" content="webkit" />
@@ -23,7 +23,8 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="William Yeh" />
-  <meta name="description" content="敏捷魔藥師 (Agile Potioneer)。會說 90% 的工匠語言，會說 70% 的總管語言，正在努力提升 30% 的行腳商人語言。" />
+  <meta name="description" content="活動名稱：給 RD 的 Kubernetes 初體驗 時間：2019-05-15 (三) / 11:00&amp;ndash;12:30 會議：台灣雲端大會 (Cloud Edge Summit 2019) 課程簡介 Kubernetes 是目前雲端環境的顯學。可是，傳統的程式，並不" />
+
 
 
 
@@ -33,8 +34,8 @@
 <meta name="generator" content="Hugo 0.82.0" />
 
 
-<link rel="canonical" href="//william-yeh.net/" />
-<link href="/index.xml" rel="alternate" type="application/rss+xml" title="Potioneer&#39;s Essays" />
+<link rel="canonical" href="//william-yeh.net/courses/k8s-workship-cloudsummit2019/" />
+
 
 
 
@@ -57,15 +58,20 @@
 
 
 
-<meta property="og:title" content="Potioneer&#39;s Essays" />
-<meta property="og:description" content="敏捷魔藥師 (Agile Potioneer)。會說 90% 的工匠語言，會說 70% 的總管語言，正在努力提升 30% 的行腳商人語言。" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="//william-yeh.net/" />
+<meta property="og:title" content="給 RD 的 Kubernetes 初體驗" />
+<meta property="og:description" content="活動名稱：給 RD 的 Kubernetes 初體驗 時間：2019-05-15 (三) / 11:00&ndash;12:30 會議：台灣雲端大會 (Cloud Edge Summit 2019) 課程簡介 Kubernetes 是目前雲端環境的顯學。可是，傳統的程式，並不" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="//william-yeh.net/courses/k8s-workship-cloudsummit2019/" /><meta property="article:section" content="courses" />
+<meta property="article:published_time" content="2019-04-02T16:00:00&#43;08:00" />
+<meta property="article:modified_time" content="2019-04-02T16:00:00&#43;08:00" />
 
-<meta itemprop="name" content="Potioneer&#39;s Essays">
-<meta itemprop="description" content="敏捷魔藥師 (Agile Potioneer)。會說 90% 的工匠語言，會說 70% 的總管語言，正在努力提升 30% 的行腳商人語言。"><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Potioneer&#39;s Essays"/>
-<meta name="twitter:description" content="敏捷魔藥師 (Agile Potioneer)。會說 90% 的工匠語言，會說 70% 的總管語言，正在努力提升 30% 的行腳商人語言。"/>
+<meta itemprop="name" content="給 RD 的 Kubernetes 初體驗">
+<meta itemprop="description" content="活動名稱：給 RD 的 Kubernetes 初體驗 時間：2019-05-15 (三) / 11:00&ndash;12:30 會議：台灣雲端大會 (Cloud Edge Summit 2019) 課程簡介 Kubernetes 是目前雲端環境的顯學。可是，傳統的程式，並不"><meta itemprop="datePublished" content="2019-04-02T16:00:00&#43;08:00" />
+<meta itemprop="dateModified" content="2019-04-02T16:00:00&#43;08:00" />
+<meta itemprop="wordCount" content="634">
+<meta itemprop="keywords" content="devops,kubernetes,microservices," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="給 RD 的 Kubernetes 初體驗"/>
+<meta name="twitter:description" content="活動名稱：給 RD 的 Kubernetes 初體驗 時間：2019-05-15 (三) / 11:00&ndash;12:30 會議：台灣雲端大會 (Cloud Edge Summit 2019) 課程簡介 Kubernetes 是目前雲端環境的顯學。可是，傳統的程式，並不"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -217,7 +223,7 @@ if (!doNotTrack) {
   <ul id="menu" class="menu">
     
     
-        <li class="menu-item active">
+        <li class="menu-item">
         
           
           
@@ -275,750 +281,207 @@ if (!doNotTrack) {
     <main id="main" class="main bg-llight">
       <div class="content-wrapper">
         <div id="content" class="content container">
-          
-<section id="posts" class="posts">
+          <article class="post bg-white">
   
-  
-    
-  
-  
-  
-    <article class="post bg-white">
   <header class="post-header">
-    <h1 class="post-title">
-      
-      <a class="post-link" href="/post/2016/05/change-viewpoint-on-lord-of-rings/">從「改變」角度看《魔戒》</a>
-    </h1>
+    <h1 class="post-title">給 RD 的 Kubernetes 初體驗</h1>
     
     <div class="post-meta">
-      <time datetime="2016-05-25" class="post-time">
-        2016-05-25
+      <time datetime="2019-04-02" class="post-time">
+        2019-04-02
       </time>
-      <div class="post-category">
-          <a href="//william-yeh.net/categories/management/"> Management </a>
-          
-        </div>
-      <span class="more-meta"> 約 640 字 </span>
-      <span class="more-meta"> 預計閱讀 2 分鐘 </span>
-      
-      
-      
     </div>
   </header>
-  
-  <div class="post-content">
-    
-    <div class="post-summary">
-      <p>今年一月，參加 <a href="http://kojenchieh.pixnet.net/blog">David Ko</a> 舉辦的一場敏捷轉型活動，從中學到了一個有趣的分析工具：Lean Change Canvas。</p>
-<p>知道了一個好東西，自然要追本溯源，加深加廣。便研讀相關資料：</p>
-    </div>
-    <div class="read-more">
-      <a href="/post/2016/05/change-viewpoint-on-lord-of-rings/" class="read-more-link">閱讀全文</a>
-    </div>
-    
-  </div>
-</article>
-
-  
-    <article class="post bg-white">
-  <header class="post-header">
-    <h1 class="post-title">
-      
-      <a class="post-link" href="/post/2016/05/devops-a-lean-perspective/">有了 Agile，為什麼還要有 DevOps？</a>
-    </h1>
-    
-    <div class="post-meta">
-      <time datetime="2016-05-03" class="post-time">
-        2016-05-03
-      </time>
-      <div class="post-category">
-          <a href="//william-yeh.net/categories/management/"> Management </a>
-          
-        </div>
-      <span class="more-meta"> 約 751 字 </span>
-      <span class="more-meta"> 預計閱讀 2 分鐘 </span>
-      
-      
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    
-    <div class="post-summary">
-      <p>今晚，受 Agile Community Taiwan 之邀，在 <a href="https://www.accupass.com/event/1604251622311845219210">Agile Meetup Taipei</a> 給了一場演講：【<a href="http://www.slideshare.net/williamyeh/agile-devops">有了 Agile，為什麼還要有 DevOps？</a>】</p>
-    </div>
-    <div class="read-more">
-      <a href="/post/2016/05/devops-a-lean-perspective/" class="read-more-link">閱讀全文</a>
-    </div>
-    
-  </div>
-</article>
-
-  
-    <article class="post bg-white">
-  <header class="post-header">
-    <h1 class="post-title">
-      
-      <a class="post-link" href="/post/2016/04/learn-process-mgmt-by-game/">向遊戲學習</a>
-    </h1>
-    
-    <div class="post-meta">
-      <time datetime="2016-04-23" class="post-time">
-        2016-04-23
-      </time>
-      <div class="post-category">
-          <a href="//william-yeh.net/categories/management/"> Management </a>
-          
-        </div>
-      <span class="more-meta"> 約 1070 字 </span>
-      <span class="more-meta"> 預計閱讀 3 分鐘 </span>
-      
-      
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    
-    <div class="post-summary">
-      <p>前一篇文章〈<a href="//william-yeh.net/post/2016/04/learn-from-plant-mgmt/">向工廠管理致敬</a>〉提到，最近為了準備一場 Agile/DevOps 演講，我特地研讀了數本原典，希望能對某些核心的思考元素來一場溯源之旅。</p>
-<p>啃原典，其實還有另一個原因：為了好好替今天要去大玩特玩的<strong>小火車遊戲</strong>⋯⋯喔，不，是為了替今天要專程去上的一門【<a href="https://www.projectup.net/activity/view/id/7689">102 流程設計與跨部門溝通</a>】課程預作準備。</p>
-<p>盯上這門課，其實已經很久了</p>
-    </div>
-    <div class="read-more">
-      <a href="/post/2016/04/learn-process-mgmt-by-game/" class="read-more-link">閱讀全文</a>
-    </div>
-    
-  </div>
-</article>
-
-  
-    <article class="post bg-white">
-  <header class="post-header">
-    <h1 class="post-title">
-      
-      <a class="post-link" href="/post/2016/04/learn-from-plant-mgmt/">向工廠管理致敬</a>
-    </h1>
-    
-    <div class="post-meta">
-      <time datetime="2016-04-22" class="post-time">
-        2016-04-22
-      </time>
-      <div class="post-category">
-          <a href="//william-yeh.net/categories/management/"> Management </a>
-          
-        </div>
-      <span class="more-meta"> 約 1258 字 </span>
-      <span class="more-meta"> 預計閱讀 3 分鐘 </span>
-      
-      
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    
-    <div class="post-summary">
-      <p>身為徹頭徹尾的軟體人，在軟體產業待久了，總會對「硬」一點的產業，尤其是製造業，有莫名的成見，以為他們是僵固的、反人性的。從 1972 年「<a href="https://en.wikipedia.org/wiki/Software_crisis">軟體危機</a>」引發的論述當中，更加深軟體人的印象：製造業的經驗，是無法直接套用到軟體界的；我們是截然不同的國度。</p>
-<p>不過，近十年來許多軟體界的流程改革，尤其是同屬 Agile 陣營的 Scrum 及 Kanban，居然有許多元素是從製造業<del>偷竊</del>學習而來。譬如說</p>
-    </div>
-    <div class="read-more">
-      <a href="/post/2016/04/learn-from-plant-mgmt/" class="read-more-link">閱讀全文</a>
-    </div>
-    
-  </div>
-</article>
-
-  
-    <article class="post bg-white">
-  <header class="post-header">
-    <h1 class="post-title">
-      
-      <a class="post-link" href="/post/2016/03/lean-perspective-of-multitasking/">多工切換：有趣的 Lean 觀點</a>
-    </h1>
-    
-    <div class="post-meta">
-      <time datetime="2016-03-29" class="post-time">
-        2016-03-29
-      </time>
-      <div class="post-category">
-          <a href="//william-yeh.net/categories/management/"> Management </a>
-          
-        </div>
-      <span class="more-meta"> 約 801 字 </span>
-      <span class="more-meta"> 預計閱讀 2 分鐘 </span>
-      
-      
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    
-    <div class="post-summary">
-      <p>系統思考，全局思考，是困難的；即使是貌似常識的場域，亦然。</p>
-<p>最近在看 <a href="https://www.books.com.tw/products/0010662172"><em>Lean Thinking</em></a> 原典時，感觸更深。</p>
-    </div>
-    <div class="read-more">
-      <a href="/post/2016/03/lean-perspective-of-multitasking/" class="read-more-link">閱讀全文</a>
-    </div>
-    
-  </div>
-</article>
-
-  
-</section>
-
-
-
-
-
 
   
   
-  
-
-  
-  
-
-  
-  
-
-  
-  
-
-  
-  
-
-    <nav class="pagination">
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目錄</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#課程簡介">課程簡介</a></li>
+    <li><a href="#課程目標">課程目標</a></li>
+    <li><a href="#課程架構">課程架構</a></li>
+    <li><a href="#注意事項">注意事項</a>
       <ul>
-
-      
-      
-      <li><a href="/">««</a></li>
-      
-
-      
-      
-      <li><a href="/page/14/">«</a></li>
-      
-
-      
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-
-          
-          
-
-        
-        
-
-        
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-
-          
-          
-
-        
-        
-
-        
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-
-          
-          
-
-        
-        
-
-        
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-
-          
-          
-
-        
-        
-
-        
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-              
-            
-
-          
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/page/5/">
-              5
-            </a>
-          </li>
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-              
-            
-
-          
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/page/6/">
-              6
-            </a>
-          </li>
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-              
-            
-
-          
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/page/7/">
-              7
-            </a>
-          </li>
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-              
-            
-
-          
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/page/8/">
-              8
-            </a>
-          </li>
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-              
-            
-
-          
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/page/9/">
-              9
-            </a>
-          </li>
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-              
-            
-
-          
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/page/10/">
-              10
-            </a>
-          </li>
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-              
-            
-
-          
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/page/11/">
-              11
-            </a>
-          </li>
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-              
-            
-
-          
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/page/12/">
-              12
-            </a>
-          </li>
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-              
-            
-
-          
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/page/13/">
-              13
-            </a>
-          </li>
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-              
-            
-
-          
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/page/14/">
-              14
-            </a>
-          </li>
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-              
-            
-
-          
-          
-
-        
-        
-
-        
-        
-          <li class="active">
-            <a href="/page/15/">
-              15
-            </a>
-          </li>
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-              
-            
-
-          
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/page/16/">
-              16
-            </a>
-          </li>
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-              
-            
-
-          
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/page/17/">
-              17
-            </a>
-          </li>
-        
-
-      
-
-      
-      
-      <li><a href="/page/16/">»</a></li>
-      
-
-      
-      
-      <li><a href="/page/17/">»»</a></li>
-      
-
+        <li><a href="#學員能力要求">學員能力要求</a></li>
+        <li><a href="#學員需知">學員需知</a></li>
       </ul>
-    </nav>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+
+  
+  <div class="post-content">
+      <p><strong>活動名稱</strong>：給 RD 的 Kubernetes 初體驗</p>
+<p><strong>時間</strong>：2019-05-15 (三) / 11:00&ndash;12:30</p>
+<p><strong>會議</strong>：<a href="https://cloudsummit.ithome.com.tw/2019/lab.html#0001">台灣雲端大會 (Cloud Edge Summit 2019)</a></p>
+<h2 id="課程簡介">課程簡介</h2>
+<p>Kubernetes 是目前雲端環境的顯學。可是，傳統的程式，並不是原封不動搬上去，就能夠自動享受 Kubernetes 所宣稱的種種好處。</p>
+<p>新的環境，不僅需要新的 Ops 思維，也需要新的 Dev 思維。我們將以一個半小時的時間，從軟體研發者的角度，探討軟體的設計該做哪些最起碼的改變，從實作中體驗 Kubernetes 引進的新觀念及新效益。</p>
+<h2 id="課程目標">課程目標</h2>
+<p>從實例中體驗，傳統 web 應用程式在搬上 Kubernetes 時，可能會經歷哪些架構面的調整，才能享受新架構的效益：</p>
+<ul>
+<li>
+<p>容器化</p>
+</li>
+<li>
+<p>微服務</p>
+</li>
+<li>
+<p>組態管理</p>
+</li>
+<li>
+<p>API gateway</p>
+</li>
+<li>
+<p>多重環境管理：本機端與雲端（以 GKE 為例）</p>
+</li>
+</ul>
+<h2 id="課程架構">課程架構</h2>
+<table>
+<thead>
+<tr>
+<th>主題</th>
+<th>內容簡介</th>
+<th>類型</th>
+<th>時間(分)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. 基本觀念</td>
+<td>快速介紹 Kubernetes 基本觀念</td>
+<td>簡報介紹</td>
+<td>10</td>
+</tr>
+<tr>
+<td>2. 本機端實作</td>
+<td>移植 web 軟體至本機端 Kubernetes</td>
+<td>實機操作</td>
+<td>50</td>
+</tr>
+<tr>
+<td>3. 雲端實作</td>
+<td>將 Kubernetes 成果送上雲端</td>
+<td>實機操作</td>
+<td>20</td>
+</tr>
+<tr>
+<td>4. 總結</td>
+<td>Kubernetes 微服務要點總結</td>
+<td>簡報介紹</td>
+<td>10</td>
+</tr>
+</tbody>
+</table>
+<h2 id="注意事項">注意事項</h2>
+<h3 id="學員能力要求">學員能力要求</h3>
+<ul>
+<li>
+<p>須具備簡單的 Web 前後端觀念。</p>
+</li>
+<li>
+<p>須具備 Docker、Docker Compose、git 基本操作能力。</p>
+</li>
+</ul>
+<h3 id="學員需知">學員需知</h3>
+<ul>
+<li>
+<p>請先在自備筆電中安裝 <a href="https://www.docker.com/products/docker-desktop">Docker Desktop</a>，並開啟其中的 Kubernetes 功能。</p>
+</li>
+<li>
+<p>本課程有一部分實作活動會使用 Google Kubernetes Engine (GKE) 及 Container Registry (GCR) 服務。為了讓現場體驗活動順暢，請學員事先申請好 <a href="https://cloud.google.com/">Google Cloud Platform</a> 帳號，並自主練習約 45 分鐘的 “<a href="https://www.qwiklabs.com/focuses/2794?parent=catalog">A Tour of Qwiklabs and the Google Cloud Platform</a>” 免費活動，確保你在來到活動現場之前，就已熟悉 <a href="https://cloud.google.com/shell/">Google Cloud Shell</a> 的操作環境。</p>
+</li>
+<li>
+<p>本實機操作課程由【Google Developers 贊助】。如果你是第一次用 GCP account 或還在 Free Trial 期間內，請繼續用 Free Trial 來操作；如果你已經是正式的 account，活動現場將提供你足夠額度的 coupon 來使用。</p>
+</li>
+</ul>
+
+  </div>
+
+  
+  
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">William Yeh</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+      2019-04-02
+      
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">授權條款</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW" target="_blank">CC BY-NC-SA 4.0</a> (姓名標示-非商業性-相同方式分享 4.0 國際)</span>
+  </p>
+</div>
+
+
+  
+  
+</article>
+
+
+
+
   
 
+  
+  
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= "William-Yeh/utterances-area"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
+  
 
+  
 
+  
 
+  <div class="disqus-comment">
+  <div class="disqus-button" id="load_disqus" onclick="load_disqus()">
+    顯示 Disqus 評論
+  </div>
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_config = function () {
+      this.page.url = "//william-yeh.net/courses/k8s-workship-cloudsummit2019/";
+    };
+    function load_disqus() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'potioneer';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+      $('#load_disqus').remove();
+    };
+  </script>
+  <noscript>Please enable JavaScript to view the
+    <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+  </noscript>
+  
+  </div>
+
+    
+
+  
 
         </div>
       </div>
