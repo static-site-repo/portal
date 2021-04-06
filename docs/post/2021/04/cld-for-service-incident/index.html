@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Potioneer&#39;s Essays</title>
+  <title>服務事故處理的系統思考 - Potioneer&#39;s Essays</title>
   
 
 <meta name="renderer" content="webkit" />
@@ -23,7 +23,12 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="William Yeh" />
-  <meta name="description" content="敏捷魔藥師 (Agile Potioneer)。會說 90% 的工匠語言，會說 70% 的總管語言，正在努力提升 30% 的行腳商人語言。" />
+  <meta name="description" content="公司內 Agile CoP 定期聚會，最近都在團練「行動學習 (action learning)」。
+行動學習十分殊勝。對我來說，在參加之前，多元探詢角度居然能夠同時並存，委實難以想像。
+我參加了兩次，上次我選擇的提問切入點 1 是「問題重塑」，這次刻意換成「系統思考」來練練。
+某團員提出一則個案讓大家探討：
+" />
+
 
 
 
@@ -33,8 +38,8 @@
 <meta name="generator" content="Hugo 0.82.0" />
 
 
-<link rel="canonical" href="//william-yeh.net/" />
-<link href="/index.xml" rel="alternate" type="application/rss+xml" title="Potioneer&#39;s Essays" />
+<link rel="canonical" href="//william-yeh.net/post/2021/04/cld-for-service-incident/" />
+
 
 
 
@@ -57,15 +62,29 @@
 
 
 
-<meta property="og:title" content="Potioneer&#39;s Essays" />
-<meta property="og:description" content="敏捷魔藥師 (Agile Potioneer)。會說 90% 的工匠語言，會說 70% 的總管語言，正在努力提升 30% 的行腳商人語言。" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="//william-yeh.net/" />
+<meta property="og:title" content="服務事故處理的系統思考" />
+<meta property="og:description" content="公司內 Agile CoP 定期聚會，最近都在團練「行動學習 (action learning)」。
+行動學習十分殊勝。對我來說，在參加之前，多元探詢角度居然能夠同時並存，委實難以想像。
+我參加了兩次，上次我選擇的提問切入點 1 是「問題重塑」，這次刻意換成「系統思考」來練練。
+某團員提出一則個案讓大家探討：" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="//william-yeh.net/post/2021/04/cld-for-service-incident/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-04-05T20:00:00&#43;08:00" />
+<meta property="article:modified_time" content="2021-04-05T20:00:00&#43;08:00" />
 
-<meta itemprop="name" content="Potioneer&#39;s Essays">
-<meta itemprop="description" content="敏捷魔藥師 (Agile Potioneer)。會說 90% 的工匠語言，會說 70% 的總管語言，正在努力提升 30% 的行腳商人語言。"><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Potioneer&#39;s Essays"/>
-<meta name="twitter:description" content="敏捷魔藥師 (Agile Potioneer)。會說 90% 的工匠語言，會說 70% 的總管語言，正在努力提升 30% 的行腳商人語言。"/>
+<meta itemprop="name" content="服務事故處理的系統思考">
+<meta itemprop="description" content="公司內 Agile CoP 定期聚會，最近都在團練「行動學習 (action learning)」。
+行動學習十分殊勝。對我來說，在參加之前，多元探詢角度居然能夠同時並存，委實難以想像。
+我參加了兩次，上次我選擇的提問切入點 1 是「問題重塑」，這次刻意換成「系統思考」來練練。
+某團員提出一則個案讓大家探討："><meta itemprop="datePublished" content="2021-04-05T20:00:00&#43;08:00" />
+<meta itemprop="dateModified" content="2021-04-05T20:00:00&#43;08:00" />
+<meta itemprop="wordCount" content="1944">
+<meta itemprop="keywords" content="devops,agile,book,systems-thinking," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="服務事故處理的系統思考"/>
+<meta name="twitter:description" content="公司內 Agile CoP 定期聚會，最近都在團練「行動學習 (action learning)」。
+行動學習十分殊勝。對我來說，在參加之前，多元探詢角度居然能夠同時並存，委實難以想像。
+我參加了兩次，上次我選擇的提問切入點 1 是「問題重塑」，這次刻意換成「系統思考」來練練。
+某團員提出一則個案讓大家探討："/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -217,7 +236,7 @@ if (!doNotTrack) {
   <ul id="menu" class="menu">
     
     
-        <li class="menu-item active">
+        <li class="menu-item">
         
           
           
@@ -275,708 +294,299 @@ if (!doNotTrack) {
     <main id="main" class="main bg-llight">
       <div class="content-wrapper">
         <div id="content" class="content container">
-          
-<section id="posts" class="posts">
-  
-  
+          <article class="post bg-white">
     
-  
-  
-  
-    <article class="post bg-white">
-  <header class="post-header">
-    <h1 class="post-title">
+    <header class="post-header">
+      <h1 class="post-title">服務事故處理的系統思考</h1>
       
-      <a class="post-link" href="/post/2015/12/devops-1st-step/">DevOps 是圓的，找到立足點就是頂點</a>
-    </h1>
-    
-    <div class="post-meta">
-      <time datetime="2015-12-28" class="post-time">
-        2015-12-28
-      </time>
-      <div class="post-category">
-          <a href="//william-yeh.net/categories/tech/"> Tech </a>
-          
-        </div>
-      <span class="more-meta"> 約 1805 字 </span>
-      <span class="more-meta"> 預計閱讀 4 分鐘 </span>
-      
-      
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    
-    <div class="post-summary">
-      <p>自從 IT 相關媒體開始傳頌 2009 年蔚為經典的 Flickr 經驗 “<a href="https://youtu.be/LdOe18KhtT4">10+ Deploys per Day</a>”、2014 年 Marissa Mayer 的鐵桿作風「<a href="http://www.ithome.com.tw/news/99283">沒有持續交付，專案不得上線，我不是在說笑</a>」之後，頓時 DevOps 成為 IT 界新的焦慮源。我還聽說有高層在聽完兩天 <a href="https://www.ithome.com.tw/article/98527">DevOps 2015 研討會</a>之後，回頭要求 IT 部門要師法 2009 年的 Flickr 做到「10+ Deploys per Day」。</p>
-<p>聽了很潮的新觀念，就訂不合理的 KPI，這也是「負能量」呀！</p>
-    </div>
-    <div class="read-more">
-      <a href="/post/2015/12/devops-1st-step/" class="read-more-link">閱讀全文</a>
-    </div>
-    
-  </div>
-</article>
+      <div class="post-meta">
+        <time datetime="2021-04-05" class="post-time">
+          2021-04-05
+        </time>
+        <div class="post-category">
+            <a href="//william-yeh.net/categories/management/"> management </a>
+            
+          </div>
+        <span class="more-meta"> 約 1944 字 </span>
+          <span class="more-meta"> 預計閱讀 4 分鐘 </span>
 
-  
-    <article class="post bg-white">
-  <header class="post-header">
-    <h1 class="post-title">
-      
-      <a class="post-link" href="/post/2015/12/ci-effect/">CI 怎樣帶你遠離平庸？</a>
-    </h1>
-    
-    <div class="post-meta">
-      <time datetime="2015-12-22" class="post-time">
-        2015-12-22
-      </time>
-      <div class="post-category">
-          <a href="//william-yeh.net/categories/tech/"> Tech </a>
-          
-        </div>
-      <span class="more-meta"> 約 1743 字 </span>
-      <span class="more-meta"> 預計閱讀 4 分鐘 </span>
-      
-      
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    
-    <div class="post-summary">
-      前天我的文章〈CI 是條不歸路〉提到：「CI/CD/DevOps 既是條不歸路，更是大躍進之路：一旦踏出第一步，就注定你會不斷接觸**『遠離平庸
-    </div>
-    <div class="read-more">
-      <a href="/post/2015/12/ci-effect/" class="read-more-link">閱讀全文</a>
-    </div>
-    
-  </div>
-</article>
+        
+        
+          <span id="busuanzi_container_page_pv">
+            | 阅读 <span id="busuanzi_value_page_pv"></span>
+          </span>
+        
 
-  
-    <article class="post bg-white">
-  <header class="post-header">
-    <h1 class="post-title">
-      
-      <a class="post-link" href="/post/2015/12/ci-no-turning-back/">CI 是條不歸路</a>
-    </h1>
-    
-    <div class="post-meta">
-      <time datetime="2015-12-21" class="post-time">
-        2015-12-21
-      </time>
-      <div class="post-category">
-          <a href="//william-yeh.net/categories/tech/"> Tech </a>
-          
-        </div>
-      <span class="more-meta"> 約 1333 字 </span>
-      <span class="more-meta"> 預計閱讀 3 分鐘 </span>
-      
-      
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    
-    <div class="post-summary">
-      今年九月初參加完 DevOps 2015 之後，有感而發，寫了兩則 tweets： 說實在的，打從 1999 年 Kent Beck 經典著作 Extreme Programming Explained 問世，整個軟體文化就被徹底分裂成兩個國度。以 agile
-    </div>
-    <div class="read-more">
-      <a href="/post/2015/12/ci-no-turning-back/" class="read-more-link">閱讀全文</a>
-    </div>
-    
-  </div>
-</article>
+        
+        
+      </div>
+    </header>
 
-  
-    <article class="post bg-white">
-  <header class="post-header">
-    <h1 class="post-title">
-      
-      <a class="post-link" href="/post/2015/09/upgrade-adult-thinking/">升級成大人版的思維作業系統</a>
-    </h1>
     
-    <div class="post-meta">
-      <time datetime="2015-09-15" class="post-time">
-        2015-09-15
-      </time>
-      <div class="post-category">
-          <a href="//william-yeh.net/categories/management/"> management </a>
-          <a href="//william-yeh.net/categories/course/"> course </a>
-          
-        </div>
-      <span class="more-meta"> 約 896 字 </span>
-      <span class="more-meta"> 預計閱讀 2 分鐘 </span>
-      
-      
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
     
-    <div class="post-summary">
-      <p>兩個週末【<a href="https://shop.darencademy.com/product/view/id/28">A101 職場人際關係與優勢策略工作坊</a>】，一枚價值 14 PDU 的結業證書。雖然對沒有 PMP 證照企圖的我來說，帳面數字沒什麼用處；但獲得的，絕對遠遠超過這 14 PDU。</p>
-<p>用 14 PDU 換來 Bryan 積蓄 15 年的內功，還有什麼更划算的事情呢？</p>
-    </div>
-    <div class="read-more">
-      <a href="/post/2015/09/upgrade-adult-thinking/" class="read-more-link">閱讀全文</a>
-    </div>
-    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目錄</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#規則">規則</a></li>
+    <li><a href="#捨本逐末系統基模">捨本逐末系統基模</a></li>
+    <li><a href="#適合的特質">適合的特質</a></li>
+  </ul>
+</nav>
   </div>
-</article>
+</div>
 
-  
+    
+    <div class="post-content">
+      <p>公司內 Agile CoP 定期聚會，最近都在團練「<a href="https://wiki.mbalib.com/zh-tw/%E8%A1%8C%E5%8A%A8%E5%AD%A6%E4%B9%A0%E6%B3%95">行動學習 (action learning)</a>」。</p>
+<p>行動學習十分殊勝。對我來說，在參加之前，多元探詢角度居然能夠同時並存，委實難以想像。</p>
+<p>我參加了兩次，上次我選擇的提問切入點 <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> 是「問題重塑」，這次刻意換成「系統思考」來練練。</p>
+<p>某團員提出一則個案讓大家探討：</p>
+<blockquote>
+<p>P0 事件令人疲於奔命，大家也認同軟體服務系統 Op-friendly 很重要。問題是：應該由誰去推動？</p>
+</blockquote>
+<p>一看這敘述，內心小劇場就開始了：我超想換回上次的「問題重塑」切入點呀！不過，轉念一想，「系統思考」也是能夠重塑問題的⋯⋯</p>
+<p>於是，藉由團員夥伴們從各個角度提問，我漸漸系統思考出一些端倪（並偷偷夾帶一些問題重塑）。接下來，就要帶著這份初期假設去小步行動了。</p>
+<p>具體細節不便在此公開揭露，我就改用有些局部類似的場景：《<a href="https://www.tenlong.com.tw/products/9789865026653">獨角獸專案</a>》第 11 章的故事情節當例子吧。</p>
+<h2 id="規則">規則</h2>
+<p>《獨角獸專案》主角梅克辛很納悶：為什麼她一直陷在工單的無窮迴圈？</p>
+<blockquote>
+<p>是我們一手造成的。我們制定了一系列規定，強調 QA 從開發部門分離出來的必要性，你懂的，以便保護業務不受那些瘋狂、無所顧忌的開發人員波及。每一年，我們都用任何出了差錯的事作為名堂，制定更多的規則來『提升開發人員的問責性』，然而只讓效率更加緩慢。</p>
+<p>常聽人們說 IT 是整個組織的神經樞紐。但出於某種原因，企業卻容忍他們的中樞神經逐漸退化，好比多發性硬化症擾亂了大腦內部與在身體間流動的資訊流一樣。</p>
+</blockquote>
+<p>若改用系統思考 <a href="https://en.wikipedia.org/wiki/Causal_loop_diagram">CLD</a> 圖來表達，這是企圖利用「制定更多規則」來達到平衡迴路：</p>
+
+<link rel="stylesheet" href="/css/hugo-easy-gallery.css" />
+<div class="box">
+<figure  itemprop="associatedMedia"
+  itemscope itemtype="http://schema.org/ImageObject" 
+  style="max-width:20em" >
+    <div class="img">
+      <img itemprop="thumbnail" src="/img/2021/04/cld-1-regulation.png" alt="CLD Part 1：制定規則的平衡迴路"/>
+    </div>
+    <a href="/img/2021/04/cld-1-regulation.png" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>CLD Part 1：制定規則的平衡迴路</p>
+      </figcaption>
+  </figure>
+</div>
+
+<p><!-- raw HTML omitted -->   <!-- raw HTML omitted --></p>
+<p>規定，初衷是好的；可是，過度的規定，會反噬系統研發。</p>
+<p>就像《獨角獸專案》第 8 章所描述的情景：</p>
+<blockquote>
+<p>第三理念的對立面是堅持程序合規性和 TWWADI 的人，你們懂吧，『The Way We&rsquo;ve Always Done It.（這是我們一貫的做法）』。無數的規則、條例、流程、程序、批准和階段門檻，隨時都有新的規則出現，為了防止最近的災難再度發生。</p>
+<p>嚴格的專案計畫、不靈活的採購流程、強勢的架構審查委員會、不頻繁的發布時程、冗長的審核流程、嚴格的職責分離⋯⋯你們對程序合規性一定深有體會。</p>
+<p>每一項都增加了我們所做的每一件事的協調成本，也推高了延遲成本。再加上決策所在和工作執行地之間的距離不斷擴大，我們交付的成果品質每下愈況。正如戴明大師 (W. Edwards Demming) 的觀察，『一個壞系統將次次擊潰所有好人。』</p>
+</blockquote>
+<p>用系統思考 <a href="https://en.wikipedia.org/wiki/Causal_loop_diagram">CLD</a> 圖來表達，這是「制定更多規則」所產生的惡化增強迴路：</p>
+
+
+<div class="box">
+<figure  itemprop="associatedMedia"
+  itemscope itemtype="http://schema.org/ImageObject" 
+  style="max-width:30em" >
+    <div class="img">
+      <img itemprop="thumbnail" src="/img/2021/04/cld-2-depression.png" alt="CLD Part 2：制定規則的惡化增強迴路"/>
+    </div>
+    <a href="/img/2021/04/cld-2-depression.png" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>CLD Part 2：制定規則的惡化增強迴路</p>
+      </figcaption>
+  </figure>
+</div>
+
+<p><!-- raw HTML omitted -->   <!-- raw HTML omitted --></p>
+<p>欲證實是否真有如上圖所預測的惡化增強迴路，可沿著增強迴路觀察關鍵變數的增長趨勢：</p>
+<ul>
+<li>Restrictions on Dev</li>
+<li>Dev&rsquo;s willingness to cooperate and contribute</li>
+</ul>
+<h2 id="捨本逐末系統基模">捨本逐末系統基模</h2>
+<p>上圖，像極了<a href="https://en.wikipedia.org/wiki/System_archetype#Shifting_the_burden">捨本逐末 (shifting the burden)</a> 系統基模的「徵狀解」及「副作用」部分：</p>
+
+
+<div class="box">
+<figure  itemprop="associatedMedia"
+  itemscope itemtype="http://schema.org/ImageObject" 
+  style="max-width:30em" >
+    <div class="img">
+      <img itemprop="thumbnail" src="/img/2021/04/shifting_the_burden.png" alt="捨本逐末 (shifting the burden) 系統基模 (摘自 Wikipedia)"/>
+    </div>
+    <a href="/img/2021/04/shifting_the_burden.png" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>捨本逐末 (shifting the burden) 系統基模 (摘自 Wikipedia)</p>
+      </figcaption>
+  </figure>
+</div>
+
+<p><!-- raw HTML omitted -->   <!-- raw HTML omitted --></p>
+<p>既然如此，我們就來補上「根本解」，把整幅拼圖完成：</p>
+
+
+<div class="box">
+<figure  itemprop="associatedMedia"
+  itemscope itemtype="http://schema.org/ImageObject" 
+  style="max-width:30em" >
+    <div class="img">
+      <img itemprop="thumbnail" src="/img/2021/04/cld-3-devops.png" alt="CLD Part 3：以整體價值流思考的平衡迴路"/>
+    </div>
+    <a href="/img/2021/04/cld-3-devops.png" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>CLD Part 3：以整體價值流思考的平衡迴路</p>
+      </figcaption>
+  </figure>
+</div>
+
+<p><!-- raw HTML omitted -->   <!-- raw HTML omitted --></p>
+<p>這塊拼圖，也正是 DevOps 運動講究的整體價值流思考。</p>
+<h2 id="適合的特質">適合的特質</h2>
+<p>剩下的問題是：這塊拼圖，該由誰來拼？</p>
+<p>無疑的，在《獨角獸專案》故事中，適合推動這些改變的人，就是紅衫軍。</p>
+<p>讓我們試著不要只鎖定在特定的單一英雄人物身上，而是試著重塑問題，改問：紅衫軍有什麼特質？</p>
+<p>《獨角獸專案》第 5 章，如此形容紅衫軍：</p>
+<blockquote>
+<p>對鳳凰專案的大多數人來說，營運部只代表在另一頭接收任務工單的人。他們是所有人的抱怨對象。但是，庫爾特和這群烏合之眾顯然有截然不同的工作之道，他們用非正式的方法繞過正常的組織溝通管道。</p>
+<p>梅克辛非常興奮。她對這個團隊一直致力完成的事以及自己被選來幫忙這件事，發自內心感到驚艷。我終於找到屬於我的部落了，她心想。這就是經營人脈的意義所在——你可以集結一群充滿動力的人來解決一個大問題，儘管這個組合人選和官方組織架構圖一點關係也沒有。</p>
+</blockquote>
+<p>第 5 章，如此形容梅克辛：</p>
+<blockquote>
+<p>梅克辛，你為了破解鳳凰專案軟體版本的努力成果讓我們很驚艷。我們對你所展現的技術和社交技巧深感敬畏，你成功地找出了幾乎所有的環境要素，這件事需要驚人毅力、專注，還有永不妥協的態度！</p>
+</blockquote>
+<p>第 12 章，如此形同香儂：</p>
+<blockquote>
+<p>梅克辛欣賞香儂盡量把握任何機會讓人們站在同一陣線。</p>
+</blockquote>
+<p>第 17 章，如此形容比爾與梅克辛：</p>
+<blockquote>
+<p>許多企業認識了<a href="https://hbr.org/2007/07/to-succeed-in-the-long-term-focus-on-the-middle-term">三層面理論</a>，還是無法好好地投資新一代創新事務。換句話說，他們在核心業務投資不足，因為他們被脈絡業務綁架了。脈絡業務管理不善是一流企業的罩門。被脈絡業務耽誤的公司沒有辦法專心推動核心業務。</p>
+<p>的確有一條改造公司的策略，但它需要近乎苛刻的專注與堅持。</p>
+<p>最適合管理脈絡業務就是比爾和梅克辛這樣的人。這絕非易事。你需要一個真正了解公司業務的人，能夠不屈不撓地在全公司上下推動標準化，把組織的最佳利益視為第一位，清楚科技的運用時機與分寸。</p>
+</blockquote>
+<p><!-- raw HTML omitted -->   <!-- raw HTML omitted --></p>
+<p>但願以上這些摘錄的段落，足以給任何有志推動改變的有志之士一些啟發。</p>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>行動學習三要素 <em>L</em> = <em>P</em> + <em>Q</em> + <em>R</em>，當中的 <em>L</em> 為 learning，<em>P</em> 為 programmed knowledge，<em>Q</em> 為 questioning，<em>R</em> 為 reflection。 <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
 </section>
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">William Yeh</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+      2021-04-05
+      
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">授權條款</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW" target="_blank">CC BY-NC-SA 4.0</a> (姓名標示-非商業性-相同方式分享 4.0 國際)</span>
+  </p>
+</div>
 
 
+    
+    
 
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="//william-yeh.net/tags/devops/">devops</a>
+          <a href="//william-yeh.net/tags/agile/">agile</a>
+          <a href="//william-yeh.net/tags/book/">book</a>
+          <a href="//william-yeh.net/tags/systems-thinking/">systems-thinking</a>
+          
+        </div>
 
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/post/2021/03/sys-thinking-unicorn-project/">
+            <span class="next-text nav-default">從系統思考角度讀《獨角獸專案》</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            
+            <i class="iconfont">
+              <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311 0.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889 0.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-0.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"></path>
+</svg>
 
+            </i>
+          </a>
+      </nav>
+    </footer>
+  </article>
 
   
   
-  
 
   
   
 
   
-  
 
   
   
-
-  
-  
-
-    <nav class="pagination">
-      <ul>
-
-      
-      
-      <li><a href="/">««</a></li>
-      
-
-      
-      
-      <li><a href="/page/16/">«</a></li>
-      
-
-      
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-
-          
-          
-
-        
-        
-
-        
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-
-          
-          
-
-        
-        
-
-        
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-
-          
-          
-
-        
-        
-
-        
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-
-          
-          
-
-        
-        
-
-        
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-              
-            
-
-          
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/page/5/">
-              5
-            </a>
-          </li>
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-              
-            
-
-          
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/page/6/">
-              6
-            </a>
-          </li>
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-              
-            
-
-          
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/page/7/">
-              7
-            </a>
-          </li>
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-              
-            
-
-          
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/page/8/">
-              8
-            </a>
-          </li>
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-              
-            
-
-          
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/page/9/">
-              9
-            </a>
-          </li>
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-              
-            
-
-          
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/page/10/">
-              10
-            </a>
-          </li>
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-              
-            
-
-          
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/page/11/">
-              11
-            </a>
-          </li>
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-              
-            
-
-          
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/page/12/">
-              12
-            </a>
-          </li>
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-              
-            
-
-          
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/page/13/">
-              13
-            </a>
-          </li>
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-              
-            
-
-          
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/page/14/">
-              14
-            </a>
-          </li>
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-              
-            
-
-          
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/page/15/">
-              15
-            </a>
-          </li>
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-              
-            
-
-          
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/page/16/">
-              16
-            </a>
-          </li>
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-              
-            
-
-          
-          
-
-        
-        
-
-        
-        
-          <li class="active">
-            <a href="/page/17/">
-              17
-            </a>
-          </li>
-        
-
-      
-
-      
-      
-
-      
-      
-
-      </ul>
-    </nav>
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= "William-Yeh/utterances-area"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
   
 
+  
 
+  
 
+  <div class="disqus-comment">
+  <div class="disqus-button" id="load_disqus" onclick="load_disqus()">
+    顯示 Disqus 評論
+  </div>
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_config = function () {
+      this.page.url = "//william-yeh.net/post/2021/04/cld-for-service-incident/";
+    };
+    function load_disqus() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
 
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'potioneer';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+      $('#load_disqus').remove();
+    };
+  </script>
+  <noscript>Please enable JavaScript to view the
+    <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+  </noscript>
+  
+  </div>
+
+    
+
+  
 
         </div>
       </div>

@@ -6,7 +6,19 @@
     <description>Recent content in devops on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sun, 28 Mar 2021 16:00:00 +0800</lastBuildDate><atom:link href="//william-yeh.net/tags/devops/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 05 Apr 2021 20:00:00 +0800</lastBuildDate><atom:link href="//william-yeh.net/tags/devops/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>服務事故處理的系統思考</title>
+      <link>//william-yeh.net/post/2021/04/cld-for-service-incident/</link>
+      <pubDate>Mon, 05 Apr 2021 20:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2021/04/cld-for-service-incident/</guid>
+      <description>&lt;p&gt;公司內 Agile CoP 定期聚會，最近都在團練「&lt;a href=&#34;https://wiki.mbalib.com/zh-tw/%E8%A1%8C%E5%8A%A8%E5%AD%A6%E4%B9%A0%E6%B3%95&#34;&gt;行動學習 (action learning)&lt;/a&gt;」。&lt;/p&gt;
+&lt;p&gt;行動學習十分殊勝。對我來說，在參加之前，多元探詢角度居然能夠同時並存，委實難以想像。&lt;/p&gt;
+&lt;p&gt;我參加了兩次，上次我選擇的提問切入點 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; 是「問題重塑」，這次刻意換成「系統思考」來練練。&lt;/p&gt;
+&lt;p&gt;某團員提出一則個案讓大家探討：&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>從系統思考角度讀《獨角獸專案》</title>
       <link>//william-yeh.net/post/2021/03/sys-thinking-unicorn-project/</link>
@@ -232,15 +244,6 @@ To clarify this I&amp;rsquo;ve conducted a series of experiments for 3 possible 
       <description>&lt;p&gt;Kubernetes 演化速度令人驚訝。彈性之大，令人聯想到當年  Perl 圈子奉為圭臬的 &lt;a href=&#34;https://en.wikipedia.org/wiki/There%27s_more_than_one_way_to_do_it&#34;&gt;TIMTOWTDI&lt;/a&gt; 口號。&lt;/p&gt;
 &lt;p&gt;選擇過多也會帶來問題。發展到某個階段，也該適時沈澱收斂出較佳的實務建議準則。&lt;/p&gt;
 &lt;p&gt;因此，我稍微搜尋一下相關資料，作為參考。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>年假可讀的軟體領域輕讀物</title>
-      <link>//william-yeh.net/post/2019/01/soft-reading-list/</link>
-      <pubDate>Thu, 17 Jan 2019 15:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2019/01/soft-reading-list/</guid>
-      <description>中午時，非 RD 的同事請我推薦適合泛軟體產業從業人員的五份輕讀物，可在春節連續假期時好好補血。 年假，自然不方便啃太過於生硬艱澀、理論宏偉的讀物。</description>
     </item>
     
   </channel>

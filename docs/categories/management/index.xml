@@ -6,7 +6,19 @@
     <description>Recent content in management on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Wed, 17 Mar 2021 20:00:00 +0800</lastBuildDate><atom:link href="//william-yeh.net/categories/management/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 05 Apr 2021 20:00:00 +0800</lastBuildDate><atom:link href="//william-yeh.net/categories/management/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>服務事故處理的系統思考</title>
+      <link>//william-yeh.net/post/2021/04/cld-for-service-incident/</link>
+      <pubDate>Mon, 05 Apr 2021 20:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2021/04/cld-for-service-incident/</guid>
+      <description>&lt;p&gt;公司內 Agile CoP 定期聚會，最近都在團練「&lt;a href=&#34;https://wiki.mbalib.com/zh-tw/%E8%A1%8C%E5%8A%A8%E5%AD%A6%E4%B9%A0%E6%B3%95&#34;&gt;行動學習 (action learning)&lt;/a&gt;」。&lt;/p&gt;
+&lt;p&gt;行動學習十分殊勝。對我來說，在參加之前，多元探詢角度居然能夠同時並存，委實難以想像。&lt;/p&gt;
+&lt;p&gt;我參加了兩次，上次我選擇的提問切入點 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; 是「問題重塑」，這次刻意換成「系統思考」來練練。&lt;/p&gt;
+&lt;p&gt;某團員提出一則個案讓大家探討：&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>如何訓練一個新的 Scrum master？</title>
       <link>//william-yeh.net/post/2021/03/train-new-scrum-master/</link>
@@ -279,30 +291,6 @@ Output Essential:
       
       <guid>//william-yeh.net/post/2018/11/devops-value/</guid>
       <description>看完〈敏捷的價值與指標〉之後，很自然的會進一步追問：「那麼，什麼才是 DevOps 圈子所認定的價值，以及對應的指標，尤其是領先指標？」 這問題其實比較容易</description>
-    </item>
-    
-    <item>
-      <title>敏捷的價值與指標</title>
-      <link>//william-yeh.net/post/2018/11/agile-value/</link>
-      <pubDate>Tue, 27 Nov 2018 08:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2018/11/agile-value/</guid>
-      <description>&lt;p&gt;同溫層朋友提出一則有趣的&lt;a href=&#34;https://www.facebook.com/groups/179345672472/permalink/10156092663467473/&#34;&gt;提問&lt;/a&gt;：&lt;/p&gt;
-
-&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
-&lt;div class=&#34;box&#34;&gt;
-&lt;figure  itemprop=&#34;associatedMedia&#34;
-  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
-  style=&#34;max-width:30em&#34; &gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/11/agile-value-post.png&#34; alt=&#34;如何衡量敏捷的成效？ by Howie Yu (2018-11-23)&#34;/&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2018/11/agile-value-post.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-      &lt;figcaption&gt;
-          &lt;p&gt;如何衡量敏捷的成效？ by Howie Yu (2018-11-23)&lt;/p&gt;
-      &lt;/figcaption&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;</description>
     </item>
     
   </channel>
