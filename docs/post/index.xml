@@ -42,6 +42,15 @@
     </item>
     
     <item>
+      <title>軟體研發者的隨身職涯教練——《經理人之道》推薦序</title>
+      <link>//william-yeh.net/post/2021/02/the-managers-path-review/</link>
+      <pubDate>Sun, 21 Feb 2021 16:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2021/02/the-managers-path-review/</guid>
+      <description>研究所時期，身為實驗室的師兄，我必須帶領學弟妹完成各種公民營機構的合作計畫案。那是我第一次接觸到「領導技術團隊」這件事——這件學校不會教的事</description>
+    </item>
+    
+    <item>
       <title>2020 個人回顧</title>
       <link>//william-yeh.net/post/2020/12/2020-retrospective/</link>
       <pubDate>Sat, 26 Dec 2020 20:00:00 +0800</pubDate>
@@ -253,19 +262,6 @@ Output Essential:
       <guid>//william-yeh.net/post/2020/03/grpc-load-balancing/</guid>
       <description>&lt;p&gt;Kubernetes 有個很方便的地方：只要修改 deployment 的 &lt;code&gt;spec.replicas&lt;/code&gt; 數字，就能橫向擴展 pod，以應付更大的流量負載需求。&lt;/p&gt;
 &lt;p&gt;這一招，對於 stateless 的 HTTP 服務很管用，也是 Kubernetes 入門教學愛用的例子。但是，對於 &lt;a href=&#34;https://grpc.io/&#34;&gt;gRPC&lt;/a&gt; 呢？&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Idempotency Key：原理與實測</title>
-      <link>//william-yeh.net/post/2020/03/idempotency-key-test/</link>
-      <pubDate>Tue, 10 Mar 2020 23:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2020/03/idempotency-key-test/</guid>
-      <description>&lt;p&gt;最近幾年，在微服務打滾的人，不時會遇到神祕的 &amp;ldquo;idempotency key&amp;rdquo; 字眼。本文爬梳 idempotency key 的技術背景，探討運作流程，並分析資料庫的實作選項。&lt;/p&gt;
-&lt;h2 id=&#34;idempotency-冪等性&#34;&gt;Idempotency 冪等性&lt;/h2&gt;
-&lt;p&gt;在 API 服務中，常常需要留意 idempotency（冪等性）。&lt;/p&gt;
-&lt;p&gt;名詞：idempotency，形容詞：idempotent。&lt;/p&gt;
-&lt;p&gt;&amp;ldquo;Idempotency&amp;rdquo; 這字眼源自數學。維基百科是這麼解釋 &amp;ldquo;&lt;a href=&#34;https://en.wikipedia.org/wiki/Idempotence#Idempotent_functions&#34;&gt;idempotent function&lt;/a&gt;&amp;rdquo; 的：&lt;/p&gt;</description>
     </item>
     
   </channel>
