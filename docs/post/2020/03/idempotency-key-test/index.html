@@ -35,7 +35,7 @@ Idempotency 冪等性 在 API 服務中，常常需要留意 idempotency（冪�
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.82.0" />
+<meta name="generator" content="Hugo 0.83.1" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2020/03/idempotency-key-test/" />
@@ -56,7 +56,7 @@ Idempotency 冪等性 在 API 服務中，常常需要留意 idempotency（冪�
 
 
 
-<link rel="stylesheet" href="/sass/jane.min.f7440b5c0d223f47a09bf5853465434e6f91d80a591c2f8d2d5e8220e5db0580.css" integrity="sha256-90QLXA0iP0egm/WFNGVDTm&#43;R2ApZHC&#43;NLV6CIOXbBYA=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.fa4b2b9f31b5c6d0b683db81157a9226e17b06e61911791ab547242a4a0556f2.css" integrity="sha256-&#43;ksrnzG1xtC2g9uBFXqSJuF7BuYZEXkatUckKkoFVvI=" media="screen" crossorigin="anonymous">
 
 
 
@@ -80,7 +80,7 @@ Idempotency 冪等性
 名詞：idempotency，形容詞：idempotent。
 &ldquo;Idempotency&rdquo; 這字眼源自數學。維基百科是這麼解釋 &ldquo;idempotent function&rdquo; 的："><meta itemprop="datePublished" content="2020-03-10T23:00:00&#43;08:00" />
 <meta itemprop="dateModified" content="2020-03-10T23:00:00&#43;08:00" />
-<meta itemprop="wordCount" content="4678">
+<meta itemprop="wordCount" content="4719">
 <meta itemprop="keywords" content="microservices,ddd,database," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Idempotency Key：原理與實測"/>
 <meta name="twitter:description" content="最近幾年，在微服務打滾的人，不時會遇到神祕的 &ldquo;idempotency key&rdquo; 字眼。本文爬梳 idempotency key 的技術背景，探討運作流程，並分析資料庫的實作選項。
@@ -310,7 +310,7 @@ if (!doNotTrack) {
             <a href="//william-yeh.net/categories/tech/"> tech </a>
             
           </div>
-        <span class="more-meta"> 約 4678 字 </span>
+        <span class="more-meta"> 約 4719 字 </span>
           <span class="more-meta"> 預計閱讀 10 分鐘 </span>
 
         
@@ -741,13 +741,13 @@ if (!doNotTrack) {
 <hr>
 <ol>
 <li id="fn:1" role="doc-endnote">
-<p>嚴格來說，電腦領域講的 &ldquo;idempotency&rdquo;，已經與數學領域講的 &ldquo;idempotency&rdquo; 不盡相同了，可說是一種假借。詳情請見維基百科的說明： <a href="https://en.wikipedia.org/wiki/Idempotence#Computer_science_meaning">https://en.wikipedia.org/wiki/Idempotence#Computer_science_meaning</a> <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>嚴格來說，電腦領域講的 &ldquo;idempotency&rdquo;，已經與數學領域講的 &ldquo;idempotency&rdquo; 不盡相同了，可說是一種假借。詳情請見維基百科的說明： <a href="https://en.wikipedia.org/wiki/Idempotence#Computer_science_meaning">https://en.wikipedia.org/wiki/Idempotence#Computer_science_meaning</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:2" role="doc-endnote">
-<p>對於 TCP 序列號機制感興趣的，可參考鄭中勝寫的三篇介紹文章：〈<a href="https://notfalse.net/26/tcp-seq">TCP 序列號 (Sequence Number, SEQ)</a>〉、〈<a href="https://notfalse.net/7/three-way-handshake">TCP 三向交握 (Three-way Handshake)</a>〉、〈<a href="https://notfalse.net/24/tcp-flow-control">TCP 流量控制 (Flow Control)</a>〉。 <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>對於 TCP 序列號機制感興趣的，可參考鄭中勝寫的三篇介紹文章：〈<a href="https://notfalse.net/26/tcp-seq">TCP 序列號 (Sequence Number, SEQ)</a>〉、〈<a href="https://notfalse.net/7/three-way-handshake">TCP 三向交握 (Three-way Handshake)</a>〉、〈<a href="https://notfalse.net/24/tcp-flow-control">TCP 流量控制 (Flow Control)</a>〉。&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:3" role="doc-endnote">
-<p>在 DDD 中，id 生成機制很適合放在 Repository 層。如果你沒有 <a href="https://www.amazon.com/dp/0321834577/ref=cm_sw_r_tw_dp_U_x_gp2zEbQ9DT5BB"><em>Implementing Domain-Driven Design</em></a> 這本書，也可以參考劉鳳軒寫的〈<a href="https://ithelp.ithome.com.tw/articles/10223150">DDD 戰術設計：Entity 概念與實作</a>〉一文。 <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>在 DDD 中，id 生成機制很適合放在 Repository 層。如果你沒有 <a href="https://www.amazon.com/dp/0321834577/ref=cm_sw_r_tw_dp_U_x_gp2zEbQ9DT5BB"><em>Implementing Domain-Driven Design</em></a> 這本書，也可以參考劉鳳軒寫的〈<a href="https://ithelp.ithome.com.tw/articles/10223150">DDD 戰術設計：Entity 概念與實作</a>〉一文。&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </section>

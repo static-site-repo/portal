@@ -35,7 +35,7 @@ Travis CI 也提供許多常見的程式語言及伺服器軟體，以方便做 
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.82.0" />
+<meta name="generator" content="Hugo 0.83.1" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2020/07/travisci-hacks/" />
@@ -56,7 +56,7 @@ Travis CI 也提供許多常見的程式語言及伺服器軟體，以方便做 
 
 
 
-<link rel="stylesheet" href="/sass/jane.min.f7440b5c0d223f47a09bf5853465434e6f91d80a591c2f8d2d5e8220e5db0580.css" integrity="sha256-90QLXA0iP0egm/WFNGVDTm&#43;R2ApZHC&#43;NLV6CIOXbBYA=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.fa4b2b9f31b5c6d0b683db81157a9226e17b06e61911791ab547242a4a0556f2.css" integrity="sha256-&#43;ksrnzG1xtC2g9uBFXqSJuF7BuYZEXkatUckKkoFVvI=" media="screen" crossorigin="anonymous">
 
 
 
@@ -78,7 +78,7 @@ Travis CI 也提供許多常見的程式語言及伺服器軟體，以方便做 
 Travis CI 也提供許多常見的程式語言及伺服器軟體，以方便做 CI 測試。我個人的習慣是，盡量不去使用這些功能，而是直接用 Docker 或 Docker Compose 來組裝，以降低對於 Travis CI 的依賴（尤其我還要兼顧 CircleCI）。
 不過，如果是與人合作的專案，就得顧及其他人的習慣。我在使用 Travis CI 提供的伺服器軟體 Postgres、Cassandra、RabbitMQ 時，遇到一些雷，特地記錄下來，供有類似困擾的人參考。"><meta itemprop="datePublished" content="2020-07-09T23:00:00&#43;08:00" />
 <meta itemprop="dateModified" content="2020-07-09T23:00:00&#43;08:00" />
-<meta itemprop="wordCount" content="1505">
+<meta itemprop="wordCount" content="1589">
 <meta itemprop="keywords" content="devops,ci," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Travis CI 虛擬機的地雷"/>
 <meta name="twitter:description" content="我算是 Travis CI 的老用戶了。
@@ -307,7 +307,7 @@ if (!doNotTrack) {
             <a href="//william-yeh.net/categories/tech/"> tech </a>
             
           </div>
-        <span class="more-meta"> 約 1505 字 </span>
+        <span class="more-meta"> 約 1589 字 </span>
           <span class="more-meta"> 預計閱讀 4 分鐘 </span>
 
         
@@ -465,16 +465,16 @@ if (!doNotTrack) {
 <hr>
 <ol>
 <li id="fn:1" role="doc-endnote">
-<p>Travis CI 支援許多虛擬機，完整列表請見 &ldquo;<a href="https://docs.travis-ci.com/user/reference/overview/">Build Environment Overview</a>&rdquo; 一文。 <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Travis CI 支援許多虛擬機，完整列表請見 &ldquo;<a href="https://docs.travis-ci.com/user/reference/overview/">Build Environment Overview</a>&rdquo; 一文。&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:2" role="doc-endnote">
-<p>在 <a href="https://en.wikipedia.org/wiki/Ubuntu_version_history">Ubuntu version history</a> 文件中，詳列了 Ubuntu 各版本代號及官方保固期限。 <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>在 <a href="https://en.wikipedia.org/wiki/Ubuntu_version_history">Ubuntu version history</a> 文件中，詳列了 Ubuntu 各版本代號及官方保固期限。&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:3" role="doc-endnote">
-<p>我參考 <a href="https://github.com/aio-libs/aiocassandra">aiocassandra 專案</a>的設定，將 Cassandra 安裝在 Travis CI 的 Xenial 虛擬機上：https://github.com/aio-libs/aiocassandra/blob/master/.travis.yml <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>我參考 <a href="https://github.com/aio-libs/aiocassandra">aiocassandra 專案</a>的設定，將 Cassandra 安裝在 Travis CI 的 Xenial 虛擬機上：https://github.com/aio-libs/aiocassandra/blob/master/.travis.yml&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:4" role="doc-endnote">
-<p>可能也是在官方論壇收到 &ldquo;<a href="https://travis-ci.community/t/rabbitmq-on-xenial/1827">RabbitMQ on Xenial</a>&rdquo; 這則提問，Travis CI 才會把這一段解法放進官方文件吧。 <a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>可能也是在官方論壇收到 &ldquo;<a href="https://travis-ci.community/t/rabbitmq-on-xenial/1827">RabbitMQ on Xenial</a>&rdquo; 這則提問，Travis CI 才會把這一段解法放進官方文件吧。&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </section>
