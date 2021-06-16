@@ -20,12 +20,21 @@
     </item>
     
     <item>
+      <title>被 Yves 啟發的敏捷轉型之旅</title>
+      <link>//william-yeh.net/post/2021/03/agile-inspired-by-yves/</link>
+      <pubDate>Wed, 31 Mar 2021 08:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2021/03/agile-inspired-by-yves/</guid>
+      <description>（2021-06-16 補記） 在 Yves 臉書看到《敏捷管理生存指南：不是快，而是適者生存》這本書終於要上市的消息，非常振奮。僅以此文，紀念當年 Yves 部落</description>
+    </item>
+    
+    <item>
       <title>從系統思考角度讀《獨角獸專案》</title>
       <link>//william-yeh.net/post/2021/03/sys-thinking-unicorn-project/</link>
       <pubDate>Sun, 28 Mar 2021 16:00:00 +0800</pubDate>
       
       <guid>//william-yeh.net/post/2021/03/sys-thinking-unicorn-project/</guid>
-      <description>活動名稱：從系統思考角度讀《獨角獸專案》 時間：2021-05-28 (五) / 13:00&amp;ndash;14:30 因疫情影響延期舉辦 會議：DevOpsDays Taipei 2021 的 603 會議室 課程簡</description>
+      <description>活動名稱：從系統思考角度讀《獨角獸專案》 時間：2021-11-24 (三) / 13:00&amp;ndash;14:30 因疫情影響延期舉辦 會議：DevOpsDays Taipei 2021 的 603 會議室 課程簡</description>
     </item>
     
     <item>
@@ -252,16 +261,6 @@ Output Essential:
       <description>&lt;p&gt;RESTful API 時代，我們有許多簡單好用的測試工具：有酷炫的 &lt;a href=&#34;https://www.postman.com/&#34;&gt;Postman&lt;/a&gt;，有命令列控愛用的 &lt;a href=&#34;https://httpie.org/&#34;&gt;HTTPie&lt;/a&gt;，當然也有硬漢必備的萬用瑞士刀 &lt;a href=&#34;https://curl.haxx.se/&#34;&gt;curl&lt;/a&gt;。&lt;/p&gt;
 &lt;p&gt;那麼，gRPC 呢？&lt;/p&gt;
 &lt;p&gt;這篇文章介紹兩個好用的小工具：&lt;a href=&#34;https://github.com/fullstorydev/grpcurl&#34;&gt;gRPCurl&lt;/a&gt; 及 &lt;a href=&#34;https://github.com/bojand/ghz&#34;&gt;ghz&lt;/a&gt;，一個是輸入輸出介面測試工具，另一個是壓測工具，也順便介紹一些簡化測試的技巧。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>gRPC Load Balancing in Kubernetes</title>
-      <link>//william-yeh.net/post/2020/03/grpc-load-balancing/</link>
-      <pubDate>Mon, 30 Mar 2020 22:30:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2020/03/grpc-load-balancing/</guid>
-      <description>&lt;p&gt;Kubernetes 有個很方便的地方：只要修改 deployment 的 &lt;code&gt;spec.replicas&lt;/code&gt; 數字，就能橫向擴展 pod，以應付更大的流量負載需求。&lt;/p&gt;
-&lt;p&gt;這一招，對於 stateless 的 HTTP 服務很管用，也是 Kubernetes 入門教學愛用的例子。但是，對於 &lt;a href=&#34;https://grpc.io/&#34;&gt;gRPC&lt;/a&gt; 呢？&lt;/p&gt;</description>
     </item>
     
   </channel>

@@ -20,12 +20,21 @@
     </item>
     
     <item>
+      <title>被 Yves 啟發的敏捷轉型之旅</title>
+      <link>//william-yeh.net/post/2021/03/agile-inspired-by-yves/</link>
+      <pubDate>Wed, 31 Mar 2021 08:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2021/03/agile-inspired-by-yves/</guid>
+      <description>（2021-06-16 補記） 在 Yves 臉書看到《敏捷管理生存指南：不是快，而是適者生存》這本書終於要上市的消息，非常振奮。僅以此文，紀念當年 Yves 部落</description>
+    </item>
+    
+    <item>
       <title>從系統思考角度讀《獨角獸專案》</title>
       <link>//william-yeh.net/post/2021/03/sys-thinking-unicorn-project/</link>
       <pubDate>Sun, 28 Mar 2021 16:00:00 +0800</pubDate>
       
       <guid>//william-yeh.net/post/2021/03/sys-thinking-unicorn-project/</guid>
-      <description>活動名稱：從系統思考角度讀《獨角獸專案》 時間：2021-05-28 (五) / 13:00&amp;ndash;14:30 因疫情影響延期舉辦 會議：DevOpsDays Taipei 2021 的 603 會議室 課程簡</description>
+      <description>活動名稱：從系統思考角度讀《獨角獸專案》 時間：2021-11-24 (三) / 13:00&amp;ndash;14:30 因疫情影響延期舉辦 會議：DevOpsDays Taipei 2021 的 603 會議室 課程簡</description>
     </item>
     
     <item>
@@ -292,30 +301,6 @@ Output Essential:
       
       <guid>//william-yeh.net/post/2018/11/devops-value/</guid>
       <description>看完〈敏捷的價值與指標〉之後，很自然的會進一步追問：「那麼，什麼才是 DevOps 圈子所認定的價值，以及對應的指標，尤其是領先指標？」 這問題其實比較容易</description>
-    </item>
-    
-    <item>
-      <title>敏捷的價值與指標</title>
-      <link>//william-yeh.net/post/2018/11/agile-value/</link>
-      <pubDate>Tue, 27 Nov 2018 08:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2018/11/agile-value/</guid>
-      <description>&lt;p&gt;同溫層朋友提出一則有趣的&lt;a href=&#34;https://www.facebook.com/groups/179345672472/permalink/10156092663467473/&#34;&gt;提問&lt;/a&gt;：&lt;/p&gt;
-
-&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
-&lt;div class=&#34;box&#34;&gt;
-&lt;figure  itemprop=&#34;associatedMedia&#34;
-  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
-  style=&#34;max-width:30em&#34; &gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/11/agile-value-post.png&#34; alt=&#34;如何衡量敏捷的成效？ by Howie Yu (2018-11-23)&#34;/&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2018/11/agile-value-post.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-      &lt;figcaption&gt;
-          &lt;p&gt;如何衡量敏捷的成效？ by Howie Yu (2018-11-23)&lt;/p&gt;
-      &lt;/figcaption&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;</description>
     </item>
     
   </channel>
