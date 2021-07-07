@@ -6,7 +6,19 @@
     <description>Recent content in Posts on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Mon, 05 Apr 2021 20:00:00 +0800</lastBuildDate><atom:link href="//william-yeh.net/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 06 Jul 2021 20:00:00 +0800</lastBuildDate><atom:link href="//william-yeh.net/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>企業能否吸引專業人士？看這 14 點。</title>
+      <link>//william-yeh.net/post/2021/07/ic-needs/</link>
+      <pubDate>Tue, 06 Jul 2021 20:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2021/07/ic-needs/</guid>
+      <description>&lt;p&gt;時代不斷進步，競爭日益激烈，專業工作者的門檻也愈來愈高。我們對 individual contributor 專業能力的期待是高的，相對的，這群人的自我意識自然也不低。&lt;/p&gt;
+&lt;p&gt;企業挑人才，人才也挑企業。&lt;/p&gt;
+&lt;p&gt;問題來了：企業能否吸引專業人士？&lt;/p&gt;
+&lt;p&gt;我從兩本書，摘錄出個人比較心儀的優勢導向、人本導向觀點。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>服務事故處理的系統思考</title>
       <link>//william-yeh.net/post/2021/04/cld-for-service-incident/</link>
@@ -250,17 +262,6 @@ Output Essential:
 &lt;p&gt;實體看板容易 zoom in/out，利於適時切換俯瞰與細節視角，不需過度的數字管理。&lt;/p&gt;
 &lt;p&gt;實體看板的空間共時性，容易塑造團隊的一體感。&lt;/p&gt;
 &lt;p&gt;實體看板彈性大，能以最小成本，讓團隊在敏捷路上不斷嘗試與調整。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>gRPC 測試工具</title>
-      <link>//william-yeh.net/post/2020/04/grpc-testing-tools/</link>
-      <pubDate>Tue, 14 Apr 2020 22:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2020/04/grpc-testing-tools/</guid>
-      <description>&lt;p&gt;RESTful API 時代，我們有許多簡單好用的測試工具：有酷炫的 &lt;a href=&#34;https://www.postman.com/&#34;&gt;Postman&lt;/a&gt;，有命令列控愛用的 &lt;a href=&#34;https://httpie.org/&#34;&gt;HTTPie&lt;/a&gt;，當然也有硬漢必備的萬用瑞士刀 &lt;a href=&#34;https://curl.haxx.se/&#34;&gt;curl&lt;/a&gt;。&lt;/p&gt;
-&lt;p&gt;那麼，gRPC 呢？&lt;/p&gt;
-&lt;p&gt;這篇文章介紹兩個好用的小工具：&lt;a href=&#34;https://github.com/fullstorydev/grpcurl&#34;&gt;gRPCurl&lt;/a&gt; 及 &lt;a href=&#34;https://github.com/bojand/ghz&#34;&gt;ghz&lt;/a&gt;，一個是輸入輸出介面測試工具，另一個是壓測工具，也順便介紹一些簡化測試的技巧。&lt;/p&gt;</description>
     </item>
     
   </channel>
