@@ -35,7 +35,7 @@
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.85.0" />
+<meta name="generator" content="Hugo 0.86.0" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2019/03/wsl-cmder-zsh/" />
@@ -362,16 +362,16 @@ if (!doNotTrack) {
 </ol>
 <h2 id="zsh--oh-my-zsh">Zsh + Oh My ZSH</h2>
 <p>在 WSL 中安裝 zsh 及 oh-my-zsh：</p>
-<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">% sudo apt-get install zsh
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">% sudo apt-get install zsh
 
 % sudo sh -c &#34;$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&#34;</code></pre></div>
 <p>將 zsh 設為內定 shell：</p>
-<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">% chsh -s $(which zsh)</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">% chsh -s $(which zsh)</code></pre></div>
 <p>如果你的 zsh theme 含有許多特殊的符號字元，請順便安裝 <a href="https://github.com/powerline/fonts">Powerline</a> 系列字型。</p>
 <h2 id="cmder">Cmder</h2>
 <p><a href="https://cmder.net/">Cmder</a> 有「完整版」及「迷你版」兩種安裝方式。有了 WSL 之後，msysgit 可以退場，因此，我們只需安裝 Cmder 迷你版。</p>
 <p>用 Chocolatey 套件管理工具安裝比較簡單：</p>
-<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">C:\&gt; choco install cmdermini</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">C:\&gt; choco install cmdermini</code></pre></div>
 <p>細節請見 <a href="https://chocolatey.org/packages/cmdermini">https://chocolatey.org/packages/cmdermini</a> 。</p>
 <h2 id="整合-cmder-與-wsl">整合 Cmder 與 WSL</h2>
 <p>為了讓 Cmder 以 WSL + Zsh 模式啟動，我們需要新增一個 Cmder 的 &ldquo;Startup / Tasks&rdquo;。</p>
@@ -417,7 +417,7 @@ if (!doNotTrack) {
 <h2 id="檔案系統">檔案系統</h2>
 <p>我習慣將 Windows 的 D: 作為文件儲存專用區。</p>
 <p>預設情況下，WSL 會將 D: 掛載在 <code>/mnt/d</code>，檔案系統則是 DrvFs：</p>
-<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">% mount -l
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">% mount -l
 rootfs on / type lxfs (rw,noatime)
 none on /dev type tmpfs (rw,noatime,mode=755)
 sysfs on /sys type sysfs (rw,nosuid,nodev,noexec,noatime)
@@ -431,11 +431,11 @@ D: on /mnt/d type drvfs (rw,noatime,uid=1000,gid=1000,case=off)
 C: on /mnt/c type drvfs (rw,noatime,uid=1000,gid=1000,case=off)</code></pre></div>
 <p>不過，因為某些複雜的原因 <sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>，我們必須重新設定 <code>/mnt/d</code> 的 mount 參數，才能讓 Linux 的檔案讀寫權限正常運作。</p>
 <p>我們先卸載 <code>/mnt/d</code>，再用夾帶 <code>metadata</code> 的方式重新掛載它：</p>
-<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">% sudo umount /mnt/d
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">% sudo umount /mnt/d
 
 % sudo mount -t drvfs D: /mnt/d -o metadata,uid=1000,gid=1000,umask=22,fmask=111</code></pre></div>
 <p>先查看是否成功:</p>
-<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">% mount -l
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">% mount -l
 rootfs on / type lxfs (rw,noatime)
 none on /dev type tmpfs (rw,noatime,mode=755)
 sysfs on /sys type sysfs (rw,nosuid,nodev,noexec,noatime)
@@ -468,19 +468,19 @@ nux-wsl-%E4%B8%8B%E4%BD%BF%E7%94%A8-windows-%E4%B8%8A%E7%9A%84-docker-engine-8dc
 </ol>
 <p>上述文章建議透過 <code>alias docker=docker.exe</code> 的方式來使用 Docker Desktop for Windows 的 docker client。不過，這些 alias 未必都能在 script 中展開 <sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup> ——有鬆綁的方法，但我不喜歡破例。我比較傾向在 WSL 裡用簡單的 wrapper script 來處理。</p>
 <p>首先是 <code>/usr/local/bin/docker</code> 檔案：</p>
-<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">#!/bin/bash
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">#!/bin/bash
 
 # allow WSL to have access to Docker Desktop for Windows
 exec  &#34;/mnt/c/Program Files/Docker/Docker/resources/bin/docker.exe&#34;  &#34;$@&#34;</code></pre></div>
 <p>其次是 <code>/usr/local/bin/docker-compose</code> 檔案：</p>
-<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">#!/bin/bash
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">#!/bin/bash
 
 # allow WSL to have access to Docker Desktop for Windows
 exec  &#34;/mnt/c/Program Files/Docker/Docker/resources/bin/docker-compose.exe&#34;  &#34;$@&#34;</code></pre></div>
 <p>別忘記打開它們的 <code>'x'</code> 權限：</p>
-<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">% sudo chmod a+x  /usr/local/bin/docker  /usr/local/bin/docker-compose</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">% sudo chmod a+x  /usr/local/bin/docker  /usr/local/bin/docker-compose</code></pre></div>
 <p>也別忘了，要將 Windows 上面的 Kubernetes 設定連接過來：</p>
-<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">% ln -s /mnt/c/Users/xxx/.kube/config ~/.kube/config</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">% ln -s /mnt/c/Users/xxx/.kube/config ~/.kube/config</code></pre></div>
 <p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <p>好了，現在已經復刻一部分 Mac 的使用習慣了。是該要好好享受一下這種混血環境了。</p>
 

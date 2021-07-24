@@ -35,7 +35,7 @@
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.85.0" />
+<meta name="generator" content="Hugo 0.86.0" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2019/04/wsl-ansible-vagrant/" />
@@ -357,15 +357,15 @@ if (!doNotTrack) {
 <h2 id="虛擬機選項一virtualbox">虛擬機選項一：VirtualBox</h2>
 <p>用慣 Mac 或 Linux 的人，可能會想沿用 <a href="https://www.virtualbox.org/">VirtualBox</a> 虛擬機軟體。畢竟 VirtualBox 是同屬開源生態系的一員，和其他開源軟體的相容性最高。</p>
 <p>你可以直接去官方網站<a href="https://www.virtualbox.org/wiki/Downloads">下載</a>安裝檔（VirtualBox 本體，以及 VirtualBox Extension Pack），或是直接透過 Chocolatey 套件管理工具來<a href="https://chocolatey.org/packages/virtualbox">安裝</a>：</p>
-<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">C:\&gt; choco install virtualbox</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">C:\&gt; choco install virtualbox</code></pre></div>
 <p>安裝完後，還有一關要克服。</p>
 <p>一般來說，在同一個 host OS 上，同一時間，只能有一個底層虛擬機制存在（除非有像「巢狀虛擬化」之類的黑魔法……吧？）。因此，VirtualBox 無法與 Windows 官方欽定的 Hyper-V 機制同時並存，一山不容二虎<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>。</p>
 <p>如果決定要使用 VirtualBox，請用管理者權限執行以下命令，暫時關閉 Hyper-V 功能<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>：</p>
-<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">C:&gt; dism.exe /Online /Disable-Feature:Microsoft-Hyper-V
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">C:&gt; dism.exe /Online /Disable-Feature:Microsoft-Hyper-V
 
 C:&gt; bcdedit /set hypervisorlaunchtype off</code></pre></div>
 <p>這麼做的缺點是：由於 Docker Desktop for Windows 會用到 Hyper-V 機制，所以，關閉了 Hyper-V，等於是關閉了 Docker Desktop 的使用權。如果稍後還想使用 Docker Desktop，就得手動恢復 Hyper-V 功能：</p>
-<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">C:&gt; dism.exe /Online /Enable-Feature:Microsoft-Hyper-V-All
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">C:&gt; dism.exe /Online /Enable-Feature:Microsoft-Hyper-V-All
 
 C:&gt; bcdedit /set hypervisorlaunchtype auto</code></pre></div>
 <p>你可能需要在 Hyper-V 與 VirtualBox 模式之間來回切換，也需要重新開機。</p>
@@ -377,14 +377,14 @@ C:&gt; bcdedit /set hypervisorlaunchtype auto</code></pre></div>
 <p>直接比照 Linux 安裝 Vagrant 的方法。</p>
 <p>請在 WSL 底下，直接去官方網站<a href="https://www.vagrantup.com/downloads.html">下載</a>安裝檔，或是用 Apt 之類的套件管理系統來安裝。</p>
 <p>安裝完畢，請根據官方網站的<a href="https://www.vagrantup.com/docs/other/wsl.html">建議</a>設定環境變數。尤其是 <code>VAGRANT_WSL_ENABLE_WINDOWS_ACCESS</code> 這一項：</p>
-<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">export VAGRANT_WSL_ENABLE_WINDOWS_ACCESS=&#34;1&#34;</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">export VAGRANT_WSL_ENABLE_WINDOWS_ACCESS=&#34;1&#34;</code></pre></div>
 <h2 id="ansible">Ansible</h2>
 <p>直接比照 Linux 安裝 Ansible 的方法。</p>
 <p>請在 WSL 底下，照著官方網站的<a href="https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html#installing-the-control-machine">安裝步驟</a>來執行。譬如說，在 Debian/Ubuntu 系列下，可以用 Apt 套件管理系統來安裝。</p>
 <h2 id="ansible--vagrant">Ansible + Vagrant</h2>
 <p>現在，試試看把 Ansible 和 Vagrant 結合起來！</p>
 <p>先準備好 <code>Vagrantfile</code> 檔案：</p>
-<div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="no">Vagrant</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ruby" data-lang="ruby"><span class="no">Vagrant</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
   <span class="n">config</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">box</span> <span class="o">=</span> <span class="s2">&#34;bento/ubuntu-18.04&#34;</span>
 
   <span class="n">config</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">network</span> <span class="s2">&#34;forwarded_port&#34;</span><span class="p">,</span> <span class="ss">guest</span><span class="p">:</span> <span class="mi">80</span><span class="p">,</span> <span class="ss">host</span><span class="p">:</span> <span class="mi">8080</span>
@@ -398,13 +398,13 @@ C:&gt; bcdedit /set hypervisorlaunchtype auto</code></pre></div>
 
 <span class="k">end</span></code></pre></div>
 <p>還有 Ansible 的 <code>playbook.yml</code> 檔案：</p>
-<div class="highlight"><pre class="chroma"><code class="language-yml" data-lang="yml">- <span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l">all</span><span class="w">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yml" data-lang="yml">- <span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l">all</span><span class="w">
 </span><span class="w">  </span><span class="nt">become</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
 </span><span class="w">  </span><span class="nt">tasks</span><span class="p">:</span><span class="w">
 </span><span class="w">    </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">install nginx</span><span class="w">
 </span><span class="w">      </span><span class="nt">apt</span><span class="p">:</span><span class="w"> </span><span class="l">name=nginx state=present update_cache=yes</span></code></pre></div>
 <p>試著啟動看看：</p>
-<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">% vagrant up</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">% vagrant up</code></pre></div>
 <p>如果一切順利，你可以在 <code>http://localhost:8080/</code> 看到 Nginx 歡迎畫面。</p>
 <p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <p>在 Docker + Kubernetes 時代，用到 Ansible 的機會愈來愈少了，Vagrant 更是如此；不過，保有這種工具，在處理還來不及跟上腳步的舊系統仍然很管用。因此，花一點功夫湊出堪用的組合，希望能有順手的 WSL 環境。</p>

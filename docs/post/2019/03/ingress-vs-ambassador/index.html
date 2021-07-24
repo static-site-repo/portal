@@ -34,7 +34,7 @@
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.85.0" />
+<meta name="generator" content="Hugo 0.86.0" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2019/03/ingress-vs-ambassador/" />
@@ -376,19 +376,19 @@ if (!doNotTrack) {
 <h2 id="ambassador">Ambassador</h2>
 <p>首先，仿造前面的 Qwiklabs 步驟，在 GKE 上建立起相同規模的 k8s cluster。也執行一份 <a href="https://gist.githubusercontent.com/William-Yeh/0aab709e450b4442614ef87b0250260b/raw/daba0ba7e6b5561ec9af51a3ea020c79e572e34e/hello-app-service.yaml">hello-app service</a>。</p>
 <p>為了安裝 Ambassador，我們需要開啟 GKE 權限：</p>
-<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">% kubectl create clusterrolebinding my-cluster-admin-binding  \
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">% kubectl create clusterrolebinding my-cluster-admin-binding  \
     --clusterrole=cluster-admin  \
     --user=$(gcloud info --format=&#34;value(config.account)&#34;)</code></pre></div>
 <p>接下來，就是正常的 Ambassador 安裝步驟：</p>
-<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">% kubectl create -f http://bit.ly/2UmsPuE</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">% kubectl create -f http://bit.ly/2UmsPuE</code></pre></div>
 <p>此刻，我們終於可以透過 Ambassador，替 hello-app 設定 API gateway 規則：</p>
-<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">% kubectl create -f https://bit.ly/2YyZzjO</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">% kubectl create -f https://bit.ly/2YyZzjO</code></pre></div>
 <p>照著做完後，Ambassador 會在 GKE 開放一個公開的 http 服務存取點。</p>
 <p>我們可以先用 <code>kubectl get services</code> 查看 API gateway 的 public IP 位址。假設是 <code>35.224.99.169</code> 的話，這個服務路徑則是 <code>http://35.224.99.169/hello2/</code>。</p>
 <h2 id="簡單的壓測">簡單的壓測</h2>
 <p>為了簡單起見，我在 GCP 的 <a href="https://cloud.google.com/shell/?hl=zh-tw">Cloud Shell</a> 進行壓測。我會對 Nginx ingress 及 Ambassador 兩種情況，各送出一萬個 API 存取要求。</p>
 <p>針對 Nginx ingress 的情況進行測試：</p>
-<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">% docker run --rm  williamyeh/boom  \
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">% docker run --rm  williamyeh/boom  \
     -n 10000 -c 100  http://35.222.12.84/hello/
 
 Summary:
@@ -425,7 +425,7 @@ Latency distribution:
   95% in 0.1661 secs
   99% in 0.3152 secs</code></pre></div>
 <p>針對 Ambassador 的情況進行測試：</p>
-<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">% docker run --rm  williamyeh/boom  \
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">% docker run --rm  williamyeh/boom  \
     -n 10000 -c 100  http://35.224.99.169/hello2/
 
 Summary:

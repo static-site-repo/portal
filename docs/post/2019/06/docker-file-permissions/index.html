@@ -33,7 +33,7 @@ Recently I&amp;rsquo;ve found something very strange about Linux-style file perm
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.85.0" />
+<meta name="generator" content="Hugo 0.86.0" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2019/06/docker-file-permissions/" />
@@ -335,10 +335,10 @@ if (!doNotTrack) {
     <div class="post-content">
       <p>Currently Linux containers are still more popular than Windows containers. And Windows users often need to use Linux containers even from their Windows computers.</p>
 <p>Recently I&rsquo;ve found something very strange about Linux-style file permissions when the Docker images are built from Windows hosts.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> Therefore, I&rsquo;ve conducted a suite of test cases to investigate whether file permissions are preserved with Docker &amp; <a href="https://skaffold.dev/">Skaffold</a> toolchains. All experiment materials are available in the <a href="https://github.com/William-Yeh/container-chmod">container-chmod</a> repo.</p>
-<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">% git clone https://github.com/William-Yeh/container-chmod.git</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">% git clone https://github.com/William-Yeh/container-chmod.git</code></pre></div>
 <h2 id="experiment-setting">Experiment setting</h2>
 <p>The experiments are composed of a few files with typical Unix-style file permissions:</p>
-<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">.
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">.
 ├── skaffold.yaml
 └── src
     ├── Dockerfile
@@ -393,7 +393,7 @@ if (!doNotTrack) {
 <p>Let&rsquo;s begin with macOS, which acts as the control group.</p>
 <p><a href="https://asciinema.org/a/253423"><img src="https://asciinema.org/a/253423.svg" alt="asciicast"></a></p>
 <p>Perfect! All Unix-style file permissions are set correctly.</p>
-<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">total 20                                                                        
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">total 20                                                                        
 drwxr-xr-x    1 root     root          4096 Jun 24 22:30 .                      
 drwxr-xr-x    1 root     root          4096 Jun 24 22:30 ..                     
 -rw-r--r--    1 root     root            70 Jun 24 22:18 Dockerfile             
@@ -410,7 +410,7 @@ drwxr-xr-x    1 root     root          4096 Jun 24 22:30 ..
 <h2 id="pure-windows--">Pure Windows: ⑤ ⑹</h2>
 <p>What if a Windows user sticks with pure-Windows toolchains, i.e., use traditional Command Prompt (cmd) to connect to Docker Desktop for Windows?</p>
 <p>The ⑤ docker-cli experiment shows the same result as in previous ③ <code>'-rwxr-xr-x'</code> permission:</p>
-<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">C:\&gt; docker run -it test-docker                                           
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">C:\&gt; docker run -it test-docker                                           
 File permission (script-755.sh) should be: 755  rwxr-xr-x              
 total 20                                                               
 drwxr-xr-x    1 root     root          4096 Jun 25 03:45 .             
@@ -419,7 +419,7 @@ drwxr-xr-x    1 root     root          4096 Jun 25 03:45 ..
 -rwxr-xr-x    1 root     root            57 Jun 24 08:03 file-644.txt  
 -rwxr-xr-x    1 root     root            84 Jun 24 08:03 script-755.sh</code></pre></div>
 <p>However, the ⑹ skaffold experiment shows the <em>worst</em> result:</p>
-<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">C:\&gt; skaffold-windows-amd64.exe build
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">C:\&gt; skaffold-windows-amd64.exe build
 Generating tags...
  - test-skaffold -&gt; test-skaffold:dbe377c
 Tags generated in 228.0023ms

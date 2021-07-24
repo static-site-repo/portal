@@ -34,7 +34,7 @@
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.85.0" />
+<meta name="generator" content="Hugo 0.86.0" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2019/04/wsltty-tmux/" />
@@ -341,16 +341,16 @@ if (!doNotTrack) {
 <p>此事古難全。</p>
 <h2 id="wsltty-剪貼簿">WSLtty 剪貼簿</h2>
 <p>在 X Window 或 Mac 的終端機，只要按下滑鼠右鍵就能夠 paste 文字。如果在 WSLtty 上也想這麼玩，請在 <code>%APPDATA%\wsltty\config</code> 設定檔加上這一行：</p>
-<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">RightClickAction=paste</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">RightClickAction=paste</code></pre></div>
 <h2 id="tmux-與-zsh">Tmux 與 zsh</h2>
 <p>啟動 tmux 時，似乎並不會根據 <code>/etc/passwd</code> 的資訊來喚起自訂的 shell，而是一律喚起 bash。</p>
 <p>解決方法是，在 <code>~/.tmux.conf</code> 加上這一行：</p>
-<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">set-option -g default-shell /bin/zsh</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">set-option -g default-shell /bin/zsh</code></pre></div>
 <h2 id="tmux-的-pane">Tmux 的 pane</h2>
 <p>用慣 iTerm2 的我，對 tmux 的 pane 功能不太習慣。</p>
 <p>譬如說，在 tmux 新增 pane 或 window 時，不會自動帶入目前的目錄 <code>$PWD</code>，而是一律帶入 <code>$HOME</code>，很不方便。Tmux 預設的組合鍵 <code>&lt;prefix&gt; %</code> 及 <code>&lt;prefix&gt; &quot;</code> 難記又難按，也很令人頭痛。</p>
 <p>因此，我綜合多人的做法<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup>，解決目錄問題，換成好記好按的組合鍵，更可用方向鍵來切換 pane：</p>
-<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext"># Create new window (tab) with current path
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"># Create new window (tab) with current path
 unbind c
 bind -n M-t new-window -c &#39;#{pane_current_path}&#39;  # mimic for iTerm2 habit
 
@@ -369,9 +369,9 @@ bind -n M-Down  select-pane -D</code></pre></div>
 <h2 id="tmux-plugin-manager">Tmux Plugin Manager</h2>
 <p>Tmux 設定太多了，就有人寫了外掛管理系統 <a href="https://github.com/tmux-plugins/tpm">Tmux Plugin Manager</a>。雖然目前我還用不到，但還是先安裝，以備不時之需。</p>
 <p>首先，下載 TPM：</p>
-<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">% git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">% git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm</code></pre></div>
 <p>將以下幾行加到 <code>.tmux.conf</code> 最後面：</p>
-<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext"># List of plugins
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"># List of plugins
 set -g @plugin &#39;tmux-plugins/tpm&#39;
 set -g @plugin &#39;tmux-plugins/tmux-sensible&#39;
 

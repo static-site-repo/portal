@@ -33,7 +33,7 @@ Is it possible in Kubernetes?
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.85.0" />
+<meta name="generator" content="Hugo 0.86.0" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2019/07/k8s-vol-resizing/" />
@@ -346,7 +346,7 @@ if (!doNotTrack) {
 <h2 id="about-the-sample-app">About the sample app</h2>
 <p>A sample app <a href="https://github.com/William-Yeh/vol-resize/blob/master/voltest.sh">voltest.sh</a> will be used for the whole experiment.<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> It displays the size of available disk spaces in the specified mount point (as the 1st argument), and also records the data continuously in the specified output file (as the 2nd argument; default to <code>&quot;data&quot;</code>).</p>
 <p>Let&rsquo;s see how it works. Assume that we are in the <code>/home</code> directory, with available disk space about 4.5 GB:</p>
-<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">% pwd
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">% pwd
 /home
 %
 % df -h
@@ -362,7 +362,7 @@ overlayfs       1.0M  160K  864K  16% /etc/ssh/ssh_host_dsa_key
 tmpfs           848M  736K  847M   1% /run/metrics
 tmpfs           848M     0  848M   0% /run/google/devshell</code></pre></div>
 <p>At first run, it shows the space of current directory and records them continuously in the <code>data</code> file within the same directory:</p>
-<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">% docker run -it  -v $(pwd):/mnt  williamyeh/voltest  /mnt
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">% docker run -it  -v $(pwd):/mnt  williamyeh/voltest  /mnt
 ---&gt; Checking /mnt/data
 1 : 4.5G
 2 : 4.5G
@@ -379,7 +379,7 @@ tmpfs           848M     0  848M   0% /run/google/devshell</code></pre></div>
 ^C
 %</code></pre></div>
 <p>Interrupt the execution at 12 on purpose, and run again. You&rsquo;ll see that it picks up the last serial number 12 and continues counting:</p>
-<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">% docker run -it  -v $(pwd):/mnt  williamyeh/voltest  /mnt
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">% docker run -it  -v $(pwd):/mnt  williamyeh/voltest  /mnt
 ---&gt; Checking /mnt/data
 13 : 4.5G
 14 : 4.5G
@@ -395,7 +395,7 @@ tmpfs           848M     0  848M   0% /run/google/devshell</code></pre></div>
 ^C
 %</code></pre></div>
 <p>Now the <code>data</code> file should have 23 lines of records:</p>
-<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">% cat data
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">% cat data
 1 : 4.5G
 2 : 4.5G
 3 : 4.5G
@@ -436,10 +436,10 @@ tmpfs           848M     0  848M   0% /run/google/devshell</code></pre></div>
 <h2 id="experiment-part-1-initial-size">Experiment part 1: initial size</h2>
 <p>The experiment is conducted on GCP and GKE. However, it should apply to other cloud Kubernetes platforms as well, with minor modification.</p>
 <p>➊ Clone the experiment repo to your workspace or Cloud Shell:</p>
-<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">% git clone https://github.com/William-Yeh/vol-resize.git</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">% git clone https://github.com/William-Yeh/vol-resize.git</code></pre></div>
 <p>➋ Prepare a Kubernetes cluster in GKE.</p>
 <p>➌ Create a 20GB persistent disk named <code>voltest</code>.  For example, the following command will create such a persistent disk in the us-central1-a zone:</p>
-<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">% gcloud compute disks create         \
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">% gcloud compute disks create         \
     --size=20GB --zone=us-central1-a  \
     voltest</code></pre></div>
 <p>Check if the underlying persistent disk is created:</p>
@@ -457,7 +457,7 @@ tmpfs           848M     0  848M   0% /run/google/devshell</code></pre></div>
 </div>
 
 <p>➍ We need a storage class with <code>allowVolumeExpansion</code> enabled. The manifest file <a href="https://github.com/William-Yeh/vol-resize/blob/master/expansion-ss.yml">expansion-ss.yml</a> is provided as follows:</p>
-<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">apiVersion: storage.k8s.io/v1
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
   name: expansion
@@ -467,9 +467,9 @@ provisioner: kubernetes.io/gce-pd
 allowVolumeExpansion: true
 reclaimPolicy: Delete</code></pre></div>
 <p>Create a storage class <code>expansion</code> for this:</p>
-<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">% kubectl apply -f expansion-ss.yml</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">% kubectl apply -f expansion-ss.yml</code></pre></div>
 <p>➎ We need a PV manifest file <a href="https://github.com/William-Yeh/vol-resize/blob/master/voltest-pv.yml">voltest-pv.yml</a> to associate it with the existing persistent disk just created before:</p>
-<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">apiVersion: v1
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">apiVersion: v1
 kind: PersistentVolume
 metadata:
   name: voltest
@@ -483,14 +483,14 @@ spec:
     pdName: voltest
     fsType: ext4</code></pre></div>
 <p>Create the persistent volume <code>voltest</code> now:</p>
-<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">% kubectl apply -f voltest-pv.yml
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">% kubectl apply -f voltest-pv.yml
 persistentvolume/voltest created
 % kubectl get pv
 NAME      CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS      CLAIM   STORAGECLASS   REASON   AGE
 voltest   20Gi       RWO            Retain           Available           expansion               8s</code></pre></div>
 <p>Note that the <code>voltest</code> PV is in &ldquo;Available&rdquo; status.</p>
 <p>➏ We need a PVC manifest file <a href="https://github.com/William-Yeh/vol-resize/blob/master/voltest-pvc.yml">voltest-pvc.yml</a> to claim the PV:</p>
-<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">apiVersion: v1
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: voltest
@@ -503,7 +503,7 @@ spec:
     requests:
       storage: 20Gi</code></pre></div>
 <p>Claim the persistent volume now:</p>
-<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">% kubectl apply -f voltest-pvc.yml
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">% kubectl apply -f voltest-pvc.yml
 persistentvolumeclaim/voltest created
 
 % kubectl get pvc
@@ -515,7 +515,7 @@ NAME      CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM             
 voltest   20Gi       RWO            Retain           Bound    default/voltest   expansion               13m</code></pre></div>
 <p>Note that the <code>voltest</code> PV/PVC pair is in &ldquo;Bound&rdquo; status.</p>
 <p>➐ We need a manifest file <a href="https://github.com/William-Yeh/vol-resize/blob/master/voltest-app.yml">voltest-app.yml</a> for our sample app to access the PV/PVC:</p>
-<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">apiVersion: apps/v1
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">apiVersion: apps/v1
 kind: Deployment
 ...
 spec:
@@ -536,9 +536,9 @@ spec:
           persistentVolumeClaim:
             claimName: voltest</code></pre></div>
 <p>Invoke the sample app now:</p>
-<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">% kubectl apply -f voltest-app.yml</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">% kubectl apply -f voltest-app.yml</code></pre></div>
 <p>Open another terminal pane to watch the logs continuously:</p>
-<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">% kubectl logs -f deployment/voltest
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">% kubectl logs -f deployment/voltest
 ---&gt; Checking /mnt/data
 1 : 20G
 2 : 20G
@@ -558,7 +558,7 @@ spec:
 <h2 id="experiment-part-2-resizing">Experiment part 2: resizing</h2>
 <p>Now we&rsquo;re about to resize the volume.</p>
 <p>➊ Edit the <code>voltest</code> PVC:</p>
-<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">% kubectl edit pvc/voltest</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">% kubectl edit pvc/voltest</code></pre></div>
 <p>➋ Change the value of <code>spec.resources.requests.storage</code> from <code>20Gi</code> to <code>100Gi</code>. Save, and exit.</p>
 <p>➌ Check if the logs are still being generated, and the content of the logs.</p>
 <p>➍ Check the size of underlying persistent disk. It should be expanded to 100 GB now.</p>
@@ -576,7 +576,7 @@ spec:
 </div>
 
 <p>➎ Check if the PV/PVC are both expanded:</p>
-<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">% kubectl get pv
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">% kubectl get pv
 NAME      CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM             STORAGECLASS   REASON   AGE
 voltest   100Gi      RWO            Retain           Bound    default/voltest   expansion               45m
 
@@ -595,13 +595,13 @@ voltest   Bound    voltest   20Gi       RWO            expansion      32m</code>
 <p>For now the question <em>&ldquo;2. Is the resizing process non-stop?&quot;</em> should be obviously answered. Let&rsquo;s move on to handle the <code>FileSystemResizePending</code> condition by restarting the related pods.</p>
 <h2 id="experiment-part-3-restart-the-pod">Experiment part 3: restart the pod</h2>
 <p>➊ Kill the pod, and let deployment restart a new pod for us (<code>replicas=1</code>):</p>
-<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">% kubectl get pods
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">% kubectl get pods
 NAME                      READY   STATUS    RESTARTS   AGE
 voltest-d88ff8c49-66wk2   1/1     Running   0          23m
 
 % kubectl delete pod voltest-d88ff8c49-66wk2</code></pre></div>
 <p>➋ Watch the logs! Our sample app will see the <em>file system expansion</em> progress on the fly:</p>
-<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">13465 : 20G
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">13465 : 20G
 13466 : 20G
 13467 : 20G
 13468 : 24G
@@ -620,7 +620,7 @@ voltest-d88ff8c49-66wk2   1/1     Running   0          23m
 13481 : 99G
 13482 : 99G</code></pre></div>
 <p>➌ Check if the PV/PVC are both expanded:</p>
-<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">% kubectl get pv
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">% kubectl get pv
 NAME      CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM             STORAGECLASS   REASON   AGE
 voltest   100Gi      RWO            Retain           Bound    default/voltest   expansion               57m
 

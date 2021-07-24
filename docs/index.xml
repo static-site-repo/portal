@@ -18,11 +18,29 @@
       
       <guid>//william-yeh.net/post/2021/07/revisit-psm1/</guid>
       
-        <description>&lt;p&gt;打算在公司內 agile guild 定期聚會中帶一場「Scrum WHAT &amp;amp; WHY 討論：以 Scrum 認證模擬測驗為素材」的小活動。它可說是非常好的 Scrum 靈魂拷問材料，若只以功利角度看待，就太可惜了。&lt;/p&gt;
+        <description>&lt;p&gt;公司內 agile guild 定期聚會輪到我來主持了。這次我打算帶一場「Scrum WHAT &amp;amp; WHY 討論：以 Scrum 認證模擬測驗為素材」的小活動。&lt;/p&gt;
+&lt;p&gt;Scrum 認證模擬測驗可說是非常好的 Scrum 靈魂拷問材料，尤其是對略有實務經驗的人來說，內容可說是拳拳到肉，足以激盪小組討論的火花。若只以功利角度看待，就太可惜了。&lt;/p&gt;
+&lt;p&gt;有圖為證：&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2021/07/psm1-feedback.png&#34; alt=&#34;活動迴響&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2021/07/psm1-feedback.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;活動迴響&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
 &lt;p&gt;&lt;a href=&#34;https://www.scrum.org/professional-scrum-certifications&#34;&gt;Scrum.org 系統的證照&lt;/a&gt;是永久有效的。儘管自己早在 2018 年就有 &lt;a href=&#34;https://www.scrum.org/user/437709&#34;&gt;PSM 1 證照&lt;/a&gt;，卻也想趁此機會再檢驗一下自己對於 Scrum 的認識。因此，上網找了一份免費的、有針對 &lt;em&gt;&lt;a href=&#34;https://scrumguides.org/&#34;&gt;The Scrum Guide&lt;/a&gt;&lt;/em&gt; 2020 版做過更新的「&lt;a href=&#34;https://www.thescrummaster.co.uk/assessments/professional-scrum-master-i-psm-i-practice-assessment/&#34;&gt;PSM 1 模擬測驗&lt;/a&gt;」，40 道題目，限時 30 分鐘，份量為正式測驗的一半。&lt;/p&gt;
 &lt;p&gt;結果還頗令人欣慰。和三年前相比，這次讀題變快，思考更少，分數也提高了（儘管這並非官方提供的模擬題） —— 或許也跟去年自己整理過一系列 &lt;a href=&#34;//william-yeh.net/post/2020/07/pbr-in-a-nutshell/&#34;&gt;&lt;em&gt;Essence of Scrum&lt;/em&gt;&lt;/a&gt; 文章有關吧。&lt;/p&gt;
 
-&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+
 &lt;div class=&#34;box&#34;&gt;
 &lt;figure  itemprop=&#34;associatedMedia&#34;
   itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
@@ -2117,7 +2135,7 @@ tcp_probe、dns_probe、icmp_probe，即使面對「不完全揭露」自身健�
 &lt;p&gt;所以，一開始，我們會先試著寫好 &lt;code&gt;blackbox.yml&lt;/code&gt; 設定檔，先測試 Blackbox exporter 能正常運作，之後才去串接 Prometheus。&lt;/p&gt;
 &lt;h2 id=&#34;blackbox-exporter-初體驗&#34;&gt;Blackbox exporter 初體驗&lt;/h2&gt;
 &lt;p&gt;官方提供的&lt;a href=&#34;https://github.com/prometheus/blackbox_exporter/blob/master/blackbox.yml&#34;&gt;陽春版 &lt;code&gt;blackbox.yml&lt;/code&gt; 設定檔&lt;/a&gt;展示了一些常見的 blackbox exporter 模組 (module)，很適合初次上手之用：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;c&#34;&gt;# https://github.com/prometheus/blackbox_exporter/blob/master/blackbox.yml&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;c&#34;&gt;# https://github.com/prometheus/blackbox_exporter/blob/master/blackbox.yml&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;modules&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;http_2xx&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;prober&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;http&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
@@ -2129,20 +2147,20 @@ tcp_probe、dns_probe、icmp_probe，即使面對「不完全揭露」自身健�
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;其中，最常用的應該是 http_2xx 模組了。如果你只需要用到這模組，可以不必準備 &lt;code&gt;blackbox.yml&lt;/code&gt; 設定檔。&lt;/p&gt;
 &lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;p&gt;我們可以先&lt;a href=&#34;https://github.com/prometheus/blackbox_exporter/releases&#34;&gt;下載&lt;/a&gt;並啟動 Blackbox exporter:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ ./blackbox_exporter
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ ./blackbox_exporter
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;預設情況下，Blackbox exporter 會透過 port 9115 提供探測服務。&lt;/p&gt;
 &lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;p&gt;現在，讓我們透過 Blackbox exporter 內建的 http_2xx 模組，探測 github.com 的健康狀況：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ curl &lt;span class=&#34;s1&#34;&gt;&amp;#39;localhost:9115/probe?target=github.com&amp;amp;module=http_2xx&amp;#39;&lt;/span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ curl &lt;span class=&#34;s1&#34;&gt;&amp;#39;localhost:9115/probe?target=github.com&amp;amp;module=http_2xx&amp;#39;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;或是乾脆省略掉預設的 http_2xx 模組名稱：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ curl &lt;span class=&#34;s1&#34;&gt;&amp;#39;localhost:9115/probe?target=github.com&amp;#39;&lt;/span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ curl &lt;span class=&#34;s1&#34;&gt;&amp;#39;localhost:9115/probe?target=github.com&amp;#39;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;details&gt;
   &lt;summary style=&#34;background-color:#f5f5f5;border:1px solid #ccc;padding:5px;&#34;&gt;
     透過 Blackbox exporter 探測 github.com 的輸出結果
     
   &lt;/summary&gt;
-  &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plain&#34; data-lang=&#34;plain&#34;&gt;# HELP probe_dns_lookup_time_seconds Returns the time taken for probe dns lookup in seconds
+  &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plain&#34; data-lang=&#34;plain&#34;&gt;# HELP probe_dns_lookup_time_seconds Returns the time taken for probe dns lookup in seconds
 # TYPE probe_dns_lookup_time_seconds gauge
 probe_dns_lookup_time_seconds 0.057117535
 # HELP probe_duration_seconds Returns how long the probe took to complete in seconds
@@ -2251,14 +2269,14 @@ probe_tls_version_info{version=&amp;#34;TLS 1.3&amp;#34;} 1
 &lt;/details&gt;
 
 &lt;p&gt;大部分情況下，我們只需要看其中的 &lt;code&gt;probe_success&lt;/code&gt; 這項 gauge 指標：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plain&#34; data-lang=&#34;plain&#34;&gt;# HELP probe_success Displays whether or not the probe was a success
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plain&#34; data-lang=&#34;plain&#34;&gt;# HELP probe_success Displays whether or not the probe was a success
 # TYPE probe_success gauge
 probe_success 1
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;p&gt;請用 Blackbox exporter 去戳戳看其他網站吧。&lt;/p&gt;
 &lt;h2 id=&#34;ipv6ipv4-問題&#34;&gt;IPv6/IPv4 問題&lt;/h2&gt;
 &lt;p&gt;如果用 Blackbox exporter 去探測 google.com，會得到很奇怪的結果：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ curl &lt;span class=&#34;s1&#34;&gt;&amp;#39;localhost:9115/probe?target=google.com&amp;#39;&lt;/span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ curl &lt;span class=&#34;s1&#34;&gt;&amp;#39;localhost:9115/probe?target=google.com&amp;#39;&lt;/span&gt;
 
 &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;略&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
 &lt;span class=&#34;c1&#34;&gt;# HELP probe_ip_protocol Specifies whether probe ip protocol is IP4 or IP6&lt;/span&gt;
@@ -2268,7 +2286,7 @@ probe_ip_protocol &lt;span class=&#34;m&#34;&gt;6&lt;/span&gt;
 &lt;span class=&#34;c1&#34;&gt;# TYPE probe_success gauge&lt;/span&gt;
 probe_success &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;打開 debug 模式查查看：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ curl &lt;span class=&#34;s1&#34;&gt;&amp;#39;localhost:9115/probe?target=google.com&amp;amp;debug=true&amp;#39;&lt;/span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ curl &lt;span class=&#34;s1&#34;&gt;&amp;#39;localhost:9115/probe?target=google.com&amp;amp;debug=true&amp;#39;&lt;/span&gt;
 
 Logs &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; the probe:
 &lt;span class=&#34;nv&#34;&gt;ts&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;2020-08-07T07:42:43.560461Z &lt;span class=&#34;nv&#34;&gt;caller&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;main.go:304 &lt;span class=&#34;nv&#34;&gt;module&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;http_2xx &lt;span class=&#34;nv&#34;&gt;target&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;google.com &lt;span class=&#34;nv&#34;&gt;level&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;info &lt;span class=&#34;nv&#34;&gt;msg&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;Beginning probe&amp;#34;&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;probe&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;http &lt;span class=&#34;nv&#34;&gt;timeout_seconds&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;119.5
@@ -2285,7 +2303,7 @@ Logs &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; the probe:
 &lt;p&gt;You can adjust this behaviour by adding &lt;code&gt;preferred_ip_protocol: &amp;quot;ip4&amp;quot;&lt;/code&gt; to the module&amp;rsquo;s configuration.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;所以，我會在 &lt;code&gt;blackbox.yml&lt;/code&gt; 設定檔當中，增加另一個模組，取一個好記的名字：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;nt&#34;&gt;modules&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;nt&#34;&gt;modules&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# module: expect http_2xx, with ip4&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;http_2xx_with_ip4&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;prober&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;http&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
@@ -2295,11 +2313,11 @@ Logs &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; the probe:
 &lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;c&#34;&gt;#...&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;然後，重啟 Blackbox exporter，記得要餵給它新的設定檔：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ ./blackbox_exporter --config.file&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;./blackbox.yml
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ ./blackbox_exporter --config.file&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;./blackbox.yml
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;這次，讓我們改用新增的模組去探測 google.com：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ curl &lt;span class=&#34;s1&#34;&gt;&amp;#39;localhost:9115/probe?target=google.com&amp;amp;module=http_2xx_with_ip4&amp;#39;&lt;/span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ curl &lt;span class=&#34;s1&#34;&gt;&amp;#39;localhost:9115/probe?target=google.com&amp;amp;module=http_2xx_with_ip4&amp;#39;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;這次，總算可以看到正常的 &lt;code&gt;probe_success&lt;/code&gt; 了：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plain&#34; data-lang=&#34;plain&#34;&gt;# HELP probe_ip_protocol Specifies whether probe ip protocol is IP4 or IP6
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plain&#34; data-lang=&#34;plain&#34;&gt;# HELP probe_ip_protocol Specifies whether probe ip protocol is IP4 or IP6
 # TYPE probe_ip_protocol gauge
 probe_ip_protocol 4
 # HELP probe_success Displays whether or not the probe was a success
@@ -2346,7 +2364,7 @@ probe_success 1
 &lt;p&gt;一切準備就緒，來試試看哪一種寫法才是對的吧。&lt;/p&gt;
 &lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;p&gt;請用 Docker Compose 執行：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ docker-compose up
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ docker-compose up
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;請用瀏覽器打開 &lt;a href=&#34;http://localhost:9090/&#34;&gt;http://localhost:9090/&lt;/a&gt; 進入 Prometheus 儀表板：&lt;/p&gt;
 
 

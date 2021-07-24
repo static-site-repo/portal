@@ -34,7 +34,7 @@
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.85.0" />
+<meta name="generator" content="Hugo 0.86.0" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2020/04/grpc-testing-tools/" />
@@ -361,7 +361,7 @@ if (!doNotTrack) {
   </summary>
   
 
-<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">.
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">.
 ├── README.md
 ├── build.sh                 ← 編譯命令
 ├── go.mod
@@ -384,7 +384,7 @@ if (!doNotTrack) {
 
 <p>為了方便起見，我挑選 &ldquo;<a href="https://github.com/grpc/grpc-go">gRPC-Go</a>&rdquo; 專案裡面的 &ldquo;<a href="https://github.com/grpc/grpc-go/tree/master/examples/route_guide">the route guide server and client</a>&rdquo; 範例做為待測程式。</p>
 <p>這隻 server 程式透過 gRPC 提供 <code>RouteGuide</code> 服務，我們這次只會測試其中的 <code>RecordRoute</code> 呼叫。以下是從 gRPC 介面定義檔 <a href="https://github.com/William-Yeh/grpcurl-and-ghz-demo/blob/master/routeguide/route_guide.proto"><code>route_guide.proto</code></a> 摘錄我們會用到的部份：</p>
-<div class="highlight"><pre class="chroma"><code class="language-proto" data-lang="proto"><span class="kn">package</span> <span class="nn">routeguide</span><span class="p">;</span><span class="err">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-proto" data-lang="proto"><span class="kn">package</span> <span class="nn">routeguide</span><span class="p">;</span><span class="err">
 </span><span class="err"></span><span class="kd">service</span> <span class="n">RouteGuide</span> <span class="p">{</span><span class="err">
 </span><span class="err"></span>  <span class="c1">//...
 </span><span class="c1"></span><span class="err">
@@ -409,7 +409,7 @@ if (!doNotTrack) {
 </span><span class="err">
 </span><span class="err"></span><span class="c1">//...
 </span></code></pre></div><p>我也針對 server 程式小改三個地方，弄出另一個 server-new 程式：</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ diff  server/server.go  server-new/server-new.go
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ diff  server/server.go  server-new/server-new.go
 42a43
 &gt; 	<span class="s2">&#34;google.golang.org/grpc/reflection&#34;</span>
 55c56
@@ -434,7 +434,7 @@ if (!doNotTrack) {
 <li><a href="https://github.com/bojand/ghz">ghz</a> 0.51.0 以上。</li>
 </ul>
 <p>先來編譯程式：</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ ./build.sh
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ ./build.sh
 </code></pre></div><p>成功後，會在 <code>out</code> 目錄拿到兩份執行檔：</p>
 <ul>
 <li>
@@ -462,7 +462,7 @@ if (!doNotTrack) {
 </div>
 
 <p>然後，請分別啟動 <code>out/server</code> 及 <code>out/server-new</code> 程式：</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 舊程式，跑在 10000 port</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 舊程式，跑在 10000 port</span>
 $ out/server
 
 <span class="c1"># 新程式，跑在 20000 port</span>
@@ -474,7 +474,7 @@ $ out/server-new
 <p><a href="https://github.com/fullstorydev/grpcurl">gRPCurl</a>，顧名思義，是在向硬漢必備的萬用瑞士刀 <a href="https://curl.haxx.se/">curl</a> 致敬。不妨將它視為 gRPC 版的 curl。</p>
 <p>gRPCurl 使用上最主要的差別是，因應 gRPC 的特性，必須餵給它 proto 檔案，才會知道該如何封裝訊息格式。</p>
 <p>譬如說，我們可將 proto 檔案的路徑寫在 <code>-import-path</code> 中、將 proto 檔案名稱寫在 <code>-proto</code> 中、將參數寫在 <code>-d</code> 中，再呼叫 server 的遠端程序：</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ grpcurl -plaintext  <span class="se">\
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ grpcurl -plaintext  <span class="se">\
 </span><span class="se"></span>    -d <span class="s1">&#39;{&#34;latitude&#34;:-460000000,&#34;longitude&#34;:-1160000000} {&#34;latitude&#34;:720000000,&#34;longitude&#34;:-540000000}&#39;</span> <span class="se">\
 </span><span class="se"></span>    -import-path ./routeguide        <span class="se">\
 </span><span class="se"></span>    -proto       route_guide.proto   <span class="se">\
@@ -486,7 +486,7 @@ $ out/server-new
   <span class="s2">&#34;distance&#34;</span>: <span class="m">13975745</span>
 <span class="o">}</span>
 </code></pre></div><p>我們也可將事先備妥的資料檔餵給 gRPCurl。像是含有 100 筆資料的 <code>testdata.dat</code>：</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ grpcurl -plaintext -d <span class="s1">&#39;@&#39;</span>            <span class="se">\
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ grpcurl -plaintext -d <span class="s1">&#39;@&#39;</span>            <span class="se">\
 </span><span class="se"></span>    -import-path ./routeguide          <span class="se">\
 </span><span class="se"></span>    -proto       route_guide.proto     <span class="se">\
 </span><span class="se"></span>    127.0.0.1:10000                    <span class="se">\
@@ -504,7 +504,7 @@ $ out/server-new
 </blockquote>
 <p>所以，從命令列參數及統計結果上，都可看出它們的影響。</p>
 <p>譬如說，我們可將 proto 檔案的路徑寫在 <code>--import-path</code> 中、將 proto 檔案名稱寫在 <code>--proto</code> 中、將參數寫在 <code>--data</code> 中，再呼叫 server 的遠端程序：</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ ghz --insecure  -z 20s  <span class="se">\
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ ghz --insecure  -z 20s  <span class="se">\
 </span><span class="se"></span>      --data <span class="s1">&#39;[{&#34;latitude&#34;:-460000000,&#34;longitude&#34;:-1160000000},{&#34;latitude&#34;:720000000,&#34;longitude&#34;:-540000000}]&#39;</span> <span class="se">\
 </span><span class="se"></span>      --import-paths ./routeguide         <span class="se">\
 </span><span class="se"></span>      --proto        route_guide.proto    <span class="se">\
@@ -518,7 +518,7 @@ $ out/server-new
   </summary>
   
 
-<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">Summary:
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">Summary:
   Count:        548082
   Total:        20.00 s
   Slowest:      50.36 ms
@@ -561,7 +561,7 @@ Error distribution:
 </details>
 
 <p>同樣的，我們也可將事先備妥的資料檔餵給 ghz。像是含有 100 筆資料的 <code>testdata.json</code>：</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ ghz --insecure --data<span class="o">=</span>@  -z 20s  <span class="se">\
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ ghz --insecure --data<span class="o">=</span>@  -z 20s  <span class="se">\
 </span><span class="se"></span>      --import-paths ./routeguide         <span class="se">\
 </span><span class="se"></span>      --proto        route_guide.proto    <span class="se">\
 </span><span class="se"></span>      --call routeguide.RouteGuide.RecordRoute  <span class="se">\
@@ -575,7 +575,7 @@ Error distribution:
   </summary>
   
 
-<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">Summary:
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">Summary:
   Count:        788680
   Total:        20.00 s
   Slowest:      28.02 ms
@@ -622,9 +622,9 @@ Error distribution:
 <h3 id="server-reflection">Server reflection</h3>
 <p>我以這次的範例程式 server-new 為例，說明如何加上 server reflection 功能。</p>
 <p>首先，請加上 <a href="https://pkg.go.dev/google.golang.org/grpc/reflection?tab=doc"><code>google.golang.org/grpc/reflection</code></a> 套件：</p>
-<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">import</span> <span class="s">&#34;google.golang.org/grpc/reflection&#34;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="kn">import</span> <span class="s">&#34;google.golang.org/grpc/reflection&#34;</span>
 </code></pre></div><p>接著，在 <code>grpcServer.Serve</code> 之前，呼叫 <code>reflection.Register</code>：</p>
-<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">grpcServer</span> <span class="o">:=</span> <span class="nx">grpc</span><span class="p">.</span><span class="nf">NewServer</span><span class="p">(</span><span class="nx">opts</span><span class="o">...</span><span class="p">)</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="nx">grpcServer</span> <span class="o">:=</span> <span class="nx">grpc</span><span class="p">.</span><span class="nf">NewServer</span><span class="p">(</span><span class="nx">opts</span><span class="o">...</span><span class="p">)</span>
 <span class="c1">//...
 </span><span class="c1"></span>
 <span class="c1">// Register reflection service on gRPC server.
@@ -635,12 +635,12 @@ Error distribution:
 <p>針對新版的 server-new 來實驗看看吧。</p>
 <h3 id="grpcurl-1">gRPCurl</h3>
 <p>我們可用 <code>list</code> 指令查詢 server-new 提供哪些服務：</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ grpcurl -plaintext  127.0.0.1:20000  list
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ grpcurl -plaintext  127.0.0.1:20000  list
 
 grpc.reflection.v1alpha.ServerReflection
 routeguide.RouteGuide
 </code></pre></div><p>可用 <code>describe</code> 指令查詢 server-new 提供服務的介面：</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ grpcurl -plaintext  127.0.0.1:20000  describe
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ grpcurl -plaintext  127.0.0.1:20000  describe
 
 grpc.reflection.v1alpha.ServerReflection is a service:
 service ServerReflection <span class="o">{</span>
@@ -654,7 +654,7 @@ service RouteGuide <span class="o">{</span>
   rpc RouteChat <span class="o">(</span> stream .routeguide.RouteNote <span class="o">)</span> returns <span class="o">(</span> stream .routeguide.RouteNote <span class="o">)</span><span class="p">;</span>
 <span class="o">}</span>
 </code></pre></div><p>可用 <code>describe</code> 指令進一步查詢某參數的具體格式：</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ grpcurl -plaintext  127.0.0.1:20000  describe .routeguide.Point
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ grpcurl -plaintext  127.0.0.1:20000  describe .routeguide.Point
 
 routeguide.Point is a message:
 message Point <span class="o">{</span>
@@ -663,7 +663,7 @@ message Point <span class="o">{</span>
 <span class="o">}</span>
 </code></pre></div><p>可看出，gRPCurl 不需要 proto 檔案，就能直接向 server-new 查詢遠端呼叫所需知道的介面細節。</p>
 <p>最後，讓我們將含有 100 筆資料的 <code>testdata.dat</code> 餵給 gRPCurl 來測測看：</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ grpcurl -plaintext -d <span class="s1">&#39;@&#39;</span> <span class="se">\
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ grpcurl -plaintext -d <span class="s1">&#39;@&#39;</span> <span class="se">\
 </span><span class="se"></span>    127.0.0.1:20000         <span class="se">\
 </span><span class="se"></span>    routeguide.RouteGuide.RecordRoute  <span class="se">\
 </span><span class="se"></span>  &lt; testdata.dat
@@ -677,7 +677,7 @@ message Point <span class="o">{</span>
 <h3 id="ghz-1">ghz</h3>
 <p>儘管 server reflection 通常不會在 production 環境啟用，不過我還是很好奇：server reflection 對執行效率的影響有多少？尤其是涉及 marshalling。</p>
 <p>用 ghz 試試看吧！</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ ghz --insecure --data<span class="o">=</span>@  -z 20s  <span class="se">\
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ ghz --insecure --data<span class="o">=</span>@  -z 20s  <span class="se">\
 </span><span class="se"></span>      --call routeguide.RouteGuide.RecordRoute  <span class="se">\
 </span><span class="se"></span>      127.0.0.1:20000  <span class="se">\
 </span><span class="se"></span>  &lt; testdata.json
@@ -689,7 +689,7 @@ message Point <span class="o">{</span>
   </summary>
   
 
-<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">Summary:
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">Summary:
   Count:        826524
   Total:        20.00 s
   Slowest:      19.79 ms
