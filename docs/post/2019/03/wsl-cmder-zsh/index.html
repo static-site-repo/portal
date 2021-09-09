@@ -35,7 +35,7 @@
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.87.0" />
+<meta name="generator" content="Hugo 0.88.1" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2019/03/wsl-cmder-zsh/" />
@@ -376,7 +376,7 @@ if (!doNotTrack) {
 <h2 id="整合-cmder-與-wsl">整合 Cmder 與 WSL</h2>
 <p>為了讓 Cmder 以 WSL + Zsh 模式啟動，我們需要新增一個 Cmder 的 &ldquo;Startup / Tasks&rdquo;。</p>
 <p>譬如說，我們可新增一個名叫 <code>{WSL::zsh}</code> 的 task，將 command 寫成：</p>
-<pre><code>set &quot;PATH=%ConEmuBaseDirShort%\wsl;%PATH%&quot; &amp; %ConEmuBaseDirShort%\conemu-cyg-64.exe --wsl -C~ -cur_console:p:t:&quot;zsh&quot; -t zsh -l
+<pre tabindex="0"><code>set &quot;PATH=%ConEmuBaseDirShort%\wsl;%PATH%&quot; &amp; %ConEmuBaseDirShort%\conemu-cyg-64.exe --wsl -C~ -cur_console:p:t:&quot;zsh&quot; -t zsh -l
 </code></pre>
 <link rel="stylesheet" href="/css/hugo-easy-gallery.css" />
 <div class="box">
@@ -448,7 +448,7 @@ none on /run/user type tmpfs (rw,nosuid,nodev,noexec,noatime,mode=755) binfmt_mi
 D: on /mnt/d type drvfs (rw,relatime,uid=1000,gid=1000,umask=22,fmask=111,metadata,case=off)
 C: on /mnt/c type drvfs (rw,noatime,uid=1000,gid=1000,case=off)</code></pre></div>
 <p>如果成功了，請記得將這設定寫進 <code>/etc/fstab</code> 裡面，下次 WSL 啟動時就會自動生效：</p>
-<pre><code>D: /mnt/d drvfs rw,relatime,uid=1000,gid=1000,metadata,umask=22,fmask=111 0 0
+<pre tabindex="0"><code>D: /mnt/d drvfs rw,relatime,uid=1000,gid=1000,metadata,umask=22,fmask=111 0 0
 </code></pre><h2 id="docker-與-kubernetes">Docker 與 Kubernetes</h2>
 <p>雖然保哥的文章推薦在 WSL 裡的 Linux 再安裝一份 Docker engine <sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup>，但我比較傾向<strong>不要</strong>。我比較傾向共用既有資源，讓 WSL 直接連接到 Docker Desktop for Windows 身上。畢竟，在同一台電腦上，要維護兩套 Docker engine，太累了。</p>
 <p>我參考上官林傑的文章〈[在 Windows Subsystem for Linux (WSL) 下使用 Windows 上的 Docker Engine](<a href="https://medium.com/@ericsk/%E5%9C%A8-windows-subsystem-for-li">https://medium.com/@ericsk/%E5%9C%A8-windows-subsystem-for-li</a>
