@@ -85,7 +85,7 @@
 &lt;p&gt;The Sprint Goal is the single objective for the Sprint.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;從 &amp;ldquo;an objective&amp;rdquo; 字眼替換成 &amp;ldquo;the single objective&amp;rdquo;，可看出背後想要強調的意涵。&lt;/p&gt;
-&lt;p&gt;因此，面對以下這題，在作答時，原本我還想把 &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Goal&lt;/span&gt;
+&lt;p&gt;因此，面對這題，在作答時，原本我還想把 &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Goal&lt;/span&gt;
  標準放寬，結果就是⋯⋯&lt;/p&gt;
 
 
@@ -134,7 +134,8 @@
 &lt;p&gt;Scrum Masters are true leaders who serve the Scrum Team and the larger organization. The Scrum Master is accountable for establishing Scrum as defined in the Scrum Guide. The Scrum Master is accountable for the Scrum Team’s effectiveness.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;從 “self-organizing” 字眼替換成 “self-managing”，從 “servant-leader” 字眼替換成 “true leaders”，從 “responsible” 字眼替換成 “accountable”，可看出背後想要強調的意涵。&lt;/p&gt;
-&lt;p&gt;因此，面對以下這題，在作答時，原本我還想比照一般 agile 陣營或多或少有點輕視管理陣營的傾向或潛規則，選個貌似政治正確的答案，結果就是⋯⋯&lt;/p&gt;
+&lt;p&gt;看了以上論述，你認為這題的答案會是什麼？&lt;/p&gt;
+&lt;p&gt;在作答時，原本我還想比照一般 agile 陣營或多或少有點輕視管理陣營的傾向或潛規則，選個貌似政治正確的答案，結果就是⋯⋯&lt;/p&gt;
 
 
 &lt;div class=&#34;box&#34;&gt;
@@ -153,6 +154,23 @@
 
 &lt;p&gt;PSM 可是非常強調 &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Scrum Master&lt;/span&gt;
  崇高價值的，在核心理念上毫不妥協。&lt;/p&gt;
+&lt;p&gt;關於這議題，我認為 LeSS 的 &lt;a href=&#34;https://less.works/less/management/role-of-manager&#34;&gt;Role of Manager&lt;/a&gt; 論述得相當精闢，尤其是以下這張圖，清楚標示出 Scrum master 的 &amp;ldquo;manager&amp;rdquo; 幅度，值得一讀：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2021/07/less-role-responsibilities.png&#34; alt=&#34;Role of Manager (LeSS perspective)&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2021/07/less-role-responsibilities.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Role of Manager (LeSS perspective)&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
 &lt;h2 id=&#34;值得精讀的文獻&#34;&gt;值得精讀的文獻&lt;/h2&gt;
 &lt;p&gt;&lt;em&gt;&lt;a href=&#34;https://scrumguides.org/&#34;&gt;The Scrum Guide&lt;/a&gt;&lt;/em&gt; 2020 版真的很值得精讀，細細體會它如何將敏捷的「本質」闡述得更精準。&lt;/p&gt;
 &lt;p&gt;建議你：做完「&lt;a href=&#34;https://www.thescrummaster.co.uk/assessments/professional-scrum-master-i-psm-i-practice-assessment/&#34;&gt;PSM 1 模擬測驗&lt;/a&gt;」後，請確實檢討一次：針對每一題，盡量從 &lt;em&gt;&lt;a href=&#34;https://scrumguides.org/&#34;&gt;The Scrum Guide&lt;/a&gt;&lt;/em&gt; 找出佐證或反證的根據。如此一來，你會更貼近 Scrum 的靈魂。&lt;/p&gt;
