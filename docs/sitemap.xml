@@ -2,42 +2,105 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>//william-yeh.net/post/2021/12/2021-retrospective/</loc>
+    <lastmod>2021-12-28T22:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>//william-yeh.net/tags/agile/</loc>
-    <lastmod>2021-07-11T16:00:00+08:00</lastmod>
+    <lastmod>2021-12-28T22:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/book/</loc>
+    <lastmod>2021-12-28T22:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/career/</loc>
+    <lastmod>2021-12-28T22:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>//william-yeh.net/categories/</loc>
-    <lastmod>2021-07-11T16:00:00+08:00</lastmod>
+    <lastmod>2021-12-28T22:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>//william-yeh.net/categories/management/</loc>
-    <lastmod>2021-07-11T16:00:00+08:00</lastmod>
+    <loc>//william-yeh.net/tags/coach/</loc>
+    <lastmod>2021-12-28T22:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/course/</loc>
+    <lastmod>2021-12-28T22:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/categories/life/</loc>
+    <lastmod>2021-12-28T22:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>//william-yeh.net/post/</loc>
-    <lastmod>2021-07-11T16:00:00+08:00</lastmod>
+    <lastmod>2021-12-28T22:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>//william-yeh.net/</loc>
-    <lastmod>2021-07-11T16:00:00+08:00</lastmod>
+    <lastmod>2021-12-28T22:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/principle/</loc>
+    <lastmod>2021-12-28T22:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>//william-yeh.net/tags/scrum/</loc>
+    <lastmod>2021-12-28T22:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/systems-thinking/</loc>
+    <lastmod>2021-12-28T22:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/tags/</loc>
+    <lastmod>2021-12-28T22:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/categories/management/</loc>
     <lastmod>2021-07-11T16:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -51,27 +114,6 @@
   </url>
   
   <url>
-    <loc>//william-yeh.net/tags/</loc>
-    <lastmod>2021-07-11T16:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/tags/book/</loc>
-    <lastmod>2021-07-06T20:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/tags/career/</loc>
-    <lastmod>2021-07-06T20:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>//william-yeh.net/post/2021/07/ic-needs/</loc>
     <lastmod>2021-07-06T20:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -80,13 +122,6 @@
   
   <url>
     <loc>//william-yeh.net/tags/devops/</loc>
-    <lastmod>2021-04-05T20:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/tags/systems-thinking/</loc>
     <lastmod>2021-04-05T20:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -121,13 +156,6 @@
   </url>
   
   <url>
-    <loc>//william-yeh.net/tags/course/</loc>
-    <lastmod>2021-03-28T16:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>//william-yeh.net/categories/course/</loc>
     <lastmod>2021-03-28T16:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -137,13 +165,6 @@
   <url>
     <loc>//william-yeh.net/post/2021/03/sys-thinking-unicorn-project/</loc>
     <lastmod>2021-03-28T16:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/tags/coach/</loc>
-    <lastmod>2021-03-17T20:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -185,20 +206,6 @@
   
   <url>
     <loc>//william-yeh.net/tags/grpc/</loc>
-    <lastmod>2020-12-26T20:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/categories/life/</loc>
-    <lastmod>2020-12-26T20:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>//william-yeh.net/tags/principle/</loc>
     <lastmod>2020-12-26T20:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
