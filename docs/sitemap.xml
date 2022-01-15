@@ -913,7 +913,14 @@
   
   <url>
     <loc>//william-yeh.net/post/2017/05/self-change/</loc>
-    <lastmod>2017-05-16T14:44:42+08:00</lastmod>
+    <lastmod>2017-05-16T22:44:42+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>//william-yeh.net/post/2017/04/satir-workshop/</loc>
+    <lastmod>2017-04-19T16:14:28+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
