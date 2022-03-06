@@ -34,7 +34,7 @@
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.92.2" />
+<meta name="generator" content="Hugo 0.93.2" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2020/04/grpc-testing-tools/" />
@@ -361,67 +361,67 @@ if (!doNotTrack) {
   </summary>
   
 
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">.
-├── README.md
-├── build.sh                 ← 編譯命令
-├── go.mod
-├── go.sum
-├── out                      ← 編譯後的可執行檔
-│   ├── server
-│   └── server-new
-├── routeguide               ← gRPC 介面定義；原封不動取自 &#34;gRPC-Go&#34; 專案
-│   ├── route_guide.pb.go
-│   └── route_guide.proto
-├── server                   ← server 程式；原封不動取自 &#34;gRPC-Go&#34; 專案
-│   └── server.go
-├── server-new               ← 由我修改過的新版 server 程式
-│   └── server-new.go
-├── testdata.dat             ← 給 gRPCurl 的測試資料
-└── testdata.json            ← 給 ghz 的測試資料</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">.
+</span></span><span class="line"><span class="cl">├── README.md
+</span></span><span class="line"><span class="cl">├── build.sh                 ← 編譯命令
+</span></span><span class="line"><span class="cl">├── go.mod
+</span></span><span class="line"><span class="cl">├── go.sum
+</span></span><span class="line"><span class="cl">├── out                      ← 編譯後的可執行檔
+</span></span><span class="line"><span class="cl">│   ├── server
+</span></span><span class="line"><span class="cl">│   └── server-new
+</span></span><span class="line"><span class="cl">├── routeguide               ← gRPC 介面定義；原封不動取自 &#34;gRPC-Go&#34; 專案
+</span></span><span class="line"><span class="cl">│   ├── route_guide.pb.go
+</span></span><span class="line"><span class="cl">│   └── route_guide.proto
+</span></span><span class="line"><span class="cl">├── server                   ← server 程式；原封不動取自 &#34;gRPC-Go&#34; 專案
+</span></span><span class="line"><span class="cl">│   └── server.go
+</span></span><span class="line"><span class="cl">├── server-new               ← 由我修改過的新版 server 程式
+</span></span><span class="line"><span class="cl">│   └── server-new.go
+</span></span><span class="line"><span class="cl">├── testdata.dat             ← 給 gRPCurl 的測試資料
+</span></span><span class="line"><span class="cl">└── testdata.json            ← 給 ghz 的測試資料</span></span></code></pre></div>
 
 
 </details>
 
 <p>為了方便起見，我挑選 &ldquo;<a href="https://github.com/grpc/grpc-go">gRPC-Go</a>&rdquo; 專案裡面的 &ldquo;<a href="https://github.com/grpc/grpc-go/tree/master/examples/route_guide">the route guide server and client</a>&rdquo; 範例做為待測程式。</p>
 <p>這隻 server 程式透過 gRPC 提供 <code>RouteGuide</code> 服務，我們這次只會測試其中的 <code>RecordRoute</code> 呼叫。以下是從 gRPC 介面定義檔 <a href="https://github.com/William-Yeh/grpcurl-and-ghz-demo/blob/master/routeguide/route_guide.proto"><code>route_guide.proto</code></a> 摘錄我們會用到的部份：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-proto" data-lang="proto"><span class="kn">package</span> <span class="nn">routeguide</span><span class="p">;</span><span class="err">
-</span><span class="err"></span><span class="kd">service</span> <span class="n">RouteGuide</span> <span class="p">{</span><span class="err">
-</span><span class="err"></span>  <span class="c1">//...
-</span><span class="c1"></span><span class="err">
-</span><span class="err"></span>  <span class="c1">// A client-to-server streaming RPC.
-</span><span class="c1"></span>  <span class="c1">//
-</span><span class="c1"></span>  <span class="c1">// Accepts a stream of Points on a route being traversed, returning a
-</span><span class="c1"></span>  <span class="c1">// RouteSummary when traversal is completed.
-</span><span class="c1"></span>  <span class="k">rpc</span> <span class="n">RecordRoute</span><span class="p">(</span><span class="n">stream</span> <span class="n">Point</span><span class="p">)</span> <span class="k">returns</span> <span class="p">(</span><span class="n">RouteSummary</span><span class="p">)</span> <span class="p">{}</span><span class="err">
-</span><span class="err"></span><span class="p">}</span><span class="err">
-</span><span class="err">
-</span><span class="err"></span><span class="kd">message</span> <span class="nc">Point</span> <span class="p">{</span><span class="err">
-</span><span class="err"></span>  <span class="kt">int32</span> <span class="n">latitude</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span><span class="err">
-</span><span class="err"></span>  <span class="kt">int32</span> <span class="n">longitude</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span><span class="err">
-</span><span class="err"></span><span class="p">}</span><span class="err">
-</span><span class="err">
-</span><span class="err"></span><span class="kd">message</span> <span class="nc">RouteSummary</span> <span class="p">{</span><span class="err">
-</span><span class="err"></span>  <span class="kt">int32</span> <span class="n">point_count</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span><span class="err">
-</span><span class="err"></span>  <span class="kt">int32</span> <span class="n">feature_count</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span><span class="err">
-</span><span class="err"></span>  <span class="kt">int32</span> <span class="n">distance</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span><span class="err">
-</span><span class="err"></span>  <span class="kt">int32</span> <span class="n">elapsed_time</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span><span class="err">
-</span><span class="err"></span><span class="p">}</span><span class="err">
-</span><span class="err">
-</span><span class="err"></span><span class="c1">//...
-</span></code></pre></div><p>我也針對 server 程式小改三個地方，弄出另一個 server-new 程式：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ diff  server/server.go  server-new/server-new.go
-42a43
-&gt; 	<span class="s2">&#34;google.golang.org/grpc/reflection&#34;</span>
-55c56
-&lt; 	<span class="nv">port</span>       <span class="o">=</span> flag.Int<span class="o">(</span><span class="s2">&#34;port&#34;</span>, 10000, <span class="s2">&#34;The server port&#34;</span><span class="o">)</span>
----
-&gt; 	<span class="nv">port</span>       <span class="o">=</span> flag.Int<span class="o">(</span><span class="s2">&#34;port&#34;</span>, 20000, <span class="s2">&#34;The server port&#34;</span><span class="o">)</span>
-243a245,248
-&gt;
-&gt; 	// Register reflection service on gRPC server.
-&gt; 	reflection.Register<span class="o">(</span>grpcServer<span class="o">)</span>
-&gt;
-</code></pre></div><p>簡單來說，新舊兩版的差別是：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-proto" data-lang="proto"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">routeguide</span><span class="p">;</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="kd">service</span> <span class="n">RouteGuide</span> <span class="p">{</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>  <span class="c1">//...
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>  <span class="c1">// A client-to-server streaming RPC.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="c1">// Accepts a stream of Points on a route being traversed, returning a
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="c1">// RouteSummary when traversal is completed.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="k">rpc</span> <span class="n">RecordRoute</span><span class="p">(</span><span class="n">stream</span> <span class="n">Point</span><span class="p">)</span> <span class="k">returns</span> <span class="p">(</span><span class="n">RouteSummary</span><span class="p">)</span> <span class="p">{}</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="p">}</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="kd">message</span> <span class="nc">Point</span> <span class="p">{</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>  <span class="kt">int32</span> <span class="n">latitude</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>  <span class="kt">int32</span> <span class="n">longitude</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="p">}</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="kd">message</span> <span class="nc">RouteSummary</span> <span class="p">{</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>  <span class="kt">int32</span> <span class="n">point_count</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>  <span class="kt">int32</span> <span class="n">feature_count</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>  <span class="kt">int32</span> <span class="n">distance</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>  <span class="kt">int32</span> <span class="n">elapsed_time</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="p">}</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c1">//...
+</span></span></span></code></pre></div><p>我也針對 server 程式小改三個地方，弄出另一個 server-new 程式：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ diff  server/server.go  server-new/server-new.go
+</span></span><span class="line"><span class="cl">42a43
+</span></span><span class="line"><span class="cl">&gt; 	<span class="s2">&#34;google.golang.org/grpc/reflection&#34;</span>
+</span></span><span class="line"><span class="cl">55c56
+</span></span><span class="line"><span class="cl">&lt; 	<span class="nv">port</span>       <span class="o">=</span> flag.Int<span class="o">(</span><span class="s2">&#34;port&#34;</span>, 10000, <span class="s2">&#34;The server port&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">---
+</span></span><span class="line"><span class="cl">&gt; 	<span class="nv">port</span>       <span class="o">=</span> flag.Int<span class="o">(</span><span class="s2">&#34;port&#34;</span>, 20000, <span class="s2">&#34;The server port&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">243a245,248
+</span></span><span class="line"><span class="cl">&gt;
+</span></span><span class="line"><span class="cl">&gt; 	// Register reflection service on gRPC server.
+</span></span><span class="line"><span class="cl">&gt; 	reflection.Register<span class="o">(</span>grpcServer<span class="o">)</span>
+</span></span><span class="line"><span class="cl">&gt;
+</span></span></code></pre></div><p>簡單來說，新舊兩版的差別是：</p>
 <ul>
 <li>舊版 server 的 gRPC port = 10000，新版 server-new 則是 20000。</li>
 <li>新版 server-new 支援 <a href="https://github.com/grpc/grpc/blob/master/doc/server-reflection.md">server reflection</a> 功能。稍後會再說明這是什麼。</li>
@@ -434,8 +434,8 @@ if (!doNotTrack) {
 <li><a href="https://github.com/bojand/ghz">ghz</a> 0.51.0 以上。</li>
 </ul>
 <p>先來編譯程式：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ ./build.sh
-</code></pre></div><p>成功後，會在 <code>out</code> 目錄拿到兩份執行檔：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ ./build.sh
+</span></span></code></pre></div><p>成功後，會在 <code>out</code> 目錄拿到兩份執行檔：</p>
 <ul>
 <li>
 <p><code>out/server</code>：原封不動來自 &ldquo;gRPC-Go&rdquo; 專案的 server 程式。</p>
@@ -462,55 +462,55 @@ if (!doNotTrack) {
 </div>
 
 <p>然後，請分別啟動 <code>out/server</code> 及 <code>out/server-new</code> 程式：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 舊程式，跑在 10000 port</span>
-$ out/server
-
-<span class="c1"># 新程式，跑在 20000 port</span>
-$ out/server-new
-</code></pre></div><p>一切就緒，準備要來測試它們了。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 舊程式，跑在 10000 port</span>
+</span></span><span class="line"><span class="cl">$ out/server
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 新程式，跑在 20000 port</span>
+</span></span><span class="line"><span class="cl">$ out/server-new
+</span></span></code></pre></div><p>一切就緒，準備要來測試它們了。</p>
 <h2 id="實驗一搭配-proto-檔">實驗一：搭配 proto 檔</h2>
 <p>先針對舊版的 server 來實驗。</p>
 <h3 id="grpcurl">gRPCurl</h3>
 <p><a href="https://github.com/fullstorydev/grpcurl">gRPCurl</a>，顧名思義，是在向硬漢必備的萬用瑞士刀 <a href="https://curl.haxx.se/">curl</a> 致敬。不妨將它視為 gRPC 版的 curl。</p>
 <p>gRPCurl 使用上最主要的差別是，因應 gRPC 的特性，必須餵給它 proto 檔案，才會知道該如何封裝訊息格式。</p>
 <p>譬如說，我們可將 proto 檔案的路徑寫在 <code>-import-path</code> 中、將 proto 檔案名稱寫在 <code>-proto</code> 中、將參數寫在 <code>-d</code> 中，再呼叫 server 的遠端程序：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ grpcurl -plaintext  <span class="se">\
-</span><span class="se"></span>    -d <span class="s1">&#39;{&#34;latitude&#34;:-460000000,&#34;longitude&#34;:-1160000000} {&#34;latitude&#34;:720000000,&#34;longitude&#34;:-540000000}&#39;</span> <span class="se">\
-</span><span class="se"></span>    -import-path ./routeguide        <span class="se">\
-</span><span class="se"></span>    -proto       route_guide.proto   <span class="se">\
-</span><span class="se"></span>    127.0.0.1:10000                  <span class="se">\
-</span><span class="se"></span>    routeguide.RouteGuide.RecordRoute
-
-<span class="o">{</span>
-  <span class="s2">&#34;pointCount&#34;</span>: 2,
-  <span class="s2">&#34;distance&#34;</span>: <span class="m">13975745</span>
-<span class="o">}</span>
-</code></pre></div><p>我們也可將事先備妥的資料檔餵給 gRPCurl。像是含有 100 筆資料的 <code>testdata.dat</code>：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ grpcurl -plaintext -d <span class="s1">&#39;@&#39;</span>            <span class="se">\
-</span><span class="se"></span>    -import-path ./routeguide          <span class="se">\
-</span><span class="se"></span>    -proto       route_guide.proto     <span class="se">\
-</span><span class="se"></span>    127.0.0.1:10000                    <span class="se">\
-</span><span class="se"></span>    routeguide.RouteGuide.RecordRoute  <span class="se">\
-</span><span class="se"></span>  &lt; testdata.dat
-
-<span class="o">{</span>
-  <span class="s2">&#34;pointCount&#34;</span>: 100,
-  <span class="s2">&#34;distance&#34;</span>: <span class="m">1003784333</span>
-<span class="o">}</span>
-</code></pre></div><h3 id="ghz">ghz</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ grpcurl -plaintext  <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    -d <span class="s1">&#39;{&#34;latitude&#34;:-460000000,&#34;longitude&#34;:-1160000000} {&#34;latitude&#34;:720000000,&#34;longitude&#34;:-540000000}&#39;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    -import-path ./routeguide        <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    -proto       route_guide.proto   <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    127.0.0.1:10000                  <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    routeguide.RouteGuide.RecordRoute
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">{</span>
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;pointCount&#34;</span>: 2,
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;distance&#34;</span>: <span class="m">13975745</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div><p>我們也可將事先備妥的資料檔餵給 gRPCurl。像是含有 100 筆資料的 <code>testdata.dat</code>：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ grpcurl -plaintext -d <span class="s1">&#39;@&#39;</span>            <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    -import-path ./routeguide          <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    -proto       route_guide.proto     <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    127.0.0.1:10000                    <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    routeguide.RouteGuide.RecordRoute  <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  &lt; testdata.dat
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">{</span>
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;pointCount&#34;</span>: 100,
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;distance&#34;</span>: <span class="m">1003784333</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div><h3 id="ghz">ghz</h3>
 <p><a href="https://github.com/bojand/ghz">ghz</a> 壓測工具，是這麼自我介紹的：</p>
 <blockquote>
 <p>Simple gRPC benchmarking and load testing tool inspired by <a href="https://github.com/rakyll/hey/">hey</a> and <a href="https://github.com/fullstorydev/grpcurl">grpcurl</a>.</p>
 </blockquote>
 <p>所以，從命令列參數及統計結果上，都可看出它們的影響。</p>
 <p>譬如說，我們可將 proto 檔案的路徑寫在 <code>--import-path</code> 中、將 proto 檔案名稱寫在 <code>--proto</code> 中、將參數寫在 <code>--data</code> 中，再呼叫 server 的遠端程序：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ ghz --insecure  -z 20s  <span class="se">\
-</span><span class="se"></span>      --data <span class="s1">&#39;[{&#34;latitude&#34;:-460000000,&#34;longitude&#34;:-1160000000},{&#34;latitude&#34;:720000000,&#34;longitude&#34;:-540000000}]&#39;</span> <span class="se">\
-</span><span class="se"></span>      --import-paths ./routeguide         <span class="se">\
-</span><span class="se"></span>      --proto        route_guide.proto    <span class="se">\
-</span><span class="se"></span>      --call routeguide.RouteGuide.RecordRoute  <span class="se">\
-</span><span class="se"></span>      127.0.0.1:10000
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ ghz --insecure  -z 20s  <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>      --data <span class="s1">&#39;[{&#34;latitude&#34;:-460000000,&#34;longitude&#34;:-1160000000},{&#34;latitude&#34;:720000000,&#34;longitude&#34;:-540000000}]&#39;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>      --import-paths ./routeguide         <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>      --proto        route_guide.proto    <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>      --call routeguide.RouteGuide.RecordRoute  <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>      127.0.0.1:10000
+</span></span></code></pre></div>
 <details>
   <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
     壓測 20 秒，結果如下：
@@ -518,56 +518,56 @@ $ out/server-new
   </summary>
   
 
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">Summary:
-  Count:        548082
-  Total:        20.00 s
-  Slowest:      50.36 ms
-  Fastest:      0.12 ms
-  Average:      1.74 ms
-  Requests/sec: 27403.72
-
-Response time histogram:
-  0.123 [1]     |
-  5.147 [543463]        |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
-  10.170 [4297] |
-  15.194 [271]  |
-  20.217 [8]    |
-  25.241 [3]    |
-  30.264 [1]    |
-  35.288 [0]    |
-  40.311 [0]    |
-  45.335 [0]    |
-  50.358 [1]    |
-
-Latency distribution:
-  10 % in 0.90 ms
-  25 % in 1.21 ms
-  50 % in 1.58 ms
-  75 % in 2.04 ms
-  90 % in 2.66 ms
-  95 % in 3.24 ms
-  99 % in 4.93 ms
-
-Status code distribution:
-  [Canceled]      33 responses
-  [Unavailable]   4 responses
-  [OK]            548045 responses
-
-Error distribution:
-  [33]   rpc error: code = Canceled desc = grpc: the client connection is closing
-  [4]    rpc error: code = Unavailable desc = transport is closing</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">Summary:
+</span></span><span class="line"><span class="cl">  Count:        548082
+</span></span><span class="line"><span class="cl">  Total:        20.00 s
+</span></span><span class="line"><span class="cl">  Slowest:      50.36 ms
+</span></span><span class="line"><span class="cl">  Fastest:      0.12 ms
+</span></span><span class="line"><span class="cl">  Average:      1.74 ms
+</span></span><span class="line"><span class="cl">  Requests/sec: 27403.72
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Response time histogram:
+</span></span><span class="line"><span class="cl">  0.123 [1]     |
+</span></span><span class="line"><span class="cl">  5.147 [543463]        |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+</span></span><span class="line"><span class="cl">  10.170 [4297] |
+</span></span><span class="line"><span class="cl">  15.194 [271]  |
+</span></span><span class="line"><span class="cl">  20.217 [8]    |
+</span></span><span class="line"><span class="cl">  25.241 [3]    |
+</span></span><span class="line"><span class="cl">  30.264 [1]    |
+</span></span><span class="line"><span class="cl">  35.288 [0]    |
+</span></span><span class="line"><span class="cl">  40.311 [0]    |
+</span></span><span class="line"><span class="cl">  45.335 [0]    |
+</span></span><span class="line"><span class="cl">  50.358 [1]    |
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Latency distribution:
+</span></span><span class="line"><span class="cl">  10 % in 0.90 ms
+</span></span><span class="line"><span class="cl">  25 % in 1.21 ms
+</span></span><span class="line"><span class="cl">  50 % in 1.58 ms
+</span></span><span class="line"><span class="cl">  75 % in 2.04 ms
+</span></span><span class="line"><span class="cl">  90 % in 2.66 ms
+</span></span><span class="line"><span class="cl">  95 % in 3.24 ms
+</span></span><span class="line"><span class="cl">  99 % in 4.93 ms
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Status code distribution:
+</span></span><span class="line"><span class="cl">  [Canceled]      33 responses
+</span></span><span class="line"><span class="cl">  [Unavailable]   4 responses
+</span></span><span class="line"><span class="cl">  [OK]            548045 responses
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Error distribution:
+</span></span><span class="line"><span class="cl">  [33]   rpc error: code = Canceled desc = grpc: the client connection is closing
+</span></span><span class="line"><span class="cl">  [4]    rpc error: code = Unavailable desc = transport is closing</span></span></code></pre></div>
 
 
 </details>
 
 <p>同樣的，我們也可將事先備妥的資料檔餵給 ghz。像是含有 100 筆資料的 <code>testdata.json</code>：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ ghz --insecure --data<span class="o">=</span>@  -z 20s  <span class="se">\
-</span><span class="se"></span>      --import-paths ./routeguide         <span class="se">\
-</span><span class="se"></span>      --proto        route_guide.proto    <span class="se">\
-</span><span class="se"></span>      --call routeguide.RouteGuide.RecordRoute  <span class="se">\
-</span><span class="se"></span>      127.0.0.1:10000  <span class="se">\
-</span><span class="se"></span>  &lt; testdata.json
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ ghz --insecure --data<span class="o">=</span>@  -z 20s  <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>      --import-paths ./routeguide         <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>      --proto        route_guide.proto    <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>      --call routeguide.RouteGuide.RecordRoute  <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>      127.0.0.1:10000  <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  &lt; testdata.json
+</span></span></code></pre></div>
 <details>
   <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
     壓測 20 秒，結果如下：
@@ -575,42 +575,42 @@ Error distribution:
   </summary>
   
 
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">Summary:
-  Count:        788680
-  Total:        20.00 s
-  Slowest:      28.02 ms
-  Fastest:      0.13 ms
-  Average:      1.23 ms
-  Requests/sec: 39432.62
-
-Response time histogram:
-  0.126 [1]     |
-  2.915 [772021]        |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
-  5.705 [15003] |∎
-  8.495 [1000]  |
-  11.285 [458]  |
-  14.074 [95]   |
-  16.864 [10]   |
-  19.654 [12]   |
-  22.444 [3]    |
-  25.233 [5]    |
-  28.023 [40]   |
-
-Latency distribution:
-  10 % in 0.65 ms
-  25 % in 0.86 ms
-  50 % in 1.11 ms
-  75 % in 1.42 ms
-  90 % in 1.88 ms
-  95 % in 2.30 ms
-  99 % in 3.57 ms
-
-Status code distribution:
-  [OK]         788648 responses
-  [Canceled]   32 responses
-
-Error distribution:
-  [32]   rpc error: code = Canceled desc = grpc: the client connection is closing</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">Summary:
+</span></span><span class="line"><span class="cl">  Count:        788680
+</span></span><span class="line"><span class="cl">  Total:        20.00 s
+</span></span><span class="line"><span class="cl">  Slowest:      28.02 ms
+</span></span><span class="line"><span class="cl">  Fastest:      0.13 ms
+</span></span><span class="line"><span class="cl">  Average:      1.23 ms
+</span></span><span class="line"><span class="cl">  Requests/sec: 39432.62
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Response time histogram:
+</span></span><span class="line"><span class="cl">  0.126 [1]     |
+</span></span><span class="line"><span class="cl">  2.915 [772021]        |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+</span></span><span class="line"><span class="cl">  5.705 [15003] |∎
+</span></span><span class="line"><span class="cl">  8.495 [1000]  |
+</span></span><span class="line"><span class="cl">  11.285 [458]  |
+</span></span><span class="line"><span class="cl">  14.074 [95]   |
+</span></span><span class="line"><span class="cl">  16.864 [10]   |
+</span></span><span class="line"><span class="cl">  19.654 [12]   |
+</span></span><span class="line"><span class="cl">  22.444 [3]    |
+</span></span><span class="line"><span class="cl">  25.233 [5]    |
+</span></span><span class="line"><span class="cl">  28.023 [40]   |
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Latency distribution:
+</span></span><span class="line"><span class="cl">  10 % in 0.65 ms
+</span></span><span class="line"><span class="cl">  25 % in 0.86 ms
+</span></span><span class="line"><span class="cl">  50 % in 1.11 ms
+</span></span><span class="line"><span class="cl">  75 % in 1.42 ms
+</span></span><span class="line"><span class="cl">  90 % in 1.88 ms
+</span></span><span class="line"><span class="cl">  95 % in 2.30 ms
+</span></span><span class="line"><span class="cl">  99 % in 3.57 ms
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Status code distribution:
+</span></span><span class="line"><span class="cl">  [OK]         788648 responses
+</span></span><span class="line"><span class="cl">  [Canceled]   32 responses
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Error distribution:
+</span></span><span class="line"><span class="cl">  [32]   rpc error: code = Canceled desc = grpc: the client connection is closing</span></span></code></pre></div>
 
 
 </details>
@@ -622,66 +622,66 @@ Error distribution:
 <h3 id="server-reflection">Server reflection</h3>
 <p>我以這次的範例程式 server-new 為例，說明如何加上 server reflection 功能。</p>
 <p>首先，請加上 <a href="https://pkg.go.dev/google.golang.org/grpc/reflection?tab=doc"><code>google.golang.org/grpc/reflection</code></a> 套件：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="kn">import</span> <span class="s">&#34;google.golang.org/grpc/reflection&#34;</span>
-</code></pre></div><p>接著，在 <code>grpcServer.Serve</code> 之前，呼叫 <code>reflection.Register</code>：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="nx">grpcServer</span> <span class="o">:=</span> <span class="nx">grpc</span><span class="p">.</span><span class="nf">NewServer</span><span class="p">(</span><span class="nx">opts</span><span class="o">...</span><span class="p">)</span>
-<span class="c1">//...
-</span><span class="c1"></span>
-<span class="c1">// Register reflection service on gRPC server.
-</span><span class="c1"></span><span class="nx">reflection</span><span class="p">.</span><span class="nf">Register</span><span class="p">(</span><span class="nx">grpcServer</span><span class="p">)</span>
-
-<span class="nx">grpcServer</span><span class="p">.</span><span class="nf">Serve</span><span class="p">(</span><span class="nx">lis</span><span class="p">)</span>
-</code></pre></div><p>只需要這兩個步驟，你的 gRPC 程式本身就具有 server reflection 功能，對方不再需要 proto 檔案就能直接進行遠端呼叫。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kn">import</span> <span class="s">&#34;google.golang.org/grpc/reflection&#34;</span>
+</span></span></code></pre></div><p>接著，在 <code>grpcServer.Serve</code> 之前，呼叫 <code>reflection.Register</code>：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nx">grpcServer</span> <span class="o">:=</span> <span class="nx">grpc</span><span class="p">.</span><span class="nf">NewServer</span><span class="p">(</span><span class="nx">opts</span><span class="o">...</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//...
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">// Register reflection service on gRPC server.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">reflection</span><span class="p">.</span><span class="nf">Register</span><span class="p">(</span><span class="nx">grpcServer</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">grpcServer</span><span class="p">.</span><span class="nf">Serve</span><span class="p">(</span><span class="nx">lis</span><span class="p">)</span>
+</span></span></code></pre></div><p>只需要這兩個步驟，你的 gRPC 程式本身就具有 server reflection 功能，對方不再需要 proto 檔案就能直接進行遠端呼叫。</p>
 <p>針對新版的 server-new 來實驗看看吧。</p>
 <h3 id="grpcurl-1">gRPCurl</h3>
 <p>我們可用 <code>list</code> 指令查詢 server-new 提供哪些服務：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ grpcurl -plaintext  127.0.0.1:20000  list
-
-grpc.reflection.v1alpha.ServerReflection
-routeguide.RouteGuide
-</code></pre></div><p>可用 <code>describe</code> 指令查詢 server-new 提供服務的介面：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ grpcurl -plaintext  127.0.0.1:20000  describe
-
-grpc.reflection.v1alpha.ServerReflection is a service:
-service ServerReflection <span class="o">{</span>
-  rpc ServerReflectionInfo <span class="o">(</span> stream .grpc.reflection.v1alpha.ServerReflectionRequest <span class="o">)</span> returns <span class="o">(</span> stream .grpc.reflection.v1alpha.ServerReflectionResponse <span class="o">)</span><span class="p">;</span>
-<span class="o">}</span>
-routeguide.RouteGuide is a service:
-service RouteGuide <span class="o">{</span>
-  rpc GetFeature <span class="o">(</span> .routeguide.Point <span class="o">)</span> returns <span class="o">(</span> .routeguide.Feature <span class="o">)</span><span class="p">;</span>
-  rpc ListFeatures <span class="o">(</span> .routeguide.Rectangle <span class="o">)</span> returns <span class="o">(</span> stream .routeguide.Feature <span class="o">)</span><span class="p">;</span>
-  rpc RecordRoute <span class="o">(</span> stream .routeguide.Point <span class="o">)</span> returns <span class="o">(</span> .routeguide.RouteSummary <span class="o">)</span><span class="p">;</span>
-  rpc RouteChat <span class="o">(</span> stream .routeguide.RouteNote <span class="o">)</span> returns <span class="o">(</span> stream .routeguide.RouteNote <span class="o">)</span><span class="p">;</span>
-<span class="o">}</span>
-</code></pre></div><p>可用 <code>describe</code> 指令進一步查詢某參數的具體格式：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ grpcurl -plaintext  127.0.0.1:20000  describe .routeguide.Point
-
-routeguide.Point is a message:
-message Point <span class="o">{</span>
-  int32 <span class="nv">latitude</span> <span class="o">=</span> 1<span class="p">;</span>
-  int32 <span class="nv">longitude</span> <span class="o">=</span> 2<span class="p">;</span>
-<span class="o">}</span>
-</code></pre></div><p>可看出，gRPCurl 不需要 proto 檔案，就能直接向 server-new 查詢遠端呼叫所需知道的介面細節。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ grpcurl -plaintext  127.0.0.1:20000  list
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">grpc.reflection.v1alpha.ServerReflection
+</span></span><span class="line"><span class="cl">routeguide.RouteGuide
+</span></span></code></pre></div><p>可用 <code>describe</code> 指令查詢 server-new 提供服務的介面：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ grpcurl -plaintext  127.0.0.1:20000  describe
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">grpc.reflection.v1alpha.ServerReflection is a service:
+</span></span><span class="line"><span class="cl">service ServerReflection <span class="o">{</span>
+</span></span><span class="line"><span class="cl">  rpc ServerReflectionInfo <span class="o">(</span> stream .grpc.reflection.v1alpha.ServerReflectionRequest <span class="o">)</span> returns <span class="o">(</span> stream .grpc.reflection.v1alpha.ServerReflectionResponse <span class="o">)</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">routeguide.RouteGuide is a service:
+</span></span><span class="line"><span class="cl">service RouteGuide <span class="o">{</span>
+</span></span><span class="line"><span class="cl">  rpc GetFeature <span class="o">(</span> .routeguide.Point <span class="o">)</span> returns <span class="o">(</span> .routeguide.Feature <span class="o">)</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  rpc ListFeatures <span class="o">(</span> .routeguide.Rectangle <span class="o">)</span> returns <span class="o">(</span> stream .routeguide.Feature <span class="o">)</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  rpc RecordRoute <span class="o">(</span> stream .routeguide.Point <span class="o">)</span> returns <span class="o">(</span> .routeguide.RouteSummary <span class="o">)</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  rpc RouteChat <span class="o">(</span> stream .routeguide.RouteNote <span class="o">)</span> returns <span class="o">(</span> stream .routeguide.RouteNote <span class="o">)</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div><p>可用 <code>describe</code> 指令進一步查詢某參數的具體格式：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ grpcurl -plaintext  127.0.0.1:20000  describe .routeguide.Point
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">routeguide.Point is a message:
+</span></span><span class="line"><span class="cl">message Point <span class="o">{</span>
+</span></span><span class="line"><span class="cl">  int32 <span class="nv">latitude</span> <span class="o">=</span> 1<span class="p">;</span>
+</span></span><span class="line"><span class="cl">  int32 <span class="nv">longitude</span> <span class="o">=</span> 2<span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div><p>可看出，gRPCurl 不需要 proto 檔案，就能直接向 server-new 查詢遠端呼叫所需知道的介面細節。</p>
 <p>最後，讓我們將含有 100 筆資料的 <code>testdata.dat</code> 餵給 gRPCurl 來測測看：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ grpcurl -plaintext -d <span class="s1">&#39;@&#39;</span> <span class="se">\
-</span><span class="se"></span>    127.0.0.1:20000         <span class="se">\
-</span><span class="se"></span>    routeguide.RouteGuide.RecordRoute  <span class="se">\
-</span><span class="se"></span>  &lt; testdata.dat
-
-<span class="o">{</span>
-  <span class="s2">&#34;pointCount&#34;</span>: 100,
-  <span class="s2">&#34;distance&#34;</span>: <span class="m">1003784333</span>
-<span class="o">}</span>
-</code></pre></div><p>有了 server reflection 功能，是不是方便多了？如果你有權修改原始程式，這是值得好好考慮的，可讓測試工作輕鬆一點。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ grpcurl -plaintext -d <span class="s1">&#39;@&#39;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    127.0.0.1:20000         <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    routeguide.RouteGuide.RecordRoute  <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  &lt; testdata.dat
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">{</span>
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;pointCount&#34;</span>: 100,
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;distance&#34;</span>: <span class="m">1003784333</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div><p>有了 server reflection 功能，是不是方便多了？如果你有權修改原始程式，這是值得好好考慮的，可讓測試工作輕鬆一點。</p>
 <p>當然啦，你可以考慮在 production 環境<strong>關掉</strong>這功能；但在測試環境中，這真的很方便。</p>
 <h3 id="ghz-1">ghz</h3>
 <p>儘管 server reflection 通常不會在 production 環境啟用，不過我還是很好奇：server reflection 對執行效率的影響有多少？尤其是涉及 marshalling。</p>
 <p>用 ghz 試試看吧！</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ ghz --insecure --data<span class="o">=</span>@  -z 20s  <span class="se">\
-</span><span class="se"></span>      --call routeguide.RouteGuide.RecordRoute  <span class="se">\
-</span><span class="se"></span>      127.0.0.1:20000  <span class="se">\
-</span><span class="se"></span>  &lt; testdata.json
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ ghz --insecure --data<span class="o">=</span>@  -z 20s  <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>      --call routeguide.RouteGuide.RecordRoute  <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>      127.0.0.1:20000  <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  &lt; testdata.json
+</span></span></code></pre></div>
 <details>
   <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
     壓測 20 秒，結果如下：
@@ -689,44 +689,44 @@ message Point <span class="o">{</span>
   </summary>
   
 
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">Summary:
-  Count:        826524
-  Total:        20.00 s
-  Slowest:      19.79 ms
-  Fastest:      0.12 ms
-  Average:      1.17 ms
-  Requests/sec: 41317.73
-
-Response time histogram:
-  0.118 [1]     |
-  2.085 [776730]        |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
-  4.052 [45892] |∎∎
-  6.019 [3018]  |
-  7.986 [550]   |
-  9.953 [112]   |
-  11.920 [74]   |
-  13.887 [51]   |
-  15.854 [37]   |
-  17.821 [17]   |
-  19.788 [1]    |
-
-Latency distribution:
-  10 % in 0.62 ms
-  25 % in 0.82 ms
-  50 % in 1.06 ms
-  75 % in 1.36 ms
-  90 % in 1.80 ms
-  95 % in 2.20 ms
-  99 % in 3.38 ms
-
-Status code distribution:
-  [OK]            826483 responses
-  [Canceled]      40 responses
-  [Unavailable]   1 responses
-
-Error distribution:
-  [40]   rpc error: code = Canceled desc = grpc: the client connection is closing
-  [1]    rpc error: code = Unavailable desc = transport is closing</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">Summary:
+</span></span><span class="line"><span class="cl">  Count:        826524
+</span></span><span class="line"><span class="cl">  Total:        20.00 s
+</span></span><span class="line"><span class="cl">  Slowest:      19.79 ms
+</span></span><span class="line"><span class="cl">  Fastest:      0.12 ms
+</span></span><span class="line"><span class="cl">  Average:      1.17 ms
+</span></span><span class="line"><span class="cl">  Requests/sec: 41317.73
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Response time histogram:
+</span></span><span class="line"><span class="cl">  0.118 [1]     |
+</span></span><span class="line"><span class="cl">  2.085 [776730]        |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+</span></span><span class="line"><span class="cl">  4.052 [45892] |∎∎
+</span></span><span class="line"><span class="cl">  6.019 [3018]  |
+</span></span><span class="line"><span class="cl">  7.986 [550]   |
+</span></span><span class="line"><span class="cl">  9.953 [112]   |
+</span></span><span class="line"><span class="cl">  11.920 [74]   |
+</span></span><span class="line"><span class="cl">  13.887 [51]   |
+</span></span><span class="line"><span class="cl">  15.854 [37]   |
+</span></span><span class="line"><span class="cl">  17.821 [17]   |
+</span></span><span class="line"><span class="cl">  19.788 [1]    |
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Latency distribution:
+</span></span><span class="line"><span class="cl">  10 % in 0.62 ms
+</span></span><span class="line"><span class="cl">  25 % in 0.82 ms
+</span></span><span class="line"><span class="cl">  50 % in 1.06 ms
+</span></span><span class="line"><span class="cl">  75 % in 1.36 ms
+</span></span><span class="line"><span class="cl">  90 % in 1.80 ms
+</span></span><span class="line"><span class="cl">  95 % in 2.20 ms
+</span></span><span class="line"><span class="cl">  99 % in 3.38 ms
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Status code distribution:
+</span></span><span class="line"><span class="cl">  [OK]            826483 responses
+</span></span><span class="line"><span class="cl">  [Canceled]      40 responses
+</span></span><span class="line"><span class="cl">  [Unavailable]   1 responses
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Error distribution:
+</span></span><span class="line"><span class="cl">  [40]   rpc error: code = Canceled desc = grpc: the client connection is closing
+</span></span><span class="line"><span class="cl">  [1]    rpc error: code = Unavailable desc = transport is closing</span></span></code></pre></div>
 
 
 </details>

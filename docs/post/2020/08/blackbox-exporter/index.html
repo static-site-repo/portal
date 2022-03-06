@@ -33,7 +33,7 @@
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.92.2" />
+<meta name="generator" content="Hugo 0.93.2" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2020/08/blackbox-exporter/" />
@@ -379,167 +379,167 @@ tcp_probe、dns_probe、icmp_probe，即使面對「不完全揭露」自身健�
 <p>所以，一開始，我們會先試著寫好 <code>blackbox.yml</code> 設定檔，先測試 Blackbox exporter 能正常運作，之後才去串接 Prometheus。</p>
 <h2 id="blackbox-exporter-初體驗">Blackbox exporter 初體驗</h2>
 <p>官方提供的<a href="https://github.com/prometheus/blackbox_exporter/blob/master/blackbox.yml">陽春版 <code>blackbox.yml</code> 設定檔</a>展示了一些常見的 blackbox exporter 模組 (module)，很適合初次上手之用：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="c"># https://github.com/prometheus/blackbox_exporter/blob/master/blackbox.yml</span><span class="w">
-</span><span class="w"></span><span class="nt">modules</span><span class="p">:</span><span class="w">
-</span><span class="w">  </span><span class="nt">http_2xx</span><span class="p">:</span><span class="w">
-</span><span class="w">    </span><span class="nt">prober</span><span class="p">:</span><span class="w"> </span><span class="l">http</span><span class="w">
-</span><span class="w">  </span><span class="nt">http_post_2xx</span><span class="p">:</span><span class="w">
-</span><span class="w">    </span><span class="nt">prober</span><span class="p">:</span><span class="w"> </span><span class="l">http</span><span class="w">
-</span><span class="w">    </span><span class="nt">http</span><span class="p">:</span><span class="w">
-</span><span class="w">      </span><span class="nt">method</span><span class="p">:</span><span class="w"> </span><span class="l">POST</span><span class="w">
-</span><span class="w">  </span><span class="c">#...</span><span class="w">
-</span></code></pre></div><p>其中，最常用的應該是 http_2xx 模組了。如果你只需要用到這模組，可以不必準備 <code>blackbox.yml</code> 設定檔。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="c"># https://github.com/prometheus/blackbox_exporter/blob/master/blackbox.yml</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">modules</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">http_2xx</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">prober</span><span class="p">:</span><span class="w"> </span><span class="l">http</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">http_post_2xx</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">prober</span><span class="p">:</span><span class="w"> </span><span class="l">http</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">http</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">method</span><span class="p">:</span><span class="w"> </span><span class="l">POST</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="c">#...</span><span class="w">
+</span></span></span></code></pre></div><p>其中，最常用的應該是 http_2xx 模組了。如果你只需要用到這模組，可以不必準備 <code>blackbox.yml</code> 設定檔。</p>
 <p><!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --></p>
 <p>我們可以先<a href="https://github.com/prometheus/blackbox_exporter/releases">下載</a>並啟動 Blackbox exporter:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ ./blackbox_exporter
-</code></pre></div><p>預設情況下，Blackbox exporter 會透過 port 9115 提供探測服務。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ ./blackbox_exporter
+</span></span></code></pre></div><p>預設情況下，Blackbox exporter 會透過 port 9115 提供探測服務。</p>
 <p><!-- raw HTML omitted --> <!-- raw HTML omitted --></p>
 <p>現在，讓我們透過 Blackbox exporter 內建的 http_2xx 模組，探測 github.com 的健康狀況：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ curl <span class="s1">&#39;localhost:9115/probe?target=github.com&amp;module=http_2xx&#39;</span>
-</code></pre></div><p>或是乾脆省略掉預設的 http_2xx 模組名稱：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ curl <span class="s1">&#39;localhost:9115/probe?target=github.com&#39;</span>
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ curl <span class="s1">&#39;localhost:9115/probe?target=github.com&amp;module=http_2xx&#39;</span>
+</span></span></code></pre></div><p>或是乾脆省略掉預設的 http_2xx 模組名稱：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ curl <span class="s1">&#39;localhost:9115/probe?target=github.com&#39;</span>
+</span></span></code></pre></div>
 <details>
   <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
     透過 Blackbox exporter 探測 github.com 的輸出結果
     
   </summary>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"># HELP probe_dns_lookup_time_seconds Returns the time taken for probe dns lookup in seconds
-# TYPE probe_dns_lookup_time_seconds gauge
-probe_dns_lookup_time_seconds 0.057117535
-# HELP probe_duration_seconds Returns how long the probe took to complete in seconds
-# TYPE probe_duration_seconds gauge
-probe_duration_seconds 1.833592006
-# HELP probe_failed_due_to_regex Indicates if probe failed due to regex
-# TYPE probe_failed_due_to_regex gauge
-probe_failed_due_to_regex 0
-# HELP probe_http_content_length Length of http content response
-# TYPE probe_http_content_length gauge
-probe_http_content_length -1
-# HELP probe_http_duration_seconds Duration of http request by phase, summed over all redirects
-# TYPE probe_http_duration_seconds gauge
-probe_http_duration_seconds{phase=&#34;connect&#34;} 0.425883281
-probe_http_duration_seconds{phase=&#34;processing&#34;} 0.433015322
-probe_http_duration_seconds{phase=&#34;resolve&#34;} 0.086735632
-probe_http_duration_seconds{phase=&#34;tls&#34;} 0.443000784
-probe_http_duration_seconds{phase=&#34;transfer&#34;} 0.663546262
-# HELP probe_http_redirects The number of redirects
-# TYPE probe_http_redirects gauge
-probe_http_redirects 1
-# HELP probe_http_ssl Indicates if SSL was used for the final redirect
-# TYPE probe_http_ssl gauge
-probe_http_ssl 1
-# HELP probe_http_status_code Response HTTP status code
-# TYPE probe_http_status_code gauge
-probe_http_status_code 200
-# HELP probe_http_uncompressed_body_length Length of uncompressed response body
-# TYPE probe_http_uncompressed_body_length gauge
-probe_http_uncompressed_body_length 137503
-# HELP probe_http_version Returns the version of HTTP of the probe response
-# TYPE probe_http_version gauge
-probe_http_version 1.1
-# HELP probe_ip_addr_hash Specifies the hash of IP address. It&#39;s useful to detect if the IP address changes.
-# TYPE probe_ip_addr_hash gauge
-probe_ip_addr_hash 2.436894991e+09
-# HELP probe_ip_protocol Specifies whether probe ip protocol is IP4 or IP6
-# TYPE probe_ip_protocol gauge
-probe_ip_protocol 4
-# HELP probe_ssl_earliest_cert_expiry Returns earliest SSL cert expiry in unixtime
-# TYPE probe_ssl_earliest_cert_expiry gauge
-probe_ssl_earliest_cert_expiry 1.652184e+09
-# HELP probe_ssl_last_chain_expiry_timestamp_seconds Returns last SSL chain expiry in timestamp seconds
-# TYPE probe_ssl_last_chain_expiry_timestamp_seconds gauge
-probe_ssl_last_chain_expiry_timestamp_seconds 1.652184e+09
-# HELP probe_success Displays whether or not the probe was a success
-# TYPE probe_success gauge
-probe_success 1
-# HELP probe_tls_version_info Contains the TLS version used
-# TYPE probe_tls_version_info gauge
-probe_tls_version_info{version=&#34;TLS 1.3&#34;} 1
-~ % curl &#39;localhost:9115/probe?target=github.com&amp;module=http_2xx&#39;
-# HELP probe_dns_lookup_time_seconds Returns the time taken for probe dns lookup in seconds
-# TYPE probe_dns_lookup_time_seconds gauge
-probe_dns_lookup_time_seconds 0.025288617
-# HELP probe_duration_seconds Returns how long the probe took to complete in seconds
-# TYPE probe_duration_seconds gauge
-probe_duration_seconds 1.776282033
-# HELP probe_failed_due_to_regex Indicates if probe failed due to regex
-# TYPE probe_failed_due_to_regex gauge
-probe_failed_due_to_regex 0
-# HELP probe_http_content_length Length of http content response
-# TYPE probe_http_content_length gauge
-probe_http_content_length -1
-# HELP probe_http_duration_seconds Duration of http request by phase, summed over all redirects
-# TYPE probe_http_duration_seconds gauge
-probe_http_duration_seconds{phase=&#34;connect&#34;} 0.414948208
-probe_http_duration_seconds{phase=&#34;processing&#34;} 0.42066351300000004
-probe_http_duration_seconds{phase=&#34;resolve&#34;} 0.038381098
-probe_http_duration_seconds{phase=&#34;tls&#34;} 0.465243547
-probe_http_duration_seconds{phase=&#34;transfer&#34;} 0.65392713
-# HELP probe_http_redirects The number of redirects
-# TYPE probe_http_redirects gauge
-probe_http_redirects 1
-# HELP probe_http_ssl Indicates if SSL was used for the final redirect
-# TYPE probe_http_ssl gauge
-probe_http_ssl 1
-# HELP probe_http_status_code Response HTTP status code
-# TYPE probe_http_status_code gauge
-probe_http_status_code 200
-# HELP probe_http_uncompressed_body_length Length of uncompressed response body
-# TYPE probe_http_uncompressed_body_length gauge
-probe_http_uncompressed_body_length 137509
-# HELP probe_http_version Returns the version of HTTP of the probe response
-# TYPE probe_http_version gauge
-probe_http_version 1.1
-# HELP probe_ip_addr_hash Specifies the hash of IP address. It&#39;s useful to detect if the IP address changes.
-# TYPE probe_ip_addr_hash gauge
-probe_ip_addr_hash 1.664977422e+09
-# HELP probe_ip_protocol Specifies whether probe ip protocol is IP4 or IP6
-# TYPE probe_ip_protocol gauge
-probe_ip_protocol 4
-# HELP probe_ssl_earliest_cert_expiry Returns earliest SSL cert expiry in unixtime
-# TYPE probe_ssl_earliest_cert_expiry gauge
-probe_ssl_earliest_cert_expiry 1.652184e+09
-# HELP probe_ssl_last_chain_expiry_timestamp_seconds Returns last SSL chain expiry in timestamp seconds
-# TYPE probe_ssl_last_chain_expiry_timestamp_seconds gauge
-probe_ssl_last_chain_expiry_timestamp_seconds 1.652184e+09
-# HELP probe_success Displays whether or not the probe was a success
-# TYPE probe_success gauge
-probe_success 1
-# HELP probe_tls_version_info Contains the TLS version used
-# TYPE probe_tls_version_info gauge
-probe_tls_version_info{version=&#34;TLS 1.3&#34;} 1
-</code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl"># HELP probe_dns_lookup_time_seconds Returns the time taken for probe dns lookup in seconds
+</span></span><span class="line"><span class="cl"># TYPE probe_dns_lookup_time_seconds gauge
+</span></span><span class="line"><span class="cl">probe_dns_lookup_time_seconds 0.057117535
+</span></span><span class="line"><span class="cl"># HELP probe_duration_seconds Returns how long the probe took to complete in seconds
+</span></span><span class="line"><span class="cl"># TYPE probe_duration_seconds gauge
+</span></span><span class="line"><span class="cl">probe_duration_seconds 1.833592006
+</span></span><span class="line"><span class="cl"># HELP probe_failed_due_to_regex Indicates if probe failed due to regex
+</span></span><span class="line"><span class="cl"># TYPE probe_failed_due_to_regex gauge
+</span></span><span class="line"><span class="cl">probe_failed_due_to_regex 0
+</span></span><span class="line"><span class="cl"># HELP probe_http_content_length Length of http content response
+</span></span><span class="line"><span class="cl"># TYPE probe_http_content_length gauge
+</span></span><span class="line"><span class="cl">probe_http_content_length -1
+</span></span><span class="line"><span class="cl"># HELP probe_http_duration_seconds Duration of http request by phase, summed over all redirects
+</span></span><span class="line"><span class="cl"># TYPE probe_http_duration_seconds gauge
+</span></span><span class="line"><span class="cl">probe_http_duration_seconds{phase=&#34;connect&#34;} 0.425883281
+</span></span><span class="line"><span class="cl">probe_http_duration_seconds{phase=&#34;processing&#34;} 0.433015322
+</span></span><span class="line"><span class="cl">probe_http_duration_seconds{phase=&#34;resolve&#34;} 0.086735632
+</span></span><span class="line"><span class="cl">probe_http_duration_seconds{phase=&#34;tls&#34;} 0.443000784
+</span></span><span class="line"><span class="cl">probe_http_duration_seconds{phase=&#34;transfer&#34;} 0.663546262
+</span></span><span class="line"><span class="cl"># HELP probe_http_redirects The number of redirects
+</span></span><span class="line"><span class="cl"># TYPE probe_http_redirects gauge
+</span></span><span class="line"><span class="cl">probe_http_redirects 1
+</span></span><span class="line"><span class="cl"># HELP probe_http_ssl Indicates if SSL was used for the final redirect
+</span></span><span class="line"><span class="cl"># TYPE probe_http_ssl gauge
+</span></span><span class="line"><span class="cl">probe_http_ssl 1
+</span></span><span class="line"><span class="cl"># HELP probe_http_status_code Response HTTP status code
+</span></span><span class="line"><span class="cl"># TYPE probe_http_status_code gauge
+</span></span><span class="line"><span class="cl">probe_http_status_code 200
+</span></span><span class="line"><span class="cl"># HELP probe_http_uncompressed_body_length Length of uncompressed response body
+</span></span><span class="line"><span class="cl"># TYPE probe_http_uncompressed_body_length gauge
+</span></span><span class="line"><span class="cl">probe_http_uncompressed_body_length 137503
+</span></span><span class="line"><span class="cl"># HELP probe_http_version Returns the version of HTTP of the probe response
+</span></span><span class="line"><span class="cl"># TYPE probe_http_version gauge
+</span></span><span class="line"><span class="cl">probe_http_version 1.1
+</span></span><span class="line"><span class="cl"># HELP probe_ip_addr_hash Specifies the hash of IP address. It&#39;s useful to detect if the IP address changes.
+</span></span><span class="line"><span class="cl"># TYPE probe_ip_addr_hash gauge
+</span></span><span class="line"><span class="cl">probe_ip_addr_hash 2.436894991e+09
+</span></span><span class="line"><span class="cl"># HELP probe_ip_protocol Specifies whether probe ip protocol is IP4 or IP6
+</span></span><span class="line"><span class="cl"># TYPE probe_ip_protocol gauge
+</span></span><span class="line"><span class="cl">probe_ip_protocol 4
+</span></span><span class="line"><span class="cl"># HELP probe_ssl_earliest_cert_expiry Returns earliest SSL cert expiry in unixtime
+</span></span><span class="line"><span class="cl"># TYPE probe_ssl_earliest_cert_expiry gauge
+</span></span><span class="line"><span class="cl">probe_ssl_earliest_cert_expiry 1.652184e+09
+</span></span><span class="line"><span class="cl"># HELP probe_ssl_last_chain_expiry_timestamp_seconds Returns last SSL chain expiry in timestamp seconds
+</span></span><span class="line"><span class="cl"># TYPE probe_ssl_last_chain_expiry_timestamp_seconds gauge
+</span></span><span class="line"><span class="cl">probe_ssl_last_chain_expiry_timestamp_seconds 1.652184e+09
+</span></span><span class="line"><span class="cl"># HELP probe_success Displays whether or not the probe was a success
+</span></span><span class="line"><span class="cl"># TYPE probe_success gauge
+</span></span><span class="line"><span class="cl">probe_success 1
+</span></span><span class="line"><span class="cl"># HELP probe_tls_version_info Contains the TLS version used
+</span></span><span class="line"><span class="cl"># TYPE probe_tls_version_info gauge
+</span></span><span class="line"><span class="cl">probe_tls_version_info{version=&#34;TLS 1.3&#34;} 1
+</span></span><span class="line"><span class="cl">~ % curl &#39;localhost:9115/probe?target=github.com&amp;module=http_2xx&#39;
+</span></span><span class="line"><span class="cl"># HELP probe_dns_lookup_time_seconds Returns the time taken for probe dns lookup in seconds
+</span></span><span class="line"><span class="cl"># TYPE probe_dns_lookup_time_seconds gauge
+</span></span><span class="line"><span class="cl">probe_dns_lookup_time_seconds 0.025288617
+</span></span><span class="line"><span class="cl"># HELP probe_duration_seconds Returns how long the probe took to complete in seconds
+</span></span><span class="line"><span class="cl"># TYPE probe_duration_seconds gauge
+</span></span><span class="line"><span class="cl">probe_duration_seconds 1.776282033
+</span></span><span class="line"><span class="cl"># HELP probe_failed_due_to_regex Indicates if probe failed due to regex
+</span></span><span class="line"><span class="cl"># TYPE probe_failed_due_to_regex gauge
+</span></span><span class="line"><span class="cl">probe_failed_due_to_regex 0
+</span></span><span class="line"><span class="cl"># HELP probe_http_content_length Length of http content response
+</span></span><span class="line"><span class="cl"># TYPE probe_http_content_length gauge
+</span></span><span class="line"><span class="cl">probe_http_content_length -1
+</span></span><span class="line"><span class="cl"># HELP probe_http_duration_seconds Duration of http request by phase, summed over all redirects
+</span></span><span class="line"><span class="cl"># TYPE probe_http_duration_seconds gauge
+</span></span><span class="line"><span class="cl">probe_http_duration_seconds{phase=&#34;connect&#34;} 0.414948208
+</span></span><span class="line"><span class="cl">probe_http_duration_seconds{phase=&#34;processing&#34;} 0.42066351300000004
+</span></span><span class="line"><span class="cl">probe_http_duration_seconds{phase=&#34;resolve&#34;} 0.038381098
+</span></span><span class="line"><span class="cl">probe_http_duration_seconds{phase=&#34;tls&#34;} 0.465243547
+</span></span><span class="line"><span class="cl">probe_http_duration_seconds{phase=&#34;transfer&#34;} 0.65392713
+</span></span><span class="line"><span class="cl"># HELP probe_http_redirects The number of redirects
+</span></span><span class="line"><span class="cl"># TYPE probe_http_redirects gauge
+</span></span><span class="line"><span class="cl">probe_http_redirects 1
+</span></span><span class="line"><span class="cl"># HELP probe_http_ssl Indicates if SSL was used for the final redirect
+</span></span><span class="line"><span class="cl"># TYPE probe_http_ssl gauge
+</span></span><span class="line"><span class="cl">probe_http_ssl 1
+</span></span><span class="line"><span class="cl"># HELP probe_http_status_code Response HTTP status code
+</span></span><span class="line"><span class="cl"># TYPE probe_http_status_code gauge
+</span></span><span class="line"><span class="cl">probe_http_status_code 200
+</span></span><span class="line"><span class="cl"># HELP probe_http_uncompressed_body_length Length of uncompressed response body
+</span></span><span class="line"><span class="cl"># TYPE probe_http_uncompressed_body_length gauge
+</span></span><span class="line"><span class="cl">probe_http_uncompressed_body_length 137509
+</span></span><span class="line"><span class="cl"># HELP probe_http_version Returns the version of HTTP of the probe response
+</span></span><span class="line"><span class="cl"># TYPE probe_http_version gauge
+</span></span><span class="line"><span class="cl">probe_http_version 1.1
+</span></span><span class="line"><span class="cl"># HELP probe_ip_addr_hash Specifies the hash of IP address. It&#39;s useful to detect if the IP address changes.
+</span></span><span class="line"><span class="cl"># TYPE probe_ip_addr_hash gauge
+</span></span><span class="line"><span class="cl">probe_ip_addr_hash 1.664977422e+09
+</span></span><span class="line"><span class="cl"># HELP probe_ip_protocol Specifies whether probe ip protocol is IP4 or IP6
+</span></span><span class="line"><span class="cl"># TYPE probe_ip_protocol gauge
+</span></span><span class="line"><span class="cl">probe_ip_protocol 4
+</span></span><span class="line"><span class="cl"># HELP probe_ssl_earliest_cert_expiry Returns earliest SSL cert expiry in unixtime
+</span></span><span class="line"><span class="cl"># TYPE probe_ssl_earliest_cert_expiry gauge
+</span></span><span class="line"><span class="cl">probe_ssl_earliest_cert_expiry 1.652184e+09
+</span></span><span class="line"><span class="cl"># HELP probe_ssl_last_chain_expiry_timestamp_seconds Returns last SSL chain expiry in timestamp seconds
+</span></span><span class="line"><span class="cl"># TYPE probe_ssl_last_chain_expiry_timestamp_seconds gauge
+</span></span><span class="line"><span class="cl">probe_ssl_last_chain_expiry_timestamp_seconds 1.652184e+09
+</span></span><span class="line"><span class="cl"># HELP probe_success Displays whether or not the probe was a success
+</span></span><span class="line"><span class="cl"># TYPE probe_success gauge
+</span></span><span class="line"><span class="cl">probe_success 1
+</span></span><span class="line"><span class="cl"># HELP probe_tls_version_info Contains the TLS version used
+</span></span><span class="line"><span class="cl"># TYPE probe_tls_version_info gauge
+</span></span><span class="line"><span class="cl">probe_tls_version_info{version=&#34;TLS 1.3&#34;} 1
+</span></span></code></pre></div>
 </details>
 
 <p>大部分情況下，我們只需要看其中的 <code>probe_success</code> 這項 gauge 指標：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"># HELP probe_success Displays whether or not the probe was a success
-# TYPE probe_success gauge
-probe_success 1
-</code></pre></div><p><!-- raw HTML omitted --> <!-- raw HTML omitted --></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl"># HELP probe_success Displays whether or not the probe was a success
+</span></span><span class="line"><span class="cl"># TYPE probe_success gauge
+</span></span><span class="line"><span class="cl">probe_success 1
+</span></span></code></pre></div><p><!-- raw HTML omitted --> <!-- raw HTML omitted --></p>
 <p>請用 Blackbox exporter 去戳戳看其他網站吧。</p>
 <h2 id="ipv6ipv4-問題">IPv6/IPv4 問題</h2>
 <p>如果用 Blackbox exporter 去探測 google.com，會得到很奇怪的結果：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ curl <span class="s1">&#39;localhost:9115/probe?target=google.com&#39;</span>
-
-<span class="o">[</span>略<span class="o">]</span>
-<span class="c1"># HELP probe_ip_protocol Specifies whether probe ip protocol is IP4 or IP6</span>
-<span class="c1"># TYPE probe_ip_protocol gauge</span>
-probe_ip_protocol <span class="m">6</span>
-<span class="c1"># HELP probe_success Displays whether or not the probe was a success</span>
-<span class="c1"># TYPE probe_success gauge</span>
-probe_success <span class="m">0</span>
-</code></pre></div><p>打開 debug 模式查查看：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ curl <span class="s1">&#39;localhost:9115/probe?target=google.com&amp;debug=true&#39;</span>
-
-Logs <span class="k">for</span> the probe:
-<span class="nv">ts</span><span class="o">=</span>2020-08-07T07:42:43.560461Z <span class="nv">caller</span><span class="o">=</span>main.go:304 <span class="nv">module</span><span class="o">=</span>http_2xx <span class="nv">target</span><span class="o">=</span>google.com <span class="nv">level</span><span class="o">=</span>info <span class="nv">msg</span><span class="o">=</span><span class="s2">&#34;Beginning probe&#34;</span> <span class="nv">probe</span><span class="o">=</span>http <span class="nv">timeout_seconds</span><span class="o">=</span>119.5
-<span class="nv">ts</span><span class="o">=</span>2020-08-07T07:42:43.561257Z <span class="nv">caller</span><span class="o">=</span>http.go:323 <span class="nv">module</span><span class="o">=</span>http_2xx <span class="nv">target</span><span class="o">=</span>google.com <span class="nv">level</span><span class="o">=</span>info <span class="nv">msg</span><span class="o">=</span><span class="s2">&#34;Resolving target address&#34;</span> <span class="nv">ip_protocol</span><span class="o">=</span>ip6
-<span class="nv">ts</span><span class="o">=</span>2020-08-07T07:42:43.573101Z <span class="nv">caller</span><span class="o">=</span>http.go:323 <span class="nv">module</span><span class="o">=</span>http_2xx <span class="nv">target</span><span class="o">=</span>google.com <span class="nv">level</span><span class="o">=</span>info <span class="nv">msg</span><span class="o">=</span><span class="s2">&#34;Resolved target address&#34;</span> <span class="nv">ip</span><span class="o">=</span>2404:6800:4008:801::200e
-<span class="nv">ts</span><span class="o">=</span>2020-08-07T07:42:43.57317Z <span class="nv">caller</span><span class="o">=</span>client.go:252 <span class="nv">module</span><span class="o">=</span>http_2xx <span class="nv">target</span><span class="o">=</span>google.com <span class="nv">level</span><span class="o">=</span>info <span class="nv">msg</span><span class="o">=</span><span class="s2">&#34;Making HTTP request&#34;</span> <span class="nv">url</span><span class="o">=</span>http://<span class="o">[</span>2404:6800:4008:801::200e<span class="o">]</span> <span class="nv">host</span><span class="o">=</span>google.com
-<span class="nv">ts</span><span class="o">=</span>2020-08-07T07:42:43.573276Z <span class="nv">caller</span><span class="o">=</span>main.go:119 <span class="nv">module</span><span class="o">=</span>http_2xx <span class="nv">target</span><span class="o">=</span>google.com <span class="nv">level</span><span class="o">=</span>error <span class="nv">msg</span><span class="o">=</span><span class="s2">&#34;Error for HTTP request&#34;</span> <span class="nv">err</span><span class="o">=</span><span class="s2">&#34;Get \&#34;http://[2404:6800:4008:801::200e]\&#34;: dial tcp [2404:6800:4008:801::200e]:80: connect: no route to host&#34;</span>
-<span class="o">[</span>略<span class="o">]</span>
-</code></pre></div><p>從上面的 log 可看到，Blackbox exporter 試圖透過 IPv6 連線到 google.com，導致錯誤。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ curl <span class="s1">&#39;localhost:9115/probe?target=google.com&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span>略<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># HELP probe_ip_protocol Specifies whether probe ip protocol is IP4 or IP6</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># TYPE probe_ip_protocol gauge</span>
+</span></span><span class="line"><span class="cl">probe_ip_protocol <span class="m">6</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># HELP probe_success Displays whether or not the probe was a success</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># TYPE probe_success gauge</span>
+</span></span><span class="line"><span class="cl">probe_success <span class="m">0</span>
+</span></span></code></pre></div><p>打開 debug 模式查查看：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ curl <span class="s1">&#39;localhost:9115/probe?target=google.com&amp;debug=true&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Logs <span class="k">for</span> the probe:
+</span></span><span class="line"><span class="cl"><span class="nv">ts</span><span class="o">=</span>2020-08-07T07:42:43.560461Z <span class="nv">caller</span><span class="o">=</span>main.go:304 <span class="nv">module</span><span class="o">=</span>http_2xx <span class="nv">target</span><span class="o">=</span>google.com <span class="nv">level</span><span class="o">=</span>info <span class="nv">msg</span><span class="o">=</span><span class="s2">&#34;Beginning probe&#34;</span> <span class="nv">probe</span><span class="o">=</span>http <span class="nv">timeout_seconds</span><span class="o">=</span>119.5
+</span></span><span class="line"><span class="cl"><span class="nv">ts</span><span class="o">=</span>2020-08-07T07:42:43.561257Z <span class="nv">caller</span><span class="o">=</span>http.go:323 <span class="nv">module</span><span class="o">=</span>http_2xx <span class="nv">target</span><span class="o">=</span>google.com <span class="nv">level</span><span class="o">=</span>info <span class="nv">msg</span><span class="o">=</span><span class="s2">&#34;Resolving target address&#34;</span> <span class="nv">ip_protocol</span><span class="o">=</span>ip6
+</span></span><span class="line"><span class="cl"><span class="nv">ts</span><span class="o">=</span>2020-08-07T07:42:43.573101Z <span class="nv">caller</span><span class="o">=</span>http.go:323 <span class="nv">module</span><span class="o">=</span>http_2xx <span class="nv">target</span><span class="o">=</span>google.com <span class="nv">level</span><span class="o">=</span>info <span class="nv">msg</span><span class="o">=</span><span class="s2">&#34;Resolved target address&#34;</span> <span class="nv">ip</span><span class="o">=</span>2404:6800:4008:801::200e
+</span></span><span class="line"><span class="cl"><span class="nv">ts</span><span class="o">=</span>2020-08-07T07:42:43.57317Z <span class="nv">caller</span><span class="o">=</span>client.go:252 <span class="nv">module</span><span class="o">=</span>http_2xx <span class="nv">target</span><span class="o">=</span>google.com <span class="nv">level</span><span class="o">=</span>info <span class="nv">msg</span><span class="o">=</span><span class="s2">&#34;Making HTTP request&#34;</span> <span class="nv">url</span><span class="o">=</span>http://<span class="o">[</span>2404:6800:4008:801::200e<span class="o">]</span> <span class="nv">host</span><span class="o">=</span>google.com
+</span></span><span class="line"><span class="cl"><span class="nv">ts</span><span class="o">=</span>2020-08-07T07:42:43.573276Z <span class="nv">caller</span><span class="o">=</span>main.go:119 <span class="nv">module</span><span class="o">=</span>http_2xx <span class="nv">target</span><span class="o">=</span>google.com <span class="nv">level</span><span class="o">=</span>error <span class="nv">msg</span><span class="o">=</span><span class="s2">&#34;Error for HTTP request&#34;</span> <span class="nv">err</span><span class="o">=</span><span class="s2">&#34;Get \&#34;http://[2404:6800:4008:801::200e]\&#34;: dial tcp [2404:6800:4008:801::200e]:80: connect: no route to host&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>略<span class="o">]</span>
+</span></span></code></pre></div><p>從上面的 log 可看到，Blackbox exporter 試圖透過 IPv6 連線到 google.com，導致錯誤。</p>
 <p><!-- raw HTML omitted --> <!-- raw HTML omitted --></p>
 <p>Prometheus 核心成員 Brian Brazil 在 &ldquo;<a href="https://www.robustperception.io/checking-for-http-200s-with-the-blackbox-exporter">Checking for HTTP 200s with the Blackbox Exporter</a>&rdquo; 文章說明這問題的原因及解法：</p>
 <blockquote>
@@ -547,27 +547,27 @@ Logs <span class="k">for</span> the probe:
 <p>You can adjust this behaviour by adding <code>preferred_ip_protocol: &quot;ip4&quot;</code> to the module&rsquo;s configuration.</p>
 </blockquote>
 <p>所以，我會在 <code>blackbox.yml</code> 設定檔當中，增加另一個模組，取一個好記的名字：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">modules</span><span class="p">:</span><span class="w">
-</span><span class="w">  </span><span class="c"># module: expect http_2xx, with ip4</span><span class="w">
-</span><span class="w">  </span><span class="nt">http_2xx_with_ip4</span><span class="p">:</span><span class="w">
-</span><span class="w">    </span><span class="nt">prober</span><span class="p">:</span><span class="w"> </span><span class="l">http</span><span class="w">
-</span><span class="w">    </span><span class="nt">timeout</span><span class="p">:</span><span class="w"> </span><span class="l">5s</span><span class="w">
-</span><span class="w">    </span><span class="nt">http</span><span class="p">:</span><span class="w">
-</span><span class="w">      </span><span class="nt">preferred_ip_protocol</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;ip4&#34;</span><span class="w">
-</span><span class="w">
-</span><span class="w">  </span><span class="c">#...</span><span class="w">
-</span></code></pre></div><p>然後，重啟 Blackbox exporter，記得要餵給它新的設定檔：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ ./blackbox_exporter --config.file<span class="o">=</span>./blackbox.yml
-</code></pre></div><p>這次，讓我們改用新增的模組去探測 google.com：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ curl <span class="s1">&#39;localhost:9115/probe?target=google.com&amp;module=http_2xx_with_ip4&#39;</span>
-</code></pre></div><p>這次，總算可以看到正常的 <code>probe_success</code> 了：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"># HELP probe_ip_protocol Specifies whether probe ip protocol is IP4 or IP6
-# TYPE probe_ip_protocol gauge
-probe_ip_protocol 4
-# HELP probe_success Displays whether or not the probe was a success
-# TYPE probe_success gauge
-probe_success 1
-</code></pre></div><h2 id="auth">Auth</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">modules</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="c"># module: expect http_2xx, with ip4</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">http_2xx_with_ip4</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">prober</span><span class="p">:</span><span class="w"> </span><span class="l">http</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">timeout</span><span class="p">:</span><span class="w"> </span><span class="l">5s</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">http</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">preferred_ip_protocol</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;ip4&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="c">#...</span><span class="w">
+</span></span></span></code></pre></div><p>然後，重啟 Blackbox exporter，記得要餵給它新的設定檔：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ ./blackbox_exporter --config.file<span class="o">=</span>./blackbox.yml
+</span></span></code></pre></div><p>這次，讓我們改用新增的模組去探測 google.com：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ curl <span class="s1">&#39;localhost:9115/probe?target=google.com&amp;module=http_2xx_with_ip4&#39;</span>
+</span></span></code></pre></div><p>這次，總算可以看到正常的 <code>probe_success</code> 了：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl"># HELP probe_ip_protocol Specifies whether probe ip protocol is IP4 or IP6
+</span></span><span class="line"><span class="cl"># TYPE probe_ip_protocol gauge
+</span></span><span class="line"><span class="cl">probe_ip_protocol 4
+</span></span><span class="line"><span class="cl"># HELP probe_success Displays whether or not the probe was a success
+</span></span><span class="line"><span class="cl"># TYPE probe_success gauge
+</span></span><span class="line"><span class="cl">probe_success 1
+</span></span></code></pre></div><h2 id="auth">Auth</h2>
 <p>某些第三方服務的 HTTP 端點需要夾帶 auth 相關欄位。</p>
 <p>像 <a href="https://stripe.com/docs/api/authentication?lang=curl">Stripe API 文件</a>就說：</p>
 <blockquote>
@@ -608,8 +608,8 @@ probe_success 1
 <p>一切準備就緒，來試試看哪一種寫法才是對的吧。</p>
 <p><!-- raw HTML omitted --> <!-- raw HTML omitted --></p>
 <p>請用 Docker Compose 執行：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ docker-compose up
-</code></pre></div><p>請用瀏覽器打開 <a href="http://localhost:9090/">http://localhost:9090/</a> 進入 Prometheus 儀表板：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ docker-compose up
+</span></span></code></pre></div><p>請用瀏覽器打開 <a href="http://localhost:9090/">http://localhost:9090/</a> 進入 Prometheus 儀表板：</p>
 
 
 <div class="box">

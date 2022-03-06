@@ -34,7 +34,7 @@ To clarify this I&amp;rsquo;ve conducted a series of experiments for 3 possible 
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.92.2" />
+<meta name="generator" content="Hugo 0.93.2" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2019/06/autoreload-from-configmap/" />
@@ -353,9 +353,9 @@ if (!doNotTrack) {
 <p>See the <a href="https://github.com/William-Yeh/configmap-auto-reload/tree/master/traefik-example">traefik-example</a> demo:</p>
 <p><a href="https://asciinema.org/a/251179"><img src="https://asciinema.org/a/251179.svg" alt="asciicast"></a></p>
 <p>Perfect!  Traefik auto-reloads itself as long as you correctly mount the <code>traefik-config</code> ConfigMap as <code>/etc/traefik/</code> directory for the pod.  Here&rsquo;s the related <a href="https://github.com/William-Yeh/configmap-auto-reload/blob/master/traefik-example/traefik-config.yml#L11-L13">code snippet</a>:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">[file]
-watch = true
-directory = &#34;/etc/traefik/&#34;</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">[file]
+</span></span><span class="line"><span class="cl">watch = true
+</span></span><span class="line"><span class="cl">directory = &#34;/etc/traefik/&#34;</span></span></code></pre></div>
 <h2 id="external-signals">External signals</h2>
 <p>Some applications can <em>reload</em> configurations; but not <em>auto-reload</em>. Instead, they reload their configurations when they are <em>told</em> to do so.  For example, when Nginx receives a <code>HUP</code> signal (<code>nginx -s reload</code>) <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>, and when Apache HTTP Server receives a <code>HUP</code> signal (<code>apache -k restart</code>) or <code>USR1</code> signal (<code>apache -k graceful</code>) <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>, they will reload new configurations without downtime.</p>
 <p>Who should be the <code>HUP</code> signal sender in Kubernetes?</p>
@@ -380,16 +380,16 @@ directory = &#34;/etc/traefik/&#34;</code></pre></div>
 <p>See the <a href="https://github.com/William-Yeh/configmap-auto-reload/tree/master/inotifywait-example">inotifywait-example</a> demo:</p>
 <p><a href="https://asciinema.org/a/251666"><img src="https://asciinema.org/a/251666.svg" alt="asciicast"></a></p>
 <p>Good!  Inotifywait detects the changes and sends <code>HUP</code> signals to Nginx as long as you correctly mount the <code>nginx-config</code> ConfigMap as <code>/etc/nginx/</code> directory for the pod.  Here&rsquo;s the related <a href="https://github.com/William-Yeh/configmap-auto-reload/blob/master/inotifywait-example/watch-nginx.sh#L13-L22">code snippet</a>:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">if [[ &#34;$(inotifywatch -e modify,create,delete,move -t 15 /etc/nginx/ 2&gt;&amp;1)&#34; =~ filename ]]; then
-    echo &#34;Try to verify updated nginx config...&#34;
-    nginx -t
-    if [ $? -ne 0 ]; then
-        echo &#34;ERROR: New configuration is invalid!!&#34;
-    else
-        echo &#34;Reloading nginx with new config...&#34;
-        nginx -s reload
-    fi
-fi;</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">if [[ &#34;$(inotifywatch -e modify,create,delete,move -t 15 /etc/nginx/ 2&gt;&amp;1)&#34; =~ filename ]]; then
+</span></span><span class="line"><span class="cl">    echo &#34;Try to verify updated nginx config...&#34;
+</span></span><span class="line"><span class="cl">    nginx -t
+</span></span><span class="line"><span class="cl">    if [ $? -ne 0 ]; then
+</span></span><span class="line"><span class="cl">        echo &#34;ERROR: New configuration is invalid!!&#34;
+</span></span><span class="line"><span class="cl">    else
+</span></span><span class="line"><span class="cl">        echo &#34;Reloading nginx with new config...&#34;
+</span></span><span class="line"><span class="cl">        nginx -s reload
+</span></span><span class="line"><span class="cl">    fi
+</span></span><span class="line"><span class="cl">fi;</span></span></code></pre></div>
 <p>DISCLAIMER: it&rsquo;s just for demo; not a robust implementation. For more examples, see <sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup><sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup><sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup>.</p>
 <p>CAUTION: it is against the best practice of &ldquo;one process per container&rdquo; policy.<sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup>  If you really want to use this combo trick, try to model it as &ldquo;multiple containers within a single pod.&rdquo;</p>
 <h2 id="pod-rollout">Pod rollout</h2>
@@ -398,13 +398,13 @@ fi;</code></pre></div>
 <p>See the <a href="https://github.com/William-Yeh/configmap-auto-reload/tree/master/reloader-example">reloader-example</a>:</p>
 <p><a href="https://asciinema.org/a/251670"><img src="https://asciinema.org/a/251670.svg" alt="asciicast"></a></p>
 <p>Perfect!  Nginx pods get rolling updated by Reloader as long as you annotate the Nginx deployment with <code>configmap.reloader.stakater.com/reload</code>.  Here&rsquo;s the related <a href="https://github.com/William-Yeh/configmap-auto-reload/blob/master/reloader-example/nginx-service.yml#L25-L26">code snippet</a>:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: nginx
-  annotations:
-    configmap.reloader.stakater.com/reload: &#34;nginx-config&#34;
-  ...</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">apiVersion: apps/v1
+</span></span><span class="line"><span class="cl">kind: Deployment
+</span></span><span class="line"><span class="cl">metadata:
+</span></span><span class="line"><span class="cl">  name: nginx
+</span></span><span class="line"><span class="cl">  annotations:
+</span></span><span class="line"><span class="cl">    configmap.reloader.stakater.com/reload: &#34;nginx-config&#34;
+</span></span><span class="line"><span class="cl">  ...</span></span></code></pre></div>
 <h2 id="conclusion">Conclusion</h2>
 <p>If your application is smart enough to gracefully reload itself whenever it detects any configuration changes, it continues working well with ConfigMap in Kubernetes.</p>
 <p>If not so smart, an easier approach is to use automatic tools (e.g., <a href="https://github.com/stakater/Reloader">Reloader</a>) to rolling update related pods.</p>

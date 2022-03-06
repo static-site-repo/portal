@@ -34,7 +34,7 @@
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.92.2" />
+<meta name="generator" content="Hugo 0.93.2" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2019/03/ingress-vs-ambassador/" />
@@ -376,91 +376,91 @@ if (!doNotTrack) {
 <h2 id="ambassador">Ambassador</h2>
 <p>首先，仿造前面的 Qwiklabs 步驟，在 GKE 上建立起相同規模的 k8s cluster。也執行一份 <a href="https://gist.githubusercontent.com/William-Yeh/0aab709e450b4442614ef87b0250260b/raw/daba0ba7e6b5561ec9af51a3ea020c79e572e34e/hello-app-service.yaml">hello-app service</a>。</p>
 <p>為了安裝 Ambassador，我們需要開啟 GKE 權限：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">% kubectl create clusterrolebinding my-cluster-admin-binding  \
-    --clusterrole=cluster-admin  \
-    --user=$(gcloud info --format=&#34;value(config.account)&#34;)</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">% kubectl create clusterrolebinding my-cluster-admin-binding  \
+</span></span><span class="line"><span class="cl">    --clusterrole=cluster-admin  \
+</span></span><span class="line"><span class="cl">    --user=$(gcloud info --format=&#34;value(config.account)&#34;)</span></span></code></pre></div>
 <p>接下來，就是正常的 Ambassador 安裝步驟：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">% kubectl create -f http://bit.ly/2UmsPuE</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">% kubectl create -f http://bit.ly/2UmsPuE</span></span></code></pre></div>
 <p>此刻，我們終於可以透過 Ambassador，替 hello-app 設定 API gateway 規則：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">% kubectl create -f https://bit.ly/2YyZzjO</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">% kubectl create -f https://bit.ly/2YyZzjO</span></span></code></pre></div>
 <p>照著做完後，Ambassador 會在 GKE 開放一個公開的 http 服務存取點。</p>
 <p>我們可以先用 <code>kubectl get services</code> 查看 API gateway 的 public IP 位址。假設是 <code>35.224.99.169</code> 的話，這個服務路徑則是 <code>http://35.224.99.169/hello2/</code>。</p>
 <h2 id="簡單的壓測">簡單的壓測</h2>
 <p>為了簡單起見，我在 GCP 的 <a href="https://cloud.google.com/shell/?hl=zh-tw">Cloud Shell</a> 進行壓測。我會對 Nginx ingress 及 Ambassador 兩種情況，各送出一萬個 API 存取要求。</p>
 <p>針對 Nginx ingress 的情況進行測試：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">% docker run --rm  williamyeh/boom  \
-    -n 10000 -c 100  http://35.222.12.84/hello/
-
-Summary:
-  Total:        16.2312 secs
-  Slowest:      0.3252 secs
-  Fastest:      0.1568 secs
-  Average:      0.1616 secs
-  Requests/sec: 616.0963
-  Total data:   660000 bytes
-  Size/request: 66 bytes
-
-Status code distribution:
-  [200] 10000 responses
-
-Response time histogram:
-  0.157 [1]     |
-  0.174 [9803]  |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
-  0.190 [96]    |
-  0.207 [0]     |
-  0.224 [0]     |
-  0.241 [0]     |
-  0.258 [0]     |
-  0.275 [0]     |
-  0.292 [0]     |
-  0.308 [0]     |
-  0.325 [100]   |
-
-Latency distribution:
-  10% in 0.1576 secs
-  25% in 0.1583 secs
-  50% in 0.1593 secs
-  75% in 0.1608 secs
-  90% in 0.1632 secs
-  95% in 0.1661 secs
-  99% in 0.3152 secs</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">% docker run --rm  williamyeh/boom  \
+</span></span><span class="line"><span class="cl">    -n 10000 -c 100  http://35.222.12.84/hello/
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Summary:
+</span></span><span class="line"><span class="cl">  Total:        16.2312 secs
+</span></span><span class="line"><span class="cl">  Slowest:      0.3252 secs
+</span></span><span class="line"><span class="cl">  Fastest:      0.1568 secs
+</span></span><span class="line"><span class="cl">  Average:      0.1616 secs
+</span></span><span class="line"><span class="cl">  Requests/sec: 616.0963
+</span></span><span class="line"><span class="cl">  Total data:   660000 bytes
+</span></span><span class="line"><span class="cl">  Size/request: 66 bytes
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Status code distribution:
+</span></span><span class="line"><span class="cl">  [200] 10000 responses
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Response time histogram:
+</span></span><span class="line"><span class="cl">  0.157 [1]     |
+</span></span><span class="line"><span class="cl">  0.174 [9803]  |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+</span></span><span class="line"><span class="cl">  0.190 [96]    |
+</span></span><span class="line"><span class="cl">  0.207 [0]     |
+</span></span><span class="line"><span class="cl">  0.224 [0]     |
+</span></span><span class="line"><span class="cl">  0.241 [0]     |
+</span></span><span class="line"><span class="cl">  0.258 [0]     |
+</span></span><span class="line"><span class="cl">  0.275 [0]     |
+</span></span><span class="line"><span class="cl">  0.292 [0]     |
+</span></span><span class="line"><span class="cl">  0.308 [0]     |
+</span></span><span class="line"><span class="cl">  0.325 [100]   |
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Latency distribution:
+</span></span><span class="line"><span class="cl">  10% in 0.1576 secs
+</span></span><span class="line"><span class="cl">  25% in 0.1583 secs
+</span></span><span class="line"><span class="cl">  50% in 0.1593 secs
+</span></span><span class="line"><span class="cl">  75% in 0.1608 secs
+</span></span><span class="line"><span class="cl">  90% in 0.1632 secs
+</span></span><span class="line"><span class="cl">  95% in 0.1661 secs
+</span></span><span class="line"><span class="cl">  99% in 0.3152 secs</span></span></code></pre></div>
 <p>針對 Ambassador 的情況進行測試：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">% docker run --rm  williamyeh/boom  \
-    -n 10000 -c 100  http://35.224.99.169/hello2/
-
-Summary:
-  Total:        16.8132 secs
-  Slowest:      0.3857 secs
-  Fastest:      0.1571 secs
-  Average:      0.1662 secs
-  Requests/sec: 594.7715
-  Total data:   660000 bytes
-  Size/request: 66 bytes
-
-Status code distribution:
-  [200] 10000 responses
-
-Response time histogram:
-  0.157 [1]     |
-  0.180 [9595]  |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
-  0.203 [304]   |∎
-  0.226 [0]     |
-  0.249 [0]     |
-  0.271 [0]     |
-  0.294 [0]     |
-  0.317 [0]     |
-  0.340 [0]     |
-  0.363 [8]     |
-  0.386 [92]    |
-
-Latency distribution:
-  10% in 0.1596 secs
-  25% in 0.1607 secs
-  50% in 0.1623 secs
-  75% in 0.1656 secs
-  90% in 0.1717 secs
-  95% in 0.1786 secs
-  99% in 0.3596 secs</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">% docker run --rm  williamyeh/boom  \
+</span></span><span class="line"><span class="cl">    -n 10000 -c 100  http://35.224.99.169/hello2/
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Summary:
+</span></span><span class="line"><span class="cl">  Total:        16.8132 secs
+</span></span><span class="line"><span class="cl">  Slowest:      0.3857 secs
+</span></span><span class="line"><span class="cl">  Fastest:      0.1571 secs
+</span></span><span class="line"><span class="cl">  Average:      0.1662 secs
+</span></span><span class="line"><span class="cl">  Requests/sec: 594.7715
+</span></span><span class="line"><span class="cl">  Total data:   660000 bytes
+</span></span><span class="line"><span class="cl">  Size/request: 66 bytes
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Status code distribution:
+</span></span><span class="line"><span class="cl">  [200] 10000 responses
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Response time histogram:
+</span></span><span class="line"><span class="cl">  0.157 [1]     |
+</span></span><span class="line"><span class="cl">  0.180 [9595]  |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+</span></span><span class="line"><span class="cl">  0.203 [304]   |∎
+</span></span><span class="line"><span class="cl">  0.226 [0]     |
+</span></span><span class="line"><span class="cl">  0.249 [0]     |
+</span></span><span class="line"><span class="cl">  0.271 [0]     |
+</span></span><span class="line"><span class="cl">  0.294 [0]     |
+</span></span><span class="line"><span class="cl">  0.317 [0]     |
+</span></span><span class="line"><span class="cl">  0.340 [0]     |
+</span></span><span class="line"><span class="cl">  0.363 [8]     |
+</span></span><span class="line"><span class="cl">  0.386 [92]    |
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Latency distribution:
+</span></span><span class="line"><span class="cl">  10% in 0.1596 secs
+</span></span><span class="line"><span class="cl">  25% in 0.1607 secs
+</span></span><span class="line"><span class="cl">  50% in 0.1623 secs
+</span></span><span class="line"><span class="cl">  75% in 0.1656 secs
+</span></span><span class="line"><span class="cl">  90% in 0.1717 secs
+</span></span><span class="line"><span class="cl">  95% in 0.1786 secs
+</span></span><span class="line"><span class="cl">  99% in 0.3596 secs</span></span></code></pre></div>
 <p>儘管不夠嚴謹，但仍可以約略看出 Ambassador 的性能已經逼近 Nginx ingress。以才兩歲半的 Envoy <sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>、才滿兩歲的 Ambassador <sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup> 來說，已經很不容易了。</p>
 <p>這是一個值得開始嘗試的好物。</p>
 <section class="footnotes" role="doc-endnotes">

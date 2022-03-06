@@ -35,7 +35,7 @@ Idempotency 冪等性 在 API 服務中，常常需要留意 idempotency（冪�
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.92.2" />
+<meta name="generator" content="Hugo 0.93.2" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2020/03/idempotency-key-test/" />
@@ -363,47 +363,47 @@ if (!doNotTrack) {
 <li>如果 <em>f</em> 是 idempotent，就代表：對 <em>f</em>(<em>x</em>) 執行 1 次產生的效果，與執行 <em>N</em> 次產生的效果，完全一樣。</li>
 </ul>
 <p>譬如說，如果有一個管理商品庫存的服務：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="kd">type</span> <span class="nx">Item</span> <span class="kd">struct</span> <span class="p">{</span><span class="cm">/*...*/</span><span class="p">}</span>
-
-<span class="kd">type</span> <span class="nx">ItemInventory</span> <span class="kd">interface</span> <span class="p">{</span>
-	<span class="kd">func</span> <span class="nf">GetQuantity</span><span class="p">(</span><span class="nx">item</span> <span class="nx">Item</span><span class="p">)</span> <span class="kt">int</span>       <span class="c1">// 查詢庫存量   
-</span><span class="c1"></span>	<span class="kd">func</span> <span class="nf">SetQuantity</span><span class="p">(</span><span class="nx">item</span> <span class="nx">Item</span><span class="p">,</span> <span class="nx">num</span> <span class="kt">int</span><span class="p">)</span>  <span class="c1">// 設定庫存量
-</span><span class="c1"></span>	<span class="kd">func</span> <span class="nf">DecreaseQuantity</span><span class="p">(</span><span class="nx">item</span> <span class="nx">Item</span><span class="p">)</span>      <span class="c1">// 庫存量減一
-</span><span class="c1"></span><span class="p">}</span>
-</code></pre></div><p>那麼，像以下這些動作，呼叫 1 次的效果，與呼叫 <em>N</em> 次的效果一樣，即可稱為是 idempotent：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="kd">var</span> <span class="nx">num</span> <span class="kt">int</span>
-
-<span class="c1">// 查詢庫存量
-</span><span class="c1"></span><span class="nx">num</span> <span class="p">=</span> <span class="nx">inventory</span><span class="p">.</span><span class="nf">GetQuantity</span><span class="p">(</span><span class="nx">item</span><span class="p">)</span>
-<span class="nx">num</span> <span class="p">=</span> <span class="nx">inventory</span><span class="p">.</span><span class="nf">GetQuantity</span><span class="p">(</span><span class="nx">item</span><span class="p">)</span>
-<span class="nx">num</span> <span class="p">=</span> <span class="nx">inventory</span><span class="p">.</span><span class="nf">GetQuantity</span><span class="p">(</span><span class="nx">item</span><span class="p">)</span>
-<span class="c1">//...
-</span><span class="c1"></span>
-<span class="err"></span><span class="c1">// 設定庫存量
-</span><span class="c1"></span><span class="nx">num</span> <span class="p">=</span> <span class="mi">100</span>
-<span class="nx">inventory</span><span class="p">.</span><span class="nf">SetQuantity</span><span class="p">(</span><span class="nx">item</span><span class="p">,</span> <span class="nx">num</span><span class="p">)</span>
-<span class="nx">inventory</span><span class="p">.</span><span class="nf">SetQuantity</span><span class="p">(</span><span class="nx">item</span><span class="p">,</span> <span class="nx">num</span><span class="p">)</span>
-<span class="nx">inventory</span><span class="p">.</span><span class="nf">SetQuantity</span><span class="p">(</span><span class="nx">item</span><span class="p">,</span> <span class="nx">num</span><span class="p">)</span>
-</code></pre></div><p>反之，像以下這些動作，呼叫 1 次的效果，與呼叫 <em>N</em> 次的效果會<strong>不一樣</strong>，即可稱為是 non-idempotent：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="cm">/*...*/</span>                              <span class="c1">// 起初庫存量為 100
-</span><span class="c1"></span><span class="nx">inventory</span><span class="p">.</span><span class="nf">DecreaseQuantity</span><span class="p">(</span><span class="nx">item</span><span class="p">)</span>     <span class="c1">// 庫存量會變成 99
-</span><span class="c1"></span><span class="nx">inventory</span><span class="p">.</span><span class="nf">DecreaseQuantity</span><span class="p">(</span><span class="nx">item</span><span class="p">)</span>     <span class="c1">// 庫存量會變成 98
-</span><span class="c1"></span><span class="nx">inventory</span><span class="p">.</span><span class="nf">DecreaseQuantity</span><span class="p">(</span><span class="nx">item</span><span class="p">)</span>     <span class="c1">// 庫存量會變成 97
-</span></code></pre></div><h2 id="non-idempotent-操作有必要存在嗎">Non-idempotent 操作有必要存在嗎？</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">type</span> <span class="nx">Item</span> <span class="kd">struct</span> <span class="p">{</span><span class="cm">/*...*/</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">type</span> <span class="nx">ItemInventory</span> <span class="kd">interface</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kd">func</span> <span class="nf">GetQuantity</span><span class="p">(</span><span class="nx">item</span> <span class="nx">Item</span><span class="p">)</span> <span class="kt">int</span>       <span class="c1">// 查詢庫存量   
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kd">func</span> <span class="nf">SetQuantity</span><span class="p">(</span><span class="nx">item</span> <span class="nx">Item</span><span class="p">,</span> <span class="nx">num</span> <span class="kt">int</span><span class="p">)</span>  <span class="c1">// 設定庫存量
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kd">func</span> <span class="nf">DecreaseQuantity</span><span class="p">(</span><span class="nx">item</span> <span class="nx">Item</span><span class="p">)</span>      <span class="c1">// 庫存量減一
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></code></pre></div><p>那麼，像以下這些動作，呼叫 1 次的效果，與呼叫 <em>N</em> 次的效果一樣，即可稱為是 idempotent：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">num</span> <span class="kt">int</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 查詢庫存量
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">num</span> <span class="p">=</span> <span class="nx">inventory</span><span class="p">.</span><span class="nf">GetQuantity</span><span class="p">(</span><span class="nx">item</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nx">num</span> <span class="p">=</span> <span class="nx">inventory</span><span class="p">.</span><span class="nf">GetQuantity</span><span class="p">(</span><span class="nx">item</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nx">num</span> <span class="p">=</span> <span class="nx">inventory</span><span class="p">.</span><span class="nf">GetQuantity</span><span class="p">(</span><span class="nx">item</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//...
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="err"></span><span class="c1">// 設定庫存量
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">num</span> <span class="p">=</span> <span class="mi">100</span>
+</span></span><span class="line"><span class="cl"><span class="nx">inventory</span><span class="p">.</span><span class="nf">SetQuantity</span><span class="p">(</span><span class="nx">item</span><span class="p">,</span> <span class="nx">num</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nx">inventory</span><span class="p">.</span><span class="nf">SetQuantity</span><span class="p">(</span><span class="nx">item</span><span class="p">,</span> <span class="nx">num</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nx">inventory</span><span class="p">.</span><span class="nf">SetQuantity</span><span class="p">(</span><span class="nx">item</span><span class="p">,</span> <span class="nx">num</span><span class="p">)</span>
+</span></span></code></pre></div><p>反之，像以下這些動作，呼叫 1 次的效果，與呼叫 <em>N</em> 次的效果會<strong>不一樣</strong>，即可稱為是 non-idempotent：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="cm">/*...*/</span>                              <span class="c1">// 起初庫存量為 100
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">inventory</span><span class="p">.</span><span class="nf">DecreaseQuantity</span><span class="p">(</span><span class="nx">item</span><span class="p">)</span>     <span class="c1">// 庫存量會變成 99
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">inventory</span><span class="p">.</span><span class="nf">DecreaseQuantity</span><span class="p">(</span><span class="nx">item</span><span class="p">)</span>     <span class="c1">// 庫存量會變成 98
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">inventory</span><span class="p">.</span><span class="nf">DecreaseQuantity</span><span class="p">(</span><span class="nx">item</span><span class="p">)</span>     <span class="c1">// 庫存量會變成 97
+</span></span></span></code></pre></div><h2 id="non-idempotent-操作有必要存在嗎">Non-idempotent 操作有必要存在嗎？</h2>
 <p>在 <a href="https://en.wikipedia.org/wiki/Functional_programming">functional programming</a> 思潮下，immutability 及 idempotency 似乎才是政治正確之舉。</p>
 <p>Non-idempotent 的操作，真的有必要存在嗎？</p>
 <p>譬如說，即使沒有 non-idempotent 的 <code>DecreaseQuantity</code>，我們仍可透過 idempotent 的 <code>SetQuantity</code> 來達到一樣的效果：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="nx">num</span> <span class="p">=</span> <span class="nx">inventory</span><span class="p">.</span><span class="nf">GetQuantity</span><span class="p">(</span><span class="nx">item</span><span class="p">)</span>       <span class="c1">// 起初庫存量為 100
-</span><span class="c1"></span>
-<span class="nx">numTarget</span> <span class="o">:=</span> <span class="nx">num</span> <span class="o">-</span> <span class="mi">1</span>
-<span class="nx">inventory</span><span class="p">.</span><span class="nf">SetQuantity</span><span class="p">(</span><span class="nx">item</span><span class="p">,</span> <span class="nx">numTarget</span><span class="p">)</span>  <span class="c1">// 庫存量會變成 99
-</span><span class="c1"></span>
-<span class="nx">numTarget</span><span class="o">--</span>
-<span class="nx">inventory</span><span class="p">.</span><span class="nf">SetQuantity</span><span class="p">(</span><span class="nx">item</span><span class="p">,</span> <span class="nx">numTarget</span><span class="p">)</span>  <span class="c1">// 庫存量會變成 98
-</span><span class="c1"></span>
-<span class="nx">numTarget</span><span class="o">--</span>
-<span class="nx">inventory</span><span class="p">.</span><span class="nf">SetQuantity</span><span class="p">(</span><span class="nx">item</span><span class="p">,</span> <span class="nx">numTarget</span><span class="p">)</span>  <span class="c1">// 庫存量會變成 97
-</span></code></pre></div><p>如此一來，是否真的沒有必要再留下 non-idempotent 的 <code>DecreaseQuantity</code>？至少有兩件事需要思考：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nx">num</span> <span class="p">=</span> <span class="nx">inventory</span><span class="p">.</span><span class="nf">GetQuantity</span><span class="p">(</span><span class="nx">item</span><span class="p">)</span>       <span class="c1">// 起初庫存量為 100
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="nx">numTarget</span> <span class="o">:=</span> <span class="nx">num</span> <span class="o">-</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl"><span class="nx">inventory</span><span class="p">.</span><span class="nf">SetQuantity</span><span class="p">(</span><span class="nx">item</span><span class="p">,</span> <span class="nx">numTarget</span><span class="p">)</span>  <span class="c1">// 庫存量會變成 99
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="nx">numTarget</span><span class="o">--</span>
+</span></span><span class="line"><span class="cl"><span class="nx">inventory</span><span class="p">.</span><span class="nf">SetQuantity</span><span class="p">(</span><span class="nx">item</span><span class="p">,</span> <span class="nx">numTarget</span><span class="p">)</span>  <span class="c1">// 庫存量會變成 98
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="nx">numTarget</span><span class="o">--</span>
+</span></span><span class="line"><span class="cl"><span class="nx">inventory</span><span class="p">.</span><span class="nf">SetQuantity</span><span class="p">(</span><span class="nx">item</span><span class="p">,</span> <span class="nx">numTarget</span><span class="p">)</span>  <span class="c1">// 庫存量會變成 97
+</span></span></span></code></pre></div><p>如此一來，是否真的沒有必要再留下 non-idempotent 的 <code>DecreaseQuantity</code>？至少有兩件事需要思考：</p>
 <ol>
 <li>
 <p>語意層面的改變。原本 <code>DecreaseQuantity</code> 的簽名，並沒有「庫存量」這一欄，也就是說，client 並不需要知道「目前庫存量」，即可進行「庫存量減一」。如果改寫成 <code>SetQuantity</code> 版本，簽名不同，多了「庫存量」欄位，換句話說，原本不必知道的「庫存量」內容，現在就必須透露出來了——這改變了原本「庫存量減一」的操作語意。</p>
@@ -433,40 +433,40 @@ if (!doNotTrack) {
     Go &#43; Gin 實作的 RESTful API 例子
     
   </summary>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="kn">import</span> <span class="p">(</span>
-	<span class="s">&#34;github.com/gin-gonic/gin&#34;</span>
-	<span class="s">&#34;strconv&#34;</span>
-<span class="p">)</span>
-
-<span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-	<span class="c1">//...
-</span><span class="c1"></span>	<span class="nx">router</span> <span class="o">:=</span> <span class="nx">gin</span><span class="p">.</span><span class="nf">Default</span><span class="p">()</span>
-
-	<span class="c1">// 查詢庫存量
-</span><span class="c1"></span>	<span class="nx">router</span><span class="p">.</span><span class="nf">GET</span><span class="p">(</span><span class="s">&#34;/inventory/quantity/:item_id&#34;</span><span class="p">,</span> <span class="kd">func</span><span class="p">(</span><span class="nx">c</span> <span class="o">*</span><span class="nx">gin</span><span class="p">.</span><span class="nx">Context</span><span class="p">)</span> <span class="p">{</span>
-		<span class="c1">//...
-</span><span class="c1"></span>		<span class="nx">num</span> <span class="err">：</span><span class="p">=</span> <span class="nx">inventory</span><span class="p">.</span><span class="nf">GetQuantity</span><span class="p">(</span><span class="nx">item</span><span class="p">)</span>
-		<span class="c1">//...
-</span><span class="c1"></span>	<span class="p">})</span>
-
-	<span class="c1">// 設定庫存量
-</span><span class="c1"></span>	<span class="nx">router</span><span class="p">.</span><span class="nf">PUT</span><span class="p">(</span><span class="s">&#34;/inventory/quantity/:item_id&#34;</span><span class="p">,</span> <span class="kd">func</span><span class="p">(</span><span class="nx">c</span> <span class="o">*</span><span class="nx">gin</span><span class="p">.</span><span class="nx">Context</span><span class="p">)</span> <span class="p">{</span>
-		<span class="c1">//...
-</span><span class="c1"></span>		<span class="nx">num</span><span class="p">,</span> <span class="nx">_</span> <span class="o">:=</span> <span class="nx">strconv</span><span class="p">.</span><span class="nf">Atoi</span><span class="p">(</span><span class="nx">c</span><span class="p">.</span><span class="nf">PostForm</span><span class="p">(</span><span class="s">&#34;num&#34;</span><span class="p">))</span>
-		<span class="nx">inventory</span><span class="p">.</span><span class="nf">SetQuantity</span><span class="p">(</span><span class="nx">item</span><span class="p">,</span> <span class="nx">num</span><span class="p">)</span>
-		<span class="c1">//...
-</span><span class="c1"></span>	<span class="p">})</span>
-
-	<span class="c1">// 庫存量減一
-</span><span class="c1"></span>	<span class="nx">router</span><span class="p">.</span><span class="nf">POST</span><span class="p">(</span><span class="s">&#34;/inventory/quantity/:item_id/dec&#34;</span><span class="p">,</span> <span class="kd">func</span><span class="p">(</span><span class="nx">c</span> <span class="o">*</span><span class="nx">gin</span><span class="p">.</span><span class="nx">Context</span><span class="p">)</span> <span class="p">{</span>
-		<span class="c1">//...
-</span><span class="c1"></span>		<span class="nx">inventory</span><span class="p">.</span><span class="nf">DecreaseQuantity</span><span class="p">(</span><span class="nx">item</span><span class="p">)</span>
-		<span class="c1">///
-</span><span class="c1"></span>	<span class="p">})</span>
-
-	<span class="nx">router</span><span class="p">.</span><span class="nf">Run</span><span class="p">()</span>
-<span class="p">}</span>
-</code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kn">import</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">	<span class="s">&#34;github.com/gin-gonic/gin&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="s">&#34;strconv&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">//...
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">router</span> <span class="o">:=</span> <span class="nx">gin</span><span class="p">.</span><span class="nf">Default</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="c1">// 查詢庫存量
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">router</span><span class="p">.</span><span class="nf">GET</span><span class="p">(</span><span class="s">&#34;/inventory/quantity/:item_id&#34;</span><span class="p">,</span> <span class="kd">func</span><span class="p">(</span><span class="nx">c</span> <span class="o">*</span><span class="nx">gin</span><span class="p">.</span><span class="nx">Context</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="c1">//...
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="nx">num</span> <span class="err">：</span><span class="p">=</span> <span class="nx">inventory</span><span class="p">.</span><span class="nf">GetQuantity</span><span class="p">(</span><span class="nx">item</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="c1">//...
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="p">})</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="c1">// 設定庫存量
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">router</span><span class="p">.</span><span class="nf">PUT</span><span class="p">(</span><span class="s">&#34;/inventory/quantity/:item_id&#34;</span><span class="p">,</span> <span class="kd">func</span><span class="p">(</span><span class="nx">c</span> <span class="o">*</span><span class="nx">gin</span><span class="p">.</span><span class="nx">Context</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="c1">//...
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="nx">num</span><span class="p">,</span> <span class="nx">_</span> <span class="o">:=</span> <span class="nx">strconv</span><span class="p">.</span><span class="nf">Atoi</span><span class="p">(</span><span class="nx">c</span><span class="p">.</span><span class="nf">PostForm</span><span class="p">(</span><span class="s">&#34;num&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">inventory</span><span class="p">.</span><span class="nf">SetQuantity</span><span class="p">(</span><span class="nx">item</span><span class="p">,</span> <span class="nx">num</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="c1">//...
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="p">})</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="c1">// 庫存量減一
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">router</span><span class="p">.</span><span class="nf">POST</span><span class="p">(</span><span class="s">&#34;/inventory/quantity/:item_id/dec&#34;</span><span class="p">,</span> <span class="kd">func</span><span class="p">(</span><span class="nx">c</span> <span class="o">*</span><span class="nx">gin</span><span class="p">.</span><span class="nx">Context</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="c1">//...
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="nx">inventory</span><span class="p">.</span><span class="nf">DecreaseQuantity</span><span class="p">(</span><span class="nx">item</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="c1">///
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="p">})</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="nx">router</span><span class="p">.</span><span class="nf">Run</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div>
 </details>
 
 <p>對於原本就是 idempotent 的 <code>GetQuantity</code> 和 <code>SetQuantity</code> 操作來說，換成 RESTful 版本並沒什麼問題。像以下這個例子中，Client 在 🅐 步驟向 Server 呼叫 query quantity 操作時，只要該資料沒被別人改動到，這個 🅐 步驟不管重試多少次，得到的結果都會是一樣的。</p>
@@ -552,12 +552,12 @@ if (!doNotTrack) {
 <p>接下來的問題是：識別碼，由誰來產生？由 request 的接收方，還是發起方？</p>
 <p>識別碼可以由 request 接收方：server 產生。像 <a href="https://www.amazon.com/dp/0596801688/138-6991958-6648417"><em>Restful Web Services Cookbook</em></a> §10.8 &amp; §10.9 就建議，針對 non-idempotent 的操作，server 可先產生 <a href="https://en.wikipedia.org/wiki/Cryptographic_nonce">nonce</a> 當作識別碼，將它當成參數添加到服務的 URI 上面，再請 client 透過這個加過料的 URI 來操作 server 的服務。</p>
 <p>也有人把識別碼的生成責任交給 request 發起方：client 來做。像 Stripe 官方提供的 <a href="https://github.com/stripe/stripe-ruby/blob/1a20c2476d35d80e411e5a692727ed5438614d66/lib/stripe/stripe_client.rb#L747">StripeClient 程式庫</a>，針對 <code>POST</code> 及 <code>DELETE</code> 類型的操作，會先在 client 這邊產生 uuid v4 當作識別碼，將它添加到 HTTP header 中（此例為 <code>Idempotency-Key</code>），再傳給 server：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ruby" data-lang="ruby"><span class="c1"># It is only safe to retry network failures on post and delete</span>
-<span class="c1"># requests if we add an Idempotency-Key header</span>
-<span class="k">if</span> <span class="o">%</span><span class="n">i</span><span class="o">[</span><span class="n">post</span> <span class="n">delete</span><span class="o">].</span><span class="n">include?</span><span class="p">(</span><span class="nb">method</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="no">Stripe</span><span class="o">.</span><span class="n">max_network_retries</span> <span class="o">&gt;</span> <span class="mi">0</span>
-    <span class="n">headers</span><span class="o">[</span><span class="s2">&#34;Idempotency-Key&#34;</span><span class="o">]</span> <span class="o">||=</span> <span class="no">SecureRandom</span><span class="o">.</span><span class="n">uuid</span>
-<span class="k">end</span>
-</code></pre></div><p>簡單的概念，近年來較新的服務，尤其是與金流或電子商務有關的，似乎也很流行這種 “idempotency key” 手法：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ruby" data-lang="ruby"><span class="line"><span class="cl"><span class="c1"># It is only safe to retry network failures on post and delete</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># requests if we add an Idempotency-Key header</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">%</span><span class="n">i</span><span class="o">[</span><span class="n">post</span> <span class="n">delete</span><span class="o">].</span><span class="n">include?</span><span class="p">(</span><span class="nb">method</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="no">Stripe</span><span class="o">.</span><span class="n">max_network_retries</span> <span class="o">&gt;</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">    <span class="n">headers</span><span class="o">[</span><span class="s2">&#34;Idempotency-Key&#34;</span><span class="o">]</span> <span class="o">||=</span> <span class="no">SecureRandom</span><span class="o">.</span><span class="n">uuid</span>
+</span></span><span class="line"><span class="cl"><span class="k">end</span>
+</span></span></code></pre></div><p>簡單的概念，近年來較新的服務，尤其是與金流或電子商務有關的，似乎也很流行這種 “idempotency key” 手法：</p>
 <ul>
 <li>Adyen: <a href="https://docs.adyen.com/development-resources/api-idempotency">API idempotency</a></li>
 <li>Airbnb: <a href="https://medium.com/airbnb-engineering/avoiding-double-payments-in-a-distributed-payments-system-2981f6b070bb">Avoiding Double Payments in a Distributed Payments System</a></li>
@@ -604,31 +604,31 @@ if (!doNotTrack) {
 <p>PostgreSQL provides storage and comparison functions for UUIDs, but the core database does not include any function for generating UUIDs, because no single algorithm is well suited for every application.</p>
 </blockquote>
 <p>從 PostgreSQL 原始碼 <a href="https://github.com/postgres/postgres/blob/0a42a2e9ce8481a024d085f2cc526a366db8df59/src/include/utils/uuid.h#L17-L23">uuid.h</a> 及 <a href="https://github.com/postgres/postgres/blob/master/src/backend/utils/adt/uuid.c">uuid.c</a> 來看，骨子裡是用 16 bytes 字元陣列來實作：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="cm">/* uuid size in bytes */</span>
-<span class="cp">#define UUID_LEN 16
-</span><span class="cp"></span>
-<span class="k">typedef</span> <span class="k">struct</span> <span class="n">pg_uuid_t</span>
-<span class="p">{</span>
-	<span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">data</span><span class="p">[</span><span class="n">UUID_LEN</span><span class="p">];</span>
-<span class="p">}</span> <span class="n">pg_uuid_t</span><span class="p">;</span>
-
-
-<span class="cm">/* internal uuid compare function */</span>
-<span class="k">static</span> <span class="kt">int</span>
-<span class="nf">uuid_internal_cmp</span><span class="p">(</span><span class="k">const</span> <span class="n">pg_uuid_t</span> <span class="o">*</span><span class="n">arg1</span><span class="p">,</span> <span class="k">const</span> <span class="n">pg_uuid_t</span> <span class="o">*</span><span class="n">arg2</span><span class="p">)</span>
-<span class="p">{</span>
-	<span class="k">return</span> <span class="n">memcmp</span><span class="p">(</span><span class="n">arg1</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">,</span> <span class="n">arg2</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">,</span> <span class="n">UUID_LEN</span><span class="p">);</span>
-<span class="p">}</span>
-
-<span class="cm">/* hash index support */</span>
-<span class="n">Datum</span>
-<span class="nf">uuid_hash</span><span class="p">(</span><span class="n">PG_FUNCTION_ARGS</span><span class="p">)</span>
-<span class="p">{</span>
-	<span class="n">pg_uuid_t</span>  <span class="o">*</span><span class="n">key</span> <span class="o">=</span> <span class="n">PG_GETARG_UUID_P</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
-
-	<span class="k">return</span> <span class="n">hash_any</span><span class="p">(</span><span class="n">key</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">,</span> <span class="n">UUID_LEN</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div><p>對於 uuid 的存取性能，PostgreSQL 似乎是有備而來胸有成竹。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cm">/* uuid size in bytes */</span>
+</span></span><span class="line"><span class="cl"><span class="cp">#define UUID_LEN 16
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="k">typedef</span> <span class="k">struct</span> <span class="n">pg_uuid_t</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">data</span><span class="p">[</span><span class="n">UUID_LEN</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span> <span class="n">pg_uuid_t</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cm">/* internal uuid compare function */</span>
+</span></span><span class="line"><span class="cl"><span class="k">static</span> <span class="kt">int</span>
+</span></span><span class="line"><span class="cl"><span class="nf">uuid_internal_cmp</span><span class="p">(</span><span class="k">const</span> <span class="n">pg_uuid_t</span> <span class="o">*</span><span class="n">arg1</span><span class="p">,</span> <span class="k">const</span> <span class="n">pg_uuid_t</span> <span class="o">*</span><span class="n">arg2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="n">memcmp</span><span class="p">(</span><span class="n">arg1</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">,</span> <span class="n">arg2</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">,</span> <span class="n">UUID_LEN</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cm">/* hash index support */</span>
+</span></span><span class="line"><span class="cl"><span class="n">Datum</span>
+</span></span><span class="line"><span class="cl"><span class="nf">uuid_hash</span><span class="p">(</span><span class="n">PG_FUNCTION_ARGS</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="n">pg_uuid_t</span>  <span class="o">*</span><span class="n">key</span> <span class="o">=</span> <span class="n">PG_GETARG_UUID_P</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="n">hash_any</span><span class="p">(</span><span class="n">key</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">,</span> <span class="n">UUID_LEN</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>對於 uuid 的存取性能，PostgreSQL 似乎是有備而來胸有成竹。</p>
 <p>因此，我針對 PostgreSQL 的 <code>uuid</code> 資料型態，分別實驗「亂數」與「遞增數值」存取效率，順便也拿 <code>bigint</code> 做對照組，看看這些排列組合，哪一種比較適合 idempotency key 用途：</p>
 <table>
 <thead>

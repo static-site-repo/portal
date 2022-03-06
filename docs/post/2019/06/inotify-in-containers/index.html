@@ -31,7 +31,7 @@
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.92.2" />
+<meta name="generator" content="Hugo 0.93.2" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2019/06/inotify-in-containers/" />
@@ -425,13 +425,13 @@ if (!doNotTrack) {
 <p>Let&rsquo;s retry the demo, but this time we&rsquo;ll focus on the directory layout from the pod&rsquo;s point of view.</p>
 <p><a href="https://asciinema.org/a/251141"><img src="https://asciinema.org/a/251141.svg" alt="asciicast"></a></p>
 <p>The demo from <a href="https://asciinema.org/a/251141?t=0:38">0:38</a> to 1:55 shows the directory layout from the pod&rsquo;s point of view:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">/mnt/site # ls -al
-total 12
-drwxrwxrwx    3 root  root   4096 Jun 12 06:19 .
-drwxr-xr-x    1 root  root   4096 Jun 12 06:19 ..
-drwxr-xr-x    2 root  root   4096 Jun 12 06:19 ..2019_06_12_06_19_15.187277003
-lrwxrwxrwx    1 root  root     31 Jun 12 06:19 ..data -&gt; ..2019_06_12_06_19_15.187277003
-lrwxrwxrwx    1 root  root     15 Jun 12 06:19 main.css -&gt; ..data/main.css</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">/mnt/site # ls -al
+</span></span><span class="line"><span class="cl">total 12
+</span></span><span class="line"><span class="cl">drwxrwxrwx    3 root  root   4096 Jun 12 06:19 .
+</span></span><span class="line"><span class="cl">drwxr-xr-x    1 root  root   4096 Jun 12 06:19 ..
+</span></span><span class="line"><span class="cl">drwxr-xr-x    2 root  root   4096 Jun 12 06:19 ..2019_06_12_06_19_15.187277003
+</span></span><span class="line"><span class="cl">lrwxrwxrwx    1 root  root     31 Jun 12 06:19 ..data -&gt; ..2019_06_12_06_19_15.187277003
+</span></span><span class="line"><span class="cl">lrwxrwxrwx    1 root  root     15 Jun 12 06:19 main.css -&gt; ..data/main.css</span></span></code></pre></div>
 <p>Simply put, things go well if you&rsquo;re inside the pod and watch for <code>/mnt/site</code> directory, but may not go well if you try to watch for a specific file <code>/mnt/site/main.css</code> since it is internally a symbolic link managed by Kubernetes.</p>
 <h2 id="conclusion">Conclusion</h2>
 <p>The <code>inotify</code> mechanism works in the container and Kubernetes world, except for the LCOW case.</p>
