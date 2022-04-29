@@ -6,14 +6,33 @@
     <description>Recent content in Posts on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sat, 16 Apr 2022 18:00:00 +0800</lastBuildDate><atom:link href="//william-yeh.net/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 29 Apr 2022 17:00:00 +0800</lastBuildDate><atom:link href="//william-yeh.net/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>請珍惜你們學到的通關密語</title>
+      <link>//william-yeh.net/post/2022/04/passphrase-at-work/</link>
+      <pubDate>Fri, 29 Apr 2022 17:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2022/04/passphrase-at-work/</guid>
+      <description>&lt;p&gt;（改寫自公司內部 memo）&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;Dear all 夥伴，&lt;/p&gt;
+&lt;p&gt;過去三個月，我根據自己的職場經驗，以及我對大家的專業要求，安排許多課程及講座。從一系列 1:1 訪談中得知，不只是主管們動了起來，連小夥伴也開始試著實踐。我很欣慰。&lt;/p&gt;
+&lt;p&gt;譬如說，送你們這群中階主管及資深工作者去接受專案管理培訓之後，我終於可以在大大小小會議上公然用專案管理語彙進行詢問與討論了，不必拐彎抹角替這些對我來說已經是「&lt;a href=&#34;https://zh.wikipedia.org/wiki/%E5%BF%AB%E6%80%9D%E6%85%A2%E6%83%B3&#34;&gt;系統一&lt;/a&gt;」的管理切入點逐一解釋或比喻。&lt;/p&gt;
+&lt;p&gt;The bar has been raised，這才像專業場域。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>經理人視角的敏捷通識課</title>
       <link>//william-yeh.net/post/2022/04/yves-agile-course/</link>
       <pubDate>Sat, 16 Apr 2022 18:00:00 +0800</pubDate>
       
       <guid>//william-yeh.net/post/2022/04/yves-agile-course/</guid>
-      <description>[課程推薦文] 高效產出：突破資源限制的敏捷管理術 S 在商業世界，「敏捷」又變成流行語了。許多人風聞敏捷兩大流派 Scrum 及 Kanban 勾勒出來的美麗新世界，聽起</description>
+      <description>&lt;p&gt;[課程推薦文] &lt;strong&gt;&lt;a href=&#34;https://www.cwlearning.com.tw/course-set/109&#34;&gt;高效產出：突破資源限制的敏捷管理術&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;在商業世界，「敏捷」又變成流行語了。許多人風聞敏捷兩大流派 Scrum 及 Kanban 勾勒出來的美麗新世界，聽起來也頭頭是道，便以為敏捷轉型是輕而易舉、隨插即用、立竿見影的事。&lt;/p&gt;
+&lt;p&gt;不過，真實世界不必然會像宣傳的那麼單純。等到真正開始嘗試時，遇到已知或未知的障礙，才開始懷疑人生，心生退轉。「敏捷轉型」這條路，怎麼走起來並沒有那麼敏捷呀？&lt;/p&gt;
+&lt;p&gt;其實，「敏捷」這道處方未必有錯，錯的可能是病患未先接受過合適的衛教。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -246,19 +265,6 @@ Output Essential:
       <guid>//william-yeh.net/post/2020/08/blackbox-exporter/</guid>
       <description>&lt;p&gt;在用 &lt;a href=&#34;https://prometheus.io/&#34;&gt;Prometheus&lt;/a&gt; + &lt;a href=&#34;https://grafana.com/&#34;&gt;Grafana&lt;/a&gt; 監控自家服務的同時，我們也會想用同一套系統去監控第三方服務。&lt;/p&gt;
 &lt;p&gt;本文介紹一個好用的 Prometheus 官方工具：&lt;a href=&#34;https://github.com/prometheus/blackbox_exporter&#34;&gt;Blackbox exporter&lt;/a&gt;，可以省下手刻 curl 腳本的工夫。我也順便介紹一些踩過的雷。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Essence of Scrum: Daily Scrum</title>
-      <link>//william-yeh.net/post/2020/08/daily-scrum-in-a-nutshell/</link>
-      <pubDate>Sun, 02 Aug 2020 16:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2020/08/daily-scrum-in-a-nutshell/</guid>
-      <description>This article discusses the essence of Daily Scrum .
-In a nutshell Daily Scrum is a time-boxed daily event in which the Developers gather together to quickly inspect current performance and to identify necessary actions in order to increase the confidence in achieving the Sprint Goal .
-Output Essential:
-  Updated confidence in the Sprint Goal supported by evidence.
-  Updated plans, if necessary, for achieving the Sprint Goal .</description>
     </item>
     
   </channel>
