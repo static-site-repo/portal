@@ -33,7 +33,7 @@
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.97.3" />
+<meta name="generator" content="Hugo 0.98.0" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2020/03/grpc-load-balancing/" />
@@ -88,16 +88,17 @@
 <![endif]-->
 
 
-<script type="application/javascript">
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-D8V6EWHYN7"></script>
+<script>
 var doNotTrack = false;
 if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-751859-3', 'auto');
-	
-	ga('send', 'pageview');
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-D8V6EWHYN7', { 'anonymize_ip': false });
 }
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 
@@ -618,17 +619,17 @@ if (!doNotTrack) {
 
 <p><!-- raw HTML omitted -->  <!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <p>簡單的實驗，示範在 Kubernetes 裡，可以透過 service mesh 替 gRPC 加上負載均衡機制。</p>
-<section class="footnotes" role="doc-endnotes">
+<div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn:1" role="doc-endnote">
+<li id="fn:1">
 <p>嚴格來說，HTTP/1.1 的 keep alive 機制，或多或少會影響到 Kubernetes 的負載均衡效果。不過正如<a href="https://en.wikipedia.org/wiki/HTTP_persistent_connection#HTTP_1.1">維基百科</a>所說，許多 Web server 本來就會針對 HTTP 設定較短的 timeout 以避免副作用。若真的要在 Web 上進行持久連線，一般都會建議改走 <a href="https://en.wikipedia.org/wiki/WebSocket">WebSocket</a> 路線。&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:2" role="doc-endnote">
+<li id="fn:2">
 <p>有在玩 <a href="https://istio.io/">Istio</a> 的朋友，可以參考〈<a href="https://medium.com/getamis/istio-%E5%9F%BA%E7%A4%8E-grpc-%E8%B2%A0%E8%BC%89%E5%9D%87%E8%A1%A1-d4be0d49ee07">Istio 基礎 — gRPC 負載均衡</a>〉一文的做法。不過，比較起來，Istio 設定上會比 Linkerd 複雜。&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
-</section>
+</div>
     </div>
 
     

@@ -34,7 +34,7 @@ To clarify this I&amp;rsquo;ve conducted a series of experiments for 3 possible 
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.97.3" />
+<meta name="generator" content="Hugo 0.98.0" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2019/06/autoreload-from-configmap/" />
@@ -95,16 +95,17 @@ To clarify this I&rsquo;ve conducted a series of experiments for 3 possible conf
 <![endif]-->
 
 
-<script type="application/javascript">
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-D8V6EWHYN7"></script>
+<script>
 var doNotTrack = false;
 if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-751859-3', 'auto');
-	
-	ga('send', 'pageview');
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-D8V6EWHYN7', { 'anonymize_ip': false });
 }
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 
@@ -422,29 +423,29 @@ if (!doNotTrack) {
 
 </div>
 
-<section class="footnotes" role="doc-endnotes">
+<div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn:1" role="doc-endnote">
+<li id="fn:1">
 <p>Nginx official document: <a href="http://nginx.org/en/docs/control.html">Controlling nginx</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:2" role="doc-endnote">
+<li id="fn:2">
 <p>Apache official document: <a href="https://httpd.apache.org/docs/2.4/stopping.html">Stopping and Restarting Apache HTTP Server</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:3" role="doc-endnote">
+<li id="fn:3">
 <p>An implementation worth studying: <a href="https://github.com/rosskukulinski/nginx-kubernetes-reload">https://github.com/rosskukulinski/nginx-kubernetes-reload</a>&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:4" role="doc-endnote">
+<li id="fn:4">
 <p>Q&amp;A in Stack Overflow: <a href="https://stackoverflow.com/questions/41031170/nginx-reload-configuration-best-practice">Nginx Reload Configuration Best Practice</a>&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:5" role="doc-endnote">
+<li id="fn:5">
 <p><a href="https://github.com/telephone/nginx-watch">https://github.com/telephone/nginx-watch</a>&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:6" role="doc-endnote">
+<li id="fn:6">
 <p><a href="https://cloud.google.com/solutions/best-practices-for-building-containers">Best practices for building containers</a>.&#160;<a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
-</section>
+</div>
 
     </div>
 

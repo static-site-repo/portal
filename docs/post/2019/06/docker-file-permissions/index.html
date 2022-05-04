@@ -33,7 +33,7 @@ Recently I&amp;rsquo;ve found something very strange about Linux-style file perm
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.97.3" />
+<meta name="generator" content="Hugo 0.98.0" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2019/06/docker-file-permissions/" />
@@ -88,16 +88,17 @@ Recently I&rsquo;ve found something very strange about Linux-style file permissi
 <![endif]-->
 
 
-<script type="application/javascript">
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-D8V6EWHYN7"></script>
+<script>
 var doNotTrack = false;
 if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-751859-3', 'auto');
-	
-	ga('send', 'pageview');
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-D8V6EWHYN7', { 'anonymize_ip': false });
 }
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 
@@ -491,20 +492,20 @@ if (!doNotTrack) {
 <p>If you can control the whole toolchains to use (e.g., in the CI/CD pipeline), stick with the Linux ones.</p>
 </li>
 </ul>
-<section class="footnotes" role="doc-endnotes">
+<div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn:1" role="doc-endnote">
+<li id="fn:1">
 <p>There is also an issue about this in Skaffold: <a href="https://github.com/GoogleContainerTools/skaffold/issues/1470">Issue #1470: Permission denied through skaffold</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:2" role="doc-endnote">
+<li id="fn:2">
 <p>See my article “<a href="//william-yeh.net/post/2019/03/wsl-cmder-zsh/">在 Windows 上復刻 Mac 使用習慣</a>”.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:3" role="doc-endnote">
+<li id="fn:3">
 <p>See <a href="https://github.com/moby/moby/issues/20397#issuecomment-185471832">thaJeztah&rsquo;s comment on GitHub</a> about this.&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
-</section>
+</div>
     </div>
 
     

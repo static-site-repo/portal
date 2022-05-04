@@ -35,7 +35,7 @@
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.97.3" />
+<meta name="generator" content="Hugo 0.98.0" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2019/04/wsl-ansible-vagrant/" />
@@ -96,16 +96,17 @@
 <![endif]-->
 
 
-<script type="application/javascript">
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-D8V6EWHYN7"></script>
+<script>
 var doNotTrack = false;
 if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-751859-3', 'auto');
-	
-	ga('send', 'pageview');
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-D8V6EWHYN7', { 'anonymize_ip': false });
 }
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 
@@ -408,23 +409,23 @@ if (!doNotTrack) {
 <p>如果一切順利，你可以在 <code>http://localhost:8080/</code> 看到 Nginx 歡迎畫面。</p>
 <p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <p>在 Docker + Kubernetes 時代，用到 Ansible 的機會愈來愈少了，Vagrant 更是如此；不過，保有這種工具，在處理還來不及跟上腳步的舊系統仍然很管用。因此，花一點功夫湊出堪用的組合，希望能有順手的 WSL 環境。</p>
-<section class="footnotes" role="doc-endnotes">
+<div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn:1" role="doc-endnote">
+<li id="fn:1">
 <p>這段故事，詳見〈<a href="//william-yeh.net/post/2019/03/wsl-cmder-zsh/">在 Windows 上復刻 Mac 使用習慣</a>〉一文。&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:2" role="doc-endnote">
+<li id="fn:2">
 <p>技術上來說，Hyper-V 是屬於 type-1 hypervisor，VirtualBox 是屬於 type-2 hypervisor。詳見維基百科 &ldquo;<a href="https://en.wikipedia.org/wiki/Hypervisor">Hypervisor</a>&rdquo; 條目。&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:3" role="doc-endnote">
+<li id="fn:3">
 <p>在 Windows 上關閉 Hyper-V 機制，請參考以下文章：“<a href="https://www.sysprobs.com/solved-vt-x-is-not-available-verr-vmx-no-vmx-in-windows-10-virtualbox">(Solved) VT-x is Not Available (verr_vmx_no_vmx) in Windows 10 – but Available for Oracle VirtualBox</a>”、〈<a href="https://blog.csdn.net/imilano/article/details/83038682">Win10 10月更新 VirtualBox VT-x is not available (VERR_VMX_NO_VMX). 解决</a>〉、“<a href="https://forums.virtualbox.org/viewtopic.php?f=38&amp;t=89791">[Solved] VT-x is not available (VERR_VMX_NO_VMX)</a>”。&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:4" role="doc-endnote">
+<li id="fn:4">
 <p>當 Vagrant 在使用 Hyper-V 時，會出現 &ldquo;Hyper-V Administrators&rdquo; 權限問題。我嘗試以下幾篇文章，可惜仍未解決：“<a href="https://github.com/hashicorp/vagrant/issues/4503">Vagrant issue #378</a>”、“<a href="https://blogs.msdn.microsoft.com/virtual_pc_guy/2014/06/11/allowing-non-administrators-to-control-hyper-vupdated/">Allowing non-Administrators to control Hyper-V–Updated</a>”、“<a href="https://dev.to/nicolus/getting-homestead-to-play-nice-with-hyper-v-4202">Getting Homestead to play nice with Hyper-V</a>”。&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
-</section>
+</div>
     </div>
 
     

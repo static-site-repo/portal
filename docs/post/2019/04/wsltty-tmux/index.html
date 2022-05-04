@@ -34,7 +34,7 @@
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.97.3" />
+<meta name="generator" content="Hugo 0.98.0" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2019/04/wsltty-tmux/" />
@@ -92,16 +92,17 @@
 <![endif]-->
 
 
-<script type="application/javascript">
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-D8V6EWHYN7"></script>
+<script>
 var doNotTrack = false;
 if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-751859-3', 'auto');
-	
-	ga('send', 'pageview');
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-D8V6EWHYN7', { 'anonymize_ip': false });
 }
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 
@@ -381,26 +382,26 @@ if (!doNotTrack) {
 <p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <p>Tmux 還有很多高段的功能，以後有需要再研究吧。</p>
 <p>如此這般拼湊起來，雖然還不能完全複刻 Mac 的 iTerm2 使用經驗，但也已經算是可以接受了。當然啦，私心還是希望 Cmder 或 Hyper 能夠好好解決顯示問題，就不必動用 tmux 了。</p>
-<section class="footnotes" role="doc-endnotes">
+<div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn:1" role="doc-endnote">
+<li id="fn:1">
 <p>這段故事，詳見〈<a href="//william-yeh.net/post/2019/03/wsl-cmder-zsh/">在 Windows 上復刻 Mac 使用習慣</a>〉一文。&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:2" role="doc-endnote">
+<li id="fn:2">
 <p>關於其他更華麗，卻也更耗資源的 Windows 終端機方案，可參考這幾篇介紹文章：〈<a href="https://github.com/spencerwooo/dowww">在 Windows 上面用 WSL 优雅开发</a>〉、“<a href="https://nickjanetakis.com/blog/conemu-vs-hyper-vs-terminus-vs-mobaxterm-terminator-vs-ubuntu-wsl">ConEmu vs Hyper vs Terminus vs MobaXTerm Terminator vs Ubuntu WSL</a>”。&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:3" role="doc-endnote">
+<li id="fn:3">
 <p>關於 <a href="https://github.com/mintty/wsltty">WSLtty</a>，可參考保哥的〈<a href="https://blog.miniasp.com/post/2019/02/09/Useful-tool-WSLtty-Mintty-as-a-terminal-for-WSL">介紹好用工具：WSLtty (Mintty as a terminal for WSL)</a>〉一文。&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:4" role="doc-endnote">
+<li id="fn:4">
 <p>關於 <a href="https://github.com/tmux/tmux">tmux</a>，可參考這幾篇介紹文章：〈<a href="https://5xruby.tw/posts/tmux/">tmux ，不只是 terminal multiplexer</a>〉、〈<a href="https://andyyou.github.io/2017/11/27/tmux-notes/">tmux 快速入門筆記</a>〉、〈<a href="https://larrylu.blog/tmux-33a24e595fbc">終端機 session 管理神器 — tmux</a>〉。&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:5" role="doc-endnote">
+<li id="fn:5">
 <p>Shubham 提供的<a href="https://unix.stackexchange.com/a/247449">做法</a>，可讓新開的 pane 及 window 保持在目前所在的目錄。Ham Vocke 的<a href="https://www.hamvocke.com/blog/a-guide-to-customizing-your-tmux-conf/">文章</a>也介紹幾種有趣的 tmux 設定。&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
-</section>
+</div>
     </div>
 
     

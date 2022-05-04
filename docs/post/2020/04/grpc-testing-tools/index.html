@@ -34,7 +34,7 @@
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.97.3" />
+<meta name="generator" content="Hugo 0.98.0" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2020/04/grpc-testing-tools/" />
@@ -92,16 +92,17 @@
 <![endif]-->
 
 
-<script type="application/javascript">
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-D8V6EWHYN7"></script>
+<script>
 var doNotTrack = false;
 if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-751859-3', 'auto');
-	
-	ga('send', 'pageview');
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-D8V6EWHYN7', { 'anonymize_ip': false });
 }
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 
@@ -736,14 +737,14 @@ if (!doNotTrack) {
 <h2 id="總結">總結</h2>
 <p>本篇文章，介紹兩個好用的 gRPC 測試小工具：輸入輸出介面測試工具 <a href="https://github.com/fullstorydev/grpcurl">gRPCurl</a>，以及壓測工具 <a href="https://github.com/bojand/ghz">ghz</a>。最後並推薦 <a href="https://github.com/grpc/grpc/blob/master/doc/server-reflection.md">server reflection</a> 功能來簡化 gRPC 測試工作。</p>
 <p>ghz 也有 web 介面，目前是 beta 狀態。有興趣的，請去 <a href="https://ghz.sh/">ghz 官網</a>看看。</p>
-<section class="footnotes" role="doc-endnotes">
+<div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn:1" role="doc-endnote">
+<li id="fn:1">
 <p>Proto 檔案也可以 import 其他 proto 檔。詳見 <a href="https://developers.google.com/protocol-buffers/docs/proto3#importing-definitions">https://developers.google.com/protocol-buffers/docs/proto3#importing-definitions</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
-</section>
+</div>
     </div>
 
     

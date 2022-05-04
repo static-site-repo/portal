@@ -35,7 +35,7 @@ Travis CI 也提供許多常見的程式語言及伺服器軟體，以方便做 
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.97.3" />
+<meta name="generator" content="Hugo 0.98.0" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2020/07/travisci-hacks/" />
@@ -96,16 +96,17 @@ Travis CI 也提供許多常見的程式語言及伺服器軟體，以方便做 
 <![endif]-->
 
 
-<script type="application/javascript">
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-D8V6EWHYN7"></script>
+<script>
 var doNotTrack = false;
 if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-751859-3', 'auto');
-	
-	ga('send', 'pageview');
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-D8V6EWHYN7', { 'anonymize_ip': false });
 }
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 
@@ -461,23 +462,23 @@ if (!doNotTrack) {
 <h2 id="結語">結語</h2>
 <p>代號為 Xenial 的 Ubuntu 16.04，官方保固期將於 2021-04 到期，若升級到代號為 Bionic，官方保固期到 2023-04 的 Ubuntu 18.04，免不了又要經歷一輪類似的修改。</p>
 <p>據我目前初步測試，Travis CI 的 Bionic 虛擬機會遇到更多雷（難怪 Travis CI 目前仍然預設為 Xenial）。如果沒有其他考量，我還是強烈建議，直接用 Docker 或 Docker Compose 去設定 CI 所需動用的程式語言及伺服器軟體，以降低對於 Travis CI 的依賴，甚至預留轉換至 <a href="https://circleci.com/">CircleCI</a> 或 <a href="https://github.com/features/actions">GitHub Actions</a> 的彈性。</p>
-<section class="footnotes" role="doc-endnotes">
+<div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn:1" role="doc-endnote">
+<li id="fn:1">
 <p>Travis CI 支援許多虛擬機，完整列表請見 &ldquo;<a href="https://docs.travis-ci.com/user/reference/overview/">Build Environment Overview</a>&rdquo; 一文。&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:2" role="doc-endnote">
+<li id="fn:2">
 <p>在 <a href="https://en.wikipedia.org/wiki/Ubuntu_version_history">Ubuntu version history</a> 文件中，詳列了 Ubuntu 各版本代號及官方保固期限。&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:3" role="doc-endnote">
+<li id="fn:3">
 <p>我參考 <a href="https://github.com/aio-libs/aiocassandra">aiocassandra 專案</a>的設定，將 Cassandra 安裝在 Travis CI 的 Xenial 虛擬機上：https://github.com/aio-libs/aiocassandra/blob/master/.travis.yml&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:4" role="doc-endnote">
+<li id="fn:4">
 <p>可能也是在官方論壇收到 &ldquo;<a href="https://travis-ci.community/t/rabbitmq-on-xenial/1827">RabbitMQ on Xenial</a>&rdquo; 這則提問，Travis CI 才會把這一段解法放進官方文件吧。&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
-</section>
+</div>
     </div>
 
     

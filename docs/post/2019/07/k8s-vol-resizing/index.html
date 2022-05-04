@@ -33,7 +33,7 @@ Is it possible in Kubernetes?
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.97.3" />
+<meta name="generator" content="Hugo 0.98.0" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2019/07/k8s-vol-resizing/" />
@@ -88,16 +88,17 @@ Is it possible in Kubernetes?"/>
 <![endif]-->
 
 
-<script type="application/javascript">
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-D8V6EWHYN7"></script>
+<script>
 var doNotTrack = false;
 if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-751859-3', 'auto');
-	
-	ga('send', 'pageview');
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-D8V6EWHYN7', { 'anonymize_ip': false });
 }
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 
@@ -652,20 +653,20 @@ if (!doNotTrack) {
 </li>
 </ul>
 <p>Kubernetes 1.11 also introduces an alpha feature called <em>online file system expansion</em>. You can track its progress in the Kubernetes CSI Developer Documentation &ldquo;<a href="https://kubernetes-csi.github.io/docs/volume-expansion.html">Volume Expansion</a>&rdquo;.</p>
-<section class="footnotes" role="doc-endnotes">
+<div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn:1" role="doc-endnote">
+<li id="fn:1">
 <p>You may use the volume resizing feature since Kubernetes 1.11. Read the article published by kubernetes.io in more detail: “<a href="https://kubernetes.io/blog/2018/07/12/resizing-persistent-volumes-using-kubernetes/">Resizing Persistent Volumes using Kubernetes</a>”.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:2" role="doc-endnote">
+<li id="fn:2">
 <p>To know more about how Strimzi implements the volume resizing for Kafka, read these articles: “<a href="https://strimzi.io/2019/07/08/persistent-storage-improvements.html">Persistent storage improvements</a>” and “<a href="https://strimzi.io/2019/02/28/resizing-persistent-volumes.html">Resizing persistent volumes with Strimzi</a>”.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:3" role="doc-endnote">
+<li id="fn:3">
 <p>The Docker image for this <a href="https://github.com/William-Yeh/vol-resize/blob/master/voltest.sh">voltest.sh</a> app is available in <code>williamyeh/voltest</code> for your convenience.&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
-</section>
+</div>
     </div>
 
     

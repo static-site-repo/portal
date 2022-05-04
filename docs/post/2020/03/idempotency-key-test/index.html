@@ -35,7 +35,7 @@ Idempotency 冪等性 在 API 服務中，常常需要留意 idempotency（冪�
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.97.3" />
+<meta name="generator" content="Hugo 0.98.0" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2020/03/idempotency-key-test/" />
@@ -99,16 +99,17 @@ Idempotency 冪等性
 <![endif]-->
 
 
-<script type="application/javascript">
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-D8V6EWHYN7"></script>
+<script>
 var doNotTrack = false;
 if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-751859-3', 'auto');
-	
-	ga('send', 'pageview');
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-D8V6EWHYN7', { 'anonymize_ip': false });
 }
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 
@@ -737,20 +738,20 @@ if (!doNotTrack) {
 <h2 id="致謝">致謝</h2>
 <p>實驗設計過程中，從 Carousell 同事得到許多建議，特此致謝。</p>
 <p><a href="https://careers.carousell.com/">We&rsquo;re hiring!</a></p>
-<section class="footnotes" role="doc-endnotes">
+<div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn:1" role="doc-endnote">
+<li id="fn:1">
 <p>嚴格來說，電腦領域講的 &ldquo;idempotency&rdquo;，已經與數學領域講的 &ldquo;idempotency&rdquo; 不盡相同了，可說是一種假借。詳情請見維基百科的說明： <a href="https://en.wikipedia.org/wiki/Idempotence#Computer_science_meaning">https://en.wikipedia.org/wiki/Idempotence#Computer_science_meaning</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:2" role="doc-endnote">
+<li id="fn:2">
 <p>對於 TCP 序列號機制感興趣的，可參考鄭中勝寫的三篇介紹文章：〈<a href="https://notfalse.net/26/tcp-seq">TCP 序列號 (Sequence Number, SEQ)</a>〉、〈<a href="https://notfalse.net/7/three-way-handshake">TCP 三向交握 (Three-way Handshake)</a>〉、〈<a href="https://notfalse.net/24/tcp-flow-control">TCP 流量控制 (Flow Control)</a>〉。&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:3" role="doc-endnote">
+<li id="fn:3">
 <p>在 DDD 中，id 生成機制很適合放在 Repository 層。如果你沒有 <a href="https://www.amazon.com/dp/0321834577/ref=cm_sw_r_tw_dp_U_x_gp2zEbQ9DT5BB"><em>Implementing Domain-Driven Design</em></a> 這本書，也可以參考劉鳳軒寫的〈<a href="https://ithelp.ithome.com.tw/articles/10223150">DDD 戰術設計：Entity 概念與實作</a>〉一文。&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
-</section>
+</div>
     </div>
 
     
