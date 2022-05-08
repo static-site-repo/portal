@@ -6,7 +6,36 @@
     <description>Recent content in Posts on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Fri, 29 Apr 2022 17:00:00 +0800</lastBuildDate><atom:link href="//william-yeh.net/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 08 May 2022 15:00:00 +0800</lastBuildDate><atom:link href="//william-yeh.net/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>向頂尖管顧公司學習的書</title>
+      <link>//william-yeh.net/post/2022/05/learn-from-consulting-firms/</link>
+      <pubDate>Sun, 08 May 2022 15:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2022/05/learn-from-consulting-firms/</guid>
+      <description>&lt;p&gt;好友進了台灣前百大公司，最近有感而發：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;請問與麥肯錫有關的書籍，你會推薦哪些？&lt;/p&gt;
+&lt;p&gt;在這間公司辛苦摸索幾個月，我才意識到，大家在使用的術語都來自麥肯錫。譬如：MECE、Story Line、論述 (Issue)⋯⋯等等。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;突然被洽詢這問題，其實有點心虛，畢竟我沒待過麥肯錫這類頂尖的管理顧問公司，不太有資格回答。不過，既然自己去年曾經系統閱讀過相關書籍（見〈&lt;a href=&#34;//william-yeh.net/post/2021/12/2021-retrospective/#問題解決的系統閱讀之旅&#34;&gt;2021 個人回顧&lt;/a&gt;〉一文），半年以來也一直運用書本裡的方法來推動改革，對於這些方法算是小有心得，因此，野人獻曝一下也無妨。&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2022/05/problem-solving-books.jpg&#34; alt=&#34;「問題分析與解決」書單&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2022/05/problem-solving-books.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;「問題分析與解決」書單&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;</description>
+    </item>
+    
     <item>
       <title>請珍惜你們學到的通關密語</title>
       <link>//william-yeh.net/post/2022/04/passphrase-at-work/</link>
@@ -279,16 +308,6 @@ Output Essential:
       
       <guid>//william-yeh.net/post/2020/08/sprint-planning-in-a-nutshell/</guid>
       <description>This article discusses the essence of Sprint Planning . In a nutshell Sprint Planning is a time-boxed1 event in which the Scrum Team defines the Sprint Goal and makes a feasible plan for the goal, to the best knowledge, information and belief of the team. Output Essential: Sprint Goal A feasible plan for achieving the Sprint Goal Sprint Backlog Items with the property of INVEST (Independent, Negotiable, Valuable, Estimable, Small,</description>
-    </item>
-    
-    <item>
-      <title>Blackbox Exporter 小記</title>
-      <link>//william-yeh.net/post/2020/08/blackbox-exporter/</link>
-      <pubDate>Fri, 07 Aug 2020 08:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2020/08/blackbox-exporter/</guid>
-      <description>&lt;p&gt;在用 &lt;a href=&#34;https://prometheus.io/&#34;&gt;Prometheus&lt;/a&gt; + &lt;a href=&#34;https://grafana.com/&#34;&gt;Grafana&lt;/a&gt; 監控自家服務的同時，我們也會想用同一套系統去監控第三方服務。&lt;/p&gt;
-&lt;p&gt;本文介紹一個好用的 Prometheus 官方工具：&lt;a href=&#34;https://github.com/prometheus/blackbox_exporter&#34;&gt;Blackbox exporter&lt;/a&gt;，可以省下手刻 curl 腳本的工夫。我也順便介紹一些踩過的雷。&lt;/p&gt;</description>
     </item>
     
   </channel>
