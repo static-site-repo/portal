@@ -78,7 +78,7 @@
 那麼，沒有明說的事，就不需要做、就不能做了嗎？做了，就違反 Scrum 嗎？
 這是許多奉 The Scrum Guide 為圭臬的人，常有的盲點。"><meta itemprop="datePublished" content="2018-12-04T08:00:00+08:00" />
 <meta itemprop="dateModified" content="2018-12-04T08:00:00+08:00" />
-<meta itemprop="wordCount" content="1813">
+<meta itemprop="wordCount" content="1866">
 <meta itemprop="keywords" content="agile,scrum,tech debt,fallow," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Scrum 沒有明說的事：休耕期"/>
 <meta name="twitter:description" content="Scrum 的官方白皮書 The Scrum Guide 非常輕薄短小（像 Nov 2017 版只有 19 頁），它的理念是：只制定最核心的原則、價值、角色、活動、產出物，其餘的則交給團隊根據經驗主義 1 去調適出最適合自己的細節。
@@ -308,7 +308,7 @@ if (!doNotTrack) {
             <a href="//william-yeh.net/categories/management/"> management </a>
             
           </div>
-        <span class="more-meta"> 約 1813 字 </span>
+        <span class="more-meta"> 約 1866 字 </span>
           <span class="more-meta"> 預計閱讀 4 分鐘 </span>
 
         
@@ -325,6 +325,18 @@ if (!doNotTrack) {
 
     
     
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目錄</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#scrum-沒有所謂的暫停">Scrum 沒有所謂的「暫停」？</a></li>
+    <li><a href="#休耕期">休耕期</a></li>
+    <li><a href="#如何做">如何做？</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
 
     
     <div class="post-content">
@@ -332,10 +344,10 @@ if (!doNotTrack) {
 <p>想當然爾，有很多事，Scrum 並沒有明說。</p>
 <p>那麼，沒有明說的事，就不需要做、就不能做了嗎？做了，就違反 Scrum 嗎？</p>
 <p>這是許多奉 <a href="https://www.scrumguides.org/"><em>The Scrum Guide</em></a> 為圭臬的人，常有的盲點。</p>
-<h2 id="對-sprint-的誤解">對 Sprint 的誤解</h2>
+<h2 id="scrum-沒有所謂的暫停">Scrum 沒有所謂的「暫停」？</h2>
 <p>譬如說，有人對 sprint 這種百米賽跑的壓力提出<a href="https://www.facebook.com/groups/179345672472/permalink/10156062491697473/">疑問</a>：</p>
 <blockquote>
-<p>Run scrum 一陣子了，有感覺到一些跟傳統軟體開發專案不一樣的壓力。以前這種方式對 team member 來說，會有淡季跟旺季的差別，所以大家比較好安排自己的休假，或者在淡季的時候安排一些 researching、training 的工作。</p>
+<p>Run scrum 一陣子了，有感覺到一些跟傳統軟體開發專案不一樣的<strong>壓力</strong>。以前這種方式對 team member 來說，會有<strong>淡季</strong>跟<strong>旺季</strong>的差別，所以大家比較好安排自己的休假，或者在淡季的時候安排一些 researching、training 的工作。</p>
 <p>現在 run scrum 覺得每個 sprint 壓力都好大，每個 sprint 都好趕，都剛剛好在最後一刻達到 sprint goal。大家也會因為齊步走的關係，所以都不太好意思請長一點的假。以前一年可能最多面臨四次 milestone review 的壓力，現在是至少每四週都會面臨一次這種壓力，Scrum guide 又說 sprint 開始以後就是一個 sprint 接一個下去，中間不會有間斷，但我們真的好想暫停 0.5 個 sprint 讓大家喘口氣。</p>
 <p>前輩們都怎麼處理休假問題跟這種持續性壓力的問題呢？</p>
 </blockquote>
@@ -347,15 +359,15 @@ if (!doNotTrack) {
 <p>Sprint 長度在整個開發過程中都是固定的，前一個
 Sprint 結束後，下一個新的 Sprint 立刻接著開始。</p>
 </blockquote>
-<p>如果只以形式主義來說，這些 sprints 的確好像是一棒接著一棒，棒棒相傳，不漏接，無止息。</p>
-<p>再進一步思考 sprint 這個載具的原始目的——即所謂 <strong>sprint goal</strong>，就可發現，goal 的意義，是由我們來賦予的。就連 <em>The Scrum Guide</em> 都叫你要保持彈性，不要形式主義：</p>
+<p>如果只以形式主義來說，這些 sprints 的確好像是一棒接著一棒，棒棒相傳，不漏接，無止息——沒有假期。</p>
+<p>再進一步思考 sprint 這個載具的原始目的——即所謂 <strong>sprint goal</strong>，就可發現，goal 的意義，是由我們 Scrum team 來賦予的。就連 <em>The Scrum Guide</em> 都叫你要保持彈性，不要形式主義：</p>
 <blockquote>
 <p>Each Sprint may be considered a project with no more than a one-month horizon. Like projects, Sprints are used to <strong>accomplish something</strong>. Each Sprint has a <strong>goal</strong> of what is to be built, a design and <strong>flexible plan</strong> that will guide building it, the work, and the resultant product increment.</p>
 <p>每個 Sprint 可視為一個不超過一個月的專案，如同其他專案一般，Sprint 是用來完成某些事情的。每個 Sprint 有著要打造些什麼的目標，而由一份設計和有<strong>彈性</strong>的計畫來引導其打造的過程、工作與最後的產品 Increment。</p>
 </blockquote>
-<p>Sprint goal 的意義，是由我們來賦予的。</p>
+<p>Sprint goal 的意義，是由我們 Scrum team 來賦予的。</p>
 <p>你想賦予什麼意義呢？</p>
-<p>市場探索，可不可以是一種 sprint goal 呢？用戶調研，可不可以是一種 sprint goal 呢？五日 <a href="https://www.gv.com/sprint/">design sprint</a>，可不可以是一種 sprint goal 呢？</p>
+<p>市場探索，可不可以是一種 sprint goal 呢？用戶研究，可不可以是一種 sprint goal 呢？五日 <a href="https://www.gv.com/sprint/">design sprint</a>，可不可以是一種 sprint goal 呢？</p>
 <p>甚至有點離經叛道的講：恢復元氣，能不能算是一種 sprint goal 呢？</p>
 
 <link rel="stylesheet" href="/css/hugo-easy-gallery.css" />
@@ -392,7 +404,7 @@ Sprint 結束後，下一個新的 Sprint 立刻接著開始。</p>
   </figure>
 </div>
 
-<p>大神 Douglas Crockford 毫不客氣挑明地講：「管理層很難看到這一點⋯⋯管理層很久之後才會發現。」</p>
+<p>「一般來說，團隊應該知道什麼時候合適（要進行這種清理程式碼、重寫的事）」，大神 Douglas Crockford 毫不客氣挑明地講：「管理層很難看到這一點⋯⋯管理層很久之後才會發現。」</p>
 <p>如果沒有這種特地保留起來的休耕期，那麼，重構、技術債的議題，幾乎註定會一直被推遲到比馬里亞納海溝還更低的順位。這將嚴重破壞 Scrum 的基石：<a href="/post/2018/10/agile-criteria/#scrum-的判準">PSPI</a> <sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>。</p>
 <p>敏捷陣營也有人呼應這種想法。像 Toronto Agile Conference 2017 有一場演講 “<a href="https://www.youtube.com/watch?v=iJoLe0fnWKc&amp;feature=youtu.be&amp;t=54m2s">Technical Debt Is a Systemic Problem, Not A Personal Failing</a>”，用的是 &ldquo;technical-debt sprints&rdquo; 一詞，還畫出 CLD 呢：</p>
 
