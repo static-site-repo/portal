@@ -6,10 +6,114 @@
     <description>Recent content on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sun, 08 May 2022 15:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 16 May 2022 20:00:00 +0800</lastBuildDate>
     
         <atom:link href="//william-yeh.net/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>推動改變的評估流程</title>
+      <link>//william-yeh.net/post/2022/05/evaluation-process-for-changes/</link>
+      <pubDate>Mon, 16 May 2022 20:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2022/05/evaluation-process-for-changes/</guid>
+      
+        <description>&lt;p&gt;在發出內部 memo 〈&lt;a href=&#34;//william-yeh.net/post/2022/04/passphrase-at-work/&#34;&gt;請珍惜你們學到的通關密語&lt;/a&gt;〉之後，收到這樣的來信：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;上周假日也花了點時間，將您從去年 11 月起寫給大家的每一封信都讀了一遍，雖然還不是全部內容都完全吸收和理解，但仍然覺得受益匪淺，真的非常感謝您願意無私的分享您過去許多很棒的經驗和想法。&lt;/p&gt;
+&lt;p&gt;今日這封信，我很喜歡您用「通關密語」來形容這些語彙，突然覺得他們不再是死板板的方法論，而像是賦予了它們魔力，雖然不至於天真到認為知道這些詞彙和正確的應用，就能馬上變成具有超能力的 superman，但至少能讓我在規劃專案時更自信和從容。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;溢美之詞就摘錄到此。以下是正題：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;同時，我雖然也很認同這些詞彙確實是「通關密語」，畢竟清楚和正確的定義可以有效減少許多溝通時的落差和模糊地帶，更快的凝聚共識，但前提是和具有同為專業的人溝通，我想這也是您迫切希望大家能盡快建立起這些基本常識的原因吧~&lt;/p&gt;
+&lt;p&gt;但經驗豐富如您，一定也有許多，甚至是多數時候，都是在和沒有這些基本常識的人溝通吧！過去我就有許多這樣的經驗，不管面對公司主管或是面對客戶時，要求我產出一個四不像等情況。&lt;/p&gt;
+&lt;p&gt;通常這種時候我的作法會是，不再堅持使用這些專業詞彙，而是解釋我產出的每個圖表的目的、用途和邏輯，但不幸的是還是有很多時候是無法被理解的，通常結局就是我需要照著對方的邏輯和方法，做出一個我自己無法認同的東西，但因為這才是利害關係人們可以接受的作法，所以為了可以溝通和讓專案順利進行，我還是會做。&lt;/p&gt;
+&lt;p&gt;所以很想問問 William 您是否有類似的經驗呢？那您是怎麼面對和解決的呢?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;這是大哉問。&lt;/p&gt;
+&lt;p&gt;大體上，我會根據幾個角度迅速評估一下這整件事。&lt;/p&gt;
+&lt;h2 id=&#34;-值不值得推動改變&#34;&gt;❶ 值不值得推動改變？&lt;/h2&gt;
+&lt;p&gt;我常用 Impact Effort Matrix &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; 這種簡易的兩軸思考工具，迅速定位這項改變是否值得。橫坐標是「可付諸實現的速度」，縱座標是「效益、影響」。&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2022/05/impact-effort-matrix.jpg&#34; alt=&#34;Impact Effort Matrix&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2022/05/impact-effort-matrix.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Impact Effort Matrix&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;從圖上來看，若想推動的改變恰巧落在「1 號」位置，那就太幸運了，投資報酬率最高。萬一沒那麼幸運，落在「7 號」位置呢？&lt;/p&gt;
+&lt;p&gt;引述《&lt;a href=&#34;https://www.amazon.cn/dp/B087M3LK7P&#34;&gt;麥肯錫＆波士頓解決問題方法和創造價值技巧&lt;/a&gt;》的精闢見解：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;確實，以「1 號」著手是正確的。&lt;/p&gt;
+&lt;p&gt;那麼，「7 號」就被永久棄之不顧了嗎？並不是那樣的，「7 號」的建構化還做得不夠，還是一個大塊。所以，要花費時間把它再進一步細化，重新做成「1 號」那樣的小塊。這樣問題就容易解答了。&lt;/p&gt;
+&lt;p&gt;把這個擱置的「7 號」建構化為「1 號」，就是諮詢顧問展現本領的地方了。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;如果 Benefit/Impact 夠大，才值得進一步往下評估予以細化的 Effort。&lt;/p&gt;
+&lt;h2 id=&#34;-用-fogg-behavior-model--評估-effort&#34;&gt;❷ 用 Fogg Behavior Model  評估 Effort&lt;/h2&gt;
+&lt;p&gt;我常用 &lt;a href=&#34;https://behaviormodel.org/&#34;&gt;Fogg Behavior Model&lt;/a&gt;: B = MAP 評估可能的 Effort。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;▶︎&lt;/strong&gt; &lt;strong&gt;Motivation&lt;/strong&gt;：當事人是否有改變的&lt;strong&gt;動機&lt;/strong&gt;？&lt;/p&gt;
+&lt;p&gt;簡單一點的情況，我會用「洞」與「痛」、笨問題法則（為什麼非得如此如此……）來判斷。 &lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;複雜一點的情況，我會用 TOC 抵制變革層次來判斷。 &lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;▶︎&lt;/strong&gt; &lt;strong&gt;Ability&lt;/strong&gt;：當事人是否有改變的&lt;strong&gt;能力&lt;/strong&gt;？&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;▶︎&lt;/strong&gt; &lt;strong&gt;Prompt&lt;/strong&gt;：當事人是否遇到推動改變的&lt;strong&gt;臨門一腳&lt;/strong&gt;？&lt;/p&gt;
+&lt;p&gt;我常用「三不四人」來判斷：不舒服、不甘於、不能停、人背叛、人出現、人離開、人不理。 &lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;     &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;B = MAP 具體的運用方法很多。對於當事人越了解，越能發掘洞見，找出有創意的方法。譬如說：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Motivation 可以訴諸權力關係，可以訴諸外部壓力，可以訴諸同儕壓力。&lt;/li&gt;
+&lt;li&gt;Ability 可以訴諸教育訓練，可以訴諸教練手法，可以訴諸新陳代謝。&lt;/li&gt;
+&lt;li&gt;Prompt 通常要訴諸善用局勢或創造局勢，或者……機緣巧合的運氣。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;就以推動敏捷為例。想推動敏捷，要改變的事情太多了，我會視情況分階段推動具體的敏捷實踐措施。&lt;/p&gt;
+&lt;p&gt;工作透明化是 Benefit/Impact 非常大的，而 Planning Poker 則未必。所以，在裁適敏捷方法時，我會優先處理工作透明化，至於 Planning Poker 則看情況。&lt;/p&gt;
+&lt;h2 id=&#34;-在這件事情上我有多少的主導權&#34;&gt;❸ 在這件事情上，我有多少的主導權？&lt;/h2&gt;
+&lt;p&gt;主導權越高，就越不需要費神在 Effort 上。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/French_and_Raven%27s_bases_of_power&#34;&gt;French and Raven (1965)&lt;/a&gt; 將權力來源分為六種：強制權 (coercive power)、酬賞權 (reward power)、參照權 (referent power)、法職權 (legitimate power)、專家權 (expert power)、資訊權 (informational power)。平時善於經營權力基礎的深度及廣度，才容易推動改變。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;     &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;     &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;以上就是我快速評估推動改變的可能性及施力點的大致流程。&lt;/p&gt;
+
+&lt;div class=&#34;shortcode-notice note&#34;&gt;
+  &lt;div class=&#34;shortcode-notice-title note&#34;&gt;
+    
+      系列文章
+    
+  &lt;/div&gt;
+  &lt;p&gt;❶ &lt;a href=&#34;//william-yeh.net/post/2016/06/change-framework/&#34;&gt;改變的框架&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❷ &lt;a href=&#34;//william-yeh.net/post/2018/12/process-and-metrics/&#34;&gt;改變／改革：流程與衡量指標&lt;/a&gt;&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;p&gt;❸ 推動改變的評估流程&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;Impact Effort Matrix 又名 Benefit Effort Matrix、PICK Matrix，詳見這段&lt;a href=&#34;https://www.youtube.com/watch?v=ODr-xd8LsDI&#34;&gt;影片&lt;/a&gt;。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;「洞」與「痛」、笨問題法則，出自裘凱宇《&lt;a href=&#34;https://www.koob.com.tw/online/A579F23266cCC488Caa7&#34;&gt;過好人生學&lt;/a&gt;》。&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;
+&lt;p&gt;TOC 抵制變革層次，詳見〈&lt;a href=&#34;//william-yeh.net/post/2016/06/change-framework/#限制理論的改變框架&#34;&gt;改變的框架&lt;/a&gt;〉一文。&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:4&#34;&gt;
+&lt;p&gt;「三不四人」出自憲哥《&lt;a href=&#34;https://www.books.com.tw/products/0010752512&#34;&gt;人生準備 40% 就衝了！：超乎常人的目標執行力&lt;/a&gt;》。&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+      
+    </item>
     
     <item>
       <title>向頂尖管顧公司學習的書</title>
@@ -2529,198 +2633,6 @@
 &lt;/li&gt;
 &lt;li id=&#34;fn:8&#34;&gt;
 &lt;p&gt;&lt;a href=&#34;https://less.works/&#34;&gt;LeSS&lt;/a&gt; advocates a bazaar-style Sprint Review: &lt;em&gt;&amp;ldquo;The Sprint Review is best conducted using a diverge-converge meeting pattern. During the diverge periods, use a bazaar. This is analogous to a science fair: A large room has multiple areas, each staffed by team representatives, where the items developed by a team are shown and discussed. Stakeholders visit areas of interest. During the converge periods, stakeholders summarize their opinions from the bazaar. A subset of items may be inspected on a common computer projector during this time, also.&amp;rdquo;&lt;/em&gt;&amp;#160;&lt;a href=&#34;#fnref:8&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-</description>
-      
-    </item>
-    
-    <item>
-      <title>Essence of Scrum: Sprint Planning</title>
-      <link>//william-yeh.net/post/2020/08/sprint-planning-in-a-nutshell/</link>
-      <pubDate>Sun, 09 Aug 2020 13:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2020/08/sprint-planning-in-a-nutshell/</guid>
-      
-        <description>&lt;p&gt;This article discusses the essence of &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Planning&lt;/span&gt;
-.&lt;/p&gt;
-&lt;h2 id=&#34;in-a-nutshell&#34;&gt;In a nutshell&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;Sprint Planning&lt;/strong&gt; is a time-boxed&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; event in which the &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Scrum Team&lt;/span&gt;
- defines the &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Goal&lt;/span&gt;
- and makes a feasible plan for the goal, to the best knowledge, information and belief of the team.&lt;/p&gt;
-&lt;h2 id=&#34;output&#34;&gt;Output&lt;/h2&gt;
-&lt;p&gt;Essential:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Goal&lt;/span&gt;
-
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;A feasible plan for achieving the &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Goal&lt;/span&gt;
-&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Backlog Items&lt;/span&gt;
- with the property of &lt;strong&gt;INVEST&lt;/strong&gt; (Independent, Negotiable, Valuable, Estimable, Small, Testable)&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Better:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;A coherent &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Goal&lt;/span&gt;
-&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt; and expectation for the outcome to be seen at &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Review&lt;/span&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;input&#34;&gt;Input&lt;/h2&gt;
-&lt;p&gt;Essential:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Strategy breakdown (e.g., product roadmap, &lt;a href=&#34;https://www.whatmatters.com/faqs/okr-meaning-definition-example/&#34;&gt;OKR&lt;/a&gt;, &lt;a href=&#34;https://en.wikipedia.org/wiki/OGSM&#34;&gt;OGSM&lt;/a&gt;, &lt;a href=&#34;https://www.impactmapping.org/&#34;&gt;impact mapping&lt;/a&gt;, &lt;a href=&#34;https://www.jpattonassociates.com/user-story-mapping/&#34;&gt;user story mapping&lt;/a&gt;).&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;A &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Product Backlog&lt;/span&gt;
- that has been refined during &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Product Backlog Refinement&lt;/span&gt;
- and adapted during previous &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Review&lt;/span&gt;
-&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Action items created during previous &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Retrospective&lt;/span&gt;
-&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Influences&lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Better:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;The top &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Product Backlog Items&lt;/span&gt;
- meet the &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Definition of Ready&lt;/span&gt;
- criteria&lt;sup id=&#34;fnref:6&#34;&gt;&lt;a href=&#34;#fn:6&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;6&lt;/a&gt;&lt;/sup&gt; defined and evolved by the &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Scrum Team&lt;/span&gt;
-.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;tools-and-techniques&#34;&gt;Tools and Techniques&lt;/h2&gt;
-&lt;p&gt;Essential:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Short-term strategic planning statements in brief&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Judgment to &lt;strong&gt;balance&lt;/strong&gt; a variety of needs and goals&lt;sup id=&#34;fnref:7&#34;&gt;&lt;a href=&#34;#fn:7&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;7&lt;/a&gt;&lt;/sup&gt;, especially &amp;ldquo;whole product focus&amp;rdquo;&lt;sup id=&#34;fnref:8&#34;&gt;&lt;a href=&#34;#fn:8&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;8&lt;/a&gt;&lt;/sup&gt; and technical excellence&lt;sup id=&#34;fnref:9&#34;&gt;&lt;a href=&#34;#fn:9&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;9&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Logical approach to ordering items&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Logical approach to breaking down items&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Estimation in proper granularity&lt;sup id=&#34;fnref:10&#34;&gt;&lt;a href=&#34;#fn:10&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;10&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Encouraging a focus on the team rather than individuals.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Better:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Two parts planning&lt;sup id=&#34;fnref:11&#34;&gt;&lt;a href=&#34;#fn:11&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;11&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;SPIDR (Spike, Paths, Interfaces, Data, and Rules)&lt;sup id=&#34;fnref:12&#34;&gt;&lt;a href=&#34;#fn:12&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;12&lt;/a&gt;&lt;/sup&gt; (should be used in &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Product Backlog Refinement&lt;/span&gt;
- as well)&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Techniques for enabling specification&lt;sup id=&#34;fnref:13&#34;&gt;&lt;a href=&#34;#fn:13&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;13&lt;/a&gt;&lt;/sup&gt; (should be used in &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Product Backlog Refinement&lt;/span&gt;
- as well)&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Visualized &lt;a href=&#34;http://scrumbook.org/value-stream/information-radiator.html&#34;&gt;information radiators&lt;/a&gt; (e.g., Scrum board, Kanban board).&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Self-managing instead of being conducted solely by &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Scrum Master&lt;/span&gt;
-.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Encouraging participative decision-making in proposal and ordering of &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Backlog Items&lt;/span&gt;
-&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-
-&lt;div class=&#34;shortcode-notice note&#34;&gt;
-  &lt;div class=&#34;shortcode-notice-title note&#34;&gt;
-    
-      &amp;#39;Essence of Scrum&amp;#39; Series
-    
-  &lt;/div&gt;
-  &lt;p&gt;❶ &lt;a href=&#34;//william-yeh.net/post/2020/07/pbr-in-a-nutshell/&#34;&gt;Product Backlog Refinement&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;❷ &lt;a href=&#34;//william-yeh.net/post/2020/08/daily-scrum-in-a-nutshell/&#34;&gt;Daily Scrum&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;❸ Sprint Planning&lt;/p&gt;
-&lt;p&gt;❹ &lt;a href=&#34;//william-yeh.net/post/2020/08/sprint-review-in-a-nutshell/&#34;&gt;Sprint Review&lt;/a&gt;&lt;/p&gt;
-
-&lt;/div&gt;
-
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-
-&lt;div class=&#34;shortcode-notice info&#34;&gt;
-  &lt;div class=&#34;shortcode-notice-title info&#34;&gt;
-    
-      2020-11-24 Memo
-    
-  &lt;/div&gt;
-  &lt;p&gt;The series of articles have been updated according to the 2020 revision of &lt;em&gt;&lt;a href=&#34;https://scrumguides.org/&#34;&gt;The Scrum Guide&lt;/a&gt;&lt;/em&gt; (published on Nov 2020).&lt;/p&gt;
-
-&lt;/div&gt;
-
-&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
-&lt;hr&gt;
-&lt;ol&gt;
-&lt;li id=&#34;fn:1&#34;&gt;
-&lt;p&gt;&lt;em&gt;&lt;a href=&#34;https://scrumguides.org/&#34;&gt;The Scrum Guide&lt;/a&gt;&lt;/em&gt; says that &lt;em&gt;&amp;ldquo;Sprint Planning is time-boxed to a maximum of eight hours for a one-month Sprint. For shorter Sprints, the event is usually shorter. [&amp;hellip;] The Scrum Master teaches the Scrum Team to keep it within the time-box.&amp;rdquo;&lt;/em&gt;      &lt;em&gt;&lt;a href=&#34;http://scrumbook.org/&#34;&gt;A Scrum Book&lt;/a&gt;&lt;/em&gt; suggests that &lt;em&gt;&amp;ldquo;It is important that Sprint Planning allow time for enough design to create a well-understood Sprint Backlog. But the planning should be time-boxed. A rule of thumb is that the event should take no more than four hours for a two-week Sprint and proportionally less for shorter Sprints. If it takes longer, it takes longer—but seek kaizen opportunities to reduce the amount of time to plan and to correspondingly increase the time spent on building product.&amp;rdquo;&lt;/em&gt;     &lt;a href=&#34;http://teddy-chen-tw.blogspot.com/&#34;&gt;Teddy Chen&lt;/a&gt; advocates in &lt;a href=&#34;http://teddy-chen-tw.blogspot.com/2012/01/scrum-6sprint-planning-meeting.html&#34;&gt;his article&lt;/a&gt; sticking to the timebox to avoid the &amp;ldquo;big up-front design&amp;rdquo; symptom.&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:2&#34;&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.agilealliance.org/glossary/invest/&#34;&gt;Agile Alliance&lt;/a&gt; says that &lt;em&gt;&amp;ldquo;The acronym INVEST helps to remember a widely accepted set of criteria, or checklist, to assess the quality of a user story.&amp;rdquo;&lt;/em&gt;      Read Bob Hartman&amp;rsquo;s article &amp;ldquo;&lt;a href=&#34;https://agileforall.com/new-to-agile-invest-in-good-user-stories/&#34;&gt;New to agile? INVEST in good user stories&lt;/a&gt;&amp;rdquo; for more info.&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:3&#34;&gt;
-&lt;p&gt;Scrum works better when it is considered an enabling engine toward a coherent goal rather than just a collection of work packages by chance.      &lt;em&gt;&lt;a href=&#34;https://scrumguides.org/&#34;&gt;The Scrum Guide&lt;/a&gt;&lt;/em&gt; 2020 version says that &lt;em&gt;&amp;ldquo;the &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Goal&lt;/span&gt;
- also creates coherence and focus, encouraging the Scrum Team to work together rather than on separate initiatives.&amp;rdquo;&lt;/em&gt;     &lt;em&gt;&lt;a href=&#34;http://scrumbook.org/&#34;&gt;A Scrum Book&lt;/a&gt;&lt;/em&gt; says that &lt;em&gt;&amp;ldquo;The Scrum Team can use the &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Goal&lt;/span&gt;
- to frame the selection of PBIs for the Sprint but in some sense the &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Goal&lt;/span&gt;
- is more important even than the sum of the individual PBIs.&amp;rdquo;&lt;/em&gt;     Roman Pichler says in his article &amp;ldquo;&lt;a href=&#34;https://www.romanpichler.com/blog/sprint-goal-template/&#34;&gt;A Template for formulating great sprint goals&lt;/a&gt;&amp;rdquo; that &lt;em&gt;&amp;ldquo;your sprint goal should differ from your user stories. The goal explains the why it is a good idea to carry out the sprint an implement the stories. The user stories enable you to reach the goal. It’s a common mistake to confuse the two.&amp;rdquo;&lt;/em&gt;&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:4&#34;&gt;
-&lt;p&gt;&lt;em&gt;&lt;a href=&#34;https://scrumguides.org/&#34;&gt;The Scrum Guide&lt;/a&gt;&lt;/em&gt; 2017 puts more emphasis on the follow-up actions for &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Retrospective&lt;/span&gt;
-: &lt;em&gt;&amp;ldquo;To ensure continuous improvement, it (the Sprint Backlog) includes at least one high priority way in which the team works, identified in the previous Retrospective meeting&amp;rdquo;&lt;/em&gt; (p.16).    In 2020 version it is expressed in a more relaxed tone: &lt;em&gt;&amp;ldquo;The Scrum Team identifies the most helpful changes to improve its effectiveness. The most impactful improvements are addressed as soon as possible. They may even be added to the Sprint Backlog for the next Sprint.&amp;rdquo;&lt;/em&gt;     &lt;a href=&#34;https://www.linkedin.com/in/emersonmills&#34;&gt;Emerson Mills&lt;/a&gt; suggested in his &lt;a href=&#34;http://teddy-chen-tw.blogspot.com/2012/10/certified-scrummaster.html&#34;&gt;CSM class&lt;/a&gt; putting these identified technical improvements into &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Planning&lt;/span&gt;
- Part 2 (source: “&lt;a href=&#34;http://teddy-chen-tw.blogspot.com/2012/12/certified-scrummaster1.html&#34;&gt;我在第二次 Certified ScrumMaster 課程學到的事（1）&lt;/a&gt;”.&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:5&#34;&gt;
-&lt;p&gt;&lt;em&gt;&lt;a href=&#34;https://scrumguides.org/&#34;&gt;The Scrum Guide&lt;/a&gt;&lt;/em&gt; 2017 says that &lt;em&gt;&amp;ldquo;Each Sprint may be considered a project with no more than a one-month horizon&amp;rdquo;&lt;/em&gt; (p.9).  In this regard, a sprint cannot be immune from influences discussed in the &lt;a href=&#34;https://www.pmi.org/pmbok-guide-standards&#34;&gt;&lt;em&gt;PMBOK Guide&lt;/em&gt;&lt;/a&gt;, such as enterprise environmental factors and organizational process assets.&amp;#160;&lt;a href=&#34;#fnref:5&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:6&#34;&gt;
-&lt;p&gt;&lt;a href=&#34;http://scrumbook.org/value-stream/product-backlog/definition-of-ready.html&#34;&gt;Definition of Ready&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:6&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:7&#34;&gt;
-&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Peter_Drucker&#34;&gt;Peter Drucker&lt;/a&gt; emphasized in his book &lt;a href=&#34;https://www.amazon.com/dp/0060878975&#34;&gt;&lt;em&gt;The Practice of Management&lt;/em&gt;&lt;/a&gt; (pp. 62-63, 87) that &lt;em&gt;&amp;ldquo;To manage a business is to balance a variety of needs and goals. This requires judgment. The search for the one objective is essentially a search for a magic formula that will make judgment unnecessary. But the attempt to replace judgment by formula is always irrational; all that can be done is to make judgment possible by narrowing its range and the available alternatives, giving it clear focus, a sound foundation in facts and reliable measurements of the effects and validity of actions and decisions. And this, by the very nature of business enterprise, requires multiple objectives. [&amp;hellip;] Yet, there is no formula for doing the job. Each business requires its own balance—and it may require a different balance at different times.&amp;rdquo;&lt;/em&gt;&amp;#160;&lt;a href=&#34;#fnref:7&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:8&#34;&gt;
-&lt;p&gt;The definition of &amp;ldquo;product&amp;rdquo; by the &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Scrum Team&lt;/span&gt;
- has also defined what is in scope and what is by default out of scope for the team. For example, what parts of Ops should be handled by the &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Scrum Team&lt;/span&gt;
-?    LeSS advocates a &lt;a href=&#34;https://less.works/less/framework/product&#34;&gt;broader product definition&lt;/a&gt; and a “&lt;a href=&#34;https://less.works/less/principles/whole-product-focus&#34;&gt;whole product focus&lt;/a&gt;” point of view: &lt;em&gt;&amp;ldquo;Whenever there is a choice to optimize a team output or the whole product, we always chose the whole product. [&amp;hellip;] In many large product development groups, getting everyone to focus on the whole product instead of their individual parts/tasks/specialization is one of the hardest parts of scaling Scrum. Always keep a whole product focus, keep reminding everyone there is no value in separate parts or half-working parts.&amp;rdquo;&lt;/em&gt;&amp;#160;&lt;a href=&#34;#fnref:8&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:9&#34;&gt;
-&lt;p&gt;&amp;ldquo;&lt;a href=&#34;https://agilemanifesto.org/principles.html&#34;&gt;Principles behind the Agile Manifesto&lt;/a&gt;&amp;rdquo; emphasizes that &lt;em&gt;“Continuous attention to technical excellence and good design enhances agility.”&lt;/em&gt; LeSS identifies several areas of &lt;a href=&#34;https://less.works/less/technical-excellence/index&#34;&gt;technical excellence&lt;/a&gt;.&amp;#160;&lt;a href=&#34;#fnref:9&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:10&#34;&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.scrumalliance.org/community/profile/mikecohn&#34;&gt;Mike Cohn&lt;/a&gt; discusses different levels of estimation activities in his article &amp;ldquo;&lt;a href=&#34;https://www.mountaingoatsoftware.com/blog/why-agile-teams-should-estimate-at-two-different-levels&#34;&gt;Why Agile Teams Should Estimate at Two Different Levels&lt;/a&gt;.&amp;rdquo;&amp;#160;&lt;a href=&#34;#fnref:10&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:11&#34;&gt;
-&lt;p&gt;It is common to divide the &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Planning&lt;/span&gt;
- into 2 parts. Here is a good quote from &lt;a href=&#34;https://less.works/less/framework/sprint-planning-one&#34;&gt;LeSS&lt;/a&gt;: &lt;em&gt;&amp;quot;&lt;strong&gt;Sprint Planning One&lt;/strong&gt; focuses on selection of ready items from those offered by the Product Owner, wrapping up lingering questions, and definition of the Sprint Goal. &lt;strong&gt;Sprint Planning Two&lt;/strong&gt; focuses on creating a plan of work to get to ‘done’ for each item. The items and plan of action or tasks comprise the Sprint Backlog.&amp;quot;&lt;/em&gt;&amp;#160;&lt;a href=&#34;#fnref:11&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:12&#34;&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.scrumalliance.org/community/profile/mikecohn&#34;&gt;Mike Cohn&lt;/a&gt; proposed the SPIDR approach (spike, paths, interfaces, data, and rules) for breaking down user stories. Watch the &amp;ldquo;&lt;a href=&#34;https://www.mountaingoatsoftware.com/exclusive/spidr-video&#34;&gt;Stop Wasting Time Splitting Stories&lt;/a&gt;&amp;rdquo; video for more details.&amp;#160;&lt;a href=&#34;#fnref:12&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:13&#34;&gt;
-&lt;p&gt;&lt;a href=&#34;http://scrumbook.org/value-stream/product-backlog/enabling-specification.html&#34;&gt;Enabling specification&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:13&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
