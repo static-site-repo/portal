@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>彙整 - Potioneer&#39;s Essays</title>
+  <title>很簡單的東西，也要單元測試嗎？ - Potioneer&#39;s Essays</title>
   
 
 <meta name="renderer" content="webkit" />
@@ -23,7 +23,14 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="William Yeh" />
-  <meta name="description" content="敏捷魔藥師 (Agile Potioneer)。會說 90% 的工匠語言，會說 70% 的總管語言，正在努力提升 30% 的行腳商人語言。" />
+  <meta name="description" content="（改寫自公司內部 memo）
+Hi all engineers,
+上完一整天單元測試課程之後，有同事問我：「有沒有標準來決定要不要寫單元測試？」
+剛讀完劉潤《底層邏輯》的我，對於這類疑似「注射器」的問句格外敏感。雖然我可以瀟灑引述 Working Effectively with Legacy Code 的說法「我毫無疑問地將『遺留程式碼』定義為『沒有編寫測試的程式碼』」：
+ 沒有編寫測試的程式碼是糟糕的程式碼——不管我們多麼細心地編寫它們，不管它們有多漂亮、物件導向或封裝良好。有了測試，我們就能夠迅速、可驗證地修改程式碼的行為。沒有測試，我們就不知道修改後的程式碼，實際上是變得更好還是更糟。
+ 但當下我還是決定先展開一場對話。
+" />
+
 
 
 
@@ -33,8 +40,8 @@
 <meta name="generator" content="Hugo 0.98.0" />
 
 
-<link rel="canonical" href="//william-yeh.net/post/" />
-<link href="/post/index.xml" rel="alternate" type="application/rss+xml" title="Potioneer&#39;s Essays" />
+<link rel="canonical" href="//william-yeh.net/post/2022/05/need-for-unit-testing/" />
+
 
 
 
@@ -57,15 +64,44 @@
 
 
 
-<meta property="og:title" content="Posts" />
-<meta property="og:description" content="敏捷魔藥師 (Agile Potioneer)。會說 90% 的工匠語言，會說 70% 的總管語言，正在努力提升 30% 的行腳商人語言。" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="//william-yeh.net/post/" />
+<meta property="og:title" content="很簡單的東西，也要單元測試嗎？" />
+<meta property="og:description" content="（改寫自公司內部 memo）
+      
+Hi all engineers,
+上完一整天單元測試課程之後，有同事問我：「有沒有標準來決定要不要寫單元測試？」
+剛讀完劉潤《底層邏輯》的我，對於這類疑似「注射器」的問句格外敏感。雖然我可以瀟灑引述 Working Effectively with Legacy Code 的說法「我毫無疑問地將『遺留程式碼』定義為『沒有編寫測試的程式碼』」：
 
-<meta itemprop="name" content="Posts">
-<meta itemprop="description" content="敏捷魔藥師 (Agile Potioneer)。會說 90% 的工匠語言，會說 70% 的總管語言，正在努力提升 30% 的行腳商人語言。"><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Posts"/>
-<meta name="twitter:description" content="敏捷魔藥師 (Agile Potioneer)。會說 90% 的工匠語言，會說 70% 的總管語言，正在努力提升 30% 的行腳商人語言。"/>
+沒有編寫測試的程式碼是糟糕的程式碼——不管我們多麼細心地編寫它們，不管它們有多漂亮、物件導向或封裝良好。有了測試，我們就能夠迅速、可驗證地修改程式碼的行為。沒有測試，我們就不知道修改後的程式碼，實際上是變得更好還是更糟。
+
+但當下我還是決定先展開一場對話。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="//william-yeh.net/post/2022/05/need-for-unit-testing/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-05-24T12:00:00+08:00" />
+<meta property="article:modified_time" content="2022-05-24T12:00:00+08:00" />
+
+<meta itemprop="name" content="很簡單的東西，也要單元測試嗎？">
+<meta itemprop="description" content="（改寫自公司內部 memo）
+      
+Hi all engineers,
+上完一整天單元測試課程之後，有同事問我：「有沒有標準來決定要不要寫單元測試？」
+剛讀完劉潤《底層邏輯》的我，對於這類疑似「注射器」的問句格外敏感。雖然我可以瀟灑引述 Working Effectively with Legacy Code 的說法「我毫無疑問地將『遺留程式碼』定義為『沒有編寫測試的程式碼』」：
+
+沒有編寫測試的程式碼是糟糕的程式碼——不管我們多麼細心地編寫它們，不管它們有多漂亮、物件導向或封裝良好。有了測試，我們就能夠迅速、可驗證地修改程式碼的行為。沒有測試，我們就不知道修改後的程式碼，實際上是變得更好還是更糟。
+
+但當下我還是決定先展開一場對話。"><meta itemprop="datePublished" content="2022-05-24T12:00:00+08:00" />
+<meta itemprop="dateModified" content="2022-05-24T12:00:00+08:00" />
+<meta itemprop="wordCount" content="1559">
+<meta itemprop="keywords" content="programming,tech-debt,testing," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="很簡單的東西，也要單元測試嗎？"/>
+<meta name="twitter:description" content="（改寫自公司內部 memo）
+      
+Hi all engineers,
+上完一整天單元測試課程之後，有同事問我：「有沒有標準來決定要不要寫單元測試？」
+剛讀完劉潤《底層邏輯》的我，對於這類疑似「注射器」的問句格外敏感。雖然我可以瀟灑引述 Working Effectively with Legacy Code 的說法「我毫無疑問地將『遺留程式碼』定義為『沒有編寫測試的程式碼』」：
+
+沒有編寫測試的程式碼是糟糕的程式碼——不管我們多麼細心地編寫它們，不管它們有多漂亮、物件導向或封裝良好。有了測試，我們就能夠迅速、可驗證地修改程式碼的行為。沒有測試，我們就不知道修改後的程式碼，實際上是變得更好還是更糟。
+
+但當下我還是決定先展開一場對話。"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -276,211 +312,205 @@ if (!doNotTrack) {
     <main id="main" class="main bg-llight">
       <div class="content-wrapper">
         <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">很簡單的東西，也要單元測試嗎？</h1>
+      
+      <div class="post-meta">
+        <time datetime="2022-05-24" class="post-time">
+          2022-05-24
+        </time>
+        <div class="post-category">
+            <a href="//william-yeh.net/categories/tech/"> tech </a>
+            
+          </div>
+        <span class="more-meta"> 約 1559 字 </span>
+          <span class="more-meta"> 預計閱讀 4 分鐘 </span>
+
+        
+        
+          <span id="busuanzi_container_page_pv">
+            | 阅读 <span id="busuanzi_value_page_pv"></span>
+          </span>
+        
+
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    
+    <div class="post-content">
+      <p>（改寫自公司內部 memo）</p>
+<p><!-- raw HTML omitted -->   <!-- raw HTML omitted -->   <!-- raw HTML omitted --></p>
+<p>Hi all engineers,</p>
+<p>上完一整天單元測試課程之後，有同事問我：「有沒有標準來決定要不要寫單元測試？」</p>
+<p>剛讀完劉潤《<a href="https://www.books.com.tw/products/0010919211">底層邏輯</a>》的我，對於這類疑似「注射器」的問句格外敏感。雖然我可以瀟灑引述 <a href="https://www.tenlong.com.tw/products/9789864344000"><em>Working Effectively with Legacy Code</em></a> 的說法「我毫無疑問地將『遺留程式碼』定義為『<strong>沒有編寫測試的程式碼</strong>』」：</p>
+<blockquote>
+<p>沒有編寫測試的程式碼是糟糕的程式碼——不管我們多麼細心地編寫它們，不管它們有多漂亮、物件導向或封裝良好。有了測試，我們就能夠迅速、可驗證地修改程式碼的行為。沒有測試，我們就不知道修改後的程式碼，實際上是變得更好還是更糟。</p>
+</blockquote>
+<p>但當下我還是決定先展開一場對話。</p>
+<p><!-- raw HTML omitted -->   <!-- raw HTML omitted -->   <!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->   <!-- raw HTML omitted -->   <!-- raw HTML omitted --></p>
+<p>我：「我一時想不出來有沒有合適的標準，但我有一個簡單的 gut feeling 來判斷：如果我沒有把握證明這段程式碼會表現出該有的行為，那麼我就應該考慮替它加一段測試，用測試來表現出這段程式碼的確忠實表現出該有的行為，<strong>讓測試來說話</strong>。」</p>
+<p>同事：「即使是很簡單的程式碼，也需要加單元測試嗎？這會不會太麻煩了？」</p>
+<p>我心中頓時浮現一個聲音：“如果你有 <strong>TDD (test-driven design)</strong> 的觀念或紀律，就不會有此一問了。再簡單的程式碼，都會測試先行——何況，簡單的程式碼，對應的單元測試會很難嗎？如果很難很繁雜，那麼，或許這程式碼本身並沒有想像中那麼簡單。”</p>
+<p>但當下我還是決定繼續對話，先不要說教⋯⋯</p>
+<p><!-- raw HTML omitted -->   <!-- raw HTML omitted -->   <!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->   <!-- raw HTML omitted -->   <!-- raw HTML omitted --></p>
+<p>我：「能不能舉一個『簡單的程式碼』的例子？」</p>
+<p>同事：「就像某一個 function，它會先檢查輸入的日期格式，如果格式不是 <code>yyyy/mm/dd</code> 就會失敗；如果格式對了，就會繼續往下做正事⋯⋯」</p>
+<p>我：「且慢，你所說的『如果格式不對，就會失敗』這句話，所謂的『失敗』是指什麼？」</p>
+<p>同事：「啊⋯⋯就是失敗呀！」</p>
+<p>我：「讓我們用程式語言的角度來講。你所謂的『失敗』，是指 return false 呢，還是 throw exception？」</p>
+<p>同事：「嗯，以這個例子來說，是 throw exception。」</p>
+<p>我：「好的，那麼，你怎麼證明，在遇到錯誤的日期格式時，你的程式碼真的會 throw exception？」</p>
+<p>同事靜默中⋯⋯</p>
+<p><!-- raw HTML omitted -->   <!-- raw HTML omitted -->   <!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->   <!-- raw HTML omitted -->   <!-- raw HTML omitted --></p>
+<p>我：「在談論寫不寫單元測試時，我想稍微區分一下問題，究竟是 ❶ 不會寫，或者是 ❷ 懶得寫？」</p>
+<p>我：「就以這一個例子來說，你知道該怎麼單元測試嗎？」</p>
+<p>同事靜默中⋯⋯</p>
+<p>我：「目前的主流單元測試框架，都有 <a href="https://docs.microsoft.com/en-us/dotnet/api/microsoft.visualstudio.testtools.unittesting.assert.throwsexception">Assert.ThrowsException</a> 或 <a href="https://docs.microsoft.com/en-us/dotnet/api/microsoft.visualstudio.testtools.unittesting.assert.throwsexceptionasync">Assert.ThrowsExceptionAsync</a> 之類的設施去處理 exception。所以，『❶ 不會寫』就不成立了。剩下的問題就是：『❷ 懶得寫』。」</p>
+<p>我：「你會在這段 function 一開頭的 doc comment 陳述說：『如果日期格式錯誤，會 throw XXX exception』嗎？」</p>
+<p>同事：「會。」</p>
+<p>（他大概不敢當面說不會，因為我兩個月前才寫過一篇內部 memo 講 &ldquo;doc comment&rdquo; 這件事。）</p>
+<p>我：「針對 throw exception 這個行為，既然你都已經花時間寫程式了，也都已經花時間寫 doc comment 了，為什麼不順手寫一小段單元測試來證明你的程式碼與 doc comment 是<strong>對齊</strong>的，<strong>讓測試來說話</strong>？」</p>
+<p>同事靜默中⋯⋯</p>
+<p>我：「而且，你寫的程式，不只是給你看，也會給幾個月後、甚至一兩年後接手維護的其他人看。萬一有一天，別人沒注意到『日期格式』這件事就改寫這段程式碼，你的程式又沒有單元測試的保護，你會不會擔心對方把你的程式改壞了？」</p>
+<p>同事靜默中⋯⋯</p>
+<p>我：「所以在單元測試課堂的開場致詞中，我強調：『<strong>單元測試是程式設計師的職業道德</strong>』，就是這個意思。」</p>
+<p><!-- raw HTML omitted -->   <!-- raw HTML omitted -->   <!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->   <!-- raw HTML omitted -->   <!-- raw HTML omitted --></p>
+<p>最後，請容我引述《<a href="https://www.tenlong.com.tw/products/9787115467768">修改軟件的藝術 (<em>Beyond Legacy Code</em>)</a>》裡面的金句：</p>
+<blockquote>
+<p>在編寫程式碼之後才編寫測試，往往會發現程式碼難以測試，需要大量的清理來讓其可以測試，這可能會成為一個大工程。最好是一開始就編寫出<strong>可測試的程式碼</strong>，而編寫可測試程式碼的最好方式是<strong>先編寫測試</strong>。</p>
+<p>沒法進行測試，則說明我有些設計問題需要重新進行思考。</p>
+<p>應該假設測試集是對整個用戶故事的完整定義。如果沒有用測試來描述一個行為，那麼這個行為很可能是錯的。<strong>任何沒有在測試集中體現的行為，都被視為不存在</strong>。</p>
+<p>測試集不僅驗證行為，而且描述行為。<strong>用測試描述行為，從而建立活的文檔</strong>。</p>
+</blockquote>
+<p><!-- raw HTML omitted -->   <!-- raw HTML omitted -->   <!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->   <!-- raw HTML omitted -->   <!-- raw HTML omitted --></p>
+<p>（PS. 以上情節，是根據實際對話加油添醋改編而成，請勿對號入座。）</p>
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">William Yeh</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+      2022-05-24
+      
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">授權條款</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW" target="_blank">CC BY-NC-SA 4.0</a> (姓名標示-非商業性-相同方式分享 4.0 國際)</span>
+  </p>
+</div>
+
+
+    
+    
+
+    
+    <iframe class="LikeCoin" height="235" src="https://button.like.co/in/embed/william-yeh/button?referrer=%2f%2fwilliam-yeh.net%2fpost%2f2022%2f05%2fneed-for-unit-testing%2f" width="100%" frameborder=0></iframe>
+  
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="//william-yeh.net/tags/programming/">programming</a>
+          <a href="//william-yeh.net/tags/tech-debt/">tech-debt</a>
+          <a href="//william-yeh.net/tags/testing/">testing</a>
           
-<section id="archive" class="archive">
-    
-      <div class="collection-title">
-        <h2 class="archive-year">2016</h2>
-      </div>
+        </div>
 
-    <div class="archive-post">
-      <time datetime="2016-05-03" class="archive-post-time">
-        2016-05-03
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/2016/05/devops-a-lean-perspective/" class="archive-post-link">
-          有了 Agile，為什麼還要有 DevOps？
-        </a>
-      </span>
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/post/2022/05/evaluation-process-for-changes/">
+            <span class="next-text nav-default">推動改變的評估流程</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            
+            <i class="iconfont">
+              <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311 0.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889 0.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-0.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"></path>
+</svg>
+
+            </i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+  
+  
+
+  
+  
+
+  
+
+  
+  
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= "William-Yeh/utterances-area"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+      </script>
     </div>
+  
+
+  
+
+  
+
+  <div class="disqus-comment">
+  <div class="disqus-button" id="load_disqus" onclick="load_disqus()">
+    顯示 Disqus 評論
+  </div>
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_config = function () {
+      this.page.url = "//william-yeh.net/post/2022/05/need-for-unit-testing/";
+    };
+    function load_disqus() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'potioneer';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+      $('#load_disqus').remove();
+    };
+  </script>
+  <noscript>Please enable JavaScript to view the
+    <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+  </noscript>
+  
+  </div>
+
     
 
-    <div class="archive-post">
-      <time datetime="2016-04-23" class="archive-post-time">
-        2016-04-23
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/2016/04/learn-process-mgmt-by-game/" class="archive-post-link">
-          向遊戲學習
-        </a>
-      </span>
-    </div>
-    
-
-    <div class="archive-post">
-      <time datetime="2016-04-22" class="archive-post-time">
-        2016-04-22
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/2016/04/learn-from-plant-mgmt/" class="archive-post-link">
-          向工廠管理致敬
-        </a>
-      </span>
-    </div>
-    
-
-    <div class="archive-post">
-      <time datetime="2016-03-29" class="archive-post-time">
-        2016-03-29
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/2016/03/lean-perspective-of-multitasking/" class="archive-post-link">
-          多工切換：有趣的 Lean 觀點
-        </a>
-      </span>
-    </div>
-    
-
-    <div class="archive-post">
-      <time datetime="2016-03-15" class="archive-post-time">
-        2016-03-15
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/2016/03/polp-intro/" class="archive-post-link">
-          POLP：最小權限原則
-        </a>
-      </span>
-    </div>
-    
-
-    <div class="archive-post">
-      <time datetime="2016-03-07" class="archive-post-time">
-        2016-03-07
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/2016/03/origin-of-devops-elements/" class="archive-post-link">
-          DevOps 核心元素的考古溯源
-        </a>
-      </span>
-    </div>
-    
-
-    <div class="archive-post">
-      <time datetime="2016-03-02" class="archive-post-time">
-        2016-03-02
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/2016/03/metaphor-in-cm/" class="archive-post-link">
-          電腦界的隱喻：組態管理
-        </a>
-      </span>
-    </div>
-    
-
-    <div class="archive-post">
-      <time datetime="2016-01-29" class="archive-post-time">
-        2016-01-29
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/2016/01/devops-goals-in-a-nutshell/" class="archive-post-link">
-          一句話囊括 DevOps 的目標
-        </a>
-      </span>
-    </div>
-    
-      <div class="collection-title">
-        <h2 class="archive-year">2015</h2>
-      </div>
-
-    <div class="archive-post">
-      <time datetime="2015-12-28" class="archive-post-time">
-        2015-12-28
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/2015/12/devops-1st-step/" class="archive-post-link">
-          DevOps 是圓的，找到立足點就是頂點
-        </a>
-      </span>
-    </div>
-    
-
-    <div class="archive-post">
-      <time datetime="2015-12-22" class="archive-post-time">
-        2015-12-22
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/2015/12/ci-effect/" class="archive-post-link">
-          CI 怎樣帶你遠離平庸？
-        </a>
-      </span>
-    </div></section>
-
-
-
-
-
-
   
-  
-  
-
-  
-  
-
-  
-  
-
-  
-  
-
-  
-  
-  <nav class="pagination">
-    <ul>
-      
-      <li >
-        <a href="/post/">1</a>
-      </li>
-      
-      <li >
-        <a href="/post/page/2/">2</a>
-      </li>
-      
-      <li >
-        <a href="/post/page/3/">3</a>
-      </li>
-      
-      <li >
-        <a href="/post/page/4/">4</a>
-      </li>
-      
-      <li >
-        <a href="/post/page/5/">5</a>
-      </li>
-      
-      <li >
-        <a href="/post/page/6/">6</a>
-      </li>
-      
-      <li >
-        <a href="/post/page/7/">7</a>
-      </li>
-      
-      <li >
-        <a href="/post/page/8/">8</a>
-      </li>
-      
-      <li >
-        <a href="/post/page/9/">9</a>
-      </li>
-      
-      <li  class="active" >
-        <a href="/post/page/10/">10</a>
-      </li>
-      
-      <li >
-        <a href="/post/page/11/">11</a>
-      </li>
-      
-    </ul>
-  </nav>
-
-  
-  
-
-
-
-
 
         </div>
       </div>

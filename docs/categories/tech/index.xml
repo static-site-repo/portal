@@ -6,7 +6,24 @@
     <description>Recent content in tech on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Mon, 28 Sep 2020 14:00:00 +0800</lastBuildDate><atom:link href="//william-yeh.net/categories/tech/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 24 May 2022 12:00:00 +0800</lastBuildDate><atom:link href="//william-yeh.net/categories/tech/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>很簡單的東西，也要單元測試嗎？</title>
+      <link>//william-yeh.net/post/2022/05/need-for-unit-testing/</link>
+      <pubDate>Tue, 24 May 2022 12:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2022/05/need-for-unit-testing/</guid>
+      <description>&lt;p&gt;（改寫自公司內部 memo）&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;Hi all engineers,&lt;/p&gt;
+&lt;p&gt;上完一整天單元測試課程之後，有同事問我：「有沒有標準來決定要不要寫單元測試？」&lt;/p&gt;
+&lt;p&gt;剛讀完劉潤《&lt;a href=&#34;https://www.books.com.tw/products/0010919211&#34;&gt;底層邏輯&lt;/a&gt;》的我，對於這類疑似「注射器」的問句格外敏感。雖然我可以瀟灑引述 &lt;a href=&#34;https://www.tenlong.com.tw/products/9789864344000&#34;&gt;&lt;em&gt;Working Effectively with Legacy Code&lt;/em&gt;&lt;/a&gt; 的說法「我毫無疑問地將『遺留程式碼』定義為『&lt;strong&gt;沒有編寫測試的程式碼&lt;/strong&gt;』」：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;沒有編寫測試的程式碼是糟糕的程式碼——不管我們多麼細心地編寫它們，不管它們有多漂亮、物件導向或封裝良好。有了測試，我們就能夠迅速、可驗證地修改程式碼的行為。沒有測試，我們就不知道修改後的程式碼，實際上是變得更好還是更糟。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;但當下我還是決定先展開一場對話。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>推薦序：讓 GitLab 成為數位轉型的重要推手</title>
       <link>//william-yeh.net/post/2020/09/learning-gitlab-review/</link>
@@ -236,17 +253,6 @@ To clarify this I&amp;rsquo;ve conducted a series of experiments for 3 possible 
       
       <guid>//william-yeh.net/courses/k8s-workship-cloudsummit2019/</guid>
       <description>活動名稱：給 RD 的 Kubernetes 初體驗 時間：2019-05-15 (三) / 11:00&amp;ndash;12:30 會議：台灣雲端大會 (Cloud Edge Summit 2019) 課程簡介 Kubernetes 是目前雲端環境的顯學。可是，傳統的程式，並不</description>
-    </item>
-    
-    <item>
-      <title>Nginx Ingress 與 Ambassador 簡易性能比較</title>
-      <link>//william-yeh.net/post/2019/03/ingress-vs-ambassador/</link>
-      <pubDate>Fri, 29 Mar 2019 23:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2019/03/ingress-vs-ambassador/</guid>
-      <description>&lt;p&gt;API gateway 是微服務環境，甚至 service mesh 的要角 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;。&lt;/p&gt;
-&lt;p&gt;在 Kubernetes 上面，API gateway 選項眾多。有像 HAProxy 及 Nginx 這些石器時代老傢伙跨足過來，也有打從一開始就走 cloud native 路線的後起之秀。&lt;/p&gt;
-&lt;p&gt;該如何選擇？&lt;/p&gt;</description>
     </item>
     
   </channel>

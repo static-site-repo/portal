@@ -6,10 +6,71 @@
     <description>Recent content on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Mon, 16 May 2022 20:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 24 May 2022 12:00:00 +0800</lastBuildDate>
     
         <atom:link href="//william-yeh.net/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>很簡單的東西，也要單元測試嗎？</title>
+      <link>//william-yeh.net/post/2022/05/need-for-unit-testing/</link>
+      <pubDate>Tue, 24 May 2022 12:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2022/05/need-for-unit-testing/</guid>
+      
+        <description>&lt;p&gt;（改寫自公司內部 memo）&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;Hi all engineers,&lt;/p&gt;
+&lt;p&gt;上完一整天單元測試課程之後，有同事問我：「有沒有標準來決定要不要寫單元測試？」&lt;/p&gt;
+&lt;p&gt;剛讀完劉潤《&lt;a href=&#34;https://www.books.com.tw/products/0010919211&#34;&gt;底層邏輯&lt;/a&gt;》的我，對於這類疑似「注射器」的問句格外敏感。雖然我可以瀟灑引述 &lt;a href=&#34;https://www.tenlong.com.tw/products/9789864344000&#34;&gt;&lt;em&gt;Working Effectively with Legacy Code&lt;/em&gt;&lt;/a&gt; 的說法「我毫無疑問地將『遺留程式碼』定義為『&lt;strong&gt;沒有編寫測試的程式碼&lt;/strong&gt;』」：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;沒有編寫測試的程式碼是糟糕的程式碼——不管我們多麼細心地編寫它們，不管它們有多漂亮、物件導向或封裝良好。有了測試，我們就能夠迅速、可驗證地修改程式碼的行為。沒有測試，我們就不知道修改後的程式碼，實際上是變得更好還是更糟。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;但當下我還是決定先展開一場對話。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;我：「我一時想不出來有沒有合適的標準，但我有一個簡單的 gut feeling 來判斷：如果我沒有把握證明這段程式碼會表現出該有的行為，那麼我就應該考慮替它加一段測試，用測試來表現出這段程式碼的確忠實表現出該有的行為，&lt;strong&gt;讓測試來說話&lt;/strong&gt;。」&lt;/p&gt;
+&lt;p&gt;同事：「即使是很簡單的程式碼，也需要加單元測試嗎？這會不會太麻煩了？」&lt;/p&gt;
+&lt;p&gt;我心中頓時浮現一個聲音：“如果你有 &lt;strong&gt;TDD (test-driven design)&lt;/strong&gt; 的觀念或紀律，就不會有此一問了。再簡單的程式碼，都會測試先行——何況，簡單的程式碼，對應的單元測試會很難嗎？如果很難很繁雜，那麼，或許這程式碼本身並沒有想像中那麼簡單。”&lt;/p&gt;
+&lt;p&gt;但當下我還是決定繼續對話，先不要說教⋯⋯&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;我：「能不能舉一個『簡單的程式碼』的例子？」&lt;/p&gt;
+&lt;p&gt;同事：「就像某一個 function，它會先檢查輸入的日期格式，如果格式不是 &lt;code&gt;yyyy/mm/dd&lt;/code&gt; 就會失敗；如果格式對了，就會繼續往下做正事⋯⋯」&lt;/p&gt;
+&lt;p&gt;我：「且慢，你所說的『如果格式不對，就會失敗』這句話，所謂的『失敗』是指什麼？」&lt;/p&gt;
+&lt;p&gt;同事：「啊⋯⋯就是失敗呀！」&lt;/p&gt;
+&lt;p&gt;我：「讓我們用程式語言的角度來講。你所謂的『失敗』，是指 return false 呢，還是 throw exception？」&lt;/p&gt;
+&lt;p&gt;同事：「嗯，以這個例子來說，是 throw exception。」&lt;/p&gt;
+&lt;p&gt;我：「好的，那麼，你怎麼證明，在遇到錯誤的日期格式時，你的程式碼真的會 throw exception？」&lt;/p&gt;
+&lt;p&gt;同事靜默中⋯⋯&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;我：「在談論寫不寫單元測試時，我想稍微區分一下問題，究竟是 ❶ 不會寫，或者是 ❷ 懶得寫？」&lt;/p&gt;
+&lt;p&gt;我：「就以這一個例子來說，你知道該怎麼單元測試嗎？」&lt;/p&gt;
+&lt;p&gt;同事靜默中⋯⋯&lt;/p&gt;
+&lt;p&gt;我：「目前的主流單元測試框架，都有 &lt;a href=&#34;https://docs.microsoft.com/en-us/dotnet/api/microsoft.visualstudio.testtools.unittesting.assert.throwsexception&#34;&gt;Assert.ThrowsException&lt;/a&gt; 或 &lt;a href=&#34;https://docs.microsoft.com/en-us/dotnet/api/microsoft.visualstudio.testtools.unittesting.assert.throwsexceptionasync&#34;&gt;Assert.ThrowsExceptionAsync&lt;/a&gt; 之類的設施去處理 exception。所以，『❶ 不會寫』就不成立了。剩下的問題就是：『❷ 懶得寫』。」&lt;/p&gt;
+&lt;p&gt;我：「你會在這段 function 一開頭的 doc comment 陳述說：『如果日期格式錯誤，會 throw XXX exception』嗎？」&lt;/p&gt;
+&lt;p&gt;同事：「會。」&lt;/p&gt;
+&lt;p&gt;（他大概不敢當面說不會，因為我兩個月前才寫過一篇內部 memo 講 &amp;ldquo;doc comment&amp;rdquo; 這件事。）&lt;/p&gt;
+&lt;p&gt;我：「針對 throw exception 這個行為，既然你都已經花時間寫程式了，也都已經花時間寫 doc comment 了，為什麼不順手寫一小段單元測試來證明你的程式碼與 doc comment 是&lt;strong&gt;對齊&lt;/strong&gt;的，&lt;strong&gt;讓測試來說話&lt;/strong&gt;？」&lt;/p&gt;
+&lt;p&gt;同事靜默中⋯⋯&lt;/p&gt;
+&lt;p&gt;我：「而且，你寫的程式，不只是給你看，也會給幾個月後、甚至一兩年後接手維護的其他人看。萬一有一天，別人沒注意到『日期格式』這件事就改寫這段程式碼，你的程式又沒有單元測試的保護，你會不會擔心對方把你的程式改壞了？」&lt;/p&gt;
+&lt;p&gt;同事靜默中⋯⋯&lt;/p&gt;
+&lt;p&gt;我：「所以在單元測試課堂的開場致詞中，我強調：『&lt;strong&gt;單元測試是程式設計師的職業道德&lt;/strong&gt;』，就是這個意思。」&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;最後，請容我引述《&lt;a href=&#34;https://www.tenlong.com.tw/products/9787115467768&#34;&gt;修改軟件的藝術 (&lt;em&gt;Beyond Legacy Code&lt;/em&gt;)&lt;/a&gt;》裡面的金句：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在編寫程式碼之後才編寫測試，往往會發現程式碼難以測試，需要大量的清理來讓其可以測試，這可能會成為一個大工程。最好是一開始就編寫出&lt;strong&gt;可測試的程式碼&lt;/strong&gt;，而編寫可測試程式碼的最好方式是&lt;strong&gt;先編寫測試&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;沒法進行測試，則說明我有些設計問題需要重新進行思考。&lt;/p&gt;
+&lt;p&gt;應該假設測試集是對整個用戶故事的完整定義。如果沒有用測試來描述一個行為，那麼這個行為很可能是錯的。&lt;strong&gt;任何沒有在測試集中體現的行為，都被視為不存在&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;測試集不僅驗證行為，而且描述行為。&lt;strong&gt;用測試描述行為，從而建立活的文檔&lt;/strong&gt;。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;（PS. 以上情節，是根據實際對話加油添醋改編而成，請勿對號入座。）&lt;/p&gt;</description>
+      
+    </item>
     
     <item>
       <title>推動改變的評估流程</title>
@@ -155,7 +216,7 @@
   &lt;/figure&gt;
 &lt;/div&gt;
 
-&lt;p&gt;朋友問的是「與麥肯錫有關的書籍」，如果連「與 BCG 有關的書籍」也納入，那麼，值得一讀的多產作者就有勝間和代、高杉尚孝、大嶋祥譽、內田和成、安宅和人⋯⋯等人。&lt;/p&gt;
+&lt;p&gt;朋友問的是「與麥肯錫有關的書籍」，如果範圍稍微擴大一點，連「與 BCG 有關的書籍」也納入，那麼，值得一讀的多產作者就有勝間和代、高杉尚孝、大嶋祥譽、內田和成、安宅和人⋯⋯等人。&lt;/p&gt;
 &lt;p&gt;為了聚焦，我只挑選對「非以顧問為業」的初階至中階職場人士都能受益的書籍。&lt;/p&gt;
 &lt;p&gt;註：以下書籍，有些可能要去圖書館找。&lt;/p&gt;
 &lt;h2 id=&#34;入門篇職場基本功&#34;&gt;入門篇：職場基本功&lt;/h2&gt;
@@ -2510,144 +2571,6 @@
 &lt;p&gt;　❸ TODO&lt;/p&gt;
 
 &lt;/div&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Essence of Scrum: Sprint Review</title>
-      <link>//william-yeh.net/post/2020/08/sprint-review-in-a-nutshell/</link>
-      <pubDate>Thu, 20 Aug 2020 08:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2020/08/sprint-review-in-a-nutshell/</guid>
-      
-        <description>&lt;p&gt;This article discusses the essence of &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Review&lt;/span&gt;
-.&lt;/p&gt;
-&lt;h2 id=&#34;in-a-nutshell&#34;&gt;In a nutshell&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;Sprint Review&lt;/strong&gt; is a time-boxed&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; event in which the &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Scrum Team&lt;/span&gt;
- and invited stakeholders inspect what has been &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Done&lt;/span&gt;
- with respect to the &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Goal&lt;/span&gt;
-, gain insight into values, and adapt business strategy if necessary.&lt;/p&gt;
-&lt;h2 id=&#34;output&#34;&gt;Output&lt;/h2&gt;
-&lt;p&gt;Essential:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;An adapted &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Product Backlog&lt;/span&gt;
-&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;An adapted business strategy and roadmap&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Better:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Celebration&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;input&#34;&gt;Input&lt;/h2&gt;
-&lt;p&gt;Essential:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Goal&lt;/span&gt;
-
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;span style=&#34;font-variant: small-caps;&#34;&gt;Increment&lt;/span&gt;
-&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Backlog&lt;/span&gt;
-
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Better:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Feedback from real-world customers and markets&lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;tools-and-techniques&#34;&gt;Tools and Techniques&lt;/h2&gt;
-&lt;p&gt;Essential:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Self-managing instead of being conducted solely by &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Scrum Master&lt;/span&gt;
-, &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Product Owner&lt;/span&gt;
-, or dedicated persons&lt;sup id=&#34;fnref:6&#34;&gt;&lt;a href=&#34;#fn:6&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;6&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Encouraging a focus on the &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Goal&lt;/span&gt;
- rather than individual &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Backlog Items&lt;/span&gt;
-.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Encouraging a focus on the learning rather than just checking off &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Backlog Items&lt;/span&gt;
-.&lt;sup id=&#34;fnref:7&#34;&gt;&lt;a href=&#34;#fn:7&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;7&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Better:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Diverge-converge meeting pattern&lt;sup id=&#34;fnref:8&#34;&gt;&lt;a href=&#34;#fn:8&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;8&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-
-&lt;div class=&#34;shortcode-notice note&#34;&gt;
-  &lt;div class=&#34;shortcode-notice-title note&#34;&gt;
-    
-      &amp;#39;Essence of Scrum&amp;#39; Series
-    
-  &lt;/div&gt;
-  &lt;p&gt;❶ &lt;a href=&#34;//william-yeh.net/post/2020/07/pbr-in-a-nutshell/&#34;&gt;Product Backlog Refinement&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;❷ &lt;a href=&#34;//william-yeh.net/post/2020/08/daily-scrum-in-a-nutshell/&#34;&gt;Daily Scrum&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;❸ &lt;a href=&#34;//william-yeh.net/post/2020/08/sprint-planning-in-a-nutshell/&#34;&gt;Sprint Planning&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;❹ Sprint Review&lt;/p&gt;
-
-&lt;/div&gt;
-
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-
-&lt;div class=&#34;shortcode-notice info&#34;&gt;
-  &lt;div class=&#34;shortcode-notice-title info&#34;&gt;
-    
-      2020-11-24 Memo
-    
-  &lt;/div&gt;
-  &lt;p&gt;The series of articles have been updated according to the 2020 revision of &lt;em&gt;&lt;a href=&#34;https://scrumguides.org/&#34;&gt;The Scrum Guide&lt;/a&gt;&lt;/em&gt; (published on Nov 2020).&lt;/p&gt;
-
-&lt;/div&gt;
-
-&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
-&lt;hr&gt;
-&lt;ol&gt;
-&lt;li id=&#34;fn:1&#34;&gt;
-&lt;p&gt;The &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Review&lt;/span&gt;
- is intended to be an opportunity for learning, not a formal product launch presentation.      &lt;em&gt;&lt;a href=&#34;https://scrumguides.org/&#34;&gt;The Scrum Guide&lt;/a&gt;&lt;/em&gt; 2017 says that &lt;em&gt;&amp;ldquo;This is an informal meeting, not a status meeting, and the presentation of the Increment is intended to elicit feedback and foster collaboration. [&amp;hellip;] The Scrum Master teaches everyone involved to keep it within the time-box.&amp;rdquo;&lt;/em&gt;     &lt;em&gt;&lt;a href=&#34;http://scrumbook.org/&#34;&gt;A Scrum Book&lt;/a&gt;&lt;/em&gt; even emphasizes that &lt;em&gt;&amp;lsquo;The event should be time-boxed to a maximum of three hours. The focus is on assessing the product. The Development Team should not spend more than about 30 minutes specifically preparing for this event. Too often a team will prop up the product with temporary supporting structures to make it work well for the Sprint Review, or will spend time trying to “impress” the stakeholders with a sophisticated presentation. There is very little opportunity to be convincing here: the product stands on its own. The team demonstrates the product in an environment approximating that of an end user, without any special “demo support,” and without any props that could make the product appear better than it is. A good rule of thumb is: No PowerPoint® (unless your product is PowerPoint).&amp;rsquo;&lt;/em&gt;&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:2&#34;&gt;
-&lt;p&gt;&lt;em&gt;&lt;a href=&#34;https://www.scrumguides.org/&#34;&gt;The Scrum Guide&lt;/a&gt;&lt;/em&gt; 2020 says that in the &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Review&lt;/span&gt;
-, &lt;em&gt;&amp;ldquo;During the event, the Scrum Team and stakeholders review what was accomplished in the Sprint and what has changed in their environment. Based on this information, attendees collaborate on what to do next. [&amp;hellip;] The Sprint Review is a working session and the Scrum Team should avoid limiting it to a presentation.&amp;rdquo;&lt;/em&gt;      &lt;em&gt;&lt;a href=&#34;http://scrumbook.org/&#34;&gt;A Scrum Book&lt;/a&gt;&lt;/em&gt; says that &lt;em&gt;&amp;ldquo;It is good for the &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Product Owner&lt;/span&gt;
- to adopt a vulnerable posture and to hear whether the team endorses and trusts the decisions and directions by which he or she is directing the team, particularly with respect to the product direction and dealing with technical debt and product quality. This helps reinforce the Community of Trust.&amp;rdquo;&lt;/em&gt;&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:3&#34;&gt;
-&lt;p&gt;&lt;em&gt;&lt;a href=&#34;http://scrumbook.org/&#34;&gt;A Scrum Book&lt;/a&gt;&lt;/em&gt; suggests that &lt;em&gt;&amp;ldquo;A Sprint Review is an opportunity for the team to reflect on their accomplishments during the past Sprint, which contributes to growth in Product Pride. A Sprint Review can be a form of celebration if the team reaches a particularly noteworthy goal, or just for the sake of celebrating now and then. A company in Finland would occasionally have a Sprint Review in a sauna, with good food and drink, going late into the evening. The event covered the perfunctory agenda items but the real focus was for the team to celebrate its work together. (Thanks to Jukka Järvelä for this story!).&amp;rdquo;&lt;/em&gt;&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:4&#34;&gt;
-&lt;p&gt;&lt;em&gt;&lt;a href=&#34;https://scrumguides.org/&#34;&gt;The Scrum Guide&lt;/a&gt;&lt;/em&gt; uses the term &amp;ldquo;&lt;a href=&#34;https://www.scrumguides.org/scrum-guide.html#artifacts-increment&#34;&gt;&lt;span style=&#34;font-variant: small-caps;&#34;&gt;Increment&lt;/span&gt;
-&lt;/a&gt;&amp;rdquo; to refer to &lt;em&gt;&amp;ldquo;the sum of all the Product Backlog items completed during a Sprint and the value of the increments of all previous Sprints.&amp;rdquo;&lt;/em&gt;     To be more precise, &lt;em&gt;&lt;a href=&#34;http://scrumbook.org/&#34;&gt;A Scrum Book&lt;/a&gt;&lt;/em&gt; uses the term &amp;ldquo;&lt;a href=&#34;http://scrumbook.org.datasenter.no/value-stream/regular-product-increment.html&#34;&gt;&lt;span style=&#34;font-variant: small-caps;&#34;&gt;Regular Product Increment&lt;/span&gt;
-&lt;/a&gt;&amp;rdquo;, and  &lt;a href=&#34;https://less.works/&#34;&gt;LeSS&lt;/a&gt; uses the term &amp;ldquo;&lt;a href=&#34;https://less.works/less/framework/potentially-shippable-product-increment&#34;&gt;&lt;span style=&#34;font-variant: small-caps;&#34;&gt;Potentially Shippable Product Increment&lt;/span&gt;
-&lt;/a&gt;&amp;rdquo; (often abbreviated as &amp;ldquo;PSPI&amp;rdquo;).&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:5&#34;&gt;
-&lt;p&gt;&lt;em&gt;&lt;a href=&#34;https://www.amazon.com/dp/1492033510&#34;&gt;Agile for Everybody&lt;/a&gt;&lt;/em&gt; says that &lt;em&gt;&amp;lsquo;One of the many ways that organizational leaders often accidentally undermine Agile principles is to continue asking only company-centric questions, such as “Are we on time and on budget?” and “Has your manager approved this?” as opposed to customer-centric questions, such as “How do our customers feel about this change to the product?” One immediate and powerful sign that you’re on the right track is that leaders are asking customer-centric questions or, even better, referring directly to customer quotes and insights.&amp;rsquo;&lt;/em&gt;&amp;#160;&lt;a href=&#34;#fnref:5&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:6&#34;&gt;
-&lt;p&gt;&lt;em&gt;&lt;a href=&#34;https://scrumguides.org/&#34;&gt;The Scrum Guide&lt;/a&gt;&lt;/em&gt; 2020 says that &lt;em&gt;&amp;ldquo;The &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Review&lt;/span&gt;
- is a working session and the Scrum Team should avoid limiting it to a presentation.&amp;rdquo;&lt;/em&gt;&amp;#160;&lt;a href=&#34;#fnref:6&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:7&#34;&gt;
-&lt;p&gt;&lt;a href=&#34;https://less.works/&#34;&gt;LeSS&lt;/a&gt; advocates the &amp;ldquo;Inspect-Adapt and &lt;em&gt;not&lt;/em&gt; Inspect-Accept&amp;rdquo; concept: &lt;em&gt;&amp;ldquo;The most common mistake in a Sprint Review is to focus on the Product Owner accepting items from the teams. This is a misunderstanding of the purpose of the Sprint Review and moves it away from &lt;a href=&#34;https://less.works/less/principles/empirical-process-control.html&#34;&gt;empirical process control&lt;/a&gt; towards finding blame. The Sprint Review is an opportunity for everyone to collaborate about the product.&amp;rdquo;&lt;/em&gt;&amp;#160;&lt;a href=&#34;#fnref:7&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:8&#34;&gt;
-&lt;p&gt;&lt;a href=&#34;https://less.works/&#34;&gt;LeSS&lt;/a&gt; advocates a bazaar-style Sprint Review: &lt;em&gt;&amp;ldquo;The Sprint Review is best conducted using a diverge-converge meeting pattern. During the diverge periods, use a bazaar. This is analogous to a science fair: A large room has multiple areas, each staffed by team representatives, where the items developed by a team are shown and discussed. Stakeholders visit areas of interest. During the converge periods, stakeholders summarize their opinions from the bazaar. A subset of items may be inspected on a common computer projector during this time, also.&amp;rdquo;&lt;/em&gt;&amp;#160;&lt;a href=&#34;#fnref:8&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-</description>
       
     </item>
     
