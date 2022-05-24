@@ -90,7 +90,7 @@ Hi all engineers,
 
 但當下我還是決定先展開一場對話。"><meta itemprop="datePublished" content="2022-05-24T12:00:00+08:00" />
 <meta itemprop="dateModified" content="2022-05-24T12:00:00+08:00" />
-<meta itemprop="wordCount" content="1559">
+<meta itemprop="wordCount" content="1571">
 <meta itemprop="keywords" content="programming,tech-debt,testing," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="很簡單的東西，也要單元測試嗎？"/>
 <meta name="twitter:description" content="（改寫自公司內部 memo）
@@ -325,7 +325,7 @@ if (!doNotTrack) {
             <a href="//william-yeh.net/categories/tech/"> tech </a>
             
           </div>
-        <span class="more-meta"> 約 1559 字 </span>
+        <span class="more-meta"> 約 1571 字 </span>
           <span class="more-meta"> 預計閱讀 4 分鐘 </span>
 
         
@@ -375,13 +375,13 @@ if (!doNotTrack) {
 <p>我：「在談論寫不寫單元測試時，我想稍微區分一下問題，究竟是 ❶ 不會寫，或者是 ❷ 懶得寫？」</p>
 <p>我：「就以這一個例子來說，你知道該怎麼單元測試嗎？」</p>
 <p>同事靜默中⋯⋯</p>
-<p>我：「目前的主流單元測試框架，都有 <a href="https://docs.microsoft.com/en-us/dotnet/api/microsoft.visualstudio.testtools.unittesting.assert.throwsexception">Assert.ThrowsException</a> 或 <a href="https://docs.microsoft.com/en-us/dotnet/api/microsoft.visualstudio.testtools.unittesting.assert.throwsexceptionasync">Assert.ThrowsExceptionAsync</a> 之類的設施去處理 exception。所以，『❶ 不會寫』就不成立了。剩下的問題就是：『❷ 懶得寫』。」</p>
+<p>我：「目前的主流單元測試框架，都有 <a href="https://docs.microsoft.com/en-us/dotnet/api/microsoft.visualstudio.testtools.unittesting.assert.throwsexception">Assert.ThrowsException</a> 或 <a href="https://docs.microsoft.com/en-us/dotnet/api/microsoft.visualstudio.testtools.unittesting.assert.throwsexceptionasync">Assert.ThrowsExceptionAsync</a> 之類的設施去處理 exception，所以『❶ 不會寫』就不成立了。只剩下一個問題：『❷ 懶得寫』。」</p>
 <p>我：「你會在這段 function 一開頭的 doc comment 陳述說：『如果日期格式錯誤，會 throw XXX exception』嗎？」</p>
 <p>同事：「會。」</p>
 <p>（他大概不敢當面說不會，因為我兩個月前才寫過一篇內部 memo 講 &ldquo;doc comment&rdquo; 這件事。）</p>
 <p>我：「針對 throw exception 這個行為，既然你都已經花時間寫程式了，也都已經花時間寫 doc comment 了，為什麼不順手寫一小段單元測試來證明你的程式碼與 doc comment 是<strong>對齊</strong>的，<strong>讓測試來說話</strong>？」</p>
 <p>同事靜默中⋯⋯</p>
-<p>我：「而且，你寫的程式，不只是給你看，也會給幾個月後、甚至一兩年後接手維護的其他人看。萬一有一天，別人沒注意到『日期格式』這件事就改寫這段程式碼，你的程式又沒有單元測試的保護，你會不會擔心對方把你的程式改壞了？」</p>
+<p>我：「而且，你寫的程式，不只是給現在的你自己看，不只是給 code reviewers 看，也會給幾個月後、甚至一兩年後接手維護的其他人看。萬一有一天，別人沒注意到『日期格式』這件事就改寫這段程式碼，你的程式又沒有單元測試的保護，你會不會擔心對方把你的程式改壞了？」</p>
 <p>同事靜默中⋯⋯</p>
 <p>我：「所以在單元測試課堂的開場致詞中，我強調：『<strong>單元測試是程式設計師的職業道德</strong>』，就是這個意思。」</p>
 <p><!-- raw HTML omitted -->   <!-- raw HTML omitted -->   <!-- raw HTML omitted --></p>
