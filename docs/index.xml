@@ -31,7 +31,7 @@
 &lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;p&gt;我：「我一時想不出來有沒有合適的標準，但我有一個簡單的 gut feeling 來判斷：如果我沒有把握證明這段程式碼會表現出該有的行為，那麼我就應該考慮替它加一段測試，用測試來表現出這段程式碼的確忠實表現出該有的行為，&lt;strong&gt;讓測試來說話&lt;/strong&gt;。」&lt;/p&gt;
 &lt;p&gt;同事：「即使是很簡單的程式碼，也需要加單元測試嗎？這會不會太麻煩了？」&lt;/p&gt;
-&lt;p&gt;我心中頓時浮現一個聲音：“如果你有 &lt;strong&gt;TDD (test-driven design)&lt;/strong&gt; 的觀念或紀律，就不會有此一問了。再簡單的程式碼，都會測試先行——何況，簡單的程式碼，對應的單元測試會很難嗎？如果很難很繁雜，那麼，或許這程式碼本身並沒有想像中那麼簡單。”&lt;/p&gt;
+&lt;p&gt;我心中頓時浮現一個聲音：“如果你有 &lt;strong&gt;TDD (test-driven design)&lt;/strong&gt; 的觀念或紀律，就不會有此一問了。再簡單的程式碼，都會測試先行——何況，簡單的程式碼，對應的單元測試會很難嗎？如果很難很繁雜，那麼，或許這程式碼本身並沒有當初想像中那麼簡單。”&lt;/p&gt;
 &lt;p&gt;但當下我還是決定繼續對話，先不要說教⋯⋯&lt;/p&gt;
 &lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
