@@ -6,10 +6,168 @@
     <description>Recent content on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Tue, 24 May 2022 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 09 Jun 2022 20:00:00 +0800</lastBuildDate>
     
         <atom:link href="//william-yeh.net/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>圖表，要有重點訊息</title>
+      <link>//william-yeh.net/post/2022/06/one-msg-per-slide/</link>
+      <pubDate>Thu, 09 Jun 2022 20:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2022/06/one-msg-per-slide/</guid>
+      
+        <description>&lt;p&gt;月前看到君婷老師提的這則&lt;a href=&#34;https://www.facebook.com/elva.lee.752/posts/5372125532799861&#34;&gt;重大發現&lt;/a&gt;：「當你沒辦法 convince 對方的時候，那就想辦法 confuse 他。」&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:20em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2022/06/elva-20220505.jpg&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2022/06/elva-20220505.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;對於「塞一大堆無關緊要，但看起來好像很認真整理過的資料」這件事，我是感同身受的——尤其是職場的會議簡報。&lt;/p&gt;
+&lt;p&gt;職場的會議簡報，下焉者，塞一大堆原始數據；中焉者，把數據整理為樸素的統計圖表；上焉者，會針對圖表的洞見予以錘鍊。&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; 上焉者的境界，可能需要一段時間訓練與即時回饋，但我發現，只要掌握一個&lt;strong&gt;逆向工作法&lt;/strong&gt;的小訣竅，就能找到改善中焉者表現的線索。&lt;/p&gt;
+&lt;h2 id=&#34;金字塔原理的-so-what-觀點&#34;&gt;金字塔原理的 &amp;ldquo;so what?&amp;rdquo; 觀點&lt;/h2&gt;
+&lt;p&gt;記得第一次看到這個訣竅，是從 Barbara Minto《&lt;a href=&#34;https://www.books.com.tw/products/0010645634&#34;&gt;金字塔原理&lt;/a&gt;》書中學來的：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;先決定你想要利用圖表回答的問題，&lt;strong&gt;將答案當作標題&lt;/strong&gt;，然後選擇最適合的圖表格式來呈現該論點。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;務必確定圖表的標題直接表達它的內容&lt;/strong&gt;。標題可以是一個完整的句子，或是包含動詞的一句片語，這麼做讓你可以&lt;strong&gt;核對&lt;/strong&gt;圖表帶給觀眾的視覺印象是否符合你希望表達的內容。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;同樣出自麥肯錫人、同樣在談金字塔原理的另一本書《&lt;a href=&#34;https://www.books.com.tw/products/0010346087&#34;&gt;邏輯思考的技術&lt;/a&gt;》，第四章舉了一個具體例子：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:20em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2022/06/logic-example.jpg&#34; alt=&#34;Source: 《邏輯思考的技術》&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2022/06/logic-example.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Source: 《邏輯思考的技術》&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;這份圖表，只有把數據整理為樸素的時序表格及初級分類，但對讀者來說，如果未經解說，其實很難一眼看出作者為什麼要秀出這份表格：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;即使觀察相同的東西，由於觀察者有興趣或關心的事情不同，很可能會得出不同的 &amp;ldquo;so what?” 內容。&lt;/p&gt;
+&lt;p&gt;不要以為「只要看到圖，應該就一目瞭然了」，因為那樣會變成把 &amp;ldquo;so what?” 全權交由接收者解釋。不可以認為「看了就會懂」而放任不管，明確表示出「總之，從這裡我們可以看出什麼」，是非常重要的。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;這份圖表，缺少明確的 &amp;ldquo;so what?&amp;rdquo; 線索，充其量只是落於「中焉者」層次。&lt;/p&gt;
+&lt;p&gt;因此，《&lt;a href=&#34;https://www.taaze.tw/products/11100687763.html&#34;&gt;麥肯錫新人培訓 7 堂課&lt;/a&gt;》的第七課，就明確提出這樣的「&lt;strong&gt;一張圖表、一個訊息&lt;/strong&gt;」範本，「一個經過徹底調查，將所有資料&lt;strong&gt;結晶化&lt;/strong&gt;後的訊息，以及一張簡單表示相關情報的圖表」：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2022/06/one-message.jpg&#34; alt=&#34;Source: 《麥肯錫新人培訓 7 堂課》&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2022/06/one-message.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Source: 《麥肯錫新人培訓 7 堂課》&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;事先逆向思考這張圖表想傳達的 &amp;ldquo;so what?&amp;rdquo; 關鍵訊息是什麼，然後明確揭露在大標題或小標題上。我發現，只要掌握這個小訣竅，就有助於引導自己接下來該朝什麼方向去加工錘鍊，好讓圖表能夠支持這段 &amp;ldquo;so what?&amp;rdquo; 關鍵訊息。&lt;/p&gt;
+&lt;h2 id=&#34;簡報大師的觀點&#34;&gt;簡報大師的觀點&lt;/h2&gt;
+&lt;p&gt;以上都是麥肯錫人的觀點。那麼，簡報大師，尤其是視覺簡報大師、敘事簡報大師的觀點呢？就請 Nancy Duarte 及 Brent Dykes 兩位大師現身說法吧。&lt;/p&gt;
+&lt;p&gt;Nancy Duarte 在《&lt;a href=&#34;https://www.books.com.tw/products/0010885500&#34;&gt;矽谷簡報女王用數據說出好故事&lt;/a&gt;》第六章，將圖表簡報頁面的標題再細分成「圖表標題」與「研究心得」兩部份：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;圖表標題要合乎&lt;strong&gt;事實&lt;/strong&gt;，保持&lt;strong&gt;中性&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;研究心得則是&lt;strong&gt;敘述&lt;/strong&gt;，從圖表中你得到的&lt;strong&gt;見解&lt;/strong&gt;，支持你如何看待數據呈現的&lt;strong&gt;問題&lt;/strong&gt;或&lt;strong&gt;機會&lt;/strong&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2022/06/datastory.jpg&#34; alt=&#34;Source: 《矽谷簡報女王用數據說出好故事》&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2022/06/datastory.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Source: 《矽谷簡報女王用數據說出好故事》&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Brent Dykes 在《&lt;a href=&#34;https://www.books.com.tw/products/0010920682&#34;&gt;資料故事時代&lt;/a&gt;》第八章，主張要善用「解釋性」的標題：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;我們常在圖表上寫&lt;strong&gt;描述性&lt;/strong&gt;的標題，而不是&lt;strong&gt;解釋性&lt;/strong&gt;的標題，因此浪費了那個寶貴的空間。&lt;/p&gt;
+&lt;p&gt;你用資料講述故事時，必須把握機會，利用標題來強調每個圖像的重點。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2022/06/data-storytelling.jpg&#34; alt=&#34;Source: 《資料故事時代》&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2022/06/data-storytelling.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Source: 《資料故事時代》&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;看起來，兩位簡報大師的觀點，都與金字塔原理的 &amp;ldquo;so what?&amp;rdquo; 觀點相吻合。&lt;/p&gt;
+&lt;h2 id=&#34;資料中立性的觀點&#34;&gt;資料中立性的觀點？&lt;/h2&gt;
+&lt;p&gt;有些人可能認為，資料，就該是客觀中性的存在，應該讓樸素的統計圖表直出，讓數字自己跳出來說話，不該滲雜人為的誘導。&lt;/p&gt;
+&lt;p&gt;真的是這樣嗎？&lt;/p&gt;
+&lt;p&gt;資料固然不能造假，統計圖表不能刻意施以歪曲事實的加工，但這不意味著我們就要棄守主觀詮釋的權力——這不是客觀理性，而是怠惰。&lt;/p&gt;
+&lt;p&gt;尤其是職場的會議簡報。&lt;/p&gt;
+&lt;p&gt;對於資料中立性議題，《&lt;a href=&#34;https://www.books.com.tw/products/0010792433&#34;&gt;２軸思考&lt;/a&gt;》說得好：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;工作上有大成就的人，其資料一定會加上自己的意見，或說偏見。製作資料時，一定要避免完全交由對方判斷而絲毫不滲入自己的意見。&lt;/p&gt;
+&lt;p&gt;相反地，當自己是資訊接受者，就必須冷靜判斷，避免被這樣的「偏見」迷惑。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:20em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2022/06/two-axes.jpg&#34; alt=&#34;Source: 《２軸思考》&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2022/06/two-axes.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Source: 《２軸思考》&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;這也不禁讓我想起洪震宇在《&lt;a href=&#34;https://www.books.com.tw/products/0010846006&#34;&gt;精準寫作&lt;/a&gt;》提出的「魚骨寫作法」觀點。雖然不是針對資料圖表，但中心思想一樣適用：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;我從學員的魚骨寫作練習發現，大家並不習慣這種逆向思考的寫作方法。學員說，要想清楚再寫，是一大挑戰，因為&lt;strong&gt;沒有勇氣第一句就破題，總喜歡鋪陳迂迴。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;問題在於過去的寫作慣性：❶ 喜歡把重點、主題藏在段落中，&lt;strong&gt;似乎怕人一眼看穿&lt;/strong&gt;。❷ 想法不聚焦，邊寫邊想、邊想邊寫；寫完後，沒有仔細消化想法，到底要呈現什麼主題？&lt;strong&gt;沒想法，就端不出魚頭句。&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;或許，端得出想法，有勇氣破題，不僅是寫作，也是職場會議簡報該學的功課吧。&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;我講的不是 TED 或 keynote speech 那種簡報。忙碌的職場人士，並不需要時時刻刻追求加工到資訊圖表 (infographic) 等級，因此，我並不把「上焉者」標準設定到這個層次。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description>
+      
+    </item>
     
     <item>
       <title>很簡單的東西，也要單元測試嗎？</title>
@@ -2446,131 +2604,6 @@
 &lt;/ul&gt;
 &lt;p&gt;畢竟，如同正瑋一再提醒的：「DevOps 涉及&lt;strong&gt;文化&lt;/strong&gt;、&lt;strong&gt;實踐方法&lt;/strong&gt;及&lt;strong&gt;工具&lt;/strong&gt;，企業組織必須從這三個層面多管齊下，才有機會成功實踐 DevOps。」這本書是起點，不是終點，希望大家除了學會 GitLab 這麼優異的 DevOps platform 之外，更能深刻探討 DevOps 背後的文化及實踐方法，讓 GitLab 成為數位轉型的重要推手。&lt;/p&gt;
 &lt;p&gt;  　   —— 敏捷魔藥師　葉秉哲 (William Yeh)&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>從系統思考角度讀《目標》：第一～三章</title>
-      <link>//william-yeh.net/post/2020/09/systhinking-goal-ch01-03/</link>
-      <pubDate>Sun, 13 Sep 2020 22:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2020/09/systhinking-goal-ch01-03/</guid>
-      
-        <description>&lt;h2 id=&#34;緣起&#34;&gt;緣起&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Eliyahu_M._Goldratt&#34;&gt;高德拉特&lt;/a&gt;系列著作是我的管理啟蒙書，《&lt;a href=&#34;https://www.books.com.tw/products/0010898249&#34;&gt;目標&lt;/a&gt;》更是每隔一陣子就會重讀的經典。&lt;/p&gt;
-&lt;p&gt;這次，我打算以系統思考 (systems thinking) 角度重讀。尤其是以我在【&lt;a href=&#34;//william-yeh.net/post/2018/06/sys-thinking-workshop/&#34;&gt;系統思考的四堂課&lt;/a&gt;】提出的「&lt;strong&gt;SLR·CPI 法&lt;/strong&gt;」來逐步分析。&lt;/p&gt;
-&lt;p&gt;土井英司在《&lt;a href=&#34;http://www.books.com.tw/products/0010762830&#34;&gt;一流的人讀書，都在哪裡畫線？&lt;/a&gt;》點出箇中訣竅：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;世上的一切都有「原因」與「結果」，線要畫在原因上，而非結果上。只要掌握這個基礎，就能在書中畫出很好的線。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;用土井英司這種方法重啃經典，燒腦，進度慢，但在腦中結晶的速度卻快多了。&lt;/p&gt;
-&lt;p&gt;我也發現，小說體裁絲毫不減《&lt;a href=&#34;https://www.books.com.tw/products/0010898249&#34;&gt;目標&lt;/a&gt;》這本書值得劃線的區域，反而能提供更多脈絡。&lt;/p&gt;
-&lt;p&gt;就先從第一～三章開始吧。&lt;/p&gt;
-&lt;h2 id=&#34;current-reality-tree-crt&#34;&gt;Current Reality Tree (CRT)&lt;/h2&gt;
-&lt;p&gt;《目標》第一～三章主要在描述故事主角羅哥 (Alex Rogo) 所負責的工廠、以及所隸屬的事業部，目前正遭遇的困境。&lt;/p&gt;
-&lt;p&gt;根據敘事及對話，再略加推演，可繪出初步的 CRT。為了方便查考，括號中列出對應的《目標》中譯本頁碼。&lt;/p&gt;
-
-&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
-&lt;div class=&#34;box&#34;&gt;
-&lt;figure  itemprop=&#34;associatedMedia&#34;
-  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
-  style=&#34;max-width:30em&#34; &gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2020/09/crt-ch1-3.png&#34; alt=&#34;《目標》§1--§3 Current Reality Tree&#34;/&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2020/09/crt-ch1-3.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-      &lt;figcaption&gt;
-          &lt;p&gt;《目標》§1--§3 Current Reality Tree&lt;/p&gt;
-      &lt;/figcaption&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&#34;causal-loop-diagram-cld&#34;&gt;Causal Loop Diagram (CLD)&lt;/h2&gt;
-&lt;p&gt;進一步萃取本質，可發現，此處至少出現了兩個&lt;a href=&#34;https://en.wikipedia.org/wiki/System_archetype&#34;&gt;系統基模&lt;/a&gt;。&lt;/p&gt;
-&lt;p&gt;第一個是「飲鴆止渴」(&lt;a href=&#34;https://en.wikipedia.org/wiki/System_archetype#Fixes_that_fail&#34;&gt;fixes that fail&lt;/a&gt;)，症狀解反而會回頭加劇問題：&lt;/p&gt;
-
-
-&lt;div class=&#34;box&#34;&gt;
-&lt;figure  itemprop=&#34;associatedMedia&#34;
-  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
-  style=&#34;max-width:30em&#34; &gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2020/09/cld-ch1-3-part1.png&#34; alt=&#34;《目標》§1--§3 Causal Loop Diagram (Part 1)&#34;/&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2020/09/cld-ch1-3-part1.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-      &lt;figcaption&gt;
-          &lt;p&gt;《目標》§1--§3 Causal Loop Diagram (Part 1)&lt;/p&gt;
-      &lt;/figcaption&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;  &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;第二個是「捨本逐末」(&lt;a href=&#34;https://en.wikipedia.org/wiki/System_archetype#Shifting_the_burden&#34;&gt;shifting the burden&lt;/a&gt;)，症狀解反而會侵蝕實施根本解的能力：&lt;/p&gt;
-
-
-&lt;div class=&#34;box&#34;&gt;
-&lt;figure  itemprop=&#34;associatedMedia&#34;
-  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
-  style=&#34;max-width:30em&#34; &gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2020/09/cld-ch1-3-part2.png&#34; alt=&#34;《目標》§1--§3 Causal Loop Diagram (Part 2)&#34;/&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2020/09/cld-ch1-3-part2.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-      &lt;figcaption&gt;
-          &lt;p&gt;《目標》§1--§3 Causal Loop Diagram (Part 2)&lt;/p&gt;
-      &lt;/figcaption&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;  &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;合併起來，這就是《目標》第一～三章所述困境的本質：&lt;/p&gt;
-
-
-&lt;div class=&#34;box&#34;&gt;
-&lt;figure  itemprop=&#34;associatedMedia&#34;
-  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
-  style=&#34;max-width:30em&#34; &gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2020/09/cld-ch1-3-all.png&#34; alt=&#34;《目標》§1--§3 Causal Loop Diagram (All)&#34;/&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2020/09/cld-ch1-3-all.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-      &lt;figcaption&gt;
-          &lt;p&gt;《目標》§1--§3 Causal Loop Diagram (All)&lt;/p&gt;
-      &lt;/figcaption&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&#34;poogi-聚焦五步驟&#34;&gt;POOGI 聚焦五步驟&lt;/h2&gt;
-&lt;p&gt;故事中羅哥的上司：事業部副總裁皮區 (Bill Peach)，雖然一出場就幫了個倒忙，但不以人廢言，有段教訓羅哥的話值得深思：「你已經有足夠的人手了！看在老天的分上，看看你們的效率！你還有很多改進的空間。先證明給我看你可以有效運用現有人力，否則就別哭訴人手不夠！」&lt;/p&gt;
-&lt;p&gt;這還滿符合 &lt;a href=&#34;https://www.tocinstitute.org/five-focusing-steps.html&#34;&gt;POOGI&lt;/a&gt; 的起手式：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;Identify 確認瓶頸／限制／制約因素：「有效運用現有人力」的能力。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Exploit 決定如何充分運用瓶頸／限制／制約因素：「先證明給我看你可以有效運用現有人力」。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;  &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;  &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;其實，在第二章的喃喃自語中，主角羅哥已經開始隱隱觸及本質議題了，只是還沒站在適當的視角。所幸，神秘人物鐘納 (Jonah) 即將在《目標》第四章登場，藉由不斷質疑最根本的商業思維，引導羅哥去大膽質疑系統思考點出的本質議題。&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;  &lt;!-- raw HTML omitted --&gt;  &lt;!-- raw HTML omitted --&gt;  &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-
-&lt;div class=&#34;shortcode-notice note&#34;&gt;
-  &lt;div class=&#34;shortcode-notice-title note&#34;&gt;
-    
-      從系統思考角度讀《目標》 - 系列
-    
-  &lt;/div&gt;
-  &lt;p&gt;REFERENCES&lt;/p&gt;
-&lt;p&gt;　🅐 &lt;a href=&#34;https://en.wikipedia.org/wiki/Current_reality_tree_%28theory_of_constraints%29&#34;&gt;&lt;strong&gt;Current reality tree&lt;/strong&gt;&lt;/a&gt; (&lt;strong&gt;CRT&lt;/strong&gt;) and &lt;a href=&#34;https://www.tocinstitute.org/five-focusing-steps.html&#34;&gt;&lt;strong&gt;POOGI&lt;/strong&gt;&lt;/a&gt; are from the field of &lt;a href=&#34;https://en.wikipedia.org/wiki/Theory_of_constraints&#34;&gt;TOC&lt;/a&gt;&amp;rsquo;s &lt;a href=&#34;https://en.wikipedia.org/wiki/Thinking_processes_%28theory_of_constraints%29&#34;&gt;thinking processes&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;　🅑 &lt;a href=&#34;https://en.wikipedia.org/wiki/Causal_loop_diagram&#34;&gt;&lt;strong&gt;Causal loop diagram&lt;/strong&gt;&lt;/a&gt; (&lt;strong&gt;CLD&lt;/strong&gt;) is from the field of &lt;a href=&#34;https://en.wikipedia.org/wiki/System_dynamics&#34;&gt;system dynamics&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;ARTICLES&lt;/p&gt;
-&lt;p&gt;　❶ 第一～三章&lt;/p&gt;
-&lt;p&gt;　❷ 第四章 (TODO)&lt;/p&gt;
-&lt;p&gt;　❸ TODO&lt;/p&gt;
-
-&lt;/div&gt;</description>
       
     </item>
     

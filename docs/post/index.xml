@@ -6,7 +6,31 @@
     <description>Recent content in Posts on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Tue, 24 May 2022 12:00:00 +0800</lastBuildDate><atom:link href="//william-yeh.net/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 09 Jun 2022 20:00:00 +0800</lastBuildDate><atom:link href="//william-yeh.net/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>圖表，要有重點訊息</title>
+      <link>//william-yeh.net/post/2022/06/one-msg-per-slide/</link>
+      <pubDate>Thu, 09 Jun 2022 20:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2022/06/one-msg-per-slide/</guid>
+      <description>&lt;p&gt;月前看到君婷老師提的這則&lt;a href=&#34;https://www.facebook.com/elva.lee.752/posts/5372125532799861&#34;&gt;重大發現&lt;/a&gt;：「當你沒辦法 convince 對方的時候，那就想辦法 confuse 他。」&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:20em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2022/06/elva-20220505.jpg&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2022/06/elva-20220505.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;對於「塞一大堆無關緊要，但看起來好像很認真整理過的資料」這件事，我是感同身受的——尤其是職場的會議簡報。&lt;/p&gt;
+&lt;p&gt;職場的會議簡報，下焉者，塞一大堆原始數據；中焉者，把數據整理為樸素的統計圖表；上焉者，會針對圖表的洞見予以錘鍊。&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; 上焉者的境界，可能需要一段時間訓練與即時回饋，但我發現，只要掌握一個&lt;strong&gt;逆向工作法&lt;/strong&gt;的小訣竅，就能找到改善中焉者表現的線索。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>很簡單的東西，也要單元測試嗎？</title>
       <link>//william-yeh.net/post/2022/05/need-for-unit-testing/</link>
@@ -299,18 +323,6 @@
 &lt;p&gt;2019 年，我因爲工作需要，得開始研究 GitLab 某些功能。巧合的是，當時我也正擔任「&lt;a href=&#34;https://ithelp.ithome.com.tw/2020ironman&#34;&gt;第 11 屆 iT 邦幫忙鐵人賽&lt;/a&gt;」評審，就在陳正瑋【&lt;a href=&#34;https://ithelp.ithome.com.tw/users/20120986/ironman/2733&#34;&gt;和艦長一起 30 天玩轉 GitLab&lt;/a&gt;】參賽文章中，學到我所需要知道的一切。&lt;/p&gt;
 &lt;p&gt;後來，陳正瑋的這系列文章不負眾望，榮獲 DevOps 組冠軍。&lt;/p&gt;
 &lt;p&gt;頒獎典禮上，我鼓勵陳正瑋將這系列文章整理修潤，成為華文世界第一本 GitLab 專書。畢竟，我實在想不到有誰能夠比鐵人賽冠軍、GitLab 官方認證的 “GitLab Hero” 更適合做這件事的人。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>從系統思考角度讀《目標》：第一～三章</title>
-      <link>//william-yeh.net/post/2020/09/systhinking-goal-ch01-03/</link>
-      <pubDate>Sun, 13 Sep 2020 22:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2020/09/systhinking-goal-ch01-03/</guid>
-      <description>&lt;h2 id=&#34;緣起&#34;&gt;緣起&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Eliyahu_M._Goldratt&#34;&gt;高德拉特&lt;/a&gt;系列著作是我的管理啟蒙書，《&lt;a href=&#34;https://www.books.com.tw/products/0010898249&#34;&gt;目標&lt;/a&gt;》更是每隔一陣子就會重讀的經典。&lt;/p&gt;
-&lt;p&gt;這次，我打算以系統思考 (systems thinking) 角度重讀。尤其是以我在【&lt;a href=&#34;//william-yeh.net/post/2018/06/sys-thinking-workshop/&#34;&gt;系統思考的四堂課&lt;/a&gt;】提出的「&lt;strong&gt;SLR·CPI 法&lt;/strong&gt;」來逐步分析。&lt;/p&gt;
-&lt;p&gt;土井英司在《&lt;a href=&#34;http://www.books.com.tw/products/0010762830&#34;&gt;一流的人讀書，都在哪裡畫線？&lt;/a&gt;》點出箇中訣竅：&lt;/p&gt;</description>
     </item>
     
   </channel>
