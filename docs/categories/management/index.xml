@@ -6,7 +6,16 @@
     <description>Recent content in management on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Thu, 09 Jun 2022 20:00:00 +0800</lastBuildDate><atom:link href="//william-yeh.net/categories/management/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 17 Jun 2022 20:00:00 +0800</lastBuildDate><atom:link href="//william-yeh.net/categories/management/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>職涯躍升書系導讀會，Part 1</title>
+      <link>//william-yeh.net/post/2022/06/career-reading-club-1/</link>
+      <pubDate>Fri, 17 Jun 2022 20:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2022/06/career-reading-club-1/</guid>
+      <description>2022 年一月起，我開始每個月一次，每次兩小時的【職涯躍升書系導讀會】，讓公司同仁自由報名，希望藉由這種草根性的軟性活動，另闢一條 bottom-up 的改革路徑。畢</description>
+    </item>
+    
     <item>
       <title>圖表，要有重點訊息</title>
       <link>//william-yeh.net/post/2022/06/one-msg-per-slide/</link>
@@ -254,9 +263,11 @@
       <description>This article discusses the essence of Sprint Review .
 In a nutshell Sprint Review is a time-boxed1 event in which the Scrum Team and invited stakeholders inspect what has been Done with respect to the Sprint Goal , gain insight into values, and adapt business strategy if necessary.
 Output Essential:
-  An adapted Product Backlog   An adapted business strategy and roadmap2
-  Better:
- Celebration3  Input Essential:</description>
+An adapted Product Backlog An adapted business strategy and roadmap2
+Better:
+Celebration3 Input Essential:
+Sprint Goal Increment 4
+Sprint Backlog Better:</description>
     </item>
     
     <item>
@@ -277,8 +288,9 @@ Output Essential:
       <description>This article discusses the essence of Daily Scrum .
 In a nutshell Daily Scrum is a time-boxed daily event in which the Developers gather together to quickly inspect current performance and to identify necessary actions in order to increase the confidence in achieving the Sprint Goal .
 Output Essential:
-  Updated confidence in the Sprint Goal supported by evidence.
-  Updated plans, if necessary, for achieving the Sprint Goal .</description>
+Updated confidence in the Sprint Goal supported by evidence.
+Updated plans, if necessary, for achieving the Sprint Goal .
+Input Essential:</description>
     </item>
     
     <item>
@@ -301,19 +313,6 @@ Output Essential:
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;My selection and elaboration of &amp;ldquo;essence&amp;rdquo; is very subjective. Follow the advice at your own risk.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Jira Board Hacks</title>
-      <link>//william-yeh.net/post/2020/06/jira-board-hacks/</link>
-      <pubDate>Sat, 06 Jun 2020 08:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2020/06/jira-board-hacks/</guid>
-      <description>&lt;h2 id=&#34;實體看板&#34;&gt;實體看板&lt;/h2&gt;
-&lt;p&gt;在導入 Scrum 時，我偏好實體看板。&lt;/p&gt;
-&lt;p&gt;實體看板容易 zoom in/out，利於適時切換俯瞰與細節視角，不需過度的數字管理。&lt;/p&gt;
-&lt;p&gt;實體看板的空間共時性，容易塑造團隊的一體感。&lt;/p&gt;
-&lt;p&gt;實體看板彈性大，能以最小成本，讓團隊在敏捷路上不斷嘗試與調整。&lt;/p&gt;</description>
     </item>
     
   </channel>

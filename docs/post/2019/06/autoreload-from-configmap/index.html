@@ -26,7 +26,7 @@
   <meta name="description" content="My previous article &amp;ldquo;Inotify in Containers&amp;rdquo; has demonstrated that when ConfigMap is mounted as directories, any changes in the ConfigMap will propagate to related pods, and can be detected with inotify-like APIs.
 A follow-up question might be: what should a well-behaved application react to this trigger accordingly? What if it&amp;rsquo;s a ill-designed application?
 To clarify this I&amp;rsquo;ve conducted a series of experiments for 3 possible configmap-reloading strategies:
- Built-in auto-reloading apps External signals Pod rollout  In this article I&amp;rsquo;m going to explain the experiments and preliminary findings." />
+Built-in auto-reloading apps External signals Pod rollout In this article I&amp;rsquo;m going to explain the experiments and preliminary findings." />
 
 
 
@@ -34,7 +34,7 @@ To clarify this I&amp;rsquo;ve conducted a series of experiments for 3 possible 
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.99.1" />
+<meta name="generator" content="Hugo 0.101.0" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2019/06/autoreload-from-configmap/" />
@@ -65,7 +65,7 @@ To clarify this I&amp;rsquo;ve conducted a series of experiments for 3 possible 
 <meta property="og:description" content="My previous article &ldquo;Inotify in Containers&rdquo; has demonstrated that when ConfigMap is mounted as directories, any changes in the ConfigMap will propagate to related pods, and can be detected with inotify-like APIs.
 A follow-up question might be: what should a well-behaved application react to this trigger accordingly? What if it&rsquo;s a ill-designed application?
 To clarify this I&rsquo;ve conducted a series of experiments for 3 possible configmap-reloading strategies:
- Built-in auto-reloading apps External signals Pod rollout  In this article I&rsquo;m going to explain the experiments and preliminary findings." />
+Built-in auto-reloading apps External signals Pod rollout In this article I&rsquo;m going to explain the experiments and preliminary findings." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="//william-yeh.net/post/2019/06/autoreload-from-configmap/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2019-06-17T17:00:00+08:00" />
@@ -75,7 +75,7 @@ To clarify this I&rsquo;ve conducted a series of experiments for 3 possible conf
 <meta itemprop="description" content="My previous article &ldquo;Inotify in Containers&rdquo; has demonstrated that when ConfigMap is mounted as directories, any changes in the ConfigMap will propagate to related pods, and can be detected with inotify-like APIs.
 A follow-up question might be: what should a well-behaved application react to this trigger accordingly? What if it&rsquo;s a ill-designed application?
 To clarify this I&rsquo;ve conducted a series of experiments for 3 possible configmap-reloading strategies:
- Built-in auto-reloading apps External signals Pod rollout  In this article I&rsquo;m going to explain the experiments and preliminary findings."><meta itemprop="datePublished" content="2019-06-17T17:00:00+08:00" />
+Built-in auto-reloading apps External signals Pod rollout In this article I&rsquo;m going to explain the experiments and preliminary findings."><meta itemprop="datePublished" content="2019-06-17T17:00:00+08:00" />
 <meta itemprop="dateModified" content="2019-06-17T17:00:00+08:00" />
 <meta itemprop="wordCount" content="612">
 <meta itemprop="keywords" content="devops,docker,kubernetes,inotify,configmap," /><meta name="twitter:card" content="summary"/>
@@ -83,7 +83,7 @@ To clarify this I&rsquo;ve conducted a series of experiments for 3 possible conf
 <meta name="twitter:description" content="My previous article &ldquo;Inotify in Containers&rdquo; has demonstrated that when ConfigMap is mounted as directories, any changes in the ConfigMap will propagate to related pods, and can be detected with inotify-like APIs.
 A follow-up question might be: what should a well-behaved application react to this trigger accordingly? What if it&rsquo;s a ill-designed application?
 To clarify this I&rsquo;ve conducted a series of experiments for 3 possible configmap-reloading strategies:
- Built-in auto-reloading apps External signals Pod rollout  In this article I&rsquo;m going to explain the experiments and preliminary findings."/>
+Built-in auto-reloading apps External signals Pod rollout In this article I&rsquo;m going to explain the experiments and preliminary findings."/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>

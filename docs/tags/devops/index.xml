@@ -6,7 +6,16 @@
     <description>Recent content in devops on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Mon, 05 Apr 2021 20:00:00 +0800</lastBuildDate><atom:link href="//william-yeh.net/tags/devops/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 17 Jun 2022 20:00:00 +0800</lastBuildDate><atom:link href="//william-yeh.net/tags/devops/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>職涯躍升書系導讀會，Part 1</title>
+      <link>//william-yeh.net/post/2022/06/career-reading-club-1/</link>
+      <pubDate>Fri, 17 Jun 2022 20:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2022/06/career-reading-club-1/</guid>
+      <description>2022 年一月起，我開始每個月一次，每次兩小時的【職涯躍升書系導讀會】，讓公司同仁自由報名，希望藉由這種草根性的軟性活動，另闢一條 bottom-up 的改革路徑。畢</description>
+    </item>
+    
     <item>
       <title>服務事故處理的系統思考</title>
       <link>//william-yeh.net/post/2021/04/cld-for-service-incident/</link>
@@ -152,7 +161,7 @@
       <description>My previous article &amp;ldquo;Inotify in Containers&amp;rdquo; has demonstrated that when ConfigMap is mounted as directories, any changes in the ConfigMap will propagate to related pods, and can be detected with inotify-like APIs.
 A follow-up question might be: what should a well-behaved application react to this trigger accordingly? What if it&amp;rsquo;s a ill-designed application?
 To clarify this I&amp;rsquo;ve conducted a series of experiments for 3 possible configmap-reloading strategies:
- Built-in auto-reloading apps External signals Pod rollout  In this article I&amp;rsquo;m going to explain the experiments and preliminary findings.</description>
+Built-in auto-reloading apps External signals Pod rollout In this article I&amp;rsquo;m going to explain the experiments and preliminary findings.</description>
     </item>
     
     <item>
@@ -233,17 +242,6 @@ To clarify this I&amp;rsquo;ve conducted a series of experiments for 3 possible 
       <description>&lt;p&gt;API gateway 是微服務環境，甚至 service mesh 的要角 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;。&lt;/p&gt;
 &lt;p&gt;在 Kubernetes 上面，API gateway 選項眾多。有像 HAProxy 及 Nginx 這些石器時代老傢伙跨足過來，也有打從一開始就走 cloud native 路線的後起之秀。&lt;/p&gt;
 &lt;p&gt;該如何選擇？&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Kubernetes Best Practices 資料</title>
-      <link>//william-yeh.net/post/2019/02/k8s-best-practice/</link>
-      <pubDate>Mon, 25 Feb 2019 12:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2019/02/k8s-best-practice/</guid>
-      <description>&lt;p&gt;Kubernetes 演化速度令人驚訝。彈性之大，令人聯想到當年  Perl 圈子奉為圭臬的 &lt;a href=&#34;https://en.wikipedia.org/wiki/There%27s_more_than_one_way_to_do_it&#34;&gt;TIMTOWTDI&lt;/a&gt; 口號。&lt;/p&gt;
-&lt;p&gt;選擇過多也會帶來問題。發展到某個階段，也該適時沈澱收斂出較佳的實務建議準則。&lt;/p&gt;
-&lt;p&gt;因此，我稍微搜尋一下相關資料，作為參考。&lt;/p&gt;</description>
     </item>
     
   </channel>

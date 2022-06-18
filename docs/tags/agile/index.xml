@@ -6,7 +6,16 @@
     <description>Recent content in agile on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sat, 16 Apr 2022 18:00:00 +0800</lastBuildDate><atom:link href="//william-yeh.net/tags/agile/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 17 Jun 2022 20:00:00 +0800</lastBuildDate><atom:link href="//william-yeh.net/tags/agile/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>職涯躍升書系導讀會，Part 1</title>
+      <link>//william-yeh.net/post/2022/06/career-reading-club-1/</link>
+      <pubDate>Fri, 17 Jun 2022 20:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2022/06/career-reading-club-1/</guid>
+      <description>2022 年一月起，我開始每個月一次，每次兩小時的【職涯躍升書系導讀會】，讓公司同仁自由報名，希望藉由這種草根性的軟性活動，另闢一條 bottom-up 的改革路徑。畢</description>
+    </item>
+    
     <item>
       <title>經理人視角的敏捷通識課</title>
       <link>//william-yeh.net/post/2022/04/yves-agile-course/</link>
@@ -182,9 +191,11 @@
       <description>This article discusses the essence of Sprint Review .
 In a nutshell Sprint Review is a time-boxed1 event in which the Scrum Team and invited stakeholders inspect what has been Done with respect to the Sprint Goal , gain insight into values, and adapt business strategy if necessary.
 Output Essential:
-  An adapted Product Backlog   An adapted business strategy and roadmap2
-  Better:
- Celebration3  Input Essential:</description>
+An adapted Product Backlog An adapted business strategy and roadmap2
+Better:
+Celebration3 Input Essential:
+Sprint Goal Increment 4
+Sprint Backlog Better:</description>
     </item>
     
     <item>
@@ -205,8 +216,9 @@ Output Essential:
       <description>This article discusses the essence of Daily Scrum .
 In a nutshell Daily Scrum is a time-boxed daily event in which the Developers gather together to quickly inspect current performance and to identify necessary actions in order to increase the confidence in achieving the Sprint Goal .
 Output Essential:
-  Updated confidence in the Sprint Goal supported by evidence.
-  Updated plans, if necessary, for achieving the Sprint Goal .</description>
+Updated confidence in the Sprint Goal supported by evidence.
+Updated plans, if necessary, for achieving the Sprint Goal .
+Input Essential:</description>
     </item>
     
     <item>
@@ -315,37 +327,6 @@ Output Essential:
       <description>&lt;p&gt;到了年終，又開始要做個總回顧，再對來年許願。&lt;/p&gt;
 &lt;p&gt;如果說 &lt;a href=&#34;https://school.soft-arch.net/blog/6676/2016-retrospective&#34;&gt;2016&lt;/a&gt; 和 &lt;a href=&#34;https://school.soft-arch.net/blog/13083/2017-retrospective&#34;&gt;2017&lt;/a&gt; 都是華麗冒險年，那麼，2018 對我來說，是收攝靜觀的一年。&lt;/p&gt;
 &lt;p&gt;去除一些不便揭露的事情，以下是簡單的回顧。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>為了精準估算，你必須付出什麼代價？</title>
-      <link>//william-yeh.net/post/2018/12/agile-measurement/</link>
-      <pubDate>Wed, 19 Dec 2018 08:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2018/12/agile-measurement/</guid>
-      <description>&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
-&lt;div class=&#34;box&#34;&gt;
-&lt;figure  itemprop=&#34;associatedMedia&#34;
-  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
-  style=&#34;max-width:30em&#34; &gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/12/dilbert-measurement.jpg&#34; alt=&#34;開場對話&#34;/&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2018/12/dilbert-measurement.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-      &lt;figcaption&gt;
-          &lt;p&gt;開場對話&lt;/p&gt;
-      &lt;/figcaption&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;
-
-&lt;p&gt;研發團隊，常會被問到一個問題：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;「請問一下，這個Ａ功能，大概要多久才能完成？」&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;這個問題，不會因為你跑的是敏捷，就自動免疫。那麼，身為經過敏捷思維洗禮的人，該如何做出合宜的應對？&lt;/p&gt;
-&lt;p&gt;我在 &lt;a href=&#34;https://agilekaohsiung.kktix.cc/events/agiletourkaohsiung2018&#34;&gt;Agile Tour Kaohsiung 2018&lt;/a&gt; 開辦一場 2.5 小時的工作坊，帶領大家親自體驗這個議題。&lt;/p&gt;
-&lt;p&gt;不過，這個題材的背後，其實還有三段故事。&lt;/p&gt;
-&lt;p&gt;故事，要從一年半前講起。&lt;/p&gt;</description>
     </item>
     
   </channel>

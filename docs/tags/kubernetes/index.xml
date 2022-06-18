@@ -61,7 +61,7 @@
       <description>My previous article &amp;ldquo;Inotify in Containers&amp;rdquo; has demonstrated that when ConfigMap is mounted as directories, any changes in the ConfigMap will propagate to related pods, and can be detected with inotify-like APIs.
 A follow-up question might be: what should a well-behaved application react to this trigger accordingly? What if it&amp;rsquo;s a ill-designed application?
 To clarify this I&amp;rsquo;ve conducted a series of experiments for 3 possible configmap-reloading strategies:
- Built-in auto-reloading apps External signals Pod rollout  In this article I&amp;rsquo;m going to explain the experiments and preliminary findings.</description>
+Built-in auto-reloading apps External signals Pod rollout In this article I&amp;rsquo;m going to explain the experiments and preliminary findings.</description>
     </item>
     
     <item>
