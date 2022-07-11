@@ -6,10 +6,119 @@
     <description>Recent content on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Fri, 17 Jun 2022 20:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 11 Jul 2022 15:00:00 +0800</lastBuildDate>
     
         <atom:link href="//william-yeh.net/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>專案 Kick-off meeting 的前置作業</title>
+      <link>//william-yeh.net/post/2022/07/prj-kickoff/</link>
+      <pubDate>Mon, 11 Jul 2022 15:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2022/07/prj-kickoff/</guid>
+      
+        <description>&lt;p&gt;（改寫自公司內部 memo）&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;（Target audience: 上過【專案管理第一次就上手】的同仁）&lt;/p&gt;
+&lt;p&gt;很高興看到二月及四月上過【專案管理第一次就上手】的同仁們，開始在工作上運用課堂所學，尤其是「&lt;strong&gt;專案管理問題清單&lt;/strong&gt;」開始被廣泛運用在大大小小專案的 kick-off meeting 上面，這是非常好的現象。&lt;/p&gt;
+&lt;p&gt;這份 memo，我針對 &lt;strong&gt;kick-off meeting&lt;/strong&gt; 的定位及前置作業多做一些補充，算是這陣子貼身觀察的小小心得。&lt;/p&gt;
+&lt;h2 id=&#34;定位&#34;&gt;定位&lt;/h2&gt;
+&lt;p&gt;關於 Kick-off meeting 的&lt;strong&gt;定位&lt;/strong&gt;，Rex 老師在課堂上有提過：&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2022/07/kick-off-meeting.png&#34; alt=&#34;Source: 【專案管理第一次就上手】by Rex Feng&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2022/07/kick-off-meeting.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Source: 【專案管理第一次就上手】by Rex Feng&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;接下來的問題就是：要怎麼做，才能夠「&lt;strong&gt;獲得大家支持&lt;/strong&gt;」？畢竟，光是在會議現場「公告天下專案即將啟動」，並不必然會順水推舟達到「獲得大家支持」的結果。&lt;/p&gt;
+&lt;p&gt;我認為，關鍵就在於「&lt;strong&gt;事前的利害關係人管理&lt;/strong&gt;」。&lt;/p&gt;
+&lt;p&gt;請注意，這句話有兩個重點：「&lt;strong&gt;利害關係人管理&lt;/strong&gt;」以及「&lt;strong&gt;事前&lt;/strong&gt;」，更進一步說，這涉及到 &lt;strong&gt;WHEN&lt;/strong&gt; (事前) 與 &lt;strong&gt;DO WHAT&lt;/strong&gt; (管理) 兩個議題。&lt;/p&gt;
+&lt;h2 id=&#34;when&#34;&gt;WHEN&lt;/h2&gt;
+&lt;p&gt;既然提到「kick-off meeting 必須在『事前』先做一些事」，那麼，kick-off meeting 的時機點，會是在專案管理生命週期（亦即「五大流程群組」：initiating、planning、executing、monitoring and controlling、closing）的什麼時機進行，才算是最恰當的？&lt;/p&gt;
+&lt;p&gt;以 &lt;a href=&#34;https://www.amazon.com/dp/1628251840&#34;&gt;&lt;em&gt;The PMBOK Guide&lt;/em&gt; 6/e&lt;/a&gt; 而言，kick-off meeting 是擺在「Planning 結束」 ←→ 「Execution 開始」這個中間地帶：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2022/07/pmbok6-kickoff.png&#34; alt=&#34;Source: The PMBOK Guide, 6/e&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2022/07/pmbok6-kickoff.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Source: The PMBOK Guide, 6/e&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;do-what&#34;&gt;DO WHAT&lt;/h2&gt;
+&lt;p&gt;既然 kick-off meeting 是落在「Planning 結束」 ←→ 「Execution 開始」這個時間點，那麼，以下這幾個活動，應該都已經進行到某個完成度了：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Scope
+&lt;ul&gt;
+&lt;li&gt;Collect Requirements&lt;/li&gt;
+&lt;li&gt;Define Scope&lt;/li&gt;
+&lt;li&gt;Create WBS&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Stakeholder
+&lt;ul&gt;
+&lt;li&gt;Plan Stakeholder Engagement&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Communication
+&lt;ul&gt;
+&lt;li&gt;Plan Communications Management&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;總而言之，理論上，「利害關係人管理」應該早在 kick-off meeting 之前就已經做到某個程度了。&lt;/p&gt;
+&lt;h2 id=&#34;那麼kick-off-meeting-本身都在做什麼&#34;&gt;那麼，kick-off meeting 本身都在做什麼？&lt;/h2&gt;
+&lt;p&gt;Kick-off meeting 之前居然要做這麼多事情，那麼，kick-off meeting 本身還要做什麼？&lt;/p&gt;
+&lt;p&gt;Rita Mulcahy 在 &lt;a href=&#34;https://www.amazon.com/dp/1932735658&#34;&gt;&lt;em&gt;PMP Exam Prep&lt;/em&gt;&lt;/a&gt; 書中說得好：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2022/07/rita-kickoff.png&#34; alt=&#34;Source: PMP Exam Prep by Rita Mulcahy&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2022/07/rita-kickoff.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Source: PMP Exam Prep by Rita Mulcahy&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;事前準備若做得好，kick-off meeting 多半的時間，是在 &amp;ldquo;review&amp;rdquo; 會議前就規劃出來的 project plan（縱然這可能只是一份仍待 rolling wave planning 的版本），做些最後的對齊與釐清，然後，拍板定案。&lt;/p&gt;
+&lt;h2 id=&#34;no-surprise&#34;&gt;No Surprise&lt;/h2&gt;
+&lt;p&gt;理論上，kick-off meeting 現場，應該不會有太多的 &amp;ldquo;surprise!&amp;rdquo; 發生，更多的是一種儀式，一種畫押。&lt;/p&gt;
+&lt;p&gt;如果當場會有過多的 &amp;ldquo;surprise!&amp;quot;，那就代表事前準備仍有疏漏。&lt;/p&gt;
+&lt;p&gt;所以君婷老師在〈&lt;a href=&#34;https://www.projectup.net/article/view/id/16626&#34;&gt;老闆心，海底針：我該如何錨定老闆的目標？&lt;/a&gt;〉這篇文章就提醒過：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在某些有規模的專案當中，&lt;strong&gt;「定出專案的目標」本身就是一個專案前的專案&lt;/strong&gt;，而且是個非常重要的專案，請用看待一個「正式專案」，態度嚴謹看待之，而你必須先取得這個專案的結果（目標）。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;如果真的要 fast tracking 抄捷徑，那就得承擔對應的風險。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;願大家在專案管理路上繼續精進，讓我們的工作進展得更順利，朝向 Rex 老師所講的「諸葛亮」境界邁進。&lt;/p&gt;
+</description>
+      
+    </item>
     
     <item>
       <title>職涯躍升書系導讀會，Part 1</title>
@@ -2693,62 +2802,6 @@
 &lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;p&gt;以上就是這兩個月以來自練直拍橫打的心得。&lt;/p&gt;
 &lt;p&gt;桌球是少數幾個對場地要求不高，從四歲到九十歲都可以樂在其中的運動。從細膩到粗獷的多變風格，更是迷人。時值中年，還有機會能夠重拾學齡期練球的樂趣，也算難得。僅以此文做個小紀錄。&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>值得你看門道的好書——《獨角獸專案》推薦序</title>
-      <link>//william-yeh.net/post/2020/10/unicorn-project-review/</link>
-      <pubDate>Sat, 03 Oct 2020 10:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2020/10/unicorn-project-review/</guid>
-      
-        <description>&lt;p&gt;2011 年 8 月，瀏覽器之父 &lt;a href=&#34;https://en.wikipedia.org/wiki/Marc_Andreessen&#34;&gt;Marc Andreessen&lt;/a&gt; 曾在華爾街日報&lt;a href=&#34;https://online.wsj.com/article/SB10001424053111903480904576512250915629460.html&#34;&gt;評論&lt;/a&gt;道：「軟體正在蠶食整個世界」(software is eating the world)。&lt;/p&gt;
-&lt;p&gt;接下來這十年，果然如他所預言，世界徹底被軟體顛覆。各行業，如果不對軟體研發的重要思潮保持關注，就無法善用科技力量站在競爭力的最前線。&lt;/p&gt;
-&lt;p&gt;近十年，軟體研發界有兩大類重要思潮。在技術面，有大數據、機器學習、immutable infrastructure、微服務、容器、函式編程、資料流水線等；在流程面，則有敏捷開發、DevOps、自助服務、混亂工程、精實 UX 等。這些思潮，有些是新發明，有些則是文藝復興，甚至是跨界學習而來。&lt;/p&gt;
-&lt;p&gt;這些思潮，不只是純軟體界在乎，就連《&lt;a href=&#34;https://itrevolution.com/the-unicorn-project/&#34;&gt;獨角獸專案&lt;/a&gt;》這本小說的場景設定：汽車零件製造商暨零售商，影響一樣深遠。畢竟「軟體正在蠶食整個世界」。&lt;/p&gt;
-&lt;p&gt;某方面來說，《&lt;a href=&#34;https://www.tenlong.com.tw/products/9789865026653&#34;&gt;獨角獸專案&lt;/a&gt;》這本書，可謂 2010～2020 這個波瀾壯闊時代軟體研發界的具體縮影。&lt;/p&gt;
-&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
-&lt;div class=&#34;box&#34;&gt;
-&lt;figure  itemprop=&#34;associatedMedia&#34;
-  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
-  style=&#34;max-width:15em&#34; &gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2020/10/the-unicorn-project.png&#34; alt=&#34;獨角獸專案 (The Unicorn Project)&#34;/&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2020/10/the-unicorn-project.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-      &lt;figcaption&gt;
-          &lt;p&gt;獨角獸專案 (The Unicorn Project)&lt;/p&gt;
-      &lt;/figcaption&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;
-
-&lt;p&gt;在這小說中，你可以看到在「無極限零件公司」這樣年營業額 40 億美元的製造商暨零售商中，行銷企劃部門、軟體研發部門、服務維運部門彼此爭功諉過的寫實場景。你會看到故事主角梅克辛如何在穀倉泥淖中獨自展開她的「英雄之旅」，與地下反抗軍合作，導入先進的軟體研發思潮。正當一切似乎漸入佳境時，居然還有一條懸疑支線在背後悄悄醞釀⋯⋯高潮迭起，頗有潛力改編成劇情片。&lt;/p&gt;
-&lt;p&gt;如果你是愛看熱鬧的小說族，你會喜歡它的。&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;如果你是非技術人，「軟體正在蠶食整個世界」，於公於私，免不了必須與組織內外的技術人打交道。因此，這本書請不要走馬看花。請設身處地多讀幾次，增長同理心，瞭解這群愛說外星語的「外星人」的日常，有助於你和諧推動工作任務。尤其是新產品上線前的兵荒馬亂局面，請不吝對這群外星人多給些關愛的行動。&lt;/p&gt;
-&lt;p&gt;如果你是第一線的軟體研發者，這本寫實刻劃日常甘苦的書，能點燃或重燃你的熱情，像故事主角梅克辛及反抗軍一樣，用技術改變世界，至少改變公司。&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;當然啦，內行看門道。這本奇書，並不止於小說，而是真正可以照表操課的。&lt;/p&gt;
-&lt;p&gt;如果你是技術經理人，在對劇情發展擊節讚歎之餘，不妨換位思考：換作是我，會如何決定優先順序？會如何設定領先指標？會如何協調目標衝突的相關部門？會如何兼顧近憂與遠慮？如何形塑適合 IT 滋長的企業文化？如何處理外部利害關係人的財務表現壓力？&lt;/p&gt;
-&lt;p&gt;在前一部姊妹作《&lt;a href=&#34;https://itrevolution.com/the-phoenix-project/&#34;&gt;鳳凰專案&lt;/a&gt;》中，神祕人物埃瑞克教導了&lt;a href=&#34;https://itrevolution.com/the-three-ways-principles-underpinning-devops/&#34;&gt;&lt;strong&gt;三步工作法&lt;/strong&gt;&lt;/a&gt;、&lt;strong&gt;四大類工作&lt;/strong&gt;，引導無極限零件公司的維運團隊走出裁撤危機，成為 IT 敏捷力的堅強後盾。如今，在這本《獨角獸專案》裡，埃瑞克以另一個神祕的碼頭酒吧酒保身分亮相，教導了企業經營的&lt;strong&gt;三層面&lt;/strong&gt;、&lt;strong&gt;四大區域顧客群&lt;/strong&gt;、系統與組織的&lt;a href=&#34;https://itrevolution.com/five-ideals-of-devops/&#34;&gt;&lt;strong&gt;五大理念&lt;/strong&gt;&lt;/a&gt;，引導無極限零件公司的研發團隊站在企業視角，以敏捷的 IT 能力驅動並翻轉整間公司的競爭力。&lt;/p&gt;
-&lt;p&gt;一言以蔽之，本書鎖定在敏捷性，尤其是企業敏捷性。&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;這麼精彩的書，只讀一遍是不夠的。&lt;/p&gt;
-&lt;p&gt;我鼓勵讀者們，第一遍看熱鬧，第二遍看門道。第一遍速讀，先享受高潮起伏的劇情，並熟悉人物與關係。第二遍重讀時，請以「&lt;strong&gt;核心業務&lt;/strong&gt;與&lt;strong&gt;脈絡業務&lt;/strong&gt;」及「系統與組織的&lt;strong&gt;五大理念&lt;/strong&gt;」兩種觀點細讀，從頭分析故事的人事時地物及因果關係。經此一番系統思考，比起許多愛談高大上理念的敏捷、DevOps、數位轉型書籍，你將會有更深刻具體的領悟。&lt;/p&gt;
-&lt;p&gt;橫看成嶺側成峰，願你能從中獲益。&lt;/p&gt;
-&lt;p&gt; 　 　 　 　 　 　—— 敏捷魔藥師　葉秉哲 (William Yeh)　2020-10-03&lt;/p&gt;
-
-&lt;div class=&#34;shortcode-notice note&#34;&gt;
-  &lt;div class=&#34;shortcode-notice-title note&#34;&gt;
-    
-      《獨角獸專案》系列文章
-    
-  &lt;/div&gt;
-  &lt;p&gt;❶ 值得你看門道的好書——《獨角獸專案》推薦序&lt;/p&gt;
-&lt;p&gt;❷ &lt;a href=&#34;//william-yeh.net/post/2021/03/sys-thinking-unicorn-project/&#34;&gt;從系統思考角度讀《獨角獸專案》&lt;/a&gt;&lt;/p&gt;
-
-&lt;/div&gt;</description>
       
     </item>
     
