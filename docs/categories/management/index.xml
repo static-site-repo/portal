@@ -6,7 +6,21 @@
     <description>Recent content in management on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Mon, 11 Jul 2022 15:00:00 +0800</lastBuildDate><atom:link href="//william-yeh.net/categories/management/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 01 Aug 2022 17:00:00 +0800</lastBuildDate><atom:link href="//william-yeh.net/categories/management/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>專案管理／專案組合管理當中，不必然需要公開透明的地方</title>
+      <link>//william-yeh.net/post/2022/08/stakeholder-transparency/</link>
+      <pubDate>Mon, 01 Aug 2022 17:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2022/08/stakeholder-transparency/</guid>
+      <description>&lt;p&gt;（改寫自公司內部 memo）&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;（Target audience: 有「專案管理」職責的人）&lt;/p&gt;
+&lt;p&gt;Hi all,&lt;/p&gt;
+&lt;p&gt;隨著愈來愈多人開始運用專案管理課堂上學到的技術來工作，帶來更高的透明度，更成熟的專業度，欣慰之餘，我也針對其中一件事「透明度」提出一點小提醒。&lt;/p&gt;
+&lt;p&gt;理想情況下，組織應該要追求專案的透明度——除非有特殊理由。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>專案 Kick-off meeting 的前置作業</title>
       <link>//william-yeh.net/post/2022/07/prj-kickoff/</link>
@@ -335,20 +349,6 @@ Sprint Backlog Better:</description>
       
       <guid>//william-yeh.net/post/2020/08/sprint-planning-in-a-nutshell/</guid>
       <description>This article discusses the essence of Sprint Planning . In a nutshell Sprint Planning is a time-boxed1 event in which the Scrum Team defines the Sprint Goal and makes a feasible plan for the goal, to the best knowledge, information and belief of the team. Output Essential: Sprint Goal A feasible plan for achieving the Sprint Goal Sprint Backlog Items with the property of INVEST (Independent, Negotiable, Valuable, Estimable, Small,</description>
-    </item>
-    
-    <item>
-      <title>Essence of Scrum: Daily Scrum</title>
-      <link>//william-yeh.net/post/2020/08/daily-scrum-in-a-nutshell/</link>
-      <pubDate>Sun, 02 Aug 2020 16:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2020/08/daily-scrum-in-a-nutshell/</guid>
-      <description>This article discusses the essence of Daily Scrum .
-In a nutshell Daily Scrum is a time-boxed daily event in which the Developers gather together to quickly inspect current performance and to identify necessary actions in order to increase the confidence in achieving the Sprint Goal .
-Output Essential:
-Updated confidence in the Sprint Goal supported by evidence.
-Updated plans, if necessary, for achieving the Sprint Goal .
-Input Essential:</description>
     </item>
     
   </channel>
