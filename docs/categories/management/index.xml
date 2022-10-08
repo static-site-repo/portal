@@ -6,7 +6,24 @@
     <description>Recent content in management on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sat, 20 Aug 2022 10:00:00 +0800</lastBuildDate><atom:link href="//william-yeh.net/categories/management/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 08 Oct 2022 10:30:00 +0800</lastBuildDate><atom:link href="//william-yeh.net/categories/management/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>User Story 釋疑：真的要遵守嗎？</title>
+      <link>//william-yeh.net/post/2022/10/on-user-stories/</link>
+      <pubDate>Sat, 08 Oct 2022 10:30:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2022/10/on-user-stories/</guid>
+      <description>&lt;p&gt;（改寫自公司內部 memo）&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;Hi all guys,&lt;/p&gt;
+&lt;p&gt;最近我會對有意導入 Scrum 的任務小組個別進行一整天的 Agile Workshop。這些小組都有一項課前作業：請先準備團隊在三個月以內會進行的 User Stories 清單／陳述。&lt;/p&gt;
+&lt;p&gt;眾所周知，user story 有一個經典句型：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;As a&lt;/strong&gt; {XXX user persona}, &lt;strong&gt;I want to&lt;/strong&gt; {do YYY} &lt;strong&gt;so that&lt;/strong&gt; {ZZZ result or benefit}.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;有同仁問道：有些 user story 不容易以「&amp;ldquo;user&amp;rdquo; 視角」來寫。怎麼辦？真的要這麼嚴格遵守 user story 格式嗎？&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>職涯躍升書系導讀會，Part 2：高效團隊的工作方法</title>
       <link>//william-yeh.net/post/2022/08/career-reading-club-2/</link>
@@ -354,18 +371,6 @@
 &lt;p&gt;近十年，軟體研發界有兩大類重要思潮。在技術面，有大數據、機器學習、immutable infrastructure、微服務、容器、函式編程、資料流水線等；在流程面，則有敏捷開發、DevOps、自助服務、混亂工程、精實 UX 等。這些思潮，有些是新發明，有些則是文藝復興，甚至是跨界學習而來。&lt;/p&gt;
 &lt;p&gt;這些思潮，不只是純軟體界在乎，就連《&lt;a href=&#34;https://itrevolution.com/the-unicorn-project/&#34;&gt;獨角獸專案&lt;/a&gt;》這本小說的場景設定：汽車零件製造商暨零售商，影響一樣深遠。畢竟「軟體正在蠶食整個世界」。&lt;/p&gt;
 &lt;p&gt;某方面來說，《&lt;a href=&#34;https://www.tenlong.com.tw/products/9789865026653&#34;&gt;獨角獸專案&lt;/a&gt;》這本書，可謂 2010～2020 這個波瀾壯闊時代軟體研發界的具體縮影。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>從系統思考角度讀《目標》：第一～三章</title>
-      <link>//william-yeh.net/post/2020/09/systhinking-goal-ch01-03/</link>
-      <pubDate>Sun, 13 Sep 2020 22:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2020/09/systhinking-goal-ch01-03/</guid>
-      <description>&lt;h2 id=&#34;緣起&#34;&gt;緣起&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Eliyahu_M._Goldratt&#34;&gt;高德拉特&lt;/a&gt;系列著作是我的管理啟蒙書，《&lt;a href=&#34;https://www.books.com.tw/products/0010898249&#34;&gt;目標&lt;/a&gt;》更是每隔一陣子就會重讀的經典。&lt;/p&gt;
-&lt;p&gt;這次，我打算以系統思考 (systems thinking) 角度重讀。尤其是以我在【&lt;a href=&#34;//william-yeh.net/post/2018/06/sys-thinking-workshop/&#34;&gt;系統思考的四堂課&lt;/a&gt;】提出的「&lt;strong&gt;SLR·CPI 法&lt;/strong&gt;」來逐步分析。&lt;/p&gt;
-&lt;p&gt;土井英司在《&lt;a href=&#34;http://www.books.com.tw/products/0010762830&#34;&gt;一流的人讀書，都在哪裡畫線？&lt;/a&gt;》點出箇中訣竅：&lt;/p&gt;</description>
     </item>
     
   </channel>
