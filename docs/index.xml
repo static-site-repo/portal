@@ -6,10 +6,100 @@
     <description>Recent content on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sat, 20 Aug 2022 10:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 08 Oct 2022 10:30:00 +0800</lastBuildDate>
     
         <atom:link href="//william-yeh.net/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>User Story 釋疑</title>
+      <link>//william-yeh.net/post/2022/10/on-user-stories/</link>
+      <pubDate>Sat, 08 Oct 2022 10:30:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2022/10/on-user-stories/</guid>
+      
+        <description>&lt;p&gt;（改寫自公司內部 memo）&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;Hi all guys,&lt;/p&gt;
+&lt;p&gt;最近我會對有意導入 Scrum 的任務小組個別進行一整天的 Agile Workshop。這些小組都有一項課前作業：請先準備團隊在三個月以內會進行的 User Stories 清單／陳述。&lt;/p&gt;
+&lt;p&gt;眾所周知，user story 有一個經典句型：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;As a&lt;/strong&gt; {XXX user persona}, &lt;strong&gt;I want to&lt;/strong&gt; {do YYY} &lt;strong&gt;so that&lt;/strong&gt; {ZZZ result or benefit}.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;有同仁問道：有些 user story 不容易以「&amp;ldquo;user&amp;rdquo; 視角」來寫。怎麼辦？真的要這麼嚴格遵守 user story 格式嗎？&lt;/p&gt;
+&lt;p&gt;譬如說，以下兩個 autocomplete 任務，要怎麼轉寫成 user story？&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Autocomplete 要能承受 100 rps。&lt;/li&gt;
+&lt;li&gt;Autocomplete 要優先置入廣告關鍵字。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;我的建議是：如果能夠，就盡量努力嘗試；如果不能勉強，就不要勉強。&lt;/p&gt;
+&lt;p&gt;我先講後者。&lt;/p&gt;
+&lt;h2 id=&#34;如果不能勉強就不要勉強&#34;&gt;如果不能勉強，就不要勉強&lt;/h2&gt;
+&lt;p&gt;Story 有很多種，&amp;ldquo;user story&amp;rdquo; 只是其中一種。像大師 Mike Cohn 在 &lt;a href=&#34;https://www.tenlong.com.tw/products/9789864347995&#34;&gt;&lt;em&gt;User Stories Applied&lt;/em&gt;&lt;/a&gt; 就說：「產品 backlog 中，有面向客戶的任務，也有技術類的任務。」&lt;/p&gt;
+&lt;p&gt;事實上，就連 &lt;a href=&#34;https://scrumguides.org/&#34;&gt;&lt;em&gt;The Scrum Guide&lt;/em&gt;&lt;/a&gt; 都沒有提及 &amp;ldquo;user story&amp;rdquo; 一詞，遑論明文規定 product backlog items 及 sprint backlog items 要以 user story 方式表述。所以 Scrum.org 有一篇文章 &amp;ldquo;&lt;a href=&#34;https://www.scrum.org/resources/blog/myth-4-scrum-product-backlog-has-consist-out-user-stories&#34;&gt;Myth 4: In Scrum, the Product Backlog has to consist out of User Stories&lt;/a&gt;&amp;rdquo; 主張放入 technical tasks 是完全正常的，大師 Roman Pichler 在 &amp;ldquo;&lt;a href=&#34;https://www.romanpichler.com/blog/10-tips-writing-good-user-stories/&#34;&gt;10 Tips for Writing Good User Stories&lt;/a&gt;&amp;rdquo; 一文也說：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;User stories are not good for capturing technical requirements. If you need to describe what an architectural element like a component or service should do, then write &lt;strong&gt;technical stories&lt;/strong&gt; or—which is my preference—use a modeling language like UML.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;簡言之，如果將它轉寫成 user 視角的 story 真的有困難，那麼，不一定非得死守著 &amp;ldquo;user story&amp;rdquo; 這種視角。&lt;/p&gt;
+&lt;h2 id=&#34;如果能夠就盡量努力嘗試&#34;&gt;如果能夠，就盡量努力嘗試&lt;/h2&gt;
+&lt;p&gt;不過，如果你堅持用 &amp;ldquo;user&amp;rdquo; 視角來寫 user story，會有更大的收穫。&lt;/p&gt;
+&lt;p&gt;這是有根據的。&lt;/p&gt;
+&lt;p&gt;從企業管理觀點來看，彼得．杜拉克在 &lt;a href=&#34;https://williampjyeh.notion.site/cab89225cde14229a7d1000fdea58475&#34;&gt;&lt;em&gt;The Practice of Management&lt;/em&gt;&lt;/a&gt; 開宗明義提到：「關於企業的目的，只有一個正確而有效的定義：『&lt;strong&gt;創造顧客&lt;/strong&gt;』(&lt;strong&gt;create&lt;/strong&gt; and &lt;strong&gt;keep&lt;/strong&gt; a customer)。企業是什麼，是由顧客來決定的。」&lt;/p&gt;
+&lt;p&gt;從敏捷觀點來看，&lt;a href=&#34;https://williampjyeh.notion.site/2eeb7794966b440c8856cc6fe8927658&#34;&gt;&lt;em&gt;User Story Mapping&lt;/em&gt;&lt;/a&gt; 提到：「我們要量測的是你建造的東西對人們達成目標的方式產生什麼&lt;strong&gt;影響&lt;/strong&gt;。先針對具體的商業目標、客戶和使用者，然後是他們的目標排定優先順序，最後才針對功能。你的任務不是實現需求，而是改變世界。」&lt;/p&gt;
+&lt;p&gt;綜上所述，如果你能夠盡量以 &amp;ldquo;user&amp;rdquo; 視角來審視這些 story 對於他們達成目標的方式產生什麼影響，相較於僅以單一視角（獲利？利潤？）魯莽地提出需求設計功能，你會有更周全的思考，有更多樣的替代選項。&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:20em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2022/10/create-and-keep-customers.jpg&#34; alt=&#34;From: The Practice of Management&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2022/10/create-and-keep-customers.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;From: The Practice of Management&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;上週有上過 Hans【產品數據分析與關鍵指標設計】課程的同仁，不妨回想一下老師提醒的「從商業與用戶的角度去做解讀」心法。沒上過的，請在我的 Agile Workshop 玩一場 Impact Mapping 變形版，就會知道了。&lt;/p&gt;
+&lt;h2 id=&#34;該怎麼改寫&#34;&gt;該怎麼改寫？&lt;/h2&gt;
+&lt;p&gt;理論說完了，回到現實：一開頭列的兩個 autocomplete 任務，要怎麼轉寫成 user story？&lt;/p&gt;
+&lt;p&gt;⓵ Autocomplete 要能承受 100 rps。&lt;/p&gt;
+&lt;p&gt;先以工程角度來評估這項 non-functional requirement (NFR)。如果並不難實現，那麼，就不必特別為它另寫一張獨立的 story，直接將它填寫到正常 story 裡面的「驗收條件」一欄即可。&lt;/p&gt;
+&lt;p&gt;如果仍待進一步評估，那就用一張 &amp;ldquo;&lt;strong&gt;As a&lt;/strong&gt; service owner, &lt;strong&gt;I want to&lt;/strong&gt; make sure that&amp;hellip;&amp;rdquo; 這種風格的 user story 去陳述，或者乾脆撇開形式，直接用 technical story 去陳述這項純工程純技術的任務即可，不必役於物。&lt;/p&gt;
+&lt;p&gt;⓶ Autocomplete 要優先置入廣告關鍵字。&lt;/p&gt;
+&lt;p&gt;我們可以試著用一些 power questions 來輔助思考。&lt;/p&gt;
+&lt;p&gt;譬如說，將彼得．杜拉克的名言「企業是什麼，是由顧客來決定的」改編一下，請試著回答：「&lt;strong&gt;在顧客眼中，這功能是什麼？&lt;/strong&gt;」&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;As a&lt;/strong&gt; search service user, &lt;strong&gt;I want to&lt;/strong&gt; see keyword suggestions prioritized by advertising spending when I use the autocomplete feature &lt;strong&gt;so that&lt;/strong&gt; I can&amp;hellip; &lt;em&gt;{achieve what?}&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;萬一寫到這裡就寫不下去了，那麼，此刻，或許該暫停一下，用 User Story Mapping 的名言思考一下：「&lt;strong&gt;你建造的東西，對人們達成目標的方式產生什麼影響？&lt;/strong&gt;」&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;As a&lt;/strong&gt; search service user, &lt;strong&gt;I want to&lt;/strong&gt; see keyword suggestions prioritized by advertising spending when I use the autocomplete feature &lt;strong&gt;so that&lt;/strong&gt; I can&amp;hellip; &lt;em&gt;{get an awesome impact or&amp;hellip; awful impact?}&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;萬一寫到這裡就寫不下去了，那麼，此刻，或許該暫停一下，改用 Impact Mapping 的角度去反思：這功能若實現了，誰會是這功能的受益者，以及⋯⋯潛在的受害者？&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;As a&lt;/strong&gt; buyers of digital advertising inventory, &lt;strong&gt;I want to&lt;/strong&gt; increase ad exposure to users&amp;rsquo; autocomplete journey &lt;strong&gt;so that&lt;/strong&gt; &amp;hellip;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;As a&lt;/strong&gt; search service user, &lt;strong&gt;I want to&lt;/strong&gt; &amp;hellip;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;一旦嘗試從這幾個 user 視角去改寫 story，你會發現，原本的「Autocomplete 要優先置入廣告關鍵字」任務陳述有多麼粗糙。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;限制帶來自由。如有可能，請盡可能嘗試用正統的 User Story 來審視你的任務。&lt;/p&gt;
+&lt;p&gt;也請盡量試著用一些 power questions 來輔助思考：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;「在顧客眼中，這功能是什麼？」&lt;/li&gt;
+&lt;li&gt;「你建造的東西，對人們達成目標的方式產生什麼影響？」&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+      
+    </item>
     
     <item>
       <title>職涯躍升書系導讀會，Part 2：高效團隊的工作方法</title>
@@ -1195,8 +1285,8 @@
 &lt;h2 id=&#34;補血課程&#34;&gt;補血課程&lt;/h2&gt;
 &lt;p&gt;這一年，由於 COVID-19 因素，參加的實體課程，就只有公司舉辦的這兩場內訓，而且都是國外課程的中文化版本，很值得推薦：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.harment.com/trainShow-21-26-133-19.html&#34;&gt;勁道領導&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://surmgroup.com/%e8%a7%a3%e6%b1%ba%e6%96%b9%e6%a1%88/%e9%a0%98%e5%b0%8e%e5%8a%9b#leadership01&#34;&gt;Accountability Builder&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.harment.com/trainShow-21-26-133-19.html&#34;&gt;勁道領導 (Fierce Conversations)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://doortraining.com/virtual-solutions/accountability-builder/&#34;&gt;Accountability Builder&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;這一年，我上的多半是線上課程。我漸漸不追求 100% 完課，反而視為書本之外的另一種素材，只要其中某些片段能夠引為己用，就算值得。畢竟，我們都不見得需要 100% 讀完一整本書，為什麼我們需要把一門線上課 100% 上完？&lt;/p&gt;
 &lt;p&gt;就以我今年重點修練科目「金字塔原理」為例，除了書本之外，在 Bryan 的《&lt;a href=&#34;https://shop.darencademy.com/product/view/id/98&#34;&gt;知識型商品的文案寫作課&lt;/a&gt;》線上課程也聽到了 26 分鐘的相關內容，在張敏敏的《&lt;a href=&#34;https://www.dada-master.com/lesson/91&#34;&gt;敏捷溝通力&lt;/a&gt;》線上課程也有 14 分鐘，里茲螞蟻《&lt;a href=&#34;https://vclass.voicetube.com/classes/leedsmayi-communication&#34;&gt;三步驟邁向進階英文口說&lt;/a&gt;》更是到處都是這種論述結構。有機會從更多角度去看這主題，滿有趣的。&lt;/p&gt;
@@ -1396,14 +1486,14 @@
 &lt;p&gt;至於非技術面的培訓，一部份打算以導讀會的形式進行。目前的戰備存糧計有：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;//william-yeh.net/post/2021/02/the-managers-path-review/&#34;&gt;經理人之道&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.books.com.tw/products/0010641668&#34;&gt;三年後，你的工作還在嗎？&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://williampjyeh.notion.site/cd42e217271d454aac9411b0c6fc84c7&#34;&gt;三年後，你的工作還在嗎？&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;//william-yeh.net/post/2020/10/unicorn-project-review/&#34;&gt;獨角獸專案&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.books.com.tw/products/0010811254&#34;&gt;Amazon 的人為什麼這麼厲害？&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.books.com.tw/products/0010721292&#34;&gt;左思右想&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.books.com.tw/products/0010865668&#34;&gt;高產出的本事&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;勝間和代 or 麥肯錫系列的某本書&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.notion.so/williampjyeh/3e31bb4af3d74007bc0e522e268019c0&#34;&gt;薩提爾教練模式&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.books.com.tw/products/0010796709&#34;&gt;給力&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://williampjyeh.notion.site/eeb5d579610b40128755a17adf983c51&#34;&gt;給力&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.books.com.tw/products/0010898249&#34;&gt;目標&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;⋯⋯&lt;/li&gt;
 &lt;/ul&gt;
@@ -2170,107 +2260,6 @@
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>軟體研發者的隨身職涯教練——《經理人之道》推薦序</title>
-      <link>//william-yeh.net/post/2021/02/the-managers-path-review/</link>
-      <pubDate>Sun, 21 Feb 2021 16:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2021/02/the-managers-path-review/</guid>
-      
-        <description>&lt;p&gt;研究所時期，身為實驗室的師兄，我必須帶領學弟妹完成各種公民營機構的合作計畫案。那是我第一次接觸到「領導技術團隊」這件事——這件學校不會教的事。&lt;/p&gt;
-&lt;p&gt;後來，在新創圈打滾，陸續經歷了小工頭、技術負責人、部門主管等身分轉變，甚至也有機會從事跨部門、跨團隊的 Scrum master 及變革推動者。資歷增加，守備範圍不斷擴大，一路走來，跌跌撞撞在所難免。遇到挫折時，不免自問：這真的是我想走的路嗎？我不能只當單純的&lt;strong&gt;個別貢獻者&lt;/strong&gt; (&lt;strong&gt;individual contributor&lt;/strong&gt;) 就好了嗎？&lt;/p&gt;
-&lt;p&gt;沒有 mentor 在身邊，得向書籍求教。&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;書架上不乏經理人職涯發展的忠告。針對&lt;strong&gt;經理人&lt;/strong&gt;與&lt;strong&gt;個別貢獻者&lt;/strong&gt;兩種職涯路線的分野，《&lt;a href=&#34;https://www.books.com.tw/products/0010858309&#34;&gt;彼得・杜拉克的管理聖經&lt;/a&gt;》(&lt;a href=&#34;https://www.amazon.com/dp/0060878975&#34;&gt;&lt;em&gt;The Practice of Management&lt;/em&gt;&lt;/a&gt;) 如是說：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;專業人員和經理人一樣，同時肩負「工作」和「團隊運作」的責任。差別：&lt;strong&gt;經理人&lt;/strong&gt;必須為成果負責，因此他必須為別人的工作負責。&lt;strong&gt;個別專業貢獻者&lt;/strong&gt;無論採取單獨工作方式，或是團隊的一分子，也為成果負責，但只為自己的工作成果負責。唯有當其他人了解他的工作成果，並且能運用他的工作成果時，他的工作才能發揮功效。&lt;/p&gt;
-&lt;p&gt;但是，優秀的專業人員往往不是傑出的管理人才。原因不見得在於專業人員寧可獨自工作，而是他們通常很厭煩行政作業。優秀的專業人員往往對行政管理人員缺乏敬意，他欽佩的是在專業領域中表現比他優秀的人。&lt;/p&gt;
-&lt;p&gt;企業需要的是為個別貢獻者提供一條與管理職位平行的升遷管道。這些新升遷機會的聲望、重要性和地位應該和傳統管理職位沒有兩樣。專業人員的上司應該有能力協助、教導、指引屬下，他和專業人員的關係應該好像大學的資深教授與年輕教授之間的關係，而不是從屬關係。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;至於經理人路線，針對&lt;strong&gt;一般領域的經理人&lt;/strong&gt;，《&lt;a href=&#34;https://www.books.com.tw/products/0010515462&#34;&gt;經理人的一天：明茲伯格談管理&lt;/a&gt;》(&lt;a href=&#34;https://www.amazon.com/Managing-Henry-Mintzberg/dp/1605098744&#34;&gt;&lt;em&gt;Managing&lt;/em&gt;&lt;/a&gt;) 如此提醒：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;只會&lt;strong&gt;溝通&lt;/strong&gt;的管理者，從來不會完成任何事情；只會&lt;strong&gt;行動&lt;/strong&gt;的管理者，最後是一人包辦所有事物；只在乎&lt;strong&gt;掌控&lt;/strong&gt;的管理者，可能下面只剩一些唯命是從的馬屁精。&lt;/p&gt;
-&lt;p&gt;有效的管理者不會在各個角色之間保持完美的平衡，他們雖然無法忽視某些角色，但可以偏向其中幾個角色。管理工作的關鍵在於，把管理的所有面向融入這種動態平衡中。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;進一步，針對&lt;strong&gt;技術領域的經理人&lt;/strong&gt;，《&lt;a href=&#34;https://www.books.com.tw/products/0010467750&#34;&gt;領導者，該想什麼？&lt;/a&gt;》(&lt;a href=&#34;https://www.amazon.com/Becoming-Technical-Leader-Problem-Solving-Approach/dp/0932633021&#34;&gt;&lt;em&gt;Becoming a Technical Leader&lt;/em&gt;&lt;/a&gt;) 提出犀利的拷問：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;我能一面當領導者，一面繼續提升我的技術能力嗎？一個毫無技術背景的人，有可能在技術界成為領導者嗎？一旦成為領導者，我必須犧牲多少技術專業能力？我能得到多少回報？&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;諸位大師所言極是。不過，資質駑鈍如我，難以直接將如此泛化的建議轉換到軟體技術領域。畢竟在我們這個領域裡，技術深度與廣度皆日新月異，技術選型更迭頻繁，更講究組織扁平以迅速應變，因此，過去那些針對一般領域、甚至一般技術領域的職涯分化發展通則，未必能夠不假思索直接套用到軟體技術領域。&lt;/p&gt;
-&lt;p&gt;我更期待看到具體建議，而且是專門針對我們這個軟體技術領域而提出的具體建議：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;軟體研發者，在不同的職涯階段，對於&lt;strong&gt;溝通&lt;/strong&gt;、&lt;strong&gt;行動&lt;/strong&gt;、&lt;strong&gt;掌控&lt;/strong&gt;三個面向，各該保持哪一種動態平衡狀態？&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;軟體研發者，在不同的職涯階段，對於軟體技術能力，該追求或維持到什麼程度？又該如何做到？&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;軟體研發者，面對「經理人」與「個別貢獻者」兩條路線，是否只能二選一？是否都是單行道？&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;這類疑惑，沒有 mentor 在身邊，實在難以解決。&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;因此，當我看到 &lt;a href=&#34;https://en.wikipedia.org/wiki/Camille_Fournier&#34;&gt;Camille Fournier&lt;/a&gt; 寫的《&lt;a href=&#34;https://www.tenlong.com.tw/products/9789865027896&#34;&gt;經理人之道：技術領袖航向成長與改變的參考指南&lt;/a&gt;》(&lt;a href=&#34;https://www.amazon.com/Managers-Path-Leaders-Navigating-Growth/dp/1491973897&#34;&gt;&lt;em&gt;The Manager&amp;rsquo;s Path&lt;/em&gt;&lt;/a&gt;) 這本書，以她從軟體工程師開始，一路做到 CTO，甚至避險基金公司常務董事的豐富經驗，直言不諱道出具體觀點，不禁擊節讚嘆。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;這不是一本廣泛適用所有人的管理學書籍，而是一本專門寫給&lt;strong&gt;工程經理&lt;/strong&gt;的工具書。工程管理是一門技術學科，而不是僅僅一套帶人心法。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
-&lt;div class=&#34;box&#34;&gt;
-&lt;figure  itemprop=&#34;associatedMedia&#34;
-  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
-  style=&#34;max-width:30em&#34; &gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2021/02/the-managers-path.jpg&#34; alt=&#34;《經理人之道：技術領袖航向成長與改變的參考指南》&#34;/&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2021/02/the-managers-path.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-      &lt;figcaption&gt;
-          &lt;p&gt;《經理人之道：技術領袖航向成長與改變的參考指南》&lt;/p&gt;
-      &lt;/figcaption&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;譬如說，對於尚處於非正式的技術負責人 (team lead) 階段，她建議要專注在：透徹瞭解架構、注重團隊精神、領導技術決策、溝通。到了更正式的工程經理 (engineering manager) 階段，她建議，除了必須增進人員管理技能，萬萬不可忘記繼續維持技術敏銳度：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;從我的經驗來看，絕大多數工程部門管理的挑戰都在「工程」與「管理」的交集處。人事管理不容易，我不會低估處理人際關係的挑戰，而這些與人打交道的能力在各行業都吃得開。&lt;/p&gt;
-&lt;p&gt;然而，工程部門管理的挑戰並不僅止於人員管理的面向。我們管理的是一群技術人員，且我們之中大多數人來自技術專家的職位。我決不會建議非技術專業背景人員管理工程部門！在技術上長年累積的專業有助於獲得團隊的信任，並幫助你領導團隊做出高效決策。當你努力成為一名成功的工程主管，不要低估技術能力的價值。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;點出「維持技術敏銳」的重要性之後，她也建議初階技術主管可以這麼做：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;當然，你要學會平衡的藝術。當你轉換跑道到管理職時，維持技術敏銳可能是一項艱鉅挑戰。然而，在管理團隊的這個階段，假如你不再維持對程式碼的敏銳度，你將面臨在職涯發展中過早和技術脫節的風險。雖然你日後打算走管理職，但這也不代表你應該放棄技術責任。事實上，我在關於 Engineering Lead 的職位描述中特別提過，我希望這個職位的經理還要負責交付小功能並修復 bug。&lt;/p&gt;
-&lt;p&gt;可悲的是，某些公司實際上並沒有開出「有一點時間開發程式碼的經理」的職缺。我的建議是繼續維持對技術的敏銳度，直到你真的認為自己夠懂程式碼和系統設計等領域，再決定你是否想轉換到管理職。一旦和程式碼說了再見，重新回到程式碼的懷抱將格外困難。更有甚者，假如你過早與技術脫節，你可能因為技術專業積累的不足，而無法朝更高的管理階層邁進，最終只能止步於中階主管職。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;對於逐漸昇到類似工程總監位子的人，她也提出具體建議以盡可能維持技術敏銳度：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;幸運的是，對我們來說，還有幾個不需要碰大量程式碼的辦法幫助我們保持手感。對於二級審核人員來說，程式碼審查就是個好方法。假如你更親力親為地建立系統，請繼續關注這些系統，因為你會比大多數人更能牢記技術細節，可以透過程式碼審查和提問來幫助為這個系統工作的工程師。&lt;/p&gt;
-&lt;p&gt;最後，即使你不大算寫太多 code，我也強烈建議你每週至少有一個完整的半天時間，不要安排任何會議或其他工作，專注在一些富有創造性的追求，比如撰寫關於技術的部落格文章、準備科技大會的演講內容，或者參與一個開源專案。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;針對軟體技術領域，「經理人」與「個別貢獻者」兩條路線的取捨，她的觀點是：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;一定要記得你有權利更換職涯跑道。人們通常會在某個時候嘗試管理職，然後發現他們不喜歡當主管，兜兜轉轉回歸技術職位。走上管理職，你不是不能回頭，但記得睜大眼睛去嘗試。每個職位角色都有各自的優缺點，自己親自去感受最適合你的那一種。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;她也建議如何引導下屬對「經理人」與「個別貢獻者」兩條路線進行探索：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;在人們夠格被升職到資深工程師或更高的職等之前，鼓勵他們累積管理或指導經驗。對於大多數公司來說，管理職和技術職的分岔點應該是人們開始展現&lt;strong&gt;領導力&lt;/strong&gt;的階段，無論這個領導力是管理人員還是設計軟體。即便人們負責設計軟體，也會面對人與人之間的互動與需求；出類拔萃的資深個人貢獻者也知道如何管理專案和指導團隊中佔比更多的菜鳥／初階工程師。你可以考慮將&lt;strong&gt;指導經驗&lt;/strong&gt;作為資深個人貢獻者的升職條件。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;以上是我從書中信手捻來的幾則精闢見解，書中還有更多精彩內容待你發掘。&lt;/p&gt;
-&lt;p&gt;我認為，身為軟體研發從業人員，只要你不是自雇者，只要你想在軟體研發組織內，統合團隊力量做一番大事，都值得細讀此書，把此書當作軟體研發者的隨身職涯教練：覆盤總結自身經驗，解決當下問題，凝聚團隊，培訓優秀下屬，並替未來道路預做準備。&lt;/p&gt;
-&lt;p&gt;這將是能陪伴你很久的一本書。&lt;/p&gt;
-&lt;p&gt; 　 　 　 　 　 　—— 敏捷魔藥師　葉秉哲 (William Yeh)　2021-02-21&lt;/p&gt;
-</description>
       
     </item>
     

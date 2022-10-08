@@ -6,7 +6,16 @@
     <description>Recent content in tech on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Tue, 24 May 2022 12:00:00 +0800</lastBuildDate><atom:link href="//william-yeh.net/categories/tech/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 08 Oct 2022 10:30:00 +0800</lastBuildDate><atom:link href="//william-yeh.net/categories/tech/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>User Story 釋疑</title>
+      <link>//william-yeh.net/post/2022/10/on-user-stories/</link>
+      <pubDate>Sat, 08 Oct 2022 10:30:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2022/10/on-user-stories/</guid>
+      <description>（改寫自公司內部 memo） Hi all guys, 最近我會對有意導入 Scrum 的任務小組個別進行一整天的 Agile Workshop。這些小組都有一項課前作業：請先準備團隊在三</description>
+    </item>
+    
     <item>
       <title>很簡單的東西，也要單元測試嗎？</title>
       <link>//william-yeh.net/post/2022/05/need-for-unit-testing/</link>
@@ -244,15 +253,6 @@ Built-in auto-reloading apps External signals Pod rollout In this article I&amp;
       <description>&lt;p&gt;在 Windows 10 上面使用 WSL 已經一個月了&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;。小狀況也就罷了，但 &lt;a href=&#34;https://cmder.net/&#34;&gt;Cmder&lt;/a&gt; 不夠穩定的顯示邏輯卻最讓我頭痛，在視窗尺寸變化時，無法正確處理字元位置。更令人費解的是，即使是其他狀似更華麗（也更耗資源）的替代方案，也仍然有這些問題&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;。&lt;/p&gt;
 &lt;p&gt;既然酷炫的終端機競品問題多多，乾脆回歸極簡的 WSLtty&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;，並混搭 tmux&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt; 來彌補。可惜，畢竟是組合技，無法完全複製 Mac 的 iTerm2 使用經驗。&lt;/p&gt;
 &lt;p&gt;此事古難全。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>給 RD 的 Kubernetes 初體驗</title>
-      <link>//william-yeh.net/courses/k8s-workship-cloudsummit2019/</link>
-      <pubDate>Tue, 02 Apr 2019 16:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/courses/k8s-workship-cloudsummit2019/</guid>
-      <description>活動名稱：給 RD 的 Kubernetes 初體驗 時間：2019-05-15 (三) / 11:00&amp;ndash;12:30 會議：台灣雲端大會 (Cloud Edge Summit 2019) 課程簡介 Kubernetes 是目前雲端環境的顯學。可是，傳統的程式，並不</description>
     </item>
     
   </channel>
