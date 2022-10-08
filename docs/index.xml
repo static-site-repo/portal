@@ -35,8 +35,8 @@
 &lt;p&gt;我的建議是：如果能夠，就盡量努力嘗試；如果不能勉強，就不要勉強。&lt;/p&gt;
 &lt;p&gt;我先從後者講起。&lt;/p&gt;
 &lt;h2 id=&#34;如果不能勉強就不要勉強&#34;&gt;如果不能勉強，就不要勉強&lt;/h2&gt;
-&lt;p&gt;Story 有很多種，&amp;ldquo;user story&amp;rdquo; 只是其中一種。像大師 Mike Cohn 在 &lt;a href=&#34;https://www.tenlong.com.tw/products/9789864347995&#34;&gt;&lt;em&gt;User Stories Applied&lt;/em&gt;&lt;/a&gt; 就說：「產品 backlog 中，有面向客戶的任務，也有技術類的任務。」&lt;/p&gt;
-&lt;p&gt;事實上，就連 &lt;a href=&#34;https://scrumguides.org/&#34;&gt;&lt;em&gt;The Scrum Guide&lt;/em&gt;&lt;/a&gt; 都沒有提及 &amp;ldquo;user story&amp;rdquo; 一詞，遑論明文規定 product backlog items 及 sprint backlog items 要以 user story 方式表述。所以 Scrum.org 有一篇文章 &amp;ldquo;&lt;a href=&#34;https://www.scrum.org/resources/blog/myth-4-scrum-product-backlog-has-consist-out-user-stories&#34;&gt;Myth 4: In Scrum, the Product Backlog has to consist out of User Stories&lt;/a&gt;&amp;rdquo; 主張放入 technical tasks 是完全正常的，大師 Roman Pichler 在 &amp;ldquo;&lt;a href=&#34;https://www.romanpichler.com/blog/10-tips-writing-good-user-stories/&#34;&gt;10 Tips for Writing Good User Stories&lt;/a&gt;&amp;rdquo; 一文也說：&lt;/p&gt;
+&lt;p&gt;Story 有很多種，&amp;ldquo;user story&amp;rdquo; 只是其中一種。就連大師 Mike Cohn 在 &lt;a href=&#34;https://www.tenlong.com.tw/products/9789864347995&#34;&gt;&lt;em&gt;User Stories Applied&lt;/em&gt;&lt;/a&gt; 也承認：「產品 backlog 中，有面向客戶的任務，也有技術類的任務。」&lt;/p&gt;
+&lt;p&gt;事實上，整篇 &lt;a href=&#34;https://scrumguides.org/&#34;&gt;&lt;em&gt;The Scrum Guide&lt;/em&gt;&lt;/a&gt; 文件都沒有提及 &amp;ldquo;user story&amp;rdquo; 一詞，甚至連 &amp;ldquo;story&amp;rdquo; 一詞都沒有。所以 Scrum.org 有一篇文章 &amp;ldquo;&lt;a href=&#34;https://www.scrum.org/resources/blog/myth-4-scrum-product-backlog-has-consist-out-user-stories&#34;&gt;Myth 4: In Scrum, the Product Backlog has to consist out of User Stories&lt;/a&gt;&amp;rdquo; 主張在 backlog 中放入 technical tasks 是完全正常的，大師 Roman Pichler 在 &amp;ldquo;&lt;a href=&#34;https://www.romanpichler.com/blog/10-tips-writing-good-user-stories/&#34;&gt;10 Tips for Writing Good User Stories&lt;/a&gt;&amp;rdquo; 一文也說：&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;User stories are not good for capturing technical requirements. If you need to describe what an architectural element like a component or service should do, then write &lt;strong&gt;technical stories&lt;/strong&gt; or—which is my preference—use a modeling language like UML.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -46,7 +46,7 @@
 &lt;p&gt;這是有根據的。&lt;/p&gt;
 &lt;p&gt;從企業管理觀點來看，彼得．杜拉克在 &lt;a href=&#34;https://williampjyeh.notion.site/cab89225cde14229a7d1000fdea58475&#34;&gt;&lt;em&gt;The Practice of Management&lt;/em&gt;&lt;/a&gt; 開宗明義提到：「關於企業的目的，只有一個正確而有效的定義：『&lt;strong&gt;創造顧客&lt;/strong&gt;』(&lt;strong&gt;create&lt;/strong&gt; and &lt;strong&gt;keep&lt;/strong&gt; a customer)。企業是什麼，是由顧客來決定的。」&lt;/p&gt;
 &lt;p&gt;從敏捷觀點來看，&lt;a href=&#34;https://williampjyeh.notion.site/2eeb7794966b440c8856cc6fe8927658&#34;&gt;&lt;em&gt;User Story Mapping&lt;/em&gt;&lt;/a&gt; 提到：「我們要量測的是你建造的東西對人們達成目標的方式產生什麼&lt;strong&gt;影響&lt;/strong&gt;。先針對具體的商業目標、客戶和使用者，然後是他們的目標排定優先順序，最後才針對功能。你的任務不是實現需求，而是改變世界。」&lt;/p&gt;
-&lt;p&gt;綜上所述，如果你能夠盡量以 &amp;ldquo;user&amp;rdquo; 視角來審視這些 story 對於他們達成目標的方式產生什麼影響，相較於僅以單一視角（獲利？利潤？）魯莽地提出需求設計功能，你會有更周全的思考，有更多樣的替代選項。&lt;/p&gt;
+&lt;p&gt;綜上所述，如果你能夠盡量以 &amp;ldquo;user&amp;rdquo; 視角來審視這些 story 對於他們達成目標的方式產生什麼影響，相較於僅以單一視角（獲利？利潤？）魯莽地提出需求、設計功能，你會有更周全的思考、更多樣的替代選項。&lt;/p&gt;
 
 &lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
 &lt;div class=&#34;box&#34;&gt;
@@ -79,7 +79,7 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;As a&lt;/strong&gt; search service user, &lt;strong&gt;I want to&lt;/strong&gt; see keyword suggestions prioritized by advertising spending when I use the autocomplete feature &lt;strong&gt;so that&lt;/strong&gt; I can&amp;hellip; &lt;em&gt;{get an awesome impact or&amp;hellip; awful impact?}&lt;/em&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;萬一寫到這裡就寫不下去了，那麼，此刻，或許該暫停一下，改用 Impact Mapping 的角度去反思：這功能若實現了，誰會是這功能的受益者，以及⋯⋯潛在的受害者？&lt;/p&gt;
+&lt;p&gt;萬一又寫不下去了，那麼，請改用 Impact Mapping 的角度去反思：這功能若實現了，誰會是這功能的受益者，以及⋯⋯潛在的受害者？&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;As a&lt;/strong&gt; buyers of digital advertising inventory, &lt;strong&gt;I want to&lt;/strong&gt; increase ad exposure to users&amp;rsquo; autocomplete journey &lt;strong&gt;so that&lt;/strong&gt; &amp;hellip;&lt;/p&gt;
