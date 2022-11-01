@@ -6,7 +6,16 @@
     <description>Recent content in management on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Mon, 31 Oct 2022 17:00:00 +0800</lastBuildDate><atom:link href="//william-yeh.net/categories/management/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 01 Nov 2022 17:00:00 +0800</lastBuildDate><atom:link href="//william-yeh.net/categories/management/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>以「蜘蛛法」拆分過於龐大的 User Story</title>
+      <link>//william-yeh.net/post/2022/11/spidr/</link>
+      <pubDate>Tue, 01 Nov 2022 17:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2022/11/spidr/</guid>
+      <description>（改寫自公司內部 memo） Hi all guys, 剛從傳統瀑布式專案管理風格轉換到敏捷風格的團隊，最常遇到第二個卡關之處是：如何將 User Story 拆分到足以在一個 sprint 內完成</description>
+    </item>
+    
     <item>
       <title>事情做一半，等於沒完成：淺談敏捷的里程碑設定</title>
       <link>//william-yeh.net/post/2022/10/agile-milestone/</link>
@@ -367,15 +376,6 @@
 &lt;p&gt;「如何訓練一個新的 Scrum master？」​&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;邊寫便利貼，邊回想自己過往經驗，也試圖歸納統整一些層次。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>軟體研發者的隨身職涯教練——《經理人之道》推薦序</title>
-      <link>//william-yeh.net/post/2021/02/the-managers-path-review/</link>
-      <pubDate>Sun, 21 Feb 2021 16:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2021/02/the-managers-path-review/</guid>
-      <description>研究所時期，身為實驗室的師兄，我必須帶領學弟妹完成各種公民營機構的合作計畫案。那是我第一次接觸到「領導技術團隊」這件事——這件學校不會教的事</description>
     </item>
     
   </channel>

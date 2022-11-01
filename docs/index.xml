@@ -6,10 +6,110 @@
     <description>Recent content on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Mon, 31 Oct 2022 17:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 01 Nov 2022 17:00:00 +0800</lastBuildDate>
     
         <atom:link href="//william-yeh.net/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>以「蜘蛛法」拆分過於龐大的 User Story</title>
+      <link>//william-yeh.net/post/2022/11/spidr/</link>
+      <pubDate>Tue, 01 Nov 2022 17:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2022/11/spidr/</guid>
+      
+        <description>&lt;p&gt;（改寫自公司內部 memo）&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;Hi all guys,&lt;/p&gt;
+&lt;p&gt;剛從傳統瀑布式專案管理風格轉換到敏捷風格的團隊，最常遇到第二個卡關之處是：如何將 User Story 拆分到足以在一個 sprint 內完成的顆粒度？&lt;/p&gt;
+&lt;p&gt;如果玩過我帶的「在幾分鐘以內出門」(&amp;ldquo;get out of the door in a few minutes&amp;rdquo;) 活動 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，或許可藉由喚起這段活動的體驗來得到拆分大故事的靈感。如果還想進一步知道更具體的步驟，我推薦大家試試 Mike Cohn 大師提出的 &lt;a href=&#34;https://www.mountaingoatsoftware.com/exclusive/spidr-poster-download&#34;&gt;SPIDR 法&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;SPIDR 是 Spikes, Paths, Interfaces, Data, Rules 的頭字語，音近 &amp;ldquo;spider&amp;rdquo; 蜘蛛，可以戲稱為「蜘蛛法」。它指導我們從五個角度嘗試拆分過於龐大的 User Story：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Spikes&lt;/strong&gt;: 拆分出探索性、實驗性的先遣任務。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Paths&lt;/strong&gt;: 拆分出不同的使用路徑。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Interfaces&lt;/strong&gt;: 拆分出不同的介面、軟體、設備、環境。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Data&lt;/strong&gt;: 拆分出不同的資料來源或類型。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Rules&lt;/strong&gt;: 拆分出不同鬆緊程度的商業邏輯。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;就以這個龐大的 User Story 為例：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;As a 商家，I want to 在既有的商家後台，以不同的商品分類或時間區間來檢視我家商品的種種銷售數據圖表，so that I can 對銷售行為作更即時的調整。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;這麼大的 User Story，很難放在一個 sprint 裡面實現。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;我們可以試著用 SPIDR 當中的 &amp;ldquo;Spikes&amp;rdquo; 角度來拆分：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;As a 商家，I want to 在既有的商家後台，先針對人工餵入的 1,000 筆假資料，試試看能否把整個流程串起來，以不同的商品分類或時間區間來檢視我家商品的種種銷售數據圖表，so that I can 確定這對我想從事的「對銷售行為作更即時的調整」會有幫助。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;我們可以試著用 SPIDR 當中的 &amp;ldquo;Paths&amp;rdquo; 角度來拆分：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;As a 商家，I want to 在既有的商家後台，以不同的商品分類來檢視我家商品的種種銷售數據圖表，so that I can 對銷售行為作更即時的調整。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;As a 商家，I want to 在既有的商家後台，以不同的時間區間來檢視我家商品的種種銷售數據圖表，so that I can 對銷售行為作更即時的調整。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;我們可以試著用 SPIDR 當中的 &amp;ldquo;Interfaces&amp;rdquo; 角度來拆分：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;As a 商家，I want to 在試算表檔案中，以不同的商品分類或時間區間來檢視我家商品的種種銷售數據圖表，so that I can 對銷售行為作更即時的調整。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;我們可以試著用 SPIDR 當中的 &amp;ldquo;Data&amp;rdquo; 角度來拆分：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;As a 商家，I want to 在既有的商家後台，針對 3C 商品來檢視銷售直方圖，so that I can 對銷售行為作更即時的調整。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;As a 商家，I want to 在既有的商家後台，針對 3C 商品來檢視訪客 PV，so that I can 對銷售行為作更即時的調整。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;As a 商家，I want to 在既有的商家後台，針對日用品來檢視成交率，so that I can 對銷售行為作更即時的調整。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;我們可以試著用 SPIDR 當中的 &amp;ldquo;Rules&amp;rdquo; 角度來拆分：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;As a 商家，I want to 在既有的商家後台，以日為單位來檢視我家商品的種種銷售數據圖表，so that I can 對銷售行為作更即時的調整。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;As a 商家，I want to 在既有的商家後台，以周為單位來檢視我家商品的種種銷售數據圖表，so that I can 對銷售行為作更即時的調整。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;As a 商家，I want to 在既有的商家後台，以「商品分類」及「時間區間」複合條件來檢視我家商品的種種銷售數據圖表，so that I can 對銷售行為作更即時的調整。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;以我的經驗來說，把 SPIDR 法練熟，足以應付大多數情況。如果你還想嘗試更多方法，請讀讀我 &lt;em&gt;N&lt;/em&gt; 年前寫的〈&lt;a href=&#34;//william-yeh.net/post/2016/11/decomposition-reading-list/&#34;&gt;工作分解講座・閱讀材料&lt;/a&gt;〉一文。&lt;/p&gt;
+
+&lt;div class=&#34;shortcode-notice note&#34;&gt;
+  &lt;div class=&#34;shortcode-notice-title note&#34;&gt;
+    
+      【敏捷的工作分解方法】系列
+    
+  &lt;/div&gt;
+  &lt;p&gt;❶ &lt;a href=&#34;//william-yeh.net/post/2016/10/one-week-sprint/&#34;&gt;One-Week Sprint 的節奏&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❷ &lt;a href=&#34;//william-yeh.net/post/2016/11/decomposition-reading-list/&#34;&gt;工作分解講座・閱讀材料&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❸ &lt;a href=&#34;//william-yeh.net/post/2022/10/agile-milestone/&#34;&gt;事情做一半，等於沒完成：淺談敏捷的里程碑設定&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❹ 以「蜘蛛法」拆分過於龐大的 User Story&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;「在幾分鐘以內出門」(&amp;ldquo;get out of the door in a few minutes&amp;rdquo;) 是出自 &lt;em&gt;&lt;a href=&#34;https://williampjyeh.notion.site/2eeb7794966b440c8856cc6fe8927658&#34;&gt;User Story Mapping&lt;/a&gt;&lt;/em&gt; 第五章的經典活動。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+      
+    </item>
     
     <item>
       <title>事情做一半，等於沒完成：淺談敏捷的里程碑設定</title>
@@ -103,6 +203,7 @@
   &lt;p&gt;❶ &lt;a href=&#34;//william-yeh.net/post/2016/10/one-week-sprint/&#34;&gt;One-Week Sprint 的節奏&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;❷ &lt;a href=&#34;//william-yeh.net/post/2016/11/decomposition-reading-list/&#34;&gt;工作分解講座・閱讀材料&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;❸ 事情做一半，等於沒完成：淺談敏捷的里程碑設定&lt;/p&gt;
+&lt;p&gt;❹ &lt;a href=&#34;//william-yeh.net/post/2022/11/spidr/&#34;&gt;以「蜘蛛法」拆分過於龐大的 User Story&lt;/a&gt;&lt;/p&gt;
 
 &lt;/div&gt;</description>
       
@@ -2146,176 +2247,6 @@
 &lt;/div&gt;
 
 &lt;p&gt; 　 　 　 　 　 　—— 敏捷魔藥師　葉秉哲 (William Yeh)　2021-03-31&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>從系統思考角度讀《獨角獸專案》</title>
-      <link>//william-yeh.net/post/2021/03/sys-thinking-unicorn-project/</link>
-      <pubDate>Sun, 28 Mar 2021 16:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2021/03/sys-thinking-unicorn-project/</guid>
-      
-        <description>&lt;p&gt;&lt;strong&gt;活動名稱&lt;/strong&gt;：從系統思考角度讀《獨角獸專案》&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;時間&lt;/strong&gt;：2021-11-24 (三) / 13:30&amp;ndash;15:00 (因疫情影響延期舉辦)&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;會議&lt;/strong&gt;：&lt;a href=&#34;https://devopsdays.tw/&#34;&gt;DevOpsDays Taipei 2021&lt;/a&gt; 的 &lt;a href=&#34;https://devopsdays.tw/2021/workshop-page/212&#34;&gt;603 會議室&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;課程簡介&#34;&gt;課程簡介&lt;/h2&gt;
-&lt;p&gt;《&lt;a href=&#34;https://www.tenlong.com.tw/products/9789865026653&#34;&gt;獨角獸專案&lt;/a&gt;》是本寫實刻劃軟體研發者日常甘苦的商業小說，但內行看門道，這本奇書，並不止於小說，而是真正可以照表操課的，以敏捷的 IT 能力驅動並翻轉整間公司的競爭力。&lt;/p&gt;
-&lt;p&gt;我在本書&lt;a href=&#34;//william-yeh.net/post/2020/10/unicorn-project-review/&#34;&gt;推薦序&lt;/a&gt;也曾如此建議：『請以「&lt;strong&gt;系統與組織的五大理念&lt;/strong&gt;」觀點細讀，從頭分析故事的人事時地物及&lt;strong&gt;因果關係&lt;/strong&gt;。經此一番&lt;strong&gt;系統思考&lt;/strong&gt;，比起許多愛談高大上理念的敏捷、DevOps、數位轉型書籍，你將會有更深刻具體的領悟。』&lt;/p&gt;
-&lt;p&gt;問題是：如何系統思考？如何照表操課？&lt;/p&gt;
-&lt;p&gt;這場 90 分鐘的迷你工作坊，將以「系統思考」角度，帶你分析書中倡議的「五大理念」，你將會得到有助於形塑適合 IT 滋長企業文化的施力線索。&lt;/p&gt;
-&lt;h2 id=&#34;目標聽眾&#34;&gt;目標聽眾&lt;/h2&gt;
-&lt;p&gt;已有《&lt;a href=&#34;https://www.tenlong.com.tw/products/9789865026653&#34;&gt;獨角獸專案&lt;/a&gt;》一書，想從中擷取可行洞見的人。&lt;/p&gt;
-&lt;p&gt;程度分級 ★☆☆ (通識)：介紹新知給尚未具備或僅具備少許該領域知識的人，也包含非技術議題。&lt;/p&gt;
-&lt;h2 id=&#34;聽眾收穫&#34;&gt;聽眾收穫&lt;/h2&gt;
-&lt;p&gt;認識高效能研發團隊的核心特質，以及促成這些特質的關鍵施力點。&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;h2 id=&#34;注意事項&#34;&gt;注意事項&lt;/h2&gt;
-&lt;h3 id=&#34;學員需知&#34;&gt;學員需知&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;上課前，請先完成「課前作業」（後詳）。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;上課時，請攜帶「課前作業」及《&lt;a href=&#34;https://www.tenlong.com.tw/products/9789865026653&#34;&gt;獨角獸專案&lt;/a&gt;》一書。建議攜帶繁體中文版，以備隨時照頁數檢索。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;課前作業&#34;&gt;課前作業&lt;/h2&gt;
-&lt;p&gt;根據學員不同的狀況，我將課前作業分成兩部分：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;必備作業：所有人都務必在課前確實完成。&lt;/li&gt;
-&lt;li&gt;選配作業：行有餘力，請在課前盡量做。做得越多，課堂上就越輕鬆。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;必備作業&#34;&gt;必備作業&lt;/h3&gt;
-&lt;p&gt;請依照「速讀」及「精讀」兩階段依序進行：&lt;/p&gt;
-&lt;p&gt;➊ 速讀階段：速讀完《&lt;a href=&#34;https://www.tenlong.com.tw/products/9789865026653&#34;&gt;獨角獸專案&lt;/a&gt;》至少一遍，先享受高潮起伏的劇情，並熟悉人物與關係。&lt;/p&gt;
-&lt;p&gt;➋ 精讀階段：挑出書中所有與「&lt;strong&gt;系統與組織的五大理念&lt;/strong&gt;」有關的段落，越多越好。&lt;/p&gt;
-&lt;p&gt;我自己的做法是：每讀到一個有關的地方，就用書籤標註。如下圖：&lt;/p&gt;
-
-   &lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
-   &lt;div class=&#34;box&#34;&gt;
-   &lt;figure  itemprop=&#34;associatedMedia&#34;
-     itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
-     style=&#34;max-width:30em&#34; &gt;
-       &lt;div class=&#34;img&#34;&gt;
-         &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2021/03/unicorn-project-bookmark.jpg&#34; alt=&#34;用書籤標註五大理念的例子&#34;/&gt;
-       &lt;/div&gt;
-       &lt;a href=&#34;//william-yeh.net/img/2021/03/unicorn-project-bookmark.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-         &lt;figcaption&gt;
-             &lt;p&gt;用書籤標註五大理念的例子&lt;/p&gt;
-         &lt;/figcaption&gt;
-     &lt;/figure&gt;
-   &lt;/div&gt;
-
-&lt;p&gt;一點小建議：請善用不同顏色的標籤，或是可寫字的標籤，以便檢索。&lt;/p&gt;
-&lt;p&gt;以上請務必在課前確實完成。&lt;/p&gt;
-&lt;h3 id=&#34;選配作業&#34;&gt;選配作業&lt;/h3&gt;
-&lt;p&gt;若行有餘力，請針對前面挑出的「&lt;strong&gt;五大理念&lt;/strong&gt;」段落，分析其中的因果關係。&lt;/p&gt;
-&lt;p&gt;就以《&lt;a href=&#34;https://www.tenlong.com.tw/products/9789865026653&#34;&gt;獨角獸專案&lt;/a&gt;》第七章為例，埃瑞克在對紅衫軍成員侃侃而談第一理念「簡潔性和區域性 (locality and simplicity)」時，有個段落提到「程式碼區域性與組織區域性」：&lt;/p&gt;
-
-
-&lt;div class=&#34;box&#34;&gt;
-&lt;figure  itemprop=&#34;associatedMedia&#34;
-  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
-  style=&#34;max-width:30em&#34; &gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2021/03/unicorn-project-crt-example.jpg&#34; alt=&#34;因果關係例子：《獨角獸專案》第七章&#34;/&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2021/03/unicorn-project-crt-example.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-      &lt;figcaption&gt;
-          &lt;p&gt;因果關係例子：《獨角獸專案》第七章&lt;/p&gt;
-      &lt;/figcaption&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;讓我們先以「因果關係」角度直接翻譯這段文字吧。初期，你可能會解讀出三組因果關係：&lt;/p&gt;
-
-
-&lt;div class=&#34;box&#34;&gt;
-&lt;figure  itemprop=&#34;associatedMedia&#34;
-  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
-  style=&#34;max-width:30em&#34; &gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2021/03/unicorn-project-crt-part1.png&#34; alt=&#34;因果關係 Part 1：直接翻譯&#34;/&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2021/03/unicorn-project-crt-part1.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-      &lt;figcaption&gt;
-          &lt;p&gt;因果關係 Part 1：直接翻譯&lt;/p&gt;
-      &lt;/figcaption&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;這三組因果關係貌似彼此獨立。若再仔細檢視，你可能會發現彼此之間並不是毫無關聯，而是可以辨識出一些共同結構或模式：&lt;/p&gt;
-
-
-&lt;div class=&#34;box&#34;&gt;
-&lt;figure  itemprop=&#34;associatedMedia&#34;
-  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
-  style=&#34;max-width:30em&#34; &gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2021/03/unicorn-project-crt-part2.png&#34; alt=&#34;因果關係 Part 2：找出共同模式&#34;/&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2021/03/unicorn-project-crt-part2.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-      &lt;figcaption&gt;
-          &lt;p&gt;因果關係 Part 2：找出共同模式&lt;/p&gt;
-      &lt;/figcaption&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;最後，再進一步以「系統思考」常見的「增強迴路」角度來檢視，我們可以合理腦補上「正確歸因」與「錯誤歸因」兩項元素，統整出一份較完整的因果關係圖：&lt;/p&gt;
-
-
-&lt;div class=&#34;box&#34;&gt;
-&lt;figure  itemprop=&#34;associatedMedia&#34;
-  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
-  style=&#34;max-width:30em&#34; &gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2021/03/unicorn-project-crt-part3.png&#34; alt=&#34;因果關係 Part 3：增強迴路&#34;/&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2021/03/unicorn-project-crt-part3.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-      &lt;figcaption&gt;
-          &lt;p&gt;因果關係 Part 3：增強迴路&lt;/p&gt;
-      &lt;/figcaption&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;因果關係圖一旦推導到這種地步，施力線索也就昭然若揭。&lt;/p&gt;
-&lt;p&gt;這就是「系統思考」的威力。&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;這份「選配」作業，請盡可能在課前多做一些。課前做得越多，課堂上你就會越輕鬆。&lt;/p&gt;
-&lt;p&gt;做不出來的，也別擔心，課堂上會以分組方式進行，有隊友會與你一齊破關。&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;     &lt;!-- raw HTML omitted --&gt;     &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-
-&lt;div class=&#34;shortcode-notice note&#34;&gt;
-  &lt;div class=&#34;shortcode-notice-title note&#34;&gt;
-    
-      《獨角獸專案》系列文章
-    
-  &lt;/div&gt;
-  &lt;p&gt;❶ &lt;a href=&#34;//william-yeh.net/post/2020/10/unicorn-project-review/&#34;&gt;值得你看門道的好書——《獨角獸專案》推薦序&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;❷ 從系統思考角度讀《獨角獸專案》&lt;/p&gt;
-
-&lt;/div&gt;
-
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;     &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-
-&lt;div class=&#34;shortcode-notice note&#34;&gt;
-  &lt;div class=&#34;shortcode-notice-title note&#34;&gt;
-    
-      系統思考工作坊 - 系列文章
-    
-  &lt;/div&gt;
-  &lt;p&gt;❶ 【系統思考的四堂課】&lt;a href=&#34;//william-yeh.net/post/2018/06/sys-thinking-workshop/&#34;&gt;緣起&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;❷ 第一場公開班課後回覆：&lt;a href=&#34;//william-yeh.net/post/2018/09/thinking-weight-training/&#34;&gt;思維的重量訓練&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;❸ 從系統思考角度讀《獨角獸專案》&lt;/p&gt;
-
-&lt;/div&gt;</description>
       
     </item>
     

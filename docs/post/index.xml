@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Mon, 31 Oct 2022 17:00:00 +0800</lastBuildDate><atom:link href="//william-yeh.net/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 01 Nov 2022 17:00:00 +0800</lastBuildDate><atom:link href="//william-yeh.net/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>以「蜘蛛法」拆分過於龐大的 User Story</title>
+      <link>//william-yeh.net/post/2022/11/spidr/</link>
+      <pubDate>Tue, 01 Nov 2022 17:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2022/11/spidr/</guid>
+      <description>（改寫自公司內部 memo） Hi all guys, 剛從傳統瀑布式專案管理風格轉換到敏捷風格的團隊，最常遇到第二個卡關之處是：如何將 User Story 拆分到足以在一個 sprint 內完成</description>
+    </item>
+    
     <item>
       <title>事情做一半，等於沒完成：淺談敏捷的里程碑設定</title>
       <link>//william-yeh.net/post/2022/10/agile-milestone/</link>
@@ -371,17 +380,6 @@
       &lt;/figcaption&gt;
   &lt;/figure&gt;
 &lt;/div&gt;</description>
-    </item>
-    
-    <item>
-      <title>從系統思考角度讀《獨角獸專案》</title>
-      <link>//william-yeh.net/post/2021/03/sys-thinking-unicorn-project/</link>
-      <pubDate>Sun, 28 Mar 2021 16:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2021/03/sys-thinking-unicorn-project/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;活動名稱&lt;/strong&gt;：從系統思考角度讀《獨角獸專案》&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;時間&lt;/strong&gt;：2021-11-24 (三) / 13:30&amp;ndash;15:00 (因疫情影響延期舉辦)&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;會議&lt;/strong&gt;：&lt;a href=&#34;https://devopsdays.tw/&#34;&gt;DevOpsDays Taipei 2021&lt;/a&gt; 的 &lt;a href=&#34;https://devopsdays.tw/2021/workshop-page/212&#34;&gt;603 會議室&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>
