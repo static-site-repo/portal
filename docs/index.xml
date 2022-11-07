@@ -108,8 +108,7 @@
 &lt;p&gt;「在幾分鐘以內出門」(&amp;ldquo;get out of the door in a few minutes&amp;rdquo;) 是出自 &lt;em&gt;&lt;a href=&#34;https://williampjyeh.notion.site/2eeb7794966b440c8856cc6fe8927658&#34;&gt;User Story Mapping&lt;/a&gt;&lt;/em&gt; 第五章的經典活動。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;
-</description>
+&lt;/div&gt;</description>
       
     </item>
     
@@ -131,7 +130,24 @@
 &lt;p&gt;這需要創意，需要練習，需要提升規劃能力，需要提升工程能力，需要時時用挑戰性提問提醒自己。但或許更重要的是：大家需要打從心裡認清且認同這樣做的理由。&lt;/p&gt;
 &lt;p&gt;理由之一是：精實生產。&lt;/p&gt;
 &lt;h2 id=&#34;七大浪費&#34;&gt;七大浪費&lt;/h2&gt;
-&lt;p&gt;7/22 舉辦過的&lt;a href=&#34;//william-yeh.net/post/2022/08/career-reading-club-2/#豐田精實管理的翻轉獲利秘密&#34;&gt;《豐田精實管理的翻轉獲利秘密》導讀會&lt;/a&gt;有介紹過，馳名世界的豐田生產 (Toyota Production System) 當中有一個基本信念：「&lt;strong&gt;降低浪費，就能提升效率。&lt;/strong&gt;」豐田生產會從降低七大浪費著手：&lt;/p&gt;
+&lt;p&gt;7/22 舉辦過的&lt;a href=&#34;//william-yeh.net/post/2022/08/career-reading-club-2/#豐田精實管理的翻轉獲利秘密&#34;&gt;《豐田精實管理的翻轉獲利秘密》導讀會&lt;/a&gt;有介紹過，馳名世界的豐田生產 (Toyota Production System) 當中有一個基本信念：「&lt;strong&gt;降低浪費，就能提升效率。&lt;/strong&gt;」另一本書《&lt;a href=&#34;https://williampjyeh.notion.site/fc98b324a0c7482f82d3a639f8b10282&#34;&gt;豐田物語&lt;/a&gt;》也如是說：&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:20em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2022/10/muda.jpg&#34; alt=&#34;From: 《豐田物語》&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2022/10/muda.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;From: 《豐田物語》&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;豐田生產會從降低七大浪費著手：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;Inventory&lt;/strong&gt;：庫存、在製品。以軟體研發而言，規格書、wireframe、schema、test case⋯⋯任何無法真正迅速 go to production 轉換成實質價值的中間產物，都是 inventory。&lt;/p&gt;
