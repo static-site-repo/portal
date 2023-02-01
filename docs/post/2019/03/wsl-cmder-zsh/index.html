@@ -35,7 +35,7 @@
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.109.0" />
+<meta name="generator" content="Hugo 0.110.0" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2019/03/wsl-cmder-zsh/" />
@@ -56,7 +56,9 @@
 
 
 
-<link rel="stylesheet" href="/sass/jane.min.fa4b2b9f31b5c6d0b683db81157a9226e17b06e61911791ab547242a4a0556f2.css" integrity="sha256-&#43;ksrnzG1xtC2g9uBFXqSJuF7BuYZEXkatUckKkoFVvI=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.de22abc00de44766eebd1054fd9e0b254b071f89d5019044f893c484a9249a8d.css" integrity="sha256-3iKrwA3kR2buvRBU/Z4LJUsHH4nVAZBE&#43;JPEhKkkmo0=" media="screen" crossorigin="anonymous">
+
+
 
 
 
@@ -77,7 +79,7 @@
 上古時代，需要靠 Cygwin 或 MinGW 方案，才能勉強湊出一點點 Unix 的命令列感覺，但地雷超級多，難以作為嚴肅用途。後來，到了 2015 年，從保哥那邊知道有 Cmder 這個好物 1，微軟又於 2016 年推出 WSL (Windows Subsystem for Linux) 機制，Windows 這邊似乎出現曙光，對 Unix 命令列愛好者展現出久違的吸引力。
 為了在 Windows 10 上面復刻我的 Mac 的體驗：iTerm2 &#43; Zsh &#43; Oh My ZSH，我試了幾天，把步驟整理如下。"><meta itemprop="datePublished" content="2019-03-14T08:00:00+08:00" />
 <meta itemprop="dateModified" content="2019-03-14T08:00:00+08:00" />
-<meta itemprop="wordCount" content="2070">
+<meta itemprop="wordCount" content="1984">
 <meta itemprop="keywords" content="wsl," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="在 Windows 上復刻 Mac 使用習慣"/>
 <meta name="twitter:description" content="改用 Mac 已經六年了。現在要再回頭碰 Windows，還真有點不習慣。
@@ -95,7 +97,6 @@
 <![endif]-->
 
 
-  
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-D8V6EWHYN7"></script>
 <script>
 var doNotTrack = false;
@@ -291,7 +292,7 @@ if (!doNotTrack) {
   </header>
 
   <div id="mobile-panel">
-    <main id="main" class="main bg-llight">
+    <main id="main" class="main bg-llight wallpaper">
       <div class="content-wrapper">
         <div id="content" class="content container">
           <article class="post bg-white">
@@ -299,27 +300,48 @@ if (!doNotTrack) {
     <header class="post-header">
       <h1 class="post-title">在 Windows 上復刻 Mac 使用習慣</h1>
       
+
       <div class="post-meta">
-        <time datetime="2019-03-14" class="post-time">
-          2019-03-14
-        </time>
-        <div class="post-category">
-            <a href="//william-yeh.net/categories/tech/"> tech </a>
-            
-          </div>
-        <span class="more-meta"> 約 2070 字 </span>
-          <span class="more-meta"> 預計閱讀 5 分鐘 </span>
+  <div class="post-meta-author">
+    by
+      William Yeh
+    
+  </div>
 
-        
-        
-          <span id="busuanzi_container_page_pv">
-            | 阅读 <span id="busuanzi_value_page_pv"></span>
-          </span>
-        
+  <div class="post-meta-time">
+    <time datetime="2019-03-14">
+      2019-03-14
+    </time>
+  </div>
 
-        
-        
+  
+
+
+  <div class="post-meta__right">
+    <span class="post-meta-more">
+        約 1984 字 -
+        預計閱讀 4 分鐘
+      </span>
+
+    <div class="post-meta-category">
+        <a href="//william-yeh.net/categories/tech/"> tech </a>
+          
       </div>
+
+
+    
+    
+      <span id="busuanzi_container_page_pv">
+        | 阅读 <span id="busuanzi_value_page_pv"></span>
+      </span>
+    
+
+
+    
+    
+  </div>
+</div>
+
     </header>
 
     
@@ -340,6 +362,7 @@ if (!doNotTrack) {
 </nav>
   </div>
 </div>
+
 
     
     <div class="post-content">
@@ -451,8 +474,7 @@ if (!doNotTrack) {
 <pre tabindex="0"><code>D: /mnt/d drvfs rw,relatime,uid=1000,gid=1000,metadata,umask=22,fmask=111 0 0
 </code></pre><h2 id="docker-與-kubernetes">Docker 與 Kubernetes</h2>
 <p>雖然保哥的文章推薦在 WSL 裡的 Linux 再安裝一份 Docker engine <sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup>，但我比較傾向<strong>不要</strong>。我比較傾向共用既有資源，讓 WSL 直接連接到 Docker Desktop for Windows 身上。畢竟，在同一台電腦上，要維護兩套 Docker engine，太累了。</p>
-<p>我參考上官林傑的文章〈[在 Windows Subsystem for Linux (WSL) 下使用 Windows 上的 Docker Engine](<a href="https://medium.com/@ericsk/%E5%9C%A8-windows-subsystem-for-li">https://medium.com/@ericsk/%E5%9C%A8-windows-subsystem-for-li</a>
-nux-wsl-%E4%B8%8B%E4%BD%BF%E7%94%A8-windows-%E4%B8%8A%E7%9A%84-docker-engine-8dc0040ca240)〉，做好必要的設定，但省略文中提到的 alias 步驟（稍後會說明為什麼）。簡單來說，請先進行這三步驟：</p>
+<p>我參考上官林傑的文章〈<a href="https://medium.com/@ericsk/%E5%9C%A8-windows-subsystem-for-linux-wsl-%E4%B8%8B%E4%BD%BF%E7%94%A8-windows-%E4%B8%8A%E7%9A%84-docker-engine-8dc0040ca240">在 Windows Subsystem for Linux (WSL) 下使用 Windows 上的 Docker Engine</a>〉，做好必要的設定，但省略文中提到的 alias 步驟（稍後會說明為什麼）。簡單來說，請先進行這三步驟：</p>
 <ol>
 <li>
 <p>打開 Docker Desktop for Windows 的 &ldquo;Expose daemon on tcp://localhost:2375 without TLS.&rdquo; 選項。</p>
@@ -538,17 +560,17 @@ nux-wsl-%E4%B8%8B%E4%BD%BF%E7%94%A8-windows-%E4%B8%8A%E7%9A%84-docker-engine-8dc
 </div>
 
 
+
     
     
 
-    
-    <iframe class="LikeCoin" height="235" src="https://button.like.co/in/embed/william-yeh/button?referrer=%2f%2fwilliam-yeh.net%2fpost%2f2019%2f03%2fwsl-cmder-zsh%2f" width="100%" frameborder=0></iframe>
-  
+
     <footer class="post-footer">
       <div class="post-tags">
           <a href="//william-yeh.net/tags/wsl/">wsl</a>
-          
+            
         </div>
+
 
       
       <nav class="post-nav">
@@ -587,23 +609,26 @@ nux-wsl-%E4%B8%8B%E4%BD%BF%E7%94%A8-windows-%E4%B8%8A%E7%9A%84-docker-engine-8dc
   
   
 
+
   
   
 
+  
+
+  
   
 
   
   
     <div class="post bg-white">
-      <script src="https://utteranc.es/client.js"
-            repo= "William-Yeh/utterances-area"
-            issue-term="pathname"
-            theme="github-light"
-            crossorigin="anonymous"
-            async>
-      </script>
-    </div>
-  
+  <script src="https://utteranc.es/client.js"
+        repo= "William-Yeh/utterances-area"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script>
+</div>
 
   
 
@@ -631,13 +656,17 @@ nux-wsl-%E4%B8%8B%E4%BD%BF%E7%94%A8-windows-%E4%B8%8A%E7%9A%84-docker-engine-8dc
       $('#load_disqus').remove();
     };
   </script>
-  <noscript>Please enable JavaScript to view the
+  <noscript
+    >Please enable JavaScript to view the
     <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
   </noscript>
   
-  </div>
+</div>
+
 
     
+
+  
 
   
 
@@ -728,7 +757,7 @@ nux-wsl-%E4%B8%8B%E4%BD%BF%E7%94%A8-windows-%E4%B8%8A%E7%9A%84-docker-engine-8dc
 </svg>
 
   </a>
-   
+  
 </div>
 
 <div class="copyright">
@@ -744,7 +773,7 @@ nux-wsl-%E4%B8%8B%E4%BD%BF%E7%94%A8-windows-%E4%B8%8A%E7%9A%84-docker-engine-8dc
     &copy;
     
       2015 -
-    2022
+    2023
     <span class="heart">
       
       <i class="iconfont">
@@ -792,7 +821,7 @@ nux-wsl-%E4%B8%8B%E4%BD%BF%E7%94%A8-windows-%E4%B8%8A%E7%9A%84-docker-engine-8dc
 
 
 
-<script type="text/javascript" src="/js/main.638251f4230630f0335d8c6748e53a96f94b72670920b60c09a56fdc8bece214.js" integrity="sha256-Y4JR9CMGMPAzXYxnSOU6lvlLcmcJILYMCaVv3Ivs4hQ=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/js/main.fe83e11b4fbc9193d67e2c9db78bad21f8dc59fca0cacd8c1c3bb071bb16a852.js" integrity="sha256-/oPhG0&#43;8kZPWfiydt4utIfjcWfygys2MHDuwcbsWqFI=" crossorigin="anonymous"></script>
 
 
 
@@ -815,6 +844,8 @@ nux-wsl-%E4%B8%8B%E4%BD%BF%E7%94%A8-windows-%E4%B8%8A%E7%9A%84-docker-engine-8dc
 
 
   <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
 
 
 
