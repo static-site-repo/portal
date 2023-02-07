@@ -6,7 +6,16 @@
     <description>Recent content in docker on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Mon, 24 Jun 2019 12:00:00 +0800</lastBuildDate><atom:link href="//william-yeh.net/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 06 Feb 2023 22:00:00 +0800</lastBuildDate><atom:link href="//william-yeh.net/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>WSL2 &#43; Podman &#43; K3s 組合技</title>
+      <link>//william-yeh.net/post/2023/02/wsl2-podman-k3s/</link>
+      <pubDate>Mon, 06 Feb 2023 22:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2023/02/wsl2-podman-k3s/</guid>
+      <description>距離上次重度使用 WSL 已經快四年了。四年來 WSL 世界起了一些變化： WSL 已經演進到第二版。 以前還會為了要搭配 Cmder 或者 WSLtty 而大費周章，現在則被 Windows Terminal 解決了大部分</description>
+    </item>
+    
     <item>
       <title>Docker File Permissions on Windows</title>
       <link>//william-yeh.net/post/2019/06/docker-file-permissions/</link>

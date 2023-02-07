@@ -6,7 +6,16 @@
     <description>Recent content in devops on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Fri, 17 Jun 2022 20:00:00 +0800</lastBuildDate><atom:link href="//william-yeh.net/tags/devops/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 06 Feb 2023 22:00:00 +0800</lastBuildDate><atom:link href="//william-yeh.net/tags/devops/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>WSL2 &#43; Podman &#43; K3s 組合技</title>
+      <link>//william-yeh.net/post/2023/02/wsl2-podman-k3s/</link>
+      <pubDate>Mon, 06 Feb 2023 22:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2023/02/wsl2-podman-k3s/</guid>
+      <description>距離上次重度使用 WSL 已經快四年了。四年來 WSL 世界起了一些變化： WSL 已經演進到第二版。 以前還會為了要搭配 Cmder 或者 WSLtty 而大費周章，現在則被 Windows Terminal 解決了大部分</description>
+    </item>
+    
     <item>
       <title>職涯躍升書系導讀會，Part 1：喚醒個人及團隊的成長意識</title>
       <link>//william-yeh.net/post/2022/06/career-reading-club-1/</link>
@@ -247,17 +256,6 @@ Built-in auto-reloading apps External signals Pod rollout In this article I&amp;
       
       <guid>//william-yeh.net/courses/k8s-workship-cloudsummit2019/</guid>
       <description>活動名稱：給 RD 的 Kubernetes 初體驗 時間：2019-05-15 (三) / 11:00&amp;ndash;12:30 會議：台灣雲端大會 (Cloud Edge Summit 2019) 課程簡介 Kubernetes 是目前雲端環境的顯學。可是，傳統的程式，並不</description>
-    </item>
-    
-    <item>
-      <title>Nginx Ingress 與 Ambassador 簡易性能比較</title>
-      <link>//william-yeh.net/post/2019/03/ingress-vs-ambassador/</link>
-      <pubDate>Fri, 29 Mar 2019 23:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2019/03/ingress-vs-ambassador/</guid>
-      <description>&lt;p&gt;API gateway 是微服務環境，甚至 service mesh 的要角 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;。&lt;/p&gt;
-&lt;p&gt;在 Kubernetes 上面，API gateway 選項眾多。有像 HAProxy 及 Nginx 這些石器時代老傢伙跨足過來，也有打從一開始就走 cloud native 路線的後起之秀。&lt;/p&gt;
-&lt;p&gt;該如何選擇？&lt;/p&gt;</description>
     </item>
     
   </channel>
