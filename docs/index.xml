@@ -36,7 +36,7 @@
 &lt;p&gt;Kubernetes 從 1.24 起停止支援 dockershim。 &lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;RedHat 釋出的 &lt;a href=&#34;https://podman.io/&#34;&gt;Podman&lt;/a&gt;，挾其完全免費、rootless、pod 的特性，開始吸引對 Docker 不滿的人。&lt;/p&gt;
+&lt;p&gt;RedHat 釋出的 &lt;a href=&#34;https://podman.io/&#34;&gt;Podman&lt;/a&gt;，挾其完全免費、daemonless、rootless、pod 的特性，開始吸引對 Docker 起異心的人。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;因此，我也趁此機會更新這方面的資訊，以免費的組合技，在 Windows 上盡量復刻 Mac 的容器體驗：&lt;/p&gt;
@@ -58,17 +58,17 @@
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;建議編輯一下 WSL 的設定檔 &lt;code&gt;/etc/wsl.conf&lt;/code&gt;：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;[boot]
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;systemd=true
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-ini&#34; data-lang=&#34;ini&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;[boot]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;na&#34;&gt;systemd&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;true&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;[network]
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# Disable auto-gen /etc/resolv.conf if necessary
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;generateResolvConf = false&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;如果要避免 WSL 占用過多系統資源，可編輯 Windows 的 &lt;code&gt;%UserProfile%\.wslconfig&lt;/code&gt; 檔案如下：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;[wsl2]
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;memory=4GB
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;processors=2&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;如果要讓 Windows 慣用的 IDE 能夠與 WSL 合作順暢，請參考相關的設定：&lt;/p&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;[network]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# Disable auto-gen /etc/resolv.conf if necessary&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;na&#34;&gt;generateResolvConf&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;false&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;如果要避免 WSL 占用過多系統資源，可編輯 Windows 的 &lt;code&gt;%UserProfile%\.wslconfig&lt;/code&gt; 檔案如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-ini&#34; data-lang=&#34;ini&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;[wsl2]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;na&#34;&gt;memory&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;4GB&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;na&#34;&gt;processors&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;2&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;如果要讓 Windows 慣用的 IDE 能夠與 WSL 合作順暢，請參考相關的設定：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;VS Code 需要安裝 &lt;a href=&#34;https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl&#34;&gt;WSL extension&lt;/a&gt;。&lt;/p&gt;
@@ -85,7 +85,7 @@
 &lt;p&gt;將 zsh 設為內定 shell：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;% chsh -s $(which zsh)&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;如果你的 zsh theme 含有許多特殊的符號字元，請順便安裝 &lt;a href=&#34;https://github.com/powerline/fonts&#34;&gt;Powerline&lt;/a&gt; 系列字型。&lt;/p&gt;
-&lt;p&gt;安裝 Ubuntu 版的 Homebrew：&lt;/p&gt;
+&lt;p&gt;Mac 族群一向愛用 &lt;a href=&#34;https://brew.sh/&#34;&gt;Homebrew&lt;/a&gt;。既然它也搬到 Linux 世界了，就來安裝吧！&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;% sudo apt-get install build-essential curl file git
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;% sh -c &amp;#34;$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)&amp;#34;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
@@ -94,6 +94,9 @@
 &lt;p&gt;請依照 &lt;a href=&#34;https://podman.io/getting-started/installation#installing-on-linux&#34;&gt;Podman 官方文件&lt;/a&gt;所載步驟安裝 Podman。譬如說，如果 WSL 的 distribution 是 Ubuntu 22.04.1 LTS，可如此安裝：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;% sudo apt update
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;% sudo apt -y install podman&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;或是直接透過 Homebrew 安裝。好處是容易更新版本，缺點是安裝較慢：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;% sudo apt install uidmap
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;% brew install podman&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;為了讓 Podman 能盡量沿用過往 Docker 的使用習慣，建議在 &lt;code&gt;$HOME/.bashrc&lt;/code&gt; 添加 alias：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;alias docker=&amp;#39;podman&amp;#39;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;還有一個選擇性步驟。如果你希望讓 image 不會被綁在 &lt;code&gt;docker.io/library/&lt;/code&gt; 這個預設的 registry，可以考慮在 &lt;code&gt;/etc/containers/registries.conf&lt;/code&gt; 添加設定 &lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt; ：&lt;/p&gt;
@@ -188,7 +191,7 @@
   &lt;/figure&gt;
 &lt;/div&gt;
 
-&lt;p&gt;整個 process tree 是不是跟以前 Docker Desktop 的版本很不一樣呢？&lt;/p&gt;
+&lt;p&gt;整個 process tree 非常扁平，是不是跟以前 Docker Desktop 的版本很不一樣呢？&lt;/p&gt;
 &lt;p&gt;希望這篇文章，能夠讓你更放心擺脫 Docker Desktop。&lt;/p&gt;
 &lt;!-- raw HTML omitted --&gt;
 &lt;!-- raw HTML omitted --&gt;

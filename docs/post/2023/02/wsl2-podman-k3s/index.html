@@ -52,7 +52,7 @@
 
 
 
-<link rel="stylesheet" href="/sass/jane.min.fa4b2b9f31b5c6d0b683db81157a9226e17b06e61911791ab547242a4a0556f2.css" integrity="sha256-&#43;ksrnzG1xtC2g9uBFXqSJuF7BuYZEXkatUckKkoFVvI=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.de22abc00de44766eebd1054fd9e0b254b071f89d5019044f893c484a9249a8d.css" integrity="sha256-3iKrwA3kR2buvRBU/Z4LJUsHH4nVAZBE&#43;JPEhKkkmo0=" media="screen" crossorigin="anonymous">
 
 
 
@@ -69,7 +69,7 @@
 <meta itemprop="name" content="WSL2 &#43; Podman &#43; K3s 組合技">
 <meta itemprop="description" content="距離上次重度使用 WSL 已經快四年了。四年來 WSL 世界起了一些變化： WSL 已經演進到第二版。 以前還會為了要搭配 Cmder 或者 WSLtty 而大費周章，現在則被 Windows Terminal 解決了大部分"><meta itemprop="datePublished" content="2023-02-06T22:00:00+08:00" />
 <meta itemprop="dateModified" content="2023-02-06T22:00:00+08:00" />
-<meta itemprop="wordCount" content="1751">
+<meta itemprop="wordCount" content="1824">
 <meta itemprop="keywords" content="devops,wsl,docker,kubernetes,podman," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="WSL2 &#43; Podman &#43; K3s 組合技"/>
 <meta name="twitter:description" content="距離上次重度使用 WSL 已經快四年了。四年來 WSL 世界起了一些變化： WSL 已經演進到第二版。 以前還會為了要搭配 Cmder 或者 WSLtty 而大費周章，現在則被 Windows Terminal 解決了大部分"/>
@@ -306,7 +306,7 @@ if (!doNotTrack) {
 
   <div class="post-meta__right">
     <span class="post-meta-more">
-        約 1751 字 -
+        約 1824 字 -
         預計閱讀 4 分鐘
       </span>
 
@@ -372,7 +372,7 @@ if (!doNotTrack) {
 <p>Kubernetes 從 1.24 起停止支援 dockershim。 <sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></p>
 </li>
 <li>
-<p>RedHat 釋出的 <a href="https://podman.io/">Podman</a>，挾其完全免費、rootless、pod 的特性，開始吸引對 Docker 不滿的人。</p>
+<p>RedHat 釋出的 <a href="https://podman.io/">Podman</a>，挾其完全免費、daemonless、rootless、pod 的特性，開始吸引對 Docker 起異心的人。</p>
 </li>
 </ul>
 <p>因此，我也趁此機會更新這方面的資訊，以免費的組合技，在 Windows 上盡量復刻 Mac 的容器體驗：</p>
@@ -394,17 +394,17 @@ if (!doNotTrack) {
 </li>
 </ol>
 <p>建議編輯一下 WSL 的設定檔 <code>/etc/wsl.conf</code>：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">[boot]
-</span></span><span class="line"><span class="cl">systemd=true
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ini" data-lang="ini"><span class="line"><span class="cl"><span class="k">[boot]</span>
+</span></span><span class="line"><span class="cl"><span class="na">systemd</span><span class="o">=</span><span class="s">true</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">[network]
-</span></span><span class="line"><span class="cl"># Disable auto-gen /etc/resolv.conf if necessary
-</span></span><span class="line"><span class="cl">generateResolvConf = false</span></span></code></pre></div>
-<p>如果要避免 WSL 占用過多系統資源，可編輯 Windows 的 <code>%UserProfile%\.wslconfig</code> 檔案如下：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">[wsl2]
-</span></span><span class="line"><span class="cl">memory=4GB
-</span></span><span class="line"><span class="cl">processors=2</span></span></code></pre></div>
-<p>如果要讓 Windows 慣用的 IDE 能夠與 WSL 合作順暢，請參考相關的設定：</p>
+</span></span><span class="line"><span class="cl"><span class="k">[network]</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Disable auto-gen /etc/resolv.conf if necessary</span>
+</span></span><span class="line"><span class="cl"><span class="na">generateResolvConf</span> <span class="o">=</span> <span class="s">false</span>
+</span></span></code></pre></div><p>如果要避免 WSL 占用過多系統資源，可編輯 Windows 的 <code>%UserProfile%\.wslconfig</code> 檔案如下：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ini" data-lang="ini"><span class="line"><span class="cl"><span class="k">[wsl2]</span>
+</span></span><span class="line"><span class="cl"><span class="na">memory</span><span class="o">=</span><span class="s">4GB</span>
+</span></span><span class="line"><span class="cl"><span class="na">processors</span><span class="o">=</span><span class="s">2</span>
+</span></span></code></pre></div><p>如果要讓 Windows 慣用的 IDE 能夠與 WSL 合作順暢，請參考相關的設定：</p>
 <ul>
 <li>
 <p>VS Code 需要安裝 <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl">WSL extension</a>。</p>
@@ -421,7 +421,7 @@ if (!doNotTrack) {
 <p>將 zsh 設為內定 shell：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">% chsh -s $(which zsh)</span></span></code></pre></div>
 <p>如果你的 zsh theme 含有許多特殊的符號字元，請順便安裝 <a href="https://github.com/powerline/fonts">Powerline</a> 系列字型。</p>
-<p>安裝 Ubuntu 版的 Homebrew：</p>
+<p>Mac 族群一向愛用 <a href="https://brew.sh/">Homebrew</a>。既然它也搬到 Linux 世界了，就來安裝吧！</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">% sudo apt-get install build-essential curl file git
 </span></span><span class="line"><span class="cl">% sh -c &#34;$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)&#34;
 </span></span><span class="line"><span class="cl">
@@ -430,6 +430,9 @@ if (!doNotTrack) {
 <p>請依照 <a href="https://podman.io/getting-started/installation#installing-on-linux">Podman 官方文件</a>所載步驟安裝 Podman。譬如說，如果 WSL 的 distribution 是 Ubuntu 22.04.1 LTS，可如此安裝：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">% sudo apt update
 </span></span><span class="line"><span class="cl">% sudo apt -y install podman</span></span></code></pre></div>
+<p>或是直接透過 Homebrew 安裝。好處是容易更新版本，缺點是安裝較慢：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">% sudo apt install uidmap
+</span></span><span class="line"><span class="cl">% brew install podman</span></span></code></pre></div>
 <p>為了讓 Podman 能盡量沿用過往 Docker 的使用習慣，建議在 <code>$HOME/.bashrc</code> 添加 alias：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">alias docker=&#39;podman&#39;</span></span></code></pre></div>
 <p>還有一個選擇性步驟。如果你希望讓 image 不會被綁在 <code>docker.io/library/</code> 這個預設的 registry，可以考慮在 <code>/etc/containers/registries.conf</code> 添加設定 <sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup> ：</p>
@@ -524,7 +527,7 @@ if (!doNotTrack) {
   </figure>
 </div>
 
-<p>整個 process tree 是不是跟以前 Docker Desktop 的版本很不一樣呢？</p>
+<p>整個 process tree 非常扁平，是不是跟以前 Docker Desktop 的版本很不一樣呢？</p>
 <p>希望這篇文章，能夠讓你更放心擺脫 Docker Desktop。</p>
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
