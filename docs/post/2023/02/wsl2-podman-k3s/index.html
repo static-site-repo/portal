@@ -69,7 +69,7 @@
 <meta itemprop="name" content="WSL2 &#43; Podman &#43; K3s 組合技">
 <meta itemprop="description" content="距離上次重度使用 WSL 已經快四年了。四年來 WSL 世界起了一些變化： WSL 已經演進到第二版。 以前還會為了要搭配 Cmder 或者 WSLtty 而大費周章，現在則被 Windows Terminal 解決了大部分"><meta itemprop="datePublished" content="2023-02-06T22:00:00+08:00" />
 <meta itemprop="dateModified" content="2023-02-06T22:00:00+08:00" />
-<meta itemprop="wordCount" content="1761">
+<meta itemprop="wordCount" content="1751">
 <meta itemprop="keywords" content="devops,wsl,docker,kubernetes,podman," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="WSL2 &#43; Podman &#43; K3s 組合技"/>
 <meta name="twitter:description" content="距離上次重度使用 WSL 已經快四年了。四年來 WSL 世界起了一些變化： WSL 已經演進到第二版。 以前還會為了要搭配 Cmder 或者 WSLtty 而大費周章，現在則被 Windows Terminal 解決了大部分"/>
@@ -306,7 +306,7 @@ if (!doNotTrack) {
 
   <div class="post-meta__right">
     <span class="post-meta-more">
-        約 1761 字 -
+        約 1751 字 -
         預計閱讀 4 分鐘
       </span>
 
@@ -403,10 +403,7 @@ if (!doNotTrack) {
 <p>如果要避免 WSL 占用過多系統資源，可編輯 Windows 的 <code>%UserProfile%\.wslconfig</code> 檔案如下：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">[wsl2]
 </span></span><span class="line"><span class="cl">memory=4GB
-</span></span><span class="line"><span class="cl">processors=2
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">################## cgroup v2 for rootless podman + kind ???
-</span></span><span class="line"><span class="cl">#systemd.unified_cgroup_hierarchy=1</span></span></code></pre></div>
+</span></span><span class="line"><span class="cl">processors=2</span></span></code></pre></div>
 <p>如果要讓 Windows 慣用的 IDE 能夠與 WSL 合作順暢，請參考相關的設定：</p>
 <ul>
 <li>
