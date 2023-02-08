@@ -23,7 +23,9 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="William Yeh" />
-  <meta name="description" content="從 Docker Desktop 換到 Podman 1 ，開始需要處理某些相容性問題。有些問題不見得是 Podman 的錯，但既然遇到了，就順手記錄一下除雷經驗。 此文記錄一下在 Podman 執行 Laravel 9 欽定開發環" />
+  <meta name="description" content="從 Docker Desktop 換到 Podman 1 ，開始需要處理某些相容性問題。有些問題不見得是 Podman 的錯，但既然遇到了，就順手記錄一下除雷經驗。
+此文記錄一下在 Podman 執行 Laravel 9 欽定開發環境 Sail 的步驟。
+" />
 
 
 
@@ -61,18 +63,21 @@
 
 
 <meta property="og:title" content="用 Podman 執行 Laravel &#43; Sail" />
-<meta property="og:description" content="從 Docker Desktop 換到 Podman 1 ，開始需要處理某些相容性問題。有些問題不見得是 Podman 的錯，但既然遇到了，就順手記錄一下除雷經驗。 此文記錄一下在 Podman 執行 Laravel 9 欽定開發環" />
+<meta property="og:description" content="從 Docker Desktop 換到 Podman 1 ，開始需要處理某些相容性問題。有些問題不見得是 Podman 的錯，但既然遇到了，就順手記錄一下除雷經驗。
+此文記錄一下在 Podman 執行 Laravel 9 欽定開發環境 Sail 的步驟。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="//william-yeh.net/post/2023/02/podman-laravel-sail/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2023-02-07T22:00:00+08:00" />
 <meta property="article:modified_time" content="2023-02-07T22:00:00+08:00" />
 <meta itemprop="name" content="用 Podman 執行 Laravel &#43; Sail">
-<meta itemprop="description" content="從 Docker Desktop 換到 Podman 1 ，開始需要處理某些相容性問題。有些問題不見得是 Podman 的錯，但既然遇到了，就順手記錄一下除雷經驗。 此文記錄一下在 Podman 執行 Laravel 9 欽定開發環"><meta itemprop="datePublished" content="2023-02-07T22:00:00+08:00" />
+<meta itemprop="description" content="從 Docker Desktop 換到 Podman 1 ，開始需要處理某些相容性問題。有些問題不見得是 Podman 的錯，但既然遇到了，就順手記錄一下除雷經驗。
+此文記錄一下在 Podman 執行 Laravel 9 欽定開發環境 Sail 的步驟。"><meta itemprop="datePublished" content="2023-02-07T22:00:00+08:00" />
 <meta itemprop="dateModified" content="2023-02-07T22:00:00+08:00" />
 <meta itemprop="wordCount" content="647">
 <meta itemprop="keywords" content="devops,docker,podman,programming," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="用 Podman 執行 Laravel &#43; Sail"/>
-<meta name="twitter:description" content="從 Docker Desktop 換到 Podman 1 ，開始需要處理某些相容性問題。有些問題不見得是 Podman 的錯，但既然遇到了，就順手記錄一下除雷經驗。 此文記錄一下在 Podman 執行 Laravel 9 欽定開發環"/>
+<meta name="twitter:description" content="從 Docker Desktop 換到 Podman 1 ，開始需要處理某些相容性問題。有些問題不見得是 Podman 的錯，但既然遇到了，就順手記錄一下除雷經驗。
+此文記錄一下在 Podman 執行 Laravel 9 欽定開發環境 Sail 的步驟。"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -426,7 +431,6 @@ if (!doNotTrack) {
 </li>
 </ol>
 </div>
-
     </div>
 
     
