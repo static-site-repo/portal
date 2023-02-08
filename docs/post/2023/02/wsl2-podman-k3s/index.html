@@ -69,8 +69,8 @@
 <meta itemprop="name" content="WSL2 &#43; Podman &#43; K3s 組合技">
 <meta itemprop="description" content="距離上次重度使用 WSL 已經快四年了。四年來 WSL 世界起了一些變化： WSL 已經演進到第二版。 以前還會為了要搭配 Cmder 或者 WSLtty 而大費周章，現在則被 Windows Terminal 解決了大部分"><meta itemprop="datePublished" content="2023-02-06T22:00:00+08:00" />
 <meta itemprop="dateModified" content="2023-02-06T22:00:00+08:00" />
-<meta itemprop="wordCount" content="1959">
-<meta itemprop="keywords" content="devops,wsl,docker,kubernetes,podman," /><meta name="twitter:card" content="summary"/>
+<meta itemprop="wordCount" content="1970">
+<meta itemprop="keywords" content="devops,wsl,docker,podman,kubernetes," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="WSL2 &#43; Podman &#43; K3s 組合技"/>
 <meta name="twitter:description" content="距離上次重度使用 WSL 已經快四年了。四年來 WSL 世界起了一些變化： WSL 已經演進到第二版。 以前還會為了要搭配 Cmder 或者 WSLtty 而大費周章，現在則被 Windows Terminal 解決了大部分"/>
 
@@ -306,7 +306,7 @@ if (!doNotTrack) {
 
   <div class="post-meta__right">
     <span class="post-meta-more">
-        約 1959 字 -
+        約 1970 字 -
         預計閱讀 4 分鐘
       </span>
 
@@ -340,7 +340,13 @@ if (!doNotTrack) {
   <ul>
     <li><a href="#wsl-2">WSL 2</a></li>
     <li><a href="#zsh--oh-my-zsh--homebrew">Zsh + Oh My ZSH + Homebrew</a></li>
-    <li><a href="#podman">Podman</a></li>
+    <li><a href="#podman">Podman</a>
+      <ul>
+        <li><a href="#安裝">安裝</a></li>
+        <li><a href="#設定">設定</a></li>
+        <li><a href="#便利性">便利性</a></li>
+      </ul>
+    </li>
     <li><a href="#podman-play-kube">Podman play kube</a></li>
     <li><a href="#podman-compose">Podman Compose</a></li>
     <li><a href="#k3s">K3s</a></li>
@@ -427,20 +433,16 @@ if (!doNotTrack) {
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">% # 請記得要遵照安裝畫面出現的步驟做最後的設定！</span></span></code></pre></div>
 <h2 id="podman">Podman</h2>
+<h3 id="安裝">安裝</h3>
 <p>請依照 <a href="https://podman.io/getting-started/installation#installing-on-linux">Podman 官方文件</a>所載步驟安裝 Podman。譬如說，如果 WSL 的 distribution 是 Ubuntu 22.04.1 LTS，可如此安裝：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">% sudo apt update
 </span></span><span class="line"><span class="cl">% sudo apt -y install podman</span></span></code></pre></div>
 <p>或是直接透過 Homebrew 安裝。好處是容易更新版本，缺點是安裝較慢：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">% sudo apt install uidmap
 </span></span><span class="line"><span class="cl">% brew install podman</span></span></code></pre></div>
+<h3 id="設定">設定</h3>
 <p>Podman 是 daemonless + rootless 的架構。如果你希望讓 container 能夠自由綁定 port 80 以利本地開發，可以考慮在 <code>/etc/sysctl.conf</code> 添加設定：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">net.ipv4.ip_unprivileged_port_start=80</span></span></code></pre></div>
-<p>為了讓 Podman 能盡量沿用過往 Docker 的使用習慣，建議在 <code>$HOME/.bashrc</code> 添加 alias：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">alias docker=&#39;podman&#39;</span></span></code></pre></div>
-<p>如果遇到 alias 也無法避開的問題，建議索性放一個 <code>/usr/local/bin/docker</code> 檔案：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
-</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
-</span></span><span class="line"><span class="cl"><span class="nb">exec</span> podman <span class="s2">&#34;</span><span class="nv">$@</span><span class="s2">&#34;</span></span></span></code></pre></div>
 <p>還有一個選擇性步驟。如果你希望讓 image 不會被綁在 <code>docker.io/library/</code> 這個預設的 registry，可以考慮在 <code>/etc/containers/registries.conf</code> 添加設定 <sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup> ：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">unqualified-search-registries=[
 </span></span><span class="line"><span class="cl">  &#34;registry.access.redhat.com&#34;, &#34;registry.fedoraproject.org&#34;,
@@ -448,6 +450,13 @@ if (!doNotTrack) {
 </span></span><span class="line"><span class="cl">  &#34;gcr.io&#34;,
 </span></span><span class="line"><span class="cl">  &#34;docker.io&#34;
 </span></span><span class="line"><span class="cl">]</span></span></code></pre></div>
+<h3 id="便利性">便利性</h3>
+<p>為了讓 Podman 能盡量沿用過往 Docker 的使用習慣，建議在 <code>$HOME/.bashrc</code> 添加 alias：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">alias docker=&#39;podman&#39;</span></span></code></pre></div>
+<p>如果遇到 alias 也無法避開的問題，建議索性放一個 <code>/usr/local/bin/docker</code> 檔案：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="nb">exec</span> podman <span class="s2">&#34;</span><span class="nv">$@</span><span class="s2">&#34;</span></span></span></code></pre></div>
 <h2 id="podman-play-kube">Podman play kube</h2>
 <p>Podman 有一個介於 Docker 與 Kubernetes 之間的功能：pod。如果懂得善用，在許多情況下可以取代 Docker Compose，也做為邁向 Kubernetes 的踏腳石。</p>
 <p>譬如說，如果我們稍加修改 Kubernetes 官網的 pod 範例 <a href="https://kubernetes.io/docs/concepts/workloads/pods/#using-pods">simple-pod.yaml</a>：</p>
@@ -485,7 +494,13 @@ if (!doNotTrack) {
 </div>
 
 <h2 id="podman-compose">Podman Compose</h2>
-<p>Kubernetes 生態圈有一大堆媲美 Docker Compose 便利性的工具（譬如我愛用的 <a href="https://skaffold.dev/">Skaffold</a>）。不過，如果你實在太想念 Docker Compose，不妨試試 Podman 陣營端出的替代品 <a href="https://github.com/containers/podman-compose">Podman Compose</a>。</p>
+<p>Kubernetes 生態圈有一大堆媲美 Docker Compose 便利性的工具（譬如我愛用的 <a href="https://skaffold.dev/">Skaffold</a>）。不過，如果你實在太想念 Docker Compose，有兩種做法：</p>
+<p>➀ 可直接沿用舊的 <a href="https://github.com/docker/compose">Docker Compose</a>，但是需要將 Podman 啟動成 daemon。</p>
+<p>安裝方法：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">% sudo curl -SL https://github.com/docker/compose/releases/download/v2.15.1/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">% sudo chmod +x /usr/local/bin/docker-compose</span></span></code></pre></div>
+<p>➁ 如果不需顧及相容性，不妨試試 Podman 陣營端出的替代品 <a href="https://github.com/containers/podman-compose">Podman Compose</a>。</p>
 <p>對於 Podman Compose 感興趣的，請參考以下文章：</p>
 <ul>
 <li>
@@ -495,12 +510,8 @@ if (!doNotTrack) {
 <p><a href="https://www.redhat.com/sysadmin/podman-compose-docker-compose">Podman Compose or Docker Compose: Which should you use in Podman?</a></p>
 </li>
 </ul>
-<p>為了讓 Podman Compose 能盡量沿用過往 Docker Compose 的使用習慣，建議在 <code>$HOME/.bashrc</code> 添加 alias：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">alias docker-compose=&#39;podman-compose&#39;</span></span></code></pre></div>
-<p>如果遇到 alias 也無法避開的問題，建議索性放一個 <code>/usr/local/bin/docker-compose</code> 檔案：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
-</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
-</span></span><span class="line"><span class="cl"><span class="nb">exec</span> podman-compose <span class="s2">&#34;</span><span class="nv">$@</span><span class="s2">&#34;</span></span></span></code></pre></div>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <h2 id="k3s">K3s</h2>
 <p><a href="https://k3s.io/">K3s</a> 是由 Rancher Labs 貢獻給 CNCF 的輕量級 Kubernetes 開源方案，很適合應用程式開發者使用，作為 Docker Desktop 內建 Kubernetes 的替代方案。</p>
 <p>請依照 <a href="https://docs.k3s.io/installation/configuration">K3s 官方文件</a>所載步驟安裝： <sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup></p>
@@ -598,8 +609,8 @@ if (!doNotTrack) {
           <a href="//william-yeh.net/tags/devops/">devops</a>
             <a href="//william-yeh.net/tags/wsl/">wsl</a>
             <a href="//william-yeh.net/tags/docker/">docker</a>
-            <a href="//william-yeh.net/tags/kubernetes/">kubernetes</a>
             <a href="//william-yeh.net/tags/podman/">podman</a>
+            <a href="//william-yeh.net/tags/kubernetes/">kubernetes</a>
             
         </div>
 
