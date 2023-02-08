@@ -129,7 +129,7 @@
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;% sudo ln -s /run/user/$(id -u)/podman/podman.sock /var/run/docker.sock&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;我也習慣設一個 alias 以便需要時隨時啟用它：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;alias podman-service=&amp;#39;podman system service -t 0&amp;#39;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;在不需要時，按下 Ctrl-C 即可關閉，非常方便。&lt;/p&gt;
+&lt;p&gt;在不需要時，按下 &lt;code&gt;Ctrl&lt;/code&gt;+&lt;code&gt;C&lt;/code&gt; 即可關閉，非常方便。&lt;/p&gt;
 &lt;h3 id=&#34;持久性設置&#34;&gt;持久性設置&lt;/h3&gt;
 &lt;p&gt;如果你想透過 systemd 來管理，請參考 K3d 團隊提供的 &lt;a href=&#34;https://k3d.io/v5.4.7/usage/advanced/podman/&#34;&gt;Using Podman instead of Docker&lt;/a&gt; 這篇文章。&lt;/p&gt;
 &lt;!-- raw HTML omitted --&gt;

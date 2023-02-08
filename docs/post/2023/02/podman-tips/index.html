@@ -381,7 +381,7 @@ if (!doNotTrack) {
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">% sudo ln -s /run/user/$(id -u)/podman/podman.sock /var/run/docker.sock</span></span></code></pre></div>
 <p>我也習慣設一個 alias 以便需要時隨時啟用它：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">alias podman-service=&#39;podman system service -t 0&#39;</span></span></code></pre></div>
-<p>在不需要時，按下 Ctrl-C 即可關閉，非常方便。</p>
+<p>在不需要時，按下 <code>Ctrl</code>+<code>C</code> 即可關閉，非常方便。</p>
 <h3 id="持久性設置">持久性設置</h3>
 <p>如果你想透過 systemd 來管理，請參考 K3d 團隊提供的 <a href="https://k3d.io/v5.4.7/usage/advanced/podman/">Using Podman instead of Docker</a> 這篇文章。</p>
 <!-- raw HTML omitted -->
