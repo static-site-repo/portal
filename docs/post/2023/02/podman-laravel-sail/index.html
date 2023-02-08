@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Potioneer&#39;s Essays</title>
+  <title>用 Podman 執行 Laravel &#43; Sail - Potioneer&#39;s Essays</title>
   
 
 <meta name="renderer" content="webkit" />
@@ -23,7 +23,8 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="William Yeh" />
-  <meta name="description" content="敏捷魔藥師 (Agile Potioneer)。會說 90% 的工匠語言，會說 70% 的總管語言，正在努力提升 30% 的行腳商人語言。" />
+  <meta name="description" content="從 Docker Desktop 換到 Podman 1 ，開始需要處理某些相容性問題。有些問題不見得是 Podman 的錯，但既然遇到了，就順手記錄一下。 此文記錄一下在 Podman 執行 Laravel 9 欽定開發環境 Sail 的除" />
+
 
 
 
@@ -33,8 +34,8 @@
 <meta name="generator" content="Hugo 0.110.0" />
 
 
-<link rel="canonical" href="//william-yeh.net/" />
-<link href="/index.xml" rel="alternate" type="application/rss+xml" title="Potioneer&#39;s Essays" />
+<link rel="canonical" href="//william-yeh.net/post/2023/02/podman-laravel-sail/" />
+
 
 
 
@@ -59,14 +60,19 @@
 
 
 
-<meta property="og:title" content="Potioneer&#39;s Essays" />
-<meta property="og:description" content="敏捷魔藥師 (Agile Potioneer)。會說 90% 的工匠語言，會說 70% 的總管語言，正在努力提升 30% 的行腳商人語言。" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="//william-yeh.net/" />
-<meta itemprop="name" content="Potioneer&#39;s Essays">
-<meta itemprop="description" content="敏捷魔藥師 (Agile Potioneer)。會說 90% 的工匠語言，會說 70% 的總管語言，正在努力提升 30% 的行腳商人語言。"><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Potioneer&#39;s Essays"/>
-<meta name="twitter:description" content="敏捷魔藥師 (Agile Potioneer)。會說 90% 的工匠語言，會說 70% 的總管語言，正在努力提升 30% 的行腳商人語言。"/>
+<meta property="og:title" content="用 Podman 執行 Laravel &#43; Sail" />
+<meta property="og:description" content="從 Docker Desktop 換到 Podman 1 ，開始需要處理某些相容性問題。有些問題不見得是 Podman 的錯，但既然遇到了，就順手記錄一下。 此文記錄一下在 Podman 執行 Laravel 9 欽定開發環境 Sail 的除" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="//william-yeh.net/post/2023/02/podman-laravel-sail/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2023-02-07T22:00:00+08:00" />
+<meta property="article:modified_time" content="2023-02-07T22:00:00+08:00" />
+<meta itemprop="name" content="用 Podman 執行 Laravel &#43; Sail">
+<meta itemprop="description" content="從 Docker Desktop 換到 Podman 1 ，開始需要處理某些相容性問題。有些問題不見得是 Podman 的錯，但既然遇到了，就順手記錄一下。 此文記錄一下在 Podman 執行 Laravel 9 欽定開發環境 Sail 的除"><meta itemprop="datePublished" content="2023-02-07T22:00:00+08:00" />
+<meta itemprop="dateModified" content="2023-02-07T22:00:00+08:00" />
+<meta itemprop="wordCount" content="629">
+<meta itemprop="keywords" content="devops,docker,podman,programming," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="用 Podman 執行 Laravel &#43; Sail"/>
+<meta name="twitter:description" content="從 Docker Desktop 換到 Podman 1 ，開始需要處理某些相容性問題。有些問題不見得是 Podman 的錯，但既然遇到了，就順手記錄一下。 此文記錄一下在 Podman 執行 Laravel 9 欽定開發環境 Sail 的除"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -276,23 +282,13 @@ if (!doNotTrack) {
     <main id="main" class="main bg-llight wallpaper">
       <div class="content-wrapper">
         <div id="content" class="content container">
-          
-<section id="posts" class="posts">
-  
-  
+          <article class="post bg-white">
     
-  
-  
-  
-    <article class="post bg-white">
-  <header class="post-header">
-    <h1 class="post-title">
+    <header class="post-header">
+      <h1 class="post-title">用 Podman 執行 Laravel &#43; Sail</h1>
       
-      <a class="post-link" href="/post/2022/08/stakeholder-transparency/">專案管理／專案組合管理當中，不必然需要公開透明的地方</a>
-    </h1>
-    
 
-    <div class="post-meta">
+      <div class="post-meta">
   <div class="post-meta-author">
     by
       William Yeh
@@ -300,8 +296,8 @@ if (!doNotTrack) {
   </div>
 
   <div class="post-meta-time">
-    <time datetime="2022-08-01">
-      2022-08-01
+    <time datetime="2023-02-07">
+      2023-02-07
     </time>
   </div>
 
@@ -310,310 +306,8 @@ if (!doNotTrack) {
 
   <div class="post-meta__right">
     <span class="post-meta-more">
-        約 485 字 -
-        預計閱讀 1 分鐘
-      </span>
-
-    <div class="post-meta-category">
-        <a href="//william-yeh.net/categories/management/"> management </a>
-          
-      </div>
-
-
-    
-    
-      <span id="busuanzi_container_page_pv">
-        | 阅读 <span id="busuanzi_value_page_pv"></span>
-      </span>
-    
-
-
-    
-    
-  </div>
-</div>
-
-  </header>
-  
-  <div class="post-content">
-    
-      <div class="post-summary">
-        <p>（改寫自公司內部 memo）</p>
-<p><!-- raw HTML omitted -->   <!-- raw HTML omitted -->   <!-- raw HTML omitted --></p>
-<p>（Target audience: 有「專案管理」職責的人）</p>
-<p>Hi all,</p>
-<p>隨著愈來愈多人開始運用專案管理課堂上學到的技術來工作，帶來更高的透明度，更成熟的專業度，欣慰之餘，我也針對其中一件事「透明度」提出一點小提醒。</p>
-<p>理想情況下，組織應該要追求專案的透明度——除非有特殊理由。</p>
-      </div>
-      <div class="read-more">
-        <a href="/post/2022/08/stakeholder-transparency/" class="read-more-link"
-          >閱讀全文</a
-        >
-      </div>
-    
-  </div>
-</article>
-
-  
-    <article class="post bg-white">
-  <header class="post-header">
-    <h1 class="post-title">
-      
-      <a class="post-link" href="/post/2022/07/prj-kickoff/">專案 Kick-off meeting 的前置作業</a>
-    </h1>
-    
-
-    <div class="post-meta">
-  <div class="post-meta-author">
-    by
-      William Yeh
-    
-  </div>
-
-  <div class="post-meta-time">
-    <time datetime="2022-07-11">
-      2022-07-11
-    </time>
-  </div>
-
-  
-
-
-  <div class="post-meta__right">
-    <span class="post-meta-more">
-        約 1114 字 -
-        預計閱讀 3 分鐘
-      </span>
-
-    <div class="post-meta-category">
-        <a href="//william-yeh.net/categories/management/"> management </a>
-          
-      </div>
-
-
-    
-    
-      <span id="busuanzi_container_page_pv">
-        | 阅读 <span id="busuanzi_value_page_pv"></span>
-      </span>
-    
-
-
-    
-    
-  </div>
-</div>
-
-  </header>
-  
-  <div class="post-content">
-    
-      <div class="post-summary">
-        <p>（改寫自公司內部 memo）</p>
-<p><!-- raw HTML omitted -->   <!-- raw HTML omitted -->   <!-- raw HTML omitted --></p>
-<p>（Target audience: 上過【專案管理第一次就上手】的同仁）</p>
-<p>很高興看到二月及四月上過【專案管理第一次就上手】的同仁們，開始在工作上運用課堂所學，尤其是「<strong>專案管理問題清單</strong>」開始被廣泛運用在大大小小專案的 kick-off meeting 上面，這是非常好的現象。</p>
-<p>這份 memo，我針對 <strong>kick-off meeting</strong> 的定位及前置作業多做一些補充，算是這陣子貼身觀察的小小心得。</p>
-      </div>
-      <div class="read-more">
-        <a href="/post/2022/07/prj-kickoff/" class="read-more-link"
-          >閱讀全文</a
-        >
-      </div>
-    
-  </div>
-</article>
-
-  
-    <article class="post bg-white">
-  <header class="post-header">
-    <h1 class="post-title">
-      
-      <a class="post-link" href="/post/2022/06/career-reading-club-1/">職涯躍升書系導讀會，Part 1：喚醒個人及團隊的成長意識</a>
-    </h1>
-    
-
-    <div class="post-meta">
-  <div class="post-meta-author">
-    by
-      William Yeh
-    
-  </div>
-
-  <div class="post-meta-time">
-    <time datetime="2022-06-17">
-      2022-06-17
-    </time>
-  </div>
-
-  
-
-
-  <div class="post-meta__right">
-    <span class="post-meta-more">
-        約 3561 字 -
-        預計閱讀 8 分鐘
-      </span>
-
-    <div class="post-meta-category">
-        <a href="//william-yeh.net/categories/management/"> management </a>
-          
-      </div>
-
-
-    
-    
-      <span id="busuanzi_container_page_pv">
-        | 阅读 <span id="busuanzi_value_page_pv"></span>
-      </span>
-    
-
-
-    
-    
-  </div>
-</div>
-
-  </header>
-  
-  <div class="post-content">
-    
-      <div class="post-summary">
-        <p>2022 年一月起，我開始每個月一次，每次兩小時的【職涯躍升書系導讀會】，讓公司同仁自由報名，希望藉由這種草根性的軟性活動，另闢一條 bottom-up 的改革路徑。畢竟，深遠持久的影響，不能少掉「喚醒基層意識」這環節。</p>
-
-<link rel="stylesheet" href="/css/hugo-easy-gallery.css" />
-<div class="box">
-<figure  itemprop="associatedMedia"
-  itemscope itemtype="http://schema.org/ImageObject" 
-  style="max-width:30em" >
-    <div class="img">
-      <img itemprop="thumbnail" src="/img/2022/06/reading-club-photo.jpg" />
-    </div>
-    <a href="/img/2022/06/reading-club-photo.jpg" itemprop="contentUrl"></a>
-  </figure>
-</div>
-
-<p>前六個月的選書如下：</p>
-      </div>
-      <div class="read-more">
-        <a href="/post/2022/06/career-reading-club-1/" class="read-more-link"
-          >閱讀全文</a
-        >
-      </div>
-    
-  </div>
-</article>
-
-  
-    <article class="post bg-white">
-  <header class="post-header">
-    <h1 class="post-title">
-      
-      <a class="post-link" href="/post/2022/06/one-msg-per-slide/">圖表，要有重點訊息</a>
-    </h1>
-    
-
-    <div class="post-meta">
-  <div class="post-meta-author">
-    by
-      William Yeh
-    
-  </div>
-
-  <div class="post-meta-time">
-    <time datetime="2022-06-09">
-      2022-06-09
-    </time>
-  </div>
-
-  
-
-
-  <div class="post-meta__right">
-    <span class="post-meta-more">
-        約 1845 字 -
-        預計閱讀 4 分鐘
-      </span>
-
-    <div class="post-meta-category">
-        <a href="//william-yeh.net/categories/management/"> management </a>
-          
-      </div>
-
-
-    
-    
-      <span id="busuanzi_container_page_pv">
-        | 阅读 <span id="busuanzi_value_page_pv"></span>
-      </span>
-    
-
-
-    
-    
-  </div>
-</div>
-
-  </header>
-  
-  <div class="post-content">
-    
-      <div class="post-summary">
-        <p>月前看到君婷老師提的這則<a href="https://www.facebook.com/elva.lee.752/posts/5372125532799861">重大發現</a>：「當你沒辦法 convince 對方的時候，那就想辦法 confuse 他。」</p>
-
-<link rel="stylesheet" href="/css/hugo-easy-gallery.css" />
-<div class="box">
-<figure  itemprop="associatedMedia"
-  itemscope itemtype="http://schema.org/ImageObject" 
-  style="max-width:20em" >
-    <div class="img">
-      <img itemprop="thumbnail" src="/img/2022/06/elva-20220505.jpg" />
-    </div>
-    <a href="/img/2022/06/elva-20220505.jpg" itemprop="contentUrl"></a>
-  </figure>
-</div>
-
-<p>對於「塞一大堆無關緊要，但看起來好像很認真整理過的資料」這件事，我是感同身受的——尤其是職場的會議簡報。</p>
-<p>職場的會議簡報，下焉者，塞一大堆原始數據；中焉者，把數據整理為樸素的統計圖表；上焉者，會針對圖表的洞見予以錘鍊。<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> 上焉者的境界，可能需要一段時間訓練與即時回饋，恐非短期可奏效；但我發現，只要掌握一個<strong>逆向工作法</strong>的小訣竅，就能找到改善中焉者表現的線索。</p>
-      </div>
-      <div class="read-more">
-        <a href="/post/2022/06/one-msg-per-slide/" class="read-more-link"
-          >閱讀全文</a
-        >
-      </div>
-    
-  </div>
-</article>
-
-  
-    <article class="post bg-white">
-  <header class="post-header">
-    <h1 class="post-title">
-      
-      <a class="post-link" href="/post/2022/05/need-for-unit-testing/">很簡單的東西，也要單元測試嗎？</a>
-    </h1>
-    
-
-    <div class="post-meta">
-  <div class="post-meta-author">
-    by
-      William Yeh
-    
-  </div>
-
-  <div class="post-meta-time">
-    <time datetime="2022-05-24">
-      2022-05-24
-    </time>
-  </div>
-
-  
-
-
-  <div class="post-meta__right">
-    <span class="post-meta-more">
-        約 1573 字 -
-        預計閱讀 4 分鐘
+        約 629 字 -
+        預計閱讀 2 分鐘
       </span>
 
     <div class="post-meta-category">
@@ -635,791 +329,227 @@ if (!doNotTrack) {
   </div>
 </div>
 
-  </header>
-  
-  <div class="post-content">
+    </header>
+
     
-      <div class="post-summary">
-        <p>（改寫自公司內部 memo）</p>
-<p><!-- raw HTML omitted -->   <!-- raw HTML omitted -->   <!-- raw HTML omitted --></p>
-<p>Hi all engineers,</p>
-<p>上完一整天單元測試課程之後，有同事問我：「有沒有標準來決定要不要寫單元測試？」</p>
-<p>剛讀完劉潤《<a href="https://www.books.com.tw/products/0010919211">底層邏輯</a>》的我，對於這類疑似「注射器」的問句格外敏感。雖然我可以瀟灑引述 <a href="https://www.tenlong.com.tw/products/9789864344000"><em>Working Effectively with Legacy Code</em></a> 的說法「我毫無疑問地將『遺留程式碼』定義為『<strong>沒有編寫測試的程式碼</strong>』」：</p>
-<blockquote>
-<p>沒有編寫測試的程式碼是糟糕的程式碼——不管我們多麼細心地編寫它們，不管它們有多漂亮、物件導向或封裝良好。有了測試，我們就能夠迅速、可驗證地修改程式碼的行為。沒有測試，我們就不知道修改後的程式碼，實際上是變得更好還是更糟。</p>
-</blockquote>
-<p>但當下我還是決定先展開一場對話。</p>
-      </div>
-      <div class="read-more">
-        <a href="/post/2022/05/need-for-unit-testing/" class="read-more-link"
-          >閱讀全文</a
-        >
-      </div>
     
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目錄</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#前置作業podman-daemon-mode">前置作業：Podman daemon mode</a></li>
+    <li><a href="#前置作業解決-composer-連線問題">前置作業：解決 Composer 連線問題</a></li>
+    <li><a href="#安裝-sail">安裝 Sail</a></li>
+    <li><a href="#修改-sail-產生的專案設定">修改 Sail 產生的專案設定</a></li>
+    <li><a href="#執行-sail">執行 Sail</a></li>
+  </ul>
+</nav>
   </div>
-</article>
+</div>
+
+
+    
+    <div class="post-content">
+      <p>從 Docker Desktop 換到 Podman <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> ，開始需要處理某些相容性問題。有些問題不見得是 Podman 的錯，但既然遇到了，就順手記錄一下。</p>
+<p>此文記錄一下在 Podman 執行 Laravel 9 欽定開發環境 <a href="https://laravel.com/docs/9.x/sail">Sail</a> 的除雷經驗。</p>
+<h2 id="前置作業podman-daemon-mode">前置作業：Podman daemon mode</h2>
+<p>Laravel + Sail 需要用到 Docker Compose，而且它的 <code>docker-compose.yml</code> 又寫得很需要以 daemon mode 運作的 container engine。</p>
+<p>所以，請根據〈<a href="//william-yeh.net/post/2023/02/podman-tips/#daemon-mode">Podman Tips</a>〉一文的步驟，將 Podman 以 daemon mode 運作。</p>
+<h2 id="前置作業解決-composer-連線問題">前置作業：解決 Composer 連線問題</h2>
+<p>有些人在透過 Composer 安裝套件的過程中，會出現 repo.packagist.org 連線 timeout 的問題：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">curl error 28 while downloading https://repo.packagist.org/packages.json:
+</span></span><span class="line"><span class="cl">    Connection timed out after 10000 milliseconds</span></span></code></pre></div>
+<p>請參考<a href="https://github.com/composer/packagist/issues/950#issuecomment-424913225">這篇解法</a>，將 repo.packagist.org 的 IPv4 位址直接寫死到 <code>/etc/hosts</code>：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">% dig +short repo.packagist.org
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">% echo &#34;`dig +short repo.packagist.org` repo.packagist.org&#34; &gt;&gt; /etc/hosts</span></span></code></pre></div>
+<p>如果你是身處 WSL2 環境，也請順便編輯一下 WSL 的設定檔 <code>/etc/wsl.conf</code> 以避免設定消失：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ini" data-lang="ini"><span class="line"><span class="cl"><span class="k">[network]</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Disable auto-gen /etc/hosts</span>
+</span></span><span class="line"><span class="cl"><span class="na">generateHosts</span> <span class="o">=</span> <span class="s">false</span>
+</span></span></code></pre></div><h2 id="安裝-sail">安裝 Sail</h2>
+<p>請依照 <a href="https://laravel.com/docs/9.x/installation#getting-started-on-linux">Laravel 官方文件</a>所載步驟，安裝 container 版的一整套 PHP + Laravel + Sail + blah blah blah 環境，順便建立名為 &ldquo;example-app&rdquo; 的新專案：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">% curl -s &#34;https://laravel.build/example-app&#34; | bash</span></span></code></pre></div>
+<h2 id="修改-sail-產生的專案設定">修改 Sail 產生的專案設定</h2>
+<p>透過 Laravel + Sail 產生的專案，預設會跑在 port 80。我建議修改到其他 unprivileged port 以減少問題。</p>
+<p>請在專案的 <code>.env</code> 檔案添加這一行：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">APP_PORT=3001</span></span></code></pre></div>
+<p>透過 Laravel + Sail 產生的專案，<code>storage</code> 目錄可能會有存取權限的問題。請參考<a href="https://stackoverflow.com/a/67511101/714426">這篇解法</a>：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">% sudo chmod o+w ./storage/ -R</span></span></code></pre></div>
+<p>或是保守一點：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">% sudo chmod o+w ./storage/logs/       -R
+</span></span><span class="line"><span class="cl">% sudo chmod o+w ./framework/cache/    -R
+</span></span><span class="line"><span class="cl">% sudo chmod o+w ./framework/sessions/ -R
+</span></span><span class="line"><span class="cl">% sudo chmod o+w ./framework/views/    -R</span></span></code></pre></div>
+<h2 id="執行-sail">執行 Sail</h2>
+<p>請依照 <a href="https://laravel.com/docs/9.x/installation#getting-started-on-linux">Laravel 官方文件</a>所載步驟，執行 &ldquo;example-app&rdquo; 專案：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">% cd example-app
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">% ./vendor/bin/sail up</span></span></code></pre></div>
+<p>如果一切順利，可以用瀏覽器看到 http://localhost:3001/ 順利執行：</p>
+
+<link rel="stylesheet" href="/css/hugo-easy-gallery.css" />
+<div class="box">
+<figure  itemprop="associatedMedia"
+  itemscope itemtype="http://schema.org/ImageObject" 
+  style="max-width:30em" >
+    <div class="img">
+      <img itemprop="thumbnail" src="/img/2023/02/laravel-screenshot.png" />
+    </div>
+    <a href="/img/2023/02/laravel-screenshot.png" itemprop="contentUrl"></a>
+  </figure>
+</div>
+
+<p>也順便看看整個 Laravel 產生的本地開發環境含有哪些東西：</p>
+
+
+<div class="box">
+<figure  itemprop="associatedMedia"
+  itemscope itemtype="http://schema.org/ImageObject" 
+  style="max-width:30em" >
+    <div class="img">
+      <img itemprop="thumbnail" src="/img/2023/02/laravel-process.png" />
+    </div>
+    <a href="/img/2023/02/laravel-process.png" itemprop="contentUrl"></a>
+  </figure>
+</div>
+
+<p><!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --></p>
+<p>以這篇文章示範，只要懂得排雷，Podman 足以勝任 Docker Desktop 的角色。</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>詳見〈<a href="//william-yeh.net/post/2023/02/wsl2-podman-k3s/">WSL2 + Podman + K3s 組合技</a>〉一文。&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">William Yeh</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+      2023-02-07
+      
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">授權條款</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW" target="_blank">CC BY-NC-SA 4.0</a> (姓名標示-非商業性-相同方式分享 4.0 國際)</span>
+  </p>
+</div>
+
+
+
+    
+    
+
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="//william-yeh.net/tags/devops/">devops</a>
+            <a href="//william-yeh.net/tags/docker/">docker</a>
+            <a href="//william-yeh.net/tags/podman/">podman</a>
+            <a href="//william-yeh.net/tags/programming/">programming</a>
+            
+        </div>
+
+
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/post/2023/02/podman-tips/">
+            <span class="next-text nav-default">Podman Tips</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            
+            <i class="iconfont">
+              <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311 0.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889 0.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-0.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"></path>
+</svg>
+
+            </i>
+          </a>
+      </nav>
+    </footer>
+  </article>
 
   
-</section>
-
-
-
-
-
-
-  
-  
-  
-
-  
-  
-
-  
-  
-
-  
-  
-
-  
-  
-
-    <nav class="pagination">
-      <ul>
-
-      
-      
-      <li><a href="/">««</a></li>
-      
-
-      
-      
-      <li><a href="/page/2/">«</a></li>
-      
-
-      
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-              
-            
-
-          
-          
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/">
-              1
-            </a>
-          </li>
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-              
-            
-
-          
-          
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/page/2/">
-              2
-            </a>
-          </li>
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-              
-            
-
-          
-          
-          
-
-        
-        
-
-        
-        
-          <li class="active">
-            <a href="/page/3/">
-              3
-            </a>
-          </li>
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-              
-            
-
-          
-          
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/page/4/">
-              4
-            </a>
-          </li>
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-              
-            
-
-          
-          
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/page/5/">
-              5
-            </a>
-          </li>
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-              
-            
-
-          
-          
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/page/6/">
-              6
-            </a>
-          </li>
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-              
-            
-
-          
-          
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/page/7/">
-              7
-            </a>
-          </li>
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-              
-            
-
-          
-          
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/page/8/">
-              8
-            </a>
-          </li>
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-              
-            
-
-          
-          
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/page/9/">
-              9
-            </a>
-          </li>
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-              
-            
-
-          
-          
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/page/10/">
-              10
-            </a>
-          </li>
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-              
-            
-
-          
-          
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/page/11/">
-              11
-            </a>
-          </li>
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-              
-            
-
-          
-          
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/page/12/">
-              12
-            </a>
-          </li>
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-              
-            
-
-          
-          
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/page/13/">
-              13
-            </a>
-          </li>
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-
-          
-          
-          
-
-        
-        
-
-        
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-
-          
-          
-          
-
-        
-        
-
-        
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-
-          
-          
-          
-
-        
-        
-
-        
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-
-          
-          
-          
-
-        
-        
-
-        
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-
-          
-          
-          
-
-        
-        
-
-        
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-
-          
-          
-          
-
-        
-        
-
-        
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-
-          
-          
-          
-
-        
-        
-
-        
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-
-          
-          
-          
-
-        
-        
-
-        
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-
-          
-          
-          
-
-        
-        
-
-        
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-
-          
-          
-          
-
-        
-        
-
-        
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-
-          
-          
-          
-
-        
-        
-
-        
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-
-          
-          
-          
-
-        
-        
-
-        
-        
-
-      
-
-      
-      
-      <li><a href="/page/4/">»</a></li>
-      
-
-      
-      
-      <li><a href="/page/25/">»»</a></li>
-      
-
-      </ul>
-    </nav>
   
 
 
+  
+  
+
+  
+
+  
+  
+
+  
+  
+    <div class="post bg-white">
+  <script src="https://utteranc.es/client.js"
+        repo= "William-Yeh/utterances-area"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script>
+</div>
+
+  
+
+  
+
+  <div class="disqus-comment">
+  <div class="disqus-button" id="load_disqus" onclick="load_disqus()">
+    顯示 Disqus 評論
+  </div>
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_config = function () {
+      this.page.url = "//william-yeh.net/post/2023/02/podman-laravel-sail/";
+    };
+    function load_disqus() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'potioneer';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+      $('#load_disqus').remove();
+    };
+  </script>
+  <noscript
+    >Please enable JavaScript to view the
+    <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+  </noscript>
+  
+</div>
 
 
+    
+
+  
+
+  
 
         </div>
       </div>

@@ -6,14 +6,57 @@
     <description>Recent content in tech on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Mon, 06 Feb 2023 22:00:00 +0800</lastBuildDate><atom:link href="//william-yeh.net/categories/tech/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 07 Feb 2023 22:00:00 +0800</lastBuildDate><atom:link href="//william-yeh.net/categories/tech/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>用 Podman 執行 Laravel &#43; Sail</title>
+      <link>//william-yeh.net/post/2023/02/podman-laravel-sail/</link>
+      <pubDate>Tue, 07 Feb 2023 22:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2023/02/podman-laravel-sail/</guid>
+      <description>從 Docker Desktop 換到 Podman 1 ，開始需要處理某些相容性問題。有些問題不見得是 Podman 的錯，但既然遇到了，就順手記錄一下。 此文記錄一下在 Podman 執行 Laravel 9 欽定開發環境 Sail 的除</description>
+    </item>
+    
+    <item>
+      <title>Podman Tips</title>
+      <link>//william-yeh.net/post/2023/02/podman-tips/</link>
+      <pubDate>Tue, 07 Feb 2023 20:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2023/02/podman-tips/</guid>
+      <description>&lt;p&gt;從 Docker Desktop 換成 Podman，有些習慣必須做些小調整。此文記錄一些常用的小技巧。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>WSL2 &#43; Podman &#43; K3s 組合技</title>
       <link>//william-yeh.net/post/2023/02/wsl2-podman-k3s/</link>
       <pubDate>Mon, 06 Feb 2023 22:00:00 +0800</pubDate>
       
       <guid>//william-yeh.net/post/2023/02/wsl2-podman-k3s/</guid>
-      <description>距離上次重度使用 WSL 已經快四年了。四年來 WSL 世界起了一些變化： WSL 已經演進到第二版。 以前還會為了要搭配 Cmder 或者 WSLtty 而大費周章，現在則被 Windows Terminal 解決了大部分</description>
+      <description>&lt;p&gt;距離上次重度使用 WSL 已經快四年了。四年來 WSL 世界起了一些變化：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;WSL 已經演進到第二版。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;以前還會為了要搭配 &lt;a href=&#34;//william-yeh.net/post/2019/03/wsl-cmder-zsh/&#34;&gt;Cmder&lt;/a&gt; 或者 &lt;a href=&#34;//william-yeh.net/post/2019/04/wsltty-tmux/&#34;&gt;WSLtty&lt;/a&gt; 而大費周章，現在則被 &lt;a href=&#34;https://learn.microsoft.com/zh-tw/windows/terminal/&#34;&gt;Windows Terminal&lt;/a&gt; 解決了大部分問題，使用體驗也開始接近 Mac 的 iTerm2。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;容器世界也起了很大的變化：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Docker Desktop 新規定：只要公司超過 250 人，或是年營收超過美金千萬，就必須付費。&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; Docker Hub 也開始對未付費者施以較嚴格的限流措施。 &lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Kubernetes 從 1.24 起停止支援 dockershim。 &lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;RedHat 釋出的 &lt;a href=&#34;https://podman.io/&#34;&gt;Podman&lt;/a&gt;，挾其完全免費、daemonless、rootless、pod 的特性，開始吸引對 Docker 起異心的人。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;因此，我也趁此機會更新這方面的資訊，以免費的組合技，在 Windows 上盡量復刻 Mac 的容器體驗：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;以 WSL 2 與 IDE 的整合，兼顧命令列與 GUI 體驗。&lt;/li&gt;
+&lt;li&gt;以 Podman + K3s 取代 Docker Desktop。&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
     
     <item>
@@ -230,29 +273,6 @@ Built-in auto-reloading apps External signals Pod rollout In this article I&amp;
 &lt;p&gt;這場大會，同一時段就有近 30 場專題演講同時進行，議程滿滿，勢必得做取捨。基於工作需要及個人興趣，我主要選擇與容器相關的場次：service mesh、Windows containers、混合雲、資安實務。&lt;/p&gt;
 &lt;p&gt;我發現，光是這些場次，就得花很大力氣去消化、實驗與應用。&lt;/p&gt;
 &lt;p&gt;我們這些所謂的「台港團」會在 GCPUG Taipei 舉辦一場&lt;a href=&#34;https://www.meetup.com/GCPUG-Taipei/events/260555968/&#34;&gt;分享會&lt;/a&gt;。因為自己不克參加，便以這篇文章，針對我鎖定的核心議題：Istio，做一番重點摘要，以饗讀者。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>在 WSL 裡使用 Ansible &#43; Vagrant</title>
-      <link>//william-yeh.net/post/2019/04/wsl-ansible-vagrant/</link>
-      <pubDate>Thu, 18 Apr 2019 23:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2019/04/wsl-ansible-vagrant/</guid>
-      <description>&lt;p&gt;既然要開始在 Windows 上沿用 Mac 及 Unix 的命令列工具習慣&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，免不了要處理 &lt;a href=&#34;https://github.com/ansible/ansible&#34;&gt;Ansible&lt;/a&gt; 及 &lt;a href=&#34;https://www.vagrantup.com/&#34;&gt;Vagrant&lt;/a&gt;。&lt;/p&gt;
-&lt;p&gt;雖然這兩個軟體都有對應的 Windows 版本，但據我以前的經驗，卡卡的，有許多小地雷；畢竟這些發跡自泛 Unix 家族的軟體，不是那麼容易無縫移植到對命令列不友善的 Windows 家族。&lt;/p&gt;
-&lt;p&gt;如今 Windows 已經有 &lt;a href=&#34;https://docs.microsoft.com/en-us/windows/wsl/&#34;&gt;WSL (Windows Subsystem for Linux)&lt;/a&gt; 機制，是否可以更無痛享用 Ansible 及 Vagrant 呢？&lt;/p&gt;
-&lt;p&gt;可以的。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>WSLtty &#43; tmux 組合技</title>
-      <link>//william-yeh.net/post/2019/04/wsltty-tmux/</link>
-      <pubDate>Wed, 17 Apr 2019 22:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2019/04/wsltty-tmux/</guid>
-      <description>&lt;p&gt;在 Windows 10 上面使用 WSL 已經一個月了&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;。小狀況也就罷了，但 &lt;a href=&#34;https://cmder.net/&#34;&gt;Cmder&lt;/a&gt; 不夠穩定的顯示邏輯卻最讓我頭痛，在視窗尺寸變化時，無法正確處理字元位置。更令人費解的是，即使是其他狀似更華麗（也更耗資源）的替代方案，也仍然有這些問題&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;。&lt;/p&gt;
-&lt;p&gt;既然酷炫的終端機競品問題多多，乾脆回歸極簡的 WSLtty&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;，並混搭 tmux&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt; 來彌補。可惜，畢竟是組合技，無法完全複製 Mac 的 iTerm2 使用經驗。&lt;/p&gt;
-&lt;p&gt;此事古難全。&lt;/p&gt;</description>
     </item>
     
   </channel>

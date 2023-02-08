@@ -23,7 +23,15 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="William Yeh" />
-  <meta name="description" content="距離上次重度使用 WSL 已經快四年了。四年來 WSL 世界起了一些變化： WSL 已經演進到第二版。 以前還會為了要搭配 Cmder 或者 WSLtty 而大費周章，現在則被 Windows Terminal 解決了大部分" />
+  <meta name="description" content="距離上次重度使用 WSL 已經快四年了。四年來 WSL 世界起了一些變化：
+WSL 已經演進到第二版。
+以前還會為了要搭配 Cmder 或者 WSLtty 而大費周章，現在則被 Windows Terminal 解決了大部分問題，使用體驗也開始接近 Mac 的 iTerm2。
+容器世界也起了很大的變化：
+Docker Desktop 新規定：只要公司超過 250 人，或是年營收超過美金千萬，就必須付費。1 Docker Hub 也開始對未付費者施以較嚴格的限流措施。 2
+Kubernetes 從 1.24 起停止支援 dockershim。 3
+RedHat 釋出的 Podman，挾其完全免費、daemonless、rootless、pod 的特性，開始吸引對 Docker 起異心的人。
+因此，我也趁此機會更新這方面的資訊，以免費的組合技，在 Windows 上盡量復刻 Mac 的容器體驗：
+以 WSL 2 與 IDE 的整合，兼顧命令列與 GUI 體驗。 以 Podman &#43; K3s 取代 Docker Desktop。 " />
 
 
 
@@ -61,18 +69,93 @@
 
 
 <meta property="og:title" content="WSL2 &#43; Podman &#43; K3s 組合技" />
-<meta property="og:description" content="距離上次重度使用 WSL 已經快四年了。四年來 WSL 世界起了一些變化： WSL 已經演進到第二版。 以前還會為了要搭配 Cmder 或者 WSLtty 而大費周章，現在則被 Windows Terminal 解決了大部分" />
+<meta property="og:description" content="距離上次重度使用 WSL 已經快四年了。四年來 WSL 世界起了一些變化：
+
+
+WSL 已經演進到第二版。
+
+
+以前還會為了要搭配 Cmder 或者 WSLtty 而大費周章，現在則被 Windows Terminal 解決了大部分問題，使用體驗也開始接近 Mac 的 iTerm2。
+
+
+容器世界也起了很大的變化：
+
+
+Docker Desktop 新規定：只要公司超過 250 人，或是年營收超過美金千萬，就必須付費。1 Docker Hub 也開始對未付費者施以較嚴格的限流措施。 2
+
+
+Kubernetes 從 1.24 起停止支援 dockershim。 3
+
+
+RedHat 釋出的 Podman，挾其完全免費、daemonless、rootless、pod 的特性，開始吸引對 Docker 起異心的人。
+
+
+因此，我也趁此機會更新這方面的資訊，以免費的組合技，在 Windows 上盡量復刻 Mac 的容器體驗：
+
+以 WSL 2 與 IDE 的整合，兼顧命令列與 GUI 體驗。
+以 Podman &#43; K3s 取代 Docker Desktop。
+" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="//william-yeh.net/post/2023/02/wsl2-podman-k3s/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2023-02-06T22:00:00+08:00" />
 <meta property="article:modified_time" content="2023-02-06T22:00:00+08:00" />
 <meta itemprop="name" content="WSL2 &#43; Podman &#43; K3s 組合技">
-<meta itemprop="description" content="距離上次重度使用 WSL 已經快四年了。四年來 WSL 世界起了一些變化： WSL 已經演進到第二版。 以前還會為了要搭配 Cmder 或者 WSLtty 而大費周章，現在則被 Windows Terminal 解決了大部分"><meta itemprop="datePublished" content="2023-02-06T22:00:00+08:00" />
+<meta itemprop="description" content="距離上次重度使用 WSL 已經快四年了。四年來 WSL 世界起了一些變化：
+
+
+WSL 已經演進到第二版。
+
+
+以前還會為了要搭配 Cmder 或者 WSLtty 而大費周章，現在則被 Windows Terminal 解決了大部分問題，使用體驗也開始接近 Mac 的 iTerm2。
+
+
+容器世界也起了很大的變化：
+
+
+Docker Desktop 新規定：只要公司超過 250 人，或是年營收超過美金千萬，就必須付費。1 Docker Hub 也開始對未付費者施以較嚴格的限流措施。 2
+
+
+Kubernetes 從 1.24 起停止支援 dockershim。 3
+
+
+RedHat 釋出的 Podman，挾其完全免費、daemonless、rootless、pod 的特性，開始吸引對 Docker 起異心的人。
+
+
+因此，我也趁此機會更新這方面的資訊，以免費的組合技，在 Windows 上盡量復刻 Mac 的容器體驗：
+
+以 WSL 2 與 IDE 的整合，兼顧命令列與 GUI 體驗。
+以 Podman &#43; K3s 取代 Docker Desktop。
+"><meta itemprop="datePublished" content="2023-02-06T22:00:00+08:00" />
 <meta itemprop="dateModified" content="2023-02-06T22:00:00+08:00" />
-<meta itemprop="wordCount" content="1970">
+<meta itemprop="wordCount" content="2029">
 <meta itemprop="keywords" content="devops,wsl,docker,podman,kubernetes," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="WSL2 &#43; Podman &#43; K3s 組合技"/>
-<meta name="twitter:description" content="距離上次重度使用 WSL 已經快四年了。四年來 WSL 世界起了一些變化： WSL 已經演進到第二版。 以前還會為了要搭配 Cmder 或者 WSLtty 而大費周章，現在則被 Windows Terminal 解決了大部分"/>
+<meta name="twitter:description" content="距離上次重度使用 WSL 已經快四年了。四年來 WSL 世界起了一些變化：
+
+
+WSL 已經演進到第二版。
+
+
+以前還會為了要搭配 Cmder 或者 WSLtty 而大費周章，現在則被 Windows Terminal 解決了大部分問題，使用體驗也開始接近 Mac 的 iTerm2。
+
+
+容器世界也起了很大的變化：
+
+
+Docker Desktop 新規定：只要公司超過 250 人，或是年營收超過美金千萬，就必須付費。1 Docker Hub 也開始對未付費者施以較嚴格的限流措施。 2
+
+
+Kubernetes 從 1.24 起停止支援 dockershim。 3
+
+
+RedHat 釋出的 Podman，挾其完全免費、daemonless、rootless、pod 的特性，開始吸引對 Docker 起異心的人。
+
+
+因此，我也趁此機會更新這方面的資訊，以免費的組合技，在 Windows 上盡量復刻 Mac 的容器體驗：
+
+以 WSL 2 與 IDE 的整合，兼顧命令列與 GUI 體驗。
+以 Podman &#43; K3s 取代 Docker Desktop。
+"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -306,8 +389,8 @@ if (!doNotTrack) {
 
   <div class="post-meta__right">
     <span class="post-meta-more">
-        約 1970 字 -
-        預計閱讀 4 分鐘
+        約 2029 字 -
+        預計閱讀 5 分鐘
       </span>
 
     <div class="post-meta-category">
@@ -404,8 +487,12 @@ if (!doNotTrack) {
 </span></span><span class="line"><span class="cl"><span class="na">systemd</span><span class="o">=</span><span class="s">true</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">[network]</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># Disable auto-gen /etc/resolv.conf if necessary</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Disable auto-gen /etc/resolv.conf</span>
 </span></span><span class="line"><span class="cl"><span class="na">generateResolvConf</span> <span class="o">=</span> <span class="s">false</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Disable auto-gen /etc/hosts</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># @see https://github.com/composer/packagist/issues/950#issuecomment-424913225</span>
+</span></span><span class="line"><span class="cl"><span class="na">generateHosts</span> <span class="o">=</span> <span class="s">false</span>
 </span></span></code></pre></div><p>如果要避免 WSL 占用過多系統資源，可編輯 Windows 的 <code>%UserProfile%\.wslconfig</code> 檔案如下：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ini" data-lang="ini"><span class="line"><span class="cl"><span class="k">[wsl2]</span>
 </span></span><span class="line"><span class="cl"><span class="na">memory</span><span class="o">=</span><span class="s">4GB</span>
@@ -495,7 +582,7 @@ if (!doNotTrack) {
 
 <h2 id="podman-compose">Podman Compose</h2>
 <p>Kubernetes 生態圈有一大堆媲美 Docker Compose 便利性的工具（譬如我愛用的 <a href="https://skaffold.dev/">Skaffold</a>）。不過，如果你實在太想念 Docker Compose，有兩種做法：</p>
-<p>➀ 可直接沿用舊的 <a href="https://github.com/docker/compose">Docker Compose</a>，但是需要將 Podman 啟動成 daemon。</p>
+<p>➀ 可直接沿用舊的 <a href="https://github.com/docker/compose">Docker Compose</a>，但是需要將 Podman 啟動成 daemon <sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup> 。</p>
 <p>安裝方法：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">% sudo curl -SL https://github.com/docker/compose/releases/download/v2.15.1/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose
 </span></span><span class="line"><span class="cl">
@@ -514,7 +601,7 @@ if (!doNotTrack) {
 <!-- raw HTML omitted -->
 <h2 id="k3s">K3s</h2>
 <p><a href="https://k3s.io/">K3s</a> 是由 Rancher Labs 貢獻給 CNCF 的輕量級 Kubernetes 開源方案，很適合應用程式開發者使用，作為 Docker Desktop 內建 Kubernetes 的替代方案。</p>
-<p>請依照 <a href="https://docs.k3s.io/installation/configuration">K3s 官方文件</a>所載步驟安裝： <sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup></p>
+<p>請依照 <a href="https://docs.k3s.io/installation/configuration">K3s 官方文件</a>所載步驟安裝： <sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">% curl -sfL https://get.k3s.io | K3S_KUBECONFIG_MODE=&#34;644&#34; sh -</span></span></code></pre></div>
 <p>為了讓其他 Kubernetes 相關工具順利運作，建議在 <code>$HOME/.bashrc</code> 添加 <code>KUBECONFIG</code> 環境變數：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">export KUBECONFIG=&#34;~/.kube/config:/etc/rancher/k3s/k3s.yaml&#34;</span></span></code></pre></div>
@@ -570,11 +657,13 @@ if (!doNotTrack) {
 <p>關於 <code>registries.conf</code> 的更多設定內容，請見 <a href="https://www.redhat.com/sysadmin/manage-container-registries">How to manage Linux container registries</a> 一文。&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:5">
-<p>大部份的人會依照 <a href="https://k3s.io/">K3s 首頁</a>所載的步驟 <code>curl -sfL https://get.k3s.io | sh -</code> 來安裝 K3s，但這樣安裝好的 K3s 常會需要動用 <code>sudo</code> 才能執行相關指令。我認為，與其事後再用 <a href="https://0to1.nl/post/k3s-kubectl-permission/">k3s permission denied when using kubectl</a> 所介紹的方法調整設定，不如從一開始就以不需動用 <code>sudo</code> 的方式安裝。&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>關於將 Podman 以 daemon mode 運作的具體步驟，請參考〈<a href="//william-yeh.net/post/2023/02/podman-tips/#daemon-mode">Podman Tips</a>〉一文。&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:6">
+<p>大部份的人會依照 <a href="https://k3s.io/">K3s 首頁</a>所載的步驟 <code>curl -sfL https://get.k3s.io | sh -</code> 來安裝 K3s，但這樣安裝好的 K3s 常會需要動用 <code>sudo</code> 才能執行相關指令。我認為，與其事後再用 <a href="https://0to1.nl/post/k3s-kubectl-permission/">k3s permission denied when using kubectl</a> 所介紹的方法調整設定，不如從一開始就以不需動用 <code>sudo</code> 的方式安裝。&#160;<a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </div>
-
     </div>
 
     
@@ -618,6 +707,19 @@ if (!doNotTrack) {
       
       <nav class="post-nav">
         
+          <a class="prev" href="/post/2023/02/podman-tips/">
+            
+            <i class="iconfont">
+              <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M691.908486 949.511495l75.369571-89.491197c10.963703-12.998035 10.285251-32.864502-1.499144-44.378743L479.499795 515.267417 757.434875 204.940602c11.338233-12.190647 11.035334-32.285311-0.638543-44.850487l-80.46666-86.564541c-11.680017-12.583596-30.356378-12.893658-41.662889-0.716314L257.233596 494.235404c-11.332093 12.183484-11.041474 32.266891 0.657986 44.844348l80.46666 86.564541c1.772366 1.910513 3.706415 3.533476 5.750981 4.877077l306.620399 321.703933C662.505829 963.726242 680.945807 962.528973 691.908486 949.511495z"></path>
+</svg>
+
+            </i>
+            <span class="prev-text nav-default">Podman Tips</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
         
           <a class="next" href="/post/2022/12/20222-retrospective/">
             <span class="next-text nav-default">2022 個人回顧</span>

@@ -6,7 +6,16 @@
     <description>Recent content in programming on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Tue, 24 May 2022 12:00:00 +0800</lastBuildDate><atom:link href="//william-yeh.net/tags/programming/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 07 Feb 2023 22:00:00 +0800</lastBuildDate><atom:link href="//william-yeh.net/tags/programming/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>用 Podman 執行 Laravel &#43; Sail</title>
+      <link>//william-yeh.net/post/2023/02/podman-laravel-sail/</link>
+      <pubDate>Tue, 07 Feb 2023 22:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2023/02/podman-laravel-sail/</guid>
+      <description>從 Docker Desktop 換到 Podman 1 ，開始需要處理某些相容性問題。有些問題不見得是 Podman 的錯，但既然遇到了，就順手記錄一下。 此文記錄一下在 Podman 執行 Laravel 9 欽定開發環境 Sail 的除</description>
+    </item>
+    
     <item>
       <title>很簡單的東西，也要單元測試嗎？</title>
       <link>//william-yeh.net/post/2022/05/need-for-unit-testing/</link>

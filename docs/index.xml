@@ -6,10 +6,136 @@
     <description>Recent content on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Mon, 06 Feb 2023 22:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 07 Feb 2023 22:00:00 +0800</lastBuildDate>
     
         <atom:link href="//william-yeh.net/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>用 Podman 執行 Laravel &#43; Sail</title>
+      <link>//william-yeh.net/post/2023/02/podman-laravel-sail/</link>
+      <pubDate>Tue, 07 Feb 2023 22:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2023/02/podman-laravel-sail/</guid>
+      
+        <description>&lt;p&gt;從 Docker Desktop 換到 Podman &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; ，開始需要處理某些相容性問題。有些問題不見得是 Podman 的錯，但既然遇到了，就順手記錄一下。&lt;/p&gt;
+&lt;p&gt;此文記錄一下在 Podman 執行 Laravel 9 欽定開發環境 &lt;a href=&#34;https://laravel.com/docs/9.x/sail&#34;&gt;Sail&lt;/a&gt; 的除雷經驗。&lt;/p&gt;
+&lt;h2 id=&#34;前置作業podman-daemon-mode&#34;&gt;前置作業：Podman daemon mode&lt;/h2&gt;
+&lt;p&gt;Laravel + Sail 需要用到 Docker Compose，而且它的 &lt;code&gt;docker-compose.yml&lt;/code&gt; 又寫得很需要以 daemon mode 運作的 container engine。&lt;/p&gt;
+&lt;p&gt;所以，請根據〈&lt;a href=&#34;//william-yeh.net/post/2023/02/podman-tips/#daemon-mode&#34;&gt;Podman Tips&lt;/a&gt;〉一文的步驟，將 Podman 以 daemon mode 運作。&lt;/p&gt;
+&lt;h2 id=&#34;前置作業解決-composer-連線問題&#34;&gt;前置作業：解決 Composer 連線問題&lt;/h2&gt;
+&lt;p&gt;有些人在透過 Composer 安裝套件的過程中，會出現 repo.packagist.org 連線 timeout 的問題：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;curl error 28 while downloading https://repo.packagist.org/packages.json:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    Connection timed out after 10000 milliseconds&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;請參考&lt;a href=&#34;https://github.com/composer/packagist/issues/950#issuecomment-424913225&#34;&gt;這篇解法&lt;/a&gt;，將 repo.packagist.org 的 IPv4 位址直接寫死到 &lt;code&gt;/etc/hosts&lt;/code&gt;：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;% dig +short repo.packagist.org
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;% echo &amp;#34;`dig +short repo.packagist.org` repo.packagist.org&amp;#34; &amp;gt;&amp;gt; /etc/hosts&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;如果你是身處 WSL2 環境，也請順便編輯一下 WSL 的設定檔 &lt;code&gt;/etc/wsl.conf&lt;/code&gt; 以避免設定消失：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-ini&#34; data-lang=&#34;ini&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;[network]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# Disable auto-gen /etc/hosts&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;na&#34;&gt;generateHosts&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;false&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;安裝-sail&#34;&gt;安裝 Sail&lt;/h2&gt;
+&lt;p&gt;請依照 &lt;a href=&#34;https://laravel.com/docs/9.x/installation#getting-started-on-linux&#34;&gt;Laravel 官方文件&lt;/a&gt;所載步驟，安裝 container 版的一整套 PHP + Laravel + Sail + blah blah blah 環境，順便建立名為 &amp;ldquo;example-app&amp;rdquo; 的新專案：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;% curl -s &amp;#34;https://laravel.build/example-app&amp;#34; | bash&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&#34;修改-sail-產生的專案設定&#34;&gt;修改 Sail 產生的專案設定&lt;/h2&gt;
+&lt;p&gt;透過 Laravel + Sail 產生的專案，預設會跑在 port 80。我建議修改到其他 unprivileged port 以減少問題。&lt;/p&gt;
+&lt;p&gt;請在專案的 &lt;code&gt;.env&lt;/code&gt; 檔案添加這一行：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;APP_PORT=3001&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;透過 Laravel + Sail 產生的專案，&lt;code&gt;storage&lt;/code&gt; 目錄可能會有存取權限的問題。請參考&lt;a href=&#34;https://stackoverflow.com/a/67511101/714426&#34;&gt;這篇解法&lt;/a&gt;：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;% sudo chmod o+w ./storage/ -R&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;或是保守一點：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;% sudo chmod o+w ./storage/logs/       -R
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;% sudo chmod o+w ./framework/cache/    -R
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;% sudo chmod o+w ./framework/sessions/ -R
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;% sudo chmod o+w ./framework/views/    -R&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&#34;執行-sail&#34;&gt;執行 Sail&lt;/h2&gt;
+&lt;p&gt;請依照 &lt;a href=&#34;https://laravel.com/docs/9.x/installation#getting-started-on-linux&#34;&gt;Laravel 官方文件&lt;/a&gt;所載步驟，執行 &amp;ldquo;example-app&amp;rdquo; 專案：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;% cd example-app
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;% ./vendor/bin/sail up&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;如果一切順利，可以用瀏覽器看到 http://localhost:3001/ 順利執行：&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/02/laravel-screenshot.png&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2023/02/laravel-screenshot.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;也順便看看整個 Laravel 產生的本地開發環境含有哪些東西：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/02/laravel-process.png&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2023/02/laravel-process.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;以這篇文章示範，只要懂得排雷，Podman 足以勝任 Docker Desktop 的角色。&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;詳見〈&lt;a href=&#34;//william-yeh.net/post/2023/02/wsl2-podman-k3s/&#34;&gt;WSL2 + Podman + K3s 組合技&lt;/a&gt;〉一文。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>Podman Tips</title>
+      <link>//william-yeh.net/post/2023/02/podman-tips/</link>
+      <pubDate>Tue, 07 Feb 2023 20:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2023/02/podman-tips/</guid>
+      
+        <description>&lt;p&gt;從 Docker Desktop 換成 Podman，有些習慣必須做些小調整。此文記錄一些常用的小技巧。&lt;/p&gt;
+&lt;h2 id=&#34;image-tree&#34;&gt;Image tree&lt;/h2&gt;
+&lt;p&gt;很久很久以前，我們可以用 &lt;code&gt;docker images --tree&lt;/code&gt; 來看 &lt;a href=&#34;https://docs.docker.com/storage/storagedriver/#images-and-layers&#34;&gt;image layer&lt;/a&gt; 的層次關係。此功能選項被後來某一版 Docker 廢除了，於是就有一些替代方案來做這件事：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/justone/dockviz&#34;&gt;dockviz&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/wagoodman/dive&#34;&gt;dive&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/TomasTomecek/sen&#34;&gt;sen&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;可惜的是，這些工具都假設現在是處於「有一個 daemon 跑在 &lt;code&gt;DOCKER_HOST&lt;/code&gt; 的環境」（畢竟這是 Docker 的老規矩）。如果我們不想為此而刻意以 daemon 模式開啟 Podman，可透過 Podman 的 &lt;a href=&#34;https://docs.podman.io/en/latest/markdown/podman-image-tree.1.html&#34;&gt;image tree 指令&lt;/a&gt;來查詢：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;% podman image tree python:3.9.16&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&#34;daemon-mode&#34;&gt;Daemon mode&lt;/h2&gt;
+&lt;p&gt;儘管 daemonless 的好處很多，但很多舊世界的工具，會假設現在是處於「有一個 container engine daemon 跑在 &lt;code&gt;DOCKER_HOST&lt;/code&gt;」的環境。因此，有時候我們得故意讓 Podman 以 daemon mode 運行。&lt;/p&gt;
+&lt;h3 id=&#34;臨時性實驗&#34;&gt;臨時性實驗&lt;/h3&gt;
+&lt;p&gt;我們先啟動一個 rootless Podman process：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;% podman system service -t 0&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;另開一個終端機視窗，設置 &lt;code&gt;DOCKER_HOST&lt;/code&gt; 環境變數：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;% podman info --format={{&amp;#34;.Host.RemoteSocket.Path&amp;#34;}}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;% export DOCKER_HOST=unix://$(podman info --format={{&amp;#34;.Host.RemoteSocket.Path&amp;#34;}})&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;現在，我們可以在這個終端機實驗看看那些舊世界的工具是否可以正常運作。就以前面提到的 &lt;a href=&#34;https://github.com/wagoodman/dive&#34;&gt;dive&lt;/a&gt; 為例吧！&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;% dive python:3.9.16&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id=&#34;便利性設置&#34;&gt;便利性設置&lt;/h3&gt;
+&lt;p&gt;如果一切正常，我們可以設置 &lt;code&gt;/var/run/docker.sock&lt;/code&gt; 以簡化流程：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;% sudo ln -s /run/user/$(id -u)/podman/podman.sock /var/run/docker.sock&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;我也習慣設一個 alias：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;alias podman-service=&amp;#39;podman system service -t 0&amp;#39;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id=&#34;持久性設置&#34;&gt;持久性設置&lt;/h3&gt;
+&lt;p&gt;如果你想透過 systemd 來管理，請參考 K3d 團隊提供的 &lt;a href=&#34;https://k3d.io/v5.4.7/usage/advanced/podman/&#34;&gt;Using Podman instead of Docker&lt;/a&gt; 這篇文章。&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;</description>
+      
+    </item>
     
     <item>
       <title>WSL2 &#43; Podman &#43; K3s 組合技</title>
@@ -62,8 +188,12 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;na&#34;&gt;systemd&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;true&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;[network]&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# Disable auto-gen /etc/resolv.conf if necessary&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# Disable auto-gen /etc/resolv.conf&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;na&#34;&gt;generateResolvConf&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;false&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# Disable auto-gen /etc/hosts&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# @see https://github.com/composer/packagist/issues/950#issuecomment-424913225&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;na&#34;&gt;generateHosts&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;false&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;如果要避免 WSL 占用過多系統資源，可編輯 Windows 的 &lt;code&gt;%UserProfile%\.wslconfig&lt;/code&gt; 檔案如下：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-ini&#34; data-lang=&#34;ini&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;[wsl2]&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;na&#34;&gt;memory&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;4GB&lt;/span&gt;
@@ -153,7 +283,7 @@
 
 &lt;h2 id=&#34;podman-compose&#34;&gt;Podman Compose&lt;/h2&gt;
 &lt;p&gt;Kubernetes 生態圈有一大堆媲美 Docker Compose 便利性的工具（譬如我愛用的 &lt;a href=&#34;https://skaffold.dev/&#34;&gt;Skaffold&lt;/a&gt;）。不過，如果你實在太想念 Docker Compose，有兩種做法：&lt;/p&gt;
-&lt;p&gt;➀ 可直接沿用舊的 &lt;a href=&#34;https://github.com/docker/compose&#34;&gt;Docker Compose&lt;/a&gt;，但是需要將 Podman 啟動成 daemon。&lt;/p&gt;
+&lt;p&gt;➀ 可直接沿用舊的 &lt;a href=&#34;https://github.com/docker/compose&#34;&gt;Docker Compose&lt;/a&gt;，但是需要將 Podman 啟動成 daemon &lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt; 。&lt;/p&gt;
 &lt;p&gt;安裝方法：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;% sudo curl -SL https://github.com/docker/compose/releases/download/v2.15.1/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
@@ -172,7 +302,7 @@
 &lt;!-- raw HTML omitted --&gt;
 &lt;h2 id=&#34;k3s&#34;&gt;K3s&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;https://k3s.io/&#34;&gt;K3s&lt;/a&gt; 是由 Rancher Labs 貢獻給 CNCF 的輕量級 Kubernetes 開源方案，很適合應用程式開發者使用，作為 Docker Desktop 內建 Kubernetes 的替代方案。&lt;/p&gt;
-&lt;p&gt;請依照 &lt;a href=&#34;https://docs.k3s.io/installation/configuration&#34;&gt;K3s 官方文件&lt;/a&gt;所載步驟安裝： &lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;請依照 &lt;a href=&#34;https://docs.k3s.io/installation/configuration&#34;&gt;K3s 官方文件&lt;/a&gt;所載步驟安裝： &lt;sup id=&#34;fnref:6&#34;&gt;&lt;a href=&#34;#fn:6&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;6&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;% curl -sfL https://get.k3s.io | K3S_KUBECONFIG_MODE=&amp;#34;644&amp;#34; sh -&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;為了讓其他 Kubernetes 相關工具順利運作，建議在 &lt;code&gt;$HOME/.bashrc&lt;/code&gt; 添加 &lt;code&gt;KUBECONFIG&lt;/code&gt; 環境變數：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;export KUBECONFIG=&amp;#34;~/.kube/config:/etc/rancher/k3s/k3s.yaml&amp;#34;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -228,11 +358,13 @@
 &lt;p&gt;關於 &lt;code&gt;registries.conf&lt;/code&gt; 的更多設定內容，請見 &lt;a href=&#34;https://www.redhat.com/sysadmin/manage-container-registries&#34;&gt;How to manage Linux container registries&lt;/a&gt; 一文。&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:5&#34;&gt;
-&lt;p&gt;大部份的人會依照 &lt;a href=&#34;https://k3s.io/&#34;&gt;K3s 首頁&lt;/a&gt;所載的步驟 &lt;code&gt;curl -sfL https://get.k3s.io | sh -&lt;/code&gt; 來安裝 K3s，但這樣安裝好的 K3s 常會需要動用 &lt;code&gt;sudo&lt;/code&gt; 才能執行相關指令。我認為，與其事後再用 &lt;a href=&#34;https://0to1.nl/post/k3s-kubectl-permission/&#34;&gt;k3s permission denied when using kubectl&lt;/a&gt; 所介紹的方法調整設定，不如從一開始就以不需動用 &lt;code&gt;sudo&lt;/code&gt; 的方式安裝。&amp;#160;&lt;a href=&#34;#fnref:5&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;關於將 Podman 以 daemon mode 運作的具體步驟，請參考〈&lt;a href=&#34;//william-yeh.net/post/2023/02/podman-tips/#daemon-mode&#34;&gt;Podman Tips&lt;/a&gt;〉一文。&amp;#160;&lt;a href=&#34;#fnref:5&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:6&#34;&gt;
+&lt;p&gt;大部份的人會依照 &lt;a href=&#34;https://k3s.io/&#34;&gt;K3s 首頁&lt;/a&gt;所載的步驟 &lt;code&gt;curl -sfL https://get.k3s.io | sh -&lt;/code&gt; 來安裝 K3s，但這樣安裝好的 K3s 常會需要動用 &lt;code&gt;sudo&lt;/code&gt; 才能執行相關指令。我認為，與其事後再用 &lt;a href=&#34;https://0to1.nl/post/k3s-kubectl-permission/&#34;&gt;k3s permission denied when using kubectl&lt;/a&gt; 所介紹的方法調整設定，不如從一開始就以不需動用 &lt;code&gt;sudo&lt;/code&gt; 的方式安裝。&amp;#160;&lt;a href=&#34;#fnref:6&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;
-</description>
+&lt;/div&gt;</description>
       
     </item>
     
@@ -2166,425 +2298,6 @@
 &lt;p&gt;請參考〈&lt;a href=&#34;//william-yeh.net/post/2016/11/decomposition-reading-list/&#34;&gt;工作分解講座・閱讀材料&lt;/a&gt;〉一文。&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>2021 個人回顧</title>
-      <link>//william-yeh.net/post/2021/12/2021-retrospective/</link>
-      <pubDate>Tue, 28 Dec 2021 22:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2021/12/2021-retrospective/</guid>
-      
-        <description>&lt;p&gt;年初，從外商被挖腳到台商；年末，又再被挖腳到另一間台商。&lt;/p&gt;
-&lt;p&gt;我常笑著說：今年，好像都在消費我在 &lt;a href=&#34;//william-yeh.net/post/2019/12/2019-retrospective/&#34;&gt;2019&lt;/a&gt;～&lt;a href=&#34;//william-yeh.net/post/2020/12/2020-retrospective/&#34;&gt;2020&lt;/a&gt; 年間外商經驗的戰備存糧。&lt;/p&gt;
-&lt;p&gt;到了年終，又開始要做個總回顧，再對來年許願。去除一些不便揭露的事情，以下是簡單的回顧。&lt;/p&gt;
-&lt;h2 id=&#34;補血課程&#34;&gt;補血課程&lt;/h2&gt;
-&lt;p&gt;這一年，由於 COVID-19 因素，參加的實體課程，就只有公司舉辦的這兩場內訓，而且都是國外課程的中文化版本，很值得推薦：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.harment.com/trainShow-21-26-133-19.html&#34;&gt;勁道領導 (Fierce Conversations)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://doortraining.com/virtual-solutions/accountability-builder/&#34;&gt;Accountability Builder&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;這一年，我上的多半是線上課程。我漸漸不追求 100% 完課，反而視為書本之外的另一種素材，只要其中某些片段能夠引為己用，就算值得。畢竟，我們都不見得需要 100% 讀完一整本書，為什麼我們需要把一門線上課 100% 上完？&lt;/p&gt;
-&lt;p&gt;就以我今年重點修練科目「金字塔原理」為例，除了書本之外，在 Bryan 的《&lt;a href=&#34;https://shop.darencademy.com/product/view/id/98&#34;&gt;知識型商品的文案寫作課&lt;/a&gt;》線上課程也聽到了 26 分鐘的相關內容，在張敏敏的《&lt;a href=&#34;https://www.dada-master.com/lesson/91&#34;&gt;敏捷溝通力&lt;/a&gt;》線上課程也有 14 分鐘，里茲螞蟻《&lt;a href=&#34;https://vclass.voicetube.com/classes/leedsmayi-communication&#34;&gt;三步驟邁向進階英文口說&lt;/a&gt;》更是到處都是這種論述結構。有機會從更多角度去看這主題，滿有趣的。&lt;/p&gt;
-&lt;p&gt;我不追求 100% 完課。話雖如此，但當七月初收到 Udemy 這樣的通知，還是小小虛榮了一下。&lt;/p&gt;
-
-&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
-&lt;div class=&#34;box&#34;&gt;
-&lt;figure  itemprop=&#34;associatedMedia&#34;
-  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
-  style=&#34;max-width:20em&#34; &gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2021/12/udemy-statistics.jpg&#34; alt=&#34;Udemy 超過 8 小時&#34;/&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2021/12/udemy-statistics.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-      &lt;figcaption&gt;
-          &lt;p&gt;Udemy 超過 8 小時&lt;/p&gt;
-      &lt;/figcaption&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&#34;演講及授課&#34;&gt;演講及授課&lt;/h2&gt;
-&lt;p&gt;今年，由於 COVID-19 因素，再加上自覺已經過了能夠恣意 &lt;del&gt;跑趴&lt;/del&gt; 出沒 社群活動的人生階段，婉拒許多邀約，只接了一場公開工作坊：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;//william-yeh.net/post/2021/03/sys-thinking-unicorn-project/&#34;&gt;從系統思考角度讀《獨角獸專案》&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;反之，如果是在公司的上班時間、用公司的場地舉辦活動，安排起來較有餘裕，也就順勢辦了好幾場：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;在Ｋ公司內部 Agile Guild 舉辦一場【&lt;a href=&#34;//william-yeh.net/post/2021/07/revisit-psm1/&#34;&gt;Scrum WHAT &amp;amp; WHY 討論：以 Scrum 認證模擬測驗為素材&lt;/a&gt;】小活動&lt;/li&gt;
-&lt;li&gt;在Ｋ集團內部讀書會舉辦一場【&lt;a href=&#34;//william-yeh.net/post/2021/02/the-managers-path-review/&#34;&gt;《經理人之道》&lt;/a&gt;導讀會】&lt;/li&gt;
-&lt;li&gt;在Ｐ集團內部舉辦兩場【Agile Workshop / 敏捷原理與團隊塑造】工作坊&lt;/li&gt;
-&lt;/ul&gt;
-
-
-&lt;div class=&#34;box&#34;&gt;
-&lt;figure  itemprop=&#34;associatedMedia&#34;
-  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
-  style=&#34;max-width:30em&#34; &gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2021/12/agile-workshop-20211210.png&#34; alt=&#34;Agile Workshop @ PChome&#34;/&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2021/12/agile-workshop-20211210.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-      &lt;figcaption&gt;
-          &lt;p&gt;Agile Workshop @ PChome&lt;/p&gt;
-      &lt;/figcaption&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;
-
-&lt;p&gt;這次 Agile Workshop 算是初步成功將 &lt;a href=&#34;https://shop.darencademy.com/product/view/id/95&#34;&gt;OKR&lt;/a&gt;、&lt;a href=&#34;https://www.books.com.tw/products/0010855790&#34;&gt;OGSM&lt;/a&gt;、JTBD 部份精華融合到 impact mapping 當中了。也算了卻一樁塵封三年的心願。&lt;/p&gt;
-&lt;p&gt;尤其當我看到某團隊在上完課之後，自組織弄出這樣的 Scrum 空間，內心感動難以言喻。&lt;/p&gt;
-
-
-&lt;div class=&#34;box&#34;&gt;
-&lt;figure  itemprop=&#34;associatedMedia&#34;
-  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
-  style=&#34;max-width:30em&#34; &gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2021/12/sprint-0.jpg&#34; alt=&#34;某團隊的 Sprint 0 環境&#34;/&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2021/12/sprint-0.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-      &lt;figcaption&gt;
-          &lt;p&gt;某團隊的 Sprint 0 環境&lt;/p&gt;
-      &lt;/figcaption&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&#34;問題解決的系統閱讀之旅&#34;&gt;問題解決的系統閱讀之旅&lt;/h2&gt;
-&lt;p&gt;我在〈&lt;a href=&#34;//william-yeh.net/post/2021/03/train-new-scrum-master/&#34;&gt;如何訓練一個新的 Scrum master？&lt;/a&gt;〉一文曾提到：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;視團隊狀況及他的信心指數，我會開始逐步請他主持某些 Scrum 會議。&lt;/p&gt;
-&lt;p&gt;至於 retrospective 則可能是最具挑戰性的。這階段，能否搭配更即時更精準的事後回饋，甚至事前就進行沙盤推演，是成敗關鍵。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;在我自己的 Agile Workshop 中，第二日原本就有一個名為「retrospective 進階篇」的單元。不過，隨著經驗累積，深感有重新設計的必要。因此，我默默展開一場「問題分析與解決」的系統閱讀之旅。&lt;/p&gt;
-&lt;p&gt;老書新書讀完一輪，思維相互碰撞，漸漸忘記原本的動機「訓練 Scrum master」，轉而鑽研到更深層的課題去了。此中有真意，欲辨已忘言。&lt;/p&gt;
-
-
-&lt;div class=&#34;box&#34;&gt;
-&lt;figure  itemprop=&#34;associatedMedia&#34;
-  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
-  style=&#34;max-width:30em&#34; &gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2021/12/problem-solving-books.jpg&#34; alt=&#34;「問題分析與解決」書單&#34;/&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2021/12/problem-solving-books.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-      &lt;figcaption&gt;
-          &lt;p&gt;「問題分析與解決」書單&lt;/p&gt;
-      &lt;/figcaption&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;
-
-&lt;p&gt;這堆書籍當中，我對於其中兩類格外有感。&lt;/p&gt;
-&lt;p&gt;① 當了一陣子幕僚，總算比較看得懂溫老的書《&lt;a href=&#34;https://www.books.com.tw/products/0010711585&#34;&gt;顧問成功的祕密&lt;/a&gt;》。引述一段君婷老師的精闢評論：&lt;/p&gt;
-
-
-&lt;div class=&#34;box&#34;&gt;
-&lt;figure  itemprop=&#34;associatedMedia&#34;
-  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
-  style=&#34;max-width:30em&#34; &gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2021/12/consultant-comment.png&#34; /&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2021/12/consultant-comment.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;
-
-&lt;p&gt;溫老的書狀似戲謔，但這陣子周遊列國的經歷告訴我，這是真的：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;顧問第一法則：不管客戶怎麼跟你說，一定有問題。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;顧問第二法則：無論問題乍看之下如何，問題一定出在人身上。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;顧問第四法則：如果別人沒有雇用你，千萬不要去解決他們的問題。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;費雪基本原則：你現在適應得愈好，你的適應性就變得愈差。「顧問是比較不能適應目前的一種人，這使得他們的適應性比較強。」&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;② 像《&lt;a href=&#34;https://www.books.com.tw/products/0010645634&#34;&gt;金字塔原理&lt;/a&gt;》這種經典還是該用力啃一啃。畢竟，金字塔原理的牛肉，可不只有 &lt;a href=&#34;https://wiki.mbalib.com/zh-tw/MECE%E5%88%86%E6%9E%90%E6%B3%95&#34;&gt;MECE&lt;/a&gt; 及 why so/so what 而已，許多洞見都被稀釋書籍草草帶過。&lt;/p&gt;
-&lt;p&gt;認真啃了這類書籍，刻意練習須臾，驚覺勝間和代在《&lt;a href=&#34;https://www.taaze.tw/products/11100153609.html&#34;&gt;新．知識生產術&lt;/a&gt;》預告過的副作用真的也上身了。&lt;/p&gt;
-
-
-&lt;div class=&#34;box&#34;&gt;
-&lt;figure  itemprop=&#34;associatedMedia&#34;
-  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
-  style=&#34;max-width:30em&#34; &gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2021/12/no-logic.jpg&#34; alt=&#34;「外行人在閒聊」&#34;/&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2021/12/no-logic.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-      &lt;figcaption&gt;
-          &lt;p&gt;「外行人在閒聊」&lt;/p&gt;
-      &lt;/figcaption&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&#34;周遊列國其致一也&#34;&gt;周遊列國，其致一也&lt;/h2&gt;
-&lt;p&gt;這幾年在職場上周遊列國的經歷，讓我對王羲之《&lt;a href=&#34;https://zh.wikipedia.org/wiki/%E8%98%AD%E4%BA%AD%E9%9B%86%E5%BA%8F&#34;&gt;蘭亭集序&lt;/a&gt;》這句話格外有感：「雖世殊事異，所以興懷，其致一也。」&lt;/p&gt;
-
-
-&lt;div class=&#34;box&#34;&gt;
-&lt;figure  itemprop=&#34;associatedMedia&#34;
-  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
-  style=&#34;max-width:10em&#34; &gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2021/12/same-feeling.jpg&#34; /&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2021/12/same-feeling.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;
-
-&lt;p&gt;不同的是，國家、產業、公司、產品線、團隊、制度、文化、技能。&lt;/p&gt;
-&lt;p&gt;相同的是，「不管客戶怎麼跟你說，一定有問題」及「無論問題乍看之下如何，問題一定出在人身上」這兩大顧問法則，不斷上演。&lt;/p&gt;
-&lt;p&gt;相同的是，系統思考呈現出來的系統基模，也不斷現蹤。&lt;/p&gt;
-&lt;p&gt;很寫實的是，我在兩屆 &lt;a href=&#34;https://devopsdays.tw/&#34;&gt;DevOpsDays Taipei&lt;/a&gt; 帶的兩場系統思考工作坊，推演出來的 &lt;a href=&#34;https://en.wikipedia.org/wiki/Causal_loop_diagram&#34;&gt;CLD&lt;/a&gt;，無心插柳，在日後周遊列國的旅程中都親眼目睹：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;我在 2018 年根據《&lt;a href=&#34;https://www.books.com.tw/products/0010819137&#34;&gt;The DevOps Handbook 中文版&lt;/a&gt;》第七章設計的&lt;a href=&#34;//william-yeh.net/post/2018/09/thinking-weight-training/&#34;&gt;系統思考工作坊&lt;/a&gt;，描繪出來的&lt;a href=&#34;https://en.wikipedia.org/wiki/System_archetype#Fixes_that_fail&#34;&gt;飲鴆止渴&lt;/a&gt;、&lt;a href=&#34;https://en.wikipedia.org/wiki/System_archetype#Limits_to_growth&#34;&gt;成長上限&lt;/a&gt;、&lt;a href=&#34;https://en.wikipedia.org/wiki/System_archetype#Shifting_the_burden&#34;&gt;捨本逐末&lt;/a&gt;動態結構，簡直就是某公司某團隊的寫照。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;我在今年根據《&lt;a href=&#34;https://www.tenlong.com.tw/products/9789865026653&#34;&gt;獨角獸專案&lt;/a&gt;》設計的&lt;a href=&#34;//william-yeh.net/post/2021/03/sys-thinking-unicorn-project/&#34;&gt;系統思考工作坊&lt;/a&gt;，描繪出來的&lt;a href=&#34;https://en.wikipedia.org/wiki/System_archetype#Shifting_the_burden&#34;&gt;捨本逐末&lt;/a&gt;動態結構，簡直就是某公司的寫照。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;系統思考這門直探本質的技藝，很值得好好掌握。&lt;/p&gt;
-&lt;p&gt;也很慶幸看到這些年周遊列國的經歷及探索沒有白費，若干本質逐漸結晶固化下來。&lt;/p&gt;
-&lt;p&gt;吉卜林：「僅知英國的人，如何能知道英國呢？」&lt;/p&gt;
-&lt;h2 id=&#34;教練的必要&#34;&gt;教練的必要&lt;/h2&gt;
-&lt;p&gt;周遊列國也讓我看到：敏捷不起來，很多時候是因為輕忽技術實踐，甚至漠視。&lt;/p&gt;
-&lt;p&gt;就像《&lt;a href=&#34;https://zh.wikipedia.org/wiki/%E7%81%8C%E7%AF%AE%E9%AB%98%E6%89%8B&#34;&gt;灌籃高手&lt;/a&gt;》安西教練的犀利質問：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;「有人教導基本動作嗎？」&lt;/p&gt;
-&lt;p&gt;「每個人都各打各的，完全不團結。」&lt;/p&gt;
-&lt;p&gt;「球隊的教練到底在搞什麼？」&lt;/p&gt;
-&lt;/blockquote&gt;
-
-
-&lt;div class=&#34;box&#34;&gt;
-&lt;figure  itemprop=&#34;associatedMedia&#34;
-  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
-  style=&#34;max-width:30em&#34; &gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2021/12/basic-training.png&#34; alt=&#34;「基本動作」&#34;/&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2021/12/basic-training.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-      &lt;figcaption&gt;
-          &lt;p&gt;「基本動作」&lt;/p&gt;
-      &lt;/figcaption&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;
-
-&lt;p&gt;我也漸漸體會到：其實，中高階主管也極需要 coaching。&lt;/p&gt;
-&lt;p&gt;我甚至懷疑：他們當年真的上過他們現在要初階主管接受過的培訓嗎？&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;沒有人做，就由我來起個頭吧。誰叫我現在的職稱有一個 &amp;ldquo;agile coach&amp;rdquo; 字眼呢？&lt;/p&gt;
-&lt;p&gt;技術面的培訓，已經逐步規劃與執行。&lt;/p&gt;
-&lt;p&gt;至於非技術面的培訓，一部份打算以導讀會的形式進行。目前的戰備存糧計有：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;//william-yeh.net/post/2021/02/the-managers-path-review/&#34;&gt;經理人之道&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://williampjyeh.notion.site/cd42e217271d454aac9411b0c6fc84c7&#34;&gt;三年後，你的工作還在嗎？&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;//william-yeh.net/post/2020/10/unicorn-project-review/&#34;&gt;獨角獸專案&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.books.com.tw/products/0010811254&#34;&gt;Amazon 的人為什麼這麼厲害？&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.books.com.tw/products/0010721292&#34;&gt;左思右想&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.books.com.tw/products/0010865668&#34;&gt;高產出的本事&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;勝間和代 or 麥肯錫系列的某本書&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://williampjyeh.notion.site/3e31bb4af3d74007bc0e522e268019c0&#34;&gt;薩提爾教練模式&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://williampjyeh.notion.site/eeb5d579610b40128755a17adf983c51&#34;&gt;給力&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.books.com.tw/products/0010898249&#34;&gt;目標&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;⋯⋯&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;給自己一個 2022 的小挑戰，也算是刻意練習「金字塔原理」12 回合 (是的，我以金字塔原理來進行每一場導讀會)。&lt;/p&gt;
-&lt;h2 id=&#34;2022-許願&#34;&gt;2022 許願&lt;/h2&gt;
-&lt;p&gt;2022 年，希望自己能做到：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;每個月辦一場 2hr 導讀會。&lt;/li&gt;
-&lt;li&gt;繼續更深度的本質修練。&lt;/li&gt;
-&lt;li&gt;繼續增進商務英語聽說能力。&lt;/li&gt;
-&lt;li&gt;開放冒險選項。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;就醬。&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Scrum 認證模擬測驗的兩項啟發</title>
-      <link>//william-yeh.net/post/2021/07/revisit-psm1/</link>
-      <pubDate>Sun, 11 Jul 2021 16:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2021/07/revisit-psm1/</guid>
-      
-        <description>&lt;p&gt;公司內 agile guild 定期聚會輪到我來主持了。這次我打算帶一場「Scrum WHAT &amp;amp; WHY 討論：以 Scrum 認證模擬測驗為素材」的小活動。&lt;/p&gt;
-&lt;p&gt;理論上來說，「Scrum WHAT &amp;amp; WHY」的終極答案應該是來自 &lt;em&gt;&lt;a href=&#34;https://scrumguides.org/&#34;&gt;The Scrum Guide&lt;/a&gt;&lt;/em&gt;，不過，這份輕薄短小的文件就像成文法典法條，不易引發實務聯想。反之，Scrum 認證模擬測驗可說是非常好的 Scrum 靈魂拷問材料，尤其是對略有實務經驗的人來說，內容可說是拳拳到肉，足以激盪小組討論的火花。若只以功利角度看待，就太可惜了。&lt;/p&gt;
-&lt;p&gt;有圖為證：&lt;/p&gt;
-
-&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
-&lt;div class=&#34;box&#34;&gt;
-&lt;figure  itemprop=&#34;associatedMedia&#34;
-  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
-  style=&#34;max-width:30em&#34; &gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2021/07/psm1-feedback.png&#34; alt=&#34;2021-07-21 活動迴響&#34;/&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2021/07/psm1-feedback.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-      &lt;figcaption&gt;
-          &lt;p&gt;2021-07-21 活動迴響&lt;/p&gt;
-      &lt;/figcaption&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://www.scrum.org/professional-scrum-certifications&#34;&gt;Scrum.org 系統的證照&lt;/a&gt;是永久有效的。儘管自己早在 2018 年就有 &lt;a href=&#34;https://www.scrum.org/user/437709&#34;&gt;PSM 1 證照&lt;/a&gt;，卻也想趁此機會再檢驗一下自己對於 Scrum 的認識。因此，上網找了一份免費的、有針對 &lt;em&gt;&lt;a href=&#34;https://scrumguides.org/&#34;&gt;The Scrum Guide&lt;/a&gt;&lt;/em&gt; 2020 版做過更新的「&lt;a href=&#34;https://www.thescrummaster.co.uk/assessments/professional-scrum-master-i-psm-i-practice-assessment/&#34;&gt;PSM 1 模擬測驗&lt;/a&gt;」，40 道題目，限時 30 分鐘，份量為正式測驗的一半。&lt;/p&gt;
-&lt;p&gt;結果還頗令人欣慰。和三年前相比，這次讀題變快，思考更少，分數也提高了（儘管這並非官方提供的模擬題） —— 或許也跟去年自己整理過一系列 &lt;a href=&#34;//william-yeh.net/post/2020/07/pbr-in-a-nutshell/&#34;&gt;&lt;em&gt;Essence of Scrum&lt;/em&gt;&lt;/a&gt; 文章有關吧。&lt;/p&gt;
-
-
-&lt;div class=&#34;box&#34;&gt;
-&lt;figure  itemprop=&#34;associatedMedia&#34;
-  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
-  style=&#34;max-width:30em&#34; &gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2021/07/psm1-sim-test.png&#34; alt=&#34;PSM 1 模擬測驗&#34;/&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2021/07/psm1-sim-test.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-      &lt;figcaption&gt;
-          &lt;p&gt;PSM 1 模擬測驗&lt;/p&gt;
-      &lt;/figcaption&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;
-
-&lt;p&gt;答錯的題目中，有兩題滿有意思的，值得特別探討。&lt;/p&gt;
-&lt;p&gt;警告：以下有雷。如果你也打算去嘗試這份「&lt;a href=&#34;https://www.thescrummaster.co.uk/assessments/professional-scrum-master-i-psm-i-practice-assessment/&#34;&gt;PSM 1 模擬測驗&lt;/a&gt;」，請先去考一考，考完了再回來讀本文。&lt;/p&gt;
-&lt;h2 id=&#34;sprint-goal&#34;&gt;Sprint Goal&lt;/h2&gt;
-&lt;p&gt;這一題是關於 &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Goal&lt;/span&gt;
- 的：&lt;/p&gt;
-
-
-&lt;div class=&#34;box&#34;&gt;
-&lt;figure  itemprop=&#34;associatedMedia&#34;
-  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
-  style=&#34;max-width:30em&#34; &gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2021/07/psm1-q34.png&#34; /&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2021/07/psm1-q34.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;
-
-&lt;p&gt;請先思考幾秒鐘：你認為答案會是什麼？&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;讓我們看看 &lt;em&gt;&lt;a href=&#34;https://scrumguides.org/&#34;&gt;The Scrum Guide&lt;/a&gt;&lt;/em&gt; 怎麼說。2017 版是如此描述 &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Goal&lt;/span&gt;
- 的：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;The Sprint Goal is an objective set for the Sprint that can be met through the implementation of Product Backlog.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;2020 版則是如此描述：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;The Sprint Goal is the single objective for the Sprint.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;從 &amp;ldquo;an objective&amp;rdquo; 字眼替換成 &amp;ldquo;the single objective&amp;rdquo;，可看出背後想要強調的意涵。&lt;/p&gt;
-&lt;p&gt;因此，面對這題，在作答時，原本我還想把 &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Goal&lt;/span&gt;
- 標準放寬，結果就是⋯⋯&lt;/p&gt;
-
-
-&lt;div class=&#34;box&#34;&gt;
-&lt;figure  itemprop=&#34;associatedMedia&#34;
-  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
-  style=&#34;max-width:30em&#34; &gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2021/07/psm1-sprint-goal.png&#34; alt=&#34;PSM 1 模擬測驗：Goal&#34;/&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2021/07/psm1-sprint-goal.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-      &lt;figcaption&gt;
-          &lt;p&gt;PSM 1 模擬測驗：Goal&lt;/p&gt;
-      &lt;/figcaption&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;
-
-&lt;p&gt;PSM 可是非常強調原汁原味的，在核心理念上毫不妥協。&lt;/p&gt;
-&lt;h2 id=&#34;scrum-master-as-a-management-role&#34;&gt;Scrum master as a management role&lt;/h2&gt;
-&lt;p&gt;這一題是關於 management 的：&lt;/p&gt;
-
-
-&lt;div class=&#34;box&#34;&gt;
-&lt;figure  itemprop=&#34;associatedMedia&#34;
-  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
-  style=&#34;max-width:30em&#34; &gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2021/07/psm1-q33.png&#34; /&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2021/07/psm1-q33.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;
-
-&lt;p&gt;請先思考幾秒鐘：你認為答案會是什麼？&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;讓我們看看 &lt;em&gt;&lt;a href=&#34;https://scrumguides.org/&#34;&gt;The Scrum Guide&lt;/a&gt;&lt;/em&gt; 怎麼說。2017 版對於 &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Scrum Team&lt;/span&gt;
- 及 &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Scrum Master&lt;/span&gt;
- 的描述是：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Scrum Teams are self-organizing and cross-functional.&lt;/p&gt;
-&lt;p&gt;The Scrum Master is a servant-leader for the Scrum Team. The Scrum Master is responsible for promoting and supporting Scrum as defined in the Scrum Guide.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;2020 版則是如此描述：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;(Scrum Teams) are also self-managing, meaning they internally decide who does what, when, and how.&lt;/p&gt;
-&lt;p&gt;Scrum Masters are true leaders who serve the Scrum Team and the larger organization. The Scrum Master is accountable for establishing Scrum as defined in the Scrum Guide. The Scrum Master is accountable for the Scrum Team’s effectiveness.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;從 “self-organizing” 字眼替換成 “self-managing”，從 “servant-leader” 字眼替換成 “true leaders”，從 “responsible” 字眼替換成 “accountable”，可看出背後想要強調的意涵。&lt;/p&gt;
-&lt;p&gt;看了以上論述，你認為這題的答案會是什麼？&lt;/p&gt;
-&lt;p&gt;在作答時，原本我還想比照一般 agile 陣營或多或少有點輕視管理陣營的傾向或潛規則，選個貌似政治正確的答案，結果就是⋯⋯&lt;/p&gt;
-
-
-&lt;div class=&#34;box&#34;&gt;
-&lt;figure  itemprop=&#34;associatedMedia&#34;
-  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
-  style=&#34;max-width:30em&#34; &gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2021/07/psm1-sm-management.png&#34; alt=&#34;PSM 1 模擬測驗：management&#34;/&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2021/07/psm1-sm-management.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-      &lt;figcaption&gt;
-          &lt;p&gt;PSM 1 模擬測驗：management&lt;/p&gt;
-      &lt;/figcaption&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;
-
-&lt;p&gt;PSM 可是非常強調 &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Scrum Master&lt;/span&gt;
- 崇高價值的，在核心理念上毫不妥協。&lt;/p&gt;
-&lt;p&gt;關於這議題，我認為 LeSS 的 &lt;a href=&#34;https://less.works/less/management/role-of-manager&#34;&gt;Role of Manager&lt;/a&gt; 論述得相當精闢，尤其是以下這張圖，清楚標示出 Scrum master 的 &amp;ldquo;manager&amp;rdquo; 幅度，值得一讀：&lt;/p&gt;
-
-
-&lt;div class=&#34;box&#34;&gt;
-&lt;figure  itemprop=&#34;associatedMedia&#34;
-  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
-  style=&#34;max-width:30em&#34; &gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2021/07/less-role-responsibilities.png&#34; alt=&#34;Role of Manager (LeSS perspective)&#34;/&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2021/07/less-role-responsibilities.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-      &lt;figcaption&gt;
-          &lt;p&gt;Role of Manager (LeSS perspective)&lt;/p&gt;
-      &lt;/figcaption&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&#34;值得精讀的文獻&#34;&gt;值得精讀的文獻&lt;/h2&gt;
-&lt;p&gt;&lt;em&gt;&lt;a href=&#34;https://scrumguides.org/&#34;&gt;The Scrum Guide&lt;/a&gt;&lt;/em&gt; 2020 版真的很值得精讀，細細體會它如何將敏捷的「本質」闡述得更精準。&lt;/p&gt;
-&lt;p&gt;建議你：做完「&lt;a href=&#34;https://www.thescrummaster.co.uk/assessments/professional-scrum-master-i-psm-i-practice-assessment/&#34;&gt;PSM 1 模擬測驗&lt;/a&gt;」後，請確實檢討一次：針對每一題，盡量從 &lt;em&gt;&lt;a href=&#34;https://scrumguides.org/&#34;&gt;The Scrum Guide&lt;/a&gt;&lt;/em&gt; 找出佐證或反證的根據。如此一來，你會更貼近 Scrum 的靈魂。&lt;/p&gt;
-&lt;p&gt;更建議 Scrum master：請試著在你的團隊中舉辦幾次這類的討論活動。若引導得當，你們會在饒富趣味的觀點辯論中，逐漸凝聚團隊運作的共識。&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-
-&lt;div class=&#34;shortcode-notice note&#34;&gt;
-  &lt;div class=&#34;shortcode-notice-title note&#34;&gt;
-    
-      Scrum master 培訓系列
-    
-  &lt;/div&gt;
-  &lt;p&gt;❶ &lt;a href=&#34;//william-yeh.net/post/2021/03/train-new-scrum-master/&#34;&gt;如何訓練一個新的 Scrum master？&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;❷ &lt;a href=&#34;//william-yeh.net/post/2018/09/deliberate-practice-for-agile/&#34;&gt;敏捷之途無他，刻意練習而已矣！&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;❸ Scrum 認證模擬測驗的兩項啟發&lt;/p&gt;
-&lt;p&gt;❹ &lt;a href=&#34;//william-yeh.net/post/2022/03/prof-common-vocabulary/&#34;&gt;敏捷啟航的專業基礎：共同語彙&lt;/a&gt;&lt;/p&gt;
-
 &lt;/div&gt;</description>
       
     </item>
