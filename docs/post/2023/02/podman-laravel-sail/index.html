@@ -23,7 +23,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="William Yeh" />
-  <meta name="description" content="從 Docker Desktop 換到 Podman 1 ，開始需要處理某些相容性問題。有些問題不見得是 Podman 的錯，但既然遇到了，就順手記錄一下。 此文記錄一下在 Podman 執行 Laravel 9 欽定開發環境 Sail 的除" />
+  <meta name="description" content="從 Docker Desktop 換到 Podman 1 ，開始需要處理某些相容性問題。有些問題不見得是 Podman 的錯，但既然遇到了，就順手記錄一下除雷經驗。 此文記錄一下在 Podman 執行 Laravel 9 欽定開發環" />
 
 
 
@@ -61,18 +61,18 @@
 
 
 <meta property="og:title" content="用 Podman 執行 Laravel &#43; Sail" />
-<meta property="og:description" content="從 Docker Desktop 換到 Podman 1 ，開始需要處理某些相容性問題。有些問題不見得是 Podman 的錯，但既然遇到了，就順手記錄一下。 此文記錄一下在 Podman 執行 Laravel 9 欽定開發環境 Sail 的除" />
+<meta property="og:description" content="從 Docker Desktop 換到 Podman 1 ，開始需要處理某些相容性問題。有些問題不見得是 Podman 的錯，但既然遇到了，就順手記錄一下除雷經驗。 此文記錄一下在 Podman 執行 Laravel 9 欽定開發環" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="//william-yeh.net/post/2023/02/podman-laravel-sail/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2023-02-07T22:00:00+08:00" />
 <meta property="article:modified_time" content="2023-02-07T22:00:00+08:00" />
 <meta itemprop="name" content="用 Podman 執行 Laravel &#43; Sail">
-<meta itemprop="description" content="從 Docker Desktop 換到 Podman 1 ，開始需要處理某些相容性問題。有些問題不見得是 Podman 的錯，但既然遇到了，就順手記錄一下。 此文記錄一下在 Podman 執行 Laravel 9 欽定開發環境 Sail 的除"><meta itemprop="datePublished" content="2023-02-07T22:00:00+08:00" />
+<meta itemprop="description" content="從 Docker Desktop 換到 Podman 1 ，開始需要處理某些相容性問題。有些問題不見得是 Podman 的錯，但既然遇到了，就順手記錄一下除雷經驗。 此文記錄一下在 Podman 執行 Laravel 9 欽定開發環"><meta itemprop="datePublished" content="2023-02-07T22:00:00+08:00" />
 <meta itemprop="dateModified" content="2023-02-07T22:00:00+08:00" />
-<meta itemprop="wordCount" content="629">
+<meta itemprop="wordCount" content="647">
 <meta itemprop="keywords" content="devops,docker,podman,programming," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="用 Podman 執行 Laravel &#43; Sail"/>
-<meta name="twitter:description" content="從 Docker Desktop 換到 Podman 1 ，開始需要處理某些相容性問題。有些問題不見得是 Podman 的錯，但既然遇到了，就順手記錄一下。 此文記錄一下在 Podman 執行 Laravel 9 欽定開發環境 Sail 的除"/>
+<meta name="twitter:description" content="從 Docker Desktop 換到 Podman 1 ，開始需要處理某些相容性問題。有些問題不見得是 Podman 的錯，但既然遇到了，就順手記錄一下除雷經驗。 此文記錄一下在 Podman 執行 Laravel 9 欽定開發環"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -306,7 +306,7 @@ if (!doNotTrack) {
 
   <div class="post-meta__right">
     <span class="post-meta-more">
-        約 629 字 -
+        約 647 字 -
         預計閱讀 2 分鐘
       </span>
 
@@ -351,11 +351,11 @@ if (!doNotTrack) {
 
     
     <div class="post-content">
-      <p>從 Docker Desktop 換到 Podman <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> ，開始需要處理某些相容性問題。有些問題不見得是 Podman 的錯，但既然遇到了，就順手記錄一下。</p>
-<p>此文記錄一下在 Podman 執行 Laravel 9 欽定開發環境 <a href="https://laravel.com/docs/9.x/sail">Sail</a> 的除雷經驗。</p>
+      <p>從 Docker Desktop 換到 Podman <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> ，開始需要處理某些相容性問題。有些問題不見得是 Podman 的錯，但既然遇到了，就順手記錄一下除雷經驗。</p>
+<p>此文記錄一下在 Podman 執行 Laravel 9 欽定開發環境 <a href="https://laravel.com/docs/9.x/sail">Sail</a> 的步驟。</p>
 <h2 id="前置作業podman-daemon-mode">前置作業：Podman daemon mode</h2>
-<p>Laravel + Sail 需要用到 Docker Compose，而且它的 <code>docker-compose.yml</code> 又寫得很需要以 daemon mode 運作的 container engine。</p>
-<p>所以，請根據〈<a href="//william-yeh.net/post/2023/02/podman-tips/#daemon-mode">Podman Tips</a>〉一文的步驟，將 Podman 以 daemon mode 運作。</p>
+<p>Laravel 的 Sail 需要用到 Docker Compose，而且它的 docker-compose.yml 又寫得⋯⋯很需要是以 daemon mode 運作的 container engine。</p>
+<p>所以，請根據〈<a href="//william-yeh.net/post/2023/02/podman-tips/#daemon-mode">Podman Tips</a>〉一文的步驟，啟動一個 daemon mode 的 Podman。</p>
 <h2 id="前置作業解決-composer-連線問題">前置作業：解決 Composer 連線問題</h2>
 <p>有些人在透過 Composer 安裝套件的過程中，會出現 repo.packagist.org 連線 timeout 的問題：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">curl error 28 while downloading https://repo.packagist.org/packages.json:
@@ -369,7 +369,7 @@ if (!doNotTrack) {
 </span></span><span class="line"><span class="cl"><span class="c1"># Disable auto-gen /etc/hosts</span>
 </span></span><span class="line"><span class="cl"><span class="na">generateHosts</span> <span class="o">=</span> <span class="s">false</span>
 </span></span></code></pre></div><h2 id="安裝-sail">安裝 Sail</h2>
-<p>請依照 <a href="https://laravel.com/docs/9.x/installation#getting-started-on-linux">Laravel 官方文件</a>所載步驟，安裝 container 版的一整套 PHP + Laravel + Sail + blah blah blah 環境，順便建立名為 &ldquo;example-app&rdquo; 的新專案：</p>
+<p>請依照 <a href="https://laravel.com/docs/9.x/installation#getting-started-on-linux">Laravel 官方文件</a>所載步驟，安裝一整套 PHP + Composer + Laravel + Sail + blah blah blah 本地開發環境，也順便建立一個名為 &ldquo;example-app&rdquo; 的新專案：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">% curl -s &#34;https://laravel.build/example-app&#34; | bash</span></span></code></pre></div>
 <h2 id="修改-sail-產生的專案設定">修改 Sail 產生的專案設定</h2>
 <p>透過 Laravel + Sail 產生的專案，預設會跑在 port 80。我建議修改到其他 unprivileged port 以減少問題。</p>
@@ -417,7 +417,7 @@ if (!doNotTrack) {
 
 <p><!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --></p>
 <p><!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --></p>
-<p>以這篇文章示範，只要懂得排雷，Podman 足以勝任 Docker Desktop 的角色。</p>
+<p>僅以這篇文章示範，只要懂得排雷，Podman 足以勝任 Docker Desktop 的角色。</p>
 <div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>

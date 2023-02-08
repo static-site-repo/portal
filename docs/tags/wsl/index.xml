@@ -37,7 +37,8 @@
 &lt;p&gt;因此，我也趁此機會更新這方面的資訊，以免費的組合技，在 Windows 上盡量復刻 Mac 的容器體驗：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;以 WSL 2 與 IDE 的整合，兼顧命令列與 GUI 體驗。&lt;/li&gt;
-&lt;li&gt;以 Podman + K3s 取代 Docker Desktop。&lt;/li&gt;
+&lt;li&gt;以 Podman 取代 Docker Desktop 的 container engine。&lt;/li&gt;
+&lt;li&gt;以 K3s 取代 Docker Desktop 的 Kubernetes。&lt;/li&gt;
 &lt;/ul&gt;</description>
     </item>
     

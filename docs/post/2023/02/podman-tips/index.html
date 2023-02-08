@@ -70,7 +70,7 @@
 <meta itemprop="name" content="Podman Tips">
 <meta itemprop="description" content="從 Docker Desktop 換成 Podman，有些習慣必須做些小調整。此文記錄一些常用的小技巧。"><meta itemprop="datePublished" content="2023-02-07T20:00:00+08:00" />
 <meta itemprop="dateModified" content="2023-02-07T20:00:00+08:00" />
-<meta itemprop="wordCount" content="445">
+<meta itemprop="wordCount" content="485">
 <meta itemprop="keywords" content="devops,docker,podman," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Podman Tips"/>
 <meta name="twitter:description" content="從 Docker Desktop 換成 Podman，有些習慣必須做些小調整。此文記錄一些常用的小技巧。"/>
@@ -307,7 +307,7 @@ if (!doNotTrack) {
 
   <div class="post-meta__right">
     <span class="post-meta-more">
-        約 445 字 -
+        約 485 字 -
         預計閱讀 1 分鐘
       </span>
 
@@ -363,7 +363,7 @@ if (!doNotTrack) {
 <li><a href="https://github.com/wagoodman/dive">dive</a></li>
 <li><a href="https://github.com/TomasTomecek/sen">sen</a></li>
 </ul>
-<p>可惜的是，這些工具都假設現在是處於「有一個 daemon 跑在 <code>DOCKER_HOST</code> 的環境」（畢竟這是 Docker 的老規矩）。如果我們不想為此而刻意以 daemon 模式開啟 Podman，可透過 Podman 的 <a href="https://docs.podman.io/en/latest/markdown/podman-image-tree.1.html">image tree 指令</a>來查詢：</p>
+<p>可惜的是，這些工具都假設現在是處於「有一個 daemon 跑在 <code>DOCKER_HOST</code>」的環境（畢竟這是 Docker 的老規矩）。如果我們不想為此而刻意以 daemon 模式啟動 Podman，可透過 Podman 的 <a href="https://docs.podman.io/en/latest/markdown/podman-image-tree.1.html">image tree 指令</a>來檢視 image：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">% podman image tree python:3.9.16</span></span></code></pre></div>
 <h2 id="daemon-mode">Daemon mode</h2>
 <p>儘管 daemonless 的好處很多，但很多舊世界的工具，會假設現在是處於「有一個 container engine daemon 跑在 <code>DOCKER_HOST</code>」的環境。因此，有時候我們得故意讓 Podman 以 daemon mode 運行。</p>
@@ -379,8 +379,9 @@ if (!doNotTrack) {
 <h3 id="便利性設置">便利性設置</h3>
 <p>如果一切正常，我們可以設置 <code>/var/run/docker.sock</code> 以簡化流程：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">% sudo ln -s /run/user/$(id -u)/podman/podman.sock /var/run/docker.sock</span></span></code></pre></div>
-<p>我也習慣設一個 alias：</p>
+<p>我也習慣設一個 alias 以便需要時隨時啟用它：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">alias podman-service=&#39;podman system service -t 0&#39;</span></span></code></pre></div>
+<p>在不需要時，按下 Ctrl-C 即可關閉，非常方便。</p>
 <h3 id="持久性設置">持久性設置</h3>
 <p>如果你想透過 systemd 來管理，請參考 K3d 團隊提供的 <a href="https://k3d.io/v5.4.7/usage/advanced/podman/">Using Podman instead of Docker</a> 這篇文章。</p>
 <!-- raw HTML omitted -->

@@ -13,7 +13,7 @@
       <pubDate>Tue, 07 Feb 2023 22:00:00 +0800</pubDate>
       
       <guid>//william-yeh.net/post/2023/02/podman-laravel-sail/</guid>
-      <description>從 Docker Desktop 換到 Podman 1 ，開始需要處理某些相容性問題。有些問題不見得是 Podman 的錯，但既然遇到了，就順手記錄一下。 此文記錄一下在 Podman 執行 Laravel 9 欽定開發環境 Sail 的除</description>
+      <description>從 Docker Desktop 換到 Podman 1 ，開始需要處理某些相容性問題。有些問題不見得是 Podman 的錯，但既然遇到了，就順手記錄一下除雷經驗。 此文記錄一下在 Podman 執行 Laravel 9 欽定開發環</description>
     </item>
     
     <item>
@@ -55,7 +55,8 @@
 &lt;p&gt;因此，我也趁此機會更新這方面的資訊，以免費的組合技，在 Windows 上盡量復刻 Mac 的容器體驗：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;以 WSL 2 與 IDE 的整合，兼顧命令列與 GUI 體驗。&lt;/li&gt;
-&lt;li&gt;以 Podman + K3s 取代 Docker Desktop。&lt;/li&gt;
+&lt;li&gt;以 Podman 取代 Docker Desktop 的 container engine。&lt;/li&gt;
+&lt;li&gt;以 K3s 取代 Docker Desktop 的 Kubernetes。&lt;/li&gt;
 &lt;/ul&gt;</description>
     </item>
     

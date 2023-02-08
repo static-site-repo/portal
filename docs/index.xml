@@ -18,11 +18,11 @@
       
       <guid>//william-yeh.net/post/2023/02/podman-laravel-sail/</guid>
       
-        <description>&lt;p&gt;從 Docker Desktop 換到 Podman &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; ，開始需要處理某些相容性問題。有些問題不見得是 Podman 的錯，但既然遇到了，就順手記錄一下。&lt;/p&gt;
-&lt;p&gt;此文記錄一下在 Podman 執行 Laravel 9 欽定開發環境 &lt;a href=&#34;https://laravel.com/docs/9.x/sail&#34;&gt;Sail&lt;/a&gt; 的除雷經驗。&lt;/p&gt;
+        <description>&lt;p&gt;從 Docker Desktop 換到 Podman &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; ，開始需要處理某些相容性問題。有些問題不見得是 Podman 的錯，但既然遇到了，就順手記錄一下除雷經驗。&lt;/p&gt;
+&lt;p&gt;此文記錄一下在 Podman 執行 Laravel 9 欽定開發環境 &lt;a href=&#34;https://laravel.com/docs/9.x/sail&#34;&gt;Sail&lt;/a&gt; 的步驟。&lt;/p&gt;
 &lt;h2 id=&#34;前置作業podman-daemon-mode&#34;&gt;前置作業：Podman daemon mode&lt;/h2&gt;
-&lt;p&gt;Laravel + Sail 需要用到 Docker Compose，而且它的 &lt;code&gt;docker-compose.yml&lt;/code&gt; 又寫得很需要以 daemon mode 運作的 container engine。&lt;/p&gt;
-&lt;p&gt;所以，請根據〈&lt;a href=&#34;//william-yeh.net/post/2023/02/podman-tips/#daemon-mode&#34;&gt;Podman Tips&lt;/a&gt;〉一文的步驟，將 Podman 以 daemon mode 運作。&lt;/p&gt;
+&lt;p&gt;Laravel 的 Sail 需要用到 Docker Compose，而且它的 docker-compose.yml 又寫得⋯⋯很需要是以 daemon mode 運作的 container engine。&lt;/p&gt;
+&lt;p&gt;所以，請根據〈&lt;a href=&#34;//william-yeh.net/post/2023/02/podman-tips/#daemon-mode&#34;&gt;Podman Tips&lt;/a&gt;〉一文的步驟，啟動一個 daemon mode 的 Podman。&lt;/p&gt;
 &lt;h2 id=&#34;前置作業解決-composer-連線問題&#34;&gt;前置作業：解決 Composer 連線問題&lt;/h2&gt;
 &lt;p&gt;有些人在透過 Composer 安裝套件的過程中，會出現 repo.packagist.org 連線 timeout 的問題：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;curl error 28 while downloading https://repo.packagist.org/packages.json:
@@ -36,7 +36,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# Disable auto-gen /etc/hosts&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;na&#34;&gt;generateHosts&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;false&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;安裝-sail&#34;&gt;安裝 Sail&lt;/h2&gt;
-&lt;p&gt;請依照 &lt;a href=&#34;https://laravel.com/docs/9.x/installation#getting-started-on-linux&#34;&gt;Laravel 官方文件&lt;/a&gt;所載步驟，安裝 container 版的一整套 PHP + Laravel + Sail + blah blah blah 環境，順便建立名為 &amp;ldquo;example-app&amp;rdquo; 的新專案：&lt;/p&gt;
+&lt;p&gt;請依照 &lt;a href=&#34;https://laravel.com/docs/9.x/installation#getting-started-on-linux&#34;&gt;Laravel 官方文件&lt;/a&gt;所載步驟，安裝一整套 PHP + Composer + Laravel + Sail + blah blah blah 本地開發環境，也順便建立一個名為 &amp;ldquo;example-app&amp;rdquo; 的新專案：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;% curl -s &amp;#34;https://laravel.build/example-app&amp;#34; | bash&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2 id=&#34;修改-sail-產生的專案設定&#34;&gt;修改 Sail 產生的專案設定&lt;/h2&gt;
 &lt;p&gt;透過 Laravel + Sail 產生的專案，預設會跑在 port 80。我建議修改到其他 unprivileged port 以減少問題。&lt;/p&gt;
@@ -84,7 +84,7 @@
 
 &lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;以這篇文章示範，只要懂得排雷，Podman 足以勝任 Docker Desktop 的角色。&lt;/p&gt;
+&lt;p&gt;僅以這篇文章示範，只要懂得排雷，Podman 足以勝任 Docker Desktop 的角色。&lt;/p&gt;
 &lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
 &lt;hr&gt;
 &lt;ol&gt;
@@ -112,7 +112,7 @@
 &lt;li&gt;&lt;a href=&#34;https://github.com/wagoodman/dive&#34;&gt;dive&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/TomasTomecek/sen&#34;&gt;sen&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;可惜的是，這些工具都假設現在是處於「有一個 daemon 跑在 &lt;code&gt;DOCKER_HOST&lt;/code&gt; 的環境」（畢竟這是 Docker 的老規矩）。如果我們不想為此而刻意以 daemon 模式開啟 Podman，可透過 Podman 的 &lt;a href=&#34;https://docs.podman.io/en/latest/markdown/podman-image-tree.1.html&#34;&gt;image tree 指令&lt;/a&gt;來查詢：&lt;/p&gt;
+&lt;p&gt;可惜的是，這些工具都假設現在是處於「有一個 daemon 跑在 &lt;code&gt;DOCKER_HOST&lt;/code&gt;」的環境（畢竟這是 Docker 的老規矩）。如果我們不想為此而刻意以 daemon 模式啟動 Podman，可透過 Podman 的 &lt;a href=&#34;https://docs.podman.io/en/latest/markdown/podman-image-tree.1.html&#34;&gt;image tree 指令&lt;/a&gt;來檢視 image：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;% podman image tree python:3.9.16&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2 id=&#34;daemon-mode&#34;&gt;Daemon mode&lt;/h2&gt;
 &lt;p&gt;儘管 daemonless 的好處很多，但很多舊世界的工具，會假設現在是處於「有一個 container engine daemon 跑在 &lt;code&gt;DOCKER_HOST&lt;/code&gt;」的環境。因此，有時候我們得故意讓 Podman 以 daemon mode 運行。&lt;/p&gt;
@@ -128,8 +128,9 @@
 &lt;h3 id=&#34;便利性設置&#34;&gt;便利性設置&lt;/h3&gt;
 &lt;p&gt;如果一切正常，我們可以設置 &lt;code&gt;/var/run/docker.sock&lt;/code&gt; 以簡化流程：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;% sudo ln -s /run/user/$(id -u)/podman/podman.sock /var/run/docker.sock&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;我也習慣設一個 alias：&lt;/p&gt;
+&lt;p&gt;我也習慣設一個 alias 以便需要時隨時啟用它：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;alias podman-service=&amp;#39;podman system service -t 0&amp;#39;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;在不需要時，按下 Ctrl-C 即可關閉，非常方便。&lt;/p&gt;
 &lt;h3 id=&#34;持久性設置&#34;&gt;持久性設置&lt;/h3&gt;
 &lt;p&gt;如果你想透過 systemd 來管理，請參考 K3d 團隊提供的 &lt;a href=&#34;https://k3d.io/v5.4.7/usage/advanced/podman/&#34;&gt;Using Podman instead of Docker&lt;/a&gt; 這篇文章。&lt;/p&gt;
 &lt;!-- raw HTML omitted --&gt;
@@ -168,7 +169,8 @@
 &lt;p&gt;因此，我也趁此機會更新這方面的資訊，以免費的組合技，在 Windows 上盡量復刻 Mac 的容器體驗：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;以 WSL 2 與 IDE 的整合，兼顧命令列與 GUI 體驗。&lt;/li&gt;
-&lt;li&gt;以 Podman + K3s 取代 Docker Desktop。&lt;/li&gt;
+&lt;li&gt;以 Podman 取代 Docker Desktop 的 container engine。&lt;/li&gt;
+&lt;li&gt;以 K3s 取代 Docker Desktop 的 Kubernetes。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;wsl-2&#34;&gt;WSL 2&lt;/h2&gt;
 &lt;p&gt;請依照保哥的文章〈&lt;a href=&#34;https://blog.miniasp.com/post/2022/11/25/Useful-tool-WSL-1-0&#34;&gt;介紹好用工具：從 Microsoft Store 安裝 WSL 1.0 版&lt;/a&gt;〉進行以下步驟：&lt;/p&gt;
