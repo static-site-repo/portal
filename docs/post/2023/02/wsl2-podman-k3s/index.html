@@ -129,7 +129,7 @@ RedHat 釋出的 Podman，挾其完全免費、daemonless、rootless、pod 的�
 以 K3s 取代 Docker Desktop 的 Kubernetes。
 "><meta itemprop="datePublished" content="2023-02-06T22:00:00+08:00" />
 <meta itemprop="dateModified" content="2023-02-06T22:00:00+08:00" />
-<meta itemprop="wordCount" content="2047">
+<meta itemprop="wordCount" content="2050">
 <meta itemprop="keywords" content="devops,wsl,docker,podman,kubernetes," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="WSL2 &#43; Podman &#43; K3s 組合技"/>
 <meta name="twitter:description" content="距離上次重度使用 WSL 已經快四年了。四年來 WSL 世界起了一些變化：
@@ -392,7 +392,7 @@ if (!doNotTrack) {
 
   <div class="post-meta__right">
     <span class="post-meta-more">
-        約 2047 字 -
+        約 2050 字 -
         預計閱讀 5 分鐘
       </span>
 
@@ -586,8 +586,8 @@ if (!doNotTrack) {
 
 <h2 id="podman-compose">Podman Compose</h2>
 <p>Kubernetes 生態圈有一大堆媲美 Docker Compose 便利性的工具（譬如我愛用的 <a href="https://skaffold.dev/">Skaffold</a>）。不過，如果你實在太想念 Docker Compose，有兩種做法：</p>
-<p>➀ 可直接沿用舊的 <a href="https://github.com/docker/compose">Docker Compose</a>，但是需要將 Podman 啟動成 daemon <sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup> 。</p>
-<p>安裝方法：</p>
+<p>➀ 可直接沿用舊的 Docker Compose，但是需要將 Podman 啟動成 daemon <sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup> 。</p>
+<p><a href="https://github.com/docker/compose">Docker Compose</a> 的安裝方法：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">% sudo curl -SL https://github.com/docker/compose/releases/download/v2.15.1/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">% sudo chmod +x /usr/local/bin/docker-compose</span></span></code></pre></div>

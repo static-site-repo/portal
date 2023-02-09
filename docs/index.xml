@@ -284,8 +284,8 @@
 
 &lt;h2 id=&#34;podman-compose&#34;&gt;Podman Compose&lt;/h2&gt;
 &lt;p&gt;Kubernetes 生態圈有一大堆媲美 Docker Compose 便利性的工具（譬如我愛用的 &lt;a href=&#34;https://skaffold.dev/&#34;&gt;Skaffold&lt;/a&gt;）。不過，如果你實在太想念 Docker Compose，有兩種做法：&lt;/p&gt;
-&lt;p&gt;➀ 可直接沿用舊的 &lt;a href=&#34;https://github.com/docker/compose&#34;&gt;Docker Compose&lt;/a&gt;，但是需要將 Podman 啟動成 daemon &lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt; 。&lt;/p&gt;
-&lt;p&gt;安裝方法：&lt;/p&gt;
+&lt;p&gt;➀ 可直接沿用舊的 Docker Compose，但是需要將 Podman 啟動成 daemon &lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt; 。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/docker/compose&#34;&gt;Docker Compose&lt;/a&gt; 的安裝方法：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;% sudo curl -SL https://github.com/docker/compose/releases/download/v2.15.1/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;% sudo chmod +x /usr/local/bin/docker-compose&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
