@@ -235,6 +235,8 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;% # 請記得要遵照安裝畫面出現的步驟做最後的設定！&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2 id=&#34;podman&#34;&gt;Podman&lt;/h2&gt;
+&lt;p&gt;透過 WSL 安裝好 Linux 之後，其實我們大可在裡面安裝純粹的 &lt;a href=&#34;https://docs.docker.com/engine/install/&#34;&gt;Docker Engine&lt;/a&gt;，即過去俗稱的 &lt;a href=&#34;https://github.com/docker/docker-ce&#34;&gt;CE 版 (community edition)&lt;/a&gt;，它採用 Apache License 2.0 授權，不會有 Docker Desktop 的收費問題。&lt;/p&gt;
+&lt;p&gt;不過，我還是想玩玩具有 daemonless &amp;amp; rootless 特性的替代方案：Podman。&lt;/p&gt;
 &lt;h3 id=&#34;安裝&#34;&gt;安裝&lt;/h3&gt;
 &lt;p&gt;請依照 &lt;a href=&#34;https://podman.io/getting-started/installation#installing-on-linux&#34;&gt;Podman 官方文件&lt;/a&gt;所載步驟安裝 Podman。譬如說，如果 WSL 的 distribution 是 Ubuntu 22.04.1 LTS，可如此安裝：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;% sudo apt update

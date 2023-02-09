@@ -129,7 +129,7 @@ RedHat 釋出的 Podman，挾其完全免費、daemonless、rootless、pod 的�
 以 K3s 取代 Docker Desktop 的 Kubernetes。
 "><meta itemprop="datePublished" content="2023-02-06T22:00:00+08:00" />
 <meta itemprop="dateModified" content="2023-02-06T22:00:00+08:00" />
-<meta itemprop="wordCount" content="2049">
+<meta itemprop="wordCount" content="2148">
 <meta itemprop="keywords" content="devops,wsl,docker,podman,kubernetes," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="WSL2 &#43; Podman &#43; K3s 組合技"/>
 <meta name="twitter:description" content="距離上次重度使用 WSL 已經快四年了。四年來 WSL 世界起了一些變化：
@@ -392,7 +392,7 @@ if (!doNotTrack) {
 
   <div class="post-meta__right">
     <span class="post-meta-more">
-        約 2049 字 -
+        約 2148 字 -
         預計閱讀 5 分鐘
       </span>
 
@@ -524,6 +524,8 @@ if (!doNotTrack) {
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">% # 請記得要遵照安裝畫面出現的步驟做最後的設定！</span></span></code></pre></div>
 <h2 id="podman">Podman</h2>
+<p>透過 WSL 安裝好 Linux 之後，其實我們大可在裡面安裝純粹的 <a href="https://docs.docker.com/engine/install/">Docker Engine</a>，即過去俗稱的 <a href="https://github.com/docker/docker-ce">CE 版 (community edition)</a>，它採用 Apache License 2.0 授權，不會有 Docker Desktop 的收費問題。</p>
+<p>不過，我還是想玩玩具有 daemonless &amp; rootless 特性的替代方案：Podman。</p>
 <h3 id="安裝">安裝</h3>
 <p>請依照 <a href="https://podman.io/getting-started/installation#installing-on-linux">Podman 官方文件</a>所載步驟安裝 Podman。譬如說，如果 WSL 的 distribution 是 Ubuntu 22.04.1 LTS，可如此安裝：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">% sudo apt update
