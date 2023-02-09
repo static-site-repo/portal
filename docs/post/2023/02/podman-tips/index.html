@@ -70,7 +70,7 @@
 <meta itemprop="name" content="Podman Tips">
 <meta itemprop="description" content="從 Docker Desktop 換成 Podman，有些習慣必須做些小調整。此文記錄一些常用的小技巧。"><meta itemprop="datePublished" content="2023-02-07T20:00:00+08:00" />
 <meta itemprop="dateModified" content="2023-02-07T20:00:00+08:00" />
-<meta itemprop="wordCount" content="494">
+<meta itemprop="wordCount" content="488">
 <meta itemprop="keywords" content="devops,docker,podman," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Podman Tips"/>
 <meta name="twitter:description" content="從 Docker Desktop 換成 Podman，有些習慣必須做些小調整。此文記錄一些常用的小技巧。"/>
@@ -307,7 +307,7 @@ if (!doNotTrack) {
 
   <div class="post-meta__right">
     <span class="post-meta-more">
-        約 494 字 -
+        約 488 字 -
         預計閱讀 1 分鐘
       </span>
 
@@ -377,10 +377,19 @@ if (!doNotTrack) {
 <p>現在，我們可以在這個終端機實驗看看那些舊世界的工具是否可以正常運作。就以前面提到的 <a href="https://github.com/wagoodman/dive">dive</a> 為例吧！</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">% dive python:3.9.16</span></span></code></pre></div>
 <h3 id="便利性設置">便利性設置</h3>
-<p>如果一切正常，我們可以設置 <code>/var/run/docker.sock</code> 以簡化流程：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">% sudo ln -s /run/user/$(id -u)/podman/podman.sock /var/run/docker.sock</span></span></code></pre></div>
-<p>我也習慣設一個 alias 以便需要時隨時啟用它：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">alias start-podman-service=&#39;echo &#34;Starting podman as server... Ctrl-C to stop.&#34; &amp;&amp; podman system service -t 0&#39;</span></span></code></pre></div>
+<p>如果一切正常，我們可以寫一個 <code>/usr/local/bin/start-podman-service.sh</code> 程式以簡化啟用流程：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">#!/bin/bash
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">FILE=/var/run/docker.sock
+</span></span><span class="line"><span class="cl">if [ ! -f &#34;$FILE&#34; ]; then
+</span></span><span class="line"><span class="cl">    sudo ln -s /run/user/$(id -u)/podman/podman.sock $FILE
+</span></span><span class="line"><span class="cl">fi
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">echo &#34;Starting podman as server... Ctrl-C to stop.&#34;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">exec podman system service -t 0</span></span></code></pre></div>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>在不需要時，按下 <code>Ctrl</code>+<code>C</code> 即可關閉，非常方便。</p>
 <h3 id="持久性設置">持久性設置</h3>
 <p>如果你想透過 systemd 來管理，請參考 K3d 團隊提供的 <a href="https://k3d.io/v5.4.7/usage/advanced/podman/">Using Podman instead of Docker</a> 這篇文章。</p>

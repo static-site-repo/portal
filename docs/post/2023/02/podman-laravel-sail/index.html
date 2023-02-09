@@ -73,7 +73,7 @@
 <meta itemprop="description" content="從 Docker Desktop 換到 Podman 1 ，開始需要處理某些相容性問題。有些問題不見得是 Podman 的錯，但既然遇到了，就順手記錄一下除雷經驗。
 此文記錄一下在 Podman 執行 Laravel 9 欽定開發環境 Sail 的步驟。"><meta itemprop="datePublished" content="2023-02-07T22:00:00+08:00" />
 <meta itemprop="dateModified" content="2023-02-07T22:00:00+08:00" />
-<meta itemprop="wordCount" content="759">
+<meta itemprop="wordCount" content="754">
 <meta itemprop="keywords" content="devops,docker,podman,programming," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="用 Podman 執行 Laravel &#43; Sail"/>
 <meta name="twitter:description" content="從 Docker Desktop 換到 Podman 1 ，開始需要處理某些相容性問題。有些問題不見得是 Podman 的錯，但既然遇到了，就順手記錄一下除雷經驗。
@@ -311,7 +311,7 @@ if (!doNotTrack) {
 
   <div class="post-meta__right">
     <span class="post-meta-more">
-        約 759 字 -
+        約 754 字 -
         預計閱讀 2 分鐘
       </span>
 
@@ -386,12 +386,12 @@ if (!doNotTrack) {
 <p>請在專案的 <code>.env</code> 檔案添加這一行：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">APP_PORT=3001</span></span></code></pre></div>
 <p>透過 Laravel + Sail 產生的專案，<code>storage</code> 目錄可能會有存取權限的問題。請參考<a href="https://stackoverflow.com/a/67511101/714426">這篇解法</a>：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">% sudo chmod o+w ./storage/ -R</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">% chmod o+w ./storage/ -R</span></span></code></pre></div>
 <p>或是保守一點：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">% sudo chmod o+w ./storage/logs/       -R
-</span></span><span class="line"><span class="cl">% sudo chmod o+w ./framework/cache/    -R
-</span></span><span class="line"><span class="cl">% sudo chmod o+w ./framework/sessions/ -R
-</span></span><span class="line"><span class="cl">% sudo chmod o+w ./framework/views/    -R</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">% chmod o+w ./storage/logs/       -R
+</span></span><span class="line"><span class="cl">% chmod o+w ./framework/cache/    -R
+</span></span><span class="line"><span class="cl">% chmod o+w ./framework/sessions/ -R
+</span></span><span class="line"><span class="cl">% chmod o+w ./framework/views/    -R</span></span></code></pre></div>
 <h2 id="執行-sail">執行 Sail</h2>
 <p>請依照 <a href="https://laravel.com/docs/9.x/installation#getting-started-on-linux">Laravel 官方文件</a>所載步驟，執行 &ldquo;example-app&rdquo; 專案：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">% cd example-app
