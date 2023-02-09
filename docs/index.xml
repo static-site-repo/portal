@@ -20,6 +20,10 @@
       
         <description>&lt;p&gt;從 Docker Desktop 換到 Podman &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; ，開始需要處理某些相容性問題。有些問題不見得是 Podman 的錯，但既然遇到了，就順手記錄一下除雷經驗。&lt;/p&gt;
 &lt;p&gt;此文記錄一下在 Podman 執行 Laravel 9 欽定開發環境 &lt;a href=&#34;https://laravel.com/docs/9.x/sail&#34;&gt;Sail&lt;/a&gt; 的步驟。&lt;/p&gt;
+&lt;h2 id=&#34;前置作業安裝-podman&#34;&gt;前置作業：安裝 Podman&lt;/h2&gt;
+&lt;p&gt;如果你是 Linux 用戶，請依照 &lt;a href=&#34;https://podman.io/getting-started/installation#installing-on-linux&#34;&gt;Podman 官方文件&lt;/a&gt;所載步驟安裝 Podman。&lt;/p&gt;
+&lt;p&gt;如果你是 Windows 用戶，請根據〈&lt;a href=&#34;//william-yeh.net/post/2023/02/wsl2-podman-k3s/&#34;&gt;WSL2 + Podman + K3s 組合技&lt;/a&gt;〉一文安裝 WSL2 + Podman。&lt;/p&gt;
+&lt;p&gt;如果你是 Mac 用戶，請先用 &lt;code&gt;brew install podman&lt;/code&gt; 來安裝。但據說 multipass + Podman 方案更好，我會再找時間實驗。&lt;/p&gt;
 &lt;h2 id=&#34;前置作業podman-daemon-mode&#34;&gt;前置作業：Podman daemon mode&lt;/h2&gt;
 &lt;p&gt;Laravel 的 Sail 需要用到 Docker Compose，而且它的 docker-compose.yml 又寫得⋯⋯很需要是以 daemon mode 運作的 container engine。&lt;/p&gt;
 &lt;p&gt;所以，請根據〈&lt;a href=&#34;//william-yeh.net/post/2023/02/podman-tips/#daemon-mode&#34;&gt;Podman Tips&lt;/a&gt;〉一文的步驟，啟動一個 daemon mode 的 Podman。&lt;/p&gt;

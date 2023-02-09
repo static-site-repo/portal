@@ -73,7 +73,7 @@
 <meta itemprop="description" content="從 Docker Desktop 換到 Podman 1 ，開始需要處理某些相容性問題。有些問題不見得是 Podman 的錯，但既然遇到了，就順手記錄一下除雷經驗。
 此文記錄一下在 Podman 執行 Laravel 9 欽定開發環境 Sail 的步驟。"><meta itemprop="datePublished" content="2023-02-07T22:00:00+08:00" />
 <meta itemprop="dateModified" content="2023-02-07T22:00:00+08:00" />
-<meta itemprop="wordCount" content="647">
+<meta itemprop="wordCount" content="759">
 <meta itemprop="keywords" content="devops,docker,podman,programming," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="用 Podman 執行 Laravel &#43; Sail"/>
 <meta name="twitter:description" content="從 Docker Desktop 換到 Podman 1 ，開始需要處理某些相容性問題。有些問題不見得是 Podman 的錯，但既然遇到了，就順手記錄一下除雷經驗。
@@ -311,7 +311,7 @@ if (!doNotTrack) {
 
   <div class="post-meta__right">
     <span class="post-meta-more">
-        約 647 字 -
+        約 759 字 -
         預計閱讀 2 分鐘
       </span>
 
@@ -343,6 +343,7 @@ if (!doNotTrack) {
   <div class="post-toc-content">
     <nav id="TableOfContents">
   <ul>
+    <li><a href="#前置作業安裝-podman">前置作業：安裝 Podman</a></li>
     <li><a href="#前置作業podman-daemon-mode">前置作業：Podman daemon mode</a></li>
     <li><a href="#前置作業解決-composer-連線問題">前置作業：解決 Composer 連線問題</a></li>
     <li><a href="#安裝-sail">安裝 Sail</a></li>
@@ -358,6 +359,10 @@ if (!doNotTrack) {
     <div class="post-content">
       <p>從 Docker Desktop 換到 Podman <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> ，開始需要處理某些相容性問題。有些問題不見得是 Podman 的錯，但既然遇到了，就順手記錄一下除雷經驗。</p>
 <p>此文記錄一下在 Podman 執行 Laravel 9 欽定開發環境 <a href="https://laravel.com/docs/9.x/sail">Sail</a> 的步驟。</p>
+<h2 id="前置作業安裝-podman">前置作業：安裝 Podman</h2>
+<p>如果你是 Linux 用戶，請依照 <a href="https://podman.io/getting-started/installation#installing-on-linux">Podman 官方文件</a>所載步驟安裝 Podman。</p>
+<p>如果你是 Windows 用戶，請根據〈<a href="//william-yeh.net/post/2023/02/wsl2-podman-k3s/">WSL2 + Podman + K3s 組合技</a>〉一文安裝 WSL2 + Podman。</p>
+<p>如果你是 Mac 用戶，請先用 <code>brew install podman</code> 來安裝。但據說 multipass + Podman 方案更好，我會再找時間實驗。</p>
 <h2 id="前置作業podman-daemon-mode">前置作業：Podman daemon mode</h2>
 <p>Laravel 的 Sail 需要用到 Docker Compose，而且它的 docker-compose.yml 又寫得⋯⋯很需要是以 daemon mode 運作的 container engine。</p>
 <p>所以，請根據〈<a href="//william-yeh.net/post/2023/02/podman-tips/#daemon-mode">Podman Tips</a>〉一文的步驟，啟動一個 daemon mode 的 Podman。</p>
