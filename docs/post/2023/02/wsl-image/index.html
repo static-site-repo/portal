@@ -73,7 +73,7 @@
 <meta itemprop="description" content="經過一番辛苦調教，總算把 WSL 調整成可推廣到團隊使用的地步。下一步就是要輸出成 WSL 公版。
 謹以此文記錄匯出與匯入 WSL 映像檔的步驟與除雷經驗。"><meta itemprop="datePublished" content="2023-02-09T22:00:00+08:00" />
 <meta itemprop="dateModified" content="2023-02-09T22:00:00+08:00" />
-<meta itemprop="wordCount" content="757">
+<meta itemprop="wordCount" content="844">
 <meta itemprop="keywords" content="devops,wsl," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="WSL Image 匯出與匯入"/>
 <meta name="twitter:description" content="經過一番辛苦調教，總算把 WSL 調整成可推廣到團隊使用的地步。下一步就是要輸出成 WSL 公版。
@@ -311,7 +311,7 @@ if (!doNotTrack) {
 
   <div class="post-meta__right">
     <span class="post-meta-more">
-        約 757 字 -
+        約 844 字 -
         預計閱讀 2 分鐘
       </span>
 
@@ -390,6 +390,7 @@ if (!doNotTrack) {
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c"># 將 &#34;Ubuntu&#34; 個體匯出至 &#34;my-image.tar&#34; 映像檔</span>
 </span></span><span class="line"><span class="cl"><span class="n">wsl</span>  <span class="p">-</span><span class="n">-export</span> <span class="n">Ubuntu</span>  <span class="nb">my-image</span><span class="p">.</span><span class="n">tar</span></span></span></code></pre></div>
+<p>映像檔可能很大。建議對它產生一份 hash，以供比對。<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
 <h2 id="匯入映像檔">匯入映像檔</h2>
 <p>假設我們想從 <code>my-image.tar</code> 映像檔匯入到一個名為 <code>dev</code> 的 WSL 個體，請輸入以下指令：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl"># 將 &#34;my-image.tar&#34; 映像檔匯入到 &#34;dev&#34; 個體
@@ -417,7 +418,7 @@ if (!doNotTrack) {
 </div>
 
 <h2 id="測試">測試</h2>
-<p>既然是要給研發團隊用的公版，自然要登入看看是否一切正常。就以這陣子在實驗的 Laravel Sail 環境為例 <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>：</p>
+<p>既然是要給研發團隊用的公版，自然要登入看看是否一切正常。就以這陣子在實驗的 Laravel Sail 環境為例 <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>：</p>
 <p><a href="https://asciinema.org/a/558746"><img src="https://asciinema.org/a/558746.svg" alt="asciicast"></a></p>
 <p>如果有問題，就得卸載這份有瑕疵的 WSL 個體，回到源頭繼續修改：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="c"># 停止 &#34;dev&#34; 個體</span>
@@ -438,7 +439,10 @@ if (!doNotTrack) {
 <hr>
 <ol>
 <li id="fn:1">
-<p>詳見〈<a href="//william-yeh.net/post/2023/02/podman-laravel-sail/">用 Podman 執行 Laravel + Sail</a>〉一文。&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>在 Windows 可透過 <code>certutil</code> 或 <code>Get-FileHash</code> 指令取得檔案的 hash 值。詳見 &ldquo;<a href="https://www.nextofwindows.com/5-ways-to-generate-and-verify-md5-sha-checksum-of-any-file-in-windows-10">5 Ways to Generate and Verify MD5 SHA Checksum of Any File in Windows 10</a>&rdquo; 一文。&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>詳見〈<a href="//william-yeh.net/post/2023/02/podman-laravel-sail/">用 Podman 執行 Laravel + Sail</a>〉一文。&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </div>
