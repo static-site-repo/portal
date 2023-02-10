@@ -3,14 +3,56 @@
   
   <url>
     <loc>https://william-yeh.net/categories/</loc>
-    <lastmod>2023-02-07T22:00:00+08:00</lastmod>
+    <lastmod>2023-02-09T22:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://william-yeh.net/tags/devops/</loc>
-    <lastmod>2023-02-07T22:00:00+08:00</lastmod>
+    <lastmod>2023-02-09T22:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://william-yeh.net/post/</loc>
+    <lastmod>2023-02-09T22:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://william-yeh.net/</loc>
+    <lastmod>2023-02-09T22:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://william-yeh.net/tags/</loc>
+    <lastmod>2023-02-09T22:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://william-yeh.net/categories/tech/</loc>
+    <lastmod>2023-02-09T22:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://william-yeh.net/tags/wsl/</loc>
+    <lastmod>2023-02-09T22:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://william-yeh.net/post/2023/02/wsl-image/</loc>
+    <lastmod>2023-02-09T22:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -30,35 +72,7 @@
   </url>
   
   <url>
-    <loc>https://william-yeh.net/post/</loc>
-    <lastmod>2023-02-07T22:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://william-yeh.net/</loc>
-    <lastmod>2023-02-07T22:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://william-yeh.net/tags/programming/</loc>
-    <lastmod>2023-02-07T22:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://william-yeh.net/tags/</loc>
-    <lastmod>2023-02-07T22:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://william-yeh.net/categories/tech/</loc>
     <lastmod>2023-02-07T22:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -80,13 +94,6 @@
   
   <url>
     <loc>https://william-yeh.net/tags/kubernetes/</loc>
-    <lastmod>2023-02-06T22:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://william-yeh.net/tags/wsl/</loc>
     <lastmod>2023-02-06T22:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

@@ -6,10 +6,105 @@
     <description>Recent content on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Tue, 07 Feb 2023 22:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 09 Feb 2023 22:00:00 +0800</lastBuildDate>
     
         <atom:link href="//william-yeh.net/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>WSL Image 匯出與匯入</title>
+      <link>//william-yeh.net/post/2023/02/wsl-image/</link>
+      <pubDate>Thu, 09 Feb 2023 22:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2023/02/wsl-image/</guid>
+      
+        <description>&lt;p&gt;經過一番辛苦調教，總算把 WSL 調整成可推廣到團隊使用的地步。下一步就是要輸出成 WSL 公版。&lt;/p&gt;
+&lt;p&gt;謹以此文記錄匯出與匯入 WSL 映像檔的步驟與除雷經驗。&lt;/p&gt;
+&lt;h2 id=&#34;前置作業清理內容&#34;&gt;前置作業：清理內容&lt;/h2&gt;
+&lt;p&gt;在匯出成公版之前，記得先清理一下機敏資料。譬如：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;檢視一下 &lt;code&gt;~/.ssh&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;檢視一下 &lt;code&gt;~/.kube&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;檢視一下 &lt;code&gt;~/.gitconfig&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;檢視一下其他重要的 &lt;a href=&#34;https://dotfiles.github.io/&#34;&gt;dotfiles&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;也記得清理一下足跡：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;清理一下 &lt;code&gt;~/.*_history&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;清理一下 &lt;code&gt;/var/log&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;前置作業預設登入用戶&#34;&gt;前置作業：預設登入用戶&lt;/h2&gt;
+&lt;p&gt;踩雷經驗：匯出再匯入 WSL 映像檔之後，再登入的身分會是 root。&lt;/p&gt;
+&lt;p&gt;為了避免此事發生，請在匯出映像檔之前，先編輯 WSL 設定檔 &lt;code&gt;/etc/wsl.conf&lt;/code&gt; 如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-ini&#34; data-lang=&#34;ini&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;[user]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;na&#34;&gt;default&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;預設的登入帳號名稱&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;匯出映像檔&#34;&gt;匯出映像檔&lt;/h2&gt;
+&lt;p&gt;先在 PowerShell 查看一下現在系統裡有哪些 WSL 設置：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;wsl -l -v
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;---
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  NAME            STATE           VERSION
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;* Ubuntu          Running         2
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  Ubuntu-22.04    Stopped         2&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;假設 &lt;code&gt;Ubuntu&lt;/code&gt; 就是我們想要匯出的標的，請輸入以下命令：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;# 停止 &amp;#34;Ubuntu&amp;#34; 個體&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;wsl&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;-t&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Ubuntu&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;# 將 &amp;#34;Ubuntu&amp;#34; 個體匯出至 &amp;#34;my-image.tar&amp;#34; 映像檔&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;wsl&lt;/span&gt;  &lt;span class=&#34;p&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;-export&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Ubuntu&lt;/span&gt;  &lt;span class=&#34;nb&#34;&gt;my-image&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;tar&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&#34;匯入映像檔&#34;&gt;匯入映像檔&lt;/h2&gt;
+&lt;p&gt;假設我們想從 &lt;code&gt;my-image.tar&lt;/code&gt; 映像檔匯入到一個名為 &lt;code&gt;dev&lt;/code&gt; 的 WSL 個體，請輸入以下指令：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# 將 &amp;#34;my-image.tar&amp;#34; 映像檔匯入到 &amp;#34;dev&amp;#34; 個體
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;wsl --import dev  C:\WslDev  my-image.tar
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# 看看是否匯入成功
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;wsl -l -v
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;---
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  NAME            STATE           VERSION
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;* Ubuntu          Stopped         2
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  dev             Stopped         2
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  Ubuntu-22.04    Stopped         2&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;你在 Windows Terminal 應該可以看到多了一個名為 &lt;code&gt;dev&lt;/code&gt; 的終端機選項：&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/02/wsl-image-added.png&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2023/02/wsl-image-added.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;測試&#34;&gt;測試&lt;/h2&gt;
+&lt;p&gt;既然是要給研發團隊用的公版，自然要登入看看是否一切正常。就以這陣子在實驗的 Laravel Sail 環境為例 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;：&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://asciinema.org/a/558746&#34;&gt;&lt;img src=&#34;https://asciinema.org/a/558746.svg&#34; alt=&#34;asciicast&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;如果有問題，就得卸載這份有瑕疵的 WSL 個體，回到源頭繼續修改：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;# 停止 &amp;#34;dev&amp;#34; 個體&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;wsl&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;-t&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;dev&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;# 卸載 &amp;#34;dev&amp;#34; 個體&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;wsl&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;-unregister&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;dev&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&#34;如果還有預設登入帳號的問題&#34;&gt;如果還有預設登入帳號的問題&lt;/h2&gt;
+&lt;p&gt;在前置作業時，曾經透過 WSL 設定檔 &lt;code&gt;/etc/wsl.conf&lt;/code&gt; 避免預設登入帳號變成 root 的問題。如果此法無效，請根據&lt;a href=&#34;https://superuser.com/a/1566031&#34;&gt;這份建議&lt;/a&gt;，用 Windows 登錄編輯程式 &lt;code&gt;regedit.exe&lt;/code&gt; 去修改 Windows registry：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Key&lt;/strong&gt;: HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Lxss\{某一個}&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Name&lt;/strong&gt;: &lt;code&gt;DefaultUid&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Type&lt;/strong&gt;: 請切換成「十進位數字」&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Data&lt;/strong&gt;: 請設成 &lt;code&gt;1000&lt;/code&gt; （十進位數字）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;萬一還無效，請參考 &amp;ldquo;&lt;a href=&#34;https://superuser.com/questions/1566022/how-to-set-default-user-for-manually-installed-wsl-distro&#34;&gt;How to set default user for manually installed WSL distro?&lt;/a&gt;&amp;rdquo; 一文的討論。&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;詳見〈&lt;a href=&#34;//william-yeh.net/post/2023/02/podman-laravel-sail/&#34;&gt;用 Podman 執行 Laravel + Sail&lt;/a&gt;〉一文。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description>
+      
+    </item>
     
     <item>
       <title>用 Podman 執行 Laravel &#43; Sail</title>
@@ -2164,157 +2259,6 @@
 &lt;li&gt;優惠碼：&lt;code&gt;william300&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;優惠期限：2022-04-30&lt;/li&gt;
 &lt;/ul&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>敏捷啟航的專業基礎：共同語彙</title>
-      <link>//william-yeh.net/post/2022/03/prof-common-vocabulary/</link>
-      <pubDate>Sat, 05 Mar 2022 14:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2022/03/prof-common-vocabulary/</guid>
-      
-        <description>&lt;p&gt;LeSS 的 &amp;ldquo;&lt;a href=&#34;https://less.works/less/structure/scrummaster.html#ScrumMasterfocus&#34;&gt;Scrum Master focus over time&lt;/a&gt;&amp;rdquo; 一文主張，在導入敏捷的初期階段，首要焦點應放在 &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Team&lt;/span&gt;
-、&lt;span style=&#34;font-variant: small-caps;&#34;&gt;Product Owner&lt;/span&gt;
- 及 &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Organization&lt;/span&gt;
- 三者。&lt;/p&gt;
-
-&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
-&lt;div class=&#34;box&#34;&gt;
-&lt;figure  itemprop=&#34;associatedMedia&#34;
-  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
-  style=&#34;max-width:30em&#34; &gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2019/12/scrum-master-focus-over-time.png&#34; alt=&#34;Scrum Master focus over time (from LeSS)&#34;/&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2019/12/scrum-master-focus-over-time.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-      &lt;figcaption&gt;
-          &lt;p&gt;Scrum Master focus over time (from LeSS)&lt;/p&gt;
-      &lt;/figcaption&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;
-
-&lt;p&gt;如果借用&lt;a href=&#34;https://www.mckinsey.com/business-functions/strategy-and-corporate-finance/our-insights/enduring-ideas-the-7-s-framework&#34;&gt;麥肯錫 7S 模型&lt;/a&gt;來分析這些初期的施力重點，不難發現，&lt;span style=&#34;font-variant: small-caps;&#34;&gt;Organization&lt;/span&gt;
- 的施力點大致可直接對應到 7S 的結構 (Structure) &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; ，至於 &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Team&lt;/span&gt;
- 及 &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Product Owner&lt;/span&gt;
- 的施力點，則是對應到 7S 的風格 (Style)、技能 (Skills)，甚至是共同價值觀 (Shared Values)。&lt;/p&gt;
-&lt;p&gt;前者屬於硬性要素，較易理解，也較易實施；後者屬於軟性要素，較抽象，也不易立竿見影——這是敏捷啟航時需要面對的模糊題。&lt;/p&gt;
-&lt;p&gt;面對軟性要素，除了像【敏捷原理與團隊塑造】工作坊這種典型的起手式，我發現，要促成根本改變，還得致力於「&lt;strong&gt;建立共同語彙&lt;/strong&gt;」。我還更進一步發現，這些共同語彙，不只是敏捷轉型需要，就算不談敏捷轉型，也一樣需要——這應該是各職能工作者都該有的專業基礎。&lt;/p&gt;
-&lt;p&gt;其中，我最看重且亟需建立的共同語彙有三：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;5W1H&lt;/li&gt;
-&lt;li&gt;WBS &amp;amp; MECE&lt;/li&gt;
-&lt;li&gt;Working backwards collaboratively&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;5w1h&#34;&gt;5W1H&lt;/h2&gt;
-&lt;p&gt;很多人視 5W1H 為過氣的老調。有趣的是，日本人對於經典的 5W1H 似乎情有獨鍾，出了幾本專書：《&lt;a href=&#34;https://www.books.com.tw/products/0010826002&#34;&gt;5W1H 超強思考術：你的所有問題，都可以靠 5W1H 解決！&lt;/a&gt;》、《&lt;a href=&#34;https://www.books.com.tw/products/0010840745&#34;&gt;5W1H 經典思考法：容易獲得成果的人都在用&lt;/a&gt;》。&lt;/p&gt;
-&lt;p&gt;5W1H 不只是表面上「人事時地物」這麼單純的事項羅列，&lt;strong&gt;以事實為基礎&lt;/strong&gt;的行事態度才是它更深層的意涵。如果套用麥肯錫常用的「天空、下雨、雨傘」比喻，如果連「天空」這個事實層次都無法精準陳述，後續「下雨」的推論詮釋或是「雨傘」的行動決策，都是刻舟求劍。&lt;/p&gt;
-&lt;p&gt;對敏捷的影響：若行事態度不以事實為基礎，等於是推翻了 Scrum 經驗主義三支柱當中的「檢視性 (&lt;a href=&#34;https://scrumguides.org/scrum-guide.html#inspection&#34;&gt;inspection&lt;/a&gt;)」，就別奢望能夠正確發揮 Scrum 的功效。&lt;/p&gt;
-&lt;h2 id=&#34;wbs--mece&#34;&gt;WBS &amp;amp; MECE&lt;/h2&gt;
-&lt;p&gt;工作分解 &lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt; ，是專業工作者的基本功。磨練工作分解的技術，不管是 &lt;a href=&#34;https://en.wikipedia.org/wiki/Work_breakdown_structure&#34;&gt;WBS&lt;/a&gt; 形式還是 &lt;a href=&#34;https://en.wikipedia.org/wiki/MECE_principle&#34;&gt;MECE&lt;/a&gt; 意識，都能促成更專業的工作品質。&lt;/p&gt;
-&lt;p&gt;對敏捷的影響：儘管敏捷並不講究在一開頭就進行鉅細彌遺的工作分解，但這並不代表敏捷就不需要工作分解技能了。此技能若不精熟，&lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Planning&lt;/span&gt;
- 或 &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Refinement&lt;/span&gt;
- 等活動很快就會卡關。&lt;/p&gt;
-&lt;h2 id=&#34;working-backwards-collaboratively&#34;&gt;Working backwards collaboratively&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.amazon.com/dp/1250267595&#34;&gt;Working backwards&lt;/a&gt; 一詞，近年來因 Amazon 而聲名大噪，但這觀念其實相當古老。至少當我們還在學生時期，都懂得所謂的「逆推法」解題祕訣：面對數學證明題，有時候可以嘗試從待證明的結果往回推導個幾步；面對閱讀測驗，較有效率的做法，往往是先快速掃描後面的提問及選項，而不是傻傻地先閱讀冗長的文本。&lt;/p&gt;
-&lt;p&gt;迷宮，未必非得從入口出發；從出口往回倒著走，可能更容易破關。&lt;/p&gt;
-&lt;p&gt;Working backwards 是學生的法寶，只可惜到了職場，只有一流高效人士才懂得重拾這個絕招。像在專案管理領域中，WBS 就是最典型的 working backwards 應用：從「最終交付物」出發的分解結構 (a &lt;strong&gt;deliverable-oriented&lt;/strong&gt; hierarchical decomposition)。&lt;/p&gt;
-&lt;p&gt;一流高效人士不只是懂得 working backwards，更懂得 working backwards &lt;strong&gt;collaboratively&lt;/strong&gt;。專案管理名著 &lt;a href=&#34;https://www.amazon.com/dp/0470177128&#34;&gt;&lt;em&gt;Work Breakdown Structures: The Foundation for Project Management Excellence&lt;/em&gt;&lt;/a&gt; 就說，WBS 不是 PM 一個人悶著頭生出來的，而是靠整個團隊的力量集結完成：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Who owns the WBS, who should be involved in developing it, who keeps it up to date? The answer to each of these is the &lt;strong&gt;project manager&lt;/strong&gt; and the &lt;strong&gt;project team&lt;/strong&gt;. [&amp;hellip;] who is responsible for the upkeep of the WBS? This is the responsibility of &lt;strong&gt;the entire project team&lt;/strong&gt;.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;不靠整個團隊的力量，很難做到 WBS 所講究的 “100% rule”。&lt;/p&gt;
-&lt;p&gt;對敏捷的影響：不具備 working backwards collaboratively 的心態及技藝，就只是表面功夫的敏捷。就以敏捷圈常見的 &lt;a href=&#34;https://en.wikipedia.org/wiki/User_story&#34;&gt;user story&lt;/a&gt; 及 &lt;a href=&#34;https://en.wikipedia.org/wiki/Specification_by_example&#34;&gt;SBE&lt;/a&gt; 手法為例：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;User story：經典句型 &amp;ldquo;&lt;a href=&#34;https://www.mountaingoatsoftware.com/blog/advantages-of-the-as-a-user-i-want-user-story-template&#34;&gt;who + what + why&lt;/a&gt;&amp;rdquo; 及 acceptance criteria 就是 working backwards，&lt;a href=&#34;https://www.agilealliance.org/glossary/three-cs/&#34;&gt;3C 要素&lt;/a&gt;當中的 &amp;ldquo;conversation&amp;rdquo; 就是 working collaboratively。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;SBE：經典句型 “&lt;a href=&#34;https://martinfowler.com/bliki/GivenWhenThen.html&#34;&gt;given-when-then&lt;/a&gt;&amp;quot; 就是 working backwards，&lt;a href=&#34;https://www.agilealliance.org/glossary/three-amigos/&#34;&gt;3 amigos 活動&lt;/a&gt;就是 working collaboratively。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;交叉訓練&#34;&gt;交叉訓練&lt;/h2&gt;
-&lt;p&gt;5W1H、WBS &amp;amp; MECE、working backwards collaboratively 這些共同語彙，不只是敏捷轉型需要，就算不談敏捷轉型，也一樣需要——這應該是各職能工作者都該有的專業基礎。&lt;/p&gt;
-&lt;p&gt;檯面上沒有單一課程能深度涵蓋這三種語彙。我只好打組合牌，透過幾種課程的交叉訓練，從不同角度冶煉出這三種語彙的交集，再以我的【&lt;a href=&#34;//william-yeh.net/post/2022/06/career-reading-club-1/&#34;&gt;職涯躍升書系導讀會&lt;/a&gt;】做為佐料來提味：&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;&lt;/th&gt;
-&lt;th&gt;Git&lt;/th&gt;
-&lt;th&gt;專案管理入門&lt;/th&gt;
-&lt;th&gt;SBE&lt;/th&gt;
-&lt;th&gt;TDD&lt;/th&gt;
-&lt;th&gt;遠距工作講座&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;5W1H&lt;/td&gt;
-&lt;td&gt;✓&lt;/td&gt;
-&lt;td&gt;✓&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;WBS &amp;amp; MECE&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;✓&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Working backwards&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;✓&lt;/td&gt;
-&lt;td&gt;✓&lt;/td&gt;
-&lt;td&gt;✓&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Working collaboratively&lt;/td&gt;
-&lt;td&gt;✓&lt;/td&gt;
-&lt;td&gt;✓&lt;/td&gt;
-&lt;td&gt;✓&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;✓&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;教育訓練效果不彰，很多時候是因為：​❶ 主管自己都沒上過，❷ 沒有人致力於把它變成組織內的共同語彙，❸ 沒有人有 coaching 的意識與行動。​如此這般，就淪為徒具形式，船過水無痕。&lt;/p&gt;
-&lt;p&gt;透過交叉訓練，應用場景自然而然擴大起來，再搭配正確的 coaching 意識與行動，將更有機會成為真正實質意義上的「共同語彙」。&lt;/p&gt;
-&lt;h2 id=&#34;整土&#34;&gt;整土&lt;/h2&gt;
-&lt;p&gt;這些共同語彙一旦真正建立起來，許多 Scrum 元素就顯得理所當然。&lt;/p&gt;
-&lt;p&gt;Scrum 跑不順，不見得是 Scrum 的錯。畢竟 Scrum 是個篇幅 20 頁的擴大機，原本的天籟會增益，反之——噪音亦然。&lt;/p&gt;
-&lt;p&gt;Scrum 懷璧其罪很久了。&lt;/p&gt;
-&lt;p&gt;在敏捷啟航之前，花點時間處理這些軟性要素，在組織中種下這些共同語彙，把硬土、淺土、雜土整理成好土，整理成易於滋養敏捷的環境吧。&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-
-&lt;div class=&#34;shortcode-notice note&#34;&gt;
-  &lt;div class=&#34;shortcode-notice-title note&#34;&gt;
-    
-      Scrum master 培訓系列
-    
-  &lt;/div&gt;
-  &lt;p&gt;❶ &lt;a href=&#34;//william-yeh.net/post/2021/03/train-new-scrum-master/&#34;&gt;如何訓練一個新的 Scrum master？&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;❷ &lt;a href=&#34;//william-yeh.net/post/2018/09/deliberate-practice-for-agile/&#34;&gt;敏捷之途無他，刻意練習而已矣！&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;❸ &lt;a href=&#34;//william-yeh.net/post/2021/07/revisit-psm1/&#34;&gt;Scrum 認證模擬測驗的兩項啟發&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;❹ 敏捷啟航的專業基礎：共同語彙&lt;/p&gt;
-
-&lt;/div&gt;
-
-&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
-&lt;hr&gt;
-&lt;ol&gt;
-&lt;li id=&#34;fn:1&#34;&gt;
-&lt;p&gt;即使 Kanban 方法是傳説中一開始對既有組織結構衝擊最小，且明文宣稱 “Start with what you do now“ 及 “Initially, respect current processes, roles, responsibilities, and job titles”，但根據 &lt;a href=&#34;https://www.amazon.com/dp/0985305193&#34;&gt;&lt;em&gt;Kanban from the Inside&lt;/em&gt;&lt;/a&gt; 一書的說法，Kanban 最輕量的導入手法 “The Sustainability Agenda” 當中，就包含 ① Visualize, ④ Make Policies Explicit, ⑤ Implement Feedback Loops 這三項 Transparency 實踐手法——說實話，這未必是小小的衝擊！如果借用&lt;a href=&#34;https://www.mckinsey.com/business-functions/strategy-and-corporate-finance/our-insights/enduring-ideas-the-7-s-framework&#34;&gt;麥肯錫 7S 模型&lt;/a&gt;來分析這些初期的施力重點，可說是從 7S 的體制 (Systems) 這項硬性要素及風格 (Style) 這項軟性要素切入。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:2&#34;&gt;
-&lt;p&gt;請參考〈&lt;a href=&#34;//william-yeh.net/post/2016/11/decomposition-reading-list/&#34;&gt;工作分解講座・閱讀材料&lt;/a&gt;〉一文。&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;</description>
       
     </item>
     

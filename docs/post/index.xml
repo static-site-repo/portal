@@ -6,7 +6,17 @@
     <description>Recent content in Posts on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Tue, 07 Feb 2023 22:00:00 +0800</lastBuildDate><atom:link href="//william-yeh.net/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 09 Feb 2023 22:00:00 +0800</lastBuildDate><atom:link href="//william-yeh.net/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>WSL Image 匯出與匯入</title>
+      <link>//william-yeh.net/post/2023/02/wsl-image/</link>
+      <pubDate>Thu, 09 Feb 2023 22:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2023/02/wsl-image/</guid>
+      <description>&lt;p&gt;經過一番辛苦調教，總算把 WSL 調整成可推廣到團隊使用的地步。下一步就是要輸出成 WSL 公版。&lt;/p&gt;
+&lt;p&gt;謹以此文記錄匯出與匯入 WSL 映像檔的步驟與除雷經驗。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>用 Podman 執行 Laravel &#43; Sail</title>
       <link>//william-yeh.net/post/2023/02/podman-laravel-sail/</link>
@@ -359,39 +369,6 @@
 &lt;p&gt;在商業世界，「敏捷」又變成流行語了。許多人風聞敏捷兩大流派 Scrum 及 Kanban 勾勒出來的美麗新世界，聽起來也頭頭是道，便以為敏捷轉型是輕而易舉、隨插即用、立竿見影的事。&lt;/p&gt;
 &lt;p&gt;不過，真實世界不必然會像宣傳的那麼單純。等到真正開始嘗試時，遇到已知或未知的障礙，才開始懷疑人生，心生退轉。「敏捷轉型」這條路，怎麼走起來並沒有那麼敏捷呀？&lt;/p&gt;
 &lt;p&gt;其實，「敏捷」這道處方未必有錯，錯的可能是病患未先接受過合適的衛教。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>敏捷啟航的專業基礎：共同語彙</title>
-      <link>//william-yeh.net/post/2022/03/prof-common-vocabulary/</link>
-      <pubDate>Sat, 05 Mar 2022 14:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2022/03/prof-common-vocabulary/</guid>
-      <description>&lt;p&gt;LeSS 的 &amp;ldquo;&lt;a href=&#34;https://less.works/less/structure/scrummaster.html#ScrumMasterfocus&#34;&gt;Scrum Master focus over time&lt;/a&gt;&amp;rdquo; 一文主張，在導入敏捷的初期階段，首要焦點應放在 &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Team&lt;/span&gt;
-、&lt;span style=&#34;font-variant: small-caps;&#34;&gt;Product Owner&lt;/span&gt;
- 及 &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Organization&lt;/span&gt;
- 三者。&lt;/p&gt;
-
-&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
-&lt;div class=&#34;box&#34;&gt;
-&lt;figure  itemprop=&#34;associatedMedia&#34;
-  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
-  style=&#34;max-width:30em&#34; &gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2019/12/scrum-master-focus-over-time.png&#34; alt=&#34;Scrum Master focus over time (from LeSS)&#34;/&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2019/12/scrum-master-focus-over-time.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-      &lt;figcaption&gt;
-          &lt;p&gt;Scrum Master focus over time (from LeSS)&lt;/p&gt;
-      &lt;/figcaption&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;
-
-&lt;p&gt;如果借用&lt;a href=&#34;https://www.mckinsey.com/business-functions/strategy-and-corporate-finance/our-insights/enduring-ideas-the-7-s-framework&#34;&gt;麥肯錫 7S 模型&lt;/a&gt;來分析這些初期的施力重點，不難發現，&lt;span style=&#34;font-variant: small-caps;&#34;&gt;Organization&lt;/span&gt;
- 的施力點大致可直接對應到 7S 的結構 (Structure) &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; ，至於 &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Team&lt;/span&gt;
- 及 &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Product Owner&lt;/span&gt;
- 的施力點，則是對應到 7S 的風格 (Style)、技能 (Skills)，甚至是共同價值觀 (Shared Values)。&lt;/p&gt;
-&lt;p&gt;前者屬於硬性要素，較易理解，也較易實施；後者屬於軟性要素，較抽象，也不易立竿見影——這是敏捷啟航時需要面對的模糊題。&lt;/p&gt;</description>
     </item>
     
   </channel>
