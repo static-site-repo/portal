@@ -497,7 +497,7 @@ if (!doNotTrack) {
 </span></span><span class="line"><span class="cl"><span class="c1"># Disable auto-gen /etc/hosts</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># @see https://github.com/composer/packagist/issues/950#issuecomment-424913225</span>
 </span></span><span class="line"><span class="cl"><span class="na">generateHosts</span> <span class="o">=</span> <span class="s">false</span>
-</span></span></code></pre></div><p>如果要避免 WSL 占用過多系統資源，可編輯 Windows 的 <code>%UserProfile%\.wslconfig</code> 檔案如下：</p>
+</span></span></code></pre></div><p>如果要避免 WSL 占用過多系統資源，可編輯 Windows 的 <code>$env:USERPROFILE\.wslconfig</code> 檔案如下：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ini" data-lang="ini"><span class="line"><span class="cl"><span class="k">[wsl2]</span>
 </span></span><span class="line"><span class="cl"><span class="na">memory</span><span class="o">=</span><span class="s">4GB</span>
 </span></span><span class="line"><span class="cl"><span class="na">processors</span><span class="o">=</span><span class="s">2</span>
