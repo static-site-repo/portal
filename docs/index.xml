@@ -289,11 +289,12 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;因此，我也趁此機會更新這方面的資訊，以免費的組合技，在 Windows 上盡量復刻 Mac 的容器體驗：&lt;/p&gt;
-&lt;ul&gt;
+&lt;ol&gt;
 &lt;li&gt;以 WSL 2 與 IDE 的整合，兼顧命令列與 GUI 體驗。&lt;/li&gt;
 &lt;li&gt;以 Podman 取代 Docker Desktop 的 container engine。&lt;/li&gt;
 &lt;li&gt;以 K3s 取代 Docker Desktop 的 Kubernetes。&lt;/li&gt;
-&lt;/ul&gt;
+&lt;/ol&gt;
+&lt;p&gt;註：如果不想以 WSL 2 為工作環境 (1)，單純只想要一個 Desktop Desktop 替代方案 (2 + 3) 的人，可以直接選用 &lt;a href=&#34;https://rancherdesktop.io/&#34;&gt;Rancher Desktop&lt;/a&gt;，就不必往下看了。&lt;/p&gt;
 &lt;h2 id=&#34;wsl-2&#34;&gt;WSL 2&lt;/h2&gt;
 &lt;p&gt;請依照保哥的文章〈&lt;a href=&#34;https://blog.miniasp.com/post/2022/11/25/Useful-tool-WSL-1-0&#34;&gt;介紹好用工具：從 Microsoft Store 安裝 WSL 1.0 版&lt;/a&gt;〉進行以下步驟：&lt;/p&gt;
 &lt;ol&gt;
@@ -372,7 +373,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;% # 請記得要遵照安裝畫面出現的步驟做最後的設定！&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2 id=&#34;podman&#34;&gt;Podman&lt;/h2&gt;
-&lt;p&gt;透過 WSL 安裝好 Linux 之後，其實我們大可在裡面安裝純粹的 &lt;a href=&#34;https://docs.docker.com/engine/install/&#34;&gt;Docker Engine&lt;/a&gt;，即過去俗稱的 &lt;a href=&#34;https://github.com/docker/docker-ce&#34;&gt;CE 版 (community edition)&lt;/a&gt;，它採用 Apache License 2.0 授權，不會有 Docker Desktop 的收費問題。&lt;/p&gt;
+&lt;p&gt;透過 WSL 安裝好 Linux 之後，其實我們大可在裡面安裝純粹的 Docker Engine](&lt;a href=&#34;https://docs.docker.com/engine/install/&#34;&gt;https://docs.docker.com/engine/install/&lt;/a&gt;)，即過去俗稱的 &lt;a href=&#34;https://github.com/docker/docker-ce&#34;&gt;CE 版 (community edition)&lt;/a&gt; 或 Moby，它採用 Apache License 2.0 授權，不會有 Docker Desktop 的收費問題。&lt;/p&gt;
 &lt;p&gt;不過，我還是想玩玩具有 daemonless &amp;amp; rootless 特性的替代方案：Podman。&lt;/p&gt;
 &lt;h3 id=&#34;安裝&#34;&gt;安裝&lt;/h3&gt;
 &lt;p&gt;請依照 &lt;a href=&#34;https://podman.io/getting-started/installation#installing-on-linux&#34;&gt;Podman 官方文件&lt;/a&gt;所載步驟安裝 Podman。譬如說，如果 WSL 的 distribution 是 Ubuntu 22.04.1 LTS，可如此安裝：&lt;/p&gt;
