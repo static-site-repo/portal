@@ -6,7 +6,19 @@
     <description>Recent content in security on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Tue, 15 Mar 2016 08:00:00 +0800</lastBuildDate><atom:link href="//william-yeh.net/tags/security/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 27 Aug 2016 20:00:00 +0800</lastBuildDate><atom:link href="//william-yeh.net/tags/security/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>為什麼要追求極簡化的 Docker image？</title>
+      <link>//william-yeh.net/post/2016/08/why-minimal-docker-images/</link>
+      <pubDate>Sat, 27 Aug 2016 20:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2016/08/why-minimal-docker-images/</guid>
+      <description>&lt;p&gt;今早〈&lt;a href=&#34;//william-yeh.net/post/2016/08/halfblood-docker/&#34;&gt;從 Ansible 到 Docker：混血模式&lt;/a&gt;〉演講過後，有人在聊天室提問：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;請問為什麼要追求最小化的 Docker image？&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
     <item>
       <title>POLP：最小權限原則</title>
       <link>//william-yeh.net/post/2016/03/polp-intro/</link>

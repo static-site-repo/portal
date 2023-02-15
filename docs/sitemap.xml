@@ -1213,6 +1213,27 @@
   </url>
   
   <url>
+    <loc>https://william-yeh.net/tags/security/</loc>
+    <lastmod>2016-08-27T20:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://william-yeh.net/post/2016/08/why-minimal-docker-images/</loc>
+    <lastmod>2016-08-27T20:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://william-yeh.net/post/2016/08/halfblood-docker/</loc>
+    <lastmod>2016-08-27T08:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://william-yeh.net/tags/mac/</loc>
     <lastmod>2016-08-22T08:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -1368,13 +1389,6 @@
   
   <url>
     <loc>https://william-yeh.net/post/2016/03/polp-intro/</loc>
-    <lastmod>2016-03-15T08:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://william-yeh.net/tags/security/</loc>
     <lastmod>2016-03-15T08:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
