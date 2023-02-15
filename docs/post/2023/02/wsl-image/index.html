@@ -73,7 +73,7 @@
 <meta itemprop="description" content="經過一番辛苦調教，總算把 WSL 調整成可推廣到團隊使用的地步。下一步就是要輸出成 WSL 公版。
 謹以此文記錄匯出與匯入 WSL 映像檔的步驟與除雷經驗。"><meta itemprop="datePublished" content="2023-02-09T22:00:00+08:00" />
 <meta itemprop="dateModified" content="2023-02-09T22:00:00+08:00" />
-<meta itemprop="wordCount" content="933">
+<meta itemprop="wordCount" content="950">
 <meta itemprop="keywords" content="devops,wsl," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="WSL Image 匯出與匯入"/>
 <meta name="twitter:description" content="經過一番辛苦調教，總算把 WSL 調整成可推廣到團隊使用的地步。下一步就是要輸出成 WSL 公版。
@@ -311,7 +311,7 @@ if (!doNotTrack) {
 
   <div class="post-meta__right">
     <span class="post-meta-more">
-        約 933 字 -
+        約 950 字 -
         預計閱讀 2 分鐘
       </span>
 
@@ -399,13 +399,14 @@ if (!doNotTrack) {
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="c"># 停止 &#34;Ubuntu&#34; 個體</span>
 </span></span><span class="line"><span class="cl"><span class="n">wsl</span> <span class="n">-t</span> <span class="n">Ubuntu</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c"># 將 &#34;Ubuntu&#34; 個體匯出至 &#34;my-image.tar&#34; 映像檔</span>
-</span></span><span class="line"><span class="cl"><span class="n">wsl</span>  <span class="p">-</span><span class="n">-export</span> <span class="n">Ubuntu</span>  <span class="nb">my-image</span><span class="p">.</span><span class="n">tar</span></span></span></code></pre></div>
+</span></span><span class="line"><span class="cl"><span class="c"># 將 &#34;Ubuntu&#34; 個體匯出至 &#34;my-image.vhdx&#34; 映像檔</span>
+</span></span><span class="line"><span class="cl"><span class="n">wsl</span>  <span class="p">-</span><span class="n">-export</span> <span class="n">Ubuntu</span>  <span class="p">-</span><span class="n">-vhd</span> <span class="nb">my-image</span><span class="p">.</span><span class="n">vhdx</span></span></span></code></pre></div>
 <p>映像檔可能很大。建議對它產生一份 hash，以供比對。<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
 <h2 id="匯入映像檔">匯入映像檔</h2>
-<p>假設我們想從 <code>my-image.tar</code> 映像檔匯入到一個名為 <code>dev</code> 的 WSL 個體，請輸入以下指令：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl"># 將 &#34;my-image.tar&#34; 映像檔匯入到 &#34;dev&#34; 個體
-</span></span><span class="line"><span class="cl">wsl --import dev  C:\WslDev  my-image.tar
+<p>假設我們想從 <code>my-image.vhdx</code> 映像檔匯入到一個名為 <code>dev</code> 的 WSL 個體，請輸入以下指令：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl"># 將 &#34;my-image.vhdx&#34; 映像檔匯入到名為 &#34;dev&#34; 的 WSL 個體，
+</span></span><span class="line"><span class="cl"># 並在 C:\WslDisk 建立虛擬硬碟
+</span></span><span class="line"><span class="cl">wsl --import dev  C:\WslDisk  my-image.vhdx  --vhd
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"># 看看是否匯入成功
 </span></span><span class="line"><span class="cl">wsl -l -v
