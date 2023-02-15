@@ -20,6 +20,16 @@
       
         <description>&lt;p&gt;經過一番辛苦調教，總算把 WSL 調整成可推廣到團隊使用的地步。下一步就是要輸出成 WSL 公版。&lt;/p&gt;
 &lt;p&gt;謹以此文記錄匯出與匯入 WSL 映像檔的步驟與除雷經驗。&lt;/p&gt;
+&lt;h2 id=&#34;前置作業查看已安裝的軟體清單&#34;&gt;前置作業：查看已安裝的軟體清單&lt;/h2&gt;
+&lt;p&gt;在匯出成公版之前，先查看已安裝了哪些軟體：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# 查看已用 apt install 安裝了哪些軟體
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;% apt list --installed
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# 查看已用 brew install 安裝了哪些軟體
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;% brew list
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# 查看手動下載安裝了哪些軟體
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;% ls -al /usr/local/bin&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2 id=&#34;前置作業清理內容&#34;&gt;前置作業：清理內容&lt;/h2&gt;
 &lt;p&gt;在匯出成公版之前，記得先清理一下機敏資料。譬如：&lt;/p&gt;
 &lt;ul&gt;
@@ -287,8 +297,35 @@
 &lt;p&gt;請依照保哥的文章〈&lt;a href=&#34;https://blog.miniasp.com/post/2022/11/25/Useful-tool-WSL-1-0&#34;&gt;介紹好用工具：從 Microsoft Store 安裝 WSL 1.0 版&lt;/a&gt;〉進行以下步驟：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
+&lt;p&gt;更新 Windows 版本（譬如說，Windows 10 請更新至 &lt;code&gt;22H2&lt;/code&gt; 以上，並確定套用過  &lt;a href=&#34;https://support.microsoft.com/en-us/topic/november-15-2022-kb5020030-os-builds-19042-2311-19043-2311-19044-2311-and-19045-2311-preview-237a9048-f853-4e29-a3a2-62efdbea95e2?WT.mc_id=DT-MVP-4015686&#34;&gt;KB5020030&lt;/a&gt; patch）。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
 &lt;p&gt;安裝 WSL。&lt;/p&gt;
 &lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;更新 WSL 版本：&lt;code&gt;wsl --update&lt;/code&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;查看 WSL 版本：&lt;code&gt;wsl --version&lt;/code&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;如果一切順利，應該會看到類似以下的畫面：&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/02/wsl-version.png&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2023/02/wsl-version.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;請確定 WSL 版本是 1.0.3.0 以上，否則接下來可能會遇到一堆稀奇古怪的問題。 &lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;接下來，請繼續透過 WSL 安裝 Linux：&lt;/p&gt;
+&lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;安裝一個 Linux distribution。&lt;/p&gt;
 &lt;/li&gt;
@@ -346,11 +383,12 @@
 &lt;h3 id=&#34;設定&#34;&gt;設定&lt;/h3&gt;
 &lt;p&gt;Podman 是 daemonless + rootless 的架構。如果你希望讓 container 能夠自由綁定 port 80 以利本地開發，可以考慮在 &lt;code&gt;/etc/sysctl.conf&lt;/code&gt; 添加設定：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;net.ipv4.ip_unprivileged_port_start=80&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;還有一個選擇性步驟。如果你希望讓 image 不會被綁在 &lt;code&gt;docker.io/library/&lt;/code&gt; 這個預設的 registry，可以考慮在 &lt;code&gt;/etc/containers/registries.conf&lt;/code&gt; 添加設定 &lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt; ：&lt;/p&gt;
+&lt;p&gt;還有一個選擇性步驟。如果你希望讓 image 不會被綁在 &lt;code&gt;docker.io/library/&lt;/code&gt; 這個預設的 registry，可以考慮在 &lt;code&gt;/etc/containers/registries.conf&lt;/code&gt; 添加設定 &lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt; ：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;unqualified-search-registries=[
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &amp;#34;registry.access.redhat.com&amp;#34;, &amp;#34;registry.fedoraproject.org&amp;#34;,
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &amp;#34;quay.io&amp;#34;,
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &amp;#34;gcr.io&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &amp;#34;ghcr.io&amp;#34;,
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &amp;#34;docker.io&amp;#34;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;]&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h3 id=&#34;便利性&#34;&gt;便利性&lt;/h3&gt;
@@ -384,7 +422,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;% wget -O - localhost:8080&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;也可以在 Windows host 用瀏覽器看到 nginx 順利執行：&lt;/p&gt;
 
-&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+
 &lt;div class=&#34;box&#34;&gt;
 &lt;figure  itemprop=&#34;associatedMedia&#34;
   itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
@@ -398,7 +436,7 @@
 
 &lt;h2 id=&#34;podman-compose&#34;&gt;Podman Compose&lt;/h2&gt;
 &lt;p&gt;Kubernetes 生態圈有一大堆媲美 Docker Compose 便利性的工具（譬如我愛用的 &lt;a href=&#34;https://skaffold.dev/&#34;&gt;Skaffold&lt;/a&gt;）。不過，如果你實在太想念 Docker Compose，有兩種做法：&lt;/p&gt;
-&lt;p&gt;➀ 可直接沿用舊的 Docker Compose，但是需要將 Podman 啟動成 daemon &lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt; 。&lt;/p&gt;
+&lt;p&gt;➀ 可直接沿用舊的 Docker Compose，但是需要將 Podman 啟動成 daemon &lt;sup id=&#34;fnref:6&#34;&gt;&lt;a href=&#34;#fn:6&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;6&lt;/a&gt;&lt;/sup&gt; 。&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://github.com/docker/compose&#34;&gt;Docker Compose&lt;/a&gt; 的安裝方法：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;% sudo curl -SL https://github.com/docker/compose/releases/download/v2.15.1/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
@@ -417,7 +455,7 @@
 &lt;!-- raw HTML omitted --&gt;
 &lt;h2 id=&#34;k3s&#34;&gt;K3s&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;https://k3s.io/&#34;&gt;K3s&lt;/a&gt; 是由 Rancher Labs 貢獻給 CNCF 的輕量級 Kubernetes 開源方案，很適合應用程式開發者使用，作為 Docker Desktop 內建 Kubernetes 的替代方案。&lt;/p&gt;
-&lt;p&gt;請依照 &lt;a href=&#34;https://docs.k3s.io/installation/configuration&#34;&gt;K3s 官方文件&lt;/a&gt;所載步驟安裝： &lt;sup id=&#34;fnref:6&#34;&gt;&lt;a href=&#34;#fn:6&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;6&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;請依照 &lt;a href=&#34;https://docs.k3s.io/installation/configuration&#34;&gt;K3s 官方文件&lt;/a&gt;所載步驟安裝： &lt;sup id=&#34;fnref:7&#34;&gt;&lt;a href=&#34;#fn:7&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;7&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;% curl -sfL https://get.k3s.io | K3S_KUBECONFIG_MODE=&amp;#34;644&amp;#34; sh -&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;為了讓其他 Kubernetes 相關工具順利運作，建議在 &lt;code&gt;$HOME/.bashrc&lt;/code&gt; 添加 &lt;code&gt;KUBECONFIG&lt;/code&gt; 環境變數：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;export KUBECONFIG=&amp;#34;~/.kube/config:/etc/rancher/k3s/k3s.yaml&amp;#34;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -470,13 +508,16 @@
 &lt;p&gt;關於 Kubernetes 1.24 停止支援 dockershim 的始末，請見 &lt;a href=&#34;https://kubernetes.io/blog/2022/02/17/dockershim-faq/&#34;&gt;Updated: Dockershim Removal FAQ&lt;/a&gt; 這份文件。&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:4&#34;&gt;
-&lt;p&gt;關於 &lt;code&gt;registries.conf&lt;/code&gt; 的更多設定內容，請見 &lt;a href=&#34;https://www.redhat.com/sysadmin/manage-container-registries&#34;&gt;How to manage Linux container registries&lt;/a&gt; 一文。&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;譬如說在 &amp;ldquo;&lt;a href=&#34;https://devblogs.microsoft.com/commandline/systemd-support-is-now-available-in-wsl/#how-can-you-get-systemd-on-your-machine&#34;&gt;Systemd support is now available in WSL!&lt;/a&gt;&amp;rdquo; 一文就提到，如果 WSL 版本過舊，甚至連 Linux systemd 功能都會有問題。&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:5&#34;&gt;
-&lt;p&gt;關於將 Podman 以 daemon mode 運作的具體步驟，請參考〈&lt;a href=&#34;//william-yeh.net/post/2023/02/podman-tips/#daemon-mode&#34;&gt;Podman Tips&lt;/a&gt;〉一文。&amp;#160;&lt;a href=&#34;#fnref:5&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;關於 &lt;code&gt;registries.conf&lt;/code&gt; 的更多設定內容，請見 &lt;a href=&#34;https://www.redhat.com/sysadmin/manage-container-registries&#34;&gt;How to manage Linux container registries&lt;/a&gt; 一文。&amp;#160;&lt;a href=&#34;#fnref:5&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:6&#34;&gt;
-&lt;p&gt;大部份的人會依照 &lt;a href=&#34;https://k3s.io/&#34;&gt;K3s 首頁&lt;/a&gt;所載的步驟 &lt;code&gt;curl -sfL https://get.k3s.io | sh -&lt;/code&gt; 來安裝 K3s，但這樣安裝好的 K3s 常會需要動用 &lt;code&gt;sudo&lt;/code&gt; 才能執行相關指令。我認為，與其事後再用 &lt;a href=&#34;https://0to1.nl/post/k3s-kubectl-permission/&#34;&gt;k3s permission denied when using kubectl&lt;/a&gt; 所介紹的方法調整設定，不如從一開始就以不需動用 &lt;code&gt;sudo&lt;/code&gt; 的方式安裝。&amp;#160;&lt;a href=&#34;#fnref:6&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;關於將 Podman 以 daemon mode 運作的具體步驟，請參考〈&lt;a href=&#34;//william-yeh.net/post/2023/02/podman-tips/#daemon-mode&#34;&gt;Podman Tips&lt;/a&gt;〉一文。&amp;#160;&lt;a href=&#34;#fnref:6&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:7&#34;&gt;
+&lt;p&gt;大部份的人會依照 &lt;a href=&#34;https://k3s.io/&#34;&gt;K3s 首頁&lt;/a&gt;所載的步驟 &lt;code&gt;curl -sfL https://get.k3s.io | sh -&lt;/code&gt; 來安裝 K3s，但這樣安裝好的 K3s 常會需要動用 &lt;code&gt;sudo&lt;/code&gt; 才能執行相關指令。我認為，與其事後再用 &lt;a href=&#34;https://0to1.nl/post/k3s-kubectl-permission/&#34;&gt;k3s permission denied when using kubectl&lt;/a&gt; 所介紹的方法調整設定，不如從一開始就以不需動用 &lt;code&gt;sudo&lt;/code&gt; 的方式安裝。&amp;#160;&lt;a href=&#34;#fnref:7&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;</description>

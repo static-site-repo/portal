@@ -73,7 +73,7 @@
 <meta itemprop="description" content="經過一番辛苦調教，總算把 WSL 調整成可推廣到團隊使用的地步。下一步就是要輸出成 WSL 公版。
 謹以此文記錄匯出與匯入 WSL 映像檔的步驟與除雷經驗。"><meta itemprop="datePublished" content="2023-02-09T22:00:00+08:00" />
 <meta itemprop="dateModified" content="2023-02-09T22:00:00+08:00" />
-<meta itemprop="wordCount" content="844">
+<meta itemprop="wordCount" content="933">
 <meta itemprop="keywords" content="devops,wsl," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="WSL Image 匯出與匯入"/>
 <meta name="twitter:description" content="經過一番辛苦調教，總算把 WSL 調整成可推廣到團隊使用的地步。下一步就是要輸出成 WSL 公版。
@@ -311,7 +311,7 @@ if (!doNotTrack) {
 
   <div class="post-meta__right">
     <span class="post-meta-more">
-        約 844 字 -
+        約 933 字 -
         預計閱讀 2 分鐘
       </span>
 
@@ -343,6 +343,7 @@ if (!doNotTrack) {
   <div class="post-toc-content">
     <nav id="TableOfContents">
   <ul>
+    <li><a href="#前置作業查看已安裝的軟體清單">前置作業：查看已安裝的軟體清單</a></li>
     <li><a href="#前置作業清理內容">前置作業：清理內容</a></li>
     <li><a href="#前置作業預設登入用戶">前置作業：預設登入用戶</a></li>
     <li><a href="#匯出映像檔">匯出映像檔</a></li>
@@ -359,6 +360,16 @@ if (!doNotTrack) {
     <div class="post-content">
       <p>經過一番辛苦調教，總算把 WSL 調整成可推廣到團隊使用的地步。下一步就是要輸出成 WSL 公版。</p>
 <p>謹以此文記錄匯出與匯入 WSL 映像檔的步驟與除雷經驗。</p>
+<h2 id="前置作業查看已安裝的軟體清單">前置作業：查看已安裝的軟體清單</h2>
+<p>在匯出成公版之前，先查看已安裝了哪些軟體：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl"># 查看已用 apt install 安裝了哪些軟體
+</span></span><span class="line"><span class="cl">% apt list --installed
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"># 查看已用 brew install 安裝了哪些軟體
+</span></span><span class="line"><span class="cl">% brew list
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"># 查看手動下載安裝了哪些軟體
+</span></span><span class="line"><span class="cl">% ls -al /usr/local/bin</span></span></code></pre></div>
 <h2 id="前置作業清理內容">前置作業：清理內容</h2>
 <p>在匯出成公版之前，記得先清理一下機敏資料。譬如：</p>
 <ul>

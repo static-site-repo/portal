@@ -129,7 +129,7 @@ RedHat 釋出的 Podman，挾其完全免費、daemonless、rootless、pod 的�
 以 K3s 取代 Docker Desktop 的 Kubernetes。
 "><meta itemprop="datePublished" content="2023-02-06T22:00:00+08:00" />
 <meta itemprop="dateModified" content="2023-02-06T22:00:00+08:00" />
-<meta itemprop="wordCount" content="2148">
+<meta itemprop="wordCount" content="2356">
 <meta itemprop="keywords" content="devops,wsl,docker,podman,kubernetes," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="WSL2 &#43; Podman &#43; K3s 組合技"/>
 <meta name="twitter:description" content="距離上次重度使用 WSL 已經快四年了。四年來 WSL 世界起了一些變化：
@@ -392,7 +392,7 @@ if (!doNotTrack) {
 
   <div class="post-meta__right">
     <span class="post-meta-more">
-        約 2148 字 -
+        約 2356 字 -
         預計閱讀 5 分鐘
       </span>
 
@@ -477,8 +477,35 @@ if (!doNotTrack) {
 <p>請依照保哥的文章〈<a href="https://blog.miniasp.com/post/2022/11/25/Useful-tool-WSL-1-0">介紹好用工具：從 Microsoft Store 安裝 WSL 1.0 版</a>〉進行以下步驟：</p>
 <ol>
 <li>
+<p>更新 Windows 版本（譬如說，Windows 10 請更新至 <code>22H2</code> 以上，並確定套用過  <a href="https://support.microsoft.com/en-us/topic/november-15-2022-kb5020030-os-builds-19042-2311-19043-2311-19044-2311-and-19045-2311-preview-237a9048-f853-4e29-a3a2-62efdbea95e2?WT.mc_id=DT-MVP-4015686">KB5020030</a> patch）。</p>
+</li>
+<li>
 <p>安裝 WSL。</p>
 </li>
+<li>
+<p>更新 WSL 版本：<code>wsl --update</code>。</p>
+</li>
+<li>
+<p>查看 WSL 版本：<code>wsl --version</code>。</p>
+</li>
+</ol>
+<p>如果一切順利，應該會看到類似以下的畫面：</p>
+
+<link rel="stylesheet" href="/css/hugo-easy-gallery.css" />
+<div class="box">
+<figure  itemprop="associatedMedia"
+  itemscope itemtype="http://schema.org/ImageObject" 
+  style="max-width:30em" >
+    <div class="img">
+      <img itemprop="thumbnail" src="/img/2023/02/wsl-version.png" />
+    </div>
+    <a href="/img/2023/02/wsl-version.png" itemprop="contentUrl"></a>
+  </figure>
+</div>
+
+<p>請確定 WSL 版本是 1.0.3.0 以上，否則接下來可能會遇到一堆稀奇古怪的問題。 <sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup></p>
+<p>接下來，請繼續透過 WSL 安裝 Linux：</p>
+<ol>
 <li>
 <p>安裝一個 Linux distribution。</p>
 </li>
@@ -536,11 +563,12 @@ if (!doNotTrack) {
 <h3 id="設定">設定</h3>
 <p>Podman 是 daemonless + rootless 的架構。如果你希望讓 container 能夠自由綁定 port 80 以利本地開發，可以考慮在 <code>/etc/sysctl.conf</code> 添加設定：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">net.ipv4.ip_unprivileged_port_start=80</span></span></code></pre></div>
-<p>還有一個選擇性步驟。如果你希望讓 image 不會被綁在 <code>docker.io/library/</code> 這個預設的 registry，可以考慮在 <code>/etc/containers/registries.conf</code> 添加設定 <sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup> ：</p>
+<p>還有一個選擇性步驟。如果你希望讓 image 不會被綁在 <code>docker.io/library/</code> 這個預設的 registry，可以考慮在 <code>/etc/containers/registries.conf</code> 添加設定 <sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup> ：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">unqualified-search-registries=[
 </span></span><span class="line"><span class="cl">  &#34;registry.access.redhat.com&#34;, &#34;registry.fedoraproject.org&#34;,
 </span></span><span class="line"><span class="cl">  &#34;quay.io&#34;,
 </span></span><span class="line"><span class="cl">  &#34;gcr.io&#34;,
+</span></span><span class="line"><span class="cl">  &#34;ghcr.io&#34;,
 </span></span><span class="line"><span class="cl">  &#34;docker.io&#34;
 </span></span><span class="line"><span class="cl">]</span></span></code></pre></div>
 <h3 id="便利性">便利性</h3>
@@ -574,7 +602,7 @@ if (!doNotTrack) {
 </span></span><span class="line"><span class="cl">% wget -O - localhost:8080</span></span></code></pre></div>
 <p>也可以在 Windows host 用瀏覽器看到 nginx 順利執行：</p>
 
-<link rel="stylesheet" href="/css/hugo-easy-gallery.css" />
+
 <div class="box">
 <figure  itemprop="associatedMedia"
   itemscope itemtype="http://schema.org/ImageObject" 
@@ -588,7 +616,7 @@ if (!doNotTrack) {
 
 <h2 id="podman-compose">Podman Compose</h2>
 <p>Kubernetes 生態圈有一大堆媲美 Docker Compose 便利性的工具（譬如我愛用的 <a href="https://skaffold.dev/">Skaffold</a>）。不過，如果你實在太想念 Docker Compose，有兩種做法：</p>
-<p>➀ 可直接沿用舊的 Docker Compose，但是需要將 Podman 啟動成 daemon <sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup> 。</p>
+<p>➀ 可直接沿用舊的 Docker Compose，但是需要將 Podman 啟動成 daemon <sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup> 。</p>
 <p><a href="https://github.com/docker/compose">Docker Compose</a> 的安裝方法：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">% sudo curl -SL https://github.com/docker/compose/releases/download/v2.15.1/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose
 </span></span><span class="line"><span class="cl">
@@ -607,7 +635,7 @@ if (!doNotTrack) {
 <!-- raw HTML omitted -->
 <h2 id="k3s">K3s</h2>
 <p><a href="https://k3s.io/">K3s</a> 是由 Rancher Labs 貢獻給 CNCF 的輕量級 Kubernetes 開源方案，很適合應用程式開發者使用，作為 Docker Desktop 內建 Kubernetes 的替代方案。</p>
-<p>請依照 <a href="https://docs.k3s.io/installation/configuration">K3s 官方文件</a>所載步驟安裝： <sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup></p>
+<p>請依照 <a href="https://docs.k3s.io/installation/configuration">K3s 官方文件</a>所載步驟安裝： <sup id="fnref:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">% curl -sfL https://get.k3s.io | K3S_KUBECONFIG_MODE=&#34;644&#34; sh -</span></span></code></pre></div>
 <p>為了讓其他 Kubernetes 相關工具順利運作，建議在 <code>$HOME/.bashrc</code> 添加 <code>KUBECONFIG</code> 環境變數：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">export KUBECONFIG=&#34;~/.kube/config:/etc/rancher/k3s/k3s.yaml&#34;</span></span></code></pre></div>
@@ -660,13 +688,16 @@ if (!doNotTrack) {
 <p>關於 Kubernetes 1.24 停止支援 dockershim 的始末，請見 <a href="https://kubernetes.io/blog/2022/02/17/dockershim-faq/">Updated: Dockershim Removal FAQ</a> 這份文件。&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:4">
-<p>關於 <code>registries.conf</code> 的更多設定內容，請見 <a href="https://www.redhat.com/sysadmin/manage-container-registries">How to manage Linux container registries</a> 一文。&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>譬如說在 &ldquo;<a href="https://devblogs.microsoft.com/commandline/systemd-support-is-now-available-in-wsl/#how-can-you-get-systemd-on-your-machine">Systemd support is now available in WSL!</a>&rdquo; 一文就提到，如果 WSL 版本過舊，甚至連 Linux systemd 功能都會有問題。&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:5">
-<p>關於將 Podman 以 daemon mode 運作的具體步驟，請參考〈<a href="//william-yeh.net/post/2023/02/podman-tips/#daemon-mode">Podman Tips</a>〉一文。&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>關於 <code>registries.conf</code> 的更多設定內容，請見 <a href="https://www.redhat.com/sysadmin/manage-container-registries">How to manage Linux container registries</a> 一文。&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:6">
-<p>大部份的人會依照 <a href="https://k3s.io/">K3s 首頁</a>所載的步驟 <code>curl -sfL https://get.k3s.io | sh -</code> 來安裝 K3s，但這樣安裝好的 K3s 常會需要動用 <code>sudo</code> 才能執行相關指令。我認為，與其事後再用 <a href="https://0to1.nl/post/k3s-kubectl-permission/">k3s permission denied when using kubectl</a> 所介紹的方法調整設定，不如從一開始就以不需動用 <code>sudo</code> 的方式安裝。&#160;<a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>關於將 Podman 以 daemon mode 運作的具體步驟，請參考〈<a href="//william-yeh.net/post/2023/02/podman-tips/#daemon-mode">Podman Tips</a>〉一文。&#160;<a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:7">
+<p>大部份的人會依照 <a href="https://k3s.io/">K3s 首頁</a>所載的步驟 <code>curl -sfL https://get.k3s.io | sh -</code> 來安裝 K3s，但這樣安裝好的 K3s 常會需要動用 <code>sudo</code> 才能執行相關指令。我認為，與其事後再用 <a href="https://0to1.nl/post/k3s-kubectl-permission/">k3s permission denied when using kubectl</a> 所介紹的方法調整設定，不如從一開始就以不需動用 <code>sudo</code> 的方式安裝。&#160;<a href="#fnref:7" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </div>
