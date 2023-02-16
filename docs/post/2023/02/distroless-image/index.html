@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Potioneer&#39;s Essays</title>
+  <title>Distroless Image 牛刀小試 - Potioneer&#39;s Essays</title>
   
 
 <meta name="renderer" content="webkit" />
@@ -23,7 +23,12 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="William Yeh" />
-  <meta name="description" content="敏捷魔藥師 (Agile Potioneer)。會說 90% 的工匠語言，會說 70% 的總管語言，正在努力提升 30% 的行腳商人語言。" />
+  <meta name="description" content="距離上次重度探討「極簡化容器」已經快六年多了1。這議題，以前可能只是某些人技術上的興趣，現在則可能是必要。
+原因是：Docker Inc 的一些措施，讓人不得不慎重考慮替代方案。
+搬家的必要 這陣子容器世界起了不少變化，除了眾所周知的「Docker Desktop 要收費了」規定 2，另一個較少被提及影響是 Docker Hub 的緊縮政策：
+Image CI 緊縮：Docker Hub 取消免費用戶的 automated builds 功能。 3 Image pull 緊縮：Docker Hub 開始對未付費者施以較嚴格的限流措施。 4 於是，未付費的人，不僅要用其他迂迴手法實現 CI，產製的 image 又不能無限制供第三人即時取用——甚至還會波及繼承鏈的下游：如果你引用到的 base image(s) 繼承鏈恰好也託管在 Docker Hub（這是很常見的事情），那就會常常遇到這樣的 &amp;ldquo;toomanyrequests&amp;rdquo; 限流警告：
+" />
+
 
 
 
@@ -33,8 +38,8 @@
 <meta name="generator" content="Hugo 0.110.0" />
 
 
-<link rel="canonical" href="//william-yeh.net/" />
-<link href="/index.xml" rel="alternate" type="application/rss+xml" title="Potioneer&#39;s Essays" />
+<link rel="canonical" href="//william-yeh.net/post/2023/02/distroless-image/" />
+
 
 
 
@@ -59,14 +64,43 @@
 
 
 
-<meta property="og:title" content="Potioneer&#39;s Essays" />
-<meta property="og:description" content="敏捷魔藥師 (Agile Potioneer)。會說 90% 的工匠語言，會說 70% 的總管語言，正在努力提升 30% 的行腳商人語言。" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="//william-yeh.net/" />
-<meta itemprop="name" content="Potioneer&#39;s Essays">
-<meta itemprop="description" content="敏捷魔藥師 (Agile Potioneer)。會說 90% 的工匠語言，會說 70% 的總管語言，正在努力提升 30% 的行腳商人語言。"><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Potioneer&#39;s Essays"/>
-<meta name="twitter:description" content="敏捷魔藥師 (Agile Potioneer)。會說 90% 的工匠語言，會說 70% 的總管語言，正在努力提升 30% 的行腳商人語言。"/>
+<meta property="og:title" content="Distroless Image 牛刀小試" />
+<meta property="og:description" content="距離上次重度探討「極簡化容器」已經快六年多了1。這議題，以前可能只是某些人技術上的興趣，現在則可能是必要。
+原因是：Docker Inc 的一些措施，讓人不得不慎重考慮替代方案。
+搬家的必要
+這陣子容器世界起了不少變化，除了眾所周知的「Docker Desktop 要收費了」規定 2，另一個較少被提及影響是 Docker Hub 的緊縮政策：
+
+Image CI 緊縮：Docker Hub 取消免費用戶的 automated builds 功能。 3
+Image pull 緊縮：Docker Hub 開始對未付費者施以較嚴格的限流措施。 4
+
+於是，未付費的人，不僅要用其他迂迴手法實現 CI，產製的 image 又不能無限制供第三人即時取用——甚至還會波及繼承鏈的下游：如果你引用到的 base image(s) 繼承鏈恰好也託管在 Docker Hub（這是很常見的事情），那就會常常遇到這樣的 &ldquo;toomanyrequests&rdquo; 限流警告：" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="//william-yeh.net/post/2023/02/distroless-image/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2023-02-15T22:00:00+08:00" />
+<meta property="article:modified_time" content="2023-02-15T22:00:00+08:00" />
+<meta itemprop="name" content="Distroless Image 牛刀小試">
+<meta itemprop="description" content="距離上次重度探討「極簡化容器」已經快六年多了1。這議題，以前可能只是某些人技術上的興趣，現在則可能是必要。
+原因是：Docker Inc 的一些措施，讓人不得不慎重考慮替代方案。
+搬家的必要
+這陣子容器世界起了不少變化，除了眾所周知的「Docker Desktop 要收費了」規定 2，另一個較少被提及影響是 Docker Hub 的緊縮政策：
+
+Image CI 緊縮：Docker Hub 取消免費用戶的 automated builds 功能。 3
+Image pull 緊縮：Docker Hub 開始對未付費者施以較嚴格的限流措施。 4
+
+於是，未付費的人，不僅要用其他迂迴手法實現 CI，產製的 image 又不能無限制供第三人即時取用——甚至還會波及繼承鏈的下游：如果你引用到的 base image(s) 繼承鏈恰好也託管在 Docker Hub（這是很常見的事情），那就會常常遇到這樣的 &ldquo;toomanyrequests&rdquo; 限流警告："><meta itemprop="datePublished" content="2023-02-15T22:00:00+08:00" />
+<meta itemprop="dateModified" content="2023-02-15T22:00:00+08:00" />
+<meta itemprop="wordCount" content="1152">
+<meta itemprop="keywords" content="devops,docker,security," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Distroless Image 牛刀小試"/>
+<meta name="twitter:description" content="距離上次重度探討「極簡化容器」已經快六年多了1。這議題，以前可能只是某些人技術上的興趣，現在則可能是必要。
+原因是：Docker Inc 的一些措施，讓人不得不慎重考慮替代方案。
+搬家的必要
+這陣子容器世界起了不少變化，除了眾所周知的「Docker Desktop 要收費了」規定 2，另一個較少被提及影響是 Docker Hub 的緊縮政策：
+
+Image CI 緊縮：Docker Hub 取消免費用戶的 automated builds 功能。 3
+Image pull 緊縮：Docker Hub 開始對未付費者施以較嚴格的限流措施。 4
+
+於是，未付費的人，不僅要用其他迂迴手法實現 CI，產製的 image 又不能無限制供第三人即時取用——甚至還會波及繼承鏈的下游：如果你引用到的 base image(s) 繼承鏈恰好也託管在 Docker Hub（這是很常見的事情），那就會常常遇到這樣的 &ldquo;toomanyrequests&rdquo; 限流警告："/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -276,23 +310,13 @@ if (!doNotTrack) {
     <main id="main" class="main bg-llight wallpaper">
       <div class="content-wrapper">
         <div id="content" class="content container">
-          
-<section id="posts" class="posts">
-  
-  
+          <article class="post bg-white">
     
-  
-  
-  
-    <article class="post bg-white">
-  <header class="post-header">
-    <h1 class="post-title">
+    <header class="post-header">
+      <h1 class="post-title">Distroless Image 牛刀小試</h1>
       
-      <a class="post-link" href="/post/2019/07/k8s-vol-resizing/">Volume Resizing Mechanism in Kubernetes</a>
-    </h1>
-    
 
-    <div class="post-meta">
+      <div class="post-meta">
   <div class="post-meta-author">
     by
       William Yeh
@@ -300,8 +324,8 @@ if (!doNotTrack) {
   </div>
 
   <div class="post-meta-time">
-    <time datetime="2019-07-31">
-      2019-07-31
+    <time datetime="2023-02-15">
+      2023-02-15
     </time>
   </div>
 
@@ -310,74 +334,7 @@ if (!doNotTrack) {
 
   <div class="post-meta__right">
     <span class="post-meta-more">
-        約 1585 字 -
-        預計閱讀 8 分鐘
-      </span>
-
-    <div class="post-meta-category">
-        <a href="//william-yeh.net/categories/tech/"> tech </a>
-          
-      </div>
-
-
-    
-    
-      <span id="busuanzi_container_page_pv">
-        | 阅读 <span id="busuanzi_value_page_pv"></span>
-      </span>
-    
-
-
-    
-    
-  </div>
-</div>
-
-  </header>
-  
-  <div class="post-content">
-    
-      <div class="post-summary">
-        <p>Non-stop storage scaling (vertical or horizontal scaling) is essential in a data-intensive system, database servers in particular.</p>
-<p>Is it possible in Kubernetes?</p>
-      </div>
-      <div class="read-more">
-        <a href="/post/2019/07/k8s-vol-resizing/" class="read-more-link"
-          >閱讀全文</a
-        >
-      </div>
-    
-  </div>
-</article>
-
-  
-    <article class="post bg-white">
-  <header class="post-header">
-    <h1 class="post-title">
-      
-      <a class="post-link" href="/post/2019/07/ckad-materials/">CKAD (Certified Kubernetes Application Developer) 相關資料</a>
-    </h1>
-    
-
-    <div class="post-meta">
-  <div class="post-meta-author">
-    by
-      William Yeh
-    
-  </div>
-
-  <div class="post-meta-time">
-    <time datetime="2019-07-11">
-      2019-07-11
-    </time>
-  </div>
-
-  
-
-
-  <div class="post-meta__right">
-    <span class="post-meta-more">
-        約 1078 字 -
+        約 1152 字 -
         預計閱讀 3 分鐘
       </span>
 
@@ -400,947 +357,260 @@ if (!doNotTrack) {
   </div>
 </div>
 
-  </header>
-  
-  <div class="post-content">
+    </header>
+
     
-      <div class="post-summary">
-        <p>Linux Foundation 旗下的 <a href="https://www.cncf.io/">CNCF (Cloud Native Computing Foundation)</a> 提供兩個與 Kubernetes 相關的個人技術檢定：偏維運的 <a href="https://www.cncf.io/certification/cka/">CKA (Certified Kubernetes Administrator)</a>，以及偏研發的 <a href="https://www.cncf.io/certification/ckad/">CKAD (Certified Kubernetes Application Developer)</a>。</p>
-<p>其中，CKAD 與我關注的範圍、與我設計的工作坊最接近，便想進一步瞭解它的細節。</p>
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目錄</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#搬家的必要">搬家的必要</a></li>
+    <li><a href="#distroless-image">Distroless image</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+
+
+    
+    <div class="post-content">
+      <p>距離上次重度探討「極簡化容器」已經快六年多了<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>。這議題，以前可能只是某些人技術上的興趣，現在則可能是必要。</p>
+<p>原因是：Docker Inc 的一些措施，讓人不得不慎重考慮替代方案。</p>
+<h2 id="搬家的必要">搬家的必要</h2>
+<p>這陣子容器世界起了不少變化，除了眾所周知的「Docker Desktop 要收費了」規定 <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>，另一個較少被提及影響是 Docker Hub 的緊縮政策：</p>
+<ul>
+<li>Image CI 緊縮：Docker Hub 取消免費用戶的 automated builds 功能。 <sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></li>
+<li>Image pull 緊縮：Docker Hub 開始對未付費者施以較嚴格的限流措施。 <sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup></li>
+</ul>
+<p>於是，未付費的人，不僅要用其他迂迴手法實現 CI，產製的 image 又不能無限制供第三人即時取用——甚至還會波及繼承鏈的下游：如果你引用到的 base image(s) 繼承鏈恰好也託管在 Docker Hub（這是很常見的事情），那就會常常遇到這樣的 &ldquo;toomanyrequests&rdquo; 限流警告：</p>
+<pre tabindex="0"><code>WARN[0109] failed, retrying in 1s ... (3/3).
+  Error: initializing source docker://xxx:
+    reading manifest v2.9 in docker.io/library/xxx:
+      toomanyrequests: You have reached your pull rate limit.
+    You may increase the limit by authenticating and upgrading:
+      https://www.docker.com/increase-rate-limit
+</code></pre><p>要避開這限制，我們得從兩方面著手：</p>
+<ol>
+<li>Image 要從 Docker Hub 搬遷到 ghcr.io 之類的地方。</li>
+<li>直接或間接引用的 base image(s) 也必須從 Docker Hub 換成 gcr.io 或 ghcr.io 之類的地方。</li>
+</ol>
+<p>其中 (1) 很簡單，只要會 CI pipeline 即可辦到，像 GitHub Action 就有許多現成的元件可用。</p>
+<p>至於 (2) 則比較麻煩。當然啦，對於玩過「極簡化容器」技術的人來說，這也只是小事一樁。</p>
+<h2 id="distroless-image">Distroless image</h2>
+<p>以前玩 minimal image 的人，是以 <a href="https://hub.docker.com/_/alpine">alpine</a> 系列為大宗，只要不介意背後用的是 <a href="https://en.wikipedia.org/wiki/Musl">musl libc</a>，這可以產生非常 &ldquo;minimal&rdquo; 的 image。近來 Google 的 <a href="https://github.com/GoogleContainerTools/distroless">&ldquo;distroless&rdquo; images</a> 則提供 glibc 偏好者的另一種選擇，儘管它不算是 &ldquo;minimal&rdquo;，但也稱得上是 &ldquo;small-enough&rdquo;。</p>
+<p>曾經我也是追求 minimal docker image 的一族，現在我只求 small-enough 就好。畢竟對大多數應用場景來說，像以下這兩個 image，一個約 8 MB，一個約 29 MB，差異其實是可以忽略不計的：</p>
 
 <link rel="stylesheet" href="/css/hugo-easy-gallery.css" />
 <div class="box">
 <figure  itemprop="associatedMedia"
   itemscope itemtype="http://schema.org/ImageObject" 
-  style="max-width:15em" >
+  style="max-width:30em" >
     <div class="img">
-      <img itemprop="thumbnail" src="/img/2019/07/kubernetes-ckad-color.png" alt="CKAD logo"/>
+      <img itemprop="thumbnail" src="/img/2023/02/image-layers.png" />
     </div>
-    <a href="/img/2019/07/kubernetes-ckad-color.png" itemprop="contentUrl"></a>
-      <figcaption>
-          <p>CKAD logo</p>
-      </figcaption>
+    <a href="/img/2023/02/image-layers.png" itemprop="contentUrl"></a>
   </figure>
 </div>
-      </div>
-      <div class="read-more">
-        <a href="/post/2019/07/ckad-materials/" class="read-more-link"
-          >閱讀全文</a
-        >
-      </div>
-    
-  </div>
-</article>
 
-  
-    <article class="post bg-white">
-  <header class="post-header">
-    <h1 class="post-title">
-      
-      <a class="post-link" href="/post/2019/06/docker-file-permissions/">Docker File Permissions on Windows</a>
-    </h1>
-    
-
-    <div class="post-meta">
-  <div class="post-meta-author">
-    by
-      William Yeh
-    
-  </div>
-
-  <div class="post-meta-time">
-    <time datetime="2019-06-24">
-      2019-06-24
-    </time>
-  </div>
-
-  
+<table>
+<thead>
+<tr>
+<th>Image</th>
+<th>Size (MB)</th>
+<th>Base</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>docker.io/williamyeh/wrk:4.0.2</td>
+<td>8.347</td>
+<td><a href="https://hub.docker.com/_/alpine">alpine3</a></td>
+</tr>
+<tr>
+<td>ghcr.io/william-yeh/wrk:4.2.0</td>
+<td>28.76</td>
+<td><a href="https://github.com/GoogleContainerTools/distroless">gcr.io/distroless/cc-debian11</a></td>
+</tr>
+</tbody>
+</table>
+<p><!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --></p>
+<p>可是，以資安角度來說，8.347 MB 的 image 被挑出許多漏洞，這很顛覆「alpine 又小又安全」的既定印象：</p>
 
 
-  <div class="post-meta__right">
-    <span class="post-meta-more">
-        約 816 字 -
-        預計閱讀 2 分鐘
-      </span>
-
-    <div class="post-meta-category">
-        <a href="//william-yeh.net/categories/tech/"> tech </a>
-          
-      </div>
-
-
-    
-    
-      <span id="busuanzi_container_page_pv">
-        | 阅读 <span id="busuanzi_value_page_pv"></span>
-      </span>
-    
-
-
-    
-    
-  </div>
+<div class="box">
+<figure  itemprop="associatedMedia"
+  itemscope itemtype="http://schema.org/ImageObject" 
+  style="max-width:30em" >
+    <div class="img">
+      <img itemprop="thumbnail" src="/img/2023/02/alpine-security.png" />
+    </div>
+    <a href="/img/2023/02/alpine-security.png" itemprop="contentUrl"></a>
+  </figure>
 </div>
 
-  </header>
-  
-  <div class="post-content">
-    
-      <div class="post-summary">
-        <p>Currently Linux containers are still more popular than Windows containers. And Windows users often need to use Linux containers even from their Windows computers.</p>
-<p>Recently I&rsquo;ve found something very strange about Linux-style file permissions when the Docker images are built from Windows hosts.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> Therefore, I&rsquo;ve conducted a suite of test cases to investigate whether file permissions are preserved with Docker &amp; <a href="https://skaffold.dev/">Skaffold</a> toolchains. All experiment materials are available in the <a href="https://github.com/William-Yeh/container-chmod">container-chmod</a> repo.</p>
-      </div>
-      <div class="read-more">
-        <a href="/post/2019/06/docker-file-permissions/" class="read-more-link"
-          >閱讀全文</a
-        >
-      </div>
-    
-  </div>
-</article>
-
-  
-    <article class="post bg-white">
-  <header class="post-header">
-    <h1 class="post-title">
-      
-      <a class="post-link" href="/post/2019/06/autoreload-from-configmap/">Auto-Reload from ConfigMap</a>
-    </h1>
-    
-
-    <div class="post-meta">
-  <div class="post-meta-author">
-    by
-      William Yeh
-    
-  </div>
-
-  <div class="post-meta-time">
-    <time datetime="2019-06-17">
-      2019-06-17
-    </time>
-  </div>
-
-  
+<p>反觀 28.76 MB 的 image 反而較安全，這也很顛覆「glibc 系列不安全」的既定印象：</p>
 
 
-  <div class="post-meta__right">
-    <span class="post-meta-more">
-        約 612 字 -
-        預計閱讀 3 分鐘
-      </span>
-
-    <div class="post-meta-category">
-        <a href="//william-yeh.net/categories/tech/"> tech </a>
-          
-      </div>
-
-
-    
-    
-      <span id="busuanzi_container_page_pv">
-        | 阅读 <span id="busuanzi_value_page_pv"></span>
-      </span>
-    
-
-
-    
-    
-  </div>
+<div class="box">
+<figure  itemprop="associatedMedia"
+  itemscope itemtype="http://schema.org/ImageObject" 
+  style="max-width:30em" >
+    <div class="img">
+      <img itemprop="thumbnail" src="/img/2023/02/distroless-security.png" />
+    </div>
+    <a href="/img/2023/02/distroless-security.png" itemprop="contentUrl"></a>
+  </figure>
 </div>
 
-  </header>
-  
-  <div class="post-content">
-    
-      <div class="post-summary">
-        My previous article &ldquo;Inotify in Containers&rdquo; has demonstrated that when ConfigMap is mounted as directories, any changes in the ConfigMap will propagate to related pods, and can be detected with inotify-like APIs.
-A follow-up question might be: what should a well-behaved application react to this trigger accordingly? What if it&rsquo;s a ill-designed application?
-To clarify this I&rsquo;ve conducted a series of experiments for 3 possible configmap-reloading strategies:
-Built-in auto-reloading apps External signals Pod rollout In this article I&rsquo;m going to explain the experiments and preliminary findings.
-      </div>
-      <div class="read-more">
-        <a href="/post/2019/06/autoreload-from-configmap/" class="read-more-link"
-          >閱讀全文</a
-        >
-      </div>
-    
-  </div>
-</article>
+<p>因此，我會建議，對大多數應用程式來說，選擇 Google 的 distroless 路線，可以省下許多與 alpine 相容性搏鬥的精力，又可以享受到許多好處：</p>
+<ul>
+<li>有 Google 在維護。</li>
+<li>Base image 的所在地 gcr.io 沒有限流問題。</li>
+<li>透過 multi-stage builds 機制，沿用既有工具鏈即可輕鬆製作。</li>
+</ul>
+<p><!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --></p>
+<p>對於 distroless 感興趣的，請參考 &ldquo;<a href="https://iximiuz.com/en/posts/containers-distroless-images/">What&rsquo;s Inside Of a Distroless Container Image: Taking a Deeper Look</a>&rdquo; 這篇文章。</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>詳見〈<a href="//william-yeh.net/post/2016/08/why-minimal-docker-images/">為什麼要追求極簡化的 Docker image？</a>〉一文。&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>Docker Desktop 新規定：只要公司超過 250 人，或是年營收超過美金千萬，就必須付費。根據 <a href="https://www.docker.com/pricing/faq/">Docker FAQs</a> 文件所載：&ldquo;Docker Desktop requires a paid, per-user subscription for organizations with more than 250 employees or more than $10 million in annual revenue per our terms of service. [..] The updated terms for Docker Desktop were effective August 31, 2021, with a grace period until January 31, 2022.&rdquo;&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3">
+<p>根據 Docker Hub &ldquo;<a href="https://docs.docker.com/docker-hub/builds/">Set up Automated Builds</a>&rdquo; 文件所載：&ldquo;The Automated Builds feature is available for Docker Pro, Team, and Business users. Upgrade now to automatically build and push your images.&rdquo;&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4">
+<p>根據 Docker Hub &ldquo;<a href="https://docs.docker.com/docker-hub/download-rate-limit/">Download rate limit</a>&rdquo; 文件所載：&ldquo;For anonymous users, the rate limit is set to 100 pulls per 6 hours per IP address. For authenticated users, it’s 200 pulls per 6 hour period. Users with a paid Docker subscription get up to 5000 pulls per day.&rdquo;&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+    </div>
 
-  
-    <article class="post bg-white">
-  <header class="post-header">
-    <h1 class="post-title">
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">William Yeh</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+      2023-02-15
       
-      <a class="post-link" href="/post/2019/06/containers-and-env/">Containers and Environment Variables</a>
-    </h1>
-    
-
-    <div class="post-meta">
-  <div class="post-meta-author">
-    by
-      William Yeh
-    
-  </div>
-
-  <div class="post-meta-time">
-    <time datetime="2019-06-17">
-      2019-06-17
-    </time>
-  </div>
-
+    </span>
+  </p>
   
-
-
-  <div class="post-meta__right">
-    <span class="post-meta-more">
-        約 225 字 -
-        預計閱讀 1 分鐘
-      </span>
-
-    <div class="post-meta-category">
-        <a href="//william-yeh.net/categories/tech/"> tech </a>
-          
-      </div>
-
-
-    
-    
-      <span id="busuanzi_container_page_pv">
-        | 阅读 <span id="busuanzi_value_page_pv"></span>
-      </span>
-    
-
-
-    
-    
-  </div>
+  <p class="copyright-item">
+    <span class="item-title">授權條款</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW" target="_blank">CC BY-NC-SA 4.0</a> (姓名標示-非商業性-相同方式分享 4.0 國際)</span>
+  </p>
 </div>
 
-  </header>
+
+
+    
+    
+
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="//william-yeh.net/tags/devops/">devops</a>
+            <a href="//william-yeh.net/tags/docker/">docker</a>
+            <a href="//william-yeh.net/tags/security/">security</a>
+            
+        </div>
+
+
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/post/2023/02/wsl-image/">
+            <span class="next-text nav-default">WSL Image 匯出與匯入</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            
+            <i class="iconfont">
+              <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311 0.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889 0.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-0.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"></path>
+</svg>
+
+            </i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
   
-  <div class="post-content">
-    
-      <div class="post-summary">
-        My previous article &ldquo;Inotify in Containers&rdquo; has demonstrated that when ConfigMap is mounted as directories, any changes in the ConfigMap will propagate to related pods. A follow-up question might be: what if the ConfigMap is mounted as environment variables? Some said that the answer is NO in Kubernetes1; even in the old Docker world2. Therefore, I&rsquo;d like to begin with a simple experiment to try to answer the question: After
-      </div>
-      <div class="read-more">
-        <a href="/post/2019/06/containers-and-env/" class="read-more-link"
-          >閱讀全文</a
-        >
-      </div>
-    
+  
+
+
+  
+  
+
+  
+
+  
+  
+
+  
+  
+    <div class="post bg-white">
+  <script src="https://utteranc.es/client.js"
+        repo= "William-Yeh/utterances-area"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script>
+</div>
+
+  
+
+  
+
+  <div class="disqus-comment">
+  <div class="disqus-button" id="load_disqus" onclick="load_disqus()">
+    顯示 Disqus 評論
   </div>
-</article>
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_config = function () {
+      this.page.url = "//william-yeh.net/post/2023/02/distroless-image/";
+    };
+    function load_disqus() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'potioneer';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+      $('#load_disqus').remove();
+    };
+  </script>
+  <noscript
+    >Please enable JavaScript to view the
+    <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+  </noscript>
+  
+</div>
+
+
+    
 
   
-</section>
-
-
-
-
-
 
   
-  
-  
-
-  
-  
-
-  
-  
-
-  
-  
-
-  
-  
-
-    <nav class="pagination">
-      <ul>
-
-      
-      
-      <li><a href="/">««</a></li>
-      
-
-      
-      
-      <li><a href="/page/10/">«</a></li>
-      
-
-      
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-
-          
-
-        
-        
-
-        
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-
-          
-
-        
-        
-
-        
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-
-          
-
-        
-        
-
-        
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-
-          
-
-        
-        
-
-        
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-              
-            
-
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/page/5/">
-              5
-            </a>
-          </li>
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-              
-            
-
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/page/6/">
-              6
-            </a>
-          </li>
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-              
-            
-
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/page/7/">
-              7
-            </a>
-          </li>
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-              
-            
-
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/page/8/">
-              8
-            </a>
-          </li>
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-              
-            
-
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/page/9/">
-              9
-            </a>
-          </li>
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-              
-            
-
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/page/10/">
-              10
-            </a>
-          </li>
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-              
-            
-
-          
-
-        
-        
-
-        
-        
-          <li class="active">
-            <a href="/page/11/">
-              11
-            </a>
-          </li>
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-              
-            
-
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/page/12/">
-              12
-            </a>
-          </li>
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-              
-            
-
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/page/13/">
-              13
-            </a>
-          </li>
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-              
-            
-
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/page/14/">
-              14
-            </a>
-          </li>
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-              
-            
-
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/page/15/">
-              15
-            </a>
-          </li>
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-              
-            
-
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/page/16/">
-              16
-            </a>
-          </li>
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-              
-            
-
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/page/17/">
-              17
-            </a>
-          </li>
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-
-          
-
-        
-        
-
-        
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-
-          
-
-        
-        
-
-        
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-
-          
-
-        
-        
-
-        
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-
-          
-
-        
-        
-
-        
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-
-          
-
-        
-        
-
-        
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-
-          
-
-        
-        
-
-        
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-
-          
-
-        
-        
-
-        
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-
-          
-
-        
-        
-
-        
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-
-          
-
-        
-        
-
-        
-        
-
-      
-
-      
-      
-      <li><a href="/page/12/">»</a></li>
-      
-
-      
-      
-      <li><a href="/page/26/">»»</a></li>
-      
-
-      </ul>
-    </nav>
-  
-
-
-
-
 
         </div>
       </div>

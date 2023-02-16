@@ -6,10 +6,133 @@
     <description>Recent content on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Thu, 09 Feb 2023 22:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 15 Feb 2023 22:00:00 +0800</lastBuildDate>
     
         <atom:link href="//william-yeh.net/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Distroless Image 牛刀小試</title>
+      <link>//william-yeh.net/post/2023/02/distroless-image/</link>
+      <pubDate>Wed, 15 Feb 2023 22:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2023/02/distroless-image/</guid>
+      
+        <description>&lt;p&gt;距離上次重度探討「極簡化容器」已經快六年多了&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;。這議題，以前可能只是某些人技術上的興趣，現在則可能是必要。&lt;/p&gt;
+&lt;p&gt;原因是：Docker Inc 的一些措施，讓人不得不慎重考慮替代方案。&lt;/p&gt;
+&lt;h2 id=&#34;搬家的必要&#34;&gt;搬家的必要&lt;/h2&gt;
+&lt;p&gt;這陣子容器世界起了不少變化，除了眾所周知的「Docker Desktop 要收費了」規定 &lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;，另一個較少被提及影響是 Docker Hub 的緊縮政策：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Image CI 緊縮：Docker Hub 取消免費用戶的 automated builds 功能。 &lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
+&lt;li&gt;Image pull 緊縮：Docker Hub 開始對未付費者施以較嚴格的限流措施。 &lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;於是，未付費的人，不僅要用其他迂迴手法實現 CI，產製的 image 又不能無限制供第三人即時取用——甚至還會波及繼承鏈的下游：如果你引用到的 base image(s) 繼承鏈恰好也託管在 Docker Hub（這是很常見的事情），那就會常常遇到這樣的 &amp;ldquo;toomanyrequests&amp;rdquo; 限流警告：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;WARN[0109] failed, retrying in 1s ... (3/3).
+  Error: initializing source docker://xxx:
+    reading manifest v2.9 in docker.io/library/xxx:
+      toomanyrequests: You have reached your pull rate limit.
+    You may increase the limit by authenticating and upgrading:
+      https://www.docker.com/increase-rate-limit
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;要避開這限制，我們得從兩方面著手：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Image 要從 Docker Hub 搬遷到 ghcr.io 之類的地方。&lt;/li&gt;
+&lt;li&gt;直接或間接引用的 base image(s) 也必須從 Docker Hub 換成 gcr.io 或 ghcr.io 之類的地方。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;其中 (1) 很簡單，只要會 CI pipeline 即可辦到，像 GitHub Action 就有許多現成的元件可用。&lt;/p&gt;
+&lt;p&gt;至於 (2) 則比較麻煩。當然啦，對於玩過「極簡化容器」技術的人來說，這也只是小事一樁。&lt;/p&gt;
+&lt;h2 id=&#34;distroless-image&#34;&gt;Distroless image&lt;/h2&gt;
+&lt;p&gt;以前玩 minimal image 的人，是以 &lt;a href=&#34;https://hub.docker.com/_/alpine&#34;&gt;alpine&lt;/a&gt; 系列為大宗，只要不介意背後用的是 &lt;a href=&#34;https://en.wikipedia.org/wiki/Musl&#34;&gt;musl libc&lt;/a&gt;，這可以產生非常 &amp;ldquo;minimal&amp;rdquo; 的 image。近來 Google 的 &lt;a href=&#34;https://github.com/GoogleContainerTools/distroless&#34;&gt;&amp;ldquo;distroless&amp;rdquo; images&lt;/a&gt; 則提供 glibc 偏好者的另一種選擇，儘管它不算是 &amp;ldquo;minimal&amp;rdquo;，但也稱得上是 &amp;ldquo;small-enough&amp;rdquo;。&lt;/p&gt;
+&lt;p&gt;曾經我也是追求 minimal docker image 的一族，現在我只求 small-enough 就好。畢竟對大多數應用場景來說，像以下這兩個 image，一個約 8 MB，一個約 29 MB，差異其實是可以忽略不計的：&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/02/image-layers.png&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2023/02/image-layers.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Image&lt;/th&gt;
+&lt;th&gt;Size (MB)&lt;/th&gt;
+&lt;th&gt;Base&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;docker.io/williamyeh/wrk:4.0.2&lt;/td&gt;
+&lt;td&gt;8.347&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://hub.docker.com/_/alpine&#34;&gt;alpine3&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ghcr.io/william-yeh/wrk:4.2.0&lt;/td&gt;
+&lt;td&gt;28.76&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://github.com/GoogleContainerTools/distroless&#34;&gt;gcr.io/distroless/cc-debian11&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;可是，以資安角度來說，8.347 MB 的 image 被挑出許多漏洞，這很顛覆「alpine 又小又安全」的既定印象：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/02/alpine-security.png&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2023/02/alpine-security.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;反觀 28.76 MB 的 image 反而較安全，這也很顛覆「glibc 系列不安全」的既定印象：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/02/distroless-security.png&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2023/02/distroless-security.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;因此，我會建議，對大多數應用程式來說，選擇 Google 的 distroless 路線，可以省下許多與 alpine 相容性搏鬥的精力，又可以享受到許多好處：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;有 Google 在維護。&lt;/li&gt;
+&lt;li&gt;Base image 的所在地 gcr.io 沒有限流問題。&lt;/li&gt;
+&lt;li&gt;透過 multi-stage builds 機制，沿用既有工具鏈即可輕鬆製作。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;對於 distroless 感興趣的，請參考 &amp;ldquo;&lt;a href=&#34;https://iximiuz.com/en/posts/containers-distroless-images/&#34;&gt;What&amp;rsquo;s Inside Of a Distroless Container Image: Taking a Deeper Look&lt;/a&gt;&amp;rdquo; 這篇文章。&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;詳見〈&lt;a href=&#34;//william-yeh.net/post/2016/08/why-minimal-docker-images/&#34;&gt;為什麼要追求極簡化的 Docker image？&lt;/a&gt;〉一文。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;Docker Desktop 新規定：只要公司超過 250 人，或是年營收超過美金千萬，就必須付費。根據 &lt;a href=&#34;https://www.docker.com/pricing/faq/&#34;&gt;Docker FAQs&lt;/a&gt; 文件所載：&amp;ldquo;Docker Desktop requires a paid, per-user subscription for organizations with more than 250 employees or more than $10 million in annual revenue per our terms of service. [..] The updated terms for Docker Desktop were effective August 31, 2021, with a grace period until January 31, 2022.&amp;rdquo;&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;
+&lt;p&gt;根據 Docker Hub &amp;ldquo;&lt;a href=&#34;https://docs.docker.com/docker-hub/builds/&#34;&gt;Set up Automated Builds&lt;/a&gt;&amp;rdquo; 文件所載：&amp;ldquo;The Automated Builds feature is available for Docker Pro, Team, and Business users. Upgrade now to automatically build and push your images.&amp;rdquo;&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:4&#34;&gt;
+&lt;p&gt;根據 Docker Hub &amp;ldquo;&lt;a href=&#34;https://docs.docker.com/docker-hub/download-rate-limit/&#34;&gt;Download rate limit&lt;/a&gt;&amp;rdquo; 文件所載：&amp;ldquo;For anonymous users, the rate limit is set to 100 pulls per 6 hours per IP address. For authenticated users, it’s 200 pulls per 6 hour period. Users with a paid Docker subscription get up to 5000 pulls per day.&amp;rdquo;&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description>
+      
+    </item>
     
     <item>
       <title>WSL Image 匯出與匯入</title>
@@ -2254,58 +2377,6 @@
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>經理人視角的敏捷通識課</title>
-      <link>//william-yeh.net/post/2022/04/yves-agile-course/</link>
-      <pubDate>Sat, 16 Apr 2022 18:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2022/04/yves-agile-course/</guid>
-      
-        <description>&lt;p&gt;[課程推薦文] &lt;strong&gt;&lt;a href=&#34;https://www.cwlearning.com.tw/course-set/109&#34;&gt;高效產出：突破資源限制的敏捷管理術&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;在商業世界，「敏捷」又變成流行語了。許多人風聞敏捷兩大流派 Scrum 及 Kanban 勾勒出來的美麗新世界，聽起來也頭頭是道，便以為敏捷轉型是輕而易舉、隨插即用、立竿見影的事。&lt;/p&gt;
-&lt;p&gt;不過，真實世界不必然會像宣傳的那麼單純。等到真正開始嘗試時，遇到已知或未知的障礙，才開始懷疑人生，心生退轉。「敏捷轉型」這條路，怎麼走起來並沒有那麼敏捷呀？&lt;/p&gt;
-&lt;p&gt;其實，「敏捷」這道處方未必有錯，錯的可能是病患未先接受過合適的衛教。&lt;/p&gt;
-&lt;p&gt;坊間的敏捷衛教多半是由顧問、教練、證照供應商所提供，內容專業度是有的，但多半只呈現出乙方觀點，缺少甲方的第一人稱視角，尤其是切身之痛的視角。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;乙方觀點是：「你應該如何如何如何，不應該如何如何如何  (Thou shall&amp;hellip; Thou shall not&amp;hellip;)。」&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;甲方視角是：「你說得倒輕鬆。你又不是我，你不了解我的兩難與無奈。」&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;不對等的視角，衛教效果有限，難怪甲方容易心生退轉。&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;為了平衡，除了敏捷宣傳品或培訓教材之外，我們還需要另一種敏捷通識課，以第一人稱的經理人角度現身說法，告訴我們踏上敏捷轉型之旅之前，必須要先做好哪些心理建設。&lt;/p&gt;
-&lt;p&gt;Yves 身為跨國企業經營者，帶領公司敏捷轉型，成為台灣、甚至東南亞的敏捷標竿企業。由他親自開講的這門敏捷通識課【&lt;a href=&#34;https://www.cwlearning.com.tw/course-set/109&#34;&gt;高效產出：突破資源限制的敏捷管理術&lt;/a&gt;】，格外具有說服力。畢竟這些內容，都是企業經營者親自神農嚐百草之後淬煉出來的精華，都是實證有效的作法。&lt;/p&gt;
-&lt;p&gt;這門敏捷通識課，鎖定三個必須具備的認知：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;敏捷核心觀念與流程&lt;/strong&gt;。Yves 從 Scrum 及 Kanban 擷取最精華的觀念及流程，用傳統經理人也領會得了的方式講解。這 50 分鐘的內容，既可作為敏捷的先導知識，亦可作為經理人日後的提醒：勿因阻礙而忘卻敏捷導入的初衷。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;敏捷之旅的關卡&lt;/strong&gt;。Yves 從實務中挑選敏捷之旅的五大關卡：主管權力、角色分工、團隊決策、僵化思維、與市場脫節，以 40 分鐘逐一提供對應的處方，有些處方甚至不是一般敏捷教材會談到的。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;自管理的軟性修練&lt;/strong&gt;。任何轉型都需要考慮人性層面，轉型到對於「人性」格外細膩的敏捷世界更是如此，我們甚至可以說，絕大多數的敏捷轉型失敗，追根究柢就是對於「人性」議題的無意識或無能力。Yves 以公司經營者的切身經驗，提煉出「IMPACT 影響力」六字訣：I Message、Mindfulness、Positive Language、Active Listening、Curiosity Question、Target Alignment。我誠懇建議，有心推動敏捷轉型的經理人，應該認真聆聽這 50 分鐘的內容，並有耐心將它推廣並內化到整個組織裡，由經理人帶頭改變，才容易風行草偃。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;身為敏捷推手，我過去曾從 Yves 身上學習許多。我敢保證，這門線上課，絕對是值得常常拿出來溫習的敏捷通識課。&lt;/p&gt;
-&lt;p&gt;如果你也想吸收 Yves 以企業經理人視角親自開講的敏捷通識課【&lt;a href=&#34;https://www.cwlearning.com.tw/course-set/109&#34;&gt;高效產出：突破資源限制的敏捷管理術&lt;/a&gt;】，現在到 2022-04-30 之前，你可以用以下優惠碼，享有更優惠的價格（早鳥優惠，再折價 300 元）。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;課程：【&lt;a href=&#34;https://www.cwlearning.com.tw/course-set/109&#34;&gt;高效產出：突破資源限制的敏捷管理術&lt;/a&gt;】&lt;/li&gt;
-&lt;li&gt;課程網址：&lt;a href=&#34;https://www.cwlearning.com.tw/course-set/109&#34;&gt;https://www.cwlearning.com.tw/course-set/109&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;優惠碼：&lt;code&gt;william300&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;優惠期限：2022-04-30&lt;/li&gt;
-&lt;/ul&gt;</description>
       
     </item>
     
