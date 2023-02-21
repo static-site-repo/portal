@@ -26,7 +26,7 @@
   <meta name="description" content="距離上次重度探討「極簡化容器」已經快六年多了1。這議題，以前可能只是某些人技術上的興趣，現在則可能是必要。
 原因是：Docker Inc 的一些措施，讓人不得不慎重考慮替代方案。
 搬家的必要 這陣子容器世界起了不少變化，除了眾所周知的「Docker Desktop 要收費了」規定 2，另一個較少被提及影響是 Docker Hub 的緊縮政策：
-Image CI 緊縮：Docker Hub 取消免費用戶的 automated builds 功能。 3 Image pull 緊縮：Docker Hub 開始對未付費者施以較嚴格的限流措施。 4 於是，未付費的人，不僅要用其他迂迴手法實現 CI，產製的 image 又不能無限制供第三人即時取用——甚至還會波及繼承鏈的下游：如果你引用到的 base image(s) 繼承鏈恰好也託管在 Docker Hub（這是很常見的事情），那就會常常遇到這樣的 &amp;ldquo;toomanyrequests&amp;rdquo; 限流警告：
+Image CI 緊縮：Docker Hub 取消免費用戶的 automated builds 功能。 3 Image pull 緊縮：Docker Hub 開始對未付費者施以較嚴格的限流措施。 4 於是，未付費的人，不僅在使用 Docker Hub 時會受到管制，還會波及產製 image 的 CI pipeline，不時會遇到這樣的 &amp;ldquo;toomanyrequests&amp;rdquo; 限流警告：
 " />
 
 
@@ -73,7 +73,7 @@ Image CI 緊縮：Docker Hub 取消免費用戶的 automated builds 功能。 3 
 Image CI 緊縮：Docker Hub 取消免費用戶的 automated builds 功能。 3
 Image pull 緊縮：Docker Hub 開始對未付費者施以較嚴格的限流措施。 4
 
-於是，未付費的人，不僅要用其他迂迴手法實現 CI，產製的 image 又不能無限制供第三人即時取用——甚至還會波及繼承鏈的下游：如果你引用到的 base image(s) 繼承鏈恰好也託管在 Docker Hub（這是很常見的事情），那就會常常遇到這樣的 &ldquo;toomanyrequests&rdquo; 限流警告：" />
+於是，未付費的人，不僅在使用 Docker Hub 時會受到管制，還會波及產製 image 的 CI pipeline，不時會遇到這樣的 &ldquo;toomanyrequests&rdquo; 限流警告：" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="//william-yeh.net/post/2023/02/distroless-image/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2023-02-15T22:00:00+08:00" />
@@ -87,9 +87,9 @@ Image pull 緊縮：Docker Hub 開始對未付費者施以較嚴格的限流措�
 Image CI 緊縮：Docker Hub 取消免費用戶的 automated builds 功能。 3
 Image pull 緊縮：Docker Hub 開始對未付費者施以較嚴格的限流措施。 4
 
-於是，未付費的人，不僅要用其他迂迴手法實現 CI，產製的 image 又不能無限制供第三人即時取用——甚至還會波及繼承鏈的下游：如果你引用到的 base image(s) 繼承鏈恰好也託管在 Docker Hub（這是很常見的事情），那就會常常遇到這樣的 &ldquo;toomanyrequests&rdquo; 限流警告："><meta itemprop="datePublished" content="2023-02-15T22:00:00+08:00" />
+於是，未付費的人，不僅在使用 Docker Hub 時會受到管制，還會波及產製 image 的 CI pipeline，不時會遇到這樣的 &ldquo;toomanyrequests&rdquo; 限流警告："><meta itemprop="datePublished" content="2023-02-15T22:00:00+08:00" />
 <meta itemprop="dateModified" content="2023-02-15T22:00:00+08:00" />
-<meta itemprop="wordCount" content="1152">
+<meta itemprop="wordCount" content="1201">
 <meta itemprop="keywords" content="devops,docker,security," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Distroless Image 牛刀小試"/>
 <meta name="twitter:description" content="距離上次重度探討「極簡化容器」已經快六年多了1。這議題，以前可能只是某些人技術上的興趣，現在則可能是必要。
@@ -100,7 +100,7 @@ Image pull 緊縮：Docker Hub 開始對未付費者施以較嚴格的限流措�
 Image CI 緊縮：Docker Hub 取消免費用戶的 automated builds 功能。 3
 Image pull 緊縮：Docker Hub 開始對未付費者施以較嚴格的限流措施。 4
 
-於是，未付費的人，不僅要用其他迂迴手法實現 CI，產製的 image 又不能無限制供第三人即時取用——甚至還會波及繼承鏈的下游：如果你引用到的 base image(s) 繼承鏈恰好也託管在 Docker Hub（這是很常見的事情），那就會常常遇到這樣的 &ldquo;toomanyrequests&rdquo; 限流警告："/>
+於是，未付費的人，不僅在使用 Docker Hub 時會受到管制，還會波及產製 image 的 CI pipeline，不時會遇到這樣的 &ldquo;toomanyrequests&rdquo; 限流警告："/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -334,7 +334,7 @@ if (!doNotTrack) {
 
   <div class="post-meta__right">
     <span class="post-meta-more">
-        約 1152 字 -
+        約 1201 字 -
         預計閱讀 3 分鐘
       </span>
 
@@ -384,17 +384,28 @@ if (!doNotTrack) {
 <li>Image CI 緊縮：Docker Hub 取消免費用戶的 automated builds 功能。 <sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></li>
 <li>Image pull 緊縮：Docker Hub 開始對未付費者施以較嚴格的限流措施。 <sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup></li>
 </ul>
-<p>於是，未付費的人，不僅要用其他迂迴手法實現 CI，產製的 image 又不能無限制供第三人即時取用——甚至還會波及繼承鏈的下游：如果你引用到的 base image(s) 繼承鏈恰好也託管在 Docker Hub（這是很常見的事情），那就會常常遇到這樣的 &ldquo;toomanyrequests&rdquo; 限流警告：</p>
-<pre tabindex="0"><code>WARN[0109] failed, retrying in 1s ... (3/3).
-  Error: initializing source docker://xxx:
-    reading manifest v2.9 in docker.io/library/xxx:
-      toomanyrequests: You have reached your pull rate limit.
-    You may increase the limit by authenticating and upgrading:
-      https://www.docker.com/increase-rate-limit
-</code></pre><p>要避開這限制，我們得從兩方面著手：</p>
+<p>於是，未付費的人，不僅在使用 Docker Hub 時會受到管制，還會波及產製 image 的 CI pipeline，不時會遇到這樣的 &ldquo;toomanyrequests&rdquo; 限流警告：</p>
+<link rel="stylesheet" href="/css/hugo-easy-gallery.css" />
+<div class="box">
+<figure  itemprop="associatedMedia"
+  itemscope itemtype="http://schema.org/ImageObject" 
+  style="max-width:30em" >
+    <div class="img">
+      <img itemprop="thumbnail" src="/img/2023/02/ratelimit.png" />
+    </div>
+    <a href="/img/2023/02/ratelimit.png" itemprop="contentUrl"></a>
+  </figure>
+</div>
+
+<p>要避開這限制，治標方法是：</p>
+<ul>
+<li>架設 image proxy。 <sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup></li>
+<li>註冊 Docker Hub 帳號，將帳密寫進 CI pipeline 裡，以獲得稍微寬鬆一點點的 rate limit 門檻。</li>
+</ul>
+<p>治本方法，則得從兩方面著手：</p>
 <ol>
 <li>Image 要從 Docker Hub 搬遷到 ghcr.io 之類的地方。</li>
-<li>直接或間接引用的 base image(s) 也必須從 Docker Hub 換成 gcr.io 或 ghcr.io 之類的地方。</li>
+<li>直接引用的 base image(s) 也必須從 Docker Hub 換成 gcr.io 或 ghcr.io 之類的地方。</li>
 </ol>
 <p>其中 (1) 很簡單，只要會 CI pipeline 即可辦到，像 GitHub Action 就有許多現成的元件可用。</p>
 <p>至於 (2) 則比較麻煩。當然啦，對於玩過「極簡化容器」技術的人來說，這也只是小事一樁。</p>
@@ -402,7 +413,7 @@ if (!doNotTrack) {
 <p>以前玩 minimal image 的人，是以 <a href="https://hub.docker.com/_/alpine">alpine</a> 系列為大宗，只要不介意背後用的是 <a href="https://en.wikipedia.org/wiki/Musl">musl libc</a>，這可以產生非常 &ldquo;minimal&rdquo; 的 image。近來 Google 的 <a href="https://github.com/GoogleContainerTools/distroless">&ldquo;distroless&rdquo; images</a> 則提供 glibc 偏好者的另一種選擇，儘管它不算是 &ldquo;minimal&rdquo;，但也稱得上是 &ldquo;small-enough&rdquo;。</p>
 <p>曾經我也是追求 minimal docker image 的一族，現在我只求 small-enough 就好。畢竟對大多數應用場景來說，像以下這兩個 image，一個約 8 MB，一個約 29 MB，差異其實是可以忽略不計的：</p>
 
-<link rel="stylesheet" href="/css/hugo-easy-gallery.css" />
+
 <div class="box">
 <figure  itemprop="associatedMedia"
   itemscope itemtype="http://schema.org/ImageObject" 
@@ -486,6 +497,9 @@ if (!doNotTrack) {
 </li>
 <li id="fn:4">
 <p>根據 Docker Hub &ldquo;<a href="https://docs.docker.com/docker-hub/download-rate-limit/">Download rate limit</a>&rdquo; 文件所載：&ldquo;For anonymous users, the rate limit is set to 100 pulls per 6 hours per IP address. For authenticated users, it’s 200 pulls per 6 hour period. Users with a paid Docker subscription get up to 5000 pulls per day.&rdquo;&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:5">
+<p>其實有規模的組織，本來就應該自行架設 image proxy，以做好 artifact management。對這主題感興趣的，請參考 &ldquo;<a href="https://ranchergovernment.com/blog/mitigate-the-docker-dilemma-with-a-proxy-cache">Mitigate the Docker Dilemma with a Proxy Cache</a>&rdquo; 一文。&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </div>

@@ -26,17 +26,28 @@
 &lt;li&gt;Image CI 緊縮：Docker Hub 取消免費用戶的 automated builds 功能。 &lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
 &lt;li&gt;Image pull 緊縮：Docker Hub 開始對未付費者施以較嚴格的限流措施。 &lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;於是，未付費的人，不僅要用其他迂迴手法實現 CI，產製的 image 又不能無限制供第三人即時取用——甚至還會波及繼承鏈的下游：如果你引用到的 base image(s) 繼承鏈恰好也託管在 Docker Hub（這是很常見的事情），那就會常常遇到這樣的 &amp;ldquo;toomanyrequests&amp;rdquo; 限流警告：&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;WARN[0109] failed, retrying in 1s ... (3/3).
-  Error: initializing source docker://xxx:
-    reading manifest v2.9 in docker.io/library/xxx:
-      toomanyrequests: You have reached your pull rate limit.
-    You may increase the limit by authenticating and upgrading:
-      https://www.docker.com/increase-rate-limit
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;要避開這限制，我們得從兩方面著手：&lt;/p&gt;
+&lt;p&gt;於是，未付費的人，不僅在使用 Docker Hub 時會受到管制，還會波及產製 image 的 CI pipeline，不時會遇到這樣的 &amp;ldquo;toomanyrequests&amp;rdquo; 限流警告：&lt;/p&gt;
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/02/ratelimit.png&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2023/02/ratelimit.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;要避開這限制，治標方法是：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;架設 image proxy。 &lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
+&lt;li&gt;註冊 Docker Hub 帳號，將帳密寫進 CI pipeline 裡，以獲得稍微寬鬆一點點的 rate limit 門檻。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;治本方法，則得從兩方面著手：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Image 要從 Docker Hub 搬遷到 ghcr.io 之類的地方。&lt;/li&gt;
-&lt;li&gt;直接或間接引用的 base image(s) 也必須從 Docker Hub 換成 gcr.io 或 ghcr.io 之類的地方。&lt;/li&gt;
+&lt;li&gt;直接引用的 base image(s) 也必須從 Docker Hub 換成 gcr.io 或 ghcr.io 之類的地方。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;其中 (1) 很簡單，只要會 CI pipeline 即可辦到，像 GitHub Action 就有許多現成的元件可用。&lt;/p&gt;
 &lt;p&gt;至於 (2) 則比較麻煩。當然啦，對於玩過「極簡化容器」技術的人來說，這也只是小事一樁。&lt;/p&gt;
@@ -44,7 +55,7 @@
 &lt;p&gt;以前玩 minimal image 的人，是以 &lt;a href=&#34;https://hub.docker.com/_/alpine&#34;&gt;alpine&lt;/a&gt; 系列為大宗，只要不介意背後用的是 &lt;a href=&#34;https://en.wikipedia.org/wiki/Musl&#34;&gt;musl libc&lt;/a&gt;，這可以產生非常 &amp;ldquo;minimal&amp;rdquo; 的 image。近來 Google 的 &lt;a href=&#34;https://github.com/GoogleContainerTools/distroless&#34;&gt;&amp;ldquo;distroless&amp;rdquo; images&lt;/a&gt; 則提供 glibc 偏好者的另一種選擇，儘管它不算是 &amp;ldquo;minimal&amp;rdquo;，但也稱得上是 &amp;ldquo;small-enough&amp;rdquo;。&lt;/p&gt;
 &lt;p&gt;曾經我也是追求 minimal docker image 的一族，現在我只求 small-enough 就好。畢竟對大多數應用場景來說，像以下這兩個 image，一個約 8 MB，一個約 29 MB，差異其實是可以忽略不計的：&lt;/p&gt;
 
-&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+
 &lt;div class=&#34;box&#34;&gt;
 &lt;figure  itemprop=&#34;associatedMedia&#34;
   itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
@@ -128,6 +139,9 @@
 &lt;/li&gt;
 &lt;li id=&#34;fn:4&#34;&gt;
 &lt;p&gt;根據 Docker Hub &amp;ldquo;&lt;a href=&#34;https://docs.docker.com/docker-hub/download-rate-limit/&#34;&gt;Download rate limit&lt;/a&gt;&amp;rdquo; 文件所載：&amp;ldquo;For anonymous users, the rate limit is set to 100 pulls per 6 hours per IP address. For authenticated users, it’s 200 pulls per 6 hour period. Users with a paid Docker subscription get up to 5000 pulls per day.&amp;rdquo;&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:5&#34;&gt;
+&lt;p&gt;其實有規模的組織，本來就應該自行架設 image proxy，以做好 artifact management。對這主題感興趣的，請參考 &amp;ldquo;&lt;a href=&#34;https://ranchergovernment.com/blog/mitigate-the-docker-dilemma-with-a-proxy-cache&#34;&gt;Mitigate the Docker Dilemma with a Proxy Cache&lt;/a&gt;&amp;rdquo; 一文。&amp;#160;&lt;a href=&#34;#fnref:5&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;</description>

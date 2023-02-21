@@ -310,7 +310,7 @@ if (!doNotTrack) {
 
   <div class="post-meta__right">
     <span class="post-meta-more">
-        約 1152 字 -
+        約 1201 字 -
         預計閱讀 3 分鐘
       </span>
 
@@ -346,7 +346,7 @@ if (!doNotTrack) {
 <li>Image CI 緊縮：Docker Hub 取消免費用戶的 automated builds 功能。 <sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></li>
 <li>Image pull 緊縮：Docker Hub 開始對未付費者施以較嚴格的限流措施。 <sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup></li>
 </ul>
-<p>於是，未付費的人，不僅要用其他迂迴手法實現 CI，產製的 image 又不能無限制供第三人即時取用——甚至還會波及繼承鏈的下游：如果你引用到的 base image(s) 繼承鏈恰好也託管在 Docker Hub（這是很常見的事情），那就會常常遇到這樣的 &ldquo;toomanyrequests&rdquo; 限流警告：</p>
+<p>於是，未付費的人，不僅在使用 Docker Hub 時會受到管制，還會波及產製 image 的 CI pipeline，不時會遇到這樣的 &ldquo;toomanyrequests&rdquo; 限流警告：</p>
       </div>
       <div class="read-more">
         <a href="/post/2023/02/distroless-image/" class="read-more-link"
