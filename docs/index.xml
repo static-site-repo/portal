@@ -33,9 +33,12 @@
   itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
   style=&#34;max-width:30em&#34; &gt;
     &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/02/ratelimit.png&#34; /&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/02/ratelimit.png&#34; alt=&#34;Docker Hub 的 toomanyrequests 限流警告&#34;/&gt;
     &lt;/div&gt;
     &lt;a href=&#34;//william-yeh.net/img/2023/02/ratelimit.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Docker Hub 的 toomanyrequests 限流警告&lt;/p&gt;
+      &lt;/figcaption&gt;
   &lt;/figure&gt;
 &lt;/div&gt;
 
@@ -53,20 +56,7 @@
 &lt;p&gt;至於 (2) 則比較麻煩。當然啦，對於玩過「極簡化容器」技術的人來說，這也只是小事一樁。&lt;/p&gt;
 &lt;h2 id=&#34;distroless-image&#34;&gt;Distroless image&lt;/h2&gt;
 &lt;p&gt;以前玩 minimal image 的人，是以 &lt;a href=&#34;https://hub.docker.com/_/alpine&#34;&gt;alpine&lt;/a&gt; 系列為大宗，只要不介意背後用的是 &lt;a href=&#34;https://en.wikipedia.org/wiki/Musl&#34;&gt;musl libc&lt;/a&gt;，這可以產生非常 &amp;ldquo;minimal&amp;rdquo; 的 image。近來 Google 的 &lt;a href=&#34;https://github.com/GoogleContainerTools/distroless&#34;&gt;&amp;ldquo;distroless&amp;rdquo; images&lt;/a&gt; 則提供 glibc 偏好者的另一種選擇，儘管它不算是 &amp;ldquo;minimal&amp;rdquo;，但也稱得上是 &amp;ldquo;small-enough&amp;rdquo;。&lt;/p&gt;
-&lt;p&gt;曾經我也是追求 minimal docker image 的一族，現在我只求 small-enough 就好。畢竟對大多數應用場景來說，像以下這兩個 image，一個約 8 MB，一個約 29 MB，差異其實是可以忽略不計的：&lt;/p&gt;
-
-
-&lt;div class=&#34;box&#34;&gt;
-&lt;figure  itemprop=&#34;associatedMedia&#34;
-  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
-  style=&#34;max-width:30em&#34; &gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/02/image-layers.png&#34; /&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2023/02/image-layers.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;
-
+&lt;p&gt;曾經我也是追求 minimal docker image 的一族 &lt;sup id=&#34;fnref1:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，現在我只求 small-enough 就好。畢竟對大多數應用場景來說，像以下這兩個 image，一個約 8 MB，一個約 29 MB，差異其實是可以忽略不計的：&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -88,8 +78,6 @@
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;可是，以資安角度來說，8.347 MB 的 image 被挑出許多漏洞，這很顛覆「alpine 又小又安全」的既定印象：&lt;/p&gt;
 
 
 &lt;div class=&#34;box&#34;&gt;
@@ -97,13 +85,34 @@
   itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
   style=&#34;max-width:30em&#34; &gt;
     &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/02/alpine-security.png&#34; /&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/02/image-layers.png&#34; alt=&#34;兩種 image 的 layers&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2023/02/image-layers.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;兩種 image 的 layers&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;可是，若以資安角度來看，8.347 MB 的 image 被挑出許多漏洞，這很顛覆「alpine 又小又安全」的既定印象：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/02/alpine-security.png&#34; alt=&#34;以 Alpine 的 musl 生態系產製的 image 被偵測出許多資安漏洞&#34;/&gt;
     &lt;/div&gt;
     &lt;a href=&#34;//william-yeh.net/img/2023/02/alpine-security.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;以 Alpine 的 musl 生態系產製的 image 被偵測出許多資安漏洞&lt;/p&gt;
+      &lt;/figcaption&gt;
   &lt;/figure&gt;
 &lt;/div&gt;
 
-&lt;p&gt;反觀 28.76 MB 的 image 反而較安全，這也很顛覆「glibc 系列不安全」的既定印象：&lt;/p&gt;
+&lt;p&gt;反觀 28.76 MB 的 image 卻比較安全，這也很顛覆「glibc 系列不安全」的既定印象：&lt;/p&gt;
 
 
 &lt;div class=&#34;box&#34;&gt;
@@ -111,13 +120,16 @@
   itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
   style=&#34;max-width:30em&#34; &gt;
     &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/02/distroless-security.png&#34; /&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/02/distroless-security.png&#34; alt=&#34;以 Debian 的 glibc 生態系產製的 image 資安漏洞反而較少&#34;/&gt;
     &lt;/div&gt;
     &lt;a href=&#34;//william-yeh.net/img/2023/02/distroless-security.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;以 Debian 的 glibc 生態系產製的 image 資安漏洞反而較少&lt;/p&gt;
+      &lt;/figcaption&gt;
   &lt;/figure&gt;
 &lt;/div&gt;
 
-&lt;p&gt;因此，我會建議，對大多數應用程式來說，選擇 Google 的 distroless 路線，可以省下許多與 alpine 相容性搏鬥的精力，又可以享受到許多好處：&lt;/p&gt;
+&lt;p&gt;因此，我會建議，對大多數應用程式來說，選擇 Google 的 &lt;a href=&#34;https://github.com/GoogleContainerTools/distroless&#34;&gt;distroless 路線&lt;/a&gt;，可以省下許多與 alpine 相容性搏鬥的精力，又可以享受到許多好處：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;有 Google 在維護。&lt;/li&gt;
 &lt;li&gt;Base image 的所在地 gcr.io 沒有限流問題。&lt;/li&gt;
@@ -129,7 +141,7 @@
 &lt;hr&gt;
 &lt;ol&gt;
 &lt;li id=&#34;fn:1&#34;&gt;
-&lt;p&gt;詳見〈&lt;a href=&#34;//william-yeh.net/post/2016/08/why-minimal-docker-images/&#34;&gt;為什麼要追求極簡化的 Docker image？&lt;/a&gt;〉一文。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;詳見〈&lt;a href=&#34;//william-yeh.net/post/2016/08/why-minimal-docker-images/&#34;&gt;為什麼要追求極簡化的 Docker image？&lt;/a&gt;〉一文。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref1:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:2&#34;&gt;
 &lt;p&gt;Docker Desktop 新規定：只要公司超過 250 人，或是年營收超過美金千萬，就必須付費。根據 &lt;a href=&#34;https://www.docker.com/pricing/faq/&#34;&gt;Docker FAQs&lt;/a&gt; 文件所載：&amp;ldquo;Docker Desktop requires a paid, per-user subscription for organizations with more than 250 employees or more than $10 million in annual revenue per our terms of service. [..] The updated terms for Docker Desktop were effective August 31, 2021, with a grace period until January 31, 2022.&amp;rdquo;&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
