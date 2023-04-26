@@ -6,7 +6,23 @@
     <description>Recent content in Posts on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Wed, 15 Feb 2023 22:00:00 +0800</lastBuildDate><atom:link href="//william-yeh.net/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 25 Apr 2023 22:00:00 +0800</lastBuildDate><atom:link href="//william-yeh.net/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Coursera 上面的 GCP 課程</title>
+      <link>//william-yeh.net/post/2023/04/gcp-on-coursera/</link>
+      <pubDate>Tue, 25 Apr 2023 22:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2023/04/gcp-on-coursera/</guid>
+      <description>&lt;p&gt;為了在公司內推動 GCP 認證考試，必須先推動大家勤修 GCP 課程；為了推動大家勤修 GCP 課程，我得先帶頭示範。因此，我最近在 Coursera 修了許多 GCP 認證考試相關課程 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，感觸很深：就算不考照，用這些課程補完一些知識，還是很值得的。&lt;/p&gt;
+&lt;p&gt;這些課程深度與廣度兼具，又有搭配實作演習，有系統地吸收，會比雜亂搜尋文件來得踏實。&lt;/p&gt;
+&lt;p&gt;即使以俗氣的 C/P 值角度來說，這些課程也是物超所值的。像以下這門放在 Coursera 的課：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.coursera.org/learn/gcp-big-data-ml-fundamentals&#34;&gt;Google Cloud Big Data and Machine Learning Fundamentals&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;大家知道嗎？這樣的課，用同樣的 Google 原廠教材，改用國語發音 live 授課，在外頭可是喊價超過一萬元新台幣的。&lt;/p&gt;
+&lt;p&gt;我根據自己這些日子勤修課程的小經驗，推薦幾門有廣度有深度的課，讓想要對雲端環境有更廣更深認識的人參考。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Distroless Image 牛刀小試</title>
       <link>//william-yeh.net/post/2023/02/distroless-image/</link>
@@ -341,20 +357,6 @@
       &lt;/figcaption&gt;
   &lt;/figure&gt;
 &lt;/div&gt;</description>
-    </item>
-    
-    <item>
-      <title>請珍惜你們學到的通關密語</title>
-      <link>//william-yeh.net/post/2022/04/passphrase-at-work/</link>
-      <pubDate>Fri, 29 Apr 2022 17:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2022/04/passphrase-at-work/</guid>
-      <description>&lt;p&gt;（改寫自公司內部 memo）&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;Dear all 夥伴，&lt;/p&gt;
-&lt;p&gt;過去三個月，我根據自己的職場經驗，以及我對大家的專業要求，安排許多課程及講座。從一系列 1:1 訪談中得知，不只是主管們動了起來，連小夥伴也開始試著實踐。我很欣慰。&lt;/p&gt;
-&lt;p&gt;譬如說，送你們這群中階主管及資深工作者去接受專案管理培訓之後，我終於可以在大大小小會議上公然用專案管理語彙進行詢問與討論了，不必拐彎抹角替這些對我來說已經是「&lt;a href=&#34;https://zh.wikipedia.org/wiki/%E5%BF%AB%E6%80%9D%E6%85%A2%E6%83%B3&#34;&gt;系統一&lt;/a&gt;」的管理切入點逐一解釋或比喻。&lt;/p&gt;
-&lt;p&gt;The bar has been raised，這才像專業場域。&lt;/p&gt;</description>
     </item>
     
   </channel>
