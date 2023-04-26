@@ -25,7 +25,15 @@
 &lt;li&gt;&lt;a href=&#34;https://www.coursera.org/learn/gcp-big-data-ml-fundamentals&#34;&gt;Google Cloud Big Data and Machine Learning Fundamentals&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;大家知道嗎？這樣的課，用同樣的 Google 原廠教材，改用國語發音 live 授課，在外頭可是喊價超過一萬元新台幣的。&lt;/p&gt;
-&lt;p&gt;我根據自己這些日子勤修課程的小經驗，推薦幾門有廣度有深度的課，讓想要對雲端環境有更廣更深認識的人參考。&lt;/p&gt;
+&lt;p&gt;我根據自己這些日子勤修課程的小經驗，推薦幾門有廣度有深度的課，讓想要對雲端環境有更廣更深認識的人參考。我大致將這些課程分類如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;非技術的通識類&lt;/li&gt;
+&lt;li&gt;GCP 技術：共通核心&lt;/li&gt;
+&lt;li&gt;GCP 技術：K8s&lt;/li&gt;
+&lt;li&gt;Dev&lt;/li&gt;
+&lt;li&gt;DevOps &amp;amp; SRE&lt;/li&gt;
+&lt;li&gt;ML &amp;amp; Big Data&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id=&#34;非技術的通識類&#34;&gt;非技術的通識類&lt;/h2&gt;
 &lt;p&gt;這類課程比較軟性，適合讓非技術底子出身的人也有機會體會雲端帶來的可能性。非技術人擁有雲端的基礎認知，與技術人的對話也才能更同調。&lt;/p&gt;
 &lt;p&gt;系列／&lt;a href=&#34;https://www.coursera.org/professional-certificates/google-cloud-digital-leader-training&#34;&gt;&lt;strong&gt;Google Cloud Digital Leader Training Professional Certificate&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
@@ -42,7 +50,7 @@
 &lt;li&gt;Infrastructure and Application Modernization with Google Cloud&lt;/li&gt;
 &lt;li&gt;Managing Machine Learning Projects with Google Cloud&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;其中，像 &lt;a href=&#34;https://www.coursera.org/learn/machine-learning-business-professionals&#34;&gt;Managing Machine Learning Projects with Google Cloud&lt;/a&gt; 這門課提到最適合 ML 發揮的領域，是 &amp;ldquo;Channenging &amp;amp; Clear&amp;rdquo; 的問題：&lt;/p&gt;
+&lt;p&gt;其中，像 &lt;a href=&#34;https://www.coursera.org/learn/machine-learning-business-professionals&#34;&gt;Managing Machine Learning Projects with Google Cloud&lt;/a&gt; 這門課提到最適合 ML 發揮的領域，是 &amp;ldquo;Challenging &amp;amp; Clear&amp;rdquo; 的問題：&lt;/p&gt;
 
 &lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
 &lt;div class=&#34;box&#34;&gt;
