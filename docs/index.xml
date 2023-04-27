@@ -119,6 +119,24 @@
 &lt;/ul&gt;
 &lt;p&gt;這專項課程，與 Udemy 三門 CKA/CKAD/CKS 認證考試課程相比，還算實用，可互補。&lt;/p&gt;
 &lt;h2 id=&#34;dev&#34;&gt;Dev&lt;/h2&gt;
+&lt;p&gt;很多課程似乎都鎖定在 serverless 方案，因此，先把這張圖記下來（引述自 &lt;a href=&#34;https://www.coursera.org/learn/application-development-with-cloud-run&#34;&gt;Application Development with Cloud Run&lt;/a&gt; 課程）：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/04/gcp-serverless-landscape.png&#34; alt=&#34;GCP 的 serverless 方案&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2023/04/gcp-serverless-landscape.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;GCP 的 serverless 方案&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;p&gt;系列／&lt;a href=&#34;https://www.coursera.org/professional-certificates/google-cloud-developer&#34;&gt;&lt;strong&gt;Preparing for Google Cloud Certification: Cloud Developer&lt;/strong&gt;&lt;/a&gt; (&lt;a href=&#34;https://coursera.org/share/aefc965bd4bdeee46b1fd906d1f93158&#34;&gt;秀肌肉&lt;/a&gt;)&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Securing and Integrating Components of your Application&lt;/li&gt;
@@ -129,6 +147,9 @@
 &lt;li&gt;Getting Started With Application Development&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;比較令我驚訝的是，最後一門課 &lt;a href=&#34;https://www.coursera.org/learn/getting-started-app-development&#34;&gt;Getting Started With Application Development&lt;/a&gt; 花了很多篇幅在講 Cloud Run，尤其是講它的 networking &amp;amp; security 設定，卻讓人覺得這個 serverless 方案沒有想像中那麼無腦即可使用。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.coursera.org/learn/developing-applications-with-cloud-functions-on-google-cloud&#34;&gt;&lt;strong&gt;Developing Applications with Cloud Functions on Google Cloud&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;身為 GCP serverless 另一員大將 Cloud Functions，值得好好掌握。&lt;/p&gt;
 &lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.coursera.org/learn/service-orchestration-and-choreography-on-google-cloud&#34;&gt;&lt;strong&gt;Service Orchestration and Choreography on Google Cloud&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;難得在 GCP 課程上看到這主題，很值得照著他的範例把玩一遍。&lt;/p&gt;
@@ -193,6 +214,9 @@
 &lt;li&gt;Recommendation Systems on Google Cloud&lt;/li&gt;
 &lt;li&gt;Machine Learning in the Enterprise&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;系列／&lt;a href=&#34;https://www.coursera.org/specializations/customer-experience-gcp&#34;&gt;Customer Experiences with Contact Center AI - Dialogflow ES Specialization&lt;/a&gt; &amp;amp; &lt;a href=&#34;https://www.coursera.org/specializations/customer-experiences-with-contact-center-ai-dialogflow-cx#courses&#34;&gt;Customer Experiences with Contact Center AI - Dialogflow CX Specialization&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;把玩一下聊天機器人吧。&lt;/p&gt;
 &lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;p&gt;以上就是我個人偏食的菜單，希望給大家一些啟發，好好善用這個深度與廣度兼具的大補帖吧。&lt;/p&gt;
 &lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
