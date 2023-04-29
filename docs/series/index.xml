@@ -6,26 +6,71 @@
     <description>Recent content in Series on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Thu, 20 Aug 2020 00:00:00 +0000</lastBuildDate><atom:link href="//william-yeh.net/series/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 29 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="//william-yeh.net/series/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>&#39;Essence of Scrum&#39; Series</title>
-      <link>//william-yeh.net/series/1/</link>
-      <pubDate>Thu, 20 Aug 2020 00:00:00 +0000</pubDate>
+      <title>職涯躍升書系導讀會</title>
+      <link>//william-yeh.net/series/career-reading-club/</link>
+      <pubDate>Tue, 29 Nov 2022 00:00:00 +0000</pubDate>
       
-      <guid>//william-yeh.net/series/1/</guid>
-      <description>2020-07-29: Essence of Scrum: Product Backlog Refinement
-2020-08-02: Essence of Scrum: Daily Scrum
-2020-08-09: Essence of Scrum: Sprint Planning
-2020-08-20: Essence of Scrum: Sprint Review</description>
+      <guid>//william-yeh.net/series/career-reading-club/</guid>
+      <description>❶ Part 1: 喚醒個人及團隊的成長意識 (計 6 冊) ❷ Part 2: 高效團隊的工作方法 (計 2 冊) ❸ Part 3: 職場心理：觀點、期待、渴望 (計 3 冊)</description>
     </item>
     
     <item>
-      <title></title>
-      <link>//william-yeh.net/series/2/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <title>敏捷的工作分解方法</title>
+      <link>//william-yeh.net/series/agile-decomposition/</link>
+      <pubDate>Tue, 01 Nov 2022 00:00:00 +0000</pubDate>
       
-      <guid>//william-yeh.net/series/2/</guid>
-      <description></description>
+      <guid>//william-yeh.net/series/agile-decomposition/</guid>
+      <description>One-Week Sprint 的節奏 工作分解講座・閱讀材料 事情做一半，等於沒完成：淺談敏捷的里程碑設定 以「蜘蛛法」拆分過於龐大的 User Story</description>
+    </item>
+    
+    <item>
+      <title>「改變」系列</title>
+      <link>//william-yeh.net/series/change-series/</link>
+      <pubDate>Mon, 16 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>//william-yeh.net/series/change-series/</guid>
+      <description>改變的框架 改變／改革：流程與衡量指標 推動改變的評估流程</description>
+    </item>
+    
+    <item>
+      <title>Scrum master 培訓系列</title>
+      <link>//william-yeh.net/series/scrum-master-training/</link>
+      <pubDate>Sat, 05 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>//william-yeh.net/series/scrum-master-training/</guid>
+      <description>如何訓練一個新的 Scrum master？ 敏捷之途無他，刻意練習而已矣！ Scrum 認證模擬測驗的兩項啟發 敏捷啟航的專業基礎：共同語彙</description>
+    </item>
+    
+    <item>
+      <title>「系統思考工作坊」系列</title>
+      <link>//william-yeh.net/series/systhinking-series/</link>
+      <pubDate>Sun, 28 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>//william-yeh.net/series/systhinking-series/</guid>
+      <description>【系統思考的四堂課】緣起 第一場公開班課後回覆：思維的重量訓練 從系統思考角度讀《獨角獸專案》</description>
+    </item>
+    
+    <item>
+      <title>Essence of Scrum</title>
+      <link>//william-yeh.net/series/essence-of-scrum/</link>
+      <pubDate>Thu, 20 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>//william-yeh.net/series/essence-of-scrum/</guid>
+      <description>Essence of Scrum: Product Backlog Refinement
+Essence of Scrum: Daily Scrum
+Essence of Scrum: Sprint Planning
+Essence of Scrum: Sprint Review</description>
+    </item>
+    
+    <item>
+      <title>「判準與指標」系列</title>
+      <link>//william-yeh.net/series/criteria-series/</link>
+      <pubDate>Wed, 28 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>//william-yeh.net/series/criteria-series/</guid>
+      <description>軟體開發，除了方法論，還有⋯⋯ 敏捷的判準 Lean Startup 的判準 敏捷的價值與指標 DevOps 的價值與指標</description>
     </item>
     
   </channel>

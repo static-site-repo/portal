@@ -19,6 +19,15 @@
     </item>
     
     <item>
+      <title>職涯躍升書系導讀會</title>
+      <link>//william-yeh.net/series/career-reading-club/</link>
+      <pubDate>Tue, 29 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>//william-yeh.net/series/career-reading-club/</guid>
+      <description>❶ Part 1: 喚醒個人及團隊的成長意識 (計 6 冊) ❷ Part 2: 高效團隊的工作方法 (計 2 冊) ❸ Part 3: 職場心理：觀點、期待、渴望 (計 3 冊)</description>
+    </item>
+    
+    <item>
       <title>以「蜘蛛法」拆分過於龐大的 User Story</title>
       <link>//william-yeh.net/post/2022/11/spidr/</link>
       <pubDate>Tue, 01 Nov 2022 17:00:00 +0800</pubDate>
@@ -29,6 +38,15 @@
 &lt;p&gt;Hi all guys,&lt;/p&gt;
 &lt;p&gt;剛從傳統瀑布式專案管理風格轉換到敏捷風格的團隊，最常遇到第二個卡關之處是：如何將 User Story 拆分到足以在一個 sprint 內完成的顆粒度？&lt;/p&gt;
 &lt;p&gt;如果玩過我帶的「在幾分鐘以內出門」(&amp;ldquo;get out of the door in a few minutes&amp;rdquo;) 活動 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，或許可藉由喚起這段活動的體驗來得到拆分大故事的靈感。如果還想進一步知道更具體的步驟，我推薦大家試試 Mike Cohn 大師提出的 &lt;a href=&#34;https://www.mountaingoatsoftware.com/exclusive/spidr-poster-download&#34;&gt;SPIDR 法&lt;/a&gt;。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>敏捷的工作分解方法</title>
+      <link>//william-yeh.net/series/agile-decomposition/</link>
+      <pubDate>Tue, 01 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>//william-yeh.net/series/agile-decomposition/</guid>
+      <description>One-Week Sprint 的節奏 工作分解講座・閱讀材料 事情做一半，等於沒完成：淺談敏捷的里程碑設定 以「蜘蛛法」拆分過於龐大的 User Story</description>
     </item>
     
     <item>
@@ -165,6 +183,15 @@
     </item>
     
     <item>
+      <title>Scrum master 培訓系列</title>
+      <link>//william-yeh.net/series/scrum-master-training/</link>
+      <pubDate>Sat, 05 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>//william-yeh.net/series/scrum-master-training/</guid>
+      <description>如何訓練一個新的 Scrum master？ 敏捷之途無他，刻意練習而已矣！ Scrum 認證模擬測驗的兩項啟發 敏捷啟航的專業基礎：共同語彙</description>
+    </item>
+    
+    <item>
       <title>2021 個人回顧</title>
       <link>//william-yeh.net/post/2021/12/2021-retrospective/</link>
       <pubDate>Tue, 28 Dec 2021 22:00:00 +0800</pubDate>
@@ -250,6 +277,15 @@
     </item>
     
     <item>
+      <title>「系統思考工作坊」系列</title>
+      <link>//william-yeh.net/series/systhinking-series/</link>
+      <pubDate>Sun, 28 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>//william-yeh.net/series/systhinking-series/</guid>
+      <description>【系統思考的四堂課】緣起 第一場公開班課後回覆：思維的重量訓練 從系統思考角度讀《獨角獸專案》</description>
+    </item>
+    
+    <item>
       <title>如何訓練一個新的 Scrum master？</title>
       <link>//william-yeh.net/post/2021/03/train-new-scrum-master/</link>
       <pubDate>Wed, 17 Mar 2021 20:00:00 +0800</pubDate>
@@ -299,57 +335,6 @@
 &lt;p&gt;近十年，軟體研發界有兩大類重要思潮。在技術面，有大數據、機器學習、immutable infrastructure、微服務、容器、函式編程、資料流水線等；在流程面，則有敏捷開發、DevOps、自助服務、混亂工程、精實 UX 等。這些思潮，有些是新發明，有些則是文藝復興，甚至是跨界學習而來。&lt;/p&gt;
 &lt;p&gt;這些思潮，不只是純軟體界在乎，就連《&lt;a href=&#34;https://itrevolution.com/the-unicorn-project/&#34;&gt;獨角獸專案&lt;/a&gt;》這本小說的場景設定：汽車零件製造商暨零售商，影響一樣深遠。畢竟「軟體正在蠶食整個世界」。&lt;/p&gt;
 &lt;p&gt;某方面來說，《&lt;a href=&#34;https://www.tenlong.com.tw/products/9789865026653&#34;&gt;獨角獸專案&lt;/a&gt;》這本書，可謂 2010～2020 這個波瀾壯闊時代軟體研發界的具體縮影。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>&#39;Essence of Scrum&#39; Series</title>
-      <link>//william-yeh.net/series/1/</link>
-      <pubDate>Thu, 20 Aug 2020 00:00:00 +0000</pubDate>
-      
-      <guid>//william-yeh.net/series/1/</guid>
-      <description>2020-07-29: Essence of Scrum: Product Backlog Refinement
-2020-08-02: Essence of Scrum: Daily Scrum
-2020-08-09: Essence of Scrum: Sprint Planning
-2020-08-20: Essence of Scrum: Sprint Review</description>
-    </item>
-    
-    <item>
-      <title>Essence of Scrum: Sprint Review</title>
-      <link>//william-yeh.net/post/2020/08/sprint-review-in-a-nutshell/</link>
-      <pubDate>Thu, 20 Aug 2020 08:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2020/08/sprint-review-in-a-nutshell/</guid>
-      <description>This article discusses the essence of Sprint Review .
-In a nutshell Sprint Review is a time-boxed1 event in which the Scrum Team and invited stakeholders inspect what has been Done with respect to the Sprint Goal , gain insight into values, and adapt business strategy if necessary.
-Output Essential:
-An adapted Product Backlog An adapted business strategy and roadmap2
-Better:
-Celebration3 Input Essential:
-Sprint Goal Increment 4
-Sprint Backlog Better:</description>
-    </item>
-    
-    <item>
-      <title>Essence of Scrum: Sprint Planning</title>
-      <link>//william-yeh.net/post/2020/08/sprint-planning-in-a-nutshell/</link>
-      <pubDate>Sun, 09 Aug 2020 13:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2020/08/sprint-planning-in-a-nutshell/</guid>
-      <description>This article discusses the essence of Sprint Planning . In a nutshell Sprint Planning is a time-boxed1 event in which the Scrum Team defines the Sprint Goal and makes a feasible plan for the goal, to the best knowledge, information and belief of the team. Output Essential: Sprint Goal A feasible plan for achieving the Sprint Goal Sprint Backlog Items with the property of INVEST (Independent, Negotiable, Valuable, Estimable, Small,</description>
-    </item>
-    
-    <item>
-      <title>Essence of Scrum: Daily Scrum</title>
-      <link>//william-yeh.net/post/2020/08/daily-scrum-in-a-nutshell/</link>
-      <pubDate>Sun, 02 Aug 2020 16:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2020/08/daily-scrum-in-a-nutshell/</guid>
-      <description>This article discusses the essence of Daily Scrum .
-In a nutshell Daily Scrum is a time-boxed daily event in which the Developers gather together to quickly inspect current performance and to identify necessary actions in order to increase the confidence in achieving the Sprint Goal .
-Output Essential:
-Updated confidence in the Sprint Goal supported by evidence.
-Updated plans, if necessary, for achieving the Sprint Goal .
-Input Essential:</description>
     </item>
     
   </channel>

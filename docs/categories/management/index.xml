@@ -37,6 +37,15 @@
     </item>
     
     <item>
+      <title>職涯躍升書系導讀會</title>
+      <link>//william-yeh.net/series/career-reading-club/</link>
+      <pubDate>Tue, 29 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>//william-yeh.net/series/career-reading-club/</guid>
+      <description>❶ Part 1: 喚醒個人及團隊的成長意識 (計 6 冊) ❷ Part 2: 高效團隊的工作方法 (計 2 冊) ❸ Part 3: 職場心理：觀點、期待、渴望 (計 3 冊)</description>
+    </item>
+    
+    <item>
       <title>以「蜘蛛法」拆分過於龐大的 User Story</title>
       <link>//william-yeh.net/post/2022/11/spidr/</link>
       <pubDate>Tue, 01 Nov 2022 17:00:00 +0800</pubDate>
@@ -47,6 +56,15 @@
 &lt;p&gt;Hi all guys,&lt;/p&gt;
 &lt;p&gt;剛從傳統瀑布式專案管理風格轉換到敏捷風格的團隊，最常遇到第二個卡關之處是：如何將 User Story 拆分到足以在一個 sprint 內完成的顆粒度？&lt;/p&gt;
 &lt;p&gt;如果玩過我帶的「在幾分鐘以內出門」(&amp;ldquo;get out of the door in a few minutes&amp;rdquo;) 活動 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，或許可藉由喚起這段活動的體驗來得到拆分大故事的靈感。如果還想進一步知道更具體的步驟，我推薦大家試試 Mike Cohn 大師提出的 &lt;a href=&#34;https://www.mountaingoatsoftware.com/exclusive/spidr-poster-download&#34;&gt;SPIDR 法&lt;/a&gt;。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>敏捷的工作分解方法</title>
+      <link>//william-yeh.net/series/agile-decomposition/</link>
+      <pubDate>Tue, 01 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>//william-yeh.net/series/agile-decomposition/</guid>
+      <description>One-Week Sprint 的節奏 工作分解講座・閱讀材料 事情做一半，等於沒完成：淺談敏捷的里程碑設定 以「蜘蛛法」拆分過於龐大的 User Story</description>
     </item>
     
     <item>
@@ -223,6 +241,15 @@
     </item>
     
     <item>
+      <title>「改變」系列</title>
+      <link>//william-yeh.net/series/change-series/</link>
+      <pubDate>Mon, 16 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>//william-yeh.net/series/change-series/</guid>
+      <description>改變的框架 改變／改革：流程與衡量指標 推動改變的評估流程</description>
+    </item>
+    
+    <item>
       <title>向頂尖管顧公司學習的書</title>
       <link>//william-yeh.net/post/2022/05/learn-from-consulting-firms/</link>
       <pubDate>Sun, 08 May 2022 15:00:00 +0800</pubDate>
@@ -313,6 +340,15 @@
     </item>
     
     <item>
+      <title>Scrum master 培訓系列</title>
+      <link>//william-yeh.net/series/scrum-master-training/</link>
+      <pubDate>Sat, 05 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>//william-yeh.net/series/scrum-master-training/</guid>
+      <description>如何訓練一個新的 Scrum master？ 敏捷之途無他，刻意練習而已矣！ Scrum 認證模擬測驗的兩項啟發 敏捷啟航的專業基礎：共同語彙</description>
+    </item>
+    
+    <item>
       <title>Scrum 認證模擬測驗的兩項啟發</title>
       <link>//william-yeh.net/post/2021/07/revisit-psm1/</link>
       <pubDate>Sun, 11 Jul 2021 16:00:00 +0800</pubDate>
@@ -336,66 +372,6 @@
       &lt;/figcaption&gt;
   &lt;/figure&gt;
 &lt;/div&gt;</description>
-    </item>
-    
-    <item>
-      <title>企業能否吸引專業人士？看這 14 點。</title>
-      <link>//william-yeh.net/post/2021/07/ic-needs/</link>
-      <pubDate>Tue, 06 Jul 2021 20:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2021/07/ic-needs/</guid>
-      <description>&lt;p&gt;時代不斷進步，競爭日益激烈，專業工作者的門檻也愈來愈高。我們對 individual contributor 專業能力的期待是高的，相對的，這群人的自我意識自然也不低。&lt;/p&gt;
-&lt;p&gt;企業挑人才，人才也挑企業。&lt;/p&gt;
-&lt;p&gt;問題來了：企業能否吸引專業人士？&lt;/p&gt;
-&lt;p&gt;我從兩本書，摘錄出個人比較心儀的優勢導向、人本導向觀點。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>服務事故處理的系統思考</title>
-      <link>//william-yeh.net/post/2021/04/cld-for-service-incident/</link>
-      <pubDate>Mon, 05 Apr 2021 20:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2021/04/cld-for-service-incident/</guid>
-      <description>&lt;p&gt;集團內 Agile CoP 定期聚會，最近都在團練「&lt;a href=&#34;https://wiki.mbalib.com/zh-tw/%E8%A1%8C%E5%8A%A8%E5%AD%A6%E4%B9%A0%E6%B3%95&#34;&gt;行動學習 (action learning)&lt;/a&gt;」。&lt;/p&gt;
-&lt;p&gt;行動學習十分殊勝。多元探詢角度居然能夠同時並存，對我來說，在參加之前委實難以想像。&lt;/p&gt;
-&lt;p&gt;我參加了兩次，上次我選擇的提問切入點 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; 是「問題重塑」，這次刻意換成「系統思考」來練練。&lt;/p&gt;
-&lt;p&gt;某團員提出一則個案讓大家探討：&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>被 Yves 啟發的敏捷轉型之旅</title>
-      <link>//william-yeh.net/post/2021/03/agile-inspired-by-yves/</link>
-      <pubDate>Wed, 31 Mar 2021 08:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2021/03/agile-inspired-by-yves/</guid>
-      <description>&lt;p&gt;（2021-06-16 補記）
-在 Yves 臉書看到《&lt;a href=&#34;https://www.books.com.tw/products/0010896844&#34;&gt;敏捷管理生存指南：不是快，而是適者生存&lt;/a&gt;》這本書終於要上市的&lt;a href=&#34;https://www.facebook.com/yves.lin888/posts/10159360045030751&#34;&gt;消息&lt;/a&gt;，非常振奮。僅以此文，紀念當年 Yves &lt;a href=&#34;https://blog.yveslin.com/&#34;&gt;部落格&lt;/a&gt;文章給我的種種啟示。&lt;/p&gt;
-
-&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
-&lt;div class=&#34;box&#34;&gt;
-&lt;figure  itemprop=&#34;associatedMedia&#34;
-  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
-  style=&#34;max-width:20em&#34; &gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2021/03/book-agile-mgmt-survival-guide.jpg&#34; alt=&#34;《敏捷管理生存指南：不是快，而是適者生存》&#34;/&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2021/03/book-agile-mgmt-survival-guide.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-      &lt;figcaption&gt;
-          &lt;p&gt;《敏捷管理生存指南：不是快，而是適者生存》&lt;/p&gt;
-      &lt;/figcaption&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;</description>
-    </item>
-    
-    <item>
-      <title>從系統思考角度讀《獨角獸專案》</title>
-      <link>//william-yeh.net/post/2021/03/sys-thinking-unicorn-project/</link>
-      <pubDate>Sun, 28 Mar 2021 16:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2021/03/sys-thinking-unicorn-project/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;活動名稱&lt;/strong&gt;：從系統思考角度讀《獨角獸專案》&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;時間&lt;/strong&gt;：2021-11-24 (三) / 13:30&amp;ndash;15:00 (因疫情影響延期舉辦)&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;會議&lt;/strong&gt;：&lt;a href=&#34;https://devopsdays.tw/&#34;&gt;DevOpsDays Taipei 2021&lt;/a&gt; 的 &lt;a href=&#34;https://devopsdays.tw/2021/workshop-page/212&#34;&gt;603 會議室&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

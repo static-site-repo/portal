@@ -96,6 +96,15 @@
     </item>
     
     <item>
+      <title>職涯躍升書系導讀會</title>
+      <link>//william-yeh.net/series/career-reading-club/</link>
+      <pubDate>Tue, 29 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>//william-yeh.net/series/career-reading-club/</guid>
+      <description>❶ Part 1: 喚醒個人及團隊的成長意識 (計 6 冊) ❷ Part 2: 高效團隊的工作方法 (計 2 冊) ❸ Part 3: 職場心理：觀點、期待、渴望 (計 3 冊)</description>
+    </item>
+    
+    <item>
       <title>職涯躍升書系導讀會，Part 1：喚醒個人及團隊的成長意識</title>
       <link>//william-yeh.net/post/2022/06/career-reading-club-1/</link>
       <pubDate>Fri, 17 Jun 2022 20:00:00 +0800</pubDate>
@@ -139,6 +148,15 @@
       <description>&lt;p&gt;&lt;strong&gt;活動名稱&lt;/strong&gt;：從系統思考角度讀《獨角獸專案》&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;時間&lt;/strong&gt;：2021-11-24 (三) / 13:30&amp;ndash;15:00 (因疫情影響延期舉辦)&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;會議&lt;/strong&gt;：&lt;a href=&#34;https://devopsdays.tw/&#34;&gt;DevOpsDays Taipei 2021&lt;/a&gt; 的 &lt;a href=&#34;https://devopsdays.tw/2021/workshop-page/212&#34;&gt;603 會議室&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>「系統思考工作坊」系列</title>
+      <link>//william-yeh.net/series/systhinking-series/</link>
+      <pubDate>Sun, 28 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>//william-yeh.net/series/systhinking-series/</guid>
+      <description>【系統思考的四堂課】緣起 第一場公開班課後回覆：思維的重量訓練 從系統思考角度讀《獨角獸專案》</description>
     </item>
     
     <item>
@@ -254,27 +272,6 @@
       <guid>//william-yeh.net/post/2019/06/docker-file-permissions/</guid>
       <description>&lt;p&gt;Currently Linux containers are still more popular than Windows containers. And Windows users often need to use Linux containers even from their Windows computers.&lt;/p&gt;
 &lt;p&gt;Recently I&amp;rsquo;ve found something very strange about Linux-style file permissions when the Docker images are built from Windows hosts.&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; Therefore, I&amp;rsquo;ve conducted a suite of test cases to investigate whether file permissions are preserved with Docker &amp;amp; &lt;a href=&#34;https://skaffold.dev/&#34;&gt;Skaffold&lt;/a&gt; toolchains. All experiment materials are available in the &lt;a href=&#34;https://github.com/William-Yeh/container-chmod&#34;&gt;container-chmod&lt;/a&gt; repo.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Auto-Reload from ConfigMap</title>
-      <link>//william-yeh.net/post/2019/06/autoreload-from-configmap/</link>
-      <pubDate>Mon, 17 Jun 2019 17:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2019/06/autoreload-from-configmap/</guid>
-      <description>My previous article &amp;ldquo;Inotify in Containers&amp;rdquo; has demonstrated that when ConfigMap is mounted as directories, any changes in the ConfigMap will propagate to related pods, and can be detected with inotify-like APIs.
-A follow-up question might be: what should a well-behaved application react to this trigger accordingly? What if it&amp;rsquo;s a ill-designed application?
-To clarify this I&amp;rsquo;ve conducted a series of experiments for 3 possible configmap-reloading strategies:
-Built-in auto-reloading apps External signals Pod rollout In this article I&amp;rsquo;m going to explain the experiments and preliminary findings.</description>
-    </item>
-    
-    <item>
-      <title>Containers and Environment Variables</title>
-      <link>//william-yeh.net/post/2019/06/containers-and-env/</link>
-      <pubDate>Mon, 17 Jun 2019 14:00:00 +0800</pubDate>
-      
-      <guid>//william-yeh.net/post/2019/06/containers-and-env/</guid>
-      <description>My previous article &amp;ldquo;Inotify in Containers&amp;rdquo; has demonstrated that when ConfigMap is mounted as directories, any changes in the ConfigMap will propagate to related pods. A follow-up question might be: what if the ConfigMap is mounted as environment variables? Some said that the answer is NO in Kubernetes1; even in the old Docker world2. Therefore, I&amp;rsquo;d like to begin with a simple experiment to try to answer the question: After</description>
     </item>
     
   </channel>
