@@ -33,7 +33,7 @@
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.111.3" />
+<meta name="generator" content="Hugo 0.117.0" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2020/03/grpc-load-balancing/" />
@@ -88,17 +88,6 @@
   <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
 <![endif]-->
 
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-D8V6EWHYN7"></script>
-<script>
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
-	gtag('config', 'G-D8V6EWHYN7', { 'anonymize_ip': false });
-}
-</script>
 
 
 
@@ -462,11 +451,11 @@ if (!doNotTrack) {
 <li><a href="https://linkerd.io/">Linkerd</a> 2.7.0 以上。</li>
 </ul>
 <p>實驗進行之前，請先編譯所需的執行檔及容器映像檔：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Generate native binaries in `out` directory: </span>
-</span></span><span class="line"><span class="cl">./build.sh
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Generate Docker images:</span>
-</span></span><span class="line"><span class="cl">skaffold build
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Generate native binaries in `out` directory: </span>
+</span></span><span style="display:flex;"><span>./build.sh
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Generate Docker images:</span>
+</span></span><span style="display:flex;"><span>skaffold build
 </span></span></code></pre></div><p>會產生以下程式：</p>
 <ul>
 <li>
@@ -518,26 +507,26 @@ if (!doNotTrack) {
 <ol>
 <li>
 <p>建立 <code>grpc-lb</code> namespace：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">kubectl create ns grpc-lb
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl create ns grpc-lb
 </span></span></code></pre></div></li>
 <li>
 <p>在 <code>grpc-lb</code> 裡執行 server，此時 <code>spec.replicas</code> 為 <code>1</code>：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">skaffold dev  -n grpc-lb
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>skaffold dev  -n grpc-lb
 </span></span></code></pre></div></li>
 <li>
 <p>執行 client-http，透過 HTTP 連線到 server：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">out/client-http  http://127.0.0.1:30080/addr
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>out/client-http  http://127.0.0.1:30080/addr
 </span></span></code></pre></div></li>
 <li>
 <p>執行 client-grpc，透過 gRPC 連線到 server：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">out/client-grpc  localhost:30051
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>out/client-grpc  localhost:30051
 </span></span></code></pre></div></li>
 </ol>
 <p>因為現在 server pod 只有一個，所以 client-http 及 client-grpc 都只會連線到同一個 IP 位址（即此例的 <code>10.1.0.8</code>）。</p>
 <p><!-- raw HTML omitted -->  <!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <p>現在，讓我們把 server pod 的 <code>spec.replicas</code> 數字擴展成 <code>5</code>：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">kubectl scale -n grpc-lb <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --replicas<span class="o">=</span><span class="m">5</span>  deployment/addr-server
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl scale -n grpc-lb <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --replicas<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>  deployment/addr-server
 </span></span></code></pre></div><p>如下圖所示，當 server pod 數目從 1 變成 5，Kubernetes 的確開始將 HTTP 流量平均分配到 5 個 pods 身上（即此例的 <code>10.1.0.8</code> ～ <code>10.1.0.12</code>）。可是 gRPC 流量卻仍然綁在舊的那一個 pod 身上（即此例的 <code>10.1.0.8</code>）。</p>
 
 
@@ -587,23 +576,23 @@ if (!doNotTrack) {
 <ol>
 <li>
 <p>安裝 Linkerd 2 到現行的 Kubernetes cluster：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Install</span>
-</span></span><span class="line"><span class="cl">linkerd install <span class="p">|</span> kubectl apply -f -
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Check</span>
-</span></span><span class="line"><span class="cl">linkerd check
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Install</span>
+</span></span><span style="display:flex;"><span>linkerd install | kubectl apply -f -
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Check</span>
+</span></span><span style="display:flex;"><span>linkerd check
 </span></span></code></pre></div></li>
 <li>
 <p>先刪掉舊的 <code>grpc-lb</code> namespace:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">kubectl delete ns grpc-lb
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl delete ns grpc-lb
 </span></span></code></pre></div></li>
 <li>
 <p>建立新的 <code>grpc-lb</code> namespace，並注入 Linkerd：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">kubectl apply -f ns.yml
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl apply -f ns.yml
 </span></span></code></pre></div></li>
 <li>
 <p>檢查一下 <code>grpc-lb</code> namespace 的 data plane 是否正常：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">linkerd -n grpc-lb check --proxy
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>linkerd -n grpc-lb check --proxy
 </span></span></code></pre></div></li>
 </ol>
 <p>我們把 <code>grpc-lb</code> namespace 圈成一塊 service mesh 疆域。如果一切順利，在 <code>grpc-lb</code> namespace 裡面的東西，會自動被 Linkerd 接管——包括 gRPC 負載均衡。</p>
@@ -646,26 +635,26 @@ if (!doNotTrack) {
 <ol>
 <li>
 <p>移掉 <code>skaffold.yaml</code> 這一行的註解符號：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">deploy</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">kubectl</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">manifests</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">server.yml</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="c">#- client-grpc.yml  ← 請讓這一行生效！</span><span class="w">
-</span></span></span></code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">deploy</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">kubectl</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">manifests</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">server.yml</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">#- client-grpc.yml  ← 請讓這一行生效！</span>
+</span></span></code></pre></div></li>
 <li>
 <p>在 <code>grpc-lb</code> namespace 裡執行 addr-client-grpc 及 server，此時 server 的 <code>spec.replicas</code> 為 <code>1</code>：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">skaffold dev  -n grpc-lb
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>skaffold dev  -n grpc-lb
 </span></span></code></pre></div></li>
 <li>
 <p>等前一個步驟跑到穩定狀態之後，在 Kubernetes 外面也執行一份舊的 client-grpc 作為對照組：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">out/client-grpc  localhost:30051
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>out/client-grpc  localhost:30051
 </span></span></code></pre></div></li>
 </ol>
 <p>此時，因為 server pod 只有一個，所以，位於 service mesh 疆域內的 addr-client-grpc 及疆域外的 client-grpc 都只會連線到同一個 IP 位址（即此例的 <code>10.1.0.71</code>）。</p>
 <h3 id="replicas--5">Replicas = 5</h3>
 <p>一切就緒，讓我們把 server pod 的 <code>spec.replicas</code> 數字擴展成 <code>5</code>：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">kubectl scale -n grpc-lb <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --replicas<span class="o">=</span><span class="m">5</span>  deployment/addr-server
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl scale -n grpc-lb <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --replicas<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>  deployment/addr-server
 </span></span></code></pre></div><p>如下圖所示，當 server pod 數目從 1 變成 5，Kubernetes 的確開始將 service mesh 疆域內 addr-client-grpc 產生的 gRPC 流量平均分配到 5 個 pods 身上（即此例的 <code>10.1.0.71</code> ～ <code>10.1.0.75</code>）。可是「<strong>不</strong>」位於 service mesh 疆域的 client-grpc 產生的 gRPC 流量，就仍然綁在舊的那一個 pod 身上（即此例的 <code>10.1.0.71</code>）。</p>
 
 
@@ -685,7 +674,7 @@ if (!doNotTrack) {
 
 <h3 id="linkerd-儀表板">Linkerd 儀表板</h3>
 <p>讓我們看看酷炫一點的東西吧！請用以下命令打開 Linkerd 儀表板：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">linkerd dashboard <span class="p">&amp;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>linkerd dashboard &amp;
 </span></span></code></pre></div><p>請切換到 <code>grpc-lb</code> namespace，觀察三個角色之間的網路互連架構，並檢視一些效率指標。如下圖所示，Linkerd 2.7.0 對於 gRPC load balancing 的表現很不錯，即使打開 mesh sidecar，P99 latency 也仍然壓在 10ms 左右的水準：</p>
 
 
@@ -834,35 +823,7 @@ if (!doNotTrack) {
 
   
 
-  <div class="disqus-comment">
-  <div class="disqus-button" id="load_disqus" onclick="load_disqus()">
-    顯示 Disqus 評論
-  </div>
-  <div id="disqus_thread"></div>
-  <script type="text/javascript">
-    var disqus_config = function () {
-      this.page.url = "//william-yeh.net/post/2020/03/grpc-load-balancing/";
-    };
-    function load_disqus() {
-      
-      
-      if (window.location.hostname === 'localhost') return;
-
-      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      var disqus_shortname = 'potioneer';
-      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-
-      $('#load_disqus').remove();
-    };
-  </script>
-  <noscript
-    >Please enable JavaScript to view the
-    <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-  </noscript>
   
-</div>
-
 
     
 

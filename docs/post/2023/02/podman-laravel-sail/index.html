@@ -33,7 +33,7 @@
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.111.3" />
+<meta name="generator" content="Hugo 0.117.0" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2023/02/podman-laravel-sail/" />
@@ -88,17 +88,6 @@
   <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
 <![endif]-->
 
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-D8V6EWHYN7"></script>
-<script>
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
-	gtag('config', 'G-D8V6EWHYN7', { 'anonymize_ip': false });
-}
-</script>
 
 
 
@@ -449,35 +438,35 @@ if (!doNotTrack) {
 <p>所以，請根據〈<a href="//william-yeh.net/post/2023/02/podman-tips/#daemon-mode">Podman Tips</a>〉一文的步驟，啟動一個 daemon mode 的 Podman。</p>
 <h2 id="前置作業解決-composer-連線問題">前置作業：解決 Composer 連線問題</h2>
 <p>有些人在透過 Composer 安裝套件的過程中，會出現 repo.packagist.org 連線 timeout 的問題：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">curl error 28 while downloading https://repo.packagist.org/packages.json:
-</span></span><span class="line"><span class="cl">    Connection timed out after 10000 milliseconds</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>curl error 28 while downloading https://repo.packagist.org/packages.json:
+</span></span><span style="display:flex;"><span>    Connection timed out after 10000 milliseconds</span></span></code></pre></div>
 <p>請參考<a href="https://github.com/composer/packagist/issues/950#issuecomment-424913225">這篇解法</a>，將 repo.packagist.org 的 IPv4 位址直接寫死到 <code>/etc/hosts</code>：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">% dig +short repo.packagist.org
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">% echo &#34;`dig +short repo.packagist.org` repo.packagist.org&#34; &gt;&gt; /etc/hosts</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>% dig +short repo.packagist.org
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>% echo &#34;`dig +short repo.packagist.org` repo.packagist.org&#34; &gt;&gt; /etc/hosts</span></span></code></pre></div>
 <p>如果你是身處 WSL2 環境，也請順便編輯一下 WSL 的設定檔 <code>/etc/wsl.conf</code> 以避免設定消失：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ini" data-lang="ini"><span class="line"><span class="cl"><span class="k">[network]</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># Disable auto-gen /etc/hosts</span>
-</span></span><span class="line"><span class="cl"><span class="na">generateHosts</span> <span class="o">=</span> <span class="s">false</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#66d9ef">[network]</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Disable auto-gen /etc/hosts</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">generateHosts</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">false</span>
 </span></span></code></pre></div><h2 id="安裝-sail">安裝 Sail</h2>
 <p>請依照 <a href="https://laravel.com/docs/9.x/installation#getting-started-on-linux">Laravel 官方文件</a>所載步驟，安裝一整套 PHP + Composer + Laravel + Sail + blah blah blah 本地開發環境，也順便建立一個名為 &ldquo;example-app&rdquo; 的新專案：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">% curl -s &#34;https://laravel.build/example-app&#34; | bash</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>% curl -s &#34;https://laravel.build/example-app&#34; | bash</span></span></code></pre></div>
 <h2 id="修改-sail-產生的專案設定">修改 Sail 產生的專案設定</h2>
 <p>透過 Laravel + Sail 產生的專案，預設會跑在 port 80。我建議修改到其他 unprivileged port 以減少問題。</p>
 <p>請在專案的 <code>.env</code> 檔案添加這一行：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">APP_PORT=3001</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>APP_PORT=3001</span></span></code></pre></div>
 <p>透過 Laravel + Sail 產生的專案，<code>storage</code> 目錄可能會有存取權限的問題。請參考<a href="https://stackoverflow.com/a/67511101/714426">這篇解法</a>：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">% chmod o+w ./storage/ -R</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>% chmod o+w ./storage/ -R</span></span></code></pre></div>
 <p>或是保守一點：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">% chmod o+w ./storage/logs/       -R
-</span></span><span class="line"><span class="cl">% chmod o+w ./framework/cache/    -R
-</span></span><span class="line"><span class="cl">% chmod o+w ./framework/sessions/ -R
-</span></span><span class="line"><span class="cl">% chmod o+w ./framework/views/    -R</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>% chmod o+w ./storage/logs/       -R
+</span></span><span style="display:flex;"><span>% chmod o+w ./framework/cache/    -R
+</span></span><span style="display:flex;"><span>% chmod o+w ./framework/sessions/ -R
+</span></span><span style="display:flex;"><span>% chmod o+w ./framework/views/    -R</span></span></code></pre></div>
 <h2 id="執行-sail">執行 Sail</h2>
 <p>請依照 <a href="https://laravel.com/docs/9.x/installation#getting-started-on-linux">Laravel 官方文件</a>所載步驟，執行 &ldquo;example-app&rdquo; 專案：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">% cd example-app
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">% ./vendor/bin/sail up</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>% cd example-app
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>% ./vendor/bin/sail up</span></span></code></pre></div>
 <p>如果一切順利，可以用瀏覽器看到 http://localhost:3001/ 順利執行：</p>
 
 <link rel="stylesheet" href="/css/hugo-easy-gallery.css" />
@@ -618,35 +607,7 @@ if (!doNotTrack) {
 
   
 
-  <div class="disqus-comment">
-  <div class="disqus-button" id="load_disqus" onclick="load_disqus()">
-    顯示 Disqus 評論
-  </div>
-  <div id="disqus_thread"></div>
-  <script type="text/javascript">
-    var disqus_config = function () {
-      this.page.url = "//william-yeh.net/post/2023/02/podman-laravel-sail/";
-    };
-    function load_disqus() {
-      
-      
-      if (window.location.hostname === 'localhost') return;
-
-      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      var disqus_shortname = 'potioneer';
-      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-
-      $('#load_disqus').remove();
-    };
-  </script>
-  <noscript
-    >Please enable JavaScript to view the
-    <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-  </noscript>
   
-</div>
-
 
     
 

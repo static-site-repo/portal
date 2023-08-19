@@ -32,7 +32,7 @@
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.111.3" />
+<meta name="generator" content="Hugo 0.117.0" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2023/02/podman-tips/" />
@@ -84,17 +84,6 @@
   <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
 <![endif]-->
 
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-D8V6EWHYN7"></script>
-<script>
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
-	gtag('config', 'G-D8V6EWHYN7', { 'anonymize_ip': false });
-}
-</script>
 
 
 
@@ -445,30 +434,30 @@ if (!doNotTrack) {
 <li><a href="https://github.com/TomasTomecek/sen">sen</a></li>
 </ul>
 <p>可惜的是，這些工具都假設現在是處於「有一個 daemon 跑在 <code>DOCKER_HOST</code>」的環境（畢竟這是 Docker 的老規矩）。如果我們不想為此而刻意以 daemon 模式啟動 Podman，可透過 Podman 的 <a href="https://docs.podman.io/en/latest/markdown/podman-image-tree.1.html">image tree 指令</a>來檢視 image：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">% podman image tree python:3.9.16</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>% podman image tree python:3.9.16</span></span></code></pre></div>
 <h2 id="daemon-mode">Daemon mode</h2>
 <p>儘管 daemonless 的好處很多，但很多舊世界的工具，會假設現在是處於「有一個 container engine daemon 跑在 <code>DOCKER_HOST</code>」的環境。因此，有時候我們得故意讓 Podman 以 daemon mode 運行。</p>
 <h3 id="臨時性實驗">臨時性實驗</h3>
 <p>我們先啟動一個 rootless Podman process：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">% podman system service -t 0</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>% podman system service -t 0</span></span></code></pre></div>
 <p>另開一個終端機視窗，設置 <code>DOCKER_HOST</code> 環境變數：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">% podman info --format={{&#34;.Host.RemoteSocket.Path&#34;}}
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">% export DOCKER_HOST=unix://$(podman info --format={{&#34;.Host.RemoteSocket.Path&#34;}})</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>% podman info --format={{&#34;.Host.RemoteSocket.Path&#34;}}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>% export DOCKER_HOST=unix://$(podman info --format={{&#34;.Host.RemoteSocket.Path&#34;}})</span></span></code></pre></div>
 <p>現在，我們可以在這個終端機實驗看看那些舊世界的工具是否可以正常運作。就以前面提到的 <a href="https://github.com/wagoodman/dive">dive</a> 為例吧！</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">% dive python:3.9.16</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>% dive python:3.9.16</span></span></code></pre></div>
 <h3 id="便利性設置">便利性設置</h3>
 <p>如果一切正常，我們可以寫一個 <code>/usr/local/bin/start-podman-service.sh</code> 程式以簡化啟用流程：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">#!/bin/bash
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">FILE=/var/run/docker.sock
-</span></span><span class="line"><span class="cl">if [ ! -f &#34;$FILE&#34; ]; then
-</span></span><span class="line"><span class="cl">    sudo ln -s /run/user/$(id -u)/podman/podman.sock $FILE
-</span></span><span class="line"><span class="cl">fi
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">echo &#34;Starting podman as server... Ctrl-C to stop.&#34;
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">exec podman system service -t 0</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>#!/bin/bash
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>FILE=/var/run/docker.sock
+</span></span><span style="display:flex;"><span>if [ ! -f &#34;$FILE&#34; ]; then
+</span></span><span style="display:flex;"><span>    sudo ln -s /run/user/$(id -u)/podman/podman.sock $FILE
+</span></span><span style="display:flex;"><span>fi
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo &#34;Starting podman as server... Ctrl-C to stop.&#34;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>exec podman system service -t 0</span></span></code></pre></div>
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <p>在不需要時，按下 <code>Ctrl</code>+<code>C</code> 即可關閉，非常方便。</p>
@@ -576,35 +565,7 @@ if (!doNotTrack) {
 
   
 
-  <div class="disqus-comment">
-  <div class="disqus-button" id="load_disqus" onclick="load_disqus()">
-    顯示 Disqus 評論
-  </div>
-  <div id="disqus_thread"></div>
-  <script type="text/javascript">
-    var disqus_config = function () {
-      this.page.url = "//william-yeh.net/post/2023/02/podman-tips/";
-    };
-    function load_disqus() {
-      
-      
-      if (window.location.hostname === 'localhost') return;
-
-      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      var disqus_shortname = 'potioneer';
-      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-
-      $('#load_disqus').remove();
-    };
-  </script>
-  <noscript
-    >Please enable JavaScript to view the
-    <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-  </noscript>
   
-</div>
-
 
     
 

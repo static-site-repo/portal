@@ -35,7 +35,7 @@ WSL 已經演進到第二版。
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.111.3" />
+<meta name="generator" content="Hugo 0.117.0" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2023/02/wsl2-podman-k3s/" />
@@ -114,17 +114,6 @@ WSL 已經演進到第二版。
   <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
 <![endif]-->
 
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-D8V6EWHYN7"></script>
-<script>
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
-	gtag('config', 'G-D8V6EWHYN7', { 'anonymize_ip': false });
-}
-</script>
 
 
 
@@ -541,20 +530,20 @@ if (!doNotTrack) {
 </li>
 </ol>
 <p>建議編輯一下 WSL 的設定檔 <code>/etc/wsl.conf</code>：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ini" data-lang="ini"><span class="line"><span class="cl"><span class="k">[boot]</span>
-</span></span><span class="line"><span class="cl"><span class="na">systemd</span><span class="o">=</span><span class="s">true</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">[network]</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># Disable auto-gen /etc/resolv.conf</span>
-</span></span><span class="line"><span class="cl"><span class="na">generateResolvConf</span> <span class="o">=</span> <span class="s">false</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Disable auto-gen /etc/hosts</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># @see https://github.com/composer/packagist/issues/950#issuecomment-424913225</span>
-</span></span><span class="line"><span class="cl"><span class="na">generateHosts</span> <span class="o">=</span> <span class="s">false</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#66d9ef">[boot]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">systemd</span><span style="color:#f92672">=</span><span style="color:#e6db74">true</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">[network]</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Disable auto-gen /etc/resolv.conf</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">generateResolvConf</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">false</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Disable auto-gen /etc/hosts</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># @see https://github.com/composer/packagist/issues/950#issuecomment-424913225</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">generateHosts</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">false</span>
 </span></span></code></pre></div><p>如果要避免 WSL 占用過多系統資源，可編輯 Windows 的 <code>$env:USERPROFILE\.wslconfig</code> 檔案如下：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ini" data-lang="ini"><span class="line"><span class="cl"><span class="k">[wsl2]</span>
-</span></span><span class="line"><span class="cl"><span class="na">memory</span><span class="o">=</span><span class="s">4GB</span>
-</span></span><span class="line"><span class="cl"><span class="na">processors</span><span class="o">=</span><span class="s">2</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#66d9ef">[wsl2]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">memory</span><span style="color:#f92672">=</span><span style="color:#e6db74">4GB</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">processors</span><span style="color:#f92672">=</span><span style="color:#e6db74">2</span>
 </span></span></code></pre></div><p>如果要讓 Windows 慣用的 IDE 能夠與 WSL 合作順暢，請參考相關的設定：</p>
 <ul>
 <li>
@@ -566,67 +555,67 @@ if (!doNotTrack) {
 </ul>
 <h2 id="zsh--oh-my-zsh--homebrew">Zsh + Oh My ZSH + Homebrew</h2>
 <p>在 WSL 中安裝 zsh 及 oh-my-zsh：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">% sudo apt-get install zsh
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">% sh -c &#34;$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&#34;</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>% sudo apt-get install zsh
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>% sh -c &#34;$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&#34;</span></span></code></pre></div>
 <p>將 zsh 設為內定 shell：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">% chsh -s $(which zsh)</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>% chsh -s $(which zsh)</span></span></code></pre></div>
 <p>如果你的 zsh theme 含有許多特殊的符號字元，請順便安裝 <a href="https://github.com/powerline/fonts">Powerline</a> 系列字型。</p>
 <p>Mac 族群一向愛用 <a href="https://brew.sh/">Homebrew</a>。既然它也搬到 Linux 世界了，就來安裝吧！</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">% sudo apt-get install build-essential curl file git
-</span></span><span class="line"><span class="cl">% sh -c &#34;$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)&#34;
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">% # 請記得要遵照安裝畫面出現的步驟做最後的設定！</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>% sudo apt-get install build-essential curl file git
+</span></span><span style="display:flex;"><span>% sh -c &#34;$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)&#34;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>% # 請記得要遵照安裝畫面出現的步驟做最後的設定！</span></span></code></pre></div>
 <h2 id="podman">Podman</h2>
 <p>透過 WSL 安裝好 Linux 之後，其實我們大可在裡面安裝純粹的 Docker Engine](<a href="https://docs.docker.com/engine/install/">https://docs.docker.com/engine/install/</a>)，即過去俗稱的 <a href="https://github.com/docker/docker-ce">CE 版 (community edition)</a> 或 Moby，它採用 Apache License 2.0 授權，不會有 Docker Desktop 的收費問題。</p>
 <p>不過，我還是想玩玩具有 daemonless &amp; rootless 特性的替代方案：Podman。</p>
 <h3 id="安裝">安裝</h3>
 <p>請依照 <a href="https://podman.io/getting-started/installation#installing-on-linux">Podman 官方文件</a>所載步驟安裝 Podman。譬如說，如果 WSL 的 distribution 是 Ubuntu 22.04.1 LTS，可如此安裝：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">% sudo apt update
-</span></span><span class="line"><span class="cl">% sudo apt -y install podman</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>% sudo apt update
+</span></span><span style="display:flex;"><span>% sudo apt -y install podman</span></span></code></pre></div>
 <p>或是直接透過 Homebrew 安裝。好處是容易更新版本，缺點是安裝較慢：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">% sudo apt install uidmap
-</span></span><span class="line"><span class="cl">% brew install podman</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>% sudo apt install uidmap
+</span></span><span style="display:flex;"><span>% brew install podman</span></span></code></pre></div>
 <h3 id="設定">設定</h3>
 <p>Podman 是 daemonless + rootless 的架構。如果你希望讓 container 能夠自由綁定 port 80 以利本地開發，可以考慮在 <code>/etc/sysctl.conf</code> 添加設定：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">net.ipv4.ip_unprivileged_port_start=80</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>net.ipv4.ip_unprivileged_port_start=80</span></span></code></pre></div>
 <p>還有一個選擇性步驟。如果你希望讓 image 不會被綁在 <code>docker.io/library/</code> 這個預設的 registry，可以考慮在 <code>/etc/containers/registries.conf</code> 添加設定 <sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup> ：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">unqualified-search-registries=[
-</span></span><span class="line"><span class="cl">  &#34;registry.access.redhat.com&#34;, &#34;registry.fedoraproject.org&#34;,
-</span></span><span class="line"><span class="cl">  &#34;quay.io&#34;,
-</span></span><span class="line"><span class="cl">  &#34;gcr.io&#34;,
-</span></span><span class="line"><span class="cl">  &#34;ghcr.io&#34;,
-</span></span><span class="line"><span class="cl">  &#34;docker.io&#34;
-</span></span><span class="line"><span class="cl">]</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>unqualified-search-registries=[
+</span></span><span style="display:flex;"><span>  &#34;registry.access.redhat.com&#34;, &#34;registry.fedoraproject.org&#34;,
+</span></span><span style="display:flex;"><span>  &#34;quay.io&#34;,
+</span></span><span style="display:flex;"><span>  &#34;gcr.io&#34;,
+</span></span><span style="display:flex;"><span>  &#34;ghcr.io&#34;,
+</span></span><span style="display:flex;"><span>  &#34;docker.io&#34;
+</span></span><span style="display:flex;"><span>]</span></span></code></pre></div>
 <h3 id="便利性">便利性</h3>
 <p>為了讓 Podman 能盡量沿用過往 Docker 的使用習慣，建議在 <code>$HOME/.bashrc</code> 添加 alias：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">alias docker=&#39;podman&#39;</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>alias docker=&#39;podman&#39;</span></span></code></pre></div>
 <p>如果遇到 alias 也無法避開的問題，建議索性放一個 <code>/usr/local/bin/docker</code> 檔案：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
-</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
-</span></span><span class="line"><span class="cl"><span class="nb">exec</span> podman <span class="s2">&#34;</span><span class="nv">$@</span><span class="s2">&#34;</span></span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>exec podman <span style="color:#e6db74">&#34;</span>$@<span style="color:#e6db74">&#34;</span></span></span></code></pre></div>
 <h2 id="podman-play-kube">Podman play kube</h2>
 <p>Podman 有一個介於 Docker 與 Kubernetes 之間的功能：pod。如果懂得善用，在許多情況下可以取代 Docker Compose，也做為邁向 Kubernetes 的踏腳石。</p>
 <p>譬如說，如果我們稍加修改 Kubernetes 官網的 pod 範例 <a href="https://kubernetes.io/docs/concepts/workloads/pods/#using-pods">simple-pod.yaml</a>：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l">v1</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l">Pod</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">metadata</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">nginx-pod</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">spec</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">containers</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">nginx</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">docker.io/library/nginx:1.14.2</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">ports</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span>- <span class="nt">containerPort</span><span class="p">:</span><span class="w"> </span><span class="m">80</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">hostPort</span><span class="p">:</span><span class="w"> </span><span class="m">8080</span><span class="w">     </span><span class="c"># add this line</span></span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">v1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Pod</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">nginx-pod</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">spec</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">containers</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">nginx</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">image</span>: <span style="color:#ae81ff">docker.io/library/nginx:1.14.2</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">ports</span>:
+</span></span><span style="display:flex;"><span>        - <span style="color:#f92672">containerPort</span>: <span style="color:#ae81ff">80</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">hostPort</span>: <span style="color:#ae81ff">8080</span>     <span style="color:#75715e"># add this line</span></span></span></code></pre></div>
 <p>接下來就可用 <code>podman play kube</code> 指令在 WSL 啟用這個 <code>nginx-pod</code>：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">% sudo podman play kube simple-pod.yaml</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>% sudo podman play kube simple-pod.yaml</span></span></code></pre></div>
 <p>如果一切順利，就可以在 WSL 裡面看到 nginx pod 成功執行：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">% podman pod ps
-</span></span><span class="line"><span class="cl">POD ID        NAME        STATUS      CREATED            INFRA ID      # OF CONTAINERS
-</span></span><span class="line"><span class="cl">46be4ed3a73f  nginx-pod   Degraded    About an hour ago  93d658fa1939  2
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">% wget -O - localhost:8080</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>% podman pod ps
+</span></span><span style="display:flex;"><span>POD ID        NAME        STATUS      CREATED            INFRA ID      # OF CONTAINERS
+</span></span><span style="display:flex;"><span>46be4ed3a73f  nginx-pod   Degraded    About an hour ago  93d658fa1939  2
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>% wget -O - localhost:8080</span></span></code></pre></div>
 <p>也可以在 Windows host 用瀏覽器看到 nginx 順利執行：</p>
 
 
@@ -645,9 +634,9 @@ if (!doNotTrack) {
 <p>Kubernetes 生態圈有一大堆媲美 Docker Compose 便利性的工具（譬如我愛用的 <a href="https://skaffold.dev/">Skaffold</a>）。不過，如果你實在太想念 Docker Compose，有兩種做法：</p>
 <p>➀ 可直接沿用舊的 Docker Compose，但是需要將 Podman 啟動成 daemon <sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup> 。</p>
 <p><a href="https://github.com/docker/compose">Docker Compose</a> 的安裝方法：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">% sudo curl -SL https://github.com/docker/compose/releases/download/v2.15.1/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">% sudo chmod +x /usr/local/bin/docker-compose</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>% sudo curl -SL https://github.com/docker/compose/releases/download/v2.15.1/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>% sudo chmod +x /usr/local/bin/docker-compose</span></span></code></pre></div>
 <p>➁ 如果不需顧及相容性，不妨試試 Podman 陣營端出的替代品 <a href="https://github.com/containers/podman-compose">Podman Compose</a>。</p>
 <p>對於 Podman Compose 感興趣的，請參考以下文章：</p>
 <ul>
@@ -663,12 +652,12 @@ if (!doNotTrack) {
 <h2 id="k3s">K3s</h2>
 <p><a href="https://k3s.io/">K3s</a> 是由 Rancher Labs 貢獻給 CNCF 的輕量級 Kubernetes 開源方案，很適合應用程式開發者使用，作為 Docker Desktop 內建 Kubernetes 的替代方案。</p>
 <p>請依照 <a href="https://docs.k3s.io/installation/configuration">K3s 官方文件</a>所載步驟安裝： <sup id="fnref:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">% curl -sfL https://get.k3s.io | K3S_KUBECONFIG_MODE=&#34;644&#34; sh -</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>% curl -sfL https://get.k3s.io | K3S_KUBECONFIG_MODE=&#34;644&#34; sh -</span></span></code></pre></div>
 <p>為了讓其他 Kubernetes 相關工具順利運作，建議在 <code>$HOME/.bashrc</code> 添加 <code>KUBECONFIG</code> 環境變數：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">export KUBECONFIG=&#34;~/.kube/config:/etc/rancher/k3s/k3s.yaml&#34;</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>export KUBECONFIG=&#34;~/.kube/config:/etc/rancher/k3s/k3s.yaml&#34;</span></span></code></pre></div>
 <h2 id="k9s">K9s</h2>
 <p><a href="https://k9scli.io/">K9s</a> 是很方便的 Kubernetes 終端機工具，請依照官方文件所載步驟安裝：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">% brew install derailed/k9s/k9s</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>% brew install derailed/k9s/k9s</span></span></code></pre></div>
 <p>現在，我們可以用 <code>k9s</code> 指令查看剛剛安裝好的最陽春的 K3s 環境到底跑了哪些東西：</p>
 
 
@@ -830,35 +819,7 @@ if (!doNotTrack) {
 
   
 
-  <div class="disqus-comment">
-  <div class="disqus-button" id="load_disqus" onclick="load_disqus()">
-    顯示 Disqus 評論
-  </div>
-  <div id="disqus_thread"></div>
-  <script type="text/javascript">
-    var disqus_config = function () {
-      this.page.url = "//william-yeh.net/post/2023/02/wsl2-podman-k3s/";
-    };
-    function load_disqus() {
-      
-      
-      if (window.location.hostname === 'localhost') return;
-
-      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      var disqus_shortname = 'potioneer';
-      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-
-      $('#load_disqus').remove();
-    };
-  </script>
-  <noscript
-    >Please enable JavaScript to view the
-    <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-  </noscript>
   
-</div>
-
 
     
 

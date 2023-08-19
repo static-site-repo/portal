@@ -2,8 +2,64 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://william-yeh.net/tags/book/</loc>
+    <lastmod>2023-08-19T20:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://william-yeh.net/categories/</loc>
-    <lastmod>2023-04-25T22:00:00+08:00</lastmod>
+    <lastmod>2023-08-19T20:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://william-yeh.net/tags/docker/</loc>
+    <lastmod>2023-08-19T20:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://william-yeh.net/tags/linux/</loc>
+    <lastmod>2023-08-19T20:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://william-yeh.net/post/</loc>
+    <lastmod>2023-08-19T20:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://william-yeh.net/</loc>
+    <lastmod>2023-08-19T20:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://william-yeh.net/tags/</loc>
+    <lastmod>2023-08-19T20:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://william-yeh.net/categories/tech/</loc>
+    <lastmod>2023-08-19T20:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://william-yeh.net/post/2023/08/docker-labs-review/</loc>
+    <lastmod>2023-08-19T20:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -44,42 +100,7 @@
   </url>
   
   <url>
-    <loc>https://william-yeh.net/post/</loc>
-    <lastmod>2023-04-25T22:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://william-yeh.net/</loc>
-    <lastmod>2023-04-25T22:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://william-yeh.net/tags/</loc>
-    <lastmod>2023-04-25T22:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://william-yeh.net/categories/tech/</loc>
-    <lastmod>2023-04-25T22:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://william-yeh.net/post/2023/02/distroless-image/</loc>
-    <lastmod>2023-02-15T22:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://william-yeh.net/tags/docker/</loc>
     <lastmod>2023-02-15T22:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -150,13 +171,6 @@
   
   <url>
     <loc>https://william-yeh.net/tags/agile/</loc>
-    <lastmod>2022-12-18T22:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://william-yeh.net/tags/book/</loc>
     <lastmod>2022-12-18T22:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1446,13 +1460,6 @@
   <url>
     <loc>https://william-yeh.net/post/2016/03/lean-perspective-of-multitasking/</loc>
     <lastmod>2016-03-29T08:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://william-yeh.net/tags/linux/</loc>
-    <lastmod>2016-03-15T08:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

@@ -337,5 +337,446 @@
 &lt;p&gt;某方面來說，《&lt;a href=&#34;https://www.tenlong.com.tw/products/9789865026653&#34;&gt;獨角獸專案&lt;/a&gt;》這本書，可謂 2010～2020 這個波瀾壯闊時代軟體研發界的具體縮影。&lt;/p&gt;</description>
     </item>
     
+    <item>
+      <title>Essence of Scrum</title>
+      <link>//william-yeh.net/series/essence-of-scrum/</link>
+      <pubDate>Thu, 20 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>//william-yeh.net/series/essence-of-scrum/</guid>
+      <description>Essence of Scrum: Product Backlog Refinement
+Essence of Scrum: Daily Scrum
+Essence of Scrum: Sprint Planning
+Essence of Scrum: Sprint Review</description>
+    </item>
+    
+    <item>
+      <title>Essence of Scrum: Sprint Review</title>
+      <link>//william-yeh.net/post/2020/08/sprint-review-in-a-nutshell/</link>
+      <pubDate>Thu, 20 Aug 2020 08:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2020/08/sprint-review-in-a-nutshell/</guid>
+      <description>This article discusses the essence of Sprint Review .
+In a nutshell Sprint Review is a time-boxed1 event in which the Scrum Team and invited stakeholders inspect what has been Done with respect to the Sprint Goal , gain insight into values, and adapt business strategy if necessary.
+Output Essential:
+An adapted Product Backlog An adapted business strategy and roadmap2
+Better:
+Celebration3 Input Essential:
+Sprint Goal Increment 4
+Sprint Backlog Better:</description>
+    </item>
+    
+    <item>
+      <title>Essence of Scrum: Sprint Planning</title>
+      <link>//william-yeh.net/post/2020/08/sprint-planning-in-a-nutshell/</link>
+      <pubDate>Sun, 09 Aug 2020 13:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2020/08/sprint-planning-in-a-nutshell/</guid>
+      <description>This article discusses the essence of Sprint Planning . In a nutshell Sprint Planning is a time-boxed1 event in which the Scrum Team defines the Sprint Goal and makes a feasible plan for the goal, to the best knowledge, information and belief of the team. Output Essential: Sprint Goal A feasible plan for achieving the Sprint Goal Sprint Backlog Items with the property of INVEST (Independent, Negotiable, Valuable, Estimable, Small,</description>
+    </item>
+    
+    <item>
+      <title>Essence of Scrum: Daily Scrum</title>
+      <link>//william-yeh.net/post/2020/08/daily-scrum-in-a-nutshell/</link>
+      <pubDate>Sun, 02 Aug 2020 16:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2020/08/daily-scrum-in-a-nutshell/</guid>
+      <description>This article discusses the essence of Daily Scrum .
+In a nutshell Daily Scrum is a time-boxed daily event in which the Developers gather together to quickly inspect current performance and to identify necessary actions in order to increase the confidence in achieving the Sprint Goal .
+Output Essential:
+Updated confidence in the Sprint Goal supported by evidence.
+Updated plans, if necessary, for achieving the Sprint Goal .
+Input Essential:</description>
+    </item>
+    
+    <item>
+      <title>Essence of Scrum: Product Backlog Refinement</title>
+      <link>//william-yeh.net/post/2020/07/pbr-in-a-nutshell/</link>
+      <pubDate>Wed, 29 Jul 2020 22:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2020/07/pbr-in-a-nutshell/</guid>
+      <description>&lt;h2 id=&#34;preface-of-the-series&#34;&gt;Preface of the series&lt;/h2&gt;
+&lt;p&gt;The series of &amp;ldquo;Essence of Scrum&amp;rdquo; articles tries to identify the essence of Scrum elements (e.g., events and artifacts) so that:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;the core can be understood without much effort.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;the feeling overwhelmed can be reduced.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;the gradual adoption is more possible.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;My selection and elaboration of &amp;ldquo;essence&amp;rdquo; is very subjective. Follow the advice at your own risk.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Jira Board Hacks</title>
+      <link>//william-yeh.net/post/2020/06/jira-board-hacks/</link>
+      <pubDate>Sat, 06 Jun 2020 08:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2020/06/jira-board-hacks/</guid>
+      <description>&lt;h2 id=&#34;實體看板&#34;&gt;實體看板&lt;/h2&gt;
+&lt;p&gt;在導入 Scrum 時，我偏好實體看板。&lt;/p&gt;
+&lt;p&gt;實體看板容易 zoom in/out，利於適時切換俯瞰與細節視角，不需過度的數字管理。&lt;/p&gt;
+&lt;p&gt;實體看板的空間共時性，容易塑造團隊的一體感。&lt;/p&gt;
+&lt;p&gt;實體看板彈性大，能以最小成本，讓團隊在敏捷路上不斷嘗試與調整。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>2019 個人回顧</title>
+      <link>//william-yeh.net/post/2019/12/2019-retrospective/</link>
+      <pubDate>Thu, 26 Dec 2019 23:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2019/12/2019-retrospective/</guid>
+      <description>&lt;p&gt;年初，告別服務五年的單位，走出舒適圈，歸零，重啟。&lt;/p&gt;
+&lt;p&gt;如果說 &lt;a href=&#34;//william-yeh.net/post/2018/12/2018-retrospective/&#34;&gt;2018&lt;/a&gt; 是收攝靜觀的一年，那麼，2019 可謂驚滔駭浪了。做對了一些事，也犯下許多蠢事。&lt;/p&gt;
+&lt;p&gt;到了年終，又開始要做個總回顧，再對來年許願。去除一些不便揭露的事情，以下是簡單的回顧。&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2019/12/ippo.jpg&#34; alt=&#34;鷹村對幕之內畫的那條線，我要踏過去了。&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2019/12/ippo.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;鷹村對幕之內畫的那條線，我要踏過去了。&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>年假可讀的軟體領域輕讀物</title>
+      <link>//william-yeh.net/post/2019/01/soft-reading-list/</link>
+      <pubDate>Thu, 17 Jan 2019 15:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2019/01/soft-reading-list/</guid>
+      <description>中午時，非 RD 的同事請我推薦適合泛軟體產業從業人員的五份輕讀物，可在春節連續假期時好好補血。 年假，自然不方便啃太過於生硬艱澀、理論宏偉的讀物。</description>
+    </item>
+    
+    <item>
+      <title>Scrum 與《從 A 到 A&#43;》</title>
+      <link>//william-yeh.net/post/2019/01/scrum-good-to-great/</link>
+      <pubDate>Fri, 11 Jan 2019 08:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2019/01/scrum-good-to-great/</guid>
+      <description>&lt;p&gt;最近重新溫習近二十年的老書《&lt;a href=&#34;https://www.books.com.tw/products/0010202911&#34;&gt;從 A 到 A+&lt;/a&gt;》，啟發頗多。&lt;/p&gt;
+&lt;p&gt;《從 A 到 A+》作者們的實證研究方法很嚴謹 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;。他們從 1965～1995 年名列 Fortune 500 的企業名單中，挑選「十五年累計股票報酬率」超越股市整體表現三倍以上，且不受產業循環影響的企業，研究這些績優公司從「優秀」到「卓越」的關鍵因素。最後，作者們提出「&lt;a href=&#34;https://www.jimcollins.com/concepts/the-flywheel.html&#34;&gt;飛輪效應&lt;/a&gt;」來統一解釋他們的發現：&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2019/01/flywheel.jpg&#34; alt=&#34;飛輪效應&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2019/01/flywheel.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;飛輪效應&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;某方面來說，軟體研發圈講究的 Scrum，還滿符合《從 A 到 A+》所講的飛輪效應。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>2018 個人回顧</title>
+      <link>//william-yeh.net/post/2018/12/2018-retrospective/</link>
+      <pubDate>Thu, 20 Dec 2018 08:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2018/12/2018-retrospective/</guid>
+      <description>&lt;p&gt;到了年終，又開始要做個總回顧，再對來年許願。&lt;/p&gt;
+&lt;p&gt;如果說 &lt;a href=&#34;https://school.soft-arch.net/blog/6676/2016-retrospective&#34;&gt;2016&lt;/a&gt; 和 &lt;a href=&#34;https://school.soft-arch.net/blog/13083/2017-retrospective&#34;&gt;2017&lt;/a&gt; 都是華麗冒險年，那麼，2018 對我來說，是收攝靜觀的一年。&lt;/p&gt;
+&lt;p&gt;去除一些不便揭露的事情，以下是簡單的回顧。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>為了精準估算，你必須付出什麼代價？</title>
+      <link>//william-yeh.net/post/2018/12/agile-measurement/</link>
+      <pubDate>Wed, 19 Dec 2018 08:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2018/12/agile-measurement/</guid>
+      <description>&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/12/dilbert-measurement.jpg&#34; alt=&#34;開場對話&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2018/12/dilbert-measurement.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;開場對話&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;研發團隊，常會被問到一個問題：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;「請問一下，這個Ａ功能，大概要多久才能完成？」&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;這個問題，不會因為你跑的是敏捷，就自動免疫。那麼，身為經過敏捷思維洗禮的人，該如何做出合宜的應對？&lt;/p&gt;
+&lt;p&gt;我在 &lt;a href=&#34;https://agilekaohsiung.kktix.cc/events/agiletourkaohsiung2018&#34;&gt;Agile Tour Kaohsiung 2018&lt;/a&gt; 開辦一場 2.5 小時的工作坊，帶領大家親自體驗這個議題。&lt;/p&gt;
+&lt;p&gt;不過，這個題材的背後，其實還有三段故事。&lt;/p&gt;
+&lt;p&gt;故事，要從一年半前講起。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>改變／改革：流程與衡量指標</title>
+      <link>//william-yeh.net/post/2018/12/process-and-metrics/</link>
+      <pubDate>Fri, 07 Dec 2018 13:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2018/12/process-and-metrics/</guid>
+      <description>改革，很不容易；摧毀改革，卻很簡單。知名的改革框架，莫不注重改革的整合與固化。 敏捷亦然。像這篇文章〈慢慢的，公司内敏捷的热度就退了&amp;hell</description>
+    </item>
+    
+    <item>
+      <title>Scrum 沒有明說的事：休耕期</title>
+      <link>//william-yeh.net/post/2018/12/fallow/</link>
+      <pubDate>Tue, 04 Dec 2018 08:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2018/12/fallow/</guid>
+      <description>&lt;p&gt;Scrum 的官方白皮書 &lt;a href=&#34;https://www.scrumguides.org/&#34;&gt;&lt;em&gt;The Scrum Guide&lt;/em&gt;&lt;/a&gt; 非常輕薄短小（像 &lt;a href=&#34;https://scrumguides.org/docs/scrumguide/v2017/2017-Scrum-Guide-US.pdf&#34;&gt;Nov 2017 版&lt;/a&gt;只有 19 頁），它的理念是：只制定最核心的原則、價值、角色、活動、產出物，其餘的則交給團隊根據經驗主義 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; 去調適出最適合自己的細節。&lt;/p&gt;
+&lt;p&gt;想當然爾，有很多事，Scrum 並沒有明說。&lt;/p&gt;
+&lt;p&gt;那麼，沒有明說的事，就不需要做、就不能做了嗎？做了，就違反 Scrum 嗎？&lt;/p&gt;
+&lt;p&gt;這是許多奉 &lt;a href=&#34;https://www.scrumguides.org/&#34;&gt;&lt;em&gt;The Scrum Guide&lt;/em&gt;&lt;/a&gt; 為圭臬的人，常有的盲點。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>為什麼 LeSS 這麼迷人，可是總是輸給 SAFe？</title>
+      <link>//william-yeh.net/post/2018/11/why-safe-over-less/</link>
+      <pubDate>Fri, 30 Nov 2018 15:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2018/11/why-safe-over-less/</guid>
+      <description>在一篇 Terry &amp;amp; Ruddy 對話紀錄中，看到一系列有趣的 LeSS vs. SAFe 討論： 「為什麼 LeSS 這麼迷人，可是總是輸給 SAFe？」 「SAFe 是敏捷跟辦公室政治作出了完美的妥協</description>
+    </item>
+    
+    <item>
+      <title>「判準與指標」系列</title>
+      <link>//william-yeh.net/series/criteria-series/</link>
+      <pubDate>Wed, 28 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>//william-yeh.net/series/criteria-series/</guid>
+      <description>軟體開發，除了方法論，還有⋯⋯ 敏捷的判準 Lean Startup 的判準 敏捷的價值與指標 DevOps 的價值與指標</description>
+    </item>
+    
+    <item>
+      <title>DevOps 的價值與指標</title>
+      <link>//william-yeh.net/post/2018/11/devops-value/</link>
+      <pubDate>Wed, 28 Nov 2018 08:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2018/11/devops-value/</guid>
+      <description>看完〈敏捷的價值與指標〉之後，很自然的會進一步追問：「那麼，什麼才是 DevOps 圈子所認定的價值，以及對應的指標，尤其是領先指標？」 這問題其實比較容易</description>
+    </item>
+    
+    <item>
+      <title>敏捷的價值與指標</title>
+      <link>//william-yeh.net/post/2018/11/agile-value/</link>
+      <pubDate>Tue, 27 Nov 2018 08:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2018/11/agile-value/</guid>
+      <description>&lt;p&gt;同溫層朋友提出一則有趣的&lt;a href=&#34;https://www.facebook.com/groups/179345672472/permalink/10156092663467473/&#34;&gt;提問&lt;/a&gt;：&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/11/agile-value-post.png&#34; alt=&#34;如何衡量敏捷的成效？ by Howie Yu (2018-11-23)&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2018/11/agile-value-post.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;如何衡量敏捷的成效？ by Howie Yu (2018-11-23)&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>Agile PMO</title>
+      <link>//william-yeh.net/post/2018/11/agile-pmo/</link>
+      <pubDate>Thu, 15 Nov 2018 08:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2018/11/agile-pmo/</guid>
+      <description>&amp;ldquo;Project&amp;rdquo; 一詞，儼然成為 agile 及 DevOps 圈子的禁語。 譬如說，敏捷祖師爺 Martin Fowler 的網站有一篇 &amp;ldquo;Products Over Projects&amp;rdquo; 文章，DevOps 巨著 The DevOps Handbook 第 7.7 節的篇名叫做〈投資於服務和產品，而</description>
+    </item>
+    
+    <item>
+      <title>Lean Startup 的判準</title>
+      <link>//william-yeh.net/post/2018/11/lean-startup-criteria/</link>
+      <pubDate>Thu, 01 Nov 2018 08:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2018/11/lean-startup-criteria/</guid>
+      <description>《商業周刊》第 1615 期，有一篇總編輯的話〈拖鞋戰法，先做了再修！〉： 網路時代的敏捷開發法，強調「先做了再修改」，中心思想不是「預測」(predi</description>
+    </item>
+    
+    <item>
+      <title>敏捷的判準</title>
+      <link>//william-yeh.net/post/2018/10/agile-criteria/</link>
+      <pubDate>Wed, 31 Oct 2018 08:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2018/10/agile-criteria/</guid>
+      <description>&lt;p&gt;今年暑假，我第一次去台中的國美館，參觀 &lt;a href=&#34;https://www.ntmofa.gov.tw/information_1078_86836.html&#34;&gt;2018 年全國美術展&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;這年度盛會，分成油畫、水彩、版畫、水墨等十大類。大開眼界之餘，也不禁有個奇想：為什麼要分這麼多類別來競賽？為什麼不選出一個跨十大類別的首獎，就像武林盟主一樣？&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>軟體開發，除了方法論，還有⋯⋯</title>
+      <link>//william-yeh.net/post/2018/10/methodology-and-criteria/</link>
+      <pubDate>Thu, 25 Oct 2018 12:22:16 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2018/10/methodology-and-criteria/</guid>
+      <description>&lt;p&gt;在某些人眼中，「敏捷」是狂熱份子聚集的邪教。&lt;/p&gt;
+&lt;p&gt;或許是被困在守舊勢力太久了，敏捷信徒不只有改變世界的熱情，更有捨我其誰的急迫感。不過，在傳播理念或推動改變時，若操之過急，忽略對方所處的情境、歷史及歷程，就很難有建設性對話。在這守舊勢力龐大的世界，自然很容易陣亡。&lt;/p&gt;
+&lt;p&gt;但這還只是表象。歧見，單靠對話仍不足以化解，更需要在方法論層次達到理解，方可進退有據。&lt;/p&gt;
+&lt;p&gt;尤其在看過《&lt;a href=&#34;https://www.books.com.tw/products/0010791756&#34;&gt;社會科學的理路&lt;/a&gt;》之後，我領悟到一些根源問題及槓桿解。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>敏捷之途無他，刻意練習而已矣！</title>
+      <link>//william-yeh.net/post/2018/09/deliberate-practice-for-agile/</link>
+      <pubDate>Wed, 19 Sep 2018 23:25:01 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2018/09/deliberate-practice-for-agile/</guid>
+      <description>親愛的學員們： 感謝你們 9/13 ＆ 9/14，一起共度充滿歡笑的兩日。 課堂上，我多次提醒：請大家回去之後，要持續刻意練習；自練，對練，都好。 你可能會有</description>
+    </item>
+    
+    <item>
+      <title>以 impact mapping 進行參與式決策</title>
+      <link>//william-yeh.net/post/2018/02/impact-mapping-as-participatory-decision-making/</link>
+      <pubDate>Fri, 23 Feb 2018 10:54:14 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2018/02/impact-mapping-as-participatory-decision-making/</guid>
+      <description>我在半年前〈以談判角度看 Sprint Planning〉一文曾提過： 只要是我有權主導的 Sprint Planning，都會先花些時間請 PO 重新展開 Impact Mapping 及 Scaling Lean 的內容，尤</description>
+    </item>
+    
+    <item>
+      <title>咬文嚼字的必要性</title>
+      <link>//william-yeh.net/post/2018/01/precise-expression/</link>
+      <pubDate>Thu, 04 Jan 2018 14:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2018/01/precise-expression/</guid>
+      <description>前同事 Peter Su 提出他在荷蘭工作的觀察： 貼文短短，卻已提到幾則重點： 準則 思考框架 句型 參考範例 儘管自己還沒有在國外工作過，但成天浸潤在外文書籍，也感</description>
+    </item>
+    
+    <item>
+      <title>以談判角度看 Sprint Planning</title>
+      <link>//william-yeh.net/post/2017/07/sprint-planning-as-negotiation/</link>
+      <pubDate>Thu, 27 Jul 2017 12:18:03 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2017/07/sprint-planning-as-negotiation/</guid>
+      <description>自從去年 Q3 個人的 Scrum 首航開始，讓我壓力最大的，並不是主持 Retrospective，而是 Sprint Planning。上完 CSPO 課程後，更是對高品質的 Sprint Planning 有</description>
+    </item>
+    
+    <item>
+      <title>自我改變，起點不是先挑戰意志力</title>
+      <link>//william-yeh.net/post/2017/05/self-change/</link>
+      <pubDate>Tue, 16 May 2017 22:44:42 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2017/05/self-change/</guid>
+      <description>一看到 Joe 多年後重開【大人學講座04 : 有效自我改變的系統化做法】，二話不說，立刻報名。 為什麼這麼有信心呢？ 原因之一，已經上過好幾次 Joe 的課程，尤</description>
+    </item>
+    
+    <item>
+      <title>CSPO，超越收據的收穫</title>
+      <link>//william-yeh.net/post/2017/03/cspo/</link>
+      <pubDate>Wed, 08 Mar 2017 14:52:29 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2017/03/cspo/</guid>
+      <description>為什麼要去上 Scrum 認證課程？ 去年 Q4 起，在有限的職權範圍內，小規模試行敏捷轉型。一路走來，自認在 Scrum 這一塊還有很多不足之處，想親炙這領域的先行者，以</description>
+    </item>
+    
+    <item>
+      <title>打怪升級路線圖</title>
+      <link>//william-yeh.net/post/2016/12/game-frame/</link>
+      <pubDate>Tue, 27 Dec 2016 08:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2016/12/game-frame/</guid>
+      <description>遊戲化 我第一次看到將「遊戲化」概念運用到職場上的點子，是在《加入遊戲因子，解決各種問題》這本有趣的書： 遊戲的十個組成要素 第二次看到將「遊戲化</description>
+    </item>
+    
+    <item>
+      <title>工作分解講座・閱讀材料</title>
+      <link>//william-yeh.net/post/2016/11/decomposition-reading-list/</link>
+      <pubDate>Wed, 30 Nov 2016 08:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2016/11/decomposition-reading-list/</guid>
+      <description>緣起 我在〈One-Week Sprint 的節奏〉一文提到個人的「迷你版 Scrum」首航經驗： 第一個 sprint 順利達標，儘管變數層出不窮。 萬萬沒想到第一次嘗試帶 S</description>
+    </item>
+    
+    <item>
+      <title>One-Week Sprint 的節奏</title>
+      <link>//william-yeh.net/post/2016/10/one-week-sprint/</link>
+      <pubDate>Wed, 26 Oct 2016 00:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2016/10/one-week-sprint/</guid>
+      <description>我曾在 iThome 的 2012 年度必看好書中，推薦 The Scrum Field Guide（當年還是第一版，現在則有第二版了）。當年看這本書時，還沒置身 Scrum 團隊的經驗，純粹是為了未來做</description>
+    </item>
+    
+    <item>
+      <title>從「改變」角度看《魔戒》</title>
+      <link>//william-yeh.net/post/2016/05/change-viewpoint-on-lord-of-rings/</link>
+      <pubDate>Wed, 25 May 2016 08:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2016/05/change-viewpoint-on-lord-of-rings/</guid>
+      <description>&lt;p&gt;今年一月，參加 &lt;a href=&#34;http://kojenchieh.pixnet.net/blog&#34;&gt;David Ko&lt;/a&gt; 舉辦的一場敏捷轉型活動，從中學到了一個有趣的分析工具：Lean Change Canvas。&lt;/p&gt;
+&lt;p&gt;知道了一個好東西，自然要追本溯源，加深加廣。便研讀相關資料：&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>向工廠管理致敬</title>
+      <link>//william-yeh.net/post/2016/04/learn-from-plant-mgmt/</link>
+      <pubDate>Fri, 22 Apr 2016 08:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2016/04/learn-from-plant-mgmt/</guid>
+      <description>&lt;p&gt;身為徹頭徹尾的軟體人，在軟體產業待久了，總會對「硬」一點的產業，尤其是製造業，有莫名的成見，以為他們是僵固的、反人性的。從 1972 年「&lt;a href=&#34;https://en.wikipedia.org/wiki/Software_crisis&#34;&gt;軟體危機&lt;/a&gt;」引發的論述當中，更加深軟體人的印象：製造業的經驗，是無法直接套用到軟體界的；我們是截然不同的國度。&lt;/p&gt;
+&lt;p&gt;不過，近十年來許多軟體界的流程改革，尤其是同屬 Agile 陣營的 Scrum 及 Kanban，居然有許多元素是從製造業&lt;del&gt;偷竊&lt;/del&gt;學習而來。譬如說&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>多工切換：有趣的 Lean 觀點</title>
+      <link>//william-yeh.net/post/2016/03/lean-perspective-of-multitasking/</link>
+      <pubDate>Tue, 29 Mar 2016 08:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2016/03/lean-perspective-of-multitasking/</guid>
+      <description>&lt;p&gt;系統思考，全局思考，是困難的；即使是貌似常識的場域，亦然。&lt;/p&gt;
+&lt;p&gt;最近在看 &lt;a href=&#34;https://www.books.com.tw/products/0010662172&#34;&gt;&lt;em&gt;Lean Thinking&lt;/em&gt;&lt;/a&gt; 原典時，感觸更深。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>DevOps 核心元素的考古溯源</title>
+      <link>//william-yeh.net/post/2016/03/origin-of-devops-elements/</link>
+      <pubDate>Mon, 07 Mar 2016 08:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2016/03/origin-of-devops-elements/</guid>
+      <description>&lt;p&gt;DevOps 和 Agile 的關係是什麼？DevOps 是源自 Agile 的嗎？&lt;/p&gt;
+&lt;p&gt;我在〈&lt;a href=&#34;//william-yeh.net/post/2016/01/devops-goals-in-a-nutshell/&#34;&gt;一句話囊括 DevOps 的目標&lt;/a&gt;〉文中曾經簡略提過：&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>CI 怎樣帶你遠離平庸？</title>
+      <link>//william-yeh.net/post/2015/12/ci-effect/</link>
+      <pubDate>Tue, 22 Dec 2015 08:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2015/12/ci-effect/</guid>
+      <description>前天我的文章〈CI 是條不歸路〉提到：「CI/CD/DevOps 既是條不歸路，更是大躍進之路：一旦踏出第一步，就注定你會不斷接觸**『遠離平庸</description>
+    </item>
+    
+    <item>
+      <title>CI 是條不歸路</title>
+      <link>//william-yeh.net/post/2015/12/ci-no-turning-back/</link>
+      <pubDate>Mon, 21 Dec 2015 08:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2015/12/ci-no-turning-back/</guid>
+      <description>今年九月初參加完 DevOps 2015 之後，有感而發，寫了兩則 tweets： 說實在的，打從 1999 年 Kent Beck 經典著作 Extreme Programming Explained 問世，整個軟體文化就被徹底分裂成兩個國度。以 agile</description>
+    </item>
+    
   </channel>
 </rss>

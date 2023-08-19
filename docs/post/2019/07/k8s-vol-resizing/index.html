@@ -33,7 +33,7 @@ Is it possible in Kubernetes?
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.111.3" />
+<meta name="generator" content="Hugo 0.117.0" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2019/07/k8s-vol-resizing/" />
@@ -88,17 +88,6 @@ Is it possible in Kubernetes?"/>
   <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
 <![endif]-->
 
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-D8V6EWHYN7"></script>
-<script>
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
-	gtag('config', 'G-D8V6EWHYN7', { 'anonymize_ip': false });
-}
-</script>
 
 
 
@@ -450,80 +439,80 @@ if (!doNotTrack) {
 <h2 id="about-the-sample-app">About the sample app</h2>
 <p>A sample app <a href="https://github.com/William-Yeh/vol-resize/blob/master/voltest.sh">voltest.sh</a> will be used for the whole experiment.<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> It displays the size of available disk spaces in the specified mount point (as the 1st argument), and also records the data continuously in the specified output file (as the 2nd argument; default to <code>&quot;data&quot;</code>).</p>
 <p>Let&rsquo;s see how it works. Assume that we are in the <code>/home</code> directory, with available disk space about 4.5 GB:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">% pwd
-</span></span><span class="line"><span class="cl">/home
-</span></span><span class="line"><span class="cl">%
-</span></span><span class="line"><span class="cl">% df -h
-</span></span><span class="line"><span class="cl">Filesystem      Size  Used Avail Use% Mounted on
-</span></span><span class="line"><span class="cl">overlay          41G   32G  8.2G  80% /
-</span></span><span class="line"><span class="cl">tmpfs            64M     0   64M   0% /dev
-</span></span><span class="line"><span class="cl">tmpfs           848M     0  848M   0% /sys/fs/cgroup
-</span></span><span class="line"><span class="cl">/dev/sda1        41G   32G  8.2G  80% /root
-</span></span><span class="line"><span class="cl">/dev/sdb1       4.8G   38M  4.5G   1% /home
-</span></span><span class="line"><span class="cl">overlayfs       1.0M  160K  864K  16% /etc/ssh/keys
-</span></span><span class="line"><span class="cl">shm              64M     0   64M   0% /dev/shm
-</span></span><span class="line"><span class="cl">overlayfs       1.0M  160K  864K  16% /etc/ssh/ssh_host_dsa_key
-</span></span><span class="line"><span class="cl">tmpfs           848M  736K  847M   1% /run/metrics
-</span></span><span class="line"><span class="cl">tmpfs           848M     0  848M   0% /run/google/devshell</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>% pwd
+</span></span><span style="display:flex;"><span>/home
+</span></span><span style="display:flex;"><span>%
+</span></span><span style="display:flex;"><span>% df -h
+</span></span><span style="display:flex;"><span>Filesystem      Size  Used Avail Use% Mounted on
+</span></span><span style="display:flex;"><span>overlay          41G   32G  8.2G  80% /
+</span></span><span style="display:flex;"><span>tmpfs            64M     0   64M   0% /dev
+</span></span><span style="display:flex;"><span>tmpfs           848M     0  848M   0% /sys/fs/cgroup
+</span></span><span style="display:flex;"><span>/dev/sda1        41G   32G  8.2G  80% /root
+</span></span><span style="display:flex;"><span>/dev/sdb1       4.8G   38M  4.5G   1% /home
+</span></span><span style="display:flex;"><span>overlayfs       1.0M  160K  864K  16% /etc/ssh/keys
+</span></span><span style="display:flex;"><span>shm              64M     0   64M   0% /dev/shm
+</span></span><span style="display:flex;"><span>overlayfs       1.0M  160K  864K  16% /etc/ssh/ssh_host_dsa_key
+</span></span><span style="display:flex;"><span>tmpfs           848M  736K  847M   1% /run/metrics
+</span></span><span style="display:flex;"><span>tmpfs           848M     0  848M   0% /run/google/devshell</span></span></code></pre></div>
 <p>At first run, it shows the space of current directory and records them continuously in the <code>data</code> file within the same directory:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">% docker run -it  -v $(pwd):/mnt  williamyeh/voltest  /mnt
-</span></span><span class="line"><span class="cl">---&gt; Checking /mnt/data
-</span></span><span class="line"><span class="cl">1 : 4.5G
-</span></span><span class="line"><span class="cl">2 : 4.5G
-</span></span><span class="line"><span class="cl">3 : 4.5G
-</span></span><span class="line"><span class="cl">4 : 4.5G
-</span></span><span class="line"><span class="cl">5 : 4.5G
-</span></span><span class="line"><span class="cl">6 : 4.5G
-</span></span><span class="line"><span class="cl">7 : 4.5G
-</span></span><span class="line"><span class="cl">8 : 4.5G
-</span></span><span class="line"><span class="cl">9 : 4.5G
-</span></span><span class="line"><span class="cl">10 : 4.5G
-</span></span><span class="line"><span class="cl">11 : 4.5G
-</span></span><span class="line"><span class="cl">12 : 4.5G
-</span></span><span class="line"><span class="cl">^C
-</span></span><span class="line"><span class="cl">%</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>% docker run -it  -v $(pwd):/mnt  williamyeh/voltest  /mnt
+</span></span><span style="display:flex;"><span>---&gt; Checking /mnt/data
+</span></span><span style="display:flex;"><span>1 : 4.5G
+</span></span><span style="display:flex;"><span>2 : 4.5G
+</span></span><span style="display:flex;"><span>3 : 4.5G
+</span></span><span style="display:flex;"><span>4 : 4.5G
+</span></span><span style="display:flex;"><span>5 : 4.5G
+</span></span><span style="display:flex;"><span>6 : 4.5G
+</span></span><span style="display:flex;"><span>7 : 4.5G
+</span></span><span style="display:flex;"><span>8 : 4.5G
+</span></span><span style="display:flex;"><span>9 : 4.5G
+</span></span><span style="display:flex;"><span>10 : 4.5G
+</span></span><span style="display:flex;"><span>11 : 4.5G
+</span></span><span style="display:flex;"><span>12 : 4.5G
+</span></span><span style="display:flex;"><span>^C
+</span></span><span style="display:flex;"><span>%</span></span></code></pre></div>
 <p>Interrupt the execution at 12 on purpose, and run again. You&rsquo;ll see that it picks up the last serial number 12 and continues counting:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">% docker run -it  -v $(pwd):/mnt  williamyeh/voltest  /mnt
-</span></span><span class="line"><span class="cl">---&gt; Checking /mnt/data
-</span></span><span class="line"><span class="cl">13 : 4.5G
-</span></span><span class="line"><span class="cl">14 : 4.5G
-</span></span><span class="line"><span class="cl">15 : 4.5G
-</span></span><span class="line"><span class="cl">16 : 4.5G
-</span></span><span class="line"><span class="cl">17 : 4.5G
-</span></span><span class="line"><span class="cl">18 : 4.5G
-</span></span><span class="line"><span class="cl">19 : 4.5G
-</span></span><span class="line"><span class="cl">20 : 4.5G
-</span></span><span class="line"><span class="cl">21 : 4.5G
-</span></span><span class="line"><span class="cl">22 : 4.5G
-</span></span><span class="line"><span class="cl">23 : 4.5G
-</span></span><span class="line"><span class="cl">^C
-</span></span><span class="line"><span class="cl">%</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>% docker run -it  -v $(pwd):/mnt  williamyeh/voltest  /mnt
+</span></span><span style="display:flex;"><span>---&gt; Checking /mnt/data
+</span></span><span style="display:flex;"><span>13 : 4.5G
+</span></span><span style="display:flex;"><span>14 : 4.5G
+</span></span><span style="display:flex;"><span>15 : 4.5G
+</span></span><span style="display:flex;"><span>16 : 4.5G
+</span></span><span style="display:flex;"><span>17 : 4.5G
+</span></span><span style="display:flex;"><span>18 : 4.5G
+</span></span><span style="display:flex;"><span>19 : 4.5G
+</span></span><span style="display:flex;"><span>20 : 4.5G
+</span></span><span style="display:flex;"><span>21 : 4.5G
+</span></span><span style="display:flex;"><span>22 : 4.5G
+</span></span><span style="display:flex;"><span>23 : 4.5G
+</span></span><span style="display:flex;"><span>^C
+</span></span><span style="display:flex;"><span>%</span></span></code></pre></div>
 <p>Now the <code>data</code> file should have 23 lines of records:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">% cat data
-</span></span><span class="line"><span class="cl">1 : 4.5G
-</span></span><span class="line"><span class="cl">2 : 4.5G
-</span></span><span class="line"><span class="cl">3 : 4.5G
-</span></span><span class="line"><span class="cl">4 : 4.5G
-</span></span><span class="line"><span class="cl">5 : 4.5G
-</span></span><span class="line"><span class="cl">6 : 4.5G
-</span></span><span class="line"><span class="cl">7 : 4.5G
-</span></span><span class="line"><span class="cl">8 : 4.5G
-</span></span><span class="line"><span class="cl">9 : 4.5G
-</span></span><span class="line"><span class="cl">10 : 4.5G
-</span></span><span class="line"><span class="cl">11 : 4.5G
-</span></span><span class="line"><span class="cl">12 : 4.5G
-</span></span><span class="line"><span class="cl">13 : 4.5G
-</span></span><span class="line"><span class="cl">14 : 4.5G
-</span></span><span class="line"><span class="cl">15 : 4.5G
-</span></span><span class="line"><span class="cl">16 : 4.5G
-</span></span><span class="line"><span class="cl">17 : 4.5G
-</span></span><span class="line"><span class="cl">18 : 4.5G
-</span></span><span class="line"><span class="cl">19 : 4.5G
-</span></span><span class="line"><span class="cl">20 : 4.5G
-</span></span><span class="line"><span class="cl">21 : 4.5G
-</span></span><span class="line"><span class="cl">22 : 4.5G
-</span></span><span class="line"><span class="cl">23 : 4.5G
-</span></span><span class="line"><span class="cl">%</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>% cat data
+</span></span><span style="display:flex;"><span>1 : 4.5G
+</span></span><span style="display:flex;"><span>2 : 4.5G
+</span></span><span style="display:flex;"><span>3 : 4.5G
+</span></span><span style="display:flex;"><span>4 : 4.5G
+</span></span><span style="display:flex;"><span>5 : 4.5G
+</span></span><span style="display:flex;"><span>6 : 4.5G
+</span></span><span style="display:flex;"><span>7 : 4.5G
+</span></span><span style="display:flex;"><span>8 : 4.5G
+</span></span><span style="display:flex;"><span>9 : 4.5G
+</span></span><span style="display:flex;"><span>10 : 4.5G
+</span></span><span style="display:flex;"><span>11 : 4.5G
+</span></span><span style="display:flex;"><span>12 : 4.5G
+</span></span><span style="display:flex;"><span>13 : 4.5G
+</span></span><span style="display:flex;"><span>14 : 4.5G
+</span></span><span style="display:flex;"><span>15 : 4.5G
+</span></span><span style="display:flex;"><span>16 : 4.5G
+</span></span><span style="display:flex;"><span>17 : 4.5G
+</span></span><span style="display:flex;"><span>18 : 4.5G
+</span></span><span style="display:flex;"><span>19 : 4.5G
+</span></span><span style="display:flex;"><span>20 : 4.5G
+</span></span><span style="display:flex;"><span>21 : 4.5G
+</span></span><span style="display:flex;"><span>22 : 4.5G
+</span></span><span style="display:flex;"><span>23 : 4.5G
+</span></span><span style="display:flex;"><span>%</span></span></code></pre></div>
 <p>In the following experiment we&rsquo;ll use the app and the data file to answer the 3 questions:</p>
 <ol>
 <li>
@@ -540,12 +529,12 @@ if (!doNotTrack) {
 <h2 id="experiment-part-1-initial-size">Experiment part 1: initial size</h2>
 <p>The experiment is conducted on GCP and GKE. However, it should apply to other cloud Kubernetes platforms as well, with minor modification.</p>
 <p>➊ Clone the experiment repo to your workspace or Cloud Shell:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">% git clone https://github.com/William-Yeh/vol-resize.git</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>% git clone https://github.com/William-Yeh/vol-resize.git</span></span></code></pre></div>
 <p>➋ Prepare a Kubernetes cluster in GKE.</p>
 <p>➌ Create a 20GB persistent disk named <code>voltest</code>.  For example, the following command will create such a persistent disk in the us-central1-a zone:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">% gcloud compute disks create         \
-</span></span><span class="line"><span class="cl">    --size=20GB --zone=us-central1-a  \
-</span></span><span class="line"><span class="cl">    voltest</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>% gcloud compute disks create         \
+</span></span><span style="display:flex;"><span>    --size=20GB --zone=us-central1-a  \
+</span></span><span style="display:flex;"><span>    voltest</span></span></code></pre></div>
 <p>Check if the underlying persistent disk is created:</p>
 
 <link rel="stylesheet" href="/css/hugo-easy-gallery.css" />
@@ -561,108 +550,108 @@ if (!doNotTrack) {
 </div>
 
 <p>➍ We need a storage class with <code>allowVolumeExpansion</code> enabled. The manifest file <a href="https://github.com/William-Yeh/vol-resize/blob/master/expansion-ss.yml">expansion-ss.yml</a> is provided as follows:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">apiVersion: storage.k8s.io/v1
-</span></span><span class="line"><span class="cl">kind: StorageClass
-</span></span><span class="line"><span class="cl">metadata:
-</span></span><span class="line"><span class="cl">  name: expansion
-</span></span><span class="line"><span class="cl">parameters:
-</span></span><span class="line"><span class="cl">  type: pd-standard
-</span></span><span class="line"><span class="cl">provisioner: kubernetes.io/gce-pd
-</span></span><span class="line"><span class="cl">allowVolumeExpansion: true
-</span></span><span class="line"><span class="cl">reclaimPolicy: Delete</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>apiVersion: storage.k8s.io/v1
+</span></span><span style="display:flex;"><span>kind: StorageClass
+</span></span><span style="display:flex;"><span>metadata:
+</span></span><span style="display:flex;"><span>  name: expansion
+</span></span><span style="display:flex;"><span>parameters:
+</span></span><span style="display:flex;"><span>  type: pd-standard
+</span></span><span style="display:flex;"><span>provisioner: kubernetes.io/gce-pd
+</span></span><span style="display:flex;"><span>allowVolumeExpansion: true
+</span></span><span style="display:flex;"><span>reclaimPolicy: Delete</span></span></code></pre></div>
 <p>Create a storage class <code>expansion</code> for this:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">% kubectl apply -f expansion-ss.yml</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>% kubectl apply -f expansion-ss.yml</span></span></code></pre></div>
 <p>➎ We need a PV manifest file <a href="https://github.com/William-Yeh/vol-resize/blob/master/voltest-pv.yml">voltest-pv.yml</a> to associate it with the existing persistent disk just created before:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">apiVersion: v1
-</span></span><span class="line"><span class="cl">kind: PersistentVolume
-</span></span><span class="line"><span class="cl">metadata:
-</span></span><span class="line"><span class="cl">  name: voltest
-</span></span><span class="line"><span class="cl">spec:
-</span></span><span class="line"><span class="cl">  storageClassName: &#34;expansion&#34;
-</span></span><span class="line"><span class="cl">  accessModes:
-</span></span><span class="line"><span class="cl">    - ReadWriteOnce
-</span></span><span class="line"><span class="cl">  capacity:
-</span></span><span class="line"><span class="cl">    storage: 20Gi
-</span></span><span class="line"><span class="cl">  gcePersistentDisk:
-</span></span><span class="line"><span class="cl">    pdName: voltest
-</span></span><span class="line"><span class="cl">    fsType: ext4</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>apiVersion: v1
+</span></span><span style="display:flex;"><span>kind: PersistentVolume
+</span></span><span style="display:flex;"><span>metadata:
+</span></span><span style="display:flex;"><span>  name: voltest
+</span></span><span style="display:flex;"><span>spec:
+</span></span><span style="display:flex;"><span>  storageClassName: &#34;expansion&#34;
+</span></span><span style="display:flex;"><span>  accessModes:
+</span></span><span style="display:flex;"><span>    - ReadWriteOnce
+</span></span><span style="display:flex;"><span>  capacity:
+</span></span><span style="display:flex;"><span>    storage: 20Gi
+</span></span><span style="display:flex;"><span>  gcePersistentDisk:
+</span></span><span style="display:flex;"><span>    pdName: voltest
+</span></span><span style="display:flex;"><span>    fsType: ext4</span></span></code></pre></div>
 <p>Create the persistent volume <code>voltest</code> now:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">% kubectl apply -f voltest-pv.yml
-</span></span><span class="line"><span class="cl">persistentvolume/voltest created
-</span></span><span class="line"><span class="cl">% kubectl get pv
-</span></span><span class="line"><span class="cl">NAME      CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS      CLAIM   STORAGECLASS   REASON   AGE
-</span></span><span class="line"><span class="cl">voltest   20Gi       RWO            Retain           Available           expansion               8s</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>% kubectl apply -f voltest-pv.yml
+</span></span><span style="display:flex;"><span>persistentvolume/voltest created
+</span></span><span style="display:flex;"><span>% kubectl get pv
+</span></span><span style="display:flex;"><span>NAME      CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS      CLAIM   STORAGECLASS   REASON   AGE
+</span></span><span style="display:flex;"><span>voltest   20Gi       RWO            Retain           Available           expansion               8s</span></span></code></pre></div>
 <p>Note that the <code>voltest</code> PV is in &ldquo;Available&rdquo; status.</p>
 <p>➏ We need a PVC manifest file <a href="https://github.com/William-Yeh/vol-resize/blob/master/voltest-pvc.yml">voltest-pvc.yml</a> to claim the PV:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">apiVersion: v1
-</span></span><span class="line"><span class="cl">kind: PersistentVolumeClaim
-</span></span><span class="line"><span class="cl">metadata:
-</span></span><span class="line"><span class="cl">  name: voltest
-</span></span><span class="line"><span class="cl">spec:
-</span></span><span class="line"><span class="cl">  volumeName: voltest
-</span></span><span class="line"><span class="cl">  storageClassName: &#34;expansion&#34;
-</span></span><span class="line"><span class="cl">  accessModes:
-</span></span><span class="line"><span class="cl">    - ReadWriteOnce
-</span></span><span class="line"><span class="cl">  resources:
-</span></span><span class="line"><span class="cl">    requests:
-</span></span><span class="line"><span class="cl">      storage: 20Gi</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>apiVersion: v1
+</span></span><span style="display:flex;"><span>kind: PersistentVolumeClaim
+</span></span><span style="display:flex;"><span>metadata:
+</span></span><span style="display:flex;"><span>  name: voltest
+</span></span><span style="display:flex;"><span>spec:
+</span></span><span style="display:flex;"><span>  volumeName: voltest
+</span></span><span style="display:flex;"><span>  storageClassName: &#34;expansion&#34;
+</span></span><span style="display:flex;"><span>  accessModes:
+</span></span><span style="display:flex;"><span>    - ReadWriteOnce
+</span></span><span style="display:flex;"><span>  resources:
+</span></span><span style="display:flex;"><span>    requests:
+</span></span><span style="display:flex;"><span>      storage: 20Gi</span></span></code></pre></div>
 <p>Claim the persistent volume now:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">% kubectl apply -f voltest-pvc.yml
-</span></span><span class="line"><span class="cl">persistentvolumeclaim/voltest created
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">% kubectl get pvc
-</span></span><span class="line"><span class="cl">NAME      STATUS   VOLUME    CAPACITY   ACCESS MODES   STORAGECLASS   AGE
-</span></span><span class="line"><span class="cl">voltest   Bound    voltest   20Gi       RWO            expansion      11s
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">% kubectl get pv
-</span></span><span class="line"><span class="cl">NAME      CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM             STORAGECLASS   REASON   AGE
-</span></span><span class="line"><span class="cl">voltest   20Gi       RWO            Retain           Bound    default/voltest   expansion               13m</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>% kubectl apply -f voltest-pvc.yml
+</span></span><span style="display:flex;"><span>persistentvolumeclaim/voltest created
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>% kubectl get pvc
+</span></span><span style="display:flex;"><span>NAME      STATUS   VOLUME    CAPACITY   ACCESS MODES   STORAGECLASS   AGE
+</span></span><span style="display:flex;"><span>voltest   Bound    voltest   20Gi       RWO            expansion      11s
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>% kubectl get pv
+</span></span><span style="display:flex;"><span>NAME      CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM             STORAGECLASS   REASON   AGE
+</span></span><span style="display:flex;"><span>voltest   20Gi       RWO            Retain           Bound    default/voltest   expansion               13m</span></span></code></pre></div>
 <p>Note that the <code>voltest</code> PV/PVC pair is in &ldquo;Bound&rdquo; status.</p>
 <p>➐ We need a manifest file <a href="https://github.com/William-Yeh/vol-resize/blob/master/voltest-app.yml">voltest-app.yml</a> for our sample app to access the PV/PVC:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">apiVersion: apps/v1
-</span></span><span class="line"><span class="cl">kind: Deployment
-</span></span><span class="line"><span class="cl">...
-</span></span><span class="line"><span class="cl">spec:
-</span></span><span class="line"><span class="cl">  replicas: 1
-</span></span><span class="line"><span class="cl">  ...
-</span></span><span class="line"><span class="cl">  template:   # pod definition
-</span></span><span class="line"><span class="cl">    ...
-</span></span><span class="line"><span class="cl">    spec:
-</span></span><span class="line"><span class="cl">      containers:
-</span></span><span class="line"><span class="cl">        - name: voltest
-</span></span><span class="line"><span class="cl">          image: williamyeh/voltest
-</span></span><span class="line"><span class="cl">          volumeMounts:
-</span></span><span class="line"><span class="cl">            - mountPath: &#34;/mnt&#34;
-</span></span><span class="line"><span class="cl">              name: voltest
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">      volumes:
-</span></span><span class="line"><span class="cl">        - name: voltest
-</span></span><span class="line"><span class="cl">          persistentVolumeClaim:
-</span></span><span class="line"><span class="cl">            claimName: voltest</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>apiVersion: apps/v1
+</span></span><span style="display:flex;"><span>kind: Deployment
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>spec:
+</span></span><span style="display:flex;"><span>  replicas: 1
+</span></span><span style="display:flex;"><span>  ...
+</span></span><span style="display:flex;"><span>  template:   # pod definition
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>    spec:
+</span></span><span style="display:flex;"><span>      containers:
+</span></span><span style="display:flex;"><span>        - name: voltest
+</span></span><span style="display:flex;"><span>          image: williamyeh/voltest
+</span></span><span style="display:flex;"><span>          volumeMounts:
+</span></span><span style="display:flex;"><span>            - mountPath: &#34;/mnt&#34;
+</span></span><span style="display:flex;"><span>              name: voltest
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      volumes:
+</span></span><span style="display:flex;"><span>        - name: voltest
+</span></span><span style="display:flex;"><span>          persistentVolumeClaim:
+</span></span><span style="display:flex;"><span>            claimName: voltest</span></span></code></pre></div>
 <p>Invoke the sample app now:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">% kubectl apply -f voltest-app.yml</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>% kubectl apply -f voltest-app.yml</span></span></code></pre></div>
 <p>Open another terminal pane to watch the logs continuously:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">% kubectl logs -f deployment/voltest
-</span></span><span class="line"><span class="cl">---&gt; Checking /mnt/data
-</span></span><span class="line"><span class="cl">1 : 20G
-</span></span><span class="line"><span class="cl">2 : 20G
-</span></span><span class="line"><span class="cl">3 : 20G
-</span></span><span class="line"><span class="cl">4 : 20G
-</span></span><span class="line"><span class="cl">5 : 20G
-</span></span><span class="line"><span class="cl">6 : 20G
-</span></span><span class="line"><span class="cl">7 : 20G
-</span></span><span class="line"><span class="cl">8 : 20G
-</span></span><span class="line"><span class="cl">9 : 20G
-</span></span><span class="line"><span class="cl">10 : 20G
-</span></span><span class="line"><span class="cl">11 : 20G
-</span></span><span class="line"><span class="cl">12 : 20G
-</span></span><span class="line"><span class="cl">...</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>% kubectl logs -f deployment/voltest
+</span></span><span style="display:flex;"><span>---&gt; Checking /mnt/data
+</span></span><span style="display:flex;"><span>1 : 20G
+</span></span><span style="display:flex;"><span>2 : 20G
+</span></span><span style="display:flex;"><span>3 : 20G
+</span></span><span style="display:flex;"><span>4 : 20G
+</span></span><span style="display:flex;"><span>5 : 20G
+</span></span><span style="display:flex;"><span>6 : 20G
+</span></span><span style="display:flex;"><span>7 : 20G
+</span></span><span style="display:flex;"><span>8 : 20G
+</span></span><span style="display:flex;"><span>9 : 20G
+</span></span><span style="display:flex;"><span>10 : 20G
+</span></span><span style="display:flex;"><span>11 : 20G
+</span></span><span style="display:flex;"><span>12 : 20G
+</span></span><span style="display:flex;"><span>...</span></span></code></pre></div>
 <p>Quite familiar output. Everything works fine.</p>
 <p>Keep the logs running. We&rsquo;ll see it again and again.</p>
 <h2 id="experiment-part-2-resizing">Experiment part 2: resizing</h2>
 <p>Now we&rsquo;re about to resize the volume.</p>
 <p>➊ Edit the <code>voltest</code> PVC:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">% kubectl edit pvc/voltest</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>% kubectl edit pvc/voltest</span></span></code></pre></div>
 <p>➋ Change the value of <code>spec.resources.requests.storage</code> from <code>20Gi</code> to <code>100Gi</code>. Save, and exit.</p>
 <p>➌ Check if the logs are still being generated, and the content of the logs.</p>
 <p>➍ Check the size of underlying persistent disk. It should be expanded to 100 GB now.</p>
@@ -680,13 +669,13 @@ if (!doNotTrack) {
 </div>
 
 <p>➎ Check if the PV/PVC are both expanded:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">% kubectl get pv
-</span></span><span class="line"><span class="cl">NAME      CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM             STORAGECLASS   REASON   AGE
-</span></span><span class="line"><span class="cl">voltest   100Gi      RWO            Retain           Bound    default/voltest   expansion               45m
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">% kubectl get pvc
-</span></span><span class="line"><span class="cl">NAME      STATUS   VOLUME    CAPACITY   ACCESS MODES   STORAGECLASS   AGE
-</span></span><span class="line"><span class="cl">voltest   Bound    voltest   20Gi       RWO            expansion      32m</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>% kubectl get pv
+</span></span><span style="display:flex;"><span>NAME      CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM             STORAGECLASS   REASON   AGE
+</span></span><span style="display:flex;"><span>voltest   100Gi      RWO            Retain           Bound    default/voltest   expansion               45m
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>% kubectl get pvc
+</span></span><span style="display:flex;"><span>NAME      STATUS   VOLUME    CAPACITY   ACCESS MODES   STORAGECLASS   AGE
+</span></span><span style="display:flex;"><span>voltest   Bound    voltest   20Gi       RWO            expansion      32m</span></span></code></pre></div>
 <p>PV is expanded to 100 GB, but PVC not yet. In other words, <em>block storage volume</em> is expanded, but <em>file system</em> is not yet. The reason is described in the “<a href="https://kubernetes.io/blog/2018/07/12/resizing-persistent-volumes-using-kubernetes/">Resizing Persistent Volumes using Kubernetes</a>” article:</p>
 <ul>
 <li>
@@ -699,38 +688,38 @@ if (!doNotTrack) {
 <p>For now the question <em>&ldquo;2. Is the resizing process non-stop?&rdquo;</em> should be obviously answered. Let&rsquo;s move on to handle the <code>FileSystemResizePending</code> condition by restarting the related pods.</p>
 <h2 id="experiment-part-3-restart-the-pod">Experiment part 3: restart the pod</h2>
 <p>➊ Kill the pod, and let deployment restart a new pod for us (<code>replicas=1</code>):</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">% kubectl get pods
-</span></span><span class="line"><span class="cl">NAME                      READY   STATUS    RESTARTS   AGE
-</span></span><span class="line"><span class="cl">voltest-d88ff8c49-66wk2   1/1     Running   0          23m
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">% kubectl delete pod voltest-d88ff8c49-66wk2</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>% kubectl get pods
+</span></span><span style="display:flex;"><span>NAME                      READY   STATUS    RESTARTS   AGE
+</span></span><span style="display:flex;"><span>voltest-d88ff8c49-66wk2   1/1     Running   0          23m
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>% kubectl delete pod voltest-d88ff8c49-66wk2</span></span></code></pre></div>
 <p>➋ Watch the logs! Our sample app will see the <em>file system expansion</em> progress on the fly:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">13465 : 20G
-</span></span><span class="line"><span class="cl">13466 : 20G
-</span></span><span class="line"><span class="cl">13467 : 20G
-</span></span><span class="line"><span class="cl">13468 : 24G
-</span></span><span class="line"><span class="cl">13469 : 30G
-</span></span><span class="line"><span class="cl">13470 : 30G
-</span></span><span class="line"><span class="cl">13471 : 30G
-</span></span><span class="line"><span class="cl">13472 : 30G
-</span></span><span class="line"><span class="cl">13473 : 30G
-</span></span><span class="line"><span class="cl">13474 : 42G
-</span></span><span class="line"><span class="cl">13475 : 77G
-</span></span><span class="line"><span class="cl">13476 : 99G
-</span></span><span class="line"><span class="cl">13477 : 99G
-</span></span><span class="line"><span class="cl">13478 : 99G
-</span></span><span class="line"><span class="cl">13479 : 99G
-</span></span><span class="line"><span class="cl">13480 : 99G
-</span></span><span class="line"><span class="cl">13481 : 99G
-</span></span><span class="line"><span class="cl">13482 : 99G</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>13465 : 20G
+</span></span><span style="display:flex;"><span>13466 : 20G
+</span></span><span style="display:flex;"><span>13467 : 20G
+</span></span><span style="display:flex;"><span>13468 : 24G
+</span></span><span style="display:flex;"><span>13469 : 30G
+</span></span><span style="display:flex;"><span>13470 : 30G
+</span></span><span style="display:flex;"><span>13471 : 30G
+</span></span><span style="display:flex;"><span>13472 : 30G
+</span></span><span style="display:flex;"><span>13473 : 30G
+</span></span><span style="display:flex;"><span>13474 : 42G
+</span></span><span style="display:flex;"><span>13475 : 77G
+</span></span><span style="display:flex;"><span>13476 : 99G
+</span></span><span style="display:flex;"><span>13477 : 99G
+</span></span><span style="display:flex;"><span>13478 : 99G
+</span></span><span style="display:flex;"><span>13479 : 99G
+</span></span><span style="display:flex;"><span>13480 : 99G
+</span></span><span style="display:flex;"><span>13481 : 99G
+</span></span><span style="display:flex;"><span>13482 : 99G</span></span></code></pre></div>
 <p>➌ Check if the PV/PVC are both expanded:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">% kubectl get pv
-</span></span><span class="line"><span class="cl">NAME      CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM             STORAGECLASS   REASON   AGE
-</span></span><span class="line"><span class="cl">voltest   100Gi      RWO            Retain           Bound    default/voltest   expansion               57m
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">% kubectl get pvc
-</span></span><span class="line"><span class="cl">NAME      STATUS   VOLUME    CAPACITY   ACCESS MODES   STORAGECLASS   AGE
-</span></span><span class="line"><span class="cl">voltest   Bound    voltest   100Gi      RWO            expansion      44m</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>% kubectl get pv
+</span></span><span style="display:flex;"><span>NAME      CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM             STORAGECLASS   REASON   AGE
+</span></span><span style="display:flex;"><span>voltest   100Gi      RWO            Retain           Bound    default/voltest   expansion               57m
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>% kubectl get pvc
+</span></span><span style="display:flex;"><span>NAME      STATUS   VOLUME    CAPACITY   ACCESS MODES   STORAGECLASS   AGE
+</span></span><span style="display:flex;"><span>voltest   Bound    voltest   100Gi      RWO            expansion      44m</span></span></code></pre></div>
 <p>For now the remaining questions <em>“1. Does volume resizing really work in Kubernetes?”</em> and <em>“3. Are data still persistent after resizing?”</em> should be obviously answered.</p>
 <h2 id="conclusion">Conclusion</h2>
 <p>As can be seen in this experiment, all you have to do to grow the PV/PVC are:</p>
@@ -869,35 +858,7 @@ if (!doNotTrack) {
 
   
 
-  <div class="disqus-comment">
-  <div class="disqus-button" id="load_disqus" onclick="load_disqus()">
-    顯示 Disqus 評論
-  </div>
-  <div id="disqus_thread"></div>
-  <script type="text/javascript">
-    var disqus_config = function () {
-      this.page.url = "//william-yeh.net/post/2019/07/k8s-vol-resizing/";
-    };
-    function load_disqus() {
-      
-      
-      if (window.location.hostname === 'localhost') return;
-
-      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      var disqus_shortname = 'potioneer';
-      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-
-      $('#load_disqus').remove();
-    };
-  </script>
-  <noscript
-    >Please enable JavaScript to view the
-    <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-  </noscript>
   
-</div>
-
 
     
 

@@ -33,7 +33,7 @@ Recently I&amp;rsquo;ve found something very strange about Linux-style file perm
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.111.3" />
+<meta name="generator" content="Hugo 0.117.0" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2019/06/docker-file-permissions/" />
@@ -88,17 +88,6 @@ Recently I&rsquo;ve found something very strange about Linux-style file permissi
   <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
 <![endif]-->
 
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-D8V6EWHYN7"></script>
-<script>
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
-	gtag('config', 'G-D8V6EWHYN7', { 'anonymize_ip': false });
-}
-</script>
 
 
 
@@ -439,19 +428,19 @@ if (!doNotTrack) {
     <div class="post-content">
       <p>Currently Linux containers are still more popular than Windows containers. And Windows users often need to use Linux containers even from their Windows computers.</p>
 <p>Recently I&rsquo;ve found something very strange about Linux-style file permissions when the Docker images are built from Windows hosts.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> Therefore, I&rsquo;ve conducted a suite of test cases to investigate whether file permissions are preserved with Docker &amp; <a href="https://skaffold.dev/">Skaffold</a> toolchains. All experiment materials are available in the <a href="https://github.com/William-Yeh/container-chmod">container-chmod</a> repo.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">% git clone https://github.com/William-Yeh/container-chmod.git</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>% git clone https://github.com/William-Yeh/container-chmod.git</span></span></code></pre></div>
 <h2 id="experiment-setting">Experiment setting</h2>
 <p>The experiments are composed of a few files with typical Unix-style file permissions:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">.
-</span></span><span class="line"><span class="cl">├── skaffold.yaml
-</span></span><span class="line"><span class="cl">└── src
-</span></span><span class="line"><span class="cl">    ├── Dockerfile
-</span></span><span class="line"><span class="cl">    ├── file-644.txt
-</span></span><span class="line"><span class="cl">    └── script-755.sh
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">-rw-r--r-- 1 william  70 Jun 24 17:01 Dockerfile
-</span></span><span class="line"><span class="cl">-rw-r--r-- 1 william  57 Jun 24 15:17 file-644.txt
-</span></span><span class="line"><span class="cl">-rwxr-xr-x 1 william  84 Jun 24 15:19 script-755.sh</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>.
+</span></span><span style="display:flex;"><span>├── skaffold.yaml
+</span></span><span style="display:flex;"><span>└── src
+</span></span><span style="display:flex;"><span>    ├── Dockerfile
+</span></span><span style="display:flex;"><span>    ├── file-644.txt
+</span></span><span style="display:flex;"><span>    └── script-755.sh
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>-rw-r--r-- 1 william  70 Jun 24 17:01 Dockerfile
+</span></span><span style="display:flex;"><span>-rw-r--r-- 1 william  57 Jun 24 15:17 file-644.txt
+</span></span><span style="display:flex;"><span>-rwxr-xr-x 1 william  84 Jun 24 15:19 script-755.sh</span></span></code></pre></div>
 <p>We will use two ways to build the Linux-container images:</p>
 <ol>
 <li>
@@ -497,12 +486,12 @@ if (!doNotTrack) {
 <p>Let&rsquo;s begin with macOS, which acts as the control group.</p>
 <p><a href="https://asciinema.org/a/253423"><img src="https://asciinema.org/a/253423.svg" alt="asciicast"></a></p>
 <p>Perfect! All Unix-style file permissions are set correctly.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">total 20                                                                        
-</span></span><span class="line"><span class="cl">drwxr-xr-x    1 root     root          4096 Jun 24 22:30 .                      
-</span></span><span class="line"><span class="cl">drwxr-xr-x    1 root     root          4096 Jun 24 22:30 ..                     
-</span></span><span class="line"><span class="cl">-rw-r--r--    1 root     root            70 Jun 24 22:18 Dockerfile             
-</span></span><span class="line"><span class="cl">-rw-r--r--    1 root     root            57 Jun 24 22:18 file-644.txt           
-</span></span><span class="line"><span class="cl">-rwxr-xr-x    1 root     root            84 Jun 24 22:18 script-755.sh          </span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>total 20                                                                        
+</span></span><span style="display:flex;"><span>drwxr-xr-x    1 root     root          4096 Jun 24 22:30 .                      
+</span></span><span style="display:flex;"><span>drwxr-xr-x    1 root     root          4096 Jun 24 22:30 ..                     
+</span></span><span style="display:flex;"><span>-rw-r--r--    1 root     root            70 Jun 24 22:18 Dockerfile             
+</span></span><span style="display:flex;"><span>-rw-r--r--    1 root     root            57 Jun 24 22:18 file-644.txt           
+</span></span><span style="display:flex;"><span>-rwxr-xr-x    1 root     root            84 Jun 24 22:18 script-755.sh          </span></span></code></pre></div>
 <h2 id="wsl--">WSL: ③ ➍</h2>
 <p>On Windows, my preference is to use WSL to connect to Docker Desktop for Windows.<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>  Will this combination work well with Unix-style file permissions?</p>
 <p>Below are experiments conducted on WSL:</p>
@@ -514,39 +503,39 @@ if (!doNotTrack) {
 <h2 id="pure-windows--">Pure Windows: ⑤ ⑹</h2>
 <p>What if a Windows user sticks with pure-Windows toolchains, i.e., use traditional Command Prompt (cmd) to connect to Docker Desktop for Windows?</p>
 <p>The ⑤ docker-cli experiment shows the same result as in previous ③ <code>'-rwxr-xr-x'</code> permission:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">C:\&gt; docker run -it test-docker                                           
-</span></span><span class="line"><span class="cl">File permission (script-755.sh) should be: 755  rwxr-xr-x              
-</span></span><span class="line"><span class="cl">total 20                                                               
-</span></span><span class="line"><span class="cl">drwxr-xr-x    1 root     root          4096 Jun 25 03:45 .             
-</span></span><span class="line"><span class="cl">drwxr-xr-x    1 root     root          4096 Jun 25 03:45 ..            
-</span></span><span class="line"><span class="cl">-rwxr-xr-x    1 root     root            70 Jun 25 03:44 Dockerfile    
-</span></span><span class="line"><span class="cl">-rwxr-xr-x    1 root     root            57 Jun 24 08:03 file-644.txt  
-</span></span><span class="line"><span class="cl">-rwxr-xr-x    1 root     root            84 Jun 24 08:03 script-755.sh</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>C:\&gt; docker run -it test-docker                                           
+</span></span><span style="display:flex;"><span>File permission (script-755.sh) should be: 755  rwxr-xr-x              
+</span></span><span style="display:flex;"><span>total 20                                                               
+</span></span><span style="display:flex;"><span>drwxr-xr-x    1 root     root          4096 Jun 25 03:45 .             
+</span></span><span style="display:flex;"><span>drwxr-xr-x    1 root     root          4096 Jun 25 03:45 ..            
+</span></span><span style="display:flex;"><span>-rwxr-xr-x    1 root     root            70 Jun 25 03:44 Dockerfile    
+</span></span><span style="display:flex;"><span>-rwxr-xr-x    1 root     root            57 Jun 24 08:03 file-644.txt  
+</span></span><span style="display:flex;"><span>-rwxr-xr-x    1 root     root            84 Jun 24 08:03 script-755.sh</span></span></code></pre></div>
 <p>However, the ⑹ skaffold experiment shows the <em>worst</em> result:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">C:\&gt; skaffold-windows-amd64.exe build
-</span></span><span class="line"><span class="cl">Generating tags...
-</span></span><span class="line"><span class="cl"> - test-skaffold -&gt; test-skaffold:dbe377c
-</span></span><span class="line"><span class="cl">Tags generated in 228.0023ms
-</span></span><span class="line"><span class="cl">Starting build...
-</span></span><span class="line"><span class="cl">Found [docker-for-desktop] context, using local docker daemon.
-</span></span><span class="line"><span class="cl">Building [test-skaffold]...
-</span></span><span class="line"><span class="cl">Sending build context to Docker daemon  4.096kB
-</span></span><span class="line"><span class="cl">Step 1/4 : FROM alpine:3.9.4
-</span></span><span class="line"><span class="cl">...
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">C:\&gt; docker run -it 25997136449a
-</span></span><span class="line"><span class="cl">docker: Error response from daemon: OCI runtime create failed: container_linux.go:344:
-</span></span><span class="line"><span class="cl">starting container process caused &#34;exec: \&#34;/app/script-755.sh\&#34;: permission denied&#34;: unknown.
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">C:\&gt; docker run -it 25997136449a  ls -al
-</span></span><span class="line"><span class="cl">total 20
-</span></span><span class="line"><span class="cl">drwxr-xr-x    1 root     root          4096 Jun 25 03:51 .
-</span></span><span class="line"><span class="cl">drwxr-xr-x    1 root     root          4096 Jun 25 03:53 ..
-</span></span><span class="line"><span class="cl">-rw-rw-rw-    1 root     root            70 Jun 25 03:44 Dockerfile
-</span></span><span class="line"><span class="cl">-rw-rw-rw-    1 root     root            57 Jun 24 08:03 file-644.txt
-</span></span><span class="line"><span class="cl">-rw-rw-rw-    1 root     root            84 Jun 24 08:03 script-755.sh</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>C:\&gt; skaffold-windows-amd64.exe build
+</span></span><span style="display:flex;"><span>Generating tags...
+</span></span><span style="display:flex;"><span> - test-skaffold -&gt; test-skaffold:dbe377c
+</span></span><span style="display:flex;"><span>Tags generated in 228.0023ms
+</span></span><span style="display:flex;"><span>Starting build...
+</span></span><span style="display:flex;"><span>Found [docker-for-desktop] context, using local docker daemon.
+</span></span><span style="display:flex;"><span>Building [test-skaffold]...
+</span></span><span style="display:flex;"><span>Sending build context to Docker daemon  4.096kB
+</span></span><span style="display:flex;"><span>Step 1/4 : FROM alpine:3.9.4
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>C:\&gt; docker run -it 25997136449a
+</span></span><span style="display:flex;"><span>docker: Error response from daemon: OCI runtime create failed: container_linux.go:344:
+</span></span><span style="display:flex;"><span>starting container process caused &#34;exec: \&#34;/app/script-755.sh\&#34;: permission denied&#34;: unknown.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>C:\&gt; docker run -it 25997136449a  ls -al
+</span></span><span style="display:flex;"><span>total 20
+</span></span><span style="display:flex;"><span>drwxr-xr-x    1 root     root          4096 Jun 25 03:51 .
+</span></span><span style="display:flex;"><span>drwxr-xr-x    1 root     root          4096 Jun 25 03:53 ..
+</span></span><span style="display:flex;"><span>-rw-rw-rw-    1 root     root            70 Jun 25 03:44 Dockerfile
+</span></span><span style="display:flex;"><span>-rw-rw-rw-    1 root     root            57 Jun 24 08:03 file-644.txt
+</span></span><span style="display:flex;"><span>-rw-rw-rw-    1 root     root            84 Jun 24 08:03 script-755.sh</span></span></code></pre></div>
 <p>As shown in the demo, Skaffold blindly sets all the file permissions as <code>'-rw-rw-rw-'</code>, eliminating the <code>'x'</code> permission required for the <code>script-755.sh</code> script file.</p>
 <h2 id="conclusion">Conclusion</h2>
 <p>Different Unix-style file permissions will be generated in the Docker images when building Linux containers with different combination of host operating systems, docker cli, and Skaffold toolchains:</p>
@@ -710,35 +699,7 @@ if (!doNotTrack) {
 
   
 
-  <div class="disqus-comment">
-  <div class="disqus-button" id="load_disqus" onclick="load_disqus()">
-    顯示 Disqus 評論
-  </div>
-  <div id="disqus_thread"></div>
-  <script type="text/javascript">
-    var disqus_config = function () {
-      this.page.url = "//william-yeh.net/post/2019/06/docker-file-permissions/";
-    };
-    function load_disqus() {
-      
-      
-      if (window.location.hostname === 'localhost') return;
-
-      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      var disqus_shortname = 'potioneer';
-      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-
-      $('#load_disqus').remove();
-    };
-  </script>
-  <noscript
-    >Please enable JavaScript to view the
-    <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-  </noscript>
   
-</div>
-
 
     
 

@@ -342,5 +342,195 @@ Input Essential:</description>
 &lt;p&gt;My selection and elaboration of &amp;ldquo;essence&amp;rdquo; is very subjective. Follow the advice at your own risk.&lt;/p&gt;</description>
     </item>
     
+    <item>
+      <title>Jira Board Hacks</title>
+      <link>//william-yeh.net/post/2020/06/jira-board-hacks/</link>
+      <pubDate>Sat, 06 Jun 2020 08:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2020/06/jira-board-hacks/</guid>
+      <description>&lt;h2 id=&#34;實體看板&#34;&gt;實體看板&lt;/h2&gt;
+&lt;p&gt;在導入 Scrum 時，我偏好實體看板。&lt;/p&gt;
+&lt;p&gt;實體看板容易 zoom in/out，利於適時切換俯瞰與細節視角，不需過度的數字管理。&lt;/p&gt;
+&lt;p&gt;實體看板的空間共時性，容易塑造團隊的一體感。&lt;/p&gt;
+&lt;p&gt;實體看板彈性大，能以最小成本，讓團隊在敏捷路上不斷嘗試與調整。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Scrum 與《從 A 到 A&#43;》</title>
+      <link>//william-yeh.net/post/2019/01/scrum-good-to-great/</link>
+      <pubDate>Fri, 11 Jan 2019 08:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2019/01/scrum-good-to-great/</guid>
+      <description>&lt;p&gt;最近重新溫習近二十年的老書《&lt;a href=&#34;https://www.books.com.tw/products/0010202911&#34;&gt;從 A 到 A+&lt;/a&gt;》，啟發頗多。&lt;/p&gt;
+&lt;p&gt;《從 A 到 A+》作者們的實證研究方法很嚴謹 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;。他們從 1965～1995 年名列 Fortune 500 的企業名單中，挑選「十五年累計股票報酬率」超越股市整體表現三倍以上，且不受產業循環影響的企業，研究這些績優公司從「優秀」到「卓越」的關鍵因素。最後，作者們提出「&lt;a href=&#34;https://www.jimcollins.com/concepts/the-flywheel.html&#34;&gt;飛輪效應&lt;/a&gt;」來統一解釋他們的發現：&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2019/01/flywheel.jpg&#34; alt=&#34;飛輪效應&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2019/01/flywheel.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;飛輪效應&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;某方面來說，軟體研發圈講究的 Scrum，還滿符合《從 A 到 A+》所講的飛輪效應。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>2018 個人回顧</title>
+      <link>//william-yeh.net/post/2018/12/2018-retrospective/</link>
+      <pubDate>Thu, 20 Dec 2018 08:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2018/12/2018-retrospective/</guid>
+      <description>&lt;p&gt;到了年終，又開始要做個總回顧，再對來年許願。&lt;/p&gt;
+&lt;p&gt;如果說 &lt;a href=&#34;https://school.soft-arch.net/blog/6676/2016-retrospective&#34;&gt;2016&lt;/a&gt; 和 &lt;a href=&#34;https://school.soft-arch.net/blog/13083/2017-retrospective&#34;&gt;2017&lt;/a&gt; 都是華麗冒險年，那麼，2018 對我來說，是收攝靜觀的一年。&lt;/p&gt;
+&lt;p&gt;去除一些不便揭露的事情，以下是簡單的回顧。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Scrum 沒有明說的事：休耕期</title>
+      <link>//william-yeh.net/post/2018/12/fallow/</link>
+      <pubDate>Tue, 04 Dec 2018 08:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2018/12/fallow/</guid>
+      <description>&lt;p&gt;Scrum 的官方白皮書 &lt;a href=&#34;https://www.scrumguides.org/&#34;&gt;&lt;em&gt;The Scrum Guide&lt;/em&gt;&lt;/a&gt; 非常輕薄短小（像 &lt;a href=&#34;https://scrumguides.org/docs/scrumguide/v2017/2017-Scrum-Guide-US.pdf&#34;&gt;Nov 2017 版&lt;/a&gt;只有 19 頁），它的理念是：只制定最核心的原則、價值、角色、活動、產出物，其餘的則交給團隊根據經驗主義 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; 去調適出最適合自己的細節。&lt;/p&gt;
+&lt;p&gt;想當然爾，有很多事，Scrum 並沒有明說。&lt;/p&gt;
+&lt;p&gt;那麼，沒有明說的事，就不需要做、就不能做了嗎？做了，就違反 Scrum 嗎？&lt;/p&gt;
+&lt;p&gt;這是許多奉 &lt;a href=&#34;https://www.scrumguides.org/&#34;&gt;&lt;em&gt;The Scrum Guide&lt;/em&gt;&lt;/a&gt; 為圭臬的人，常有的盲點。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>為什麼 LeSS 這麼迷人，可是總是輸給 SAFe？</title>
+      <link>//william-yeh.net/post/2018/11/why-safe-over-less/</link>
+      <pubDate>Fri, 30 Nov 2018 15:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2018/11/why-safe-over-less/</guid>
+      <description>在一篇 Terry &amp;amp; Ruddy 對話紀錄中，看到一系列有趣的 LeSS vs. SAFe 討論： 「為什麼 LeSS 這麼迷人，可是總是輸給 SAFe？」 「SAFe 是敏捷跟辦公室政治作出了完美的妥協</description>
+    </item>
+    
+    <item>
+      <title>「判準與指標」系列</title>
+      <link>//william-yeh.net/series/criteria-series/</link>
+      <pubDate>Wed, 28 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>//william-yeh.net/series/criteria-series/</guid>
+      <description>軟體開發，除了方法論，還有⋯⋯ 敏捷的判準 Lean Startup 的判準 敏捷的價值與指標 DevOps 的價值與指標</description>
+    </item>
+    
+    <item>
+      <title>敏捷的價值與指標</title>
+      <link>//william-yeh.net/post/2018/11/agile-value/</link>
+      <pubDate>Tue, 27 Nov 2018 08:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2018/11/agile-value/</guid>
+      <description>&lt;p&gt;同溫層朋友提出一則有趣的&lt;a href=&#34;https://www.facebook.com/groups/179345672472/permalink/10156092663467473/&#34;&gt;提問&lt;/a&gt;：&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/11/agile-value-post.png&#34; alt=&#34;如何衡量敏捷的成效？ by Howie Yu (2018-11-23)&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2018/11/agile-value-post.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;如何衡量敏捷的成效？ by Howie Yu (2018-11-23)&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>敏捷的判準</title>
+      <link>//william-yeh.net/post/2018/10/agile-criteria/</link>
+      <pubDate>Wed, 31 Oct 2018 08:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2018/10/agile-criteria/</guid>
+      <description>&lt;p&gt;今年暑假，我第一次去台中的國美館，參觀 &lt;a href=&#34;https://www.ntmofa.gov.tw/information_1078_86836.html&#34;&gt;2018 年全國美術展&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;這年度盛會，分成油畫、水彩、版畫、水墨等十大類。大開眼界之餘，也不禁有個奇想：為什麼要分這麼多類別來競賽？為什麼不選出一個跨十大類別的首獎，就像武林盟主一樣？&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>軟體開發，除了方法論，還有⋯⋯</title>
+      <link>//william-yeh.net/post/2018/10/methodology-and-criteria/</link>
+      <pubDate>Thu, 25 Oct 2018 12:22:16 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2018/10/methodology-and-criteria/</guid>
+      <description>&lt;p&gt;在某些人眼中，「敏捷」是狂熱份子聚集的邪教。&lt;/p&gt;
+&lt;p&gt;或許是被困在守舊勢力太久了，敏捷信徒不只有改變世界的熱情，更有捨我其誰的急迫感。不過，在傳播理念或推動改變時，若操之過急，忽略對方所處的情境、歷史及歷程，就很難有建設性對話。在這守舊勢力龐大的世界，自然很容易陣亡。&lt;/p&gt;
+&lt;p&gt;但這還只是表象。歧見，單靠對話仍不足以化解，更需要在方法論層次達到理解，方可進退有據。&lt;/p&gt;
+&lt;p&gt;尤其在看過《&lt;a href=&#34;https://www.books.com.tw/products/0010791756&#34;&gt;社會科學的理路&lt;/a&gt;》之後，我領悟到一些根源問題及槓桿解。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>敏捷之途無他，刻意練習而已矣！</title>
+      <link>//william-yeh.net/post/2018/09/deliberate-practice-for-agile/</link>
+      <pubDate>Wed, 19 Sep 2018 23:25:01 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2018/09/deliberate-practice-for-agile/</guid>
+      <description>親愛的學員們： 感謝你們 9/13 ＆ 9/14，一起共度充滿歡笑的兩日。 課堂上，我多次提醒：請大家回去之後，要持續刻意練習；自練，對練，都好。 你可能會有</description>
+    </item>
+    
+    <item>
+      <title>以 impact mapping 進行參與式決策</title>
+      <link>//william-yeh.net/post/2018/02/impact-mapping-as-participatory-decision-making/</link>
+      <pubDate>Fri, 23 Feb 2018 10:54:14 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2018/02/impact-mapping-as-participatory-decision-making/</guid>
+      <description>我在半年前〈以談判角度看 Sprint Planning〉一文曾提過： 只要是我有權主導的 Sprint Planning，都會先花些時間請 PO 重新展開 Impact Mapping 及 Scaling Lean 的內容，尤</description>
+    </item>
+    
+    <item>
+      <title>以談判角度看 Sprint Planning</title>
+      <link>//william-yeh.net/post/2017/07/sprint-planning-as-negotiation/</link>
+      <pubDate>Thu, 27 Jul 2017 12:18:03 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2017/07/sprint-planning-as-negotiation/</guid>
+      <description>自從去年 Q3 個人的 Scrum 首航開始，讓我壓力最大的，並不是主持 Retrospective，而是 Sprint Planning。上完 CSPO 課程後，更是對高品質的 Sprint Planning 有</description>
+    </item>
+    
+    <item>
+      <title>自我改變，起點不是先挑戰意志力</title>
+      <link>//william-yeh.net/post/2017/05/self-change/</link>
+      <pubDate>Tue, 16 May 2017 22:44:42 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2017/05/self-change/</guid>
+      <description>一看到 Joe 多年後重開【大人學講座04 : 有效自我改變的系統化做法】，二話不說，立刻報名。 為什麼這麼有信心呢？ 原因之一，已經上過好幾次 Joe 的課程，尤</description>
+    </item>
+    
+    <item>
+      <title>CSPO，超越收據的收穫</title>
+      <link>//william-yeh.net/post/2017/03/cspo/</link>
+      <pubDate>Wed, 08 Mar 2017 14:52:29 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2017/03/cspo/</guid>
+      <description>為什麼要去上 Scrum 認證課程？ 去年 Q4 起，在有限的職權範圍內，小規模試行敏捷轉型。一路走來，自認在 Scrum 這一塊還有很多不足之處，想親炙這領域的先行者，以</description>
+    </item>
+    
+    <item>
+      <title>打怪升級路線圖</title>
+      <link>//william-yeh.net/post/2016/12/game-frame/</link>
+      <pubDate>Tue, 27 Dec 2016 08:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2016/12/game-frame/</guid>
+      <description>遊戲化 我第一次看到將「遊戲化」概念運用到職場上的點子，是在《加入遊戲因子，解決各種問題》這本有趣的書： 遊戲的十個組成要素 第二次看到將「遊戲化</description>
+    </item>
+    
+    <item>
+      <title>One-Week Sprint 的節奏</title>
+      <link>//william-yeh.net/post/2016/10/one-week-sprint/</link>
+      <pubDate>Wed, 26 Oct 2016 00:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2016/10/one-week-sprint/</guid>
+      <description>我曾在 iThome 的 2012 年度必看好書中，推薦 The Scrum Field Guide（當年還是第一版，現在則有第二版了）。當年看這本書時，還沒置身 Scrum 團隊的經驗，純粹是為了未來做</description>
+    </item>
+    
   </channel>
 </rss>

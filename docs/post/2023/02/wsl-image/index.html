@@ -33,7 +33,7 @@
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.111.3" />
+<meta name="generator" content="Hugo 0.117.0" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2023/02/wsl-image/" />
@@ -88,17 +88,6 @@
   <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
 <![endif]-->
 
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-D8V6EWHYN7"></script>
-<script>
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
-	gtag('config', 'G-D8V6EWHYN7', { 'anonymize_ip': false });
-}
-</script>
 
 
 
@@ -443,14 +432,14 @@ if (!doNotTrack) {
 <p>謹以此文記錄匯出與匯入 WSL 映像檔的步驟與除雷經驗。</p>
 <h2 id="前置作業查看已安裝的軟體清單">前置作業：查看已安裝的軟體清單</h2>
 <p>在匯出成公版之前，先查看已安裝了哪些軟體：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl"># 查看已用 apt install 安裝了哪些軟體
-</span></span><span class="line"><span class="cl">% apt list --installed
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"># 查看已用 brew install 安裝了哪些軟體
-</span></span><span class="line"><span class="cl">% brew list
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"># 查看手動下載安裝了哪些軟體
-</span></span><span class="line"><span class="cl">% ls -al /usr/local/bin</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span># 查看已用 apt install 安裝了哪些軟體
+</span></span><span style="display:flex;"><span>% apt list --installed
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span># 查看已用 brew install 安裝了哪些軟體
+</span></span><span style="display:flex;"><span>% brew list
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span># 查看手動下載安裝了哪些軟體
+</span></span><span style="display:flex;"><span>% ls -al /usr/local/bin</span></span></code></pre></div>
 <h2 id="前置作業清理內容">前置作業：清理內容</h2>
 <p>在匯出成公版之前，記得先清理一下機敏資料。譬如：</p>
 <ul>
@@ -467,35 +456,35 @@ if (!doNotTrack) {
 <h2 id="前置作業預設登入用戶">前置作業：預設登入用戶</h2>
 <p>踩雷經驗：匯出再匯入 WSL 映像檔之後，再登入的身分會是 root。</p>
 <p>為了避免此事發生，請在匯出映像檔之前，先編輯 WSL 設定檔 <code>/etc/wsl.conf</code> 如下：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ini" data-lang="ini"><span class="line"><span class="cl"><span class="k">[user]</span>
-</span></span><span class="line"><span class="cl"><span class="na">default</span><span class="o">=</span><span class="s">預設的登入帳號名稱</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#66d9ef">[user]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">default</span><span style="color:#f92672">=</span><span style="color:#e6db74">預設的登入帳號名稱</span>
 </span></span></code></pre></div><h2 id="匯出映像檔">匯出映像檔</h2>
 <p>先在 PowerShell 查看一下現在系統裡有哪些 WSL 設置：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">wsl -l -v
-</span></span><span class="line"><span class="cl">---
-</span></span><span class="line"><span class="cl">  NAME            STATE           VERSION
-</span></span><span class="line"><span class="cl">* Ubuntu          Running         2
-</span></span><span class="line"><span class="cl">  Ubuntu-22.04    Stopped         2</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>wsl -l -v
+</span></span><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>  NAME            STATE           VERSION
+</span></span><span style="display:flex;"><span>* Ubuntu          Running         2
+</span></span><span style="display:flex;"><span>  Ubuntu-22.04    Stopped         2</span></span></code></pre></div>
 <p>假設 <code>Ubuntu</code> 就是我們想要匯出的標的，請輸入以下命令：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="c"># 停止 &#34;Ubuntu&#34; 個體</span>
-</span></span><span class="line"><span class="cl"><span class="n">wsl</span> <span class="n">-t</span> <span class="n">Ubuntu</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c"># 將 &#34;Ubuntu&#34; 個體匯出至 &#34;my-image.vhdx&#34; 映像檔</span>
-</span></span><span class="line"><span class="cl"><span class="n">wsl</span>  <span class="p">-</span><span class="n">-export</span> <span class="n">Ubuntu</span>  <span class="p">-</span><span class="n">-vhd</span> <span class="nb">my-image</span><span class="p">.</span><span class="n">vhdx</span></span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#75715e"># 停止 &#34;Ubuntu&#34; 個體</span>
+</span></span><span style="display:flex;"><span>wsl -t Ubuntu
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 將 &#34;Ubuntu&#34; 個體匯出至 &#34;my-image.vhdx&#34; 映像檔</span>
+</span></span><span style="display:flex;"><span>wsl  --export Ubuntu  --vhd my-image.vhdx</span></span></code></pre></div>
 <p>映像檔可能很大。建議對它產生一份 hash，以供比對。<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
 <h2 id="匯入映像檔">匯入映像檔</h2>
 <p>假設我們想從 <code>my-image.vhdx</code> 映像檔匯入到一個名為 <code>dev</code> 的 WSL 個體，請輸入以下指令：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl"># 將 &#34;my-image.vhdx&#34; 映像檔匯入到名為 &#34;dev&#34; 的 WSL 個體，
-</span></span><span class="line"><span class="cl"># 並在 C:\WslDisk 建立虛擬硬碟
-</span></span><span class="line"><span class="cl">wsl --import dev  C:\WslDisk  my-image.vhdx  --vhd
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"># 看看是否匯入成功
-</span></span><span class="line"><span class="cl">wsl -l -v
-</span></span><span class="line"><span class="cl">---
-</span></span><span class="line"><span class="cl">  NAME            STATE           VERSION
-</span></span><span class="line"><span class="cl">* Ubuntu          Stopped         2
-</span></span><span class="line"><span class="cl">  dev             Stopped         2
-</span></span><span class="line"><span class="cl">  Ubuntu-22.04    Stopped         2</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span># 將 &#34;my-image.vhdx&#34; 映像檔匯入到名為 &#34;dev&#34; 的 WSL 個體，
+</span></span><span style="display:flex;"><span># 並在 C:\WslDisk 建立虛擬硬碟
+</span></span><span style="display:flex;"><span>wsl --import dev  C:\WslDisk  my-image.vhdx  --vhd
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span># 看看是否匯入成功
+</span></span><span style="display:flex;"><span>wsl -l -v
+</span></span><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>  NAME            STATE           VERSION
+</span></span><span style="display:flex;"><span>* Ubuntu          Stopped         2
+</span></span><span style="display:flex;"><span>  dev             Stopped         2
+</span></span><span style="display:flex;"><span>  Ubuntu-22.04    Stopped         2</span></span></code></pre></div>
 <p>你在 Windows Terminal 應該可以看到多了一個名為 <code>dev</code> 的終端機選項：</p>
 
 <link rel="stylesheet" href="/css/hugo-easy-gallery.css" />
@@ -514,11 +503,11 @@ if (!doNotTrack) {
 <p>既然是要給研發團隊用的公版，自然要登入看看是否一切正常。就以這陣子在實驗的 Laravel Sail 環境為例 <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>：</p>
 <p><a href="https://asciinema.org/a/558746"><img src="https://asciinema.org/a/558746.svg" alt="asciicast"></a></p>
 <p>如果有問題，就得卸載這份有瑕疵的 WSL 個體，回到源頭繼續修改：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="c"># 停止 &#34;dev&#34; 個體</span>
-</span></span><span class="line"><span class="cl"><span class="n">wsl</span> <span class="n">-t</span> <span class="n">dev</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c"># 卸載 &#34;dev&#34; 個體</span>
-</span></span><span class="line"><span class="cl"><span class="n">wsl</span> <span class="p">-</span><span class="n">-unregister</span> <span class="n">dev</span></span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#75715e"># 停止 &#34;dev&#34; 個體</span>
+</span></span><span style="display:flex;"><span>wsl -t dev
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 卸載 &#34;dev&#34; 個體</span>
+</span></span><span style="display:flex;"><span>wsl --unregister dev</span></span></code></pre></div>
 <h2 id="如果還有預設登入帳號的問題">如果還有預設登入帳號的問題</h2>
 <p>在前置作業時，曾經透過 WSL 設定檔 <code>/etc/wsl.conf</code> 避免預設登入帳號變成 root 的問題。如果此法無效，請根據<a href="https://superuser.com/a/1566031">這份建議</a>，用 Windows 登錄編輯程式 <code>regedit.exe</code> 去修改 Windows registry：</p>
 <ul>
@@ -638,35 +627,7 @@ if (!doNotTrack) {
 
   
 
-  <div class="disqus-comment">
-  <div class="disqus-button" id="load_disqus" onclick="load_disqus()">
-    顯示 Disqus 評論
-  </div>
-  <div id="disqus_thread"></div>
-  <script type="text/javascript">
-    var disqus_config = function () {
-      this.page.url = "//william-yeh.net/post/2023/02/wsl-image/";
-    };
-    function load_disqus() {
-      
-      
-      if (window.location.hostname === 'localhost') return;
-
-      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      var disqus_shortname = 'potioneer';
-      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-
-      $('#load_disqus').remove();
-    };
-  </script>
-  <noscript
-    >Please enable JavaScript to view the
-    <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-  </noscript>
   
-</div>
-
 
     
 

@@ -35,7 +35,7 @@
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.111.3" />
+<meta name="generator" content="Hugo 0.117.0" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2020/06/jira-board-hacks/" />
@@ -99,17 +99,6 @@
   <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
 <![endif]-->
 
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-D8V6EWHYN7"></script>
-<script>
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
-	gtag('config', 'G-D8V6EWHYN7', { 'anonymize_ip': false });
-}
-</script>
 
 
 
@@ -567,15 +556,15 @@ if (!doNotTrack) {
 
 <p>如此一來，寶貴的螢幕可視區域，只放絕對必要的資訊，就能多擺幾張卡片（是的，是的，我知道這是 bad smell 啦⋯⋯）。</p>
 <p>不過，Jira 本身已經夠笨重了，甚至連 Jira 本身的熱鍵都會不時失效；若再搭配像暴力猴這類 script 式外掛，可能會不夠穩定。如果你想要穩定一點的方案，或者不想透過熱鍵切換，只想一勞永逸眼不見為淨，不妨考慮改用 <a href="https://userstyles.org/">Stylish</a> 之類的東西，自動套用：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="c">/* For horizontal headers */</span>
-</span></span><span class="line"><span class="cl"> <span class="p">.</span><span class="nc">css-e2mdyo</span><span class="o">,</span> <span class="p">#</span><span class="nn">ghx-header</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">display</span><span class="p">:</span> <span class="kc">none</span> <span class="cp">!important</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c">/* For card fields */</span>
-</span></span><span class="line"><span class="cl"> <span class="nt">section</span><span class="p">.</span><span class="nc">ghx-extra-fields</span><span class="o">,</span> <span class="nt">div</span><span class="p">.</span><span class="nc">ghx-row</span><span class="p">.</span><span class="nc">ghx-highlighted-field</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">display</span><span class="p">:</span> <span class="kc">none</span> <span class="cp">!important</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span><span style="color:#75715e">/* For horizontal headers */</span>
+</span></span><span style="display:flex;"><span> .<span style="color:#a6e22e">css-e2mdyo</span><span style="color:#f92672">,</span> #ghx-header {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">none</span> <span style="color:#75715e">!important</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* For card fields */</span>
+</span></span><span style="display:flex;"><span> <span style="color:#f92672">section</span>.<span style="color:#a6e22e">ghx-extra-fields</span><span style="color:#f92672">,</span> <span style="color:#f92672">div</span>.<span style="color:#a6e22e">ghx-row</span>.<span style="color:#a6e22e">ghx-highlighted-field</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">none</span> <span style="color:#75715e">!important</span>;
+</span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><h2 id="jira-的聚焦卡片視角">Jira 的聚焦卡片視角</h2>
 <p>在 daily stand-up 進行時，常常需要讓大家知道「我們現在正在討論某一張卡片」。</p>
 <p>在 Jira 裡，我們可以對某一張卡片原地拖曳一下下，就會有類似的視覺聚焦效果：</p>
@@ -730,35 +719,7 @@ if (!doNotTrack) {
 
   
 
-  <div class="disqus-comment">
-  <div class="disqus-button" id="load_disqus" onclick="load_disqus()">
-    顯示 Disqus 評論
-  </div>
-  <div id="disqus_thread"></div>
-  <script type="text/javascript">
-    var disqus_config = function () {
-      this.page.url = "//william-yeh.net/post/2020/06/jira-board-hacks/";
-    };
-    function load_disqus() {
-      
-      
-      if (window.location.hostname === 'localhost') return;
-
-      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      var disqus_shortname = 'potioneer';
-      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-
-      $('#load_disqus').remove();
-    };
-  </script>
-  <noscript
-    >Please enable JavaScript to view the
-    <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-  </noscript>
   
-</div>
-
 
     
 

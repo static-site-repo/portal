@@ -34,7 +34,7 @@
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.111.3" />
+<meta name="generator" content="Hugo 0.117.0" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2019/04/wsltty-tmux/" />
@@ -92,17 +92,6 @@
   <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
 <![endif]-->
 
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-D8V6EWHYN7"></script>
-<script>
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
-	gtag('config', 'G-D8V6EWHYN7', { 'anonymize_ip': false });
-}
-</script>
 
 
 
@@ -445,43 +434,43 @@ if (!doNotTrack) {
 <p>此事古難全。</p>
 <h2 id="wsltty-剪貼簿">WSLtty 剪貼簿</h2>
 <p>在 X Window 或 Mac 的終端機，只要按下滑鼠右鍵就能夠 paste 文字。如果在 WSLtty 上也想這麼玩，請在 <code>%APPDATA%\wsltty\config</code> 設定檔加上這一行：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">RightClickAction=paste</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>RightClickAction=paste</span></span></code></pre></div>
 <h2 id="tmux-與-zsh">Tmux 與 zsh</h2>
 <p>啟動 tmux 時，似乎並不會根據 <code>/etc/passwd</code> 的資訊來喚起自訂的 shell，而是一律喚起 bash。</p>
 <p>解決方法是，在 <code>~/.tmux.conf</code> 加上這一行：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">set-option -g default-shell /bin/zsh</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>set-option -g default-shell /bin/zsh</span></span></code></pre></div>
 <h2 id="tmux-的-pane">Tmux 的 pane</h2>
 <p>用慣 iTerm2 的我，對 tmux 的 pane 功能不太習慣。</p>
 <p>譬如說，在 tmux 新增 pane 或 window 時，不會自動帶入目前的目錄 <code>$PWD</code>，而是一律帶入 <code>$HOME</code>，很不方便。Tmux 預設的組合鍵 <code>&lt;prefix&gt; %</code> 及 <code>&lt;prefix&gt; &quot;</code> 難記又難按，也很令人頭痛。</p>
 <p>因此，我綜合多人的做法<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup>，解決目錄問題，換成好記好按的組合鍵，更可用方向鍵來切換 pane：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl"># Create new window (tab) with current path
-</span></span><span class="line"><span class="cl">unbind c
-</span></span><span class="line"><span class="cl">bind -n M-t new-window -c &#39;#{pane_current_path}&#39;  # mimic for iTerm2 habit
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"># Split panes with current path
-</span></span><span class="line"><span class="cl"># @see https://unix.stackexchange.com/a/247449
-</span></span><span class="line"><span class="cl">unbind &#39;&#34;&#39;
-</span></span><span class="line"><span class="cl">unbind &#39;%&#39;
-</span></span><span class="line"><span class="cl">bind -n M-d split-window -h -c &#39;#{pane_current_path}&#39;  # Split panes horizontal
-</span></span><span class="line"><span class="cl">bind -n M-D split-window -v -c &#39;#{pane_current_path}&#39;  # Split panes vertically
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"># Switch panes using Alt-arrow without prefix
-</span></span><span class="line"><span class="cl">bind -n M-Left  select-pane -L
-</span></span><span class="line"><span class="cl">bind -n M-Right select-pane -R
-</span></span><span class="line"><span class="cl">bind -n M-Up    select-pane -U
-</span></span><span class="line"><span class="cl">bind -n M-Down  select-pane -D</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span># Create new window (tab) with current path
+</span></span><span style="display:flex;"><span>unbind c
+</span></span><span style="display:flex;"><span>bind -n M-t new-window -c &#39;#{pane_current_path}&#39;  # mimic for iTerm2 habit
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span># Split panes with current path
+</span></span><span style="display:flex;"><span># @see https://unix.stackexchange.com/a/247449
+</span></span><span style="display:flex;"><span>unbind &#39;&#34;&#39;
+</span></span><span style="display:flex;"><span>unbind &#39;%&#39;
+</span></span><span style="display:flex;"><span>bind -n M-d split-window -h -c &#39;#{pane_current_path}&#39;  # Split panes horizontal
+</span></span><span style="display:flex;"><span>bind -n M-D split-window -v -c &#39;#{pane_current_path}&#39;  # Split panes vertically
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span># Switch panes using Alt-arrow without prefix
+</span></span><span style="display:flex;"><span>bind -n M-Left  select-pane -L
+</span></span><span style="display:flex;"><span>bind -n M-Right select-pane -R
+</span></span><span style="display:flex;"><span>bind -n M-Up    select-pane -U
+</span></span><span style="display:flex;"><span>bind -n M-Down  select-pane -D</span></span></code></pre></div>
 <h2 id="tmux-plugin-manager">Tmux Plugin Manager</h2>
 <p>Tmux 設定太多了，就有人寫了外掛管理系統 <a href="https://github.com/tmux-plugins/tpm">Tmux Plugin Manager</a>。雖然目前我還用不到，但還是先安裝，以備不時之需。</p>
 <p>首先，下載 TPM：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">% git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>% git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm</span></span></code></pre></div>
 <p>將以下幾行加到 <code>.tmux.conf</code> 最後面：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl"># List of plugins
-</span></span><span class="line"><span class="cl">set -g @plugin &#39;tmux-plugins/tpm&#39;
-</span></span><span class="line"><span class="cl">set -g @plugin &#39;tmux-plugins/tmux-sensible&#39;
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"># Initialize TMUX plugin manager
-</span></span><span class="line"><span class="cl"># (keep this line at the very bottom of tmux.conf)
-</span></span><span class="line"><span class="cl">run -b &#39;~/.tmux/plugins/tpm/tpm&#39;</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span># List of plugins
+</span></span><span style="display:flex;"><span>set -g @plugin &#39;tmux-plugins/tpm&#39;
+</span></span><span style="display:flex;"><span>set -g @plugin &#39;tmux-plugins/tmux-sensible&#39;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span># Initialize TMUX plugin manager
+</span></span><span style="display:flex;"><span># (keep this line at the very bottom of tmux.conf)
+</span></span><span style="display:flex;"><span>run -b &#39;~/.tmux/plugins/tpm/tpm&#39;</span></span></code></pre></div>
 <p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <p>Tmux 還有很多高段的功能，以後有需要再研究吧。</p>
 <p>如此這般拼湊起來，雖然還不能完全複刻 Mac 的 iTerm2 使用經驗，但也已經算是可以接受了。當然啦，私心還是希望 Cmder 或 Hyper 能夠好好解決顯示問題，就不必動用 tmux 了。</p>
@@ -604,35 +593,7 @@ if (!doNotTrack) {
 
   
 
-  <div class="disqus-comment">
-  <div class="disqus-button" id="load_disqus" onclick="load_disqus()">
-    顯示 Disqus 評論
-  </div>
-  <div id="disqus_thread"></div>
-  <script type="text/javascript">
-    var disqus_config = function () {
-      this.page.url = "//william-yeh.net/post/2019/04/wsltty-tmux/";
-    };
-    function load_disqus() {
-      
-      
-      if (window.location.hostname === 'localhost') return;
-
-      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      var disqus_shortname = 'potioneer';
-      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-
-      $('#load_disqus').remove();
-    };
-  </script>
-  <noscript
-    >Please enable JavaScript to view the
-    <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-  </noscript>
   
-</div>
-
 
     
 
