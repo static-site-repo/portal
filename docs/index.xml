@@ -6,10 +6,105 @@
     <description>Recent content on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sat, 19 Aug 2023 20:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 26 Aug 2023 18:00:00 +0800</lastBuildDate>
     
         <atom:link href="//william-yeh.net/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>很簡單的 Story，也要拆分出 Tasks 嗎？</title>
+      <link>//william-yeh.net/post/2023/08/story-to-tasks/</link>
+      <pubDate>Sat, 26 Aug 2023 18:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2023/08/story-to-tasks/</guid>
+      
+        <description>&lt;p&gt;雖然 &lt;a href=&#34;https://scrumguides.org&#34;&gt;&lt;em&gt;The Scrum Guide&lt;/em&gt;&lt;/a&gt; 並沒有規定 &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Planning&lt;/span&gt;
+ 要分為 Part 1 &amp;amp; Part 2，但這可說是 Scrum 圈公認的最佳實踐。&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;如果團隊已經成熟到能以自己的方式把 &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Planning&lt;/span&gt;
+ 做好做滿，其實也未必非得硬性劃分 Part 1 &amp;amp; Part 2（畢竟 Scrum 推崇基於經驗主義的自組織、自管理）。最怕的是，不明白劃分 Part 1 &amp;amp; Part 2 的好處，不明白 Part 2 的重點及產出，甚至單純只因「嫌麻煩」、「省時間」，就省略原本預定該在 Part 2 進行的活動，往往會導致 sprint 進行途中出現種種問題。&lt;/p&gt;
+&lt;p&gt;很多問題，追根究柢，就是當初沒有認真進行 Part 2。&lt;/p&gt;
+&lt;p&gt;在 Part 2 中，有一個重要的步驟是將 &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Backlog Items&lt;/span&gt;
+ 拆分出較小、較具體的 tasks &lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;  ——常被團隊輕看的步驟。我姑且不搬出專案管理的大道理 &lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt; ，純粹以 Scrum 日常經驗來反思「很簡單的 story，也要拆分出 tasks 嗎？」這個提問。&lt;/p&gt;
+&lt;h2 id=&#34;對自己避免低估&#34;&gt;對自己：避免低估&lt;/h2&gt;
+&lt;p&gt;工程師常會低估 story 所需耗費的時間資源。可能是刻意低估（迎合上意、打腫臉充胖子⋯⋯），也可能是不自覺的低估。前者當然不可取，後者雖然是無心之舉，但仍會造成 sprint fail 的風險，若無法道德勸說大家警覺，就得訴諸制度流程來避免。&lt;/p&gt;
+&lt;p&gt;將 story 拆分出較小、較具體的 tasks，其實就是&lt;strong&gt;切換至一個較為深入的視角來審視 story 的執行計畫&lt;/strong&gt;。拆分出來的 tasks，不僅可當成 checklist 避免自己掛一漏萬，更可忠實反映 story 的複雜度——我常常看到團隊在真正嘗試將 story 拆分出好多張 tasks 便利貼之後，才回頭修改當初對於 story 的估點，而且往往是增加點數。&lt;/p&gt;
+&lt;p&gt;我很喜歡 Mike Cohn 大師在 &lt;a href=&#34;https://www.amazon.com/dp/0321205685&#34;&gt;&lt;em&gt;User Stories Applied&lt;/em&gt;&lt;/a&gt; 所舉的 &amp;ldquo;Everything takes four hours&amp;rdquo; 例子：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;In one episode the husband is being pestered by his wife to go shopping for a couch. She insists the trip will take only an hour. He tells her that “Everything in the world takes four hours. You gotta go there, you gotta do whatever, eat, talk about where you should have eaten, and then come home. That&amp;rsquo;s four hours minimum.”&lt;/p&gt;
+&lt;p&gt;This isn’t a bad rule of thumb for software development and is
+a perfect example of how projects get in trouble when they
+don’t distinguish between ideal time and elapsed time.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;如果你堅持「這個 story 很簡單，根本不必浪費時間拆分出 tasks」，那麼，請想想 &amp;ldquo;Everything takes four hours&amp;rdquo; 這句話。&lt;/p&gt;
+&lt;h2 id=&#34;對團隊製造流動感&#34;&gt;對團隊：製造流動感&lt;/h2&gt;
+&lt;p&gt;讓 &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Daily Scrum&lt;/span&gt;
+ 無趣的方法有很多，常見的病徵是：某一張卡片，日復一日就是一直停留在某一欄 (column)，沒有前進。&lt;/p&gt;
+&lt;p&gt;某Ａ問：「這張卡片，停留在這一欄好像已經好幾天了⋯⋯請問它怎麼了？」&lt;/p&gt;
+&lt;p&gt;答：「啊，就是還在進行中，還沒做完呀。」&lt;/p&gt;
+&lt;p&gt;某Ｂ問：「好幾天都一直停留在這裡，我怎麼知道它到底有沒有任何進展呀？」&lt;/p&gt;
+&lt;p&gt;答：「啊，就是還在進行中呀⋯⋯你懷疑我喔？」&lt;/p&gt;
+&lt;p&gt;團隊需要製造任務的流動感，以區隔「沒有流動的幻覺」與「真實的 blocker」。&lt;/p&gt;
+&lt;p&gt;Scrum 的團隊未必會採用 Kanban 陣營的做法，但 Kanban 的 flow 觀念及視覺化手法很值得 Scrum 團隊借鏡。將 story 拆分出較小、較具體的 tasks，其實就是&lt;strong&gt;切換至一個較具流動感的視角來審視 story 的執行狀況&lt;/strong&gt;。當你憑著每一天每一天 &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Daily Scrum&lt;/span&gt;
+ 的視覺印象，懷疑某張 story 似乎停滯不前，或是憑著 burndown chart &lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt; 的量化資料，懷疑整個 sprint 似乎偏離理想斜線，那麼，在進入「blocker 問題解決模式」之前，請先試著檢查看看當初 tasks 拆分是否確實。&lt;/p&gt;
+&lt;h2 id=&#34;當-tasks-已經變成無趣的例行公事時&#34;&gt;當 Tasks 已經變成無趣的例行公事時&lt;/h2&gt;
+&lt;p&gt;Ｃ問：「萬一我們每次將 story 拆分出來的 tasks 都長得一模一樣，還有必要浪費這些時間嗎？」&lt;/p&gt;
+&lt;p&gt;我：「請舉例。」&lt;/p&gt;
+&lt;p&gt;Ｃ：「就拿這一張 StoryA 來說吧，我們會拆出這幾張 tasks：(1) Design Logic，(2) Design Schema，(3) Coding，(4) PR，(5) Deploy。」&lt;/p&gt;
+&lt;p&gt;Ｃ：「對其他那幾張 Story B、C、D 來說，其實也都是一樣的手順。每次都要同樣的複製貼上複製貼上，滿浪費青春的⋯⋯」&lt;/p&gt;
+&lt;p&gt;如果團隊面對的產品，真的如同這位Ｃ所說，在 tasks 層次的手順幾乎已經了無新意，那麼，在不犧牲前面講的「對自己：避免低估」及「對團隊：製造流動感」兩大好處的前提下，我會建議團隊：或許可試著將樸素的 Scrum task board 轉換成較精緻的 Kanban board，把例行手順變成 Kanban column。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;     &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;「很簡單的 Story，也要拆分出 Tasks 嗎？」&lt;/p&gt;
+&lt;p&gt;你認為呢？&lt;/p&gt;
+
+&lt;div class=&#34;shortcode-notice note&#34;&gt;
+  &lt;div class=&#34;shortcode-notice-title note&#34;&gt;
+    
+      【敏捷的工作分解方法】系列
+    
+  &lt;/div&gt;
+  &lt;p&gt;❶ &lt;a href=&#34;//william-yeh.net/post/2016/10/one-week-sprint/&#34;&gt;One-Week Sprint 的節奏&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❷ &lt;a href=&#34;//william-yeh.net/post/2016/11/decomposition-reading-list/&#34;&gt;工作分解講座・閱讀材料&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❸ &lt;a href=&#34;//william-yeh.net/post/2022/10/agile-milestone/&#34;&gt;事情做一半，等於沒完成：淺談敏捷的里程碑設定&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❹ &lt;a href=&#34;//william-yeh.net/post/2022/11/spidr/&#34;&gt;以「蜘蛛法」拆分過於龐大的 User Story&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❺ 很簡單的 Story，也要拆分出 Tasks 嗎？&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;對於 Sprint Planning 是否要分成兩部曲，請參考 Teddy 的文章〈&lt;a href=&#34;https://teddy-chen-tw.blogspot.com/2014/11/sprint-planning-meeting.html&#34;&gt;談談 Sprint Planning Meeting&lt;/a&gt;〉。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;像 &lt;a href=&#34;https://less.works/less/framework/sprint-planning-one&#34;&gt;LeSS&lt;/a&gt; 就說：&amp;quot;&lt;em&gt;Sprint Planning Two focuses on creating a &lt;strong&gt;plan of work&lt;/strong&gt; to get to &amp;lsquo;done&amp;rsquo; for each item. The items and &lt;strong&gt;plan of action or tasks&lt;/strong&gt; comprise the Sprint Backlog.&lt;/em&gt;&amp;quot;&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;
+&lt;p&gt;如果想從更宏觀的角度看待「工作分解」，請參考〈&lt;a href=&#34;//william-yeh.net/post/2016/11/decomposition-reading-list/&#34;&gt;工作分解講座‧閱讀材料&lt;/a&gt;〉一文。&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:4&#34;&gt;
+&lt;p&gt;Scrum 陣營常見的 burndown chart 有兩種，請參考〈  &lt;a href=&#34;https://medium.com/%E6%96%87%E6%80%9D%E4%B8%8D%E8%97%8F%E7%A7%81/%E6%96%87%E6%80%9D%E4%B8%8D%E8%97%8F%E7%A7%81-%E7%87%83%E7%9B%A1%E5%9C%96%E7%B0%A1%E5%96%AE%E8%AA%AA-29628f3570be&#34;&gt;燃盡圖 (Burndown) 簡單說&lt;/a&gt;〉一文。&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>敏捷的工作分解方法</title>
+      <link>//william-yeh.net/series/agile-decomposition/</link>
+      <pubDate>Sat, 26 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>//william-yeh.net/series/agile-decomposition/</guid>
+      
+        <description>&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2016/10/one-week-sprint/&#34;&gt;One-Week Sprint 的節奏&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2016/11/decomposition-reading-list/&#34;&gt;工作分解講座・閱讀材料&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2022/10/agile-milestone/&#34;&gt;事情做一半，等於沒完成：淺談敏捷的里程碑設定&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2022/11/spidr/&#34;&gt;以「蜘蛛法」拆分過於龐大的 User Story&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2023/08/story-to-tasks/&#34;&gt;很簡單的 Story，也要拆分出 Tasks 嗎？&lt;/a&gt;&lt;/p&gt;
+</description>
+      
+    </item>
     
     <item>
       <title>透過自己的雙手，掌握那不變的容器技術核心——《Docker 實戰 6 堂課》推薦序</title>
@@ -1499,6 +1594,7 @@
 &lt;p&gt;❷ &lt;a href=&#34;//william-yeh.net/post/2016/11/decomposition-reading-list/&#34;&gt;工作分解講座・閱讀材料&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;❸ &lt;a href=&#34;//william-yeh.net/post/2022/10/agile-milestone/&#34;&gt;事情做一半，等於沒完成：淺談敏捷的里程碑設定&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;❹ 以「蜘蛛法」拆分過於龐大的 User Story&lt;/p&gt;
+&lt;p&gt;❺ &lt;a href=&#34;//william-yeh.net/post/2023/08/story-to-tasks/&#34;&gt;很簡單的 Story，也要拆分出 Tasks 嗎？&lt;/a&gt;&lt;/p&gt;
 
 &lt;/div&gt;
 
@@ -1510,21 +1606,6 @@
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>敏捷的工作分解方法</title>
-      <link>//william-yeh.net/series/agile-decomposition/</link>
-      <pubDate>Tue, 01 Nov 2022 00:00:00 +0000</pubDate>
-      
-      <guid>//william-yeh.net/series/agile-decomposition/</guid>
-      
-        <description>&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2016/10/one-week-sprint/&#34;&gt;One-Week Sprint 的節奏&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2016/11/decomposition-reading-list/&#34;&gt;工作分解講座・閱讀材料&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2022/10/agile-milestone/&#34;&gt;事情做一半，等於沒完成：淺談敏捷的里程碑設定&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2022/11/spidr/&#34;&gt;以「蜘蛛法」拆分過於龐大的 User Story&lt;/a&gt;&lt;/p&gt;
-</description>
       
     </item>
     
@@ -1638,6 +1719,7 @@
 &lt;p&gt;❷ &lt;a href=&#34;//william-yeh.net/post/2016/11/decomposition-reading-list/&#34;&gt;工作分解講座・閱讀材料&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;❸ 事情做一半，等於沒完成：淺談敏捷的里程碑設定&lt;/p&gt;
 &lt;p&gt;❹ &lt;a href=&#34;//william-yeh.net/post/2022/11/spidr/&#34;&gt;以「蜘蛛法」拆分過於龐大的 User Story&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❺ &lt;a href=&#34;//william-yeh.net/post/2023/08/story-to-tasks/&#34;&gt;很簡單的 Story，也要拆分出 Tasks 嗎？&lt;/a&gt;&lt;/p&gt;
 
 &lt;/div&gt;</description>
       
@@ -14987,6 +15069,7 @@ increment 的方式交付「完成」的產品，可以確保一直提供一個�
 &lt;p&gt;❷ 工作分解講座・閱讀材料&lt;/p&gt;
 &lt;p&gt;❸ &lt;a href=&#34;//william-yeh.net/post/2022/10/agile-milestone/&#34;&gt;事情做一半，等於沒完成：淺談敏捷的里程碑設定&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;❹ &lt;a href=&#34;//william-yeh.net/post/2022/11/spidr/&#34;&gt;以「蜘蛛法」拆分過於龐大的 User Story&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❺ &lt;a href=&#34;//william-yeh.net/post/2023/08/story-to-tasks/&#34;&gt;很簡單的 Story，也要拆分出 Tasks 嗎？&lt;/a&gt;&lt;/p&gt;
 
 &lt;/div&gt;
 
@@ -15169,6 +15252,7 @@ increment 的方式交付「完成」的產品，可以確保一直提供一個�
 &lt;p&gt;❷ &lt;a href=&#34;//william-yeh.net/post/2016/11/decomposition-reading-list/&#34;&gt;工作分解講座・閱讀材料&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;❸ &lt;a href=&#34;//william-yeh.net/post/2022/10/agile-milestone/&#34;&gt;事情做一半，等於沒完成：淺談敏捷的里程碑設定&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;❹ &lt;a href=&#34;//william-yeh.net/post/2022/11/spidr/&#34;&gt;以「蜘蛛法」拆分過於龐大的 User Story&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❺ &lt;a href=&#34;//william-yeh.net/post/2023/08/story-to-tasks/&#34;&gt;很簡單的 Story，也要拆分出 Tasks 嗎？&lt;/a&gt;&lt;/p&gt;
 
 &lt;/div&gt;
 
