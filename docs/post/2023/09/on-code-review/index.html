@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="zh-tw" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>從 Code Review 的小事看到大事 - Potioneer&#39;s Essays</title>
+  
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="William Yeh" />
+  <meta name="description" content="Opening 我很喜歡 Java 大師 Joshua Bloch 在《編程的頂尖對話》所說的： 即使是想把一個很小的程式寫對也是非常難的。 認為自己程式沒有 bug 就是在愚弄自己。程式肯定有 bug" />
+
+
+
+
+<meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
+
+
+<meta name="generator" content="Hugo 0.117.0" />
+
+
+<link rel="canonical" href="//william-yeh.net/post/2023/09/on-code-review/" />
+
+
+
+
+
+<link rel="icon" href="/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/sass/jane.min.de22abc00de44766eebd1054fd9e0b254b071f89d5019044f893c484a9249a8d.css" integrity="sha256-3iKrwA3kR2buvRBU/Z4LJUsHH4nVAZBE&#43;JPEhKkkmo0=" media="screen" crossorigin="anonymous">
+
+
+
+
+
+
+
+<meta property="og:title" content="從 Code Review 的小事看到大事" />
+<meta property="og:description" content="Opening 我很喜歡 Java 大師 Joshua Bloch 在《編程的頂尖對話》所說的： 即使是想把一個很小的程式寫對也是非常難的。 認為自己程式沒有 bug 就是在愚弄自己。程式肯定有 bug" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="//william-yeh.net/post/2023/09/on-code-review/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2023-09-13T20:00:00+08:00" />
+<meta property="article:modified_time" content="2023-09-13T20:00:00+08:00" />
+<meta itemprop="name" content="從 Code Review 的小事看到大事">
+<meta itemprop="description" content="Opening 我很喜歡 Java 大師 Joshua Bloch 在《編程的頂尖對話》所說的： 即使是想把一個很小的程式寫對也是非常難的。 認為自己程式沒有 bug 就是在愚弄自己。程式肯定有 bug"><meta itemprop="datePublished" content="2023-09-13T20:00:00+08:00" />
+<meta itemprop="dateModified" content="2023-09-13T20:00:00+08:00" />
+<meta itemprop="wordCount" content="7280">
+<meta itemprop="keywords" content="programming,craftsmanship,testing,agile,scrum," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="從 Code Review 的小事看到大事"/>
+<meta name="twitter:description" content="Opening 我很喜歡 Java 大師 Joshua Bloch 在《編程的頂尖對話》所說的： 即使是想把一個很小的程式寫對也是非常難的。 認為自己程式沒有 bug 就是在愚弄自己。程式肯定有 bug"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Potioneer&#39;s Essays</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="//william-yeh.net/">♜</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="//william-yeh.net/post/">Archives</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          <div class="mobile-menu-parent">
+            <span class="mobile-submenu-open"></span>
+            <a href="//william-yeh.net/series/">
+              Series
+            </a>
+          </div>
+          <ul class="mobile-submenu-list">
+            
+              <li>
+                <a href="//william-yeh.net/series/career-reading-club/">職涯躍升書系導讀會</a>
+              </li>
+            
+              <li>
+                <a href="//william-yeh.net/series/essence-of-scrum/">Essence of Scrum</a>
+              </li>
+            
+              <li>
+                <a href="//william-yeh.net/series/scrum-master-training/">Scrum master 培訓系列</a>
+              </li>
+            
+              <li>
+                <a href="//william-yeh.net/series/agile-decomposition/">敏捷的工作分解方法</a>
+              </li>
+            
+              <li>
+                <a href="//william-yeh.net/series/systhinking-series/">「系統思考工作坊」系列</a>
+              </li>
+            
+              <li>
+                <a href="//william-yeh.net/series/criteria-series/">「判準與指標」系列</a>
+              </li>
+            
+              <li>
+                <a href="//william-yeh.net/series/change-series/">「改變」系列</a>
+              </li>
+            
+              <li>
+                <a href="//william-yeh.net/series/book-review/">書籍／課程推薦</a>
+              </li>
+            
+          </ul>
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="//william-yeh.net/tags/">Tags</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="//william-yeh.net/categories/">Categories</a>
+          
+        
+      </li>
+    
+
+    
+  </ul>
+</nav>
+
+
+  
+    
+
+
+
+
+
+
+  <link rel="stylesheet" href="/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+
+  
+
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/" class="logo">
+    
+      Potioneer&#39;s Essays
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="//william-yeh.net/">♜</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="//william-yeh.net/post/">Archives</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          <a class="menu-item-link menu-parent" href="//william-yeh.net/series/">Series</a>
+          <ul class="submenu">
+            
+              <li class="submenu-item">
+                <a href="//william-yeh.net/series/career-reading-club/">職涯躍升書系導讀會</a>
+              </li>
+            
+              <li class="submenu-item">
+                <a href="//william-yeh.net/series/essence-of-scrum/">Essence of Scrum</a>
+              </li>
+            
+              <li class="submenu-item">
+                <a href="//william-yeh.net/series/scrum-master-training/">Scrum master 培訓系列</a>
+              </li>
+            
+              <li class="submenu-item">
+                <a href="//william-yeh.net/series/agile-decomposition/">敏捷的工作分解方法</a>
+              </li>
+            
+              <li class="submenu-item">
+                <a href="//william-yeh.net/series/systhinking-series/">「系統思考工作坊」系列</a>
+              </li>
+            
+              <li class="submenu-item">
+                <a href="//william-yeh.net/series/criteria-series/">「判準與指標」系列</a>
+              </li>
+            
+              <li class="submenu-item">
+                <a href="//william-yeh.net/series/change-series/">「改變」系列</a>
+              </li>
+            
+              <li class="submenu-item">
+                <a href="//william-yeh.net/series/book-review/">書籍／課程推薦</a>
+              </li>
+            
+          </ul>
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="//william-yeh.net/tags/">Tags</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="//william-yeh.net/categories/">Categories</a>
+          
+
+        
+
+      </li>
+    
+
+    
+    
+
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight wallpaper">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">從 Code Review 的小事看到大事</h1>
+      
+
+      <div class="post-meta">
+  <div class="post-meta-author">
+    by
+      William Yeh
+    
+  </div>
+
+  <div class="post-meta-time">
+    <time datetime="2023-09-13">
+      2023-09-13
+    </time>
+  </div>
+
+  
+
+
+  <div class="post-meta__right">
+    <span class="post-meta-more">
+        約 7280 字 -
+        預計閱讀 15 分鐘
+      </span>
+
+    <div class="post-meta-category">
+        <a href="//william-yeh.net/categories/tech/"> tech </a>
+          
+      </div>
+
+
+    
+    
+      <span id="busuanzi_container_page_pv">
+        | 阅读 <span id="busuanzi_value_page_pv"></span>
+      </span>
+    
+
+
+    
+    
+  </div>
+</div>
+
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目錄</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#opening">Opening</a></li>
+    <li><a href="#-基本信念品質來自正確地做事">① 基本信念：品質來自正確地做事</a>
+      <ul>
+        <li><a href="#collective-ownership">Collective ownership</a></li>
+        <li><a href="#four-eyes-principle">Four-eyes principle</a></li>
+        <li><a href="#working-backwards">Working backwards</a></li>
+        <li><a href="#品質不是白吃的午餐">品質不是白吃的午餐</a></li>
+      </ul>
+    </li>
+    <li><a href="#-掌握基本功與領域知識">② 掌握基本功與領域知識</a>
+      <ul>
+        <li><a href="#clean-code">Clean code</a></li>
+        <li><a href="#guideline">Guideline</a></li>
+        <li><a href="#small-batch">Small batch</a></li>
+        <li><a href="#domain-knowledge">Domain knowledge</a></li>
+        <li><a href="#context">Context</a></li>
+        <li><a href="#config">Config</a></li>
+      </ul>
+    </li>
+    <li><a href="#-凝聚團隊公約的共識">③ 凝聚團隊公約的共識</a>
+      <ul>
+        <li><a href="#過與不及的拿捏">過與不及的拿捏</a></li>
+        <li><a href="#cadence">Cadence</a></li>
+        <li><a href="#process">Process</a></li>
+      </ul>
+    </li>
+    <li><a href="#-嘗試更好的協同理解技巧">④ 嘗試更好的協同理解技巧</a>
+      <ul>
+        <li><a href="#放大溝通頻寬">放大溝通頻寬</a></li>
+        <li><a href="#尋求深度資訊">尋求深度資訊</a></li>
+      </ul>
+    </li>
+    <li><a href="#-讓進步看得見">⑤ 讓進步看得見</a></li>
+    <li><a href="#-支持長久研發的措施">⑥ 支持長久研發的措施</a>
+      <ul>
+        <li><a href="#事">事</a></li>
+        <li><a href="#物">物</a></li>
+        <li><a href="#人">人</a></li>
+      </ul>
+    </li>
+    <li><a href="#結語">結語</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+
+
+    
+    <div class="post-content">
+      <h2 id="opening">Opening</h2>
+<p>我很喜歡 Java 大師 <a href="https://en.wikipedia.org/wiki/Joshua_Bloch">Joshua Bloch</a> 在《<a href="https://williampjyeh.notion.site/d265b736b05f42d885ef40bb0a48786f">編程的頂尖對話</a>》所說的：</p>
+<blockquote>
+<p>即使是想把一個很小的程式寫對也是非常難的。</p>
+<p>認為自己程式沒有 bug 就是在愚弄自己。程式肯定有 bug，（只是）多數情況下，程式裡的 bug 夠少，足以使其完成任務。</p>
+</blockquote>
+<p>是的，100% 正確的程式或許很難達成，或許連定義起來都很困難，但我們還是得努力趨近它，讓我們工作更有成就感，更有信心能夠交付價值，也更少因不慎流出去的瑕疵而疲於奔命。</p>
+<p>Joshua Bloch 緊接著又說：</p>
+<blockquote>
+<p>既然寫正確的程式那麼困難，我們就應該盡力取得幫助。所以，能減少 bug 的所有東西都是好的。這就是我是靜態型別和靜態分析的信徒的原因。</p>
+</blockquote>
+<p>是的，我們需要動員許多力量，取得許多幫助，才能夠趨近於正確的程式。可動員的許多力量當中，無疑的 code review 是重要的基礎，可惜的是，許多團隊連這基礎都還有諸多可改善之處，這也限縮了團隊能進一步發揮的價值。</p>
+<p>Code review 乍看之下是小事，但若認真探討起來還真是不小。在我多年輔導各種成熟度團隊的經驗中，有六個基於 code review 以及衍生出來的議題可深入探討：</p>
+<ol>
+<li>基本信念：品質來自正確地做事</li>
+<li>掌握基本功與領域知識</li>
+<li>凝聚團隊公約的共識</li>
+<li>嘗試更好的協同理解技巧</li>
+<li>讓進步看得見</li>
+<li>支持長久研發的措施</li>
+</ol>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>如果你所在的團隊已經啟動 Scrum 或 Kanban 研發流程，恭喜你，你們已經有很好的流程基礎可在這六大議題上面精進，只需要正確實施（玩真的！）你們所採用的敏捷流程。文中我會大量連結到 Scrum 及 Kanban 的要素。請確實「守」你們該守的流程，不要驟然「破」或「離」。</p>
+<p>全文很長，如果你是現役的程式設計師，可先讀①②以瞭解 engineering disciplines；如果你是 team lead，可先讀③④以瞭解團隊動力；如果你是管理層，可先讀⑤⑥，尤其是⑤關於管理面的施力點。</p>
+<!-- raw HTML omitted -->
+<h2 id="-基本信念品質來自正確地做事">① 基本信念：品質來自正確地做事</h2>
+<p>Code review，甚至任何一種 review，都源自一個單純的理由：多一個人來確保品質。</p>
+<p>品質是計畫、設計和內建而來的，不是靠檢驗出來的。換言之，品質來自正確地做事。</p>
+<p>怎樣才叫做「正確地做事」？</p>
+<p>談「正確地做事」之前，先確定我們擁有共同的基本信念。</p>
+<h3 id="collective-ownership">Collective ownership</h3>
+<p>Odd-e 三位專家在 2023-08-31 晚上有一場很精彩的 webinar【高效 Scrum 團隊所需的能力】。在 <a href="https://www.youtube.com/watch?v=13clptdw6J8&amp;t=3816s">1h:03m:36s</a> 聊到「工程能力」時，有一句語重心長的話：「所有跟 eXtreme Programming 相關的工程能力都很重要。」</p>
+<p>eXtreme Programming (XP) 第一版與第二版提到許多工程實踐，此刻我想特別點出 &ldquo;<a href="http://extremeprogramming.org/rules/collective.html">collective ownership</a>&rdquo; 這一條：</p>
+<blockquote>
+<p>Collective Ownership encourages everyone to contribute new ideas to all segments of the project. No one person becomes a bottleneck for changes.</p>
+<p>In practice collective ownership is actually more reliable than putting a single person in charge of watching specific classes. Especially since a person may leave the project at any time.</p>
+</blockquote>
+<p>積極面來說，collective ownership 可善用集體智慧提升設計品質，可促成知識共享，消極面則可降低公車指數 (bus factor)。 <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+<p>萬一連 &ldquo;collective ownership&rdquo; 都不是團隊想要追求的境界，或許這個團隊從一開始的組成階段 (team forming) 就有問題了；我建議，解決了之後，再談以下的議題吧。否則，連「共同持有」的心態都沒有，還有什麼動機要去 review 別人的 code 呢？</p>
+<h3 id="four-eyes-principle">Four-eyes principle</h3>
+<p>Code review 的出發點很單純：多一個人來確保品質，也就是說「不要只靠自己的兩隻眼睛，要再加上別人的兩隻眼睛，總共要用四隻眼睛來確保品質。」</p>
+<p>Four-eyes principle 雖然既古老又原始，但管用，因此就連<a href="https://unido.org/overview/member-states/change-management/faq/what-four-eyes-principle">聯合國</a>及<a href="https://cros-legacy.ec.europa.eu/content/four-eyes-principle_en">歐盟</a>這麼先進的國際性組織都仍在使用。</p>
+<p>再引述一次 Joshua Block 的話：「既然寫正確的程式那麼困難，我們就應該盡力取得幫助。」</p>
+<p>就算我們不想時時刻刻都像 XP 主張的 pair programming（甚至更激進的 mob programming），但至少在關鍵時刻，尤其是在 design review 及 code review 的時刻，就該好好善用這種原始方式取得幫助。</p>
+<p>每當有「現在可不可以暫時跳過 four eyes？」的衝動，或許該換個角度思考「現在有沒有方法讓 four eyes 更有效率且不犧牲品質？」</p>
+<h3 id="working-backwards">Working backwards</h3>
+<p>「逆向工作法」或「以終為始」是很有威力的心法。用在敏捷開發上，就是熟知的 user story &ldquo;<a href="https://agileforall.com/new-to-agile-invest-in-good-user-stories">INVEST</a>&rdquo; 原則當中的 V (Valuable) 及 T (Testable)：</p>
+<ul>
+<li>
+<p>Valuable - 品質的起頭：這個 user story 是為了交付什麼價值？是為了誰？</p>
+</li>
+<li>
+<p>Testable - 品質的末端：該怎麼確定這個 user story 已經做完了 (done)？該怎麼驗收？</p>
+</li>
+</ul>
+<p>雖然前面曾提到「品質不是靠檢驗出來的」，但若能在一開頭就設想末端的檢驗標準，甚至設計出可讓將來更容易確實檢驗的結構，就是「內建品質」的精神——這就是敏捷實踐者常講的 &ldquo;acceptance criteria&rdquo; 及 &ldquo;test-driven/behavior-driven design&rdquo; 的用意。</p>
+<p>Code review 就是讓 four eyes 共同檢視 Valuable 及 Testable 的好時機，喔，不，甚至早在 Sprint Planning 或 Refinement 時就應該來 review 了——現在不是流行凡事都要 &ldquo;shift left&rdquo; 嗎？</p>
+<h3 id="品質不是白吃的午餐">品質不是白吃的午餐</h3>
+<p>品質是計畫、設計和內建而來的。</p>
+<p>計畫與設計出內建品質，是需要時間、精力、技能的。孕育出 collective ownership、four eyes、working backwards 的意識及紀律，也是需要時間、精力、技能的。</p>
+<p>畢竟品質不是白吃的午餐。</p>
+<p>在推銷這些進步理念時，讓團隊想像藉由「追求高品質」將會帶來的效益，或是以具體事證呈現因為「漠視低品質」而正在且將會持續深陷的痛苦泥淖，讓團隊做出選擇，願意投資時間、精力、技能在品質改進上。</p>
+<p>你能舉出「不好好進行 code review」最終會引發的災難嗎？這樣的災難是大家願意承擔的嗎？用這個來鞏固大家願意投資在品質上面的動機吧。</p>
+<h2 id="-掌握基本功與領域知識">② 掌握基本功與領域知識</h2>
+<p>不可諱言，code review 要做得好，不是大聲嚷嚷精神喊話就會自動美夢成真，是需要自我提升能力的，尤其是研發基本功與領域知識。</p>
+<p>不過，以下提到的這些能力，就算不談 code review，也是工程師本來就該自我提升的。</p>
+<p>所以，結論是：請把它們當成是必修課吧，這會讓你成為更稱職的軟體研發工程師。</p>
+<h3 id="clean-code">Clean code</h3>
+<p>Turing Award 得主 <a href="https://en.wikipedia.org/wiki/Tony_Hoare">C.A.R. Hoare</a> 有一段經典名言：</p>
+<blockquote>
+<p>There are two ways of constructing a software design: One way is to make it so simple that there are <em>obviously</em> no deficiencies, and the other way is to make it so complicated that there are no <em>obvious</em> deficiencies. The first method is far more difficult.</p>
+</blockquote>
+<p>單純到「顯然沒有缺陷」 vs. 複雜到「沒有明顯的缺陷」，你願意選擇哪一種？</p>
+<p>寫出 clean code，可說是程式設計師的職業道德。坊間早有 clean code 及 refactoring 相關的經典書籍，網路上也有一大堆相關文章，請花點時間自我充實吧。</p>
+<h3 id="guideline">Guideline</h3>
+<p>除了 clean code 技能之外，我們還需要一些讓程式變得更好的 code review 指導方針。</p>
+<p>讓我們向 Google 取經吧 <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>。Google 在 &ldquo;<a href="https://google.github.io/eng-practices/review/reviewer/looking-for.html">What to look for in a code review</a>&rdquo; 一文建議了一些 review 的重點：</p>
+<ul>
+<li>Design</li>
+<li>Functionality</li>
+<li>Complexity</li>
+<li>Tests</li>
+<li>Naming</li>
+<li>Comments</li>
+<li>Style</li>
+<li>Consistency</li>
+<li>Documentation</li>
+<li>Every line</li>
+<li>Context</li>
+<li>Good things</li>
+</ul>
+<p>《<a href="https://williampjyeh.notion.site/999d5b9d126a4da39db13eaa401d6ab3">軟體測試實務：業界成功案例與高效實踐（第一冊）</a>》第四章也建議了一些 code review 的重點：</p>
+<ul>
+<li>是否有明顯的邏輯錯誤？</li>
+<li>有無遵循既有的程式碼編寫規範？</li>
+<li>邏輯的測試保護足夠嗎？</li>
+<li>有完整實現需求嗎？</li>
+</ul>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>如果是在 DevOps 合一的團隊，甚至還會 review 一些 design for observability 的要點。以上都很值得放在團隊的 Definition of Done 或 PR/MR template。</p>
+<p>注意事項洋洋灑灑，每當有「現在可不可以暫時跳過？」的衝動時，或許該換個角度自問：「此刻若不好好 review 這些地方，我能承擔抄捷徑的後果嗎？」</p>
+<h3 id="small-batch">Small batch</h3>
+<p>敏捷陣營推崇小批量開發：小批量的東西容易估算，容易寫，容易理解，容易測試，容易部署，容易取得回饋，容易歸因。</p>
+<p>DevOps 陣營也推崇小批量。Google 在 &ldquo;<a href="https://cloud.google.com/architecture/devops/devops-process-working-in-small-batches">DevOps process: Working in small batches</a>&rdquo; 一文說道：</p>
+<blockquote>
+<p>Working in small batches is one of a set of capabilities that drive higher software delivery and organizational performance. These capabilities were discovered by the DORA State of DevOps research program, an independent, academically rigorous investigation into the practices and capabilities that drive high performance.</p>
+</blockquote>
+<p>如果不是因為技術問題無法小批量提交 PR/MR，而是因為上游的 backlog item 就是如此大，或許團隊可以嘗試在 Sprint Planning 或 Refinement 時套用 <a href="//william-yeh.net/post/2022/11/spidr/">SPIDR 法</a>來拆解過大的 backlog item。</p>
+<h3 id="domain-knowledge">Domain knowledge</h3>
+<p>如果身處教育資源不那麼完備的團隊，想要養成領域知識，得自助加上人助：</p>
+<ul>
+<li>
+<p>自助：盡量回到學生時期的好學心態，並盡量掌握有效率的學習方法。尤其是近年來流行的卡片盒筆記法，很值得一試。</p>
+</li>
+<li>
+<p>人助：尋求協助，並設法將學到的東西反饋到團隊的公共資產：文件、簡報、錄影、自動化測試，造福你的左右鄰兵，也造福後人。</p>
+</li>
+</ul>
+<h3 id="context">Context</h3>
+<p>即使有了領域知識，但論及理解需求，又是另外一回事了。</p>
+<p>理解需求，除了老生常談的敏感度、傾聽與提問技巧之外，敏捷圈發展出來的 <a href="https://gojko.net/books/specification-by-example/">Specification by Example</a> 技術，很值得大家嘗試。</p>
+<p>而且，既然都已經口頭問出來這些實例了，何妨順便用驗收測試予以固化？</p>
+<h3 id="config">Config</h3>
+<p>現代軟體不能只顧好核心業務邏輯，還得處理全球化、客製化、混合雲、多租戶等外圍需求，要能透過 feature flag 動態即時切換，甚至還要能讓用戶自助服務。</p>
+<p>組態管理比以往重要許多，複雜度不亞於程式碼管理，有時甚至超過。</p>
+<p>程式碼的管理，有 git flow、GitHub flow、GitLab flow 等流行的作法，那麼，組態管理呢？</p>
+<p>對於 legacy 系統，盤點既有組態，給予合適的現狀描述，至少是第一步。考古之餘，別忘了反饋到團隊的公共資產上。</p>
+<h2 id="-凝聚團隊公約的共識">③ 凝聚團隊公約的共識</h2>
+<p>Code review 是兩個人之間的活動，一個是 reviewer，另一個是 reviewee。喔，其實更常見的情況是，reviewer 要寫成複數 &ldquo;reviewers&rdquo;。</p>
+<p>Code review 不只是兩個人之間的活動，更是團隊的活動。</p>
+<p>Marcus Buckingham 在〈<a href="https://www.hbrtaiwan.com/special-topics/18933/power-of-hidden-team">隱藏版團隊力量大 (Power of Hidden Teams)</a>〉一文提到團隊的力量 <sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>：</p>
+<blockquote>
+<p>大多數工作實際上都是團隊進行的工作。團隊是你工作經驗的現實。你的責任似乎連結到其他人的責任；你的長處似乎能與其他人的長處互補；你的左右都有人幫你留意，讓你保持自信，對你的工作給予回應，分享你對「好」的想法，在你看起來快要承受不住時伸出援手，並在你陷入困境時給予意見。這種團隊體驗的品質，正是你工作體驗的品質。</p>
+<p>你的團隊體驗會促進很多事情：你在工作時的生產力；你在工作時是否感到快樂；你有多少創意、創新和復原力；以及你選擇留在公司多久。換句話說，在你的工作上，優秀的團隊和團隊合作不是「有了也不錯」的事物，而是必須要擁有。</p>
+</blockquote>
+<p>現代軟體研發是一個群體的事業， <del>有人就有江湖</del>  有人就有協作的議題。Code review 既然是團隊的活動，免不了也會有 <del>江湖的議題</del> 協作的議題。</p>
+<p>若你的團隊已經啟動 Scrum，以下都是很值得在 retrospective 充分探討的好議題，讓團隊公約成為團隊協作的助力。</p>
+<h3 id="過與不及的拿捏">過與不及的拿捏</h3>
+<p>Code review 的尺度，該鬆還是該緊？</p>
+<p>「太鬆」當然並非我們樂見，但「太緊」呢？</p>
+<p>如果團隊對於鬆與緊的尺度難以達到共識，不妨聽聽看 Google 怎麼說。</p>
+<p>Google 在 &ldquo;<a href="https://google.github.io/eng-practices/review/reviewer/looking-for.html">What to look for in a code review</a>&rdquo; 一文提出他們認為最起碼的品質標準是：</p>
+<blockquote>
+<p>Don&rsquo;t accept CLs (change lists) that degrade the code health of the system.</p>
+</blockquote>
+<p>在業界，我們常暱稱它是「童子軍規則」(The Boy Scout Rule)：「離開營地前，讓營地比使用前更加乾淨。Always leave the campground cleaner than you found it.」</p>
+<p>至於尺度太緊的問題，Google 在 &ldquo;<a href="https://google.github.io/eng-practices/review/reviewer/standard.html">The Standard of code review</a>&rdquo; 一文提出他們的看法：</p>
+<blockquote>
+<p>In general, reviewers should favor approving a CL once it is in a state where it definitely improves the overall code health of the system being worked on, even if the CL isn&rsquo;t perfect.  That is <em>the</em> senior principle among all of the code review guidelines.</p>
+</blockquote>
+<p>儘管 Google 是菁英薈萃之地，但關於這一點倒是滿務實的，不會追求完美主義。</p>
+<h3 id="cadence">Cadence</h3>
+<p>很多人怕 code review 會打斷別人的工作節奏，也怕自己的節奏被打斷。因此我常常看到看板上面擠壓許多有待 review 的 PR/MR，我輔導過的團隊，也幾乎都會在 retrospective 提出這項熱門議題。</p>
+<p>聽聽看 Google 怎麼說。&quot;<a href="https://google.github.io/eng-practices/review/reviewer/speed.html">Speed of Code Reviews</a>&quot; 一文主張：</p>
+<blockquote>
+<p>If you are not in the middle of a focused task, you should do a code review shortly after it comes in.  On business day is the maximum time it should take to respond to a code review request.</p>
+</blockquote>
+<p>可見 Google 很務實地將焦點放在 flow 上面：若無特殊理由，要以團隊目標為重。</p>
+<p>《<a href="https://williampjyeh.notion.site/999d5b9d126a4da39db13eaa401d6ab3">軟體測試實務：業界成功案例與高效實踐（第一冊）</a>》第四章則提出團隊一起 code review 的常見做法，以避免個別人士零零星星被打斷：</p>
+<blockquote>
+<p>除了找另一個團隊成員協助 code review 外，在多數團隊成員不熟悉相關程式碼時，我們也會有 mob code review，去加強知識擴散的效果。</p>
+<p>鑑於此種需要專心投入的特質，有些團隊會直接定時進行 mob code review（例如：每日 daily meeting 之後或是下班之前），以避免當前工作被打斷。</p>
+</blockquote>
+<p>大家可以參考這些業界常見的做法，改善自己團隊的 code review 節奏。</p>
+<h3 id="process">Process</h3>
+<p>敏捷路線不太鼓勵過多 top-down 的流程約束，更希望團隊基於經驗主義自行湧現出合適的流程。我鼓勵團隊挑選感興趣的部份實踐看看，並在 retrospective 充分反思。</p>
+<p>如果你是走 Scrum 路線，請善用 Definition of Done 作為品質共識。像《<a href="https://williampjyeh.notion.site/999d5b9d126a4da39db13eaa401d6ab3">軟體測試實務：業界成功案例與高效實踐（第一冊）</a>》第四章就提到：</p>
+<blockquote>
+<p>有些團隊甚至在他們的實體或 Jira 的 Scrum board 上，將 code review 強制設為必需通過的一個階段，未 code review 過的任務就不算完成。</p>
+</blockquote>
+<p>列入 Definition of Done 還有一個好處：code review 就不再是隱藏成本，而是正大光明的 task，需要被規劃，需要被估點，也需要認真投入。</p>
+<p>如果你是走 Kanban 路線，可考慮新增一個名叫 &ldquo;code review&rdquo; 的 column，並設下 WIP 及 policy。接下來，你會驚訝地發現 code review 的 flow 是多麼順暢⋯⋯或是不順暢。請善用 Kanban 視覺化的威力。</p>
+<h2 id="-嘗試更好的協同理解技巧">④ 嘗試更好的協同理解技巧</h2>
+<p>在理想世界中，我們程式要實作的任務很單純，所需的背景知識大家都有，程式碼寫得清晰易懂，PR/MR 也充分交代 reviewer 需注意的事項。這種情況下，reviewer 或許只需要動動眼、動動滑鼠、動動腦，就能善盡 code review 責任。</p>
+<p>理想世界不常發生，是吧？</p>
+<p>真實世界中，要實作的任務不那麼單純，所需的背景知識不見得大家都有，程式碼埋藏一些神祕邏輯，如果我們繼續仰賴低頻寬的程式碼溝通方式，會讓 reviewer 只能根據眼前所見的浮面資訊進行浮面的 review，最終只能算是表面工夫的 review，輸出低品質的程式。</p>
+<p>因此，整個團隊都需要學習更好的協同理解技巧：放大溝通頻寬，尋求深度資訊。</p>
+<h3 id="放大溝通頻寬">放大溝通頻寬</h3>
+<p>一對一的溝通頻寬太低了，有必要的話，集體一起 code review 吧。</p>
+<p>程式碼的溝通頻寬太低了，大家可以善用嘴巴，善用白板、螢幕（如果你們坐在附近）、投影機（如果需要多人一起看）、遠距會議軟體（如果是異地辦公的團隊）。</p>
+<p>《<a href="https://williampjyeh.notion.site/999d5b9d126a4da39db13eaa401d6ab3">軟體測試實務：業界成功案例與高效實踐（第一冊）</a>》第四章就介紹過這種大絕招：</p>
+<blockquote>
+<p>除了找另一個團隊成員協助 code review 外，在多數團隊成員不熟悉相關程式碼時，我們也會有 mob code review，去加強知識擴散的效果。</p>
+</blockquote>
+<p>如果連這種大絕招都無效，或許團隊成員彼此落差實在太大，需要長期治療。</p>
+<h3 id="尋求深度資訊">尋求深度資訊</h3>
+<p>避免 reviewer 只能根據浮面資訊進行浮面的 review，團隊需要提供更多深度資訊以協助 reviewer。</p>
+<p>我從 &ldquo;<a href="https://axolo.co/blog/part-3-github-pull-request-template">GitHub pull request template</a>&rdquo; 摘錄一些有助於 code review 的資訊，可做為大家的出發點：</p>
+<ul>
+<li>Ticket number and link</li>
+<li>How has this been tested?
+<ul>
+<li>Please describe the tests that you ran to verify your design. Provide instructions so we can <em>reproduce</em>.</li>
+<li>Please also list any relevant details for your test configuration.</li>
+</ul>
+</li>
+<li>Checklist:
+<ul>
+<li><input disabled="" type="checkbox"> I have <em>commented</em> my code, particularly in hard-to-understand areas</li>
+<li><input disabled="" type="checkbox"> I have made corresponding changes to the <em>documentation</em></li>
+<li><input disabled="" type="checkbox"> I have added tests that <em>prove</em> my fix is effective or that my feature works</li>
+<li><input disabled="" type="checkbox"> New and existing <em>unit tests</em> pass locally with my changes</li>
+</ul>
+</li>
+<li>Screenshots (if appropriate)</li>
+</ul>
+<p>我還曾經身處於有這種內規的團隊：「沒看到 unit test 的報表，就不予以 code review。」很硬！但那卻是我非常享受程式設計的一段經歷。</p>
+<h2 id="-讓進步看得見">⑤ 讓進步看得見</h2>
+<p>Code review 的目的，是善用集體智慧提升設計品質，促成知識共享，讓我們工作更有成就感，更有信心能夠交付價值，也更少因不慎流出去的瑕疵而疲於奔命。</p>
+<p>直接的效益是：提升品質，降低風險，間接的效益是：提升團隊的長期生產力，進而縮短上市時間，提升客戶滿意度。</p>
+<p>這些效益都是偏向企業內部流程的構面，甚至是學習與成長的構面，偏向落後指標，且都不容易直接衡量。若以系統思考角度來說，這些效益有很明顯的滯延現象，短期內甚至還可能不利，急功近利的人，很容易因此落入「捨本逐末」(shifting the burden) 及「目標侵蝕」(eroding goals) 的陷阱。</p>
+
+<link rel="stylesheet" href="/css/hugo-easy-gallery.css" />
+<div class="box">
+<figure  itemprop="associatedMedia"
+  itemscope itemtype="http://schema.org/ImageObject" 
+  style="max-width:30em" >
+    <div class="img">
+      <img itemprop="thumbnail" src="/img/2023/09/code-review-cld.png" />
+    </div>
+    <a href="/img/2023/09/code-review-cld.png" itemprop="contentUrl"></a>
+  </figure>
+</div>
+
+<p>認清根本解具有滯延現象，且選擇正面對決之後，才能接下去探討如何衡量成效。</p>
+<p>這篇從 code review 出發的文章，一路看到這裡，大家應該很清楚，對於提升品質、降低風險、提升團隊生產力⋯⋯這些我們想要的成效，code review 只是手法之一，單獨只有這一個手法是無益的，勢必得搭配衍生的配套措施。因此，code review 的成效也不宜單獨看待，需連同其他配套措施一起衡量才比較實際。</p>
+<p>不同的團隊，成熟度各異，管理者需要正視不同的現況，擬定不同的改進措施、衡量方式及目標狀態，並且要分階段。</p>
+<p>譬如說，以領先指標來看：</p>
+<ul>
+<li>
+<p>推動 collective ownership 的同時，可嘗試衡量 Scrum 五大活動參與度、PR 參與度、Sprint Backlog Items 分工多元性。</p>
+</li>
+<li>
+<p>推動 working backwards 的同時，可嘗試衡量 Sprint Backlog Items 的 acceptance test 完備度、design for observability 完備度、test 涵蓋率。</p>
+</li>
+<li>
+<p>推動 clean code 的同時，可嘗試衡量原始碼品質指標，並搭載於 CI 系統。</p>
+</li>
+</ul>
+<p>以落後指標來看：</p>
+<ul>
+<li>
+<p>關注 flow cadence 的同時，可嘗試衡量看板的 cumulative flow diagram。</p>
+</li>
+<li>
+<p>關注最終交付品質的同時，可嘗試衡量 change failure rate——這正好是 DORA (DevOps Research and Assessment) 四大指標其中之一。<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup></p>
+</li>
+</ul>
+<p>最後，即使我們已經盡其所能把關品質，但很不幸 defect 仍然流了出去造成影響，亡羊補牢之餘，我們也需要關注 regression test 是否落實：</p>
+<ul>
+<li>針對已流出去造成影響的 defect，可嘗試衡量 regression test 涵蓋率。</li>
+</ul>
+<h2 id="-支持長久研發的措施">⑥ 支持長久研發的措施</h2>
+<p>個人具備正確的品質基本信念，掌握了基本功與領域知識，團隊擁有公約共識，也掌握了更好的協同理解技巧，接下來就是這個大哉問了：周圍的環境，是否可以促成 code review 及相關的關鍵行為？</p>
+<h3 id="事">事</h3>
+<p>品質不是白吃的午餐，計畫與設計出內建品質，是需要時間、精力、技能的。</p>
+<p>如果整個團隊已經開始嘗試用更好的方法進行 code review 及相關活動，但仍然受阻於事情太多、時間太少，或許這就要回到 Product Backlog Items 的基本問題了。請團隊試著問問自己幾個問題：</p>
+<ul>
+<li>即使可能有複數個上游來源，但團隊是否最後只會有一份透明化的 Product Backlog？</li>
+<li>團隊是認真看待 Product Backlog 的嗎？</li>
+<li>PO 是根據什麼原則管理 Product Backlog 的？</li>
+<li>團隊 Sprint Planning 及 Refinement 是如何進行的？</li>
+<li>品質、flow 相關議題在 Retrospective 裡面是如何被討論的？</li>
+<li>Retrospective 是玩真的嗎？</li>
+</ul>
+<p>思考過一輪，應該可以更好的區隔出：究竟是外面的問題，還是自己的問題。針對前者，再去尋求協助。</p>
+<h3 id="物">物</h3>
+<p>想讓 PR/MR template 所要求的種種事項具體發揮效用，需要自動化環境的支持，尤其是與 CI/CD 高度連動的環境。</p>
+<p>這是得持續投入的基礎建設，沒有捷徑。</p>
+<h3 id="人">人</h3>
+<p>Code review 及相關的配套措施，需要有一定的技術能力。</p>
+<p>大規模敏捷框架 LeSS 在探討 &ldquo;<a href="https://less.works/less/technical-excellence">technical excellence</a>&rdquo; 時，有一段語重心長的話：</p>
+<blockquote>
+<p>There is no magic to them, most people are able to learn them. However, most people are <em>not</em> aware of these after they graduated from university and hence, your organization <em>will</em> need to invest in these, usually via coaching.</p>
+</blockquote>
+<p>簡單的說，自立自強固然可行，但若有好的前輩或教練親自帶領，將會事半功倍。</p>
+<p>這就是團隊裡資深同仁的責任了。我期許你們能在③④提到的種種團隊協作活動中，以身作則，起示範作用。把整個團隊的水平提升到某個地步，有團隊整體戰力當你的後盾，也才能夠發揮更大的價值。</p>
+<h2 id="結語">結語</h2>
+<p>品質改善具有滯延現象，需要正確思路與堅定決心，才能避免捨本逐末與目標侵蝕的陷阱。</p>
+<p>本文探討從 code review 出發並衍生出來的六大議題，也建議一些可供個人、團隊、組織開始嘗試推動的事項。</p>
+<p>提升品質，不必然意味著降低研發效率。讓我們持續學習與探索如何聰明地做事。</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>關於「公車指數」(bus factor)，可參考以下兩篇文章：〈<a href="https://blog.yveslin.com/2015/11/24/measure-sustainability-bus-factor/">少一個差很多：算算團隊的公車指數</a>〉、〈<a href="https://agile.ithome.com.tw/2022/news-page/271">你的團隊「合作無間」嗎？嘗試用「公車指數」衡量現況吧！</a>〉。&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>建議大家讀讀 Google 公開的 <a href="https://github.com/google/eng-practices"><em>Google Engineering Practices Documentation</em></a>，最近也有保哥的<a href="https://eng-practices.gh.miniasp.com">中譯版</a> 。&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3">
+<p>如果你無法閱讀全文，也可收聽這一集 podcast：〈<a href="https://podcasts.google.com/feed/aHR0cHM6Ly9mZWVkcy5zb3VuZG9uLmZtL3BvZGNhc3RzLzQxNDAzM2IzLTkwNmQtNGI4YS04MDM0LWNiOTM1NzBiNjc5NS54bWw/episode/YjgyOTQ1YjYtYTdiOS00N2I3LTg5OTMtZmE5NTU4NzVlMDM5?ep=14">員工投入程度來自&hellip; 這個隱藏因素，你發現了嗎？</a>〉&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4">
+<p>關於 DORA 四大指標，可參考 &ldquo;<a href="https://cloud.google.com/blog/products/devops-sre/using-the-four-keys-to-measure-your-devops-performance">Are you an Elite DevOps performer? Find out with the Four Key Project</a>&rdquo; 一文，更詳細的說明，請參考《<a href="https://findbook.com.tw/9789863126959">Accelerate：精益軟體與 DevOps 背後的科學</a>》一書。&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">William Yeh</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+      2023-09-13
+      
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">授權條款</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW" target="_blank">CC BY-NC-SA 4.0</a> (姓名標示-非商業性-相同方式分享 4.0 國際)</span>
+  </p>
+</div>
+
+
+
+    
+    
+
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="//william-yeh.net/tags/programming/">programming</a>
+            <a href="//william-yeh.net/tags/craftsmanship/">craftsmanship</a>
+            <a href="//william-yeh.net/tags/testing/">testing</a>
+            <a href="//william-yeh.net/tags/agile/">agile</a>
+            <a href="//william-yeh.net/tags/scrum/">scrum</a>
+            
+        </div>
+
+
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/post/2023/08/story-to-tasks/">
+            <span class="next-text nav-default">很簡單的 Story，也要拆分出 Tasks 嗎？</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            
+            <i class="iconfont">
+              <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311 0.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889 0.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-0.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"></path>
+</svg>
+
+            </i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+  
+  
+
+
+  
+  
+
+  
+
+  
+  
+
+  
+  
+    <div class="post bg-white">
+  <script src="https://utteranc.es/client.js"
+        repo= "William-Yeh/utterances-area"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script>
+</div>
+
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="icon-links">
+  
+  
+    <a href="mailto:william.pjyeh@gmail.com" rel="me noopener" class="iconfont"
+      title="email" >
+      <svg class="icon" viewBox="0 0 1451 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M664.781909 681.472759 0 97.881301C0 3.997201 71.046997 0 71.046997 0L474.477909 0 961.649408 0 1361.641813 0C1361.641813 0 1432.688811 3.997201 1432.688811 97.881301L771.345323 681.472759C771.345323 681.472759 764.482731 685.154773 753.594283 688.65053L753.594283 688.664858C741.602731 693.493018 729.424896 695.068979 718.077952 694.839748 706.731093 695.068979 694.553173 693.493018 682.561621 688.664858L682.561621 688.65053C671.644501 685.140446 664.781909 681.472759 664.781909 681.472759L664.781909 681.472759ZM718.063616 811.603883C693.779541 811.016482 658.879232 802.205449 619.10784 767.734955 542.989056 701.759633 0 212.052267 0 212.052267L0 942.809523C0 942.809523 0 1024 83.726336 1024L682.532949 1024 753.579947 1024 1348.948139 1024C1432.688811 1024 1432.688811 942.809523 1432.688811 942.809523L1432.688811 212.052267C1432.688811 212.052267 893.138176 701.759633 817.019477 767.734955 777.248 802.205449 742.347691 811.03081 718.063616 811.603883L718.063616 811.603883Z"></path>
+</svg>
+
+    </a>
+  
+    <a href="https://twitter.com/william_yeh" rel="me noopener" class="iconfont"
+      title="twitter"  target="_blank"
+      >
+      <svg class="icon" viewBox="0 0 1264 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M1229.8616 18.043658c0 0-117.852626 63.135335-164.151872 67.344358-105.225559-164.151872-505.082682-92.598492-437.738325 223.078185C278.622548 312.675223 89.216542 47.506814 89.216542 47.506814s-117.852626 189.406006 75.762402 345.139833C127.097743 396.85567 55.544363 371.601535 55.544363 371.601535S26.081207 535.753407 253.368414 615.724832c-21.045112 29.463156-113.643603 8.418045-113.643603 8.418045s25.254134 143.10676 231.496229 180.987961c-143.10676 130.479693-387.230056 92.598492-370.393967 105.225559 206.242095 189.406006 1119.599946 231.496229 1128.01799-643.98042C1179.353331 249.539887 1263.533778 123.269217 1263.533778 123.269217s-130.479693 37.881201-138.897738 33.672179C1225.652577 98.015083 1229.8616 18.043658 1229.8616 18.043658"></path>
+</svg>
+
+    </a>
+  
+    <a href="https://www.facebook.com/william.yeh" rel="me noopener" class="iconfont"
+      title="facebook"  target="_blank"
+      >
+      <svg class="icon" style="" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="33" height="33">
+  <path d="M965.7344 2.7648c14.848 0 28.2624 5.5296 40.2432 16.6912C1017.9584 30.5152 1024 43.52 1024 58.2656l0 910.2336c0 14.848-6.0416 27.7504-18.0224 38.8096C993.8944 1018.4704 980.48 1024 965.7344 1024L704.9216 1024 704.9216 629.9648l133.2224 0 19.456-155.4432-152.576 0L705.024 373.0432c0-50.688 25.9072-76.0832 77.7216-76.0832l80.4864 0L863.232 163.5328c-27.7504-5.4272-67.4816-8.192-119.296-8.192-59.1872 0-106.8032 18.0224-142.9504 54.0672C564.736 245.5552 546.7136 296.0384 546.7136 360.7552l0 113.7664L413.4912 474.5216l0 155.4432 133.2224 0L546.7136 1024 55.5008 1024c-14.848 0-27.7504-5.5296-38.8096-16.6912C5.5296 996.2496 0 983.3472 0 968.4992L0 58.2656C0 43.52 5.5296 30.5152 16.6912 19.456c11.0592-11.0592 24.064-16.6912 38.8096-16.6912L965.7344 2.7648z"></path>
+</svg>
+
+    </a>
+  
+    <a href="https://www.linkedin.com/in/pjyeh/" rel="me noopener" class="iconfont"
+      title="linkedin"  target="_blank"
+      >
+      <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="33" height="33">
+  <path d="M872.405333 872.618667h-151.637333v-237.610667c0-56.661333-1.152-129.578667-79.018667-129.578667-79.061333 0-91.136 61.653333-91.136 125.397334v241.792H398.976V384h145.664v66.602667h1.962667c20.352-38.4 69.845333-78.933333 143.786666-78.933334 153.642667 0 182.058667 101.12 182.058667 232.746667v268.202667zM227.712 317.141333a87.978667 87.978667 0 0 1-88.021333-88.106666 88.064 88.064 0 1 1 88.021333 88.106666z m76.032 555.477334H151.68V384h152.064v488.618667zM948.266667 0H75.562667C33.792 0 0 33.024 0 73.770667v876.458666C0 991.018667 33.792 1024 75.562667 1024h872.576C989.866667 1024 1024 991.018667 1024 950.229333V73.770667C1024 33.024 989.866667 0 948.138667 0h0.128z"></path>
+</svg>
+
+    </a>
+  
+    <a href="https://github.com/william-yeh" rel="me noopener" class="iconfont"
+      title="github"  target="_blank"
+      >
+      <svg class="icon" style="" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M512 12.672c-282.88 0-512 229.248-512 512 0 226.261333 146.688 418.133333 350.08 485.76 25.6 4.821333 34.986667-11.008 34.986667-24.618667 0-12.16-0.426667-44.373333-0.64-87.04-142.421333 30.890667-172.458667-68.693333-172.458667-68.693333C188.672 770.986667 155.008 755.2 155.008 755.2c-46.378667-31.744 3.584-31.104 3.584-31.104 51.413333 3.584 78.421333 52.736 78.421333 52.736 45.653333 78.293333 119.850667 55.68 149.12 42.581333 4.608-33.109333 17.792-55.68 32.426667-68.48-113.706667-12.8-233.216-56.832-233.216-253.013333 0-55.893333 19.84-101.546667 52.693333-137.386667-5.76-12.928-23.04-64.981333 4.48-135.509333 0 0 42.88-13.738667 140.8 52.48 40.96-11.392 84.48-17.024 128-17.28 43.52 0.256 87.04 5.888 128 17.28 97.28-66.218667 140.16-52.48 140.16-52.48 27.52 70.528 10.24 122.581333 5.12 135.509333 32.64 35.84 52.48 81.493333 52.48 137.386667 0 196.693333-119.68 240-233.6 252.586667 17.92 15.36 34.56 46.762667 34.56 94.72 0 68.522667-0.64 123.562667-0.64 140.202666 0 13.44 8.96 29.44 35.2 24.32C877.44 942.592 1024 750.592 1024 524.672c0-282.752-229.248-512-512-512"></path>
+</svg>
+
+    </a>
+  
+    <a href="https://www.slideshare.net/williamyeh" rel="me noopener" class="iconfont"
+      title="coding"  target="_blank"
+      >
+      <svg class="icon" style="" viewBox="0 0 1024 1024" version="1.1"
+  width="36" height="36">
+  <path
+      d="m 313.5359,557.51414 c 9.229,0 16.57801,8.88719 16.57801,19.99616 0,11.10899 -7.34901,19.99617 -16.57801,19.99617 -9.229,0 -16.57801,-8.88718 -16.57801,-19.99617 0,-11.10897 7.34901,-19.99616 16.57801,-19.99616 z m 393.7706,0 c 9.22899,0 16.57802,8.88719 16.57802,19.99616 0,11.10899 -7.34903,19.99617 -16.57802,19.99617 -9.229,0 -16.57802,-8.88718 -16.57802,-19.99617 0,-11.10897 7.34902,-19.99616 16.57802,-19.99616 z"
+      id="path6"/>
+  <path
+      d="m 945.8932,448.98796 c -27.17427,0 -51.1013,17.26164 -64.43208,43.23957 C 836.17066,393.44306 741.8298,302.00762 625.27096,264.23708 562.37704,239.1137 518.28294,190.57601 512.8139,134.17657 507.34486,190.74691 463.25077,239.1137 400.35685,264.23708 283.79802,301.83671 189.45714,393.44306 144.16669,492.22753 130.83591,466.2496 107.07979,448.98796 79.734607,448.98796 c -41.701401,0 -75.541066,40.84686 -75.541066,91.26454 0,50.41768 33.839665,91.26454 75.541066,91.26454 12.64715,0 24.610663,-3.75996 35.206923,-10.42536 3.58906,163.55837 180.30728,269.69186 397.87237,270.03367 217.5651,-0.34181 394.28332,-106.4753 397.87238,-270.03367 10.42535,6.6654 22.55977,10.42536 35.20692,10.42536 41.7014,0 75.541,-40.84686 75.541,-91.26454 0.171,-50.41768 -33.6687,-91.26454 -75.541,-91.26454 z M 114.2579,568.79403 c -3.58906,13.15987 -19.312535,18.79981 -35.206921,12.47625 -15.894385,-6.15267 -25.977916,-21.87616 -22.388867,-35.03602 3.58906,-13.15987 19.312533,-18.79981 35.206919,-12.47624 15.894389,6.15267 25.807019,21.87614 22.388869,35.03601 z m 398.556,276.69904 C 338.31748,845.15126 196.97707,762.603 196.97707,644.33509 c 0,-2.56361 0.1709,-4.95631 0.1709,-7.34902 0,-0.85453 0,-1.53817 0.17092,-2.3927 0.1709,-1.70908 0.34181,-3.41814 0.34181,-4.95631 0.1709,-2.22179 0.51273,-4.44359 0.85454,-6.6654 0,-0.1709 0,-0.51271 0.1709,-0.68362 3.58906,-23.2434 12.47624,-58.79214 26.14883,-79.13012 32.64331,-47.51224 90.92273,-78.9592 157.23479,-78.9592 51.1013,0 97.41721,18.79981 130.91506,49.05041 33.49784,-30.2506 79.64283,-49.05041 130.91504,-49.05041 66.48298,0 124.59148,31.61786 157.23479,78.9592 13.67259,20.50889 22.55977,55.88672 26.14883,79.13012 0,0.17091 0,0.51272 0.17091,0.68362 0.34182,2.22181 0.51272,4.44361 0.85453,6.6654 0.17091,1.70907 0.34181,3.24723 0.34181,4.95631 0,0.85453 0.17092,1.53817 0.17092,2.3927 0.17091,2.39271 0.17091,4.95631 0.17091,7.34902 C 828.82165,762.603 687.48124,845.15126 512.8139,845.49307 Z M 946.74774,581.27028 c -15.89439,6.15265 -31.61787,0.68362 -35.20692,-12.47625 -3.58906,-13.15987 6.49448,-28.88334 22.38887,-35.03601 15.89438,-6.15267 31.61786,-0.68363 35.20692,12.47624 3.41815,12.98896 -6.49448,28.71243 -22.38887,35.03602 z"
+      id="path8"/>
+</svg>
+
+    </a>
+
+
+<a href="//william-yeh.net/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
+    class="iconfont" title="rss" target="_blank">
+    <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="30" height="30">
+  <path d="M819.157333 1024C819.157333 574.592 449.408 204.8 0 204.8V0c561.706667 0 1024 462.293333 1024 1024h-204.842667zM140.416 743.04a140.8 140.8 0 0 1 140.501333 140.586667A140.928 140.928 0 0 1 140.074667 1024C62.72 1024 0 961.109333 0 883.626667s62.933333-140.544 140.416-140.586667zM678.784 1024h-199.04c0-263.210667-216.533333-479.786667-479.744-479.786667V345.173333c372.352 0 678.784 306.517333 678.784 678.826667z"></path>
+</svg>
+
+  </a>
+  
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+      2015 -
+    2023
+    <span class="heart">
+      
+      <i class="iconfont">
+        <svg class="icon" viewBox="0 0 1025 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="14" height="14">
+  <path d="M1000.1 247.9c-15.5-37.3-37.6-70.6-65.7-98.9-54.4-54.8-125.8-85-201-85-85.7 0-166 39-221.4 107.4C456.6 103 376.3 64 290.6 64c-75.1 0-146.5 30.4-201.1 85.6-28.2 28.5-50.4 61.9-65.8 99.3-16 38.8-24 79.9-23.6 122.2 0.7 91.7 40.1 177.2 108.1 234.8 3.1 2.6 6 5.1 8.9 7.8 14.9 13.4 58 52.8 112.6 102.7 93.5 85.5 209.9 191.9 257.5 234.2 7 6.1 15.8 9.5 24.9 9.5 9.2 0 18.1-3.4 24.9-9.5 34.5-30.7 105.8-95.9 181.4-165 74.2-67.8 150.9-138 195.8-178.2 69.5-57.9 109.6-144.4 109.9-237.3 0.1-42.5-8-83.6-24-122.2z"
+   fill="#8a8a8a"></path>
+</svg>
+
+      </i>
+    </span><span class="author">
+        William Yeh
+        
+      </span></span>
+
+  
+  
+    <span id="busuanzi_container">
+      访客数/访问量：<span id="busuanzi_value_site_uv"></span>/<span id="busuanzi_value_site_pv"></span>
+    </span>
+  
+
+  
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont">
+        
+        <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="35" height="35">
+  <path d="M510.866688 227.694839 95.449397 629.218702l235.761562 0-2.057869 328.796468 362.40389 0L691.55698 628.188232l241.942331-3.089361L510.866688 227.694839zM63.840492 63.962777l894.052392 0 0 131.813095L63.840492 195.775872 63.840492 63.962777 63.840492 63.962777zM63.840492 63.962777"></path>
+</svg>
+
+      </i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+
+
+
+
+<script type="text/javascript" src="/js/main.fe83e11b4fbc9193d67e2c9db78bad21f8dc59fca0cacd8c1c3bb071bb16a852.js" integrity="sha256-/oPhG0&#43;8kZPWfiydt4utIfjcWfygys2MHDuwcbsWqFI=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <script type="text/javascript" src="/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

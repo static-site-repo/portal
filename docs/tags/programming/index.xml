@@ -6,7 +6,16 @@
     <description>Recent content in programming on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Tue, 07 Feb 2023 22:00:00 +0800</lastBuildDate><atom:link href="//william-yeh.net/tags/programming/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 13 Sep 2023 20:00:00 +0800</lastBuildDate><atom:link href="//william-yeh.net/tags/programming/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>從 Code Review 的小事看到大事</title>
+      <link>//william-yeh.net/post/2023/09/on-code-review/</link>
+      <pubDate>Wed, 13 Sep 2023 20:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2023/09/on-code-review/</guid>
+      <description>Opening 我很喜歡 Java 大師 Joshua Bloch 在《編程的頂尖對話》所說的： 即使是想把一個很小的程式寫對也是非常難的。 認為自己程式沒有 bug 就是在愚弄自己。程式肯定有 bug</description>
+    </item>
+    
     <item>
       <title>用 Podman 執行 Laravel &#43; Sail</title>
       <link>//william-yeh.net/post/2023/02/podman-laravel-sail/</link>
