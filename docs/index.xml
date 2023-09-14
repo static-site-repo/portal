@@ -174,7 +174,7 @@
 &lt;p&gt;很多人怕 code review 會打斷別人的工作節奏，也怕自己的節奏被打斷。因此我常常看到看板上面擠壓許多有待 review 的 PR/MR，我輔導過的團隊，也幾乎都會在 retrospective 提出這項熱門議題。&lt;/p&gt;
 &lt;p&gt;聽聽看 Google 怎麼說。&amp;quot;&lt;a href=&#34;https://google.github.io/eng-practices/review/reviewer/speed.html&#34;&gt;Speed of Code Reviews&lt;/a&gt;&amp;quot; 一文主張：&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;If you are not in the middle of a focused task, you should do a code review shortly after it comes in.  On business day is the maximum time it should take to respond to a code review request.&lt;/p&gt;
+&lt;p&gt;If you are not in the middle of a focused task, you should do a code review shortly after it comes in.  One business day is the maximum time it should take to respond to a code review request.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;可見 Google 很務實地將焦點放在 flow 上面：若無特殊理由，要以團隊目標為重。&lt;/p&gt;
 &lt;p&gt;《&lt;a href=&#34;https://williampjyeh.notion.site/999d5b9d126a4da39db13eaa401d6ab3&#34;&gt;軟體測試實務：業界成功案例與高效實踐（第一冊）&lt;/a&gt;》第四章則提出團隊一起 code review 的常見做法，以避免個別人士零零星星被打斷：&lt;/p&gt;
