@@ -6,10 +6,156 @@
     <description>Recent content on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Wed, 13 Sep 2023 20:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 10 Oct 2023 10:00:00 +0800</lastBuildDate>
     
         <atom:link href="//william-yeh.net/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Timebox 是死胡同嗎？</title>
+      <link>//william-yeh.net/post/2023/10/criticism-about-timebox/</link>
+      <pubDate>Tue, 10 Oct 2023 10:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2023/10/criticism-about-timebox/</guid>
+      
+        <description>&lt;p&gt;看板方法之父 David J. Anderson 在新書 &lt;a href=&#34;https://www.amazon.com/dp/1960442074&#34;&gt;&lt;em&gt;Discovering Kanban&lt;/em&gt;&lt;/a&gt; 第 15 章對於 Scrum 之類基於 timebox 的方法有頗露骨的批評（光從標題 &amp;ldquo;The Tyranny of the Ever-Decreasing Timebox&amp;rdquo; 就看得出來）。正好好友 Derek 在 〈&lt;a href=&#34;https://medium.com/agile-coffee/discovering-kanban-18d9b2ac9be2&#34;&gt;《Discovering Kanban》心得：Scrum 可能沒有你想像的那麼美好&lt;/a&gt;〉一文整理了這一章的摘要與閱讀心得，在網路上也引發一些討論 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，我便趁此機會細讀這一章。&lt;/p&gt;
+&lt;p&gt;這一章論點非常深刻。但讀著讀著，總覺得作者道出的結論 &amp;ldquo;time-constrained sprints are an evolutionary cul-de-sac, a dead end&amp;rdquo;，與我直接或間接所知的業界實踐現況，並不相符。我猜想：會不會是某個推論環節出了些問題？&lt;/p&gt;
+&lt;p&gt;因此，我嘗試用系統思考角度去梳理相關論述。我試圖用更清晰的因果關係秀出 timebox 路線被點名的痛點，以及常見的因應之道。至於這痛點是否真的已被解決了，則留待讀者思考，不在此文的探討範圍。&lt;/p&gt;
+&lt;h2 id=&#34;目標相同途徑各異&#34;&gt;目標相同，途徑各異&lt;/h2&gt;
+&lt;p&gt;首先，David J. Anderson 是贊同 small batch 小批量的。他明確指出小批量的三大優點：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;the advantages of smaller batches—&lt;strong&gt;higher quality&lt;/strong&gt;, &lt;strong&gt;more frequent interaction&lt;/strong&gt; between customers and the delivery organization, and potential gains from &lt;strong&gt;earlier delivery&lt;/strong&gt; of valuable work (also known as the avoidance of opportunity cost of delay)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;他接著指出，欲達小批量的目標，有兩種常見的途徑，一個是 timebox，另一個是 WIP limit：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;There are two ways to constrain the batch size of work: &lt;strong&gt;Constraining the amount of time&lt;/strong&gt; available to do the work, resulting in scoping to small numbers of requests that can be completed in the given time; or simply &lt;strong&gt;constraining the number of work items&lt;/strong&gt;, constraining the size of the batch of requests, also known as WIP constraints.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;此處姑且小結一下，David J. Anderson 是贊同 small batch 的（至少在整本書我還沒找到反對的段落），但主張透過 WIP limit 的方式達到小批量，反對透過 timebox 的方式達到小批量。&lt;/p&gt;
+&lt;p&gt;他認為 timebox 劣於 WIP 的地方是：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This switch from a time constraint to a WIP constraint free you from the tyranny of the timebox and it&amp;rsquo;s three dysfunctions of &lt;strong&gt;upfront analysis&lt;/strong&gt;, &lt;strong&gt;excessive and costly estimation&lt;/strong&gt;, and &lt;strong&gt;heavy-weight dependency management&lt;/strong&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;接下來我們就來看看他反對 timebox 的理由。&lt;/p&gt;
+&lt;h2 id=&#34;timebox-會浪費力氣在削足適履上&#34;&gt;Timebox 會浪費力氣在削足適履上？&lt;/h2&gt;
+&lt;p&gt;David J. Anderson 認為，timebox 愈短，就愈是需要花力氣在 backlog item 的事前分析上，以「削足適履」進去 timebox：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;smaller timeboxes create three types of pressure that are often difficult to cope with and adjust to: First, smaller batches require an ever more detailed approach to requirements analysis and development—the need to write ever more fine-grained user stories that can be completed within the smaller time window. Second, an ever more accurate approach to estimation is needed so that a realistic commitment can be made; with smaller time windows, greater precision is required in estimation.&lt;/p&gt;
+&lt;p&gt;The shorter the time box, the more upfront effort is required to estimate whether the work will fit into the available time.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;這段話的確指出了一部份實質存在的驅動力量，但並非全部。實務上，如果 Scrum 做得夠確實，在經驗主義的引領下，timebox 會逐漸趨於穩定態：&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/10/cld-1.png&#34; alt=&#34;Timebox 會趨於平衡迴路&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2023/10/cld-1.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Timebox 會趨於平衡迴路&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;因此，如果還需要做過多的 up-front estimation，那一定是做錯了 Scrum Planning &amp;amp; Refinement。&lt;/p&gt;
+&lt;p&gt;David J. Anderson 又進一步評論道：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;there is still, after twenty-plus years of Agile, little or no solid guidance on writing fine-grained, consistently small user stories.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;這與我直接或間接所知的業界實踐現況，並不完全相符。至少我看到許多成功運用 Mike Cohn 大師提出的 &lt;a href=&#34;//william-yeh.net/post/2022/11/spidr/&#34;&gt;SPIDR 法&lt;/a&gt;的例子。&lt;/p&gt;
+&lt;h2 id=&#34;timebox-會鼓勵低交付價值&#34;&gt;Timebox 會鼓勵低交付價值？&lt;/h2&gt;
+&lt;p&gt;David J. Anderson 認為，timebox 愈短，就只能交付出被削足適履出來的小碎片，這是難以被用戶察覺到交付價值的：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;small-scale requirements may not be meaningful to the customer—they may not enable value. This means that if one small requirement has a peer relationship to others, they all must be delivered together in order to release value.&lt;/p&gt;
+&lt;p&gt;This type of breakdown defeats the purpose of the ever-smaller timeboxes and creates a false sense of agility when, in fact, customer value and quality are not improving; perhaps even the opposite is true.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;這段話的確指出了一部份實質存在的驅動力量，但並非全部。實務上，如果 Scrum 做得夠確實，在 Scrum Planning 及 Review 時，用戶有充分機會了解如此拆解的目的，並實質參與拆解的活動。因此，在經驗主義的引領下，timebox 與交付價值之間會逐漸趨於穩定態：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/10/cld-2.png&#34; alt=&#34;Timebox 與交付價值之間會趨於平衡迴路&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2023/10/cld-2.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Timebox 與交付價值之間會趨於平衡迴路&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;事實上，從上圖可知，不只是 timebox，就連 David J. Anderson 認可的「小批量」也一樣會面臨「低交付價值」的挑戰。因此，Kanban 的淵源——Lean 陣營，即使主張小批量、one-piece flow，但對於 batch size 是否可以無限制壓縮到最小，也是持保留態度的。像《&lt;a href=&#34;https://williampjyeh.notion.site/6901e548c40c4389bf8919a74d2a1efd&#34;&gt;流的傳承&lt;/a&gt;》就提到，大野耐一主張 batch size ≥ 5。&lt;/p&gt;
+&lt;h2 id=&#34;timebox-會讓-dependency-更惡化&#34;&gt;Timebox 會讓 Dependency 更惡化？&lt;/h2&gt;
+&lt;p&gt;David J. Anderson 認為，timebox 愈短，dependency 造成 sprint fail 的機率也隨之增加：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;What if a story in our sprint backlog gets blocked because of a dependency? That might prevent it from completing on time. Hence, the shorter the sprint timebox, the greater the need to identify dependencies up front.&lt;/p&gt;
+&lt;p&gt;Fine-grained requirements analysis coupled to short timeboxed sprints introduces a dependency management problem to Agile methodologies. If a piece of work will be affected by dependencies, such dependencies need to be tracked and managed between teams and multiple sprint backlogs and potentially across sprint boundaries.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;這段話的確指出了一部份實質存在的驅動力量，但並非全部。假設 dependency 條件不變，timebox 愈短，一點點的 dependency 擾動帶來的影響的確可能較大——這是 threat。可是相對的，granularity 愈小，也愈有將它 fit in 到相關團隊 upcoming sprints 的可能性；尤其當對方團隊也是 short timebox 風格，就更容易 fit in 進去——這是 opportunity。&lt;/p&gt;
+&lt;p&gt;Threat 與 opportunity，一加一減，綜合起來的效應是好是壞，還很難說。&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/10/cld-3.png&#34; alt=&#34;Granuality 與 dependency 的關係是？&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2023/10/cld-3.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Granuality 與 dependency 的關係是？&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;實務上，如果 Scrum 做得夠確實，在跨團隊 Refinement &amp;amp; Planning 時，已經有辨識、拆解、對齊、協調 dependency 的事情在檯面上或檯面下發生了，而且不只是消極地為了處理 dependency，更是積極地處理交付價值。&lt;/p&gt;
+&lt;p&gt;事實上，這也是各家各派大規模 Scrum 框架最核心的挑戰與賣點。至於這議題是否真的已被解決了，則留待讀者思考，不在此文的探討範圍。&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/10/cld-final.png&#34; alt=&#34;timebox 的 CLD 全圖&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2023/10/cld-final.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;timebox 的 CLD 全圖&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;kanban-又是怎麼處理-dependency-的&#34;&gt;Kanban 又是怎麼處理 dependency 的？&lt;/h2&gt;
+&lt;p&gt;David J. Anderson  也承認 dependency 是個普遍現象，他也沒有神奇魔法可以讓 Kanban 免於 dependency：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Dependencies are a fact of life in all but very small-scale software development or mediocre development done by largely dilettante generalists.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Kanban 又是怎麼處理 dependency 的呢？從以下文字可以歸結出 global transparency 及 learning to coordinate/cooperate 這兩個方向：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Let dependencies happen as you discover them, create &lt;strong&gt;visibility&lt;/strong&gt; onto them, and actively track them. Use a service-oriented approach and define workflow kanban boards (and systems) that &lt;strong&gt;encourage cooperation&lt;/strong&gt; across functions. Don’t reorganize into cross-functional teams or attempt to design out dependencies from your product architecture; instead, start where you are and &lt;strong&gt;learn&lt;/strong&gt; to be proficient at &lt;strong&gt;coordinating&lt;/strong&gt; shared services.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;這段主張，我的理解是，服務導向的看板，通常會是更縱向 end to end，也更橫向 cross functional。如果做得確實，理論上 dependency 會更早浮現，也更早讓縱向橫向的人一起面對，一起 ad hoc 處理或是 systematically 處理。&lt;/p&gt;
+&lt;p&gt;看到這裡，心中不禁想到：timebox 路線不也是如此嗎？&lt;/p&gt;
+&lt;h2 id=&#34;個人總結&#34;&gt;個人總結&lt;/h2&gt;
+&lt;p&gt;至此，我個人認為，timebox 與 WIP limit 兩種途徑，長期的目標狀態「小批量」其實很類似，只是選擇的途徑不同，造成哪個要先關注、哪個可以等到成熟度提升之後自然就會去關注的不同優先順序。&lt;/p&gt;
+&lt;p&gt;兩者的差異並沒有想像中的大，雙方只是切入的角度不同，但核心要素是很接近的；尤其是繼續精進時，會發現共同點越來越多，相互取經是司空見慣。&lt;/p&gt;
+&lt;p&gt;所以我在課程中，總愛用《&lt;a href=&#34;https://zh.wikipedia.org/zh-tw/%E7%A5%9E%E4%B9%8B%E9%9B%AB&#34;&gt;神之雫&lt;/a&gt;》的最終章來比喻兩者的關係。&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;Derek 這篇文章，在 Facebook 引發一些討論，請見 &lt;a href=&#34;https://www.facebook.com/agilederek/posts/pfbid02YF8yCiY1oUUNnFkeRZgKzfmLVLSd3wBjKqFTC8tVrRkFE1mxhDQAWtKsZqEM4Z8nl&#34;&gt;link 1&lt;/a&gt; &amp;amp; &lt;a href=&#34;https://www.facebook.com/william.yeh/posts/pfbid034juT78DsgHtSYHjKnJ3uEcgXqU8KNSqh24th6ep1nYTXDgnyix8KMF4HjGDb2Z5Al&#34;&gt;link 2&lt;/a&gt;。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description>
+      
+    </item>
     
     <item>
       <title>從 Code Review 的小事看到大事</title>

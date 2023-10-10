@@ -6,7 +6,18 @@
     <description>Recent content in Posts on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Wed, 13 Sep 2023 20:00:00 +0800</lastBuildDate><atom:link href="//william-yeh.net/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 10 Oct 2023 10:00:00 +0800</lastBuildDate><atom:link href="//william-yeh.net/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Timebox 是死胡同嗎？</title>
+      <link>//william-yeh.net/post/2023/10/criticism-about-timebox/</link>
+      <pubDate>Tue, 10 Oct 2023 10:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2023/10/criticism-about-timebox/</guid>
+      <description>&lt;p&gt;看板方法之父 David J. Anderson 在新書 &lt;a href=&#34;https://www.amazon.com/dp/1960442074&#34;&gt;&lt;em&gt;Discovering Kanban&lt;/em&gt;&lt;/a&gt; 第 15 章對於 Scrum 之類基於 timebox 的方法有頗露骨的批評（光從標題 &amp;ldquo;The Tyranny of the Ever-Decreasing Timebox&amp;rdquo; 就看得出來）。正好好友 Derek 在 〈&lt;a href=&#34;https://medium.com/agile-coffee/discovering-kanban-18d9b2ac9be2&#34;&gt;《Discovering Kanban》心得：Scrum 可能沒有你想像的那麼美好&lt;/a&gt;〉一文整理了這一章的摘要與閱讀心得，在網路上也引發一些討論 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，我便趁此機會細讀這一章。&lt;/p&gt;
+&lt;p&gt;這一章論點非常深刻。但讀著讀著，總覺得作者道出的結論 &amp;ldquo;time-constrained sprints are an evolutionary cul-de-sac, a dead end&amp;rdquo;，與我直接或間接所知的業界實踐現況，並不相符。我猜想：會不會是某個推論環節出了些問題？&lt;/p&gt;
+&lt;p&gt;因此，我嘗試用系統思考角度去梳理相關論述。我試圖用更清晰的因果關係秀出 timebox 路線被點名的痛點，以及常見的因應之道。至於這痛點是否真的已被解決了，則留待讀者思考，不在此文的探討範圍。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>從 Code Review 的小事看到大事</title>
       <link>//william-yeh.net/post/2023/09/on-code-review/</link>
