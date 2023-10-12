@@ -6,7 +6,19 @@
     <description>Recent content in Posts on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Tue, 10 Oct 2023 10:00:00 +0800</lastBuildDate><atom:link href="//william-yeh.net/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 12 Oct 2023 20:00:00 +0800</lastBuildDate><atom:link href="//william-yeh.net/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Code Review 碎碎念] 簡化巢狀條件判斷式</title>
+      <link>//william-yeh.net/post/2023/10/nested-conditional/</link>
+      <pubDate>Thu, 12 Oct 2023 20:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2023/10/nested-conditional/</guid>
+      <description>&lt;p&gt;讀別人的程式是一件苦差事，不僅需要具備對應的領域知識，也得了解對方的程式書寫邏輯與風格。因此，為了讓程式碼容易被人理解，整潔程式碼是必須持續精進的技藝。&lt;/p&gt;
+&lt;p&gt;在 code review 進行實質審查之前，我喜歡先做一點點形式審查，尤其是某些 code smell，臭味暴風半徑大到甚至連領域知識的外行人都聞得到。&lt;/p&gt;
+&lt;p&gt;我很常遇到不必要的巢狀迴圈或條件判斷式。經驗告訴我，除非真的是要設計出什麼高大尚的演算法或者刷題，否則，這有相當大的機率是需要進一步 refactor 的。&lt;/p&gt;
+&lt;p&gt;像以下這段程式，即使我故意把領域知識相關細節用 &lt;code&gt;conditionXX&lt;/code&gt; 馬賽克掉了，你還是可以明顯聞到 bad smell：迴圈 + 條件判斷式，ABCDEF 深達 6 層，你能夠很快捕捉到箇中邏輯嗎？&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Timebox 是死胡同嗎？</title>
       <link>//william-yeh.net/post/2023/10/criticism-about-timebox/</link>
