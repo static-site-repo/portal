@@ -23,7 +23,8 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="William Yeh" />
-  <meta name="description" content="看板方法之父 David J. Anderson 在新書 Discovering Kanban 第 15 章對於 Scrum 之類基於 timebox 的方法有頗露骨的批評（光從標題 &amp;ldquo;The Tyranny of the Ever-Decreasing Timebox&amp;rdquo; 就看得出來）。正好好友 Derek 在 〈《Discovering Kanban》心得：Scrum 可能沒有你想像的那麼美好〉一文整理了這一章的摘要與閱讀心得，在網路上也引發一些討論 1，我便趁此機會細讀這一章。
+  <meta name="description" content="許多敏捷手法都奠基於 timebox。那麼，為什麼有人會認為 timebox 路線是死胡同呢？有此論點的人，偏偏又是敏捷圈的重量級人物呢。
+看板方法之父 David J. Anderson 在新書 Discovering Kanban 第 15 章對於 Scrum 之類基於 timebox 的方法有頗露骨的批評（光從標題 &amp;ldquo;The Tyranny of the Ever-Decreasing Timebox&amp;rdquo; 就看得出來）。正好好友 Derek 在 〈《Discovering Kanban》心得：Scrum 可能沒有你想像的那麼美好〉一文整理了這一章的摘要與閱讀心得，在網路上也引發一些討論 1，我便趁此機會細讀這一章。
 這一章論點非常深刻。但讀著讀著，總覺得作者道出的結論 &amp;ldquo;time-constrained sprints are an evolutionary cul-de-sac, a dead end&amp;rdquo;，與我直接或間接所知的業界實踐現況，並不相符。我猜想：會不會是某個推論環節出了些問題？
 因此，我嘗試用系統思考角度去梳理相關論述。我試圖用更清晰的因果關係秀出 timebox 路線被點名的痛點，以及常見的因應之道。至於這痛點是否真的已被解決了，則留待讀者思考，不在此文的探討範圍。
 " />
@@ -64,7 +65,8 @@
 
 
 <meta property="og:title" content="Timebox 是死胡同嗎？" />
-<meta property="og:description" content="看板方法之父 David J. Anderson 在新書 Discovering Kanban 第 15 章對於 Scrum 之類基於 timebox 的方法有頗露骨的批評（光從標題 &ldquo;The Tyranny of the Ever-Decreasing Timebox&rdquo; 就看得出來）。正好好友 Derek 在 〈《Discovering Kanban》心得：Scrum 可能沒有你想像的那麼美好〉一文整理了這一章的摘要與閱讀心得，在網路上也引發一些討論 1，我便趁此機會細讀這一章。
+<meta property="og:description" content="許多敏捷手法都奠基於 timebox。那麼，為什麼有人會認為 timebox 路線是死胡同呢？有此論點的人，偏偏又是敏捷圈的重量級人物呢。
+看板方法之父 David J. Anderson 在新書 Discovering Kanban 第 15 章對於 Scrum 之類基於 timebox 的方法有頗露骨的批評（光從標題 &ldquo;The Tyranny of the Ever-Decreasing Timebox&rdquo; 就看得出來）。正好好友 Derek 在 〈《Discovering Kanban》心得：Scrum 可能沒有你想像的那麼美好〉一文整理了這一章的摘要與閱讀心得，在網路上也引發一些討論 1，我便趁此機會細讀這一章。
 這一章論點非常深刻。但讀著讀著，總覺得作者道出的結論 &ldquo;time-constrained sprints are an evolutionary cul-de-sac, a dead end&rdquo;，與我直接或間接所知的業界實踐現況，並不相符。我猜想：會不會是某個推論環節出了些問題？
 因此，我嘗試用系統思考角度去梳理相關論述。我試圖用更清晰的因果關係秀出 timebox 路線被點名的痛點，以及常見的因應之道。至於這痛點是否真的已被解決了，則留待讀者思考，不在此文的探討範圍。" />
 <meta property="og:type" content="article" />
@@ -72,14 +74,16 @@
 <meta property="article:published_time" content="2023-10-10T10:00:00+08:00" />
 <meta property="article:modified_time" content="2023-10-10T10:00:00+08:00" />
 <meta itemprop="name" content="Timebox 是死胡同嗎？">
-<meta itemprop="description" content="看板方法之父 David J. Anderson 在新書 Discovering Kanban 第 15 章對於 Scrum 之類基於 timebox 的方法有頗露骨的批評（光從標題 &ldquo;The Tyranny of the Ever-Decreasing Timebox&rdquo; 就看得出來）。正好好友 Derek 在 〈《Discovering Kanban》心得：Scrum 可能沒有你想像的那麼美好〉一文整理了這一章的摘要與閱讀心得，在網路上也引發一些討論 1，我便趁此機會細讀這一章。
+<meta itemprop="description" content="許多敏捷手法都奠基於 timebox。那麼，為什麼有人會認為 timebox 路線是死胡同呢？有此論點的人，偏偏又是敏捷圈的重量級人物呢。
+看板方法之父 David J. Anderson 在新書 Discovering Kanban 第 15 章對於 Scrum 之類基於 timebox 的方法有頗露骨的批評（光從標題 &ldquo;The Tyranny of the Ever-Decreasing Timebox&rdquo; 就看得出來）。正好好友 Derek 在 〈《Discovering Kanban》心得：Scrum 可能沒有你想像的那麼美好〉一文整理了這一章的摘要與閱讀心得，在網路上也引發一些討論 1，我便趁此機會細讀這一章。
 這一章論點非常深刻。但讀著讀著，總覺得作者道出的結論 &ldquo;time-constrained sprints are an evolutionary cul-de-sac, a dead end&rdquo;，與我直接或間接所知的業界實踐現況，並不相符。我猜想：會不會是某個推論環節出了些問題？
 因此，我嘗試用系統思考角度去梳理相關論述。我試圖用更清晰的因果關係秀出 timebox 路線被點名的痛點，以及常見的因應之道。至於這痛點是否真的已被解決了，則留待讀者思考，不在此文的探討範圍。"><meta itemprop="datePublished" content="2023-10-10T10:00:00+08:00" />
 <meta itemprop="dateModified" content="2023-10-10T10:00:00+08:00" />
-<meta itemprop="wordCount" content="2428">
+<meta itemprop="wordCount" content="2488">
 <meta itemprop="keywords" content="agile,scrum,kanban,lean,systems-thinking," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Timebox 是死胡同嗎？"/>
-<meta name="twitter:description" content="看板方法之父 David J. Anderson 在新書 Discovering Kanban 第 15 章對於 Scrum 之類基於 timebox 的方法有頗露骨的批評（光從標題 &ldquo;The Tyranny of the Ever-Decreasing Timebox&rdquo; 就看得出來）。正好好友 Derek 在 〈《Discovering Kanban》心得：Scrum 可能沒有你想像的那麼美好〉一文整理了這一章的摘要與閱讀心得，在網路上也引發一些討論 1，我便趁此機會細讀這一章。
+<meta name="twitter:description" content="許多敏捷手法都奠基於 timebox。那麼，為什麼有人會認為 timebox 路線是死胡同呢？有此論點的人，偏偏又是敏捷圈的重量級人物呢。
+看板方法之父 David J. Anderson 在新書 Discovering Kanban 第 15 章對於 Scrum 之類基於 timebox 的方法有頗露骨的批評（光從標題 &ldquo;The Tyranny of the Ever-Decreasing Timebox&rdquo; 就看得出來）。正好好友 Derek 在 〈《Discovering Kanban》心得：Scrum 可能沒有你想像的那麼美好〉一文整理了這一章的摘要與閱讀心得，在網路上也引發一些討論 1，我便趁此機會細讀這一章。
 這一章論點非常深刻。但讀著讀著，總覺得作者道出的結論 &ldquo;time-constrained sprints are an evolutionary cul-de-sac, a dead end&rdquo;，與我直接或間接所知的業界實踐現況，並不相符。我猜想：會不會是某個推論環節出了些問題？
 因此，我嘗試用系統思考角度去梳理相關論述。我試圖用更清晰的因果關係秀出 timebox 路線被點名的痛點，以及常見的因應之道。至於這痛點是否真的已被解決了，則留待讀者思考，不在此文的探討範圍。"/>
 
@@ -393,7 +397,7 @@
 
   <div class="post-meta__right">
     <span class="post-meta-more">
-        約 2428 字 -
+        約 2488 字 -
         預計閱讀 5 分鐘
       </span>
 
@@ -439,7 +443,8 @@
 
     
     <div class="post-content">
-      <p>看板方法之父 David J. Anderson 在新書 <a href="https://www.amazon.com/dp/1960442074"><em>Discovering Kanban</em></a> 第 15 章對於 Scrum 之類基於 timebox 的方法有頗露骨的批評（光從標題 &ldquo;The Tyranny of the Ever-Decreasing Timebox&rdquo; 就看得出來）。正好好友 Derek 在 〈<a href="https://medium.com/agile-coffee/discovering-kanban-18d9b2ac9be2">《Discovering Kanban》心得：Scrum 可能沒有你想像的那麼美好</a>〉一文整理了這一章的摘要與閱讀心得，在網路上也引發一些討論 <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>，我便趁此機會細讀這一章。</p>
+      <p>許多敏捷手法都奠基於 timebox。那麼，為什麼有人會認為 timebox 路線是死胡同呢？有此論點的人，偏偏又是敏捷圈的重量級人物呢。</p>
+<p>看板方法之父 David J. Anderson 在新書 <a href="https://www.amazon.com/dp/1960442074"><em>Discovering Kanban</em></a> 第 15 章對於 Scrum 之類基於 timebox 的方法有頗露骨的批評（光從標題 &ldquo;The Tyranny of the Ever-Decreasing Timebox&rdquo; 就看得出來）。正好好友 Derek 在 〈<a href="https://medium.com/agile-coffee/discovering-kanban-18d9b2ac9be2">《Discovering Kanban》心得：Scrum 可能沒有你想像的那麼美好</a>〉一文整理了這一章的摘要與閱讀心得，在網路上也引發一些討論 <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>，我便趁此機會細讀這一章。</p>
 <p>這一章論點非常深刻。但讀著讀著，總覺得作者道出的結論 &ldquo;time-constrained sprints are an evolutionary cul-de-sac, a dead end&rdquo;，與我直接或間接所知的業界實踐現況，並不相符。我猜想：會不會是某個推論環節出了些問題？</p>
 <p>因此，我嘗試用系統思考角度去梳理相關論述。我試圖用更清晰的因果關係秀出 timebox 路線被點名的痛點，以及常見的因應之道。至於這痛點是否真的已被解決了，則留待讀者思考，不在此文的探討範圍。</p>
 <h2 id="目標相同途徑各異">目標相同，途徑各異</h2>

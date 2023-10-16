@@ -79,7 +79,7 @@
 我很常遇到不必要的巢狀迴圈或條件判斷式。經驗告訴我，除非真的是要設計出什麼高大尚的演算法或者刷題，否則，這有相當大的機率是需要進一步 refactor 的。
 像以下這段程式，即使我故意把領域知識相關細節用 conditionXX 馬賽克掉了，你還是可以明顯聞到 bad smell：迴圈 &#43; 條件判斷式，ABCDEF 深達 6 層，你能夠很快捕捉到箇中邏輯嗎？"><meta itemprop="datePublished" content="2023-10-12T20:00:00+08:00" />
 <meta itemprop="dateModified" content="2023-10-12T20:00:00+08:00" />
-<meta itemprop="wordCount" content="1459">
+<meta itemprop="wordCount" content="1463">
 <meta itemprop="keywords" content="programming,craftsmanship," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="[Code Review 碎碎念] 簡化巢狀條件判斷式"/>
 <meta name="twitter:description" content="讀別人的程式是一件苦差事，不僅需要具備對應的領域知識，也得了解對方的程式書寫邏輯與風格。因此，為了讓程式碼容易被人理解，整潔程式碼是必須持續精進的技藝。
@@ -397,7 +397,7 @@
 
   <div class="post-meta__right">
     <span class="post-meta-more">
-        約 1459 字 -
+        約 1463 字 -
         預計閱讀 3 分鐘
       </span>
 
@@ -483,7 +483,7 @@
 </span></span><span style="display:flex;"><span><span style="color:#ae81ff">21</span>:         <span style="color:#75715e"># only 1 line of code (腳輕)</span>
 </span></span></code></pre></div><p>此刻，儘管你才讀到第 4 行，但應該會有個懸念：「究竟 if 的另一隻腳 else 會是什麼？」可是你要一直往下讀到第 20 行，謎底才會揭曉。</p>
 <p>這種懸念，有個心理學名詞：Zeigarnik effect（常譯為齊加尼克效應、蔡加尼克效應）。</p>
-<p>這種懸念，會增加我們的認知負荷，瓜分我們的專注力——閱讀程式碼，是最需要專注力的。</p>
+<p>這種懸念，會增加我們的認知負荷，瓜分我們的專注力————閱讀程式碼，是最需要專注力的。</p>
 <p>如果換個順序，頭輕腳重，就可以盡早排除懸念，因為懸念早在你讀到第 3 行就已結束：</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ae81ff">01</span>:     <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> condition1(item):
 </span></span><span style="display:flex;"><span><span style="color:#ae81ff">02</span>:         <span style="color:#75715e"># only 1 line of code (頭輕)</span>
@@ -511,7 +511,7 @@
 </span></span><span style="display:flex;"><span>                        print(<span style="color:#e6db74">&#39;CASE 2&#39;</span>)
 </span></span></code></pre></div><p>這一招，在 <a href="https://martinfowler.com/books/refactoring.html"><em>Refactoring</em></a> 書中叫做 &ldquo;Replace Nested Conditional with Guard Clauses&rdquo;。 <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
 <h2 id="整併">整併</h2>
-<p>連續的巢狀 if，往往給讀者一種「這裡一定藏著很複雜的邏輯」的感覺－－或者錯覺。如有可能，應該嘗試用 and 及 or 加以整併。</p>
+<p>連續的巢狀 if，往往給讀者一種「這裡一定藏著很複雜的邏輯」的感覺————或者錯覺。如有可能，應該嘗試用 and 及 or 加以整併。</p>
 <p>像前面的範例程式，如果繼續將 condition2 &amp; condition3 整併，巢狀深度降低了，是不是更易讀呢？</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">demo3</span>():
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> item <span style="color:#f92672">in</span> data:    <span style="color:#75715e"># A</span>
