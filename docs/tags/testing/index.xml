@@ -6,12 +6,12 @@
     <description>Recent content in testing on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Wed, 13 Sep 2023 20:00:00 +0800</lastBuildDate><atom:link href="//william-yeh.net/tags/testing/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 13 Sep 2023 20:00:00 +0800</lastBuildDate>
+    <atom:link href="//william-yeh.net/tags/testing/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>從 Code Review 的小事看到大事</title>
       <link>//william-yeh.net/post/2023/09/on-code-review/</link>
       <pubDate>Wed, 13 Sep 2023 20:00:00 +0800</pubDate>
-      
       <guid>//william-yeh.net/post/2023/09/on-code-review/</guid>
       <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
 &lt;p&gt;我很喜歡 Java 大師 &lt;a href=&#34;https://en.wikipedia.org/wiki/Joshua_Bloch&#34;&gt;Joshua Bloch&lt;/a&gt; 在《&lt;a href=&#34;https://williampjyeh.notion.site/d265b736b05f42d885ef40bb0a48786f&#34;&gt;編程的頂尖對話&lt;/a&gt;》所說的：&lt;/p&gt;
@@ -39,12 +39,10 @@
 &lt;p&gt;如果你所在的團隊已經啟動 Scrum 或 Kanban 研發流程，恭喜你，你們已經有很好的流程基礎可在這六大議題上面精進，只需要正確實施（玩真的！）你們所採用的敏捷流程。文中我會大量連結到 Scrum 及 Kanban 的要素。請確實「守」你們該守的流程，不要驟然「破」或「離」。&lt;/p&gt;
 &lt;p&gt;全文很長，如果你是現役的程式設計師，可先讀①②以瞭解 engineering disciplines；如果你是 team lead，可先讀③④以瞭解團隊動力；如果你是管理層，可先讀⑤⑥，尤其是⑤關於管理面的施力點。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>很簡單的東西，也要單元測試嗎？</title>
       <link>//william-yeh.net/post/2022/05/need-for-unit-testing/</link>
       <pubDate>Tue, 24 May 2022 12:00:00 +0800</pubDate>
-      
       <guid>//william-yeh.net/post/2022/05/need-for-unit-testing/</guid>
       <description>&lt;p&gt;（改寫自公司內部 memo）&lt;/p&gt;
 &lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
@@ -56,26 +54,21 @@
 &lt;/blockquote&gt;
 &lt;p&gt;但當下我還是決定先展開一場對話。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>gRPC 測試工具</title>
       <link>//william-yeh.net/post/2020/04/grpc-testing-tools/</link>
       <pubDate>Tue, 14 Apr 2020 22:00:00 +0800</pubDate>
-      
       <guid>//william-yeh.net/post/2020/04/grpc-testing-tools/</guid>
       <description>&lt;p&gt;RESTful API 時代，我們有許多簡單好用的測試工具：有酷炫的 &lt;a href=&#34;https://www.postman.com/&#34;&gt;Postman&lt;/a&gt;，有命令列控愛用的 &lt;a href=&#34;https://httpie.org/&#34;&gt;HTTPie&lt;/a&gt;，當然也有硬漢必備的萬用瑞士刀 &lt;a href=&#34;https://curl.haxx.se/&#34;&gt;curl&lt;/a&gt;。&lt;/p&gt;
 &lt;p&gt;那麼，gRPC 呢？&lt;/p&gt;
 &lt;p&gt;這篇文章介紹兩個好用的小工具：&lt;a href=&#34;https://github.com/fullstorydev/grpcurl&#34;&gt;gRPCurl&lt;/a&gt; 及 &lt;a href=&#34;https://github.com/bojand/ghz&#34;&gt;ghz&lt;/a&gt;，一個是輸入輸出介面測試工具，另一個是壓測工具，也順便介紹一些簡化測試的技巧。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>CI 怎樣帶你遠離平庸？</title>
       <link>//william-yeh.net/post/2015/12/ci-effect/</link>
       <pubDate>Tue, 22 Dec 2015 08:00:00 +0800</pubDate>
-      
       <guid>//william-yeh.net/post/2015/12/ci-effect/</guid>
       <description>前天我的文章〈CI 是條不歸路〉提到：「CI/CD/DevOps 既是條不歸路，更是大躍進之路：一旦踏出第一步，就注定你會不斷接觸**『遠離平庸</description>
     </item>
-    
   </channel>
 </rss>

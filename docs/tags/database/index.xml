@@ -6,12 +6,12 @@
     <description>Recent content in database on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Tue, 10 Mar 2020 23:00:00 +0800</lastBuildDate><atom:link href="//william-yeh.net/tags/database/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 10 Mar 2020 23:00:00 +0800</lastBuildDate>
+    <atom:link href="//william-yeh.net/tags/database/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Idempotency Key：原理與實測</title>
       <link>//william-yeh.net/post/2020/03/idempotency-key-test/</link>
       <pubDate>Tue, 10 Mar 2020 23:00:00 +0800</pubDate>
-      
       <guid>//william-yeh.net/post/2020/03/idempotency-key-test/</guid>
       <description>&lt;p&gt;最近幾年，在微服務打滾的人，不時會遇到神祕的 &amp;ldquo;idempotency key&amp;rdquo; 字眼。本文爬梳 idempotency key 的技術背景，探討運作流程，並分析資料庫的實作選項。&lt;/p&gt;
 &lt;h2 id=&#34;idempotency-冪等性&#34;&gt;Idempotency 冪等性&lt;/h2&gt;
@@ -19,6 +19,5 @@
 &lt;p&gt;名詞：idempotency，形容詞：idempotent。&lt;/p&gt;
 &lt;p&gt;&amp;ldquo;Idempotency&amp;rdquo; 這字眼源自數學。維基百科是這麼解釋 &amp;ldquo;&lt;a href=&#34;https://en.wikipedia.org/wiki/Idempotence#Idempotent_functions&#34;&gt;idempotent function&lt;/a&gt;&amp;rdquo; 的：&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

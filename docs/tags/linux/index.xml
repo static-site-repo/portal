@@ -6,12 +6,12 @@
     <description>Recent content in linux on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sat, 19 Aug 2023 20:00:00 +0800</lastBuildDate><atom:link href="//william-yeh.net/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 19 Aug 2023 20:00:00 +0800</lastBuildDate>
+    <atom:link href="//william-yeh.net/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>透過自己的雙手，掌握那不變的容器技術核心——《Docker 實戰 6 堂課》推薦序</title>
       <link>//william-yeh.net/post/2023/08/docker-labs-review/</link>
       <pubDate>Sat, 19 Aug 2023 20:00:00 +0800</pubDate>
-      
       <guid>//william-yeh.net/post/2023/08/docker-labs-review/</guid>
       <description>&lt;p&gt;我在 2015 年～2017 年間，開了 8 次【&lt;a href=&#34;https://william-yeh.github.io/docker-workshop/&#34;&gt;Docker 建置實戰講堂&lt;/a&gt;】一日課程。在那個大眾對於 Docker 還矇矇懂懂的年代，我就堅持不用貌似較簡便的 Docker Desktop，而是大膽採用 Vagrant + VirtualBox 作為統一的授課環境，讓學員儘早習慣在 Linux 平台上探索 Docker 的底層與應用。&lt;/p&gt;
 &lt;p&gt;所以，當我在 2022 年 iThome 鐵人賽看到小賴的參賽作品【&lt;a href=&#34;https://ithelp.ithome.com.tw/users/20151857/ironman/5419&#34;&gt;那些關於 docker 你知道與不知道的事&lt;/a&gt;】中，是以 AWS EC2 的 Ubuntu instance 作為實作環境，現在更出版新書《&lt;a href=&#34;https://www.tenlong.com.tw/products/9786263335769&#34;&gt;Docker 實戰 6 堂課：56 個實驗動手做，掌握 Linux 容器核心技術&lt;/a&gt;》，就非常高興。畢竟，從最擬真的角度切入，才能夠透過自己的雙手，掌握那不變的容器技術核心。&lt;/p&gt;
@@ -31,16 +31,13 @@
   &lt;/figure&gt;
 &lt;/div&gt;</description>
     </item>
-    
     <item>
       <title>POLP：最小權限原則</title>
       <link>//william-yeh.net/post/2016/03/polp-intro/</link>
       <pubDate>Tue, 15 Mar 2016 08:00:00 +0800</pubDate>
-      
       <guid>//william-yeh.net/post/2016/03/polp-intro/</guid>
       <description>&lt;p&gt;在我開的 &lt;a href=&#34;http://get.soft-arch.net/ansible/&#34;&gt;Ansible Workshop&lt;/a&gt; 中，不管是課前的【許願池】，還是課程現場的 Q&amp;amp;A，總有一個熱門議題：「如何確保系統是安全的？」&lt;/p&gt;
 &lt;p&gt;這是大哉問，不是單獨一門組態管理課就能探討到令人滿意的地步（資安也不是我所擅長的⋯⋯）。不過，被問到的次數太多了，我還是給個簡單的導引吧。&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

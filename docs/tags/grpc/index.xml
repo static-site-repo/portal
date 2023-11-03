@@ -6,12 +6,12 @@
     <description>Recent content in grpc on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sat, 26 Dec 2020 20:00:00 +0800</lastBuildDate><atom:link href="//william-yeh.net/tags/grpc/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 26 Dec 2020 20:00:00 +0800</lastBuildDate>
+    <atom:link href="//william-yeh.net/tags/grpc/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>2020 個人回顧</title>
       <link>//william-yeh.net/post/2020/12/2020-retrospective/</link>
       <pubDate>Sat, 26 Dec 2020 20:00:00 +0800</pubDate>
-      
       <guid>//william-yeh.net/post/2020/12/2020-retrospective/</guid>
       <description>&lt;p&gt;年初，再多跨出舒適圈一步，換到另外一間外商。&lt;/p&gt;
 &lt;p&gt;如果說 &lt;a href=&#34;//william-yeh.net/post/2018/12/2018-retrospective/&#34;&gt;2018&lt;/a&gt; 是收攝靜觀的一年，&lt;a href=&#34;//william-yeh.net/post/2019/12/2019-retrospective/&#34;&gt;2019&lt;/a&gt; 是驚滔駭浪的一年，那麼，2020 算是兩者兼具。&lt;/p&gt;
@@ -32,27 +32,22 @@
   &lt;/figure&gt;
 &lt;/div&gt;</description>
     </item>
-    
     <item>
       <title>gRPC 測試工具</title>
       <link>//william-yeh.net/post/2020/04/grpc-testing-tools/</link>
       <pubDate>Tue, 14 Apr 2020 22:00:00 +0800</pubDate>
-      
       <guid>//william-yeh.net/post/2020/04/grpc-testing-tools/</guid>
       <description>&lt;p&gt;RESTful API 時代，我們有許多簡單好用的測試工具：有酷炫的 &lt;a href=&#34;https://www.postman.com/&#34;&gt;Postman&lt;/a&gt;，有命令列控愛用的 &lt;a href=&#34;https://httpie.org/&#34;&gt;HTTPie&lt;/a&gt;，當然也有硬漢必備的萬用瑞士刀 &lt;a href=&#34;https://curl.haxx.se/&#34;&gt;curl&lt;/a&gt;。&lt;/p&gt;
 &lt;p&gt;那麼，gRPC 呢？&lt;/p&gt;
 &lt;p&gt;這篇文章介紹兩個好用的小工具：&lt;a href=&#34;https://github.com/fullstorydev/grpcurl&#34;&gt;gRPCurl&lt;/a&gt; 及 &lt;a href=&#34;https://github.com/bojand/ghz&#34;&gt;ghz&lt;/a&gt;，一個是輸入輸出介面測試工具，另一個是壓測工具，也順便介紹一些簡化測試的技巧。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>gRPC Load Balancing in Kubernetes</title>
       <link>//william-yeh.net/post/2020/03/grpc-load-balancing/</link>
       <pubDate>Mon, 30 Mar 2020 22:30:00 +0800</pubDate>
-      
       <guid>//william-yeh.net/post/2020/03/grpc-load-balancing/</guid>
       <description>&lt;p&gt;Kubernetes 有個很方便的地方：只要修改 deployment 的 &lt;code&gt;spec.replicas&lt;/code&gt; 數字，就能橫向擴展 pod，以應付更大的流量負載需求。&lt;/p&gt;
 &lt;p&gt;這一招，對於 stateless 的 HTTP 服務很管用，也是 Kubernetes 入門教學愛用的例子。但是，對於 &lt;a href=&#34;https://grpc.io/&#34;&gt;gRPC&lt;/a&gt; 呢？&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

@@ -6,17 +6,16 @@
     <description>Recent content in golang on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Fri, 10 Jul 2020 08:00:00 +0800</lastBuildDate><atom:link href="//william-yeh.net/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 10 Jul 2020 08:00:00 +0800</lastBuildDate>
+    <atom:link href="//william-yeh.net/tags/golang/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Go Best Practices</title>
       <link>//william-yeh.net/post/2020/07/golang-best-practices/</link>
       <pubDate>Fri, 10 Jul 2020 08:00:00 +0800</pubDate>
-      
       <guid>//william-yeh.net/post/2020/07/golang-best-practices/</guid>
       <description>&lt;p&gt;今年一月，換到一家以 Go 為主力語言的公司。&lt;/p&gt;
 &lt;p&gt;習慣了 Java 紀律，一碰到 Go 的自由奔放，不禁想尋求一些 best practices 與 patterns。&lt;/p&gt;
 &lt;p&gt;以前我曾蒐集過一份 Go Best Practices 清單。浸潤 Go 半年後，再回頭看這些內容，當初不甚明瞭之處，竟然也懂了許多。便想重新整理一次，並加上個人的短評。&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

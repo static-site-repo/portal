@@ -6,12 +6,12 @@
     <description>Recent content in project-management on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sat, 26 Aug 2023 18:00:00 +0800</lastBuildDate><atom:link href="//william-yeh.net/tags/project-management/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 26 Aug 2023 18:00:00 +0800</lastBuildDate>
+    <atom:link href="//william-yeh.net/tags/project-management/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>很簡單的 Story，也要拆分出 Tasks 嗎？</title>
       <link>//william-yeh.net/post/2023/08/story-to-tasks/</link>
       <pubDate>Sat, 26 Aug 2023 18:00:00 +0800</pubDate>
-      
       <guid>//william-yeh.net/post/2023/08/story-to-tasks/</guid>
       <description>&lt;p&gt;Scrum 已經夠精簡了，但很多人還是因為嫌麻煩、省時間，就省略原本預定該做的事情。&lt;/p&gt;
 &lt;p&gt;雖然在 2020 之前的 &lt;a href=&#34;https://scrumguides.org&#34;&gt;&lt;em&gt;The Scrum Guide&lt;/em&gt;&lt;/a&gt; 並沒有規定 &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Planning&lt;/span&gt;
@@ -20,21 +20,17 @@
  做好做滿，其實也未必非得硬性劃分 Part 1 &amp;amp; Part 2（畢竟 Scrum 推崇基於經驗主義的自組織、自管理）。最怕的是，不明白劃分 Part 1 &amp;amp; Part 2 的好處，不明白 Part 2 的重點及產出，甚至單純只因「嫌麻煩」、「省時間」，就省略原本預定該在 Part 2 進行的活動，往往會導致 sprint 進行途中出現種種問題。&lt;/p&gt;
 &lt;p&gt;很多問題，追根究柢，就是當初沒有認真進行 Part 2。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>敏捷的工作分解方法</title>
       <link>//william-yeh.net/series/agile-decomposition/</link>
       <pubDate>Sat, 26 Aug 2023 00:00:00 +0000</pubDate>
-      
       <guid>//william-yeh.net/series/agile-decomposition/</guid>
       <description>One-Week Sprint 的節奏 工作分解講座・閱讀材料 事情做一半，等於沒完成：淺談敏捷的里程碑設定 以「蜘蛛法」拆分過於龐大的 User Story 很簡單的 Story，也要拆分出 Tasks 嗎</description>
     </item>
-    
     <item>
       <title>以「蜘蛛法」拆分過於龐大的 User Story</title>
       <link>//william-yeh.net/post/2022/11/spidr/</link>
       <pubDate>Tue, 01 Nov 2022 17:00:00 +0800</pubDate>
-      
       <guid>//william-yeh.net/post/2022/11/spidr/</guid>
       <description>&lt;p&gt;（改寫自公司內部 memo）&lt;/p&gt;
 &lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
@@ -42,12 +38,10 @@
 &lt;p&gt;剛從傳統瀑布式專案管理風格轉換到敏捷風格的團隊，最常遇到第二個卡關之處是：如何將 User Story 拆分到足以在一個 sprint 內完成的顆粒度？&lt;/p&gt;
 &lt;p&gt;如果玩過我帶的「在幾分鐘以內出門」(&amp;ldquo;get out of the door in a few minutes&amp;rdquo;) 活動 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，或許可藉由喚起這段活動的體驗來得到拆分大故事的靈感。如果還想進一步知道更具體的步驟，我推薦大家試試 Mike Cohn 大師提出的 &lt;a href=&#34;https://www.mountaingoatsoftware.com/exclusive/spidr-poster-download&#34;&gt;SPIDR 法&lt;/a&gt;。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>事情做一半，等於沒完成：淺談敏捷的里程碑設定</title>
       <link>//william-yeh.net/post/2022/10/agile-milestone/</link>
       <pubDate>Mon, 31 Oct 2022 17:00:00 +0800</pubDate>
-      
       <guid>//william-yeh.net/post/2022/10/agile-milestone/</guid>
       <description>&lt;p&gt;（改寫自公司內部 memo）&lt;/p&gt;
 &lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
@@ -60,12 +54,10 @@
 &lt;p&gt;這需要創意，需要練習，需要提升規劃能力，需要提升工程能力，需要時時用挑戰性提問提醒自己。但或許更重要的是：大家需要打從心裡認清且認同這樣做的理由。&lt;/p&gt;
 &lt;p&gt;理由之一是：精實生產。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>專案管理／專案組合管理當中，不必然需要公開透明的地方</title>
       <link>//william-yeh.net/post/2022/08/stakeholder-transparency/</link>
       <pubDate>Mon, 01 Aug 2022 17:00:00 +0800</pubDate>
-      
       <guid>//william-yeh.net/post/2022/08/stakeholder-transparency/</guid>
       <description>&lt;p&gt;（改寫自公司內部 memo）&lt;/p&gt;
 &lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
@@ -74,12 +66,10 @@
 &lt;p&gt;隨著愈來愈多人開始運用專案管理課堂上學到的技術來工作，帶來更高的透明度，更成熟的專業度，欣慰之餘，我也針對其中一件事「透明度」提出一點小提醒。&lt;/p&gt;
 &lt;p&gt;理想情況下，組織應該要追求專案的透明度——除非有特殊理由。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>專案 Kick-off meeting 的前置作業</title>
       <link>//william-yeh.net/post/2022/07/prj-kickoff/</link>
       <pubDate>Mon, 11 Jul 2022 15:00:00 +0800</pubDate>
-      
       <guid>//william-yeh.net/post/2022/07/prj-kickoff/</guid>
       <description>&lt;p&gt;（改寫自公司內部 memo）&lt;/p&gt;
 &lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
@@ -87,12 +77,10 @@
 &lt;p&gt;很高興看到二月及四月上過【專案管理第一次就上手】的同仁們，開始在工作上運用課堂所學，尤其是「&lt;strong&gt;專案管理問題清單&lt;/strong&gt;」開始被廣泛運用在大大小小專案的 kick-off meeting 上面，這是非常好的現象。&lt;/p&gt;
 &lt;p&gt;這份 memo，我針對 &lt;strong&gt;kick-off meeting&lt;/strong&gt; 的定位及前置作業多做一些補充，算是這陣子貼身觀察的小小心得。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>敏捷啟航的專業基礎：共同語彙</title>
       <link>//william-yeh.net/post/2022/03/prof-common-vocabulary/</link>
       <pubDate>Sat, 05 Mar 2022 14:00:00 +0800</pubDate>
-      
       <guid>//william-yeh.net/post/2022/03/prof-common-vocabulary/</guid>
       <description>&lt;p&gt;LeSS 的 &amp;ldquo;&lt;a href=&#34;https://less.works/less/structure/scrummaster.html#ScrumMasterfocus&#34;&gt;Scrum Master focus over time&lt;/a&gt;&amp;rdquo; 一文主張，在導入敏捷的初期階段，首要焦點應放在 &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Team&lt;/span&gt;
 、&lt;span style=&#34;font-variant: small-caps;&#34;&gt;Product Owner&lt;/span&gt;
@@ -120,33 +108,26 @@
  的施力點，則是對應到 7S 的風格 (Style)、技能 (Skills)，甚至是共同價值觀 (Shared Values)。&lt;/p&gt;
 &lt;p&gt;前者屬於硬性要素，較易理解，也較易實施；後者屬於軟性要素，較抽象，也不易立竿見影——這是敏捷啟航時需要面對的模糊題。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Agile PMO</title>
       <link>//william-yeh.net/post/2018/11/agile-pmo/</link>
       <pubDate>Thu, 15 Nov 2018 08:00:00 +0800</pubDate>
-      
       <guid>//william-yeh.net/post/2018/11/agile-pmo/</guid>
       <description>&amp;ldquo;Project&amp;rdquo; 一詞，儼然成為 agile 及 DevOps 圈子的禁語。 譬如說，敏捷祖師爺 Martin Fowler 的網站有一篇 &amp;ldquo;Products Over Projects&amp;rdquo; 文章，DevOps 巨著 The DevOps Handbook 第 7.7 節的篇名叫做〈投資於服務和產品，而</description>
     </item>
-    
     <item>
       <title>工作分解講座・閱讀材料</title>
       <link>//william-yeh.net/post/2016/11/decomposition-reading-list/</link>
       <pubDate>Wed, 30 Nov 2016 08:00:00 +0800</pubDate>
-      
       <guid>//william-yeh.net/post/2016/11/decomposition-reading-list/</guid>
       <description>緣起 我在〈One-Week Sprint 的節奏〉一文提到個人的「迷你版 Scrum」首航經驗： 第一個 sprint 順利達標，儘管變數層出不窮。 萬萬沒想到第一次嘗試帶 S</description>
     </item>
-    
     <item>
       <title>One-Week Sprint 的節奏</title>
       <link>//william-yeh.net/post/2016/10/one-week-sprint/</link>
       <pubDate>Wed, 26 Oct 2016 00:00:00 +0800</pubDate>
-      
       <guid>//william-yeh.net/post/2016/10/one-week-sprint/</guid>
       <description>我曾在 iThome 的 2012 年度必看好書中，推薦 The Scrum Field Guide（當年還是第一版，現在則有第二版了）。當年看這本書時，還沒置身 Scrum 團隊的經驗，純粹是為了未來做</description>
     </item>
-    
   </channel>
 </rss>

@@ -30,7 +30,7 @@
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.119.0" />
+<meta name="generator" content="Hugo 0.120.2" />
 
 
 <link rel="canonical" href="//william-yeh.net/" />
@@ -63,6 +63,7 @@
 <meta property="og:description" content="敏捷魔藥師 (Agile Potioneer)。會說 90% 的工匠語言，會說 70% 的總管語言，正在努力提升 30% 的行腳商人語言。" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="//william-yeh.net/" />
+
 <meta itemprop="name" content="Potioneer&#39;s Essays">
 <meta itemprop="description" content="敏捷魔藥師 (Agile Potioneer)。會說 90% 的工匠語言，會說 70% 的總管語言，正在努力提升 30% 的行腳商人語言。"><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Potioneer&#39;s Essays"/>
@@ -366,6 +367,75 @@
   <header class="post-header">
     <h1 class="post-title">
       
+      <a class="post-link" href="/post/2019/04/wsl-ansible-vagrant/">在 WSL 裡使用 Ansible &#43; Vagrant</a>
+    </h1>
+    
+
+    <div class="post-meta">
+  <div class="post-meta-author">
+    by
+      William Yeh
+    
+  </div>
+
+  <div class="post-meta-time">
+    <time datetime="2019-04-18">
+      2019-04-18
+    </time>
+  </div>
+
+  
+
+
+  <div class="post-meta__right">
+    <span class="post-meta-more">
+        約 1380 字 -
+        預計閱讀 3 分鐘
+      </span>
+
+    <div class="post-meta-category">
+        <a href="//william-yeh.net/categories/tech/"> tech </a>
+          
+      </div>
+
+
+    
+    
+      <span id="busuanzi_container_page_pv">
+        | 阅读 <span id="busuanzi_value_page_pv"></span>
+      </span>
+    
+
+
+    
+    
+  </div>
+</div>
+
+  </header>
+  
+  <div class="post-content">
+    
+      <div class="post-summary">
+        <p>既然要開始在 Windows 上沿用 Mac 及 Unix 的命令列工具習慣<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>，免不了要處理 <a href="https://github.com/ansible/ansible">Ansible</a> 及 <a href="https://www.vagrantup.com/">Vagrant</a>。</p>
+<p>雖然這兩個軟體都有對應的 Windows 版本，但據我以前的經驗，卡卡的，有許多小地雷；畢竟這些發跡自泛 Unix 家族的軟體，不是那麼容易無縫移植到對命令列不友善的 Windows 家族。</p>
+<p>如今 Windows 已經有 <a href="https://docs.microsoft.com/en-us/windows/wsl/">WSL (Windows Subsystem for Linux)</a> 機制，是否可以更無痛享用 Ansible 及 Vagrant 呢？</p>
+<p>可以的。</p>
+      </div>
+      <div class="read-more">
+        <a href="/post/2019/04/wsl-ansible-vagrant/" class="read-more-link"
+          >閱讀全文</a
+        >
+      </div>
+    
+  </div>
+</article>
+
+  
+    <article class="post bg-white">
+  <header class="post-header">
+    <h1 class="post-title">
+      
       <a class="post-link" href="/post/2019/04/wsltty-tmux/">WSLtty &#43; tmux 組合技</a>
     </h1>
     
@@ -627,73 +697,6 @@
       </div>
       <div class="read-more">
         <a href="/post/2019/02/k8s-best-practice/" class="read-more-link"
-          >閱讀全文</a
-        >
-      </div>
-    
-  </div>
-</article>
-
-  
-    <article class="post bg-white">
-  <header class="post-header">
-    <h1 class="post-title">
-      
-      <a class="post-link" href="/post/2019/01/tech-leader-reading/">技術領導者微培訓</a>
-    </h1>
-    
-
-    <div class="post-meta">
-  <div class="post-meta-author">
-    by
-      William Yeh
-    
-  </div>
-
-  <div class="post-meta-time">
-    <time datetime="2019-01-19">
-      2019-01-19
-    </time>
-  </div>
-
-  
-
-
-  <div class="post-meta__right">
-    <span class="post-meta-more">
-        約 3493 字 -
-        預計閱讀 7 分鐘
-      </span>
-
-    <div class="post-meta-category">
-        <a href="//william-yeh.net/categories/management/"> management </a>
-          
-      </div>
-
-
-    
-    
-      <span id="busuanzi_container_page_pv">
-        | 阅读 <span id="busuanzi_value_page_pv"></span>
-      </span>
-    
-
-
-    
-    
-  </div>
-</div>
-
-  </header>
-  
-  <div class="post-content">
-    
-      <div class="post-summary">
-        <p>最近，我們研發組織有幅度不算小的變動，某些技術人會被要求承擔更多的技術領導責任。</p>
-<p>不過，正如<a href="https://en.wikipedia.org/wiki/Gerald_Weinberg">溫伯格</a>大師在《<a href="https://www.books.com.tw/products/0010467750">領導者，該想什麼？</a>》所說，技術人常會面臨天人交戰：</p>
-      </div>
-      <div class="read-more">
-        <a href="/post/2019/01/tech-leader-reading/" class="read-more-link"
           >閱讀全文</a
         >
       </div>

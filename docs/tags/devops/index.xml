@@ -6,12 +6,12 @@
     <description>Recent content in devops on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Tue, 25 Apr 2023 22:00:00 +0800</lastBuildDate><atom:link href="//william-yeh.net/tags/devops/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 25 Apr 2023 22:00:00 +0800</lastBuildDate>
+    <atom:link href="//william-yeh.net/tags/devops/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Coursera 上面的 GCP 課程</title>
       <link>//william-yeh.net/post/2023/04/gcp-on-coursera/</link>
       <pubDate>Tue, 25 Apr 2023 22:00:00 +0800</pubDate>
-      
       <guid>//william-yeh.net/post/2023/04/gcp-on-coursera/</guid>
       <description>&lt;p&gt;為了在公司內推動 GCP 認證考試，必須先推動大家勤修 GCP 課程；為了推動大家勤修 GCP 課程，我得先帶頭示範。因此，我最近在 Coursera 修了許多 GCP 認證考試相關課程 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，感觸很深：就算不考照，用這些課程補完一些知識，還是很值得的。&lt;/p&gt;
 &lt;p&gt;這些課程深度與廣度兼具，又有搭配實作演習，有系統地吸收，會比雜亂搜尋文件的碎片化學習來得踏實。&lt;/p&gt;
@@ -30,12 +30,10 @@
 &lt;li&gt;ML &amp;amp; Big Data&lt;/li&gt;
 &lt;/ul&gt;</description>
     </item>
-    
     <item>
       <title>Distroless Image 牛刀小試</title>
       <link>//william-yeh.net/post/2023/02/distroless-image/</link>
       <pubDate>Wed, 15 Feb 2023 22:00:00 +0800</pubDate>
-      
       <guid>//william-yeh.net/post/2023/02/distroless-image/</guid>
       <description>&lt;p&gt;距離上次重度探討「極簡化容器」已經快六年多了&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;。這議題，以前可能只是某些人技術上的興趣，現在則可能是必要。&lt;/p&gt;
 &lt;p&gt;原因是：Docker Inc 的一些措施，讓人不得不慎重考慮替代方案。&lt;/p&gt;
@@ -47,41 +45,33 @@
 &lt;/ul&gt;
 &lt;p&gt;於是，未付費的人，不僅在使用 Docker Hub 時會受到管制，還會波及產製 image 的 CI pipeline，不時會遇到這樣的 &amp;ldquo;toomanyrequests&amp;rdquo; 限流警告：&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>WSL Image 匯出與匯入</title>
       <link>//william-yeh.net/post/2023/02/wsl-image/</link>
       <pubDate>Thu, 09 Feb 2023 22:00:00 +0800</pubDate>
-      
       <guid>//william-yeh.net/post/2023/02/wsl-image/</guid>
       <description>&lt;p&gt;經過一番辛苦調教，總算把 WSL 調整成可推廣到團隊使用的地步。下一步就是要輸出成 WSL 公版。&lt;/p&gt;
 &lt;p&gt;謹以此文記錄匯出與匯入 WSL 映像檔的步驟與除雷經驗。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>用 Podman 執行 Laravel &#43; Sail</title>
       <link>//william-yeh.net/post/2023/02/podman-laravel-sail/</link>
       <pubDate>Tue, 07 Feb 2023 22:00:00 +0800</pubDate>
-      
       <guid>//william-yeh.net/post/2023/02/podman-laravel-sail/</guid>
       <description>&lt;p&gt;從 Docker Desktop 換到 Podman &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; ，開始需要處理某些相容性問題。有些問題不見得是 Podman 的錯，但既然遇到了，就順手記錄一下除雷經驗。&lt;/p&gt;
 &lt;p&gt;此文記錄一下在 Podman 執行 Laravel 9 欽定開發環境 &lt;a href=&#34;https://laravel.com/docs/9.x/sail&#34;&gt;Sail&lt;/a&gt; 的步驟。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Podman Tips</title>
       <link>//william-yeh.net/post/2023/02/podman-tips/</link>
       <pubDate>Tue, 07 Feb 2023 20:00:00 +0800</pubDate>
-      
       <guid>//william-yeh.net/post/2023/02/podman-tips/</guid>
       <description>&lt;p&gt;從 Docker Desktop 換成 Podman，有些習慣必須做些小調整。此文記錄一些常用的小技巧。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>WSL2 &#43; Podman &#43; K3s 組合技</title>
       <link>//william-yeh.net/post/2023/02/wsl2-podman-k3s/</link>
       <pubDate>Mon, 06 Feb 2023 22:00:00 +0800</pubDate>
-      
       <guid>//william-yeh.net/post/2023/02/wsl2-podman-k3s/</guid>
       <description>&lt;p&gt;距離上次重度使用 WSL 已經快四年了。四年來 WSL 世界起了一些變化：&lt;/p&gt;
 &lt;ul&gt;
@@ -94,21 +84,17 @@
 &lt;/ul&gt;
 &lt;p&gt;容器世界也起了很大的變化：&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>職涯躍升書系導讀會</title>
       <link>//william-yeh.net/series/career-reading-club/</link>
       <pubDate>Tue, 29 Nov 2022 00:00:00 +0000</pubDate>
-      
       <guid>//william-yeh.net/series/career-reading-club/</guid>
       <description>❶ Part 1: 喚醒個人及團隊的成長意識 (計 6 冊) ❷ Part 2: 高效團隊的工作方法 (計 2 冊) ❸ Part 3: 職場心理：觀點、期待、渴望 (計 3 冊)</description>
     </item>
-    
     <item>
       <title>職涯躍升書系導讀會，Part 1：喚醒個人及團隊的成長意識</title>
       <link>//william-yeh.net/post/2022/06/career-reading-club-1/</link>
       <pubDate>Fri, 17 Jun 2022 20:00:00 +0800</pubDate>
-      
       <guid>//william-yeh.net/post/2022/06/career-reading-club-1/</guid>
       <description>&lt;p&gt;2022 年一月起，我開始每個月一次，每次兩小時的【職涯躍升書系導讀會】，讓公司同仁自由報名，希望藉由這種草根性的軟性活動，另闢一條 bottom-up 的改革路徑。畢竟，深遠持久的影響，不能少掉「喚醒基層意識」這環節。&lt;/p&gt;
 
@@ -126,44 +112,36 @@
 
 &lt;p&gt;前六個月的選書如下：&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>服務事故處理的系統思考</title>
       <link>//william-yeh.net/post/2021/04/cld-for-service-incident/</link>
       <pubDate>Mon, 05 Apr 2021 20:00:00 +0800</pubDate>
-      
       <guid>//william-yeh.net/post/2021/04/cld-for-service-incident/</guid>
       <description>&lt;p&gt;集團內 Agile CoP 定期聚會，最近都在團練「&lt;a href=&#34;https://wiki.mbalib.com/zh-tw/%E8%A1%8C%E5%8A%A8%E5%AD%A6%E4%B9%A0%E6%B3%95&#34;&gt;行動學習 (action learning)&lt;/a&gt;」。&lt;/p&gt;
 &lt;p&gt;行動學習十分殊勝。多元探詢角度居然能夠同時並存，對我來說，在參加之前委實難以想像。&lt;/p&gt;
 &lt;p&gt;我參加了兩次，上次我選擇的提問切入點 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; 是「問題重塑」，這次刻意換成「系統思考」來練練。&lt;/p&gt;
 &lt;p&gt;某團員提出一則個案讓大家探討：&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>從系統思考角度讀《獨角獸專案》</title>
       <link>//william-yeh.net/post/2021/03/sys-thinking-unicorn-project/</link>
       <pubDate>Sun, 28 Mar 2021 16:00:00 +0800</pubDate>
-      
       <guid>//william-yeh.net/post/2021/03/sys-thinking-unicorn-project/</guid>
       <description>&lt;p&gt;&lt;strong&gt;活動名稱&lt;/strong&gt;：從系統思考角度讀《獨角獸專案》&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;時間&lt;/strong&gt;：2021-11-24 (三) / 13:30&amp;ndash;15:00 (因疫情影響延期舉辦)&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;會議&lt;/strong&gt;：&lt;a href=&#34;https://devopsdays.tw/&#34;&gt;DevOpsDays Taipei 2021&lt;/a&gt; 的 &lt;a href=&#34;https://devopsdays.tw/2021/workshop-page/212&#34;&gt;603 會議室&lt;/a&gt;&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>「系統思考工作坊」系列</title>
       <link>//william-yeh.net/series/systhinking-series/</link>
       <pubDate>Sun, 28 Mar 2021 00:00:00 +0000</pubDate>
-      
       <guid>//william-yeh.net/series/systhinking-series/</guid>
       <description>【系統思考的四堂課】緣起 第一場公開班課後回覆：思維的重量訓練 從系統思考角度讀《獨角獸專案》</description>
     </item>
-    
     <item>
       <title>值得你看門道的好書——《獨角獸專案》推薦序</title>
       <link>//william-yeh.net/post/2020/10/unicorn-project-review/</link>
       <pubDate>Sat, 03 Oct 2020 10:00:00 +0800</pubDate>
-      
       <guid>//william-yeh.net/post/2020/10/unicorn-project-review/</guid>
       <description>&lt;p&gt;2011 年 8 月，瀏覽器之父 &lt;a href=&#34;https://en.wikipedia.org/wiki/Marc_Andreessen&#34;&gt;Marc Andreessen&lt;/a&gt; 曾在華爾街日報&lt;a href=&#34;https://online.wsj.com/article/SB10001424053111903480904576512250915629460.html&#34;&gt;評論&lt;/a&gt;道：「軟體正在蠶食整個世界」(software is eating the world)。&lt;/p&gt;
 &lt;p&gt;接下來這十年，果然如他所預言，世界徹底被軟體顛覆。各行業，如果不對軟體研發的重要思潮保持關注，就無法善用科技力量站在競爭力的最前線。&lt;/p&gt;
@@ -171,12 +149,10 @@
 &lt;p&gt;這些思潮，不只是純軟體界在乎，就連《&lt;a href=&#34;https://itrevolution.com/the-unicorn-project/&#34;&gt;獨角獸專案&lt;/a&gt;》這本小說的場景設定：汽車零件製造商暨零售商，影響一樣深遠。畢竟「軟體正在蠶食整個世界」。&lt;/p&gt;
 &lt;p&gt;某方面來說，《&lt;a href=&#34;https://www.tenlong.com.tw/products/9789865026653&#34;&gt;獨角獸專案&lt;/a&gt;》這本書，可謂 2010～2020 這個波瀾壯闊時代軟體研發界的具體縮影。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>推薦序：讓 GitLab 成為數位轉型的重要推手</title>
       <link>//william-yeh.net/post/2020/09/learning-gitlab-review/</link>
       <pubDate>Mon, 28 Sep 2020 14:00:00 +0800</pubDate>
-      
       <guid>//william-yeh.net/post/2020/09/learning-gitlab-review/</guid>
       <description>&lt;p&gt;「如今的 GitLab 已經不是單純的 Git service，而是具備完整 workflow 的 DevOps platform。」&lt;/p&gt;
 &lt;p&gt;&lt;!-- raw HTML omitted --&gt; 
@@ -185,65 +161,53 @@
 &lt;p&gt;後來，陳正瑋的這系列文章不負眾望，榮獲 DevOps 組冠軍。&lt;/p&gt;
 &lt;p&gt;頒獎典禮上，我鼓勵陳正瑋將這系列文章整理修潤，成為華文世界第一本 GitLab 專書。畢竟，我實在想不到有誰能夠比鐵人賽冠軍、GitLab 官方認證的 “GitLab Hero” 更適合做這件事的人。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Blackbox Exporter 小記</title>
       <link>//william-yeh.net/post/2020/08/blackbox-exporter/</link>
       <pubDate>Fri, 07 Aug 2020 08:00:00 +0800</pubDate>
-      
       <guid>//william-yeh.net/post/2020/08/blackbox-exporter/</guid>
       <description>&lt;p&gt;在用 &lt;a href=&#34;https://prometheus.io/&#34;&gt;Prometheus&lt;/a&gt; + &lt;a href=&#34;https://grafana.com/&#34;&gt;Grafana&lt;/a&gt; 監控自家服務的同時，我們也會想用同一套系統去監控第三方服務。&lt;/p&gt;
 &lt;p&gt;本文介紹一個好用的 Prometheus 官方工具：&lt;a href=&#34;https://github.com/prometheus/blackbox_exporter&#34;&gt;Blackbox exporter&lt;/a&gt;，可以省下手刻 curl 腳本的工夫。我也順便介紹一些踩過的雷。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Travis CI 虛擬機的地雷</title>
       <link>//william-yeh.net/post/2020/07/travisci-hacks/</link>
       <pubDate>Thu, 09 Jul 2020 23:00:00 +0800</pubDate>
-      
       <guid>//william-yeh.net/post/2020/07/travisci-hacks/</guid>
       <description>&lt;p&gt;我算是 &lt;a href=&#34;https://travis-ci.org/&#34;&gt;Travis CI&lt;/a&gt; 的老用戶了。&lt;/p&gt;
 &lt;p&gt;以前 Travis CI 很慢，對 Docker 不友善，又很難 debug，讓我一度將重心轉移到後起之秀 &lt;a href=&#34;https://circleci.com/&#34;&gt;CircleCI&lt;/a&gt;。後來 Travis CI 向 CircleCI 看齊，讓我們能夠 ssh 進去虛擬機 debug，兩者的差距已經逐漸縮小。所以，我自己的重要專案，總是盡量同時掛上 Travis CI 及 CircleCI，讓 CI pipeline 的核心在某種程度上也能盡量 reproducible 不被 lock in。&lt;/p&gt;
 &lt;p&gt;Travis CI 也提供許多常見的程式語言及伺服器軟體，以方便做 CI 測試。我個人的習慣是，盡量不去使用這些功能，而是直接用 Docker 或 Docker Compose 來組裝，以降低對於 Travis CI 的依賴（尤其我還要兼顧 CircleCI）。&lt;/p&gt;
 &lt;p&gt;不過，如果是與人合作的專案，就得顧及其他人的習慣。我在使用 Travis CI 提供的伺服器軟體 Postgres、Cassandra、RabbitMQ 時，遇到一些雷，特地記錄下來，供有類似困擾的人參考。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>gRPC 測試工具</title>
       <link>//william-yeh.net/post/2020/04/grpc-testing-tools/</link>
       <pubDate>Tue, 14 Apr 2020 22:00:00 +0800</pubDate>
-      
       <guid>//william-yeh.net/post/2020/04/grpc-testing-tools/</guid>
       <description>&lt;p&gt;RESTful API 時代，我們有許多簡單好用的測試工具：有酷炫的 &lt;a href=&#34;https://www.postman.com/&#34;&gt;Postman&lt;/a&gt;，有命令列控愛用的 &lt;a href=&#34;https://httpie.org/&#34;&gt;HTTPie&lt;/a&gt;，當然也有硬漢必備的萬用瑞士刀 &lt;a href=&#34;https://curl.haxx.se/&#34;&gt;curl&lt;/a&gt;。&lt;/p&gt;
 &lt;p&gt;那麼，gRPC 呢？&lt;/p&gt;
 &lt;p&gt;這篇文章介紹兩個好用的小工具：&lt;a href=&#34;https://github.com/fullstorydev/grpcurl&#34;&gt;gRPCurl&lt;/a&gt; 及 &lt;a href=&#34;https://github.com/bojand/ghz&#34;&gt;ghz&lt;/a&gt;，一個是輸入輸出介面測試工具，另一個是壓測工具，也順便介紹一些簡化測試的技巧。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>gRPC Load Balancing in Kubernetes</title>
       <link>//william-yeh.net/post/2020/03/grpc-load-balancing/</link>
       <pubDate>Mon, 30 Mar 2020 22:30:00 +0800</pubDate>
-      
       <guid>//william-yeh.net/post/2020/03/grpc-load-balancing/</guid>
       <description>&lt;p&gt;Kubernetes 有個很方便的地方：只要修改 deployment 的 &lt;code&gt;spec.replicas&lt;/code&gt; 數字，就能橫向擴展 pod，以應付更大的流量負載需求。&lt;/p&gt;
 &lt;p&gt;這一招，對於 stateless 的 HTTP 服務很管用，也是 Kubernetes 入門教學愛用的例子。但是，對於 &lt;a href=&#34;https://grpc.io/&#34;&gt;gRPC&lt;/a&gt; 呢？&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Volume Resizing Mechanism in Kubernetes</title>
       <link>//william-yeh.net/post/2019/07/k8s-vol-resizing/</link>
       <pubDate>Wed, 31 Jul 2019 13:00:00 +0800</pubDate>
-      
       <guid>//william-yeh.net/post/2019/07/k8s-vol-resizing/</guid>
       <description>&lt;p&gt;Non-stop storage scaling (vertical or horizontal scaling) is essential in a data-intensive system, database servers in particular.&lt;/p&gt;
 &lt;p&gt;Is it possible in Kubernetes?&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>CKAD (Certified Kubernetes Application Developer) 相關資料</title>
       <link>//william-yeh.net/post/2019/07/ckad-materials/</link>
       <pubDate>Thu, 11 Jul 2019 17:00:00 +0800</pubDate>
-      
       <guid>//william-yeh.net/post/2019/07/ckad-materials/</guid>
       <description>&lt;p&gt;Linux Foundation 旗下的 &lt;a href=&#34;https://www.cncf.io/&#34;&gt;CNCF (Cloud Native Computing Foundation)&lt;/a&gt; 提供兩個與 Kubernetes 相關的個人技術檢定：偏維運的 &lt;a href=&#34;https://www.cncf.io/certification/cka/&#34;&gt;CKA (Certified Kubernetes Administrator)&lt;/a&gt;，以及偏研發的 &lt;a href=&#34;https://www.cncf.io/certification/ckad/&#34;&gt;CKAD (Certified Kubernetes Application Developer)&lt;/a&gt;。&lt;/p&gt;
 &lt;p&gt;其中，CKAD 與我關注的範圍、與我設計的工作坊最接近，便想進一步瞭解它的細節。&lt;/p&gt;
@@ -263,52 +227,42 @@
   &lt;/figure&gt;
 &lt;/div&gt;</description>
     </item>
-    
     <item>
       <title>Docker File Permissions on Windows</title>
       <link>//william-yeh.net/post/2019/06/docker-file-permissions/</link>
       <pubDate>Mon, 24 Jun 2019 12:00:00 +0800</pubDate>
-      
       <guid>//william-yeh.net/post/2019/06/docker-file-permissions/</guid>
       <description>&lt;p&gt;Currently Linux containers are still more popular than Windows containers. And Windows users often need to use Linux containers even from their Windows computers.&lt;/p&gt;
 &lt;p&gt;Recently I&amp;rsquo;ve found something very strange about Linux-style file permissions when the Docker images are built from Windows hosts.&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; Therefore, I&amp;rsquo;ve conducted a suite of test cases to investigate whether file permissions are preserved with Docker &amp;amp; &lt;a href=&#34;https://skaffold.dev/&#34;&gt;Skaffold&lt;/a&gt; toolchains. All experiment materials are available in the &lt;a href=&#34;https://github.com/William-Yeh/container-chmod&#34;&gt;container-chmod&lt;/a&gt; repo.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Auto-Reload from ConfigMap</title>
       <link>//william-yeh.net/post/2019/06/autoreload-from-configmap/</link>
       <pubDate>Mon, 17 Jun 2019 17:00:00 +0800</pubDate>
-      
       <guid>//william-yeh.net/post/2019/06/autoreload-from-configmap/</guid>
       <description>My previous article &amp;ldquo;Inotify in Containers&amp;rdquo; has demonstrated that when ConfigMap is mounted as directories, any changes in the ConfigMap will propagate to related pods, and can be detected with inotify-like APIs.
 A follow-up question might be: what should a well-behaved application react to this trigger accordingly? What if it&amp;rsquo;s a ill-designed application?
 To clarify this I&amp;rsquo;ve conducted a series of experiments for 3 possible configmap-reloading strategies:
 Built-in auto-reloading apps External signals Pod rollout In this article I&amp;rsquo;m going to explain the experiments and preliminary findings.</description>
     </item>
-    
     <item>
       <title>Containers and Environment Variables</title>
       <link>//william-yeh.net/post/2019/06/containers-and-env/</link>
       <pubDate>Mon, 17 Jun 2019 14:00:00 +0800</pubDate>
-      
       <guid>//william-yeh.net/post/2019/06/containers-and-env/</guid>
       <description>My previous article &amp;ldquo;Inotify in Containers&amp;rdquo; has demonstrated that when ConfigMap is mounted as directories, any changes in the ConfigMap will propagate to related pods. A follow-up question might be: what if the ConfigMap is mounted as environment variables? Some said that the answer is NO in Kubernetes1; even in the old Docker world2. Therefore, I&amp;rsquo;d like to begin with a simple experiment to try to answer the question: After</description>
     </item>
-    
     <item>
       <title>Inotify in Containers</title>
       <link>//william-yeh.net/post/2019/06/inotify-in-containers/</link>
       <pubDate>Mon, 10 Jun 2019 18:00:00 +0800</pubDate>
-      
       <guid>//william-yeh.net/post/2019/06/inotify-in-containers/</guid>
       <description>It is usually necessary to watch for any changes in file systems, both in development and in production modes. For example, in the development mode Webpack can watch files and recompile whenever they change; in the production mode Consul Template can watch runtime configs and invoke specific applications whenever they change. These are well-known scenarios in traditional pre-container world. How about the container world? Do they behave the same in</description>
     </item>
-    
     <item>
       <title>Kubernetes 的入門認知與導入策略</title>
       <link>//william-yeh.net/post/2019/05/k8s-lab/</link>
       <pubDate>Fri, 17 May 2019 12:00:00 +0800</pubDate>
-      
       <guid>//william-yeh.net/post/2019/05/k8s-lab/</guid>
       <description>&lt;p&gt;前天我在 &lt;a href=&#34;https://cloudsummit.ithome.com.tw/2019/lab.html#0001&#34;&gt;2019 台灣雲端大會&lt;/a&gt;帶了兩個場次，一個是現場實作場次，一個是經驗分享演講：&lt;/p&gt;
 &lt;ul&gt;
@@ -321,275 +275,220 @@ Built-in auto-reloading apps External signals Pod rollout In this article I&amp;
 &lt;/ul&gt;
 &lt;p&gt;兩個場次，一言以蔽之，都圍繞在 Kubernetes 的入門認知與導入策略上。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Next &#39;19 的 Istio 場次重點摘要</title>
       <link>//william-yeh.net/post/2019/04/next19-istio/</link>
       <pubDate>Fri, 19 Apr 2019 23:00:00 +0800</pubDate>
-      
       <guid>//william-yeh.net/post/2019/04/next19-istio/</guid>
       <description>&lt;p&gt;四月 9&amp;ndash;11 日去舊金山參加 Google Cloud 的 &lt;a href=&#34;https://cloud.withgoogle.com/next/sf/&#34;&gt;Next ’19&lt;/a&gt; 大會，收穫頗大。&lt;/p&gt;
 &lt;p&gt;這場大會，同一時段就有近 30 場專題演講同時進行，議程滿滿，勢必得做取捨。基於工作需要及個人興趣，我主要選擇與容器相關的場次：service mesh、Windows containers、混合雲、資安實務。&lt;/p&gt;
 &lt;p&gt;我發現，光是這些場次，就得花很大力氣去消化、實驗與應用。&lt;/p&gt;
 &lt;p&gt;我們這些所謂的「台港團」會在 GCPUG Taipei 舉辦一場&lt;a href=&#34;https://www.meetup.com/GCPUG-Taipei/events/260555968/&#34;&gt;分享會&lt;/a&gt;。因為自己不克參加，便以這篇文章，針對我鎖定的核心議題：Istio，做一番重點摘要，以饗讀者。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>在 WSL 裡使用 Ansible &#43; Vagrant</title>
       <link>//william-yeh.net/post/2019/04/wsl-ansible-vagrant/</link>
       <pubDate>Thu, 18 Apr 2019 23:00:00 +0800</pubDate>
-      
       <guid>//william-yeh.net/post/2019/04/wsl-ansible-vagrant/</guid>
       <description>&lt;p&gt;既然要開始在 Windows 上沿用 Mac 及 Unix 的命令列工具習慣&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，免不了要處理 &lt;a href=&#34;https://github.com/ansible/ansible&#34;&gt;Ansible&lt;/a&gt; 及 &lt;a href=&#34;https://www.vagrantup.com/&#34;&gt;Vagrant&lt;/a&gt;。&lt;/p&gt;
 &lt;p&gt;雖然這兩個軟體都有對應的 Windows 版本，但據我以前的經驗，卡卡的，有許多小地雷；畢竟這些發跡自泛 Unix 家族的軟體，不是那麼容易無縫移植到對命令列不友善的 Windows 家族。&lt;/p&gt;
 &lt;p&gt;如今 Windows 已經有 &lt;a href=&#34;https://docs.microsoft.com/en-us/windows/wsl/&#34;&gt;WSL (Windows Subsystem for Linux)&lt;/a&gt; 機制，是否可以更無痛享用 Ansible 及 Vagrant 呢？&lt;/p&gt;
 &lt;p&gt;可以的。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>給 RD 的 Kubernetes 初體驗</title>
       <link>//william-yeh.net/courses/k8s-workship-cloudsummit2019/</link>
       <pubDate>Tue, 02 Apr 2019 16:00:00 +0800</pubDate>
-      
       <guid>//william-yeh.net/courses/k8s-workship-cloudsummit2019/</guid>
       <description>活動名稱：給 RD 的 Kubernetes 初體驗 時間：2019-05-15 (三) / 11:00&amp;ndash;12:30 會議：台灣雲端大會 (Cloud Edge Summit 2019) 課程簡介 Kubernetes 是目前雲端環境的顯學。可是，傳統的程式，並不</description>
     </item>
-    
     <item>
       <title>Nginx Ingress 與 Ambassador 簡易性能比較</title>
       <link>//william-yeh.net/post/2019/03/ingress-vs-ambassador/</link>
       <pubDate>Fri, 29 Mar 2019 23:00:00 +0800</pubDate>
-      
       <guid>//william-yeh.net/post/2019/03/ingress-vs-ambassador/</guid>
       <description>&lt;p&gt;API gateway 是微服務環境，甚至 service mesh 的要角 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;。&lt;/p&gt;
 &lt;p&gt;在 Kubernetes 上面，API gateway 選項眾多。有像 HAProxy 及 Nginx 這些石器時代老傢伙跨足過來，也有打從一開始就走 cloud native 路線的後起之秀。&lt;/p&gt;
 &lt;p&gt;該如何選擇？&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Kubernetes Best Practices 資料</title>
       <link>//william-yeh.net/post/2019/02/k8s-best-practice/</link>
       <pubDate>Mon, 25 Feb 2019 12:00:00 +0800</pubDate>
-      
       <guid>//william-yeh.net/post/2019/02/k8s-best-practice/</guid>
       <description>&lt;p&gt;Kubernetes 演化速度令人驚訝。彈性之大，令人聯想到當年  Perl 圈子奉為圭臬的 &lt;a href=&#34;https://en.wikipedia.org/wiki/There%27s_more_than_one_way_to_do_it&#34;&gt;TIMTOWTDI&lt;/a&gt; 口號。&lt;/p&gt;
 &lt;p&gt;選擇過多也會帶來問題。發展到某個階段，也該適時沈澱收斂出較佳的實務建議準則。&lt;/p&gt;
 &lt;p&gt;因此，我稍微搜尋一下相關資料，作為參考。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>年假可讀的軟體領域輕讀物</title>
       <link>//william-yeh.net/post/2019/01/soft-reading-list/</link>
       <pubDate>Thu, 17 Jan 2019 15:00:00 +0800</pubDate>
-      
       <guid>//william-yeh.net/post/2019/01/soft-reading-list/</guid>
       <description>中午時，非 RD 的同事請我推薦適合泛軟體產業從業人員的五份輕讀物，可在春節連續假期時好好補血。 年假，自然不方便啃太過於生硬艱澀、理論宏偉的讀物。</description>
     </item>
-    
     <item>
       <title>「從 Ops 角度看 DevOps」的感想</title>
       <link>//william-yeh.net/post/2018/11/opsdev-talk-18/</link>
       <pubDate>Wed, 28 Nov 2018 23:00:00 +0800</pubDate>
-      
       <guid>//william-yeh.net/post/2018/11/opsdev-talk-18/</guid>
       <description>&lt;p&gt;在台灣（或許在其他地方也是），DevOps 的話語權，很大幅度都被 Dev 一方把持。我們很少聽到 Ops 一方的說法。&lt;/p&gt;
 &lt;p&gt;成功的改革，需要兼顧各方利益者的需求及痛點。隨著 DevOps 守備範圍日益擴大，這種失衡狀態必須改變。&lt;/p&gt;
 &lt;p&gt;今晚參加 &lt;a href=&#34;https://www.facebook.com/DevOpsTaiwan/&#34;&gt;DevOps Taiwan 社群&lt;/a&gt;舉辦的講座：【&lt;a href=&#34;https://devops.kktix.cc/events/meetup17-opsdev&#34;&gt;從 Ops 角度看 DevOps&lt;/a&gt;】，聽聽&lt;a href=&#34;https://www.facebook.com/roberthu.tw&#34;&gt;胡士亮 (Robert Hu)&lt;/a&gt; 從正統 Ops 角度來詮釋 DevOps，甚至 OpsDev，收穫頗大。&lt;/p&gt;
 &lt;p&gt;聽知識，聽心得，也聽熱情與願景。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>「判準與指標」系列</title>
       <link>//william-yeh.net/series/criteria-series/</link>
       <pubDate>Wed, 28 Nov 2018 00:00:00 +0000</pubDate>
-      
       <guid>//william-yeh.net/series/criteria-series/</guid>
       <description>軟體開發，除了方法論，還有⋯⋯ 敏捷的判準 Lean Startup 的判準 敏捷的價值與指標 DevOps 的價值與指標</description>
     </item>
-    
     <item>
       <title>DevOps 的價值與指標</title>
       <link>//william-yeh.net/post/2018/11/devops-value/</link>
       <pubDate>Wed, 28 Nov 2018 08:00:00 +0800</pubDate>
-      
       <guid>//william-yeh.net/post/2018/11/devops-value/</guid>
       <description>看完〈敏捷的價值與指標〉之後，很自然的會進一步追問：「那麼，什麼才是 DevOps 圈子所認定的價值，以及對應的指標，尤其是領先指標？」 這問題其實比較容易</description>
     </item>
-    
     <item>
       <title>Agile PMO</title>
       <link>//william-yeh.net/post/2018/11/agile-pmo/</link>
       <pubDate>Thu, 15 Nov 2018 08:00:00 +0800</pubDate>
-      
       <guid>//william-yeh.net/post/2018/11/agile-pmo/</guid>
       <description>&amp;ldquo;Project&amp;rdquo; 一詞，儼然成為 agile 及 DevOps 圈子的禁語。 譬如說，敏捷祖師爺 Martin Fowler 的網站有一篇 &amp;ldquo;Products Over Projects&amp;rdquo; 文章，DevOps 巨著 The DevOps Handbook 第 7.7 節的篇名叫做〈投資於服務和產品，而</description>
     </item>
-    
     <item>
       <title>思維的重量訓練</title>
       <link>//william-yeh.net/post/2018/09/thinking-weight-training/</link>
       <pubDate>Tue, 04 Sep 2018 11:30:00 +0800</pubDate>
-      
       <guid>//william-yeh.net/post/2018/09/thinking-weight-training/</guid>
       <description>&lt;p&gt;上週五【&lt;a href=&#34;https://devopsdays.tw/2018/workshop.html&#34;&gt;系統思考的四堂課・DevOps 特別版&lt;/a&gt;】，表定 7 小時，延長賽到 7.5 小時，感謝首梯公開班同學的熱情參與，共度刺激的一天。&lt;/p&gt;
 &lt;p&gt;課後仍持續收到提問，我挑選幾則統一回覆。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>從系統思考看 DevOps</title>
       <link>//william-yeh.net/post/2017/10/devops-a-system-dynamics-perspective/</link>
       <pubDate>Sun, 29 Oct 2017 11:40:00 +0800</pubDate>
-      
       <guid>//william-yeh.net/post/2017/10/devops-a-system-dynamics-perspective/</guid>
       <description>自從去年在〈有了 Agile，為什麼還要有 DevOps？〉及〈從限制理論看 DevOps〉兩場演講中，分別以 lean thinking 及 theory of constraints (TOC) 兩個角度探討 DevOps 之後，心</description>
     </item>
-    
     <item>
       <title>為什麼要追求極簡化的 Docker image？</title>
       <link>//william-yeh.net/post/2016/08/why-minimal-docker-images/</link>
       <pubDate>Sat, 27 Aug 2016 20:00:00 +0800</pubDate>
-      
       <guid>//william-yeh.net/post/2016/08/why-minimal-docker-images/</guid>
       <description>&lt;p&gt;今早〈&lt;a href=&#34;//william-yeh.net/post/2016/08/halfblood-docker/&#34;&gt;從 Ansible 到 Docker：混血模式&lt;/a&gt;〉演講過後，有人在聊天室提問：&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;請問為什麼要追求最小化的 Docker image？&lt;/p&gt;
 &lt;/blockquote&gt;</description>
     </item>
-    
     <item>
       <title>從 Ansible 到 Docker：混血模式</title>
       <link>//william-yeh.net/post/2016/08/halfblood-docker/</link>
       <pubDate>Sat, 27 Aug 2016 08:00:00 +0800</pubDate>
-      
       <guid>//william-yeh.net/post/2016/08/halfblood-docker/</guid>
       <description>&lt;p&gt;2015 年 4 月我在 &lt;a href=&#34;https://www.meetup.com/Docker-Taipei/&#34;&gt;Docker Taipei 社群&lt;/a&gt;講了一場〈&lt;a href=&#34;https://william-yeh.github.io/docker-mini/&#34;&gt;追求極簡化 Docker image 之路&lt;/a&gt;〉。一年後，在「極簡化 Docker」這條路上，另一條途徑 Alpine Linux 開始嶄露頭角——不必像過去那麼蠻幹，地雷減少，流程優勢顯著，品質上也不見得遜於長期被 glibc 把持的傳統體系。&lt;/p&gt;
 &lt;p&gt;我嘗試用這種手法重整過去的東西，結果還不算太差。因此，一直希望能有機會再給一場類似【追求極簡化 Docker image 之路，Part 2】的演講。&lt;/p&gt;
 &lt;p&gt;此外，由於自己持續在使用 Ansible 來處理組態設定事宜，持續維護近 20 個 Ansible Galaxy 開源 roles，也開講了五場【&lt;a href=&#34;https://devopssummit.ithome.com.tw/workshop/ansible/&#34;&gt;Ansible Workshop&lt;/a&gt;】訓練課程，很自然的，我會常常拿 Ansible 與 Docker 並列，思考兩者的定位、運用時機，甚至未來走向；有時甚至靈光一閃，浮現一些 Ansible＋Docker 的組合技。&lt;/p&gt;
 &lt;p&gt;這就是今天在 &lt;a href=&#34;https://community-open-camp.azurewebsites.net/&#34;&gt;Community Open Camp&lt;/a&gt; 這場演講【從 Ansible 到 Docker：混血模式】的由來。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>從限制理論看 DevOps</title>
       <link>//william-yeh.net/post/2016/08/devops-a-toc-perspective/</link>
       <pubDate>Wed, 17 Aug 2016 23:00:00 +0800</pubDate>
-      
       <guid>//william-yeh.net/post/2016/08/devops-a-toc-perspective/</guid>
       <description>自從寫了〈DevOps 核心元素的考古溯源〉一文，我就很想找個機會，好好闡釋 DevOps 的重要源頭：Lean Thinking。這個願望，在五月初那次兩個</description>
     </item>
-    
     <item>
       <title>請循其本</title>
       <link>//william-yeh.net/post/2016/08/back-to-the-origin/</link>
       <pubDate>Mon, 01 Aug 2016 08:00:00 +0800</pubDate>
-      
       <guid>//william-yeh.net/post/2016/08/back-to-the-origin/</guid>
       <description>老子曰：「五色令人目盲，五音令人耳聾。」 所以，最近我越來越喜歡從原始定義或目標下手。 原理通了，邏輯通了，再加一點點創意及想像力，很多東西都是</description>
     </item>
-    
     <item>
       <title>《鳳凰專案》私房標題</title>
       <link>//william-yeh.net/post/2016/06/phoenix-proj-titles/</link>
       <pubDate>Tue, 21 Jun 2016 08:00:00 +0800</pubDate>
-      
       <guid>//william-yeh.net/post/2016/06/phoenix-proj-titles/</guid>
       <description>The Phoenix Project（中譯本《鳳凰專案》）作者如是說： Dr. Eliyahu Goldratt wrote his seminal book, The Goal: A Process of Ongoing Improvement, in 1984. [&amp;hellip;] My coauthors and I studied this book for nearly a decade, getting ready to write The Phoenix Project. In many ways, I view our book as an</description>
     </item>
-    
     <item>
       <title>從「改變」角度看《魔戒》</title>
       <link>//william-yeh.net/post/2016/05/change-viewpoint-on-lord-of-rings/</link>
       <pubDate>Wed, 25 May 2016 08:00:00 +0800</pubDate>
-      
       <guid>//william-yeh.net/post/2016/05/change-viewpoint-on-lord-of-rings/</guid>
       <description>&lt;p&gt;今年一月，參加 &lt;a href=&#34;http://kojenchieh.pixnet.net/blog&#34;&gt;David Ko&lt;/a&gt; 舉辦的一場敏捷轉型活動，從中學到了一個有趣的分析工具：Lean Change Canvas。&lt;/p&gt;
 &lt;p&gt;知道了一個好東西，自然要追本溯源，加深加廣。便研讀相關資料：&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>有了 Agile，為什麼還要有 DevOps？</title>
       <link>//william-yeh.net/post/2016/05/devops-a-lean-perspective/</link>
       <pubDate>Tue, 03 May 2016 08:00:00 +0800</pubDate>
-      
       <guid>//william-yeh.net/post/2016/05/devops-a-lean-perspective/</guid>
       <description>&lt;p&gt;今晚，受 Agile Community Taiwan 之邀，在 &lt;a href=&#34;https://www.accupass.com/event/1604251622311845219210&#34;&gt;Agile Meetup Taipei&lt;/a&gt; 給了一場演講：【&lt;a href=&#34;http://www.slideshare.net/williamyeh/agile-devops&#34;&gt;有了 Agile，為什麼還要有 DevOps？&lt;/a&gt;】&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>向工廠管理致敬</title>
       <link>//william-yeh.net/post/2016/04/learn-from-plant-mgmt/</link>
       <pubDate>Fri, 22 Apr 2016 08:00:00 +0800</pubDate>
-      
       <guid>//william-yeh.net/post/2016/04/learn-from-plant-mgmt/</guid>
       <description>&lt;p&gt;身為徹頭徹尾的軟體人，在軟體產業待久了，總會對「硬」一點的產業，尤其是製造業，有莫名的成見，以為他們是僵固的、反人性的。從 1972 年「&lt;a href=&#34;https://en.wikipedia.org/wiki/Software_crisis&#34;&gt;軟體危機&lt;/a&gt;」引發的論述當中，更加深軟體人的印象：製造業的經驗，是無法直接套用到軟體界的；我們是截然不同的國度。&lt;/p&gt;
 &lt;p&gt;不過，近十年來許多軟體界的流程改革，尤其是同屬 Agile 陣營的 Scrum 及 Kanban，居然有許多元素是從製造業&lt;del&gt;偷竊&lt;/del&gt;學習而來。譬如說&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>POLP：最小權限原則</title>
       <link>//william-yeh.net/post/2016/03/polp-intro/</link>
       <pubDate>Tue, 15 Mar 2016 08:00:00 +0800</pubDate>
-      
       <guid>//william-yeh.net/post/2016/03/polp-intro/</guid>
       <description>&lt;p&gt;在我開的 &lt;a href=&#34;http://get.soft-arch.net/ansible/&#34;&gt;Ansible Workshop&lt;/a&gt; 中，不管是課前的【許願池】，還是課程現場的 Q&amp;amp;A，總有一個熱門議題：「如何確保系統是安全的？」&lt;/p&gt;
 &lt;p&gt;這是大哉問，不是單獨一門組態管理課就能探討到令人滿意的地步（資安也不是我所擅長的⋯⋯）。不過，被問到的次數太多了，我還是給個簡單的導引吧。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>DevOps 核心元素的考古溯源</title>
       <link>//william-yeh.net/post/2016/03/origin-of-devops-elements/</link>
       <pubDate>Mon, 07 Mar 2016 08:00:00 +0800</pubDate>
-      
       <guid>//william-yeh.net/post/2016/03/origin-of-devops-elements/</guid>
       <description>&lt;p&gt;DevOps 和 Agile 的關係是什麼？DevOps 是源自 Agile 的嗎？&lt;/p&gt;
 &lt;p&gt;我在〈&lt;a href=&#34;//william-yeh.net/post/2016/01/devops-goals-in-a-nutshell/&#34;&gt;一句話囊括 DevOps 的目標&lt;/a&gt;〉文中曾經簡略提過：&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>電腦界的隱喻：組態管理</title>
       <link>//william-yeh.net/post/2016/03/metaphor-in-cm/</link>
       <pubDate>Wed, 02 Mar 2016 08:00:00 +0800</pubDate>
-      
       <guid>//william-yeh.net/post/2016/03/metaphor-in-cm/</guid>
       <description>&lt;p&gt;人類是很喜愛比喻／譬喻的。戰國時代的莊子愛用譬喻，常和莊子抬槓的惠施也愛譬喻，《說苑‧善說》甚至記載著這麼一段故事：&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>一句話囊括 DevOps 的目標</title>
       <link>//william-yeh.net/post/2016/01/devops-goals-in-a-nutshell/</link>
       <pubDate>Fri, 29 Jan 2016 08:00:00 +0800</pubDate>
-      
       <guid>//william-yeh.net/post/2016/01/devops-goals-in-a-nutshell/</guid>
       <description>&lt;p&gt;TL;DR&lt;br&gt;
 &lt;em&gt;DevOps is a set of practices intended to reduce the time between committing a change to a system and the change being placed into normal production, while ensuring high quality.&lt;/em&gt;&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>DevOps 是圓的，找到立足點就是頂點</title>
       <link>//william-yeh.net/post/2015/12/devops-1st-step/</link>
       <pubDate>Mon, 28 Dec 2015 08:00:00 +0800</pubDate>
-      
       <guid>//william-yeh.net/post/2015/12/devops-1st-step/</guid>
       <description>&lt;p&gt;自從 IT 相關媒體開始傳頌 2009 年蔚為經典的 Flickr 經驗 “&lt;a href=&#34;https://youtu.be/LdOe18KhtT4&#34;&gt;10+ Deploys per Day&lt;/a&gt;”、2014 年 Marissa Mayer 的鐵桿作風「&lt;a href=&#34;http://www.ithome.com.tw/news/99283&#34;&gt;沒有持續交付，專案不得上線，我不是在說笑&lt;/a&gt;」之後，頓時 DevOps 成為 IT 界新的焦慮源。我還聽說有高層在聽完兩天 &lt;a href=&#34;https://www.ithome.com.tw/article/98527&#34;&gt;DevOps 2015 研討會&lt;/a&gt;之後，回頭要求 IT 部門要師法 2009 年的 Flickr 做到「10+ Deploys per Day」。&lt;/p&gt;
 &lt;p&gt;聽了很潮的新觀念，就訂不合理的 KPI，這也是「負能量」呀！&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>CI 怎樣帶你遠離平庸？</title>
       <link>//william-yeh.net/post/2015/12/ci-effect/</link>
       <pubDate>Tue, 22 Dec 2015 08:00:00 +0800</pubDate>
-      
       <guid>//william-yeh.net/post/2015/12/ci-effect/</guid>
       <description>前天我的文章〈CI 是條不歸路〉提到：「CI/CD/DevOps 既是條不歸路，更是大躍進之路：一旦踏出第一步，就注定你會不斷接觸**『遠離平庸</description>
     </item>
-    
     <item>
       <title>CI 是條不歸路</title>
       <link>//william-yeh.net/post/2015/12/ci-no-turning-back/</link>
       <pubDate>Mon, 21 Dec 2015 08:00:00 +0800</pubDate>
-      
       <guid>//william-yeh.net/post/2015/12/ci-no-turning-back/</guid>
       <description>今年九月初參加完 DevOps 2015 之後，有感而發，寫了兩則 tweets： 說實在的，打從 1999 年 Kent Beck 經典著作 Extreme Programming Explained 問世，整個軟體文化就被徹底分裂成兩個國度。以 agile</description>
     </item>
-    
   </channel>
 </rss>
