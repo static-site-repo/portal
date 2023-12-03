@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>management · Potioneer&#39;s Essays</title>
+  <title>如何衡量敏捷對於軟體研發效能的利益？ - Potioneer&#39;s Essays</title>
   
 
 <meta name="renderer" content="webkit" />
@@ -23,7 +23,12 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="William Yeh" />
-  <meta name="description" content="敏捷魔藥師 (Agile Potioneer)。會說 90% 的工匠語言，會說 70% 的總管語言，正在努力提升 30% 的行腳商人語言。" />
+  <meta name="description" content="面對敏捷或 DevOps 藥方，病人可能帶著各種不同的動機而來，但終歸都會提出同樣的疑問：我怎麼知道敏捷有沒有效？怎麼衡量成效？
+這問題，可能在導入之後的某個時刻會問，但更有可能像戰國時代梁惠王那樣，才剛第一次接見孟子，居然劈頭就問：「叟，不遠千里而來，亦將有以利吾國乎？」
+孟子見梁惠王
+對這議題，常有兩種極端的反應。
+" />
+
 
 
 
@@ -33,8 +38,8 @@
 <meta name="generator" content="Hugo 0.120.4" />
 
 
-<link rel="canonical" href="//william-yeh.net/categories/management/" />
-<link href="/categories/management/index.xml" rel="alternate" type="application/rss+xml" title="Potioneer&#39;s Essays" />
+<link rel="canonical" href="//william-yeh.net/post/2023/12/dev-metrics/" />
+
 
 
 
@@ -59,15 +64,68 @@
 
 
 
-<meta property="og:title" content="management" />
-<meta property="og:description" content="敏捷魔藥師 (Agile Potioneer)。會說 90% 的工匠語言，會說 70% 的總管語言，正在努力提升 30% 的行腳商人語言。" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="//william-yeh.net/categories/management/" />
+<meta property="og:title" content="如何衡量敏捷對於軟體研發效能的利益？" />
+<meta property="og:description" content="面對敏捷或 DevOps 藥方，病人可能帶著各種不同的動機而來，但終歸都會提出同樣的疑問：我怎麼知道敏捷有沒有效？怎麼衡量成效？
+這問題，可能在導入之後的某個時刻會問，但更有可能像戰國時代梁惠王那樣，才剛第一次接見孟子，居然劈頭就問：「叟，不遠千里而來，亦將有以利吾國乎？」
 
-<meta itemprop="name" content="management">
-<meta itemprop="description" content="敏捷魔藥師 (Agile Potioneer)。會說 90% 的工匠語言，會說 70% 的總管語言，正在努力提升 30% 的行腳商人語言。"><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="management"/>
-<meta name="twitter:description" content="敏捷魔藥師 (Agile Potioneer)。會說 90% 的工匠語言，會說 70% 的總管語言，正在努力提升 30% 的行腳商人語言。"/>
+
+
+
+    
+      
+    
+    
+      
+          孟子見梁惠王
+      
+  
+
+
+對這議題，常有兩種極端的反應。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="//william-yeh.net/post/2023/12/dev-metrics/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2023-12-03T20:00:00+08:00" />
+<meta property="article:modified_time" content="2023-12-03T20:00:00+08:00" />
+
+<meta itemprop="name" content="如何衡量敏捷對於軟體研發效能的利益？">
+<meta itemprop="description" content="面對敏捷或 DevOps 藥方，病人可能帶著各種不同的動機而來，但終歸都會提出同樣的疑問：我怎麼知道敏捷有沒有效？怎麼衡量成效？
+這問題，可能在導入之後的某個時刻會問，但更有可能像戰國時代梁惠王那樣，才剛第一次接見孟子，居然劈頭就問：「叟，不遠千里而來，亦將有以利吾國乎？」
+
+
+
+
+    
+      
+    
+    
+      
+          孟子見梁惠王
+      
+  
+
+
+對這議題，常有兩種極端的反應。"><meta itemprop="datePublished" content="2023-12-03T20:00:00+08:00" />
+<meta itemprop="dateModified" content="2023-12-03T20:00:00+08:00" />
+<meta itemprop="wordCount" content="2057">
+<meta itemprop="keywords" content="agile,scrum,devops,measurement," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="如何衡量敏捷對於軟體研發效能的利益？"/>
+<meta name="twitter:description" content="面對敏捷或 DevOps 藥方，病人可能帶著各種不同的動機而來，但終歸都會提出同樣的疑問：我怎麼知道敏捷有沒有效？怎麼衡量成效？
+這問題，可能在導入之後的某個時刻會問，但更有可能像戰國時代梁惠王那樣，才剛第一次接見孟子，居然劈頭就問：「叟，不遠千里而來，亦將有以利吾國乎？」
+
+
+
+
+    
+      
+    
+    
+      
+          孟子見梁惠王
+      
+  
+
+
+對這議題，常有兩種極端的反應。"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -355,194 +413,387 @@
     <main id="main" class="main bg-llight wallpaper">
       <div class="content-wrapper">
         <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">如何衡量敏捷對於軟體研發效能的利益？</h1>
+      
+
+      <div class="post-meta">
+  <div class="post-meta-author">
+    by
+      William Yeh
+    
+  </div>
+
+  <div class="post-meta-time">
+    <time datetime="2023-12-03">
+      2023-12-03
+    </time>
+  </div>
+
+  
+
+
+  <div class="post-meta__right">
+    <span class="post-meta-more">
+        約 2057 字 -
+        預計閱讀 5 分鐘
+      </span>
+
+    <div class="post-meta-category">
+        <a href="//william-yeh.net/categories/management/"> management </a>
           
-
-<section id="archive" class="archive">
-  
-    
-      <div class="archive-title category">
-        <h2 class="archive-name">分類： management</h2>
       </div>
+
+
     
-  
-
-  
-    <div class="archive-post">
-      <time datetime="2023-12-03" class="archive-post-time">
-        2023-12-03
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/2023/12/dev-metrics/" class="archive-post-link">
-          如何衡量敏捷對於軟體研發效能的利益？
-        </a>
+    
+      <span id="busuanzi_container_page_pv">
+        | 阅读 <span id="busuanzi_value_page_pv"></span>
       </span>
-    </div>
-  
-    <div class="archive-post">
-      <time datetime="2023-11-14" class="archive-post-time">
-        2023-11-14
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/2023/11/why-decomposition-matters/" class="archive-post-link">
-          變動的時代，為什麼工作分解技能更是必備？
-        </a>
-      </span>
-    </div>
-  
-    <div class="archive-post">
-      <time datetime="2023-11-03" class="archive-post-time">
-        2023-11-03
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/2023/11/scrum-events-agenda/" class="archive-post-link">
-          Agile Success Recipes: Example Agendas for Efficient Scrum Ceremonies
-        </a>
-      </span>
-    </div>
-  
-    <div class="archive-post">
-      <time datetime="2023-10-10" class="archive-post-time">
-        2023-10-10
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/2023/10/criticism-about-timebox/" class="archive-post-link">
-          Timebox 是死胡同嗎？
-        </a>
-      </span>
-    </div>
-  
-    <div class="archive-post">
-      <time datetime="2023-08-26" class="archive-post-time">
-        2023-08-26
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/2023/08/story-to-tasks/" class="archive-post-link">
-          很簡單的 Story，也要拆分出 Tasks 嗎？
-        </a>
-      </span>
-    </div>
-  
-    <div class="archive-post">
-      <time datetime="2022-11-29" class="archive-post-time">
-        2022-11-29
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/2022/11/career-reading-club-3/" class="archive-post-link">
-          職涯躍升書系導讀會，Part 3：職場心理：觀點、期待、渴望
-        </a>
-      </span>
-    </div>
-  
-    <div class="archive-post">
-      <time datetime="2022-11-01" class="archive-post-time">
-        2022-11-01
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/2022/11/spidr/" class="archive-post-link">
-          以「蜘蛛法」拆分過於龐大的 User Story
-        </a>
-      </span>
-    </div>
-  
-    <div class="archive-post">
-      <time datetime="2022-10-31" class="archive-post-time">
-        2022-10-31
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/2022/10/agile-milestone/" class="archive-post-link">
-          事情做一半，等於沒完成：淺談敏捷的里程碑設定
-        </a>
-      </span>
-    </div>
-  
-    <div class="archive-post">
-      <time datetime="2022-10-08" class="archive-post-time">
-        2022-10-08
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/2022/10/on-user-stories/" class="archive-post-link">
-          User Story 釋疑：真的要遵守嗎？
-        </a>
-      </span>
-    </div>
-  
-    <div class="archive-post">
-      <time datetime="2022-08-20" class="archive-post-time">
-        2022-08-20
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/2022/08/career-reading-club-2/" class="archive-post-link">
-          職涯躍升書系導讀會，Part 2：高效團隊的工作方法
-        </a>
-      </span>
-    </div>
-  
-</section>
+    
 
 
+    
+    
+  </div>
+</div>
+
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目錄</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#從-flow-角度看軟體研發效能的本質指標">從 Flow 角度看軟體研發效能的本質指標</a></li>
+    <li><a href="#從-gsm-角度看敏捷能解決什麼問題">從 GSM 角度看敏捷能解決什麼問題</a></li>
+    <li><a href="#價值">價值</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
 
 
+    
+    <div class="post-content">
+      <p>面對敏捷或 DevOps 藥方，病人可能帶著各種不同的動機而來，但終歸都會提出同樣的疑問：我怎麼知道敏捷有沒有效？怎麼衡量成效？</p>
+<p>這問題，可能在導入之後的某個時刻會問，但更有可能像戰國時代梁惠王那樣，才剛第一次接見孟子，居然劈頭就問：「叟，不遠千里而來，亦將有以利吾國乎？」</p>
+
+<link rel="stylesheet" href="/css/hugo-easy-gallery.css" />
+<div class="box">
+<figure  itemprop="associatedMedia"
+  itemscope itemtype="http://schema.org/ImageObject" 
+  style="max-width:30em" >
+    <div class="img">
+      <img itemprop="thumbnail" src="/img/2023/12/mencius-dialogue.png" alt="孟子見梁惠王"/>
+    </div>
+    <a href="/img/2023/12/mencius-dialogue.png" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>孟子見梁惠王</p>
+      </figcaption>
+  </figure>
+</div>
+
+<p>對這議題，常有兩種極端的反應。</p>
+<p>如果你像孟子一樣，一開頭就企圖曉以大義： <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+<blockquote>
+<p>總經理呀，何必一開頭就談「衡量成效利益」呢？你更應該看重的是「內涵與精神」呀！</p>
+<p>如果總經理成天想著「對我們的公司有什麼可衡量的成效」，主管成天想著「對我們部門有什麼可衡量的成效」，員工成天想著「對我個人有什麼可衡量的成效」，上下各自算計著成效利益，整間公司就很危險了！</p>
+</blockquote>
+<p>只怕你會像孟子一樣，很快就離開這個國家了。</p>
+<p>輕蔑指標固然不可取，但另一個極端「指標狂人」也很可怕。</p>
+<p>近年來「數位轉型」蔚為顯學，延燒到傳統產業，甚至連傳統管理顧問機構也來湊熱鬧，於是乎，世界就多了更多指標，更多成熟度衡量，更多培訓、證照、鑑定標章——更多所謂的「商機」。</p>
+<p>這世界不缺指標，缺的是能引領有效行動的指標。若不懂軟體研發的獨特性，就會訂出沒有行動意義的落後指標，或是沒有合理因果證據的偽指標。就像 Bryan Finster 在 “<a href="https://bdfinst.medium.com/5-minute-devops-mckinsey-gets-developer-productivity-wrong-573b57cd6f6a">5 Minute DevOps: McKinsey Gets Developer Productivity Wrong</a>” 一文對於某管顧公司近日端出的  “Developer Productivity” framework 所做的批評：</p>
+<blockquote>
+<p>The real problem is that too many in management don’t understand the work they manage. Management can understand the <strong>intricacies of software engineering</strong> if they become leaders and study the work they manage. Not all managers are leaders. Some simply want a framework to hold people accountable.</p>
+<p>Those who do understand tend to <strong>measure the right things</strong>. The one thing McKinsey doesn’t do with this framework is help fix this problem. They are making it worse.</p>
+</blockquote>
+<p>那麼，軟體研發活動有什麼獨特性？正確的衡量角度又是什麼？Daniel Terhorst-North 的 “<a href="https://dannorth.net/mckinsey-review/">McKinsey Developer Productivity Review</a>” 一文說得好：</p>
+<blockquote>
+<p>Software development is a collaborative, generative enterprise, and we can easily measure the effectiveness of a team, and more importantly how this is trending over time, using <strong><strong>Theory of Constraints</strong></strong> and <strong><strong>flow-based metrics</strong></strong> like <strong><strong>lead time</strong></strong> and <strong><strong>throughput</strong></strong>. Take a look at the work of Eliyahu Goldratt and Donald Reinertsen for a deeper understanding of these. An organisation like McKinsey endorsing these approaches would be a great help to the industry.</p>
+</blockquote>
+<p>這段話點出幾個關鍵：</p>
+<ul>
+<li>
+<p>團隊 vs 個人</p>
+</li>
+<li>
+<p>縱貫研究 vs 橫斷研究</p>
+</li>
+<li>
+<p>Theory of constraints &amp; lean thinking</p>
+</li>
+<li>
+<p>Flow, lead time &amp; throughput</p>
+</li>
+</ul>
+<p>我們就從這些角度來切入，尤其是 “flow” 角度。</p>
+<h2 id="從-flow-角度看軟體研發效能的本質指標">從 Flow 角度看軟體研發效能的本質指標</h2>
+<p>我喜歡用以下這五個主要的 flow 指標來整體衡量軟體研發效能：</p>
 
 
-  
-  
-  
+<div class="box">
+<figure  itemprop="associatedMedia"
+  itemscope itemtype="http://schema.org/ImageObject" 
+  style="max-width:30em" >
+    <div class="img">
+      <img itemprop="thumbnail" src="/img/2023/12/dev-efficiency.png" alt="軟體研發效能五大指標"/>
+    </div>
+    <a href="/img/2023/12/dev-efficiency.png" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>軟體研發效能五大指標</p>
+      </figcaption>
+  </figure>
+</div>
 
-  
-  
+<p>為了對於「軟體研發效能」得出較全面的 flow 觀點，我結合幾個信度效度兼具、又不複雜的論述：</p>
+<ul>
+<li>SRE 的 <a href="https://sre.google/sre-book/monitoring-distributed-systems/">4 golden signal</a>: latency, traffic, errors, saturation。</li>
+<li>Scrum 之父 Ken &amp; Jeff 在《<a href="https://williampjyeh.notion.site/Scrum-00d22ec98ca847d49f62b63d10667049">告別瀑布，擁抱 Scrum</a>》第 7 章提出的主要指標：productivity, quality, value。</li>
+<li>Theory of Constraints 提到的 bottleneck/constraints 及 throughput。</li>
+<li>Lean 提到的 lead time。</li>
+</ul>
+<p>它們之間的對應關係是：</p>
+<table>
+<thead>
+<tr>
+<th>▼</th>
+<th>SRE</th>
+<th>Ken&amp;Jeff 2012</th>
+<th>Theory of Constraints</th>
+<th>Lean</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Traffic</td>
+<td>Traffic</td>
+<td></td>
+<td></td>
+<td>Pull</td>
+</tr>
+<tr>
+<td>Saturation</td>
+<td>Saturation</td>
+<td>Saturation</td>
+<td>Bottleneck; Constraints</td>
+<td>WIP</td>
+</tr>
+<tr>
+<td>Lead time</td>
+<td>Latency</td>
+<td>Productivity</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Throughput</td>
+<td></td>
+<td>Value</td>
+<td>Throughput</td>
+<td></td>
+</tr>
+<tr>
+<td>Quality</td>
+<td>Error</td>
+<td>Quality</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>五個指標，儘管數量不多，但很容易展開成更細部的指標。譬如：</p>
+<ul>
+<li>
+<p>Traffic 可往下展開成 product backlog 管理、dual track、definition of ready 等指標。</p>
+</li>
+<li>
+<p>Saturation 可往下展開成 velocity、queue length、WIP、cycle time、interrupt 等指標。</p>
+</li>
+<li>
+<p>Lead time 可往下展開成 value stream、MTTR 等指標。</p>
+</li>
+<li>
+<p>Throughput 可往下展開成 burn up chart、cumulative flow diagram、deployment frequency 等指標。</p>
+</li>
+<li>
+<p>Quality 可往下展開成 code complexity、change failure rate、rework rate 等指標。</p>
+</li>
+</ul>
+<p>用這五個指標以簡馭繁，很好用。</p>
+<h2 id="從-gsm-角度看敏捷能解決什麼問題">從 GSM 角度看敏捷能解決什麼問題</h2>
+<p>這五個指標，儘管是偏向落後指標，但很容易展開成可行動的領先指標。</p>
+<p>當然啦，在展開成領先指標之前，最好還是先回到最原始的動機：之所以會想尋求敏捷或 DevOps 這帖藥方，一開始的痛點及原因究竟是什麼？</p>
+<p>界定好「待解決問題」之後，我建議根據《<a href="https://www.tenlong.com.tw/products/9786263242630">Google 的軟體工程之道</a>》所介紹的 <strong>GSM process</strong>，一步步找出合適的領先指標：</p>
+<ul>
+<li>
+<p><strong>Goal</strong>：期望當問題解決之後，能夠達到什麼樣的目標狀態？</p>
+</li>
+<li>
+<p><strong>Signal</strong>：有什麼明顯的信號，可以告訴我們說：目標已經達到了？</p>
+</li>
+<li>
+<p><strong>Measurement</strong>：對於上述信號，有什麼明顯的量測值，或是具有預測效度的量測值？</p>
+</li>
+</ul>
+<p>最後，則是透過 GSM 規劃出行動策略：</p>
+<ul>
+<li><strong>Task</strong>：從 Goals 找出能夠提升 Metrics 的 Tasks，而不是直接從 Metrics 找出 Task。</li>
+</ul>
+<h2 id="價值">價值</h2>
+<p>最近看到 Howie 對五年前的老話題有感而發：</p>
 
-  
-  
 
-  
-  
+<div class="box">
+<figure  itemprop="associatedMedia"
+  itemscope itemtype="http://schema.org/ImageObject" 
+  style="max-width:20em" >
+    <div class="img">
+      <img itemprop="thumbnail" src="/img/2023/12/howie-revisit.png" alt="孟子見梁惠王"/>
+    </div>
+    <a href="/img/2023/12/howie-revisit.png" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>孟子見梁惠王</p>
+      </figcaption>
+  </figure>
+</div>
 
-  
-  
-  <nav class="pagination">
-    <ul>
+<p>我想，經過了五年的歷練，我的<a href="//william-yeh.net/post/2018/11/agile-value/">回答</a>還是一樣，但更多了一份篤定：</p>
+<blockquote>
+<p>TL;DR　對於「價值」是否有增益。</p>
+<ol>
+<li>
+<p>回頭看看當初導入敏捷的痛點及原因，找出起初認定（或誤認）的價值是什麼。尤其是：這所謂的「價值」，是否可追溯至<a href="https://agilemanifesto.org/">敏捷宣言</a>或 <a href="http://modernagile.org/">Modern Agile</a> 四層面。若追溯不了，或許一開始就投錯藥方了。</p>
+</li>
+<li>
+<p>導入敏捷後，是否在敏捷宣言或 Modern Agile 四層面有所進展。進而檢討：這些進展，是否有對應到當初導入敏捷的痛點及原因。</p>
+</li>
+</ol>
+</blockquote>
+<p>希望這份關於五大軟體研發效能指標的分析，有助於你用敏捷解決正確的問題。</p>
+
+<div class="shortcode-notice note">
+  <div class="shortcode-notice-title note">
+    
+      「判準與指標」系列文章
+    
+  </div>
+  <p>❶ <a href="//william-yeh.net/post/2018/10/methodology-and-criteria/">軟體開發，除了方法論，還有⋯⋯</a></p>
+<p>❷ <a href="//william-yeh.net/post/2018/10/agile-criteria/">敏捷的判準</a></p>
+<p>❸ <a href="//william-yeh.net/post/2018/11/lean-startup-criteria/">Lean Startup 的判準</a></p>
+<p>❹ <a href="//william-yeh.net/post/2018/11/agile-value/">敏捷的價值與指標</a></p>
+<p>❺ <a href="//william-yeh.net/post/2018/11/devops-value/">DevOps 的價值與指標</a></p>
+<p>❻ 如何衡量敏捷對於軟體研發效能的利益？</p>
+
+</div>
+
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>這段孟子與梁惠王的對話，原文是：「王何必曰利？亦有仁義而已矣！王曰『何以利吾國』，大夫曰『何以利吾家』，士庶人曰『何以利吾身』，上下交征利，而國危矣！」&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">William Yeh</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+      2023-12-03
       
-      <li  class="active" >
-        <a href="/categories/management/">1</a>
-      </li>
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">授權條款</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW" target="_blank">CC BY-NC-SA 4.0</a> (姓名標示-非商業性-相同方式分享 4.0 國際)</span>
+  </p>
+</div>
+
+
+
+    
+    
+
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="//william-yeh.net/tags/agile/">agile</a>
+            <a href="//william-yeh.net/tags/scrum/">scrum</a>
+            <a href="//william-yeh.net/tags/devops/">devops</a>
+            <a href="//william-yeh.net/tags/measurement/">measurement</a>
+            
+        </div>
+
+
       
-      <li >
-        <a href="/categories/management/page/2/">2</a>
-      </li>
-      
-      <li >
-        <a href="/categories/management/page/3/">3</a>
-      </li>
-      
-      <li >
-        <a href="/categories/management/page/4/">4</a>
-      </li>
-      
-      <li >
-        <a href="/categories/management/page/5/">5</a>
-      </li>
-      
-      <li >
-        <a href="/categories/management/page/6/">6</a>
-      </li>
-      
-      <li >
-        <a href="/categories/management/page/7/">7</a>
-      </li>
-      
-      <li >
-        <a href="/categories/management/page/8/">8</a>
-      </li>
-      
-    </ul>
-  </nav>
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/post/2023/11/why-decomposition-matters/">
+            <span class="next-text nav-default">變動的時代，為什麼工作分解技能更是必備？</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            
+            <i class="iconfont">
+              <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311 0.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889 0.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-0.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"></path>
+</svg>
+
+            </i>
+          </a>
+      </nav>
+    </footer>
+  </article>
 
   
   
 
 
+  
+  
 
+  
 
+  
+  
+
+  
+  
+    <div class="post bg-white">
+  <script src="https://utteranc.es/client.js"
+        repo= "William-Yeh/utterances-area"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script>
+</div>
+
+  
+
+  
+
+  
+
+    
+
+  
+
+  
 
         </div>
       </div>

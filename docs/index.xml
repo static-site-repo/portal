@@ -6,10 +6,239 @@
     <description>Recent content on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Tue, 14 Nov 2023 20:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 03 Dec 2023 20:00:00 +0800</lastBuildDate>
     
         <atom:link href="//william-yeh.net/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>如何衡量敏捷對於軟體研發效能的利益？</title>
+      <link>//william-yeh.net/post/2023/12/dev-metrics/</link>
+      <pubDate>Sun, 03 Dec 2023 20:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2023/12/dev-metrics/</guid>
+      
+        <description>&lt;p&gt;面對敏捷或 DevOps 藥方，病人可能帶著各種不同的動機而來，但終歸都會提出同樣的疑問：我怎麼知道敏捷有沒有效？怎麼衡量成效？&lt;/p&gt;
+&lt;p&gt;這問題，可能在導入之後的某個時刻會問，但更有可能像戰國時代梁惠王那樣，才剛第一次接見孟子，居然劈頭就問：「叟，不遠千里而來，亦將有以利吾國乎？」&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/12/mencius-dialogue.png&#34; alt=&#34;孟子見梁惠王&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2023/12/mencius-dialogue.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;孟子見梁惠王&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;對這議題，常有兩種極端的反應。&lt;/p&gt;
+&lt;p&gt;如果你像孟子一樣，一開頭就企圖曉以大義： &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;總經理呀，何必一開頭就談「衡量成效利益」呢？你更應該看重的是「內涵與精神」呀！&lt;/p&gt;
+&lt;p&gt;如果總經理成天想著「對我們的公司有什麼可衡量的成效」，主管成天想著「對我們部門有什麼可衡量的成效」，員工成天想著「對我個人有什麼可衡量的成效」，上下各自算計著成效利益，整間公司就很危險了！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;只怕你會像孟子一樣，很快就離開這個國家了。&lt;/p&gt;
+&lt;p&gt;輕蔑指標固然不可取，但另一個極端「指標狂人」也很可怕。&lt;/p&gt;
+&lt;p&gt;近年來「數位轉型」蔚為顯學，延燒到傳統產業，甚至連傳統管理顧問機構也來湊熱鬧，於是乎，世界就多了更多指標，更多成熟度衡量，更多培訓、證照、鑑定標章——更多所謂的「商機」。&lt;/p&gt;
+&lt;p&gt;這世界不缺指標，缺的是能引領有效行動的指標。若不懂軟體研發的獨特性，就會訂出沒有行動意義的落後指標，或是沒有合理因果證據的偽指標。就像 Bryan Finster 在 “&lt;a href=&#34;https://bdfinst.medium.com/5-minute-devops-mckinsey-gets-developer-productivity-wrong-573b57cd6f6a&#34;&gt;5 Minute DevOps: McKinsey Gets Developer Productivity Wrong&lt;/a&gt;” 一文對於某管顧公司近日端出的  “Developer Productivity” framework 所做的批評：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The real problem is that too many in management don’t understand the work they manage. Management can understand the &lt;strong&gt;intricacies of software engineering&lt;/strong&gt; if they become leaders and study the work they manage. Not all managers are leaders. Some simply want a framework to hold people accountable.&lt;/p&gt;
+&lt;p&gt;Those who do understand tend to &lt;strong&gt;measure the right things&lt;/strong&gt;. The one thing McKinsey doesn’t do with this framework is help fix this problem. They are making it worse.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;那麼，軟體研發活動有什麼獨特性？正確的衡量角度又是什麼？Daniel Terhorst-North 的 “&lt;a href=&#34;https://dannorth.net/mckinsey-review/&#34;&gt;McKinsey Developer Productivity Review&lt;/a&gt;” 一文說得好：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Software development is a collaborative, generative enterprise, and we can easily measure the effectiveness of a team, and more importantly how this is trending over time, using &lt;strong&gt;&lt;strong&gt;Theory of Constraints&lt;/strong&gt;&lt;/strong&gt; and &lt;strong&gt;&lt;strong&gt;flow-based metrics&lt;/strong&gt;&lt;/strong&gt; like &lt;strong&gt;&lt;strong&gt;lead time&lt;/strong&gt;&lt;/strong&gt; and &lt;strong&gt;&lt;strong&gt;throughput&lt;/strong&gt;&lt;/strong&gt;. Take a look at the work of Eliyahu Goldratt and Donald Reinertsen for a deeper understanding of these. An organisation like McKinsey endorsing these approaches would be a great help to the industry.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;這段話點出幾個關鍵：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;團隊 vs 個人&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;縱貫研究 vs 橫斷研究&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Theory of constraints &amp;amp; lean thinking&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Flow, lead time &amp;amp; throughput&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;我們就從這些角度來切入，尤其是 “flow” 角度。&lt;/p&gt;
+&lt;h2 id=&#34;從-flow-角度看軟體研發效能的本質指標&#34;&gt;從 Flow 角度看軟體研發效能的本質指標&lt;/h2&gt;
+&lt;p&gt;我喜歡用以下這五個主要的 flow 指標來整體衡量軟體研發效能：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/12/dev-efficiency.png&#34; alt=&#34;軟體研發效能五大指標&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2023/12/dev-efficiency.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;軟體研發效能五大指標&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;為了對於「軟體研發效能」得出較全面的 flow 觀點，我結合幾個信度效度兼具、又不複雜的論述：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;SRE 的 &lt;a href=&#34;https://sre.google/sre-book/monitoring-distributed-systems/&#34;&gt;4 golden signal&lt;/a&gt;: latency, traffic, errors, saturation。&lt;/li&gt;
+&lt;li&gt;Scrum 之父 Ken &amp;amp; Jeff 在《&lt;a href=&#34;https://williampjyeh.notion.site/Scrum-00d22ec98ca847d49f62b63d10667049&#34;&gt;告別瀑布，擁抱 Scrum&lt;/a&gt;》第 7 章提出的主要指標：productivity, quality, value。&lt;/li&gt;
+&lt;li&gt;Theory of Constraints 提到的 bottleneck/constraints 及 throughput。&lt;/li&gt;
+&lt;li&gt;Lean 提到的 lead time。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;它們之間的對應關係是：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;▼&lt;/th&gt;
+&lt;th&gt;SRE&lt;/th&gt;
+&lt;th&gt;Ken&amp;amp;Jeff 2012&lt;/th&gt;
+&lt;th&gt;Theory of Constraints&lt;/th&gt;
+&lt;th&gt;Lean&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Traffic&lt;/td&gt;
+&lt;td&gt;Traffic&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Pull&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Saturation&lt;/td&gt;
+&lt;td&gt;Saturation&lt;/td&gt;
+&lt;td&gt;Saturation&lt;/td&gt;
+&lt;td&gt;Bottleneck; Constraints&lt;/td&gt;
+&lt;td&gt;WIP&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Lead time&lt;/td&gt;
+&lt;td&gt;Latency&lt;/td&gt;
+&lt;td&gt;Productivity&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Throughput&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Value&lt;/td&gt;
+&lt;td&gt;Throughput&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Quality&lt;/td&gt;
+&lt;td&gt;Error&lt;/td&gt;
+&lt;td&gt;Quality&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;五個指標，儘管數量不多，但很容易展開成更細部的指標。譬如：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Traffic 可往下展開成 product backlog 管理、dual track、definition of ready 等指標。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Saturation 可往下展開成 velocity、queue length、WIP、cycle time、interrupt 等指標。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Lead time 可往下展開成 value stream、MTTR 等指標。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Throughput 可往下展開成 burn up chart、cumulative flow diagram、deployment frequency 等指標。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Quality 可往下展開成 code complexity、change failure rate、rework rate 等指標。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;用這五個指標以簡馭繁，很好用。&lt;/p&gt;
+&lt;h2 id=&#34;從-gsm-角度看敏捷能解決什麼問題&#34;&gt;從 GSM 角度看敏捷能解決什麼問題&lt;/h2&gt;
+&lt;p&gt;這五個指標，儘管是偏向落後指標，但很容易展開成可行動的領先指標。&lt;/p&gt;
+&lt;p&gt;當然啦，在展開成領先指標之前，最好還是先回到最原始的動機：之所以會想尋求敏捷或 DevOps 這帖藥方，一開始的痛點及原因究竟是什麼？&lt;/p&gt;
+&lt;p&gt;界定好「待解決問題」之後，我建議根據《&lt;a href=&#34;https://www.tenlong.com.tw/products/9786263242630&#34;&gt;Google 的軟體工程之道&lt;/a&gt;》所介紹的 &lt;strong&gt;GSM process&lt;/strong&gt;，一步步找出合適的領先指標：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Goal&lt;/strong&gt;：期望當問題解決之後，能夠達到什麼樣的目標狀態？&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Signal&lt;/strong&gt;：有什麼明顯的信號，可以告訴我們說：目標已經達到了？&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Measurement&lt;/strong&gt;：對於上述信號，有什麼明顯的量測值，或是具有預測效度的量測值？&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;最後，則是透過 GSM 規劃出行動策略：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Task&lt;/strong&gt;：從 Goals 找出能夠提升 Metrics 的 Tasks，而不是直接從 Metrics 找出 Task。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;價值&#34;&gt;價值&lt;/h2&gt;
+&lt;p&gt;最近看到 Howie 對五年前的老話題有感而發：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:20em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/12/howie-revisit.png&#34; alt=&#34;孟子見梁惠王&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2023/12/howie-revisit.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;孟子見梁惠王&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;我想，經過了五年的歷練，我的&lt;a href=&#34;//william-yeh.net/post/2018/11/agile-value/&#34;&gt;回答&lt;/a&gt;還是一樣，但更多了一份篤定：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;TL;DR　對於「價值」是否有增益。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;回頭看看當初導入敏捷的痛點及原因，找出起初認定（或誤認）的價值是什麼。尤其是：這所謂的「價值」，是否可追溯至&lt;a href=&#34;https://agilemanifesto.org/&#34;&gt;敏捷宣言&lt;/a&gt;或 &lt;a href=&#34;http://modernagile.org/&#34;&gt;Modern Agile&lt;/a&gt; 四層面。若追溯不了，或許一開始就投錯藥方了。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;導入敏捷後，是否在敏捷宣言或 Modern Agile 四層面有所進展。進而檢討：這些進展，是否有對應到當初導入敏捷的痛點及原因。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;希望這份關於五大軟體研發效能指標的分析，有助於你用敏捷解決正確的問題。&lt;/p&gt;
+
+&lt;div class=&#34;shortcode-notice note&#34;&gt;
+  &lt;div class=&#34;shortcode-notice-title note&#34;&gt;
+    
+      「判準與指標」系列文章
+    
+  &lt;/div&gt;
+  &lt;p&gt;❶ &lt;a href=&#34;//william-yeh.net/post/2018/10/methodology-and-criteria/&#34;&gt;軟體開發，除了方法論，還有⋯⋯&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❷ &lt;a href=&#34;//william-yeh.net/post/2018/10/agile-criteria/&#34;&gt;敏捷的判準&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❸ &lt;a href=&#34;//william-yeh.net/post/2018/11/lean-startup-criteria/&#34;&gt;Lean Startup 的判準&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❹ &lt;a href=&#34;//william-yeh.net/post/2018/11/agile-value/&#34;&gt;敏捷的價值與指標&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❺ &lt;a href=&#34;//william-yeh.net/post/2018/11/devops-value/&#34;&gt;DevOps 的價值與指標&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❻ 如何衡量敏捷對於軟體研發效能的利益？&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;這段孟子與梁惠王的對話，原文是：「王何必曰利？亦有仁義而已矣！王曰『何以利吾國』，大夫曰『何以利吾家』，士庶人曰『何以利吾身』，上下交征利，而國危矣！」&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description>
+      
+    </item>
     
     <item>
       <title>變動的時代，為什麼工作分解技能更是必備？</title>
@@ -12991,6 +13220,7 @@ emerge from &lt;strong&gt;self-organizing teams&lt;/strong&gt;.
 &lt;p&gt;❸ &lt;a href=&#34;//william-yeh.net/post/2018/11/lean-startup-criteria/&#34;&gt;Lean Startup 的判準&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;❹ &lt;a href=&#34;//william-yeh.net/post/2018/11/agile-value/&#34;&gt;敏捷的價值與指標&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;❺ DevOps 的價值與指標&lt;/p&gt;
+&lt;p&gt;❻ &lt;a href=&#34;//william-yeh.net/post/2023/12/dev-metrics/&#34;&gt;如何衡量敏捷對於軟體研發效能的利益？&lt;/a&gt;&lt;/p&gt;
 
 &lt;/div&gt;
 
@@ -13056,7 +13286,7 @@ emerge from &lt;strong&gt;self-organizing teams&lt;/strong&gt;.
 &lt;p&gt;什麼才是敏捷圈子所認定的價值，以及對應的指標，尤其是領先指標？&lt;/p&gt;
 &lt;p&gt;來看看三本經典的說法吧。&lt;/p&gt;
 &lt;h2 id=&#34;敏捷專案儀表板&#34;&gt;敏捷專案儀表板&lt;/h2&gt;
-&lt;p&gt;Scrum 發明人 &lt;a href=&#34;https://www.linkedin.com/in/jeffsutherland&#34;&gt;Jeff Sutherland&lt;/a&gt; 及 &lt;a href=&#34;https://kenschwaber.wordpress.com/&#34;&gt;Ken Schwaber&lt;/a&gt; 合著一本小書《&lt;a href=&#34;https://www.books.com.tw/products/0010647604&#34;&gt;告別瀑布，擁抱 Scrum&lt;/a&gt;》，第七章介紹敏捷工作室可採用的評估指標，用來「追蹤和改進專案績效，建置專案和管理報告，追蹤專案歷史，反映目前趨勢，評估工作室的成本和獲利，以此來確定是否需要擴張或縮小工作室」：&lt;/p&gt;
+&lt;p&gt;Scrum 發明人 &lt;a href=&#34;https://www.linkedin.com/in/jeffsutherland&#34;&gt;Jeff Sutherland&lt;/a&gt; 及 &lt;a href=&#34;https://kenschwaber.wordpress.com/&#34;&gt;Ken Schwaber&lt;/a&gt; 合著一本小書《&lt;a href=&#34;https://williampjyeh.notion.site/Scrum-00d22ec98ca847d49f62b63d10667049&#34;&gt;告別瀑布，擁抱 Scrum&lt;/a&gt;》，第七章介紹敏捷工作室可採用的評估指標，用來「追蹤和改進專案績效，建置專案和管理報告，追蹤專案歷史，反映目前趨勢，評估工作室的成本和獲利，以此來確定是否需要擴張或縮小工作室」：&lt;/p&gt;
 
 
 &lt;div class=&#34;box&#34;&gt;
@@ -13075,13 +13305,13 @@ emerge from &lt;strong&gt;self-organizing teams&lt;/strong&gt;.
 
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;生產效率：利用特定數量的資金，所完成的業務功能的單位個數。&lt;/p&gt;
+&lt;p&gt;生產效率 (Productivity)：利用特定數量的資金，所完成的業務功能的單位個數。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;品質：軟體缺陷個數。&lt;/p&gt;
+&lt;p&gt;品質 (Quality)：軟體缺陷個數。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;價值：軟體開發中，投資的每一塊錢，為組織創造價值的效率（用百分比表示）。&lt;/p&gt;
+&lt;p&gt;價值 (Value)：軟體開發中，投資的每一塊錢，為組織創造價值的效率（用百分比表示）。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;請思考一下，這些算是領先指標，還是落後指標？與「賺錢」之間有強烈的因果關係嗎？&lt;/p&gt;
@@ -13162,6 +13392,7 @@ emerge from &lt;strong&gt;self-organizing teams&lt;/strong&gt;.
 &lt;p&gt;❸ &lt;a href=&#34;//william-yeh.net/post/2018/11/lean-startup-criteria/&#34;&gt;Lean Startup 的判準&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;❹ 敏捷的價值與指標&lt;/p&gt;
 &lt;p&gt;❺ &lt;a href=&#34;//william-yeh.net/post/2018/11/devops-value/&#34;&gt;DevOps 的價值與指標&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❻ &lt;a href=&#34;//william-yeh.net/post/2023/12/dev-metrics/&#34;&gt;如何衡量敏捷對於軟體研發效能的利益？&lt;/a&gt;&lt;/p&gt;
 
 &lt;/div&gt;
 
@@ -13683,6 +13914,7 @@ emerge from &lt;strong&gt;self-organizing teams&lt;/strong&gt;.
 &lt;p&gt;❸ Lean Startup 的判準&lt;/p&gt;
 &lt;p&gt;❹ &lt;a href=&#34;//william-yeh.net/post/2018/11/agile-value/&#34;&gt;敏捷的價值與指標&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;❺ &lt;a href=&#34;//william-yeh.net/post/2018/11/devops-value/&#34;&gt;DevOps 的價值與指標&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❻ &lt;a href=&#34;//william-yeh.net/post/2023/12/dev-metrics/&#34;&gt;如何衡量敏捷對於軟體研發效能的利益？&lt;/a&gt;&lt;/p&gt;
 
 &lt;/div&gt;
 
@@ -13823,6 +14055,7 @@ increment 的方式交付「完成」的產品，可以確保一直提供一個�
 &lt;p&gt;❸ &lt;a href=&#34;//william-yeh.net/post/2018/11/lean-startup-criteria/&#34;&gt;Lean Startup 的判準&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;❹ &lt;a href=&#34;//william-yeh.net/post/2018/11/agile-value/&#34;&gt;敏捷的價值與指標&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;❺ &lt;a href=&#34;//william-yeh.net/post/2018/11/devops-value/&#34;&gt;DevOps 的價值與指標&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❻ &lt;a href=&#34;//william-yeh.net/post/2023/12/dev-metrics/&#34;&gt;如何衡量敏捷對於軟體研發效能的利益？&lt;/a&gt;&lt;/p&gt;
 
 &lt;/div&gt;
 
@@ -13950,6 +14183,7 @@ increment 的方式交付「完成」的產品，可以確保一直提供一個�
 &lt;p&gt;❸ &lt;a href=&#34;//william-yeh.net/post/2018/11/lean-startup-criteria/&#34;&gt;Lean Startup 的判準&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;❹ &lt;a href=&#34;//william-yeh.net/post/2018/11/agile-value/&#34;&gt;敏捷的價值與指標&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;❺ &lt;a href=&#34;//william-yeh.net/post/2018/11/devops-value/&#34;&gt;DevOps 的價值與指標&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❻ &lt;a href=&#34;//william-yeh.net/post/2023/12/dev-metrics/&#34;&gt;如何衡量敏捷對於軟體研發效能的利益？&lt;/a&gt;&lt;/p&gt;
 
 &lt;/div&gt;</description>
       
