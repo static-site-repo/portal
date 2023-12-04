@@ -99,7 +99,7 @@
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th&gt;▼&lt;/th&gt;
+&lt;th&gt;Flow ▼&lt;/th&gt;
 &lt;th&gt;SRE&lt;/th&gt;
 &lt;th&gt;Ken&amp;amp;Jeff 2012&lt;/th&gt;
 &lt;th&gt;Theory of Constraints&lt;/th&gt;
@@ -162,7 +162,8 @@
 &lt;p&gt;Quality 可往下展開成 code complexity、change failure rate、rework rate 等指標。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;用這五個指標以簡馭繁，很好用。&lt;/p&gt;
+&lt;p&gt;這五個指標以簡馭繁，很好用。&lt;/p&gt;
+&lt;p&gt;我通常會從這五大指標出發，蒐集初始資料，形成假設，求證，並佐以 Theory of Constraints 分析，找到關鍵 constraints，用&lt;a href=&#34;https://www.tocinstitute.org/five-focusing-steps.html&#34;&gt;聚焦五步驟&lt;/a&gt;界定優先順序，再去探討解決方案。&lt;/p&gt;
 &lt;h2 id=&#34;從-gsm-角度看敏捷能解決什麼問題&#34;&gt;從 GSM 角度看敏捷能解決什麼問題&lt;/h2&gt;
 &lt;p&gt;這五個指標，儘管是偏向落後指標，但很容易展開成可行動的領先指標。&lt;/p&gt;
 &lt;p&gt;當然啦，在展開成領先指標之前，最好還是先回到最原始的動機：之所以會想尋求敏捷或 DevOps 這帖藥方，一開始的痛點及原因究竟是什麼？&lt;/p&gt;
@@ -205,7 +206,7 @@
 &lt;p&gt;TL;DR　對於「價值」是否有增益。&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;回頭看看當初導入敏捷的痛點及原因，找出起初認定（或誤認）的價值是什麼。尤其是：這所謂的「價值」，是否可追溯至&lt;a href=&#34;https://agilemanifesto.org/&#34;&gt;敏捷宣言&lt;/a&gt;或 &lt;a href=&#34;http://modernagile.org/&#34;&gt;Modern Agile&lt;/a&gt; 四層面。若追溯不了，或許一開始就投錯藥方了。&lt;/p&gt;
+&lt;p&gt;回頭看看當初導入敏捷的痛點及原因，找出起初認定（或誤認）的價值是什麼。尤其是：這所謂的「價值」，是否可追溯至&lt;a href=&#34;https://agilemanifesto.org/&#34;&gt;敏捷宣言&lt;/a&gt;或 &lt;a href=&#34;https://modernagile.org/&#34;&gt;Modern Agile&lt;/a&gt; 四層面。若追溯不了，或許一開始就投錯藥方了。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;導入敏捷後，是否在敏捷宣言或 Modern Agile 四層面有所進展。進而檢討：這些進展，是否有對應到當初導入敏捷的痛點及原因。&lt;/p&gt;
@@ -13101,6 +13102,7 @@ emerge from &lt;strong&gt;self-organizing teams&lt;/strong&gt;.
 &lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2018/11/lean-startup-criteria/&#34;&gt;Lean Startup 的判準&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2018/11/agile-value/&#34;&gt;敏捷的價值與指標&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2018/11/devops-value/&#34;&gt;DevOps 的價值與指標&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2023/12/dev-metrics/&#34;&gt;如何衡量敏捷對於軟體研發效能的利益？&lt;/a&gt;&lt;/p&gt;
 </description>
       
     </item>
@@ -13274,7 +13276,7 @@ emerge from &lt;strong&gt;self-organizing teams&lt;/strong&gt;.
 &lt;p&gt;TL;DR　對於「價值」是否有增益。&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;回頭看看當初導入敏捷的痛點及原因，找出起初認定（或誤認）的價值是什麼。尤其是：這所謂的「價值」，是否可追溯至&lt;a href=&#34;https://agilemanifesto.org/&#34;&gt;敏捷宣言&lt;/a&gt;或 &lt;a href=&#34;http://modernagile.org/&#34;&gt;Modern Agile&lt;/a&gt; 四層面。若追溯不了，或許一開始就投錯藥方了。&lt;/p&gt;
+&lt;p&gt;回頭看看當初導入敏捷的痛點及原因，找出起初認定（或誤認）的價值是什麼。尤其是：這所謂的「價值」，是否可追溯至&lt;a href=&#34;https://agilemanifesto.org/&#34;&gt;敏捷宣言&lt;/a&gt;或 &lt;a href=&#34;https://modernagile.org/&#34;&gt;Modern Agile&lt;/a&gt; 四層面。若追溯不了，或許一開始就投錯藥方了。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;導入敏捷後，是否在敏捷宣言或 Modern Agile 四層面有所進展。進而檢討：這些進展，是否有對應到當初導入敏捷的痛點及原因。&lt;/p&gt;

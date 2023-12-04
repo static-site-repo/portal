@@ -23,6 +23,13 @@
   </url>
   
   <url>
+    <loc>https://william-yeh.net/tags/lean/</loc>
+    <lastmod>2023-12-03T20:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://william-yeh.net/categories/management/</loc>
     <lastmod>2023-12-03T20:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -58,7 +65,21 @@
   </url>
   
   <url>
+    <loc>https://william-yeh.net/tags/sre/</loc>
+    <lastmod>2023-12-03T20:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://william-yeh.net/tags/</loc>
+    <lastmod>2023-12-03T20:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://william-yeh.net/tags/toc/</loc>
     <lastmod>2023-12-03T20:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -80,13 +101,6 @@
   
   <url>
     <loc>https://william-yeh.net/tags/kanban/</loc>
-    <lastmod>2023-11-14T20:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://william-yeh.net/tags/lean/</loc>
     <lastmod>2023-11-14T20:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -514,13 +528,6 @@
   
   <url>
     <loc>https://william-yeh.net/tags/kotter/</loc>
-    <lastmod>2022-05-16T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://william-yeh.net/tags/toc/</loc>
     <lastmod>2022-05-16T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
