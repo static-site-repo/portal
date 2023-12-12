@@ -367,6 +367,80 @@
   <header class="post-header">
     <h1 class="post-title">
       
+      <a class="post-link" href="/post/2023/02/distroless-image/">Distroless Image 牛刀小試</a>
+    </h1>
+    
+
+    <div class="post-meta">
+  <div class="post-meta-author">
+    by
+      William Yeh
+    
+  </div>
+
+  <div class="post-meta-time">
+    <time datetime="2023-02-15">
+      2023-02-15
+    </time>
+  </div>
+
+  
+
+
+  <div class="post-meta__right">
+    <span class="post-meta-more">
+        約 1278 字 -
+        預計閱讀 3 分鐘
+      </span>
+
+    <div class="post-meta-category">
+        <a href="//william-yeh.net/categories/tech/"> tech </a>
+          
+      </div>
+
+
+    
+    
+      <span id="busuanzi_container_page_pv">
+        | 阅读 <span id="busuanzi_value_page_pv"></span>
+      </span>
+    
+
+
+    
+    
+  </div>
+</div>
+
+  </header>
+  
+  <div class="post-content">
+    
+      <div class="post-summary">
+        <p>距離上次重度探討「極簡化容器」已經快六年多了<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>。這議題，以前可能只是某些人技術上的興趣，現在則可能是必要。</p>
+<p>原因是：Docker Inc 的一些措施，讓人不得不慎重考慮替代方案。</p>
+<h2 id="搬家的必要">搬家的必要</h2>
+<p>這陣子容器世界起了不少變化，除了眾所周知的「Docker Desktop 要收費了」規定 <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>，另一個較少被提及影響是 Docker Hub 的緊縮政策：</p>
+<ul>
+<li>Image CI 緊縮：Docker Hub 取消免費用戶的 automated builds 功能。 <sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></li>
+<li>Image pull 緊縮：Docker Hub 開始對未付費者施以較嚴格的限流措施。 <sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup></li>
+</ul>
+<p>於是，未付費的人，不僅在使用 Docker Hub 時會受到管制，還會波及產製 image 的 CI pipeline，不時會遇到這樣的 &ldquo;toomanyrequests&rdquo; 限流警告：</p>
+      </div>
+      <div class="read-more">
+        <a href="/post/2023/02/distroless-image/" class="read-more-link"
+          >閱讀全文</a
+        >
+      </div>
+    
+  </div>
+</article>
+
+  
+    <article class="post bg-white">
+  <header class="post-header">
+    <h1 class="post-title">
+      
       <a class="post-link" href="/post/2023/02/wsl-image/">WSL Image 匯出與匯入</a>
     </h1>
     
@@ -630,74 +704,6 @@
       </div>
       <div class="read-more">
         <a href="/post/2023/02/wsl2-podman-k3s/" class="read-more-link"
-          >閱讀全文</a
-        >
-      </div>
-    
-  </div>
-</article>
-
-  
-    <article class="post bg-white">
-  <header class="post-header">
-    <h1 class="post-title">
-      
-      <a class="post-link" href="/post/2022/12/20222-retrospective/">2022 個人回顧</a>
-    </h1>
-    
-
-    <div class="post-meta">
-  <div class="post-meta-author">
-    by
-      William Yeh
-    
-  </div>
-
-  <div class="post-meta-time">
-    <time datetime="2022-12-18">
-      2022-12-18
-    </time>
-  </div>
-
-  
-
-
-  <div class="post-meta__right">
-    <span class="post-meta-more">
-        約 3305 字 -
-        預計閱讀 7 分鐘
-      </span>
-
-    <div class="post-meta-category">
-        <a href="//william-yeh.net/categories/life/"> life </a>
-          
-      </div>
-
-
-    
-    
-      <span id="busuanzi_container_page_pv">
-        | 阅读 <span id="busuanzi_value_page_pv"></span>
-      </span>
-    
-
-
-    
-    
-  </div>
-</div>
-
-  </header>
-  
-  <div class="post-content">
-    
-      <div class="post-summary">
-        <p>去年年終<a href="//william-yeh.net/post/2021/12/2021-retrospective/">回顧文</a>中，我曾半戲謔說道：自己好像都在消費之前外商經驗的戰備存糧。</p>
-<p>今年，這份感受更加明顯，甚至連台商新創經驗都動用到了。</p>
-<p>到了年終，又開始要做個總回顧，再對來年許願。去除一些不便揭露的事情，以下是簡單的回顧。</p>
-      </div>
-      <div class="read-more">
-        <a href="/post/2022/12/20222-retrospective/" class="read-more-link"
           >閱讀全文</a
         >
       </div>

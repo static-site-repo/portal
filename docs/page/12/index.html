@@ -367,6 +367,73 @@
   <header class="post-header">
     <h1 class="post-title">
       
+      <a class="post-link" href="/post/2020/03/grpc-load-balancing/">gRPC Load Balancing in Kubernetes</a>
+    </h1>
+    
+
+    <div class="post-meta">
+  <div class="post-meta-author">
+    by
+      William Yeh
+    
+  </div>
+
+  <div class="post-meta-time">
+    <time datetime="2020-03-30">
+      2020-03-30
+    </time>
+  </div>
+
+  
+
+
+  <div class="post-meta__right">
+    <span class="post-meta-more">
+        約 2263 字 -
+        預計閱讀 5 分鐘
+      </span>
+
+    <div class="post-meta-category">
+        <a href="//william-yeh.net/categories/tech/"> tech </a>
+          
+      </div>
+
+
+    
+    
+      <span id="busuanzi_container_page_pv">
+        | 阅读 <span id="busuanzi_value_page_pv"></span>
+      </span>
+    
+
+
+    
+    
+  </div>
+</div>
+
+  </header>
+  
+  <div class="post-content">
+    
+      <div class="post-summary">
+        <p>Kubernetes 有個很方便的地方：只要修改 deployment 的 <code>spec.replicas</code> 數字，就能橫向擴展 pod，以應付更大的流量負載需求。</p>
+<p>這一招，對於 stateless 的 HTTP 服務很管用，也是 Kubernetes 入門教學愛用的例子。但是，對於 <a href="https://grpc.io/">gRPC</a> 呢？</p>
+      </div>
+      <div class="read-more">
+        <a href="/post/2020/03/grpc-load-balancing/" class="read-more-link"
+          >閱讀全文</a
+        >
+      </div>
+    
+  </div>
+</article>
+
+  
+    <article class="post bg-white">
+  <header class="post-header">
+    <h1 class="post-title">
+      
       <a class="post-link" href="/post/2020/03/idempotency-key-test/">Idempotency Key：原理與實測</a>
     </h1>
     
@@ -648,73 +715,6 @@
       </div>
       <div class="read-more">
         <a href="/post/2019/12/tech-interview/" class="read-more-link"
-          >閱讀全文</a
-        >
-      </div>
-    
-  </div>
-</article>
-
-  
-    <article class="post bg-white">
-  <header class="post-header">
-    <h1 class="post-title">
-      
-      <a class="post-link" href="/post/2019/07/k8s-vol-resizing/">Volume Resizing Mechanism in Kubernetes</a>
-    </h1>
-    
-
-    <div class="post-meta">
-  <div class="post-meta-author">
-    by
-      William Yeh
-    
-  </div>
-
-  <div class="post-meta-time">
-    <time datetime="2019-07-31">
-      2019-07-31
-    </time>
-  </div>
-
-  
-
-
-  <div class="post-meta__right">
-    <span class="post-meta-more">
-        約 1585 字 -
-        預計閱讀 8 分鐘
-      </span>
-
-    <div class="post-meta-category">
-        <a href="//william-yeh.net/categories/tech/"> tech </a>
-          
-      </div>
-
-
-    
-    
-      <span id="busuanzi_container_page_pv">
-        | 阅读 <span id="busuanzi_value_page_pv"></span>
-      </span>
-    
-
-
-    
-    
-  </div>
-</div>
-
-  </header>
-  
-  <div class="post-content">
-    
-      <div class="post-summary">
-        <p>Non-stop storage scaling (vertical or horizontal scaling) is essential in a data-intensive system, database servers in particular.</p>
-<p>Is it possible in Kubernetes?</p>
-      </div>
-      <div class="read-more">
-        <a href="/post/2019/07/k8s-vol-resizing/" class="read-more-link"
           >閱讀全文</a
         >
       </div>
