@@ -13,20 +13,14 @@
       <link>//william-yeh.net/post/2019/04/wsl-ansible-vagrant/</link>
       <pubDate>Thu, 18 Apr 2019 23:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2019/04/wsl-ansible-vagrant/</guid>
-      <description>&lt;p&gt;既然要開始在 Windows 上沿用 Mac 及 Unix 的命令列工具習慣&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，免不了要處理 &lt;a href=&#34;https://github.com/ansible/ansible&#34;&gt;Ansible&lt;/a&gt; 及 &lt;a href=&#34;https://www.vagrantup.com/&#34;&gt;Vagrant&lt;/a&gt;。&lt;/p&gt;
-&lt;p&gt;雖然這兩個軟體都有對應的 Windows 版本，但據我以前的經驗，卡卡的，有許多小地雷；畢竟這些發跡自泛 Unix 家族的軟體，不是那麼容易無縫移植到對命令列不友善的 Windows 家族。&lt;/p&gt;
-&lt;p&gt;如今 Windows 已經有 &lt;a href=&#34;https://docs.microsoft.com/en-us/windows/wsl/&#34;&gt;WSL (Windows Subsystem for Linux)&lt;/a&gt; 機制，是否可以更無痛享用 Ansible 及 Vagrant 呢？&lt;/p&gt;
-&lt;p&gt;可以的。&lt;/p&gt;</description>
+      <description>&lt;p&gt;既然要開始在 Windows 上沿用 Mac 及 Unix 的命令列工具習慣&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，免不了要處理 &lt;a href=&#34;https://github.com/ansible/ansible&#34;&gt;Ansible&lt;/a&gt; 及 &lt;a href=&#34;https://www.vagrantup.com/&#34;&gt;Vagrant&lt;/a&gt;。&lt;/p&gt;&#xA;&lt;p&gt;雖然這兩個軟體都有對應的 Windows 版本，但據我以前的經驗，卡卡的，有許多小地雷；畢竟這些發跡自泛 Unix 家族的軟體，不是那麼容易無縫移植到對命令列不友善的 Windows 家族。&lt;/p&gt;&#xA;&lt;p&gt;如今 Windows 已經有 &lt;a href=&#34;https://docs.microsoft.com/en-us/windows/wsl/&#34;&gt;WSL (Windows Subsystem for Linux)&lt;/a&gt; 機制，是否可以更無痛享用 Ansible 及 Vagrant 呢？&lt;/p&gt;&#xA;&lt;p&gt;可以的。&lt;/p&gt;</description>
     </item>
     <item>
       <title>從 Ansible 到 Docker：混血模式</title>
       <link>//william-yeh.net/post/2016/08/halfblood-docker/</link>
       <pubDate>Sat, 27 Aug 2016 08:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2016/08/halfblood-docker/</guid>
-      <description>&lt;p&gt;2015 年 4 月我在 &lt;a href=&#34;https://www.meetup.com/Docker-Taipei/&#34;&gt;Docker Taipei 社群&lt;/a&gt;講了一場〈&lt;a href=&#34;https://william-yeh.github.io/docker-mini/&#34;&gt;追求極簡化 Docker image 之路&lt;/a&gt;〉。一年後，在「極簡化 Docker」這條路上，另一條途徑 Alpine Linux 開始嶄露頭角——不必像過去那麼蠻幹，地雷減少，流程優勢顯著，品質上也不見得遜於長期被 glibc 把持的傳統體系。&lt;/p&gt;
-&lt;p&gt;我嘗試用這種手法重整過去的東西，結果還不算太差。因此，一直希望能有機會再給一場類似【追求極簡化 Docker image 之路，Part 2】的演講。&lt;/p&gt;
-&lt;p&gt;此外，由於自己持續在使用 Ansible 來處理組態設定事宜，持續維護近 20 個 Ansible Galaxy 開源 roles，也開講了五場【&lt;a href=&#34;https://devopssummit.ithome.com.tw/workshop/ansible/&#34;&gt;Ansible Workshop&lt;/a&gt;】訓練課程，很自然的，我會常常拿 Ansible 與 Docker 並列，思考兩者的定位、運用時機，甚至未來走向；有時甚至靈光一閃，浮現一些 Ansible＋Docker 的組合技。&lt;/p&gt;
-&lt;p&gt;這就是今天在 &lt;a href=&#34;https://community-open-camp.azurewebsites.net/&#34;&gt;Community Open Camp&lt;/a&gt; 這場演講【從 Ansible 到 Docker：混血模式】的由來。&lt;/p&gt;</description>
+      <description>&lt;p&gt;2015 年 4 月我在 &lt;a href=&#34;https://www.meetup.com/Docker-Taipei/&#34;&gt;Docker Taipei 社群&lt;/a&gt;講了一場〈&lt;a href=&#34;https://william-yeh.github.io/docker-mini/&#34;&gt;追求極簡化 Docker image 之路&lt;/a&gt;〉。一年後，在「極簡化 Docker」這條路上，另一條途徑 Alpine Linux 開始嶄露頭角——不必像過去那麼蠻幹，地雷減少，流程優勢顯著，品質上也不見得遜於長期被 glibc 把持的傳統體系。&lt;/p&gt;&#xA;&lt;p&gt;我嘗試用這種手法重整過去的東西，結果還不算太差。因此，一直希望能有機會再給一場類似【追求極簡化 Docker image 之路，Part 2】的演講。&lt;/p&gt;&#xA;&lt;p&gt;此外，由於自己持續在使用 Ansible 來處理組態設定事宜，持續維護近 20 個 Ansible Galaxy 開源 roles，也開講了五場【&lt;a href=&#34;https://devopssummit.ithome.com.tw/workshop/ansible/&#34;&gt;Ansible Workshop&lt;/a&gt;】訓練課程，很自然的，我會常常拿 Ansible 與 Docker 並列，思考兩者的定位、運用時機，甚至未來走向；有時甚至靈光一閃，浮現一些 Ansible＋Docker 的組合技。&lt;/p&gt;&#xA;&lt;p&gt;這就是今天在 &lt;a href=&#34;https://community-open-camp.azurewebsites.net/&#34;&gt;Community Open Camp&lt;/a&gt; 這場演講【從 Ansible 到 Docker：混血模式】的由來。&lt;/p&gt;</description>
     </item>
     <item>
       <title>電腦界的隱喻：組態管理</title>

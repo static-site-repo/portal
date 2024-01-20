@@ -13,76 +13,42 @@
       <link>//william-yeh.net/post/2023/04/gcp-on-coursera/</link>
       <pubDate>Tue, 25 Apr 2023 22:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2023/04/gcp-on-coursera/</guid>
-      <description>&lt;p&gt;為了在公司內推動 GCP 認證考試，必須先推動大家勤修 GCP 課程；為了推動大家勤修 GCP 課程，我得先帶頭示範。因此，我最近在 Coursera 修了許多 GCP 認證考試相關課程 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，感觸很深：就算不考照，用這些課程補完一些知識，還是很值得的。&lt;/p&gt;
-&lt;p&gt;這些課程深度與廣度兼具，又有搭配實作演習，有系統地吸收，會比雜亂搜尋文件的碎片化學習來得踏實。&lt;/p&gt;
-&lt;p&gt;即使以俗氣的 C/P 值角度來說，這些課程也是物超所值的。像以下這門放在 Coursera 的課：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.coursera.org/learn/gcp-big-data-ml-fundamentals&#34;&gt;Google Cloud Big Data and Machine Learning Fundamentals&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;大家知道嗎？這樣的課，用同樣的 Google 原廠教材，改用國語發音 live 授課，在外頭可是喊價超過一萬元新台幣的。&lt;/p&gt;
-&lt;p&gt;我根據自己這些日子勤修課程的小經驗，推薦幾門有廣度有深度的課，讓想要對雲端環境有更廣更深認識的人參考。我大致將這些課程分類如下：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;非技術的通識類&lt;/li&gt;
-&lt;li&gt;GCP 技術：共通核心&lt;/li&gt;
-&lt;li&gt;GCP 技術：K8s&lt;/li&gt;
-&lt;li&gt;Dev&lt;/li&gt;
-&lt;li&gt;DevOps &amp;amp; SRE&lt;/li&gt;
-&lt;li&gt;ML &amp;amp; Big Data&lt;/li&gt;
-&lt;/ul&gt;</description>
+      <description>&lt;p&gt;為了在公司內推動 GCP 認證考試，必須先推動大家勤修 GCP 課程；為了推動大家勤修 GCP 課程，我得先帶頭示範。因此，我最近在 Coursera 修了許多 GCP 認證考試相關課程 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，感觸很深：就算不考照，用這些課程補完一些知識，還是很值得的。&lt;/p&gt;&#xA;&lt;p&gt;這些課程深度與廣度兼具，又有搭配實作演習，有系統地吸收，會比雜亂搜尋文件的碎片化學習來得踏實。&lt;/p&gt;&#xA;&lt;p&gt;即使以俗氣的 C/P 值角度來說，這些課程也是物超所值的。像以下這門放在 Coursera 的課：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.coursera.org/learn/gcp-big-data-ml-fundamentals&#34;&gt;Google Cloud Big Data and Machine Learning Fundamentals&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;大家知道嗎？這樣的課，用同樣的 Google 原廠教材，改用國語發音 live 授課，在外頭可是喊價超過一萬元新台幣的。&lt;/p&gt;&#xA;&lt;p&gt;我根據自己這些日子勤修課程的小經驗，推薦幾門有廣度有深度的課，讓想要對雲端環境有更廣更深認識的人參考。我大致將這些課程分類如下：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;非技術的通識類&lt;/li&gt;&#xA;&lt;li&gt;GCP 技術：共通核心&lt;/li&gt;&#xA;&lt;li&gt;GCP 技術：K8s&lt;/li&gt;&#xA;&lt;li&gt;Dev&lt;/li&gt;&#xA;&lt;li&gt;DevOps &amp;amp; SRE&lt;/li&gt;&#xA;&lt;li&gt;ML &amp;amp; Big Data&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
     <item>
       <title>gRPC 測試工具</title>
       <link>//william-yeh.net/post/2020/04/grpc-testing-tools/</link>
       <pubDate>Tue, 14 Apr 2020 22:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2020/04/grpc-testing-tools/</guid>
-      <description>&lt;p&gt;RESTful API 時代，我們有許多簡單好用的測試工具：有酷炫的 &lt;a href=&#34;https://www.postman.com/&#34;&gt;Postman&lt;/a&gt;，有命令列控愛用的 &lt;a href=&#34;https://httpie.org/&#34;&gt;HTTPie&lt;/a&gt;，當然也有硬漢必備的萬用瑞士刀 &lt;a href=&#34;https://curl.haxx.se/&#34;&gt;curl&lt;/a&gt;。&lt;/p&gt;
-&lt;p&gt;那麼，gRPC 呢？&lt;/p&gt;
-&lt;p&gt;這篇文章介紹兩個好用的小工具：&lt;a href=&#34;https://github.com/fullstorydev/grpcurl&#34;&gt;gRPCurl&lt;/a&gt; 及 &lt;a href=&#34;https://github.com/bojand/ghz&#34;&gt;ghz&lt;/a&gt;，一個是輸入輸出介面測試工具，另一個是壓測工具，也順便介紹一些簡化測試的技巧。&lt;/p&gt;</description>
+      <description>&lt;p&gt;RESTful API 時代，我們有許多簡單好用的測試工具：有酷炫的 &lt;a href=&#34;https://www.postman.com/&#34;&gt;Postman&lt;/a&gt;，有命令列控愛用的 &lt;a href=&#34;https://httpie.org/&#34;&gt;HTTPie&lt;/a&gt;，當然也有硬漢必備的萬用瑞士刀 &lt;a href=&#34;https://curl.haxx.se/&#34;&gt;curl&lt;/a&gt;。&lt;/p&gt;&#xA;&lt;p&gt;那麼，gRPC 呢？&lt;/p&gt;&#xA;&lt;p&gt;這篇文章介紹兩個好用的小工具：&lt;a href=&#34;https://github.com/fullstorydev/grpcurl&#34;&gt;gRPCurl&lt;/a&gt; 及 &lt;a href=&#34;https://github.com/bojand/ghz&#34;&gt;ghz&lt;/a&gt;，一個是輸入輸出介面測試工具，另一個是壓測工具，也順便介紹一些簡化測試的技巧。&lt;/p&gt;</description>
     </item>
     <item>
       <title>gRPC Load Balancing in Kubernetes</title>
       <link>//william-yeh.net/post/2020/03/grpc-load-balancing/</link>
       <pubDate>Mon, 30 Mar 2020 22:30:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2020/03/grpc-load-balancing/</guid>
-      <description>&lt;p&gt;Kubernetes 有個很方便的地方：只要修改 deployment 的 &lt;code&gt;spec.replicas&lt;/code&gt; 數字，就能橫向擴展 pod，以應付更大的流量負載需求。&lt;/p&gt;
-&lt;p&gt;這一招，對於 stateless 的 HTTP 服務很管用，也是 Kubernetes 入門教學愛用的例子。但是，對於 &lt;a href=&#34;https://grpc.io/&#34;&gt;gRPC&lt;/a&gt; 呢？&lt;/p&gt;</description>
+      <description>&lt;p&gt;Kubernetes 有個很方便的地方：只要修改 deployment 的 &lt;code&gt;spec.replicas&lt;/code&gt; 數字，就能橫向擴展 pod，以應付更大的流量負載需求。&lt;/p&gt;&#xA;&lt;p&gt;這一招，對於 stateless 的 HTTP 服務很管用，也是 Kubernetes 入門教學愛用的例子。但是，對於 &lt;a href=&#34;https://grpc.io/&#34;&gt;gRPC&lt;/a&gt; 呢？&lt;/p&gt;</description>
     </item>
     <item>
       <title>Idempotency Key：原理與實測</title>
       <link>//william-yeh.net/post/2020/03/idempotency-key-test/</link>
       <pubDate>Tue, 10 Mar 2020 23:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2020/03/idempotency-key-test/</guid>
-      <description>&lt;p&gt;最近幾年，在微服務打滾的人，不時會遇到神祕的 &amp;ldquo;idempotency key&amp;rdquo; 字眼。本文爬梳 idempotency key 的技術背景，探討運作流程，並分析資料庫的實作選項。&lt;/p&gt;
-&lt;h2 id=&#34;idempotency-冪等性&#34;&gt;Idempotency 冪等性&lt;/h2&gt;
-&lt;p&gt;在 API 服務中，常常需要留意 idempotency（冪等性）。&lt;/p&gt;
-&lt;p&gt;名詞：idempotency，形容詞：idempotent。&lt;/p&gt;
-&lt;p&gt;&amp;ldquo;Idempotency&amp;rdquo; 這字眼源自數學。維基百科是這麼解釋 &amp;ldquo;&lt;a href=&#34;https://en.wikipedia.org/wiki/Idempotence#Idempotent_functions&#34;&gt;idempotent function&lt;/a&gt;&amp;rdquo; 的：&lt;/p&gt;</description>
+      <description>&lt;p&gt;最近幾年，在微服務打滾的人，不時會遇到神祕的 &amp;ldquo;idempotency key&amp;rdquo; 字眼。本文爬梳 idempotency key 的技術背景，探討運作流程，並分析資料庫的實作選項。&lt;/p&gt;&#xA;&lt;h2 id=&#34;idempotency-冪等性&#34;&gt;Idempotency 冪等性&lt;/h2&gt;&#xA;&lt;p&gt;在 API 服務中，常常需要留意 idempotency（冪等性）。&lt;/p&gt;&#xA;&lt;p&gt;名詞：idempotency，形容詞：idempotent。&lt;/p&gt;&#xA;&lt;p&gt;&amp;ldquo;Idempotency&amp;rdquo; 這字眼源自數學。維基百科是這麼解釋 &amp;ldquo;&lt;a href=&#34;https://en.wikipedia.org/wiki/Idempotence#Idempotent_functions&#34;&gt;idempotent function&lt;/a&gt;&amp;rdquo; 的：&lt;/p&gt;</description>
     </item>
     <item>
       <title>Kubernetes 的入門認知與導入策略</title>
       <link>//william-yeh.net/post/2019/05/k8s-lab/</link>
       <pubDate>Fri, 17 May 2019 12:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2019/05/k8s-lab/</guid>
-      <description>&lt;p&gt;前天我在 &lt;a href=&#34;https://cloudsummit.ithome.com.tw/2019/lab.html#0001&#34;&gt;2019 台灣雲端大會&lt;/a&gt;帶了兩個場次，一個是現場實作場次，一個是經驗分享演講：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Lab / &lt;a href=&#34;https://github.com/William-Yeh/workshop-cloud2019&#34;&gt;給 RD 的 Kubernetes 初體驗&lt;/a&gt; (90 minutes)&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Speech / &lt;a href=&#34;https://www.slideshare.net/williamyeh/when-dotnetmeetskubernetes-145557464&#34;&gt;當 .NET 遇到 Kubernetes&lt;/a&gt; (30 minutes)&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;兩個場次，一言以蔽之，都圍繞在 Kubernetes 的入門認知與導入策略上。&lt;/p&gt;</description>
+      <description>&lt;p&gt;前天我在 &lt;a href=&#34;https://cloudsummit.ithome.com.tw/2019/lab.html#0001&#34;&gt;2019 台灣雲端大會&lt;/a&gt;帶了兩個場次，一個是現場實作場次，一個是經驗分享演講：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Lab / &lt;a href=&#34;https://github.com/William-Yeh/workshop-cloud2019&#34;&gt;給 RD 的 Kubernetes 初體驗&lt;/a&gt; (90 minutes)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Speech / &lt;a href=&#34;https://www.slideshare.net/williamyeh/when-dotnetmeetskubernetes-145557464&#34;&gt;當 .NET 遇到 Kubernetes&lt;/a&gt; (30 minutes)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;兩個場次，一言以蔽之，都圍繞在 Kubernetes 的入門認知與導入策略上。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Next &#39;19 的 Istio 場次重點摘要</title>
       <link>//william-yeh.net/post/2019/04/next19-istio/</link>
       <pubDate>Fri, 19 Apr 2019 23:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2019/04/next19-istio/</guid>
-      <description>&lt;p&gt;四月 9&amp;ndash;11 日去舊金山參加 Google Cloud 的 &lt;a href=&#34;https://cloud.withgoogle.com/next/sf/&#34;&gt;Next ’19&lt;/a&gt; 大會，收穫頗大。&lt;/p&gt;
-&lt;p&gt;這場大會，同一時段就有近 30 場專題演講同時進行，議程滿滿，勢必得做取捨。基於工作需要及個人興趣，我主要選擇與容器相關的場次：service mesh、Windows containers、混合雲、資安實務。&lt;/p&gt;
-&lt;p&gt;我發現，光是這些場次，就得花很大力氣去消化、實驗與應用。&lt;/p&gt;
-&lt;p&gt;我們這些所謂的「台港團」會在 GCPUG Taipei 舉辦一場&lt;a href=&#34;https://www.meetup.com/GCPUG-Taipei/events/260555968/&#34;&gt;分享會&lt;/a&gt;。因為自己不克參加，便以這篇文章，針對我鎖定的核心議題：Istio，做一番重點摘要，以饗讀者。&lt;/p&gt;</description>
+      <description>&lt;p&gt;四月 9&amp;ndash;11 日去舊金山參加 Google Cloud 的 &lt;a href=&#34;https://cloud.withgoogle.com/next/sf/&#34;&gt;Next ’19&lt;/a&gt; 大會，收穫頗大。&lt;/p&gt;&#xA;&lt;p&gt;這場大會，同一時段就有近 30 場專題演講同時進行，議程滿滿，勢必得做取捨。基於工作需要及個人興趣，我主要選擇與容器相關的場次：service mesh、Windows containers、混合雲、資安實務。&lt;/p&gt;&#xA;&lt;p&gt;我發現，光是這些場次，就得花很大力氣去消化、實驗與應用。&lt;/p&gt;&#xA;&lt;p&gt;我們這些所謂的「台港團」會在 GCPUG Taipei 舉辦一場&lt;a href=&#34;https://www.meetup.com/GCPUG-Taipei/events/260555968/&#34;&gt;分享會&lt;/a&gt;。因為自己不克參加，便以這篇文章，針對我鎖定的核心議題：Istio，做一番重點摘要，以饗讀者。&lt;/p&gt;</description>
     </item>
     <item>
       <title>給 RD 的 Kubernetes 初體驗</title>
@@ -96,19 +62,14 @@
       <link>//william-yeh.net/post/2019/03/ingress-vs-ambassador/</link>
       <pubDate>Fri, 29 Mar 2019 23:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2019/03/ingress-vs-ambassador/</guid>
-      <description>&lt;p&gt;API gateway 是微服務環境，甚至 service mesh 的要角 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;。&lt;/p&gt;
-&lt;p&gt;在 Kubernetes 上面，API gateway 選項眾多。有像 HAProxy 及 Nginx 這些石器時代老傢伙跨足過來，也有打從一開始就走 cloud native 路線的後起之秀。&lt;/p&gt;
-&lt;p&gt;該如何選擇？&lt;/p&gt;</description>
+      <description>&lt;p&gt;API gateway 是微服務環境，甚至 service mesh 的要角 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;。&lt;/p&gt;&#xA;&lt;p&gt;在 Kubernetes 上面，API gateway 選項眾多。有像 HAProxy 及 Nginx 這些石器時代老傢伙跨足過來，也有打從一開始就走 cloud native 路線的後起之秀。&lt;/p&gt;&#xA;&lt;p&gt;該如何選擇？&lt;/p&gt;</description>
     </item>
     <item>
       <title>「從 Ops 角度看 DevOps」的感想</title>
       <link>//william-yeh.net/post/2018/11/opsdev-talk-18/</link>
       <pubDate>Wed, 28 Nov 2018 23:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2018/11/opsdev-talk-18/</guid>
-      <description>&lt;p&gt;在台灣（或許在其他地方也是），DevOps 的話語權，很大幅度都被 Dev 一方把持。我們很少聽到 Ops 一方的說法。&lt;/p&gt;
-&lt;p&gt;成功的改革，需要兼顧各方利益者的需求及痛點。隨著 DevOps 守備範圍日益擴大，這種失衡狀態必須改變。&lt;/p&gt;
-&lt;p&gt;今晚參加 &lt;a href=&#34;https://www.facebook.com/DevOpsTaiwan/&#34;&gt;DevOps Taiwan 社群&lt;/a&gt;舉辦的講座：【&lt;a href=&#34;https://devops.kktix.cc/events/meetup17-opsdev&#34;&gt;從 Ops 角度看 DevOps&lt;/a&gt;】，聽聽&lt;a href=&#34;https://www.facebook.com/roberthu.tw&#34;&gt;胡士亮 (Robert Hu)&lt;/a&gt; 從正統 Ops 角度來詮釋 DevOps，甚至 OpsDev，收穫頗大。&lt;/p&gt;
-&lt;p&gt;聽知識，聽心得，也聽熱情與願景。&lt;/p&gt;</description>
+      <description>&lt;p&gt;在台灣（或許在其他地方也是），DevOps 的話語權，很大幅度都被 Dev 一方把持。我們很少聽到 Ops 一方的說法。&lt;/p&gt;&#xA;&lt;p&gt;成功的改革，需要兼顧各方利益者的需求及痛點。隨著 DevOps 守備範圍日益擴大，這種失衡狀態必須改變。&lt;/p&gt;&#xA;&lt;p&gt;今晚參加 &lt;a href=&#34;https://www.facebook.com/DevOpsTaiwan/&#34;&gt;DevOps Taiwan 社群&lt;/a&gt;舉辦的講座：【&lt;a href=&#34;https://devops.kktix.cc/events/meetup17-opsdev&#34;&gt;從 Ops 角度看 DevOps&lt;/a&gt;】，聽聽&lt;a href=&#34;https://www.facebook.com/roberthu.tw&#34;&gt;胡士亮 (Robert Hu)&lt;/a&gt; 從正統 Ops 角度來詮釋 DevOps，甚至 OpsDev，收穫頗大。&lt;/p&gt;&#xA;&lt;p&gt;聽知識，聽心得，也聽熱情與願景。&lt;/p&gt;</description>
     </item>
     <item>
       <title>從系統思考看 DevOps</title>

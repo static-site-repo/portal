@@ -13,25 +13,14 @@
       <link>//william-yeh.net/post/2022/05/need-for-unit-testing/</link>
       <pubDate>Tue, 24 May 2022 12:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2022/05/need-for-unit-testing/</guid>
-      <description>&lt;p&gt;（改寫自公司內部 memo）&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;Hi all engineers,&lt;/p&gt;
-&lt;p&gt;上完一整天單元測試課程之後，有同事問我：「有沒有標準來決定要不要寫單元測試？」&lt;/p&gt;
-&lt;p&gt;剛讀完劉潤《&lt;a href=&#34;https://www.books.com.tw/products/0010919211&#34;&gt;底層邏輯&lt;/a&gt;》的我，對於這類疑似「注射器」的問句格外敏感。雖然我可以瀟灑引述 &lt;a href=&#34;https://www.tenlong.com.tw/products/9789864344000&#34;&gt;&lt;em&gt;Working Effectively with Legacy Code&lt;/em&gt;&lt;/a&gt; 的說法「我毫無疑問地將『遺留程式碼』定義為『&lt;strong&gt;沒有編寫測試的程式碼&lt;/strong&gt;』」：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;沒有編寫測試的程式碼是糟糕的程式碼——不管我們多麼細心地編寫它們，不管它們有多漂亮、物件導向或封裝良好。有了測試，我們就能夠迅速、可驗證地修改程式碼的行為。沒有測試，我們就不知道修改後的程式碼，實際上是變得更好還是更糟。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;但當下我還是決定先展開一場對話。&lt;/p&gt;</description>
+      <description>&lt;p&gt;（改寫自公司內部 memo）&lt;/p&gt;&#xA;&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;&#xA;&lt;p&gt;Hi all engineers,&lt;/p&gt;&#xA;&lt;p&gt;上完一整天單元測試課程之後，有同事問我：「有沒有標準來決定要不要寫單元測試？」&lt;/p&gt;&#xA;&lt;p&gt;剛讀完劉潤《&lt;a href=&#34;https://www.books.com.tw/products/0010919211&#34;&gt;底層邏輯&lt;/a&gt;》的我，對於這類疑似「注射器」的問句格外敏感。雖然我可以瀟灑引述 &lt;a href=&#34;https://www.tenlong.com.tw/products/9789864344000&#34;&gt;&lt;em&gt;Working Effectively with Legacy Code&lt;/em&gt;&lt;/a&gt; 的說法「我毫無疑問地將『遺留程式碼』定義為『&lt;strong&gt;沒有編寫測試的程式碼&lt;/strong&gt;』」：&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;沒有編寫測試的程式碼是糟糕的程式碼——不管我們多麼細心地編寫它們，不管它們有多漂亮、物件導向或封裝良好。有了測試，我們就能夠迅速、可驗證地修改程式碼的行為。沒有測試，我們就不知道修改後的程式碼，實際上是變得更好還是更糟。&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;但當下我還是決定先展開一場對話。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Scrum 沒有明說的事：休耕期</title>
       <link>//william-yeh.net/post/2018/12/fallow/</link>
       <pubDate>Tue, 04 Dec 2018 08:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2018/12/fallow/</guid>
-      <description>&lt;p&gt;Scrum 的官方白皮書 &lt;a href=&#34;https://www.scrumguides.org/&#34;&gt;&lt;em&gt;The Scrum Guide&lt;/em&gt;&lt;/a&gt; 非常輕薄短小（像 &lt;a href=&#34;https://scrumguides.org/docs/scrumguide/v2017/2017-Scrum-Guide-US.pdf&#34;&gt;Nov 2017 版&lt;/a&gt;只有 19 頁），它的理念是：只制定最核心的原則、價值、角色、活動、產出物，其餘的則交給團隊根據經驗主義 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; 去調適出最適合自己的細節。&lt;/p&gt;
-&lt;p&gt;想當然爾，有很多事，Scrum 並沒有明說。&lt;/p&gt;
-&lt;p&gt;那麼，沒有明說的事，就不需要做、就不能做了嗎？做了，就違反 Scrum 嗎？&lt;/p&gt;
-&lt;p&gt;這是許多奉 &lt;a href=&#34;https://www.scrumguides.org/&#34;&gt;&lt;em&gt;The Scrum Guide&lt;/em&gt;&lt;/a&gt; 為圭臬的人，常有的盲點。&lt;/p&gt;</description>
+      <description>&lt;p&gt;Scrum 的官方白皮書 &lt;a href=&#34;https://www.scrumguides.org/&#34;&gt;&lt;em&gt;The Scrum Guide&lt;/em&gt;&lt;/a&gt; 非常輕薄短小（像 &lt;a href=&#34;https://scrumguides.org/docs/scrumguide/v2017/2017-Scrum-Guide-US.pdf&#34;&gt;Nov 2017 版&lt;/a&gt;只有 19 頁），它的理念是：只制定最核心的原則、價值、角色、活動、產出物，其餘的則交給團隊根據經驗主義 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; 去調適出最適合自己的細節。&lt;/p&gt;&#xA;&lt;p&gt;想當然爾，有很多事，Scrum 並沒有明說。&lt;/p&gt;&#xA;&lt;p&gt;那麼，沒有明說的事，就不需要做、就不能做了嗎？做了，就違反 Scrum 嗎？&lt;/p&gt;&#xA;&lt;p&gt;這是許多奉 &lt;a href=&#34;https://www.scrumguides.org/&#34;&gt;&lt;em&gt;The Scrum Guide&lt;/em&gt;&lt;/a&gt; 為圭臬的人，常有的盲點。&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

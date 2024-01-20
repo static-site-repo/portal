@@ -13,110 +13,49 @@
       <link>//william-yeh.net/post/2023/08/docker-labs-review/</link>
       <pubDate>Sat, 19 Aug 2023 20:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2023/08/docker-labs-review/</guid>
-      <description>&lt;p&gt;我在 2015 年～2017 年間，開了 8 次【&lt;a href=&#34;https://william-yeh.github.io/docker-workshop/&#34;&gt;Docker 建置實戰講堂&lt;/a&gt;】一日課程。在那個大眾對於 Docker 還矇矇懂懂的年代，我就堅持不用貌似較簡便的 Docker Desktop，而是大膽採用 Vagrant + VirtualBox 作為統一的授課環境，讓學員儘早習慣在 Linux 平台上探索 Docker 的底層與應用。&lt;/p&gt;
-&lt;p&gt;所以，當我在 2022 年 iThome 鐵人賽看到小賴的參賽作品【&lt;a href=&#34;https://ithelp.ithome.com.tw/users/20151857/ironman/5419&#34;&gt;那些關於 docker 你知道與不知道的事&lt;/a&gt;】中，是以 AWS EC2 的 Ubuntu instance 作為實作環境，現在更出版新書《&lt;a href=&#34;https://www.tenlong.com.tw/products/9786263335769&#34;&gt;Docker 實戰 6 堂課：56 個實驗動手做，掌握 Linux 容器核心技術&lt;/a&gt;》，就非常高興。畢竟，從最擬真的角度切入，才能夠透過自己的雙手，掌握那不變的容器技術核心。&lt;/p&gt;
-
-&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
-&lt;div class=&#34;box&#34;&gt;
-&lt;figure  itemprop=&#34;associatedMedia&#34;
-  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
-  style=&#34;max-width:30em&#34; &gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/08/docker-labs-book.jpg&#34; alt=&#34;《Docker 實戰 6 堂課：56 個實驗動手做，掌握 Linux 容器核心技術》&#34;/&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2023/08/docker-labs-book.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-      &lt;figcaption&gt;
-          &lt;p&gt;《Docker 實戰 6 堂課：56 個實驗動手做，掌握 Linux 容器核心技術》&lt;/p&gt;
-      &lt;/figcaption&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;</description>
+      <description>&lt;p&gt;我在 2015 年～2017 年間，開了 8 次【&lt;a href=&#34;https://william-yeh.github.io/docker-workshop/&#34;&gt;Docker 建置實戰講堂&lt;/a&gt;】一日課程。在那個大眾對於 Docker 還矇矇懂懂的年代，我就堅持不用貌似較簡便的 Docker Desktop，而是大膽採用 Vagrant + VirtualBox 作為統一的授課環境，讓學員儘早習慣在 Linux 平台上探索 Docker 的底層與應用。&lt;/p&gt;&#xA;&lt;p&gt;所以，當我在 2022 年 iThome 鐵人賽看到小賴的參賽作品【&lt;a href=&#34;https://ithelp.ithome.com.tw/users/20151857/ironman/5419&#34;&gt;那些關於 docker 你知道與不知道的事&lt;/a&gt;】中，是以 AWS EC2 的 Ubuntu instance 作為實作環境，現在更出版新書《&lt;a href=&#34;https://www.tenlong.com.tw/products/9786263335769&#34;&gt;Docker 實戰 6 堂課：56 個實驗動手做，掌握 Linux 容器核心技術&lt;/a&gt;》，就非常高興。畢竟，從最擬真的角度切入，才能夠透過自己的雙手，掌握那不變的容器技術核心。&lt;/p&gt;&#xA;&#xA;&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;&#xA;&lt;div class=&#34;box&#34;&gt;&#xA;&lt;figure  itemprop=&#34;associatedMedia&#34;&#xA;  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; &#xA;  style=&#34;max-width:30em&#34; &gt;&#xA;    &lt;div class=&#34;img&#34;&gt;&#xA;      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/08/docker-labs-book.jpg&#34; alt=&#34;《Docker 實戰 6 堂課：56 個實驗動手做，掌握 Linux 容器核心技術》&#34;/&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;a href=&#34;//william-yeh.net/img/2023/08/docker-labs-book.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;&#xA;      &lt;figcaption&gt;&#xA;          &lt;p&gt;《Docker 實戰 6 堂課：56 個實驗動手做，掌握 Linux 容器核心技術》&lt;/p&gt;&#xA;      &lt;/figcaption&gt;&#xA;  &lt;/figure&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
       <title>Coursera 上面的 GCP 課程</title>
       <link>//william-yeh.net/post/2023/04/gcp-on-coursera/</link>
       <pubDate>Tue, 25 Apr 2023 22:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2023/04/gcp-on-coursera/</guid>
-      <description>&lt;p&gt;為了在公司內推動 GCP 認證考試，必須先推動大家勤修 GCP 課程；為了推動大家勤修 GCP 課程，我得先帶頭示範。因此，我最近在 Coursera 修了許多 GCP 認證考試相關課程 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，感觸很深：就算不考照，用這些課程補完一些知識，還是很值得的。&lt;/p&gt;
-&lt;p&gt;這些課程深度與廣度兼具，又有搭配實作演習，有系統地吸收，會比雜亂搜尋文件的碎片化學習來得踏實。&lt;/p&gt;
-&lt;p&gt;即使以俗氣的 C/P 值角度來說，這些課程也是物超所值的。像以下這門放在 Coursera 的課：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.coursera.org/learn/gcp-big-data-ml-fundamentals&#34;&gt;Google Cloud Big Data and Machine Learning Fundamentals&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;大家知道嗎？這樣的課，用同樣的 Google 原廠教材，改用國語發音 live 授課，在外頭可是喊價超過一萬元新台幣的。&lt;/p&gt;
-&lt;p&gt;我根據自己這些日子勤修課程的小經驗，推薦幾門有廣度有深度的課，讓想要對雲端環境有更廣更深認識的人參考。我大致將這些課程分類如下：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;非技術的通識類&lt;/li&gt;
-&lt;li&gt;GCP 技術：共通核心&lt;/li&gt;
-&lt;li&gt;GCP 技術：K8s&lt;/li&gt;
-&lt;li&gt;Dev&lt;/li&gt;
-&lt;li&gt;DevOps &amp;amp; SRE&lt;/li&gt;
-&lt;li&gt;ML &amp;amp; Big Data&lt;/li&gt;
-&lt;/ul&gt;</description>
+      <description>&lt;p&gt;為了在公司內推動 GCP 認證考試，必須先推動大家勤修 GCP 課程；為了推動大家勤修 GCP 課程，我得先帶頭示範。因此，我最近在 Coursera 修了許多 GCP 認證考試相關課程 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，感觸很深：就算不考照，用這些課程補完一些知識，還是很值得的。&lt;/p&gt;&#xA;&lt;p&gt;這些課程深度與廣度兼具，又有搭配實作演習，有系統地吸收，會比雜亂搜尋文件的碎片化學習來得踏實。&lt;/p&gt;&#xA;&lt;p&gt;即使以俗氣的 C/P 值角度來說，這些課程也是物超所值的。像以下這門放在 Coursera 的課：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.coursera.org/learn/gcp-big-data-ml-fundamentals&#34;&gt;Google Cloud Big Data and Machine Learning Fundamentals&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;大家知道嗎？這樣的課，用同樣的 Google 原廠教材，改用國語發音 live 授課，在外頭可是喊價超過一萬元新台幣的。&lt;/p&gt;&#xA;&lt;p&gt;我根據自己這些日子勤修課程的小經驗，推薦幾門有廣度有深度的課，讓想要對雲端環境有更廣更深認識的人參考。我大致將這些課程分類如下：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;非技術的通識類&lt;/li&gt;&#xA;&lt;li&gt;GCP 技術：共通核心&lt;/li&gt;&#xA;&lt;li&gt;GCP 技術：K8s&lt;/li&gt;&#xA;&lt;li&gt;Dev&lt;/li&gt;&#xA;&lt;li&gt;DevOps &amp;amp; SRE&lt;/li&gt;&#xA;&lt;li&gt;ML &amp;amp; Big Data&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
     <item>
       <title>WSL2 &#43; Podman &#43; K3s 組合技</title>
       <link>//william-yeh.net/post/2023/02/wsl2-podman-k3s/</link>
       <pubDate>Mon, 06 Feb 2023 22:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2023/02/wsl2-podman-k3s/</guid>
-      <description>&lt;p&gt;距離上次重度使用 WSL 已經快四年了。四年來 WSL 世界起了一些變化：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;WSL 已經演進到第二版。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;以前還會為了要搭配 &lt;a href=&#34;//william-yeh.net/post/2019/03/wsl-cmder-zsh/&#34;&gt;Cmder&lt;/a&gt; 或者 &lt;a href=&#34;//william-yeh.net/post/2019/04/wsltty-tmux/&#34;&gt;WSLtty&lt;/a&gt; 而大費周章，現在則被 &lt;a href=&#34;https://learn.microsoft.com/zh-tw/windows/terminal/&#34;&gt;Windows Terminal&lt;/a&gt; 解決了大部分問題，使用體驗也開始接近 Mac 的 iTerm2。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;容器世界也起了很大的變化：&lt;/p&gt;</description>
+      <description>&lt;p&gt;距離上次重度使用 WSL 已經快四年了。四年來 WSL 世界起了一些變化：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;WSL 已經演進到第二版。&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;以前還會為了要搭配 &lt;a href=&#34;//william-yeh.net/post/2019/03/wsl-cmder-zsh/&#34;&gt;Cmder&lt;/a&gt; 或者 &lt;a href=&#34;//william-yeh.net/post/2019/04/wsltty-tmux/&#34;&gt;WSLtty&lt;/a&gt; 而大費周章，現在則被 &lt;a href=&#34;https://learn.microsoft.com/zh-tw/windows/terminal/&#34;&gt;Windows Terminal&lt;/a&gt; 解決了大部分問題，使用體驗也開始接近 Mac 的 iTerm2。&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;容器世界也起了很大的變化：&lt;/p&gt;</description>
     </item>
     <item>
       <title>gRPC Load Balancing in Kubernetes</title>
       <link>//william-yeh.net/post/2020/03/grpc-load-balancing/</link>
       <pubDate>Mon, 30 Mar 2020 22:30:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2020/03/grpc-load-balancing/</guid>
-      <description>&lt;p&gt;Kubernetes 有個很方便的地方：只要修改 deployment 的 &lt;code&gt;spec.replicas&lt;/code&gt; 數字，就能橫向擴展 pod，以應付更大的流量負載需求。&lt;/p&gt;
-&lt;p&gt;這一招，對於 stateless 的 HTTP 服務很管用，也是 Kubernetes 入門教學愛用的例子。但是，對於 &lt;a href=&#34;https://grpc.io/&#34;&gt;gRPC&lt;/a&gt; 呢？&lt;/p&gt;</description>
+      <description>&lt;p&gt;Kubernetes 有個很方便的地方：只要修改 deployment 的 &lt;code&gt;spec.replicas&lt;/code&gt; 數字，就能橫向擴展 pod，以應付更大的流量負載需求。&lt;/p&gt;&#xA;&lt;p&gt;這一招，對於 stateless 的 HTTP 服務很管用，也是 Kubernetes 入門教學愛用的例子。但是，對於 &lt;a href=&#34;https://grpc.io/&#34;&gt;gRPC&lt;/a&gt; 呢？&lt;/p&gt;</description>
     </item>
     <item>
       <title>Volume Resizing Mechanism in Kubernetes</title>
       <link>//william-yeh.net/post/2019/07/k8s-vol-resizing/</link>
       <pubDate>Wed, 31 Jul 2019 13:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2019/07/k8s-vol-resizing/</guid>
-      <description>&lt;p&gt;Non-stop storage scaling (vertical or horizontal scaling) is essential in a data-intensive system, database servers in particular.&lt;/p&gt;
-&lt;p&gt;Is it possible in Kubernetes?&lt;/p&gt;</description>
+      <description>&lt;p&gt;Non-stop storage scaling (vertical or horizontal scaling) is essential in a data-intensive system, database servers in particular.&lt;/p&gt;&#xA;&lt;p&gt;Is it possible in Kubernetes?&lt;/p&gt;</description>
     </item>
     <item>
       <title>CKAD (Certified Kubernetes Application Developer) 相關資料</title>
       <link>//william-yeh.net/post/2019/07/ckad-materials/</link>
       <pubDate>Thu, 11 Jul 2019 17:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2019/07/ckad-materials/</guid>
-      <description>&lt;p&gt;Linux Foundation 旗下的 &lt;a href=&#34;https://www.cncf.io/&#34;&gt;CNCF (Cloud Native Computing Foundation)&lt;/a&gt; 提供兩個與 Kubernetes 相關的個人技術檢定：偏維運的 &lt;a href=&#34;https://www.cncf.io/certification/cka/&#34;&gt;CKA (Certified Kubernetes Administrator)&lt;/a&gt;，以及偏研發的 &lt;a href=&#34;https://www.cncf.io/certification/ckad/&#34;&gt;CKAD (Certified Kubernetes Application Developer)&lt;/a&gt;。&lt;/p&gt;
-&lt;p&gt;其中，CKAD 與我關注的範圍、與我設計的工作坊最接近，便想進一步瞭解它的細節。&lt;/p&gt;
-
-&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
-&lt;div class=&#34;box&#34;&gt;
-&lt;figure  itemprop=&#34;associatedMedia&#34;
-  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
-  style=&#34;max-width:15em&#34; &gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2019/07/kubernetes-ckad-color.png&#34; alt=&#34;CKAD logo&#34;/&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2019/07/kubernetes-ckad-color.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-      &lt;figcaption&gt;
-          &lt;p&gt;CKAD logo&lt;/p&gt;
-      &lt;/figcaption&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;</description>
+      <description>&lt;p&gt;Linux Foundation 旗下的 &lt;a href=&#34;https://www.cncf.io/&#34;&gt;CNCF (Cloud Native Computing Foundation)&lt;/a&gt; 提供兩個與 Kubernetes 相關的個人技術檢定：偏維運的 &lt;a href=&#34;https://www.cncf.io/certification/cka/&#34;&gt;CKA (Certified Kubernetes Administrator)&lt;/a&gt;，以及偏研發的 &lt;a href=&#34;https://www.cncf.io/certification/ckad/&#34;&gt;CKAD (Certified Kubernetes Application Developer)&lt;/a&gt;。&lt;/p&gt;&#xA;&lt;p&gt;其中，CKAD 與我關注的範圍、與我設計的工作坊最接近，便想進一步瞭解它的細節。&lt;/p&gt;&#xA;&#xA;&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;&#xA;&lt;div class=&#34;box&#34;&gt;&#xA;&lt;figure  itemprop=&#34;associatedMedia&#34;&#xA;  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; &#xA;  style=&#34;max-width:15em&#34; &gt;&#xA;    &lt;div class=&#34;img&#34;&gt;&#xA;      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2019/07/kubernetes-ckad-color.png&#34; alt=&#34;CKAD logo&#34;/&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;a href=&#34;//william-yeh.net/img/2019/07/kubernetes-ckad-color.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;&#xA;      &lt;figcaption&gt;&#xA;          &lt;p&gt;CKAD logo&lt;/p&gt;&#xA;      &lt;/figcaption&gt;&#xA;  &lt;/figure&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
       <title>Auto-Reload from ConfigMap</title>
       <link>//william-yeh.net/post/2019/06/autoreload-from-configmap/</link>
       <pubDate>Mon, 17 Jun 2019 17:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2019/06/autoreload-from-configmap/</guid>
-      <description>My previous article &amp;ldquo;Inotify in Containers&amp;rdquo; has demonstrated that when ConfigMap is mounted as directories, any changes in the ConfigMap will propagate to related pods, and can be detected with inotify-like APIs.
-A follow-up question might be: what should a well-behaved application react to this trigger accordingly? What if it&amp;rsquo;s a ill-designed application?
-To clarify this I&amp;rsquo;ve conducted a series of experiments for 3 possible configmap-reloading strategies:
-Built-in auto-reloading apps External signals Pod rollout In this article I&amp;rsquo;m going to explain the experiments and preliminary findings.</description>
+      <description>My previous article &amp;ldquo;Inotify in Containers&amp;rdquo; has demonstrated that when ConfigMap is mounted as directories, any changes in the ConfigMap will propagate to related pods, and can be detected with inotify-like APIs.&#xA;A follow-up question might be: what should a well-behaved application react to this trigger accordingly? What if it&amp;rsquo;s a ill-designed application?&#xA;To clarify this I&amp;rsquo;ve conducted a series of experiments for 3 possible configmap-reloading strategies:&#xA;Built-in auto-reloading apps External signals Pod rollout In this article I&amp;rsquo;m going to explain the experiments and preliminary findings.</description>
     </item>
     <item>
       <title>Containers and Environment Variables</title>
@@ -137,26 +76,14 @@ Built-in auto-reloading apps External signals Pod rollout In this article I&amp;
       <link>//william-yeh.net/post/2019/05/k8s-lab/</link>
       <pubDate>Fri, 17 May 2019 12:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2019/05/k8s-lab/</guid>
-      <description>&lt;p&gt;前天我在 &lt;a href=&#34;https://cloudsummit.ithome.com.tw/2019/lab.html#0001&#34;&gt;2019 台灣雲端大會&lt;/a&gt;帶了兩個場次，一個是現場實作場次，一個是經驗分享演講：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Lab / &lt;a href=&#34;https://github.com/William-Yeh/workshop-cloud2019&#34;&gt;給 RD 的 Kubernetes 初體驗&lt;/a&gt; (90 minutes)&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Speech / &lt;a href=&#34;https://www.slideshare.net/williamyeh/when-dotnetmeetskubernetes-145557464&#34;&gt;當 .NET 遇到 Kubernetes&lt;/a&gt; (30 minutes)&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;兩個場次，一言以蔽之，都圍繞在 Kubernetes 的入門認知與導入策略上。&lt;/p&gt;</description>
+      <description>&lt;p&gt;前天我在 &lt;a href=&#34;https://cloudsummit.ithome.com.tw/2019/lab.html#0001&#34;&gt;2019 台灣雲端大會&lt;/a&gt;帶了兩個場次，一個是現場實作場次，一個是經驗分享演講：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Lab / &lt;a href=&#34;https://github.com/William-Yeh/workshop-cloud2019&#34;&gt;給 RD 的 Kubernetes 初體驗&lt;/a&gt; (90 minutes)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Speech / &lt;a href=&#34;https://www.slideshare.net/williamyeh/when-dotnetmeetskubernetes-145557464&#34;&gt;當 .NET 遇到 Kubernetes&lt;/a&gt; (30 minutes)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;兩個場次，一言以蔽之，都圍繞在 Kubernetes 的入門認知與導入策略上。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Next &#39;19 的 Istio 場次重點摘要</title>
       <link>//william-yeh.net/post/2019/04/next19-istio/</link>
       <pubDate>Fri, 19 Apr 2019 23:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2019/04/next19-istio/</guid>
-      <description>&lt;p&gt;四月 9&amp;ndash;11 日去舊金山參加 Google Cloud 的 &lt;a href=&#34;https://cloud.withgoogle.com/next/sf/&#34;&gt;Next ’19&lt;/a&gt; 大會，收穫頗大。&lt;/p&gt;
-&lt;p&gt;這場大會，同一時段就有近 30 場專題演講同時進行，議程滿滿，勢必得做取捨。基於工作需要及個人興趣，我主要選擇與容器相關的場次：service mesh、Windows containers、混合雲、資安實務。&lt;/p&gt;
-&lt;p&gt;我發現，光是這些場次，就得花很大力氣去消化、實驗與應用。&lt;/p&gt;
-&lt;p&gt;我們這些所謂的「台港團」會在 GCPUG Taipei 舉辦一場&lt;a href=&#34;https://www.meetup.com/GCPUG-Taipei/events/260555968/&#34;&gt;分享會&lt;/a&gt;。因為自己不克參加，便以這篇文章，針對我鎖定的核心議題：Istio，做一番重點摘要，以饗讀者。&lt;/p&gt;</description>
+      <description>&lt;p&gt;四月 9&amp;ndash;11 日去舊金山參加 Google Cloud 的 &lt;a href=&#34;https://cloud.withgoogle.com/next/sf/&#34;&gt;Next ’19&lt;/a&gt; 大會，收穫頗大。&lt;/p&gt;&#xA;&lt;p&gt;這場大會，同一時段就有近 30 場專題演講同時進行，議程滿滿，勢必得做取捨。基於工作需要及個人興趣，我主要選擇與容器相關的場次：service mesh、Windows containers、混合雲、資安實務。&lt;/p&gt;&#xA;&lt;p&gt;我發現，光是這些場次，就得花很大力氣去消化、實驗與應用。&lt;/p&gt;&#xA;&lt;p&gt;我們這些所謂的「台港團」會在 GCPUG Taipei 舉辦一場&lt;a href=&#34;https://www.meetup.com/GCPUG-Taipei/events/260555968/&#34;&gt;分享會&lt;/a&gt;。因為自己不克參加，便以這篇文章，針對我鎖定的核心議題：Istio，做一番重點摘要，以饗讀者。&lt;/p&gt;</description>
     </item>
     <item>
       <title>給 RD 的 Kubernetes 初體驗</title>
@@ -170,28 +97,21 @@ Built-in auto-reloading apps External signals Pod rollout In this article I&amp;
       <link>//william-yeh.net/post/2019/03/ingress-vs-ambassador/</link>
       <pubDate>Fri, 29 Mar 2019 23:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2019/03/ingress-vs-ambassador/</guid>
-      <description>&lt;p&gt;API gateway 是微服務環境，甚至 service mesh 的要角 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;。&lt;/p&gt;
-&lt;p&gt;在 Kubernetes 上面，API gateway 選項眾多。有像 HAProxy 及 Nginx 這些石器時代老傢伙跨足過來，也有打從一開始就走 cloud native 路線的後起之秀。&lt;/p&gt;
-&lt;p&gt;該如何選擇？&lt;/p&gt;</description>
+      <description>&lt;p&gt;API gateway 是微服務環境，甚至 service mesh 的要角 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;。&lt;/p&gt;&#xA;&lt;p&gt;在 Kubernetes 上面，API gateway 選項眾多。有像 HAProxy 及 Nginx 這些石器時代老傢伙跨足過來，也有打從一開始就走 cloud native 路線的後起之秀。&lt;/p&gt;&#xA;&lt;p&gt;該如何選擇？&lt;/p&gt;</description>
     </item>
     <item>
       <title>Kubernetes Best Practices 資料</title>
       <link>//william-yeh.net/post/2019/02/k8s-best-practice/</link>
       <pubDate>Mon, 25 Feb 2019 12:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2019/02/k8s-best-practice/</guid>
-      <description>&lt;p&gt;Kubernetes 演化速度令人驚訝。彈性之大，令人聯想到當年  Perl 圈子奉為圭臬的 &lt;a href=&#34;https://en.wikipedia.org/wiki/There%27s_more_than_one_way_to_do_it&#34;&gt;TIMTOWTDI&lt;/a&gt; 口號。&lt;/p&gt;
-&lt;p&gt;選擇過多也會帶來問題。發展到某個階段，也該適時沈澱收斂出較佳的實務建議準則。&lt;/p&gt;
-&lt;p&gt;因此，我稍微搜尋一下相關資料，作為參考。&lt;/p&gt;</description>
+      <description>&lt;p&gt;Kubernetes 演化速度令人驚訝。彈性之大，令人聯想到當年  Perl 圈子奉為圭臬的 &lt;a href=&#34;https://en.wikipedia.org/wiki/There%27s_more_than_one_way_to_do_it&#34;&gt;TIMTOWTDI&lt;/a&gt; 口號。&lt;/p&gt;&#xA;&lt;p&gt;選擇過多也會帶來問題。發展到某個階段，也該適時沈澱收斂出較佳的實務建議準則。&lt;/p&gt;&#xA;&lt;p&gt;因此，我稍微搜尋一下相關資料，作為參考。&lt;/p&gt;</description>
     </item>
     <item>
       <title>「從 Ops 角度看 DevOps」的感想</title>
       <link>//william-yeh.net/post/2018/11/opsdev-talk-18/</link>
       <pubDate>Wed, 28 Nov 2018 23:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2018/11/opsdev-talk-18/</guid>
-      <description>&lt;p&gt;在台灣（或許在其他地方也是），DevOps 的話語權，很大幅度都被 Dev 一方把持。我們很少聽到 Ops 一方的說法。&lt;/p&gt;
-&lt;p&gt;成功的改革，需要兼顧各方利益者的需求及痛點。隨著 DevOps 守備範圍日益擴大，這種失衡狀態必須改變。&lt;/p&gt;
-&lt;p&gt;今晚參加 &lt;a href=&#34;https://www.facebook.com/DevOpsTaiwan/&#34;&gt;DevOps Taiwan 社群&lt;/a&gt;舉辦的講座：【&lt;a href=&#34;https://devops.kktix.cc/events/meetup17-opsdev&#34;&gt;從 Ops 角度看 DevOps&lt;/a&gt;】，聽聽&lt;a href=&#34;https://www.facebook.com/roberthu.tw&#34;&gt;胡士亮 (Robert Hu)&lt;/a&gt; 從正統 Ops 角度來詮釋 DevOps，甚至 OpsDev，收穫頗大。&lt;/p&gt;
-&lt;p&gt;聽知識，聽心得，也聽熱情與願景。&lt;/p&gt;</description>
+      <description>&lt;p&gt;在台灣（或許在其他地方也是），DevOps 的話語權，很大幅度都被 Dev 一方把持。我們很少聽到 Ops 一方的說法。&lt;/p&gt;&#xA;&lt;p&gt;成功的改革，需要兼顧各方利益者的需求及痛點。隨著 DevOps 守備範圍日益擴大，這種失衡狀態必須改變。&lt;/p&gt;&#xA;&lt;p&gt;今晚參加 &lt;a href=&#34;https://www.facebook.com/DevOpsTaiwan/&#34;&gt;DevOps Taiwan 社群&lt;/a&gt;舉辦的講座：【&lt;a href=&#34;https://devops.kktix.cc/events/meetup17-opsdev&#34;&gt;從 Ops 角度看 DevOps&lt;/a&gt;】，聽聽&lt;a href=&#34;https://www.facebook.com/roberthu.tw&#34;&gt;胡士亮 (Robert Hu)&lt;/a&gt; 從正統 Ops 角度來詮釋 DevOps，甚至 OpsDev，收穫頗大。&lt;/p&gt;&#xA;&lt;p&gt;聽知識，聽心得，也聽熱情與願景。&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

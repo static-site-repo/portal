@@ -13,10 +13,7 @@
       <link>//william-yeh.net/post/2023/10/criticism-about-timebox/</link>
       <pubDate>Tue, 10 Oct 2023 10:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2023/10/criticism-about-timebox/</guid>
-      <description>&lt;p&gt;許多敏捷手法都奠基於 timebox。那麼，為什麼有人會認為 timebox 路線是死胡同呢？有此論點的人，偏偏又是敏捷圈的重量級人物呢。&lt;/p&gt;
-&lt;p&gt;看板方法之父 David J. Anderson 在新書 &lt;a href=&#34;https://www.amazon.com/dp/1960442074&#34;&gt;&lt;em&gt;Discovering Kanban&lt;/em&gt;&lt;/a&gt; 第 15 章對於 Scrum 之類基於 timebox 的方法有頗露骨的批評（光從標題 &amp;ldquo;The Tyranny of the Ever-Decreasing Timebox&amp;rdquo; 就看得出來）。正好好友 Derek 在 〈&lt;a href=&#34;https://medium.com/agile-coffee/discovering-kanban-18d9b2ac9be2&#34;&gt;《Discovering Kanban》心得：Scrum 可能沒有你想像的那麼美好&lt;/a&gt;〉一文整理了這一章的摘要與閱讀心得，在網路上也引發一些討論 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，我便趁此機會細讀這一章。&lt;/p&gt;
-&lt;p&gt;這一章論點非常深刻。但讀著讀著，總覺得作者道出的結論 &amp;ldquo;time-constrained sprints are an evolutionary cul-de-sac, a dead end&amp;rdquo;，與我直接或間接所知的業界實踐現況，並不相符。我猜想：會不會是某個推論環節出了些問題？&lt;/p&gt;
-&lt;p&gt;因此，我嘗試用系統思考角度去梳理相關論述。我試圖用更清晰的因果關係秀出 timebox 路線被點名的痛點，以及常見的因應之道。至於這痛點是否真的已被解決了，則留待讀者思考，不在此文的探討範圍。&lt;/p&gt;</description>
+      <description>&lt;p&gt;許多敏捷手法都奠基於 timebox。那麼，為什麼有人會認為 timebox 路線是死胡同呢？有此論點的人，偏偏又是敏捷圈的重量級人物呢。&lt;/p&gt;&#xA;&lt;p&gt;看板方法之父 David J. Anderson 在新書 &lt;a href=&#34;https://www.amazon.com/dp/1960442074&#34;&gt;&lt;em&gt;Discovering Kanban&lt;/em&gt;&lt;/a&gt; 第 15 章對於 Scrum 之類基於 timebox 的方法有頗露骨的批評（光從標題 &amp;ldquo;The Tyranny of the Ever-Decreasing Timebox&amp;rdquo; 就看得出來）。正好好友 Derek 在 〈&lt;a href=&#34;https://medium.com/agile-coffee/discovering-kanban-18d9b2ac9be2&#34;&gt;《Discovering Kanban》心得：Scrum 可能沒有你想像的那麼美好&lt;/a&gt;〉一文整理了這一章的摘要與閱讀心得，在網路上也引發一些討論 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，我便趁此機會細讀這一章。&lt;/p&gt;&#xA;&lt;p&gt;這一章論點非常深刻。但讀著讀著，總覺得作者道出的結論 &amp;ldquo;time-constrained sprints are an evolutionary cul-de-sac, a dead end&amp;rdquo;，與我直接或間接所知的業界實踐現況，並不相符。我猜想：會不會是某個推論環節出了些問題？&lt;/p&gt;&#xA;&lt;p&gt;因此，我嘗試用系統思考角度去梳理相關論述。我試圖用更清晰的因果關係秀出 timebox 路線被點名的痛點，以及常見的因應之道。至於這痛點是否真的已被解決了，則留待讀者思考，不在此文的探討範圍。&lt;/p&gt;</description>
     </item>
     <item>
       <title>職涯躍升書系導讀會</title>
@@ -30,75 +27,35 @@
       <link>//william-yeh.net/post/2022/08/career-reading-club-2/</link>
       <pubDate>Sat, 20 Aug 2022 10:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2022/08/career-reading-club-2/</guid>
-      <description>&lt;p&gt;2022 年一月起，我開始每個月一次，每次兩小時的【職涯躍升書系導讀會】。&lt;a href=&#34;//william-yeh.net/post/2022/06/career-reading-club-1/&#34;&gt;前六個月&lt;/a&gt;著眼於&lt;strong&gt;喚醒個人及團隊的成長意識&lt;/strong&gt;，接下來兩個月則著眼於&lt;strong&gt;高效團隊的工作方法&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;這兩個月的導讀會，都鎖定在 Agile 相關書籍上——儘管單純從書籍名稱上面都看不出來會與「敏捷」有關。選書如下：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;① &lt;a href=&#34;https://williampjyeh.notion.site/d8a843cbc9c148989e6489625b6fb34d&#34;&gt;豐田精實管理的翻轉獲利秘密&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;② &lt;a href=&#34;https://www.playpcesor.com/2020/05/2020-new-book.html&#34;&gt;時間管理的 30 道難題&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
-&lt;div class=&#34;box&#34;&gt;
-&lt;figure  itemprop=&#34;associatedMedia&#34;
-  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
-  style=&#34;max-width:30em&#34; &gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2022/08/career-reading-club-2.jpg&#34; /&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2022/08/career-reading-club-2.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;
-
-&lt;p&gt;以下列出這兩場導讀會的介紹文案。&lt;/p&gt;</description>
+      <description>&lt;p&gt;2022 年一月起，我開始每個月一次，每次兩小時的【職涯躍升書系導讀會】。&lt;a href=&#34;//william-yeh.net/post/2022/06/career-reading-club-1/&#34;&gt;前六個月&lt;/a&gt;著眼於&lt;strong&gt;喚醒個人及團隊的成長意識&lt;/strong&gt;，接下來兩個月則著眼於&lt;strong&gt;高效團隊的工作方法&lt;/strong&gt;。&lt;/p&gt;&#xA;&lt;p&gt;這兩個月的導讀會，都鎖定在 Agile 相關書籍上——儘管單純從書籍名稱上面都看不出來會與「敏捷」有關。選書如下：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;① &lt;a href=&#34;https://williampjyeh.notion.site/d8a843cbc9c148989e6489625b6fb34d&#34;&gt;豐田精實管理的翻轉獲利秘密&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;② &lt;a href=&#34;https://www.playpcesor.com/2020/05/2020-new-book.html&#34;&gt;時間管理的 30 道難題&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&#xA;&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;&#xA;&lt;div class=&#34;box&#34;&gt;&#xA;&lt;figure  itemprop=&#34;associatedMedia&#34;&#xA;  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; &#xA;  style=&#34;max-width:30em&#34; &gt;&#xA;    &lt;div class=&#34;img&#34;&gt;&#xA;      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2022/08/career-reading-club-2.jpg&#34; /&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;a href=&#34;//william-yeh.net/img/2022/08/career-reading-club-2.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;&#xA;  &lt;/figure&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;p&gt;以下列出這兩場導讀會的介紹文案。&lt;/p&gt;</description>
     </item>
     <item>
       <title>職涯躍升書系導讀會，Part 1：喚醒個人及團隊的成長意識</title>
       <link>//william-yeh.net/post/2022/06/career-reading-club-1/</link>
       <pubDate>Fri, 17 Jun 2022 20:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2022/06/career-reading-club-1/</guid>
-      <description>&lt;p&gt;2022 年一月起，我開始每個月一次，每次兩小時的【職涯躍升書系導讀會】，讓公司同仁自由報名，希望藉由這種草根性的軟性活動，另闢一條 bottom-up 的改革路徑。畢竟，深遠持久的影響，不能少掉「喚醒基層意識」這環節。&lt;/p&gt;
-
-&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
-&lt;div class=&#34;box&#34;&gt;
-&lt;figure  itemprop=&#34;associatedMedia&#34;
-  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
-  style=&#34;max-width:30em&#34; &gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2022/06/reading-club-photo.jpg&#34; /&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2022/06/reading-club-photo.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;
-
-&lt;p&gt;前六個月的選書如下：&lt;/p&gt;</description>
+      <description>&lt;p&gt;2022 年一月起，我開始每個月一次，每次兩小時的【職涯躍升書系導讀會】，讓公司同仁自由報名，希望藉由這種草根性的軟性活動，另闢一條 bottom-up 的改革路徑。畢竟，深遠持久的影響，不能少掉「喚醒基層意識」這環節。&lt;/p&gt;&#xA;&#xA;&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;&#xA;&lt;div class=&#34;box&#34;&gt;&#xA;&lt;figure  itemprop=&#34;associatedMedia&#34;&#xA;  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; &#xA;  style=&#34;max-width:30em&#34; &gt;&#xA;    &lt;div class=&#34;img&#34;&gt;&#xA;      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2022/06/reading-club-photo.jpg&#34; /&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;a href=&#34;//william-yeh.net/img/2022/06/reading-club-photo.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;&#xA;  &lt;/figure&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;p&gt;前六個月的選書如下：&lt;/p&gt;</description>
     </item>
     <item>
       <title>2021 個人回顧</title>
       <link>//william-yeh.net/post/2021/12/2021-retrospective/</link>
       <pubDate>Tue, 28 Dec 2021 22:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2021/12/2021-retrospective/</guid>
-      <description>&lt;p&gt;年初，從外商被挖腳到台商；年末，又再被挖腳到另一間台商。&lt;/p&gt;
-&lt;p&gt;我常笑著說：今年，好像都在消費我在 &lt;a href=&#34;//william-yeh.net/post/2019/12/2019-retrospective/&#34;&gt;2019&lt;/a&gt;～&lt;a href=&#34;//william-yeh.net/post/2020/12/2020-retrospective/&#34;&gt;2020&lt;/a&gt; 年間外商經驗的戰備存糧。&lt;/p&gt;
-&lt;p&gt;到了年終，又開始要做個總回顧，再對來年許願。去除一些不便揭露的事情，以下是簡單的回顧。&lt;/p&gt;</description>
+      <description>&lt;p&gt;年初，從外商被挖腳到台商；年末，又再被挖腳到另一間台商。&lt;/p&gt;&#xA;&lt;p&gt;我常笑著說：今年，好像都在消費我在 &lt;a href=&#34;//william-yeh.net/post/2019/12/2019-retrospective/&#34;&gt;2019&lt;/a&gt;～&lt;a href=&#34;//william-yeh.net/post/2020/12/2020-retrospective/&#34;&gt;2020&lt;/a&gt; 年間外商經驗的戰備存糧。&lt;/p&gt;&#xA;&lt;p&gt;到了年終，又開始要做個總回顧，再對來年許願。去除一些不便揭露的事情，以下是簡單的回顧。&lt;/p&gt;</description>
     </item>
     <item>
       <title>服務事故處理的系統思考</title>
       <link>//william-yeh.net/post/2021/04/cld-for-service-incident/</link>
       <pubDate>Mon, 05 Apr 2021 20:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2021/04/cld-for-service-incident/</guid>
-      <description>&lt;p&gt;集團內 Agile CoP 定期聚會，最近都在團練「&lt;a href=&#34;https://wiki.mbalib.com/zh-tw/%E8%A1%8C%E5%8A%A8%E5%AD%A6%E4%B9%A0%E6%B3%95&#34;&gt;行動學習 (action learning)&lt;/a&gt;」。&lt;/p&gt;
-&lt;p&gt;行動學習十分殊勝。多元探詢角度居然能夠同時並存，對我來說，在參加之前委實難以想像。&lt;/p&gt;
-&lt;p&gt;我參加了兩次，上次我選擇的提問切入點 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; 是「問題重塑」，這次刻意換成「系統思考」來練練。&lt;/p&gt;
-&lt;p&gt;某團員提出一則個案讓大家探討：&lt;/p&gt;</description>
+      <description>&lt;p&gt;集團內 Agile CoP 定期聚會，最近都在團練「&lt;a href=&#34;https://wiki.mbalib.com/zh-tw/%E8%A1%8C%E5%8A%A8%E5%AD%A6%E4%B9%A0%E6%B3%95&#34;&gt;行動學習 (action learning)&lt;/a&gt;」。&lt;/p&gt;&#xA;&lt;p&gt;行動學習十分殊勝。多元探詢角度居然能夠同時並存，對我來說，在參加之前委實難以想像。&lt;/p&gt;&#xA;&lt;p&gt;我參加了兩次，上次我選擇的提問切入點 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; 是「問題重塑」，這次刻意換成「系統思考」來練練。&lt;/p&gt;&#xA;&lt;p&gt;某團員提出一則個案讓大家探討：&lt;/p&gt;</description>
     </item>
     <item>
       <title>從系統思考角度讀《獨角獸專案》</title>
       <link>//william-yeh.net/post/2021/03/sys-thinking-unicorn-project/</link>
       <pubDate>Sun, 28 Mar 2021 16:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2021/03/sys-thinking-unicorn-project/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;活動名稱&lt;/strong&gt;：從系統思考角度讀《獨角獸專案》&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;時間&lt;/strong&gt;：2021-11-24 (三) / 13:30&amp;ndash;15:00 (因疫情影響延期舉辦)&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;會議&lt;/strong&gt;：&lt;a href=&#34;https://devopsdays.tw/&#34;&gt;DevOpsDays Taipei 2021&lt;/a&gt; 的 &lt;a href=&#34;https://devopsdays.tw/2021/workshop-page/212&#34;&gt;603 會議室&lt;/a&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;strong&gt;活動名稱&lt;/strong&gt;：從系統思考角度讀《獨角獸專案》&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;時間&lt;/strong&gt;：2021-11-24 (三) / 13:30&amp;ndash;15:00 (因疫情影響延期舉辦)&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;會議&lt;/strong&gt;：&lt;a href=&#34;https://devopsdays.tw/&#34;&gt;DevOpsDays Taipei 2021&lt;/a&gt; 的 &lt;a href=&#34;https://devopsdays.tw/2021/workshop-page/212&#34;&gt;603 會議室&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>「系統思考工作坊」系列</title>
@@ -112,18 +69,14 @@
       <link>//william-yeh.net/post/2020/09/systhinking-goal-ch01-03/</link>
       <pubDate>Sun, 13 Sep 2020 22:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2020/09/systhinking-goal-ch01-03/</guid>
-      <description>&lt;h2 id=&#34;緣起&#34;&gt;緣起&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Eliyahu_M._Goldratt&#34;&gt;高德拉特&lt;/a&gt;系列著作是我的管理啟蒙書，《&lt;a href=&#34;https://www.books.com.tw/products/0010898249&#34;&gt;目標&lt;/a&gt;》更是每隔一陣子就會重讀的經典。&lt;/p&gt;
-&lt;p&gt;這次，我打算以系統思考 (systems thinking) 角度重讀。尤其是以我在【&lt;a href=&#34;//william-yeh.net/post/2018/06/sys-thinking-workshop/&#34;&gt;系統思考的四堂課&lt;/a&gt;】提出的「&lt;strong&gt;SLR·CPI 法&lt;/strong&gt;」來逐步分析。&lt;/p&gt;
-&lt;p&gt;土井英司在《&lt;a href=&#34;http://www.books.com.tw/products/0010762830&#34;&gt;一流的人讀書，都在哪裡畫線？&lt;/a&gt;》點出箇中訣竅：&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;緣起&#34;&gt;緣起&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Eliyahu_M._Goldratt&#34;&gt;高德拉特&lt;/a&gt;系列著作是我的管理啟蒙書，《&lt;a href=&#34;https://www.books.com.tw/products/0010898249&#34;&gt;目標&lt;/a&gt;》更是每隔一陣子就會重讀的經典。&lt;/p&gt;&#xA;&lt;p&gt;這次，我打算以系統思考 (systems thinking) 角度重讀。尤其是以我在【&lt;a href=&#34;//william-yeh.net/post/2018/06/sys-thinking-workshop/&#34;&gt;系統思考的四堂課&lt;/a&gt;】提出的「&lt;strong&gt;SLR·CPI 法&lt;/strong&gt;」來逐步分析。&lt;/p&gt;&#xA;&lt;p&gt;土井英司在《&lt;a href=&#34;http://www.books.com.tw/products/0010762830&#34;&gt;一流的人讀書，都在哪裡畫線？&lt;/a&gt;》點出箇中訣竅：&lt;/p&gt;</description>
     </item>
     <item>
       <title>思維的重量訓練</title>
       <link>//william-yeh.net/post/2018/09/thinking-weight-training/</link>
       <pubDate>Tue, 04 Sep 2018 11:30:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2018/09/thinking-weight-training/</guid>
-      <description>&lt;p&gt;上週五【&lt;a href=&#34;https://devopsdays.tw/2018/workshop.html&#34;&gt;系統思考的四堂課・DevOps 特別版&lt;/a&gt;】，表定 7 小時，延長賽到 7.5 小時，感謝首梯公開班同學的熱情參與，共度刺激的一天。&lt;/p&gt;
-&lt;p&gt;課後仍持續收到提問，我挑選幾則統一回覆。&lt;/p&gt;</description>
+      <description>&lt;p&gt;上週五【&lt;a href=&#34;https://devopsdays.tw/2018/workshop.html&#34;&gt;系統思考的四堂課・DevOps 特別版&lt;/a&gt;】，表定 7 小時，延長賽到 7.5 小時，感謝首梯公開班同學的熱情參與，共度刺激的一天。&lt;/p&gt;&#xA;&lt;p&gt;課後仍持續收到提問，我挑選幾則統一回覆。&lt;/p&gt;</description>
     </item>
     <item>
       <title>系統思考的四堂課</title>

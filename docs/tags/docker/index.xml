@@ -13,46 +13,21 @@
       <link>//william-yeh.net/post/2023/08/docker-labs-review/</link>
       <pubDate>Sat, 19 Aug 2023 20:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2023/08/docker-labs-review/</guid>
-      <description>&lt;p&gt;我在 2015 年～2017 年間，開了 8 次【&lt;a href=&#34;https://william-yeh.github.io/docker-workshop/&#34;&gt;Docker 建置實戰講堂&lt;/a&gt;】一日課程。在那個大眾對於 Docker 還矇矇懂懂的年代，我就堅持不用貌似較簡便的 Docker Desktop，而是大膽採用 Vagrant + VirtualBox 作為統一的授課環境，讓學員儘早習慣在 Linux 平台上探索 Docker 的底層與應用。&lt;/p&gt;
-&lt;p&gt;所以，當我在 2022 年 iThome 鐵人賽看到小賴的參賽作品【&lt;a href=&#34;https://ithelp.ithome.com.tw/users/20151857/ironman/5419&#34;&gt;那些關於 docker 你知道與不知道的事&lt;/a&gt;】中，是以 AWS EC2 的 Ubuntu instance 作為實作環境，現在更出版新書《&lt;a href=&#34;https://www.tenlong.com.tw/products/9786263335769&#34;&gt;Docker 實戰 6 堂課：56 個實驗動手做，掌握 Linux 容器核心技術&lt;/a&gt;》，就非常高興。畢竟，從最擬真的角度切入，才能夠透過自己的雙手，掌握那不變的容器技術核心。&lt;/p&gt;
-
-&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
-&lt;div class=&#34;box&#34;&gt;
-&lt;figure  itemprop=&#34;associatedMedia&#34;
-  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
-  style=&#34;max-width:30em&#34; &gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/08/docker-labs-book.jpg&#34; alt=&#34;《Docker 實戰 6 堂課：56 個實驗動手做，掌握 Linux 容器核心技術》&#34;/&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2023/08/docker-labs-book.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-      &lt;figcaption&gt;
-          &lt;p&gt;《Docker 實戰 6 堂課：56 個實驗動手做，掌握 Linux 容器核心技術》&lt;/p&gt;
-      &lt;/figcaption&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;</description>
+      <description>&lt;p&gt;我在 2015 年～2017 年間，開了 8 次【&lt;a href=&#34;https://william-yeh.github.io/docker-workshop/&#34;&gt;Docker 建置實戰講堂&lt;/a&gt;】一日課程。在那個大眾對於 Docker 還矇矇懂懂的年代，我就堅持不用貌似較簡便的 Docker Desktop，而是大膽採用 Vagrant + VirtualBox 作為統一的授課環境，讓學員儘早習慣在 Linux 平台上探索 Docker 的底層與應用。&lt;/p&gt;&#xA;&lt;p&gt;所以，當我在 2022 年 iThome 鐵人賽看到小賴的參賽作品【&lt;a href=&#34;https://ithelp.ithome.com.tw/users/20151857/ironman/5419&#34;&gt;那些關於 docker 你知道與不知道的事&lt;/a&gt;】中，是以 AWS EC2 的 Ubuntu instance 作為實作環境，現在更出版新書《&lt;a href=&#34;https://www.tenlong.com.tw/products/9786263335769&#34;&gt;Docker 實戰 6 堂課：56 個實驗動手做，掌握 Linux 容器核心技術&lt;/a&gt;》，就非常高興。畢竟，從最擬真的角度切入，才能夠透過自己的雙手，掌握那不變的容器技術核心。&lt;/p&gt;&#xA;&#xA;&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;&#xA;&lt;div class=&#34;box&#34;&gt;&#xA;&lt;figure  itemprop=&#34;associatedMedia&#34;&#xA;  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; &#xA;  style=&#34;max-width:30em&#34; &gt;&#xA;    &lt;div class=&#34;img&#34;&gt;&#xA;      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/08/docker-labs-book.jpg&#34; alt=&#34;《Docker 實戰 6 堂課：56 個實驗動手做，掌握 Linux 容器核心技術》&#34;/&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;a href=&#34;//william-yeh.net/img/2023/08/docker-labs-book.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;&#xA;      &lt;figcaption&gt;&#xA;          &lt;p&gt;《Docker 實戰 6 堂課：56 個實驗動手做，掌握 Linux 容器核心技術》&lt;/p&gt;&#xA;      &lt;/figcaption&gt;&#xA;  &lt;/figure&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
       <title>Distroless Image 牛刀小試</title>
       <link>//william-yeh.net/post/2023/02/distroless-image/</link>
       <pubDate>Wed, 15 Feb 2023 22:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2023/02/distroless-image/</guid>
-      <description>&lt;p&gt;距離上次重度探討「極簡化容器」已經快六年多了&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;。這議題，以前可能只是某些人技術上的興趣，現在則可能是必要。&lt;/p&gt;
-&lt;p&gt;原因是：Docker Inc 的一些措施，讓人不得不慎重考慮替代方案。&lt;/p&gt;
-&lt;h2 id=&#34;搬家的必要&#34;&gt;搬家的必要&lt;/h2&gt;
-&lt;p&gt;這陣子容器世界起了不少變化，除了眾所周知的「Docker Desktop 要收費了」規定 &lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;，另一個較少被提及影響是 Docker Hub 的緊縮政策：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Image CI 緊縮：Docker Hub 取消免費用戶的 automated builds 功能。 &lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
-&lt;li&gt;Image pull 緊縮：Docker Hub 開始對未付費者施以較嚴格的限流措施。 &lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;於是，未付費的人，不僅在使用 Docker Hub 時會受到管制，還會波及產製 image 的 CI pipeline，不時會遇到這樣的 &amp;ldquo;toomanyrequests&amp;rdquo; 限流警告：&lt;/p&gt;</description>
+      <description>&lt;p&gt;距離上次重度探討「極簡化容器」已經快六年多了&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;。這議題，以前可能只是某些人技術上的興趣，現在則可能是必要。&lt;/p&gt;&#xA;&lt;p&gt;原因是：Docker Inc 的一些措施，讓人不得不慎重考慮替代方案。&lt;/p&gt;&#xA;&lt;h2 id=&#34;搬家的必要&#34;&gt;搬家的必要&lt;/h2&gt;&#xA;&lt;p&gt;這陣子容器世界起了不少變化，除了眾所周知的「Docker Desktop 要收費了」規定 &lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;，另一個較少被提及影響是 Docker Hub 的緊縮政策：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Image CI 緊縮：Docker Hub 取消免費用戶的 automated builds 功能。 &lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;&#xA;&lt;li&gt;Image pull 緊縮：Docker Hub 開始對未付費者施以較嚴格的限流措施。 &lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;於是，未付費的人，不僅在使用 Docker Hub 時會受到管制，還會波及產製 image 的 CI pipeline，不時會遇到這樣的 &amp;ldquo;toomanyrequests&amp;rdquo; 限流警告：&lt;/p&gt;</description>
     </item>
     <item>
       <title>用 Podman 執行 Laravel &#43; Sail</title>
       <link>//william-yeh.net/post/2023/02/podman-laravel-sail/</link>
       <pubDate>Tue, 07 Feb 2023 22:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2023/02/podman-laravel-sail/</guid>
-      <description>&lt;p&gt;從 Docker Desktop 換到 Podman &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; ，開始需要處理某些相容性問題。有些問題不見得是 Podman 的錯，但既然遇到了，就順手記錄一下除雷經驗。&lt;/p&gt;
-&lt;p&gt;此文記錄一下在 Podman 執行 Laravel 9 欽定開發環境 &lt;a href=&#34;https://laravel.com/docs/9.x/sail&#34;&gt;Sail&lt;/a&gt; 的步驟。&lt;/p&gt;</description>
+      <description>&lt;p&gt;從 Docker Desktop 換到 Podman &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; ，開始需要處理某些相容性問題。有些問題不見得是 Podman 的錯，但既然遇到了，就順手記錄一下除雷經驗。&lt;/p&gt;&#xA;&lt;p&gt;此文記錄一下在 Podman 執行 Laravel 9 欽定開發環境 &lt;a href=&#34;https://laravel.com/docs/9.x/sail&#34;&gt;Sail&lt;/a&gt; 的步驟。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Podman Tips</title>
@@ -66,34 +41,21 @@
       <link>//william-yeh.net/post/2023/02/wsl2-podman-k3s/</link>
       <pubDate>Mon, 06 Feb 2023 22:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2023/02/wsl2-podman-k3s/</guid>
-      <description>&lt;p&gt;距離上次重度使用 WSL 已經快四年了。四年來 WSL 世界起了一些變化：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;WSL 已經演進到第二版。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;以前還會為了要搭配 &lt;a href=&#34;//william-yeh.net/post/2019/03/wsl-cmder-zsh/&#34;&gt;Cmder&lt;/a&gt; 或者 &lt;a href=&#34;//william-yeh.net/post/2019/04/wsltty-tmux/&#34;&gt;WSLtty&lt;/a&gt; 而大費周章，現在則被 &lt;a href=&#34;https://learn.microsoft.com/zh-tw/windows/terminal/&#34;&gt;Windows Terminal&lt;/a&gt; 解決了大部分問題，使用體驗也開始接近 Mac 的 iTerm2。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;容器世界也起了很大的變化：&lt;/p&gt;</description>
+      <description>&lt;p&gt;距離上次重度使用 WSL 已經快四年了。四年來 WSL 世界起了一些變化：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;WSL 已經演進到第二版。&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;以前還會為了要搭配 &lt;a href=&#34;//william-yeh.net/post/2019/03/wsl-cmder-zsh/&#34;&gt;Cmder&lt;/a&gt; 或者 &lt;a href=&#34;//william-yeh.net/post/2019/04/wsltty-tmux/&#34;&gt;WSLtty&lt;/a&gt; 而大費周章，現在則被 &lt;a href=&#34;https://learn.microsoft.com/zh-tw/windows/terminal/&#34;&gt;Windows Terminal&lt;/a&gt; 解決了大部分問題，使用體驗也開始接近 Mac 的 iTerm2。&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;容器世界也起了很大的變化：&lt;/p&gt;</description>
     </item>
     <item>
       <title>Docker File Permissions on Windows</title>
       <link>//william-yeh.net/post/2019/06/docker-file-permissions/</link>
       <pubDate>Mon, 24 Jun 2019 12:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2019/06/docker-file-permissions/</guid>
-      <description>&lt;p&gt;Currently Linux containers are still more popular than Windows containers. And Windows users often need to use Linux containers even from their Windows computers.&lt;/p&gt;
-&lt;p&gt;Recently I&amp;rsquo;ve found something very strange about Linux-style file permissions when the Docker images are built from Windows hosts.&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; Therefore, I&amp;rsquo;ve conducted a suite of test cases to investigate whether file permissions are preserved with Docker &amp;amp; &lt;a href=&#34;https://skaffold.dev/&#34;&gt;Skaffold&lt;/a&gt; toolchains. All experiment materials are available in the &lt;a href=&#34;https://github.com/William-Yeh/container-chmod&#34;&gt;container-chmod&lt;/a&gt; repo.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Currently Linux containers are still more popular than Windows containers. And Windows users often need to use Linux containers even from their Windows computers.&lt;/p&gt;&#xA;&lt;p&gt;Recently I&amp;rsquo;ve found something very strange about Linux-style file permissions when the Docker images are built from Windows hosts.&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; Therefore, I&amp;rsquo;ve conducted a suite of test cases to investigate whether file permissions are preserved with Docker &amp;amp; &lt;a href=&#34;https://skaffold.dev/&#34;&gt;Skaffold&lt;/a&gt; toolchains. All experiment materials are available in the &lt;a href=&#34;https://github.com/William-Yeh/container-chmod&#34;&gt;container-chmod&lt;/a&gt; repo.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Auto-Reload from ConfigMap</title>
       <link>//william-yeh.net/post/2019/06/autoreload-from-configmap/</link>
       <pubDate>Mon, 17 Jun 2019 17:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2019/06/autoreload-from-configmap/</guid>
-      <description>My previous article &amp;ldquo;Inotify in Containers&amp;rdquo; has demonstrated that when ConfigMap is mounted as directories, any changes in the ConfigMap will propagate to related pods, and can be detected with inotify-like APIs.
-A follow-up question might be: what should a well-behaved application react to this trigger accordingly? What if it&amp;rsquo;s a ill-designed application?
-To clarify this I&amp;rsquo;ve conducted a series of experiments for 3 possible configmap-reloading strategies:
-Built-in auto-reloading apps External signals Pod rollout In this article I&amp;rsquo;m going to explain the experiments and preliminary findings.</description>
+      <description>My previous article &amp;ldquo;Inotify in Containers&amp;rdquo; has demonstrated that when ConfigMap is mounted as directories, any changes in the ConfigMap will propagate to related pods, and can be detected with inotify-like APIs.&#xA;A follow-up question might be: what should a well-behaved application react to this trigger accordingly? What if it&amp;rsquo;s a ill-designed application?&#xA;To clarify this I&amp;rsquo;ve conducted a series of experiments for 3 possible configmap-reloading strategies:&#xA;Built-in auto-reloading apps External signals Pod rollout In this article I&amp;rsquo;m going to explain the experiments and preliminary findings.</description>
     </item>
     <item>
       <title>Containers and Environment Variables</title>
@@ -114,46 +76,28 @@ Built-in auto-reloading apps External signals Pod rollout In this article I&amp;
       <link>//william-yeh.net/post/2019/05/k8s-lab/</link>
       <pubDate>Fri, 17 May 2019 12:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2019/05/k8s-lab/</guid>
-      <description>&lt;p&gt;前天我在 &lt;a href=&#34;https://cloudsummit.ithome.com.tw/2019/lab.html#0001&#34;&gt;2019 台灣雲端大會&lt;/a&gt;帶了兩個場次，一個是現場實作場次，一個是經驗分享演講：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Lab / &lt;a href=&#34;https://github.com/William-Yeh/workshop-cloud2019&#34;&gt;給 RD 的 Kubernetes 初體驗&lt;/a&gt; (90 minutes)&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Speech / &lt;a href=&#34;https://www.slideshare.net/williamyeh/when-dotnetmeetskubernetes-145557464&#34;&gt;當 .NET 遇到 Kubernetes&lt;/a&gt; (30 minutes)&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;兩個場次，一言以蔽之，都圍繞在 Kubernetes 的入門認知與導入策略上。&lt;/p&gt;</description>
+      <description>&lt;p&gt;前天我在 &lt;a href=&#34;https://cloudsummit.ithome.com.tw/2019/lab.html#0001&#34;&gt;2019 台灣雲端大會&lt;/a&gt;帶了兩個場次，一個是現場實作場次，一個是經驗分享演講：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Lab / &lt;a href=&#34;https://github.com/William-Yeh/workshop-cloud2019&#34;&gt;給 RD 的 Kubernetes 初體驗&lt;/a&gt; (90 minutes)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Speech / &lt;a href=&#34;https://www.slideshare.net/williamyeh/when-dotnetmeetskubernetes-145557464&#34;&gt;當 .NET 遇到 Kubernetes&lt;/a&gt; (30 minutes)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;兩個場次，一言以蔽之，都圍繞在 Kubernetes 的入門認知與導入策略上。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Next &#39;19 的 Istio 場次重點摘要</title>
       <link>//william-yeh.net/post/2019/04/next19-istio/</link>
       <pubDate>Fri, 19 Apr 2019 23:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2019/04/next19-istio/</guid>
-      <description>&lt;p&gt;四月 9&amp;ndash;11 日去舊金山參加 Google Cloud 的 &lt;a href=&#34;https://cloud.withgoogle.com/next/sf/&#34;&gt;Next ’19&lt;/a&gt; 大會，收穫頗大。&lt;/p&gt;
-&lt;p&gt;這場大會，同一時段就有近 30 場專題演講同時進行，議程滿滿，勢必得做取捨。基於工作需要及個人興趣，我主要選擇與容器相關的場次：service mesh、Windows containers、混合雲、資安實務。&lt;/p&gt;
-&lt;p&gt;我發現，光是這些場次，就得花很大力氣去消化、實驗與應用。&lt;/p&gt;
-&lt;p&gt;我們這些所謂的「台港團」會在 GCPUG Taipei 舉辦一場&lt;a href=&#34;https://www.meetup.com/GCPUG-Taipei/events/260555968/&#34;&gt;分享會&lt;/a&gt;。因為自己不克參加，便以這篇文章，針對我鎖定的核心議題：Istio，做一番重點摘要，以饗讀者。&lt;/p&gt;</description>
+      <description>&lt;p&gt;四月 9&amp;ndash;11 日去舊金山參加 Google Cloud 的 &lt;a href=&#34;https://cloud.withgoogle.com/next/sf/&#34;&gt;Next ’19&lt;/a&gt; 大會，收穫頗大。&lt;/p&gt;&#xA;&lt;p&gt;這場大會，同一時段就有近 30 場專題演講同時進行，議程滿滿，勢必得做取捨。基於工作需要及個人興趣，我主要選擇與容器相關的場次：service mesh、Windows containers、混合雲、資安實務。&lt;/p&gt;&#xA;&lt;p&gt;我發現，光是這些場次，就得花很大力氣去消化、實驗與應用。&lt;/p&gt;&#xA;&lt;p&gt;我們這些所謂的「台港團」會在 GCPUG Taipei 舉辦一場&lt;a href=&#34;https://www.meetup.com/GCPUG-Taipei/events/260555968/&#34;&gt;分享會&lt;/a&gt;。因為自己不克參加，便以這篇文章，針對我鎖定的核心議題：Istio，做一番重點摘要，以饗讀者。&lt;/p&gt;</description>
     </item>
     <item>
       <title>為什麼要追求極簡化的 Docker image？</title>
       <link>//william-yeh.net/post/2016/08/why-minimal-docker-images/</link>
       <pubDate>Sat, 27 Aug 2016 20:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2016/08/why-minimal-docker-images/</guid>
-      <description>&lt;p&gt;今早〈&lt;a href=&#34;//william-yeh.net/post/2016/08/halfblood-docker/&#34;&gt;從 Ansible 到 Docker：混血模式&lt;/a&gt;〉演講過後，有人在聊天室提問：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;請問為什麼要追求最小化的 Docker image？&lt;/p&gt;
-&lt;/blockquote&gt;</description>
+      <description>&lt;p&gt;今早〈&lt;a href=&#34;//william-yeh.net/post/2016/08/halfblood-docker/&#34;&gt;從 Ansible 到 Docker：混血模式&lt;/a&gt;〉演講過後，有人在聊天室提問：&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;請問為什麼要追求最小化的 Docker image？&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
     </item>
     <item>
       <title>從 Ansible 到 Docker：混血模式</title>
       <link>//william-yeh.net/post/2016/08/halfblood-docker/</link>
       <pubDate>Sat, 27 Aug 2016 08:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2016/08/halfblood-docker/</guid>
-      <description>&lt;p&gt;2015 年 4 月我在 &lt;a href=&#34;https://www.meetup.com/Docker-Taipei/&#34;&gt;Docker Taipei 社群&lt;/a&gt;講了一場〈&lt;a href=&#34;https://william-yeh.github.io/docker-mini/&#34;&gt;追求極簡化 Docker image 之路&lt;/a&gt;〉。一年後，在「極簡化 Docker」這條路上，另一條途徑 Alpine Linux 開始嶄露頭角——不必像過去那麼蠻幹，地雷減少，流程優勢顯著，品質上也不見得遜於長期被 glibc 把持的傳統體系。&lt;/p&gt;
-&lt;p&gt;我嘗試用這種手法重整過去的東西，結果還不算太差。因此，一直希望能有機會再給一場類似【追求極簡化 Docker image 之路，Part 2】的演講。&lt;/p&gt;
-&lt;p&gt;此外，由於自己持續在使用 Ansible 來處理組態設定事宜，持續維護近 20 個 Ansible Galaxy 開源 roles，也開講了五場【&lt;a href=&#34;https://devopssummit.ithome.com.tw/workshop/ansible/&#34;&gt;Ansible Workshop&lt;/a&gt;】訓練課程，很自然的，我會常常拿 Ansible 與 Docker 並列，思考兩者的定位、運用時機，甚至未來走向；有時甚至靈光一閃，浮現一些 Ansible＋Docker 的組合技。&lt;/p&gt;
-&lt;p&gt;這就是今天在 &lt;a href=&#34;https://community-open-camp.azurewebsites.net/&#34;&gt;Community Open Camp&lt;/a&gt; 這場演講【從 Ansible 到 Docker：混血模式】的由來。&lt;/p&gt;</description>
+      <description>&lt;p&gt;2015 年 4 月我在 &lt;a href=&#34;https://www.meetup.com/Docker-Taipei/&#34;&gt;Docker Taipei 社群&lt;/a&gt;講了一場〈&lt;a href=&#34;https://william-yeh.github.io/docker-mini/&#34;&gt;追求極簡化 Docker image 之路&lt;/a&gt;〉。一年後，在「極簡化 Docker」這條路上，另一條途徑 Alpine Linux 開始嶄露頭角——不必像過去那麼蠻幹，地雷減少，流程優勢顯著，品質上也不見得遜於長期被 glibc 把持的傳統體系。&lt;/p&gt;&#xA;&lt;p&gt;我嘗試用這種手法重整過去的東西，結果還不算太差。因此，一直希望能有機會再給一場類似【追求極簡化 Docker image 之路，Part 2】的演講。&lt;/p&gt;&#xA;&lt;p&gt;此外，由於自己持續在使用 Ansible 來處理組態設定事宜，持續維護近 20 個 Ansible Galaxy 開源 roles，也開講了五場【&lt;a href=&#34;https://devopssummit.ithome.com.tw/workshop/ansible/&#34;&gt;Ansible Workshop&lt;/a&gt;】訓練課程，很自然的，我會常常拿 Ansible 與 Docker 並列，思考兩者的定位、運用時機，甚至未來走向；有時甚至靈光一閃，浮現一些 Ansible＋Docker 的組合技。&lt;/p&gt;&#xA;&lt;p&gt;這就是今天在 &lt;a href=&#34;https://community-open-camp.azurewebsites.net/&#34;&gt;Community Open Camp&lt;/a&gt; 這場演講【從 Ansible 到 Docker：混血模式】的由來。&lt;/p&gt;</description>
     </item>
     <item>
       <title>CI 怎樣帶你遠離平庸？</title>

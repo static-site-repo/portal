@@ -13,25 +13,7 @@
       <link>//william-yeh.net/post/2023/12/dev-metrics/</link>
       <pubDate>Sun, 03 Dec 2023 20:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2023/12/dev-metrics/</guid>
-      <description>&lt;p&gt;面對敏捷或 DevOps 藥方，病人可能帶著各種不同的動機而來，但終歸都會提出同樣的疑問：我怎麼知道敏捷有沒有效？怎麼衡量成效？&lt;/p&gt;
-&lt;p&gt;這問題，可能在導入之後的某個時刻會問，但更有可能像戰國時代梁惠王那樣，才剛第一次接見孟子，居然劈頭就問：「叟，不遠千里而來，亦將有以利吾國乎？」&lt;/p&gt;
-
-&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
-&lt;div class=&#34;box&#34;&gt;
-&lt;figure  itemprop=&#34;associatedMedia&#34;
-  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
-  style=&#34;max-width:30em&#34; &gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/12/mencius-dialogue.png&#34; alt=&#34;孟子見梁惠王&#34;/&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2023/12/mencius-dialogue.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-      &lt;figcaption&gt;
-          &lt;p&gt;孟子見梁惠王&lt;/p&gt;
-      &lt;/figcaption&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;
-
-&lt;p&gt;對這議題，常有兩種極端的反應。&lt;/p&gt;</description>
+      <description>&lt;p&gt;面對敏捷或 DevOps 藥方，病人可能帶著各種不同的動機而來，但終歸都會提出同樣的疑問：我怎麼知道敏捷有沒有效？怎麼衡量成效？&lt;/p&gt;&#xA;&lt;p&gt;這問題，可能在導入之後的某個時刻會問，但更有可能像戰國時代梁惠王那樣，才剛第一次接見孟子，居然劈頭就問：「叟，不遠千里而來，亦將有以利吾國乎？」&lt;/p&gt;&#xA;&#xA;&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;&#xA;&lt;div class=&#34;box&#34;&gt;&#xA;&lt;figure  itemprop=&#34;associatedMedia&#34;&#xA;  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; &#xA;  style=&#34;max-width:30em&#34; &gt;&#xA;    &lt;div class=&#34;img&#34;&gt;&#xA;      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/12/mencius-dialogue.png&#34; alt=&#34;孟子見梁惠王&#34;/&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;a href=&#34;//william-yeh.net/img/2023/12/mencius-dialogue.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;&#xA;      &lt;figcaption&gt;&#xA;          &lt;p&gt;孟子見梁惠王&lt;/p&gt;&#xA;      &lt;/figcaption&gt;&#xA;  &lt;/figure&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;p&gt;對這議題，常有兩種極端的反應。&lt;/p&gt;</description>
     </item>
     <item>
       <title>「改變」系列</title>
@@ -45,38 +27,14 @@
       <link>//william-yeh.net/post/2018/12/2018-retrospective/</link>
       <pubDate>Thu, 20 Dec 2018 08:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2018/12/2018-retrospective/</guid>
-      <description>&lt;p&gt;到了年終，又開始要做個總回顧，再對來年許願。&lt;/p&gt;
-&lt;p&gt;如果說 &lt;a href=&#34;https://school.soft-arch.net/blog/6676/2016-retrospective&#34;&gt;2016&lt;/a&gt; 和 &lt;a href=&#34;https://school.soft-arch.net/blog/13083/2017-retrospective&#34;&gt;2017&lt;/a&gt; 都是華麗冒險年，那麼，2018 對我來說，是收攝靜觀的一年。&lt;/p&gt;
-&lt;p&gt;去除一些不便揭露的事情，以下是簡單的回顧。&lt;/p&gt;</description>
+      <description>&lt;p&gt;到了年終，又開始要做個總回顧，再對來年許願。&lt;/p&gt;&#xA;&lt;p&gt;如果說 &lt;a href=&#34;https://school.soft-arch.net/blog/6676/2016-retrospective&#34;&gt;2016&lt;/a&gt; 和 &lt;a href=&#34;https://school.soft-arch.net/blog/13083/2017-retrospective&#34;&gt;2017&lt;/a&gt; 都是華麗冒險年，那麼，2018 對我來說，是收攝靜觀的一年。&lt;/p&gt;&#xA;&lt;p&gt;去除一些不便揭露的事情，以下是簡單的回顧。&lt;/p&gt;</description>
     </item>
     <item>
       <title>為了精準估算，你必須付出什麼代價？</title>
       <link>//william-yeh.net/post/2018/12/agile-measurement/</link>
       <pubDate>Wed, 19 Dec 2018 08:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2018/12/agile-measurement/</guid>
-      <description>&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
-&lt;div class=&#34;box&#34;&gt;
-&lt;figure  itemprop=&#34;associatedMedia&#34;
-  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
-  style=&#34;max-width:30em&#34; &gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/12/dilbert-measurement.jpg&#34; alt=&#34;開場對話&#34;/&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2018/12/dilbert-measurement.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-      &lt;figcaption&gt;
-          &lt;p&gt;開場對話&lt;/p&gt;
-      &lt;/figcaption&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;
-
-&lt;p&gt;研發團隊，常會被問到一個問題：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;「請問一下，這個Ａ功能，大概要多久才能完成？」&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;這個問題，不會因為你跑的是敏捷，就自動免疫。那麼，身為經過敏捷思維洗禮的人，該如何做出合宜的應對？&lt;/p&gt;
-&lt;p&gt;我在 &lt;a href=&#34;https://agilekaohsiung.kktix.cc/events/agiletourkaohsiung2018&#34;&gt;Agile Tour Kaohsiung 2018&lt;/a&gt; 開辦一場 2.5 小時的工作坊，帶領大家親自體驗這個議題。&lt;/p&gt;
-&lt;p&gt;不過，這個題材的背後，其實還有三段故事。&lt;/p&gt;
-&lt;p&gt;故事，要從一年半前講起。&lt;/p&gt;</description>
+      <description>&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;&#xA;&lt;div class=&#34;box&#34;&gt;&#xA;&lt;figure  itemprop=&#34;associatedMedia&#34;&#xA;  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; &#xA;  style=&#34;max-width:30em&#34; &gt;&#xA;    &lt;div class=&#34;img&#34;&gt;&#xA;      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/12/dilbert-measurement.jpg&#34; alt=&#34;開場對話&#34;/&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;a href=&#34;//william-yeh.net/img/2018/12/dilbert-measurement.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;&#xA;      &lt;figcaption&gt;&#xA;          &lt;p&gt;開場對話&lt;/p&gt;&#xA;      &lt;/figcaption&gt;&#xA;  &lt;/figure&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;p&gt;研發團隊，常會被問到一個問題：&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;「請問一下，這個Ａ功能，大概要多久才能完成？」&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;這個問題，不會因為你跑的是敏捷，就自動免疫。那麼，身為經過敏捷思維洗禮的人，該如何做出合宜的應對？&lt;/p&gt;&#xA;&lt;p&gt;我在 &lt;a href=&#34;https://agilekaohsiung.kktix.cc/events/agiletourkaohsiung2018&#34;&gt;Agile Tour Kaohsiung 2018&lt;/a&gt; 開辦一場 2.5 小時的工作坊，帶領大家親自體驗這個議題。&lt;/p&gt;&#xA;&lt;p&gt;不過，這個題材的背後，其實還有三段故事。&lt;/p&gt;&#xA;&lt;p&gt;故事，要從一年半前講起。&lt;/p&gt;</description>
     </item>
     <item>
       <title>改變／改革：流程與衡量指標</title>
@@ -104,22 +62,7 @@
       <link>//william-yeh.net/post/2018/11/agile-value/</link>
       <pubDate>Tue, 27 Nov 2018 08:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2018/11/agile-value/</guid>
-      <description>&lt;p&gt;同溫層朋友提出一則有趣的&lt;a href=&#34;https://www.facebook.com/groups/179345672472/permalink/10156092663467473/&#34;&gt;提問&lt;/a&gt;：&lt;/p&gt;
-
-&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
-&lt;div class=&#34;box&#34;&gt;
-&lt;figure  itemprop=&#34;associatedMedia&#34;
-  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
-  style=&#34;max-width:30em&#34; &gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/11/agile-value-post.png&#34; alt=&#34;如何衡量敏捷的成效？ by Howie Yu (2018-11-23)&#34;/&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2018/11/agile-value-post.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-      &lt;figcaption&gt;
-          &lt;p&gt;如何衡量敏捷的成效？ by Howie Yu (2018-11-23)&lt;/p&gt;
-      &lt;/figcaption&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;</description>
+      <description>&lt;p&gt;同溫層朋友提出一則有趣的&lt;a href=&#34;https://www.facebook.com/groups/179345672472/permalink/10156092663467473/&#34;&gt;提問&lt;/a&gt;：&lt;/p&gt;&#xA;&#xA;&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;&#xA;&lt;div class=&#34;box&#34;&gt;&#xA;&lt;figure  itemprop=&#34;associatedMedia&#34;&#xA;  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; &#xA;  style=&#34;max-width:30em&#34; &gt;&#xA;    &lt;div class=&#34;img&#34;&gt;&#xA;      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/11/agile-value-post.png&#34; alt=&#34;如何衡量敏捷的成效？ by Howie Yu (2018-11-23)&#34;/&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;a href=&#34;//william-yeh.net/img/2018/11/agile-value-post.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;&#xA;      &lt;figcaption&gt;&#xA;          &lt;p&gt;如何衡量敏捷的成效？ by Howie Yu (2018-11-23)&lt;/p&gt;&#xA;      &lt;/figcaption&gt;&#xA;  &lt;/figure&gt;&#xA;&lt;/div&gt;</description>
     </item>
   </channel>
 </rss>

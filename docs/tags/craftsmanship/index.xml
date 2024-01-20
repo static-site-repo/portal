@@ -13,56 +13,21 @@
       <link>//william-yeh.net/post/2023/10/nested-conditional/</link>
       <pubDate>Thu, 12 Oct 2023 20:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2023/10/nested-conditional/</guid>
-      <description>&lt;p&gt;讀別人的程式是一件苦差事，不僅需要具備對應的領域知識，也得了解對方的程式書寫邏輯與風格。因此，為了讓程式碼容易被人理解，整潔程式碼是必須持續精進的技藝。&lt;/p&gt;
-&lt;p&gt;在 code review 進行實質審查之前，我喜歡先做一點點形式審查，尤其是某些 code smell，臭味暴風半徑大到甚至連領域知識的外行人都聞得到。&lt;/p&gt;
-&lt;p&gt;我很常遇到不必要的巢狀迴圈或條件判斷式。經驗告訴我，除非真的是要設計出什麼高大尚的演算法或者刷題，否則，這有相當大的機率是需要進一步 refactor 的。&lt;/p&gt;
-&lt;p&gt;像以下這段程式，即使我故意把領域知識相關細節用 &lt;code&gt;conditionXX&lt;/code&gt; 馬賽克掉了，你還是可以明顯聞到 bad smell：迴圈 + 條件判斷式，ABCDEF 深達 6 層，你能夠很快捕捉到箇中邏輯嗎？&lt;/p&gt;</description>
+      <description>&lt;p&gt;讀別人的程式是一件苦差事，不僅需要具備對應的領域知識，也得了解對方的程式書寫邏輯與風格。因此，為了讓程式碼容易被人理解，整潔程式碼是必須持續精進的技藝。&lt;/p&gt;&#xA;&lt;p&gt;在 code review 進行實質審查之前，我喜歡先做一點點形式審查，尤其是某些 code smell，臭味暴風半徑大到甚至連領域知識的外行人都聞得到。&lt;/p&gt;&#xA;&lt;p&gt;我很常遇到不必要的巢狀迴圈或條件判斷式。經驗告訴我，除非真的是要設計出什麼高大尚的演算法或者刷題，否則，這有相當大的機率是需要進一步 refactor 的。&lt;/p&gt;&#xA;&lt;p&gt;像以下這段程式，即使我故意把領域知識相關細節用 &lt;code&gt;conditionXX&lt;/code&gt; 馬賽克掉了，你還是可以明顯聞到 bad smell：迴圈 + 條件判斷式，ABCDEF 深達 6 層，你能夠很快捕捉到箇中邏輯嗎？&lt;/p&gt;</description>
     </item>
     <item>
       <title>從 Code Review 的小事看到大事</title>
       <link>//william-yeh.net/post/2023/09/on-code-review/</link>
       <pubDate>Wed, 13 Sep 2023 20:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2023/09/on-code-review/</guid>
-      <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
-&lt;p&gt;我很喜歡 Java 大師 &lt;a href=&#34;https://en.wikipedia.org/wiki/Joshua_Bloch&#34;&gt;Joshua Bloch&lt;/a&gt; 在《&lt;a href=&#34;https://williampjyeh.notion.site/d265b736b05f42d885ef40bb0a48786f&#34;&gt;編程的頂尖對話&lt;/a&gt;》所說的：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;即使是想把一個很小的程式寫對也是非常難的。&lt;/p&gt;
-&lt;p&gt;認為自己程式沒有 bug 就是在愚弄自己。程式肯定有 bug，（只是）多數情況下，程式裡的 bug 夠少，足以使其完成任務。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;是的，100% 正確的程式或許很難達成，或許連定義起來都很困難，但我們還是得努力趨近它，讓我們工作更有成就感，更有信心能夠交付價值，也更少因不慎流出去的瑕疵而疲於奔命。&lt;/p&gt;
-&lt;p&gt;Joshua Bloch 緊接著又說：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;既然寫正確的程式那麼困難，我們就應該盡力取得幫助。所以，能減少 bug 的所有東西都是好的。這就是我是靜態型別和靜態分析的信徒的原因。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;是的，我們需要動員許多力量，取得許多幫助，才能夠趨近於正確的程式。可動員的許多力量當中，無疑的 code review 是重要的基礎，可惜的是，許多團隊連這基礎都還有諸多可改善之處，這也限縮了團隊能進一步發揮的價值。&lt;/p&gt;
-&lt;p&gt;Code review 乍看之下是小事，但若認真探討起來還真是不小。在我多年輔導各種成熟度團隊的經驗中，有六個基於 code review 以及衍生出來的議題可深入探討：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;基本信念：品質來自正確地做事&lt;/li&gt;
-&lt;li&gt;掌握基本功與領域知識&lt;/li&gt;
-&lt;li&gt;凝聚團隊公約的共識&lt;/li&gt;
-&lt;li&gt;嘗試更好的協同理解技巧&lt;/li&gt;
-&lt;li&gt;讓進步看得見&lt;/li&gt;
-&lt;li&gt;支持長久研發的措施&lt;/li&gt;
-&lt;/ol&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;p&gt;如果你所在的團隊已經啟動 Scrum 或 Kanban 研發流程，恭喜你，你們已經有很好的流程基礎可在這六大議題上面精進，只需要正確實施（玩真的！）你們所採用的敏捷流程。文中我會大量連結到 Scrum 及 Kanban 的要素。請確實「守」你們該守的流程，不要驟然「破」或「離」。&lt;/p&gt;
-&lt;p&gt;全文很長，如果你是現役的程式設計師，可先讀①②以瞭解 engineering disciplines；如果你是 team lead，可先讀③④以瞭解團隊動力；如果你是管理層，可先讀⑤⑥，尤其是⑤關於管理面的施力點。&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;&#xA;&lt;p&gt;我很喜歡 Java 大師 &lt;a href=&#34;https://en.wikipedia.org/wiki/Joshua_Bloch&#34;&gt;Joshua Bloch&lt;/a&gt; 在《&lt;a href=&#34;https://williampjyeh.notion.site/d265b736b05f42d885ef40bb0a48786f&#34;&gt;編程的頂尖對話&lt;/a&gt;》所說的：&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;即使是想把一個很小的程式寫對也是非常難的。&lt;/p&gt;&#xA;&lt;p&gt;認為自己程式沒有 bug 就是在愚弄自己。程式肯定有 bug，（只是）多數情況下，程式裡的 bug 夠少，足以使其完成任務。&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;是的，100% 正確的程式或許很難達成，或許連定義起來都很困難，但我們還是得努力趨近它，讓我們工作更有成就感，更有信心能夠交付價值，也更少因不慎流出去的瑕疵而疲於奔命。&lt;/p&gt;&#xA;&lt;p&gt;Joshua Bloch 緊接著又說：&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;既然寫正確的程式那麼困難，我們就應該盡力取得幫助。所以，能減少 bug 的所有東西都是好的。這就是我是靜態型別和靜態分析的信徒的原因。&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;是的，我們需要動員許多力量，取得許多幫助，才能夠趨近於正確的程式。可動員的許多力量當中，無疑的 code review 是重要的基礎，可惜的是，許多團隊連這基礎都還有諸多可改善之處，這也限縮了團隊能進一步發揮的價值。&lt;/p&gt;&#xA;&lt;p&gt;Code review 乍看之下是小事，但若認真探討起來還真是不小。在我多年輔導各種成熟度團隊的經驗中，有六個基於 code review 以及衍生出來的議題可深入探討：&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;基本信念：品質來自正確地做事&lt;/li&gt;&#xA;&lt;li&gt;掌握基本功與領域知識&lt;/li&gt;&#xA;&lt;li&gt;凝聚團隊公約的共識&lt;/li&gt;&#xA;&lt;li&gt;嘗試更好的協同理解技巧&lt;/li&gt;&#xA;&lt;li&gt;讓進步看得見&lt;/li&gt;&#xA;&lt;li&gt;支持長久研發的措施&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;如果你所在的團隊已經啟動 Scrum 或 Kanban 研發流程，恭喜你，你們已經有很好的流程基礎可在這六大議題上面精進，只需要正確實施（玩真的！）你們所採用的敏捷流程。文中我會大量連結到 Scrum 及 Kanban 的要素。請確實「守」你們該守的流程，不要驟然「破」或「離」。&lt;/p&gt;&#xA;&lt;p&gt;全文很長，如果你是現役的程式設計師，可先讀①②以瞭解 engineering disciplines；如果你是 team lead，可先讀③④以瞭解團隊動力；如果你是管理層，可先讀⑤⑥，尤其是⑤關於管理面的施力點。&lt;/p&gt;</description>
     </item>
     <item>
       <title>很簡單的東西，也要單元測試嗎？</title>
       <link>//william-yeh.net/post/2022/05/need-for-unit-testing/</link>
       <pubDate>Tue, 24 May 2022 12:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2022/05/need-for-unit-testing/</guid>
-      <description>&lt;p&gt;（改寫自公司內部 memo）&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;Hi all engineers,&lt;/p&gt;
-&lt;p&gt;上完一整天單元測試課程之後，有同事問我：「有沒有標準來決定要不要寫單元測試？」&lt;/p&gt;
-&lt;p&gt;剛讀完劉潤《&lt;a href=&#34;https://www.books.com.tw/products/0010919211&#34;&gt;底層邏輯&lt;/a&gt;》的我，對於這類疑似「注射器」的問句格外敏感。雖然我可以瀟灑引述 &lt;a href=&#34;https://www.tenlong.com.tw/products/9789864344000&#34;&gt;&lt;em&gt;Working Effectively with Legacy Code&lt;/em&gt;&lt;/a&gt; 的說法「我毫無疑問地將『遺留程式碼』定義為『&lt;strong&gt;沒有編寫測試的程式碼&lt;/strong&gt;』」：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;沒有編寫測試的程式碼是糟糕的程式碼——不管我們多麼細心地編寫它們，不管它們有多漂亮、物件導向或封裝良好。有了測試，我們就能夠迅速、可驗證地修改程式碼的行為。沒有測試，我們就不知道修改後的程式碼，實際上是變得更好還是更糟。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;但當下我還是決定先展開一場對話。&lt;/p&gt;</description>
+      <description>&lt;p&gt;（改寫自公司內部 memo）&lt;/p&gt;&#xA;&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;&#xA;&lt;p&gt;Hi all engineers,&lt;/p&gt;&#xA;&lt;p&gt;上完一整天單元測試課程之後，有同事問我：「有沒有標準來決定要不要寫單元測試？」&lt;/p&gt;&#xA;&lt;p&gt;剛讀完劉潤《&lt;a href=&#34;https://www.books.com.tw/products/0010919211&#34;&gt;底層邏輯&lt;/a&gt;》的我，對於這類疑似「注射器」的問句格外敏感。雖然我可以瀟灑引述 &lt;a href=&#34;https://www.tenlong.com.tw/products/9789864344000&#34;&gt;&lt;em&gt;Working Effectively with Legacy Code&lt;/em&gt;&lt;/a&gt; 的說法「我毫無疑問地將『遺留程式碼』定義為『&lt;strong&gt;沒有編寫測試的程式碼&lt;/strong&gt;』」：&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;沒有編寫測試的程式碼是糟糕的程式碼——不管我們多麼細心地編寫它們，不管它們有多漂亮、物件導向或封裝良好。有了測試，我們就能夠迅速、可驗證地修改程式碼的行為。沒有測試，我們就不知道修改後的程式碼，實際上是變得更好還是更糟。&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;但當下我還是決定先展開一場對話。&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

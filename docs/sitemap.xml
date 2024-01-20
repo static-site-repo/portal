@@ -2,6 +2,55 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://william-yeh.net/categories/</loc>
+    <lastmod>2024-01-20T18:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://william-yeh.net/tags/education/</loc>
+    <lastmod>2024-01-20T18:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://william-yeh.net/categories/life/</loc>
+    <lastmod>2024-01-20T18:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://william-yeh.net/post/</loc>
+    <lastmod>2024-01-20T18:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://william-yeh.net/</loc>
+    <lastmod>2024-01-20T18:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://william-yeh.net/tags/</loc>
+    <lastmod>2024-01-20T18:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://william-yeh.net/post/2024/01/k9-k12/</loc>
+    <lastmod>2024-01-20T18:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://william-yeh.net/post/2023/12/2023-retrospective/</loc>
     <lastmod>2023-12-12T20:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -24,13 +73,6 @@
   
   <url>
     <loc>https://william-yeh.net/tags/career/</loc>
-    <lastmod>2023-12-12T20:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://william-yeh.net/categories/</loc>
     <lastmod>2023-12-12T20:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -65,27 +107,6 @@
   </url>
   
   <url>
-    <loc>https://william-yeh.net/categories/life/</loc>
-    <lastmod>2023-12-12T20:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://william-yeh.net/post/</loc>
-    <lastmod>2023-12-12T20:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://william-yeh.net/</loc>
-    <lastmod>2023-12-12T20:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://william-yeh.net/tags/principle/</loc>
     <lastmod>2023-12-12T20:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -94,13 +115,6 @@
   
   <url>
     <loc>https://william-yeh.net/tags/scrum/</loc>
-    <lastmod>2023-12-12T20:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://william-yeh.net/tags/</loc>
     <lastmod>2023-12-12T20:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1257,13 +1271,6 @@
   <url>
     <loc>https://william-yeh.net/post/2018/06/sys-thinking-workshop/</loc>
     <lastmod>2018-06-21T23:26:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://william-yeh.net/tags/education/</loc>
-    <lastmod>2018-04-26T11:36:45+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

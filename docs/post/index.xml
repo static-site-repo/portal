@@ -6,227 +6,105 @@
     <description>Recent content in Posts on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Tue, 12 Dec 2023 20:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 20 Jan 2024 18:00:00 +0800</lastBuildDate>
     <atom:link href="//william-yeh.net/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>從私校角度看新課綱</title>
+      <link>//william-yeh.net/post/2024/01/k9-k12/</link>
+      <pubDate>Sat, 20 Jan 2024 18:00:00 +0800</pubDate>
+      <guid>//william-yeh.net/post/2024/01/k9-k12/</guid>
+      <description>&lt;p&gt;屢次教改，課綱演進至今，許多人認為補習班與私校是受益者。&lt;/p&gt;&#xA;&lt;p&gt;補習班的說法可能不易判斷真偽，而私校畢竟受到教育當局的監管程度較高，說法應較可信。譬如說，私校定期呈報教育當局的「學校課程計畫」報告書，就可看出從教師角度出發的論述。&lt;/p&gt;&#xA;&lt;p&gt;我選了兩份報告：〈&lt;a href=&#34;https://www.chjhs.tp.edu.tw/dispUploadBox/pic/20230908132514559.pdf&#34;&gt;臺北市靜心國民中學 112 學年度學校課程計畫&lt;/a&gt;〉（以下簡稱「靜」）與〈&lt;a href=&#34;https://drive.google.com/file/d/1eVi8Yp9t8wuhbYy5YJHiq0_dl9vPoQUF/view?usp=sharing&#34;&gt;臺北市私立復興實驗高級中學國中部 112 學年度學校課程計畫&lt;/a&gt;〉（以下簡稱「復」），一窺私校眼中新課綱時代的教與學。&lt;/p&gt;</description>
+    </item>
     <item>
       <title>2023 個人回顧</title>
       <link>//william-yeh.net/post/2023/12/2023-retrospective/</link>
       <pubDate>Tue, 12 Dec 2023 20:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2023/12/2023-retrospective/</guid>
-      <description>&lt;p&gt;原本以為前幾年的冒險已經夠精彩了，沒想到今年更加刺激，簡直就是甘迺迪的登月大計。&lt;/p&gt;
-&lt;p&gt;到了年終，又開始要做個總回顧，再對來年許願。去除一些不便揭露的事情，以下是簡單的回顧。&lt;/p&gt;</description>
+      <description>&lt;p&gt;原本以為前幾年的冒險已經夠精彩了，沒想到今年更加刺激，簡直就是甘迺迪的登月大計。&lt;/p&gt;&#xA;&lt;p&gt;到了年終，又開始要做個總回顧，再對來年許願。去除一些不便揭露的事情，以下是簡單的回顧。&lt;/p&gt;</description>
     </item>
     <item>
       <title>如何衡量敏捷對於軟體研發效能的利益？</title>
       <link>//william-yeh.net/post/2023/12/dev-metrics/</link>
       <pubDate>Sun, 03 Dec 2023 20:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2023/12/dev-metrics/</guid>
-      <description>&lt;p&gt;面對敏捷或 DevOps 藥方，病人可能帶著各種不同的動機而來，但終歸都會提出同樣的疑問：我怎麼知道敏捷有沒有效？怎麼衡量成效？&lt;/p&gt;
-&lt;p&gt;這問題，可能在導入之後的某個時刻會問，但更有可能像戰國時代梁惠王那樣，才剛第一次接見孟子，居然劈頭就問：「叟，不遠千里而來，亦將有以利吾國乎？」&lt;/p&gt;
-
-&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
-&lt;div class=&#34;box&#34;&gt;
-&lt;figure  itemprop=&#34;associatedMedia&#34;
-  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
-  style=&#34;max-width:30em&#34; &gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/12/mencius-dialogue.png&#34; alt=&#34;孟子見梁惠王&#34;/&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2023/12/mencius-dialogue.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-      &lt;figcaption&gt;
-          &lt;p&gt;孟子見梁惠王&lt;/p&gt;
-      &lt;/figcaption&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;
-
-&lt;p&gt;對這議題，常有兩種極端的反應。&lt;/p&gt;</description>
+      <description>&lt;p&gt;面對敏捷或 DevOps 藥方，病人可能帶著各種不同的動機而來，但終歸都會提出同樣的疑問：我怎麼知道敏捷有沒有效？怎麼衡量成效？&lt;/p&gt;&#xA;&lt;p&gt;這問題，可能在導入之後的某個時刻會問，但更有可能像戰國時代梁惠王那樣，才剛第一次接見孟子，居然劈頭就問：「叟，不遠千里而來，亦將有以利吾國乎？」&lt;/p&gt;&#xA;&#xA;&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;&#xA;&lt;div class=&#34;box&#34;&gt;&#xA;&lt;figure  itemprop=&#34;associatedMedia&#34;&#xA;  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; &#xA;  style=&#34;max-width:30em&#34; &gt;&#xA;    &lt;div class=&#34;img&#34;&gt;&#xA;      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/12/mencius-dialogue.png&#34; alt=&#34;孟子見梁惠王&#34;/&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;a href=&#34;//william-yeh.net/img/2023/12/mencius-dialogue.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;&#xA;      &lt;figcaption&gt;&#xA;          &lt;p&gt;孟子見梁惠王&lt;/p&gt;&#xA;      &lt;/figcaption&gt;&#xA;  &lt;/figure&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;p&gt;對這議題，常有兩種極端的反應。&lt;/p&gt;</description>
     </item>
     <item>
       <title>變動的時代，為什麼工作分解技能更是必備？</title>
       <link>//william-yeh.net/post/2023/11/why-decomposition-matters/</link>
       <pubDate>Tue, 14 Nov 2023 20:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2023/11/why-decomposition-matters/</guid>
-      <description>&lt;p&gt;很多人認為，在變動較少的舊時代 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，一次到位的工作規劃、工作分解是必備技能，但是到了現在這個變動頻仍、朝令夕改、隕石滿天飛的時代，做再多工作分解的規劃只是不切實際的浪費。&lt;/p&gt;
-&lt;p&gt;你怎麼看？&lt;/p&gt;
-&lt;p&gt;我反而認為，正是因為變動頻仍，就更需要及早進行工作分解。只不過這種工作分解，不是舊時代那種一次到位的無差別分解，而是要能夠區分近光燈與遠光燈的不同層次，也就是敏捷陣營所講究的 &amp;ldquo;&lt;a href=&#34;https://scrumbook.org.datasenter.no/value-stream/product-backlog/granularity-gradient.html&#34;&gt;granularity gradient&lt;/a&gt;&amp;quot;。&lt;/p&gt;
-&lt;p&gt;這個論點，我曾在去年的兩場導讀會，透過兩本書，作為公司內推動敏捷轉型的心態導正。&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt; 最近我發現，這類誤解仍然普遍存在於敏捷轉型的業界，因此特地將去年那兩場導讀會的觀點稍作整理，誌於此文。&lt;/p&gt;
-
-&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
-&lt;div class=&#34;box&#34;&gt;
-&lt;figure  itemprop=&#34;associatedMedia&#34;
-  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
-  style=&#34;max-width:30em&#34; &gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/11/pomodoro-timer.png&#34; alt=&#34;Generated by ChatGPT4 &amp;#43; DALL·E 3&#34;/&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2023/11/pomodoro-timer.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-      &lt;figcaption&gt;
-          &lt;p&gt;Generated by ChatGPT4 &amp;#43; DALL·E 3&lt;/p&gt;
-      &lt;/figcaption&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;</description>
+      <description>&lt;p&gt;很多人認為，在變動較少的舊時代 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，一次到位的工作規劃、工作分解是必備技能，但是到了現在這個變動頻仍、朝令夕改、隕石滿天飛的時代，做再多工作分解的規劃只是不切實際的浪費。&lt;/p&gt;&#xA;&lt;p&gt;你怎麼看？&lt;/p&gt;&#xA;&lt;p&gt;我反而認為，正是因為變動頻仍，就更需要及早進行工作分解。只不過這種工作分解，不是舊時代那種一次到位的無差別分解，而是要能夠區分近光燈與遠光燈的不同層次，也就是敏捷陣營所講究的 &amp;ldquo;&lt;a href=&#34;https://scrumbook.org.datasenter.no/value-stream/product-backlog/granularity-gradient.html&#34;&gt;granularity gradient&lt;/a&gt;&amp;quot;。&lt;/p&gt;&#xA;&lt;p&gt;這個論點，我曾在去年的兩場導讀會，透過兩本書，作為公司內推動敏捷轉型的心態導正。&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt; 最近我發現，這類誤解仍然普遍存在於敏捷轉型的業界，因此特地將去年那兩場導讀會的觀點稍作整理，誌於此文。&lt;/p&gt;&#xA;&#xA;&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;&#xA;&lt;div class=&#34;box&#34;&gt;&#xA;&lt;figure  itemprop=&#34;associatedMedia&#34;&#xA;  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; &#xA;  style=&#34;max-width:30em&#34; &gt;&#xA;    &lt;div class=&#34;img&#34;&gt;&#xA;      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/11/pomodoro-timer.png&#34; alt=&#34;Generated by ChatGPT4 &amp;#43; DALL·E 3&#34;/&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;a href=&#34;//william-yeh.net/img/2023/11/pomodoro-timer.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;&#xA;      &lt;figcaption&gt;&#xA;          &lt;p&gt;Generated by ChatGPT4 &amp;#43; DALL·E 3&lt;/p&gt;&#xA;      &lt;/figcaption&gt;&#xA;  &lt;/figure&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
       <title>Agile Success Recipes: Example Agendas for Efficient Scrum Ceremonies</title>
       <link>//william-yeh.net/post/2023/11/scrum-events-agenda/</link>
       <pubDate>Fri, 03 Nov 2023 20:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2023/11/scrum-events-agenda/</guid>
-      <description>&lt;p&gt;If you&amp;rsquo;re new to leading Scrum events, knowing what to do can be tough. Having a set agenda can make things easier for you and your team. It helps everyone know what to expect.&lt;/p&gt;
-&lt;p&gt;I&amp;rsquo;ve got my own agendas that work for me, but it&amp;rsquo;s a good idea to get different takes. Why not ask ChatGPT to suggest some? The examples you&amp;rsquo;ll see here came from ChatGPT 4 and were adapted by me. Use them as a guide and tweak them to fit what your team needs.&lt;/p&gt;
-
-&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
-&lt;div class=&#34;box&#34;&gt;
-&lt;figure  itemprop=&#34;associatedMedia&#34;
-  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
-  style=&#34;max-width:20em&#34; &gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/11/scrum-events.png&#34; alt=&#34;Generated by ChatGPT4 &amp;#43; DALL·E 3&#34;/&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2023/11/scrum-events.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-      &lt;figcaption&gt;
-          &lt;p&gt;Generated by ChatGPT4 &amp;#43; DALL·E 3&lt;/p&gt;
-      &lt;/figcaption&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;</description>
+      <description>&lt;p&gt;If you&amp;rsquo;re new to leading Scrum events, knowing what to do can be tough. Having a set agenda can make things easier for you and your team. It helps everyone know what to expect.&lt;/p&gt;&#xA;&lt;p&gt;I&amp;rsquo;ve got my own agendas that work for me, but it&amp;rsquo;s a good idea to get different takes. Why not ask ChatGPT to suggest some? The examples you&amp;rsquo;ll see here came from ChatGPT 4 and were adapted by me. Use them as a guide and tweak them to fit what your team needs.&lt;/p&gt;&#xA;&#xA;&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;&#xA;&lt;div class=&#34;box&#34;&gt;&#xA;&lt;figure  itemprop=&#34;associatedMedia&#34;&#xA;  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; &#xA;  style=&#34;max-width:20em&#34; &gt;&#xA;    &lt;div class=&#34;img&#34;&gt;&#xA;      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/11/scrum-events.png&#34; alt=&#34;Generated by ChatGPT4 &amp;#43; DALL·E 3&#34;/&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;a href=&#34;//william-yeh.net/img/2023/11/scrum-events.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;&#xA;      &lt;figcaption&gt;&#xA;          &lt;p&gt;Generated by ChatGPT4 &amp;#43; DALL·E 3&lt;/p&gt;&#xA;      &lt;/figcaption&gt;&#xA;  &lt;/figure&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
       <title>[Code Review 碎碎念] 簡化巢狀條件判斷式</title>
       <link>//william-yeh.net/post/2023/10/nested-conditional/</link>
       <pubDate>Thu, 12 Oct 2023 20:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2023/10/nested-conditional/</guid>
-      <description>&lt;p&gt;讀別人的程式是一件苦差事，不僅需要具備對應的領域知識，也得了解對方的程式書寫邏輯與風格。因此，為了讓程式碼容易被人理解，整潔程式碼是必須持續精進的技藝。&lt;/p&gt;
-&lt;p&gt;在 code review 進行實質審查之前，我喜歡先做一點點形式審查，尤其是某些 code smell，臭味暴風半徑大到甚至連領域知識的外行人都聞得到。&lt;/p&gt;
-&lt;p&gt;我很常遇到不必要的巢狀迴圈或條件判斷式。經驗告訴我，除非真的是要設計出什麼高大尚的演算法或者刷題，否則，這有相當大的機率是需要進一步 refactor 的。&lt;/p&gt;
-&lt;p&gt;像以下這段程式，即使我故意把領域知識相關細節用 &lt;code&gt;conditionXX&lt;/code&gt; 馬賽克掉了，你還是可以明顯聞到 bad smell：迴圈 + 條件判斷式，ABCDEF 深達 6 層，你能夠很快捕捉到箇中邏輯嗎？&lt;/p&gt;</description>
+      <description>&lt;p&gt;讀別人的程式是一件苦差事，不僅需要具備對應的領域知識，也得了解對方的程式書寫邏輯與風格。因此，為了讓程式碼容易被人理解，整潔程式碼是必須持續精進的技藝。&lt;/p&gt;&#xA;&lt;p&gt;在 code review 進行實質審查之前，我喜歡先做一點點形式審查，尤其是某些 code smell，臭味暴風半徑大到甚至連領域知識的外行人都聞得到。&lt;/p&gt;&#xA;&lt;p&gt;我很常遇到不必要的巢狀迴圈或條件判斷式。經驗告訴我，除非真的是要設計出什麼高大尚的演算法或者刷題，否則，這有相當大的機率是需要進一步 refactor 的。&lt;/p&gt;&#xA;&lt;p&gt;像以下這段程式，即使我故意把領域知識相關細節用 &lt;code&gt;conditionXX&lt;/code&gt; 馬賽克掉了，你還是可以明顯聞到 bad smell：迴圈 + 條件判斷式，ABCDEF 深達 6 層，你能夠很快捕捉到箇中邏輯嗎？&lt;/p&gt;</description>
     </item>
     <item>
       <title>Timebox 是死胡同嗎？</title>
       <link>//william-yeh.net/post/2023/10/criticism-about-timebox/</link>
       <pubDate>Tue, 10 Oct 2023 10:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2023/10/criticism-about-timebox/</guid>
-      <description>&lt;p&gt;許多敏捷手法都奠基於 timebox。那麼，為什麼有人會認為 timebox 路線是死胡同呢？有此論點的人，偏偏又是敏捷圈的重量級人物呢。&lt;/p&gt;
-&lt;p&gt;看板方法之父 David J. Anderson 在新書 &lt;a href=&#34;https://www.amazon.com/dp/1960442074&#34;&gt;&lt;em&gt;Discovering Kanban&lt;/em&gt;&lt;/a&gt; 第 15 章對於 Scrum 之類基於 timebox 的方法有頗露骨的批評（光從標題 &amp;ldquo;The Tyranny of the Ever-Decreasing Timebox&amp;rdquo; 就看得出來）。正好好友 Derek 在 〈&lt;a href=&#34;https://medium.com/agile-coffee/discovering-kanban-18d9b2ac9be2&#34;&gt;《Discovering Kanban》心得：Scrum 可能沒有你想像的那麼美好&lt;/a&gt;〉一文整理了這一章的摘要與閱讀心得，在網路上也引發一些討論 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，我便趁此機會細讀這一章。&lt;/p&gt;
-&lt;p&gt;這一章論點非常深刻。但讀著讀著，總覺得作者道出的結論 &amp;ldquo;time-constrained sprints are an evolutionary cul-de-sac, a dead end&amp;rdquo;，與我直接或間接所知的業界實踐現況，並不相符。我猜想：會不會是某個推論環節出了些問題？&lt;/p&gt;
-&lt;p&gt;因此，我嘗試用系統思考角度去梳理相關論述。我試圖用更清晰的因果關係秀出 timebox 路線被點名的痛點，以及常見的因應之道。至於這痛點是否真的已被解決了，則留待讀者思考，不在此文的探討範圍。&lt;/p&gt;</description>
+      <description>&lt;p&gt;許多敏捷手法都奠基於 timebox。那麼，為什麼有人會認為 timebox 路線是死胡同呢？有此論點的人，偏偏又是敏捷圈的重量級人物呢。&lt;/p&gt;&#xA;&lt;p&gt;看板方法之父 David J. Anderson 在新書 &lt;a href=&#34;https://www.amazon.com/dp/1960442074&#34;&gt;&lt;em&gt;Discovering Kanban&lt;/em&gt;&lt;/a&gt; 第 15 章對於 Scrum 之類基於 timebox 的方法有頗露骨的批評（光從標題 &amp;ldquo;The Tyranny of the Ever-Decreasing Timebox&amp;rdquo; 就看得出來）。正好好友 Derek 在 〈&lt;a href=&#34;https://medium.com/agile-coffee/discovering-kanban-18d9b2ac9be2&#34;&gt;《Discovering Kanban》心得：Scrum 可能沒有你想像的那麼美好&lt;/a&gt;〉一文整理了這一章的摘要與閱讀心得，在網路上也引發一些討論 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，我便趁此機會細讀這一章。&lt;/p&gt;&#xA;&lt;p&gt;這一章論點非常深刻。但讀著讀著，總覺得作者道出的結論 &amp;ldquo;time-constrained sprints are an evolutionary cul-de-sac, a dead end&amp;rdquo;，與我直接或間接所知的業界實踐現況，並不相符。我猜想：會不會是某個推論環節出了些問題？&lt;/p&gt;&#xA;&lt;p&gt;因此，我嘗試用系統思考角度去梳理相關論述。我試圖用更清晰的因果關係秀出 timebox 路線被點名的痛點，以及常見的因應之道。至於這痛點是否真的已被解決了，則留待讀者思考，不在此文的探討範圍。&lt;/p&gt;</description>
     </item>
     <item>
       <title>從 Code Review 的小事看到大事</title>
       <link>//william-yeh.net/post/2023/09/on-code-review/</link>
       <pubDate>Wed, 13 Sep 2023 20:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2023/09/on-code-review/</guid>
-      <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
-&lt;p&gt;我很喜歡 Java 大師 &lt;a href=&#34;https://en.wikipedia.org/wiki/Joshua_Bloch&#34;&gt;Joshua Bloch&lt;/a&gt; 在《&lt;a href=&#34;https://williampjyeh.notion.site/d265b736b05f42d885ef40bb0a48786f&#34;&gt;編程的頂尖對話&lt;/a&gt;》所說的：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;即使是想把一個很小的程式寫對也是非常難的。&lt;/p&gt;
-&lt;p&gt;認為自己程式沒有 bug 就是在愚弄自己。程式肯定有 bug，（只是）多數情況下，程式裡的 bug 夠少，足以使其完成任務。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;是的，100% 正確的程式或許很難達成，或許連定義起來都很困難，但我們還是得努力趨近它，讓我們工作更有成就感，更有信心能夠交付價值，也更少因不慎流出去的瑕疵而疲於奔命。&lt;/p&gt;
-&lt;p&gt;Joshua Bloch 緊接著又說：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;既然寫正確的程式那麼困難，我們就應該盡力取得幫助。所以，能減少 bug 的所有東西都是好的。這就是我是靜態型別和靜態分析的信徒的原因。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;是的，我們需要動員許多力量，取得許多幫助，才能夠趨近於正確的程式。可動員的許多力量當中，無疑的 code review 是重要的基礎，可惜的是，許多團隊連這基礎都還有諸多可改善之處，這也限縮了團隊能進一步發揮的價值。&lt;/p&gt;
-&lt;p&gt;Code review 乍看之下是小事，但若認真探討起來還真是不小。在我多年輔導各種成熟度團隊的經驗中，有六個基於 code review 以及衍生出來的議題可深入探討：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;基本信念：品質來自正確地做事&lt;/li&gt;
-&lt;li&gt;掌握基本功與領域知識&lt;/li&gt;
-&lt;li&gt;凝聚團隊公約的共識&lt;/li&gt;
-&lt;li&gt;嘗試更好的協同理解技巧&lt;/li&gt;
-&lt;li&gt;讓進步看得見&lt;/li&gt;
-&lt;li&gt;支持長久研發的措施&lt;/li&gt;
-&lt;/ol&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;p&gt;如果你所在的團隊已經啟動 Scrum 或 Kanban 研發流程，恭喜你，你們已經有很好的流程基礎可在這六大議題上面精進，只需要正確實施（玩真的！）你們所採用的敏捷流程。文中我會大量連結到 Scrum 及 Kanban 的要素。請確實「守」你們該守的流程，不要驟然「破」或「離」。&lt;/p&gt;
-&lt;p&gt;全文很長，如果你是現役的程式設計師，可先讀①②以瞭解 engineering disciplines；如果你是 team lead，可先讀③④以瞭解團隊動力；如果你是管理層，可先讀⑤⑥，尤其是⑤關於管理面的施力點。&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;&#xA;&lt;p&gt;我很喜歡 Java 大師 &lt;a href=&#34;https://en.wikipedia.org/wiki/Joshua_Bloch&#34;&gt;Joshua Bloch&lt;/a&gt; 在《&lt;a href=&#34;https://williampjyeh.notion.site/d265b736b05f42d885ef40bb0a48786f&#34;&gt;編程的頂尖對話&lt;/a&gt;》所說的：&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;即使是想把一個很小的程式寫對也是非常難的。&lt;/p&gt;&#xA;&lt;p&gt;認為自己程式沒有 bug 就是在愚弄自己。程式肯定有 bug，（只是）多數情況下，程式裡的 bug 夠少，足以使其完成任務。&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;是的，100% 正確的程式或許很難達成，或許連定義起來都很困難，但我們還是得努力趨近它，讓我們工作更有成就感，更有信心能夠交付價值，也更少因不慎流出去的瑕疵而疲於奔命。&lt;/p&gt;&#xA;&lt;p&gt;Joshua Bloch 緊接著又說：&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;既然寫正確的程式那麼困難，我們就應該盡力取得幫助。所以，能減少 bug 的所有東西都是好的。這就是我是靜態型別和靜態分析的信徒的原因。&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;是的，我們需要動員許多力量，取得許多幫助，才能夠趨近於正確的程式。可動員的許多力量當中，無疑的 code review 是重要的基礎，可惜的是，許多團隊連這基礎都還有諸多可改善之處，這也限縮了團隊能進一步發揮的價值。&lt;/p&gt;&#xA;&lt;p&gt;Code review 乍看之下是小事，但若認真探討起來還真是不小。在我多年輔導各種成熟度團隊的經驗中，有六個基於 code review 以及衍生出來的議題可深入探討：&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;基本信念：品質來自正確地做事&lt;/li&gt;&#xA;&lt;li&gt;掌握基本功與領域知識&lt;/li&gt;&#xA;&lt;li&gt;凝聚團隊公約的共識&lt;/li&gt;&#xA;&lt;li&gt;嘗試更好的協同理解技巧&lt;/li&gt;&#xA;&lt;li&gt;讓進步看得見&lt;/li&gt;&#xA;&lt;li&gt;支持長久研發的措施&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;如果你所在的團隊已經啟動 Scrum 或 Kanban 研發流程，恭喜你，你們已經有很好的流程基礎可在這六大議題上面精進，只需要正確實施（玩真的！）你們所採用的敏捷流程。文中我會大量連結到 Scrum 及 Kanban 的要素。請確實「守」你們該守的流程，不要驟然「破」或「離」。&lt;/p&gt;&#xA;&lt;p&gt;全文很長，如果你是現役的程式設計師，可先讀①②以瞭解 engineering disciplines；如果你是 team lead，可先讀③④以瞭解團隊動力；如果你是管理層，可先讀⑤⑥，尤其是⑤關於管理面的施力點。&lt;/p&gt;</description>
     </item>
     <item>
       <title>很簡單的 Story，也要拆分出 Tasks 嗎？</title>
       <link>//william-yeh.net/post/2023/08/story-to-tasks/</link>
       <pubDate>Sat, 26 Aug 2023 18:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2023/08/story-to-tasks/</guid>
-      <description>&lt;p&gt;Scrum 已經夠精簡了，但很多人還是因為嫌麻煩、省時間，就省略原本預定該做的事情。&lt;/p&gt;
-&lt;p&gt;雖然在 2020 之前的 &lt;a href=&#34;https://scrumguides.org&#34;&gt;&lt;em&gt;The Scrum Guide&lt;/em&gt;&lt;/a&gt; 並沒有規定 &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Planning&lt;/span&gt;
- 要分為 Part 1 &amp;amp; Part 2 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，但這可說是 Scrum 圈公認的最佳實踐。&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-&lt;p&gt;如果團隊已經成熟到能以自己的方式把 &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Planning&lt;/span&gt;
- 做好做滿，其實也未必非得硬性劃分 Part 1 &amp;amp; Part 2（畢竟 Scrum 推崇基於經驗主義的自組織、自管理）。最怕的是，不明白劃分 Part 1 &amp;amp; Part 2 的好處，不明白 Part 2 的重點及產出，甚至單純只因「嫌麻煩」、「省時間」，就省略原本預定該在 Part 2 進行的活動，往往會導致 sprint 進行途中出現種種問題。&lt;/p&gt;
-&lt;p&gt;很多問題，追根究柢，就是當初沒有認真進行 Part 2。&lt;/p&gt;</description>
+      <description>&lt;p&gt;Scrum 已經夠精簡了，但很多人還是因為嫌麻煩、省時間，就省略原本預定該做的事情。&lt;/p&gt;&#xA;&lt;p&gt;雖然在 2020 之前的 &lt;a href=&#34;https://scrumguides.org&#34;&gt;&lt;em&gt;The Scrum Guide&lt;/em&gt;&lt;/a&gt; 並沒有規定 &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Planning&lt;/span&gt;&#xA; 要分為 Part 1 &amp;amp; Part 2 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，但這可說是 Scrum 圈公認的最佳實踐。&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;&#xA;&lt;p&gt;如果團隊已經成熟到能以自己的方式把 &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Planning&lt;/span&gt;&#xA; 做好做滿，其實也未必非得硬性劃分 Part 1 &amp;amp; Part 2（畢竟 Scrum 推崇基於經驗主義的自組織、自管理）。最怕的是，不明白劃分 Part 1 &amp;amp; Part 2 的好處，不明白 Part 2 的重點及產出，甚至單純只因「嫌麻煩」、「省時間」，就省略原本預定該在 Part 2 進行的活動，往往會導致 sprint 進行途中出現種種問題。&lt;/p&gt;&#xA;&lt;p&gt;很多問題，追根究柢，就是當初沒有認真進行 Part 2。&lt;/p&gt;</description>
     </item>
     <item>
       <title>透過自己的雙手，掌握那不變的容器技術核心——《Docker 實戰 6 堂課》推薦序</title>
       <link>//william-yeh.net/post/2023/08/docker-labs-review/</link>
       <pubDate>Sat, 19 Aug 2023 20:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2023/08/docker-labs-review/</guid>
-      <description>&lt;p&gt;我在 2015 年～2017 年間，開了 8 次【&lt;a href=&#34;https://william-yeh.github.io/docker-workshop/&#34;&gt;Docker 建置實戰講堂&lt;/a&gt;】一日課程。在那個大眾對於 Docker 還矇矇懂懂的年代，我就堅持不用貌似較簡便的 Docker Desktop，而是大膽採用 Vagrant + VirtualBox 作為統一的授課環境，讓學員儘早習慣在 Linux 平台上探索 Docker 的底層與應用。&lt;/p&gt;
-&lt;p&gt;所以，當我在 2022 年 iThome 鐵人賽看到小賴的參賽作品【&lt;a href=&#34;https://ithelp.ithome.com.tw/users/20151857/ironman/5419&#34;&gt;那些關於 docker 你知道與不知道的事&lt;/a&gt;】中，是以 AWS EC2 的 Ubuntu instance 作為實作環境，現在更出版新書《&lt;a href=&#34;https://www.tenlong.com.tw/products/9786263335769&#34;&gt;Docker 實戰 6 堂課：56 個實驗動手做，掌握 Linux 容器核心技術&lt;/a&gt;》，就非常高興。畢竟，從最擬真的角度切入，才能夠透過自己的雙手，掌握那不變的容器技術核心。&lt;/p&gt;
-
-&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
-&lt;div class=&#34;box&#34;&gt;
-&lt;figure  itemprop=&#34;associatedMedia&#34;
-  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
-  style=&#34;max-width:30em&#34; &gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/08/docker-labs-book.jpg&#34; alt=&#34;《Docker 實戰 6 堂課：56 個實驗動手做，掌握 Linux 容器核心技術》&#34;/&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2023/08/docker-labs-book.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-      &lt;figcaption&gt;
-          &lt;p&gt;《Docker 實戰 6 堂課：56 個實驗動手做，掌握 Linux 容器核心技術》&lt;/p&gt;
-      &lt;/figcaption&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;</description>
+      <description>&lt;p&gt;我在 2015 年～2017 年間，開了 8 次【&lt;a href=&#34;https://william-yeh.github.io/docker-workshop/&#34;&gt;Docker 建置實戰講堂&lt;/a&gt;】一日課程。在那個大眾對於 Docker 還矇矇懂懂的年代，我就堅持不用貌似較簡便的 Docker Desktop，而是大膽採用 Vagrant + VirtualBox 作為統一的授課環境，讓學員儘早習慣在 Linux 平台上探索 Docker 的底層與應用。&lt;/p&gt;&#xA;&lt;p&gt;所以，當我在 2022 年 iThome 鐵人賽看到小賴的參賽作品【&lt;a href=&#34;https://ithelp.ithome.com.tw/users/20151857/ironman/5419&#34;&gt;那些關於 docker 你知道與不知道的事&lt;/a&gt;】中，是以 AWS EC2 的 Ubuntu instance 作為實作環境，現在更出版新書《&lt;a href=&#34;https://www.tenlong.com.tw/products/9786263335769&#34;&gt;Docker 實戰 6 堂課：56 個實驗動手做，掌握 Linux 容器核心技術&lt;/a&gt;》，就非常高興。畢竟，從最擬真的角度切入，才能夠透過自己的雙手，掌握那不變的容器技術核心。&lt;/p&gt;&#xA;&#xA;&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;&#xA;&lt;div class=&#34;box&#34;&gt;&#xA;&lt;figure  itemprop=&#34;associatedMedia&#34;&#xA;  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; &#xA;  style=&#34;max-width:30em&#34; &gt;&#xA;    &lt;div class=&#34;img&#34;&gt;&#xA;      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/08/docker-labs-book.jpg&#34; alt=&#34;《Docker 實戰 6 堂課：56 個實驗動手做，掌握 Linux 容器核心技術》&#34;/&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;a href=&#34;//william-yeh.net/img/2023/08/docker-labs-book.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;&#xA;      &lt;figcaption&gt;&#xA;          &lt;p&gt;《Docker 實戰 6 堂課：56 個實驗動手做，掌握 Linux 容器核心技術》&lt;/p&gt;&#xA;      &lt;/figcaption&gt;&#xA;  &lt;/figure&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
       <title>Coursera 上面的 GCP 課程</title>
       <link>//william-yeh.net/post/2023/04/gcp-on-coursera/</link>
       <pubDate>Tue, 25 Apr 2023 22:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2023/04/gcp-on-coursera/</guid>
-      <description>&lt;p&gt;為了在公司內推動 GCP 認證考試，必須先推動大家勤修 GCP 課程；為了推動大家勤修 GCP 課程，我得先帶頭示範。因此，我最近在 Coursera 修了許多 GCP 認證考試相關課程 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，感觸很深：就算不考照，用這些課程補完一些知識，還是很值得的。&lt;/p&gt;
-&lt;p&gt;這些課程深度與廣度兼具，又有搭配實作演習，有系統地吸收，會比雜亂搜尋文件的碎片化學習來得踏實。&lt;/p&gt;
-&lt;p&gt;即使以俗氣的 C/P 值角度來說，這些課程也是物超所值的。像以下這門放在 Coursera 的課：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.coursera.org/learn/gcp-big-data-ml-fundamentals&#34;&gt;Google Cloud Big Data and Machine Learning Fundamentals&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;大家知道嗎？這樣的課，用同樣的 Google 原廠教材，改用國語發音 live 授課，在外頭可是喊價超過一萬元新台幣的。&lt;/p&gt;
-&lt;p&gt;我根據自己這些日子勤修課程的小經驗，推薦幾門有廣度有深度的課，讓想要對雲端環境有更廣更深認識的人參考。我大致將這些課程分類如下：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;非技術的通識類&lt;/li&gt;
-&lt;li&gt;GCP 技術：共通核心&lt;/li&gt;
-&lt;li&gt;GCP 技術：K8s&lt;/li&gt;
-&lt;li&gt;Dev&lt;/li&gt;
-&lt;li&gt;DevOps &amp;amp; SRE&lt;/li&gt;
-&lt;li&gt;ML &amp;amp; Big Data&lt;/li&gt;
-&lt;/ul&gt;</description>
+      <description>&lt;p&gt;為了在公司內推動 GCP 認證考試，必須先推動大家勤修 GCP 課程；為了推動大家勤修 GCP 課程，我得先帶頭示範。因此，我最近在 Coursera 修了許多 GCP 認證考試相關課程 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，感觸很深：就算不考照，用這些課程補完一些知識，還是很值得的。&lt;/p&gt;&#xA;&lt;p&gt;這些課程深度與廣度兼具，又有搭配實作演習，有系統地吸收，會比雜亂搜尋文件的碎片化學習來得踏實。&lt;/p&gt;&#xA;&lt;p&gt;即使以俗氣的 C/P 值角度來說，這些課程也是物超所值的。像以下這門放在 Coursera 的課：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.coursera.org/learn/gcp-big-data-ml-fundamentals&#34;&gt;Google Cloud Big Data and Machine Learning Fundamentals&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;大家知道嗎？這樣的課，用同樣的 Google 原廠教材，改用國語發音 live 授課，在外頭可是喊價超過一萬元新台幣的。&lt;/p&gt;&#xA;&lt;p&gt;我根據自己這些日子勤修課程的小經驗，推薦幾門有廣度有深度的課，讓想要對雲端環境有更廣更深認識的人參考。我大致將這些課程分類如下：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;非技術的通識類&lt;/li&gt;&#xA;&lt;li&gt;GCP 技術：共通核心&lt;/li&gt;&#xA;&lt;li&gt;GCP 技術：K8s&lt;/li&gt;&#xA;&lt;li&gt;Dev&lt;/li&gt;&#xA;&lt;li&gt;DevOps &amp;amp; SRE&lt;/li&gt;&#xA;&lt;li&gt;ML &amp;amp; Big Data&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
     <item>
       <title>Distroless Image 牛刀小試</title>
       <link>//william-yeh.net/post/2023/02/distroless-image/</link>
       <pubDate>Wed, 15 Feb 2023 22:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2023/02/distroless-image/</guid>
-      <description>&lt;p&gt;距離上次重度探討「極簡化容器」已經快六年多了&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;。這議題，以前可能只是某些人技術上的興趣，現在則可能是必要。&lt;/p&gt;
-&lt;p&gt;原因是：Docker Inc 的一些措施，讓人不得不慎重考慮替代方案。&lt;/p&gt;
-&lt;h2 id=&#34;搬家的必要&#34;&gt;搬家的必要&lt;/h2&gt;
-&lt;p&gt;這陣子容器世界起了不少變化，除了眾所周知的「Docker Desktop 要收費了」規定 &lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;，另一個較少被提及影響是 Docker Hub 的緊縮政策：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Image CI 緊縮：Docker Hub 取消免費用戶的 automated builds 功能。 &lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
-&lt;li&gt;Image pull 緊縮：Docker Hub 開始對未付費者施以較嚴格的限流措施。 &lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;於是，未付費的人，不僅在使用 Docker Hub 時會受到管制，還會波及產製 image 的 CI pipeline，不時會遇到這樣的 &amp;ldquo;toomanyrequests&amp;rdquo; 限流警告：&lt;/p&gt;</description>
+      <description>&lt;p&gt;距離上次重度探討「極簡化容器」已經快六年多了&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;。這議題，以前可能只是某些人技術上的興趣，現在則可能是必要。&lt;/p&gt;&#xA;&lt;p&gt;原因是：Docker Inc 的一些措施，讓人不得不慎重考慮替代方案。&lt;/p&gt;&#xA;&lt;h2 id=&#34;搬家的必要&#34;&gt;搬家的必要&lt;/h2&gt;&#xA;&lt;p&gt;這陣子容器世界起了不少變化，除了眾所周知的「Docker Desktop 要收費了」規定 &lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;，另一個較少被提及影響是 Docker Hub 的緊縮政策：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Image CI 緊縮：Docker Hub 取消免費用戶的 automated builds 功能。 &lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;&#xA;&lt;li&gt;Image pull 緊縮：Docker Hub 開始對未付費者施以較嚴格的限流措施。 &lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;於是，未付費的人，不僅在使用 Docker Hub 時會受到管制，還會波及產製 image 的 CI pipeline，不時會遇到這樣的 &amp;ldquo;toomanyrequests&amp;rdquo; 限流警告：&lt;/p&gt;</description>
     </item>
     <item>
       <title>WSL Image 匯出與匯入</title>
       <link>//william-yeh.net/post/2023/02/wsl-image/</link>
       <pubDate>Thu, 09 Feb 2023 22:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2023/02/wsl-image/</guid>
-      <description>&lt;p&gt;經過一番辛苦調教，總算把 WSL 調整成可推廣到團隊使用的地步。下一步就是要輸出成 WSL 公版。&lt;/p&gt;
-&lt;p&gt;謹以此文記錄匯出與匯入 WSL 映像檔的步驟與除雷經驗。&lt;/p&gt;</description>
+      <description>&lt;p&gt;經過一番辛苦調教，總算把 WSL 調整成可推廣到團隊使用的地步。下一步就是要輸出成 WSL 公版。&lt;/p&gt;&#xA;&lt;p&gt;謹以此文記錄匯出與匯入 WSL 映像檔的步驟與除雷經驗。&lt;/p&gt;</description>
     </item>
     <item>
       <title>用 Podman 執行 Laravel &#43; Sail</title>
       <link>//william-yeh.net/post/2023/02/podman-laravel-sail/</link>
       <pubDate>Tue, 07 Feb 2023 22:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2023/02/podman-laravel-sail/</guid>
-      <description>&lt;p&gt;從 Docker Desktop 換到 Podman &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; ，開始需要處理某些相容性問題。有些問題不見得是 Podman 的錯，但既然遇到了，就順手記錄一下除雷經驗。&lt;/p&gt;
-&lt;p&gt;此文記錄一下在 Podman 執行 Laravel 9 欽定開發環境 &lt;a href=&#34;https://laravel.com/docs/9.x/sail&#34;&gt;Sail&lt;/a&gt; 的步驟。&lt;/p&gt;</description>
+      <description>&lt;p&gt;從 Docker Desktop 換到 Podman &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; ，開始需要處理某些相容性問題。有些問題不見得是 Podman 的錯，但既然遇到了，就順手記錄一下除雷經驗。&lt;/p&gt;&#xA;&lt;p&gt;此文記錄一下在 Podman 執行 Laravel 9 欽定開發環境 &lt;a href=&#34;https://laravel.com/docs/9.x/sail&#34;&gt;Sail&lt;/a&gt; 的步驟。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Podman Tips</title>
@@ -240,411 +118,175 @@
       <link>//william-yeh.net/post/2023/02/wsl2-podman-k3s/</link>
       <pubDate>Mon, 06 Feb 2023 22:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2023/02/wsl2-podman-k3s/</guid>
-      <description>&lt;p&gt;距離上次重度使用 WSL 已經快四年了。四年來 WSL 世界起了一些變化：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;WSL 已經演進到第二版。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;以前還會為了要搭配 &lt;a href=&#34;//william-yeh.net/post/2019/03/wsl-cmder-zsh/&#34;&gt;Cmder&lt;/a&gt; 或者 &lt;a href=&#34;//william-yeh.net/post/2019/04/wsltty-tmux/&#34;&gt;WSLtty&lt;/a&gt; 而大費周章，現在則被 &lt;a href=&#34;https://learn.microsoft.com/zh-tw/windows/terminal/&#34;&gt;Windows Terminal&lt;/a&gt; 解決了大部分問題，使用體驗也開始接近 Mac 的 iTerm2。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;容器世界也起了很大的變化：&lt;/p&gt;</description>
+      <description>&lt;p&gt;距離上次重度使用 WSL 已經快四年了。四年來 WSL 世界起了一些變化：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;WSL 已經演進到第二版。&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;以前還會為了要搭配 &lt;a href=&#34;//william-yeh.net/post/2019/03/wsl-cmder-zsh/&#34;&gt;Cmder&lt;/a&gt; 或者 &lt;a href=&#34;//william-yeh.net/post/2019/04/wsltty-tmux/&#34;&gt;WSLtty&lt;/a&gt; 而大費周章，現在則被 &lt;a href=&#34;https://learn.microsoft.com/zh-tw/windows/terminal/&#34;&gt;Windows Terminal&lt;/a&gt; 解決了大部分問題，使用體驗也開始接近 Mac 的 iTerm2。&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;容器世界也起了很大的變化：&lt;/p&gt;</description>
     </item>
     <item>
       <title>2022 個人回顧</title>
       <link>//william-yeh.net/post/2022/12/2022-retrospective/</link>
       <pubDate>Sun, 18 Dec 2022 22:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2022/12/2022-retrospective/</guid>
-      <description>&lt;p&gt;去年年終&lt;a href=&#34;//william-yeh.net/post/2021/12/2021-retrospective/&#34;&gt;回顧文&lt;/a&gt;中，我曾半戲謔說道：自己好像都在消費之前外商經驗的戰備存糧。&lt;/p&gt;
-&lt;p&gt;今年，這份感受更加明顯，甚至連台商新創經驗都動用到了。&lt;/p&gt;
-&lt;p&gt;到了年終，又開始要做個總回顧，再對來年許願。去除一些不便揭露的事情，以下是簡單的回顧。&lt;/p&gt;</description>
+      <description>&lt;p&gt;去年年終&lt;a href=&#34;//william-yeh.net/post/2021/12/2021-retrospective/&#34;&gt;回顧文&lt;/a&gt;中，我曾半戲謔說道：自己好像都在消費之前外商經驗的戰備存糧。&lt;/p&gt;&#xA;&lt;p&gt;今年，這份感受更加明顯，甚至連台商新創經驗都動用到了。&lt;/p&gt;&#xA;&lt;p&gt;到了年終，又開始要做個總回顧，再對來年許願。去除一些不便揭露的事情，以下是簡單的回顧。&lt;/p&gt;</description>
     </item>
     <item>
       <title>職涯躍升書系導讀會，Part 3：職場心理：觀點、期待、渴望</title>
       <link>//william-yeh.net/post/2022/11/career-reading-club-3/</link>
       <pubDate>Tue, 29 Nov 2022 20:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2022/11/career-reading-club-3/</guid>
-      <description>&lt;p&gt;2022 年一月起，我開始每個月一次，每次兩小時的【職涯躍升書系導讀會】。&lt;a href=&#34;//william-yeh.net/post/2022/06/career-reading-club-1/&#34;&gt;前六個月&lt;/a&gt;著眼於喚醒個人及團隊的成長意識，接下來&lt;a href=&#34;//william-yeh.net/post/2022/08/career-reading-club-2/&#34;&gt;兩個月&lt;/a&gt;著眼於高效團隊的工作方法，最近三個月則著眼於心理層面，尤其是觀點、期待、渴望。&lt;/p&gt;
-&lt;p&gt;這三個月的選書如下：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;① &lt;a href=&#34;https://williampjyeh.notion.site/3e31bb4af3d74007bc0e522e268019c0&#34;&gt;薩提爾教練模式&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;② &lt;a href=&#34;https://williampjyeh.notion.site/b299b20f381643c9b7b0caaba1d12f44&#34;&gt;為什麼上班這麼累？其實是你心累&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;③ 兩本與 Accountability 有關的書：&lt;a href=&#34;https://williampjyeh.notion.site/QBQ-30-89b7f2e8006e41afa8953f238ff26441&#34;&gt;QBQ&lt;/a&gt; ＆ &lt;a href=&#34;https://williampjyeh.notion.site/99f7c1cb5ef84873bf294916a03715a0&#34;&gt;當責&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
-&lt;div class=&#34;box&#34;&gt;
-&lt;figure  itemprop=&#34;associatedMedia&#34;
-  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
-  style=&#34;max-width:30em&#34; &gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2022/11/career-reading-club-3.png&#34; /&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2022/11/career-reading-club-3.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;
-
-&lt;p&gt;以下列出這三場導讀會的介紹文案。&lt;/p&gt;</description>
+      <description>&lt;p&gt;2022 年一月起，我開始每個月一次，每次兩小時的【職涯躍升書系導讀會】。&lt;a href=&#34;//william-yeh.net/post/2022/06/career-reading-club-1/&#34;&gt;前六個月&lt;/a&gt;著眼於喚醒個人及團隊的成長意識，接下來&lt;a href=&#34;//william-yeh.net/post/2022/08/career-reading-club-2/&#34;&gt;兩個月&lt;/a&gt;著眼於高效團隊的工作方法，最近三個月則著眼於心理層面，尤其是觀點、期待、渴望。&lt;/p&gt;&#xA;&lt;p&gt;這三個月的選書如下：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;① &lt;a href=&#34;https://williampjyeh.notion.site/3e31bb4af3d74007bc0e522e268019c0&#34;&gt;薩提爾教練模式&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;② &lt;a href=&#34;https://williampjyeh.notion.site/b299b20f381643c9b7b0caaba1d12f44&#34;&gt;為什麼上班這麼累？其實是你心累&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;③ 兩本與 Accountability 有關的書：&lt;a href=&#34;https://williampjyeh.notion.site/QBQ-30-89b7f2e8006e41afa8953f238ff26441&#34;&gt;QBQ&lt;/a&gt; ＆ &lt;a href=&#34;https://williampjyeh.notion.site/99f7c1cb5ef84873bf294916a03715a0&#34;&gt;當責&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&#xA;&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;&#xA;&lt;div class=&#34;box&#34;&gt;&#xA;&lt;figure  itemprop=&#34;associatedMedia&#34;&#xA;  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; &#xA;  style=&#34;max-width:30em&#34; &gt;&#xA;    &lt;div class=&#34;img&#34;&gt;&#xA;      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2022/11/career-reading-club-3.png&#34; /&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;a href=&#34;//william-yeh.net/img/2022/11/career-reading-club-3.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;&#xA;  &lt;/figure&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;p&gt;以下列出這三場導讀會的介紹文案。&lt;/p&gt;</description>
     </item>
     <item>
       <title>以「蜘蛛法」拆分過於龐大的 User Story</title>
       <link>//william-yeh.net/post/2022/11/spidr/</link>
       <pubDate>Tue, 01 Nov 2022 17:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2022/11/spidr/</guid>
-      <description>&lt;p&gt;（改寫自公司內部 memo）&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;Hi all guys,&lt;/p&gt;
-&lt;p&gt;剛從傳統瀑布式專案管理風格轉換到敏捷風格的團隊，最常遇到第二個卡關之處是：如何將 User Story 拆分到足以在一個 sprint 內完成的顆粒度？&lt;/p&gt;
-&lt;p&gt;如果玩過我帶的「在幾分鐘以內出門」(&amp;ldquo;get out of the door in a few minutes&amp;rdquo;) 活動 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，或許可藉由喚起這段活動的體驗來得到拆分大故事的靈感。如果還想進一步知道更具體的步驟，我推薦大家試試 Mike Cohn 大師提出的 &lt;a href=&#34;https://www.mountaingoatsoftware.com/exclusive/spidr-poster-download&#34;&gt;SPIDR 法&lt;/a&gt;。&lt;/p&gt;</description>
+      <description>&lt;p&gt;（改寫自公司內部 memo）&lt;/p&gt;&#xA;&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;&#xA;&lt;p&gt;Hi all guys,&lt;/p&gt;&#xA;&lt;p&gt;剛從傳統瀑布式專案管理風格轉換到敏捷風格的團隊，最常遇到第二個卡關之處是：如何將 User Story 拆分到足以在一個 sprint 內完成的顆粒度？&lt;/p&gt;&#xA;&lt;p&gt;如果玩過我帶的「在幾分鐘以內出門」(&amp;ldquo;get out of the door in a few minutes&amp;rdquo;) 活動 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，或許可藉由喚起這段活動的體驗來得到拆分大故事的靈感。如果還想進一步知道更具體的步驟，我推薦大家試試 Mike Cohn 大師提出的 &lt;a href=&#34;https://www.mountaingoatsoftware.com/exclusive/spidr-poster-download&#34;&gt;SPIDR 法&lt;/a&gt;。&lt;/p&gt;</description>
     </item>
     <item>
       <title>事情做一半，等於沒完成：淺談敏捷的里程碑設定</title>
       <link>//william-yeh.net/post/2022/10/agile-milestone/</link>
       <pubDate>Mon, 31 Oct 2022 17:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2022/10/agile-milestone/</guid>
-      <description>&lt;p&gt;（改寫自公司內部 memo）&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;Hi all guys,&lt;/p&gt;
-&lt;p&gt;剛從傳統瀑布式專案管理風格轉換到敏捷風格的團隊，最常遇到第一個卡關之處是：如何以敏捷的角度設定里程碑？&lt;/p&gt;
-&lt;p&gt;最近在協助兩個 Scrum teams 進行 Sprint Planning 時，我都會用以下角度提出挑戰性提問：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;能否將 User Stories &lt;strong&gt;拆分&lt;/strong&gt;到：可以在一個 sprint 結束時，端出&lt;strong&gt;利害關係人&lt;/strong&gt;可以據以給出&lt;strong&gt;建設性回饋&lt;/strong&gt;的 &lt;strong&gt;end-to-end 成果&lt;/strong&gt;？&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;這需要創意，需要練習，需要提升規劃能力，需要提升工程能力，需要時時用挑戰性提問提醒自己。但或許更重要的是：大家需要打從心裡認清且認同這樣做的理由。&lt;/p&gt;
-&lt;p&gt;理由之一是：精實生產。&lt;/p&gt;</description>
+      <description>&lt;p&gt;（改寫自公司內部 memo）&lt;/p&gt;&#xA;&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;&#xA;&lt;p&gt;Hi all guys,&lt;/p&gt;&#xA;&lt;p&gt;剛從傳統瀑布式專案管理風格轉換到敏捷風格的團隊，最常遇到第一個卡關之處是：如何以敏捷的角度設定里程碑？&lt;/p&gt;&#xA;&lt;p&gt;最近在協助兩個 Scrum teams 進行 Sprint Planning 時，我都會用以下角度提出挑戰性提問：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;能否將 User Stories &lt;strong&gt;拆分&lt;/strong&gt;到：可以在一個 sprint 結束時，端出&lt;strong&gt;利害關係人&lt;/strong&gt;可以據以給出&lt;strong&gt;建設性回饋&lt;/strong&gt;的 &lt;strong&gt;end-to-end 成果&lt;/strong&gt;？&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;這需要創意，需要練習，需要提升規劃能力，需要提升工程能力，需要時時用挑戰性提問提醒自己。但或許更重要的是：大家需要打從心裡認清且認同這樣做的理由。&lt;/p&gt;&#xA;&lt;p&gt;理由之一是：精實生產。&lt;/p&gt;</description>
     </item>
     <item>
       <title>User Story 釋疑：真的要遵守嗎？</title>
       <link>//william-yeh.net/post/2022/10/on-user-stories/</link>
       <pubDate>Sat, 08 Oct 2022 10:30:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2022/10/on-user-stories/</guid>
-      <description>&lt;p&gt;（改寫自公司內部 memo）&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;Hi all guys,&lt;/p&gt;
-&lt;p&gt;最近我會對有意導入 Scrum 的任務小組個別進行一整天的 Agile Workshop。這些小組都有一項課前作業：請先準備團隊在三個月以內會進行的 User Stories 清單／陳述。&lt;/p&gt;
-&lt;p&gt;眾所周知，user story 有一個經典句型：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;As a&lt;/strong&gt; {XXX user persona}, &lt;strong&gt;I want to&lt;/strong&gt; {do YYY} &lt;strong&gt;so that&lt;/strong&gt; {ZZZ result or benefit}.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;有同仁問道：有些 user story 不容易以「&amp;ldquo;user&amp;rdquo; 視角」來寫。怎麼辦？真的要這麼嚴格遵守 user story 格式嗎？&lt;/p&gt;</description>
+      <description>&lt;p&gt;（改寫自公司內部 memo）&lt;/p&gt;&#xA;&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;&#xA;&lt;p&gt;Hi all guys,&lt;/p&gt;&#xA;&lt;p&gt;最近我會對有意導入 Scrum 的任務小組個別進行一整天的 Agile Workshop。這些小組都有一項課前作業：請先準備團隊在三個月以內會進行的 User Stories 清單／陳述。&lt;/p&gt;&#xA;&lt;p&gt;眾所周知，user story 有一個經典句型：&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;As a&lt;/strong&gt; {XXX user persona}, &lt;strong&gt;I want to&lt;/strong&gt; {do YYY} &lt;strong&gt;so that&lt;/strong&gt; {ZZZ result or benefit}.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;有同仁問道：有些 user story 不容易以「&amp;ldquo;user&amp;rdquo; 視角」來寫。怎麼辦？真的要這麼嚴格遵守 user story 格式嗎？&lt;/p&gt;</description>
     </item>
     <item>
       <title>職涯躍升書系導讀會，Part 2：高效團隊的工作方法</title>
       <link>//william-yeh.net/post/2022/08/career-reading-club-2/</link>
       <pubDate>Sat, 20 Aug 2022 10:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2022/08/career-reading-club-2/</guid>
-      <description>&lt;p&gt;2022 年一月起，我開始每個月一次，每次兩小時的【職涯躍升書系導讀會】。&lt;a href=&#34;//william-yeh.net/post/2022/06/career-reading-club-1/&#34;&gt;前六個月&lt;/a&gt;著眼於&lt;strong&gt;喚醒個人及團隊的成長意識&lt;/strong&gt;，接下來兩個月則著眼於&lt;strong&gt;高效團隊的工作方法&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;這兩個月的導讀會，都鎖定在 Agile 相關書籍上——儘管單純從書籍名稱上面都看不出來會與「敏捷」有關。選書如下：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;① &lt;a href=&#34;https://williampjyeh.notion.site/d8a843cbc9c148989e6489625b6fb34d&#34;&gt;豐田精實管理的翻轉獲利秘密&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;② &lt;a href=&#34;https://www.playpcesor.com/2020/05/2020-new-book.html&#34;&gt;時間管理的 30 道難題&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
-&lt;div class=&#34;box&#34;&gt;
-&lt;figure  itemprop=&#34;associatedMedia&#34;
-  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
-  style=&#34;max-width:30em&#34; &gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2022/08/career-reading-club-2.jpg&#34; /&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2022/08/career-reading-club-2.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;
-
-&lt;p&gt;以下列出這兩場導讀會的介紹文案。&lt;/p&gt;</description>
+      <description>&lt;p&gt;2022 年一月起，我開始每個月一次，每次兩小時的【職涯躍升書系導讀會】。&lt;a href=&#34;//william-yeh.net/post/2022/06/career-reading-club-1/&#34;&gt;前六個月&lt;/a&gt;著眼於&lt;strong&gt;喚醒個人及團隊的成長意識&lt;/strong&gt;，接下來兩個月則著眼於&lt;strong&gt;高效團隊的工作方法&lt;/strong&gt;。&lt;/p&gt;&#xA;&lt;p&gt;這兩個月的導讀會，都鎖定在 Agile 相關書籍上——儘管單純從書籍名稱上面都看不出來會與「敏捷」有關。選書如下：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;① &lt;a href=&#34;https://williampjyeh.notion.site/d8a843cbc9c148989e6489625b6fb34d&#34;&gt;豐田精實管理的翻轉獲利秘密&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;② &lt;a href=&#34;https://www.playpcesor.com/2020/05/2020-new-book.html&#34;&gt;時間管理的 30 道難題&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&#xA;&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;&#xA;&lt;div class=&#34;box&#34;&gt;&#xA;&lt;figure  itemprop=&#34;associatedMedia&#34;&#xA;  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; &#xA;  style=&#34;max-width:30em&#34; &gt;&#xA;    &lt;div class=&#34;img&#34;&gt;&#xA;      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2022/08/career-reading-club-2.jpg&#34; /&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;a href=&#34;//william-yeh.net/img/2022/08/career-reading-club-2.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;&#xA;  &lt;/figure&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;p&gt;以下列出這兩場導讀會的介紹文案。&lt;/p&gt;</description>
     </item>
     <item>
       <title>請掌握「對高層簡報」的技術及習慣</title>
       <link>//william-yeh.net/post/2022/08/present-for-upper-mgmt/</link>
       <pubDate>Thu, 04 Aug 2022 19:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2022/08/present-for-upper-mgmt/</guid>
-      <description>&lt;p&gt;（改寫自公司內部 memo）&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;Dear all guys,&lt;/p&gt;
-&lt;p&gt;最近協助一些同仁潤飾簡報，尤其是對高層的簡報，有一個常見的問題，值得特別為文給大家一點建議。&lt;/p&gt;
-&lt;p&gt;我們在三月份&lt;a href=&#34;//william-yeh.net/post/2022/06/career-reading-club-1/&#34;&gt;導讀會&lt;/a&gt;《&lt;a href=&#34;https://www.books.com.tw/products/0010681486&#34;&gt;不懂這些，別想加薪&lt;/a&gt;》就已經探討過，對高層的寫作與簡報，要盡量掌握「&lt;strong&gt;金字塔原理&lt;/strong&gt;」：結論先行，論證隨後。&lt;/p&gt;
-&lt;p&gt;鑑於有些人沒參加這場導讀會，以下僅說明三大重點：① 一般的溝通原理，② 對高層的溝通原理，③ 對高層的溝通方法。&lt;/p&gt;</description>
+      <description>&lt;p&gt;（改寫自公司內部 memo）&lt;/p&gt;&#xA;&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;&#xA;&lt;p&gt;Dear all guys,&lt;/p&gt;&#xA;&lt;p&gt;最近協助一些同仁潤飾簡報，尤其是對高層的簡報，有一個常見的問題，值得特別為文給大家一點建議。&lt;/p&gt;&#xA;&lt;p&gt;我們在三月份&lt;a href=&#34;//william-yeh.net/post/2022/06/career-reading-club-1/&#34;&gt;導讀會&lt;/a&gt;《&lt;a href=&#34;https://www.books.com.tw/products/0010681486&#34;&gt;不懂這些，別想加薪&lt;/a&gt;》就已經探討過，對高層的寫作與簡報，要盡量掌握「&lt;strong&gt;金字塔原理&lt;/strong&gt;」：結論先行，論證隨後。&lt;/p&gt;&#xA;&lt;p&gt;鑑於有些人沒參加這場導讀會，以下僅說明三大重點：① 一般的溝通原理，② 對高層的溝通原理，③ 對高層的溝通方法。&lt;/p&gt;</description>
     </item>
     <item>
       <title>專案管理／專案組合管理當中，不必然需要公開透明的地方</title>
       <link>//william-yeh.net/post/2022/08/stakeholder-transparency/</link>
       <pubDate>Mon, 01 Aug 2022 17:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2022/08/stakeholder-transparency/</guid>
-      <description>&lt;p&gt;（改寫自公司內部 memo）&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;（Target audience: 有「專案管理」職責的人）&lt;/p&gt;
-&lt;p&gt;Hi all,&lt;/p&gt;
-&lt;p&gt;隨著愈來愈多人開始運用專案管理課堂上學到的技術來工作，帶來更高的透明度，更成熟的專業度，欣慰之餘，我也針對其中一件事「透明度」提出一點小提醒。&lt;/p&gt;
-&lt;p&gt;理想情況下，組織應該要追求專案的透明度——除非有特殊理由。&lt;/p&gt;</description>
+      <description>&lt;p&gt;（改寫自公司內部 memo）&lt;/p&gt;&#xA;&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;&#xA;&lt;p&gt;（Target audience: 有「專案管理」職責的人）&lt;/p&gt;&#xA;&lt;p&gt;Hi all,&lt;/p&gt;&#xA;&lt;p&gt;隨著愈來愈多人開始運用專案管理課堂上學到的技術來工作，帶來更高的透明度，更成熟的專業度，欣慰之餘，我也針對其中一件事「透明度」提出一點小提醒。&lt;/p&gt;&#xA;&lt;p&gt;理想情況下，組織應該要追求專案的透明度——除非有特殊理由。&lt;/p&gt;</description>
     </item>
     <item>
       <title>專案 Kick-off meeting 的前置作業</title>
       <link>//william-yeh.net/post/2022/07/prj-kickoff/</link>
       <pubDate>Mon, 11 Jul 2022 15:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2022/07/prj-kickoff/</guid>
-      <description>&lt;p&gt;（改寫自公司內部 memo）&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;（Target audience: 上過【專案管理第一次就上手】的同仁）&lt;/p&gt;
-&lt;p&gt;很高興看到二月及四月上過【專案管理第一次就上手】的同仁們，開始在工作上運用課堂所學，尤其是「&lt;strong&gt;專案管理問題清單&lt;/strong&gt;」開始被廣泛運用在大大小小專案的 kick-off meeting 上面，這是非常好的現象。&lt;/p&gt;
-&lt;p&gt;這份 memo，我針對 &lt;strong&gt;kick-off meeting&lt;/strong&gt; 的定位及前置作業多做一些補充，算是這陣子貼身觀察的小小心得。&lt;/p&gt;</description>
+      <description>&lt;p&gt;（改寫自公司內部 memo）&lt;/p&gt;&#xA;&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;&#xA;&lt;p&gt;（Target audience: 上過【專案管理第一次就上手】的同仁）&lt;/p&gt;&#xA;&lt;p&gt;很高興看到二月及四月上過【專案管理第一次就上手】的同仁們，開始在工作上運用課堂所學，尤其是「&lt;strong&gt;專案管理問題清單&lt;/strong&gt;」開始被廣泛運用在大大小小專案的 kick-off meeting 上面，這是非常好的現象。&lt;/p&gt;&#xA;&lt;p&gt;這份 memo，我針對 &lt;strong&gt;kick-off meeting&lt;/strong&gt; 的定位及前置作業多做一些補充，算是這陣子貼身觀察的小小心得。&lt;/p&gt;</description>
     </item>
     <item>
       <title>職涯躍升書系導讀會，Part 1：喚醒個人及團隊的成長意識</title>
       <link>//william-yeh.net/post/2022/06/career-reading-club-1/</link>
       <pubDate>Fri, 17 Jun 2022 20:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2022/06/career-reading-club-1/</guid>
-      <description>&lt;p&gt;2022 年一月起，我開始每個月一次，每次兩小時的【職涯躍升書系導讀會】，讓公司同仁自由報名，希望藉由這種草根性的軟性活動，另闢一條 bottom-up 的改革路徑。畢竟，深遠持久的影響，不能少掉「喚醒基層意識」這環節。&lt;/p&gt;
-
-&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
-&lt;div class=&#34;box&#34;&gt;
-&lt;figure  itemprop=&#34;associatedMedia&#34;
-  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
-  style=&#34;max-width:30em&#34; &gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2022/06/reading-club-photo.jpg&#34; /&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2022/06/reading-club-photo.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;
-
-&lt;p&gt;前六個月的選書如下：&lt;/p&gt;</description>
+      <description>&lt;p&gt;2022 年一月起，我開始每個月一次，每次兩小時的【職涯躍升書系導讀會】，讓公司同仁自由報名，希望藉由這種草根性的軟性活動，另闢一條 bottom-up 的改革路徑。畢竟，深遠持久的影響，不能少掉「喚醒基層意識」這環節。&lt;/p&gt;&#xA;&#xA;&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;&#xA;&lt;div class=&#34;box&#34;&gt;&#xA;&lt;figure  itemprop=&#34;associatedMedia&#34;&#xA;  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; &#xA;  style=&#34;max-width:30em&#34; &gt;&#xA;    &lt;div class=&#34;img&#34;&gt;&#xA;      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2022/06/reading-club-photo.jpg&#34; /&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;a href=&#34;//william-yeh.net/img/2022/06/reading-club-photo.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;&#xA;  &lt;/figure&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;p&gt;前六個月的選書如下：&lt;/p&gt;</description>
     </item>
     <item>
       <title>圖表，要有重點訊息</title>
       <link>//william-yeh.net/post/2022/06/one-msg-per-slide/</link>
       <pubDate>Thu, 09 Jun 2022 20:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2022/06/one-msg-per-slide/</guid>
-      <description>&lt;p&gt;月前看到君婷老師提的這則&lt;a href=&#34;https://www.facebook.com/elva.lee.752/posts/5372125532799861&#34;&gt;重大發現&lt;/a&gt;：「當你沒辦法 convince 對方的時候，那就想辦法 confuse 他。」&lt;/p&gt;
-
-&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
-&lt;div class=&#34;box&#34;&gt;
-&lt;figure  itemprop=&#34;associatedMedia&#34;
-  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
-  style=&#34;max-width:20em&#34; &gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2022/06/elva-20220505.jpg&#34; /&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2022/06/elva-20220505.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;
-
-&lt;p&gt;對於「塞一大堆無關緊要，但看起來好像很認真整理過的資料」這件事，我是感同身受的——尤其是職場的會議簡報。&lt;/p&gt;
-&lt;p&gt;職場的會議簡報，下焉者，塞一大堆原始數據；中焉者，把數據整理為樸素的統計圖表；上焉者，會針對圖表的洞見予以錘鍊。&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; 上焉者的境界，可能需要一段時間訓練與即時回饋，恐非短期可奏效；但我發現，只要掌握一個&lt;strong&gt;逆向工作法&lt;/strong&gt;的小訣竅，就能找到改善中焉者表現的線索。&lt;/p&gt;</description>
+      <description>&lt;p&gt;月前看到君婷老師提的這則&lt;a href=&#34;https://www.facebook.com/elva.lee.752/posts/5372125532799861&#34;&gt;重大發現&lt;/a&gt;：「當你沒辦法 convince 對方的時候，那就想辦法 confuse 他。」&lt;/p&gt;&#xA;&#xA;&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;&#xA;&lt;div class=&#34;box&#34;&gt;&#xA;&lt;figure  itemprop=&#34;associatedMedia&#34;&#xA;  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; &#xA;  style=&#34;max-width:20em&#34; &gt;&#xA;    &lt;div class=&#34;img&#34;&gt;&#xA;      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2022/06/elva-20220505.jpg&#34; /&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;a href=&#34;//william-yeh.net/img/2022/06/elva-20220505.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;&#xA;  &lt;/figure&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;p&gt;對於「塞一大堆無關緊要，但看起來好像很認真整理過的資料」這件事，我是感同身受的——尤其是職場的會議簡報。&lt;/p&gt;&#xA;&lt;p&gt;職場的會議簡報，下焉者，塞一大堆原始數據；中焉者，把數據整理為樸素的統計圖表；上焉者，會針對圖表的洞見予以錘鍊。&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; 上焉者的境界，可能需要一段時間訓練與即時回饋，恐非短期可奏效；但我發現，只要掌握一個&lt;strong&gt;逆向工作法&lt;/strong&gt;的小訣竅，就能找到改善中焉者表現的線索。&lt;/p&gt;</description>
     </item>
     <item>
       <title>很簡單的東西，也要單元測試嗎？</title>
       <link>//william-yeh.net/post/2022/05/need-for-unit-testing/</link>
       <pubDate>Tue, 24 May 2022 12:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2022/05/need-for-unit-testing/</guid>
-      <description>&lt;p&gt;（改寫自公司內部 memo）&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;Hi all engineers,&lt;/p&gt;
-&lt;p&gt;上完一整天單元測試課程之後，有同事問我：「有沒有標準來決定要不要寫單元測試？」&lt;/p&gt;
-&lt;p&gt;剛讀完劉潤《&lt;a href=&#34;https://www.books.com.tw/products/0010919211&#34;&gt;底層邏輯&lt;/a&gt;》的我，對於這類疑似「注射器」的問句格外敏感。雖然我可以瀟灑引述 &lt;a href=&#34;https://www.tenlong.com.tw/products/9789864344000&#34;&gt;&lt;em&gt;Working Effectively with Legacy Code&lt;/em&gt;&lt;/a&gt; 的說法「我毫無疑問地將『遺留程式碼』定義為『&lt;strong&gt;沒有編寫測試的程式碼&lt;/strong&gt;』」：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;沒有編寫測試的程式碼是糟糕的程式碼——不管我們多麼細心地編寫它們，不管它們有多漂亮、物件導向或封裝良好。有了測試，我們就能夠迅速、可驗證地修改程式碼的行為。沒有測試，我們就不知道修改後的程式碼，實際上是變得更好還是更糟。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;但當下我還是決定先展開一場對話。&lt;/p&gt;</description>
+      <description>&lt;p&gt;（改寫自公司內部 memo）&lt;/p&gt;&#xA;&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;&#xA;&lt;p&gt;Hi all engineers,&lt;/p&gt;&#xA;&lt;p&gt;上完一整天單元測試課程之後，有同事問我：「有沒有標準來決定要不要寫單元測試？」&lt;/p&gt;&#xA;&lt;p&gt;剛讀完劉潤《&lt;a href=&#34;https://www.books.com.tw/products/0010919211&#34;&gt;底層邏輯&lt;/a&gt;》的我，對於這類疑似「注射器」的問句格外敏感。雖然我可以瀟灑引述 &lt;a href=&#34;https://www.tenlong.com.tw/products/9789864344000&#34;&gt;&lt;em&gt;Working Effectively with Legacy Code&lt;/em&gt;&lt;/a&gt; 的說法「我毫無疑問地將『遺留程式碼』定義為『&lt;strong&gt;沒有編寫測試的程式碼&lt;/strong&gt;』」：&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;沒有編寫測試的程式碼是糟糕的程式碼——不管我們多麼細心地編寫它們，不管它們有多漂亮、物件導向或封裝良好。有了測試，我們就能夠迅速、可驗證地修改程式碼的行為。沒有測試，我們就不知道修改後的程式碼，實際上是變得更好還是更糟。&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;但當下我還是決定先展開一場對話。&lt;/p&gt;</description>
     </item>
     <item>
       <title>推動改變的評估流程</title>
       <link>//william-yeh.net/post/2022/05/evaluation-process-for-changes/</link>
       <pubDate>Mon, 16 May 2022 20:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2022/05/evaluation-process-for-changes/</guid>
-      <description>&lt;p&gt;在發出內部 memo 〈&lt;a href=&#34;//william-yeh.net/post/2022/04/passphrase-at-work/&#34;&gt;請珍惜你們學到的通關密語&lt;/a&gt;〉之後，收到這樣的來信：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;上周假日也花了點時間，將您從去年 11 月起寫給大家的每一封信都讀了一遍，雖然還不是全部內容都完全吸收和理解，但仍然覺得受益匪淺，真的非常感謝您願意無私的分享您過去許多很棒的經驗和想法。&lt;/p&gt;
-&lt;p&gt;我很喜歡您用「通關密語」來形容這些語彙，突然覺得他們不再是死板板的方法論，而像是賦予了它們魔力，雖然不至於天真到認為知道這些詞彙和正確的應用，就能馬上變成具有超能力的 superman，但至少能讓我在規劃專案時更自信和從容。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;溢美之詞就摘錄到此。以下是正題：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;同時，我雖然也很認同這些詞彙確實是「通關密語」，畢竟清楚和正確的定義可以有效減少許多溝通時的落差和模糊地帶，更快的凝聚共識，但前提是和具有同為專業的人溝通，我想這也是您迫切希望大家能盡快建立起這些基本常識的原因吧~&lt;/p&gt;
-&lt;p&gt;但經驗豐富如您，一定也有許多，甚至是多數時候，都是在和沒有這些基本常識的人溝通吧！過去我就有許多這樣的經驗，不管面對公司主管或是面對客戶時，要求我產出一個四不像等情況。&lt;/p&gt;
-&lt;p&gt;通常這種時候我的作法會是，不再堅持使用這些專業詞彙，而是解釋我產出的每個圖表的目的、用途和邏輯，但不幸的是還是有很多時候是無法被理解的，通常結局就是我需要照著對方的邏輯和方法，做出一個我自己無法認同的東西，但因為這才是利害關係人們可以接受的作法，所以為了可以溝通和讓專案順利進行，我還是會做。&lt;/p&gt;
-&lt;p&gt;所以很想問問 William 您是否有類似的經驗呢？那您是怎麼面對和解決的呢?&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;這是大哉問。&lt;/p&gt;
-&lt;p&gt;大體上，我會根據幾個角度迅速評估一下這整件事。&lt;/p&gt;</description>
+      <description>&lt;p&gt;在發出內部 memo 〈&lt;a href=&#34;//william-yeh.net/post/2022/04/passphrase-at-work/&#34;&gt;請珍惜你們學到的通關密語&lt;/a&gt;〉之後，收到這樣的來信：&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;上周假日也花了點時間，將您從去年 11 月起寫給大家的每一封信都讀了一遍，雖然還不是全部內容都完全吸收和理解，但仍然覺得受益匪淺，真的非常感謝您願意無私的分享您過去許多很棒的經驗和想法。&lt;/p&gt;&#xA;&lt;p&gt;我很喜歡您用「通關密語」來形容這些語彙，突然覺得他們不再是死板板的方法論，而像是賦予了它們魔力，雖然不至於天真到認為知道這些詞彙和正確的應用，就能馬上變成具有超能力的 superman，但至少能讓我在規劃專案時更自信和從容。&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;溢美之詞就摘錄到此。以下是正題：&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;同時，我雖然也很認同這些詞彙確實是「通關密語」，畢竟清楚和正確的定義可以有效減少許多溝通時的落差和模糊地帶，更快的凝聚共識，但前提是和具有同為專業的人溝通，我想這也是您迫切希望大家能盡快建立起這些基本常識的原因吧~&lt;/p&gt;&#xA;&lt;p&gt;但經驗豐富如您，一定也有許多，甚至是多數時候，都是在和沒有這些基本常識的人溝通吧！過去我就有許多這樣的經驗，不管面對公司主管或是面對客戶時，要求我產出一個四不像等情況。&lt;/p&gt;&#xA;&lt;p&gt;通常這種時候我的作法會是，不再堅持使用這些專業詞彙，而是解釋我產出的每個圖表的目的、用途和邏輯，但不幸的是還是有很多時候是無法被理解的，通常結局就是我需要照著對方的邏輯和方法，做出一個我自己無法認同的東西，但因為這才是利害關係人們可以接受的作法，所以為了可以溝通和讓專案順利進行，我還是會做。&lt;/p&gt;&#xA;&lt;p&gt;所以很想問問 William 您是否有類似的經驗呢？那您是怎麼面對和解決的呢?&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;這是大哉問。&lt;/p&gt;&#xA;&lt;p&gt;大體上，我會根據幾個角度迅速評估一下這整件事。&lt;/p&gt;</description>
     </item>
     <item>
       <title>向頂尖管顧公司學習的書</title>
       <link>//william-yeh.net/post/2022/05/learn-from-consulting-firms/</link>
       <pubDate>Sun, 08 May 2022 15:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2022/05/learn-from-consulting-firms/</guid>
-      <description>&lt;p&gt;好友進了台灣前百大公司，最近有感而發：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;請問與麥肯錫有關的書籍，你會推薦哪些？&lt;/p&gt;
-&lt;p&gt;在這間公司辛苦摸索幾個月，我才意識到，大家在使用的術語都來自麥肯錫。譬如：MECE、Story Line、論述 (Issue)⋯⋯等等。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;突然被洽詢這問題，其實有點心虛，畢竟我沒待過麥肯錫這類頂尖的管理顧問公司，不太有資格回答。不過，既然自己去年曾經系統閱讀過相關書籍（見〈&lt;a href=&#34;//william-yeh.net/post/2021/12/2021-retrospective/#問題解決的系統閱讀之旅&#34;&gt;2021 個人回顧&lt;/a&gt;〉一文），半年以來也一直運用書本裡的方法來推動改革，對於這些方法算是小有心得，因此，野人獻曝一下也無妨。&lt;/p&gt;
-
-&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
-&lt;div class=&#34;box&#34;&gt;
-&lt;figure  itemprop=&#34;associatedMedia&#34;
-  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
-  style=&#34;max-width:30em&#34; &gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2022/05/problem-solving-books.jpg&#34; alt=&#34;「問題分析與解決」書單&#34;/&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2022/05/problem-solving-books.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-      &lt;figcaption&gt;
-          &lt;p&gt;「問題分析與解決」書單&lt;/p&gt;
-      &lt;/figcaption&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;</description>
+      <description>&lt;p&gt;好友進了台灣前百大公司，最近有感而發：&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;請問與麥肯錫有關的書籍，你會推薦哪些？&lt;/p&gt;&#xA;&lt;p&gt;在這間公司辛苦摸索幾個月，我才意識到，大家在使用的術語都來自麥肯錫。譬如：MECE、Story Line、論述 (Issue)⋯⋯等等。&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;突然被洽詢這問題，其實有點心虛，畢竟我沒待過麥肯錫這類頂尖的管理顧問公司，不太有資格回答。不過，既然自己去年曾經系統閱讀過相關書籍（見〈&lt;a href=&#34;//william-yeh.net/post/2021/12/2021-retrospective/#問題解決的系統閱讀之旅&#34;&gt;2021 個人回顧&lt;/a&gt;〉一文），半年以來也一直運用書本裡的方法來推動改革，對於這些方法算是小有心得，因此，野人獻曝一下也無妨。&lt;/p&gt;&#xA;&#xA;&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;&#xA;&lt;div class=&#34;box&#34;&gt;&#xA;&lt;figure  itemprop=&#34;associatedMedia&#34;&#xA;  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; &#xA;  style=&#34;max-width:30em&#34; &gt;&#xA;    &lt;div class=&#34;img&#34;&gt;&#xA;      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2022/05/problem-solving-books.jpg&#34; alt=&#34;「問題分析與解決」書單&#34;/&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;a href=&#34;//william-yeh.net/img/2022/05/problem-solving-books.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;&#xA;      &lt;figcaption&gt;&#xA;          &lt;p&gt;「問題分析與解決」書單&lt;/p&gt;&#xA;      &lt;/figcaption&gt;&#xA;  &lt;/figure&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
       <title>請珍惜你們學到的通關密語</title>
       <link>//william-yeh.net/post/2022/04/passphrase-at-work/</link>
       <pubDate>Fri, 29 Apr 2022 17:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2022/04/passphrase-at-work/</guid>
-      <description>&lt;p&gt;（改寫自公司內部 memo）&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;Dear all 夥伴，&lt;/p&gt;
-&lt;p&gt;過去三個月，我根據自己的職場經驗，以及我對大家的專業要求，安排許多課程及講座。從一系列 1:1 訪談中得知，不只是主管們動了起來，連小夥伴也開始試著實踐。我很欣慰。&lt;/p&gt;
-&lt;p&gt;譬如說，送你們這群中階主管及資深工作者去接受專案管理培訓之後，我終於可以在大大小小會議上公然用專案管理語彙進行詢問與討論了，不必拐彎抹角替這些對我來說已經是「&lt;a href=&#34;https://zh.wikipedia.org/wiki/%E5%BF%AB%E6%80%9D%E6%85%A2%E6%83%B3&#34;&gt;系統一&lt;/a&gt;」的管理切入點逐一解釋或比喻。&lt;/p&gt;
-&lt;p&gt;The bar has been raised，這才像專業場域。&lt;/p&gt;</description>
+      <description>&lt;p&gt;（改寫自公司內部 memo）&lt;/p&gt;&#xA;&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;&#xA;&lt;p&gt;Dear all 夥伴，&lt;/p&gt;&#xA;&lt;p&gt;過去三個月，我根據自己的職場經驗，以及我對大家的專業要求，安排許多課程及講座。從一系列 1:1 訪談中得知，不只是主管們動了起來，連小夥伴也開始試著實踐。我很欣慰。&lt;/p&gt;&#xA;&lt;p&gt;譬如說，送你們這群中階主管及資深工作者去接受專案管理培訓之後，我終於可以在大大小小會議上公然用專案管理語彙進行詢問與討論了，不必拐彎抹角替這些對我來說已經是「&lt;a href=&#34;https://zh.wikipedia.org/wiki/%E5%BF%AB%E6%80%9D%E6%85%A2%E6%83%B3&#34;&gt;系統一&lt;/a&gt;」的管理切入點逐一解釋或比喻。&lt;/p&gt;&#xA;&lt;p&gt;The bar has been raised，這才像專業場域。&lt;/p&gt;</description>
     </item>
     <item>
       <title>經理人視角的敏捷通識課</title>
       <link>//william-yeh.net/post/2022/04/yves-agile-course/</link>
       <pubDate>Sat, 16 Apr 2022 18:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2022/04/yves-agile-course/</guid>
-      <description>&lt;p&gt;[課程推薦文] &lt;strong&gt;&lt;a href=&#34;https://www.cwlearning.com.tw/course-set/109&#34;&gt;高效產出：突破資源限制的敏捷管理術&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;在商業世界，「敏捷」又變成流行語了。許多人風聞敏捷兩大流派 Scrum 及 Kanban 勾勒出來的美麗新世界，聽起來也頭頭是道，便以為敏捷轉型是輕而易舉、隨插即用、立竿見影的事。&lt;/p&gt;
-&lt;p&gt;不過，真實世界不必然會像宣傳的那麼單純。等到真正開始嘗試時，遇到已知或未知的障礙，才開始懷疑人生，心生退轉。「敏捷轉型」這條路，怎麼走起來並沒有那麼敏捷呀？&lt;/p&gt;
-&lt;p&gt;其實，「敏捷」這道處方未必有錯，錯的可能是病患未先接受過合適的衛教。&lt;/p&gt;</description>
+      <description>&lt;p&gt;[課程推薦文] &lt;strong&gt;&lt;a href=&#34;https://www.cwlearning.com.tw/course-set/109&#34;&gt;高效產出：突破資源限制的敏捷管理術&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;&#xA;&lt;p&gt;在商業世界，「敏捷」又變成流行語了。許多人風聞敏捷兩大流派 Scrum 及 Kanban 勾勒出來的美麗新世界，聽起來也頭頭是道，便以為敏捷轉型是輕而易舉、隨插即用、立竿見影的事。&lt;/p&gt;&#xA;&lt;p&gt;不過，真實世界不必然會像宣傳的那麼單純。等到真正開始嘗試時，遇到已知或未知的障礙，才開始懷疑人生，心生退轉。「敏捷轉型」這條路，怎麼走起來並沒有那麼敏捷呀？&lt;/p&gt;&#xA;&lt;p&gt;其實，「敏捷」這道處方未必有錯，錯的可能是病患未先接受過合適的衛教。&lt;/p&gt;</description>
     </item>
     <item>
       <title>敏捷啟航的專業基礎：共同語彙</title>
       <link>//william-yeh.net/post/2022/03/prof-common-vocabulary/</link>
       <pubDate>Sat, 05 Mar 2022 14:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2022/03/prof-common-vocabulary/</guid>
-      <description>&lt;p&gt;LeSS 的 &amp;ldquo;&lt;a href=&#34;https://less.works/less/structure/scrummaster.html#ScrumMasterfocus&#34;&gt;Scrum Master focus over time&lt;/a&gt;&amp;rdquo; 一文主張，在導入敏捷的初期階段，首要焦點應放在 &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Team&lt;/span&gt;
-、&lt;span style=&#34;font-variant: small-caps;&#34;&gt;Product Owner&lt;/span&gt;
- 及 &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Organization&lt;/span&gt;
- 三者。&lt;/p&gt;
-
-&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
-&lt;div class=&#34;box&#34;&gt;
-&lt;figure  itemprop=&#34;associatedMedia&#34;
-  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
-  style=&#34;max-width:30em&#34; &gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2019/12/scrum-master-focus-over-time.png&#34; alt=&#34;Scrum Master focus over time (from LeSS)&#34;/&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2019/12/scrum-master-focus-over-time.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-      &lt;figcaption&gt;
-          &lt;p&gt;Scrum Master focus over time (from LeSS)&lt;/p&gt;
-      &lt;/figcaption&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;
-
-&lt;p&gt;如果借用&lt;a href=&#34;https://www.mckinsey.com/business-functions/strategy-and-corporate-finance/our-insights/enduring-ideas-the-7-s-framework&#34;&gt;麥肯錫 7S 模型&lt;/a&gt;來分析這些初期的施力重點，不難發現，&lt;span style=&#34;font-variant: small-caps;&#34;&gt;Organization&lt;/span&gt;
- 的施力點大致可直接對應到 7S 的結構 (Structure) &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; ，至於 &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Team&lt;/span&gt;
- 及 &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Product Owner&lt;/span&gt;
- 的施力點，則是對應到 7S 的風格 (Style)、技能 (Skills)，甚至是共同價值觀 (Shared Values)。&lt;/p&gt;
-&lt;p&gt;前者屬於硬性要素，較易理解，也較易實施；後者屬於軟性要素，較抽象，也不易立竿見影——這是敏捷啟航時需要面對的模糊題。&lt;/p&gt;</description>
+      <description>&lt;p&gt;LeSS 的 &amp;ldquo;&lt;a href=&#34;https://less.works/less/structure/scrummaster.html#ScrumMasterfocus&#34;&gt;Scrum Master focus over time&lt;/a&gt;&amp;rdquo; 一文主張，在導入敏捷的初期階段，首要焦點應放在 &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Team&lt;/span&gt;&#xA;、&lt;span style=&#34;font-variant: small-caps;&#34;&gt;Product Owner&lt;/span&gt;&#xA; 及 &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Organization&lt;/span&gt;&#xA; 三者。&lt;/p&gt;&#xA;&#xA;&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;&#xA;&lt;div class=&#34;box&#34;&gt;&#xA;&lt;figure  itemprop=&#34;associatedMedia&#34;&#xA;  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; &#xA;  style=&#34;max-width:30em&#34; &gt;&#xA;    &lt;div class=&#34;img&#34;&gt;&#xA;      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2019/12/scrum-master-focus-over-time.png&#34; alt=&#34;Scrum Master focus over time (from LeSS)&#34;/&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;a href=&#34;//william-yeh.net/img/2019/12/scrum-master-focus-over-time.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;&#xA;      &lt;figcaption&gt;&#xA;          &lt;p&gt;Scrum Master focus over time (from LeSS)&lt;/p&gt;&#xA;      &lt;/figcaption&gt;&#xA;  &lt;/figure&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;p&gt;如果借用&lt;a href=&#34;https://www.mckinsey.com/business-functions/strategy-and-corporate-finance/our-insights/enduring-ideas-the-7-s-framework&#34;&gt;麥肯錫 7S 模型&lt;/a&gt;來分析這些初期的施力重點，不難發現，&lt;span style=&#34;font-variant: small-caps;&#34;&gt;Organization&lt;/span&gt;&#xA; 的施力點大致可直接對應到 7S 的結構 (Structure) &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; ，至於 &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Team&lt;/span&gt;&#xA; 及 &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Product Owner&lt;/span&gt;&#xA; 的施力點，則是對應到 7S 的風格 (Style)、技能 (Skills)，甚至是共同價值觀 (Shared Values)。&lt;/p&gt;&#xA;&lt;p&gt;前者屬於硬性要素，較易理解，也較易實施；後者屬於軟性要素，較抽象，也不易立竿見影——這是敏捷啟航時需要面對的模糊題。&lt;/p&gt;</description>
     </item>
     <item>
       <title>2021 個人回顧</title>
       <link>//william-yeh.net/post/2021/12/2021-retrospective/</link>
       <pubDate>Tue, 28 Dec 2021 22:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2021/12/2021-retrospective/</guid>
-      <description>&lt;p&gt;年初，從外商被挖腳到台商；年末，又再被挖腳到另一間台商。&lt;/p&gt;
-&lt;p&gt;我常笑著說：今年，好像都在消費我在 &lt;a href=&#34;//william-yeh.net/post/2019/12/2019-retrospective/&#34;&gt;2019&lt;/a&gt;～&lt;a href=&#34;//william-yeh.net/post/2020/12/2020-retrospective/&#34;&gt;2020&lt;/a&gt; 年間外商經驗的戰備存糧。&lt;/p&gt;
-&lt;p&gt;到了年終，又開始要做個總回顧，再對來年許願。去除一些不便揭露的事情，以下是簡單的回顧。&lt;/p&gt;</description>
+      <description>&lt;p&gt;年初，從外商被挖腳到台商；年末，又再被挖腳到另一間台商。&lt;/p&gt;&#xA;&lt;p&gt;我常笑著說：今年，好像都在消費我在 &lt;a href=&#34;//william-yeh.net/post/2019/12/2019-retrospective/&#34;&gt;2019&lt;/a&gt;～&lt;a href=&#34;//william-yeh.net/post/2020/12/2020-retrospective/&#34;&gt;2020&lt;/a&gt; 年間外商經驗的戰備存糧。&lt;/p&gt;&#xA;&lt;p&gt;到了年終，又開始要做個總回顧，再對來年許願。去除一些不便揭露的事情，以下是簡單的回顧。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Scrum 認證模擬測驗的兩項啟發</title>
       <link>//william-yeh.net/post/2021/07/revisit-psm1/</link>
       <pubDate>Sun, 11 Jul 2021 16:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2021/07/revisit-psm1/</guid>
-      <description>&lt;p&gt;公司內 agile guild 定期聚會輪到我來主持了。這次我打算帶一場「Scrum WHAT &amp;amp; WHY 討論：以 Scrum 認證模擬測驗為素材」的小活動。&lt;/p&gt;
-&lt;p&gt;理論上來說，「Scrum WHAT &amp;amp; WHY」的終極答案應該是來自 &lt;em&gt;&lt;a href=&#34;https://scrumguides.org/&#34;&gt;The Scrum Guide&lt;/a&gt;&lt;/em&gt;，不過，這份輕薄短小的文件就像成文法典法條，不易引發實務聯想。反之，Scrum 認證模擬測驗可說是非常好的 Scrum 靈魂拷問材料，尤其是對略有實務經驗的人來說，內容可說是拳拳到肉，足以激盪小組討論的火花。若只以功利角度看待，就太可惜了。&lt;/p&gt;
-&lt;p&gt;有圖為證：&lt;/p&gt;
-
-&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
-&lt;div class=&#34;box&#34;&gt;
-&lt;figure  itemprop=&#34;associatedMedia&#34;
-  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
-  style=&#34;max-width:30em&#34; &gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2021/07/psm1-feedback.png&#34; alt=&#34;2021-07-21 活動迴響&#34;/&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2021/07/psm1-feedback.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-      &lt;figcaption&gt;
-          &lt;p&gt;2021-07-21 活動迴響&lt;/p&gt;
-      &lt;/figcaption&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;</description>
+      <description>&lt;p&gt;公司內 agile guild 定期聚會輪到我來主持了。這次我打算帶一場「Scrum WHAT &amp;amp; WHY 討論：以 Scrum 認證模擬測驗為素材」的小活動。&lt;/p&gt;&#xA;&lt;p&gt;理論上來說，「Scrum WHAT &amp;amp; WHY」的終極答案應該是來自 &lt;em&gt;&lt;a href=&#34;https://scrumguides.org/&#34;&gt;The Scrum Guide&lt;/a&gt;&lt;/em&gt;，不過，這份輕薄短小的文件就像成文法典法條，不易引發實務聯想。反之，Scrum 認證模擬測驗可說是非常好的 Scrum 靈魂拷問材料，尤其是對略有實務經驗的人來說，內容可說是拳拳到肉，足以激盪小組討論的火花。若只以功利角度看待，就太可惜了。&lt;/p&gt;&#xA;&lt;p&gt;有圖為證：&lt;/p&gt;&#xA;&#xA;&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;&#xA;&lt;div class=&#34;box&#34;&gt;&#xA;&lt;figure  itemprop=&#34;associatedMedia&#34;&#xA;  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; &#xA;  style=&#34;max-width:30em&#34; &gt;&#xA;    &lt;div class=&#34;img&#34;&gt;&#xA;      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2021/07/psm1-feedback.png&#34; alt=&#34;2021-07-21 活動迴響&#34;/&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;a href=&#34;//william-yeh.net/img/2021/07/psm1-feedback.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;&#xA;      &lt;figcaption&gt;&#xA;          &lt;p&gt;2021-07-21 活動迴響&lt;/p&gt;&#xA;      &lt;/figcaption&gt;&#xA;  &lt;/figure&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
       <title>企業能否吸引專業人士？看這 14 點。</title>
       <link>//william-yeh.net/post/2021/07/ic-needs/</link>
       <pubDate>Tue, 06 Jul 2021 20:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2021/07/ic-needs/</guid>
-      <description>&lt;p&gt;時代不斷進步，競爭日益激烈，專業工作者的門檻也愈來愈高。我們對 individual contributor 專業能力的期待是高的，相對的，這群人的自我意識自然也不低。&lt;/p&gt;
-&lt;p&gt;企業挑人才，人才也挑企業。&lt;/p&gt;
-&lt;p&gt;問題來了：企業能否吸引專業人士？&lt;/p&gt;
-&lt;p&gt;我從兩本書，摘錄出個人比較心儀的優勢導向、人本導向觀點。&lt;/p&gt;</description>
+      <description>&lt;p&gt;時代不斷進步，競爭日益激烈，專業工作者的門檻也愈來愈高。我們對 individual contributor 專業能力的期待是高的，相對的，這群人的自我意識自然也不低。&lt;/p&gt;&#xA;&lt;p&gt;企業挑人才，人才也挑企業。&lt;/p&gt;&#xA;&lt;p&gt;問題來了：企業能否吸引專業人士？&lt;/p&gt;&#xA;&lt;p&gt;我從兩本書，摘錄出個人比較心儀的優勢導向、人本導向觀點。&lt;/p&gt;</description>
     </item>
     <item>
       <title>服務事故處理的系統思考</title>
       <link>//william-yeh.net/post/2021/04/cld-for-service-incident/</link>
       <pubDate>Mon, 05 Apr 2021 20:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2021/04/cld-for-service-incident/</guid>
-      <description>&lt;p&gt;集團內 Agile CoP 定期聚會，最近都在團練「&lt;a href=&#34;https://wiki.mbalib.com/zh-tw/%E8%A1%8C%E5%8A%A8%E5%AD%A6%E4%B9%A0%E6%B3%95&#34;&gt;行動學習 (action learning)&lt;/a&gt;」。&lt;/p&gt;
-&lt;p&gt;行動學習十分殊勝。多元探詢角度居然能夠同時並存，對我來說，在參加之前委實難以想像。&lt;/p&gt;
-&lt;p&gt;我參加了兩次，上次我選擇的提問切入點 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; 是「問題重塑」，這次刻意換成「系統思考」來練練。&lt;/p&gt;
-&lt;p&gt;某團員提出一則個案讓大家探討：&lt;/p&gt;</description>
+      <description>&lt;p&gt;集團內 Agile CoP 定期聚會，最近都在團練「&lt;a href=&#34;https://wiki.mbalib.com/zh-tw/%E8%A1%8C%E5%8A%A8%E5%AD%A6%E4%B9%A0%E6%B3%95&#34;&gt;行動學習 (action learning)&lt;/a&gt;」。&lt;/p&gt;&#xA;&lt;p&gt;行動學習十分殊勝。多元探詢角度居然能夠同時並存，對我來說，在參加之前委實難以想像。&lt;/p&gt;&#xA;&lt;p&gt;我參加了兩次，上次我選擇的提問切入點 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; 是「問題重塑」，這次刻意換成「系統思考」來練練。&lt;/p&gt;&#xA;&lt;p&gt;某團員提出一則個案讓大家探討：&lt;/p&gt;</description>
     </item>
     <item>
       <title>被 Yves 啟發的敏捷轉型之旅</title>
       <link>//william-yeh.net/post/2021/03/agile-inspired-by-yves/</link>
       <pubDate>Wed, 31 Mar 2021 08:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2021/03/agile-inspired-by-yves/</guid>
-      <description>&lt;p&gt;（2021-06-16 補記）
-在 Yves 臉書看到《&lt;a href=&#34;https://www.books.com.tw/products/0010896844&#34;&gt;敏捷管理生存指南：不是快，而是適者生存&lt;/a&gt;》這本書終於要上市的&lt;a href=&#34;https://www.facebook.com/yves.lin888/posts/10159360045030751&#34;&gt;消息&lt;/a&gt;，非常振奮。僅以此文，紀念當年 Yves &lt;a href=&#34;https://blog.yveslin.com/&#34;&gt;部落格&lt;/a&gt;文章給我的種種啟示。&lt;/p&gt;
-
-&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
-&lt;div class=&#34;box&#34;&gt;
-&lt;figure  itemprop=&#34;associatedMedia&#34;
-  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
-  style=&#34;max-width:20em&#34; &gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2021/03/book-agile-mgmt-survival-guide.jpg&#34; alt=&#34;《敏捷管理生存指南：不是快，而是適者生存》&#34;/&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2021/03/book-agile-mgmt-survival-guide.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-      &lt;figcaption&gt;
-          &lt;p&gt;《敏捷管理生存指南：不是快，而是適者生存》&lt;/p&gt;
-      &lt;/figcaption&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;</description>
+      <description>&lt;p&gt;（2021-06-16 補記）&#xA;在 Yves 臉書看到《&lt;a href=&#34;https://www.books.com.tw/products/0010896844&#34;&gt;敏捷管理生存指南：不是快，而是適者生存&lt;/a&gt;》這本書終於要上市的&lt;a href=&#34;https://www.facebook.com/yves.lin888/posts/10159360045030751&#34;&gt;消息&lt;/a&gt;，非常振奮。僅以此文，紀念當年 Yves &lt;a href=&#34;https://blog.yveslin.com/&#34;&gt;部落格&lt;/a&gt;文章給我的種種啟示。&lt;/p&gt;&#xA;&#xA;&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;&#xA;&lt;div class=&#34;box&#34;&gt;&#xA;&lt;figure  itemprop=&#34;associatedMedia&#34;&#xA;  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; &#xA;  style=&#34;max-width:20em&#34; &gt;&#xA;    &lt;div class=&#34;img&#34;&gt;&#xA;      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2021/03/book-agile-mgmt-survival-guide.jpg&#34; alt=&#34;《敏捷管理生存指南：不是快，而是適者生存》&#34;/&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;a href=&#34;//william-yeh.net/img/2021/03/book-agile-mgmt-survival-guide.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;&#xA;      &lt;figcaption&gt;&#xA;          &lt;p&gt;《敏捷管理生存指南：不是快，而是適者生存》&lt;/p&gt;&#xA;      &lt;/figcaption&gt;&#xA;  &lt;/figure&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
       <title>從系統思考角度讀《獨角獸專案》</title>
       <link>//william-yeh.net/post/2021/03/sys-thinking-unicorn-project/</link>
       <pubDate>Sun, 28 Mar 2021 16:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2021/03/sys-thinking-unicorn-project/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;活動名稱&lt;/strong&gt;：從系統思考角度讀《獨角獸專案》&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;時間&lt;/strong&gt;：2021-11-24 (三) / 13:30&amp;ndash;15:00 (因疫情影響延期舉辦)&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;會議&lt;/strong&gt;：&lt;a href=&#34;https://devopsdays.tw/&#34;&gt;DevOpsDays Taipei 2021&lt;/a&gt; 的 &lt;a href=&#34;https://devopsdays.tw/2021/workshop-page/212&#34;&gt;603 會議室&lt;/a&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;strong&gt;活動名稱&lt;/strong&gt;：從系統思考角度讀《獨角獸專案》&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;時間&lt;/strong&gt;：2021-11-24 (三) / 13:30&amp;ndash;15:00 (因疫情影響延期舉辦)&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;會議&lt;/strong&gt;：&lt;a href=&#34;https://devopsdays.tw/&#34;&gt;DevOpsDays Taipei 2021&lt;/a&gt; 的 &lt;a href=&#34;https://devopsdays.tw/2021/workshop-page/212&#34;&gt;603 會議室&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>如何訓練一個新的 Scrum master？</title>
       <link>//william-yeh.net/post/2021/03/train-new-scrum-master/</link>
       <pubDate>Wed, 17 Mar 2021 20:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2021/03/train-new-scrum-master/</guid>
-      <description>&lt;p&gt;今天在公司內 agile guild 定期聚會中，討論到一個有趣的議題：​&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;「如何訓練一個新的 Scrum master？」​&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;邊寫便利貼，邊回想自己過往經驗，也試圖歸納統整一些層次。&lt;/p&gt;</description>
+      <description>&lt;p&gt;今天在公司內 agile guild 定期聚會中，討論到一個有趣的議題：​&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;「如何訓練一個新的 Scrum master？」​&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;邊寫便利貼，邊回想自己過往經驗，也試圖歸納統整一些層次。&lt;/p&gt;</description>
     </item>
     <item>
       <title>軟體研發者的隨身職涯教練——《經理人之道》推薦序</title>
@@ -658,91 +300,49 @@
       <link>//william-yeh.net/post/2020/12/2020-retrospective/</link>
       <pubDate>Sat, 26 Dec 2020 20:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2020/12/2020-retrospective/</guid>
-      <description>&lt;p&gt;年初，再多跨出舒適圈一步，換到另外一間外商。&lt;/p&gt;
-&lt;p&gt;如果說 &lt;a href=&#34;//william-yeh.net/post/2018/12/2018-retrospective/&#34;&gt;2018&lt;/a&gt; 是收攝靜觀的一年，&lt;a href=&#34;//william-yeh.net/post/2019/12/2019-retrospective/&#34;&gt;2019&lt;/a&gt; 是驚滔駭浪的一年，那麼，2020 算是兩者兼具。&lt;/p&gt;
-&lt;p&gt;到了年終，又開始要做個總回顧，再對來年許願。去除一些不便揭露的事情，以下是簡單的回顧。&lt;/p&gt;
-
-&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
-&lt;div class=&#34;box&#34;&gt;
-&lt;figure  itemprop=&#34;associatedMedia&#34;
-  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
-  style=&#34;max-width:30em&#34; &gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2020/12/national-forest.jpg&#34; alt=&#34;翠峰湖 (2020-08-13)&#34;/&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2020/12/national-forest.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-      &lt;figcaption&gt;
-          &lt;p&gt;翠峰湖 (2020-08-13)&lt;/p&gt;
-      &lt;/figcaption&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;</description>
+      <description>&lt;p&gt;年初，再多跨出舒適圈一步，換到另外一間外商。&lt;/p&gt;&#xA;&lt;p&gt;如果說 &lt;a href=&#34;//william-yeh.net/post/2018/12/2018-retrospective/&#34;&gt;2018&lt;/a&gt; 是收攝靜觀的一年，&lt;a href=&#34;//william-yeh.net/post/2019/12/2019-retrospective/&#34;&gt;2019&lt;/a&gt; 是驚滔駭浪的一年，那麼，2020 算是兩者兼具。&lt;/p&gt;&#xA;&lt;p&gt;到了年終，又開始要做個總回顧，再對來年許願。去除一些不便揭露的事情，以下是簡單的回顧。&lt;/p&gt;&#xA;&#xA;&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;&#xA;&lt;div class=&#34;box&#34;&gt;&#xA;&lt;figure  itemprop=&#34;associatedMedia&#34;&#xA;  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; &#xA;  style=&#34;max-width:30em&#34; &gt;&#xA;    &lt;div class=&#34;img&#34;&gt;&#xA;      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2020/12/national-forest.jpg&#34; alt=&#34;翠峰湖 (2020-08-13)&#34;/&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;a href=&#34;//william-yeh.net/img/2020/12/national-forest.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;&#xA;      &lt;figcaption&gt;&#xA;          &lt;p&gt;翠峰湖 (2020-08-13)&lt;/p&gt;&#xA;      &lt;/figcaption&gt;&#xA;  &lt;/figure&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
       <title>教練與選手之間</title>
       <link>//william-yeh.net/post/2020/11/tt-coaches/</link>
       <pubDate>Tue, 03 Nov 2020 22:30:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2020/11/tt-coaches/</guid>
-      <description>&lt;p&gt;近來敏捷同溫層流行學習「教練」技能。&lt;/p&gt;
-&lt;p&gt;至於我，由於這兩個月以來開始自學桌球的「&lt;a href=&#34;//william-yeh.net/post/2020/10/reverse-penhold-backhand/&#34;&gt;直拍橫打&lt;/a&gt;」技術，關注的重點，自然是「教練」觀念的源頭——&lt;strong&gt;運動&lt;/strong&gt;領域了。&lt;/p&gt;
-&lt;p&gt;在尋找相關資訊的過程中，王楠、張怡寧、劉國梁、馬琳⋯⋯當年耳熟能詳的名字不時出現在電腦螢幕前。如今，拜網路之賜，我們有機會從相關訪談中，一窺這些名將當年在役時期，與教練之間、與隊友之間的心路歷程。&lt;/p&gt;</description>
+      <description>&lt;p&gt;近來敏捷同溫層流行學習「教練」技能。&lt;/p&gt;&#xA;&lt;p&gt;至於我，由於這兩個月以來開始自學桌球的「&lt;a href=&#34;//william-yeh.net/post/2020/10/reverse-penhold-backhand/&#34;&gt;直拍橫打&lt;/a&gt;」技術，關注的重點，自然是「教練」觀念的源頭——&lt;strong&gt;運動&lt;/strong&gt;領域了。&lt;/p&gt;&#xA;&lt;p&gt;在尋找相關資訊的過程中，王楠、張怡寧、劉國梁、馬琳⋯⋯當年耳熟能詳的名字不時出現在電腦螢幕前。如今，拜網路之賜，我們有機會從相關訪談中，一窺這些名將當年在役時期，與教練之間、與隊友之間的心路歷程。&lt;/p&gt;</description>
     </item>
     <item>
       <title>直拍橫打兩個月心得小記</title>
       <link>//william-yeh.net/post/2020/10/reverse-penhold-backhand/</link>
       <pubDate>Sun, 25 Oct 2020 10:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2020/10/reverse-penhold-backhand/</guid>
-      <description>&lt;h2 id=&#34;緣起&#34;&gt;緣起&lt;/h2&gt;
-&lt;p&gt;哥哥正式學桌球一年半載了，妹妹暑假時也開始正式上課。身為爸爸，為了避免太早被孩子們追上，除了找空檔與這群有上課的對打，也偷偷思索進步之道。&lt;/p&gt;
-&lt;p&gt;有一次，忘了帶自己的日直球拍去，又遇到有人邀約對打，便借教練的橫拍一用。突然發現，儘管我是直拍握法，但這橫拍打起來卻十分順手。&lt;/p&gt;
-&lt;p&gt;這擊球感實在難以忘懷。思之數日，突發奇想：既然想換球拍，索性嘗試看看中直、&lt;a href=&#34;https://baike.baidu.com/item/%E7%9B%B4%E6%8B%8D%E6%A8%AA%E6%89%93&#34;&gt;直拍橫打&lt;/a&gt;？&lt;/p&gt;
-&lt;p&gt;於是，中年，改變一下揮拍習慣。從日直換成⋯⋯&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;緣起&#34;&gt;緣起&lt;/h2&gt;&#xA;&lt;p&gt;哥哥正式學桌球一年半載了，妹妹暑假時也開始正式上課。身為爸爸，為了避免太早被孩子們追上，除了找空檔與這群有上課的對打，也偷偷思索進步之道。&lt;/p&gt;&#xA;&lt;p&gt;有一次，忘了帶自己的日直球拍去，又遇到有人邀約對打，便借教練的橫拍一用。突然發現，儘管我是直拍握法，但這橫拍打起來卻十分順手。&lt;/p&gt;&#xA;&lt;p&gt;這擊球感實在難以忘懷。思之數日，突發奇想：既然想換球拍，索性嘗試看看中直、&lt;a href=&#34;https://baike.baidu.com/item/%E7%9B%B4%E6%8B%8D%E6%A8%AA%E6%89%93&#34;&gt;直拍橫打&lt;/a&gt;？&lt;/p&gt;&#xA;&lt;p&gt;於是，中年，改變一下揮拍習慣。從日直換成⋯⋯&lt;/p&gt;</description>
     </item>
     <item>
       <title>值得你看門道的好書——《獨角獸專案》推薦序</title>
       <link>//william-yeh.net/post/2020/10/unicorn-project-review/</link>
       <pubDate>Sat, 03 Oct 2020 10:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2020/10/unicorn-project-review/</guid>
-      <description>&lt;p&gt;2011 年 8 月，瀏覽器之父 &lt;a href=&#34;https://en.wikipedia.org/wiki/Marc_Andreessen&#34;&gt;Marc Andreessen&lt;/a&gt; 曾在華爾街日報&lt;a href=&#34;https://online.wsj.com/article/SB10001424053111903480904576512250915629460.html&#34;&gt;評論&lt;/a&gt;道：「軟體正在蠶食整個世界」(software is eating the world)。&lt;/p&gt;
-&lt;p&gt;接下來這十年，果然如他所預言，世界徹底被軟體顛覆。各行業，如果不對軟體研發的重要思潮保持關注，就無法善用科技力量站在競爭力的最前線。&lt;/p&gt;
-&lt;p&gt;近十年，軟體研發界有兩大類重要思潮。在技術面，有大數據、機器學習、immutable infrastructure、微服務、容器、函式編程、資料流水線等；在流程面，則有敏捷開發、DevOps、自助服務、混亂工程、精實 UX 等。這些思潮，有些是新發明，有些則是文藝復興，甚至是跨界學習而來。&lt;/p&gt;
-&lt;p&gt;這些思潮，不只是純軟體界在乎，就連《&lt;a href=&#34;https://itrevolution.com/the-unicorn-project/&#34;&gt;獨角獸專案&lt;/a&gt;》這本小說的場景設定：汽車零件製造商暨零售商，影響一樣深遠。畢竟「軟體正在蠶食整個世界」。&lt;/p&gt;
-&lt;p&gt;某方面來說，《&lt;a href=&#34;https://www.tenlong.com.tw/products/9789865026653&#34;&gt;獨角獸專案&lt;/a&gt;》這本書，可謂 2010～2020 這個波瀾壯闊時代軟體研發界的具體縮影。&lt;/p&gt;</description>
+      <description>&lt;p&gt;2011 年 8 月，瀏覽器之父 &lt;a href=&#34;https://en.wikipedia.org/wiki/Marc_Andreessen&#34;&gt;Marc Andreessen&lt;/a&gt; 曾在華爾街日報&lt;a href=&#34;https://online.wsj.com/article/SB10001424053111903480904576512250915629460.html&#34;&gt;評論&lt;/a&gt;道：「軟體正在蠶食整個世界」(software is eating the world)。&lt;/p&gt;&#xA;&lt;p&gt;接下來這十年，果然如他所預言，世界徹底被軟體顛覆。各行業，如果不對軟體研發的重要思潮保持關注，就無法善用科技力量站在競爭力的最前線。&lt;/p&gt;&#xA;&lt;p&gt;近十年，軟體研發界有兩大類重要思潮。在技術面，有大數據、機器學習、immutable infrastructure、微服務、容器、函式編程、資料流水線等；在流程面，則有敏捷開發、DevOps、自助服務、混亂工程、精實 UX 等。這些思潮，有些是新發明，有些則是文藝復興，甚至是跨界學習而來。&lt;/p&gt;&#xA;&lt;p&gt;這些思潮，不只是純軟體界在乎，就連《&lt;a href=&#34;https://itrevolution.com/the-unicorn-project/&#34;&gt;獨角獸專案&lt;/a&gt;》這本小說的場景設定：汽車零件製造商暨零售商，影響一樣深遠。畢竟「軟體正在蠶食整個世界」。&lt;/p&gt;&#xA;&lt;p&gt;某方面來說，《&lt;a href=&#34;https://www.tenlong.com.tw/products/9789865026653&#34;&gt;獨角獸專案&lt;/a&gt;》這本書，可謂 2010～2020 這個波瀾壯闊時代軟體研發界的具體縮影。&lt;/p&gt;</description>
     </item>
     <item>
       <title>推薦序：讓 GitLab 成為數位轉型的重要推手</title>
       <link>//william-yeh.net/post/2020/09/learning-gitlab-review/</link>
       <pubDate>Mon, 28 Sep 2020 14:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2020/09/learning-gitlab-review/</guid>
-      <description>&lt;p&gt;「如今的 GitLab 已經不是單純的 Git service，而是具備完整 workflow 的 DevOps platform。」&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt; 
-&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;2019 年，我因爲工作需要，得開始研究 GitLab 某些功能。巧合的是，當時我也正擔任「&lt;a href=&#34;https://ithelp.ithome.com.tw/2020ironman&#34;&gt;第 11 屆 iT 邦幫忙鐵人賽&lt;/a&gt;」評審，就在陳正瑋【&lt;a href=&#34;https://ithelp.ithome.com.tw/users/20120986/ironman/2733&#34;&gt;和艦長一起 30 天玩轉 GitLab&lt;/a&gt;】參賽文章中，學到我所需要知道的一切。&lt;/p&gt;
-&lt;p&gt;後來，陳正瑋的這系列文章不負眾望，榮獲 DevOps 組冠軍。&lt;/p&gt;
-&lt;p&gt;頒獎典禮上，我鼓勵陳正瑋將這系列文章整理修潤，成為華文世界第一本 GitLab 專書。畢竟，我實在想不到有誰能夠比鐵人賽冠軍、GitLab 官方認證的 “GitLab Hero” 更適合做這件事的人。&lt;/p&gt;</description>
+      <description>&lt;p&gt;「如今的 GitLab 已經不是單純的 Git service，而是具備完整 workflow 的 DevOps platform。」&lt;/p&gt;&#xA;&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &#xA;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;&#xA;&lt;p&gt;2019 年，我因爲工作需要，得開始研究 GitLab 某些功能。巧合的是，當時我也正擔任「&lt;a href=&#34;https://ithelp.ithome.com.tw/2020ironman&#34;&gt;第 11 屆 iT 邦幫忙鐵人賽&lt;/a&gt;」評審，就在陳正瑋【&lt;a href=&#34;https://ithelp.ithome.com.tw/users/20120986/ironman/2733&#34;&gt;和艦長一起 30 天玩轉 GitLab&lt;/a&gt;】參賽文章中，學到我所需要知道的一切。&lt;/p&gt;&#xA;&lt;p&gt;後來，陳正瑋的這系列文章不負眾望，榮獲 DevOps 組冠軍。&lt;/p&gt;&#xA;&lt;p&gt;頒獎典禮上，我鼓勵陳正瑋將這系列文章整理修潤，成為華文世界第一本 GitLab 專書。畢竟，我實在想不到有誰能夠比鐵人賽冠軍、GitLab 官方認證的 “GitLab Hero” 更適合做這件事的人。&lt;/p&gt;</description>
     </item>
     <item>
       <title>從系統思考角度讀《目標》：第一～三章</title>
       <link>//william-yeh.net/post/2020/09/systhinking-goal-ch01-03/</link>
       <pubDate>Sun, 13 Sep 2020 22:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2020/09/systhinking-goal-ch01-03/</guid>
-      <description>&lt;h2 id=&#34;緣起&#34;&gt;緣起&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Eliyahu_M._Goldratt&#34;&gt;高德拉特&lt;/a&gt;系列著作是我的管理啟蒙書，《&lt;a href=&#34;https://www.books.com.tw/products/0010898249&#34;&gt;目標&lt;/a&gt;》更是每隔一陣子就會重讀的經典。&lt;/p&gt;
-&lt;p&gt;這次，我打算以系統思考 (systems thinking) 角度重讀。尤其是以我在【&lt;a href=&#34;//william-yeh.net/post/2018/06/sys-thinking-workshop/&#34;&gt;系統思考的四堂課&lt;/a&gt;】提出的「&lt;strong&gt;SLR·CPI 法&lt;/strong&gt;」來逐步分析。&lt;/p&gt;
-&lt;p&gt;土井英司在《&lt;a href=&#34;http://www.books.com.tw/products/0010762830&#34;&gt;一流的人讀書，都在哪裡畫線？&lt;/a&gt;》點出箇中訣竅：&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;緣起&#34;&gt;緣起&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Eliyahu_M._Goldratt&#34;&gt;高德拉特&lt;/a&gt;系列著作是我的管理啟蒙書，《&lt;a href=&#34;https://www.books.com.tw/products/0010898249&#34;&gt;目標&lt;/a&gt;》更是每隔一陣子就會重讀的經典。&lt;/p&gt;&#xA;&lt;p&gt;這次，我打算以系統思考 (systems thinking) 角度重讀。尤其是以我在【&lt;a href=&#34;//william-yeh.net/post/2018/06/sys-thinking-workshop/&#34;&gt;系統思考的四堂課&lt;/a&gt;】提出的「&lt;strong&gt;SLR·CPI 法&lt;/strong&gt;」來逐步分析。&lt;/p&gt;&#xA;&lt;p&gt;土井英司在《&lt;a href=&#34;http://www.books.com.tw/products/0010762830&#34;&gt;一流的人讀書，都在哪裡畫線？&lt;/a&gt;》點出箇中訣竅：&lt;/p&gt;</description>
     </item>
     <item>
       <title>Essence of Scrum: Sprint Review</title>
       <link>//william-yeh.net/post/2020/08/sprint-review-in-a-nutshell/</link>
       <pubDate>Thu, 20 Aug 2020 08:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2020/08/sprint-review-in-a-nutshell/</guid>
-      <description>This article discusses the essence of Sprint Review .
-In a nutshell Sprint Review is a time-boxed1 event in which the Scrum Team and invited stakeholders inspect what has been Done with respect to the Sprint Goal , gain insight into values, and adapt business strategy if necessary.
-Output Essential:
-An adapted Product Backlog An adapted business strategy and roadmap2
-Better:
-Celebration3 Input Essential:
-Sprint Goal Increment 4
-Sprint Backlog Better:</description>
+      <description>This article discusses the essence of Sprint Review .&#xA;In a nutshell Sprint Review is a time-boxed1 event in which the Scrum Team and invited stakeholders inspect what has been Done with respect to the Sprint Goal , gain insight into values, and adapt business strategy if necessary.&#xA;Output Essential:&#xA;An adapted Product Backlog An adapted business strategy and roadmap2&#xA;Better:&#xA;Celebration3 Input Essential:&#xA;Sprint Goal Increment 4&#xA;Sprint Backlog Better:</description>
     </item>
     <item>
       <title>Essence of Scrum: Sprint Planning</title>
@@ -756,192 +356,112 @@ Sprint Backlog Better:</description>
       <link>//william-yeh.net/post/2020/08/blackbox-exporter/</link>
       <pubDate>Fri, 07 Aug 2020 08:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2020/08/blackbox-exporter/</guid>
-      <description>&lt;p&gt;在用 &lt;a href=&#34;https://prometheus.io/&#34;&gt;Prometheus&lt;/a&gt; + &lt;a href=&#34;https://grafana.com/&#34;&gt;Grafana&lt;/a&gt; 監控自家服務的同時，我們也會想用同一套系統去監控第三方服務。&lt;/p&gt;
-&lt;p&gt;本文介紹一個好用的 Prometheus 官方工具：&lt;a href=&#34;https://github.com/prometheus/blackbox_exporter&#34;&gt;Blackbox exporter&lt;/a&gt;，可以省下手刻 curl 腳本的工夫。我也順便介紹一些踩過的雷。&lt;/p&gt;</description>
+      <description>&lt;p&gt;在用 &lt;a href=&#34;https://prometheus.io/&#34;&gt;Prometheus&lt;/a&gt; + &lt;a href=&#34;https://grafana.com/&#34;&gt;Grafana&lt;/a&gt; 監控自家服務的同時，我們也會想用同一套系統去監控第三方服務。&lt;/p&gt;&#xA;&lt;p&gt;本文介紹一個好用的 Prometheus 官方工具：&lt;a href=&#34;https://github.com/prometheus/blackbox_exporter&#34;&gt;Blackbox exporter&lt;/a&gt;，可以省下手刻 curl 腳本的工夫。我也順便介紹一些踩過的雷。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Essence of Scrum: Daily Scrum</title>
       <link>//william-yeh.net/post/2020/08/daily-scrum-in-a-nutshell/</link>
       <pubDate>Sun, 02 Aug 2020 16:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2020/08/daily-scrum-in-a-nutshell/</guid>
-      <description>This article discusses the essence of Daily Scrum .
-In a nutshell Daily Scrum is a time-boxed daily event in which the Developers gather together to quickly inspect current performance and to identify necessary actions in order to increase the confidence in achieving the Sprint Goal .
-Output Essential:
-Updated confidence in the Sprint Goal supported by evidence.
-Updated plans, if necessary, for achieving the Sprint Goal .
-Input Essential:</description>
+      <description>This article discusses the essence of Daily Scrum .&#xA;In a nutshell Daily Scrum is a time-boxed daily event in which the Developers gather together to quickly inspect current performance and to identify necessary actions in order to increase the confidence in achieving the Sprint Goal .&#xA;Output Essential:&#xA;Updated confidence in the Sprint Goal supported by evidence.&#xA;Updated plans, if necessary, for achieving the Sprint Goal .&#xA;Input Essential:</description>
     </item>
     <item>
       <title>Essence of Scrum: Product Backlog Refinement</title>
       <link>//william-yeh.net/post/2020/07/pbr-in-a-nutshell/</link>
       <pubDate>Wed, 29 Jul 2020 22:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2020/07/pbr-in-a-nutshell/</guid>
-      <description>&lt;h2 id=&#34;preface-of-the-series&#34;&gt;Preface of the series&lt;/h2&gt;
-&lt;p&gt;The series of &amp;ldquo;Essence of Scrum&amp;rdquo; articles tries to identify the essence of Scrum elements (e.g., events and artifacts) so that:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;the core can be understood without much effort.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;the feeling overwhelmed can be reduced.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;the gradual adoption is more possible.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;My selection and elaboration of &amp;ldquo;essence&amp;rdquo; is very subjective. Follow the advice at your own risk.&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;preface-of-the-series&#34;&gt;Preface of the series&lt;/h2&gt;&#xA;&lt;p&gt;The series of &amp;ldquo;Essence of Scrum&amp;rdquo; articles tries to identify the essence of Scrum elements (e.g., events and artifacts) so that:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;the core can be understood without much effort.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;the feeling overwhelmed can be reduced.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;the gradual adoption is more possible.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;My selection and elaboration of &amp;ldquo;essence&amp;rdquo; is very subjective. Follow the advice at your own risk.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Go Best Practices</title>
       <link>//william-yeh.net/post/2020/07/golang-best-practices/</link>
       <pubDate>Fri, 10 Jul 2020 08:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2020/07/golang-best-practices/</guid>
-      <description>&lt;p&gt;今年一月，換到一家以 Go 為主力語言的公司。&lt;/p&gt;
-&lt;p&gt;習慣了 Java 紀律，一碰到 Go 的自由奔放，不禁想尋求一些 best practices 與 patterns。&lt;/p&gt;
-&lt;p&gt;以前我曾蒐集過一份 Go Best Practices 清單。浸潤 Go 半年後，再回頭看這些內容，當初不甚明瞭之處，竟然也懂了許多。便想重新整理一次，並加上個人的短評。&lt;/p&gt;</description>
+      <description>&lt;p&gt;今年一月，換到一家以 Go 為主力語言的公司。&lt;/p&gt;&#xA;&lt;p&gt;習慣了 Java 紀律，一碰到 Go 的自由奔放，不禁想尋求一些 best practices 與 patterns。&lt;/p&gt;&#xA;&lt;p&gt;以前我曾蒐集過一份 Go Best Practices 清單。浸潤 Go 半年後，再回頭看這些內容，當初不甚明瞭之處，竟然也懂了許多。便想重新整理一次，並加上個人的短評。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Travis CI 虛擬機的地雷</title>
       <link>//william-yeh.net/post/2020/07/travisci-hacks/</link>
       <pubDate>Thu, 09 Jul 2020 23:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2020/07/travisci-hacks/</guid>
-      <description>&lt;p&gt;我算是 &lt;a href=&#34;https://travis-ci.org/&#34;&gt;Travis CI&lt;/a&gt; 的老用戶了。&lt;/p&gt;
-&lt;p&gt;以前 Travis CI 很慢，對 Docker 不友善，又很難 debug，讓我一度將重心轉移到後起之秀 &lt;a href=&#34;https://circleci.com/&#34;&gt;CircleCI&lt;/a&gt;。後來 Travis CI 向 CircleCI 看齊，讓我們能夠 ssh 進去虛擬機 debug，兩者的差距已經逐漸縮小。所以，我自己的重要專案，總是盡量同時掛上 Travis CI 及 CircleCI，讓 CI pipeline 的核心在某種程度上也能盡量 reproducible 不被 lock in。&lt;/p&gt;
-&lt;p&gt;Travis CI 也提供許多常見的程式語言及伺服器軟體，以方便做 CI 測試。我個人的習慣是，盡量不去使用這些功能，而是直接用 Docker 或 Docker Compose 來組裝，以降低對於 Travis CI 的依賴（尤其我還要兼顧 CircleCI）。&lt;/p&gt;
-&lt;p&gt;不過，如果是與人合作的專案，就得顧及其他人的習慣。我在使用 Travis CI 提供的伺服器軟體 Postgres、Cassandra、RabbitMQ 時，遇到一些雷，特地記錄下來，供有類似困擾的人參考。&lt;/p&gt;</description>
+      <description>&lt;p&gt;我算是 &lt;a href=&#34;https://travis-ci.org/&#34;&gt;Travis CI&lt;/a&gt; 的老用戶了。&lt;/p&gt;&#xA;&lt;p&gt;以前 Travis CI 很慢，對 Docker 不友善，又很難 debug，讓我一度將重心轉移到後起之秀 &lt;a href=&#34;https://circleci.com/&#34;&gt;CircleCI&lt;/a&gt;。後來 Travis CI 向 CircleCI 看齊，讓我們能夠 ssh 進去虛擬機 debug，兩者的差距已經逐漸縮小。所以，我自己的重要專案，總是盡量同時掛上 Travis CI 及 CircleCI，讓 CI pipeline 的核心在某種程度上也能盡量 reproducible 不被 lock in。&lt;/p&gt;&#xA;&lt;p&gt;Travis CI 也提供許多常見的程式語言及伺服器軟體，以方便做 CI 測試。我個人的習慣是，盡量不去使用這些功能，而是直接用 Docker 或 Docker Compose 來組裝，以降低對於 Travis CI 的依賴（尤其我還要兼顧 CircleCI）。&lt;/p&gt;&#xA;&lt;p&gt;不過，如果是與人合作的專案，就得顧及其他人的習慣。我在使用 Travis CI 提供的伺服器軟體 Postgres、Cassandra、RabbitMQ 時，遇到一些雷，特地記錄下來，供有類似困擾的人參考。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Jira Board Hacks</title>
       <link>//william-yeh.net/post/2020/06/jira-board-hacks/</link>
       <pubDate>Sat, 06 Jun 2020 08:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2020/06/jira-board-hacks/</guid>
-      <description>&lt;h2 id=&#34;實體看板&#34;&gt;實體看板&lt;/h2&gt;
-&lt;p&gt;在導入 Scrum 時，我偏好實體看板。&lt;/p&gt;
-&lt;p&gt;實體看板容易 zoom in/out，利於適時切換俯瞰與細節視角，不需過度的數字管理。&lt;/p&gt;
-&lt;p&gt;實體看板的空間共時性，容易塑造團隊的一體感。&lt;/p&gt;
-&lt;p&gt;實體看板彈性大，能以最小成本，讓團隊在敏捷路上不斷嘗試與調整。&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;實體看板&#34;&gt;實體看板&lt;/h2&gt;&#xA;&lt;p&gt;在導入 Scrum 時，我偏好實體看板。&lt;/p&gt;&#xA;&lt;p&gt;實體看板容易 zoom in/out，利於適時切換俯瞰與細節視角，不需過度的數字管理。&lt;/p&gt;&#xA;&lt;p&gt;實體看板的空間共時性，容易塑造團隊的一體感。&lt;/p&gt;&#xA;&lt;p&gt;實體看板彈性大，能以最小成本，讓團隊在敏捷路上不斷嘗試與調整。&lt;/p&gt;</description>
     </item>
     <item>
       <title>gRPC 測試工具</title>
       <link>//william-yeh.net/post/2020/04/grpc-testing-tools/</link>
       <pubDate>Tue, 14 Apr 2020 22:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2020/04/grpc-testing-tools/</guid>
-      <description>&lt;p&gt;RESTful API 時代，我們有許多簡單好用的測試工具：有酷炫的 &lt;a href=&#34;https://www.postman.com/&#34;&gt;Postman&lt;/a&gt;，有命令列控愛用的 &lt;a href=&#34;https://httpie.org/&#34;&gt;HTTPie&lt;/a&gt;，當然也有硬漢必備的萬用瑞士刀 &lt;a href=&#34;https://curl.haxx.se/&#34;&gt;curl&lt;/a&gt;。&lt;/p&gt;
-&lt;p&gt;那麼，gRPC 呢？&lt;/p&gt;
-&lt;p&gt;這篇文章介紹兩個好用的小工具：&lt;a href=&#34;https://github.com/fullstorydev/grpcurl&#34;&gt;gRPCurl&lt;/a&gt; 及 &lt;a href=&#34;https://github.com/bojand/ghz&#34;&gt;ghz&lt;/a&gt;，一個是輸入輸出介面測試工具，另一個是壓測工具，也順便介紹一些簡化測試的技巧。&lt;/p&gt;</description>
+      <description>&lt;p&gt;RESTful API 時代，我們有許多簡單好用的測試工具：有酷炫的 &lt;a href=&#34;https://www.postman.com/&#34;&gt;Postman&lt;/a&gt;，有命令列控愛用的 &lt;a href=&#34;https://httpie.org/&#34;&gt;HTTPie&lt;/a&gt;，當然也有硬漢必備的萬用瑞士刀 &lt;a href=&#34;https://curl.haxx.se/&#34;&gt;curl&lt;/a&gt;。&lt;/p&gt;&#xA;&lt;p&gt;那麼，gRPC 呢？&lt;/p&gt;&#xA;&lt;p&gt;這篇文章介紹兩個好用的小工具：&lt;a href=&#34;https://github.com/fullstorydev/grpcurl&#34;&gt;gRPCurl&lt;/a&gt; 及 &lt;a href=&#34;https://github.com/bojand/ghz&#34;&gt;ghz&lt;/a&gt;，一個是輸入輸出介面測試工具，另一個是壓測工具，也順便介紹一些簡化測試的技巧。&lt;/p&gt;</description>
     </item>
     <item>
       <title>gRPC Load Balancing in Kubernetes</title>
       <link>//william-yeh.net/post/2020/03/grpc-load-balancing/</link>
       <pubDate>Mon, 30 Mar 2020 22:30:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2020/03/grpc-load-balancing/</guid>
-      <description>&lt;p&gt;Kubernetes 有個很方便的地方：只要修改 deployment 的 &lt;code&gt;spec.replicas&lt;/code&gt; 數字，就能橫向擴展 pod，以應付更大的流量負載需求。&lt;/p&gt;
-&lt;p&gt;這一招，對於 stateless 的 HTTP 服務很管用，也是 Kubernetes 入門教學愛用的例子。但是，對於 &lt;a href=&#34;https://grpc.io/&#34;&gt;gRPC&lt;/a&gt; 呢？&lt;/p&gt;</description>
+      <description>&lt;p&gt;Kubernetes 有個很方便的地方：只要修改 deployment 的 &lt;code&gt;spec.replicas&lt;/code&gt; 數字，就能橫向擴展 pod，以應付更大的流量負載需求。&lt;/p&gt;&#xA;&lt;p&gt;這一招，對於 stateless 的 HTTP 服務很管用，也是 Kubernetes 入門教學愛用的例子。但是，對於 &lt;a href=&#34;https://grpc.io/&#34;&gt;gRPC&lt;/a&gt; 呢？&lt;/p&gt;</description>
     </item>
     <item>
       <title>Idempotency Key：原理與實測</title>
       <link>//william-yeh.net/post/2020/03/idempotency-key-test/</link>
       <pubDate>Tue, 10 Mar 2020 23:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2020/03/idempotency-key-test/</guid>
-      <description>&lt;p&gt;最近幾年，在微服務打滾的人，不時會遇到神祕的 &amp;ldquo;idempotency key&amp;rdquo; 字眼。本文爬梳 idempotency key 的技術背景，探討運作流程，並分析資料庫的實作選項。&lt;/p&gt;
-&lt;h2 id=&#34;idempotency-冪等性&#34;&gt;Idempotency 冪等性&lt;/h2&gt;
-&lt;p&gt;在 API 服務中，常常需要留意 idempotency（冪等性）。&lt;/p&gt;
-&lt;p&gt;名詞：idempotency，形容詞：idempotent。&lt;/p&gt;
-&lt;p&gt;&amp;ldquo;Idempotency&amp;rdquo; 這字眼源自數學。維基百科是這麼解釋 &amp;ldquo;&lt;a href=&#34;https://en.wikipedia.org/wiki/Idempotence#Idempotent_functions&#34;&gt;idempotent function&lt;/a&gt;&amp;rdquo; 的：&lt;/p&gt;</description>
+      <description>&lt;p&gt;最近幾年，在微服務打滾的人，不時會遇到神祕的 &amp;ldquo;idempotency key&amp;rdquo; 字眼。本文爬梳 idempotency key 的技術背景，探討運作流程，並分析資料庫的實作選項。&lt;/p&gt;&#xA;&lt;h2 id=&#34;idempotency-冪等性&#34;&gt;Idempotency 冪等性&lt;/h2&gt;&#xA;&lt;p&gt;在 API 服務中，常常需要留意 idempotency（冪等性）。&lt;/p&gt;&#xA;&lt;p&gt;名詞：idempotency，形容詞：idempotent。&lt;/p&gt;&#xA;&lt;p&gt;&amp;ldquo;Idempotency&amp;rdquo; 這字眼源自數學。維基百科是這麼解釋 &amp;ldquo;&lt;a href=&#34;https://en.wikipedia.org/wiki/Idempotence#Idempotent_functions&#34;&gt;idempotent function&lt;/a&gt;&amp;rdquo; 的：&lt;/p&gt;</description>
     </item>
     <item>
       <title>求職，別忘了突出你的亮點</title>
       <link>//william-yeh.net/post/2020/01/career-spotlight/</link>
       <pubDate>Wed, 08 Jan 2020 22:30:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2020/01/career-spotlight/</guid>
-      <description>&lt;p&gt;在網路上看到 Joe 喟然&lt;a href=&#34;https://www.facebook.com/story.php?story_fbid=3000276969985335&amp;amp;id=100000091845448&#34;&gt;嘆曰&lt;/a&gt;：「今天重要功課：仔細看過明天 20 位&lt;a href=&#34;https://shop.darencademy.com/product/view/id/30&#34;&gt;履歷課&lt;/a&gt;同學的履歷以及繳交的功課。說起來這堂課好像是我們最耗能的一堂課，完全是做功德的一堂課。」&lt;/p&gt;
-&lt;p&gt;我，身為履歷表價值鏈另一端的面試官，也很能瞭解這番滋味。&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-&lt;p&gt;近年來，履歷教戰守則廣傳，有專書，甚至還有專門課程。理論上，「不懂得 &lt;del&gt;包裝美化履歷&lt;/del&gt; 正確呈現履歷」的低級錯誤應該會越來越少見——其實不然。驚訝的是，即使是獵頭轉來的履歷也常無法倖免，真不知該怎麼說了。&lt;/p&gt;
-&lt;p&gt;遇到比較多的反例，是沒有&lt;strong&gt;亮點&lt;/strong&gt;。&lt;/p&gt;</description>
+      <description>&lt;p&gt;在網路上看到 Joe 喟然&lt;a href=&#34;https://www.facebook.com/story.php?story_fbid=3000276969985335&amp;amp;id=100000091845448&#34;&gt;嘆曰&lt;/a&gt;：「今天重要功課：仔細看過明天 20 位&lt;a href=&#34;https://shop.darencademy.com/product/view/id/30&#34;&gt;履歷課&lt;/a&gt;同學的履歷以及繳交的功課。說起來這堂課好像是我們最耗能的一堂課，完全是做功德的一堂課。」&lt;/p&gt;&#xA;&lt;p&gt;我，身為履歷表價值鏈另一端的面試官，也很能瞭解這番滋味。&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;&#xA;&lt;p&gt;近年來，履歷教戰守則廣傳，有專書，甚至還有專門課程。理論上，「不懂得 &lt;del&gt;包裝美化履歷&lt;/del&gt; 正確呈現履歷」的低級錯誤應該會越來越少見——其實不然。驚訝的是，即使是獵頭轉來的履歷也常無法倖免，真不知該怎麼說了。&lt;/p&gt;&#xA;&lt;p&gt;遇到比較多的反例，是沒有&lt;strong&gt;亮點&lt;/strong&gt;。&lt;/p&gt;</description>
     </item>
     <item>
       <title>2019 個人回顧</title>
       <link>//william-yeh.net/post/2019/12/2019-retrospective/</link>
       <pubDate>Thu, 26 Dec 2019 23:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2019/12/2019-retrospective/</guid>
-      <description>&lt;p&gt;年初，告別服務五年的單位，走出舒適圈，歸零，重啟。&lt;/p&gt;
-&lt;p&gt;如果說 &lt;a href=&#34;//william-yeh.net/post/2018/12/2018-retrospective/&#34;&gt;2018&lt;/a&gt; 是收攝靜觀的一年，那麼，2019 可謂驚滔駭浪了。做對了一些事，也犯下許多蠢事。&lt;/p&gt;
-&lt;p&gt;到了年終，又開始要做個總回顧，再對來年許願。去除一些不便揭露的事情，以下是簡單的回顧。&lt;/p&gt;
-
-&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
-&lt;div class=&#34;box&#34;&gt;
-&lt;figure  itemprop=&#34;associatedMedia&#34;
-  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
-  style=&#34;max-width:30em&#34; &gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2019/12/ippo.jpg&#34; alt=&#34;鷹村對幕之內畫的那條線，我要踏過去了。&#34;/&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2019/12/ippo.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-      &lt;figcaption&gt;
-          &lt;p&gt;鷹村對幕之內畫的那條線，我要踏過去了。&lt;/p&gt;
-      &lt;/figcaption&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;</description>
+      <description>&lt;p&gt;年初，告別服務五年的單位，走出舒適圈，歸零，重啟。&lt;/p&gt;&#xA;&lt;p&gt;如果說 &lt;a href=&#34;//william-yeh.net/post/2018/12/2018-retrospective/&#34;&gt;2018&lt;/a&gt; 是收攝靜觀的一年，那麼，2019 可謂驚滔駭浪了。做對了一些事，也犯下許多蠢事。&lt;/p&gt;&#xA;&lt;p&gt;到了年終，又開始要做個總回顧，再對來年許願。去除一些不便揭露的事情，以下是簡單的回顧。&lt;/p&gt;&#xA;&#xA;&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;&#xA;&lt;div class=&#34;box&#34;&gt;&#xA;&lt;figure  itemprop=&#34;associatedMedia&#34;&#xA;  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; &#xA;  style=&#34;max-width:30em&#34; &gt;&#xA;    &lt;div class=&#34;img&#34;&gt;&#xA;      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2019/12/ippo.jpg&#34; alt=&#34;鷹村對幕之內畫的那條線，我要踏過去了。&#34;/&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;a href=&#34;//william-yeh.net/img/2019/12/ippo.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;&#xA;      &lt;figcaption&gt;&#xA;          &lt;p&gt;鷹村對幕之內畫的那條線，我要踏過去了。&lt;/p&gt;&#xA;      &lt;/figcaption&gt;&#xA;  &lt;/figure&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
       <title>技術面試的小觀點</title>
       <link>//william-yeh.net/post/2019/12/tech-interview/</link>
       <pubDate>Wed, 04 Dec 2019 22:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2019/12/tech-interview/</guid>
-      <description>&lt;p&gt;年底，人才流動的旺季。&lt;/p&gt;
-&lt;p&gt;這陣子，經手一堆履歷，更面試超過十場，深深覺得，若多一點人懂得&lt;strong&gt;面試&lt;/strong&gt;的遊戲規則，甚至更廣義的&lt;strong&gt;職場&lt;/strong&gt;遊戲規則，將是賓主盡歡的美事。&lt;/p&gt;
-&lt;p&gt;Bryan &lt;a href=&#34;https://www.facebook.com/bryan.yao.1/posts/2666223613434413&#34;&gt;說得好&lt;/a&gt;：「求職過程投入越多，越能理解這個遊戲規則，也對自己的目標更清晰！」&lt;/p&gt;
-&lt;p&gt;我們或許都沒有前衛到像 Netflix《&lt;a href=&#34;https://www.books.com.tw/products/0010796709&#34;&gt;給力&lt;/a&gt;》那樣「鼓勵員工經常去面試別家公司的工作」，但說實話，多一些面試與被面試的經歷，的確能夠更掌握遊戲規則，也會衝擊到自己原先的浪漫幻想，降低美麗的錯誤，將自己導向更務實的定位。&lt;/p&gt;
-&lt;p&gt;面試與被面試都經歷過不少的我，想針對這陣子的所見所聞，分享一些個人的觀點。&lt;/p&gt;</description>
+      <description>&lt;p&gt;年底，人才流動的旺季。&lt;/p&gt;&#xA;&lt;p&gt;這陣子，經手一堆履歷，更面試超過十場，深深覺得，若多一點人懂得&lt;strong&gt;面試&lt;/strong&gt;的遊戲規則，甚至更廣義的&lt;strong&gt;職場&lt;/strong&gt;遊戲規則，將是賓主盡歡的美事。&lt;/p&gt;&#xA;&lt;p&gt;Bryan &lt;a href=&#34;https://www.facebook.com/bryan.yao.1/posts/2666223613434413&#34;&gt;說得好&lt;/a&gt;：「求職過程投入越多，越能理解這個遊戲規則，也對自己的目標更清晰！」&lt;/p&gt;&#xA;&lt;p&gt;我們或許都沒有前衛到像 Netflix《&lt;a href=&#34;https://www.books.com.tw/products/0010796709&#34;&gt;給力&lt;/a&gt;》那樣「鼓勵員工經常去面試別家公司的工作」，但說實話，多一些面試與被面試的經歷，的確能夠更掌握遊戲規則，也會衝擊到自己原先的浪漫幻想，降低美麗的錯誤，將自己導向更務實的定位。&lt;/p&gt;&#xA;&lt;p&gt;面試與被面試都經歷過不少的我，想針對這陣子的所見所聞，分享一些個人的觀點。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Volume Resizing Mechanism in Kubernetes</title>
       <link>//william-yeh.net/post/2019/07/k8s-vol-resizing/</link>
       <pubDate>Wed, 31 Jul 2019 13:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2019/07/k8s-vol-resizing/</guid>
-      <description>&lt;p&gt;Non-stop storage scaling (vertical or horizontal scaling) is essential in a data-intensive system, database servers in particular.&lt;/p&gt;
-&lt;p&gt;Is it possible in Kubernetes?&lt;/p&gt;</description>
+      <description>&lt;p&gt;Non-stop storage scaling (vertical or horizontal scaling) is essential in a data-intensive system, database servers in particular.&lt;/p&gt;&#xA;&lt;p&gt;Is it possible in Kubernetes?&lt;/p&gt;</description>
     </item>
     <item>
       <title>CKAD (Certified Kubernetes Application Developer) 相關資料</title>
       <link>//william-yeh.net/post/2019/07/ckad-materials/</link>
       <pubDate>Thu, 11 Jul 2019 17:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2019/07/ckad-materials/</guid>
-      <description>&lt;p&gt;Linux Foundation 旗下的 &lt;a href=&#34;https://www.cncf.io/&#34;&gt;CNCF (Cloud Native Computing Foundation)&lt;/a&gt; 提供兩個與 Kubernetes 相關的個人技術檢定：偏維運的 &lt;a href=&#34;https://www.cncf.io/certification/cka/&#34;&gt;CKA (Certified Kubernetes Administrator)&lt;/a&gt;，以及偏研發的 &lt;a href=&#34;https://www.cncf.io/certification/ckad/&#34;&gt;CKAD (Certified Kubernetes Application Developer)&lt;/a&gt;。&lt;/p&gt;
-&lt;p&gt;其中，CKAD 與我關注的範圍、與我設計的工作坊最接近，便想進一步瞭解它的細節。&lt;/p&gt;
-
-&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
-&lt;div class=&#34;box&#34;&gt;
-&lt;figure  itemprop=&#34;associatedMedia&#34;
-  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
-  style=&#34;max-width:15em&#34; &gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2019/07/kubernetes-ckad-color.png&#34; alt=&#34;CKAD logo&#34;/&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2019/07/kubernetes-ckad-color.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-      &lt;figcaption&gt;
-          &lt;p&gt;CKAD logo&lt;/p&gt;
-      &lt;/figcaption&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;</description>
+      <description>&lt;p&gt;Linux Foundation 旗下的 &lt;a href=&#34;https://www.cncf.io/&#34;&gt;CNCF (Cloud Native Computing Foundation)&lt;/a&gt; 提供兩個與 Kubernetes 相關的個人技術檢定：偏維運的 &lt;a href=&#34;https://www.cncf.io/certification/cka/&#34;&gt;CKA (Certified Kubernetes Administrator)&lt;/a&gt;，以及偏研發的 &lt;a href=&#34;https://www.cncf.io/certification/ckad/&#34;&gt;CKAD (Certified Kubernetes Application Developer)&lt;/a&gt;。&lt;/p&gt;&#xA;&lt;p&gt;其中，CKAD 與我關注的範圍、與我設計的工作坊最接近，便想進一步瞭解它的細節。&lt;/p&gt;&#xA;&#xA;&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;&#xA;&lt;div class=&#34;box&#34;&gt;&#xA;&lt;figure  itemprop=&#34;associatedMedia&#34;&#xA;  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; &#xA;  style=&#34;max-width:15em&#34; &gt;&#xA;    &lt;div class=&#34;img&#34;&gt;&#xA;      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2019/07/kubernetes-ckad-color.png&#34; alt=&#34;CKAD logo&#34;/&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;a href=&#34;//william-yeh.net/img/2019/07/kubernetes-ckad-color.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;&#xA;      &lt;figcaption&gt;&#xA;          &lt;p&gt;CKAD logo&lt;/p&gt;&#xA;      &lt;/figcaption&gt;&#xA;  &lt;/figure&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
       <title>Docker File Permissions on Windows</title>
       <link>//william-yeh.net/post/2019/06/docker-file-permissions/</link>
       <pubDate>Mon, 24 Jun 2019 12:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2019/06/docker-file-permissions/</guid>
-      <description>&lt;p&gt;Currently Linux containers are still more popular than Windows containers. And Windows users often need to use Linux containers even from their Windows computers.&lt;/p&gt;
-&lt;p&gt;Recently I&amp;rsquo;ve found something very strange about Linux-style file permissions when the Docker images are built from Windows hosts.&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; Therefore, I&amp;rsquo;ve conducted a suite of test cases to investigate whether file permissions are preserved with Docker &amp;amp; &lt;a href=&#34;https://skaffold.dev/&#34;&gt;Skaffold&lt;/a&gt; toolchains. All experiment materials are available in the &lt;a href=&#34;https://github.com/William-Yeh/container-chmod&#34;&gt;container-chmod&lt;/a&gt; repo.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Currently Linux containers are still more popular than Windows containers. And Windows users often need to use Linux containers even from their Windows computers.&lt;/p&gt;&#xA;&lt;p&gt;Recently I&amp;rsquo;ve found something very strange about Linux-style file permissions when the Docker images are built from Windows hosts.&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; Therefore, I&amp;rsquo;ve conducted a suite of test cases to investigate whether file permissions are preserved with Docker &amp;amp; &lt;a href=&#34;https://skaffold.dev/&#34;&gt;Skaffold&lt;/a&gt; toolchains. All experiment materials are available in the &lt;a href=&#34;https://github.com/William-Yeh/container-chmod&#34;&gt;container-chmod&lt;/a&gt; repo.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Auto-Reload from ConfigMap</title>
       <link>//william-yeh.net/post/2019/06/autoreload-from-configmap/</link>
       <pubDate>Mon, 17 Jun 2019 17:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2019/06/autoreload-from-configmap/</guid>
-      <description>My previous article &amp;ldquo;Inotify in Containers&amp;rdquo; has demonstrated that when ConfigMap is mounted as directories, any changes in the ConfigMap will propagate to related pods, and can be detected with inotify-like APIs.
-A follow-up question might be: what should a well-behaved application react to this trigger accordingly? What if it&amp;rsquo;s a ill-designed application?
-To clarify this I&amp;rsquo;ve conducted a series of experiments for 3 possible configmap-reloading strategies:
-Built-in auto-reloading apps External signals Pod rollout In this article I&amp;rsquo;m going to explain the experiments and preliminary findings.</description>
+      <description>My previous article &amp;ldquo;Inotify in Containers&amp;rdquo; has demonstrated that when ConfigMap is mounted as directories, any changes in the ConfigMap will propagate to related pods, and can be detected with inotify-like APIs.&#xA;A follow-up question might be: what should a well-behaved application react to this trigger accordingly? What if it&amp;rsquo;s a ill-designed application?&#xA;To clarify this I&amp;rsquo;ve conducted a series of experiments for 3 possible configmap-reloading strategies:&#xA;Built-in auto-reloading apps External signals Pod rollout In this article I&amp;rsquo;m going to explain the experiments and preliminary findings.</description>
     </item>
     <item>
       <title>Containers and Environment Variables</title>
@@ -962,81 +482,56 @@ Built-in auto-reloading apps External signals Pod rollout In this article I&amp;
       <link>//william-yeh.net/post/2019/05/k8s-lab/</link>
       <pubDate>Fri, 17 May 2019 12:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2019/05/k8s-lab/</guid>
-      <description>&lt;p&gt;前天我在 &lt;a href=&#34;https://cloudsummit.ithome.com.tw/2019/lab.html#0001&#34;&gt;2019 台灣雲端大會&lt;/a&gt;帶了兩個場次，一個是現場實作場次，一個是經驗分享演講：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Lab / &lt;a href=&#34;https://github.com/William-Yeh/workshop-cloud2019&#34;&gt;給 RD 的 Kubernetes 初體驗&lt;/a&gt; (90 minutes)&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Speech / &lt;a href=&#34;https://www.slideshare.net/williamyeh/when-dotnetmeetskubernetes-145557464&#34;&gt;當 .NET 遇到 Kubernetes&lt;/a&gt; (30 minutes)&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;兩個場次，一言以蔽之，都圍繞在 Kubernetes 的入門認知與導入策略上。&lt;/p&gt;</description>
+      <description>&lt;p&gt;前天我在 &lt;a href=&#34;https://cloudsummit.ithome.com.tw/2019/lab.html#0001&#34;&gt;2019 台灣雲端大會&lt;/a&gt;帶了兩個場次，一個是現場實作場次，一個是經驗分享演講：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Lab / &lt;a href=&#34;https://github.com/William-Yeh/workshop-cloud2019&#34;&gt;給 RD 的 Kubernetes 初體驗&lt;/a&gt; (90 minutes)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Speech / &lt;a href=&#34;https://www.slideshare.net/williamyeh/when-dotnetmeetskubernetes-145557464&#34;&gt;當 .NET 遇到 Kubernetes&lt;/a&gt; (30 minutes)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;兩個場次，一言以蔽之，都圍繞在 Kubernetes 的入門認知與導入策略上。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Next &#39;19 的 Istio 場次重點摘要</title>
       <link>//william-yeh.net/post/2019/04/next19-istio/</link>
       <pubDate>Fri, 19 Apr 2019 23:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2019/04/next19-istio/</guid>
-      <description>&lt;p&gt;四月 9&amp;ndash;11 日去舊金山參加 Google Cloud 的 &lt;a href=&#34;https://cloud.withgoogle.com/next/sf/&#34;&gt;Next ’19&lt;/a&gt; 大會，收穫頗大。&lt;/p&gt;
-&lt;p&gt;這場大會，同一時段就有近 30 場專題演講同時進行，議程滿滿，勢必得做取捨。基於工作需要及個人興趣，我主要選擇與容器相關的場次：service mesh、Windows containers、混合雲、資安實務。&lt;/p&gt;
-&lt;p&gt;我發現，光是這些場次，就得花很大力氣去消化、實驗與應用。&lt;/p&gt;
-&lt;p&gt;我們這些所謂的「台港團」會在 GCPUG Taipei 舉辦一場&lt;a href=&#34;https://www.meetup.com/GCPUG-Taipei/events/260555968/&#34;&gt;分享會&lt;/a&gt;。因為自己不克參加，便以這篇文章，針對我鎖定的核心議題：Istio，做一番重點摘要，以饗讀者。&lt;/p&gt;</description>
+      <description>&lt;p&gt;四月 9&amp;ndash;11 日去舊金山參加 Google Cloud 的 &lt;a href=&#34;https://cloud.withgoogle.com/next/sf/&#34;&gt;Next ’19&lt;/a&gt; 大會，收穫頗大。&lt;/p&gt;&#xA;&lt;p&gt;這場大會，同一時段就有近 30 場專題演講同時進行，議程滿滿，勢必得做取捨。基於工作需要及個人興趣，我主要選擇與容器相關的場次：service mesh、Windows containers、混合雲、資安實務。&lt;/p&gt;&#xA;&lt;p&gt;我發現，光是這些場次，就得花很大力氣去消化、實驗與應用。&lt;/p&gt;&#xA;&lt;p&gt;我們這些所謂的「台港團」會在 GCPUG Taipei 舉辦一場&lt;a href=&#34;https://www.meetup.com/GCPUG-Taipei/events/260555968/&#34;&gt;分享會&lt;/a&gt;。因為自己不克參加，便以這篇文章，針對我鎖定的核心議題：Istio，做一番重點摘要，以饗讀者。&lt;/p&gt;</description>
     </item>
     <item>
       <title>在 WSL 裡使用 Ansible &#43; Vagrant</title>
       <link>//william-yeh.net/post/2019/04/wsl-ansible-vagrant/</link>
       <pubDate>Thu, 18 Apr 2019 23:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2019/04/wsl-ansible-vagrant/</guid>
-      <description>&lt;p&gt;既然要開始在 Windows 上沿用 Mac 及 Unix 的命令列工具習慣&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，免不了要處理 &lt;a href=&#34;https://github.com/ansible/ansible&#34;&gt;Ansible&lt;/a&gt; 及 &lt;a href=&#34;https://www.vagrantup.com/&#34;&gt;Vagrant&lt;/a&gt;。&lt;/p&gt;
-&lt;p&gt;雖然這兩個軟體都有對應的 Windows 版本，但據我以前的經驗，卡卡的，有許多小地雷；畢竟這些發跡自泛 Unix 家族的軟體，不是那麼容易無縫移植到對命令列不友善的 Windows 家族。&lt;/p&gt;
-&lt;p&gt;如今 Windows 已經有 &lt;a href=&#34;https://docs.microsoft.com/en-us/windows/wsl/&#34;&gt;WSL (Windows Subsystem for Linux)&lt;/a&gt; 機制，是否可以更無痛享用 Ansible 及 Vagrant 呢？&lt;/p&gt;
-&lt;p&gt;可以的。&lt;/p&gt;</description>
+      <description>&lt;p&gt;既然要開始在 Windows 上沿用 Mac 及 Unix 的命令列工具習慣&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，免不了要處理 &lt;a href=&#34;https://github.com/ansible/ansible&#34;&gt;Ansible&lt;/a&gt; 及 &lt;a href=&#34;https://www.vagrantup.com/&#34;&gt;Vagrant&lt;/a&gt;。&lt;/p&gt;&#xA;&lt;p&gt;雖然這兩個軟體都有對應的 Windows 版本，但據我以前的經驗，卡卡的，有許多小地雷；畢竟這些發跡自泛 Unix 家族的軟體，不是那麼容易無縫移植到對命令列不友善的 Windows 家族。&lt;/p&gt;&#xA;&lt;p&gt;如今 Windows 已經有 &lt;a href=&#34;https://docs.microsoft.com/en-us/windows/wsl/&#34;&gt;WSL (Windows Subsystem for Linux)&lt;/a&gt; 機制，是否可以更無痛享用 Ansible 及 Vagrant 呢？&lt;/p&gt;&#xA;&lt;p&gt;可以的。&lt;/p&gt;</description>
     </item>
     <item>
       <title>WSLtty &#43; tmux 組合技</title>
       <link>//william-yeh.net/post/2019/04/wsltty-tmux/</link>
       <pubDate>Wed, 17 Apr 2019 22:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2019/04/wsltty-tmux/</guid>
-      <description>&lt;p&gt;在 Windows 10 上面使用 WSL 已經一個月了&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;。小狀況也就罷了，但 &lt;a href=&#34;https://cmder.net/&#34;&gt;Cmder&lt;/a&gt; 不夠穩定的顯示邏輯卻最讓我頭痛，在視窗尺寸變化時，無法正確處理字元位置。更令人費解的是，即使是其他狀似更華麗（也更耗資源）的替代方案，也仍然有這些問題&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;。&lt;/p&gt;
-&lt;p&gt;既然酷炫的終端機競品問題多多，乾脆回歸極簡的 WSLtty&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;，並混搭 tmux&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt; 來彌補。可惜，畢竟是組合技，無法完全複製 Mac 的 iTerm2 使用經驗。&lt;/p&gt;
-&lt;p&gt;此事古難全。&lt;/p&gt;</description>
+      <description>&lt;p&gt;在 Windows 10 上面使用 WSL 已經一個月了&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;。小狀況也就罷了，但 &lt;a href=&#34;https://cmder.net/&#34;&gt;Cmder&lt;/a&gt; 不夠穩定的顯示邏輯卻最讓我頭痛，在視窗尺寸變化時，無法正確處理字元位置。更令人費解的是，即使是其他狀似更華麗（也更耗資源）的替代方案，也仍然有這些問題&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;。&lt;/p&gt;&#xA;&lt;p&gt;既然酷炫的終端機競品問題多多，乾脆回歸極簡的 WSLtty&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;，並混搭 tmux&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt; 來彌補。可惜，畢竟是組合技，無法完全複製 Mac 的 iTerm2 使用經驗。&lt;/p&gt;&#xA;&lt;p&gt;此事古難全。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Nginx Ingress 與 Ambassador 簡易性能比較</title>
       <link>//william-yeh.net/post/2019/03/ingress-vs-ambassador/</link>
       <pubDate>Fri, 29 Mar 2019 23:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2019/03/ingress-vs-ambassador/</guid>
-      <description>&lt;p&gt;API gateway 是微服務環境，甚至 service mesh 的要角 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;。&lt;/p&gt;
-&lt;p&gt;在 Kubernetes 上面，API gateway 選項眾多。有像 HAProxy 及 Nginx 這些石器時代老傢伙跨足過來，也有打從一開始就走 cloud native 路線的後起之秀。&lt;/p&gt;
-&lt;p&gt;該如何選擇？&lt;/p&gt;</description>
+      <description>&lt;p&gt;API gateway 是微服務環境，甚至 service mesh 的要角 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;。&lt;/p&gt;&#xA;&lt;p&gt;在 Kubernetes 上面，API gateway 選項眾多。有像 HAProxy 及 Nginx 這些石器時代老傢伙跨足過來，也有打從一開始就走 cloud native 路線的後起之秀。&lt;/p&gt;&#xA;&lt;p&gt;該如何選擇？&lt;/p&gt;</description>
     </item>
     <item>
       <title>在 Windows 上復刻 Mac 使用習慣</title>
       <link>//william-yeh.net/post/2019/03/wsl-cmder-zsh/</link>
       <pubDate>Thu, 14 Mar 2019 08:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2019/03/wsl-cmder-zsh/</guid>
-      <description>&lt;p&gt;改用 Mac 已經六年了。現在要再回頭碰 Windows，還真有點不習慣。&lt;/p&gt;
-&lt;p&gt;這年頭，許多軟體其實都有 Mac 及 Windows 版了：Chrome、Firefox、Slack、Evernote、Dropbox、VSCode……最大的差別，應該是終端機命令列工具。&lt;/p&gt;
-&lt;p&gt;上古時代，需要靠 &lt;a href=&#34;https://www.cygwin.com/&#34;&gt;Cygwin&lt;/a&gt; 或 &lt;a href=&#34;http://www.mingw.org/&#34;&gt;MinGW&lt;/a&gt; 方案，才能勉強湊出一點點 Unix 的命令列感覺，但地雷超級多，難以作為嚴肅用途。後來，到了 2015 年，從保哥那邊知道有 &lt;a href=&#34;https://cmder.net/&#34;&gt;Cmder&lt;/a&gt; 這個好物 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，微軟又於 2016 年推出 &lt;a href=&#34;https://docs.microsoft.com/en-us/windows/wsl/&#34;&gt;WSL (Windows Subsystem for Linux)&lt;/a&gt; 機制，Windows 這邊似乎出現曙光，對 Unix 命令列愛好者展現出久違的吸引力。&lt;/p&gt;
-&lt;p&gt;為了在 Windows 10 上面復刻我的 Mac 的體驗：&lt;a href=&#34;https://www.iterm2.com/&#34;&gt;iTerm2&lt;/a&gt; + &lt;a href=&#34;https://www.zsh.org/&#34;&gt;Zsh&lt;/a&gt; + &lt;a href=&#34;https://ohmyz.sh/&#34;&gt;Oh My ZSH&lt;/a&gt;，我試了幾天，把步驟整理如下。&lt;/p&gt;</description>
+      <description>&lt;p&gt;改用 Mac 已經六年了。現在要再回頭碰 Windows，還真有點不習慣。&lt;/p&gt;&#xA;&lt;p&gt;這年頭，許多軟體其實都有 Mac 及 Windows 版了：Chrome、Firefox、Slack、Evernote、Dropbox、VSCode……最大的差別，應該是終端機命令列工具。&lt;/p&gt;&#xA;&lt;p&gt;上古時代，需要靠 &lt;a href=&#34;https://www.cygwin.com/&#34;&gt;Cygwin&lt;/a&gt; 或 &lt;a href=&#34;http://www.mingw.org/&#34;&gt;MinGW&lt;/a&gt; 方案，才能勉強湊出一點點 Unix 的命令列感覺，但地雷超級多，難以作為嚴肅用途。後來，到了 2015 年，從保哥那邊知道有 &lt;a href=&#34;https://cmder.net/&#34;&gt;Cmder&lt;/a&gt; 這個好物 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，微軟又於 2016 年推出 &lt;a href=&#34;https://docs.microsoft.com/en-us/windows/wsl/&#34;&gt;WSL (Windows Subsystem for Linux)&lt;/a&gt; 機制，Windows 這邊似乎出現曙光，對 Unix 命令列愛好者展現出久違的吸引力。&lt;/p&gt;&#xA;&lt;p&gt;為了在 Windows 10 上面復刻我的 Mac 的體驗：&lt;a href=&#34;https://www.iterm2.com/&#34;&gt;iTerm2&lt;/a&gt; + &lt;a href=&#34;https://www.zsh.org/&#34;&gt;Zsh&lt;/a&gt; + &lt;a href=&#34;https://ohmyz.sh/&#34;&gt;Oh My ZSH&lt;/a&gt;，我試了幾天，把步驟整理如下。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Kubernetes Best Practices 資料</title>
       <link>//william-yeh.net/post/2019/02/k8s-best-practice/</link>
       <pubDate>Mon, 25 Feb 2019 12:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2019/02/k8s-best-practice/</guid>
-      <description>&lt;p&gt;Kubernetes 演化速度令人驚訝。彈性之大，令人聯想到當年  Perl 圈子奉為圭臬的 &lt;a href=&#34;https://en.wikipedia.org/wiki/There%27s_more_than_one_way_to_do_it&#34;&gt;TIMTOWTDI&lt;/a&gt; 口號。&lt;/p&gt;
-&lt;p&gt;選擇過多也會帶來問題。發展到某個階段，也該適時沈澱收斂出較佳的實務建議準則。&lt;/p&gt;
-&lt;p&gt;因此，我稍微搜尋一下相關資料，作為參考。&lt;/p&gt;</description>
+      <description>&lt;p&gt;Kubernetes 演化速度令人驚訝。彈性之大，令人聯想到當年  Perl 圈子奉為圭臬的 &lt;a href=&#34;https://en.wikipedia.org/wiki/There%27s_more_than_one_way_to_do_it&#34;&gt;TIMTOWTDI&lt;/a&gt; 口號。&lt;/p&gt;&#xA;&lt;p&gt;選擇過多也會帶來問題。發展到某個階段，也該適時沈澱收斂出較佳的實務建議準則。&lt;/p&gt;&#xA;&lt;p&gt;因此，我稍微搜尋一下相關資料，作為參考。&lt;/p&gt;</description>
     </item>
     <item>
       <title>技術領導者微培訓</title>
       <link>//william-yeh.net/post/2019/01/tech-leader-reading/</link>
       <pubDate>Sat, 19 Jan 2019 10:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2019/01/tech-leader-reading/</guid>
-      <description>&lt;p&gt;最近，我們研發組織有幅度不算小的變動，某些技術人會被要求承擔更多的技術領導責任。&lt;/p&gt;
-&lt;p&gt;不過，正如&lt;a href=&#34;https://en.wikipedia.org/wiki/Gerald_Weinberg&#34;&gt;溫伯格&lt;/a&gt;大師在《&lt;a href=&#34;https://www.books.com.tw/products/0010467750&#34;&gt;領導者，該想什麼？&lt;/a&gt;》所說，技術人常會面臨天人交戰：&lt;/p&gt;</description>
+      <description>&lt;p&gt;最近，我們研發組織有幅度不算小的變動，某些技術人會被要求承擔更多的技術領導責任。&lt;/p&gt;&#xA;&lt;p&gt;不過，正如&lt;a href=&#34;https://en.wikipedia.org/wiki/Gerald_Weinberg&#34;&gt;溫伯格&lt;/a&gt;大師在《&lt;a href=&#34;https://www.books.com.tw/products/0010467750&#34;&gt;領導者，該想什麼？&lt;/a&gt;》所說，技術人常會面臨天人交戰：&lt;/p&gt;</description>
     </item>
     <item>
       <title>年假可讀的軟體領域輕讀物</title>
@@ -1050,96 +545,35 @@ Built-in auto-reloading apps External signals Pod rollout In this article I&amp;
       <link>//william-yeh.net/post/2019/01/scrum-good-to-great/</link>
       <pubDate>Fri, 11 Jan 2019 08:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2019/01/scrum-good-to-great/</guid>
-      <description>&lt;p&gt;最近重新溫習近二十年的老書《&lt;a href=&#34;https://www.books.com.tw/products/0010202911&#34;&gt;從 A 到 A+&lt;/a&gt;》，啟發頗多。&lt;/p&gt;
-&lt;p&gt;《從 A 到 A+》作者們的實證研究方法很嚴謹 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;。他們從 1965～1995 年名列 Fortune 500 的企業名單中，挑選「十五年累計股票報酬率」超越股市整體表現三倍以上，且不受產業循環影響的企業，研究這些績優公司從「優秀」到「卓越」的關鍵因素。最後，作者們提出「&lt;a href=&#34;https://www.jimcollins.com/concepts/the-flywheel.html&#34;&gt;飛輪效應&lt;/a&gt;」來統一解釋他們的發現：&lt;/p&gt;
-
-&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
-&lt;div class=&#34;box&#34;&gt;
-&lt;figure  itemprop=&#34;associatedMedia&#34;
-  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
-  style=&#34;max-width:30em&#34; &gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2019/01/flywheel.jpg&#34; alt=&#34;飛輪效應&#34;/&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2019/01/flywheel.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-      &lt;figcaption&gt;
-          &lt;p&gt;飛輪效應&lt;/p&gt;
-      &lt;/figcaption&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;
-
-&lt;p&gt;某方面來說，軟體研發圈講究的 Scrum，還滿符合《從 A 到 A+》所講的飛輪效應。&lt;/p&gt;</description>
+      <description>&lt;p&gt;最近重新溫習近二十年的老書《&lt;a href=&#34;https://www.books.com.tw/products/0010202911&#34;&gt;從 A 到 A+&lt;/a&gt;》，啟發頗多。&lt;/p&gt;&#xA;&lt;p&gt;《從 A 到 A+》作者們的實證研究方法很嚴謹 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;。他們從 1965～1995 年名列 Fortune 500 的企業名單中，挑選「十五年累計股票報酬率」超越股市整體表現三倍以上，且不受產業循環影響的企業，研究這些績優公司從「優秀」到「卓越」的關鍵因素。最後，作者們提出「&lt;a href=&#34;https://www.jimcollins.com/concepts/the-flywheel.html&#34;&gt;飛輪效應&lt;/a&gt;」來統一解釋他們的發現：&lt;/p&gt;&#xA;&#xA;&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;&#xA;&lt;div class=&#34;box&#34;&gt;&#xA;&lt;figure  itemprop=&#34;associatedMedia&#34;&#xA;  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; &#xA;  style=&#34;max-width:30em&#34; &gt;&#xA;    &lt;div class=&#34;img&#34;&gt;&#xA;      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2019/01/flywheel.jpg&#34; alt=&#34;飛輪效應&#34;/&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;a href=&#34;//william-yeh.net/img/2019/01/flywheel.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;&#xA;      &lt;figcaption&gt;&#xA;          &lt;p&gt;飛輪效應&lt;/p&gt;&#xA;      &lt;/figcaption&gt;&#xA;  &lt;/figure&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;p&gt;某方面來說，軟體研發圈講究的 Scrum，還滿符合《從 A 到 A+》所講的飛輪效應。&lt;/p&gt;</description>
     </item>
     <item>
       <title>你要一直打野戰嗎？</title>
       <link>//william-yeh.net/post/2019/01/field-battle-only/</link>
       <pubDate>Thu, 03 Jan 2019 13:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2019/01/field-battle-only/</guid>
-      <description>&lt;p&gt;去年十二月，接連把超讚的兩本書讀完。&lt;/p&gt;
-&lt;p&gt;《&lt;a href=&#34;https://www.books.com.tw/products/0010802878&#34;&gt;什麼才是經營最難的事&lt;/a&gt;》較偏草創期的戰鬥智慧，《&lt;a href=&#34;https://www.books.com.tw/products/0010796709&#34;&gt;給力&lt;/a&gt;》較偏成長期的經營智慧。兩種規模，兩種思維，激盪我許多想法。&lt;/p&gt;
-
-&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
-&lt;div class=&#34;box&#34;&gt;
-&lt;figure  itemprop=&#34;associatedMedia&#34;
-  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
-  style=&#34;max-width:30em&#34; &gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2019/01/powerful-and-hard-things.jpg&#34; alt=&#34;兩種極端的好書&#34;/&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2019/01/powerful-and-hard-things.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-      &lt;figcaption&gt;
-          &lt;p&gt;兩種極端的好書&lt;/p&gt;
-      &lt;/figcaption&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;</description>
+      <description>&lt;p&gt;去年十二月，接連把超讚的兩本書讀完。&lt;/p&gt;&#xA;&lt;p&gt;《&lt;a href=&#34;https://www.books.com.tw/products/0010802878&#34;&gt;什麼才是經營最難的事&lt;/a&gt;》較偏草創期的戰鬥智慧，《&lt;a href=&#34;https://www.books.com.tw/products/0010796709&#34;&gt;給力&lt;/a&gt;》較偏成長期的經營智慧。兩種規模，兩種思維，激盪我許多想法。&lt;/p&gt;&#xA;&#xA;&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;&#xA;&lt;div class=&#34;box&#34;&gt;&#xA;&lt;figure  itemprop=&#34;associatedMedia&#34;&#xA;  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; &#xA;  style=&#34;max-width:30em&#34; &gt;&#xA;    &lt;div class=&#34;img&#34;&gt;&#xA;      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2019/01/powerful-and-hard-things.jpg&#34; alt=&#34;兩種極端的好書&#34;/&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;a href=&#34;//william-yeh.net/img/2019/01/powerful-and-hard-things.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;&#xA;      &lt;figcaption&gt;&#xA;          &lt;p&gt;兩種極端的好書&lt;/p&gt;&#xA;      &lt;/figcaption&gt;&#xA;  &lt;/figure&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
       <title>【主管的修練】讀書會</title>
       <link>//william-yeh.net/post/2018/12/practice-of-managers/</link>
       <pubDate>Mon, 24 Dec 2018 08:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2018/12/practice-of-managers/</guid>
-      <description>&lt;p&gt;稍早草擬的〈&lt;a href=&#34;//william-yeh.net/post/2018/11/succession-planning/&#34;&gt;接班人計畫&lt;/a&gt;〉偏向一對一的培訓。&lt;/p&gt;
-&lt;p&gt;若是一對多呢？&lt;/p&gt;
-&lt;p&gt;於是乎，就有了這份企劃：【主管的修練】讀書會。&lt;/p&gt;
-&lt;p&gt;這一部分是模仿《&lt;a href=&#34;https://www.kingstone.com.tw/book/book_page.asp?kmcode=2014940760328&#34;&gt;利潤的故事&lt;/a&gt;》的做法 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，尤其是&lt;a href=&#34;https://wiki.mbalib.com/zh-tw/%E8%A9%B9%E5%A7%86%E6%96%AF%C2%B7%E9%9F%A6%E4%BC%AF%C2%B7%E6%89%AC&#34;&gt;楊傑美&lt;/a&gt;的「前端載入」方法。但我還融入剛學到的 &lt;a href=&#34;http://www.liberatingstructures.com/&#34;&gt;liberating structures&lt;/a&gt; 等技巧 &lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;。改成速讀 + 互動討論的形式，應該既緊湊又有趣吧。&lt;/p&gt;</description>
+      <description>&lt;p&gt;稍早草擬的〈&lt;a href=&#34;//william-yeh.net/post/2018/11/succession-planning/&#34;&gt;接班人計畫&lt;/a&gt;〉偏向一對一的培訓。&lt;/p&gt;&#xA;&lt;p&gt;若是一對多呢？&lt;/p&gt;&#xA;&lt;p&gt;於是乎，就有了這份企劃：【主管的修練】讀書會。&lt;/p&gt;&#xA;&lt;p&gt;這一部分是模仿《&lt;a href=&#34;https://www.kingstone.com.tw/book/book_page.asp?kmcode=2014940760328&#34;&gt;利潤的故事&lt;/a&gt;》的做法 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，尤其是&lt;a href=&#34;https://wiki.mbalib.com/zh-tw/%E8%A9%B9%E5%A7%86%E6%96%AF%C2%B7%E9%9F%A6%E4%BC%AF%C2%B7%E6%89%AC&#34;&gt;楊傑美&lt;/a&gt;的「前端載入」方法。但我還融入剛學到的 &lt;a href=&#34;http://www.liberatingstructures.com/&#34;&gt;liberating structures&lt;/a&gt; 等技巧 &lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;。改成速讀 + 互動討論的形式，應該既緊湊又有趣吧。&lt;/p&gt;</description>
     </item>
     <item>
       <title>2018 個人回顧</title>
       <link>//william-yeh.net/post/2018/12/2018-retrospective/</link>
       <pubDate>Thu, 20 Dec 2018 08:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2018/12/2018-retrospective/</guid>
-      <description>&lt;p&gt;到了年終，又開始要做個總回顧，再對來年許願。&lt;/p&gt;
-&lt;p&gt;如果說 &lt;a href=&#34;https://school.soft-arch.net/blog/6676/2016-retrospective&#34;&gt;2016&lt;/a&gt; 和 &lt;a href=&#34;https://school.soft-arch.net/blog/13083/2017-retrospective&#34;&gt;2017&lt;/a&gt; 都是華麗冒險年，那麼，2018 對我來說，是收攝靜觀的一年。&lt;/p&gt;
-&lt;p&gt;去除一些不便揭露的事情，以下是簡單的回顧。&lt;/p&gt;</description>
+      <description>&lt;p&gt;到了年終，又開始要做個總回顧，再對來年許願。&lt;/p&gt;&#xA;&lt;p&gt;如果說 &lt;a href=&#34;https://school.soft-arch.net/blog/6676/2016-retrospective&#34;&gt;2016&lt;/a&gt; 和 &lt;a href=&#34;https://school.soft-arch.net/blog/13083/2017-retrospective&#34;&gt;2017&lt;/a&gt; 都是華麗冒險年，那麼，2018 對我來說，是收攝靜觀的一年。&lt;/p&gt;&#xA;&lt;p&gt;去除一些不便揭露的事情，以下是簡單的回顧。&lt;/p&gt;</description>
     </item>
     <item>
       <title>為了精準估算，你必須付出什麼代價？</title>
       <link>//william-yeh.net/post/2018/12/agile-measurement/</link>
       <pubDate>Wed, 19 Dec 2018 08:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2018/12/agile-measurement/</guid>
-      <description>&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
-&lt;div class=&#34;box&#34;&gt;
-&lt;figure  itemprop=&#34;associatedMedia&#34;
-  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
-  style=&#34;max-width:30em&#34; &gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/12/dilbert-measurement.jpg&#34; alt=&#34;開場對話&#34;/&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2018/12/dilbert-measurement.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-      &lt;figcaption&gt;
-          &lt;p&gt;開場對話&lt;/p&gt;
-      &lt;/figcaption&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;
-
-&lt;p&gt;研發團隊，常會被問到一個問題：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;「請問一下，這個Ａ功能，大概要多久才能完成？」&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;這個問題，不會因為你跑的是敏捷，就自動免疫。那麼，身為經過敏捷思維洗禮的人，該如何做出合宜的應對？&lt;/p&gt;
-&lt;p&gt;我在 &lt;a href=&#34;https://agilekaohsiung.kktix.cc/events/agiletourkaohsiung2018&#34;&gt;Agile Tour Kaohsiung 2018&lt;/a&gt; 開辦一場 2.5 小時的工作坊，帶領大家親自體驗這個議題。&lt;/p&gt;
-&lt;p&gt;不過，這個題材的背後，其實還有三段故事。&lt;/p&gt;
-&lt;p&gt;故事，要從一年半前講起。&lt;/p&gt;</description>
+      <description>&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;&#xA;&lt;div class=&#34;box&#34;&gt;&#xA;&lt;figure  itemprop=&#34;associatedMedia&#34;&#xA;  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; &#xA;  style=&#34;max-width:30em&#34; &gt;&#xA;    &lt;div class=&#34;img&#34;&gt;&#xA;      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/12/dilbert-measurement.jpg&#34; alt=&#34;開場對話&#34;/&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;a href=&#34;//william-yeh.net/img/2018/12/dilbert-measurement.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;&#xA;      &lt;figcaption&gt;&#xA;          &lt;p&gt;開場對話&lt;/p&gt;&#xA;      &lt;/figcaption&gt;&#xA;  &lt;/figure&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;p&gt;研發團隊，常會被問到一個問題：&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;「請問一下，這個Ａ功能，大概要多久才能完成？」&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;這個問題，不會因為你跑的是敏捷，就自動免疫。那麼，身為經過敏捷思維洗禮的人，該如何做出合宜的應對？&lt;/p&gt;&#xA;&lt;p&gt;我在 &lt;a href=&#34;https://agilekaohsiung.kktix.cc/events/agiletourkaohsiung2018&#34;&gt;Agile Tour Kaohsiung 2018&lt;/a&gt; 開辦一場 2.5 小時的工作坊，帶領大家親自體驗這個議題。&lt;/p&gt;&#xA;&lt;p&gt;不過，這個題材的背後，其實還有三段故事。&lt;/p&gt;&#xA;&lt;p&gt;故事，要從一年半前講起。&lt;/p&gt;</description>
     </item>
     <item>
       <title>改變／改革：流程與衡量指標</title>
@@ -1153,10 +587,7 @@ Built-in auto-reloading apps External signals Pod rollout In this article I&amp;
       <link>//william-yeh.net/post/2018/12/fallow/</link>
       <pubDate>Tue, 04 Dec 2018 08:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2018/12/fallow/</guid>
-      <description>&lt;p&gt;Scrum 的官方白皮書 &lt;a href=&#34;https://www.scrumguides.org/&#34;&gt;&lt;em&gt;The Scrum Guide&lt;/em&gt;&lt;/a&gt; 非常輕薄短小（像 &lt;a href=&#34;https://scrumguides.org/docs/scrumguide/v2017/2017-Scrum-Guide-US.pdf&#34;&gt;Nov 2017 版&lt;/a&gt;只有 19 頁），它的理念是：只制定最核心的原則、價值、角色、活動、產出物，其餘的則交給團隊根據經驗主義 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; 去調適出最適合自己的細節。&lt;/p&gt;
-&lt;p&gt;想當然爾，有很多事，Scrum 並沒有明說。&lt;/p&gt;
-&lt;p&gt;那麼，沒有明說的事，就不需要做、就不能做了嗎？做了，就違反 Scrum 嗎？&lt;/p&gt;
-&lt;p&gt;這是許多奉 &lt;a href=&#34;https://www.scrumguides.org/&#34;&gt;&lt;em&gt;The Scrum Guide&lt;/em&gt;&lt;/a&gt; 為圭臬的人，常有的盲點。&lt;/p&gt;</description>
+      <description>&lt;p&gt;Scrum 的官方白皮書 &lt;a href=&#34;https://www.scrumguides.org/&#34;&gt;&lt;em&gt;The Scrum Guide&lt;/em&gt;&lt;/a&gt; 非常輕薄短小（像 &lt;a href=&#34;https://scrumguides.org/docs/scrumguide/v2017/2017-Scrum-Guide-US.pdf&#34;&gt;Nov 2017 版&lt;/a&gt;只有 19 頁），它的理念是：只制定最核心的原則、價值、角色、活動、產出物，其餘的則交給團隊根據經驗主義 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; 去調適出最適合自己的細節。&lt;/p&gt;&#xA;&lt;p&gt;想當然爾，有很多事，Scrum 並沒有明說。&lt;/p&gt;&#xA;&lt;p&gt;那麼，沒有明說的事，就不需要做、就不能做了嗎？做了，就違反 Scrum 嗎？&lt;/p&gt;&#xA;&lt;p&gt;這是許多奉 &lt;a href=&#34;https://www.scrumguides.org/&#34;&gt;&lt;em&gt;The Scrum Guide&lt;/em&gt;&lt;/a&gt; 為圭臬的人，常有的盲點。&lt;/p&gt;</description>
     </item>
     <item>
       <title>為什麼 LeSS 這麼迷人，可是總是輸給 SAFe？</title>
@@ -1170,10 +601,7 @@ Built-in auto-reloading apps External signals Pod rollout In this article I&amp;
       <link>//william-yeh.net/post/2018/11/opsdev-talk-18/</link>
       <pubDate>Wed, 28 Nov 2018 23:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2018/11/opsdev-talk-18/</guid>
-      <description>&lt;p&gt;在台灣（或許在其他地方也是），DevOps 的話語權，很大幅度都被 Dev 一方把持。我們很少聽到 Ops 一方的說法。&lt;/p&gt;
-&lt;p&gt;成功的改革，需要兼顧各方利益者的需求及痛點。隨著 DevOps 守備範圍日益擴大，這種失衡狀態必須改變。&lt;/p&gt;
-&lt;p&gt;今晚參加 &lt;a href=&#34;https://www.facebook.com/DevOpsTaiwan/&#34;&gt;DevOps Taiwan 社群&lt;/a&gt;舉辦的講座：【&lt;a href=&#34;https://devops.kktix.cc/events/meetup17-opsdev&#34;&gt;從 Ops 角度看 DevOps&lt;/a&gt;】，聽聽&lt;a href=&#34;https://www.facebook.com/roberthu.tw&#34;&gt;胡士亮 (Robert Hu)&lt;/a&gt; 從正統 Ops 角度來詮釋 DevOps，甚至 OpsDev，收穫頗大。&lt;/p&gt;
-&lt;p&gt;聽知識，聽心得，也聽熱情與願景。&lt;/p&gt;</description>
+      <description>&lt;p&gt;在台灣（或許在其他地方也是），DevOps 的話語權，很大幅度都被 Dev 一方把持。我們很少聽到 Ops 一方的說法。&lt;/p&gt;&#xA;&lt;p&gt;成功的改革，需要兼顧各方利益者的需求及痛點。隨著 DevOps 守備範圍日益擴大，這種失衡狀態必須改變。&lt;/p&gt;&#xA;&lt;p&gt;今晚參加 &lt;a href=&#34;https://www.facebook.com/DevOpsTaiwan/&#34;&gt;DevOps Taiwan 社群&lt;/a&gt;舉辦的講座：【&lt;a href=&#34;https://devops.kktix.cc/events/meetup17-opsdev&#34;&gt;從 Ops 角度看 DevOps&lt;/a&gt;】，聽聽&lt;a href=&#34;https://www.facebook.com/roberthu.tw&#34;&gt;胡士亮 (Robert Hu)&lt;/a&gt; 從正統 Ops 角度來詮釋 DevOps，甚至 OpsDev，收穫頗大。&lt;/p&gt;&#xA;&lt;p&gt;聽知識，聽心得，也聽熱情與願景。&lt;/p&gt;</description>
     </item>
     <item>
       <title>DevOps 的價值與指標</title>
@@ -1187,22 +615,7 @@ Built-in auto-reloading apps External signals Pod rollout In this article I&amp;
       <link>//william-yeh.net/post/2018/11/agile-value/</link>
       <pubDate>Tue, 27 Nov 2018 08:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2018/11/agile-value/</guid>
-      <description>&lt;p&gt;同溫層朋友提出一則有趣的&lt;a href=&#34;https://www.facebook.com/groups/179345672472/permalink/10156092663467473/&#34;&gt;提問&lt;/a&gt;：&lt;/p&gt;
-
-&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
-&lt;div class=&#34;box&#34;&gt;
-&lt;figure  itemprop=&#34;associatedMedia&#34;
-  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
-  style=&#34;max-width:30em&#34; &gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/11/agile-value-post.png&#34; alt=&#34;如何衡量敏捷的成效？ by Howie Yu (2018-11-23)&#34;/&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2018/11/agile-value-post.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-      &lt;figcaption&gt;
-          &lt;p&gt;如何衡量敏捷的成效？ by Howie Yu (2018-11-23)&lt;/p&gt;
-      &lt;/figcaption&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;</description>
+      <description>&lt;p&gt;同溫層朋友提出一則有趣的&lt;a href=&#34;https://www.facebook.com/groups/179345672472/permalink/10156092663467473/&#34;&gt;提問&lt;/a&gt;：&lt;/p&gt;&#xA;&#xA;&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;&#xA;&lt;div class=&#34;box&#34;&gt;&#xA;&lt;figure  itemprop=&#34;associatedMedia&#34;&#xA;  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; &#xA;  style=&#34;max-width:30em&#34; &gt;&#xA;    &lt;div class=&#34;img&#34;&gt;&#xA;      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/11/agile-value-post.png&#34; alt=&#34;如何衡量敏捷的成效？ by Howie Yu (2018-11-23)&#34;/&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;a href=&#34;//william-yeh.net/img/2018/11/agile-value-post.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;&#xA;      &lt;figcaption&gt;&#xA;          &lt;p&gt;如何衡量敏捷的成效？ by Howie Yu (2018-11-23)&lt;/p&gt;&#xA;      &lt;/figcaption&gt;&#xA;  &lt;/figure&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
       <title>Agile PMO</title>
@@ -1216,31 +629,14 @@ Built-in auto-reloading apps External signals Pod rollout In this article I&amp;
       <link>//william-yeh.net/post/2018/11/succession-planning/</link>
       <pubDate>Thu, 08 Nov 2018 08:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2018/11/succession-planning/</guid>
-      <description>&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
-&lt;div class=&#34;box&#34;&gt;
-&lt;figure  itemprop=&#34;associatedMedia&#34;
-  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
-  style=&#34;max-width:30em&#34; &gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/11/the-nigmatic-1068159-unsplash.jpg&#34; /&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;//william-yeh.net/img/2018/11/the-nigmatic-1068159-unsplash.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;
-
-&lt;p&gt;彼得・杜拉克説：經理人的基本任務，除了平衡長短期的需要外，最重要的就是培養下一代的經理人。&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-&lt;p&gt;諾爾・提區説：成功組織會贏，贏在它的領導人不斷栽培組織上下每個層級的其他領導人。&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-&lt;p&gt;其實我很早就在默默做這件事了。畢竟以長遠來看，&lt;strong&gt;堅實的中階主管層，決定一個組織能走得多久多遠&lt;/strong&gt;。&lt;/p&gt;</description>
+      <description>&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;&#xA;&lt;div class=&#34;box&#34;&gt;&#xA;&lt;figure  itemprop=&#34;associatedMedia&#34;&#xA;  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; &#xA;  style=&#34;max-width:30em&#34; &gt;&#xA;    &lt;div class=&#34;img&#34;&gt;&#xA;      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/11/the-nigmatic-1068159-unsplash.jpg&#34; /&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;a href=&#34;//william-yeh.net/img/2018/11/the-nigmatic-1068159-unsplash.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;&#xA;  &lt;/figure&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;p&gt;彼得・杜拉克説：經理人的基本任務，除了平衡長短期的需要外，最重要的就是培養下一代的經理人。&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;&#xA;&lt;p&gt;諾爾・提區説：成功組織會贏，贏在它的領導人不斷栽培組織上下每個層級的其他領導人。&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;&#xA;&lt;p&gt;其實我很早就在默默做這件事了。畢竟以長遠來看，&lt;strong&gt;堅實的中階主管層，決定一個組織能走得多久多遠&lt;/strong&gt;。&lt;/p&gt;</description>
     </item>
     <item>
       <title>從小提問看企業價值</title>
       <link>//william-yeh.net/post/2018/11/peak-at-enterprise-value/</link>
       <pubDate>Fri, 02 Nov 2018 08:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2018/11/peak-at-enterprise-value/</guid>
-      <description>&lt;p&gt;如何選人？&lt;/p&gt;
-&lt;p&gt;我有一篇舊文〈&lt;a href=&#34;//william-yeh.net/post/2016/07/professional-attitude/&#34;&gt;專業態度的養成&lt;/a&gt;〉是針對中低階領域的提問重點；善用這些切入點，可挖掘出人才潛力股。這也是年度績效面談時，我會提問的重點之一。&lt;/p&gt;
-&lt;p&gt;那麼，中高階領域呢？如何選領導者，選團隊，或者更廣泛一點講：如何選公司？&lt;/p&gt;
-&lt;p&gt;我有兩個私房切入點，剛好是兩本書教我的。&lt;/p&gt;</description>
+      <description>&lt;p&gt;如何選人？&lt;/p&gt;&#xA;&lt;p&gt;我有一篇舊文〈&lt;a href=&#34;//william-yeh.net/post/2016/07/professional-attitude/&#34;&gt;專業態度的養成&lt;/a&gt;〉是針對中低階領域的提問重點；善用這些切入點，可挖掘出人才潛力股。這也是年度績效面談時，我會提問的重點之一。&lt;/p&gt;&#xA;&lt;p&gt;那麼，中高階領域呢？如何選領導者，選團隊，或者更廣泛一點講：如何選公司？&lt;/p&gt;&#xA;&lt;p&gt;我有兩個私房切入點，剛好是兩本書教我的。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Lean Startup 的判準</title>
@@ -1254,18 +650,14 @@ Built-in auto-reloading apps External signals Pod rollout In this article I&amp;
       <link>//william-yeh.net/post/2018/10/agile-criteria/</link>
       <pubDate>Wed, 31 Oct 2018 08:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2018/10/agile-criteria/</guid>
-      <description>&lt;p&gt;今年暑假，我第一次去台中的國美館，參觀 &lt;a href=&#34;https://www.ntmofa.gov.tw/information_1078_86836.html&#34;&gt;2018 年全國美術展&lt;/a&gt;。&lt;/p&gt;
-&lt;p&gt;這年度盛會，分成油畫、水彩、版畫、水墨等十大類。大開眼界之餘，也不禁有個奇想：為什麼要分這麼多類別來競賽？為什麼不選出一個跨十大類別的首獎，就像武林盟主一樣？&lt;/p&gt;</description>
+      <description>&lt;p&gt;今年暑假，我第一次去台中的國美館，參觀 &lt;a href=&#34;https://www.ntmofa.gov.tw/information_1078_86836.html&#34;&gt;2018 年全國美術展&lt;/a&gt;。&lt;/p&gt;&#xA;&lt;p&gt;這年度盛會，分成油畫、水彩、版畫、水墨等十大類。大開眼界之餘，也不禁有個奇想：為什麼要分這麼多類別來競賽？為什麼不選出一個跨十大類別的首獎，就像武林盟主一樣？&lt;/p&gt;</description>
     </item>
     <item>
       <title>軟體開發，除了方法論，還有⋯⋯</title>
       <link>//william-yeh.net/post/2018/10/methodology-and-criteria/</link>
       <pubDate>Thu, 25 Oct 2018 12:22:16 +0800</pubDate>
       <guid>//william-yeh.net/post/2018/10/methodology-and-criteria/</guid>
-      <description>&lt;p&gt;在某些人眼中，「敏捷」是狂熱份子聚集的邪教。&lt;/p&gt;
-&lt;p&gt;或許是被困在守舊勢力太久了，敏捷信徒不只有改變世界的熱情，更有捨我其誰的急迫感。不過，在傳播理念或推動改變時，若操之過急，忽略對方所處的情境、歷史及歷程，就很難有建設性對話。在這守舊勢力龐大的世界，自然很容易陣亡。&lt;/p&gt;
-&lt;p&gt;但這還只是表象。歧見，單靠對話仍不足以化解，更需要在方法論層次達到理解，方可進退有據。&lt;/p&gt;
-&lt;p&gt;尤其在看過《&lt;a href=&#34;https://www.books.com.tw/products/0010791756&#34;&gt;社會科學的理路&lt;/a&gt;》之後，我領悟到一些根源問題及槓桿解。&lt;/p&gt;</description>
+      <description>&lt;p&gt;在某些人眼中，「敏捷」是狂熱份子聚集的邪教。&lt;/p&gt;&#xA;&lt;p&gt;或許是被困在守舊勢力太久了，敏捷信徒不只有改變世界的熱情，更有捨我其誰的急迫感。不過，在傳播理念或推動改變時，若操之過急，忽略對方所處的情境、歷史及歷程，就很難有建設性對話。在這守舊勢力龐大的世界，自然很容易陣亡。&lt;/p&gt;&#xA;&lt;p&gt;但這還只是表象。歧見，單靠對話仍不足以化解，更需要在方法論層次達到理解，方可進退有據。&lt;/p&gt;&#xA;&lt;p&gt;尤其在看過《&lt;a href=&#34;https://www.books.com.tw/products/0010791756&#34;&gt;社會科學的理路&lt;/a&gt;》之後，我領悟到一些根源問題及槓桿解。&lt;/p&gt;</description>
     </item>
     <item>
       <title>敏捷之途無他，刻意練習而已矣！</title>
@@ -1279,8 +671,7 @@ Built-in auto-reloading apps External signals Pod rollout In this article I&amp;
       <link>//william-yeh.net/post/2018/09/thinking-weight-training/</link>
       <pubDate>Tue, 04 Sep 2018 11:30:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2018/09/thinking-weight-training/</guid>
-      <description>&lt;p&gt;上週五【&lt;a href=&#34;https://devopsdays.tw/2018/workshop.html&#34;&gt;系統思考的四堂課・DevOps 特別版&lt;/a&gt;】，表定 7 小時，延長賽到 7.5 小時，感謝首梯公開班同學的熱情參與，共度刺激的一天。&lt;/p&gt;
-&lt;p&gt;課後仍持續收到提問，我挑選幾則統一回覆。&lt;/p&gt;</description>
+      <description>&lt;p&gt;上週五【&lt;a href=&#34;https://devopsdays.tw/2018/workshop.html&#34;&gt;系統思考的四堂課・DevOps 特別版&lt;/a&gt;】，表定 7 小時，延長賽到 7.5 小時，感謝首梯公開班同學的熱情參與，共度刺激的一天。&lt;/p&gt;&#xA;&lt;p&gt;課後仍持續收到提問，我挑選幾則統一回覆。&lt;/p&gt;</description>
     </item>
     <item>
       <title>系統思考的四堂課</title>
@@ -1399,29 +790,21 @@ Built-in auto-reloading apps External signals Pod rollout In this article I&amp;
       <link>//william-yeh.net/post/2016/08/lifetime-keywords/</link>
       <pubDate>Mon, 29 Aug 2016 07:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2016/08/lifetime-keywords/</guid>
-      <description>&lt;p&gt;我們的人生，都走了許多冤枉路。回頭來看，總是希望能有系統化的方法，及早認清局勢，預作準備，以求更無懼於永不停歇的變局。&lt;/p&gt;
-&lt;p&gt;這是我常常在尋覓的思維方法。&lt;/p&gt;
-&lt;p&gt;雖然 Joe 在【&lt;a href=&#34;https://shop.darencademy.com/product/view/id/66&#34;&gt;大人學講座12：別總是直球對決：人生難題的系統思考法&lt;/a&gt;】的文案自謙：&lt;/p&gt;</description>
+      <description>&lt;p&gt;我們的人生，都走了許多冤枉路。回頭來看，總是希望能有系統化的方法，及早認清局勢，預作準備，以求更無懼於永不停歇的變局。&lt;/p&gt;&#xA;&lt;p&gt;這是我常常在尋覓的思維方法。&lt;/p&gt;&#xA;&lt;p&gt;雖然 Joe 在【&lt;a href=&#34;https://shop.darencademy.com/product/view/id/66&#34;&gt;大人學講座12：別總是直球對決：人生難題的系統思考法&lt;/a&gt;】的文案自謙：&lt;/p&gt;</description>
     </item>
     <item>
       <title>為什麼要追求極簡化的 Docker image？</title>
       <link>//william-yeh.net/post/2016/08/why-minimal-docker-images/</link>
       <pubDate>Sat, 27 Aug 2016 20:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2016/08/why-minimal-docker-images/</guid>
-      <description>&lt;p&gt;今早〈&lt;a href=&#34;//william-yeh.net/post/2016/08/halfblood-docker/&#34;&gt;從 Ansible 到 Docker：混血模式&lt;/a&gt;〉演講過後，有人在聊天室提問：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;請問為什麼要追求最小化的 Docker image？&lt;/p&gt;
-&lt;/blockquote&gt;</description>
+      <description>&lt;p&gt;今早〈&lt;a href=&#34;//william-yeh.net/post/2016/08/halfblood-docker/&#34;&gt;從 Ansible 到 Docker：混血模式&lt;/a&gt;〉演講過後，有人在聊天室提問：&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;請問為什麼要追求最小化的 Docker image？&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
     </item>
     <item>
       <title>從 Ansible 到 Docker：混血模式</title>
       <link>//william-yeh.net/post/2016/08/halfblood-docker/</link>
       <pubDate>Sat, 27 Aug 2016 08:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2016/08/halfblood-docker/</guid>
-      <description>&lt;p&gt;2015 年 4 月我在 &lt;a href=&#34;https://www.meetup.com/Docker-Taipei/&#34;&gt;Docker Taipei 社群&lt;/a&gt;講了一場〈&lt;a href=&#34;https://william-yeh.github.io/docker-mini/&#34;&gt;追求極簡化 Docker image 之路&lt;/a&gt;〉。一年後，在「極簡化 Docker」這條路上，另一條途徑 Alpine Linux 開始嶄露頭角——不必像過去那麼蠻幹，地雷減少，流程優勢顯著，品質上也不見得遜於長期被 glibc 把持的傳統體系。&lt;/p&gt;
-&lt;p&gt;我嘗試用這種手法重整過去的東西，結果還不算太差。因此，一直希望能有機會再給一場類似【追求極簡化 Docker image 之路，Part 2】的演講。&lt;/p&gt;
-&lt;p&gt;此外，由於自己持續在使用 Ansible 來處理組態設定事宜，持續維護近 20 個 Ansible Galaxy 開源 roles，也開講了五場【&lt;a href=&#34;https://devopssummit.ithome.com.tw/workshop/ansible/&#34;&gt;Ansible Workshop&lt;/a&gt;】訓練課程，很自然的，我會常常拿 Ansible 與 Docker 並列，思考兩者的定位、運用時機，甚至未來走向；有時甚至靈光一閃，浮現一些 Ansible＋Docker 的組合技。&lt;/p&gt;
-&lt;p&gt;這就是今天在 &lt;a href=&#34;https://community-open-camp.azurewebsites.net/&#34;&gt;Community Open Camp&lt;/a&gt; 這場演講【從 Ansible 到 Docker：混血模式】的由來。&lt;/p&gt;</description>
+      <description>&lt;p&gt;2015 年 4 月我在 &lt;a href=&#34;https://www.meetup.com/Docker-Taipei/&#34;&gt;Docker Taipei 社群&lt;/a&gt;講了一場〈&lt;a href=&#34;https://william-yeh.github.io/docker-mini/&#34;&gt;追求極簡化 Docker image 之路&lt;/a&gt;〉。一年後，在「極簡化 Docker」這條路上，另一條途徑 Alpine Linux 開始嶄露頭角——不必像過去那麼蠻幹，地雷減少，流程優勢顯著，品質上也不見得遜於長期被 glibc 把持的傳統體系。&lt;/p&gt;&#xA;&lt;p&gt;我嘗試用這種手法重整過去的東西，結果還不算太差。因此，一直希望能有機會再給一場類似【追求極簡化 Docker image 之路，Part 2】的演講。&lt;/p&gt;&#xA;&lt;p&gt;此外，由於自己持續在使用 Ansible 來處理組態設定事宜，持續維護近 20 個 Ansible Galaxy 開源 roles，也開講了五場【&lt;a href=&#34;https://devopssummit.ithome.com.tw/workshop/ansible/&#34;&gt;Ansible Workshop&lt;/a&gt;】訓練課程，很自然的，我會常常拿 Ansible 與 Docker 並列，思考兩者的定位、運用時機，甚至未來走向；有時甚至靈光一閃，浮現一些 Ansible＋Docker 的組合技。&lt;/p&gt;&#xA;&lt;p&gt;這就是今天在 &lt;a href=&#34;https://community-open-camp.azurewebsites.net/&#34;&gt;Community Open Camp&lt;/a&gt; 這場演講【從 Ansible 到 Docker：混血模式】的由來。&lt;/p&gt;</description>
     </item>
     <item>
       <title>簡報者的小工具</title>
@@ -1463,12 +846,7 @@ Built-in auto-reloading apps External signals Pod rollout In this article I&amp;
       <link>//william-yeh.net/post/2016/08/reading-vs-extensive-reading/</link>
       <pubDate>Tue, 02 Aug 2016 23:30:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2016/08/reading-vs-extensive-reading/</guid>
-      <description>&lt;p&gt;每隔一陣子，就有「精讀」與「泛讀」孰優孰劣之辯論。&lt;/p&gt;
-&lt;p&gt;其實，就像陳年經典《&lt;a href=&#34;http://www.books.com.tw/products/0010226097&#34;&gt;如何閱讀一本書&lt;/a&gt;》所說，兩種技巧都很需要：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;閱讀的速度並非只有單一的一種，重點在如何讀出&lt;strong&gt;不同的速度感&lt;/strong&gt;，知道在閱讀某種讀物時該用什麼樣的速度。&lt;/p&gt;
-&lt;p&gt;更好的秘方是：在閱讀一本書的時候，&lt;strong&gt;慢不該慢到不值得，快不該快到有損於滿足與理解。&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;</description>
+      <description>&lt;p&gt;每隔一陣子，就有「精讀」與「泛讀」孰優孰劣之辯論。&lt;/p&gt;&#xA;&lt;p&gt;其實，就像陳年經典《&lt;a href=&#34;http://www.books.com.tw/products/0010226097&#34;&gt;如何閱讀一本書&lt;/a&gt;》所說，兩種技巧都很需要：&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;閱讀的速度並非只有單一的一種，重點在如何讀出&lt;strong&gt;不同的速度感&lt;/strong&gt;，知道在閱讀某種讀物時該用什麼樣的速度。&lt;/p&gt;&#xA;&lt;p&gt;更好的秘方是：在閱讀一本書的時候，&lt;strong&gt;慢不該慢到不值得，快不該快到有損於滿足與理解。&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
     </item>
     <item>
       <title>請循其本</title>
@@ -1482,23 +860,14 @@ Built-in auto-reloading apps External signals Pod rollout In this article I&amp;
       <link>//william-yeh.net/post/2016/07/professional-attitude/</link>
       <pubDate>Sat, 30 Jul 2016 17:35:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2016/07/professional-attitude/</guid>
-      <description>&lt;p&gt;最近在面試資深軟體工程師。幾次下來，對幾家公司培養出來的員工素質，有個概括印象了（或許也帶點偏見）。&lt;/p&gt;
-&lt;p&gt;一個最顛覆既定印象的心得是：不是在大公司就一定學得深，不是在新創就一定學得廣。&lt;/p&gt;
-&lt;p&gt;重點仍在於自己。在於自己有沒有「&lt;strong&gt;系統思考&lt;/strong&gt;及&lt;strong&gt;換位思考&lt;/strong&gt;的&lt;strong&gt;自覺&lt;/strong&gt;及&lt;strong&gt;行動&lt;/strong&gt;」。&lt;/p&gt;
-&lt;p&gt;或者再濃縮成：在於「&lt;strong&gt;專業態度&lt;/strong&gt;」。&lt;/p&gt;</description>
+      <description>&lt;p&gt;最近在面試資深軟體工程師。幾次下來，對幾家公司培養出來的員工素質，有個概括印象了（或許也帶點偏見）。&lt;/p&gt;&#xA;&lt;p&gt;一個最顛覆既定印象的心得是：不是在大公司就一定學得深，不是在新創就一定學得廣。&lt;/p&gt;&#xA;&lt;p&gt;重點仍在於自己。在於自己有沒有「&lt;strong&gt;系統思考&lt;/strong&gt;及&lt;strong&gt;換位思考&lt;/strong&gt;的&lt;strong&gt;自覺&lt;/strong&gt;及&lt;strong&gt;行動&lt;/strong&gt;」。&lt;/p&gt;&#xA;&lt;p&gt;或者再濃縮成：在於「&lt;strong&gt;專業態度&lt;/strong&gt;」。&lt;/p&gt;</description>
     </item>
     <item>
       <title>改變的框架</title>
       <link>//william-yeh.net/post/2016/06/change-framework/</link>
       <pubDate>Tue, 28 Jun 2016 08:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2016/06/change-framework/</guid>
-      <description>&lt;p&gt;前幾天在 Twitter 寫道：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;下半年自我的課題，就是左腦高德拉特，右腦薩提爾，左右互搏。&lt;/p&gt;
-&lt;p&gt;   &amp;mdash; Quote: &lt;a href=&#34;https://twitter.com/william_yeh/status/746245079375876101&#34;&gt;2016-06-24 Tweet #1&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;為什麼會把兩者相提並論呢？&lt;/p&gt;
-&lt;p&gt;對我來說，&lt;a href=&#34;https://en.wikipedia.org/wiki/Eliyahu_M._Goldratt&#34;&gt;高德拉特&lt;/a&gt;代表一種極度&lt;strong&gt;陽剛&lt;/strong&gt;的思維角度，&lt;a href=&#34;https://en.wikipedia.org/wiki/Virginia_Satir&#34;&gt;薩提爾&lt;/a&gt;代表一種極度&lt;strong&gt;柔軟&lt;/strong&gt;的治療角度。&lt;/p&gt;</description>
+      <description>&lt;p&gt;前幾天在 Twitter 寫道：&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;下半年自我的課題，就是左腦高德拉特，右腦薩提爾，左右互搏。&lt;/p&gt;&#xA;&lt;p&gt;   &amp;mdash; Quote: &lt;a href=&#34;https://twitter.com/william_yeh/status/746245079375876101&#34;&gt;2016-06-24 Tweet #1&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;為什麼會把兩者相提並論呢？&lt;/p&gt;&#xA;&lt;p&gt;對我來說，&lt;a href=&#34;https://en.wikipedia.org/wiki/Eliyahu_M._Goldratt&#34;&gt;高德拉特&lt;/a&gt;代表一種極度&lt;strong&gt;陽剛&lt;/strong&gt;的思維角度，&lt;a href=&#34;https://en.wikipedia.org/wiki/Virginia_Satir&#34;&gt;薩提爾&lt;/a&gt;代表一種極度&lt;strong&gt;柔軟&lt;/strong&gt;的治療角度。&lt;/p&gt;</description>
     </item>
     <item>
       <title>《鳳凰專案》私房標題</title>
@@ -1519,8 +888,7 @@ Built-in auto-reloading apps External signals Pod rollout In this article I&amp;
       <link>//william-yeh.net/post/2016/05/change-viewpoint-on-lord-of-rings/</link>
       <pubDate>Wed, 25 May 2016 08:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2016/05/change-viewpoint-on-lord-of-rings/</guid>
-      <description>&lt;p&gt;今年一月，參加 &lt;a href=&#34;http://kojenchieh.pixnet.net/blog&#34;&gt;David Ko&lt;/a&gt; 舉辦的一場敏捷轉型活動，從中學到了一個有趣的分析工具：Lean Change Canvas。&lt;/p&gt;
-&lt;p&gt;知道了一個好東西，自然要追本溯源，加深加廣。便研讀相關資料：&lt;/p&gt;</description>
+      <description>&lt;p&gt;今年一月，參加 &lt;a href=&#34;http://kojenchieh.pixnet.net/blog&#34;&gt;David Ko&lt;/a&gt; 舉辦的一場敏捷轉型活動，從中學到了一個有趣的分析工具：Lean Change Canvas。&lt;/p&gt;&#xA;&lt;p&gt;知道了一個好東西，自然要追本溯源，加深加廣。便研讀相關資料：&lt;/p&gt;</description>
     </item>
     <item>
       <title>有了 Agile，為什麼還要有 DevOps？</title>
@@ -1541,32 +909,28 @@ Built-in auto-reloading apps External signals Pod rollout In this article I&amp;
       <link>//william-yeh.net/post/2016/04/learn-from-plant-mgmt/</link>
       <pubDate>Fri, 22 Apr 2016 08:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2016/04/learn-from-plant-mgmt/</guid>
-      <description>&lt;p&gt;身為徹頭徹尾的軟體人，在軟體產業待久了，總會對「硬」一點的產業，尤其是製造業，有莫名的成見，以為他們是僵固的、反人性的。從 1972 年「&lt;a href=&#34;https://en.wikipedia.org/wiki/Software_crisis&#34;&gt;軟體危機&lt;/a&gt;」引發的論述當中，更加深軟體人的印象：製造業的經驗，是無法直接套用到軟體界的；我們是截然不同的國度。&lt;/p&gt;
-&lt;p&gt;不過，近十年來許多軟體界的流程改革，尤其是同屬 Agile 陣營的 Scrum 及 Kanban，居然有許多元素是從製造業&lt;del&gt;偷竊&lt;/del&gt;學習而來。譬如說，由 Toyota 引領風潮的 &lt;a href=&#34;https://en.wikipedia.org/wiki/Lean_manufacturing&#34;&gt;Lean Production&lt;/a&gt; 及 &lt;a href=&#34;https://en.wikipedia.org/wiki/Just-in-time_manufacturing&#34;&gt;JIT&lt;/a&gt;、從 &lt;a href=&#34;https://en.wikipedia.org/wiki/Theory_of_constraints&#34;&gt;TOC（限制理論）&lt;/a&gt; 學來的流程分析及改善手法，都是相關文獻最常引述的。&lt;/p&gt;</description>
+      <description>&lt;p&gt;身為徹頭徹尾的軟體人，在軟體產業待久了，總會對「硬」一點的產業，尤其是製造業，有莫名的成見，以為他們是僵固的、反人性的。從 1972 年「&lt;a href=&#34;https://en.wikipedia.org/wiki/Software_crisis&#34;&gt;軟體危機&lt;/a&gt;」引發的論述當中，更加深軟體人的印象：製造業的經驗，是無法直接套用到軟體界的；我們是截然不同的國度。&lt;/p&gt;&#xA;&lt;p&gt;不過，近十年來許多軟體界的流程改革，尤其是同屬 Agile 陣營的 Scrum 及 Kanban，居然有許多元素是從製造業&lt;del&gt;偷竊&lt;/del&gt;學習而來。譬如說，由 Toyota 引領風潮的 &lt;a href=&#34;https://en.wikipedia.org/wiki/Lean_manufacturing&#34;&gt;Lean Production&lt;/a&gt; 及 &lt;a href=&#34;https://en.wikipedia.org/wiki/Just-in-time_manufacturing&#34;&gt;JIT&lt;/a&gt;、從 &lt;a href=&#34;https://en.wikipedia.org/wiki/Theory_of_constraints&#34;&gt;TOC（限制理論）&lt;/a&gt; 學來的流程分析及改善手法，都是相關文獻最常引述的。&lt;/p&gt;</description>
     </item>
     <item>
       <title>多工切換：有趣的 Lean 觀點</title>
       <link>//william-yeh.net/post/2016/03/lean-perspective-of-multitasking/</link>
       <pubDate>Tue, 29 Mar 2016 08:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2016/03/lean-perspective-of-multitasking/</guid>
-      <description>&lt;p&gt;系統思考，全局思考，是困難的；即使是貌似常識的場域，亦然。&lt;/p&gt;
-&lt;p&gt;最近在看 &lt;a href=&#34;https://www.books.com.tw/products/0010662172&#34;&gt;&lt;em&gt;Lean Thinking&lt;/em&gt;&lt;/a&gt; 原典時，感觸更深。&lt;/p&gt;</description>
+      <description>&lt;p&gt;系統思考，全局思考，是困難的；即使是貌似常識的場域，亦然。&lt;/p&gt;&#xA;&lt;p&gt;最近在看 &lt;a href=&#34;https://www.books.com.tw/products/0010662172&#34;&gt;&lt;em&gt;Lean Thinking&lt;/em&gt;&lt;/a&gt; 原典時，感觸更深。&lt;/p&gt;</description>
     </item>
     <item>
       <title>POLP：最小權限原則</title>
       <link>//william-yeh.net/post/2016/03/polp-intro/</link>
       <pubDate>Tue, 15 Mar 2016 08:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2016/03/polp-intro/</guid>
-      <description>&lt;p&gt;在我開的 &lt;a href=&#34;http://get.soft-arch.net/ansible/&#34;&gt;Ansible Workshop&lt;/a&gt; 中，不管是課前的【許願池】，還是課程現場的 Q&amp;amp;A，總有一個熱門議題：「如何確保系統是安全的？」&lt;/p&gt;
-&lt;p&gt;這是大哉問，不是單獨一門組態管理課就能探討到令人滿意的地步（資安也不是我所擅長的⋯⋯）。不過，被問到的次數太多了，我還是給個簡單的導引吧。&lt;/p&gt;</description>
+      <description>&lt;p&gt;在我開的 &lt;a href=&#34;http://get.soft-arch.net/ansible/&#34;&gt;Ansible Workshop&lt;/a&gt; 中，不管是課前的【許願池】，還是課程現場的 Q&amp;amp;A，總有一個熱門議題：「如何確保系統是安全的？」&lt;/p&gt;&#xA;&lt;p&gt;這是大哉問，不是單獨一門組態管理課就能探討到令人滿意的地步（資安也不是我所擅長的⋯⋯）。不過，被問到的次數太多了，我還是給個簡單的導引吧。&lt;/p&gt;</description>
     </item>
     <item>
       <title>DevOps 核心元素的考古溯源</title>
       <link>//william-yeh.net/post/2016/03/origin-of-devops-elements/</link>
       <pubDate>Mon, 07 Mar 2016 08:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2016/03/origin-of-devops-elements/</guid>
-      <description>&lt;p&gt;DevOps 和 Agile 的關係是什麼？DevOps 是源自 Agile 的嗎？&lt;/p&gt;
-&lt;p&gt;我在〈&lt;a href=&#34;//william-yeh.net/post/2016/01/devops-goals-in-a-nutshell/&#34;&gt;一句話囊括 DevOps 的目標&lt;/a&gt;〉文中曾經簡略提過：&lt;/p&gt;</description>
+      <description>&lt;p&gt;DevOps 和 Agile 的關係是什麼？DevOps 是源自 Agile 的嗎？&lt;/p&gt;&#xA;&lt;p&gt;我在〈&lt;a href=&#34;//william-yeh.net/post/2016/01/devops-goals-in-a-nutshell/&#34;&gt;一句話囊括 DevOps 的目標&lt;/a&gt;〉文中曾經簡略提過：&lt;/p&gt;</description>
     </item>
     <item>
       <title>電腦界的隱喻：組態管理</title>
@@ -1580,16 +944,14 @@ Built-in auto-reloading apps External signals Pod rollout In this article I&amp;
       <link>//william-yeh.net/post/2016/01/devops-goals-in-a-nutshell/</link>
       <pubDate>Fri, 29 Jan 2016 08:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2016/01/devops-goals-in-a-nutshell/</guid>
-      <description>&lt;p&gt;TL;DR&lt;br&gt;
-&lt;em&gt;DevOps is a set of practices intended to reduce the time between committing a change to a system and the change being placed into normal production, while ensuring high quality.&lt;/em&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;TL;DR&lt;br&gt;&#xA;&lt;em&gt;DevOps is a set of practices intended to reduce the time between committing a change to a system and the change being placed into normal production, while ensuring high quality.&lt;/em&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>DevOps 是圓的，找到立足點就是頂點</title>
       <link>//william-yeh.net/post/2015/12/devops-1st-step/</link>
       <pubDate>Mon, 28 Dec 2015 08:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2015/12/devops-1st-step/</guid>
-      <description>&lt;p&gt;自從 IT 相關媒體開始傳頌 2009 年蔚為經典的 Flickr 經驗 “&lt;a href=&#34;https://youtu.be/LdOe18KhtT4&#34;&gt;10+ Deploys per Day&lt;/a&gt;”、2014 年 Marissa Mayer 的鐵桿作風「&lt;a href=&#34;http://www.ithome.com.tw/news/99283&#34;&gt;沒有持續交付，專案不得上線，我不是在說笑&lt;/a&gt;」之後，頓時 DevOps 成為 IT 界新的焦慮源。我還聽說有高層在聽完兩天 &lt;a href=&#34;https://www.ithome.com.tw/article/98527&#34;&gt;DevOps 2015 研討會&lt;/a&gt;之後，回頭要求 IT 部門要師法 2009 年的 Flickr 做到「10+ Deploys per Day」。&lt;/p&gt;
-&lt;p&gt;聽了很潮的新觀念，就訂不合理的 KPI，這也是「負能量」呀！&lt;/p&gt;</description>
+      <description>&lt;p&gt;自從 IT 相關媒體開始傳頌 2009 年蔚為經典的 Flickr 經驗 “&lt;a href=&#34;https://youtu.be/LdOe18KhtT4&#34;&gt;10+ Deploys per Day&lt;/a&gt;”、2014 年 Marissa Mayer 的鐵桿作風「&lt;a href=&#34;http://www.ithome.com.tw/news/99283&#34;&gt;沒有持續交付，專案不得上線，我不是在說笑&lt;/a&gt;」之後，頓時 DevOps 成為 IT 界新的焦慮源。我還聽說有高層在聽完兩天 &lt;a href=&#34;https://www.ithome.com.tw/article/98527&#34;&gt;DevOps 2015 研討會&lt;/a&gt;之後，回頭要求 IT 部門要師法 2009 年的 Flickr 做到「10+ Deploys per Day」。&lt;/p&gt;&#xA;&lt;p&gt;聽了很潮的新觀念，就訂不合理的 KPI，這也是「負能量」呀！&lt;/p&gt;</description>
     </item>
     <item>
       <title>CI 怎樣帶你遠離平庸？</title>
@@ -1610,8 +972,7 @@ Built-in auto-reloading apps External signals Pod rollout In this article I&amp;
       <link>//william-yeh.net/post/2015/09/upgrade-adult-thinking/</link>
       <pubDate>Tue, 15 Sep 2015 23:02:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2015/09/upgrade-adult-thinking/</guid>
-      <description>&lt;p&gt;兩個週末【&lt;a href=&#34;https://shop.darencademy.com/product/view/id/28&#34;&gt;A101 職場人際關係與優勢策略工作坊&lt;/a&gt;】，一枚價值 14 PDU 的結業證書。雖然對沒有 PMP 證照企圖的我來說，帳面數字沒什麼用處；但獲得的，絕對遠遠超過這 14 PDU。&lt;/p&gt;
-&lt;p&gt;用 14 PDU 換來 Bryan 積蓄 15 年的內功，還有什麼更划算的事情呢？&lt;/p&gt;</description>
+      <description>&lt;p&gt;兩個週末【&lt;a href=&#34;https://shop.darencademy.com/product/view/id/28&#34;&gt;A101 職場人際關係與優勢策略工作坊&lt;/a&gt;】，一枚價值 14 PDU 的結業證書。雖然對沒有 PMP 證照企圖的我來說，帳面數字沒什麼用處；但獲得的，絕對遠遠超過這 14 PDU。&lt;/p&gt;&#xA;&lt;p&gt;用 14 PDU 換來 Bryan 積蓄 15 年的內功，還有什麼更划算的事情呢？&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
