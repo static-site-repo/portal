@@ -37,16 +37,16 @@
 &lt;h2 id=&#34;專案管理領域的-milestone&#34;&gt;專案管理領域的 Milestone&lt;/h2&gt;
 &lt;p&gt;Milestone 是很常被設錯的東西。部份原因是對於「milestone 到底是什麼、作用是什麼」有了錯誤的認知。&lt;/p&gt;
 &lt;h3 id=&#34;milestone-是什麼&#34;&gt;Milestone 是什麼？&lt;/h3&gt;
-&lt;p&gt;如果你用慣了專案管理軟體，在你的印象中，milestone 或許只是一個「duration 為 0」的 activity/task &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; 。如果從這個角度來看，milestone 應該會是帶有動詞屬性的行為——或許可稱之為「瞬間行為」。但是，根據 &lt;a href=&#34;https://www.amazon.com/dp/1628256648&#34;&gt;PMBOK 第七版&lt;/a&gt;的說法，milestone 其實並不是一個帶有動詞屬性的行為，反而比較像是個偏向名詞屬性的可見事物：&lt;/p&gt;
+&lt;p&gt;如果你用慣了專案管理軟體，在你的印象中，milestone 或許只是一個「duration 為 0」的 activity/task &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; 。如果從這個角度來看，milestone 應該會是帶有動詞屬性的行為——或許可稱之為「瞬間行為」。但是，根據 &lt;a href=&#34;https://www.amazon.com/dp/1628256648&#34;&gt;PMBOK 第七版&lt;/a&gt;的說法，milestone 其實並不是一個帶有動詞屬性的行為，反而比較像是個偏向名詞屬性的「可見事物」：&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Milestone. A significant &lt;strong&gt;point&lt;/strong&gt; or &lt;strong&gt;event&lt;/strong&gt; in a project, program, or portfolio.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;PMI 網站的文章 &amp;ldquo;&lt;a href=&#34;https://www.pmi.org/learning/library/milestone-different-planning-approach-7635&#34;&gt;Milestone planning&amp;ndash;a different planning approach&lt;/a&gt;&amp;rdquo; 則指出：&lt;/p&gt;
+&lt;p&gt;PMI 網站的文章 &amp;ldquo;&lt;a href=&#34;https://www.pmi.org/learning/library/milestone-different-planning-approach-7635&#34;&gt;Milestone planning &amp;ndash; a different planning approach&lt;/a&gt;&amp;rdquo; 則指出：&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;A milestone anticipates what the project is supposed to achieve at a pre-set date. It should describe a &lt;strong&gt;desired state&lt;/strong&gt; of affairs, a &lt;strong&gt;desired future situation&lt;/strong&gt;. A milestone should describe &lt;strong&gt;what we want to achieve&lt;/strong&gt;; when we get there, that&amp;rsquo;s the event.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h3 id=&#34;milestone-的作用是什麼&#34;&gt;Milestone 的作用是什麼？&lt;/h3&gt;
-&lt;p&gt;簡單的說，milestone 是分而治之的控制點。再引述 &amp;ldquo;&lt;a href=&#34;https://www.pmi.org/learning/library/milestone-different-planning-approach-7635&#34;&gt;Milestone planning&amp;ndash;a different planning approach&lt;/a&gt;&amp;rdquo;  一文的說法：&lt;/p&gt;
+&lt;p&gt;簡單的說，milestone 是分而治之的控制點。再引述 &amp;ldquo;Milestone planning &amp;ndash; a different planning approach&amp;rdquo;  一文的說法：&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Milestones are also &lt;strong&gt;control stations&lt;/strong&gt; in the project, an opportunity for stakeholders to assure themselves that the project is moving in the right direction.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -57,7 +57,7 @@
 &lt;li&gt;足以代表專案關鍵。&lt;/li&gt;
 &lt;li&gt;可被具體檢核。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&amp;ldquo;&lt;a href=&#34;https://www.pmi.org/learning/library/milestone-different-planning-approach-7635&#34;&gt;Milestone planning&amp;ndash;a different planning approach&lt;/a&gt;&amp;rdquo; 一文也說：&lt;/p&gt;
+&lt;p&gt;&amp;ldquo;Milestone planning &amp;ndash; a different planning approach&amp;rdquo; 一文也說：&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;The way a milestone is formulated should allow us to determine whether the &lt;strong&gt;desired state&lt;/strong&gt; has been &lt;strong&gt;achieved&lt;/strong&gt; or not.&lt;/p&gt;
 &lt;p&gt;It is relatively simple to say whether a milestone has been reached if it is an &lt;strong&gt;actual object&lt;/strong&gt;, something we can &lt;strong&gt;inspect&lt;/strong&gt; and &lt;strong&gt;verify&lt;/strong&gt;.&lt;/p&gt;
