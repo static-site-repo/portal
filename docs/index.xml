@@ -69,7 +69,7 @@
 &lt;li&gt;Desired state.&lt;/li&gt;
 &lt;li&gt;Inspectable &amp;amp; verifiable.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;因此，我個人喜歡借用 event storming 圈子對於 &amp;ldquo;event&amp;rdquo; 的建議句型：「事件的內容，用 past tense (過去式) 描述」。&lt;/p&gt;
+&lt;p&gt;因此，我個人喜歡借用 &lt;a href=&#34;https://www.eventstorming.com/&#34;&gt;event storming&lt;/a&gt; 圈子對於 &amp;ldquo;event&amp;rdquo; 的建議句型：「事件的內容，用 past tense (過去式) 描述」。&lt;/p&gt;
 &lt;p&gt;應用到 milestone 身上，可選用「過去式」或「現在完成式」句型：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;英文加 -ed&lt;/strong&gt;。譬如：xx% migrated, yy% done, zzz approved.&lt;/li&gt;
