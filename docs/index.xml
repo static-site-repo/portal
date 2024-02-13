@@ -6,10 +6,134 @@
     <description>Recent content on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sat, 20 Jan 2024 18:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 13 Feb 2024 21:00:00 +0800</lastBuildDate>
     
         <atom:link href="//william-yeh.net/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>咬文嚼字的必要性（二）：階段性的預期成果設定</title>
+      <link>//william-yeh.net/post/2024/02/outcome-sentence-patterns/</link>
+      <pubDate>Tue, 13 Feb 2024 21:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2024/02/outcome-sentence-patterns/</guid>
+      
+        <description>&lt;p&gt;不管是專案管理領域還是目標管理領域，「階段性的預期成果設定」都是很重要的基本動作。&lt;/p&gt;
+&lt;p&gt;不過，多年下來，我常常看到怪怪的，但又說不上來哪裡不對勁的例子。因此，我想找找是否有建議的寫法，甚至句型，作為團隊的共同語言。&lt;/p&gt;
+&lt;p&gt;此文針對 ① 專案管理領域的 milestone 與 ② 目標管理領域的 key result 兩方面來探討。&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2024/02/goal-setting.jpg&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2024/02/goal-setting.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;專案管理領域的-milestone&#34;&gt;專案管理領域的 Milestone&lt;/h2&gt;
+&lt;p&gt;Milestone 是很常被設錯的東西。部份原因是對於「milestone 到底是什麼、作用是什麼」有了錯誤的認知。&lt;/p&gt;
+&lt;h3 id=&#34;milestone-是什麼&#34;&gt;Milestone 是什麼？&lt;/h3&gt;
+&lt;p&gt;如果你用慣了專案管理軟體，在你的印象中，milestone 或許只是一個「duration 為 0」的 activity/task &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; 。如果從這個角度來看，milestone 應該會是帶有動詞屬性的行為——或許可稱之為「瞬間行為」。但是，根據 &lt;a href=&#34;https://www.amazon.com/dp/1628256648&#34;&gt;PMBOK 第七版&lt;/a&gt;的說法，milestone 其實並不是一個帶有動詞屬性的行為，反而比較像是個偏向名詞屬性的可見事物：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Milestone. A significant &lt;strong&gt;point&lt;/strong&gt; or &lt;strong&gt;event&lt;/strong&gt; in a project, program, or portfolio.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;PMI 網站的文章 &amp;ldquo;&lt;a href=&#34;https://www.pmi.org/learning/library/milestone-different-planning-approach-7635&#34;&gt;Milestone planning&amp;ndash;a different planning approach&lt;/a&gt;&amp;rdquo; 則指出：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;A milestone anticipates what the project is supposed to achieve at a pre-set date. It should describe a &lt;strong&gt;desired state&lt;/strong&gt; of affairs, a &lt;strong&gt;desired future situation&lt;/strong&gt;. A milestone should describe &lt;strong&gt;what we want to achieve&lt;/strong&gt;; when we get there, that&amp;rsquo;s the event.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;milestone-的作用是什麼&#34;&gt;Milestone 的作用是什麼？&lt;/h3&gt;
+&lt;p&gt;簡單的說，milestone 是分而治之的控制點。再引述 &amp;ldquo;&lt;a href=&#34;https://www.pmi.org/learning/library/milestone-different-planning-approach-7635&#34;&gt;Milestone planning&amp;ndash;a different planning approach&lt;/a&gt;&amp;rdquo;  一文的說法：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Milestones are also &lt;strong&gt;control stations&lt;/strong&gt; in the project, an opportunity for stakeholders to assure themselves that the project is moving in the right direction.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;好的-milestone-該有什麼特性&#34;&gt;好的 milestone 該有什麼特性？&lt;/h3&gt;
+&lt;p&gt;根據李君婷老師【&lt;a href=&#34;https://shop.darencademy.com/product/view/id/70&#34;&gt;510 專案監管的系統思考與規則設計&lt;/a&gt;】的課程講義，好的 milestone 應該要有三個特性：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;精簡，清楚。&lt;/li&gt;
+&lt;li&gt;足以代表專案關鍵。&lt;/li&gt;
+&lt;li&gt;可被具體檢核。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&amp;ldquo;&lt;a href=&#34;https://www.pmi.org/learning/library/milestone-different-planning-approach-7635&#34;&gt;Milestone planning&amp;ndash;a different planning approach&lt;/a&gt;&amp;rdquo; 一文也說：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The way a milestone is formulated should allow us to determine whether the &lt;strong&gt;desired state&lt;/strong&gt; has been &lt;strong&gt;achieved&lt;/strong&gt; or not.&lt;/p&gt;
+&lt;p&gt;It is relatively simple to say whether a milestone has been reached if it is an &lt;strong&gt;actual object&lt;/strong&gt;, something we can &lt;strong&gt;inspect&lt;/strong&gt; and &lt;strong&gt;verify&lt;/strong&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;milestone-可能的句型&#34;&gt;Milestone 可能的句型？&lt;/h3&gt;
+&lt;p&gt;雖然我比較少看到有人直接建議 milestone 的句型，但從上述的探討，不難歸納出一些方向：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Actual object.&lt;/li&gt;
+&lt;li&gt;Desired state.&lt;/li&gt;
+&lt;li&gt;Inspectable &amp;amp; verifiable.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;因此，我個人喜歡借用 event storming 圈子對於 &amp;ldquo;event&amp;rdquo; 的建議句型：「事件的內容，用 past tense (過去式) 描述」。&lt;/p&gt;
+&lt;p&gt;應用到 milestone 身上，可選用「過去式」或「現在完成式」句型：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;英文加 -ed&lt;/strong&gt;。譬如：xx% migrated, yy% done, zzz approved.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;中文加「已」&lt;/strong&gt;。譬如：xxx 已完成、yyy 已測試、zzz 已驗收。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;okr-的-key-result&#34;&gt;OKR 的 &amp;ldquo;Key Result&amp;rdquo;&lt;/h2&gt;
+&lt;h3 id=&#34;key-result-是什麼&#34;&gt;Key Result 是什麼？&lt;/h3&gt;
+&lt;p&gt;OKR 原典《&lt;a href=&#34;https://www.books.com.tw/products/0010813170&#34;&gt;OKR：做最重要的事 (Measure What Matters)&lt;/a&gt;》是如此介紹 O 與 KR 的：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;「目標」就是我們想達成的事，不多也不少。&lt;/p&gt;
+&lt;p&gt;「關鍵結果」界定目標的標準，並且監控我們「如何」達成。有效的關鍵結果不僅明確，而且有時限，是進取但又可行的。最重要的是，它們是可測量也可驗證的。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;key-result-的作用是什麼&#34;&gt;Key Result 的作用是什麼？&lt;/h3&gt;
+&lt;p&gt;《OKR：做最重要的事》如此說：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;目標設計和運用得當，可以防範模糊不清的思想，以及執行時的含混摸魚。&lt;/p&gt;
+&lt;p&gt;關鍵結果的要求只有「已滿足」或「未滿足」兩種可能，中間沒有灰色地帶或存疑的餘地。到了指定的期限（通常是一季結束時），我們就宣佈關鍵結果是否已達成。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;好的-key-result-該有什麼特性&#34;&gt;好的 Key Result 該有什麼特性？&lt;/h3&gt;
+&lt;p&gt;《OKR：做最重要的事》如此說：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;目標必然是重要、具體和行動導向的，最好還能激勵人心。&lt;/p&gt;
+&lt;p&gt;關鍵結果必須可以測量，而且，最後也只要用看的，完全不必提出任何理由，證明自己是否做到了。達成？還是沒達成？答案很簡單，不需要下判斷就能回答。&lt;/p&gt;
+&lt;p&gt;必須含有完成工作的證據。這種證據必須可取得、可信和容易發現。&lt;/p&gt;
+&lt;p&gt;編寫關鍵結果時，務必做到一件事：每一項關鍵結果都百分百達成，目標也就百分百達成。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;key-result-可能的句型&#34;&gt;Key Result 可能的句型？&lt;/h3&gt;
+&lt;p&gt;原始的 OKR 論述中，似乎並沒有強調 O 與 KR 的句型。我只在《OKR：做最重要的事》的附錄看到這麼一句最接近的話：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;關鍵結果代表 &lt;strong&gt;「如何」(How)&lt;/strong&gt; ，應該要表達 &lt;strong&gt;可衡量的里程碑&lt;/strong&gt; 。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;這句話點出兩個核心元素：方法、里程碑。&lt;/p&gt;
+&lt;p&gt;後來管顧圈加入推廣 OKR 運動，才漸漸發展出一些較具規範性的寫法，但似乎尚未形成集體的共識。不過，從他們的 OKR 論述中，常常看到「里程碑型」這種 KR 類型 &lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;。 因此，我個人很喜歡沿用前面探討過的「Milestone 句型」做為 KR 的句型骨幹。&lt;/p&gt;
+&lt;p&gt;如果還要更細膩一點，將「如何」(How) 也放進 KR 句型當中，我會建議參考李君婷老師【&lt;a href=&#34;https://shop.darencademy.com/product/view/id/95&#34;&gt;512 目標管理與團隊績效：統整 OKR 與 KPI 的有效實務&lt;/a&gt;】的課程講義，及《&lt;a href=&#34;https://www.books.com.tw/products/0010833361&#34;&gt;OKRs 執行力：華人實踐版&lt;/a&gt;》的寫法：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在 xxx 日期之前，透過 yyy 方法，完成 zzz 成果。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;以上就是我個人慣用的 milestone 與 key result 句型。&lt;/p&gt;
+
+&lt;div class=&#34;shortcode-notice note&#34;&gt;
+  &lt;div class=&#34;shortcode-notice-title note&#34;&gt;
+    
+      【咬文嚼字的必要性】系列
+    
+  &lt;/div&gt;
+  &lt;p&gt;❶ &lt;a href=&#34;//william-yeh.net/post/2018/01/precise-expression/&#34;&gt;咬文嚼字的必要性（一）：用句型輔助思考&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❷ 咬文嚼字的必要性（二）：階段性的預期成果設定&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;許多專案管理軟體都是透過「把 activity/task 的 duration 設為 0」的方式來標記 milestone。像 &lt;a href=&#34;https://support.microsoft.com/en-gb/office/add-a-milestone-583be27b-1659-4a7a-a047-e9b9cb6a4834&#34;&gt;Microsoft Project&lt;/a&gt;、&lt;a href=&#34;https://community.smartsheet.com/discussion/101507/how-can-i-get-smartsheet-to-show-zero-days-for-milestone-with-zero-days-duration&#34;&gt;Smartsheet&lt;/a&gt;、&lt;a href=&#34;https://www.projectplan365.com/training/lesson-2-create-milestones/&#34;&gt;Project Plan 365&lt;/a&gt;。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;像《&lt;a href=&#34;https://www.books.com.tw/products/0010817208&#34;&gt;執行 OKR，帶出強團隊&lt;/a&gt;》就將 OKR 分成基線型、正向度量型、負向度量型、範圍型、里程碑型五大類，而《&lt;a href=&#34;https://www.books.com.tw/products/0010833361&#34;&gt;OKRs 執行力：華人實踐版&lt;/a&gt;》也將 OKR 分成比率型、數量型、里程碑型、主觀型四大類。由此可見，「里程碑型」都是很被看重的一種 KR 類型。&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description>
+      
+    </item>
     
     <item>
       <title>從私校角度看新課綱</title>
@@ -4366,7 +4490,7 @@ don’t distinguish between ideal time and elapsed time.&lt;/p&gt;
 &lt;hr&gt;
 &lt;ol&gt;
 &lt;li id=&#34;fn:1&#34;&gt;
-&lt;p&gt;歐美系的思考框架或準則，很喜歡用「句型」式的步驟來引導思考，且多半都很注重文法的合式。我四年前的舊文〈&lt;a href=&#34;//william-yeh.net/post/2018/01/precise-expression/&#34;&gt;咬文嚼字的必要性&lt;/a&gt;〉就列了許多例子。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;歐美系的思考框架或準則，很喜歡用「句型」式的步驟來引導思考，且多半都很注重文法的合式。我四年前的舊文〈&lt;a href=&#34;//william-yeh.net/post/2018/01/precise-expression/&#34;&gt;咬文嚼字的必要性（一）：用句型輔助思考&lt;/a&gt;〉就列了許多例子。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;</description>
@@ -15212,7 +15336,7 @@ increment 的方式交付「完成」的產品，可以確保一直提供一個�
 &lt;hr&gt;
 &lt;ol&gt;
 &lt;li id=&#34;fn:1&#34;&gt;
-&lt;p&gt;我在〈&lt;a href=&#34;//william-yeh.net/post/2018/01/precise-expression/&#34;&gt;咬文嚼字的必要性&lt;/a&gt;〉文中曾提過 impact mapping 有一個原版的建議句型。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;我在〈&lt;a href=&#34;//william-yeh.net/post/2018/01/precise-expression/&#34;&gt;咬文嚼字的必要性（一）：用句型輔助思考&lt;/a&gt;〉文中曾提過 impact mapping 有一個原版的建議句型。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
@@ -15221,7 +15345,7 @@ increment 的方式交付「完成」的產品，可以確保一直提供一個�
     </item>
     
     <item>
-      <title>咬文嚼字的必要性</title>
+      <title>咬文嚼字的必要性（一）：用句型輔助思考</title>
       <link>//william-yeh.net/post/2018/01/precise-expression/</link>
       <pubDate>Thu, 04 Jan 2018 14:00:00 +0800</pubDate>
       
@@ -15372,6 +15496,18 @@ increment 的方式交付「完成」的產品，可以確保一直提供一個�
 &lt;p&gt;予豈咬文嚼字哉？予不得已也。&lt;/p&gt;
 &lt;p&gt;為了充分發揮思考框架的威力，請暫時不要當差不多先生吧。&lt;/p&gt;
 &lt;p&gt;畢竟，嘗試深度掌握某些知識體系，先蹲後跳，後發先至，是划算的投資。&lt;/p&gt;
+
+&lt;div class=&#34;shortcode-notice note&#34;&gt;
+  &lt;div class=&#34;shortcode-notice-title note&#34;&gt;
+    
+      【咬文嚼字的必要性】系列
+    
+  &lt;/div&gt;
+  &lt;p&gt;❶ 咬文嚼字的必要性（一）：用句型輔助思考&lt;/p&gt;
+&lt;p&gt;❷ &lt;a href=&#34;//william-yeh.net/post/2024/02/outcome-sentence-patterns/&#34;&gt;咬文嚼字的必要性（二）：階段性的預期成果設定&lt;/a&gt;&lt;/p&gt;
+
+&lt;/div&gt;
+
 &lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
 &lt;hr&gt;
 &lt;ol&gt;

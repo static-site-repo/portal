@@ -2,8 +2,71 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://william-yeh.net/tags/book/</loc>
+    <lastmod>2024-02-13T21:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://william-yeh.net/categories/</loc>
-    <lastmod>2024-01-20T18:00:00+08:00</lastmod>
+    <lastmod>2024-02-13T21:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://william-yeh.net/categories/management/</loc>
+    <lastmod>2024-02-13T21:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://william-yeh.net/tags/measurement/</loc>
+    <lastmod>2024-02-13T21:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://william-yeh.net/post/</loc>
+    <lastmod>2024-02-13T21:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://william-yeh.net/</loc>
+    <lastmod>2024-02-13T21:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://william-yeh.net/tags/project-management/</loc>
+    <lastmod>2024-02-13T21:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://william-yeh.net/tags/</loc>
+    <lastmod>2024-02-13T21:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://william-yeh.net/tags/thinking-framework/</loc>
+    <lastmod>2024-02-13T21:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://william-yeh.net/post/2024/02/outcome-sentence-patterns/</loc>
+    <lastmod>2024-02-13T21:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -17,27 +80,6 @@
   
   <url>
     <loc>https://william-yeh.net/categories/life/</loc>
-    <lastmod>2024-01-20T18:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://william-yeh.net/post/</loc>
-    <lastmod>2024-01-20T18:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://william-yeh.net/</loc>
-    <lastmod>2024-01-20T18:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://william-yeh.net/tags/</loc>
     <lastmod>2024-01-20T18:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -59,13 +101,6 @@
   
   <url>
     <loc>https://william-yeh.net/tags/agile/</loc>
-    <lastmod>2023-12-12T20:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://william-yeh.net/tags/book/</loc>
     <lastmod>2023-12-12T20:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -135,20 +170,6 @@
   </url>
   
   <url>
-    <loc>https://william-yeh.net/categories/management/</loc>
-    <lastmod>2023-12-03T20:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://william-yeh.net/tags/measurement/</loc>
-    <lastmod>2023-12-03T20:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://william-yeh.net/tags/sre/</loc>
     <lastmod>2023-12-03T20:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -164,13 +185,6 @@
   
   <url>
     <loc>https://william-yeh.net/tags/decomposition/</loc>
-    <lastmod>2023-11-14T20:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://william-yeh.net/tags/project-management/</loc>
     <lastmod>2023-11-14T20:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -528,13 +542,6 @@
   
   <url>
     <loc>https://william-yeh.net/tags/change/</loc>
-    <lastmod>2022-05-16T20:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://william-yeh.net/tags/thinking-framework/</loc>
     <lastmod>2022-05-16T20:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
