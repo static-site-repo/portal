@@ -23,7 +23,8 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="William Yeh" />
-  <meta name="description" content="艦長想在 DevOpsDays Taipei 2024 繼續開設廣受好評的新手村、入門班系列。經過討論，我決定仿照之前在 DevOpsDays Taipei 2018 &amp;amp; 2021 的路線，繼續以「系統思考」角度去剖析 DevOps 相關的組織文化與管理議題。
+  <meta name="description" content="今天在 #DevOpsDaysTaipei 2024 給了一場 Keynote Speech：【從系統思考角度談 DevOps 三步工作法】。 ​ 事情的緣由是這樣的。
+艦長想在 DevOpsDays Taipei 2024 繼續開設廣受好評的新手村、入門班系列。經過討論，我決定仿照之前在 DevOpsDays Taipei 2018 &amp;amp; 2021 的路線，繼續以「系統思考」角度去剖析 DevOps 相關的組織文化與管理議題。
 我自己有一個關於演講的內規天條：演講，不只是輸出，也希望每次都有新的挑戰。因此，對於這次的演講主題【從系統思考角度談 DevOps 三步工作法】，我給自己下的挑戰是：我不要用較為人知曉的 CLD (causal loop diagram)，我要挑戰更難的 SFD (stock and flow diagram)。
 改用 SFD 倒不是為了量化塑模，而是因為它能夠更嚴謹的思考「變數」。正好這幾年台灣也開始流行起存量、增量的詞彙 1，我想，不妨跟風蹭一點熱度。
 " />
@@ -66,7 +67,8 @@
 <meta property="og:url" content="//william-yeh.net/post/2024/07/dissecting-devops-via-systems-thinking/">
   <meta property="og:site_name" content="Potioneer&#39;s Essays">
   <meta property="og:title" content="從系統思考角度談 DevOps 三步工作法">
-  <meta property="og:description" content="艦長想在 DevOpsDays Taipei 2024 繼續開設廣受好評的新手村、入門班系列。經過討論，我決定仿照之前在 DevOpsDays Taipei 2018 &amp; 2021 的路線，繼續以「系統思考」角度去剖析 DevOps 相關的組織文化與管理議題。
+  <meta property="og:description" content="今天在 #DevOpsDaysTaipei 2024 給了一場 Keynote Speech：【從系統思考角度談 DevOps 三步工作法】。 ​ 事情的緣由是這樣的。
+艦長想在 DevOpsDays Taipei 2024 繼續開設廣受好評的新手村、入門班系列。經過討論，我決定仿照之前在 DevOpsDays Taipei 2018 &amp; 2021 的路線，繼續以「系統思考」角度去剖析 DevOps 相關的組織文化與管理議題。
 我自己有一個關於演講的內規天條：演講，不只是輸出，也希望每次都有新的挑戰。因此，對於這次的演講主題【從系統思考角度談 DevOps 三步工作法】，我給自己下的挑戰是：我不要用較為人知曉的 CLD (causal loop diagram)，我要挑戰更難的 SFD (stock and flow diagram)。
 改用 SFD 倒不是為了量化塑模，而是因為它能夠更嚴謹的思考「變數」。正好這幾年台灣也開始流行起存量、增量的詞彙 1，我想，不妨跟風蹭一點熱度。">
   <meta property="og:locale" content="zh_tw">
@@ -79,16 +81,18 @@
     <meta property="article:tag" content="Systems-Thinking">
 
   <meta itemprop="name" content="從系統思考角度談 DevOps 三步工作法">
-  <meta itemprop="description" content="艦長想在 DevOpsDays Taipei 2024 繼續開設廣受好評的新手村、入門班系列。經過討論，我決定仿照之前在 DevOpsDays Taipei 2018 &amp; 2021 的路線，繼續以「系統思考」角度去剖析 DevOps 相關的組織文化與管理議題。
+  <meta itemprop="description" content="今天在 #DevOpsDaysTaipei 2024 給了一場 Keynote Speech：【從系統思考角度談 DevOps 三步工作法】。 ​ 事情的緣由是這樣的。
+艦長想在 DevOpsDays Taipei 2024 繼續開設廣受好評的新手村、入門班系列。經過討論，我決定仿照之前在 DevOpsDays Taipei 2018 &amp; 2021 的路線，繼續以「系統思考」角度去剖析 DevOps 相關的組織文化與管理議題。
 我自己有一個關於演講的內規天條：演講，不只是輸出，也希望每次都有新的挑戰。因此，對於這次的演講主題【從系統思考角度談 DevOps 三步工作法】，我給自己下的挑戰是：我不要用較為人知曉的 CLD (causal loop diagram)，我要挑戰更難的 SFD (stock and flow diagram)。
 改用 SFD 倒不是為了量化塑模，而是因為它能夠更嚴謹的思考「變數」。正好這幾年台灣也開始流行起存量、增量的詞彙 1，我想，不妨跟風蹭一點熱度。">
   <meta itemprop="datePublished" content="2024-07-11T16:00:00+08:00">
   <meta itemprop="dateModified" content="2024-07-11T16:00:00+08:00">
-  <meta itemprop="wordCount" content="589">
+  <meta itemprop="wordCount" content="634">
   <meta itemprop="keywords" content="Devops,Book,Systems-Thinking">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="從系統思考角度談 DevOps 三步工作法">
-  <meta name="twitter:description" content="艦長想在 DevOpsDays Taipei 2024 繼續開設廣受好評的新手村、入門班系列。經過討論，我決定仿照之前在 DevOpsDays Taipei 2018 &amp; 2021 的路線，繼續以「系統思考」角度去剖析 DevOps 相關的組織文化與管理議題。
+  <meta name="twitter:description" content="今天在 #DevOpsDaysTaipei 2024 給了一場 Keynote Speech：【從系統思考角度談 DevOps 三步工作法】。 ​ 事情的緣由是這樣的。
+艦長想在 DevOpsDays Taipei 2024 繼續開設廣受好評的新手村、入門班系列。經過討論，我決定仿照之前在 DevOpsDays Taipei 2018 &amp; 2021 的路線，繼續以「系統思考」角度去剖析 DevOps 相關的組織文化與管理議題。
 我自己有一個關於演講的內規天條：演講，不只是輸出，也希望每次都有新的挑戰。因此，對於這次的演講主題【從系統思考角度談 DevOps 三步工作法】，我給自己下的挑戰是：我不要用較為人知曉的 CLD (causal loop diagram)，我要挑戰更難的 SFD (stock and flow diagram)。
 改用 SFD 倒不是為了量化塑模，而是因為它能夠更嚴謹的思考「變數」。正好這幾年台灣也開始流行起存量、增量的詞彙 1，我想，不妨跟風蹭一點熱度。">
 
@@ -402,7 +406,7 @@
 
   <div class="post-meta__right">
     <span class="post-meta-more">
-        約 589 字 -
+        約 634 字 -
         預計閱讀 2 分鐘
       </span>
 
@@ -435,7 +439,10 @@
 
     
     <div class="post-content">
-      <p>艦長想在 <a href="https://devopsdays.tw/2024/">DevOpsDays Taipei 2024</a> 繼續開設廣受好評的新手村、入門班系列。經過討論，我決定仿照之前在 DevOpsDays Taipei <a href="//william-yeh.net/post/2018/09/thinking-weight-training/">2018</a> &amp; <a href="//william-yeh.net/post/2021/03/sys-thinking-unicorn-project/">2021</a> 的路線，繼續以「系統思考」角度去剖析 DevOps 相關的組織文化與管理議題。</p>
+      <p>今天在 #DevOpsDaysTaipei 2024 給了一場 Keynote Speech：【從系統思考角度談 DevOps 三步工作法】。
+​
+事情的緣由是這樣的。</p>
+<p>艦長想在 <a href="https://devopsdays.tw/2024/">DevOpsDays Taipei 2024</a> 繼續開設廣受好評的新手村、入門班系列。經過討論，我決定仿照之前在 DevOpsDays Taipei <a href="//william-yeh.net/post/2018/09/thinking-weight-training/">2018</a> &amp; <a href="//william-yeh.net/post/2021/03/sys-thinking-unicorn-project/">2021</a> 的路線，繼續以「系統思考」角度去剖析 DevOps 相關的組織文化與管理議題。</p>
 <p>我自己有一個關於演講的內規天條：演講，不只是輸出，也希望每次都有新的挑戰。因此，對於這次的演講主題【從系統思考角度談 DevOps 三步工作法】，我給自己下的挑戰是：我不要用較為人知曉的 CLD (<a href="https://en.wikipedia.org/wiki/Causal_loop_diagram">causal loop diagram</a>)，我要挑戰更難的 SFD (<a href="https://thesystemsthinker.com/step-by-step-stocks-and-flows-improving-the-rigor-of-your-thinking/">stock and flow diagram</a>)。</p>
 <p>改用 SFD 倒不是為了量化塑模，而是因為它能夠更嚴謹的思考「變數」。正好這幾年台灣也開始流行起存量、增量的詞彙 <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>，我想，不妨跟風蹭一點熱度。</p>
 <p>這只是一開始的起心動念。但後來越來越覺得，SFD 雖然表面上比 CLD 多了些東西，但實際上卻比較容易詮釋。因此，我這次就把 SFD 定位在嚴謹的分析，接著再透過 CLD 予以簡化與抽象：</p>
