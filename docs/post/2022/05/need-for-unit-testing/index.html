@@ -37,7 +37,7 @@ Hi all engineers,
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.121.2" />
+<meta name="generator" content="Hugo 0.128.2" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2022/05/need-for-unit-testing/" />
@@ -66,43 +66,44 @@ Hi all engineers,
 
 
 
-<meta property="og:title" content="很簡單的東西，也要單元測試嗎？" />
-<meta property="og:description" content="（改寫自公司內部 memo）
-      
+<meta property="og:url" content="//william-yeh.net/post/2022/05/need-for-unit-testing/">
+  <meta property="og:site_name" content="Potioneer&#39;s Essays">
+  <meta property="og:title" content="很簡單的東西，也要單元測試嗎？">
+  <meta property="og:description" content="（改寫自公司內部 memo）
 Hi all engineers,
 上完一整天單元測試課程之後，有同事問我：「有沒有標準來決定要不要寫單元測試？」
 剛讀完劉潤《底層邏輯》的我，對於這類疑似「注射器」的問句格外敏感。雖然我可以瀟灑引述 Working Effectively with Legacy Code 的說法「我毫無疑問地將『遺留程式碼』定義為『沒有編寫測試的程式碼』」：
-
 沒有編寫測試的程式碼是糟糕的程式碼——不管我們多麼細心地編寫它們，不管它們有多漂亮、物件導向或封裝良好。有了測試，我們就能夠迅速、可驗證地修改程式碼的行為。沒有測試，我們就不知道修改後的程式碼，實際上是變得更好還是更糟。
+但當下我還是決定先展開一場對話。">
+  <meta property="og:locale" content="zh_tw">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2022-05-24T12:00:00+08:00">
+    <meta property="article:modified_time" content="2022-05-24T12:00:00+08:00">
+    <meta property="article:tag" content="Programming">
+    <meta property="article:tag" content="Craftsmanship">
+    <meta property="article:tag" content="Tech-Debt">
+    <meta property="article:tag" content="Testing">
 
-但當下我還是決定先展開一場對話。" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="//william-yeh.net/post/2022/05/need-for-unit-testing/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2022-05-24T12:00:00+08:00" />
-<meta property="article:modified_time" content="2022-05-24T12:00:00+08:00" />
-
-<meta itemprop="name" content="很簡單的東西，也要單元測試嗎？">
-<meta itemprop="description" content="（改寫自公司內部 memo）
-      
+  <meta itemprop="name" content="很簡單的東西，也要單元測試嗎？">
+  <meta itemprop="description" content="（改寫自公司內部 memo）
 Hi all engineers,
 上完一整天單元測試課程之後，有同事問我：「有沒有標準來決定要不要寫單元測試？」
 剛讀完劉潤《底層邏輯》的我，對於這類疑似「注射器」的問句格外敏感。雖然我可以瀟灑引述 Working Effectively with Legacy Code 的說法「我毫無疑問地將『遺留程式碼』定義為『沒有編寫測試的程式碼』」：
-
 沒有編寫測試的程式碼是糟糕的程式碼——不管我們多麼細心地編寫它們，不管它們有多漂亮、物件導向或封裝良好。有了測試，我們就能夠迅速、可驗證地修改程式碼的行為。沒有測試，我們就不知道修改後的程式碼，實際上是變得更好還是更糟。
-
-但當下我還是決定先展開一場對話。"><meta itemprop="datePublished" content="2022-05-24T12:00:00+08:00" />
-<meta itemprop="dateModified" content="2022-05-24T12:00:00+08:00" />
-<meta itemprop="wordCount" content="1573">
-<meta itemprop="keywords" content="programming,craftsmanship,tech-debt,testing," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="很簡單的東西，也要單元測試嗎？"/>
-<meta name="twitter:description" content="（改寫自公司內部 memo）
-      
+但當下我還是決定先展開一場對話。">
+  <meta itemprop="datePublished" content="2022-05-24T12:00:00+08:00">
+  <meta itemprop="dateModified" content="2022-05-24T12:00:00+08:00">
+  <meta itemprop="wordCount" content="1573">
+  <meta itemprop="keywords" content="Programming,Craftsmanship,Tech-Debt,Testing">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="很簡單的東西，也要單元測試嗎？">
+  <meta name="twitter:description" content="（改寫自公司內部 memo）
 Hi all engineers,
 上完一整天單元測試課程之後，有同事問我：「有沒有標準來決定要不要寫單元測試？」
 剛讀完劉潤《底層邏輯》的我，對於這類疑似「注射器」的問句格外敏感。雖然我可以瀟灑引述 Working Effectively with Legacy Code 的說法「我毫無疑問地將『遺留程式碼』定義為『沒有編寫測試的程式碼』」：
-
 沒有編寫測試的程式碼是糟糕的程式碼——不管我們多麼細心地編寫它們，不管它們有多漂亮、物件導向或封裝良好。有了測試，我們就能夠迅速、可驗證地修改程式碼的行為。沒有測試，我們就不知道修改後的程式碼，實際上是變得更好還是更糟。
-
-但當下我還是決定先展開一場對話。"/>
+但當下我還是決定先展開一場對話。">
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>

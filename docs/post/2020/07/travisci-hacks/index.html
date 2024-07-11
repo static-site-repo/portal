@@ -35,7 +35,7 @@ Travis CI 也提供許多常見的程式語言及伺服器軟體，以方便做 
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.121.2" />
+<meta name="generator" content="Hugo 0.128.2" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2020/07/travisci-hacks/" />
@@ -64,28 +64,36 @@ Travis CI 也提供許多常見的程式語言及伺服器軟體，以方便做 
 
 
 
-<meta property="og:title" content="Travis CI 虛擬機的地雷" />
-<meta property="og:description" content="我算是 Travis CI 的老用戶了。
+<meta property="og:url" content="//william-yeh.net/post/2020/07/travisci-hacks/">
+  <meta property="og:site_name" content="Potioneer&#39;s Essays">
+  <meta property="og:title" content="Travis CI 虛擬機的地雷">
+  <meta property="og:description" content="我算是 Travis CI 的老用戶了。
 以前 Travis CI 很慢，對 Docker 不友善，又很難 debug，讓我一度將重心轉移到後起之秀 CircleCI。後來 Travis CI 向 CircleCI 看齊，讓我們能夠 ssh 進去虛擬機 debug，兩者的差距已經逐漸縮小。所以，我自己的重要專案，總是盡量同時掛上 Travis CI 及 CircleCI，讓 CI pipeline 的核心在某種程度上也能盡量 reproducible 不被 lock in。
 Travis CI 也提供許多常見的程式語言及伺服器軟體，以方便做 CI 測試。我個人的習慣是，盡量不去使用這些功能，而是直接用 Docker 或 Docker Compose 來組裝，以降低對於 Travis CI 的依賴（尤其我還要兼顧 CircleCI）。
-不過，如果是與人合作的專案，就得顧及其他人的習慣。我在使用 Travis CI 提供的伺服器軟體 Postgres、Cassandra、RabbitMQ 時，遇到一些雷，特地記錄下來，供有類似困擾的人參考。" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="//william-yeh.net/post/2020/07/travisci-hacks/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2020-07-09T23:00:00+08:00" />
-<meta property="article:modified_time" content="2020-07-09T23:00:00+08:00" />
+不過，如果是與人合作的專案，就得顧及其他人的習慣。我在使用 Travis CI 提供的伺服器軟體 Postgres、Cassandra、RabbitMQ 時，遇到一些雷，特地記錄下來，供有類似困擾的人參考。">
+  <meta property="og:locale" content="zh_tw">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2020-07-09T23:00:00+08:00">
+    <meta property="article:modified_time" content="2020-07-09T23:00:00+08:00">
+    <meta property="article:tag" content="Devops">
+    <meta property="article:tag" content="Ci">
 
-<meta itemprop="name" content="Travis CI 虛擬機的地雷">
-<meta itemprop="description" content="我算是 Travis CI 的老用戶了。
+  <meta itemprop="name" content="Travis CI 虛擬機的地雷">
+  <meta itemprop="description" content="我算是 Travis CI 的老用戶了。
 以前 Travis CI 很慢，對 Docker 不友善，又很難 debug，讓我一度將重心轉移到後起之秀 CircleCI。後來 Travis CI 向 CircleCI 看齊，讓我們能夠 ssh 進去虛擬機 debug，兩者的差距已經逐漸縮小。所以，我自己的重要專案，總是盡量同時掛上 Travis CI 及 CircleCI，讓 CI pipeline 的核心在某種程度上也能盡量 reproducible 不被 lock in。
 Travis CI 也提供許多常見的程式語言及伺服器軟體，以方便做 CI 測試。我個人的習慣是，盡量不去使用這些功能，而是直接用 Docker 或 Docker Compose 來組裝，以降低對於 Travis CI 的依賴（尤其我還要兼顧 CircleCI）。
-不過，如果是與人合作的專案，就得顧及其他人的習慣。我在使用 Travis CI 提供的伺服器軟體 Postgres、Cassandra、RabbitMQ 時，遇到一些雷，特地記錄下來，供有類似困擾的人參考。"><meta itemprop="datePublished" content="2020-07-09T23:00:00+08:00" />
-<meta itemprop="dateModified" content="2020-07-09T23:00:00+08:00" />
-<meta itemprop="wordCount" content="1589">
-<meta itemprop="keywords" content="devops,ci," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Travis CI 虛擬機的地雷"/>
-<meta name="twitter:description" content="我算是 Travis CI 的老用戶了。
+不過，如果是與人合作的專案，就得顧及其他人的習慣。我在使用 Travis CI 提供的伺服器軟體 Postgres、Cassandra、RabbitMQ 時，遇到一些雷，特地記錄下來，供有類似困擾的人參考。">
+  <meta itemprop="datePublished" content="2020-07-09T23:00:00+08:00">
+  <meta itemprop="dateModified" content="2020-07-09T23:00:00+08:00">
+  <meta itemprop="wordCount" content="1589">
+  <meta itemprop="keywords" content="Devops,Ci">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Travis CI 虛擬機的地雷">
+  <meta name="twitter:description" content="我算是 Travis CI 的老用戶了。
 以前 Travis CI 很慢，對 Docker 不友善，又很難 debug，讓我一度將重心轉移到後起之秀 CircleCI。後來 Travis CI 向 CircleCI 看齊，讓我們能夠 ssh 進去虛擬機 debug，兩者的差距已經逐漸縮小。所以，我自己的重要專案，總是盡量同時掛上 Travis CI 及 CircleCI，讓 CI pipeline 的核心在某種程度上也能盡量 reproducible 不被 lock in。
 Travis CI 也提供許多常見的程式語言及伺服器軟體，以方便做 CI 測試。我個人的習慣是，盡量不去使用這些功能，而是直接用 Docker 或 Docker Compose 來組裝，以降低對於 Travis CI 的依賴（尤其我還要兼顧 CircleCI）。
-不過，如果是與人合作的專案，就得顧及其他人的習慣。我在使用 Travis CI 提供的伺服器軟體 Postgres、Cassandra、RabbitMQ 時，遇到一些雷，特地記錄下來，供有類似困擾的人參考。"/>
+不過，如果是與人合作的專案，就得顧及其他人的習慣。我在使用 Travis CI 提供的伺服器軟體 Postgres、Cassandra、RabbitMQ 時，遇到一些雷，特地記錄下來，供有類似困擾的人參考。">
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>

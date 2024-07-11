@@ -34,7 +34,7 @@
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.121.2" />
+<meta name="generator" content="Hugo 0.128.2" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2020/07/golang-best-practices/" />
@@ -63,25 +63,33 @@
 
 
 
-<meta property="og:title" content="Go Best Practices" />
-<meta property="og:description" content="今年一月，換到一家以 Go 為主力語言的公司。
+<meta property="og:url" content="//william-yeh.net/post/2020/07/golang-best-practices/">
+  <meta property="og:site_name" content="Potioneer&#39;s Essays">
+  <meta property="og:title" content="Go Best Practices">
+  <meta property="og:description" content="今年一月，換到一家以 Go 為主力語言的公司。
 習慣了 Java 紀律，一碰到 Go 的自由奔放，不禁想尋求一些 best practices 與 patterns。
-以前我曾蒐集過一份 Go Best Practices 清單。浸潤 Go 半年後，再回頭看這些內容，當初不甚明瞭之處，竟然也懂了許多。便想重新整理一次，並加上個人的短評。" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="//william-yeh.net/post/2020/07/golang-best-practices/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2020-07-10T08:00:00+08:00" />
-<meta property="article:modified_time" content="2020-07-10T08:00:00+08:00" />
+以前我曾蒐集過一份 Go Best Practices 清單。浸潤 Go 半年後，再回頭看這些內容，當初不甚明瞭之處，竟然也懂了許多。便想重新整理一次，並加上個人的短評。">
+  <meta property="og:locale" content="zh_tw">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2020-07-10T08:00:00+08:00">
+    <meta property="article:modified_time" content="2020-07-10T08:00:00+08:00">
+    <meta property="article:tag" content="Programming">
+    <meta property="article:tag" content="Golang">
 
-<meta itemprop="name" content="Go Best Practices">
-<meta itemprop="description" content="今年一月，換到一家以 Go 為主力語言的公司。
+  <meta itemprop="name" content="Go Best Practices">
+  <meta itemprop="description" content="今年一月，換到一家以 Go 為主力語言的公司。
 習慣了 Java 紀律，一碰到 Go 的自由奔放，不禁想尋求一些 best practices 與 patterns。
-以前我曾蒐集過一份 Go Best Practices 清單。浸潤 Go 半年後，再回頭看這些內容，當初不甚明瞭之處，竟然也懂了許多。便想重新整理一次，並加上個人的短評。"><meta itemprop="datePublished" content="2020-07-10T08:00:00+08:00" />
-<meta itemprop="dateModified" content="2020-07-10T08:00:00+08:00" />
-<meta itemprop="wordCount" content="656">
-<meta itemprop="keywords" content="programming,golang," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Go Best Practices"/>
-<meta name="twitter:description" content="今年一月，換到一家以 Go 為主力語言的公司。
+以前我曾蒐集過一份 Go Best Practices 清單。浸潤 Go 半年後，再回頭看這些內容，當初不甚明瞭之處，竟然也懂了許多。便想重新整理一次，並加上個人的短評。">
+  <meta itemprop="datePublished" content="2020-07-10T08:00:00+08:00">
+  <meta itemprop="dateModified" content="2020-07-10T08:00:00+08:00">
+  <meta itemprop="wordCount" content="662">
+  <meta itemprop="keywords" content="Programming,Golang">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Go Best Practices">
+  <meta name="twitter:description" content="今年一月，換到一家以 Go 為主力語言的公司。
 習慣了 Java 紀律，一碰到 Go 的自由奔放，不禁想尋求一些 best practices 與 patterns。
-以前我曾蒐集過一份 Go Best Practices 清單。浸潤 Go 半年後，再回頭看這些內容，當初不甚明瞭之處，竟然也懂了許多。便想重新整理一次，並加上個人的短評。"/>
+以前我曾蒐集過一份 Go Best Practices 清單。浸潤 Go 半年後，再回頭看這些內容，當初不甚明瞭之處，竟然也懂了許多。便想重新整理一次，並加上個人的短評。">
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -393,7 +401,7 @@
 
   <div class="post-meta__right">
     <span class="post-meta-more">
-        約 656 字 -
+        約 662 字 -
         預計閱讀 2 分鐘
       </span>
 
@@ -450,7 +458,7 @@
 <p>▷ <a href="https://peter.bourgon.org/go-for-industrial-programming/"><strong>Go for Industrial Programming</strong></a></p>
 <p>或許是因為我們公司自建的 Go 微服務框架 <a href="https://github.com/carousell/Orion">Orion</a> <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>，骨幹結構非常接近 Go kit，所以我對這兩篇文章非常有感。</p>
 <h2 id="專案佈局">專案佈局</h2>
-<p>其他程式語言的經驗愈多，愈容易把 <del><del>不良習慣</del></del> 不搭配的習慣帶進 Go 來，尤其是專案佈局風格。</p>
+<p>其他程式語言的經驗愈多，愈容易把 ~~~不良習慣~~~ 不搭配的習慣帶進 Go 來，尤其是專案佈局風格。</p>
 <p>在 Go 裡，通常最簡單的專案佈局方式是：你選用哪一個主框架，就遵照著它建議的佈局。</p>
 <p>不過，如果用的是像 <a href="https://github.com/gin-gonic/gin">Gin</a> 這種超輕量的迷你框架，或者根本沒有套用任何框架，那麼，以下這一篇文章、一份範例，是很好的起點：</p>
 <p>▷ <a href="https://medium.com/@benbjohnson/standard-package-layout-7cdbc8391fc1"><strong>Standard Package Layout</strong></a></p>

@@ -6,10 +6,66 @@
     <description>Recent content on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Tue, 13 Feb 2024 21:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 11 Jul 2024 16:00:00 +0800</lastBuildDate>
     
         <atom:link href="//william-yeh.net/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>從系統思考角度談 DevOps 三步工作法</title>
+      <link>//william-yeh.net/post/2024/07/dissecting-devops-via-systems-thinking/</link>
+      <pubDate>Thu, 11 Jul 2024 16:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2024/07/dissecting-devops-via-systems-thinking/</guid>
+      
+        <description>&lt;p&gt;艦長想在 &lt;a href=&#34;https://devopsdays.tw/2024/&#34;&gt;DevOpsDays Taipei 2024&lt;/a&gt; 繼續開設廣受好評的新手村、入門班系列。經過討論，我決定仿照之前在 DevOpsDays Taipei &lt;a href=&#34;//william-yeh.net/post/2018/09/thinking-weight-training/&#34;&gt;2018&lt;/a&gt; &amp;amp; &lt;a href=&#34;//william-yeh.net/post/2021/03/sys-thinking-unicorn-project/&#34;&gt;2021&lt;/a&gt; 的路線，繼續以「系統思考」角度去剖析 DevOps 相關的組織文化與管理議題。&lt;/p&gt;
+&lt;p&gt;我自己有一個關於演講的內規天條：演講，不只是輸出，也希望每次都有新的挑戰。因此，對於這次的演講主題【從系統思考角度談 DevOps 三步工作法】，我給自己下的挑戰是：我不要用較為人知曉的 CLD (&lt;a href=&#34;https://en.wikipedia.org/wiki/Causal_loop_diagram&#34;&gt;causal loop diagram&lt;/a&gt;)，我要挑戰更難的 SFD (&lt;a href=&#34;https://thesystemsthinker.com/step-by-step-stocks-and-flows-improving-the-rigor-of-your-thinking/&#34;&gt;stock and flow diagram&lt;/a&gt;)。&lt;/p&gt;
+&lt;p&gt;改用 SFD 倒不是為了量化塑模，而是因為它能夠更嚴謹的思考「變數」。正好這幾年台灣也開始流行起存量、增量的詞彙 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，我想，不妨跟風蹭一點熱度。&lt;/p&gt;
+&lt;p&gt;這只是一開始的起心動念。但後來越來越覺得，SFD 雖然表面上比 CLD 多了些東西，但實際上卻比較容易詮釋。因此，我這次就把 SFD 定位在嚴謹的分析，接著再透過 CLD 予以簡化與抽象：&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2024/07/sfd-to-cld.png&#34; alt=&#34;先 SFD 再 CLD&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2024/07/sfd-to-cld.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;先 SFD 再 CLD&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;這次的嘗試，算是有達到當初設定的挑戰目標。以後還有機會的話，我會再挑戰用簡單的方式動態展示量化塑模。&lt;/p&gt;
+&lt;p&gt;▶︎ 投影片：&lt;a href=&#34;https://speakerdeck.com/williamyeh/cong-xi-tong-si-kao-jiao-du-tan-devops-san-bu-gong-zuo-fa&#34;&gt;從系統思考角度談 DevOps 三步工作法&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+
+&lt;div class=&#34;shortcode-notice note&#34;&gt;
+  &lt;div class=&#34;shortcode-notice-title note&#34;&gt;
+    
+      系統思考工作坊 - 系列文章
+    
+  &lt;/div&gt;
+  &lt;p&gt;❶ 【系統思考的四堂課】&lt;a href=&#34;//william-yeh.net/post/2018/06/sys-thinking-workshop/&#34;&gt;緣起&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❷ 第一場公開班課後回覆：&lt;a href=&#34;//william-yeh.net/post/2018/09/thinking-weight-training/&#34;&gt;思維的重量訓練&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❸ &lt;a href=&#34;//william-yeh.net/post/2021/03/sys-thinking-unicorn-project/&#34;&gt;從系統思考角度讀《獨角獸專案》&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;➍ 從系統思考角度談 DevOps 三步工作法&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;像劉潤的書《&lt;a href=&#34;https://www.books.com.tw/products/0010902849&#34;&gt;商業洞察力&lt;/a&gt;》、汪志謙的線上課程《&lt;a href=&#34;https://sat.cool/course/74&#34;&gt;峰值體驗 2：關鍵時刻的洞察與落地&lt;/a&gt;》，都有觸及到存量與增量的觀念，但也只是稍微引用了一點觀念，探討得並不全面。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description>
+      
+    </item>
     
     <item>
       <title>咬文嚼字的必要性（二）：階段性的預期成果設定</title>
@@ -1444,7 +1500,7 @@
 &lt;p&gt;怎樣才叫做「正確地做事」？&lt;/p&gt;
 &lt;p&gt;談「正確地做事」之前，先確定我們擁有共同的基本信念。&lt;/p&gt;
 &lt;h3 id=&#34;collective-ownership&#34;&gt;Collective ownership&lt;/h3&gt;
-&lt;p&gt;Odd-e 三位專家在 2023-08-31 晚上有一場很精彩的 webinar【高效 Scrum 團隊所需的能力】。在 &lt;a href=&#34;https://www.youtube.com/watch?v=13clptdw6J8&amp;amp;t=3816s&#34;&gt;1h:03m:36s&lt;/a&gt; 聊到「工程能力」時，有一句語重心長的話：「所有跟 eXtreme Programming 相關的工程能力都很重要。」&lt;/p&gt;
+&lt;p&gt;Odd-e 三位專家在 2023-08-31 晚上有一場很精彩的 webinar【高效 Scrum 團隊所需的能力】。在 &lt;a href=&#34;https://www.youtube.com/watch?v=13clptdw6J8&amp;t=3816s&#34;&gt;1h:03m:36s&lt;/a&gt; 聊到「工程能力」時，有一句語重心長的話：「所有跟 eXtreme Programming 相關的工程能力都很重要。」&lt;/p&gt;
 &lt;p&gt;eXtreme Programming (XP) 第一版與第二版提到許多工程實踐，此刻我想特別點出 &amp;ldquo;&lt;a href=&#34;http://extremeprogramming.org/rules/collective.html&#34;&gt;collective ownership&lt;/a&gt;&amp;rdquo; 這一條：&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Collective Ownership encourages everyone to contribute new ideas to all segments of the project. No one person becomes a bottleneck for changes.&lt;/p&gt;
@@ -2337,7 +2393,7 @@ don’t distinguish between ideal time and elapsed time.&lt;/p&gt;
 
 &lt;h2 id=&#34;測試&#34;&gt;測試&lt;/h2&gt;
 &lt;p&gt;既然是要給研發團隊用的公版，自然要登入看看是否一切正常。就以這陣子在實驗的 Laravel Sail 環境為例 &lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;：&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://asciinema.org/a/558746&#34;&gt;&lt;img src=&#34;https://asciinema.org/a/558746.svg&#34; alt=&#34;asciicast&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://asciinema.org/a/558746&#34;&gt;&lt;img alt=&#34;asciicast&#34; src=&#34;https://asciinema.org/a/558746.svg&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;如果有問題，就得卸載這份有瑕疵的 WSL 個體，回到源頭繼續修改：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 停止 &amp;#34;dev&amp;#34; 個體&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;wsl -t dev
@@ -2849,9 +2905,12 @@ don’t distinguish between ideal time and elapsed time.&lt;/p&gt;
 &lt;p&gt;關於我的 Agile Workshop，除了當年某個&lt;a href=&#34;https://www.accupass.com/event/1807260907551870930205&#34;&gt;公開班&lt;/a&gt;可以開出豪邁的二日版，後來都只能客製化組裝出一日版。好在經過多年錘鍊，已經模組化到能夠彈性端出 1 hr、2 hrs、4 hrs、8 hrs、12 hrs、16 hrs 不同套餐，能將 Impact Mapping、Kanban、Scrum 都實彈演練到一個地步，積木玩到了，電影也看到了。&lt;/p&gt;
 &lt;p&gt;順便推出一個 20 分鐘快速介紹 Scrum 的影片，以後就可以叫學員先看完影片再來上課：&lt;/p&gt;
 
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;https://www.youtube.com/embed/1_zwSqYUlYc&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
+
+    
+    &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/1_zwSqYUlYc?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
+      &gt;&lt;/iframe&gt;
+    &lt;/div&gt;
 
 &lt;h2 id=&#34;內部導讀會&#34;&gt;內部導讀會&lt;/h2&gt;
 &lt;p&gt;去年年終&lt;a href=&#34;//william-yeh.net/post/2021/12/2021-retrospective/&#34;&gt;回顧文&lt;/a&gt;中，我曾許願要「每個月辦一場 2hr 導讀會」。&lt;/p&gt;
@@ -2935,9 +2994,12 @@ don’t distinguish between ideal time and elapsed time.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;我也將每堂課一開頭的導讀部份錄影下來，以後再舉辦時，時間就可以節省下來，直接進入互動討論環節，畢竟這才是最精華的部份——這門課有趣的地方，就是思辨：&lt;/p&gt;
 
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;https://www.youtube.com/embed/S90KVeg6YzA&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
+
+    
+    &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/S90KVeg6YzA?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
+      &gt;&lt;/iframe&gt;
+    &lt;/div&gt;
 
 &lt;p&gt;有同事笑著說：跟著我的這一年，是他脫離學生身分之後，讀書最密集的時光。&lt;/p&gt;
 &lt;p&gt;這也是我舉辦這些活動背後想要傳達的訊息：要多讀書，看看外面世界；離開穴居人的世界，成為現代人。&lt;/p&gt;
@@ -5719,6 +5781,7 @@ don’t distinguish between ideal time and elapsed time.&lt;/p&gt;
   &lt;p&gt;❶ 【系統思考的四堂課】&lt;a href=&#34;//william-yeh.net/post/2018/06/sys-thinking-workshop/&#34;&gt;緣起&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;❷ 第一場公開班課後回覆：&lt;a href=&#34;//william-yeh.net/post/2018/09/thinking-weight-training/&#34;&gt;思維的重量訓練&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;❸ 從系統思考角度讀《獨角獸專案》&lt;/p&gt;
+&lt;p&gt;➍ &lt;a href=&#34;//william-yeh.net/post/2024/07/dissecting-devops-via-systems-thinking/&#34;&gt;從系統思考角度談 DevOps 三步工作法&lt;/a&gt;&lt;/p&gt;
 
 &lt;/div&gt;</description>
       
@@ -6256,69 +6319,99 @@ don’t distinguish between ideal time and elapsed time.&lt;/p&gt;
 &lt;p&gt;至於我，由於這兩個月以來開始自學桌球的「&lt;a href=&#34;//william-yeh.net/post/2020/10/reverse-penhold-backhand/&#34;&gt;直拍橫打&lt;/a&gt;」技術，關注的重點，自然是「教練」觀念的源頭——&lt;strong&gt;運動&lt;/strong&gt;領域了。&lt;/p&gt;
 &lt;p&gt;在尋找相關資訊的過程中，王楠、張怡寧、劉國梁、馬琳⋯⋯當年耳熟能詳的名字不時出現在電腦螢幕前。如今，拜網路之賜，我們有機會從相關訪談中，一窺這些名將當年在役時期，與教練之間、與隊友之間的心路歷程。&lt;/p&gt;
 &lt;h2 id=&#34;王楠&#34;&gt;王楠&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://zh.wikipedia.org/wiki/%E7%8E%8B%E6%A5%A0&#34;&gt;王楠&lt;/a&gt;職業生涯共獲得 24 個世界冠軍。在這段專訪中，談到她與&lt;a href=&#34;https://www.pingpangwang.com/forum.php?mod=viewthread&amp;amp;tid=115402&#34;&gt;曾傳強&lt;/a&gt;教練的師徒情誼，尤其是曾教練幾番語重心長的「汗水跟淚水的一段歷史」評語：&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://zh.wikipedia.org/wiki/%E7%8E%8B%E6%A5%A0&#34;&gt;王楠&lt;/a&gt;職業生涯共獲得 24 個世界冠軍。在這段專訪中，談到她與&lt;a href=&#34;https://www.pingpangwang.com/forum.php?mod=viewthread&amp;tid=115402&#34;&gt;曾傳強&lt;/a&gt;教練的師徒情誼，尤其是曾教練幾番語重心長的「汗水跟淚水的一段歷史」評語：&lt;/p&gt;
 
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;https://www.youtube.com/embed/IFqPzr_Fv20&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
+
+    
+    &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/IFqPzr_Fv20?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
+      &gt;&lt;/iframe&gt;
+    &lt;/div&gt;
 
 &lt;p&gt;另一段專訪，則道盡運動員異於常人的心理掙扎：&lt;/p&gt;
 
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;https://www.youtube.com/embed/w4mqCs2W_pY&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
+
+    
+    &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/w4mqCs2W_pY?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
+      &gt;&lt;/iframe&gt;
+    &lt;/div&gt;
 
 &lt;h2 id=&#34;張怡寧&#34;&gt;張怡寧&lt;/h2&gt;
 &lt;p&gt;外號「大魔王」的&lt;a href=&#34;https://zh.wikipedia.org/wiki/%E5%BC%A0%E6%80%A1%E5%AE%81&#34;&gt;張怡寧&lt;/a&gt;，職業生涯共獲得 19 個世界冠軍。她在專訪中多次提到&lt;a href=&#34;https://baike.baidu.com/item/%E6%9D%8E%E9%9A%BC&#34;&gt;李隼&lt;/a&gt;教練對她的影響：&lt;/p&gt;
 
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;https://www.youtube.com/embed/7Efq3G33sR4&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
+
+    
+    &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/7Efq3G33sR4?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
+      &gt;&lt;/iframe&gt;
+    &lt;/div&gt;
 
 &lt;h2 id=&#34;劉國梁&#34;&gt;劉國梁&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;https://zh.wikipedia.org/wiki/%E5%88%98%E5%9B%BD%E6%A2%81&#34;&gt;劉國梁&lt;/a&gt;，是第一個成功以直拍橫打技術在世界舞台取得佳績的桌球選手，職業生涯共獲得 11 個世界冠軍。他在專訪中提到自己從頂尖運動員轉換成教練身份時，成功與失敗的內心轉折：&lt;/p&gt;
 
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;https://www.youtube.com/embed/kenn0Pg0G_I&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
+
+    
+    &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/kenn0Pg0G_I?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
+      &gt;&lt;/iframe&gt;
+    &lt;/div&gt;
 
 &lt;p&gt;有這些經歷，才成就了日後強大的總教練「劉胖」：&lt;/p&gt;
 
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;https://www.youtube.com/embed/EEznQmAwzZQ&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
+
+    
+    &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/EEznQmAwzZQ?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
+      &gt;&lt;/iframe&gt;
+    &lt;/div&gt;
 
 &lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;https://www.youtube.com/embed/7ZGq_nJwEPo&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
+
+    
+    &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/7ZGq_nJwEPo?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
+      &gt;&lt;/iframe&gt;
+    &lt;/div&gt;
 
 &lt;h2 id=&#34;馬琳&#34;&gt;馬琳&lt;/h2&gt;
 &lt;p&gt;終於輪到我的私淑對象&lt;a href=&#34;https://zh.wikipedia.org/wiki/%E9%A9%AC%E7%90%B3&#34;&gt;馬琳&lt;/a&gt;了。在這段專訪中，馬琳與&lt;a href=&#34;https://baike.baidu.com/item/%E5%90%B4%E6%95%AC%E5%B9%B3&#34;&gt;吳敬平&lt;/a&gt;教練之間的信任關係，令人動容：&lt;/p&gt;
 
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;https://www.youtube.com/embed/y0lWogcWaDM&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
+
+    
+    &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/y0lWogcWaDM?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
+      &gt;&lt;/iframe&gt;
+    &lt;/div&gt;
 
 &lt;p&gt;於是，我們才有機會一再看到神乎其技的馬琳：&lt;/p&gt;
 
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;https://www.youtube.com/embed/k26r5iH2wxc&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
+
+    
+    &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/k26r5iH2wxc?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
+      &gt;&lt;/iframe&gt;
+    &lt;/div&gt;
 
 &lt;h2 id=&#34;福原愛&#34;&gt;福原愛&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;https://zh.wikipedia.org/wiki/%E7%A6%8F%E5%8E%9F%E7%88%B1&#34;&gt;福原愛&lt;/a&gt;，從三歲九個月起，在媽媽兼教練的帶領下，開始了又哭又笑的桌球旅程：&lt;/p&gt;
 
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;https://www.youtube.com/embed/nbkIysoHbKk&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
+
+    
+    &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/nbkIysoHbKk?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
+      &gt;&lt;/iframe&gt;
+    &lt;/div&gt;
 
 &lt;p&gt;在這段專訪中，也特別提起與&lt;a href=&#34;https://zh.wikipedia.org/wiki/%E5%BC%B5%E8%8E%89%E6%A2%93&#34;&gt;湯媛媛&lt;/a&gt;教練亦師亦友的關係，以及與偶像&lt;a href=&#34;https://zh.wikipedia.org/wiki/%E7%8E%8B%E6%A5%A0&#34;&gt;王楠&lt;/a&gt;搭檔雙打的點滴：&lt;/p&gt;
 
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;https://www.youtube.com/embed/DN5QWf7y9mY&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
+
+    
+    &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/DN5QWf7y9mY?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
+      &gt;&lt;/iframe&gt;
+    &lt;/div&gt;
 
 &lt;h2 id=&#34;心志教練&#34;&gt;心志教練&lt;/h2&gt;
 &lt;p&gt;隨著這些桌球選手的專訪，回味許多精彩賽事，更對於源自運動領域的「教練」一詞，有更嚴肅的體會。&lt;/p&gt;
@@ -6453,21 +6546,30 @@ don’t distinguish between ideal time and elapsed time.&lt;/p&gt;
 &lt;h3 id=&#34;基本概念&#34;&gt;基本概念&lt;/h3&gt;
 &lt;p&gt;反手位的處理，是直拍橫打與傳統日直的主要不同：&lt;/p&gt;
 
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;https://www.youtube.com/embed/sv5EP3U1BrE&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
+
+    
+    &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/sv5EP3U1BrE?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
+      &gt;&lt;/iframe&gt;
+    &lt;/div&gt;
 
 &lt;p&gt;戰術觀念也要跟著改變：&lt;/p&gt;
 
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;https://www.youtube.com/embed/Velentyqy3g&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
+
+    
+    &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/Velentyqy3g?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
+      &gt;&lt;/iframe&gt;
+    &lt;/div&gt;
 
 &lt;p&gt;唐瑤說明直拍橫打技術的發展現況：&lt;/p&gt;
 
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;https://www.youtube.com/embed/ON91nJgyF9A?start=1390&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
+
+    
+    &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/ON91nJgyF9A?start=1390?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
+      &gt;&lt;/iframe&gt;
+    &lt;/div&gt;
 
 &lt;h3 id=&#34;握拍法&#34;&gt;握拍法&lt;/h3&gt;
 &lt;p&gt;直拍是很個人化的。因此，直拍橫打的握拍法，也和傳統直拍一樣，存在不同的說法。&lt;/p&gt;
@@ -6476,147 +6578,213 @@ don’t distinguish between ideal time and elapsed time.&lt;/p&gt;
 &lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;p&gt;首先，談到直拍橫打，自然不能略過這項技術霸主——王皓的現身說法：&lt;/p&gt;
 
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;https://www.youtube.com/embed/iTfdz1dNFh8&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
+
+    
+    &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/iTfdz1dNFh8?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
+      &gt;&lt;/iframe&gt;
+    &lt;/div&gt;
 
 &lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;p&gt;乒乓网的《&lt;a href=&#34;https://www.pingpangwang.com/qmxpp-0-0-0-0-0-0-0-2-0-1.html&#34;&gt;全民学乒乓直拍篇&lt;/a&gt;》，算是我看到最細膩的握拍解說。其中，第 1.1 集說明直拍打磨的重點：&lt;/p&gt;
 
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;https://www.youtube.com/embed/39pzXcpEoXo&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
+
+    
+    &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/39pzXcpEoXo?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
+      &gt;&lt;/iframe&gt;
+    &lt;/div&gt;
 
 &lt;p&gt;第 1.3 集解說「正手利」與「反手利」握拍方式的利弊：&lt;/p&gt;
 
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;https://www.youtube.com/embed/Q08Sm-uiGqk&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
+
+    
+    &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/Q08Sm-uiGqk?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
+      &gt;&lt;/iframe&gt;
+    &lt;/div&gt;
 
 &lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;p&gt;乒乓网「&lt;a href=&#34;https://www.youtube.com/watch?v=4HbnKEMKSRc&#34;&gt;濕父&lt;/a&gt;」郭云鹏的這兩段影片解說也很細膩。第一段：&lt;/p&gt;
 
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;https://www.youtube.com/embed/WotfSrZDL5s&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
+
+    
+    &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/WotfSrZDL5s?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
+      &gt;&lt;/iframe&gt;
+    &lt;/div&gt;
 
 &lt;p&gt;第二段，解說最基本的拍型控制：&lt;/p&gt;
 
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;https://www.youtube.com/embed/NAxbMZtuVoA&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
+
+    
+    &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/NAxbMZtuVoA?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
+      &gt;&lt;/iframe&gt;
+    &lt;/div&gt;
 
 &lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;p&gt;唐瑤的這兩段解說也很仔細。第一段：&lt;/p&gt;
 
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;https://www.youtube.com/embed/oLlVar_XFwk&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
+
+    
+    &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/oLlVar_XFwk?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
+      &gt;&lt;/iframe&gt;
+    &lt;/div&gt;
 
 &lt;p&gt;第二段：&lt;/p&gt;
 
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;https://www.youtube.com/embed/UqG26qFSG7c&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
+
+    
+    &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/UqG26qFSG7c?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
+      &gt;&lt;/iframe&gt;
+    &lt;/div&gt;
 
 &lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;
 &lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;
 &lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;p&gt;可再參考看看吴迪的解說：&lt;/p&gt;
 
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;https://www.youtube.com/embed/raTtRt09YcA&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
+
+    
+    &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/raTtRt09YcA?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
+      &gt;&lt;/iframe&gt;
+    &lt;/div&gt;
 
 &lt;p&gt;也可參考鄒陽的解說：&lt;/p&gt;
 
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;https://www.youtube.com/embed/qrPsxtH0mhY&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
+
+    
+    &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/qrPsxtH0mhY?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
+      &gt;&lt;/iframe&gt;
+    &lt;/div&gt;
 
 &lt;h3 id=&#34;基礎功夫先練推擋撞擊&#34;&gt;基礎功夫，先練推擋撞擊&lt;/h3&gt;
 &lt;p&gt;可先看唐瑤的解說：&lt;/p&gt;
 
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;https://www.youtube.com/embed/6kQSPYOZZr8&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
+
+    
+    &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/6kQSPYOZZr8?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
+      &gt;&lt;/iframe&gt;
+    &lt;/div&gt;
 
 &lt;p&gt;郭焱有一系列很棒的教學影片，值得仔細觀摩。第一段影片，主張「先練擊打，再練摩擦」的順序：&lt;/p&gt;
 
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;https://www.youtube.com/embed/AsH37NOXeNc&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
+
+    
+    &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/AsH37NOXeNc?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
+      &gt;&lt;/iframe&gt;
+    &lt;/div&gt;
 
 &lt;p&gt;第二段，提醒直拍橫打初學者，要先學會穩定控制手指及手腕：&lt;/p&gt;
 
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;https://www.youtube.com/embed/WeZPeAjgP98&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
+
+    
+    &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/WeZPeAjgP98?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
+      &gt;&lt;/iframe&gt;
+    &lt;/div&gt;
 
 &lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;p&gt;可再參考看看吴迪的解說：&lt;/p&gt;
 
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;https://www.youtube.com/embed/tn-58hMY9BI&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
+
+    
+    &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/tn-58hMY9BI?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
+      &gt;&lt;/iframe&gt;
+    &lt;/div&gt;
 
 &lt;p&gt;也可參考廖教練的解說：&lt;/p&gt;
 
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;https://www.youtube.com/embed/z8GKwV5AK1g&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
+
+    
+    &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/z8GKwV5AK1g?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
+      &gt;&lt;/iframe&gt;
+    &lt;/div&gt;
 
 &lt;p&gt;也可參考鄒陽的解說：&lt;/p&gt;
 
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;https://www.youtube.com/embed/Wpr07cU1baQ&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
+
+    
+    &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/Wpr07cU1baQ?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
+      &gt;&lt;/iframe&gt;
+    &lt;/div&gt;
 
 &lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;
 &lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;
 &lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;p&gt;最後，看看馬凱旋兩段糾正問題的影片。第一段：&lt;/p&gt;
 
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;https://www.youtube.com/embed/ib_UuzuGOJE&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
+
+    
+    &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/ib_UuzuGOJE?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
+      &gt;&lt;/iframe&gt;
+    &lt;/div&gt;
 
 &lt;p&gt;第二段：&lt;/p&gt;
 
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;https://www.youtube.com/embed/JDDLwfg8S9Q&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
+
+    
+    &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/JDDLwfg8S9Q?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
+      &gt;&lt;/iframe&gt;
+    &lt;/div&gt;
 
 &lt;h3 id=&#34;進階功夫加強力量與摩擦&#34;&gt;進階功夫，加強力量與摩擦&lt;/h3&gt;
 &lt;p&gt;郭焱解說加強摩擦的方式與判斷擊球點：&lt;/p&gt;
 
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;https://www.youtube.com/embed/O4JAZZkwTxg&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
+
+    
+    &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/O4JAZZkwTxg?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
+      &gt;&lt;/iframe&gt;
+    &lt;/div&gt;
 
 &lt;p&gt;馮元瀚解釋銜接動作的姿勢與重心要點：&lt;/p&gt;
 
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;https://www.youtube.com/embed/_VQ9BjtMii8&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
+
+    
+    &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/_VQ9BjtMii8?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
+      &gt;&lt;/iframe&gt;
+    &lt;/div&gt;
 
 &lt;p&gt;「濕父」解說調節拍面與距離，以加強力量的技術：&lt;/p&gt;
 
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;https://www.youtube.com/embed/FtL35YGT3ek&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
+
+    
+    &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/FtL35YGT3ek?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
+      &gt;&lt;/iframe&gt;
+    &lt;/div&gt;
 
 &lt;p&gt;「濕父」糾正引拍與發力的問題：&lt;/p&gt;
 
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;https://www.youtube.com/embed/b0mGcP8iURM&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
+
+    
+    &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/b0mGcP8iURM?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
+      &gt;&lt;/iframe&gt;
+    &lt;/div&gt;
 
 &lt;p&gt;馬凱旋糾正出檯球的引拍與發力問題：&lt;/p&gt;
 
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;https://www.youtube.com/embed/75rK1CmNjh4&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
+
+    
+    &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/75rK1CmNjh4?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
+      &gt;&lt;/iframe&gt;
+    &lt;/div&gt;
 
 &lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;
 &lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;
@@ -7871,7 +8039,7 @@ tcp_probe、dns_probe、icmp_probe，即使面對「不完全揭露」自身健�
 &lt;p&gt;▷ &lt;a href=&#34;https://peter.bourgon.org/go-for-industrial-programming/&#34;&gt;&lt;strong&gt;Go for Industrial Programming&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;或許是因為我們公司自建的 Go 微服務框架 &lt;a href=&#34;https://github.com/carousell/Orion&#34;&gt;Orion&lt;/a&gt; &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，骨幹結構非常接近 Go kit，所以我對這兩篇文章非常有感。&lt;/p&gt;
 &lt;h2 id=&#34;專案佈局&#34;&gt;專案佈局&lt;/h2&gt;
-&lt;p&gt;其他程式語言的經驗愈多，愈容易把 &lt;del&gt;&lt;del&gt;不良習慣&lt;/del&gt;&lt;/del&gt; 不搭配的習慣帶進 Go 來，尤其是專案佈局風格。&lt;/p&gt;
+&lt;p&gt;其他程式語言的經驗愈多，愈容易把 ~~~不良習慣~~~ 不搭配的習慣帶進 Go 來，尤其是專案佈局風格。&lt;/p&gt;
 &lt;p&gt;在 Go 裡，通常最簡單的專案佈局方式是：你選用哪一個主框架，就遵照著它建議的佈局。&lt;/p&gt;
 &lt;p&gt;不過，如果用的是像 &lt;a href=&#34;https://github.com/gin-gonic/gin&#34;&gt;Gin&lt;/a&gt; 這種超輕量的迷你框架，或者根本沒有套用任何框架，那麼，以下這一篇文章、一份範例，是很好的起點：&lt;/p&gt;
 &lt;p&gt;▷ &lt;a href=&#34;https://medium.com/@benbjohnson/standard-package-layout-7cdbc8391fc1&#34;&gt;&lt;strong&gt;Standard Package Layout&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
@@ -9354,7 +9522,7 @@ tcp_probe、dns_probe、icmp_probe，即使面對「不完全揭露」自身健�
       
       <guid>//william-yeh.net/post/2020/01/career-spotlight/</guid>
       
-        <description>&lt;p&gt;在網路上看到 Joe 喟然&lt;a href=&#34;https://www.facebook.com/story.php?story_fbid=3000276969985335&amp;amp;id=100000091845448&#34;&gt;嘆曰&lt;/a&gt;：「今天重要功課：仔細看過明天 20 位&lt;a href=&#34;https://shop.darencademy.com/product/view/id/30&#34;&gt;履歷課&lt;/a&gt;同學的履歷以及繳交的功課。說起來這堂課好像是我們最耗能的一堂課，完全是做功德的一堂課。」&lt;/p&gt;
+        <description>&lt;p&gt;在網路上看到 Joe 喟然&lt;a href=&#34;https://www.facebook.com/story.php?story_fbid=3000276969985335&amp;id=100000091845448&#34;&gt;嘆曰&lt;/a&gt;：「今天重要功課：仔細看過明天 20 位&lt;a href=&#34;https://shop.darencademy.com/product/view/id/30&#34;&gt;履歷課&lt;/a&gt;同學的履歷以及繳交的功課。說起來這堂課好像是我們最耗能的一堂課，完全是做功德的一堂課。」&lt;/p&gt;
 &lt;p&gt;我，身為履歷表價值鏈另一端的面試官，也很能瞭解這番滋味。&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;p&gt;近年來，履歷教戰守則廣傳，有專書，甚至還有專門課程。理論上，「不懂得 &lt;del&gt;包裝美化履歷&lt;/del&gt; 正確呈現履歷」的低級錯誤應該會越來越少見——其實不然。驚訝的是，即使是獵頭轉來的履歷也常無法倖免，真不知該怎麼說了。&lt;/p&gt;
 &lt;p&gt;遇到比較多的反例，是沒有&lt;strong&gt;亮點&lt;/strong&gt;。&lt;/p&gt;
@@ -9532,9 +9700,12 @@ tcp_probe、dns_probe、icmp_probe，即使面對「不完全揭露」自身健�
 &lt;/ul&gt;
 &lt;p&gt;裘凱宇老師主辦的實體講座我參加過幾次了，也有幾本他的書，對他開的線上課程，我是充滿信心的。&lt;a href=&#34;https://youtu.be/-EHOn0UxMys&#34;&gt;試聽&lt;/a&gt; 30 分鐘，很快就決定參加。&lt;/p&gt;
 
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;https://www.youtube.com/embed/-EHOn0UxMys&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
+
+    
+    &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/-EHOn0UxMys?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
+      &gt;&lt;/iframe&gt;
+    &lt;/div&gt;
 
 &lt;p&gt;難得有這一系列我不忍心 1.25 倍速快轉的中文音頻。在通勤的捷運車廂，裘老師溫暖療癒的嗓音，猶如及時雨，撫慰了我徬徨的心。&lt;/p&gt;
 &lt;p&gt;隨著課程進行，我開始正視自己三個老毛病：熱情症候群、堅持妄想症、理想偏執狂，更老老實實照著課程練習，重新扎根四個關鍵能力：&lt;/p&gt;
@@ -9560,8 +9731,8 @@ tcp_probe、dns_probe、icmp_probe，即使面對「不完全揭露」自身健�
 &lt;ol&gt;
 &lt;li&gt;Clare: 《&lt;a href=&#34;https://www.books.com.tw/products/0010635304&#34;&gt;商務英語的祕密&lt;/a&gt;》&lt;/li&gt;
 &lt;li&gt;Clare: 《&lt;a href=&#34;https://www.books.com.tw/products/0010747532&#34;&gt;商務英文大解密&lt;/a&gt;》&lt;/li&gt;
-&lt;li&gt;Quentin Brand: 《&lt;a href=&#34;http://www.betamedia.com.tw/book.aspx?no=1707&amp;amp;bno=8130&#34;&gt;愈忙愈要學 100 個商業動詞&lt;/a&gt;》&lt;/li&gt;
-&lt;li&gt;Quentin Brand: 《&lt;a href=&#34;http://www.betamedia.com.tw/book.aspx?no=1704&amp;amp;bno=8144&#34;&gt;愈忙愈要學英文：大家開會說英文&lt;/a&gt;》&lt;/li&gt;
+&lt;li&gt;Quentin Brand: 《&lt;a href=&#34;http://www.betamedia.com.tw/book.aspx?no=1707&amp;bno=8130&#34;&gt;愈忙愈要學 100 個商業動詞&lt;/a&gt;》&lt;/li&gt;
+&lt;li&gt;Quentin Brand: 《&lt;a href=&#34;http://www.betamedia.com.tw/book.aspx?no=1704&amp;bno=8144&#34;&gt;愈忙愈要學英文：大家開會說英文&lt;/a&gt;》&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;尤其是 &lt;a href=&#34;http://clarehsu0724.blogspot.com/&#34;&gt;Clare&lt;/a&gt; 介紹的&lt;a href=&#34;http://clarehsu0724.blogspot.com/p/blog-page_1930.html&#34;&gt;綜效式商英學習法&lt;/a&gt;及&lt;a href=&#34;http://clarehsu0724.blogspot.com/p/blog-page_23.html&#34;&gt;自學商英教材&lt;/a&gt;，乍看之下很蠢，就是傻傻的跟述 (&lt;strong&gt;shadow&lt;/strong&gt;)、朗誦 (&lt;strong&gt;recite&lt;/strong&gt;)、聽寫 (&lt;strong&gt;dictate&lt;/strong&gt;)。&lt;/p&gt;
 &lt;p&gt;這方法，十幾年前張嘉倩的書有講，郭岱宗的書有講，現在 Clare 的書還是這麼講。而且這方法也非常吻合裘凱宇老師【&lt;a href=&#34;https://www.koob.com.tw/online/A579F23266cCC488Caa7&#34;&gt;過好人生學&lt;/a&gt;】課程所講的「建立學習反饋機制」要點：小時段、小行為、小實驗、小挑戰。&lt;/p&gt;
@@ -9879,7 +10050,7 @@ tcp_probe、dns_probe、icmp_probe，即使面對「不完全揭露」自身健�
 &lt;p&gt;因此，過去簡單的、走形式的面試問題和技術測試，難度就越來越高了；尤其網路和社群的普及，考過的題目立刻被分享在網上。因此，各個徵才企業就不斷的更新題庫、甚至提高難度。於是，&lt;a href=&#34;https://leetcode.com/&#34;&gt;LeetCode&lt;/a&gt; 網站上的題目，幾乎都是要去面試的軟體工程師必「做」、必「背」的。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;典型的滾雪球軍備競賽，正增強迴路。&lt;/p&gt;
-&lt;p&gt;甚至像&lt;a href=&#34;https://crossing.cw.com.tw/blogTopic.action?id=1095&amp;amp;nid=10739&#34;&gt;這篇文章&lt;/a&gt;所說，不只是近期內打算求職的人會去刷題：&lt;/p&gt;
+&lt;p&gt;甚至像&lt;a href=&#34;https://crossing.cw.com.tw/blogTopic.action?id=1095&amp;nid=10739&#34;&gt;這篇文章&lt;/a&gt;所說，不只是近期內打算求職的人會去刷題：&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;如今在矽谷的每一天，這個「刷題例行工作」，更是許多不論資深或資淺的工程師，在上班時間外的「必做功課」之一。&lt;/p&gt;
 &lt;p&gt;每天利用時間刷題，連續這樣刷上幾個月到一兩年，在矽谷是司空見慣的：最近我有兩個同事離職去了 Uber，他們在此之前分別刷了一年和整整兩年的考古題目；另一位同事刷了半年的題，進了 Amazon。&lt;/p&gt;
@@ -10517,7 +10688,7 @@ tcp_probe、dns_probe、icmp_probe，即使面對「不完全揭露」自身健�
 &lt;p&gt;Will all experiments display the correct file permissions?&lt;/p&gt;
 &lt;h2 id=&#34;macos--&#34;&gt;macOS: ➊ ➋&lt;/h2&gt;
 &lt;p&gt;Let&amp;rsquo;s begin with macOS, which acts as the control group.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://asciinema.org/a/253423&#34;&gt;&lt;img src=&#34;https://asciinema.org/a/253423.svg&#34; alt=&#34;asciicast&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://asciinema.org/a/253423&#34;&gt;&lt;img alt=&#34;asciicast&#34; src=&#34;https://asciinema.org/a/253423.svg&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Perfect! All Unix-style file permissions are set correctly.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;total 20                                                                        
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;drwxr-xr-x    1 root     root          4096 Jun 24 22:30 .                      
@@ -10528,7 +10699,7 @@ tcp_probe、dns_probe、icmp_probe，即使面對「不完全揭露」自身健�
 &lt;h2 id=&#34;wsl--&#34;&gt;WSL: ③ ➍&lt;/h2&gt;
 &lt;p&gt;On Windows, my preference is to use WSL to connect to Docker Desktop for Windows.&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;  Will this combination work well with Unix-style file permissions?&lt;/p&gt;
 &lt;p&gt;Below are experiments conducted on WSL:&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://asciinema.org/a/253450&#34;&gt;&lt;img src=&#34;https://asciinema.org/a/253450.svg&#34; alt=&#34;asciicast&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://asciinema.org/a/253450&#34;&gt;&lt;img alt=&#34;asciicast&#34; src=&#34;https://asciinema.org/a/253450.svg&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;As shown in this demo, the ➍ skaffold experiment works quite well on WSL. The ③ docker-cli experiment works, though not the best-possible Unix-style file permissions:&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;SECURITY WARNING: You are building a Docker image from Windows against a non-Windows Docker host. All files and directories added to build context will have &lt;code&gt;&#39;-rwxr-xr-x&#39;&lt;/code&gt; permissions. It is recommended to double check and reset permissions for sensitive files and directories.&lt;/p&gt;
@@ -10653,7 +10824,7 @@ tcp_probe、dns_probe、icmp_probe，即使面對「不完全揭露」自身健�
 &lt;h2 id=&#34;built-in-auto-reloading-apps&#34;&gt;Built-in auto-reloading apps&lt;/h2&gt;
 &lt;p&gt;Some applications (e.g., &lt;a href=&#34;https://traefik.io/&#34;&gt;Traefik&lt;/a&gt;) are smart enough to gracefully reload themselves whenever they detect any configuration changes without downtime.  Will this work with Kubernetes ConfigMap?&lt;/p&gt;
 &lt;p&gt;See the &lt;a href=&#34;https://github.com/William-Yeh/configmap-auto-reload/tree/master/traefik-example&#34;&gt;traefik-example&lt;/a&gt; demo:&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://asciinema.org/a/251179&#34;&gt;&lt;img src=&#34;https://asciinema.org/a/251179.svg&#34; alt=&#34;asciicast&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://asciinema.org/a/251179&#34;&gt;&lt;img alt=&#34;asciicast&#34; src=&#34;https://asciinema.org/a/251179.svg&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Perfect!  Traefik auto-reloads itself as long as you correctly mount the &lt;code&gt;traefik-config&lt;/code&gt; ConfigMap as &lt;code&gt;/etc/traefik/&lt;/code&gt; directory for the pod.  Here&amp;rsquo;s the related &lt;a href=&#34;https://github.com/William-Yeh/configmap-auto-reload/blob/master/traefik-example/traefik-config.yml#L11-L13&#34;&gt;code snippet&lt;/a&gt;:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[file]
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;watch = true
@@ -10680,7 +10851,7 @@ tcp_probe、dns_probe、icmp_probe，即使面對「不完全揭露」自身健�
 
 &lt;p&gt;Will this combo trick work with Kubernetes ConfigMap?&lt;/p&gt;
 &lt;p&gt;See the &lt;a href=&#34;https://github.com/William-Yeh/configmap-auto-reload/tree/master/inotifywait-example&#34;&gt;inotifywait-example&lt;/a&gt; demo:&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://asciinema.org/a/251666&#34;&gt;&lt;img src=&#34;https://asciinema.org/a/251666.svg&#34; alt=&#34;asciicast&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://asciinema.org/a/251666&#34;&gt;&lt;img alt=&#34;asciicast&#34; src=&#34;https://asciinema.org/a/251666.svg&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Good!  Inotifywait detects the changes and sends &lt;code&gt;HUP&lt;/code&gt; signals to Nginx as long as you correctly mount the &lt;code&gt;nginx-config&lt;/code&gt; ConfigMap as &lt;code&gt;/etc/nginx/&lt;/code&gt; directory for the pod.  Here&amp;rsquo;s the related &lt;a href=&#34;https://github.com/William-Yeh/configmap-auto-reload/blob/master/inotifywait-example/watch-nginx.sh#L13-L22&#34;&gt;code snippet&lt;/a&gt;:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;if [[ &amp;#34;$(inotifywatch -e modify,create,delete,move -t 15 /etc/nginx/ 2&amp;gt;&amp;amp;1)&amp;#34; =~ filename ]]; then
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    echo &amp;#34;Try to verify updated nginx config...&amp;#34;
@@ -10698,7 +10869,7 @@ tcp_probe、dns_probe、icmp_probe，即使面對「不完全揭露」自身健�
 &lt;p&gt;Some applications do not have any configuration reloading mechanism. What should we do? Maybe the only reasonable way is to rollout their running instances, and just spawn new ones with the new configurations.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://github.com/stakater/Reloader&#34;&gt;Reloader&lt;/a&gt; is a generic solution for Kubernetes. With the help of it, pods can be restarted whenever related ConfigMap has changed.&lt;/p&gt;
 &lt;p&gt;See the &lt;a href=&#34;https://github.com/William-Yeh/configmap-auto-reload/tree/master/reloader-example&#34;&gt;reloader-example&lt;/a&gt;:&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://asciinema.org/a/251670&#34;&gt;&lt;img src=&#34;https://asciinema.org/a/251670.svg&#34; alt=&#34;asciicast&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://asciinema.org/a/251670&#34;&gt;&lt;img alt=&#34;asciicast&#34; src=&#34;https://asciinema.org/a/251670.svg&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Perfect!  Nginx pods get rolling updated by Reloader as long as you annotate the Nginx deployment with &lt;code&gt;configmap.reloader.stakater.com/reload&lt;/code&gt;.  Here&amp;rsquo;s the related &lt;a href=&#34;https://github.com/William-Yeh/configmap-auto-reload/blob/master/reloader-example/nginx-service.yml#L25-L26&#34;&gt;code snippet&lt;/a&gt;:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;apiVersion: apps/v1
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;kind: Deployment
@@ -10762,7 +10933,7 @@ tcp_probe、dns_probe、icmp_probe，即使面對「不完全揭露」自身健�
 &lt;p&gt;A follow-up question might be: what if the ConfigMap is mounted as &lt;em&gt;environment variables&lt;/em&gt;?&lt;/p&gt;
 &lt;p&gt;Some said that the answer is NO in Kubernetes&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;; even in the old Docker world&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;.  Therefore, I&amp;rsquo;d like to begin with a simple experiment to try to answer the question: After a container starts, will it see any changes of environment variables?&lt;/p&gt;
 &lt;p&gt;The experiment material is available at &lt;a href=&#34;https://github.com/William-Yeh/container-and-env&#34;&gt;https://github.com/William-Yeh/container-and-env&lt;/a&gt; , and here&amp;rsquo;s a simple demo:&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://asciinema.org/a/252073&#34;&gt;&lt;img src=&#34;https://asciinema.org/a/252073.svg&#34; alt=&#34;asciicast&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://asciinema.org/a/252073&#34;&gt;&lt;img alt=&#34;asciicast&#34; src=&#34;https://asciinema.org/a/252073.svg&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;It is obvious in the demo that the changes of environment variables will not affect already-running processes inside the containers &amp;mdash; let alone pods in the Kubernetes world.&lt;/p&gt;
 &lt;p&gt;To simply put, if you want ConfigMap to propagate its changes to related pods, mount the ConfigMap as &lt;em&gt;directories&lt;/em&gt;, not &lt;em&gt;environment variables&lt;/em&gt;.&lt;/p&gt;
 
@@ -10866,7 +11037,7 @@ tcp_probe、dns_probe、icmp_probe，即使面對「不完全揭露」自身健�
 &lt;li&gt;2,914,304 (bytes) &lt;code&gt;fswatch-x86_64.exe&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;These experiments are easy to try by yourself. Take experiment &lt;a href=&#34;https://github.com/William-Yeh/fswatch/tree/master/test-matrix/1_native_linux&#34;&gt;1&lt;/a&gt; &amp;ldquo;run native Linux app in Linux host OS&amp;rdquo; for example:&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://asciinema.org/a/250732&#34;&gt;&lt;img src=&#34;https://asciinema.org/a/250732.svg&#34; alt=&#34;asciicast&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://asciinema.org/a/250732&#34;&gt;&lt;img alt=&#34;asciicast&#34; src=&#34;https://asciinema.org/a/250732.svg&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;In this group, changes in the file system can be tracked successfully by their native API mechanisms, respectively.&lt;/p&gt;
 &lt;h2 id=&#34;group-b-and-c-container-mode&#34;&gt;Group B and C: container mode&lt;/h2&gt;
 &lt;p&gt;Containers make things a little bit complicated.&lt;/p&gt;
@@ -10886,12 +11057,12 @@ tcp_probe、dns_probe、icmp_probe，即使面對「不完全揭露」自身健�
 &lt;h2 id=&#34;group-d-k8s-mode&#34;&gt;Group D: K8s mode&lt;/h2&gt;
 &lt;p&gt;How about Kubernetes?  Does &lt;code&gt;inotify&lt;/code&gt; work well with the ConfigMap?&lt;/p&gt;
 &lt;p&gt;Below is the demo for experiment &lt;a href=&#34;https://github.com/William-Yeh/fswatch/blob/master/test-matrix/8_k8s_linux&#34;&gt;8&lt;/a&gt;:&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://asciinema.org/a/250736&#34;&gt;&lt;img src=&#34;https://asciinema.org/a/250736.svg&#34; alt=&#34;asciicast&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://asciinema.org/a/250736&#34;&gt;&lt;img alt=&#34;asciicast&#34; src=&#34;https://asciinema.org/a/250736.svg&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;As you can see in this demo, any changes in the ConfigMap will propagate to related pods in a couple of seconds, and &lt;code&gt;inotify&lt;/code&gt; will detect this event as well. &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;h3 id=&#34;caution-about-symbolic-links&#34;&gt;Caution about symbolic links&lt;/h3&gt;
 &lt;p&gt;In such situation, however, you should use &lt;code&gt;inotify&lt;/code&gt; to watch for &lt;em&gt;directories&lt;/em&gt; instead of merely for &lt;em&gt;files&lt;/em&gt;.  It is because Kubernetes may use symbolic links to point to versioned ConfigMap volumes, and &lt;code&gt;inotify&lt;/code&gt; doesn&amp;rsquo;t work well with such symbolic links. &lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;p&gt;Let&amp;rsquo;s retry the demo, but this time we&amp;rsquo;ll focus on the directory layout from the pod&amp;rsquo;s point of view.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://asciinema.org/a/251141&#34;&gt;&lt;img src=&#34;https://asciinema.org/a/251141.svg&#34; alt=&#34;asciicast&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://asciinema.org/a/251141&#34;&gt;&lt;img alt=&#34;asciicast&#34; src=&#34;https://asciinema.org/a/251141.svg&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;The demo from &lt;a href=&#34;https://asciinema.org/a/251141?t=0:38&#34;&gt;0:38&lt;/a&gt; to 1:55 shows the directory layout from the pod&amp;rsquo;s point of view:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;/mnt/site # ls -al
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;total 12
@@ -11066,9 +11237,12 @@ tcp_probe、dns_probe、icmp_probe，即使面對「不完全揭露」自身健�
 &lt;h2 id=&#34;漸進式導入-istio&#34;&gt;漸進式導入 Istio&lt;/h2&gt;
 &lt;p&gt;很有意思的演講，很適合作為 Istio 入門。&lt;/p&gt;
 
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;https://www.youtube.com/embed/0cgTHQFXYPQ&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
+
+    
+    &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/0cgTHQFXYPQ?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
+      &gt;&lt;/iframe&gt;
+    &lt;/div&gt;
 
 &lt;p&gt;【演講】&lt;a href=&#34;https://cloud.withgoogle.com/next/sf/sessions?session=HYB102&#34;&gt;Incrementally Adopting Istio&lt;/a&gt;&lt;!-- raw HTML omitted --&gt;
 【重點摘要】&lt;/p&gt;
@@ -11102,9 +11276,12 @@ tcp_probe、dns_probe、icmp_probe，即使面對「不完全揭露」自身健�
 &lt;p&gt;這場演講，儘管旨在&lt;del&gt;廣告&lt;/del&gt;宣傳 Google 自家的 Traffic Director 服務，但講員之一 Prajakta Joshi 非常厲害，對於一般性的 service mesh 觀念也介紹得非常生動。&lt;/p&gt;
 &lt;p&gt;這一場值得全程觀看。我僅摘錄部分重點。&lt;/p&gt;
 
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;https://www.youtube.com/embed/FUITCYMCEhU&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
+
+    
+    &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/FUITCYMCEhU?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
+      &gt;&lt;/iframe&gt;
+    &lt;/div&gt;
 
 &lt;p&gt;【演講】&lt;a href=&#34;https://cloud.withgoogle.com/next/sf/sessions?session=NET207&#34;&gt;Traffic Director and Envoy-Based L7 ILB for Production-Grade Service Mesh and Istio&lt;/a&gt;&lt;!-- raw HTML omitted --&gt;
 【重點摘要】&lt;/p&gt;
@@ -11142,9 +11319,12 @@ tcp_probe、dns_probe、icmp_probe，即使面對「不完全揭露」自身健�
 &lt;p&gt;我聽了 Megan O&amp;rsquo;Keefe 兩場硬底子的演講。&lt;/p&gt;
 &lt;p&gt;第一場演講，以大量實例現場展示 Istio 的 traffic rules。&lt;/p&gt;
 
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;https://www.youtube.com/embed/7cINRP0BFY8&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
+
+    
+    &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/7cINRP0BFY8?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
+      &gt;&lt;/iframe&gt;
+    &lt;/div&gt;
 
 &lt;p&gt;【演講】&lt;a href=&#34;https://cloud.withgoogle.com/next/sf/sessions?session=HYB201&#34;&gt;Istio in Production: Day 2 Traffic Routing&lt;/a&gt;&lt;!-- raw HTML omitted --&gt;
 【重點摘要】&lt;/p&gt;
@@ -11179,9 +11359,12 @@ tcp_probe、dns_probe、icmp_probe，即使面對「不完全揭露」自身健�
 &lt;/ul&gt;
 &lt;p&gt;第二場演講，就更硬碰硬的處理 Istio 每天都可能遇到的幾個實踐問題，以及如何查找問題、解決問題的過程。三段 live demo，涵蓋 Istio control plane 的三大元件：Pilot、Mixer、Citadel，非常扎實。&lt;/p&gt;
 
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;https://www.youtube.com/embed/FbYBO7Pi2d8&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
+
+    
+    &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/FbYBO7Pi2d8?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
+      &gt;&lt;/iframe&gt;
+    &lt;/div&gt;
 
 &lt;p&gt;【演講】&lt;a href=&#34;https://cloud.withgoogle.com/next/sf/sessions?session=HYB303&#34;&gt;Debugging Istio: How to Fix a Broken Service Mesh&lt;/a&gt;&lt;!-- raw HTML omitted --&gt;
 【重點摘要】&lt;/p&gt;
@@ -11210,9 +11393,12 @@ tcp_probe、dns_probe、icmp_probe，即使面對「不完全揭露」自身健�
 &lt;p&gt;這一場，只能說，非常非常非常精彩。&lt;/p&gt;
 &lt;p&gt;對於讀過 Google 的 &lt;a href=&#34;https://landing.google.com/sre/books/&#34;&gt;&lt;em&gt;SRE&lt;/em&gt;&lt;/a&gt; 一書的人來說，看到 SLO、error budget 之類的觀念，居然可以在 Istio 上面如此實現，真是大開眼界。&lt;/p&gt;
 
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;https://www.youtube.com/embed/AKh8uuVCpFI&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
+
+    
+    &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/AKh8uuVCpFI?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
+      &gt;&lt;/iframe&gt;
+    &lt;/div&gt;
 
 &lt;p&gt;【演講】&lt;a href=&#34;https://cloud.withgoogle.com/next/sf/sessions?session=HYB309&#34;&gt;Understanding SLOs and Error Budgets With Istio&lt;/a&gt;&lt;!-- raw HTML omitted --&gt;
 【重點摘要】&lt;/p&gt;
@@ -11237,9 +11423,12 @@ tcp_probe、dns_probe、icmp_probe，即使面對「不完全揭露」自身健�
 &lt;p&gt;Service mesh 並不是容器的專利；古老的 VM 其實也可以納入治理體系。&lt;/p&gt;
 &lt;p&gt;透過 Istio 的 &lt;a href=&#34;https://istio.io/docs/setup/kubernetes/additional-setup/mesh-expansion/&#34;&gt;&lt;strong&gt;mesh expansion&lt;/strong&gt;&lt;/a&gt; 機制，VM 只要安裝 node agent 及 Envoy proxy，即可登記為 Kubernetes/Istio cluster 的 &lt;a href=&#34;https://istio.io/docs/reference/config/networking/v1alpha3/service-entry/&#34;&gt;service entry&lt;/a&gt; 資源，進行 service discovery 等互動。&lt;/p&gt;
 
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;https://www.youtube.com/embed/2czElo8a7FM&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
+
+    
+    &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/2czElo8a7FM?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
+      &gt;&lt;/iframe&gt;
+    &lt;/div&gt;
 
 &lt;p&gt;【演講】&lt;a href=&#34;https://cloud.withgoogle.com/next/sf/sessions?session=HYB308&#34;&gt;Istio Service Mesh for VM Native&lt;/a&gt;&lt;!-- raw HTML omitted --&gt;
 【重點摘要】&lt;/p&gt;
@@ -11258,9 +11447,12 @@ tcp_probe、dns_probe、icmp_probe，即使面對「不完全揭露」自身健�
 &lt;p&gt;自從 3 月底 Kubernetes 1.14 宣布正式支援 Windows 之後&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，我就很期待到 Next ’19 現場眼見為憑。&lt;/p&gt;
 &lt;p&gt;這一場值得全程觀看。我僅摘錄部分重點。&lt;/p&gt;
 
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;https://www.youtube.com/embed/C4kW9uLmefU&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
+
+    
+    &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/C4kW9uLmefU?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
+      &gt;&lt;/iframe&gt;
+    &lt;/div&gt;
 
 &lt;p&gt;【演講】&lt;a href=&#34;https://cloud.withgoogle.com/next/sf/sessions?session=HYB108&#34;&gt;Windows Containers in Google Kubernetes Engine&lt;/a&gt;&lt;!-- raw HTML omitted --&gt;
 【重點摘要】&lt;/p&gt;
@@ -11278,9 +11470,12 @@ tcp_probe、dns_probe、icmp_probe，即使面對「不完全揭露」自身健�
 &lt;p&gt;不管你想在容器化、微服務、service mesh 路線走到多遠，「API 管理」一直都是需要持續關注的一環。&lt;/p&gt;
 &lt;p&gt;針對這議題，Next ’19 是以 &lt;a href=&#34;https://cloud.google.com/apigee/&#34;&gt;Apigee&lt;/a&gt; 為主軸&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;，分別介紹 Apigee 如何與 service mesh 和 serverless 技術搭配運用。&lt;/p&gt;
 
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;https://www.youtube.com/embed/IblDMVwSSk4&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
+
+    
+    &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/IblDMVwSSk4?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
+      &gt;&lt;/iframe&gt;
+    &lt;/div&gt;
 
 &lt;p&gt;【演講】&lt;a href=&#34;https://cloud.withgoogle.com/next/sf/sessions?session=HYB319&#34;&gt;APIs, Microservices, and the Service Mesh&lt;/a&gt;&lt;!-- raw HTML omitted --&gt;
 【重點摘要】&lt;/p&gt;
@@ -11299,9 +11494,12 @@ tcp_probe、dns_probe、icmp_probe，即使面對「不完全揭露」自身健�
 &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;https://www.youtube.com/embed/7fcpwM-8qPo&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
+
+    
+    &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/7fcpwM-8qPo?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
+      &gt;&lt;/iframe&gt;
+    &lt;/div&gt;
 
 &lt;p&gt;【演講】&lt;a href=&#34;https://cloud.withgoogle.com/next/sf/sessions?session=SVR102&#34;&gt;API Management for Serverless and Multi-Cloud&lt;/a&gt;&lt;!-- raw HTML omitted --&gt;
 【重點摘要】&lt;/p&gt;
@@ -11426,7 +11624,7 @@ tcp_probe、dns_probe、icmp_probe，即使面對「不完全揭露」自身健�
 &lt;p&gt;技術上來說，Hyper-V 是屬於 type-1 hypervisor，VirtualBox 是屬於 type-2 hypervisor。詳見維基百科 &amp;ldquo;&lt;a href=&#34;https://en.wikipedia.org/wiki/Hypervisor&#34;&gt;Hypervisor&lt;/a&gt;&amp;rdquo; 條目。&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:3&#34;&gt;
-&lt;p&gt;在 Windows 上關閉 Hyper-V 機制，請參考以下文章：“&lt;a href=&#34;https://www.sysprobs.com/solved-vt-x-is-not-available-verr-vmx-no-vmx-in-windows-10-virtualbox&#34;&gt;(Solved) VT-x is Not Available (verr_vmx_no_vmx) in Windows 10 – but Available for Oracle VirtualBox&lt;/a&gt;”、〈&lt;a href=&#34;https://blog.csdn.net/imilano/article/details/83038682&#34;&gt;Win10 10月更新 VirtualBox VT-x is not available (VERR_VMX_NO_VMX). 解决&lt;/a&gt;〉、“&lt;a href=&#34;https://forums.virtualbox.org/viewtopic.php?f=38&amp;amp;t=89791&#34;&gt;[Solved] VT-x is not available (VERR_VMX_NO_VMX)&lt;/a&gt;”。&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;在 Windows 上關閉 Hyper-V 機制，請參考以下文章：“&lt;a href=&#34;https://www.sysprobs.com/solved-vt-x-is-not-available-verr-vmx-no-vmx-in-windows-10-virtualbox&#34;&gt;(Solved) VT-x is Not Available (verr_vmx_no_vmx) in Windows 10 – but Available for Oracle VirtualBox&lt;/a&gt;”、〈&lt;a href=&#34;https://blog.csdn.net/imilano/article/details/83038682&#34;&gt;Win10 10月更新 VirtualBox VT-x is not available (VERR_VMX_NO_VMX). 解决&lt;/a&gt;〉、“&lt;a href=&#34;https://forums.virtualbox.org/viewtopic.php?f=38&amp;t=89791&#34;&gt;[Solved] VT-x is not available (VERR_VMX_NO_VMX)&lt;/a&gt;”。&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:4&#34;&gt;
 &lt;p&gt;當 Vagrant 在使用 Hyper-V 時，會出現 &amp;ldquo;Hyper-V Administrators&amp;rdquo; 權限問題。我嘗試以下幾篇文章，可惜仍未解決：“&lt;a href=&#34;https://github.com/hashicorp/vagrant/issues/4503&#34;&gt;Vagrant issue #378&lt;/a&gt;”、“&lt;a href=&#34;https://blogs.msdn.microsoft.com/virtual_pc_guy/2014/06/11/allowing-non-administrators-to-control-hyper-vupdated/&#34;&gt;Allowing non-Administrators to control Hyper-V–Updated&lt;/a&gt;”、“&lt;a href=&#34;https://dev.to/nicolus/getting-homestead-to-play-nice-with-hyper-v-4202&#34;&gt;Getting Homestead to play nice with Hyper-V&lt;/a&gt;”。&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
@@ -13318,7 +13516,7 @@ Sprint 結束後，下一個新的 Sprint 立刻接著開始。&lt;/p&gt;
 
 &lt;p&gt;「一般來說，團隊應該知道什麼時候合適（進行這種清理程式碼、重寫的事）」，大神 Douglas Crockford 毫不客氣挑明地講：「管理層很難看到這一點⋯⋯管理層很久之後才會發現。」&lt;/p&gt;
 &lt;p&gt;如果沒有這種特地保留起來的休耕期，那麼，重構、技術債的議題，幾乎註定會一直被推遲到比馬里亞納海溝還更低的順位。這將嚴重破壞 Scrum 的基石：&lt;a href=&#34;//william-yeh.net/post/2018/10/agile-criteria/#scrum-的判準&#34;&gt;PSPI&lt;/a&gt; &lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;。&lt;/p&gt;
-&lt;p&gt;敏捷陣營也有人呼應這種想法。像 Toronto Agile Conference 2017 有一場演講 “&lt;a href=&#34;https://www.youtube.com/watch?v=iJoLe0fnWKc&amp;amp;feature=youtu.be&amp;amp;t=54m2s&#34;&gt;Technical Debt Is a Systemic Problem, Not A Personal Failing&lt;/a&gt;”，用的是 &amp;ldquo;technical-debt sprints&amp;rdquo; 一詞，還畫出 CLD 呢：&lt;/p&gt;
+&lt;p&gt;敏捷陣營也有人呼應這種想法。像 Toronto Agile Conference 2017 有一場演講 “&lt;a href=&#34;https://www.youtube.com/watch?v=iJoLe0fnWKc&amp;feature=youtu.be&amp;t=54m2s&#34;&gt;Technical Debt Is a Systemic Problem, Not A Personal Failing&lt;/a&gt;”，用的是 &amp;ldquo;technical-debt sprints&amp;rdquo; 一詞，還畫出 CLD 呢：&lt;/p&gt;
 
 
 &lt;div class=&#34;box&#34;&gt;
@@ -13381,7 +13579,7 @@ Sprint 結束後，下一個新的 Sprint 立刻接著開始。&lt;/p&gt;
       
       <guid>//william-yeh.net/post/2018/11/why-safe-over-less/</guid>
       
-        <description>&lt;p&gt;在一篇 &lt;a href=&#34;https://medium.com/terryisbloggingonagile/%E9%80%99%E6%98%AF%E5%80%8B%E5%B0%8D%E8%A9%B1%E7%B4%80%E9%8C%84-ebca3a63bbde&#34;&gt;Terry &amp;amp; Ruddy 對話紀錄&lt;/a&gt;中，看到一系列有趣的 &lt;a href=&#34;https://less.works/&#34;&gt;LeSS&lt;/a&gt; vs. &lt;a href=&#34;https://www.scaledagileframework.com/&#34;&gt;SAFe&lt;/a&gt; 討論：&lt;/p&gt;
+        <description>&lt;p&gt;在一篇 &lt;a href=&#34;https://medium.com/@wangtrying/%E9%80%99%E6%98%AF%E5%80%8B%E5%B0%8D%E8%A9%B1%E7%B4%80%E9%8C%84-ebca3a63bbde&#34;&gt;Terry &amp;amp; Ruddy 對話紀錄&lt;/a&gt;中，看到一系列有趣的 &lt;a href=&#34;https://less.works/&#34;&gt;LeSS&lt;/a&gt; vs. &lt;a href=&#34;https://www.scaledagileframework.com/&#34;&gt;SAFe&lt;/a&gt; 討論：&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;「為什麼 &lt;a href=&#34;https://less.works/&#34;&gt;LeSS&lt;/a&gt; 這麼迷人，可是總是輸給 &lt;a href=&#34;https://www.scaledagileframework.com/&#34;&gt;SAFe&lt;/a&gt;？」&lt;/p&gt;
 &lt;p&gt;「SAFe 是敏捷跟辦公室政治作出了完美的妥協（應該吧？），所以大家比較 Buy-in 吧。」&lt;/p&gt;
@@ -13408,7 +13606,7 @@ emerge from &lt;strong&gt;self-organizing teams&lt;/strong&gt;.
 最佳的架構、需求與設計皆來自於能自我組織的團隊。&lt;/p&gt;
 &lt;p&gt;    &amp;mdash; &lt;a href=&#34;https://agilemanifesto.org/principles.html&#34;&gt;Principles behind the Agile Manifesto&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;所以前面那則&lt;a href=&#34;(https://medium.com/terryisbloggingonagile/%E9%80%99%E6%98%AF%E5%80%8B%E5%B0%8D%E8%A9%B1%E7%B4%80%E9%8C%84-ebca3a63bbde)&#34;&gt;對話紀錄&lt;/a&gt;評論道「可是 LeSS 乾淨啊」。&lt;/p&gt;
+&lt;p&gt;所以前面那則&lt;a href=&#34;https://medium.com/@wangtrying/%E9%80%99%E6%98%AF%E5%80%8B%E5%B0%8D%E8%A9%B1%E7%B4%80%E9%8C%84-ebca3a63bbde&#34;&gt;對話紀錄&lt;/a&gt;評論道「可是 LeSS 乾淨啊」。&lt;/p&gt;
 &lt;h2 id=&#34;safe&#34;&gt;SAFe&lt;/h2&gt;
 &lt;p&gt;從這角度來看，SAFe 的「自組織團隊」程度就比較偏低了。&lt;/p&gt;
 &lt;p&gt;在 SAFe 的 &lt;a href=&#34;https://www.scaledagileframework.com/value-stream-coordination/&#34;&gt;value stream coordination&lt;/a&gt; 體系之下，有結構化的&lt;strong&gt;敏捷發布火車&lt;/strong&gt; (&lt;a href=&#34;https://www.scaledagileframework.com/agile-release-train/&#34;&gt;agile release train&lt;/a&gt;; ART)，有與之搭配的一系列結構化機制；以及⋯⋯專屬角色。&lt;/p&gt;
@@ -13441,7 +13639,7 @@ emerge from &lt;strong&gt;self-organizing teams&lt;/strong&gt;.
 &lt;p&gt;「為什麼 &lt;a href=&#34;https://less.works/&#34;&gt;LeSS&lt;/a&gt; 這麼迷人，可是總是輸給 &lt;a href=&#34;https://www.scaledagileframework.com/&#34;&gt;SAFe&lt;/a&gt;？」&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;以及，換作是你，會做什麼選擇。&lt;/p&gt;
-&lt;p&gt;以及，你的選擇，還需要哪些配套措施（文章開頭引述的&lt;a href=&#34;https://medium.com/terryisbloggingonagile/%E9%80%99%E6%98%AF%E5%80%8B%E5%B0%8D%E8%A9%B1%E7%B4%80%E9%8C%84-ebca3a63bbde&#34;&gt;對話紀錄&lt;/a&gt;中，已經有提示了）。&lt;/p&gt;
+&lt;p&gt;以及，你的選擇，還需要哪些配套措施（文章開頭引述的&lt;a href=&#34;https://medium.com/@wangtrying/%E9%80%99%E6%98%AF%E5%80%8B%E5%B0%8D%E8%A9%B1%E7%B4%80%E9%8C%84-ebca3a63bbde&#34;&gt;對話紀錄&lt;/a&gt;中，已經有提示了）。&lt;/p&gt;
 </description>
       
     </item>
@@ -13708,7 +13906,7 @@ emerge from &lt;strong&gt;self-organizing teams&lt;/strong&gt;.
 &lt;p&gt;從該討論串，以及後續追加的其他&lt;a href=&#34;https://www.facebook.com/groups/179345672472/permalink/10156096944827473/&#34;&gt;討論&lt;/a&gt;看來，「賺錢」算是簡潔扼要又難以反駁的「成效」衡量標準。畢竟，這是商業世界。&lt;/p&gt;
 &lt;p&gt;只不過，「賺錢」畢竟已經是落後指標了，有流程改善意識的人，應該要更關注領先指標。&lt;/p&gt;
 &lt;p&gt;「錢」是很重要的價值，但「窮得只剩下錢」不該是軟體研發所追求的價值。&lt;/p&gt;
-&lt;p&gt;因此，當時我給的簡短&lt;a href=&#34;https://www.facebook.com/groups/179345672472/permalink/10156092663467473/?comment_id=10156092774837473&amp;amp;comment_tracking=%7B%22tn%22%3A%22R6%22%7D&#34;&gt;回答&lt;/a&gt;是：&lt;/p&gt;
+&lt;p&gt;因此，當時我給的簡短&lt;a href=&#34;https://www.facebook.com/groups/179345672472/permalink/10156092663467473/?comment_id=10156092774837473&amp;comment_tracking=%7B%22tn%22%3A%22R6%22%7D&#34;&gt;回答&lt;/a&gt;是：&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;TL;DR　對於「價值」是否有增益。&lt;/p&gt;
 &lt;ol&gt;
@@ -14370,9 +14568,11 @@ emerge from &lt;strong&gt;self-organizing teams&lt;/strong&gt;.
       
         <description>&lt;p&gt;今年暑假，我第一次去台中的國美館，參觀 &lt;a href=&#34;https://www.ntmofa.gov.tw/information_1078_86836.html&#34;&gt;2018 年全國美術展&lt;/a&gt;。&lt;/p&gt;
 &lt;p&gt;這年度盛會，分成油畫、水彩、版畫、水墨等十大類。大開眼界之餘，也不禁有個奇想：為什麼要分這麼多類別來競賽？為什麼不選出一個跨十大類別的首獎，就像武林盟主一樣？&lt;/p&gt;
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;https://www.youtube.com/embed/nBlph7Vp92E&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
+    
+    &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/nBlph7Vp92E?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
+      &gt;&lt;/iframe&gt;
+    &lt;/div&gt;
 
 &lt;p&gt;很外行吧！畢竟，油畫的美感判準，與版畫的美感判準、攝影的美感判準，本來就有很大不同，不能草率化約在同一把尺來衡量高下境界。&lt;/p&gt;
 &lt;p&gt;把照片拍得像油畫，就能夠贏過油畫嗎？&lt;/p&gt;
@@ -14872,6 +15072,7 @@ increment 的方式交付「完成」的產品，可以確保一直提供一個�
   &lt;p&gt;❶ 【系統思考的四堂課】&lt;a href=&#34;//william-yeh.net/post/2018/06/sys-thinking-workshop/&#34;&gt;緣起&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;❷ 第一場公開班課後回覆：思維的重量訓練&lt;/p&gt;
 &lt;p&gt;❸ &lt;a href=&#34;//william-yeh.net/post/2021/03/sys-thinking-unicorn-project/&#34;&gt;從系統思考角度讀《獨角獸專案》&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;➍ &lt;a href=&#34;//william-yeh.net/post/2024/07/dissecting-devops-via-systems-thinking/&#34;&gt;從系統思考角度談 DevOps 三步工作法&lt;/a&gt;&lt;/p&gt;
 
 &lt;/div&gt;</description>
       
@@ -15085,6 +15286,7 @@ increment 的方式交付「完成」的產品，可以確保一直提供一個�
   &lt;p&gt;❶ 【系統思考的四堂課】緣起&lt;/p&gt;
 &lt;p&gt;❷ 第一場公開班課後回覆：&lt;a href=&#34;//william-yeh.net/post/2018/09/thinking-weight-training/&#34;&gt;思維的重量訓練&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;❸ &lt;a href=&#34;//william-yeh.net/post/2021/03/sys-thinking-unicorn-project/&#34;&gt;從系統思考角度讀《獨角獸專案》&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;➍ &lt;a href=&#34;//william-yeh.net/post/2024/07/dissecting-devops-via-systems-thinking/&#34;&gt;從系統思考角度談 DevOps 三步工作法&lt;/a&gt;&lt;/p&gt;
 
 &lt;/div&gt;
 
@@ -15639,9 +15841,12 @@ increment 的方式交付「完成」的產品，可以確保一直提供一個�
 &lt;br&gt;&lt;br&gt;&lt;/p&gt;
 &lt;p&gt;實況錄影：&lt;/p&gt;
 
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;https://www.youtube.com/embed/zMeA3CjOi60&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
+
+    
+    &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/zMeA3CjOi60?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
+      &gt;&lt;/iframe&gt;
+    &lt;/div&gt;
 
 &lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;p&gt;這場演講，開宗明義就說了：只探討「動態性複雜」，不探討「細節性複雜」。因此，刻意不著重在 microservices 技術細節。正好現場有兩位深富 microservices 實務經驗的高手，就順便 cue 他們幫忙回答技術提問。&lt;/p&gt;
@@ -17413,9 +17618,12 @@ increment 的方式交付「完成」的產品，可以確保一直提供一個�
 &lt;br&gt;&lt;br&gt;&lt;/p&gt;
 &lt;p&gt;今晚在 DevOps Taiwan Meetup #2 的錄影檔：&lt;/p&gt;
 
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;https://www.youtube.com/embed/C5mZp-SDbXw&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
+
+    
+    &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/C5mZp-SDbXw?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
+      &gt;&lt;/iframe&gt;
+    &lt;/div&gt;
 
 &lt;p&gt;感謝主辦人陳正瑋精彩的&lt;a href=&#34;http://blog.chengweichen.com/2016/08/devops-taiwan-meetup-2.html&#34;&gt;現場記實&lt;/a&gt;，這段話，精準點出我想傳達的意旨：&lt;/p&gt;
 &lt;blockquote&gt;
@@ -18563,7 +18771,7 @@ end function&lt;/p&gt;
 &lt;h2 id=&#34;訴求-vs-需求-vs-目標&#34;&gt;訴求 vs 需求 vs 目標&lt;/h2&gt;
 &lt;p&gt;回訓，不是乖乖聽課就好，還要協助&lt;del&gt;小鮮肉&lt;/del&gt;學弟妹進行小組討論。面對組員，就像面對去年的自己，有趣之餘，也附帶了些引導（但不過度介入）的責任。&lt;/p&gt;
 &lt;p&gt;為了因應可能被組員提出的問題，也為了自我成長，我也挑選想再深度探索的主題：&lt;a href=&#34;https://en.wikipedia.org/wiki/Evaporating_Cloud&#34;&gt;衝突圖&lt;/a&gt;，在課前先自我延伸學習。&lt;/p&gt;
-&lt;p&gt;不過，在&lt;a href=&#34;https://en.wikipedia.org/wiki/Eliyahu_M._Goldratt&#34;&gt;高德拉特&lt;/a&gt;的 &lt;a href=&#34;https://en.wikipedia.org/wiki/Theory_of_constraints&#34;&gt;TOC (Theory of Constraints)&lt;/a&gt; 發展史中，&lt;a href=&#34;https://en.wikipedia.org/wiki/Evaporating_Cloud&#34;&gt;衝突圖&lt;/a&gt;其實是隸屬於更大的 &lt;a href=&#34;https://en.wikipedia.org/wiki/Thinking_processes_(theory_of_constraints)&#34;&gt;Thinking Process&lt;/a&gt; 當中的一環。為了更充分掌握這項思考方式，便將書架上擺了超過十年的高德拉特系列書籍：《目標》、《絕不是靠運氣》、《關鍵鏈》拿出來重讀一次，順便也讀一讀岸良裕司的兩本詮釋書籍。&lt;/p&gt;
+&lt;p&gt;不過，在&lt;a href=&#34;https://en.wikipedia.org/wiki/Eliyahu_M._Goldratt&#34;&gt;高德拉特&lt;/a&gt;的 &lt;a href=&#34;https://en.wikipedia.org/wiki/Theory_of_constraints&#34;&gt;TOC (Theory of Constraints)&lt;/a&gt; 發展史中，&lt;a href=&#34;https://en.wikipedia.org/wiki/Evaporating_Cloud&#34;&gt;衝突圖&lt;/a&gt;其實是隸屬於更大的 &lt;a href=&#34;https://en.wikipedia.org/wiki/Thinking_processes_%5C%28theory_of_constraints%5C%29&#34;&gt;Thinking Process&lt;/a&gt; 當中的一環。為了更充分掌握這項思考方式，便將書架上擺了超過十年的高德拉特系列書籍：《目標》、《絕不是靠運氣》、《關鍵鏈》拿出來重讀一次，順便也讀一讀岸良裕司的兩本詮釋書籍。&lt;/p&gt;
 
 
 &lt;div class=&#34;box&#34;&gt;
@@ -18779,9 +18987,12 @@ end function&lt;/p&gt;
 &lt;p&gt;最後，要感謝 &lt;a href=&#34;http://kojenchieh.pixnet.net/blog&#34;&gt;David Ko&lt;/a&gt; 介紹 Lean Change Canvas 這麼有趣的分析框架，也要感謝過去四個梯次的 Ansible Workshop 學員，讓我有機會實際演練，反芻箇中細節。&lt;/p&gt;
 &lt;p&gt;影片全長約 11 分鐘，請慢用。&lt;/p&gt;
 
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;https://www.youtube.com/embed/Ug5wKl8J2Ng&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;</description>
+
+    
+    &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/Ug5wKl8J2Ng?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
+      &gt;&lt;/iframe&gt;
+    &lt;/div&gt;</description>
       
     </item>
     
@@ -18853,9 +19064,12 @@ end function&lt;/p&gt;
 &lt;br&gt;&lt;br&gt;&lt;/p&gt;
 &lt;p&gt;現場實況錄影在此，全長整整 2 小時，請享用：&lt;/p&gt;
 
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;https://www.youtube.com/embed/2j3eP55Oygw&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;</description>
+
+    
+    &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/2j3eP55Oygw?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
+      &gt;&lt;/iframe&gt;
+    &lt;/div&gt;</description>
       
     </item>
     
@@ -18964,9 +19178,12 @@ end function&lt;/p&gt;
 &lt;p&gt;敏捷陣營素以愛玩遊戲著稱。從今天的小火車遊戲中，我也偷學了一些遊戲設計的訣竅，希望以後能運用在團隊身上。&lt;/p&gt;
 &lt;p&gt;最後，給一個 call to action：如果你也想親身體驗這麼好玩的遊戲，&lt;a href=&#34;http://www.accupass.com/event/register/1602250738221767316794&#34;&gt;最新梯次 9/03 已經開放報名&lt;/a&gt;。&lt;/p&gt;
 
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;https://www.youtube.com/embed/DmG8VLQTobQ&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
+
+    
+    &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/DmG8VLQTobQ?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
+      &gt;&lt;/iframe&gt;
+    &lt;/div&gt;
 
 </description>
       
@@ -19081,17 +19298,23 @@ end function&lt;/p&gt;
 &lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;p&gt;先看一段 Ron Pereira 根據 &lt;em&gt;Lean Thinking&lt;/em&gt; 書中所提的實驗，錄的一段影片：&lt;/p&gt;
 
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;https://www.youtube.com/embed/Bi9R1Hqr8dI&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
+
+    
+    &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/Bi9R1Hqr8dI?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
+      &gt;&lt;/iframe&gt;
+    &lt;/div&gt;
 
 &lt;p&gt;單一動作，反覆做，練成不經大腦思考的機械式反應時，理論上，單一動作的效率會極大化。這也是科學管理之夫泰勒的觀點。&lt;/p&gt;
 &lt;p&gt;所以，看了這段實驗，真是令人咋舌。&lt;/p&gt;
 &lt;p&gt;兩年後，他又重做了一次實驗：&lt;/p&gt;
 
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;https://www.youtube.com/embed/Dr67i5SdXiM&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
+
+    
+    &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/Dr67i5SdXiM?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
+      &gt;&lt;/iframe&gt;
+    &lt;/div&gt;
 
 &lt;p&gt;實驗設計上，瑕疵當然很多，就連隨機對照實驗都沒做。不過，個人認為，實驗設計完美與否，並不是此例想彰顯的重點。它想彰顯的，都在第一段影片的小標上。&lt;/p&gt;
 &lt;p&gt;我們當然可以坐下來徹底分析：違反直覺的第二種方法，為什麼反而比較快（儘管這可能只是後見之明）。不過，這實驗已經突顯一件事：「工作切換」這件事情的影響，可能需要重新思考；不能只從微觀的局部角度，更要從整體、flow 的角度去檢視。&lt;/p&gt;
@@ -19533,7 +19756,7 @@ end function&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;p&gt;CI，小小的投資，大大的省事。&lt;/p&gt;
-&lt;p&gt;對我而言，原本 &lt;code&gt;williamyeh/ansible&lt;/code&gt; 只是為了其他目的而順帶設計出來的副產品。但由於 Ansible 官方已不再維護它的 Docker images；而在非官方版當中，我的 &lt;code&gt;williamyeh/ansible&lt;/code&gt; 下載量居冠（統計數據&lt;a href=&#34;https://hub.docker.com/search/?q=ansible&amp;amp;page=1&amp;amp;isAutomated=0&amp;amp;isOfficial=0&amp;amp;pullCount=1&amp;amp;starCount=0&#34;&gt;在此&lt;/a&gt;），也持續有人提出 feature request⋯⋯該說是無心插柳嗎？&lt;/p&gt;
+&lt;p&gt;對我而言，原本 &lt;code&gt;williamyeh/ansible&lt;/code&gt; 只是為了其他目的而順帶設計出來的副產品。但由於 Ansible 官方已不再維護它的 Docker images；而在非官方版當中，我的 &lt;code&gt;williamyeh/ansible&lt;/code&gt; 下載量居冠（統計數據&lt;a href=&#34;https://hub.docker.com/search/?q=ansible&amp;page=1&amp;isAutomated=0&amp;isOfficial=0&amp;pullCount=1&amp;starCount=0&#34;&gt;在此&lt;/a&gt;），也持續有人提出 feature request⋯⋯該說是無心插柳嗎？&lt;/p&gt;
 &lt;h2 id=&#34;吃自己的狗食&#34;&gt;吃自己的狗食&lt;/h2&gt;
 &lt;p&gt;再拿另一個很受歡迎的 Ansible role：&lt;a href=&#34;https://github.com/William-Yeh/ansible-oracle-java&#34;&gt;&lt;code&gt;williamyeh.oracle-java&lt;/code&gt;&lt;/a&gt; 為例。它在 Ansible Galaxy 已經得到 &lt;a href=&#34;https://galaxy.ansible.com/william-yeh/oracle-java&#34;&gt;4.8 的高分&lt;/a&gt;，是一個已經為人所知，甚至為人所用的元件。&lt;/p&gt;
 &lt;p&gt;因此，我必須維持良好的向後相容性，以對用戶負責。&lt;/p&gt;

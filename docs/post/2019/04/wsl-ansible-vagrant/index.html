@@ -35,7 +35,7 @@
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.121.2" />
+<meta name="generator" content="Hugo 0.128.2" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2019/04/wsl-ansible-vagrant/" />
@@ -64,28 +64,38 @@
 
 
 
-<meta property="og:title" content="在 WSL 裡使用 Ansible &#43; Vagrant" />
-<meta property="og:description" content="既然要開始在 Windows 上沿用 Mac 及 Unix 的命令列工具習慣1，免不了要處理 Ansible 及 Vagrant。
+<meta property="og:url" content="//william-yeh.net/post/2019/04/wsl-ansible-vagrant/">
+  <meta property="og:site_name" content="Potioneer&#39;s Essays">
+  <meta property="og:title" content="在 WSL 裡使用 Ansible &#43; Vagrant">
+  <meta property="og:description" content="既然要開始在 Windows 上沿用 Mac 及 Unix 的命令列工具習慣1，免不了要處理 Ansible 及 Vagrant。
 雖然這兩個軟體都有對應的 Windows 版本，但據我以前的經驗，卡卡的，有許多小地雷；畢竟這些發跡自泛 Unix 家族的軟體，不是那麼容易無縫移植到對命令列不友善的 Windows 家族。
 如今 Windows 已經有 WSL (Windows Subsystem for Linux) 機制，是否可以更無痛享用 Ansible 及 Vagrant 呢？
-可以的。" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="//william-yeh.net/post/2019/04/wsl-ansible-vagrant/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2019-04-18T23:00:00+08:00" />
-<meta property="article:modified_time" content="2019-04-18T23:00:00+08:00" />
+可以的。">
+  <meta property="og:locale" content="zh_tw">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2019-04-18T23:00:00+08:00">
+    <meta property="article:modified_time" content="2019-04-18T23:00:00+08:00">
+    <meta property="article:tag" content="Wsl">
+    <meta property="article:tag" content="Ansible">
+    <meta property="article:tag" content="Vagrant">
+    <meta property="article:tag" content="Devops">
 
-<meta itemprop="name" content="在 WSL 裡使用 Ansible &#43; Vagrant">
-<meta itemprop="description" content="既然要開始在 Windows 上沿用 Mac 及 Unix 的命令列工具習慣1，免不了要處理 Ansible 及 Vagrant。
+  <meta itemprop="name" content="在 WSL 裡使用 Ansible &#43; Vagrant">
+  <meta itemprop="description" content="既然要開始在 Windows 上沿用 Mac 及 Unix 的命令列工具習慣1，免不了要處理 Ansible 及 Vagrant。
 雖然這兩個軟體都有對應的 Windows 版本，但據我以前的經驗，卡卡的，有許多小地雷；畢竟這些發跡自泛 Unix 家族的軟體，不是那麼容易無縫移植到對命令列不友善的 Windows 家族。
 如今 Windows 已經有 WSL (Windows Subsystem for Linux) 機制，是否可以更無痛享用 Ansible 及 Vagrant 呢？
-可以的。"><meta itemprop="datePublished" content="2019-04-18T23:00:00+08:00" />
-<meta itemprop="dateModified" content="2019-04-18T23:00:00+08:00" />
-<meta itemprop="wordCount" content="1380">
-<meta itemprop="keywords" content="wsl,ansible,vagrant,devops," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="在 WSL 裡使用 Ansible &#43; Vagrant"/>
-<meta name="twitter:description" content="既然要開始在 Windows 上沿用 Mac 及 Unix 的命令列工具習慣1，免不了要處理 Ansible 及 Vagrant。
+可以的。">
+  <meta itemprop="datePublished" content="2019-04-18T23:00:00+08:00">
+  <meta itemprop="dateModified" content="2019-04-18T23:00:00+08:00">
+  <meta itemprop="wordCount" content="1380">
+  <meta itemprop="keywords" content="Wsl,Ansible,Vagrant,Devops">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="在 WSL 裡使用 Ansible &#43; Vagrant">
+  <meta name="twitter:description" content="既然要開始在 Windows 上沿用 Mac 及 Unix 的命令列工具習慣1，免不了要處理 Ansible 及 Vagrant。
 雖然這兩個軟體都有對應的 Windows 版本，但據我以前的經驗，卡卡的，有許多小地雷；畢竟這些發跡自泛 Unix 家族的軟體，不是那麼容易無縫移植到對命令列不友善的 Windows 家族。
 如今 Windows 已經有 WSL (Windows Subsystem for Linux) 機制，是否可以更無痛享用 Ansible 及 Vagrant 呢？
-可以的。"/>
+可以的。">
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -515,7 +525,7 @@
 <p>技術上來說，Hyper-V 是屬於 type-1 hypervisor，VirtualBox 是屬於 type-2 hypervisor。詳見維基百科 &ldquo;<a href="https://en.wikipedia.org/wiki/Hypervisor">Hypervisor</a>&rdquo; 條目。&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:3">
-<p>在 Windows 上關閉 Hyper-V 機制，請參考以下文章：“<a href="https://www.sysprobs.com/solved-vt-x-is-not-available-verr-vmx-no-vmx-in-windows-10-virtualbox">(Solved) VT-x is Not Available (verr_vmx_no_vmx) in Windows 10 – but Available for Oracle VirtualBox</a>”、〈<a href="https://blog.csdn.net/imilano/article/details/83038682">Win10 10月更新 VirtualBox VT-x is not available (VERR_VMX_NO_VMX). 解决</a>〉、“<a href="https://forums.virtualbox.org/viewtopic.php?f=38&amp;t=89791">[Solved] VT-x is not available (VERR_VMX_NO_VMX)</a>”。&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>在 Windows 上關閉 Hyper-V 機制，請參考以下文章：“<a href="https://www.sysprobs.com/solved-vt-x-is-not-available-verr-vmx-no-vmx-in-windows-10-virtualbox">(Solved) VT-x is Not Available (verr_vmx_no_vmx) in Windows 10 – but Available for Oracle VirtualBox</a>”、〈<a href="https://blog.csdn.net/imilano/article/details/83038682">Win10 10月更新 VirtualBox VT-x is not available (VERR_VMX_NO_VMX). 解决</a>〉、“<a href="https://forums.virtualbox.org/viewtopic.php?f=38&t=89791">[Solved] VT-x is not available (VERR_VMX_NO_VMX)</a>”。&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:4">
 <p>當 Vagrant 在使用 Hyper-V 時，會出現 &ldquo;Hyper-V Administrators&rdquo; 權限問題。我嘗試以下幾篇文章，可惜仍未解決：“<a href="https://github.com/hashicorp/vagrant/issues/4503">Vagrant issue #378</a>”、“<a href="https://blogs.msdn.microsoft.com/virtual_pc_guy/2014/06/11/allowing-non-administrators-to-control-hyper-vupdated/">Allowing non-Administrators to control Hyper-V–Updated</a>”、“<a href="https://dev.to/nicolus/getting-homestead-to-play-nice-with-hyper-v-4202">Getting Homestead to play nice with Hyper-V</a>”。&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>

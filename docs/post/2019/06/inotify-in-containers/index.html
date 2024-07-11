@@ -31,7 +31,7 @@
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.121.2" />
+<meta name="generator" content="Hugo 0.128.2" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2019/06/inotify-in-containers/" />
@@ -60,19 +60,30 @@
 
 
 
-<meta property="og:title" content="Inotify in Containers" />
-<meta property="og:description" content="It is usually necessary to watch for any changes in file systems, both in development and in production modes. For example, in the development mode Webpack can watch files and recompile whenever they change; in the production mode Consul Template can watch runtime configs and invoke specific applications whenever they change. These are well-known scenarios in traditional pre-container world. How about the container world? Do they behave the same in" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="//william-yeh.net/post/2019/06/inotify-in-containers/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2019-06-10T18:00:00+08:00" />
-<meta property="article:modified_time" content="2019-06-10T18:00:00+08:00" />
+<meta property="og:url" content="//william-yeh.net/post/2019/06/inotify-in-containers/">
+  <meta property="og:site_name" content="Potioneer&#39;s Essays">
+  <meta property="og:title" content="Inotify in Containers">
+  <meta property="og:description" content="It is usually necessary to watch for any changes in file systems, both in development and in production modes. For example, in the development mode Webpack can watch files and recompile whenever they change; in the production mode Consul Template can watch runtime configs and invoke specific applications whenever they change. These are well-known scenarios in traditional pre-container world. How about the container world? Do they behave the same in">
+  <meta property="og:locale" content="zh_tw">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2019-06-10T18:00:00+08:00">
+    <meta property="article:modified_time" content="2019-06-10T18:00:00+08:00">
+    <meta property="article:tag" content="Devops">
+    <meta property="article:tag" content="Docker">
+    <meta property="article:tag" content="Kubernetes">
+    <meta property="article:tag" content="Inotify">
+    <meta property="article:tag" content="Configmap">
 
-<meta itemprop="name" content="Inotify in Containers">
-<meta itemprop="description" content="It is usually necessary to watch for any changes in file systems, both in development and in production modes. For example, in the development mode Webpack can watch files and recompile whenever they change; in the production mode Consul Template can watch runtime configs and invoke specific applications whenever they change. These are well-known scenarios in traditional pre-container world. How about the container world? Do they behave the same in"><meta itemprop="datePublished" content="2019-06-10T18:00:00+08:00" />
-<meta itemprop="dateModified" content="2019-06-10T18:00:00+08:00" />
-<meta itemprop="wordCount" content="951">
-<meta itemprop="keywords" content="devops,docker,kubernetes,inotify,configmap," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Inotify in Containers"/>
-<meta name="twitter:description" content="It is usually necessary to watch for any changes in file systems, both in development and in production modes. For example, in the development mode Webpack can watch files and recompile whenever they change; in the production mode Consul Template can watch runtime configs and invoke specific applications whenever they change. These are well-known scenarios in traditional pre-container world. How about the container world? Do they behave the same in"/>
+  <meta itemprop="name" content="Inotify in Containers">
+  <meta itemprop="description" content="It is usually necessary to watch for any changes in file systems, both in development and in production modes. For example, in the development mode Webpack can watch files and recompile whenever they change; in the production mode Consul Template can watch runtime configs and invoke specific applications whenever they change. These are well-known scenarios in traditional pre-container world. How about the container world? Do they behave the same in">
+  <meta itemprop="datePublished" content="2019-06-10T18:00:00+08:00">
+  <meta itemprop="dateModified" content="2019-06-10T18:00:00+08:00">
+  <meta itemprop="wordCount" content="951">
+  <meta itemprop="keywords" content="Devops,Docker,Kubernetes,Inotify,Configmap">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Inotify in Containers">
+  <meta name="twitter:description" content="It is usually necessary to watch for any changes in file systems, both in development and in production modes. For example, in the development mode Webpack can watch files and recompile whenever they change; in the production mode Consul Template can watch runtime configs and invoke specific applications whenever they change. These are well-known scenarios in traditional pre-container world. How about the container world? Do they behave the same in">
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -495,7 +506,7 @@
 <li>2,914,304 (bytes) <code>fswatch-x86_64.exe</code></li>
 </ul>
 <p>These experiments are easy to try by yourself. Take experiment <a href="https://github.com/William-Yeh/fswatch/tree/master/test-matrix/1_native_linux">1</a> &ldquo;run native Linux app in Linux host OS&rdquo; for example:</p>
-<p><a href="https://asciinema.org/a/250732"><img src="https://asciinema.org/a/250732.svg" alt="asciicast"></a></p>
+<p><a href="https://asciinema.org/a/250732"><img alt="asciicast" src="https://asciinema.org/a/250732.svg"></a></p>
 <p>In this group, changes in the file system can be tracked successfully by their native API mechanisms, respectively.</p>
 <h2 id="group-b-and-c-container-mode">Group B and C: container mode</h2>
 <p>Containers make things a little bit complicated.</p>
@@ -515,12 +526,12 @@
 <h2 id="group-d-k8s-mode">Group D: K8s mode</h2>
 <p>How about Kubernetes?  Does <code>inotify</code> work well with the ConfigMap?</p>
 <p>Below is the demo for experiment <a href="https://github.com/William-Yeh/fswatch/blob/master/test-matrix/8_k8s_linux">8</a>:</p>
-<p><a href="https://asciinema.org/a/250736"><img src="https://asciinema.org/a/250736.svg" alt="asciicast"></a></p>
+<p><a href="https://asciinema.org/a/250736"><img alt="asciicast" src="https://asciinema.org/a/250736.svg"></a></p>
 <p>As you can see in this demo, any changes in the ConfigMap will propagate to related pods in a couple of seconds, and <code>inotify</code> will detect this event as well. <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
 <h3 id="caution-about-symbolic-links">Caution about symbolic links</h3>
 <p>In such situation, however, you should use <code>inotify</code> to watch for <em>directories</em> instead of merely for <em>files</em>.  It is because Kubernetes may use symbolic links to point to versioned ConfigMap volumes, and <code>inotify</code> doesn&rsquo;t work well with such symbolic links. <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></p>
 <p>Let&rsquo;s retry the demo, but this time we&rsquo;ll focus on the directory layout from the pod&rsquo;s point of view.</p>
-<p><a href="https://asciinema.org/a/251141"><img src="https://asciinema.org/a/251141.svg" alt="asciicast"></a></p>
+<p><a href="https://asciinema.org/a/251141"><img alt="asciicast" src="https://asciinema.org/a/251141.svg"></a></p>
 <p>The demo from <a href="https://asciinema.org/a/251141?t=0:38">0:38</a> to 1:55 shows the directory layout from the pod&rsquo;s point of view:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>/mnt/site # ls -al
 </span></span><span style="display:flex;"><span>total 12
@@ -542,8 +553,8 @@
     
   </div>
   <p>❶ Inotify in Containers</p>
-<p>❷ <a href="//william-yeh.net/post/2019/06/containers-and-env/">Containers and Environment Variables</a></p>
-<p>➌ <a href="//william-yeh.net/post/2019/06/autoreload-from-configmap/">Auto-Reload from ConfigMap</a></p>
+<p>❷ <a href="/post/2019/06/containers-and-env/">Containers and Environment Variables</a></p>
+<p>➌ <a href="/post/2019/06/autoreload-from-configmap/">Auto-Reload from ConfigMap</a></p>
 
 </div>
 

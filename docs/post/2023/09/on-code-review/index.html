@@ -41,7 +41,7 @@ Code review 乍看之下是小事，但若認真探討起來還真是不小。�
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.121.2" />
+<meta name="generator" content="Hugo 0.128.2" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2023/09/on-code-review/" />
@@ -70,91 +70,57 @@ Code review 乍看之下是小事，但若認真探討起來還真是不小。�
 
 
 
-<meta property="og:title" content="從 Code Review 的小事看到大事" />
-<meta property="og:description" content="前言
-我很喜歡 Java 大師 Joshua Bloch 在《編程的頂尖對話》所說的：
-
+<meta property="og:url" content="//william-yeh.net/post/2023/09/on-code-review/">
+  <meta property="og:site_name" content="Potioneer&#39;s Essays">
+  <meta property="og:title" content="從 Code Review 的小事看到大事">
+  <meta property="og:description" content="前言 我很喜歡 Java 大師 Joshua Bloch 在《編程的頂尖對話》所說的：
 即使是想把一個很小的程式寫對也是非常難的。
 認為自己程式沒有 bug 就是在愚弄自己。程式肯定有 bug，（只是）多數情況下，程式裡的 bug 夠少，足以使其完成任務。
-
 是的，100% 正確的程式或許很難達成，或許連定義起來都很困難，但我們還是得努力趨近它，讓我們工作更有成就感，更有信心能夠交付價值，也更少因不慎流出去的瑕疵而疲於奔命。
 Joshua Bloch 緊接著又說：
-
 既然寫正確的程式那麼困難，我們就應該盡力取得幫助。所以，能減少 bug 的所有東西都是好的。這就是我是靜態型別和靜態分析的信徒的原因。
-
 是的，我們需要動員許多力量，取得許多幫助，才能夠趨近於正確的程式。可動員的許多力量當中，無疑的 code review 是重要的基礎，可惜的是，許多團隊連這基礎都還有諸多可改善之處，這也限縮了團隊能進一步發揮的價值。
 Code review 乍看之下是小事，但若認真探討起來還真是不小。在我多年輔導各種成熟度團隊的經驗中，有六個基於 code review 以及衍生出來的議題可深入探討：
+基本信念：品質來自正確地做事 掌握基本功與領域知識 凝聚團隊公約的共識 嘗試更好的協同理解技巧 讓進步看得見 支持長久研發的措施 如果你所在的團隊已經啟動 Scrum 或 Kanban 研發流程，恭喜你，你們已經有很好的流程基礎可在這六大議題上面精進，只需要正確實施（玩真的！）你們所採用的敏捷流程。文中我會大量連結到 Scrum 及 Kanban 的要素。請確實「守」你們該守的流程，不要驟然「破」或「離」。
+全文很長，如果你是現役的程式設計師，可先讀①②以瞭解 engineering disciplines；如果你是 team lead，可先讀③④以瞭解團隊動力；如果你是管理層，可先讀⑤⑥，尤其是⑤關於管理面的施力點。">
+  <meta property="og:locale" content="zh_tw">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2023-09-13T20:00:00+08:00">
+    <meta property="article:modified_time" content="2023-09-13T20:00:00+08:00">
+    <meta property="article:tag" content="Programming">
+    <meta property="article:tag" content="Craftsmanship">
+    <meta property="article:tag" content="Testing">
+    <meta property="article:tag" content="Agile">
+    <meta property="article:tag" content="Scrum">
 
-基本信念：品質來自正確地做事
-掌握基本功與領域知識
-凝聚團隊公約的共識
-嘗試更好的協同理解技巧
-讓進步看得見
-支持長久研發的措施
-
-
-
-如果你所在的團隊已經啟動 Scrum 或 Kanban 研發流程，恭喜你，你們已經有很好的流程基礎可在這六大議題上面精進，只需要正確實施（玩真的！）你們所採用的敏捷流程。文中我會大量連結到 Scrum 及 Kanban 的要素。請確實「守」你們該守的流程，不要驟然「破」或「離」。
-全文很長，如果你是現役的程式設計師，可先讀①②以瞭解 engineering disciplines；如果你是 team lead，可先讀③④以瞭解團隊動力；如果你是管理層，可先讀⑤⑥，尤其是⑤關於管理面的施力點。" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="//william-yeh.net/post/2023/09/on-code-review/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2023-09-13T20:00:00+08:00" />
-<meta property="article:modified_time" content="2023-09-13T20:00:00+08:00" />
-
-<meta itemprop="name" content="從 Code Review 的小事看到大事">
-<meta itemprop="description" content="前言
-我很喜歡 Java 大師 Joshua Bloch 在《編程的頂尖對話》所說的：
-
+  <meta itemprop="name" content="從 Code Review 的小事看到大事">
+  <meta itemprop="description" content="前言 我很喜歡 Java 大師 Joshua Bloch 在《編程的頂尖對話》所說的：
 即使是想把一個很小的程式寫對也是非常難的。
 認為自己程式沒有 bug 就是在愚弄自己。程式肯定有 bug，（只是）多數情況下，程式裡的 bug 夠少，足以使其完成任務。
-
 是的，100% 正確的程式或許很難達成，或許連定義起來都很困難，但我們還是得努力趨近它，讓我們工作更有成就感，更有信心能夠交付價值，也更少因不慎流出去的瑕疵而疲於奔命。
 Joshua Bloch 緊接著又說：
-
 既然寫正確的程式那麼困難，我們就應該盡力取得幫助。所以，能減少 bug 的所有東西都是好的。這就是我是靜態型別和靜態分析的信徒的原因。
-
 是的，我們需要動員許多力量，取得許多幫助，才能夠趨近於正確的程式。可動員的許多力量當中，無疑的 code review 是重要的基礎，可惜的是，許多團隊連這基礎都還有諸多可改善之處，這也限縮了團隊能進一步發揮的價值。
 Code review 乍看之下是小事，但若認真探討起來還真是不小。在我多年輔導各種成熟度團隊的經驗中，有六個基於 code review 以及衍生出來的議題可深入探討：
-
-基本信念：品質來自正確地做事
-掌握基本功與領域知識
-凝聚團隊公約的共識
-嘗試更好的協同理解技巧
-讓進步看得見
-支持長久研發的措施
-
-
-
-如果你所在的團隊已經啟動 Scrum 或 Kanban 研發流程，恭喜你，你們已經有很好的流程基礎可在這六大議題上面精進，只需要正確實施（玩真的！）你們所採用的敏捷流程。文中我會大量連結到 Scrum 及 Kanban 的要素。請確實「守」你們該守的流程，不要驟然「破」或「離」。
-全文很長，如果你是現役的程式設計師，可先讀①②以瞭解 engineering disciplines；如果你是 team lead，可先讀③④以瞭解團隊動力；如果你是管理層，可先讀⑤⑥，尤其是⑤關於管理面的施力點。"><meta itemprop="datePublished" content="2023-09-13T20:00:00+08:00" />
-<meta itemprop="dateModified" content="2023-09-13T20:00:00+08:00" />
-<meta itemprop="wordCount" content="7281">
-<meta itemprop="keywords" content="programming,craftsmanship,testing,agile,scrum," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="從 Code Review 的小事看到大事"/>
-<meta name="twitter:description" content="前言
-我很喜歡 Java 大師 Joshua Bloch 在《編程的頂尖對話》所說的：
-
+基本信念：品質來自正確地做事 掌握基本功與領域知識 凝聚團隊公約的共識 嘗試更好的協同理解技巧 讓進步看得見 支持長久研發的措施 如果你所在的團隊已經啟動 Scrum 或 Kanban 研發流程，恭喜你，你們已經有很好的流程基礎可在這六大議題上面精進，只需要正確實施（玩真的！）你們所採用的敏捷流程。文中我會大量連結到 Scrum 及 Kanban 的要素。請確實「守」你們該守的流程，不要驟然「破」或「離」。
+全文很長，如果你是現役的程式設計師，可先讀①②以瞭解 engineering disciplines；如果你是 team lead，可先讀③④以瞭解團隊動力；如果你是管理層，可先讀⑤⑥，尤其是⑤關於管理面的施力點。">
+  <meta itemprop="datePublished" content="2023-09-13T20:00:00+08:00">
+  <meta itemprop="dateModified" content="2023-09-13T20:00:00+08:00">
+  <meta itemprop="wordCount" content="7281">
+  <meta itemprop="keywords" content="Programming,Craftsmanship,Testing,Agile,Scrum">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="從 Code Review 的小事看到大事">
+  <meta name="twitter:description" content="前言 我很喜歡 Java 大師 Joshua Bloch 在《編程的頂尖對話》所說的：
 即使是想把一個很小的程式寫對也是非常難的。
 認為自己程式沒有 bug 就是在愚弄自己。程式肯定有 bug，（只是）多數情況下，程式裡的 bug 夠少，足以使其完成任務。
-
 是的，100% 正確的程式或許很難達成，或許連定義起來都很困難，但我們還是得努力趨近它，讓我們工作更有成就感，更有信心能夠交付價值，也更少因不慎流出去的瑕疵而疲於奔命。
 Joshua Bloch 緊接著又說：
-
 既然寫正確的程式那麼困難，我們就應該盡力取得幫助。所以，能減少 bug 的所有東西都是好的。這就是我是靜態型別和靜態分析的信徒的原因。
-
 是的，我們需要動員許多力量，取得許多幫助，才能夠趨近於正確的程式。可動員的許多力量當中，無疑的 code review 是重要的基礎，可惜的是，許多團隊連這基礎都還有諸多可改善之處，這也限縮了團隊能進一步發揮的價值。
 Code review 乍看之下是小事，但若認真探討起來還真是不小。在我多年輔導各種成熟度團隊的經驗中，有六個基於 code review 以及衍生出來的議題可深入探討：
-
-基本信念：品質來自正確地做事
-掌握基本功與領域知識
-凝聚團隊公約的共識
-嘗試更好的協同理解技巧
-讓進步看得見
-支持長久研發的措施
-
-
-
-如果你所在的團隊已經啟動 Scrum 或 Kanban 研發流程，恭喜你，你們已經有很好的流程基礎可在這六大議題上面精進，只需要正確實施（玩真的！）你們所採用的敏捷流程。文中我會大量連結到 Scrum 及 Kanban 的要素。請確實「守」你們該守的流程，不要驟然「破」或「離」。
-全文很長，如果你是現役的程式設計師，可先讀①②以瞭解 engineering disciplines；如果你是 team lead，可先讀③④以瞭解團隊動力；如果你是管理層，可先讀⑤⑥，尤其是⑤關於管理面的施力點。"/>
+基本信念：品質來自正確地做事 掌握基本功與領域知識 凝聚團隊公約的共識 嘗試更好的協同理解技巧 讓進步看得見 支持長久研發的措施 如果你所在的團隊已經啟動 Scrum 或 Kanban 研發流程，恭喜你，你們已經有很好的流程基礎可在這六大議題上面精進，只需要正確實施（玩真的！）你們所採用的敏捷流程。文中我會大量連結到 Scrum 及 Kanban 的要素。請確實「守」你們該守的流程，不要驟然「破」或「離」。
+全文很長，如果你是現役的程式設計師，可先讀①②以瞭解 engineering disciplines；如果你是 team lead，可先讀③④以瞭解團隊動力；如果你是管理層，可先讀⑤⑥，尤其是⑤關於管理面的施力點。">
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -574,7 +540,7 @@ Code review 乍看之下是小事，但若認真探討起來還真是不小。�
 <p>怎樣才叫做「正確地做事」？</p>
 <p>談「正確地做事」之前，先確定我們擁有共同的基本信念。</p>
 <h3 id="collective-ownership">Collective ownership</h3>
-<p>Odd-e 三位專家在 2023-08-31 晚上有一場很精彩的 webinar【高效 Scrum 團隊所需的能力】。在 <a href="https://www.youtube.com/watch?v=13clptdw6J8&amp;t=3816s">1h:03m:36s</a> 聊到「工程能力」時，有一句語重心長的話：「所有跟 eXtreme Programming 相關的工程能力都很重要。」</p>
+<p>Odd-e 三位專家在 2023-08-31 晚上有一場很精彩的 webinar【高效 Scrum 團隊所需的能力】。在 <a href="https://www.youtube.com/watch?v=13clptdw6J8&t=3816s">1h:03m:36s</a> 聊到「工程能力」時，有一句語重心長的話：「所有跟 eXtreme Programming 相關的工程能力都很重要。」</p>
 <p>eXtreme Programming (XP) 第一版與第二版提到許多工程實踐，此刻我想特別點出 &ldquo;<a href="http://extremeprogramming.org/rules/collective.html">collective ownership</a>&rdquo; 這一條：</p>
 <blockquote>
 <p>Collective Ownership encourages everyone to contribute new ideas to all segments of the project. No one person becomes a bottleneck for changes.</p>

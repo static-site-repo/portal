@@ -35,7 +35,7 @@
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.121.2" />
+<meta name="generator" content="Hugo 0.128.2" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2023/10/nested-conditional/" />
@@ -64,28 +64,36 @@
 
 
 
-<meta property="og:title" content="[Code Review 碎碎念] 簡化巢狀條件判斷式" />
-<meta property="og:description" content="讀別人的程式是一件苦差事，不僅需要具備對應的領域知識，也得了解對方的程式書寫邏輯與風格。因此，為了讓程式碼容易被人理解，整潔程式碼是必須持續精進的技藝。
+<meta property="og:url" content="//william-yeh.net/post/2023/10/nested-conditional/">
+  <meta property="og:site_name" content="Potioneer&#39;s Essays">
+  <meta property="og:title" content="[Code Review 碎碎念] 簡化巢狀條件判斷式">
+  <meta property="og:description" content="讀別人的程式是一件苦差事，不僅需要具備對應的領域知識，也得了解對方的程式書寫邏輯與風格。因此，為了讓程式碼容易被人理解，整潔程式碼是必須持續精進的技藝。
 在 code review 進行實質審查之前，我喜歡先做一點點形式審查，尤其是某些 code smell，臭味暴風半徑大到甚至連領域知識的外行人都聞得到。
 我很常遇到不必要的巢狀迴圈或條件判斷式。經驗告訴我，除非真的是要設計出什麼高大尚的演算法或者刷題，否則，這有相當大的機率是需要進一步 refactor 的。
-像以下這段程式，即使我故意把領域知識相關細節用 conditionXX 馬賽克掉了，你還是可以明顯聞到 bad smell：迴圈 &#43; 條件判斷式，ABCDEF 深達 6 層，你能夠很快捕捉到箇中邏輯嗎？" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="//william-yeh.net/post/2023/10/nested-conditional/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2023-10-12T20:00:00+08:00" />
-<meta property="article:modified_time" content="2023-10-12T20:00:00+08:00" />
+像以下這段程式，即使我故意把領域知識相關細節用 conditionXX 馬賽克掉了，你還是可以明顯聞到 bad smell：迴圈 &#43; 條件判斷式，ABCDEF 深達 6 層，你能夠很快捕捉到箇中邏輯嗎？">
+  <meta property="og:locale" content="zh_tw">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2023-10-12T20:00:00+08:00">
+    <meta property="article:modified_time" content="2023-10-12T20:00:00+08:00">
+    <meta property="article:tag" content="Programming">
+    <meta property="article:tag" content="Craftsmanship">
 
-<meta itemprop="name" content="[Code Review 碎碎念] 簡化巢狀條件判斷式">
-<meta itemprop="description" content="讀別人的程式是一件苦差事，不僅需要具備對應的領域知識，也得了解對方的程式書寫邏輯與風格。因此，為了讓程式碼容易被人理解，整潔程式碼是必須持續精進的技藝。
+  <meta itemprop="name" content="[Code Review 碎碎念] 簡化巢狀條件判斷式">
+  <meta itemprop="description" content="讀別人的程式是一件苦差事，不僅需要具備對應的領域知識，也得了解對方的程式書寫邏輯與風格。因此，為了讓程式碼容易被人理解，整潔程式碼是必須持續精進的技藝。
 在 code review 進行實質審查之前，我喜歡先做一點點形式審查，尤其是某些 code smell，臭味暴風半徑大到甚至連領域知識的外行人都聞得到。
 我很常遇到不必要的巢狀迴圈或條件判斷式。經驗告訴我，除非真的是要設計出什麼高大尚的演算法或者刷題，否則，這有相當大的機率是需要進一步 refactor 的。
-像以下這段程式，即使我故意把領域知識相關細節用 conditionXX 馬賽克掉了，你還是可以明顯聞到 bad smell：迴圈 &#43; 條件判斷式，ABCDEF 深達 6 層，你能夠很快捕捉到箇中邏輯嗎？"><meta itemprop="datePublished" content="2023-10-12T20:00:00+08:00" />
-<meta itemprop="dateModified" content="2023-10-12T20:00:00+08:00" />
-<meta itemprop="wordCount" content="1463">
-<meta itemprop="keywords" content="programming,craftsmanship," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="[Code Review 碎碎念] 簡化巢狀條件判斷式"/>
-<meta name="twitter:description" content="讀別人的程式是一件苦差事，不僅需要具備對應的領域知識，也得了解對方的程式書寫邏輯與風格。因此，為了讓程式碼容易被人理解，整潔程式碼是必須持續精進的技藝。
+像以下這段程式，即使我故意把領域知識相關細節用 conditionXX 馬賽克掉了，你還是可以明顯聞到 bad smell：迴圈 &#43; 條件判斷式，ABCDEF 深達 6 層，你能夠很快捕捉到箇中邏輯嗎？">
+  <meta itemprop="datePublished" content="2023-10-12T20:00:00+08:00">
+  <meta itemprop="dateModified" content="2023-10-12T20:00:00+08:00">
+  <meta itemprop="wordCount" content="1463">
+  <meta itemprop="keywords" content="Programming,Craftsmanship">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="[Code Review 碎碎念] 簡化巢狀條件判斷式">
+  <meta name="twitter:description" content="讀別人的程式是一件苦差事，不僅需要具備對應的領域知識，也得了解對方的程式書寫邏輯與風格。因此，為了讓程式碼容易被人理解，整潔程式碼是必須持續精進的技藝。
 在 code review 進行實質審查之前，我喜歡先做一點點形式審查，尤其是某些 code smell，臭味暴風半徑大到甚至連領域知識的外行人都聞得到。
 我很常遇到不必要的巢狀迴圈或條件判斷式。經驗告訴我，除非真的是要設計出什麼高大尚的演算法或者刷題，否則，這有相當大的機率是需要進一步 refactor 的。
-像以下這段程式，即使我故意把領域知識相關細節用 conditionXX 馬賽克掉了，你還是可以明顯聞到 bad smell：迴圈 &#43; 條件判斷式，ABCDEF 深達 6 層，你能夠很快捕捉到箇中邏輯嗎？"/>
+像以下這段程式，即使我故意把領域知識相關細節用 conditionXX 馬賽克掉了，你還是可以明顯聞到 bad smell：迴圈 &#43; 條件判斷式，ABCDEF 深達 6 層，你能夠很快捕捉到箇中邏輯嗎？">
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
