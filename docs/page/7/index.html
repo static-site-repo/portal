@@ -30,7 +30,7 @@
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.128.2" />
+<meta name="generator" content="Hugo 0.133.1" />
 
 
 <link rel="canonical" href="//william-yeh.net/" />
@@ -68,8 +68,8 @@
 
   <meta itemprop="name" content="Potioneer&#39;s Essays">
   <meta itemprop="description" content="敏捷魔藥師 (Agile Potioneer)。會說 90% 的工匠語言，會說 70% 的總管語言，正在努力提升 30% 的行腳商人語言。">
-  <meta itemprop="datePublished" content="2024-07-11T16:00:00+08:00">
-  <meta itemprop="dateModified" content="2024-07-11T16:00:00+08:00">
+  <meta itemprop="datePublished" content="2024-08-14T20:00:00+08:00">
+  <meta itemprop="dateModified" content="2024-08-14T20:00:00+08:00">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Potioneer&#39;s Essays">
   <meta name="twitter:description" content="敏捷魔藥師 (Agile Potioneer)。會說 90% 的工匠語言，會說 70% 的總管語言，正在努力提升 30% 的行腳商人語言。">
@@ -372,6 +372,76 @@
   <header class="post-header">
     <h1 class="post-title">
       
+      <a class="post-link" href="/post/2022/05/need-for-unit-testing/">很簡單的東西，也要單元測試嗎？</a>
+    </h1>
+    
+
+    <div class="post-meta">
+  <div class="post-meta-author">
+    by
+      William Yeh
+    
+  </div>
+
+  <div class="post-meta-time">
+    <time datetime="2022-05-24">
+      2022-05-24
+    </time>
+  </div>
+
+  
+
+
+  <div class="post-meta__right">
+    <span class="post-meta-more">
+        約 1573 字 -
+        預計閱讀 4 分鐘
+      </span>
+
+    <div class="post-meta-category">
+        <a href="//william-yeh.net/categories/tech/"> tech </a>
+          
+      </div>
+
+
+    
+    
+
+
+    
+    
+  </div>
+</div>
+
+  </header>
+  
+  <div class="post-content">
+    
+      <div class="post-summary">
+        <p>（改寫自公司內部 memo）</p>
+<p><!-- raw HTML omitted -->   <!-- raw HTML omitted -->   <!-- raw HTML omitted --></p>
+<p>Hi all engineers,</p>
+<p>上完一整天單元測試課程之後，有同事問我：「有沒有標準來決定要不要寫單元測試？」</p>
+<p>剛讀完劉潤《<a href="https://www.books.com.tw/products/0010919211">底層邏輯</a>》的我，對於這類疑似「注射器」的問句格外敏感。雖然我可以瀟灑引述 <a href="https://www.tenlong.com.tw/products/9789864344000"><em>Working Effectively with Legacy Code</em></a> 的說法「我毫無疑問地將『遺留程式碼』定義為『<strong>沒有編寫測試的程式碼</strong>』」：</p>
+<blockquote>
+<p>沒有編寫測試的程式碼是糟糕的程式碼——不管我們多麼細心地編寫它們，不管它們有多漂亮、物件導向或封裝良好。有了測試，我們就能夠迅速、可驗證地修改程式碼的行為。沒有測試，我們就不知道修改後的程式碼，實際上是變得更好還是更糟。</p>
+</blockquote>
+<p>但當下我還是決定先展開一場對話。</p>
+      </div>
+      <div class="read-more">
+        <a href="/post/2022/05/need-for-unit-testing/" class="read-more-link"
+          >閱讀全文</a
+        >
+      </div>
+    
+  </div>
+</article>
+
+  
+    <article class="post bg-white">
+  <header class="post-header">
+    <h1 class="post-title">
+      
       <a class="post-link" href="/post/2022/05/evaluation-process-for-changes/">推動改變的評估流程</a>
     </h1>
     
@@ -651,92 +721,6 @@
       </div>
       <div class="read-more">
         <a href="/post/2022/04/yves-agile-course/" class="read-more-link"
-          >閱讀全文</a
-        >
-      </div>
-    
-  </div>
-</article>
-
-  
-    <article class="post bg-white">
-  <header class="post-header">
-    <h1 class="post-title">
-      
-      <a class="post-link" href="/post/2022/03/prof-common-vocabulary/">敏捷啟航的專業基礎：共同語彙</a>
-    </h1>
-    
-
-    <div class="post-meta">
-  <div class="post-meta-author">
-    by
-      William Yeh
-    
-  </div>
-
-  <div class="post-meta-time">
-    <time datetime="2022-03-05">
-      2022-03-05
-    </time>
-  </div>
-
-  
-
-
-  <div class="post-meta__right">
-    <span class="post-meta-more">
-        約 2197 字 -
-        預計閱讀 5 分鐘
-      </span>
-
-    <div class="post-meta-category">
-        <a href="//william-yeh.net/categories/management/"> management </a>
-          
-      </div>
-
-
-    
-    
-
-
-    
-    
-  </div>
-</div>
-
-  </header>
-  
-  <div class="post-content">
-    
-      <div class="post-summary">
-        <p>LeSS 的 &ldquo;<a href="https://less.works/less/structure/scrummaster.html#ScrumMasterfocus">Scrum Master focus over time</a>&rdquo; 一文主張，在導入敏捷的初期階段，首要焦點應放在 <span style="font-variant: small-caps;">Team</span>
-、<span style="font-variant: small-caps;">Product Owner</span>
- 及 <span style="font-variant: small-caps;">Organization</span>
- 三者。</p>
-
-<link rel="stylesheet" href="/css/hugo-easy-gallery.css" />
-<div class="box">
-<figure  itemprop="associatedMedia"
-  itemscope itemtype="http://schema.org/ImageObject" 
-  style="max-width:30em" >
-    <div class="img">
-      <img itemprop="thumbnail" src="/img/2019/12/scrum-master-focus-over-time.png" alt="Scrum Master focus over time (from LeSS)"/>
-    </div>
-    <a href="/img/2019/12/scrum-master-focus-over-time.png" itemprop="contentUrl"></a>
-      <figcaption>
-          <p>Scrum Master focus over time (from LeSS)</p>
-      </figcaption>
-  </figure>
-</div>
-
-<p>如果借用<a href="https://www.mckinsey.com/business-functions/strategy-and-corporate-finance/our-insights/enduring-ideas-the-7-s-framework">麥肯錫 7S 模型</a>來分析這些初期的施力重點，不難發現，<span style="font-variant: small-caps;">Organization</span>
- 的施力點大致可直接對應到 7S 的結構 (Structure) <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> ，至於 <span style="font-variant: small-caps;">Team</span>
- 及 <span style="font-variant: small-caps;">Product Owner</span>
- 的施力點，則是對應到 7S 的風格 (Style)、技能 (Skills)，甚至是共同價值觀 (Shared Values)。</p>
-<p>前者屬於硬性要素，較易理解，也較易實施；後者屬於軟性要素，較抽象，也不易立竿見影——這是敏捷啟航時需要面對的模糊題。</p>
-      </div>
-      <div class="read-more">
-        <a href="/post/2022/03/prof-common-vocabulary/" class="read-more-link"
           >閱讀全文</a
         >
       </div>
@@ -1560,6 +1544,30 @@
 
       
 
+        
+
+        
+        
+
+          
+          
+          
+
+            
+            
+
+          
+          
+          
+
+        
+        
+
+        
+        
+
+      
+
       
       
       <li><a href="/page/8/">»</a></li>
@@ -1567,7 +1575,7 @@
 
       
       
-      <li><a href="/page/28/">»»</a></li>
+      <li><a href="/page/29/">»»</a></li>
       
 
       </ul>

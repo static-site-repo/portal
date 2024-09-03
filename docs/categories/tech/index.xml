@@ -6,8 +6,15 @@
     <description>Recent content in Tech on Potioneer&#39;s Essays</description>
     <generator>Hugo</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Thu, 12 Oct 2023 20:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 14 Aug 2024 20:00:00 +0800</lastBuildDate>
     <atom:link href="//william-yeh.net/categories/tech/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>換個 Design for Ops 的腦袋——《SRE 工作現場直擊》推薦序</title>
+      <link>//william-yeh.net/post/2024/08/sre-story-review/</link>
+      <pubDate>Wed, 14 Aug 2024 20:00:00 +0800</pubDate>
+      <guid>//william-yeh.net/post/2024/08/sre-story-review/</guid>
+      <description>&lt;p&gt;全球都在享用 Google 首屈一指的線上服務群，但直到他們在 2016 年出版了 &lt;a href=&#34;https://sre.google/books/&#34;&gt;&lt;em&gt;Site Reliability Engineering&lt;/em&gt;&lt;/a&gt; 一書，世人才第一次全面認識到該如何支持這種深度廣度的系統維運。&lt;/p&gt;&#xA;&lt;p&gt;全球性線上服務系統，規模與複雜度遽增，只靠傳統的人力或獸力是無法長久維運下去的。面對這問題，擁有第一流軟體研發能量的 Google，大膽拋開傳統作法，改從一個獨特的提問出發：「如果我們賦予軟體研發工程師一個任務，讓他們有機會從頭去設計維運系統，那會是什麼模樣？」&lt;/p&gt;&#xA;&lt;p&gt;更進一步的提問是：「如果我們限制他們最多只能投入 50% 的時間在維運上，那會是怎麼樣的工作方式？」&lt;/p&gt;&#xA;&lt;p&gt;從這角度出發，便是目前我們現在看到的 SRE。&lt;/p&gt;</description>
+    </item>
     <item>
       <title>[Code Review 碎碎念] 簡化巢狀條件判斷式</title>
       <link>//william-yeh.net/post/2023/10/nested-conditional/</link>

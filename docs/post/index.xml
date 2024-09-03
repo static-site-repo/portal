@@ -6,14 +6,21 @@
     <description>Recent content in Posts on Potioneer&#39;s Essays</description>
     <generator>Hugo</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Thu, 11 Jul 2024 16:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 14 Aug 2024 20:00:00 +0800</lastBuildDate>
     <atom:link href="//william-yeh.net/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>換個 Design for Ops 的腦袋——《SRE 工作現場直擊》推薦序</title>
+      <link>//william-yeh.net/post/2024/08/sre-story-review/</link>
+      <pubDate>Wed, 14 Aug 2024 20:00:00 +0800</pubDate>
+      <guid>//william-yeh.net/post/2024/08/sre-story-review/</guid>
+      <description>&lt;p&gt;全球都在享用 Google 首屈一指的線上服務群，但直到他們在 2016 年出版了 &lt;a href=&#34;https://sre.google/books/&#34;&gt;&lt;em&gt;Site Reliability Engineering&lt;/em&gt;&lt;/a&gt; 一書，世人才第一次全面認識到該如何支持這種深度廣度的系統維運。&lt;/p&gt;&#xA;&lt;p&gt;全球性線上服務系統，規模與複雜度遽增，只靠傳統的人力或獸力是無法長久維運下去的。面對這問題，擁有第一流軟體研發能量的 Google，大膽拋開傳統作法，改從一個獨特的提問出發：「如果我們賦予軟體研發工程師一個任務，讓他們有機會從頭去設計維運系統，那會是什麼模樣？」&lt;/p&gt;&#xA;&lt;p&gt;更進一步的提問是：「如果我們限制他們最多只能投入 50% 的時間在維運上，那會是怎麼樣的工作方式？」&lt;/p&gt;&#xA;&lt;p&gt;從這角度出發，便是目前我們現在看到的 SRE。&lt;/p&gt;</description>
+    </item>
     <item>
       <title>從系統思考角度談 DevOps 三步工作法</title>
       <link>//william-yeh.net/post/2024/07/dissecting-devops-via-systems-thinking/</link>
       <pubDate>Thu, 11 Jul 2024 16:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2024/07/dissecting-devops-via-systems-thinking/</guid>
-      <description>&lt;p&gt;今天在 #DevOpsDaysTaipei 2024 給了一場 Keynote Speech：【從系統思考角度談 DevOps 三步工作法】。&#xA;​&#xA;事情的緣由是這樣的。&lt;/p&gt;&#xA;&lt;p&gt;艦長想在 &lt;a href=&#34;https://devopsdays.tw/2024/&#34;&gt;DevOpsDays Taipei 2024&lt;/a&gt; 繼續開設廣受好評的新手村、入門班系列。經過討論，我決定仿照之前在 DevOpsDays Taipei &lt;a href=&#34;//william-yeh.net/post/2018/09/thinking-weight-training/&#34;&gt;2018&lt;/a&gt; &amp;amp; &lt;a href=&#34;//william-yeh.net/post/2021/03/sys-thinking-unicorn-project/&#34;&gt;2021&lt;/a&gt; 的路線，繼續以「系統思考」角度去剖析 DevOps 相關的組織文化與管理議題。&lt;/p&gt;&#xA;&lt;p&gt;我自己有一個關於演講的內規天條：演講，不只是輸出，也希望每次都有新的挑戰。因此，對於這次的演講主題【從系統思考角度談 DevOps 三步工作法】，我給自己下的挑戰是：我不要用較為人知曉的 CLD (&lt;a href=&#34;https://en.wikipedia.org/wiki/Causal_loop_diagram&#34;&gt;causal loop diagram&lt;/a&gt;)，我要挑戰更難的 SFD (&lt;a href=&#34;https://thesystemsthinker.com/step-by-step-stocks-and-flows-improving-the-rigor-of-your-thinking/&#34;&gt;stock and flow diagram&lt;/a&gt;)。&lt;/p&gt;&#xA;&lt;p&gt;改用 SFD 倒不是為了量化塑模，而是因為它能夠更嚴謹的思考「變數」。正好這幾年台灣也開始流行起存量、增量的詞彙 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，我想，不妨跟風蹭一點熱度。&lt;/p&gt;</description>
+      <description>&lt;p&gt;今天在 &lt;a href=&#34;https://devopsdays.tw/2024/&#34;&gt;DevOpsDays Taipei 2024&lt;/a&gt; 給了一場 Keynote Speech：【從系統思考角度談 DevOps 三步工作法】。&#xA;​&#xA;事情的緣由是這樣的。&lt;/p&gt;&#xA;&lt;p&gt;艦長想在 &lt;a href=&#34;https://devopsdays.tw/2024/&#34;&gt;DevOpsDays Taipei 2024&lt;/a&gt; 繼續開設廣受好評的新手村、入門班系列。經過討論，我決定仿照之前在 DevOpsDays Taipei &lt;a href=&#34;//william-yeh.net/post/2018/09/thinking-weight-training/&#34;&gt;2018&lt;/a&gt; &amp;amp; &lt;a href=&#34;//william-yeh.net/post/2021/03/sys-thinking-unicorn-project/&#34;&gt;2021&lt;/a&gt; 的路線，繼續以「系統思考」角度去剖析 DevOps 相關的組織文化與管理議題。&lt;/p&gt;&#xA;&lt;p&gt;我自己有一個關於演講的內規天條：演講，不只是輸出，也希望每次都有新的挑戰。因此，對於這次的演講主題【從系統思考角度談 DevOps 三步工作法】，我給自己下的挑戰是：我不要用較為人知曉的 CLD (&lt;a href=&#34;https://en.wikipedia.org/wiki/Causal_loop_diagram&#34;&gt;causal loop diagram&lt;/a&gt;)，我要挑戰更難的 SFD (&lt;a href=&#34;https://thesystemsthinker.com/step-by-step-stocks-and-flows-improving-the-rigor-of-your-thinking/&#34;&gt;stock and flow diagram&lt;/a&gt;)。&lt;/p&gt;&#xA;&lt;p&gt;改用 SFD 倒不是為了量化塑模，而是因為它能夠更嚴謹的思考「變數」。正好這幾年台灣也開始流行起存量、增量的詞彙 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，我想，不妨跟風蹭一點熱度。&lt;/p&gt;</description>
     </item>
     <item>
       <title>咬文嚼字的必要性（二）：階段性的預期成果設定</title>
