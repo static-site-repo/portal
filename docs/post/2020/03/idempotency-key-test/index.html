@@ -35,7 +35,7 @@ Idempotency 冪等性 在 API 服務中，常常需要留意 idempotency（冪�
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.133.1" />
+<meta name="generator" content="Hugo 0.134.3" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2020/03/idempotency-key-test/" />
@@ -734,34 +734,34 @@ Idempotency 冪等性 在 API 服務中，常常需要留意 idempotency（冪�
 </span></span></code></pre></div><p>對於 uuid 的存取性能，PostgreSQL 似乎是有備而來胸有成竹。</p>
 <p>因此，我針對 PostgreSQL 的 <code>uuid</code> 資料型態，分別實驗「亂數」與「遞增數值」存取效率，順便也拿 <code>bigint</code> 做對照組，看看這些排列組合，哪一種比較適合 idempotency key 用途：</p>
 <table>
-<thead>
-<tr>
-<th>Idempotency Key 類型</th>
-<th>演算法</th>
-<th>資料大小 (bytes)</th>
-<th>PostgreSQL 資料型態</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>亂數</td>
-<td>uuid v4</td>
-<td>16</td>
-<td>uuid</td>
-</tr>
-<tr>
-<td>遞增數值</td>
-<td>uuid v1</td>
-<td>16</td>
-<td>uuid</td>
-</tr>
-<tr>
-<td>遞增數值</td>
-<td>Snowflake</td>
-<td>8</td>
-<td>bigint</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: left">Idempotency Key 類型</th>
+          <th style="text-align: left">演算法</th>
+          <th style="text-align: left">資料大小 (bytes)</th>
+          <th style="text-align: left">PostgreSQL 資料型態</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">亂數</td>
+          <td style="text-align: left">uuid v4</td>
+          <td style="text-align: left">16</td>
+          <td style="text-align: left">uuid</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">遞增數值</td>
+          <td style="text-align: left">uuid v1</td>
+          <td style="text-align: left">16</td>
+          <td style="text-align: left">uuid</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">遞增數值</td>
+          <td style="text-align: left">Snowflake</td>
+          <td style="text-align: left">8</td>
+          <td style="text-align: left">bigint</td>
+      </tr>
+  </tbody>
 </table>
 <p>針對這些排列組合，我進行三組實驗：</p>
 <ol>

@@ -23,7 +23,11 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="William Yeh" />
-  <meta name="description" content="活動名稱：給 RD 的 Kubernetes 初體驗 時間：2019-05-15 (三) / 11:00&ndash;12:30 會議：台灣雲端大會 (Cloud Edge Summit 2019) 課程簡介 Kubernetes 是目前雲端環境的顯學。可是，傳統的程式，並不" />
+  <meta name="description" content="活動名稱：給 RD 的 Kubernetes 初體驗
+時間：2019-05-15 (三) / 11:00&ndash;12:30
+會議：台灣雲端大會 (Cloud Edge Summit 2019)
+課程簡介 Kubernetes 是目前雲端環境的顯學。可是，傳統的程式，並不是原封不動搬上去，就能夠自動享受 Kubernetes 所宣稱的種種好處。
+" />
 
 
 
@@ -31,7 +35,7 @@
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.133.1" />
+<meta name="generator" content="Hugo 0.134.3" />
 
 
 <link rel="canonical" href="//william-yeh.net/courses/k8s-workship-cloudsummit2019/" />
@@ -63,7 +67,10 @@
 <meta property="og:url" content="//william-yeh.net/courses/k8s-workship-cloudsummit2019/">
   <meta property="og:site_name" content="Potioneer&#39;s Essays">
   <meta property="og:title" content="給 RD 的 Kubernetes 初體驗">
-  <meta property="og:description" content="活動名稱：給 RD 的 Kubernetes 初體驗 時間：2019-05-15 (三) / 11:00–12:30 會議：台灣雲端大會 (Cloud Edge Summit 2019) 課程簡介 Kubernetes 是目前雲端環境的顯學。可是，傳統的程式，並不">
+  <meta property="og:description" content="活動名稱：給 RD 的 Kubernetes 初體驗
+時間：2019-05-15 (三) / 11:00–12:30
+會議：台灣雲端大會 (Cloud Edge Summit 2019)
+課程簡介 Kubernetes 是目前雲端環境的顯學。可是，傳統的程式，並不是原封不動搬上去，就能夠自動享受 Kubernetes 所宣稱的種種好處。">
   <meta property="og:locale" content="zh_tw">
   <meta property="og:type" content="article">
     <meta property="article:section" content="courses">
@@ -74,14 +81,20 @@
     <meta property="article:tag" content="Microservices">
 
   <meta itemprop="name" content="給 RD 的 Kubernetes 初體驗">
-  <meta itemprop="description" content="活動名稱：給 RD 的 Kubernetes 初體驗 時間：2019-05-15 (三) / 11:00–12:30 會議：台灣雲端大會 (Cloud Edge Summit 2019) 課程簡介 Kubernetes 是目前雲端環境的顯學。可是，傳統的程式，並不">
+  <meta itemprop="description" content="活動名稱：給 RD 的 Kubernetes 初體驗
+時間：2019-05-15 (三) / 11:00–12:30
+會議：台灣雲端大會 (Cloud Edge Summit 2019)
+課程簡介 Kubernetes 是目前雲端環境的顯學。可是，傳統的程式，並不是原封不動搬上去，就能夠自動享受 Kubernetes 所宣稱的種種好處。">
   <meta itemprop="datePublished" content="2019-04-02T16:00:00+08:00">
   <meta itemprop="dateModified" content="2019-04-02T16:00:00+08:00">
   <meta itemprop="wordCount" content="634">
   <meta itemprop="keywords" content="Devops,Kubernetes,Microservices">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="給 RD 的 Kubernetes 初體驗">
-  <meta name="twitter:description" content="活動名稱：給 RD 的 Kubernetes 初體驗 時間：2019-05-15 (三) / 11:00–12:30 會議：台灣雲端大會 (Cloud Edge Summit 2019) 課程簡介 Kubernetes 是目前雲端環境的顯學。可是，傳統的程式，並不">
+  <meta name="twitter:description" content="活動名稱：給 RD 的 Kubernetes 初體驗
+時間：2019-05-15 (三) / 11:00–12:30
+會議：台灣雲端大會 (Cloud Edge Summit 2019)
+課程簡介 Kubernetes 是目前雲端環境的顯學。可是，傳統的程式，並不是原封不動搬上去，就能夠自動享受 Kubernetes 所宣稱的種種好處。">
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -465,40 +478,40 @@
 </ul>
 <h2 id="課程架構">課程架構</h2>
 <table>
-<thead>
-<tr>
-<th>主題</th>
-<th>內容簡介</th>
-<th>類型</th>
-<th>時間(分)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1. 基本觀念</td>
-<td>快速介紹 Kubernetes 基本觀念</td>
-<td>簡報介紹</td>
-<td>10</td>
-</tr>
-<tr>
-<td>2. 本機端實作</td>
-<td>移植 web 軟體至本機端 Kubernetes</td>
-<td>實機操作</td>
-<td>50</td>
-</tr>
-<tr>
-<td>3. 雲端實作</td>
-<td>將 Kubernetes 成果送上雲端</td>
-<td>實機操作</td>
-<td>20</td>
-</tr>
-<tr>
-<td>4. 總結</td>
-<td>Kubernetes 微服務要點總結</td>
-<td>簡報介紹</td>
-<td>10</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: left">主題</th>
+          <th style="text-align: left">內容簡介</th>
+          <th style="text-align: left">類型</th>
+          <th style="text-align: left">時間(分)</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">1. 基本觀念</td>
+          <td style="text-align: left">快速介紹 Kubernetes 基本觀念</td>
+          <td style="text-align: left">簡報介紹</td>
+          <td style="text-align: left">10</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">2. 本機端實作</td>
+          <td style="text-align: left">移植 web 軟體至本機端 Kubernetes</td>
+          <td style="text-align: left">實機操作</td>
+          <td style="text-align: left">50</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">3. 雲端實作</td>
+          <td style="text-align: left">將 Kubernetes 成果送上雲端</td>
+          <td style="text-align: left">實機操作</td>
+          <td style="text-align: left">20</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">4. 總結</td>
+          <td style="text-align: left">Kubernetes 微服務要點總結</td>
+          <td style="text-align: left">簡報介紹</td>
+          <td style="text-align: left">10</td>
+      </tr>
+  </tbody>
 </table>
 <h2 id="注意事項">注意事項</h2>
 <h3 id="學員能力要求">學員能力要求</h3>

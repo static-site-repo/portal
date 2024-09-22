@@ -27,14 +27,14 @@
       <link>//william-yeh.net/post/2017/10/devops-a-system-dynamics-perspective/</link>
       <pubDate>Sun, 29 Oct 2017 11:40:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2017/10/devops-a-system-dynamics-perspective/</guid>
-      <description>自從去年在〈有了 Agile，為什麼還要有 DevOps？〉及〈從限制理論看 DevOps〉兩場演講中，分別以 lean thinking 及 theory of constraints (TOC) 兩個角度探討 DevOps 之後，心</description>
+      <description>&lt;p&gt;自從去年在〈&lt;a href=&#34;//william-yeh.net/post/2016/05/devops-a-lean-perspective/&#34;&gt;有了 Agile，為什麼還要有 DevOps？&lt;/a&gt;〉及〈&lt;a href=&#34;//william-yeh.net/post/2016/08/devops-a-toc-perspective/&#34;&gt;從限制理論看 DevOps&lt;/a&gt;〉兩場演講中，分別以 lean thinking 及 theory of constraints (TOC) 兩個角度探討 DevOps 之後，心中一直有個願望：想再從「&lt;a href=&#34;https://en.wikipedia.org/wiki/System_dynamics&#34;&gt;系統思考&lt;/a&gt;」角度探討 DevOps。&lt;/p&gt;</description>
     </item>
     <item>
       <title>TOC 瓶頸處理九大原則</title>
       <link>//william-yeh.net/post/2016/11/toc-bottleneck-principles/</link>
       <pubDate>Mon, 14 Nov 2016 08:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2016/11/toc-bottleneck-principles/</guid>
-      <description>高德拉特初試啼聲之作《目標》，最為人津津樂道的，不外乎是「聚焦五步驟」（又稱 POOGI）及「鼓-緩衝-繩」(Drum-Buffer-Rope</description>
+      <description>&lt;p&gt;高德拉特初試啼聲之作《&lt;a href=&#34;https://www.books.com.tw/products/0010898249&#34;&gt;目標&lt;/a&gt;》，最為人津津樂道的，不外乎是「&lt;a href=&#34;https://www.projectup.net/article/view/id/3124&#34;&gt;聚焦五步驟&lt;/a&gt;」（又稱 &lt;a href=&#34;http://www.tocinstitute.org/five-focusing-steps.html&#34;&gt;POOGI&lt;/a&gt;）及「&lt;a href=&#34;http://wiki.mbalib.com/zh-tw/%E9%BC%93-%E7%BC%93%E5%86%B2-%E7%BB%B3%E6%B3%95&#34;&gt;鼓-緩衝-繩&lt;/a&gt;」(Drum-Buffer-Rope; DBR)。&lt;/p&gt;&#xA;&lt;p&gt;此兩者都是流程，都是可立即實施的方法。&lt;/p&gt;&#xA;&lt;p&gt;不過，在進入流程之前，有沒有更基本的&lt;strong&gt;現象觀察&lt;/strong&gt;及&lt;strong&gt;原則歸納&lt;/strong&gt;，可讓我們在運用這些流程時，更具方向感，不易走偏？畢竟，不懂原理，貿然盲目依循流程，並不會增加成功機率，反而可能因為不明就裡，不知變通，導致無法排除障礙，進而放棄整套方法。&lt;/p&gt;</description>
     </item>
     <item>
       <title>為什麼要追求極簡化的 Docker image？</title>
@@ -55,14 +55,14 @@
       <link>//william-yeh.net/post/2016/08/presenter-tools/</link>
       <pubDate>Mon, 22 Aug 2016 08:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2016/08/presenter-tools/</guid>
-      <description>自從去年一月看了 ihower 的〈講個秘訣：技術簡報的好用工具〉之後，我才想到，身為 Mac 用戶，我好像太疏於好好整頓自己的電腦，讓我在簡報時更順暢。於是，經</description>
+      <description>&lt;p&gt;自從去年一月看了 ihower 的〈&lt;a href=&#34;https://ihower.tw/blog/archives/8075&#34;&gt;講個秘訣：技術簡報的好用工具&lt;/a&gt;〉之後，我才想到，身為 Mac 用戶，我好像太疏於好好整頓自己的電腦，讓我在簡報時更順暢。於是，經過一番嘗試，我也建構出自己的工具組合。&lt;/p&gt;&#xA;&lt;p&gt;後來，在演講或講課時，總會遇到有人問道：「william，你是用怎麼弄出 xxx 效果的？」每次簡報，屢試不爽；乾脆自己整理一篇文章好了。&lt;/p&gt;</description>
     </item>
     <item>
       <title>從限制理論看 DevOps</title>
       <link>//william-yeh.net/post/2016/08/devops-a-toc-perspective/</link>
       <pubDate>Wed, 17 Aug 2016 23:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2016/08/devops-a-toc-perspective/</guid>
-      <description>自從寫了〈DevOps 核心元素的考古溯源〉一文，我就很想找個機會，好好闡釋 DevOps 的重要源頭：Lean Thinking。這個願望，在五月初那次兩個</description>
+      <description>&lt;p&gt;自從寫了〈&lt;a href=&#34;//william-yeh.net/post/2016/03/origin-of-devops-elements/&#34;&gt;DevOps 核心元素的考古溯源&lt;/a&gt;〉一文，我就很想找個機會，好好闡釋 DevOps 的重要源頭：&lt;strong&gt;Lean Thinking&lt;/strong&gt;。這個願望，在五月初那次兩個小時的〈&lt;a href=&#34;//william-yeh.net/post/2016/05/devops-a-lean-perspective/&#34;&gt;有了 Agile，為什麼還要有 DevOps？&lt;/a&gt;〉演講中實現了。&lt;/p&gt;</description>
     </item>
     <item>
       <title>有了 Agile，為什麼還要有 DevOps？</title>

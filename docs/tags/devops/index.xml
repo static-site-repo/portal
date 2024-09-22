@@ -76,7 +76,7 @@
       <link>//william-yeh.net/series/career-reading-club/</link>
       <pubDate>Tue, 29 Nov 2022 00:00:00 +0000</pubDate>
       <guid>//william-yeh.net/series/career-reading-club/</guid>
-      <description>❶ Part 1: 喚醒個人及團隊的成長意識 (計 6 冊) ❷ Part 2: 高效團隊的工作方法 (計 2 冊) ❸ Part 3: 職場心理：觀點、期待、渴望 (計 3 冊)</description>
+      <description>&lt;p&gt;❶ Part 1: &lt;a href=&#34;//william-yeh.net/post/2022/06/career-reading-club-1/&#34;&gt;喚醒個人及團隊的成長意識&lt;/a&gt; (計 6 冊)&lt;/p&gt;&#xA;&lt;p&gt;❷ Part 2: &lt;a href=&#34;//william-yeh.net/post/2022/08/career-reading-club-2/&#34;&gt;高效團隊的工作方法&lt;/a&gt; (計 2 冊)&lt;/p&gt;&#xA;&lt;p&gt;❸ Part 3: &lt;a href=&#34;//william-yeh.net/post/2022/11/career-reading-club-3/&#34;&gt;職場心理：觀點、期待、渴望&lt;/a&gt; (計 3 冊)&lt;/p&gt;</description>
     </item>
     <item>
       <title>職涯躍升書系導讀會，Part 1：喚醒個人及團隊的成長意識</title>
@@ -104,7 +104,7 @@
       <link>//william-yeh.net/series/systhinking-series/</link>
       <pubDate>Sun, 28 Mar 2021 00:00:00 +0000</pubDate>
       <guid>//william-yeh.net/series/systhinking-series/</guid>
-      <description>【系統思考的四堂課】緣起 第一場公開班課後回覆：思維的重量訓練 從系統思考角度讀《獨角獸專案》</description>
+      <description>&lt;p&gt;【系統思考的四堂課】&lt;a href=&#34;//william-yeh.net/post/2018/06/sys-thinking-workshop/&#34;&gt;緣起&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;第一場公開班課後回覆：&lt;a href=&#34;//william-yeh.net/post/2018/09/thinking-weight-training/&#34;&gt;思維的重量訓練&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2021/03/sys-thinking-unicorn-project/&#34;&gt;從系統思考角度讀《獨角獸專案》&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>值得你看門道的好書——《獨角獸專案》推薦序</title>
@@ -174,21 +174,21 @@
       <link>//william-yeh.net/post/2019/06/autoreload-from-configmap/</link>
       <pubDate>Mon, 17 Jun 2019 17:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2019/06/autoreload-from-configmap/</guid>
-      <description>My previous article &amp;ldquo;Inotify in Containers&amp;rdquo; has demonstrated that when ConfigMap is mounted as directories, any changes in the ConfigMap will propagate to related pods, and can be detected with inotify-like APIs.&#xA;A follow-up question might be: what should a well-behaved application react to this trigger accordingly? What if it&amp;rsquo;s a ill-designed application?&#xA;To clarify this I&amp;rsquo;ve conducted a series of experiments for 3 possible configmap-reloading strategies:&#xA;Built-in auto-reloading apps External signals Pod rollout In this article I&amp;rsquo;m going to explain the experiments and preliminary findings.</description>
+      <description>&lt;p&gt;My previous article &amp;ldquo;&lt;a href=&#34;//william-yeh.net/post/2019/06/inotify-in-containers/&#34;&gt;Inotify in Containers&lt;/a&gt;&amp;rdquo; has demonstrated that when ConfigMap is mounted as directories, any changes in the ConfigMap will propagate to related pods, and can be detected with &lt;code&gt;inotify&lt;/code&gt;-like APIs.&lt;/p&gt;&#xA;&lt;p&gt;A follow-up question might be: what should a well-behaved application react to this trigger accordingly? What if it&amp;rsquo;s a ill-designed application?&lt;/p&gt;&#xA;&lt;p&gt;To clarify this I&amp;rsquo;ve conducted a series of experiments for 3 possible configmap-reloading  strategies:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Built-in auto-reloading apps&lt;/li&gt;&#xA;&lt;li&gt;External signals&lt;/li&gt;&#xA;&lt;li&gt;Pod rollout&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;In this article I&amp;rsquo;m going to explain the experiments and preliminary findings.  All experiment materials are available in the &lt;a href=&#34;https://github.com/William-Yeh/configmap-auto-reload&#34;&gt;configmap-auto-reload&lt;/a&gt; repo.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Containers and Environment Variables</title>
       <link>//william-yeh.net/post/2019/06/containers-and-env/</link>
       <pubDate>Mon, 17 Jun 2019 14:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2019/06/containers-and-env/</guid>
-      <description>My previous article &amp;ldquo;Inotify in Containers&amp;rdquo; has demonstrated that when ConfigMap is mounted as directories, any changes in the ConfigMap will propagate to related pods. A follow-up question might be: what if the ConfigMap is mounted as environment variables? Some said that the answer is NO in Kubernetes1; even in the old Docker world2. Therefore, I&amp;rsquo;d like to begin with a simple experiment to try to answer the question: After</description>
+      <description>&lt;p&gt;My previous article &amp;ldquo;&lt;a href=&#34;//william-yeh.net/post/2019/06/inotify-in-containers/&#34;&gt;Inotify in Containers&lt;/a&gt;&amp;rdquo; has demonstrated that when ConfigMap is mounted as &lt;em&gt;directories&lt;/em&gt;, any changes in the ConfigMap will propagate to related pods.&lt;/p&gt;&#xA;&lt;p&gt;A follow-up question might be: what if the ConfigMap is mounted as &lt;em&gt;environment variables&lt;/em&gt;?&lt;/p&gt;&#xA;&lt;p&gt;Some said that the answer is NO in Kubernetes&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;; even in the old Docker world&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;.  Therefore, I&amp;rsquo;d like to begin with a simple experiment to try to answer the question: After a container starts, will it see any changes of environment variables?&lt;/p&gt;</description>
     </item>
     <item>
       <title>Inotify in Containers</title>
       <link>//william-yeh.net/post/2019/06/inotify-in-containers/</link>
       <pubDate>Mon, 10 Jun 2019 18:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2019/06/inotify-in-containers/</guid>
-      <description>It is usually necessary to watch for any changes in file systems, both in development and in production modes. For example, in the development mode Webpack can watch files and recompile whenever they change; in the production mode Consul Template can watch runtime configs and invoke specific applications whenever they change. These are well-known scenarios in traditional pre-container world. How about the container world? Do they behave the same in</description>
+      <description>&lt;p&gt;It is usually necessary to watch for any changes in file systems, both in development and in production modes. For example, in the development mode &lt;a href=&#34;https://webpack.js.org/&#34;&gt;Webpack&lt;/a&gt; can watch files and recompile whenever they change; in the production mode &lt;a href=&#34;https://github.com/hashicorp/consul-template&#34;&gt;Consul Template&lt;/a&gt; can watch runtime configs and invoke specific applications whenever they change.&lt;/p&gt;&#xA;&lt;p&gt;These are well-known scenarios in traditional pre-container world.  How about the container world? Do they behave the same in the new container world?&lt;/p&gt;</description>
     </item>
     <item>
       <title>Kubernetes 的入門認知與導入策略</title>
@@ -216,7 +216,7 @@
       <link>//william-yeh.net/courses/k8s-workship-cloudsummit2019/</link>
       <pubDate>Tue, 02 Apr 2019 16:00:00 +0800</pubDate>
       <guid>//william-yeh.net/courses/k8s-workship-cloudsummit2019/</guid>
-      <description>活動名稱：給 RD 的 Kubernetes 初體驗 時間：2019-05-15 (三) / 11:00&amp;ndash;12:30 會議：台灣雲端大會 (Cloud Edge Summit 2019) 課程簡介 Kubernetes 是目前雲端環境的顯學。可是，傳統的程式，並不</description>
+      <description>&lt;p&gt;&lt;strong&gt;活動名稱&lt;/strong&gt;：給 RD 的 Kubernetes 初體驗&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;時間&lt;/strong&gt;：2019-05-15 (三) / 11:00&amp;ndash;12:30&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;會議&lt;/strong&gt;：&lt;a href=&#34;https://cloudsummit.ithome.com.tw/2019/lab.html#0001&#34;&gt;台灣雲端大會 (Cloud Edge Summit 2019)&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;課程簡介&#34;&gt;課程簡介&lt;/h2&gt;&#xA;&lt;p&gt;Kubernetes 是目前雲端環境的顯學。可是，傳統的程式，並不是原封不動搬上去，就能夠自動享受 Kubernetes 所宣稱的種種好處。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Nginx Ingress 與 Ambassador 簡易性能比較</title>
@@ -237,7 +237,7 @@
       <link>//william-yeh.net/post/2019/01/soft-reading-list/</link>
       <pubDate>Thu, 17 Jan 2019 15:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2019/01/soft-reading-list/</guid>
-      <description>中午時，非 RD 的同事請我推薦適合泛軟體產業從業人員的五份輕讀物，可在春節連續假期時好好補血。 年假，自然不方便啃太過於生硬艱澀、理論宏偉的讀物。</description>
+      <description>&lt;p&gt;中午時，非 RD 的同事請我推薦適合泛軟體產業從業人員的五份輕讀物，可在春節連續假期時好好補血。&lt;/p&gt;&#xA;&lt;p&gt;年假，自然不方便啃太過於生硬艱澀、理論宏偉的讀物。我挑選這五份輕讀物：四本書，一組網路系列文章。敘事風格親切，高潮迭起，應該可以帶來不少啟發。&lt;/p&gt;</description>
     </item>
     <item>
       <title>「從 Ops 角度看 DevOps」的感想</title>
@@ -251,21 +251,21 @@
       <link>//william-yeh.net/series/criteria-series/</link>
       <pubDate>Wed, 28 Nov 2018 00:00:00 +0000</pubDate>
       <guid>//william-yeh.net/series/criteria-series/</guid>
-      <description>軟體開發，除了方法論，還有⋯⋯ 敏捷的判準 Lean Startup 的判準 敏捷的價值與指標 DevOps 的價值與指標 如何衡量敏捷對於軟體研發效能的利益？</description>
+      <description>&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2018/10/methodology-and-criteria/&#34;&gt;軟體開發，除了方法論，還有⋯⋯&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2018/10/agile-criteria/&#34;&gt;敏捷的判準&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2018/11/lean-startup-criteria/&#34;&gt;Lean Startup 的判準&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2018/11/agile-value/&#34;&gt;敏捷的價值與指標&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2018/11/devops-value/&#34;&gt;DevOps 的價值與指標&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2023/12/dev-metrics/&#34;&gt;如何衡量敏捷對於軟體研發效能的利益？&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>DevOps 的價值與指標</title>
       <link>//william-yeh.net/post/2018/11/devops-value/</link>
       <pubDate>Wed, 28 Nov 2018 08:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2018/11/devops-value/</guid>
-      <description>看完〈敏捷的價值與指標〉之後，很自然的會進一步追問：「那麼，什麼才是 DevOps 圈子所認定的價值，以及對應的指標，尤其是領先指標？」 這問題其實比較容易</description>
+      <description>&lt;p&gt;看完〈&lt;a href=&#34;//william-yeh.net/post/2018/11/agile-value/&#34;&gt;敏捷的價值與指標&lt;/a&gt;〉之後，很自然的會進一步追問：「那麼，什麼才是 DevOps 圈子所認定的價值，以及對應的指標，尤其是領先指標？」&lt;/p&gt;&#xA;&lt;p&gt;這問題其實比較容易回答。畢竟，相較於兄弟領域 agile，控制與監管，原本就是 DevOps 不可分割的一部分。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Agile PMO</title>
       <link>//william-yeh.net/post/2018/11/agile-pmo/</link>
       <pubDate>Thu, 15 Nov 2018 08:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2018/11/agile-pmo/</guid>
-      <description>&amp;ldquo;Project&amp;rdquo; 一詞，儼然成為 agile 及 DevOps 圈子的禁語。 譬如說，敏捷祖師爺 Martin Fowler 的網站有一篇 &amp;ldquo;Products Over Projects&amp;rdquo; 文章，DevOps 巨著 The DevOps Handbook 第 7.7 節的篇名叫做〈投資於服務和產品，而</description>
+      <description>&lt;p&gt;&amp;ldquo;Project&amp;rdquo; 一詞，儼然成為 agile 及 DevOps 圈子的禁語。&lt;/p&gt;&#xA;&lt;p&gt;譬如說，敏捷祖師爺 Martin Fowler 的網站有一篇 &amp;ldquo;&lt;a href=&#34;https://martinfowler.com/articles/products-over-projects.html&#34;&gt;Products Over Projects&lt;/a&gt;&amp;rdquo; 文章，DevOps 巨著 &lt;a href=&#34;https://www.tenlong.com.tw/products/9787115480170&#34;&gt;&lt;em&gt;The DevOps Handbook&lt;/em&gt;&lt;/a&gt; 第 7.7 節的篇名叫做〈投資於服務和產品，而非專案〉。最近甚至還有一本新書，直接取名叫做 &lt;a href=&#34;https://itrevolution.com/book/project-to-product/&#34;&gt;&lt;em&gt;Project to Product&lt;/em&gt;&lt;/a&gt; 叫人棄暗投明呢。&lt;/p&gt;</description>
     </item>
     <item>
       <title>思維的重量訓練</title>
@@ -279,7 +279,7 @@
       <link>//william-yeh.net/post/2017/10/devops-a-system-dynamics-perspective/</link>
       <pubDate>Sun, 29 Oct 2017 11:40:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2017/10/devops-a-system-dynamics-perspective/</guid>
-      <description>自從去年在〈有了 Agile，為什麼還要有 DevOps？〉及〈從限制理論看 DevOps〉兩場演講中，分別以 lean thinking 及 theory of constraints (TOC) 兩個角度探討 DevOps 之後，心</description>
+      <description>&lt;p&gt;自從去年在〈&lt;a href=&#34;//william-yeh.net/post/2016/05/devops-a-lean-perspective/&#34;&gt;有了 Agile，為什麼還要有 DevOps？&lt;/a&gt;〉及〈&lt;a href=&#34;//william-yeh.net/post/2016/08/devops-a-toc-perspective/&#34;&gt;從限制理論看 DevOps&lt;/a&gt;〉兩場演講中，分別以 lean thinking 及 theory of constraints (TOC) 兩個角度探討 DevOps 之後，心中一直有個願望：想再從「&lt;a href=&#34;https://en.wikipedia.org/wiki/System_dynamics&#34;&gt;系統思考&lt;/a&gt;」角度探討 DevOps。&lt;/p&gt;</description>
     </item>
     <item>
       <title>為什麼要追求極簡化的 Docker image？</title>
@@ -300,21 +300,21 @@
       <link>//william-yeh.net/post/2016/08/devops-a-toc-perspective/</link>
       <pubDate>Wed, 17 Aug 2016 23:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2016/08/devops-a-toc-perspective/</guid>
-      <description>自從寫了〈DevOps 核心元素的考古溯源〉一文，我就很想找個機會，好好闡釋 DevOps 的重要源頭：Lean Thinking。這個願望，在五月初那次兩個</description>
+      <description>&lt;p&gt;自從寫了〈&lt;a href=&#34;//william-yeh.net/post/2016/03/origin-of-devops-elements/&#34;&gt;DevOps 核心元素的考古溯源&lt;/a&gt;〉一文，我就很想找個機會，好好闡釋 DevOps 的重要源頭：&lt;strong&gt;Lean Thinking&lt;/strong&gt;。這個願望，在五月初那次兩個小時的〈&lt;a href=&#34;//william-yeh.net/post/2016/05/devops-a-lean-perspective/&#34;&gt;有了 Agile，為什麼還要有 DevOps？&lt;/a&gt;〉演講中實現了。&lt;/p&gt;</description>
     </item>
     <item>
       <title>請循其本</title>
       <link>//william-yeh.net/post/2016/08/back-to-the-origin/</link>
       <pubDate>Mon, 01 Aug 2016 08:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2016/08/back-to-the-origin/</guid>
-      <description>老子曰：「五色令人目盲，五音令人耳聾。」 所以，最近我越來越喜歡從原始定義或目標下手。 原理通了，邏輯通了，再加一點點創意及想像力，很多東西都是</description>
+      <description>&lt;p&gt;老子曰：「五色令人目盲，五音令人耳聾。」&lt;/p&gt;&#xA;&lt;p&gt;所以，最近我越來越喜歡從原始定義或目標下手。&lt;/p&gt;&#xA;&lt;p&gt;原理通了，邏輯通了，再加一點點創意及想像力，很多東西都是順理成章就推導得出來。&lt;/p&gt;</description>
     </item>
     <item>
       <title>《鳳凰專案》私房標題</title>
       <link>//william-yeh.net/post/2016/06/phoenix-proj-titles/</link>
       <pubDate>Tue, 21 Jun 2016 08:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2016/06/phoenix-proj-titles/</guid>
-      <description>The Phoenix Project（中譯本《鳳凰專案》）作者如是說： Dr. Eliyahu Goldratt wrote his seminal book, The Goal: A Process of Ongoing Improvement, in 1984. [&amp;hellip;] My coauthors and I studied this book for nearly a decade, getting ready to write The Phoenix Project. In many ways, I view our book as an</description>
+      <description>&lt;p&gt;&lt;a href=&#34;http://www.amazon.com/dp/0988262592/ref=cm_sw_r_tw_dp_a4p3wb0PSYY97&#34;&gt;&lt;em&gt;The Phoenix Project&lt;/em&gt;&lt;/a&gt;（中譯本《&lt;a href=&#34;https://www.books.com.tw/products/0010765203&#34;&gt;鳳凰專案&lt;/a&gt;》）作者如是說：&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Dr. Eliyahu Goldratt wrote his seminal book, &lt;a href=&#34;https://www.amazon.com/dp/0884270610/ref=cm_sw_r_tw_dp_eQmAxb6J5AFAR&#34;&gt;&lt;em&gt;The Goal: A Process of Ongoing Improvement&lt;/em&gt;&lt;/a&gt;, in 1984. [&amp;hellip;] My coauthors and I studied this book for nearly a decade, getting ready to write &lt;em&gt;The Phoenix Project&lt;/em&gt;. In many ways, I view our book as an homage to &lt;em&gt;The Goal&lt;/em&gt;.&lt;/p&gt;&#xA;&lt;p&gt;我和共同作者研究高德拉特博士的《&lt;a href=&#34;https://www.books.com.tw/products/0010898249&#34;&gt;目標&lt;/a&gt;》將近十年了，為撰寫《鳳凰專案》做準備。我認為，從很多方面來看，我們這本書都是在&lt;strong&gt;向《目標》致敬&lt;/strong&gt;。&lt;/p&gt;</description>
     </item>
     <item>
       <title>從「改變」角度看《魔戒》</title>
@@ -377,14 +377,14 @@
       <link>//william-yeh.net/post/2015/12/ci-effect/</link>
       <pubDate>Tue, 22 Dec 2015 08:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2015/12/ci-effect/</guid>
-      <description>前天我的文章〈CI 是條不歸路〉提到：「CI/CD/DevOps 既是條不歸路，更是大躍進之路：一旦踏出第一步，就注定你會不斷接觸**『遠離平庸</description>
+      <description>&lt;p&gt;前天我的文章〈&lt;a href=&#34;//william-yeh.net/post/2015/12/ci-no-turning-back/&#34;&gt;CI 是條不歸路&lt;/a&gt;〉提到：「CI/CD/DevOps 既是條不歸路，更是大躍進之路：一旦踏出第一步，就注定你會不斷接觸**『遠離平庸』**的新觀點、新技術。」&lt;/p&gt;</description>
     </item>
     <item>
       <title>CI 是條不歸路</title>
       <link>//william-yeh.net/post/2015/12/ci-no-turning-back/</link>
       <pubDate>Mon, 21 Dec 2015 08:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2015/12/ci-no-turning-back/</guid>
-      <description>今年九月初參加完 DevOps 2015 之後，有感而發，寫了兩則 tweets： 說實在的，打從 1999 年 Kent Beck 經典著作 Extreme Programming Explained 問世，整個軟體文化就被徹底分裂成兩個國度。以 agile</description>
+      <description>&lt;p&gt;今年九月初參加完 &lt;a href=&#34;https://www.ithome.com.tw/article/98527&#34;&gt;DevOps 2015&lt;/a&gt; 之後，有感而發，寫了兩則 tweets：&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;說實在的，打從 1999 年 Kent Beck 經典著作 &lt;em&gt;Extreme Programming Explained&lt;/em&gt; 問世，整個軟體文化就被徹底分裂成&lt;strong&gt;兩個國度&lt;/strong&gt;。以 agile best practices 出發的國度，不斷演化至另一個國度難以企及的高度。&lt;!-- raw HTML omitted --&gt;&#xA;&amp;mdash; Quote: &lt;a href=&#34;https://twitter.com/william_yeh/status/639246537151803392&#34;&gt;2015-09-03 Tweet #1&lt;/a&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

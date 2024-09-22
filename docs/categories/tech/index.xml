@@ -6,8 +6,15 @@
     <description>Recent content in Tech on Potioneer&#39;s Essays</description>
     <generator>Hugo</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Wed, 14 Aug 2024 20:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 28 Aug 2024 20:00:00 +0800</lastBuildDate>
     <atom:link href="//william-yeh.net/categories/tech/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>務實的長期主義路線——《多團隊高效協作密技》推薦序</title>
+      <link>//william-yeh.net/post/2024/08/less-book-review/</link>
+      <pubDate>Wed, 28 Aug 2024 20:00:00 +0800</pubDate>
+      <guid>//william-yeh.net/post/2024/08/less-book-review/</guid>
+      <description>&lt;p&gt;「敏捷」這概念，台灣很晚才起步。&lt;/p&gt;&#xA;&lt;p&gt;儘管敏捷宣言 (&lt;a href=&#34;https://agilemanifesto.org/&#34;&gt;&lt;em&gt;The Agile Manifesto&lt;/em&gt;&lt;/a&gt;) 早在 2001 年就問世，可是在台灣，如果以本書作者在 2014 年首次舉辦的 Agile Tour Taipei 活動作為開端，「敏捷」開始成為台灣業界的話題，大概也不過十年。&lt;/p&gt;</description>
+    </item>
     <item>
       <title>換個 Design for Ops 的腦袋——《SRE 工作現場直擊》推薦序</title>
       <link>//william-yeh.net/post/2024/08/sre-story-review/</link>
@@ -41,7 +48,7 @@
       <link>//william-yeh.net/series/book-review/</link>
       <pubDate>Sat, 19 Aug 2023 00:00:00 +0000</pubDate>
       <guid>//william-yeh.net/series/book-review/</guid>
-      <description>敏捷 被 Yves 啟發的敏捷轉型之旅 —— 《敏捷管理生存指南：不是快，而是適者生存》推薦文 經理人視角的敏捷通識課 —— 【高效產出：突破資源限制的敏捷管理術</description>
+      <description>&lt;h2 id=&#34;敏捷&#34;&gt;敏捷&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2021/03/agile-inspired-by-yves/&#34;&gt;被 Yves 啟發的敏捷轉型之旅&lt;/a&gt;   ——  《敏捷管理生存指南：不是快，而是適者生存》推薦文&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2022/04/yves-agile-course/&#34;&gt;經理人視角的敏捷通識課&lt;/a&gt;   ——  【高效產出：突破資源限制的敏捷管理術】推薦文&lt;/p&gt;&#xA;&lt;h2 id=&#34;管理&#34;&gt;管理&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2021/02/the-managers-path-review/&#34;&gt;軟體研發者的隨身職涯教練&lt;/a&gt;   ——  《經理人之道》推薦序&lt;/p&gt;</description>
     </item>
     <item>
       <title>Coursera 上面的 GCP 課程</title>
@@ -174,21 +181,21 @@
       <link>//william-yeh.net/post/2019/06/autoreload-from-configmap/</link>
       <pubDate>Mon, 17 Jun 2019 17:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2019/06/autoreload-from-configmap/</guid>
-      <description>My previous article &amp;ldquo;Inotify in Containers&amp;rdquo; has demonstrated that when ConfigMap is mounted as directories, any changes in the ConfigMap will propagate to related pods, and can be detected with inotify-like APIs.&#xA;A follow-up question might be: what should a well-behaved application react to this trigger accordingly? What if it&amp;rsquo;s a ill-designed application?&#xA;To clarify this I&amp;rsquo;ve conducted a series of experiments for 3 possible configmap-reloading strategies:&#xA;Built-in auto-reloading apps External signals Pod rollout In this article I&amp;rsquo;m going to explain the experiments and preliminary findings.</description>
+      <description>&lt;p&gt;My previous article &amp;ldquo;&lt;a href=&#34;//william-yeh.net/post/2019/06/inotify-in-containers/&#34;&gt;Inotify in Containers&lt;/a&gt;&amp;rdquo; has demonstrated that when ConfigMap is mounted as directories, any changes in the ConfigMap will propagate to related pods, and can be detected with &lt;code&gt;inotify&lt;/code&gt;-like APIs.&lt;/p&gt;&#xA;&lt;p&gt;A follow-up question might be: what should a well-behaved application react to this trigger accordingly? What if it&amp;rsquo;s a ill-designed application?&lt;/p&gt;&#xA;&lt;p&gt;To clarify this I&amp;rsquo;ve conducted a series of experiments for 3 possible configmap-reloading  strategies:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Built-in auto-reloading apps&lt;/li&gt;&#xA;&lt;li&gt;External signals&lt;/li&gt;&#xA;&lt;li&gt;Pod rollout&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;In this article I&amp;rsquo;m going to explain the experiments and preliminary findings.  All experiment materials are available in the &lt;a href=&#34;https://github.com/William-Yeh/configmap-auto-reload&#34;&gt;configmap-auto-reload&lt;/a&gt; repo.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Containers and Environment Variables</title>
       <link>//william-yeh.net/post/2019/06/containers-and-env/</link>
       <pubDate>Mon, 17 Jun 2019 14:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2019/06/containers-and-env/</guid>
-      <description>My previous article &amp;ldquo;Inotify in Containers&amp;rdquo; has demonstrated that when ConfigMap is mounted as directories, any changes in the ConfigMap will propagate to related pods. A follow-up question might be: what if the ConfigMap is mounted as environment variables? Some said that the answer is NO in Kubernetes1; even in the old Docker world2. Therefore, I&amp;rsquo;d like to begin with a simple experiment to try to answer the question: After</description>
+      <description>&lt;p&gt;My previous article &amp;ldquo;&lt;a href=&#34;//william-yeh.net/post/2019/06/inotify-in-containers/&#34;&gt;Inotify in Containers&lt;/a&gt;&amp;rdquo; has demonstrated that when ConfigMap is mounted as &lt;em&gt;directories&lt;/em&gt;, any changes in the ConfigMap will propagate to related pods.&lt;/p&gt;&#xA;&lt;p&gt;A follow-up question might be: what if the ConfigMap is mounted as &lt;em&gt;environment variables&lt;/em&gt;?&lt;/p&gt;&#xA;&lt;p&gt;Some said that the answer is NO in Kubernetes&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;; even in the old Docker world&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;.  Therefore, I&amp;rsquo;d like to begin with a simple experiment to try to answer the question: After a container starts, will it see any changes of environment variables?&lt;/p&gt;</description>
     </item>
     <item>
       <title>Inotify in Containers</title>
       <link>//william-yeh.net/post/2019/06/inotify-in-containers/</link>
       <pubDate>Mon, 10 Jun 2019 18:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2019/06/inotify-in-containers/</guid>
-      <description>It is usually necessary to watch for any changes in file systems, both in development and in production modes. For example, in the development mode Webpack can watch files and recompile whenever they change; in the production mode Consul Template can watch runtime configs and invoke specific applications whenever they change. These are well-known scenarios in traditional pre-container world. How about the container world? Do they behave the same in</description>
+      <description>&lt;p&gt;It is usually necessary to watch for any changes in file systems, both in development and in production modes. For example, in the development mode &lt;a href=&#34;https://webpack.js.org/&#34;&gt;Webpack&lt;/a&gt; can watch files and recompile whenever they change; in the production mode &lt;a href=&#34;https://github.com/hashicorp/consul-template&#34;&gt;Consul Template&lt;/a&gt; can watch runtime configs and invoke specific applications whenever they change.&lt;/p&gt;&#xA;&lt;p&gt;These are well-known scenarios in traditional pre-container world.  How about the container world? Do they behave the same in the new container world?&lt;/p&gt;</description>
     </item>
     <item>
       <title>Kubernetes 的入門認知與導入策略</title>
@@ -223,7 +230,7 @@
       <link>//william-yeh.net/courses/k8s-workship-cloudsummit2019/</link>
       <pubDate>Tue, 02 Apr 2019 16:00:00 +0800</pubDate>
       <guid>//william-yeh.net/courses/k8s-workship-cloudsummit2019/</guid>
-      <description>活動名稱：給 RD 的 Kubernetes 初體驗 時間：2019-05-15 (三) / 11:00&amp;ndash;12:30 會議：台灣雲端大會 (Cloud Edge Summit 2019) 課程簡介 Kubernetes 是目前雲端環境的顯學。可是，傳統的程式，並不</description>
+      <description>&lt;p&gt;&lt;strong&gt;活動名稱&lt;/strong&gt;：給 RD 的 Kubernetes 初體驗&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;時間&lt;/strong&gt;：2019-05-15 (三) / 11:00&amp;ndash;12:30&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;會議&lt;/strong&gt;：&lt;a href=&#34;https://cloudsummit.ithome.com.tw/2019/lab.html#0001&#34;&gt;台灣雲端大會 (Cloud Edge Summit 2019)&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;課程簡介&#34;&gt;課程簡介&lt;/h2&gt;&#xA;&lt;p&gt;Kubernetes 是目前雲端環境的顯學。可是，傳統的程式，並不是原封不動搬上去，就能夠自動享受 Kubernetes 所宣稱的種種好處。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Nginx Ingress 與 Ambassador 簡易性能比較</title>
@@ -258,14 +265,14 @@
       <link>//william-yeh.net/post/2018/11/devops-value/</link>
       <pubDate>Wed, 28 Nov 2018 08:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2018/11/devops-value/</guid>
-      <description>看完〈敏捷的價值與指標〉之後，很自然的會進一步追問：「那麼，什麼才是 DevOps 圈子所認定的價值，以及對應的指標，尤其是領先指標？」 這問題其實比較容易</description>
+      <description>&lt;p&gt;看完〈&lt;a href=&#34;//william-yeh.net/post/2018/11/agile-value/&#34;&gt;敏捷的價值與指標&lt;/a&gt;〉之後，很自然的會進一步追問：「那麼，什麼才是 DevOps 圈子所認定的價值，以及對應的指標，尤其是領先指標？」&lt;/p&gt;&#xA;&lt;p&gt;這問題其實比較容易回答。畢竟，相較於兄弟領域 agile，控制與監管，原本就是 DevOps 不可分割的一部分。&lt;/p&gt;</description>
     </item>
     <item>
       <title>從系統思考看 DevOps</title>
       <link>//william-yeh.net/post/2017/10/devops-a-system-dynamics-perspective/</link>
       <pubDate>Sun, 29 Oct 2017 11:40:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2017/10/devops-a-system-dynamics-perspective/</guid>
-      <description>自從去年在〈有了 Agile，為什麼還要有 DevOps？〉及〈從限制理論看 DevOps〉兩場演講中，分別以 lean thinking 及 theory of constraints (TOC) 兩個角度探討 DevOps 之後，心</description>
+      <description>&lt;p&gt;自從去年在〈&lt;a href=&#34;//william-yeh.net/post/2016/05/devops-a-lean-perspective/&#34;&gt;有了 Agile，為什麼還要有 DevOps？&lt;/a&gt;〉及〈&lt;a href=&#34;//william-yeh.net/post/2016/08/devops-a-toc-perspective/&#34;&gt;從限制理論看 DevOps&lt;/a&gt;〉兩場演講中，分別以 lean thinking 及 theory of constraints (TOC) 兩個角度探討 DevOps 之後，心中一直有個願望：想再從「&lt;a href=&#34;https://en.wikipedia.org/wiki/System_dynamics&#34;&gt;系統思考&lt;/a&gt;」角度探討 DevOps。&lt;/p&gt;</description>
     </item>
     <item>
       <title>為什麼要追求極簡化的 Docker image？</title>
@@ -286,35 +293,35 @@
       <link>//william-yeh.net/post/2016/08/presenter-tools/</link>
       <pubDate>Mon, 22 Aug 2016 08:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2016/08/presenter-tools/</guid>
-      <description>自從去年一月看了 ihower 的〈講個秘訣：技術簡報的好用工具〉之後，我才想到，身為 Mac 用戶，我好像太疏於好好整頓自己的電腦，讓我在簡報時更順暢。於是，經</description>
+      <description>&lt;p&gt;自從去年一月看了 ihower 的〈&lt;a href=&#34;https://ihower.tw/blog/archives/8075&#34;&gt;講個秘訣：技術簡報的好用工具&lt;/a&gt;〉之後，我才想到，身為 Mac 用戶，我好像太疏於好好整頓自己的電腦，讓我在簡報時更順暢。於是，經過一番嘗試，我也建構出自己的工具組合。&lt;/p&gt;&#xA;&lt;p&gt;後來，在演講或講課時，總會遇到有人問道：「william，你是用怎麼弄出 xxx 效果的？」每次簡報，屢試不爽；乾脆自己整理一篇文章好了。&lt;/p&gt;</description>
     </item>
     <item>
       <title>從限制理論看 DevOps</title>
       <link>//william-yeh.net/post/2016/08/devops-a-toc-perspective/</link>
       <pubDate>Wed, 17 Aug 2016 23:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2016/08/devops-a-toc-perspective/</guid>
-      <description>自從寫了〈DevOps 核心元素的考古溯源〉一文，我就很想找個機會，好好闡釋 DevOps 的重要源頭：Lean Thinking。這個願望，在五月初那次兩個</description>
+      <description>&lt;p&gt;自從寫了〈&lt;a href=&#34;//william-yeh.net/post/2016/03/origin-of-devops-elements/&#34;&gt;DevOps 核心元素的考古溯源&lt;/a&gt;〉一文，我就很想找個機會，好好闡釋 DevOps 的重要源頭：&lt;strong&gt;Lean Thinking&lt;/strong&gt;。這個願望，在五月初那次兩個小時的〈&lt;a href=&#34;//william-yeh.net/post/2016/05/devops-a-lean-perspective/&#34;&gt;有了 Agile，為什麼還要有 DevOps？&lt;/a&gt;〉演講中實現了。&lt;/p&gt;</description>
     </item>
     <item>
       <title>練字與程式設計</title>
       <link>//william-yeh.net/post/2016/08/on-handwriting/</link>
       <pubDate>Wed, 10 Aug 2016 08:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2016/08/on-handwriting/</guid>
-      <description>參考線 最近常常需要利用便利貼或紙筆思考。看了看筆跡，覺得⋯⋯呃，該開始重新練字了。 現在市面上看得到的範例及風格，比起只有張炳煌《硬筆書法》的</description>
+      <description>&lt;h2 id=&#34;參考線&#34;&gt;參考線&lt;/h2&gt;&#xA;&lt;p&gt;最近常常需要利用便利貼或紙筆思考。看了看筆跡，覺得⋯⋯呃，該開始重新練字了。&lt;/p&gt;&#xA;&lt;p&gt;現在市面上看得到的範例及風格，比起只有張炳煌《硬筆書法》的當年，實在是進步太多太多了。&lt;/p&gt;</description>
     </item>
     <item>
       <title>演算法也有不神祕的一面（下集）</title>
       <link>//william-yeh.net/post/2016/08/on-algorithm-myth/</link>
       <pubDate>Tue, 09 Aug 2016 08:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2016/08/on-algorithm-myth/</guid>
-      <description>記得高中時，建中電研社社刊有一則笑話： 如果高斯 (Gauss) 小學時就學程式設計，他可能就懶得發明等差級數公式了，他會直接坐在電腦前，輸入： sum := 0 for i := 1</description>
+      <description>&lt;p&gt;記得高中時，建中電研社社刊有一則笑話：&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;如果&lt;a href=&#34;https://en.wikipedia.org/wiki/Carl_Friedrich_Gauss&#34;&gt;高斯 (Gauss)&lt;/a&gt; 小學時就學程式設計，他可能就懶得發明&lt;a href=&#34;https://en.wikipedia.org/wiki/Arithmetic_progression&#34;&gt;等差級數&lt;/a&gt;公式了，他會直接坐在電腦前，輸入：&lt;/p&gt;&#xA;&lt;p&gt;sum := 0&lt;br&gt;&#xA;for i := 1 to 100 do&lt;br&gt;&#xA;　　　sum := sum + i&lt;br&gt;&#xA;end for&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;雖然是笑話一則，但也很貼切點出 algorithm（演算法；演算法則）的最原始用途：提供另一種解決數學題目的方法。&lt;/p&gt;</description>
     </item>
     <item>
       <title>運算思維其實一點也不神祕（上集）</title>
       <link>//william-yeh.net/post/2016/08/on-computational-thinking/</link>
       <pubDate>Mon, 08 Aug 2016 08:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2016/08/on-computational-thinking/</guid>
-      <description>遠見雜誌 2016/04 的專題〈22 億人玩程式，擁抱跨界力〉一連數篇專文，提到許多驚人的趨勢： 程式設計的趨勢 因此，如〈資訊科技教育、課綱制訂與後續發展〉一</description>
+      <description>&lt;p&gt;遠見雜誌 2016/04 的專題〈&lt;a href=&#34;http://store.gvm.com.tw/article_content_30968.html&#34;&gt;22 億人玩程式，擁抱跨界力&lt;/a&gt;〉一連數篇專文，提到許多驚人的趨勢：&lt;/p&gt;&#xA;&#xA;&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;&#xA;&lt;div class=&#34;box&#34;&gt;&#xA;&lt;figure  itemprop=&#34;associatedMedia&#34;&#xA;  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; &#xA;  style=&#34;max-width:20em&#34; &gt;&#xA;    &lt;div class=&#34;img&#34;&gt;&#xA;      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/08/coding-trends.jpg&#34; alt=&#34;程式設計的趨勢&#34;/&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;a href=&#34;//william-yeh.net/img/2016/08/coding-trends.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;&#xA;      &lt;figcaption&gt;&#xA;          &lt;p&gt;程式設計的趨勢&lt;/p&gt;&#xA;      &lt;/figcaption&gt;&#xA;  &lt;/figure&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;p&gt;因此，如〈&lt;a href=&#34;https://www.facebook.com/notes/shih-hao-hung/%E8%B3%87%E8%A8%8A%E7%A7%91%E6%8A%80%E6%95%99%E8%82%B2%E8%AA%B2%E7%B6%B1%E5%88%B6%E8%A8%82%E8%88%87%E5%BE%8C%E7%BA%8C%E7%99%BC%E5%B1%95/1220387071325766&#34;&gt;資訊科技教育、課綱制訂與後續發展&lt;/a&gt;〉一文所述，台灣當局也動了起來。&lt;/p&gt;&#xA;&lt;p&gt;不過，我們的政府，除了不落人後的心態，南橘北枳的習氣也叫人擔心。&lt;/p&gt;</description>
     </item>
     <item>
       <title>POLP：最小權限原則</title>
@@ -356,14 +363,14 @@
       <link>//william-yeh.net/post/2015/12/ci-effect/</link>
       <pubDate>Tue, 22 Dec 2015 08:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2015/12/ci-effect/</guid>
-      <description>前天我的文章〈CI 是條不歸路〉提到：「CI/CD/DevOps 既是條不歸路，更是大躍進之路：一旦踏出第一步，就注定你會不斷接觸**『遠離平庸</description>
+      <description>&lt;p&gt;前天我的文章〈&lt;a href=&#34;//william-yeh.net/post/2015/12/ci-no-turning-back/&#34;&gt;CI 是條不歸路&lt;/a&gt;〉提到：「CI/CD/DevOps 既是條不歸路，更是大躍進之路：一旦踏出第一步，就注定你會不斷接觸**『遠離平庸』**的新觀點、新技術。」&lt;/p&gt;</description>
     </item>
     <item>
       <title>CI 是條不歸路</title>
       <link>//william-yeh.net/post/2015/12/ci-no-turning-back/</link>
       <pubDate>Mon, 21 Dec 2015 08:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2015/12/ci-no-turning-back/</guid>
-      <description>今年九月初參加完 DevOps 2015 之後，有感而發，寫了兩則 tweets： 說實在的，打從 1999 年 Kent Beck 經典著作 Extreme Programming Explained 問世，整個軟體文化就被徹底分裂成兩個國度。以 agile</description>
+      <description>&lt;p&gt;今年九月初參加完 &lt;a href=&#34;https://www.ithome.com.tw/article/98527&#34;&gt;DevOps 2015&lt;/a&gt; 之後，有感而發，寫了兩則 tweets：&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;說實在的，打從 1999 年 Kent Beck 經典著作 &lt;em&gt;Extreme Programming Explained&lt;/em&gt; 問世，整個軟體文化就被徹底分裂成&lt;strong&gt;兩個國度&lt;/strong&gt;。以 agile best practices 出發的國度，不斷演化至另一個國度難以企及的高度。&lt;!-- raw HTML omitted --&gt;&#xA;&amp;mdash; Quote: &lt;a href=&#34;https://twitter.com/william_yeh/status/639246537151803392&#34;&gt;2015-09-03 Tweet #1&lt;/a&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

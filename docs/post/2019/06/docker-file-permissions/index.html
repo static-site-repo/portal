@@ -33,7 +33,7 @@ Recently I&rsquo;ve found something very strange about Linux-style file permissi
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.133.1" />
+<meta name="generator" content="Hugo 0.134.3" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2019/06/docker-file-permissions/" />
@@ -466,34 +466,34 @@ Recently I’ve found something very strange about Linux-style file permissions 
 </ol>
 <p>And we&rsquo;ll conduct the experiments in the following environment settings:</p>
 <table>
-<thead>
-<tr>
-<th>Host</th>
-<th>Built w/ Docker CLI</th>
-<th>Built w/ Skaffold (WSL version)</th>
-<th>Built w/ Skaffold (host version)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>macOS</td>
-<td>➊</td>
-<td>N/A</td>
-<td>➋</td>
-</tr>
-<tr>
-<td>WSL + Docker Desktop for Windows</td>
-<td>③</td>
-<td>➍</td>
-<td>N/A</td>
-</tr>
-<tr>
-<td>Windows</td>
-<td>⑤</td>
-<td>N/A</td>
-<td>⑹</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: left">Host</th>
+          <th style="text-align: left">Built w/ Docker CLI</th>
+          <th style="text-align: left">Built w/ Skaffold (WSL version)</th>
+          <th style="text-align: left">Built w/ Skaffold (host version)</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">macOS</td>
+          <td style="text-align: left">➊</td>
+          <td style="text-align: left">N/A</td>
+          <td style="text-align: left">➋</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">WSL + Docker Desktop for Windows</td>
+          <td style="text-align: left">③</td>
+          <td style="text-align: left">➍</td>
+          <td style="text-align: left">N/A</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Windows</td>
+          <td style="text-align: left">⑤</td>
+          <td style="text-align: left">N/A</td>
+          <td style="text-align: left">⑹</td>
+      </tr>
+  </tbody>
 </table>
 <p>Will all experiments display the correct file permissions?</p>
 <h2 id="macos--">macOS: ➊ ➋</h2>
@@ -554,34 +554,34 @@ Recently I’ve found something very strange about Linux-style file permissions 
 <h2 id="conclusion">Conclusion</h2>
 <p>Different Unix-style file permissions will be generated in the Docker images when building Linux containers with different combination of host operating systems, docker cli, and Skaffold toolchains:</p>
 <table>
-<thead>
-<tr>
-<th>Host</th>
-<th>Built w/ Docker CLI</th>
-<th>Built w/ Skaffold (WSL version)</th>
-<th>Built w/ Skaffold (host version)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>macOS</td>
-<td>➊</td>
-<td>N/A</td>
-<td>➋</td>
-</tr>
-<tr>
-<td>WSL + Docker Desktop for Windows</td>
-<td>③</td>
-<td>➍</td>
-<td>N/A</td>
-</tr>
-<tr>
-<td>Windows</td>
-<td>⑤</td>
-<td>N/A</td>
-<td>⑹</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: left">Host</th>
+          <th style="text-align: left">Built w/ Docker CLI</th>
+          <th style="text-align: left">Built w/ Skaffold (WSL version)</th>
+          <th style="text-align: left">Built w/ Skaffold (host version)</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">macOS</td>
+          <td style="text-align: left">➊</td>
+          <td style="text-align: left">N/A</td>
+          <td style="text-align: left">➋</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">WSL + Docker Desktop for Windows</td>
+          <td style="text-align: left">③</td>
+          <td style="text-align: left">➍</td>
+          <td style="text-align: left">N/A</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Windows</td>
+          <td style="text-align: left">⑤</td>
+          <td style="text-align: left">N/A</td>
+          <td style="text-align: left">⑹</td>
+      </tr>
+  </tbody>
 </table>
 <p>Results:</p>
 <ul>

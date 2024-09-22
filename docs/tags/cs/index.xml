@@ -13,14 +13,14 @@
       <link>//william-yeh.net/post/2016/08/on-algorithm-myth/</link>
       <pubDate>Tue, 09 Aug 2016 08:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2016/08/on-algorithm-myth/</guid>
-      <description>記得高中時，建中電研社社刊有一則笑話： 如果高斯 (Gauss) 小學時就學程式設計，他可能就懶得發明等差級數公式了，他會直接坐在電腦前，輸入： sum := 0 for i := 1</description>
+      <description>&lt;p&gt;記得高中時，建中電研社社刊有一則笑話：&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;如果&lt;a href=&#34;https://en.wikipedia.org/wiki/Carl_Friedrich_Gauss&#34;&gt;高斯 (Gauss)&lt;/a&gt; 小學時就學程式設計，他可能就懶得發明&lt;a href=&#34;https://en.wikipedia.org/wiki/Arithmetic_progression&#34;&gt;等差級數&lt;/a&gt;公式了，他會直接坐在電腦前，輸入：&lt;/p&gt;&#xA;&lt;p&gt;sum := 0&lt;br&gt;&#xA;for i := 1 to 100 do&lt;br&gt;&#xA;　　　sum := sum + i&lt;br&gt;&#xA;end for&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;雖然是笑話一則，但也很貼切點出 algorithm（演算法；演算法則）的最原始用途：提供另一種解決數學題目的方法。&lt;/p&gt;</description>
     </item>
     <item>
       <title>運算思維其實一點也不神祕（上集）</title>
       <link>//william-yeh.net/post/2016/08/on-computational-thinking/</link>
       <pubDate>Mon, 08 Aug 2016 08:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2016/08/on-computational-thinking/</guid>
-      <description>遠見雜誌 2016/04 的專題〈22 億人玩程式，擁抱跨界力〉一連數篇專文，提到許多驚人的趨勢： 程式設計的趨勢 因此，如〈資訊科技教育、課綱制訂與後續發展〉一</description>
+      <description>&lt;p&gt;遠見雜誌 2016/04 的專題〈&lt;a href=&#34;http://store.gvm.com.tw/article_content_30968.html&#34;&gt;22 億人玩程式，擁抱跨界力&lt;/a&gt;〉一連數篇專文，提到許多驚人的趨勢：&lt;/p&gt;&#xA;&#xA;&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;&#xA;&lt;div class=&#34;box&#34;&gt;&#xA;&lt;figure  itemprop=&#34;associatedMedia&#34;&#xA;  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; &#xA;  style=&#34;max-width:20em&#34; &gt;&#xA;    &lt;div class=&#34;img&#34;&gt;&#xA;      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/08/coding-trends.jpg&#34; alt=&#34;程式設計的趨勢&#34;/&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;a href=&#34;//william-yeh.net/img/2016/08/coding-trends.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;&#xA;      &lt;figcaption&gt;&#xA;          &lt;p&gt;程式設計的趨勢&lt;/p&gt;&#xA;      &lt;/figcaption&gt;&#xA;  &lt;/figure&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;p&gt;因此，如〈&lt;a href=&#34;https://www.facebook.com/notes/shih-hao-hung/%E8%B3%87%E8%A8%8A%E7%A7%91%E6%8A%80%E6%95%99%E8%82%B2%E8%AA%B2%E7%B6%B1%E5%88%B6%E8%A8%82%E8%88%87%E5%BE%8C%E7%BA%8C%E7%99%BC%E5%B1%95/1220387071325766&#34;&gt;資訊科技教育、課綱制訂與後續發展&lt;/a&gt;〉一文所述，台灣當局也動了起來。&lt;/p&gt;&#xA;&lt;p&gt;不過，我們的政府，除了不落人後的心態，南橘北枳的習氣也叫人擔心。&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

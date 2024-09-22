@@ -35,7 +35,7 @@ Image CI 緊縮：Docker Hub 取消免費用戶的 automated builds 功能。 3 
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.133.1" />
+<meta name="generator" content="Hugo 0.134.3" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2023/02/distroless-image/" />
@@ -453,6 +453,7 @@ Image CI 緊縮：Docker Hub 取消免費用戶的 automated builds 功能。 3 
 <li>Image pull 緊縮：Docker Hub 開始對未付費者施以較嚴格的限流措施。 <sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup></li>
 </ul>
 <p>於是，未付費的人，不僅在使用 Docker Hub 時會受到管制，還會波及產製 image 的 CI pipeline，不時會遇到這樣的 &ldquo;toomanyrequests&rdquo; 限流警告：</p>
+
 <link rel="stylesheet" href="/css/hugo-easy-gallery.css" />
 <div class="box">
 <figure  itemprop="associatedMedia"
@@ -484,25 +485,25 @@ Image CI 緊縮：Docker Hub 取消免費用戶的 automated builds 功能。 3 
 <p>以前玩 minimal image 的人，是以 <a href="https://hub.docker.com/_/alpine">alpine</a> 系列為大宗，只要不介意背後用的是 <a href="https://en.wikipedia.org/wiki/Musl">musl libc</a>，這可以產生非常 &ldquo;minimal&rdquo; 的 image。近來 Google 的 <a href="https://github.com/GoogleContainerTools/distroless">&ldquo;distroless&rdquo; images</a> 則提供 glibc 偏好者的另一種選擇，儘管它不算是 &ldquo;minimal&rdquo;，但也稱得上是 &ldquo;small-enough&rdquo;。</p>
 <p>曾經我也是追求 minimal docker image 的一族 <sup id="fnref1:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>，現在我只求 small-enough 就好。畢竟對大多數應用場景來說，像以下這兩個 image，一個約 8 MB，一個約 29 MB，差異其實是可以忽略不計的：</p>
 <table>
-<thead>
-<tr>
-<th>Image</th>
-<th>Size (MB)</th>
-<th>Base</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>docker.io/williamyeh/wrk:4.0.2</td>
-<td>8.347</td>
-<td><a href="https://hub.docker.com/_/alpine">alpine3</a></td>
-</tr>
-<tr>
-<td>ghcr.io/william-yeh/wrk:4.2.0</td>
-<td>28.76</td>
-<td><a href="https://github.com/GoogleContainerTools/distroless">gcr.io/distroless/cc-debian11</a></td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: left">Image</th>
+          <th style="text-align: left">Size (MB)</th>
+          <th style="text-align: left">Base</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">docker.io/williamyeh/wrk:4.0.2</td>
+          <td style="text-align: left">8.347</td>
+          <td style="text-align: left"><a href="https://hub.docker.com/_/alpine">alpine3</a></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">ghcr.io/william-yeh/wrk:4.2.0</td>
+          <td style="text-align: left">28.76</td>
+          <td style="text-align: left"><a href="https://github.com/GoogleContainerTools/distroless">gcr.io/distroless/cc-debian11</a></td>
+      </tr>
+  </tbody>
 </table>
 
 
