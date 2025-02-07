@@ -139,7 +139,7 @@
 &lt;p&gt;對於 deuce 的比分，常常只測到 3-3 的情況，沒有進一步嘗試 4-4、5-5 甚至更多。這應該是 property-based testing 的強項。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;在 arrange 及 act 階段，常常少了交錯得分的劇情（譬如：0-0 ❯ 1-0 ❯ 2-0 ❯ 2-1 ❯ 3-1 ❯ 3-2 ❯ 3-3 (deuce) ❯ 3-4 ❯ 4-4 (deuce) 這種交錯得分的緊張劇情）。&lt;/p&gt;
+&lt;p&gt;在 arrange 及 act 階段，常常少了交錯得分的劇情，譬如說像是 0-0 ❯ 1-0 ❯ 2-0 ❯ 2-1 ❯ 3-1 ❯ 3-2 ❯ 3-3 (deuce) ❯ 3-4 ❯ 4-4 (deuce) 這種緊張的情節。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Property-based testing 有點偷懶。&lt;/p&gt;
