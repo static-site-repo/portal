@@ -35,7 +35,7 @@
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.134.3" />
+<meta name="generator" content="Hugo 0.143.1" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2023/12/dev-metrics/" />
@@ -470,20 +470,17 @@
 <p>如果你像孟子一樣，一開頭就企圖曉以大義： <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
 <blockquote>
 <p>總經理呀，何必一開頭就談「衡量成效利益」呢？你更應該看重的是「內涵與精神」呀！</p>
-<p>如果總經理成天想著「對我們的公司有什麼可衡量的成效」，主管成天想著「對我們部門有什麼可衡量的成效」，員工成天想著「對我個人有什麼可衡量的成效」，上下各自算計著成效利益，整間公司就很危險了！</p>
-</blockquote>
+<p>如果總經理成天想著「對我們的公司有什麼可衡量的成效」，主管成天想著「對我們部門有什麼可衡量的成效」，員工成天想著「對我個人有什麼可衡量的成效」，上下各自算計著成效利益，整間公司就很危險了！</p></blockquote>
 <p>只怕你會像孟子一樣，很快就離開這個國家了。</p>
 <p>輕蔑指標固然不可取，但另一個極端「指標狂人」也很可怕。</p>
 <p>近年來「數位轉型」蔚為顯學，延燒到傳統產業，甚至連傳統管理顧問機構也來湊熱鬧。於是乎，世界就多了更多指標，更多成熟度衡量，更多培訓、證照、鑑定標章——更多所謂的「商機」。</p>
 <p>這世界不缺指標，缺的是能引領有效行動的指標。若不懂軟體研發的獨特性，就會訂出沒有行動意義的落後指標，或是沒有合理因果證據的偽指標。就像 Bryan Finster 在 “<a href="https://bdfinst.medium.com/5-minute-devops-mckinsey-gets-developer-productivity-wrong-573b57cd6f6a">5 Minute DevOps: McKinsey Gets Developer Productivity Wrong</a>” 一文對於某管顧公司近日端出的  “Developer Productivity” framework 所做的批評：</p>
 <blockquote>
 <p>The real problem is that too many in management don’t understand the work they manage. Management can understand the <strong>intricacies of software engineering</strong> if they become leaders and study the work they manage. Not all managers are leaders. Some simply want a framework to hold people accountable.</p>
-<p>Those who do understand tend to <strong>measure the right things</strong>. The one thing McKinsey doesn’t do with this framework is help fix this problem. They are making it worse.</p>
-</blockquote>
+<p>Those who do understand tend to <strong>measure the right things</strong>. The one thing McKinsey doesn’t do with this framework is help fix this problem. They are making it worse.</p></blockquote>
 <p>那麼，軟體研發活動有什麼獨特性？正確的衡量角度又是什麼？Daniel Terhorst-North 的 “<a href="https://dannorth.net/mckinsey-review/">McKinsey Developer Productivity Review</a>” 一文說得好：</p>
 <blockquote>
-<p>Software development is a collaborative, generative enterprise, and we can easily measure the effectiveness of a team, and more importantly how this is trending over time, using <strong><strong>Theory of Constraints</strong></strong> and <strong><strong>flow-based metrics</strong></strong> like <strong><strong>lead time</strong></strong> and <strong><strong>throughput</strong></strong>. Take a look at the work of Eliyahu Goldratt and Donald Reinertsen for a deeper understanding of these. An organisation like McKinsey endorsing these approaches would be a great help to the industry.</p>
-</blockquote>
+<p>Software development is a collaborative, generative enterprise, and we can easily measure the effectiveness of a team, and more importantly how this is trending over time, using <strong><strong>Theory of Constraints</strong></strong> and <strong><strong>flow-based metrics</strong></strong> like <strong><strong>lead time</strong></strong> and <strong><strong>throughput</strong></strong>. Take a look at the work of Eliyahu Goldratt and Donald Reinertsen for a deeper understanding of these. An organisation like McKinsey endorsing these approaches would be a great help to the industry.</p></blockquote>
 <p>這段話點出幾個關鍵：</p>
 <ul>
 <li>
@@ -529,48 +526,48 @@
 <table>
   <thead>
       <tr>
-          <th style="text-align: left">Flow ▼</th>
-          <th style="text-align: left">SRE</th>
-          <th style="text-align: left">Ken&amp;Jeff 2012</th>
-          <th style="text-align: left">Theory of Constraints</th>
-          <th style="text-align: left">Lean</th>
+          <th>Flow ▼</th>
+          <th>SRE</th>
+          <th>Ken&amp;Jeff 2012</th>
+          <th>Theory of Constraints</th>
+          <th>Lean</th>
       </tr>
   </thead>
   <tbody>
       <tr>
-          <td style="text-align: left">Traffic</td>
-          <td style="text-align: left">Traffic</td>
-          <td style="text-align: left"></td>
-          <td style="text-align: left"></td>
-          <td style="text-align: left">Pull</td>
+          <td>Traffic</td>
+          <td>Traffic</td>
+          <td></td>
+          <td></td>
+          <td>Pull</td>
       </tr>
       <tr>
-          <td style="text-align: left">Saturation</td>
-          <td style="text-align: left">Saturation</td>
-          <td style="text-align: left">Productivity</td>
-          <td style="text-align: left">Bottleneck; Constraints</td>
-          <td style="text-align: left">WIP</td>
+          <td>Saturation</td>
+          <td>Saturation</td>
+          <td>Productivity</td>
+          <td>Bottleneck; Constraints</td>
+          <td>WIP</td>
       </tr>
       <tr>
-          <td style="text-align: left">Lead time</td>
-          <td style="text-align: left">Latency</td>
-          <td style="text-align: left">Productivity</td>
-          <td style="text-align: left"></td>
-          <td style="text-align: left"></td>
+          <td>Lead time</td>
+          <td>Latency</td>
+          <td>Productivity</td>
+          <td></td>
+          <td></td>
       </tr>
       <tr>
-          <td style="text-align: left">Throughput</td>
-          <td style="text-align: left"></td>
-          <td style="text-align: left">Value</td>
-          <td style="text-align: left">Throughput</td>
-          <td style="text-align: left"></td>
+          <td>Throughput</td>
+          <td></td>
+          <td>Value</td>
+          <td>Throughput</td>
+          <td></td>
       </tr>
       <tr>
-          <td style="text-align: left">Quality</td>
-          <td style="text-align: left">Error</td>
-          <td style="text-align: left">Quality</td>
-          <td style="text-align: left"></td>
-          <td style="text-align: left"></td>
+          <td>Quality</td>
+          <td>Error</td>
+          <td>Quality</td>
+          <td></td>
+          <td></td>
       </tr>
   </tbody>
 </table>
@@ -641,8 +638,7 @@
 <li>
 <p>導入敏捷後，是否在敏捷宣言或 Modern Agile 四層面有所進展。進而檢討：這些進展，是否有對應到當初導入敏捷的痛點及原因。</p>
 </li>
-</ol>
-</blockquote>
+</ol></blockquote>
 <p>希望這份關於五大軟體研發效能指標的分析，有助於你用敏捷解決正確的問題，並用正確的方式衡量成效。</p>
 
 <div class="shortcode-notice note">
@@ -883,7 +879,7 @@
     &copy;
     
       2015 -
-    2024
+    2025
     <span class="heart">
       
       <i class="iconfont">

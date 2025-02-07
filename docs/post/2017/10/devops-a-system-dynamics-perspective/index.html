@@ -32,7 +32,7 @@
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.134.3" />
+<meta name="generator" content="Hugo 0.143.1" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2017/10/devops-a-system-dynamics-perspective/" />
@@ -425,7 +425,7 @@
     <div class="post-content">
       <p>自從去年在〈<a href="//william-yeh.net/post/2016/05/devops-a-lean-perspective/">有了 Agile，為什麼還要有 DevOps？</a>〉及〈<a href="//william-yeh.net/post/2016/08/devops-a-toc-perspective/">從限制理論看 DevOps</a>〉兩場演講中，分別以 lean thinking 及 theory of constraints (TOC) 兩個角度探討 DevOps 之後，心中一直有個願望：想再從「<a href="https://en.wikipedia.org/wiki/System_dynamics">系統思考</a>」角度探討 DevOps。</p>
 <p>畢竟，「系統思考」算是名門正派，「學習型組織」更是我從研究所時代就心嚮往之的目標。當時買的《<a href="http://www.books.com.tw/products/0010009556">第五項修練</a>》第一版，還一直在我的書架上最尊榮的位置呢。</p>
-<p>不過，想將它應用到 DevOps 場域上，我還不太有把握。畢竟系統思考的重要思維工具 <a href="https://en.wikipedia.org/wiki/Causal_loop_diagram">CLD (causal loop diagram)</a>，比一般因果推理的思維工具，多了變量 (variable) 及時間滯延 (delay) 觀念，燒腦程度更甚於 TOC 的 <a href="https://en.wikipedia.org/wiki/Current_reality_tree_(theory_of_constraints)">CRT (current reality tree)</a>。</p>
+<p>不過，想將它應用到 DevOps 場域上，我還不太有把握。畢竟系統思考的重要思維工具 <a href="https://en.wikipedia.org/wiki/Causal_loop_diagram">CLD (causal loop diagram)</a>，比一般因果推理的思維工具，多了變量 (variable) 及時間滯延 (delay) 觀念，燒腦程度更甚於 TOC 的 <a href="https://en.wikipedia.org/wiki/Current_reality_tree_%28theory_of_constraints%29">CRT (current reality tree)</a>。</p>
 <p>想法，就這麼擱置了。</p>
 <p><!-- raw HTML omitted --> <!-- raw HTML omitted --></p>
 <p>直到今年初，接連聽了<a href="https://blog.odd-e.com/yilv/">呂毅</a>老師一場演講（<a href="https://www.accupass.com/event/1702051415281771146556">在組織教練中看見系統性模式</a>）及兩天 LeSS 課程，被老師用 CLD 貫串全場的氣勢，以及推廣系統思考的熱情所感動，決定回到初衷，勇於接受挑戰。</p>
@@ -473,8 +473,7 @@
 <ul>
 <li><a href="https://goo.gl/Drfeiw">投影片 @ Slideshare</a></li>
 <li><a href="https://goo.gl/zXkESo">部落格文章</a></li>
-</ul>
-</blockquote>
+</ul></blockquote>
 <p>投影片：</p>
 <p><strong><a href="https://www.slideshare.net/williamyeh/devops-system-dynamics-perspective">從系統思考看 DevOps：以 microservices 為例</a></strong>
 <iframe
@@ -482,12 +481,8 @@
   src="https://www.slideshare.net/slideshow/embed_code/81199835" allowfullscreen webkitallowfullscreen mozallowfullscreen> </iframe>
 <br><br></p>
 <p>實況錄影：</p>
-
-
-    
-    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/zMeA3CjOi60?autoplay=0&controls=1&end=0&loop=0&mute=0&start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"
-      ></iframe>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/zMeA3CjOi60?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"></iframe>
     </div>
 
 <p><!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --></p>
@@ -495,12 +490,10 @@
 <p>感謝 andrew 幫忙回答<a href="https://www.facebook.com/andrew.blog.0928/posts/510669392641677">資料儲存問題</a>：</p>
 <blockquote>
 <p>交易處理是 RDBMS 強項，不過 RDBMS 先天就跟 microservices 不大搭，分散式的環境下要有別的處理方式。</p>
-<p>非交易的資料可透過 Message Queue 等等非同步的方式來達成最終的一致性。如果範圍切割得夠小，也許你仍然可以在單一服務內繼續用 RDBMS 的交易控制。如果交易被迫得被分散在兩個服務之間，那麼分散式交易的機制就必須確實實作（例如 2 phase commit 之類的技巧）。</p>
-</blockquote>
+<p>非交易的資料可透過 Message Queue 等等非同步的方式來達成最終的一致性。如果範圍切割得夠小，也許你仍然可以在單一服務內繼續用 RDBMS 的交易控制。如果交易被迫得被分散在兩個服務之間，那麼分散式交易的機制就必須確實實作（例如 2 phase commit 之類的技巧）。</p></blockquote>
 <p>感謝 jini 幫忙回答 <a href="https://www.facebook.com/jakarta99/posts/10155786498304719">transaction 問題</a>：</p>
 <blockquote>
-<p>但在金融交易時，若該 domain object 一定要在同一個 transaction context 時，那麼該服務就不該被切割。此外，有某些狀況也許可以切割，類似客戶與訂單的關係，這部份就可以用 async 加上 status 來處理，甚至有一個 batch 來 review 最終一致性。</p>
-</blockquote>
+<p>但在金融交易時，若該 domain object 一定要在同一個 transaction context 時，那麼該服務就不該被切割。此外，有某些狀況也許可以切割，類似客戶與訂單的關係，這部份就可以用 async 加上 status 來處理，甚至有一個 batch 來 review 最終一致性。</p></blockquote>
 <p><!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --></p>
 <p>最後，希望這種「系統思考」角度，對大家在導入 DevOps 的過程中，有些許幫助。更進一步，朝向學習型組織邁進。</p>
 <p>演講最後推薦的幾本書，別忘了要去看喔！</p>
@@ -717,7 +710,7 @@
     &copy;
     
       2015 -
-    2024
+    2025
     <span class="heart">
       
       <i class="iconfont">

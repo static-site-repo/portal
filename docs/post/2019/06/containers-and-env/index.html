@@ -34,7 +34,7 @@ Some said that the answer is NO in Kubernetes1; even in the old Docker world2. T
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.134.3" />
+<meta name="generator" content="Hugo 0.143.1" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2019/06/containers-and-env/" />
@@ -434,7 +434,7 @@ Some said that the answer is NO in Kubernetes1; even in the old Docker world2. T
 <p>A follow-up question might be: what if the ConfigMap is mounted as <em>environment variables</em>?</p>
 <p>Some said that the answer is NO in Kubernetes<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>; even in the old Docker world<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>.  Therefore, I&rsquo;d like to begin with a simple experiment to try to answer the question: After a container starts, will it see any changes of environment variables?</p>
 <p>The experiment material is available at <a href="https://github.com/William-Yeh/container-and-env">https://github.com/William-Yeh/container-and-env</a> , and here&rsquo;s a simple demo:</p>
-<p><a href="https://asciinema.org/a/252073"><img alt="asciicast" src="https://asciinema.org/a/252073.svg"></a></p>
+<p><a href="https://asciinema.org/a/252073"><img src="https://asciinema.org/a/252073.svg" alt="asciicast"></a></p>
 <p>It is obvious in the demo that the changes of environment variables will not affect already-running processes inside the containers &mdash; let alone pods in the Kubernetes world.</p>
 <p>To simply put, if you want ConfigMap to propagate its changes to related pods, mount the ConfigMap as <em>directories</em>, not <em>environment variables</em>.</p>
 
@@ -674,7 +674,7 @@ Some said that the answer is NO in Kubernetes1; even in the old Docker world2. T
     &copy;
     
       2015 -
-    2024
+    2025
     <span class="heart">
       
       <i class="iconfont">

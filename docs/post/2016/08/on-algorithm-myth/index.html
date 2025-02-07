@@ -38,7 +38,7 @@ end for
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.134.3" />
+<meta name="generator" content="Hugo 0.143.1" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2016/08/on-algorithm-myth/" />
@@ -467,13 +467,11 @@ end for
 <p>sum := 0<br>
 for i := 1 to 100 do<br>
 　　　sum := sum + i<br>
-end for</p>
-</blockquote>
+end for</p></blockquote>
 <p>雖然是笑話一則，但也很貼切點出 algorithm（演算法；演算法則）的最原始用途：提供另一種解決數學題目的方法。</p>
 <p>在前一篇文章〈<a href="//william-yeh.net/post/2016/08/on-computational-thinking/">運算思維其實一點也不神祕</a>〉中，我曾提到「運算思維，目前公認有四大核心」，其中尤以第四核心最特別：</p>
 <blockquote>
-<p>嚴格來說，運算思維與其他領域（非 <a href="https://en.wikipedia.org/wiki/Science,_technology,_engineering,_and_mathematics">STEM</a> 領域尤然）最大分野，就是演算法 (algorithm) 了。</p>
-</blockquote>
+<p>嚴格來說，運算思維與其他領域（非 <a href="https://en.wikipedia.org/wiki/Science,_technology,_engineering,_and_mathematics">STEM</a> 領域尤然）最大分野，就是演算法 (algorithm) 了。</p></blockquote>
 <p>現在，我們就來簡單看一看這個所謂的「最大分野」吧。</p>
 <h2 id="歷史">歷史</h2>
 <p>先談點嚴肅的歷史。沒興趣的人，可以跳過。</p>
@@ -483,8 +481,7 @@ end for</p>
 <p>這麼說，algorithm 只是附庸於數學底下的「機械性計算」層次？</p>
 <p>其實不然。近代比較正視 algorithm 價值、予以扶正地位的，要算是 19 世紀末開始的一系列數學革命，像 1900 年德國數學家希爾伯特提出的 <a href="https://en.wikipedia.org/wiki/Hilbert%27s_problems">23 道難題</a>，希望替數學建立起一套公理化體系＋形式化自動推導證明機制，以正本清源解決 19 世紀末開始出現的一堆撼動古典數學根基的<a href="https://en.wikipedia.org/wiki/Non-Euclidean_geometry">非歐幾何</a>、<a href="https://en.wikipedia.org/wiki/Georg_Cantor#Paradoxes_of_set_theory">集合悖論</a>、<a href="https://en.wikipedia.org/wiki/Russell%27s_paradox">邏輯悖論</a>。雖然這種夢想被著名的<a href="https://en.wikipedia.org/wiki/G%C3%B6del%27s_incompleteness_theorems">哥爾德不完備定理</a>粉碎，但也從根本提升整個 algorithm 的理論地位，不再只是單純的「計算」而已。摘錄一段維基百科對這段歷史轉折的<a href="https://en.wikipedia.org/wiki/Algorithm">說明</a>：</p>
 <blockquote>
-<p>The concept of <em>algorithm</em> has existed for centuries; however, a partial formalization of what would become the modern <em>algorithm</em> began with attempts to solve the <a href="https://en.wikipedia.org/wiki/Entscheidungsproblem" title="Entscheidungsproblem">Entscheidungsproblem</a> (the &ldquo;decision problem&rdquo;) posed by <a href="https://en.wikipedia.org/wiki/David_Hilbert" title="David Hilbert">David Hilbert</a> in 1928. Subsequent formalizations were framed as attempts to define &ldquo;<a href="https://en.wikipedia.org/wiki/Effective_calculability" title="Effective calculability">effective calculability</a>&rdquo; or &ldquo;effective method&rdquo;; those formalizations included the <a href="https://en.wikipedia.org/wiki/Kurt_G%C3%B6del" title="Kurt Gödel">Gödel</a>–<a href="https://en.wikipedia.org/wiki/Jacques_Herbrand" title="Jacques Herbrand">Herbrand</a>–<a href="https://en.wikipedia.org/wiki/Stephen_Cole_Kleene" title="Stephen Cole Kleene">Kleene</a> <a href="https://en.wikipedia.org/wiki/Recursion_%28computer_science%29" title="Recursion (computer science)">recursive functions</a> of 1930, 1934 and 1935, <a href="https://en.wikipedia.org/wiki/Alonzo_Church" title="Alonzo Church">Alonzo Church</a>&rsquo;s <a href="https://en.wikipedia.org/wiki/Lambda_calculus" title="Lambda calculus">lambda calculus</a> of 1936, <a href="https://en.wikipedia.org/wiki/Emil_Post" title="Emil Post">Emil Post</a>&rsquo;s &ldquo;<a href="https://en.wikipedia.org/wiki/Formulation_1" title="Formulation 1">Formulation 1</a>&rdquo; of 1936, and <a href="https://en.wikipedia.org/wiki/Alan_Turing" title="Alan Turing">Alan Turing</a>&rsquo;s <a href="https://en.wikipedia.org/wiki/Turing_machines" title="Turing machines">Turing machines</a> of 1936–7 and 1939. Giving a formal definition of algorithms, corresponding to the intuitive notion, remains a challenging problem.</p>
-</blockquote>
+<p>The concept of <em>algorithm</em> has existed for centuries; however, a partial formalization of what would become the modern <em>algorithm</em> began with attempts to solve the <a href="https://en.wikipedia.org/wiki/Entscheidungsproblem" title="Entscheidungsproblem">Entscheidungsproblem</a> (the &ldquo;decision problem&rdquo;) posed by <a href="https://en.wikipedia.org/wiki/David_Hilbert" title="David Hilbert">David Hilbert</a> in 1928. Subsequent formalizations were framed as attempts to define &ldquo;<a href="https://en.wikipedia.org/wiki/Effective_calculability" title="Effective calculability">effective calculability</a>&rdquo; or &ldquo;effective method&rdquo;; those formalizations included the <a href="https://en.wikipedia.org/wiki/Kurt_G%C3%B6del" title="Kurt Gödel">Gödel</a>–<a href="https://en.wikipedia.org/wiki/Jacques_Herbrand" title="Jacques Herbrand">Herbrand</a>–<a href="https://en.wikipedia.org/wiki/Stephen_Cole_Kleene" title="Stephen Cole Kleene">Kleene</a> <a href="https://en.wikipedia.org/wiki/Recursion_%28computer_science%29" title="Recursion (computer science)">recursive functions</a> of 1930, 1934 and 1935, <a href="https://en.wikipedia.org/wiki/Alonzo_Church" title="Alonzo Church">Alonzo Church</a>&rsquo;s <a href="https://en.wikipedia.org/wiki/Lambda_calculus" title="Lambda calculus">lambda calculus</a> of 1936, <a href="https://en.wikipedia.org/wiki/Emil_Post" title="Emil Post">Emil Post</a>&rsquo;s &ldquo;<a href="https://en.wikipedia.org/wiki/Formulation_1" title="Formulation 1">Formulation 1</a>&rdquo; of 1936, and <a href="https://en.wikipedia.org/wiki/Alan_Turing" title="Alan Turing">Alan Turing</a>&rsquo;s <a href="https://en.wikipedia.org/wiki/Turing_machines" title="Turing machines">Turing machines</a> of 1936–7 and 1939. Giving a formal definition of algorithms, corresponding to the intuitive notion, remains a challenging problem.</p></blockquote>
 <p>這就是前面我講的「嚴格來說，運算思維與其他領域（非 <a href="https://en.wikipedia.org/wiki/Science,_technology,_engineering,_and_mathematics">STEM</a> 領域尤然）最大分野，就是演算法 (algorithm) 了。」</p>
 <p>所以，不要以為資訊系成天都只有在做「寫寫程式」這種連早慧的小學生都會的事呀。</p>
 <p>（謎之音：維基百科短短的一段話，卻數盡當年 algorithms、formal languages 課程中令人生畏的高等議題呀。）</p>
@@ -493,12 +490,10 @@ end for</p>
 <p>如果不要扯到這麼遠，回到比較貼近一般人的角度，能不能具體講講 algorithm 是什麼，in plain English？</p>
 <p>經典教科書 <a href="https://mitpress.mit.edu/books/introduction-algorithms"><em>Introduction to Algorithms</em></a> 給了一份十分親民的解釋：</p>
 <blockquote>
-<p>Informally, an <strong>algorithm</strong> is any well-defined computational procedure that takes some value, or set of values, as <strong>input</strong> and produces some value, or set of values, as <strong>output</strong>. An algorithm is thus a sequence of computational steps that transform the input into the output.</p>
-</blockquote>
+<p>Informally, an <strong>algorithm</strong> is any well-defined computational procedure that takes some value, or set of values, as <strong>input</strong> and produces some value, or set of values, as <strong>output</strong>. An algorithm is thus a sequence of computational steps that transform the input into the output.</p></blockquote>
 <p>維基百科也給了一段親民的<a href="https://en.wikipedia.org/wiki/Algorithm">開場白</a>：</p>
 <blockquote>
-<p>In mathematics and computer science, an <strong>algorithm</strong> is a self-contained step-by-step set of operations to be performed.</p>
-</blockquote>
+<p>In mathematics and computer science, an <strong>algorithm</strong> is a self-contained step-by-step set of operations to be performed.</p></blockquote>
 <p>關鍵字：</p>
 <ul>
 <li>well-defined computational procedure</li>
@@ -518,8 +513,7 @@ end for</p>
 <p>看了 algorithm 的俗民版操作型定義之後，進一步思考：algorithm 的目的是什麼？</p>
 <p>冼鏡光在《<a href="http://www.books.com.tw/products/0010488984">名題精選百則</a>》提到：</p>
 <blockquote>
-<p>從某個角度來看，計算機科學都是在為寫作程式服務：吸收各行各業，各個不同科目、範疇而來的問題，分析那些問題，並且可能的話，找出一個「高效率」的演算法來解決問題。</p>
-</blockquote>
+<p>從某個角度來看，計算機科學都是在為寫作程式服務：吸收各行各業，各個不同科目、範疇而來的問題，分析那些問題，並且可能的話，找出一個「高效率」的演算法來解決問題。</p></blockquote>
 <p>各行各業的問題，變化萬千，所以，單以直覺來想像，解決手法一定也是五花八門。</p>
 <p>是的，只要翻開任何一本演算法經典級教科書的目錄，一定會震懾於演算法的數量。</p>
 <p>不過，這些書也告訴我們，繁多花招之餘，還是有一些獨孤九劍等級的「破xx式」。</p>
@@ -532,15 +526,13 @@ end for</p>
 <p>sum := 0<br>
 sum := sum + 1<br>
 sum := sum + 2<br>
-sum := sum + 3</p>
-</blockquote>
+sum := sum + 3</p></blockquote>
 <p>如果懂得觀察箇中的<strong>模式</strong>、<strong>規律</strong>：「啊，不就只是一直把 1 加上去，把 2 加上去，把 3 加上去嘛！」，就會用初級的迴圈改寫成：</p>
 <blockquote>
 <p>sum := 0<br>
 for i := 1 to 3 do<br>
 　　sum := sum + i<br>
-end for</p>
-</blockquote>
+end for</p></blockquote>
 <p>懂得寫到這一步，基本上，1+2+3+&hellip;+100 就不是難事了。</p>
 <p>如果沒在數學課堂上睡著，學過<a href="https://en.wikipedia.org/wiki/Mathematical_induction">數學歸納法</a>，會發現，這簡直就是天生的<strong>遞迴</strong>應用：</p>
 <blockquote>
@@ -548,8 +540,7 @@ end for</p>
 if (n &lt;= 1) return 1;<br>
 else return n + sigma(n - 1);<br>
 end function</p>
-<p>sum := sigma(100)</p>
-</blockquote>
+<p>sum := sigma(100)</p></blockquote>
 <p>所以，小結一下：<strong>分而治之</strong>、<strong>遞迴</strong>、觀察尋求<strong>模式</strong>及<strong>規律</strong>，是 algorithm 的重要核心。不能說是全部，但至少是重要的關鍵。</p>
 <h2 id="四大核心">四大核心</h2>
 <p>咦，「分而治之」、「遞迴」、「模式及規律」，好熟悉的字眼⋯⋯豈不正與運算思維的另外三大核心相呼應嗎？</p>
@@ -803,7 +794,7 @@ end function</p>
     &copy;
     
       2015 -
-    2024
+    2025
     <span class="heart">
       
       <i class="iconfont">

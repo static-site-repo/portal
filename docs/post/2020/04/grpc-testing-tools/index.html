@@ -34,7 +34,7 @@
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.134.3" />
+<meta name="generator" content="Hugo 0.143.1" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2020/04/grpc-testing-tools/" />
@@ -607,8 +607,7 @@
 </span></span></code></pre></div><h3 id="ghz">ghz</h3>
 <p><a href="https://github.com/bojand/ghz">ghz</a> 壓測工具，是這麼自我介紹的：</p>
 <blockquote>
-<p>Simple gRPC benchmarking and load testing tool inspired by <a href="https://github.com/rakyll/hey/">hey</a> and <a href="https://github.com/fullstorydev/grpcurl">grpcurl</a>.</p>
-</blockquote>
+<p>Simple gRPC benchmarking and load testing tool inspired by <a href="https://github.com/rakyll/hey/">hey</a> and <a href="https://github.com/fullstorydev/grpcurl">grpcurl</a>.</p></blockquote>
 <p>所以，從命令列參數及統計結果上，都可看出它們的影響。</p>
 <p>譬如說，我們可將 proto 檔案的路徑寫在 <code>--import-path</code> 中、將 proto 檔案名稱寫在 <code>--proto</code> 中、將參數寫在 <code>--data</code> 中，再呼叫 server 的遠端程序：</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ghz --insecure  -z 20s  <span style="color:#ae81ff">\
@@ -732,10 +731,10 @@
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;google.golang.org/grpc/reflection&#34;</span>
 </span></span></code></pre></div><p>接著，在 <code>grpcServer.Serve</code> 之前，呼叫 <code>reflection.Register</code>：</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a6e22e">grpcServer</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">grpc</span>.<span style="color:#a6e22e">NewServer</span>(<span style="color:#a6e22e">opts</span><span style="color:#f92672">...</span>)
-</span></span><span style="display:flex;"><span><span style="color:#75715e">//...
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// Register reflection service on gRPC server.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">reflection</span>.<span style="color:#a6e22e">Register</span>(<span style="color:#a6e22e">grpcServer</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//...</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Register reflection service on gRPC server.</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">reflection</span>.<span style="color:#a6e22e">Register</span>(<span style="color:#a6e22e">grpcServer</span>)
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">grpcServer</span>.<span style="color:#a6e22e">Serve</span>(<span style="color:#a6e22e">lis</span>)
 </span></span></code></pre></div><p>只需要這兩個步驟，你的 gRPC 程式本身就具有 server reflection 功能，對方不再需要 proto 檔案就能直接進行遠端呼叫。</p>
@@ -1063,7 +1062,7 @@
     &copy;
     
       2015 -
-    2024
+    2025
     <span class="heart">
       
       <i class="iconfont">

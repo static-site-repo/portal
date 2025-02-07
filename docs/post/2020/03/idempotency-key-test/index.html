@@ -35,7 +35,7 @@ Idempotency 冪等性 在 API 服務中，常常需要留意 idempotency（冪�
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.134.3" />
+<meta name="generator" content="Hugo 0.143.1" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2020/03/idempotency-key-test/" />
@@ -457,8 +457,7 @@ Idempotency 冪等性 在 API 服務中，常常需要留意 idempotency（冪�
 <p>名詞：idempotency，形容詞：idempotent。</p>
 <p>&ldquo;Idempotency&rdquo; 這字眼源自數學。維基百科是這麼解釋 &ldquo;<a href="https://en.wikipedia.org/wiki/Idempotence#Idempotent_functions">idempotent function</a>&rdquo; 的：</p>
 <blockquote>
-<p>idempotent elements are the functions <em>f</em>: <em>E</em> → <em>E</em> [&hellip;] such that for all <em>x</em> in <em>E</em>, <em>f</em>(<em>f</em>(<em>x</em>)) = <em>f</em>(<em>x</em>)</p>
-</blockquote>
+<p>idempotent elements are the functions <em>f</em>: <em>E</em> → <em>E</em> [&hellip;] such that for all <em>x</em> in <em>E</em>, <em>f</em>(<em>f</em>(<em>x</em>)) = <em>f</em>(<em>x</em>)</p></blockquote>
 <p>如果套用到電腦界 <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>，idempotency 性質可以詮釋成：</p>
 <ul>
 <li><em>f</em>：可以是 function 或是 API endpoint。</li>
@@ -469,44 +468,44 @@ Idempotency 冪等性 在 API 服務中，常常需要留意 idempotency（冪�
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Item</span> <span style="color:#66d9ef">struct</span> {<span style="color:#75715e">/*...*/</span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">ItemInventory</span> <span style="color:#66d9ef">interface</span> {
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">GetQuantity</span>(<span style="color:#a6e22e">item</span> <span style="color:#a6e22e">Item</span>) <span style="color:#66d9ef">int</span>       <span style="color:#75715e">// 查詢庫存量   
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">SetQuantity</span>(<span style="color:#a6e22e">item</span> <span style="color:#a6e22e">Item</span>, <span style="color:#a6e22e">num</span> <span style="color:#66d9ef">int</span>)  <span style="color:#75715e">// 設定庫存量
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">DecreaseQuantity</span>(<span style="color:#a6e22e">item</span> <span style="color:#a6e22e">Item</span>)      <span style="color:#75715e">// 庫存量減一
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">GetQuantity</span>(<span style="color:#a6e22e">item</span> <span style="color:#a6e22e">Item</span>) <span style="color:#66d9ef">int</span>       <span style="color:#75715e">// 查詢庫存量   </span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">SetQuantity</span>(<span style="color:#a6e22e">item</span> <span style="color:#a6e22e">Item</span>, <span style="color:#a6e22e">num</span> <span style="color:#66d9ef">int</span>)  <span style="color:#75715e">// 設定庫存量</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">DecreaseQuantity</span>(<span style="color:#a6e22e">item</span> <span style="color:#a6e22e">Item</span>)      <span style="color:#75715e">// 庫存量減一</span>
+</span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>那麼，像以下這些動作，呼叫 1 次的效果，與呼叫 <em>N</em> 次的效果一樣，即可稱為是 idempotent：</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">num</span> <span style="color:#66d9ef">int</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// 查詢庫存量
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">num</span> = <span style="color:#a6e22e">inventory</span>.<span style="color:#a6e22e">GetQuantity</span>(<span style="color:#a6e22e">item</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 查詢庫存量</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">num</span> = <span style="color:#a6e22e">inventory</span>.<span style="color:#a6e22e">GetQuantity</span>(<span style="color:#a6e22e">item</span>)
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">num</span> = <span style="color:#a6e22e">inventory</span>.<span style="color:#a6e22e">GetQuantity</span>(<span style="color:#a6e22e">item</span>)
-</span></span><span style="display:flex;"><span><span style="color:#75715e">//...
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">// 設定庫存量
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">num</span> = <span style="color:#ae81ff">100</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">num</span> = <span style="color:#a6e22e">inventory</span>.<span style="color:#a6e22e">GetQuantity</span>(<span style="color:#a6e22e">item</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//...</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">// 設定庫存量</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">num</span> = <span style="color:#ae81ff">100</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">inventory</span>.<span style="color:#a6e22e">SetQuantity</span>(<span style="color:#a6e22e">item</span>, <span style="color:#a6e22e">num</span>)
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">inventory</span>.<span style="color:#a6e22e">SetQuantity</span>(<span style="color:#a6e22e">item</span>, <span style="color:#a6e22e">num</span>)
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">inventory</span>.<span style="color:#a6e22e">SetQuantity</span>(<span style="color:#a6e22e">item</span>, <span style="color:#a6e22e">num</span>)
 </span></span></code></pre></div><p>反之，像以下這些動作，呼叫 1 次的效果，與呼叫 <em>N</em> 次的效果會<strong>不一樣</strong>，即可稱為是 non-idempotent：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#75715e">/*...*/</span>                              <span style="color:#75715e">// 起初庫存量為 100
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">inventory</span>.<span style="color:#a6e22e">DecreaseQuantity</span>(<span style="color:#a6e22e">item</span>)     <span style="color:#75715e">// 庫存量會變成 99
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">inventory</span>.<span style="color:#a6e22e">DecreaseQuantity</span>(<span style="color:#a6e22e">item</span>)     <span style="color:#75715e">// 庫存量會變成 98
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">inventory</span>.<span style="color:#a6e22e">DecreaseQuantity</span>(<span style="color:#a6e22e">item</span>)     <span style="color:#75715e">// 庫存量會變成 97
-</span></span></span></code></pre></div><h2 id="non-idempotent-操作有必要存在嗎">Non-idempotent 操作有必要存在嗎？</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#75715e">/*...*/</span>                              <span style="color:#75715e">// 起初庫存量為 100</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">inventory</span>.<span style="color:#a6e22e">DecreaseQuantity</span>(<span style="color:#a6e22e">item</span>)     <span style="color:#75715e">// 庫存量會變成 99</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">inventory</span>.<span style="color:#a6e22e">DecreaseQuantity</span>(<span style="color:#a6e22e">item</span>)     <span style="color:#75715e">// 庫存量會變成 98</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">inventory</span>.<span style="color:#a6e22e">DecreaseQuantity</span>(<span style="color:#a6e22e">item</span>)     <span style="color:#75715e">// 庫存量會變成 97</span>
+</span></span></code></pre></div><h2 id="non-idempotent-操作有必要存在嗎">Non-idempotent 操作有必要存在嗎？</h2>
 <p>在 <a href="https://en.wikipedia.org/wiki/Functional_programming">functional programming</a> 思潮下，immutability 及 idempotency 似乎才是政治正確之舉。</p>
 <p>Non-idempotent 的操作，真的有必要存在嗎？</p>
 <p>譬如說，即使沒有 non-idempotent 的 <code>DecreaseQuantity</code>，我們仍可透過 idempotent 的 <code>SetQuantity</code> 來達到一樣的效果：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a6e22e">num</span> = <span style="color:#a6e22e">inventory</span>.<span style="color:#a6e22e">GetQuantity</span>(<span style="color:#a6e22e">item</span>)       <span style="color:#75715e">// 起初庫存量為 100
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a6e22e">num</span> = <span style="color:#a6e22e">inventory</span>.<span style="color:#a6e22e">GetQuantity</span>(<span style="color:#a6e22e">item</span>)       <span style="color:#75715e">// 起初庫存量為 100</span>
+</span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">numTarget</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">num</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">inventory</span>.<span style="color:#a6e22e">SetQuantity</span>(<span style="color:#a6e22e">item</span>, <span style="color:#a6e22e">numTarget</span>)  <span style="color:#75715e">// 庫存量會變成 99
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">inventory</span>.<span style="color:#a6e22e">SetQuantity</span>(<span style="color:#a6e22e">item</span>, <span style="color:#a6e22e">numTarget</span>)  <span style="color:#75715e">// 庫存量會變成 99</span>
+</span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">numTarget</span><span style="color:#f92672">--</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">inventory</span>.<span style="color:#a6e22e">SetQuantity</span>(<span style="color:#a6e22e">item</span>, <span style="color:#a6e22e">numTarget</span>)  <span style="color:#75715e">// 庫存量會變成 98
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">inventory</span>.<span style="color:#a6e22e">SetQuantity</span>(<span style="color:#a6e22e">item</span>, <span style="color:#a6e22e">numTarget</span>)  <span style="color:#75715e">// 庫存量會變成 98</span>
+</span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">numTarget</span><span style="color:#f92672">--</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">inventory</span>.<span style="color:#a6e22e">SetQuantity</span>(<span style="color:#a6e22e">item</span>, <span style="color:#a6e22e">numTarget</span>)  <span style="color:#75715e">// 庫存量會變成 97
-</span></span></span></code></pre></div><p>如此一來，是否真的沒有必要再留下 non-idempotent 的 <code>DecreaseQuantity</code>？至少有兩件事需要思考：</p>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">inventory</span>.<span style="color:#a6e22e">SetQuantity</span>(<span style="color:#a6e22e">item</span>, <span style="color:#a6e22e">numTarget</span>)  <span style="color:#75715e">// 庫存量會變成 97</span>
+</span></span></code></pre></div><p>如此一來，是否真的沒有必要再留下 non-idempotent 的 <code>DecreaseQuantity</code>？至少有兩件事需要思考：</p>
 <ol>
 <li>
 <p>語意層面的改變。原本 <code>DecreaseQuantity</code> 的簽名，並沒有「庫存量」這一欄，也就是說，client 並不需要知道「目前庫存量」，即可進行「庫存量減一」。如果改寫成 <code>SetQuantity</code> 版本，簽名不同，多了「庫存量」欄位，換句話說，原本不必知道的「庫存量」內容，現在就必須透露出來了——這改變了原本「庫存量減一」的操作語意。</p>
@@ -519,12 +518,10 @@ Idempotency 冪等性 在 API 服務中，常常需要留意 idempotency（冪�
 <h2 id="http-的-idempotency-規範">HTTP 的 idempotency 規範</h2>
 <p>HTTP 對於 idempotency 有一些規範。像 HTTP/1.1 的規格書 <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html#sec9.1.2">§9.1.2</a> 就指出：</p>
 <blockquote>
-<p>Methods can also have the property of &ldquo;idempotence&rdquo; in that (aside from error or expiration issues) the side-effects of <em>N</em> &gt; 0 identical requests is the same as for a single request. The methods <code>GET</code>, <code>HEAD</code>, <code>PUT</code> and <code>DELETE</code> share this property. Also, the methods <code>OPTIONS</code> and <code>TRACE</code> SHOULD NOT have side effects, and so are inherently idempotent.</p>
-</blockquote>
+<p>Methods can also have the property of &ldquo;idempotence&rdquo; in that (aside from error or expiration issues) the side-effects of <em>N</em> &gt; 0 identical requests is the same as for a single request. The methods <code>GET</code>, <code>HEAD</code>, <code>PUT</code> and <code>DELETE</code> share this property. Also, the methods <code>OPTIONS</code> and <code>TRACE</code> SHOULD NOT have side effects, and so are inherently idempotent.</p></blockquote>
 <p><a href="https://tools.ietf.org/html/rfc5789">RFC 5789</a> 也提到：</p>
 <blockquote>
-<p><code>PATCH</code> is neither safe nor idempotent as defined by <a href="https://tools.ietf.org/html/rfc2616">RFC2616</a>, Section 9.1.</p>
-</blockquote>
+<p><code>PATCH</code> is neither safe nor idempotent as defined by <a href="https://tools.ietf.org/html/rfc2616">RFC2616</a>, Section 9.1.</p></blockquote>
 <p>所以，綜合來說，在 HTTP 的標準規範當中，只有 <code>POST</code> 及 <code>PATCH</code> 不是 idempotent。</p>
 <p>對這些 HTTP 細節感興趣的，請參考 ihower 的〈<a href="https://ihower.tw/blog/archives/6483">HTTP Verbs：談 POST, PUT 和 PATCH 的應用</a>〉一文。</p>
 <h2 id="web-api-的-idempotency-問題">Web API 的 idempotency 問題</h2>
@@ -542,30 +539,30 @@ Idempotency 冪等性 在 API 服務中，常常需要留意 idempotency（冪�
 </span></span><span style="display:flex;"><span>)
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
-</span></span><span style="display:flex;"><span>	<span style="color:#75715e">//...
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">router</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">gin</span>.<span style="color:#a6e22e">Default</span>()
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">//...</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">router</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">gin</span>.<span style="color:#a6e22e">Default</span>()
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 查詢庫存量
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">router</span>.<span style="color:#a6e22e">GET</span>(<span style="color:#e6db74">&#34;/inventory/quantity/:item_id&#34;</span>, <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">c</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">gin</span>.<span style="color:#a6e22e">Context</span>) {
-</span></span><span style="display:flex;"><span>		<span style="color:#75715e">//...
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#a6e22e">num</span> <span style="color:#960050;background-color:#1e0010">：</span>= <span style="color:#a6e22e">inventory</span>.<span style="color:#a6e22e">GetQuantity</span>(<span style="color:#a6e22e">item</span>)
-</span></span><span style="display:flex;"><span>		<span style="color:#75715e">//...
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	})
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 查詢庫存量</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">router</span>.<span style="color:#a6e22e">GET</span>(<span style="color:#e6db74">&#34;/inventory/quantity/:item_id&#34;</span>, <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">c</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">gin</span>.<span style="color:#a6e22e">Context</span>) {
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">//...</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">num</span> <span style="color:#960050;background-color:#1e0010">：</span>= <span style="color:#a6e22e">inventory</span>.<span style="color:#a6e22e">GetQuantity</span>(<span style="color:#a6e22e">item</span>)
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">//...</span>
+</span></span><span style="display:flex;"><span>	})
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 設定庫存量
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">router</span>.<span style="color:#a6e22e">PUT</span>(<span style="color:#e6db74">&#34;/inventory/quantity/:item_id&#34;</span>, <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">c</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">gin</span>.<span style="color:#a6e22e">Context</span>) {
-</span></span><span style="display:flex;"><span>		<span style="color:#75715e">//...
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#a6e22e">num</span>, <span style="color:#a6e22e">_</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">strconv</span>.<span style="color:#a6e22e">Atoi</span>(<span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">PostForm</span>(<span style="color:#e6db74">&#34;num&#34;</span>))
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 設定庫存量</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">router</span>.<span style="color:#a6e22e">PUT</span>(<span style="color:#e6db74">&#34;/inventory/quantity/:item_id&#34;</span>, <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">c</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">gin</span>.<span style="color:#a6e22e">Context</span>) {
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">//...</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">num</span>, <span style="color:#a6e22e">_</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">strconv</span>.<span style="color:#a6e22e">Atoi</span>(<span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">PostForm</span>(<span style="color:#e6db74">&#34;num&#34;</span>))
 </span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">inventory</span>.<span style="color:#a6e22e">SetQuantity</span>(<span style="color:#a6e22e">item</span>, <span style="color:#a6e22e">num</span>)
-</span></span><span style="display:flex;"><span>		<span style="color:#75715e">//...
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	})
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">//...</span>
+</span></span><span style="display:flex;"><span>	})
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 庫存量減一
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">router</span>.<span style="color:#a6e22e">POST</span>(<span style="color:#e6db74">&#34;/inventory/quantity/:item_id/dec&#34;</span>, <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">c</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">gin</span>.<span style="color:#a6e22e">Context</span>) {
-</span></span><span style="display:flex;"><span>		<span style="color:#75715e">//...
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#a6e22e">inventory</span>.<span style="color:#a6e22e">DecreaseQuantity</span>(<span style="color:#a6e22e">item</span>)
-</span></span><span style="display:flex;"><span>		<span style="color:#75715e">///
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	})
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 庫存量減一</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">router</span>.<span style="color:#a6e22e">POST</span>(<span style="color:#e6db74">&#34;/inventory/quantity/:item_id/dec&#34;</span>, <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">c</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">gin</span>.<span style="color:#a6e22e">Context</span>) {
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">//...</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">inventory</span>.<span style="color:#a6e22e">DecreaseQuantity</span>(<span style="color:#a6e22e">item</span>)
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">///</span>
+</span></span><span style="display:flex;"><span>	})
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">router</span>.<span style="color:#a6e22e">Run</span>()
 </span></span><span style="display:flex;"><span>}
@@ -609,8 +606,7 @@ Idempotency 冪等性 在 API 服務中，常常需要留意 idempotency（冪�
 
 <p>這也是為什麼我們在一些沒有仔細處理 idempotency 的交易網站上，會看到這類警語：</p>
 <blockquote>
-<p>交易進行中，請勿按下【重新載入此頁】按鈕，以避免重複扣款。</p>
-</blockquote>
+<p>交易進行中，請勿按下【重新載入此頁】按鈕，以避免重複扣款。</p></blockquote>
 <p>也就是說，他們認為，倘若因為電腦或網路不穩定而頻頻手動重試，從而導致的任何不良後果，都是使用者不聽勸告的錯。</p>
 <h2 id="向-tcp-取經">向 TCP 取經</h2>
 <p>在不穩定的分散式系統中，對於 non-idempotent 的操作，該如何避免重試所引發的問題？</p>
@@ -670,8 +666,7 @@ Idempotency 冪等性 在 API 服務中，常常需要留意 idempotency（冪�
 </ul>
 <p>概念很簡單，卻有個來歷不明的酷炫名詞 “<a href="https://stripe.com/blog/idempotency">idempotency key</a>”。根據 Stripe 工程師 <a href="https://twitter.com/brandur">Brandur Leach</a> 在 &ldquo;<a href="https://brandur.org/idempotency-keys">Implementing Stripe-like Idempotency Keys in Postgres</a>&rdquo; 一文所說，這名詞是 Stripe 發明的：</p>
 <blockquote>
-<p>An <strong>idempotency key</strong> is a unique value that’s generated by a client and sent to an API along with a request. The server stores the key to use for bookkeeping the status of that request on its end. If a request should fail partway through, the client retries with the <em>same</em> idempotency key value, and the server uses it to look up the request’s state and continue from where it left off. <strong>The name “idempotency key” comes from Stripe’s API.</strong></p>
-</blockquote>
+<p>An <strong>idempotency key</strong> is a unique value that’s generated by a client and sent to an API along with a request. The server stores the key to use for bookkeeping the status of that request on its end. If a request should fail partway through, the client retries with the <em>same</em> idempotency key value, and the server uses it to look up the request’s state and continue from where it left off. <strong>The name “idempotency key” comes from Stripe’s API.</strong></p></blockquote>
 <p>在沒有進一步翻案證據之前，暫時姑且接受「這是 Stripe 發明的」的說法吧。</p>
 <h2 id="idempotency-key-的生成">Idempotency key 的生成</h2>
 <p>理論上，任何機制，只要在合理範圍內具有唯一性，就能用來產生 idempotency key。</p>
@@ -688,8 +683,7 @@ Idempotency 冪等性 在 API 服務中，常常需要留意 idempotency（冪�
 <p>乍看之下很方便，不過，如果資料庫有分庫分表，就需要再額外處理，才能確保序號的唯一性。另一個或許更嚴重的缺點是，從架構潔癖的角度來看，違反了 <a href="https://www.tenlong.com.tw/products/9789864342945">clean architecture</a> 的分層原則與相依原則：</p>
 <blockquote>
 <p>資料庫是個細節，我們將這些東西放在外頭，在那邊它們不會有什麼危害。</p>
-<p>資料庫不是資料模型。資料庫是一塊軟體，是提供對於資料存取的工具。它是一個低層級的細節——是一種機制。一名好的架構師，不會允許底層機制污染系統的架構。</p>
-</blockquote>
+<p>資料庫不是資料模型。資料庫是一塊軟體，是提供對於資料存取的工具。它是一個低層級的細節——是一種機制。一名好的架構師，不會允許底層機制污染系統的架構。</p></blockquote>
 <p>同樣有架構潔癖的 DDD，也不喜歡過於仰賴資料庫機制，像 <a href="https://www.amazon.com/dp/0321834577/ref=cm_sw_r_tw_dp_U_x_gp2zEbQ9DT5BB"><em>Implementing Domain-Driven Design</em></a> 的 §5.2 就直接建議大家將序號產生機制放在 Repository 層。<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></p>
 <p>如果要改由程式邏輯層產生 idempotency key，可能會直接套用 <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier">uuid</a>，甚至訴諸 <a href="https://developer.twitter.com/en/docs/basics/twitter-ids">Snowflake</a>、<a href="https://github.com/sony/sonyflake">Sonyflake</a>、<a href="https://tech.meituan.com/2017/04/21/mt-leaf.html">Leaf</a> 這類分散式 ID 服務。不依賴資料庫，彈性大，也符合架構潔癖。</p>
 <p>不依賴資料庫，符合了架構潔癖，是否會因此犧牲了資料庫的效能？接下來我們就來探討這議題。</p>
@@ -704,8 +698,7 @@ Idempotency 冪等性 在 API 服務中，常常需要留意 idempotency（冪�
 <p>理論上來說，在目前資料庫系統主流的 <a href="https://en.wikipedia.org/wiki/B%2B_tree">B+ tree</a> 索引結構下，單調遞增的數值，會比純亂數來得有效率。因此，若不計資料欄位大小差異，三者的存取效率，理論上應該會是 Snowflake &gt; uuid v1 &gt; uuid v4。</p>
 <p>不過，我對於 PostgreSQL 提供的 <a href="https://www.postgresql.org/docs/current/datatype-uuid.html">uuid 資料型態</a>格外感興趣：</p>
 <blockquote>
-<p>PostgreSQL provides storage and comparison functions for UUIDs, but the core database does not include any function for generating UUIDs, because no single algorithm is well suited for every application.</p>
-</blockquote>
+<p>PostgreSQL provides storage and comparison functions for UUIDs, but the core database does not include any function for generating UUIDs, because no single algorithm is well suited for every application.</p></blockquote>
 <p>從 PostgreSQL 原始碼 <a href="https://github.com/postgres/postgres/blob/0a42a2e9ce8481a024d085f2cc526a366db8df59/src/include/utils/uuid.h#L17-L23">uuid.h</a> 及 <a href="https://github.com/postgres/postgres/blob/master/src/backend/utils/adt/uuid.c">uuid.c</a> 來看，骨子裡是用 16 bytes 字元陣列來實作：</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">/* uuid size in bytes */</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#define UUID_LEN 16
@@ -736,30 +729,30 @@ Idempotency 冪等性 在 API 服務中，常常需要留意 idempotency（冪�
 <table>
   <thead>
       <tr>
-          <th style="text-align: left">Idempotency Key 類型</th>
-          <th style="text-align: left">演算法</th>
-          <th style="text-align: left">資料大小 (bytes)</th>
-          <th style="text-align: left">PostgreSQL 資料型態</th>
+          <th>Idempotency Key 類型</th>
+          <th>演算法</th>
+          <th>資料大小 (bytes)</th>
+          <th>PostgreSQL 資料型態</th>
       </tr>
   </thead>
   <tbody>
       <tr>
-          <td style="text-align: left">亂數</td>
-          <td style="text-align: left">uuid v4</td>
-          <td style="text-align: left">16</td>
-          <td style="text-align: left">uuid</td>
+          <td>亂數</td>
+          <td>uuid v4</td>
+          <td>16</td>
+          <td>uuid</td>
       </tr>
       <tr>
-          <td style="text-align: left">遞增數值</td>
-          <td style="text-align: left">uuid v1</td>
-          <td style="text-align: left">16</td>
-          <td style="text-align: left">uuid</td>
+          <td>遞增數值</td>
+          <td>uuid v1</td>
+          <td>16</td>
+          <td>uuid</td>
       </tr>
       <tr>
-          <td style="text-align: left">遞增數值</td>
-          <td style="text-align: left">Snowflake</td>
-          <td style="text-align: left">8</td>
-          <td style="text-align: left">bigint</td>
+          <td>遞增數值</td>
+          <td>Snowflake</td>
+          <td>8</td>
+          <td>bigint</td>
       </tr>
   </tbody>
 </table>
@@ -1065,7 +1058,7 @@ Idempotency 冪等性 在 API 服務中，常常需要留意 idempotency（冪�
     &copy;
     
       2015 -
-    2024
+    2025
     <span class="heart">
       
       <i class="iconfont">

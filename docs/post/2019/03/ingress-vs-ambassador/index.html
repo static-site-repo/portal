@@ -34,7 +34,7 @@
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.134.3" />
+<meta name="generator" content="Hugo 0.143.1" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2019/03/ingress-vs-ambassador/" />
@@ -449,8 +449,7 @@
 <p>根據 Steven Acreman 寫的 <a href="https://kubedex.com/ingress/">Ingress 評比文章</a>的看法：</p>
 <blockquote>
 <p><em>The safest choice is <a href="https://kubernetes.github.io/ingress-nginx/">ingress-nginx</a></em>. This is the one that most people use and it’s extremely reliable. Before you begin I’d recommend you read this blog to get ahead of some of the problems you may encounter.</p>
-<p><em>My vote for the coolest ingress definitely goes to <a href="https://www.getambassador.io/">Ambassador</a>.</em>  If you’re just running standard http based micro services and fancy living on the bleeding edge then you should definitely get Istio, Ambassador and Jaeger setup as a proof of concept.</p>
-</blockquote>
+<p><em>My vote for the coolest ingress definitely goes to <a href="https://www.getambassador.io/">Ambassador</a>.</em>  If you’re just running standard http based micro services and fancy living on the bleeding edge then you should definitely get Istio, Ambassador and Jaeger setup as a proof of concept.</p></blockquote>
 <p>進一步研讀 Ambassador 相關資料 <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>，發現他們鎖定的 service mesh 路線很合我的胃口，站在 <a href="https://www.envoyproxy.io/">Envoy</a> 巨人肩膀上更是聰明。不過，理論歸理論，我想親自試試看現在的 Ambassador 是否堪當大任？</p>
 <p>初步，我只先拿 <a href="https://kubernetes.github.io/ingress-nginx/">ingress-nginx</a> 這個所謂的 “the safest choice” 作簡單的性能比較。將來有機會再進行更徹底的 chaos monkey 測試。</p>
 <h2 id="實驗環境">實驗環境</h2>
@@ -799,7 +798,7 @@
     &copy;
     
       2015 -
-    2024
+    2025
     <span class="heart">
       
       <i class="iconfont">

@@ -33,7 +33,7 @@
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.134.3" />
+<meta name="generator" content="Hugo 0.143.1" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2020/08/blackbox-exporter/" />
@@ -650,8 +650,7 @@ tcp_probe、dns_probe、icmp_probe，即使面對「不完全揭露」自身健�
 <p>Prometheus 核心成員 Brian Brazil 在 &ldquo;<a href="https://www.robustperception.io/checking-for-http-200s-with-the-blackbox-exporter">Checking for HTTP 200s with the Blackbox Exporter</a>&rdquo; 文章說明這問題的原因及解法：</p>
 <blockquote>
 <p>You may see a surprising failure if you don&rsquo;t have a working IPv6 setup, as the Blackbox exporter will prefer an IPv6 address if one is returned by DNS.</p>
-<p>You can adjust this behaviour by adding <code>preferred_ip_protocol: &quot;ip4&quot;</code> to the module&rsquo;s configuration.</p>
-</blockquote>
+<p>You can adjust this behaviour by adding <code>preferred_ip_protocol: &quot;ip4&quot;</code> to the module&rsquo;s configuration.</p></blockquote>
 <p>所以，我會在 <code>blackbox.yml</code> 設定檔當中，增加另一個模組，取一個好記的名字：</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">modules</span>:
 </span></span><span style="display:flex;"><span>  <span style="color:#75715e"># module: expect http_2xx, with ip4</span>
@@ -678,8 +677,7 @@ tcp_probe、dns_probe、icmp_probe，即使面對「不完全揭露」自身健�
 <p>像 <a href="https://stripe.com/docs/api/authentication?lang=curl">Stripe API 文件</a>就說：</p>
 <blockquote>
 <p>Authentication to the API is performed via HTTP Basic Auth. Provide your API key as the basic auth username value. You do not need to provide a password.</p>
-<p>If you need to authenticate via bearer auth (e.g., for a cross-origin request), use <code>-H &quot;Authorization: Bearer sk_test_4eC39HqLyjWDarjtT1zdp7dc&quot;</code> instead of <code>-u sk_test_4eC39HqLyjWDarjtT1zdp7dc</code>.</p>
-</blockquote>
+<p>If you need to authenticate via bearer auth (e.g., for a cross-origin request), use <code>-H &quot;Authorization: Bearer sk_test_4eC39HqLyjWDarjtT1zdp7dc&quot;</code> instead of <code>-u sk_test_4eC39HqLyjWDarjtT1zdp7dc</code>.</p></blockquote>
 <p>那麼，這段 auth 資訊該放到 <code>prometheus.yml</code> 還是 <code>blackbox.yml</code> 設定檔？畢竟與 basic_auth 相關的設定內容，在 <a href="https://prometheus.io/docs/prometheus/latest/configuration/configuration/#scrape_config">Prometheus 設定文件</a>及 <a href="https://github.com/prometheus/blackbox_exporter/blob/master/CONFIGURATION.md#http_probe">Blackbox exporter 設定文件</a>都出現過。</p>
 <p>動手實驗看看吧！</p>
 <p><!-- raw HTML omitted --> <!-- raw HTML omitted --></p>
@@ -693,21 +691,21 @@ tcp_probe、dns_probe、icmp_probe，即使面對「不完全揭露」自身健�
 <table>
   <thead>
       <tr>
-          <th style="text-align: left">Prometheus Job</th>
-          <th style="text-align: left">prometheus.yml</th>
-          <th style="text-align: left">blackbox.yml</th>
+          <th>Prometheus Job</th>
+          <th>prometheus.yml</th>
+          <th>blackbox.yml</th>
       </tr>
   </thead>
   <tbody>
       <tr>
-          <td style="text-align: left"><a href="https://github.com/William-Yeh/blackbox-exporter-demo/blob/04cbedfd1b3c035bead29d0b8ecedbbfe137ddac/prometheus.yml#L46">stripe-healthcheck</a></td>
-          <td style="text-align: left"></td>
-          <td style="text-align: left">✓ <a href="https://github.com/William-Yeh/blackbox-exporter-demo/blob/04cbedfd1b3c035bead29d0b8ecedbbfe137ddac/blackbox.yml#L24-L25">basic_auth</a></td>
+          <td><a href="https://github.com/William-Yeh/blackbox-exporter-demo/blob/04cbedfd1b3c035bead29d0b8ecedbbfe137ddac/prometheus.yml#L46">stripe-healthcheck</a></td>
+          <td></td>
+          <td>✓ <a href="https://github.com/William-Yeh/blackbox-exporter-demo/blob/04cbedfd1b3c035bead29d0b8ecedbbfe137ddac/blackbox.yml#L24-L25">basic_auth</a></td>
       </tr>
       <tr>
-          <td style="text-align: left"><a href="https://github.com/William-Yeh/blackbox-exporter-demo/blob/04cbedfd1b3c035bead29d0b8ecedbbfe137ddac/prometheus.yml#L63">stripe-healthcheck-wrong-config</a></td>
-          <td style="text-align: left">✓ <a href="https://github.com/William-Yeh/blackbox-exporter-demo/blob/04cbedfd1b3c035bead29d0b8ecedbbfe137ddac/prometheus.yml#L68-L69">basic_auth</a></td>
-          <td style="text-align: left"></td>
+          <td><a href="https://github.com/William-Yeh/blackbox-exporter-demo/blob/04cbedfd1b3c035bead29d0b8ecedbbfe137ddac/prometheus.yml#L63">stripe-healthcheck-wrong-config</a></td>
+          <td>✓ <a href="https://github.com/William-Yeh/blackbox-exporter-demo/blob/04cbedfd1b3c035bead29d0b8ecedbbfe137ddac/prometheus.yml#L68-L69">basic_auth</a></td>
+          <td></td>
       </tr>
   </tbody>
 </table>
@@ -965,7 +963,7 @@ tcp_probe、dns_probe、icmp_probe，即使面對「不完全揭露」自身健�
     &copy;
     
       2015 -
-    2024
+    2025
     <span class="heart">
       
       <i class="iconfont">

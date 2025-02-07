@@ -33,7 +33,7 @@ Recently I&rsquo;ve found something very strange about Linux-style file permissi
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.134.3" />
+<meta name="generator" content="Hugo 0.143.1" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2019/06/docker-file-permissions/" />
@@ -468,37 +468,37 @@ Recently I’ve found something very strange about Linux-style file permissions 
 <table>
   <thead>
       <tr>
-          <th style="text-align: left">Host</th>
-          <th style="text-align: left">Built w/ Docker CLI</th>
-          <th style="text-align: left">Built w/ Skaffold (WSL version)</th>
-          <th style="text-align: left">Built w/ Skaffold (host version)</th>
+          <th>Host</th>
+          <th>Built w/ Docker CLI</th>
+          <th>Built w/ Skaffold (WSL version)</th>
+          <th>Built w/ Skaffold (host version)</th>
       </tr>
   </thead>
   <tbody>
       <tr>
-          <td style="text-align: left">macOS</td>
-          <td style="text-align: left">➊</td>
-          <td style="text-align: left">N/A</td>
-          <td style="text-align: left">➋</td>
+          <td>macOS</td>
+          <td>➊</td>
+          <td>N/A</td>
+          <td>➋</td>
       </tr>
       <tr>
-          <td style="text-align: left">WSL + Docker Desktop for Windows</td>
-          <td style="text-align: left">③</td>
-          <td style="text-align: left">➍</td>
-          <td style="text-align: left">N/A</td>
+          <td>WSL + Docker Desktop for Windows</td>
+          <td>③</td>
+          <td>➍</td>
+          <td>N/A</td>
       </tr>
       <tr>
-          <td style="text-align: left">Windows</td>
-          <td style="text-align: left">⑤</td>
-          <td style="text-align: left">N/A</td>
-          <td style="text-align: left">⑹</td>
+          <td>Windows</td>
+          <td>⑤</td>
+          <td>N/A</td>
+          <td>⑹</td>
       </tr>
   </tbody>
 </table>
 <p>Will all experiments display the correct file permissions?</p>
 <h2 id="macos--">macOS: ➊ ➋</h2>
 <p>Let&rsquo;s begin with macOS, which acts as the control group.</p>
-<p><a href="https://asciinema.org/a/253423"><img alt="asciicast" src="https://asciinema.org/a/253423.svg"></a></p>
+<p><a href="https://asciinema.org/a/253423"><img src="https://asciinema.org/a/253423.svg" alt="asciicast"></a></p>
 <p>Perfect! All Unix-style file permissions are set correctly.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>total 20                                                                        
 </span></span><span style="display:flex;"><span>drwxr-xr-x    1 root     root          4096 Jun 24 22:30 .                      
@@ -509,11 +509,10 @@ Recently I’ve found something very strange about Linux-style file permissions 
 <h2 id="wsl--">WSL: ③ ➍</h2>
 <p>On Windows, my preference is to use WSL to connect to Docker Desktop for Windows.<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>  Will this combination work well with Unix-style file permissions?</p>
 <p>Below are experiments conducted on WSL:</p>
-<p><a href="https://asciinema.org/a/253450"><img alt="asciicast" src="https://asciinema.org/a/253450.svg"></a></p>
+<p><a href="https://asciinema.org/a/253450"><img src="https://asciinema.org/a/253450.svg" alt="asciicast"></a></p>
 <p>As shown in this demo, the ➍ skaffold experiment works quite well on WSL. The ③ docker-cli experiment works, though not the best-possible Unix-style file permissions:<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></p>
 <blockquote>
-<p>SECURITY WARNING: You are building a Docker image from Windows against a non-Windows Docker host. All files and directories added to build context will have <code>'-rwxr-xr-x'</code> permissions. It is recommended to double check and reset permissions for sensitive files and directories.</p>
-</blockquote>
+<p>SECURITY WARNING: You are building a Docker image from Windows against a non-Windows Docker host. All files and directories added to build context will have <code>'-rwxr-xr-x'</code> permissions. It is recommended to double check and reset permissions for sensitive files and directories.</p></blockquote>
 <h2 id="pure-windows--">Pure Windows: ⑤ ⑹</h2>
 <p>What if a Windows user sticks with pure-Windows toolchains, i.e., use traditional Command Prompt (cmd) to connect to Docker Desktop for Windows?</p>
 <p>The ⑤ docker-cli experiment shows the same result as in previous ③ <code>'-rwxr-xr-x'</code> permission:</p>
@@ -556,30 +555,30 @@ Recently I’ve found something very strange about Linux-style file permissions 
 <table>
   <thead>
       <tr>
-          <th style="text-align: left">Host</th>
-          <th style="text-align: left">Built w/ Docker CLI</th>
-          <th style="text-align: left">Built w/ Skaffold (WSL version)</th>
-          <th style="text-align: left">Built w/ Skaffold (host version)</th>
+          <th>Host</th>
+          <th>Built w/ Docker CLI</th>
+          <th>Built w/ Skaffold (WSL version)</th>
+          <th>Built w/ Skaffold (host version)</th>
       </tr>
   </thead>
   <tbody>
       <tr>
-          <td style="text-align: left">macOS</td>
-          <td style="text-align: left">➊</td>
-          <td style="text-align: left">N/A</td>
-          <td style="text-align: left">➋</td>
+          <td>macOS</td>
+          <td>➊</td>
+          <td>N/A</td>
+          <td>➋</td>
       </tr>
       <tr>
-          <td style="text-align: left">WSL + Docker Desktop for Windows</td>
-          <td style="text-align: left">③</td>
-          <td style="text-align: left">➍</td>
-          <td style="text-align: left">N/A</td>
+          <td>WSL + Docker Desktop for Windows</td>
+          <td>③</td>
+          <td>➍</td>
+          <td>N/A</td>
       </tr>
       <tr>
-          <td style="text-align: left">Windows</td>
-          <td style="text-align: left">⑤</td>
-          <td style="text-align: left">N/A</td>
-          <td style="text-align: left">⑹</td>
+          <td>Windows</td>
+          <td>⑤</td>
+          <td>N/A</td>
+          <td>⑹</td>
       </tr>
   </tbody>
 </table>
@@ -824,7 +823,7 @@ Recently I’ve found something very strange about Linux-style file permissions 
     &copy;
     
       2015 -
-    2024
+    2025
     <span class="heart">
       
       <i class="iconfont">

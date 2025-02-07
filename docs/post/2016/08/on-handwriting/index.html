@@ -33,7 +33,7 @@
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.134.3" />
+<meta name="generator" content="Hugo 0.143.1" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2016/08/on-handwriting/" />
@@ -482,19 +482,16 @@
 <p>我很喜歡引述 Joshua Bloch 在《<a href="http://www.books.com.tw/products/0010511808">編程的頂尖對話</a>》(<em>Coders at Work</em>) 提到的觀點：</p>
 <blockquote>
 <p>既然寫正確的程式那麼難，我們就應該盡力取得幫助。所以，能減少 bug 的所有東西都是好的。</p>
-<p>因此，我是靜態型別和靜態分析的信徒：任何可以減少某個特定類別 bug 的東西都是好的，任何可以讓程式師的工作更輕鬆的東西都是好的。</p>
-</blockquote>
+<p>因此，我是靜態型別和靜態分析的信徒：任何可以減少某個特定類別 bug 的東西都是好的，任何可以讓程式師的工作更輕鬆的東西都是好的。</p></blockquote>
 <p>對他來說，靜態型別、靜態分析，就是一種格子或參考線。</p>
 <p>同一本書中，Simon Peyton Jones 也說：</p>
 <blockquote>
 <p>函數式程式設計從根本上允許你建構更為健壯的結構，建構易於理解、測試和推論的框架。</p>
-<p>你的材料越結實，你的注意力就越有可能放到大規模的架構上，而不是細節的地方。但是這也會讓我們更加雄心勃勃，建構一個更大的結構，直到達到極限，達到這個結構幾乎要坍塌而又不倒的程度。</p>
-</blockquote>
+<p>你的材料越結實，你的注意力就越有可能放到大規模的架構上，而不是細節的地方。但是這也會讓我們更加雄心勃勃，建構一個更大的結構，直到達到極限，達到這個結構幾乎要坍塌而又不倒的程度。</p></blockquote>
 <p>Bernie Cosell 則說：</p>
 <blockquote>
 <p>寫程式時必須讓它可測試。讓程式可測試的唯一途徑是在你動手寫第一行程式之前，務必仔細考慮。</p>
-<p>對那些有效工作的阻塞點、判斷提示點和測試點，你不可能再去改造。如果你急等著程式工作，請一開始就把事情做對。</p>
-</blockquote>
+<p>對那些有效工作的阻塞點、判斷提示點和測試點，你不可能再去改造。如果你急等著程式工作，請一開始就把事情做對。</p></blockquote>
 <p>我發現，這些強者，都善於及早把「注意力」這項稀有資源擺在他們認為日後可能會是瓶頸、缺陷、重工之處。因此，他們不避諱限制與規條，反而擁抱限制與規條。</p>
 <p>一種很有紀律的擁抱。</p>
 <h2 id="原則">原則</h2>
@@ -505,13 +502,12 @@
 <p>古代書法家務求完美，舉起例子來鉅細靡遺。最知名的例子便是清朝書家黃自元，他在整理楷書結構之後，提出了九十二種結構法則。九十二個！仔細是仔細，不過我想九十二個學完也得花上好多時間吧！</p>
 <p>我過去教學的對象是小學生，我也會教他們一些篩選過的黃自元楷書結構九十二法，但不會一開始就教。初學投籃的人要先學會把球穩穩地扔出去，不是一開始就來個投籃的二十個要訣。</p>
 <p>我一直相信一件事：習寫鋼筆字（硬筆字）追求「結構的穩定」永遠都是最優先順位。先穩下了結構，之後練習書法才有依據。這是因為硬筆先天在筆畫粗細的變化上不如軟筆，況且有了穩定的結構做後盾，筆法才有揮灑的空間。</p>
-<p>Less is more. 這本書的特色是：相較於把所有的細節都寫出來，我花心思在「去掉」很多東西。</p>
-</blockquote>
+<p>Less is more. 這本書的特色是：相較於把所有的細節都寫出來，我花心思在「去掉」很多東西。</p></blockquote>
 <p>同樣的，李彧的《<a href="http://www.books.com.tw/products/0010716789?loc=P_asv_003">美字進化論</a>》雖然列出 800 個示範字，但關於運筆要領，則濃縮成「五度」╳「八畫」。</p>
 <p>我發現，像這種極簡但鞭辟入裡直指人心的原則，易學，易記，更容易內化，變成不知不覺的格子或參考線。</p>
 <p>這又讓我聯想到程式設計。</p>
 <h2 id="指導方針">指導方針</h2>
-<p>我發現，過去浸潤一堆程式設計規條：coding style、<a href="http://martinfowler.com/books/refactoring.html">refactoring</a>、<a href="https://en.wikipedia.org/wiki/Design_Patterns">GoF design patterns</a>⋯⋯很有用，也打下很穩的根基。不過，到了現在，真正還在平日意識得到的，大概僅剩 <a href="https://en.wikipedia.org/wiki/SOLID_(object-oriented_design)">SOLID</a>、<a href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself">DRY</a>、<a href="https://en.wikipedia.org/wiki/GRASP_(object-oriented_design)">GRASP</a>、<a href="https://en.wikipedia.org/wiki/KISS_principle">KISS</a>、<a href="https://en.wikipedia.org/wiki/Separation_of_concerns">SoC</a> 這類更原則性的指導方針。</p>
+<p>我發現，過去浸潤一堆程式設計規條：coding style、<a href="http://martinfowler.com/books/refactoring.html">refactoring</a>、<a href="https://en.wikipedia.org/wiki/Design_Patterns">GoF design patterns</a>⋯⋯很有用，也打下很穩的根基。不過，到了現在，真正還在平日意識得到的，大概僅剩 <a href="https://en.wikipedia.org/wiki/SOLID_%28object-oriented_design%29">SOLID</a>、<a href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself">DRY</a>、<a href="https://en.wikipedia.org/wiki/GRASP_%28object-oriented_design%29">GRASP</a>、<a href="https://en.wikipedia.org/wiki/KISS_principle">KISS</a>、<a href="https://en.wikipedia.org/wiki/Separation_of_concerns">SoC</a> 這類更原則性的指導方針。</p>
 <p>精簡的指導原則，不見得易學（畢竟這些是濃縮到不能再濃縮的實務精華），但易記，更容易內化。</p>
 <p>另一個好處，就如我在〈<a href="//william-yeh.net/post/2016/08/back-to-the-origin/">請循其本</a>〉一文提到的，也很容易轉化成有效提問。</p>
 <p>「注意力」是稀有資源，我們要努力保護它，尤其是在從事「程式設計」這種高度精密的心智運動時。</p>
@@ -729,7 +725,7 @@
     &copy;
     
       2015 -
-    2024
+    2025
     <span class="heart">
       
       <i class="iconfont">

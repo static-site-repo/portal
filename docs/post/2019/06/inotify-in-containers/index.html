@@ -33,7 +33,7 @@ These are well-known scenarios in traditional pre-container world. How about the
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.134.3" />
+<meta name="generator" content="Hugo 0.143.1" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2019/06/inotify-in-containers/" />
@@ -467,38 +467,38 @@ These are well-known scenarios in traditional pre-container world. How about the
 <table>
   <thead>
       <tr>
-          <th style="text-align: left">Host OS</th>
-          <th style="text-align: left">App run as<!-- raw HTML omitted -->native app</th>
-          <th style="text-align: left">App run as<!-- raw HTML omitted -->Linux Container</th>
-          <th style="text-align: left">App run as<!-- raw HTML omitted -->Windows Container</th>
-          <th style="text-align: left">‖</th>
-          <th style="text-align: left">App run in<!-- raw HTML omitted -->K8s (Linux Container)</th>
+          <th>Host OS</th>
+          <th>App run as<!-- raw HTML omitted -->native app</th>
+          <th>App run as<!-- raw HTML omitted -->Linux Container</th>
+          <th>App run as<!-- raw HTML omitted -->Windows Container</th>
+          <th>‖</th>
+          <th>App run in<!-- raw HTML omitted -->K8s (Linux Container)</th>
       </tr>
   </thead>
   <tbody>
       <tr>
-          <td style="text-align: left">Linux</td>
-          <td style="text-align: left"><a href="https://github.com/William-Yeh/fswatch/tree/master/test-matrix/1_native_linux">1</a></td>
-          <td style="text-align: left"><a href="https://github.com/William-Yeh/fswatch/blob/master/test-matrix/4_host_linux_container_linux">4</a></td>
-          <td style="text-align: left">N/A</td>
-          <td style="text-align: left">‖</td>
-          <td style="text-align: left"><a href="https://github.com/William-Yeh/fswatch/blob/master/test-matrix/8_k8s_linux">8</a></td>
+          <td>Linux</td>
+          <td><a href="https://github.com/William-Yeh/fswatch/tree/master/test-matrix/1_native_linux">1</a></td>
+          <td><a href="https://github.com/William-Yeh/fswatch/blob/master/test-matrix/4_host_linux_container_linux">4</a></td>
+          <td>N/A</td>
+          <td>‖</td>
+          <td><a href="https://github.com/William-Yeh/fswatch/blob/master/test-matrix/8_k8s_linux">8</a></td>
       </tr>
       <tr>
-          <td style="text-align: left">Mac</td>
-          <td style="text-align: left"><a href="https://github.com/William-Yeh/fswatch/tree/master/test-matrix/2_native_mac">2</a></td>
-          <td style="text-align: left"><a href="https://github.com/William-Yeh/fswatch/blob/master/test-matrix/5_host_mac_container_linux">5</a></td>
-          <td style="text-align: left">N/A</td>
-          <td style="text-align: left"></td>
-          <td style="text-align: left"></td>
+          <td>Mac</td>
+          <td><a href="https://github.com/William-Yeh/fswatch/tree/master/test-matrix/2_native_mac">2</a></td>
+          <td><a href="https://github.com/William-Yeh/fswatch/blob/master/test-matrix/5_host_mac_container_linux">5</a></td>
+          <td>N/A</td>
+          <td></td>
+          <td></td>
       </tr>
       <tr>
-          <td style="text-align: left">Windows</td>
-          <td style="text-align: left"><a href="https://github.com/William-Yeh/fswatch/blob/master/test-matrix/3_native_win">3</a></td>
-          <td style="text-align: left"><a href="https://github.com/William-Yeh/fswatch/blob/master/test-matrix/6_host_win_container_linux">6</a> (LCOW)</td>
-          <td style="text-align: left"><a href="https://github.com/William-Yeh/fswatch/blob/master/test-matrix/7_host_win_container_win">7</a> (WCOW)</td>
-          <td style="text-align: left"></td>
-          <td style="text-align: left"></td>
+          <td>Windows</td>
+          <td><a href="https://github.com/William-Yeh/fswatch/blob/master/test-matrix/3_native_win">3</a></td>
+          <td><a href="https://github.com/William-Yeh/fswatch/blob/master/test-matrix/6_host_win_container_linux">6</a> (LCOW)</td>
+          <td><a href="https://github.com/William-Yeh/fswatch/blob/master/test-matrix/7_host_win_container_win">7</a> (WCOW)</td>
+          <td></td>
+          <td></td>
       </tr>
   </tbody>
 </table>
@@ -511,7 +511,7 @@ These are well-known scenarios in traditional pre-container world. How about the
 <li>2,914,304 (bytes) <code>fswatch-x86_64.exe</code></li>
 </ul>
 <p>These experiments are easy to try by yourself. Take experiment <a href="https://github.com/William-Yeh/fswatch/tree/master/test-matrix/1_native_linux">1</a> &ldquo;run native Linux app in Linux host OS&rdquo; for example:</p>
-<p><a href="https://asciinema.org/a/250732"><img alt="asciicast" src="https://asciinema.org/a/250732.svg"></a></p>
+<p><a href="https://asciinema.org/a/250732"><img src="https://asciinema.org/a/250732.svg" alt="asciicast"></a></p>
 <p>In this group, changes in the file system can be tracked successfully by their native API mechanisms, respectively.</p>
 <h2 id="group-b-and-c-container-mode">Group B and C: container mode</h2>
 <p>Containers make things a little bit complicated.</p>
@@ -520,23 +520,21 @@ These are well-known scenarios in traditional pre-container world. How about the
 <p>Take experiment <a href="https://github.com/William-Yeh/fswatch/blob/master/test-matrix/6_host_win_container_linux">6</a> (LCOW) &ldquo;run containerized Linux app in Windows host OS&rdquo; for example. The <a href="https://docs.docker.com/docker-for-windows/troubleshoot/#inotify-on-shared-drives-does-not-work">document</a> for Docker Desktop for Windows has a warning for us:</p>
 <blockquote>
 <p><strong>Inotify on shared drives does not work</strong></p>
-<p>Currently, <code>inotify</code> does not work on Docker Desktop for Windows. This becomes evident, for example, when an application needs to read/write to a container across a mounted drive. Instead of relying on filesystem <code>inotify</code>, we recommend using polling features for your framework or programming language.</p>
-</blockquote>
+<p>Currently, <code>inotify</code> does not work on Docker Desktop for Windows. This becomes evident, for example, when an application needs to read/write to a container across a mounted drive. Instead of relying on filesystem <code>inotify</code>, we recommend using polling features for your framework or programming language.</p></blockquote>
 <p>For Windows users, <code>inotify</code> works well in the WCOW mode (experiment <a href="https://github.com/William-Yeh/fswatch/blob/master/test-matrix/7_host_win_container_win">7</a>).</p>
 <p>On the other hand, Mac users are luckier.  Docker Desktop for Mac doesn&rsquo;t have much trouble here (experiment <a href="https://github.com/William-Yeh/fswatch/blob/master/test-matrix/5_host_mac_container_linux">5</a>) thanks to excellent implementation of <strong>osxfs</strong>.  See &ldquo;<a href="https://docs.docker.com/docker-for-mac/osxfs/">File system sharing (osxfs)</a>&rdquo; and &ldquo;<a href="https://docs.docker.com/docker-for-mac/osxfs-caching/">Performance tuning for volume mounts (shared filesystems)</a>&rdquo; articles for more information.</p>
 <blockquote>
 <p><strong>File system events</strong></p>
-<p>Most <code>inotify</code> events are supported in bind mounts, and likely <code>dnotify</code> and <code>fanotify</code> (though they have not been tested) are also supported. This means that file system events from macOS are sent into containers and trigger any listening processes there.</p>
-</blockquote>
+<p>Most <code>inotify</code> events are supported in bind mounts, and likely <code>dnotify</code> and <code>fanotify</code> (though they have not been tested) are also supported. This means that file system events from macOS are sent into containers and trigger any listening processes there.</p></blockquote>
 <h2 id="group-d-k8s-mode">Group D: K8s mode</h2>
 <p>How about Kubernetes?  Does <code>inotify</code> work well with the ConfigMap?</p>
 <p>Below is the demo for experiment <a href="https://github.com/William-Yeh/fswatch/blob/master/test-matrix/8_k8s_linux">8</a>:</p>
-<p><a href="https://asciinema.org/a/250736"><img alt="asciicast" src="https://asciinema.org/a/250736.svg"></a></p>
+<p><a href="https://asciinema.org/a/250736"><img src="https://asciinema.org/a/250736.svg" alt="asciicast"></a></p>
 <p>As you can see in this demo, any changes in the ConfigMap will propagate to related pods in a couple of seconds, and <code>inotify</code> will detect this event as well. <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
 <h3 id="caution-about-symbolic-links">Caution about symbolic links</h3>
 <p>In such situation, however, you should use <code>inotify</code> to watch for <em>directories</em> instead of merely for <em>files</em>.  It is because Kubernetes may use symbolic links to point to versioned ConfigMap volumes, and <code>inotify</code> doesn&rsquo;t work well with such symbolic links. <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></p>
 <p>Let&rsquo;s retry the demo, but this time we&rsquo;ll focus on the directory layout from the pod&rsquo;s point of view.</p>
-<p><a href="https://asciinema.org/a/251141"><img alt="asciicast" src="https://asciinema.org/a/251141.svg"></a></p>
+<p><a href="https://asciinema.org/a/251141"><img src="https://asciinema.org/a/251141.svg" alt="asciicast"></a></p>
 <p>The demo from <a href="https://asciinema.org/a/251141?t=0:38">0:38</a> to 1:55 shows the directory layout from the pod&rsquo;s point of view:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>/mnt/site # ls -al
 </span></span><span style="display:flex;"><span>total 12
@@ -788,7 +786,7 @@ These are well-known scenarios in traditional pre-container world. How about the
     &copy;
     
       2015 -
-    2024
+    2025
     <span class="heart">
       
       <i class="iconfont">

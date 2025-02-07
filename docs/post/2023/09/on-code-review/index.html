@@ -41,7 +41,7 @@ Code review 乍看之下是小事，但若認真探討起來還真是不小。�
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.134.3" />
+<meta name="generator" content="Hugo 0.143.1" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2023/09/on-code-review/" />
@@ -513,13 +513,11 @@ Code review 乍看之下是小事，但若認真探討起來還真是不小。�
 <p>我很喜歡 Java 大師 <a href="https://en.wikipedia.org/wiki/Joshua_Bloch">Joshua Bloch</a> 在《<a href="https://williampjyeh.notion.site/d265b736b05f42d885ef40bb0a48786f">編程的頂尖對話</a>》所說的：</p>
 <blockquote>
 <p>即使是想把一個很小的程式寫對也是非常難的。</p>
-<p>認為自己程式沒有 bug 就是在愚弄自己。程式肯定有 bug，（只是）多數情況下，程式裡的 bug 夠少，足以使其完成任務。</p>
-</blockquote>
+<p>認為自己程式沒有 bug 就是在愚弄自己。程式肯定有 bug，（只是）多數情況下，程式裡的 bug 夠少，足以使其完成任務。</p></blockquote>
 <p>是的，100% 正確的程式或許很難達成，或許連定義起來都很困難，但我們還是得努力趨近它，讓我們工作更有成就感，更有信心能夠交付價值，也更少因不慎流出去的瑕疵而疲於奔命。</p>
 <p>Joshua Bloch 緊接著又說：</p>
 <blockquote>
-<p>既然寫正確的程式那麼困難，我們就應該盡力取得幫助。所以，能減少 bug 的所有東西都是好的。這就是我是靜態型別和靜態分析的信徒的原因。</p>
-</blockquote>
+<p>既然寫正確的程式那麼困難，我們就應該盡力取得幫助。所以，能減少 bug 的所有東西都是好的。這就是我是靜態型別和靜態分析的信徒的原因。</p></blockquote>
 <p>是的，我們需要動員許多力量，取得許多幫助，才能夠趨近於正確的程式。可動員的許多力量當中，無疑的 code review 是重要的基礎，可惜的是，許多團隊連這基礎都還有諸多可改善之處，這也限縮了團隊能進一步發揮的價值。</p>
 <p>Code review 乍看之下是小事，但若認真探討起來還真是不小。在我多年輔導各種成熟度團隊的經驗中，有六個基於 code review 以及衍生出來的議題可深入探討：</p>
 <ol>
@@ -530,8 +528,6 @@ Code review 乍看之下是小事，但若認真探討起來還真是不小。�
 <li>讓進步看得見</li>
 <li>支持長久研發的措施</li>
 </ol>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
 <p>如果你所在的團隊已經啟動 Scrum 或 Kanban 研發流程，恭喜你，你們已經有很好的流程基礎可在這六大議題上面精進，只需要正確實施（玩真的！）你們所採用的敏捷流程。文中我會大量連結到 Scrum 及 Kanban 的要素。請確實「守」你們該守的流程，不要驟然「破」或「離」。</p>
 <p>全文很長，如果你是現役的程式設計師，可先讀①②以瞭解 engineering disciplines；如果你是 team lead，可先讀③④以瞭解團隊動力；如果你是管理層，可先讀⑤⑥，尤其是⑤關於管理面的施力點。</p>
 <h2 id="-基本信念品質來自正確地做事">① 基本信念：品質來自正確地做事</h2>
@@ -540,12 +536,11 @@ Code review 乍看之下是小事，但若認真探討起來還真是不小。�
 <p>怎樣才叫做「正確地做事」？</p>
 <p>談「正確地做事」之前，先確定我們擁有共同的基本信念。</p>
 <h3 id="collective-ownership">Collective ownership</h3>
-<p>Odd-e 三位專家在 2023-08-31 晚上有一場很精彩的 webinar【高效 Scrum 團隊所需的能力】。在 <a href="https://www.youtube.com/watch?v=13clptdw6J8&t=3816s">1h:03m:36s</a> 聊到「工程能力」時，有一句語重心長的話：「所有跟 eXtreme Programming 相關的工程能力都很重要。」</p>
+<p>Odd-e 三位專家在 2023-08-31 晚上有一場很精彩的 webinar【高效 Scrum 團隊所需的能力】。在 <a href="https://www.youtube.com/watch?v=13clptdw6J8&amp;t=3816s">1h:03m:36s</a> 聊到「工程能力」時，有一句語重心長的話：「所有跟 eXtreme Programming 相關的工程能力都很重要。」</p>
 <p>eXtreme Programming (XP) 第一版與第二版提到許多工程實踐，此刻我想特別點出 &ldquo;<a href="http://extremeprogramming.org/rules/collective.html">collective ownership</a>&rdquo; 這一條：</p>
 <blockquote>
 <p>Collective Ownership encourages everyone to contribute new ideas to all segments of the project. No one person becomes a bottleneck for changes.</p>
-<p>In practice collective ownership is actually more reliable than putting a single person in charge of watching specific classes. Especially since a person may leave the project at any time.</p>
-</blockquote>
+<p>In practice collective ownership is actually more reliable than putting a single person in charge of watching specific classes. Especially since a person may leave the project at any time.</p></blockquote>
 <p>積極面來說，collective ownership 可善用集體智慧提升設計品質，可促成知識共享，消極面則可降低公車指數 (bus factor)。 <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
 <p>萬一連 &ldquo;collective ownership&rdquo; 都不是團隊想要追求的境界，或許這個團隊從一開始的組成階段 (team forming) 就有問題了；我建議，解決了之後，再談以下的議題吧。否則，連「共同持有」的心態都沒有，還有什麼動機要去 review 別人的 code 呢？</p>
 <h3 id="four-eyes-principle">Four-eyes principle</h3>
@@ -579,8 +574,7 @@ Code review 乍看之下是小事，但若認真探討起來還真是不小。�
 <h3 id="clean-code">Clean code</h3>
 <p>Turing Award 得主 <a href="https://en.wikipedia.org/wiki/Tony_Hoare">C.A.R. Hoare</a> 有一段經典名言：</p>
 <blockquote>
-<p>There are two ways of constructing a software design: One way is to make it so simple that there are <em>obviously</em> no deficiencies, and the other way is to make it so complicated that there are no <em>obvious</em> deficiencies. The first method is far more difficult.</p>
-</blockquote>
+<p>There are two ways of constructing a software design: One way is to make it so simple that there are <em>obviously</em> no deficiencies, and the other way is to make it so complicated that there are no <em>obvious</em> deficiencies. The first method is far more difficult.</p></blockquote>
 <p>單純到「顯然沒有缺陷」 vs. 複雜到「沒有明顯的缺陷」，你願意選擇哪一種？</p>
 <p>寫出 clean code，可說是程式設計師的職業道德。坊間早有 clean code 及 refactoring 相關的經典書籍，網路上也有一大堆相關文章，請花點時間自我充實吧。</p>
 <h3 id="guideline">Guideline</h3>
@@ -607,16 +601,13 @@ Code review 乍看之下是小事，但若認真探討起來還真是不小。�
 <li>邏輯的測試保護足夠嗎？</li>
 <li>有完整實現需求嗎？</li>
 </ul>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
 <p>如果是在 DevOps 合一的團隊，甚至還會 review 一些 design for observability 的要點。以上都很值得放在團隊的 Definition of Done 或 PR/MR template。</p>
 <p>注意事項洋洋灑灑，每當有「現在可不可以暫時跳過？」的衝動時，或許該換個角度自問：「此刻若不好好 review 這些地方，我能承擔抄捷徑的後果嗎？」</p>
 <h3 id="small-batch">Small batch</h3>
 <p>敏捷陣營推崇小批量開發：小批量的東西容易估算，容易寫，容易理解，容易測試，容易部署，容易取得回饋，容易歸因。</p>
 <p>DevOps 陣營也推崇小批量。Google 在 &ldquo;<a href="https://cloud.google.com/architecture/devops/devops-process-working-in-small-batches">DevOps process: Working in small batches</a>&rdquo; 一文說道：</p>
 <blockquote>
-<p>Working in small batches is one of a set of capabilities that drive higher software delivery and organizational performance. These capabilities were discovered by the DORA State of DevOps research program, an independent, academically rigorous investigation into the practices and capabilities that drive high performance.</p>
-</blockquote>
+<p>Working in small batches is one of a set of capabilities that drive higher software delivery and organizational performance. These capabilities were discovered by the DORA State of DevOps research program, an independent, academically rigorous investigation into the practices and capabilities that drive high performance.</p></blockquote>
 <p>如果不是因為技術問題無法小批量提交 PR/MR，而是因為上游的 backlog item 就是如此大，或許團隊可以嘗試在 Sprint Planning 或 Refinement 時套用 <a href="//william-yeh.net/post/2022/11/spidr/">SPIDR 法</a>來拆解過大的 backlog item。</p>
 <h3 id="domain-knowledge">Domain knowledge</h3>
 <p>如果身處教育資源不那麼完備的團隊，想要養成領域知識，得自助加上人助：</p>
@@ -643,8 +634,7 @@ Code review 乍看之下是小事，但若認真探討起來還真是不小。�
 <p>Marcus Buckingham 在〈<a href="https://www.hbrtaiwan.com/special-topics/18933/power-of-hidden-team">隱藏版團隊力量大 (Power of Hidden Teams)</a>〉一文提到團隊的力量 <sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>：</p>
 <blockquote>
 <p>大多數工作實際上都是團隊進行的工作。團隊是你工作經驗的現實。你的責任似乎連結到其他人的責任；你的長處似乎能與其他人的長處互補；你的左右都有人幫你留意，讓你保持自信，對你的工作給予回應，分享你對「好」的想法，在你看起來快要承受不住時伸出援手，並在你陷入困境時給予意見。這種團隊體驗的品質，正是你工作體驗的品質。</p>
-<p>你的團隊體驗會促進很多事情：你在工作時的生產力；你在工作時是否感到快樂；你有多少創意、創新和復原力；以及你選擇留在公司多久。換句話說，在你的工作上，優秀的團隊和團隊合作不是「有了也不錯」的事物，而是必須要擁有。</p>
-</blockquote>
+<p>你的團隊體驗會促進很多事情：你在工作時的生產力；你在工作時是否感到快樂；你有多少創意、創新和復原力；以及你選擇留在公司多久。換句話說，在你的工作上，優秀的團隊和團隊合作不是「有了也不錯」的事物，而是必須要擁有。</p></blockquote>
 <p>現代軟體研發是一個群體的事業， <del>有人就有江湖</del>  有人就有協作的議題。Code review 既然是團隊的活動，免不了也會有 <del>江湖的議題</del> 協作的議題。</p>
 <p>若你的團隊已經啟動 Scrum，以下都是很值得在 retrospective 充分探討的好議題，讓團隊公約成為團隊協作的助力。</p>
 <h3 id="過與不及的拿捏">過與不及的拿捏</h3>
@@ -653,33 +643,28 @@ Code review 乍看之下是小事，但若認真探討起來還真是不小。�
 <p>如果團隊對於鬆與緊的尺度難以達到共識，不妨聽聽看 Google 怎麼說。</p>
 <p>Google 在 &ldquo;<a href="https://google.github.io/eng-practices/review/reviewer/looking-for.html">What to look for in a code review</a>&rdquo; 一文提出他們認為最起碼的品質標準是：</p>
 <blockquote>
-<p>Don&rsquo;t accept CLs (change lists) that degrade the code health of the system.</p>
-</blockquote>
+<p>Don&rsquo;t accept CLs (change lists) that degrade the code health of the system.</p></blockquote>
 <p>在業界，我們常暱稱它是「童子軍規則」(The Boy Scout Rule)：「離開營地前，讓營地比使用前更加乾淨。Always leave the campground cleaner than you found it.」</p>
 <p>至於尺度太緊的問題，Google 在 &ldquo;<a href="https://google.github.io/eng-practices/review/reviewer/standard.html">The Standard of code review</a>&rdquo; 一文提出他們的看法：</p>
 <blockquote>
-<p>In general, reviewers should favor approving a CL once it is in a state where it definitely improves the overall code health of the system being worked on, even if the CL isn&rsquo;t perfect.  That is <em>the</em> senior principle among all of the code review guidelines.</p>
-</blockquote>
+<p>In general, reviewers should favor approving a CL once it is in a state where it definitely improves the overall code health of the system being worked on, even if the CL isn&rsquo;t perfect.  That is <em>the</em> senior principle among all of the code review guidelines.</p></blockquote>
 <p>儘管 Google 是菁英薈萃之地，但關於這一點倒是滿務實的，不會追求完美主義。</p>
 <h3 id="cadence">Cadence</h3>
 <p>很多人怕 code review 會打斷別人的工作節奏，也怕自己的節奏被打斷。因此我常常看到看板上面擠壓許多有待 review 的 PR/MR，我輔導過的團隊，也幾乎都會在 retrospective 提出這項熱門議題。</p>
 <p>聽聽看 Google 怎麼說。&quot;<a href="https://google.github.io/eng-practices/review/reviewer/speed.html">Speed of Code Reviews</a>&quot; 一文主張：</p>
 <blockquote>
-<p>If you are not in the middle of a focused task, you should do a code review shortly after it comes in.  One business day is the maximum time it should take to respond to a code review request.</p>
-</blockquote>
+<p>If you are not in the middle of a focused task, you should do a code review shortly after it comes in.  One business day is the maximum time it should take to respond to a code review request.</p></blockquote>
 <p>可見 Google 很務實地將焦點放在 flow 上面：若無特殊理由，要以團隊目標為重。</p>
 <p>《<a href="https://williampjyeh.notion.site/999d5b9d126a4da39db13eaa401d6ab3">軟體測試實務：業界成功案例與高效實踐（第一冊）</a>》第四章則提出團隊一起 code review 的常見做法，以避免個別人士零零星星被打斷：</p>
 <blockquote>
 <p>除了找另一個團隊成員協助 code review 外，在多數團隊成員不熟悉相關程式碼時，我們也會有 mob code review，去加強知識擴散的效果。</p>
-<p>鑑於此種需要專心投入的特質，有些團隊會直接定時進行 mob code review（例如：每日 daily meeting 之後或是下班之前），以避免當前工作被打斷。</p>
-</blockquote>
+<p>鑑於此種需要專心投入的特質，有些團隊會直接定時進行 mob code review（例如：每日 daily meeting 之後或是下班之前），以避免當前工作被打斷。</p></blockquote>
 <p>大家可以參考這些業界常見的做法，改善自己團隊的 code review 節奏。</p>
 <h3 id="process">Process</h3>
 <p>敏捷路線不太鼓勵過多 top-down 的流程約束，更希望團隊基於經驗主義自行湧現出合適的流程。我鼓勵團隊挑選感興趣的部份實踐看看，並在 retrospective 充分反思。</p>
 <p>如果你是走 Scrum 路線，請善用 Definition of Done 作為品質共識。像《<a href="https://williampjyeh.notion.site/999d5b9d126a4da39db13eaa401d6ab3">軟體測試實務：業界成功案例與高效實踐（第一冊）</a>》第四章就提到：</p>
 <blockquote>
-<p>有些團隊甚至在他們的實體或 Jira 的 Scrum board 上，將 code review 強制設為必需通過的一個階段，未 code review 過的任務就不算完成。</p>
-</blockquote>
+<p>有些團隊甚至在他們的實體或 Jira 的 Scrum board 上，將 code review 強制設為必需通過的一個階段，未 code review 過的任務就不算完成。</p></blockquote>
 <p>列入 Definition of Done 還有一個好處：code review 就不再是隱藏成本，而是正大光明的 task，需要被規劃，需要被估點，也需要認真投入。</p>
 <p>如果你是走 Kanban 路線，可考慮新增一個名叫 &ldquo;code review&rdquo; 的 column，並設下 WIP 及 policy。接下來，你會驚訝地發現 code review 的 flow 是多麼順暢⋯⋯或是不順暢。請善用 Kanban 視覺化的威力。</p>
 <h2 id="-嘗試更好的協同理解技巧">④ 嘗試更好的協同理解技巧</h2>
@@ -692,8 +677,7 @@ Code review 乍看之下是小事，但若認真探討起來還真是不小。�
 <p>程式碼的溝通頻寬太低了，大家可以善用嘴巴，善用白板、螢幕（如果你們坐在附近）、投影機（如果需要多人一起看）、遠距會議軟體（如果是異地辦公的團隊）。</p>
 <p>《<a href="https://williampjyeh.notion.site/999d5b9d126a4da39db13eaa401d6ab3">軟體測試實務：業界成功案例與高效實踐（第一冊）</a>》第四章就介紹過這種大絕招：</p>
 <blockquote>
-<p>除了找另一個團隊成員協助 code review 外，在多數團隊成員不熟悉相關程式碼時，我們也會有 mob code review，去加強知識擴散的效果。</p>
-</blockquote>
+<p>除了找另一個團隊成員協助 code review 外，在多數團隊成員不熟悉相關程式碼時，我們也會有 mob code review，去加強知識擴散的效果。</p></blockquote>
 <p>如果連這種大絕招都無效，或許團隊成員彼此落差實在太大，需要長期治療。</p>
 <h3 id="尋求深度資訊">尋求深度資訊</h3>
 <p>避免 reviewer 只能根據浮面資訊進行浮面的 review，團隊需要提供更多深度資訊以協助 reviewer。</p>
@@ -783,16 +767,13 @@ Code review 乍看之下是小事，但若認真探討起來還真是不小。�
 <p>Code review 及相關的配套措施，需要有一定的技術能力。</p>
 <p>大規模敏捷框架 LeSS 在探討 &ldquo;<a href="https://less.works/less/technical-excellence">technical excellence</a>&rdquo; 時，有一段語重心長的話：</p>
 <blockquote>
-<p>There is no magic to them, most people are able to learn them. However, most people are <em>not</em> aware of these after they graduated from university and hence, your organization <strong>will</strong> need to invest in these, usually via coaching.</p>
-</blockquote>
+<p>There is no magic to them, most people are able to learn them. However, most people are <em>not</em> aware of these after they graduated from university and hence, your organization <strong>will</strong> need to invest in these, usually via coaching.</p></blockquote>
 <p>簡單的說，自立自強固然可行，但若有好的前輩或教練親自帶領，將會事半功倍。</p>
 <p>這就是團隊裡資深同仁的責任了。我期許你們能在③④提到的種種團隊協作活動中，以身作則，起示範作用。把整個團隊的水平提升到某個地步，有團隊整體戰力當你的後盾，也才能夠發揮更大的價值。</p>
 <h2 id="結語">結語</h2>
 <p>品質改善具有滯延現象，需要正確思路與堅定決心，才能避免捨本逐末與目標侵蝕的陷阱。</p>
 <p>本文探討從 code review 出發並衍生出來的六大議題，也建議一些可供個人、團隊、組織開始嘗試推動的事項。</p>
 <p>提升品質，不必然意味著降低研發效率。讓我們持續學習與探索如何聰明地做事。</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
 <div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
@@ -1023,7 +1004,7 @@ Code review 乍看之下是小事，但若認真探討起來還真是不小。�
     &copy;
     
       2015 -
-    2024
+    2025
     <span class="heart">
       
       <i class="iconfont">

@@ -1,0 +1,1248 @@
+<!DOCTYPE html>
+<html lang="zh-tw" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>當 AI 會寫程式，程式碼會變得即寫即棄嗎？ - Potioneer&#39;s Essays</title>
+  
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="William Yeh" />
+  <meta name="description" content="人類從事的領域，不斷被生成式 AI (GenAI) 入侵。
+社群媒體上，早就充斥一大堆「AI 體」的文案圖案，現在就連程式設計領域也開始淪陷。像 Google 執行長就透露：「在 Google，超過 1/4 的新程式碼已經是先由 AI 生成，再讓程式設計師去複審與確認。」1 而 GitHub CEO 更大膽預言 80% 的程式碼都將會由 GenAI 生成。2
+也就是說，以前，程式設計師得親手撰寫大部分的程式碼；現在則開始挪出一段時間去跟 GenAI 對話：調教提示詞 (prompt)、審核生成的程式碼、確認正確性，如此反覆進行好幾個回合。
+GenAI 進展神速。如果某一天進展到，只要提示詞下得夠精準，第一次生出來的程式碼幾乎就合格過關了，是否也就意謂著，程式設計師的專業訓練及工作重點，將會更轉向 ⑴ 鑽研提示工程、⑵ 審核生成的程式碼這兩條路線發展？換句話說，將會更朝向 ⑴ 前段的需求規格、⑵ 後段的測試驗收這兩條路線？
+如果頭尾兩端（需求規格與測試驗收）都由人來看守定義，中間步驟（撰寫程式碼）改由 GenAI 來操刀，是否也就意謂著，程式碼會變成像是可拋棄的東西，反正隨時都可以叫 GenAI 再生出一份出來？甚至當 GenAI 能力升級之後，又能夠生出比拋棄掉的還要更好的程式碼？
+聽起來可能有點兒瘋狂。可是如果以上屬實，那麼，敏捷四大宣言之一「可用的軟體 重於 詳盡的文件」，在 GenAI 時代是否依然成立，可能都值得再重新評估檢討。
+為此，我在 ChatGPT 4o 進行一系列小小的實驗。試試看當 GenAI 收到前段的需求規格之後，能夠生出什麼樣的程式碼以及測試驗收案例；緊接著會與 GenAI 協作調教頭尾兩端（需求規格與測試驗收），再看看 GenAI 重新生出來的程式碼，會有什麼不同。
+" />
+
+
+
+
+<meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
+
+
+<meta name="generator" content="Hugo 0.143.1" />
+
+
+<link rel="canonical" href="//william-yeh.net/post/2025/02/codegen-with-genai/" />
+
+
+
+
+
+<link rel="icon" href="/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/sass/jane.min.de22abc00de44766eebd1054fd9e0b254b071f89d5019044f893c484a9249a8d.css" integrity="sha256-3iKrwA3kR2buvRBU/Z4LJUsHH4nVAZBE&#43;JPEhKkkmo0=" media="screen" crossorigin="anonymous">
+
+
+
+
+
+
+
+<meta property="og:url" content="//william-yeh.net/post/2025/02/codegen-with-genai/">
+  <meta property="og:site_name" content="Potioneer&#39;s Essays">
+  <meta property="og:title" content="當 AI 會寫程式，程式碼會變得即寫即棄嗎？">
+  <meta property="og:description" content="人類從事的領域，不斷被生成式 AI (GenAI) 入侵。
+社群媒體上，早就充斥一大堆「AI 體」的文案圖案，現在就連程式設計領域也開始淪陷。像 Google 執行長就透露：「在 Google，超過 1/4 的新程式碼已經是先由 AI 生成，再讓程式設計師去複審與確認。」1 而 GitHub CEO 更大膽預言 80% 的程式碼都將會由 GenAI 生成。2
+也就是說，以前，程式設計師得親手撰寫大部分的程式碼；現在則開始挪出一段時間去跟 GenAI 對話：調教提示詞 (prompt)、審核生成的程式碼、確認正確性，如此反覆進行好幾個回合。
+GenAI 進展神速。如果某一天進展到，只要提示詞下得夠精準，第一次生出來的程式碼幾乎就合格過關了，是否也就意謂著，程式設計師的專業訓練及工作重點，將會更轉向 ⑴ 鑽研提示工程、⑵ 審核生成的程式碼這兩條路線發展？換句話說，將會更朝向 ⑴ 前段的需求規格、⑵ 後段的測試驗收這兩條路線？
+如果頭尾兩端（需求規格與測試驗收）都由人來看守定義，中間步驟（撰寫程式碼）改由 GenAI 來操刀，是否也就意謂著，程式碼會變成像是可拋棄的東西，反正隨時都可以叫 GenAI 再生出一份出來？甚至當 GenAI 能力升級之後，又能夠生出比拋棄掉的還要更好的程式碼？
+聽起來可能有點兒瘋狂。可是如果以上屬實，那麼，敏捷四大宣言之一「可用的軟體 重於 詳盡的文件」，在 GenAI 時代是否依然成立，可能都值得再重新評估檢討。
+為此，我在 ChatGPT 4o 進行一系列小小的實驗。試試看當 GenAI 收到前段的需求規格之後，能夠生出什麼樣的程式碼以及測試驗收案例；緊接著會與 GenAI 協作調教頭尾兩端（需求規格與測試驗收），再看看 GenAI 重新生出來的程式碼，會有什麼不同。">
+  <meta property="og:locale" content="zh_tw">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2025-02-07T18:00:00+08:00">
+    <meta property="article:modified_time" content="2025-02-07T18:00:00+08:00">
+    <meta property="article:tag" content="Agile">
+    <meta property="article:tag" content="Ai">
+
+  <meta itemprop="name" content="當 AI 會寫程式，程式碼會變得即寫即棄嗎？">
+  <meta itemprop="description" content="人類從事的領域，不斷被生成式 AI (GenAI) 入侵。
+社群媒體上，早就充斥一大堆「AI 體」的文案圖案，現在就連程式設計領域也開始淪陷。像 Google 執行長就透露：「在 Google，超過 1/4 的新程式碼已經是先由 AI 生成，再讓程式設計師去複審與確認。」1 而 GitHub CEO 更大膽預言 80% 的程式碼都將會由 GenAI 生成。2
+也就是說，以前，程式設計師得親手撰寫大部分的程式碼；現在則開始挪出一段時間去跟 GenAI 對話：調教提示詞 (prompt)、審核生成的程式碼、確認正確性，如此反覆進行好幾個回合。
+GenAI 進展神速。如果某一天進展到，只要提示詞下得夠精準，第一次生出來的程式碼幾乎就合格過關了，是否也就意謂著，程式設計師的專業訓練及工作重點，將會更轉向 ⑴ 鑽研提示工程、⑵ 審核生成的程式碼這兩條路線發展？換句話說，將會更朝向 ⑴ 前段的需求規格、⑵ 後段的測試驗收這兩條路線？
+如果頭尾兩端（需求規格與測試驗收）都由人來看守定義，中間步驟（撰寫程式碼）改由 GenAI 來操刀，是否也就意謂著，程式碼會變成像是可拋棄的東西，反正隨時都可以叫 GenAI 再生出一份出來？甚至當 GenAI 能力升級之後，又能夠生出比拋棄掉的還要更好的程式碼？
+聽起來可能有點兒瘋狂。可是如果以上屬實，那麼，敏捷四大宣言之一「可用的軟體 重於 詳盡的文件」，在 GenAI 時代是否依然成立，可能都值得再重新評估檢討。
+為此，我在 ChatGPT 4o 進行一系列小小的實驗。試試看當 GenAI 收到前段的需求規格之後，能夠生出什麼樣的程式碼以及測試驗收案例；緊接著會與 GenAI 協作調教頭尾兩端（需求規格與測試驗收），再看看 GenAI 重新生出來的程式碼，會有什麼不同。">
+  <meta itemprop="datePublished" content="2025-02-07T18:00:00+08:00">
+  <meta itemprop="dateModified" content="2025-02-07T18:00:00+08:00">
+  <meta itemprop="wordCount" content="5222">
+  <meta itemprop="keywords" content="Agile,Ai">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="當 AI 會寫程式，程式碼會變得即寫即棄嗎？">
+  <meta name="twitter:description" content="人類從事的領域，不斷被生成式 AI (GenAI) 入侵。
+社群媒體上，早就充斥一大堆「AI 體」的文案圖案，現在就連程式設計領域也開始淪陷。像 Google 執行長就透露：「在 Google，超過 1/4 的新程式碼已經是先由 AI 生成，再讓程式設計師去複審與確認。」1 而 GitHub CEO 更大膽預言 80% 的程式碼都將會由 GenAI 生成。2
+也就是說，以前，程式設計師得親手撰寫大部分的程式碼；現在則開始挪出一段時間去跟 GenAI 對話：調教提示詞 (prompt)、審核生成的程式碼、確認正確性，如此反覆進行好幾個回合。
+GenAI 進展神速。如果某一天進展到，只要提示詞下得夠精準，第一次生出來的程式碼幾乎就合格過關了，是否也就意謂著，程式設計師的專業訓練及工作重點，將會更轉向 ⑴ 鑽研提示工程、⑵ 審核生成的程式碼這兩條路線發展？換句話說，將會更朝向 ⑴ 前段的需求規格、⑵ 後段的測試驗收這兩條路線？
+如果頭尾兩端（需求規格與測試驗收）都由人來看守定義，中間步驟（撰寫程式碼）改由 GenAI 來操刀，是否也就意謂著，程式碼會變成像是可拋棄的東西，反正隨時都可以叫 GenAI 再生出一份出來？甚至當 GenAI 能力升級之後，又能夠生出比拋棄掉的還要更好的程式碼？
+聽起來可能有點兒瘋狂。可是如果以上屬實，那麼，敏捷四大宣言之一「可用的軟體 重於 詳盡的文件」，在 GenAI 時代是否依然成立，可能都值得再重新評估檢討。
+為此，我在 ChatGPT 4o 進行一系列小小的實驗。試試看當 GenAI 收到前段的需求規格之後，能夠生出什麼樣的程式碼以及測試驗收案例；緊接著會與 GenAI 協作調教頭尾兩端（需求規格與測試驗收），再看看 GenAI 重新生出來的程式碼，會有什麼不同。">
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Potioneer&#39;s Essays</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="//william-yeh.net/">♜</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="//william-yeh.net/post/">Archives</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          <div class="mobile-menu-parent">
+            <span class="mobile-submenu-open"></span>
+            <a href="//william-yeh.net/series/">
+              Series
+            </a>
+          </div>
+          <ul class="mobile-submenu-list">
+            
+              <li>
+                <a href="//william-yeh.net/series/career-reading-club/">職涯躍升書系導讀會</a>
+              </li>
+            
+              <li>
+                <a href="//william-yeh.net/series/essence-of-scrum/">Essence of Scrum</a>
+              </li>
+            
+              <li>
+                <a href="//william-yeh.net/series/scrum-master-training/">Scrum master 培訓系列</a>
+              </li>
+            
+              <li>
+                <a href="//william-yeh.net/series/agile-decomposition/">敏捷的工作分解方法</a>
+              </li>
+            
+              <li>
+                <a href="//william-yeh.net/series/systhinking-series/">「系統思考工作坊」系列</a>
+              </li>
+            
+              <li>
+                <a href="//william-yeh.net/series/criteria-series/">「判準與指標」系列</a>
+              </li>
+            
+              <li>
+                <a href="//william-yeh.net/series/change-series/">「改變」系列</a>
+              </li>
+            
+              <li>
+                <a href="//william-yeh.net/series/book-review/">書籍／課程推薦</a>
+              </li>
+            
+          </ul>
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="//william-yeh.net/tags/">Tags</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="//william-yeh.net/categories/">Categories</a>
+          
+        
+      </li>
+    
+
+    
+  </ul>
+</nav>
+
+
+  
+    
+
+
+
+
+
+
+  <link rel="stylesheet" href="/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+
+  
+
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/" class="logo">
+    
+      Potioneer&#39;s Essays
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="//william-yeh.net/">♜</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="//william-yeh.net/post/">Archives</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          <a class="menu-item-link menu-parent" href="//william-yeh.net/series/">Series</a>
+          <ul class="submenu">
+            
+              <li class="submenu-item">
+                <a href="//william-yeh.net/series/career-reading-club/">職涯躍升書系導讀會</a>
+              </li>
+            
+              <li class="submenu-item">
+                <a href="//william-yeh.net/series/essence-of-scrum/">Essence of Scrum</a>
+              </li>
+            
+              <li class="submenu-item">
+                <a href="//william-yeh.net/series/scrum-master-training/">Scrum master 培訓系列</a>
+              </li>
+            
+              <li class="submenu-item">
+                <a href="//william-yeh.net/series/agile-decomposition/">敏捷的工作分解方法</a>
+              </li>
+            
+              <li class="submenu-item">
+                <a href="//william-yeh.net/series/systhinking-series/">「系統思考工作坊」系列</a>
+              </li>
+            
+              <li class="submenu-item">
+                <a href="//william-yeh.net/series/criteria-series/">「判準與指標」系列</a>
+              </li>
+            
+              <li class="submenu-item">
+                <a href="//william-yeh.net/series/change-series/">「改變」系列</a>
+              </li>
+            
+              <li class="submenu-item">
+                <a href="//william-yeh.net/series/book-review/">書籍／課程推薦</a>
+              </li>
+            
+          </ul>
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="//william-yeh.net/tags/">Tags</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="//william-yeh.net/categories/">Categories</a>
+          
+
+        
+
+      </li>
+    
+
+    
+    
+
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight wallpaper">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">當 AI 會寫程式，程式碼會變得即寫即棄嗎？</h1>
+      
+
+      <div class="post-meta">
+  <div class="post-meta-author">
+    by
+      William Yeh
+    
+  </div>
+
+  <div class="post-meta-time">
+    <time datetime="2025-02-07">
+      2025-02-07
+    </time>
+  </div>
+
+  
+
+
+  <div class="post-meta__right">
+    <span class="post-meta-more">
+        約 5222 字 -
+        預計閱讀 11 分鐘
+      </span>
+
+    <div class="post-meta-category">
+        <a href="//william-yeh.net/categories/tech/"> tech </a>
+          
+      </div>
+
+
+    
+    
+
+
+    
+    
+  </div>
+</div>
+
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目錄</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#實驗素材">實驗素材</a></li>
+    <li><a href="#實驗基礎實驗">實驗🅐、基礎實驗</a></li>
+    <li><a href="#實驗調整規格">實驗🅑、調整規格</a></li>
+    <li><a href="#實驗可執行的規格">實驗🅒、可執行的規格</a></li>
+    <li><a href="#實驗測試驅動">實驗🅓、測試驅動</a></li>
+    <li><a href="#實驗逆向工程">實驗🅔、逆向工程</a></li>
+    <li><a href="#敏捷的再思">敏捷的再思</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+
+
+    
+    <div class="post-content">
+      <p>人類從事的領域，不斷被生成式 AI (GenAI) 入侵。</p>
+<p>社群媒體上，早就充斥一大堆「AI 體」的文案圖案，現在就連程式設計領域也開始淪陷。像 Google 執行長就透露：「在 Google，超過 1/4 的新程式碼已經是先由 AI 生成，再讓程式設計師去複審與確認。」<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> 而 GitHub CEO 更大膽預言 80% 的程式碼都將會由 GenAI 生成。<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></p>
+<p>也就是說，以前，程式設計師得親手撰寫大部分的程式碼；現在則開始挪出一段時間去跟 GenAI 對話：調教提示詞 (prompt)、審核生成的程式碼、確認正確性，如此反覆進行好幾個回合。</p>
+<p>GenAI 進展神速。如果某一天進展到，只要提示詞下得夠精準，第一次生出來的程式碼幾乎就合格過關了，是否也就意謂著，程式設計師的專業訓練及工作重點，將會更轉向 ⑴ 鑽研提示工程、⑵ 審核生成的程式碼這兩條路線發展？換句話說，將會更朝向 ⑴ 前段的需求規格、⑵ 後段的測試驗收這兩條路線？</p>
+<p>如果頭尾兩端（需求規格與測試驗收）都由人來看守定義，中間步驟（撰寫程式碼）改由 GenAI 來操刀，是否也就意謂著，程式碼會變成像是可拋棄的東西，反正隨時都可以叫 GenAI 再生出一份出來？甚至當 GenAI 能力升級之後，又能夠生出比拋棄掉的還要更好的程式碼？</p>
+<p>聽起來可能有點兒瘋狂。可是如果以上屬實，那麼，敏捷四大宣言之一「<strong>可用的軟體</strong> 重於 <strong>詳盡的文件</strong>」，在 GenAI 時代是否依然成立，可能都值得再重新評估檢討。</p>
+<p>為此，我在 ChatGPT 4o 進行一系列小小的實驗。試試看當 GenAI 收到前段的需求規格之後，能夠生出什麼樣的程式碼以及測試驗收案例；緊接著會與 GenAI 協作調教頭尾兩端（需求規格與測試驗收），再看看 GenAI 重新生出來的程式碼，會有什麼不同。</p>
+
+<link rel="stylesheet" href="/css/hugo-easy-gallery.css" />
+<div class="box">
+<figure  itemprop="associatedMedia"
+  itemscope itemtype="http://schema.org/ImageObject" 
+  style="max-width:30em" >
+    <div class="img">
+      <img itemprop="thumbnail" src="/img/2025/02/work-with-genai.jpg" />
+    </div>
+    <a href="/img/2025/02/work-with-genai.jpg" itemprop="contentUrl"></a>
+  </figure>
+</div>
+
+<h2 id="實驗素材">實驗素材</h2>
+<p>我選用 TDD 社群常見的 Tennis Kata 作為實驗素材。
+為了怕 GenAI 早已被餵食過 Tennis Kata，想也不想就直接吐出記憶中的標準答案，也就是所謂的「資料記憶」問題，我稍加修改 Samman Technical Coaching 提供的 <a href="https://sammancoaching.org/kata_descriptions/tennis.html">Tennis Kata 版本</a>。微調過的文字如下：</p>
+<blockquote>
+<p>The rule of the 2-player game &ldquo;Sinnet&rdquo; is summarized below:</p>
+<ul>
+<li>A game is won by the first player to have won at least four points in total and at least two points more than the opponent.</li>
+<li>The running score of each game is described in a manner peculiar to this: scores from zero to three points are described as “Love”, “Fifteen”, “Thirty”, and “Forty” respectively.</li>
+<li>If at least three points have been scored by each player, and the scores are equal, the score is “Deuce”.</li>
+<li>If at least three points have been scored by each side and a player has one more point than his opponent, the score of the game is “Advantage” for the player in the lead.</li>
+</ul></blockquote>
+<p>為了進一步消除資料記憶的疑慮，我也故意翻譯成中文（儘管在 ChatGPT 大神面前，這麼做未必真的有用，哈）：</p>
+<blockquote>
+<p>以下是二人遊戲 &ldquo;Sinnet&rdquo; 的規則：</p>
+<ul>
+<li>遊戲由首先贏得至少四分，且比對手多至少兩分的玩家獲勝。</li>
+<li>每局的進行得分以一種特殊的方式描述：從零到三分分別描述為 “Love”、 “Fifteen”、 “Thirty” 和 “Forty”。</li>
+<li>如果每位玩家至少得了三分，且比分相同，則比分為 “Deuce”。</li>
+<li>如果每方至少得了三分，且有一名玩家比對手多一分，則領先玩家的比分為 “Advantage”。</li>
+</ul></blockquote>
+<p>接下來的一系列實驗，都會以這段文字作為對話的開始，姑且就把它叫做「<strong>初始規格/v1</strong>」吧。不過，GenAI 有一些隨機性的行為，不一定每次都會得到一樣的結果，我會挑出較具代表性的來探討。</p>
+<p>系列實驗如下：</p>
+<ul>
+<li>
+<p>🅐 基礎實驗：①給初始規格/v1 ❯ ②生成程式及測試</p>
+</li>
+<li>
+<p>🅑 調整規格：①給初始規格/v1 ❯ ③調整規格/v2 ❯ ④生成程式及測試</p>
+</li>
+<li>
+<p>🅒 可執行的規格：①給初始規格/v1 ❯ ③調整規格/v2 ❯ ④生成程式及測試 ❯ ⑤將測試納入規格/v3</p>
+</li>
+<li>
+<p>🅓 測試驅動：⑥根據規格/v3 重新生成程式，並予以測試檢驗</p>
+</li>
+<li>
+<p>🅔 逆向工程：⑥根據規格/v3 重新生成程式，並予以測試檢驗 ❯ ⑦逆向工程規格/v4</p>
+</li>
+</ul>
+<h2 id="實驗基礎實驗">實驗🅐、基礎實驗</h2>
+<p>先從最基礎的實驗開始，直接叫 GenAI 根據我們給的初始規格，生成程式及測試。</p>
+<p>基礎的實驗步驟如下：</p>
+<ul>
+<li>①給初始規格/v1</li>
+<li>②生成程式及測試</li>
+</ul>
+<p>既然要叫 GenAI 生成測試，就順便叫它用比較好的方式來做：</p>
+<ul>
+<li>
+<p><a href="https://www.amazon.com/dp/1617290084"><em>Specification by Example</em></a> 提到的 BDD (behavior driven design)。</p>
+</li>
+<li>
+<p><a href="https://www.amazon.com/dp/1633439933"><em>Effective Software Testing</em></a> 提到的 spec-based &amp; property-based testing 角度以及 AAA (arrange-act-assert) 手法。</p>
+</li>
+</ul>
+<p>提示詞②如下：</p>
+<blockquote>
+<p>Now, implement a Python program to display the current game score.  Also, create specification-based tests using BDD-style and property-based testing. Each test case should follow the Arrange-Act-Assert (AAA) pattern, ensuring that only one AAA scenario is included per test case. Place Gherkin descriptions at the beginning of each test case using a docstring, annotation, or function name. Ensure these tests cover normal scenarios as well as edge cases, focusing on boundaries, partitions, and input dependencies.</p></blockquote>
+<p><!-- raw HTML omitted -->   <!-- raw HTML omitted -->   <!-- raw HTML omitted --></p>
+<p>吐出的主體程式碼，細節可能每次都有些不同，以下是較常見的版本：</p>
+
+
+<div class="box">
+<figure  itemprop="associatedMedia"
+  itemscope itemtype="http://schema.org/ImageObject" 
+  style="max-width:30em" >
+    <div class="img">
+      <img itemprop="thumbnail" src="/img/2025/02/code-a1.png" alt="提示詞②產生的主體程式碼"/>
+    </div>
+    <a href="/img/2025/02/code-a1.png" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>提示詞②產生的主體程式碼</p>
+      </figcaption>
+  </figure>
+</div>
+
+<p>主體程式碼看起來滿樸素的，程式邏輯大體上也是圍繞在初始規格的直接翻譯。</p>
+<p><!-- raw HTML omitted -->   <!-- raw HTML omitted -->   <!-- raw HTML omitted --></p>
+<p>吐出的測試案例，每次的差異就比較大了，以下是其中一個版本：</p>
+
+
+<div class="box">
+<figure  itemprop="associatedMedia"
+  itemscope itemtype="http://schema.org/ImageObject" 
+  style="max-width:30em" >
+    <div class="img">
+      <img itemprop="thumbnail" src="/img/2025/02/code-a2.png" alt="提示詞②產生的測試"/>
+    </div>
+    <a href="/img/2025/02/code-a2.png" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>提示詞②產生的測試</p>
+      </figcaption>
+  </figure>
+</div>
+
+<p>形式上 OK，只是我認為還有些缺失：</p>
+<ul>
+<li>
+<p>對於 deuce 的比分，常常只測到 3-3 的情況，沒有進一步嘗試 4-4、5-5 甚至更多。這應該是 property-based testing 的強項。</p>
+</li>
+<li>
+<p>在 arrange 及 act 階段，常常少了交錯得分的劇情（譬如：0-0 ❯ 1-0 ❯ 2-0 ❯ 2-1 ❯ 3-1 ❯ 3-2 ❯ 3-3 (deuce) ❯ 3-4 ❯ 4-4 (deuce) 這種交錯得分的緊張劇情）。</p>
+</li>
+<li>
+<p>Property-based testing 有點偷懶。</p>
+</li>
+</ul>
+<h2 id="實驗調整規格">實驗🅑、調整規格</h2>
+<p>我們一開始給的初始規格/v1，可能未必是最好的。這一次，讓我們邀請 AI 對我們提出疑問，一起協力把初始規格調整成較清晰、無歧義的內容，再拿這份調整過的規格去生成程式與測試。</p>
+<p>調整規格的實驗步驟如下：</p>
+<ul>
+<li>①給初始規格/v1</li>
+<li>③調整規格/v2</li>
+<li>④生成程式及測試</li>
+</ul>
+<p>提示詞③如下：</p>
+<blockquote>
+<p>Now, you can ask me questions about the previous specification to clarify its meaning and remove any ambiguity. If you don&rsquo;t have any questions, please proceed to rephrase the specification for better clarity.</p></blockquote>
+<p>有時候，GenAI 的確會與我一來一往對話，請我釐清一些細節。</p>
+<p>最後，我收到一份更清晰易懂的規格（就把它叫做 規格/v2 吧）：</p>
+<blockquote>
+<p><strong>Sinnet Game Rules</strong></p>
+<ol>
+<li>
+<p><strong>Winning the Game</strong>: A player wins by reaching at least four points and leading their opponent by at least two points.</p>
+</li>
+<li>
+<p><strong>Scoring System</strong>: Points are described using specific terms:</p>
+<ul>
+<li>0 points → “Love”</li>
+<li>1 point → “Fifteen”</li>
+<li>2 points → “Thirty”</li>
+<li>3 points → “Forty”</li>
+</ul>
+</li>
+<li>
+<p><strong>Deuce</strong>: If both players have at least three points and are tied, the score is called “Deuce.”</p>
+</li>
+<li>
+<p><strong>Advantage</strong>: If both players have at least three points, and one player leads by a single point, their score is called “Advantage.”</p>
+</li>
+</ol></blockquote>
+<p><!-- raw HTML omitted -->   <!-- raw HTML omitted -->   <!-- raw HTML omitted --></p>
+<p>接下來，讓我們根據這份調整過的 規格/v2，試試看 GenAI 有什麼不一樣的產出？</p>
+<p>提示詞④如下：</p>
+<blockquote>
+<p>Based on the rephrased specification, implement a Python program to display the current game score.
+Also create specification-based tests using BDD-style and property-based testing. Each test case should follow the Arrange-Act-Assert (AAA) pattern, ensuring that only one AAA scenario is included per test case. Place Gherkin descriptions at the beginning of each test case using a docstring, annotation, or function name. Ensure these tests cover normal scenarios as well as edge cases, focusing on boundaries, partitions, and input dependencies.</p></blockquote>
+<p>吐出的主體程式碼，細節可能每次都有些不同，以下是較常見的版本：</p>
+
+
+<div class="box">
+<figure  itemprop="associatedMedia"
+  itemscope itemtype="http://schema.org/ImageObject" 
+  style="max-width:30em" >
+    <div class="img">
+      <img itemprop="thumbnail" src="/img/2025/02/code-b1.png" alt="提示詞④產生的主體程式碼"/>
+    </div>
+    <a href="/img/2025/02/code-b1.png" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>提示詞④產生的主體程式碼</p>
+      </figcaption>
+  </figure>
+</div>
+
+<p>或許要歸功於調整後的 規則/v2 較清晰易懂，據以產生出來的程式邏輯也比以前更清晰易懂。</p>
+<p><!-- raw HTML omitted -->   <!-- raw HTML omitted -->   <!-- raw HTML omitted --></p>
+<p>對於吐出的測試案例，有時候我不滿意，會叫它再做一次，加強測試涵蓋率。譬如說，如果他只考慮到 3-3 這個 deuce 案例，我也會叫它再多考慮一下：</p>
+<blockquote>
+<p>Have you considered that deuce can also occur at 4-4, 5-5, and beyond? This appears to be a strong candidate for property-based testing.</p></blockquote>
+<p>這階段，我建議要跟 GenAI 多聊幾次，先一起弄出令人滿意的測試集，以作為下一個實驗的基礎。</p>
+<p>以下是其中一個版本：</p>
+
+
+<div class="box">
+<figure  itemprop="associatedMedia"
+  itemscope itemtype="http://schema.org/ImageObject" 
+  style="max-width:30em" >
+    <div class="img">
+      <img itemprop="thumbnail" src="/img/2025/02/code-b2.png" alt="提示詞④產生的測試"/>
+    </div>
+    <a href="/img/2025/02/code-b2.png" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>提示詞④產生的測試</p>
+      </figcaption>
+  </figure>
+</div>
+
+<p>看起來還不錯。我們可以繼續往下進行最關鍵的實驗了。</p>
+<h2 id="實驗可執行的規格">實驗🅒、可執行的規格</h2>
+<p>在前一個實驗中，我們和 GenAI 一起調整出較清晰易讀的 規格/v2，也一起調整出較周全的測試集。以敏捷開發的角度來說，好的測試集，其實是可以逆向反饋到規格的，也就是所謂的「<strong>可執行的規格</strong>」(<strong>executable specification</strong>)。現在，我們就來弄出一份這樣的 規格/v3 吧。</p>
+<p>「可執行的規格」實驗步驟如下：</p>
+<ul>
+<li>①給初始規格/v1</li>
+<li>③調整規格/v2</li>
+<li>④生成程式及測試</li>
+<li>⑤將測試納入規格/v3 ◄ 承上步驟，從這裡開始。</li>
+</ul>
+<p>接續前一個實驗累積的測試集，讓我們請 GenAI 幫我們逆向轉譯為 Gherkin 格式的規格。</p>
+<p>提示詞⑤如下：</p>
+<blockquote>
+<p>Now, incorporate the newly generated tests (including property-based tests) into the specification under a section titled &ldquo;Validation Scenarios,&rdquo; expressed in Gherkin format. This will make the specification more comprehensive and allow it to function as an &ldquo;executable specification.&rdquo; Finally, add the test codes in an appendix section titled &ldquo;Tests.&rdquo;</p></blockquote>
+<p>最後會孵化出這樣的 規格/v3：</p>
+<blockquote>
+<p><strong>Sinnet Game Specification</strong></p>
+<p><strong>▋ GAME RULES</strong></p>
+<ol>
+<li>
+<p><strong>Winning the Game</strong>: A player wins by reaching at least four points and leading their opponent by at least two points.</p>
+</li>
+<li>
+<p><strong>Scoring System</strong>: Points are described using specific terms:</p>
+<ul>
+<li>0 points → “Love”</li>
+<li>1 point → “Fifteen”</li>
+<li>2 points → “Thirty”</li>
+<li>3 points → “Forty”</li>
+</ul>
+</li>
+<li>
+<p><strong>Deuce</strong>: If both players have at least three points and are tied, the score is called “Deuce.”</p>
+</li>
+<li>
+<p><strong>Advantage</strong>: If both players have at least three points, and one player leads by a single point, their score is called “Advantage.”</p>
+</li>
+</ol>
+<p><strong>▋ VALIDATION SCENARIOS</strong></p>
+<p><strong>Normal Gameplay Scenarios</strong></p>
+<ul>
+<li>
+<p>Scenario: Initial game score is &ldquo;Love - Love&rdquo;</p>
+<ul>
+<li>Given a new game has started</li>
+<li>When no player has scored</li>
+<li>Then the score should be &ldquo;Love - Love&rdquo;</li>
+</ul>
+</li>
+<li>
+<p>Scenario: A player scores first</p>
+<ul>
+<li>Given a new game has started</li>
+<li>When a player scores once</li>
+<li>Then the score should reflect the correct score for that player</li>
+</ul>
+</li>
+<li>
+<p>Scenario: A player gains advantage</p>
+<ul>
+<li>Given both players have scored at least three times</li>
+<li>When a player scores once more</li>
+<li>Then the score should be &ldquo;Advantage&rdquo; for that player</li>
+</ul>
+</li>
+<li>
+<p>Scenario: A player wins the game</p>
+<ul>
+<li>Given a player has three points and the other player has less than three points</li>
+<li>When the player scores the winning point</li>
+<li>Then the player should be declared the winner</li>
+</ul>
+</li>
+<li>
+<p>Scenario: A player wins after having advantage</p>
+<ul>
+<li>Given a player has advantage</li>
+<li>When the player scores one more point</li>
+<li>Then the player should be declared the winner</li>
+</ul>
+</li>
+<li>
+<p>Scenario: A player gains advantage from deuce</p>
+<ul>
+<li>Given the score is deuce</li>
+<li>When a player scores a point</li>
+<li>Then the score should be &ldquo;Advantage&rdquo; for that player</li>
+</ul>
+</li>
+</ul>
+<p><strong>Edge Cases and Property-Based Testing</strong></p>
+<ul>
+<li>
+<p>Scenario: Deuce occurs at 3-3, 4-4, 5-5, and beyond</p>
+<ul>
+<li>Given both players have the same score of at least 3 points</li>
+<li>When the scores are equal</li>
+<li>Then the score should be &ldquo;Deuce&rdquo;</li>
+</ul>
+</li>
+<li>
+<p>Property-Based Test: Deuce should occur at 3-3, 4-4, 5-5, and beyond</p>
+<ul>
+<li>Given both players have at least 3 points and the same score</li>
+<li>When the scores are equal</li>
+<li>Then the score should be &ldquo;Deuce&rdquo;</li>
+</ul>
+</li>
+</ul>
+<p><strong>▋ APPENDIX: TESTS</strong>
+[測試規格如下]
+
+<details>
+  <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+    Python 版的測試規格
+    
+  </summary>
+  <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> pytest
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> hypothesis <span style="color:#f92672">import</span> given, strategies <span style="color:#66d9ef">as</span> st
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_initial_score</span>():
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    Scenario: Initial game score is &#34;Love - Love&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    Given a new game has started
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    When no player has scored
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    Then the score should be &#34;Love - Love&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    game <span style="color:#f92672">=</span> SinnetGame()
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">assert</span> game<span style="color:#f92672">.</span>score() <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;Love - Love&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_player1_scores_once</span>():
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    Scenario: Player 1 scores first
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    Given a new game has started
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    When Player 1 scores once
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    Then the score should be &#34;Fifteen - Love&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    game <span style="color:#f92672">=</span> SinnetGame()
+</span></span><span style="display:flex;"><span>    game<span style="color:#f92672">.</span>player_scores(<span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">assert</span> game<span style="color:#f92672">.</span>score() <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;Fifteen - Love&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_deuce_extended</span>():
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    Scenario: Deuce occurs at 3-3, 4-4, 5-5, and beyond
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    Given both players have the same score of at least 3 points
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    When the scores are equal
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    Then the score should be &#34;Deuce&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> score <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">10</span>):
+</span></span><span style="display:flex;"><span>        game <span style="color:#f92672">=</span> SinnetGame()
+</span></span><span style="display:flex;"><span>        game<span style="color:#f92672">.</span>scores <span style="color:#f92672">=</span> [score, score]
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">assert</span> game<span style="color:#f92672">.</span>score() <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;Deuce&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_advantage_player1</span>():
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    Scenario: Player 1 gains advantage
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    Given both players have scored at least three times
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    When Player 1 scores once more
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    Then the score should be &#34;Advantage Player 1&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    game <span style="color:#f92672">=</span> SinnetGame()
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> _ <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">4</span>):
+</span></span><span style="display:flex;"><span>        game<span style="color:#f92672">.</span>player_scores(<span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>        game<span style="color:#f92672">.</span>player_scores(<span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>    game<span style="color:#f92672">.</span>player_scores(<span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">assert</span> game<span style="color:#f92672">.</span>score() <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;Advantage Player 1&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_player1_wins</span>():
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    Scenario: Player 1 wins the game
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    Given Player 1 has three points and Player 2 has less than three points
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    When Player 1 scores the winning point
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    Then Player 1 should be declared the winner
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    game <span style="color:#f92672">=</span> SinnetGame()
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> _ <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">4</span>):
+</span></span><span style="display:flex;"><span>        game<span style="color:#f92672">.</span>player_scores(<span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">assert</span> game<span style="color:#f92672">.</span>score() <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;Player 1 wins&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_transition_from_advantage_to_win</span>():
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    Scenario: Player 1 wins after having advantage
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    Given Player 1 has advantage
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    When Player 1 scores one more point
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    Then Player 1 should be declared the winner
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    game <span style="color:#f92672">=</span> SinnetGame()
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> _ <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">4</span>):
+</span></span><span style="display:flex;"><span>        game<span style="color:#f92672">.</span>player_scores(<span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>        game<span style="color:#f92672">.</span>player_scores(<span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>    game<span style="color:#f92672">.</span>player_scores(<span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>    game<span style="color:#f92672">.</span>player_scores(<span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">assert</span> game<span style="color:#f92672">.</span>score() <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;Player 1 wins&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_transition_from_deuce_to_advantage</span>():
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    Scenario: Player 2 gains advantage from deuce
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    Given the score is deuce
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    When Player 2 scores a point
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    Then the score should be &#34;Advantage Player 2&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    game <span style="color:#f92672">=</span> SinnetGame()
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> _ <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">4</span>):
+</span></span><span style="display:flex;"><span>        game<span style="color:#f92672">.</span>player_scores(<span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>        game<span style="color:#f92672">.</span>player_scores(<span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>    game<span style="color:#f92672">.</span>player_scores(<span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">assert</span> game<span style="color:#f92672">.</span>score() <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;Advantage Player 2&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@given</span>(st<span style="color:#f92672">.</span>integers(min_value<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>, max_value<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>))
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_deuce_property_based</span>(score):
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    Property-based test: Deuce should occur at 3-3, 4-4, 5-5, and beyond
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    Given both players have at least 3 points and the same score
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    When the scores are equal
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    Then the score should be &#34;Deuce&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    game <span style="color:#f92672">=</span> SinnetGame()
+</span></span><span style="display:flex;"><span>    game<span style="color:#f92672">.</span>scores <span style="color:#f92672">=</span> [score, score]
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">assert</span> game<span style="color:#f92672">.</span>score() <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;Deuce&#34;</span>
+</span></span></code></pre></div>
+</details>
+</p></blockquote>
+<p>這份 規格/v3，不僅有規格文章，還有測試集，又臭又長，要是換成是我自己一個人來寫，我多半這個耐心。</p>
+<p>你可能會懷疑：比起之前的 初始規格/v1 及 調整規格/v2，這份孵化出來的 規格/v3 是否真的有獨到之處？</p>
+<p>且讓我們繼續看下去。</p>
+<h2 id="實驗測試驅動">實驗🅓、測試驅動</h2>
+<p>在前一個實驗中，我們和 GenAI 一起孵化出「可執行的規格」。現在，我們就來根據這份 規格/v3 開啟全新的對話，叫 GenAI 重新生成程式，並根據 規格/v3 附錄的測試集予以測試檢驗。</p>
+<p>且讓我們評估看看究竟值不值得如此大費周章。</p>
+<p>測試驅動的實驗步驟如下：</p>
+<ul>
+<li>①給初始規格/v1 ❯ ③調整規格/v2 ❯ ④生成程式及測試 ❯ ⑤將測試納入規格/v3 ◄ 之前的步驟</li>
+<li>⑥根據規格/v3 重新生成程式，並予以測試檢驗 ◄ 現在的步驟</li>
+</ul>
+<p>請 GenAI 開啟全新的對話，用這份熱騰騰的 規格/v3 重新生成程式。</p>
+<p>提示詞⑥如下：</p>
+<blockquote>
+<p>Now, generate a Python program based on the following specification. [貼上 規格/v3 全文]</p></blockquote>
+<p>吐出的主體程式碼，細節可能每次都有些不同，以下是較常見的版本：</p>
+
+
+<div class="box">
+<figure  itemprop="associatedMedia"
+  itemscope itemtype="http://schema.org/ImageObject" 
+  style="max-width:30em" >
+    <div class="img">
+      <img itemprop="thumbnail" src="/img/2025/02/code-d1.png" alt="提示詞⑥產生的主體程式碼"/>
+    </div>
+    <a href="/img/2025/02/code-d1.png" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>提示詞⑥產生的主體程式碼</p>
+      </figcaption>
+  </figure>
+</div>
+
+<p>GenAI 有隨機性行為，未必每次都會比根據之前兩份規格（初始規格/v1 及 調整規格/v2）表現得更好，但至少這是可以通過測試的。萬一通不過測試，大可叫 GenAI 去 debug。這就是我們之前我們與 AI 協作，努力調教頭尾兩端（需求規格與測試驗收）的好處。只要向 AI 指出這項錯誤，它就會乖乖認錯，並且自動 debug。</p>
+<p>只要程式是正確的，隨時都可以叫 GenAI 去重構，重構到滿意為止，兼顧正確性與各種內在品質標準。</p>
+<p>這就是當初在 規格/v3 埋下「可執行的規格」伏筆的好處。</p>
+<h2 id="實驗逆向工程">實驗🅔、逆向工程</h2>
+<p>敏捷宣言說：「<strong>可用的軟體</strong> 重於 <strong>詳盡的文件</strong>」。我們想看看，GenAI 是否真的能夠從「可用的軟體」逆向工程出「詳盡的文件」，好讓我們評估究竟哪一個比較重要，可以當成 “ground truth”。</p>
+<p>逆向工程的實驗步驟如下：</p>
+<ul>
+<li>⑥根據規格/v3 重新生成程式，並予以測試檢驗 ◄ 之前的步驟</li>
+<li>⑦逆向工程規格/v4 ◄ 現在的步驟</li>
+</ul>
+<p>請 GenAI 開啟全新的對話，用前一個實驗的程式碼及測試，設法轉譯成人類的語言。</p>
+<p>提示詞⑦如下：</p>
+<blockquote>
+<p>Generate a specification based on the following Python code and tests. The specification should include two sections: 1. Sinnet Game Rules – Clearly structured and expressed in natural language. 2. Validation Scenarios – Presented in Gherkin format.  [附上主體程式碼及測試]</p></blockquote>
+<p>我驚訝的發現，GenAI 劈頭就給我這麼一句話：</p>
+<blockquote>
+<p>The Sinnet Game is a simplified scoring system inspired by tennis. The objective is for a player to win by reaching at least four points and having a two-point lead over the opponent.</p></blockquote>
+<p>看起來，可能是程式碼寫得太好了，測試寫得太好了，變數及函示名稱取得太好了，註解寫得太好了，讓 GenAI 有足夠的線索察覺到，這和現實世界的網球規則高度雷同。</p>
+<p>這也證明了，清晰易懂的程式碼，不僅讓人類舒服，連 GenAI 也受益。</p>
+<h2 id="敏捷的再思">敏捷的再思</h2>
+<p>同樣的武器，在高手與菜鳥手上，能玩出的花樣自然會有高低落差之別。</p>
+<p>儘管高手是草木竹石均可為劍的；但善用好的武器，能讓我們付出較少的精力，就做出近似高手的表現。</p>
+<p>怎麼樣善用 GenAI 這項神兵利器？</p>
+<p>前面幾個實驗中，儘管 GenAI 看起來非常厲害，但是別忘了，我所下的提示詞，其實已經將人類在程式設計領域的經驗高度濃縮進去。缺少這些知識，未必能夠和 GenAI 一來一往充分協作出好的成果：</p>
+<ul>
+<li>Executable specification 很重要。</li>
+<li>Specification-based testing 很重要。</li>
+<li>Property-based testing 很重要。</li>
+<li>AAA (arrange-act-assert) 很重要。</li>
+<li>Refactoring 很重要。</li>
+<li>Shift-left 很重要。</li>
+</ul>
+<p>這些，其實都是敏捷開發領域重視的實踐。</p>
+<p>因此，在 GenAI 時代，就算敏捷四大宣言之一「<strong>可用的軟體</strong> 重於 <strong>詳盡的文件</strong>」未必依然成立，但那也是因為藉由 GenAI 之力，我們終於可以把「可用的軟體」的內涵，用更有效率的方式轉寫到「詳盡的文件」裡面，讓它成為更有意義的 “grouth truth”。</p>
+<p>不是因為敏捷宣言過時了，而是 GenAI 成全了敏捷宣言。</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>根據 Google CEO 在 <a href="https://blog.google/inside-google/message-ceo/alphabet-earnings-q3-2024/">(2024) Q3 earnings call: CEO’s remarks</a> 的說法：“Today, more than a quarter of all new code at Google is generated by AI, then reviewed and accepted by engineers. This helps our engineers do more and move faster.”&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>GitHub CEO 在 2023 年中一場<a href="https://www.freethink.com/robots-ai/github-copilot">專訪</a>時，大膽預言：“Sooner than later, 80% of the code is going to be written by Copilot.”&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">William Yeh</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+      2025-02-07
+      
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">授權條款</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW" target="_blank">CC BY-NC-SA 4.0</a> (姓名標示-非商業性-相同方式分享 4.0 國際)</span>
+  </p>
+</div>
+
+
+
+    
+    
+
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="//william-yeh.net/tags/agile/">agile</a>
+            <a href="//william-yeh.net/tags/ai/">ai</a>
+            
+        </div>
+
+
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/post/2024/08/less-book-review/">
+            <span class="next-text nav-default">務實的長期主義路線——《多團隊高效協作密技》推薦序</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            
+            <i class="iconfont">
+              <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311 0.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889 0.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-0.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"></path>
+</svg>
+
+            </i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+  
+  
+
+
+  
+  
+
+  
+
+  
+  
+
+  
+  
+    <div class="post bg-white">
+  <script src="https://utteranc.es/client.js"
+        repo= "William-Yeh/utterances-area"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script>
+</div>
+
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="icon-links">
+  
+  
+    <a href="mailto:william.pjyeh@gmail.com" rel="me noopener" class="iconfont"
+      title="email" >
+      <svg class="icon" viewBox="0 0 1451 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M664.781909 681.472759 0 97.881301C0 3.997201 71.046997 0 71.046997 0L474.477909 0 961.649408 0 1361.641813 0C1361.641813 0 1432.688811 3.997201 1432.688811 97.881301L771.345323 681.472759C771.345323 681.472759 764.482731 685.154773 753.594283 688.65053L753.594283 688.664858C741.602731 693.493018 729.424896 695.068979 718.077952 694.839748 706.731093 695.068979 694.553173 693.493018 682.561621 688.664858L682.561621 688.65053C671.644501 685.140446 664.781909 681.472759 664.781909 681.472759L664.781909 681.472759ZM718.063616 811.603883C693.779541 811.016482 658.879232 802.205449 619.10784 767.734955 542.989056 701.759633 0 212.052267 0 212.052267L0 942.809523C0 942.809523 0 1024 83.726336 1024L682.532949 1024 753.579947 1024 1348.948139 1024C1432.688811 1024 1432.688811 942.809523 1432.688811 942.809523L1432.688811 212.052267C1432.688811 212.052267 893.138176 701.759633 817.019477 767.734955 777.248 802.205449 742.347691 811.03081 718.063616 811.603883L718.063616 811.603883Z"></path>
+</svg>
+
+    </a>
+  
+    <a href="https://twitter.com/william_yeh" rel="me noopener" class="iconfont"
+      title="twitter"  target="_blank"
+      >
+      <svg class="icon" viewBox="0 0 1264 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M1229.8616 18.043658c0 0-117.852626 63.135335-164.151872 67.344358-105.225559-164.151872-505.082682-92.598492-437.738325 223.078185C278.622548 312.675223 89.216542 47.506814 89.216542 47.506814s-117.852626 189.406006 75.762402 345.139833C127.097743 396.85567 55.544363 371.601535 55.544363 371.601535S26.081207 535.753407 253.368414 615.724832c-21.045112 29.463156-113.643603 8.418045-113.643603 8.418045s25.254134 143.10676 231.496229 180.987961c-143.10676 130.479693-387.230056 92.598492-370.393967 105.225559 206.242095 189.406006 1119.599946 231.496229 1128.01799-643.98042C1179.353331 249.539887 1263.533778 123.269217 1263.533778 123.269217s-130.479693 37.881201-138.897738 33.672179C1225.652577 98.015083 1229.8616 18.043658 1229.8616 18.043658"></path>
+</svg>
+
+    </a>
+  
+    <a href="https://www.facebook.com/william.yeh" rel="me noopener" class="iconfont"
+      title="facebook"  target="_blank"
+      >
+      <svg class="icon" style="" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="33" height="33">
+  <path d="M965.7344 2.7648c14.848 0 28.2624 5.5296 40.2432 16.6912C1017.9584 30.5152 1024 43.52 1024 58.2656l0 910.2336c0 14.848-6.0416 27.7504-18.0224 38.8096C993.8944 1018.4704 980.48 1024 965.7344 1024L704.9216 1024 704.9216 629.9648l133.2224 0 19.456-155.4432-152.576 0L705.024 373.0432c0-50.688 25.9072-76.0832 77.7216-76.0832l80.4864 0L863.232 163.5328c-27.7504-5.4272-67.4816-8.192-119.296-8.192-59.1872 0-106.8032 18.0224-142.9504 54.0672C564.736 245.5552 546.7136 296.0384 546.7136 360.7552l0 113.7664L413.4912 474.5216l0 155.4432 133.2224 0L546.7136 1024 55.5008 1024c-14.848 0-27.7504-5.5296-38.8096-16.6912C5.5296 996.2496 0 983.3472 0 968.4992L0 58.2656C0 43.52 5.5296 30.5152 16.6912 19.456c11.0592-11.0592 24.064-16.6912 38.8096-16.6912L965.7344 2.7648z"></path>
+</svg>
+
+    </a>
+  
+    <a href="https://www.linkedin.com/in/pjyeh/" rel="me noopener" class="iconfont"
+      title="linkedin"  target="_blank"
+      >
+      <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="33" height="33">
+  <path d="M872.405333 872.618667h-151.637333v-237.610667c0-56.661333-1.152-129.578667-79.018667-129.578667-79.061333 0-91.136 61.653333-91.136 125.397334v241.792H398.976V384h145.664v66.602667h1.962667c20.352-38.4 69.845333-78.933333 143.786666-78.933334 153.642667 0 182.058667 101.12 182.058667 232.746667v268.202667zM227.712 317.141333a87.978667 87.978667 0 0 1-88.021333-88.106666 88.064 88.064 0 1 1 88.021333 88.106666z m76.032 555.477334H151.68V384h152.064v488.618667zM948.266667 0H75.562667C33.792 0 0 33.024 0 73.770667v876.458666C0 991.018667 33.792 1024 75.562667 1024h872.576C989.866667 1024 1024 991.018667 1024 950.229333V73.770667C1024 33.024 989.866667 0 948.138667 0h0.128z"></path>
+</svg>
+
+    </a>
+  
+    <a href="https://github.com/william-yeh" rel="me noopener" class="iconfont"
+      title="github"  target="_blank"
+      >
+      <svg class="icon" style="" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M512 12.672c-282.88 0-512 229.248-512 512 0 226.261333 146.688 418.133333 350.08 485.76 25.6 4.821333 34.986667-11.008 34.986667-24.618667 0-12.16-0.426667-44.373333-0.64-87.04-142.421333 30.890667-172.458667-68.693333-172.458667-68.693333C188.672 770.986667 155.008 755.2 155.008 755.2c-46.378667-31.744 3.584-31.104 3.584-31.104 51.413333 3.584 78.421333 52.736 78.421333 52.736 45.653333 78.293333 119.850667 55.68 149.12 42.581333 4.608-33.109333 17.792-55.68 32.426667-68.48-113.706667-12.8-233.216-56.832-233.216-253.013333 0-55.893333 19.84-101.546667 52.693333-137.386667-5.76-12.928-23.04-64.981333 4.48-135.509333 0 0 42.88-13.738667 140.8 52.48 40.96-11.392 84.48-17.024 128-17.28 43.52 0.256 87.04 5.888 128 17.28 97.28-66.218667 140.16-52.48 140.16-52.48 27.52 70.528 10.24 122.581333 5.12 135.509333 32.64 35.84 52.48 81.493333 52.48 137.386667 0 196.693333-119.68 240-233.6 252.586667 17.92 15.36 34.56 46.762667 34.56 94.72 0 68.522667-0.64 123.562667-0.64 140.202666 0 13.44 8.96 29.44 35.2 24.32C877.44 942.592 1024 750.592 1024 524.672c0-282.752-229.248-512-512-512"></path>
+</svg>
+
+    </a>
+  
+    <a href="https://www.slideshare.net/williamyeh" rel="me noopener" class="iconfont"
+      title="coding"  target="_blank"
+      >
+      <svg class="icon" style="" viewBox="0 0 1024 1024" version="1.1"
+  width="36" height="36">
+  <path
+      d="m 313.5359,557.51414 c 9.229,0 16.57801,8.88719 16.57801,19.99616 0,11.10899 -7.34901,19.99617 -16.57801,19.99617 -9.229,0 -16.57801,-8.88718 -16.57801,-19.99617 0,-11.10897 7.34901,-19.99616 16.57801,-19.99616 z m 393.7706,0 c 9.22899,0 16.57802,8.88719 16.57802,19.99616 0,11.10899 -7.34903,19.99617 -16.57802,19.99617 -9.229,0 -16.57802,-8.88718 -16.57802,-19.99617 0,-11.10897 7.34902,-19.99616 16.57802,-19.99616 z"
+      id="path6"/>
+  <path
+      d="m 945.8932,448.98796 c -27.17427,0 -51.1013,17.26164 -64.43208,43.23957 C 836.17066,393.44306 741.8298,302.00762 625.27096,264.23708 562.37704,239.1137 518.28294,190.57601 512.8139,134.17657 507.34486,190.74691 463.25077,239.1137 400.35685,264.23708 283.79802,301.83671 189.45714,393.44306 144.16669,492.22753 130.83591,466.2496 107.07979,448.98796 79.734607,448.98796 c -41.701401,0 -75.541066,40.84686 -75.541066,91.26454 0,50.41768 33.839665,91.26454 75.541066,91.26454 12.64715,0 24.610663,-3.75996 35.206923,-10.42536 3.58906,163.55837 180.30728,269.69186 397.87237,270.03367 217.5651,-0.34181 394.28332,-106.4753 397.87238,-270.03367 10.42535,6.6654 22.55977,10.42536 35.20692,10.42536 41.7014,0 75.541,-40.84686 75.541,-91.26454 0.171,-50.41768 -33.6687,-91.26454 -75.541,-91.26454 z M 114.2579,568.79403 c -3.58906,13.15987 -19.312535,18.79981 -35.206921,12.47625 -15.894385,-6.15267 -25.977916,-21.87616 -22.388867,-35.03602 3.58906,-13.15987 19.312533,-18.79981 35.206919,-12.47624 15.894389,6.15267 25.807019,21.87614 22.388869,35.03601 z m 398.556,276.69904 C 338.31748,845.15126 196.97707,762.603 196.97707,644.33509 c 0,-2.56361 0.1709,-4.95631 0.1709,-7.34902 0,-0.85453 0,-1.53817 0.17092,-2.3927 0.1709,-1.70908 0.34181,-3.41814 0.34181,-4.95631 0.1709,-2.22179 0.51273,-4.44359 0.85454,-6.6654 0,-0.1709 0,-0.51271 0.1709,-0.68362 3.58906,-23.2434 12.47624,-58.79214 26.14883,-79.13012 32.64331,-47.51224 90.92273,-78.9592 157.23479,-78.9592 51.1013,0 97.41721,18.79981 130.91506,49.05041 33.49784,-30.2506 79.64283,-49.05041 130.91504,-49.05041 66.48298,0 124.59148,31.61786 157.23479,78.9592 13.67259,20.50889 22.55977,55.88672 26.14883,79.13012 0,0.17091 0,0.51272 0.17091,0.68362 0.34182,2.22181 0.51272,4.44361 0.85453,6.6654 0.17091,1.70907 0.34181,3.24723 0.34181,4.95631 0,0.85453 0.17092,1.53817 0.17092,2.3927 0.17091,2.39271 0.17091,4.95631 0.17091,7.34902 C 828.82165,762.603 687.48124,845.15126 512.8139,845.49307 Z M 946.74774,581.27028 c -15.89439,6.15265 -31.61787,0.68362 -35.20692,-12.47625 -3.58906,-13.15987 6.49448,-28.88334 22.38887,-35.03601 15.89438,-6.15267 31.61786,-0.68363 35.20692,12.47624 3.41815,12.98896 -6.49448,28.71243 -22.38887,35.03602 z"
+      id="path8"/>
+</svg>
+
+    </a>
+
+
+<a href="//william-yeh.net/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
+    class="iconfont" title="rss" target="_blank">
+    <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="30" height="30">
+  <path d="M819.157333 1024C819.157333 574.592 449.408 204.8 0 204.8V0c561.706667 0 1024 462.293333 1024 1024h-204.842667zM140.416 743.04a140.8 140.8 0 0 1 140.501333 140.586667A140.928 140.928 0 0 1 140.074667 1024C62.72 1024 0 961.109333 0 883.626667s62.933333-140.544 140.416-140.586667zM678.784 1024h-199.04c0-263.210667-216.533333-479.786667-479.744-479.786667V345.173333c372.352 0 678.784 306.517333 678.784 678.826667z"></path>
+</svg>
+
+  </a>
+  
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+      2015 -
+    2025
+    <span class="heart">
+      
+      <i class="iconfont">
+        <svg class="icon" viewBox="0 0 1025 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="14" height="14">
+  <path d="M1000.1 247.9c-15.5-37.3-37.6-70.6-65.7-98.9-54.4-54.8-125.8-85-201-85-85.7 0-166 39-221.4 107.4C456.6 103 376.3 64 290.6 64c-75.1 0-146.5 30.4-201.1 85.6-28.2 28.5-50.4 61.9-65.8 99.3-16 38.8-24 79.9-23.6 122.2 0.7 91.7 40.1 177.2 108.1 234.8 3.1 2.6 6 5.1 8.9 7.8 14.9 13.4 58 52.8 112.6 102.7 93.5 85.5 209.9 191.9 257.5 234.2 7 6.1 15.8 9.5 24.9 9.5 9.2 0 18.1-3.4 24.9-9.5 34.5-30.7 105.8-95.9 181.4-165 74.2-67.8 150.9-138 195.8-178.2 69.5-57.9 109.6-144.4 109.9-237.3 0.1-42.5-8-83.6-24-122.2z"
+   fill="#8a8a8a"></path>
+</svg>
+
+      </i>
+    </span><span class="author">
+        William Yeh
+        
+      </span></span>
+
+  
+  
+
+  
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont">
+        
+        <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="35" height="35">
+  <path d="M510.866688 227.694839 95.449397 629.218702l235.761562 0-2.057869 328.796468 362.40389 0L691.55698 628.188232l241.942331-3.089361L510.866688 227.694839zM63.840492 63.962777l894.052392 0 0 131.813095L63.840492 195.775872 63.840492 63.962777 63.840492 63.962777zM63.840492 63.962777"></path>
+</svg>
+
+      </i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+
+
+
+
+<script type="text/javascript" src="/js/main.fe83e11b4fbc9193d67e2c9db78bad21f8dc59fca0cacd8c1c3bb071bb16a852.js" integrity="sha256-/oPhG0&#43;8kZPWfiydt4utIfjcWfygys2MHDuwcbsWqFI=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <script type="text/javascript" src="/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

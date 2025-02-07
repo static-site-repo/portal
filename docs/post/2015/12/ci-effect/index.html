@@ -32,7 +32,7 @@
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.134.3" />
+<meta name="generator" content="Hugo 0.143.1" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2015/12/ci-effect/" />
@@ -431,8 +431,7 @@
 <p>上個禮拜，我隱約覺得對它感興趣的人似乎變多了，便好奇的去 GitHub 後台調數據來看，發現：</p>
 <blockquote>
 <p>原來是被 Prometheus 官網列入 &ldquo;<a href="http://prometheus.io/docs/introduction/install/#using-configuration-management-systems">Using configuration management systems</a>&rdquo; 清單了，難怪最近 PR 變多，品質更是超越其他幾家 CM 的例子。</p>
-<p>&mdash; Quote: <a href="https://twitter.com/william_yeh/status/676897832071241728">2015-12-16 Tweet</a></p>
-</blockquote>
+<p>&mdash; Quote: <a href="https://twitter.com/william_yeh/status/676897832071241728">2015-12-16 Tweet</a></p></blockquote>
 <p>被 Prometheus 官方欽點了，能見度提高了，就表示，三不五時會有人提出 bug report，提出 feature request；甚至更勤勞一點的，可能直接就會送出 PR (pull request)。</p>
 <p>面對 PR，其實要花很大的力氣去檢驗：檢驗對錯，檢驗風格，甚至 <a href="https://en.wikipedia.org/wiki/The_Mythical_Man-Month#Conceptual_integrity">conceptual integrity</a>（語出《<a href="https://en.wikipedia.org/wiki/The_Mythical_Man-Month">人月神話</a>》）。而且，對方既然已經很勤勞的送出 PR 了，他會預期你高度重視他的提案。</p>
 <p>我需要一道<strong>護城河</strong>，讓我不必每次都事必躬親，回應每一則 PR。</p>
@@ -476,7 +475,7 @@
 </div>
 
 <p>CI，小小的投資，大大的省事。</p>
-<p>對我而言，原本 <code>williamyeh/ansible</code> 只是為了其他目的而順帶設計出來的副產品。但由於 Ansible 官方已不再維護它的 Docker images；而在非官方版當中，我的 <code>williamyeh/ansible</code> 下載量居冠（統計數據<a href="https://hub.docker.com/search/?q=ansible&page=1&isAutomated=0&isOfficial=0&pullCount=1&starCount=0">在此</a>），也持續有人提出 feature request⋯⋯該說是無心插柳嗎？</p>
+<p>對我而言，原本 <code>williamyeh/ansible</code> 只是為了其他目的而順帶設計出來的副產品。但由於 Ansible 官方已不再維護它的 Docker images；而在非官方版當中，我的 <code>williamyeh/ansible</code> 下載量居冠（統計數據<a href="https://hub.docker.com/search/?q=ansible&amp;page=1&amp;isAutomated=0&amp;isOfficial=0&amp;pullCount=1&amp;starCount=0">在此</a>），也持續有人提出 feature request⋯⋯該說是無心插柳嗎？</p>
 <h2 id="吃自己的狗食">吃自己的狗食</h2>
 <p>再拿另一個很受歡迎的 Ansible role：<a href="https://github.com/William-Yeh/ansible-oracle-java"><code>williamyeh.oracle-java</code></a> 為例。它在 Ansible Galaxy 已經得到 <a href="https://galaxy.ansible.com/william-yeh/oracle-java">4.8 的高分</a>，是一個已經為人所知，甚至為人所用的元件。</p>
 <p>因此，我必須維持良好的向後相容性，以對用戶負責。</p>
@@ -750,7 +749,7 @@
     &copy;
     
       2015 -
-    2024
+    2025
     <span class="heart">
       
       <i class="iconfont">

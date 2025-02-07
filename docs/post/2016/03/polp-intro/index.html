@@ -33,7 +33,7 @@
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.134.3" />
+<meta name="generator" content="Hugo 0.143.1" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2016/03/polp-intro/" />
@@ -487,8 +487,7 @@
 <p>維基百科提到 POLP 的<a href="https://en.wikipedia.org/wiki/Principle_of_least_privilege#History">歷史淵源</a>，可追溯至 1974 年：</p>
 <blockquote>
 <p>Every program and every privileged user of the system should operate using the least amount of privilege necessary to complete the job.</p>
-<p>— <a href="https://en.wikipedia.org/wiki/Jerome_H._Saltzer">Jerome Saltzer</a>, <a href="https://en.wikipedia.org/wiki/Communications_of_the_ACM"><em>Communications of the ACM</em></a></p>
-</blockquote>
+<p>— <a href="https://en.wikipedia.org/wiki/Jerome_H._Saltzer">Jerome Saltzer</a>, <a href="https://en.wikipedia.org/wiki/Communications_of_the_ACM"><em>Communications of the ACM</em></a></p></blockquote>
 <p>可見這算是歷久彌新的原則了。</p>
 <p>如果要將 POLP 套用到目前流行的 web application，我引述 <em>Secure Your Node.js Web Application</em> 一書的<a href="http://www.safaribooksonline.com/a/secure-your-nodejs/1159941/">說法</a>：</p>
 <blockquote>
@@ -497,14 +496,12 @@
 <li>The web application should not be run with root privileges. It should instead use a limited account that has access to only the required resources.</li>
 <li>The database account should not be a root account. The account should have limited privileges over the database tables.</li>
 <li>The users of the web application should be given the minimum set of privileges they need.</li>
-</ol>
-</blockquote>
+</ol></blockquote>
 <p>也引述《Ruby on Rails 實戰聖經》的<a href="https://ihower.tw/rails4/deployment.html">說法</a>：</p>
 <blockquote>
 <p><strong>設定伺服器部署使用者</strong></p>
 <p>習慣上我們會在伺服器上開一個專門的帳號，用來放 Rails 應用程式：<code>sudo adduser --disabled-password deploy</code> ⋯⋯</p>
-<p>本機執行 <code>cap deploy:check</code>，就會自動登入遠端的伺服器，在登入的帳號下新建 current、releases 和 shared 這三個目錄。</p>
-</blockquote>
+<p>本機執行 <code>cap deploy:check</code>，就會自動登入遠端的伺服器，在登入的帳號下新建 current、releases 和 shared 這三個目錄。</p></blockquote>
 <p>所以，回頭檢視一下自己的軟體部署流程，有沒有遵循<strong>最小權限原則</strong>吧！</p>
     </div>
 
@@ -717,7 +714,7 @@
     &copy;
     
       2015 -
-    2024
+    2025
     <span class="heart">
       
       <i class="iconfont">

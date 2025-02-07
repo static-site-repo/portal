@@ -30,7 +30,7 @@
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.134.3" />
+<meta name="generator" content="Hugo 0.143.1" />
 
 
 <link rel="canonical" href="//william-yeh.net/" />
@@ -68,8 +68,8 @@
 
   <meta itemprop="name" content="Potioneer&#39;s Essays">
   <meta itemprop="description" content="敏捷魔藥師 (Agile Potioneer)。會說 90% 的工匠語言，會說 70% 的總管語言，正在努力提升 30% 的行腳商人語言。">
-  <meta itemprop="datePublished" content="2024-08-28T20:00:00+08:00">
-  <meta itemprop="dateModified" content="2024-08-28T20:00:00+08:00">
+  <meta itemprop="datePublished" content="2025-02-07T18:00:00+08:00">
+  <meta itemprop="dateModified" content="2025-02-07T18:00:00+08:00">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Potioneer&#39;s Essays">
   <meta name="twitter:description" content="敏捷魔藥師 (Agile Potioneer)。會說 90% 的工匠語言，會說 70% 的總管語言，正在努力提升 30% 的行腳商人語言。">
@@ -372,6 +372,86 @@
   <header class="post-header">
     <h1 class="post-title">
       
+      <a class="post-link" href="/post/2025/02/codegen-with-genai/">當 AI 會寫程式，程式碼會變得即寫即棄嗎？</a>
+    </h1>
+    
+
+    <div class="post-meta">
+  <div class="post-meta-author">
+    by
+      William Yeh
+    
+  </div>
+
+  <div class="post-meta-time">
+    <time datetime="2025-02-07">
+      2025-02-07
+    </time>
+  </div>
+
+  
+
+
+  <div class="post-meta__right">
+    <span class="post-meta-more">
+        約 5222 字 -
+        預計閱讀 11 分鐘
+      </span>
+
+    <div class="post-meta-category">
+        <a href="//william-yeh.net/categories/tech/"> tech </a>
+          
+      </div>
+
+
+    
+    
+
+
+    
+    
+  </div>
+</div>
+
+  </header>
+  
+  <div class="post-content">
+    
+      <div class="post-summary">
+        <p>人類從事的領域，不斷被生成式 AI (GenAI) 入侵。</p>
+<p>社群媒體上，早就充斥一大堆「AI 體」的文案圖案，現在就連程式設計領域也開始淪陷。像 Google 執行長就透露：「在 Google，超過 1/4 的新程式碼已經是先由 AI 生成，再讓程式設計師去複審與確認。」<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> 而 GitHub CEO 更大膽預言 80% 的程式碼都將會由 GenAI 生成。<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></p>
+<p>也就是說，以前，程式設計師得親手撰寫大部分的程式碼；現在則開始挪出一段時間去跟 GenAI 對話：調教提示詞 (prompt)、審核生成的程式碼、確認正確性，如此反覆進行好幾個回合。</p>
+<p>GenAI 進展神速。如果某一天進展到，只要提示詞下得夠精準，第一次生出來的程式碼幾乎就合格過關了，是否也就意謂著，程式設計師的專業訓練及工作重點，將會更轉向 ⑴ 鑽研提示工程、⑵ 審核生成的程式碼這兩條路線發展？換句話說，將會更朝向 ⑴ 前段的需求規格、⑵ 後段的測試驗收這兩條路線？</p>
+<p>如果頭尾兩端（需求規格與測試驗收）都由人來看守定義，中間步驟（撰寫程式碼）改由 GenAI 來操刀，是否也就意謂著，程式碼會變成像是可拋棄的東西，反正隨時都可以叫 GenAI 再生出一份出來？甚至當 GenAI 能力升級之後，又能夠生出比拋棄掉的還要更好的程式碼？</p>
+<p>聽起來可能有點兒瘋狂。可是如果以上屬實，那麼，敏捷四大宣言之一「<strong>可用的軟體</strong> 重於 <strong>詳盡的文件</strong>」，在 GenAI 時代是否依然成立，可能都值得再重新評估檢討。</p>
+<p>為此，我在 ChatGPT 4o 進行一系列小小的實驗。試試看當 GenAI 收到前段的需求規格之後，能夠生出什麼樣的程式碼以及測試驗收案例；緊接著會與 GenAI 協作調教頭尾兩端（需求規格與測試驗收），再看看 GenAI 重新生出來的程式碼，會有什麼不同。</p>
+
+<link rel="stylesheet" href="/css/hugo-easy-gallery.css" />
+<div class="box">
+<figure  itemprop="associatedMedia"
+  itemscope itemtype="http://schema.org/ImageObject" 
+  style="max-width:30em" >
+    <div class="img">
+      <img itemprop="thumbnail" src="/img/2025/02/work-with-genai.jpg" />
+    </div>
+    <a href="/img/2025/02/work-with-genai.jpg" itemprop="contentUrl"></a>
+  </figure>
+</div>
+      </div>
+      <div class="read-more">
+        <a href="/post/2025/02/codegen-with-genai/" class="read-more-link"
+          >閱讀全文</a
+        >
+      </div>
+    
+  </div>
+</article>
+
+  
+    <article class="post bg-white">
+  <header class="post-header">
+    <h1 class="post-title">
+      
       <a class="post-link" href="/post/2024/08/less-book-review/">務實的長期主義路線——《多團隊高效協作密技》推薦序</a>
     </h1>
     
@@ -634,85 +714,6 @@
       </div>
       <div class="read-more">
         <a href="/post/2024/02/outcome-sentence-patterns/" class="read-more-link"
-          >閱讀全文</a
-        >
-      </div>
-    
-  </div>
-</article>
-
-  
-    <article class="post bg-white">
-  <header class="post-header">
-    <h1 class="post-title">
-      
-      <a class="post-link" href="/post/2024/01/k7-k12/">從私校角度看新課綱</a>
-    </h1>
-    
-
-    <div class="post-meta">
-  <div class="post-meta-author">
-    by
-      William Yeh
-    
-  </div>
-
-  <div class="post-meta-time">
-    <time datetime="2024-01-20">
-      2024-01-20
-    </time>
-  </div>
-
-  
-
-
-  <div class="post-meta__right">
-    <span class="post-meta-more">
-        約 1788 字 -
-        預計閱讀 4 分鐘
-      </span>
-
-    <div class="post-meta-category">
-        <a href="//william-yeh.net/categories/life/"> life </a>
-          
-      </div>
-
-
-    
-    
-
-
-    
-    
-  </div>
-</div>
-
-  </header>
-  
-  <div class="post-content">
-    
-      <div class="post-summary">
-        <p>屢次教改，課綱演進至今，許多人認為補習班與私校是受益者。</p>
-<p>補習班的說法可能不易判斷真偽，而私校畢竟受到教育當局的監管程度較高，說法應較可信。譬如說，私校定期呈報教育當局的「學校課程計畫」報告書，就可看出從教師角度出發的論述。</p>
-<p>我選了兩份報告：〈<a href="https://www.chjhs.tp.edu.tw/dispUploadBox/pic/20230908132514559.pdf">臺北市靜心國民中學 112 學年度學校課程計畫</a>〉（以下簡稱「靜」）與〈<a href="https://drive.google.com/file/d/1eVi8Yp9t8wuhbYy5YJHiq0_dl9vPoQUF/view?usp=sharing">臺北市私立復興實驗高級中學國中部 112 學年度學校課程計畫</a>〉（以下簡稱「復」），一窺私校眼中新課綱時代的教與學。</p>
-<p>看完之後，只能用這幅 ChatGPT 生成的圖來形容自己的所見：</p>
-
-<link rel="stylesheet" href="/css/hugo-easy-gallery.css" />
-<div class="box">
-<figure  itemprop="associatedMedia"
-  itemscope itemtype="http://schema.org/ImageObject" 
-  style="max-width:30em" >
-    <div class="img">
-      <img itemprop="thumbnail" src="/img/2024/01/high-school.png" />
-    </div>
-    <a href="/img/2024/01/high-school.png" itemprop="contentUrl"></a>
-  </figure>
-</div>
-
-<p>以下是一些重點摘要。</p>
-      </div>
-      <div class="read-more">
-        <a href="/post/2024/01/k7-k12/" class="read-more-link"
           >閱讀全文</a
         >
       </div>
@@ -1677,7 +1678,7 @@
     &copy;
     
       2015 -
-    2024
+    2025
     <span class="heart">
       
       <i class="iconfont">

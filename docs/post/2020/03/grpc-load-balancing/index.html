@@ -33,7 +33,7 @@
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
 
 
-<meta name="generator" content="Hugo 0.134.3" />
+<meta name="generator" content="Hugo 0.143.1" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2020/03/grpc-load-balancing/" />
@@ -451,8 +451,7 @@
 <p>gRPC 是以 <a href="https://en.wikipedia.org/wiki/HTTP/2">HTTP/2</a> 作為傳輸協定，而 HTTP/2 的特點是持久連線：</p>
 <blockquote>
 <p><strong>One connection per origin</strong></p>
-<p>all HTTP/2 connections are persistent, and only one connection per origin is required, which offers numerous performance benefits.     &ndash; <a href="https://developers.google.com/web/fundamentals/performance/http2">Introduction to HTTP/2</a></p>
-</blockquote>
+<p>all HTTP/2 connections are persistent, and only one connection per origin is required, which offers numerous performance benefits.     &ndash; <a href="https://developers.google.com/web/fundamentals/performance/http2">Introduction to HTTP/2</a></p></blockquote>
 <p>既然 gRPC 會盡可能維持既有連線，不會傻傻地一直斷線與重連，那麼，當 Kubernetes 橫向擴展 pod 了，gRPC 流量是否也能順便平均分散到新長出來的 pod 身上，還是死咬著原本的連線不放？</p>
 <p>做個簡單的實驗吧。</p>
 <h2 id="實驗環境">實驗環境</h2>
@@ -563,8 +562,7 @@
 <h2 id="l4-vs-l7-負載均衡">L4 vs L7 負載均衡</h2>
 <p>根據 &ldquo;<a href="https://blog.nobugware.com/post/2019/kubernetes_mesh_network_load_balancing_grpc_services/">gRPC Load Balancing inside Kubernetes</a>&rdquo; 一文所述，Kubernetes 原生的負載均衡機制，是建立在 L4：</p>
 <blockquote>
-<p>When you create a Service in Kubernetes, it creates a <strong>layer 4</strong> proxy and load balance connections to your pods using iptables, the service endpoint is one IP and a port hiding your real pods.</p>
-</blockquote>
+<p>When you create a Service in Kubernetes, it creates a <strong>layer 4</strong> proxy and load balance connections to your pods using iptables, the service endpoint is one IP and a port hiding your real pods.</p></blockquote>
 <p>因此，對於不具備真正持久連線的 HTTP 來說，Kubernetes 原生的 L4 負載均衡機制足以應付 <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>；但是，對於真正具有持久連線的 gRPC，L4 就行不通了。</p>
 <p>文中列出三種解決方法：</p>
 <ol>
@@ -583,8 +581,7 @@
 <p>根據 Linkerd 官網 <a href="https://linkerd.io/2/faq/#whats-the-difference-between-linkerd-1x-and-2x">FAQ</a> 所述：</p>
 <blockquote>
 <p>Linkerd 1.x is built on the “Twitter stack”: Finagle, Netty, Scala, and the JVM.</p>
-<p>Linkerd 2.x is built in Rust and Go. It is significantly faster and lighter weight than 1.x, but currently only supports Kubernetes.</p>
-</blockquote>
+<p>Linkerd 2.x is built in Rust and Go. It is significantly faster and lighter weight than 1.x, but currently only supports Kubernetes.</p></blockquote>
 <p>Linkerd 2 比前一版有長足的進步，又是 <a href="https://smi-spec.io/">SMI</a> 陣營的一員，頗值得一試。</p>
 <h3 id="linkerd-前置作業">Linkerd 前置作業</h3>
 <ol>
@@ -948,7 +945,7 @@
     &copy;
     
       2015 -
-    2024
+    2025
     <span class="heart">
       
       <i class="iconfont">
