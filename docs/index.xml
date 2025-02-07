@@ -228,7 +228,7 @@ Also create specification-based tests using BDD-style and property-based testing
 
 &lt;p&gt;看起來還不錯。我們可以繼續往下進行最關鍵的實驗了。&lt;/p&gt;
 &lt;h2 id=&#34;實驗可執行的規格&#34;&gt;實驗🅒、可執行的規格&lt;/h2&gt;
-&lt;p&gt;在前一個實驗中，我們和 GenAI 一起調整出較清晰易讀的 規格/v2，也一起調整出較周全的測試集。以敏捷開發的角度來說，好的測試集，其實是可以逆向反饋到規格的，也就是所謂的「&lt;strong&gt;可執行的規格&lt;/strong&gt;」(&lt;strong&gt;executable specification&lt;/strong&gt;)。現在，我們就來弄出一份這樣的 規格/v3 吧。&lt;/p&gt;
+&lt;p&gt;在前一個實驗中，我們和 GenAI 一起調整出較清晰易讀的 規格/v2，也一起調整出較周全的測試集。以敏捷開發陣營的最佳實踐來說，好的測試集，其實是可以逆向反饋到規格的，也就是所謂的「&lt;strong&gt;可執行的規格&lt;/strong&gt;」(&lt;strong&gt;executable specification&lt;/strong&gt;)。現在，我們就來弄出一份這樣的「規格/v3」吧。&lt;/p&gt;
 &lt;p&gt;「可執行的規格」實驗步驟如下：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;①給初始規格/v1&lt;/li&gt;
