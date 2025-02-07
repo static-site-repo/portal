@@ -95,7 +95,7 @@ GenAI 進展神速。如果某一天進展到，只要提示詞下得夠精準�
 為此，我在 ChatGPT 4o 進行一系列小小的實驗。試試看當 GenAI 收到前段的需求規格之後，能夠生出什麼樣的程式碼以及測試驗收案例；緊接著會與 GenAI 協作調教頭尾兩端（需求規格與測試驗收），再看看 GenAI 重新生出來的程式碼，會有什麼不同。">
   <meta itemprop="datePublished" content="2025-02-07T18:00:00+08:00">
   <meta itemprop="dateModified" content="2025-02-07T18:00:00+08:00">
-  <meta itemprop="wordCount" content="5215">
+  <meta itemprop="wordCount" content="5226">
   <meta itemprop="keywords" content="Agile,Ai">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="當 AI 會寫程式，程式碼會變得即寫即棄嗎？">
@@ -417,7 +417,7 @@ GenAI 進展神速。如果某一天進展到，只要提示詞下得夠精準�
 
   <div class="post-meta__right">
     <span class="post-meta-more">
-        約 5215 字 -
+        約 5226 字 -
         預計閱讀 11 分鐘
       </span>
 
@@ -678,11 +678,11 @@ Also create specification-based tests using BDD-style and property-based testing
 <li>④生成程式及測試</li>
 <li>⑤將測試納入規格/v3 ◄ 承上步驟，從這裡開始。</li>
 </ul>
-<p>接續前一個實驗累積的測試集，讓我們請 GenAI 幫我們逆向轉譯為 Gherkin 格式的規格。</p>
+<p>接續前一個實驗累積的測試集，讓我們請 GenAI 幫我們逆向轉譯為 Gherkin 形式的規格。</p>
 <p>提示詞⑤如下：</p>
 <blockquote>
 <p>Now, incorporate the newly generated tests (including property-based tests) into the specification under a section titled &ldquo;Validation Scenarios,&rdquo; expressed in Gherkin format. This will make the specification more comprehensive and allow it to function as an &ldquo;executable specification.&rdquo; Finally, add the test codes in an appendix section titled &ldquo;Tests.&rdquo;</p></blockquote>
-<p>最後會孵化出這樣的 規格/v3：</p>
+<p>最後會孵化出這樣的「規格/v3」：</p>
 <blockquote>
 <p><strong>Sinnet Game Specification</strong></p>
 <p><strong>▋ GAME RULES</strong></p>
@@ -890,8 +890,8 @@ Also create specification-based tests using BDD-style and property-based testing
 </span></span></code></pre></div>
 </details>
 </p></blockquote>
-<p>這份 規格/v3，不僅有規格文章，還有測試集，又臭又長，要是換成是我自己一個人來寫，我多半這個耐心。</p>
-<p>你可能會懷疑：比起之前的 初始規格/v1 及 調整規格/v2，這份孵化出來的 規格/v3 是否真的有獨到之處？</p>
+<p>這份「規格/v3」，不僅有規格文章，還有測試集，又臭又長，要是換成是我自己一個人來寫，我多半沒這個耐心。</p>
+<p>你可能會懷疑：比起之前的「初始規格/v1」及「調整規格/v2」，這份孵化出來的「規格/v3」是否真的有獨到之處？</p>
 <p>且讓我們繼續看下去。</p>
 <h2 id="實驗測試驅動">實驗🅓、測試驅動</h2>
 <p>在前一個實驗中，我們和 GenAI 一起孵化出「可執行的規格」。現在，我們就來根據這份 規格/v3 開啟全新的對話，叫 GenAI 重新生成程式，並根據 規格/v3 附錄的測試集予以測試檢驗。</p>

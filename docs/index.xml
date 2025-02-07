@@ -236,11 +236,11 @@ Also create specification-based tests using BDD-style and property-based testing
 &lt;li&gt;④生成程式及測試&lt;/li&gt;
 &lt;li&gt;⑤將測試納入規格/v3 ◄ 承上步驟，從這裡開始。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;接續前一個實驗累積的測試集，讓我們請 GenAI 幫我們逆向轉譯為 Gherkin 格式的規格。&lt;/p&gt;
+&lt;p&gt;接續前一個實驗累積的測試集，讓我們請 GenAI 幫我們逆向轉譯為 Gherkin 形式的規格。&lt;/p&gt;
 &lt;p&gt;提示詞⑤如下：&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Now, incorporate the newly generated tests (including property-based tests) into the specification under a section titled &amp;ldquo;Validation Scenarios,&amp;rdquo; expressed in Gherkin format. This will make the specification more comprehensive and allow it to function as an &amp;ldquo;executable specification.&amp;rdquo; Finally, add the test codes in an appendix section titled &amp;ldquo;Tests.&amp;rdquo;&lt;/p&gt;&lt;/blockquote&gt;
-&lt;p&gt;最後會孵化出這樣的 規格/v3：&lt;/p&gt;
+&lt;p&gt;最後會孵化出這樣的「規格/v3」：&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;Sinnet Game Specification&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;▋ GAME RULES&lt;/strong&gt;&lt;/p&gt;
@@ -448,8 +448,8 @@ Also create specification-based tests using BDD-style and property-based testing
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;/details&gt;
 &lt;/p&gt;&lt;/blockquote&gt;
-&lt;p&gt;這份 規格/v3，不僅有規格文章，還有測試集，又臭又長，要是換成是我自己一個人來寫，我多半這個耐心。&lt;/p&gt;
-&lt;p&gt;你可能會懷疑：比起之前的 初始規格/v1 及 調整規格/v2，這份孵化出來的 規格/v3 是否真的有獨到之處？&lt;/p&gt;
+&lt;p&gt;這份「規格/v3」，不僅有規格文章，還有測試集，又臭又長，要是換成是我自己一個人來寫，我多半沒這個耐心。&lt;/p&gt;
+&lt;p&gt;你可能會懷疑：比起之前的「初始規格/v1」及「調整規格/v2」，這份孵化出來的「規格/v3」是否真的有獨到之處？&lt;/p&gt;
 &lt;p&gt;且讓我們繼續看下去。&lt;/p&gt;
 &lt;h2 id=&#34;實驗測試驅動&#34;&gt;實驗🅓、測試驅動&lt;/h2&gt;
 &lt;p&gt;在前一個實驗中，我們和 GenAI 一起孵化出「可執行的規格」。現在，我們就來根據這份 規格/v3 開啟全新的對話，叫 GenAI 重新生成程式，並根據 規格/v3 附錄的測試集予以測試檢驗。&lt;/p&gt;
