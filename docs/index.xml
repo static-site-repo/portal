@@ -58,7 +58,7 @@
 &lt;li&gt;如果每位玩家至少得了三分，且比分相同，則比分為 “Deuce”。&lt;/li&gt;
 &lt;li&gt;如果每方至少得了三分，且有一名玩家比對手多一分，則領先玩家的比分為 “Advantage”。&lt;/li&gt;
 &lt;/ul&gt;&lt;/blockquote&gt;
-&lt;p&gt;接下來的一系列實驗，都會以這段文字作為對話的開始，姑且就把它叫做「&lt;strong&gt;初始規格/v1&lt;/strong&gt;」吧。不過，GenAI 有一些隨機性的行為，不一定每次都會得到一樣的結果，我會挑出較具代表性的來探討。&lt;/p&gt;
+&lt;p&gt;接下來的前幾個實驗，都會以這段文字作為對話的開始，姑且就把它叫做「&lt;strong&gt;初始規格/v1&lt;/strong&gt;」吧。不過，GenAI 有一些隨機性的行為，不一定每次都會得到一樣的結果，我會挑出較具代表性的來探討。&lt;/p&gt;
 &lt;p&gt;系列實驗如下：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
