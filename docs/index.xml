@@ -490,14 +490,14 @@ Also create specification-based tests using BDD-style and property-based testing
 &lt;li&gt;⑥根據規格/v3 重新生成程式，並予以測試檢驗 ◄ 之前的步驟&lt;/li&gt;
 &lt;li&gt;⑦逆向工程規格/v4 ◄ 現在的步驟&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;請 GenAI 開啟全新的對話，用前一個實驗的程式碼及測試，設法轉譯成人類的語言。&lt;/p&gt;
+&lt;p&gt;請 GenAI 開啟全新的對話，拿前一個實驗的程式碼及測試，請它設法轉譯成人類的語言。&lt;/p&gt;
 &lt;p&gt;提示詞⑦如下：&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Generate a specification based on the following Python code and tests. The specification should include two sections: 1. Sinnet Game Rules – Clearly structured and expressed in natural language. 2. Validation Scenarios – Presented in Gherkin format.  [附上主體程式碼及測試]&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;我驚訝的發現，GenAI 劈頭就給我這麼一句話：&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;The Sinnet Game is a simplified scoring system inspired by tennis. The objective is for a player to win by reaching at least four points and having a two-point lead over the opponent.&lt;/p&gt;&lt;/blockquote&gt;
-&lt;p&gt;看起來，可能是程式碼寫得太好了，測試寫得太好了，變數及函示名稱取得太好了，註解寫得太好了，讓 GenAI 有足夠的線索察覺到，這和現實世界的網球規則高度雷同。&lt;/p&gt;
+&lt;p&gt;看起來，可能是程式碼寫得太好了，測試寫得太好了，變數及函式名稱取得太好了，註解寫得太好了，讓 GenAI 有足夠的線索察覺到，這和現實世界的網球規則高度雷同。&lt;/p&gt;
 &lt;p&gt;這也證明了，清晰易懂的程式碼，不僅讓人類舒服，連 GenAI 也受益。&lt;/p&gt;
 &lt;h2 id=&#34;敏捷的再思&#34;&gt;敏捷的再思&lt;/h2&gt;
 &lt;p&gt;同樣的武器，在高手與菜鳥手上，能玩出的花樣自然會有高低落差之別。&lt;/p&gt;

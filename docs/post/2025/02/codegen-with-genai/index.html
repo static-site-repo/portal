@@ -95,7 +95,7 @@ GenAI 進展神速。如果某一天進展到，只要提示詞下得夠精準�
 為此，我在 ChatGPT 4o 進行一系列小小的實驗。試試看當 GenAI 收到前段的需求規格之後，能夠生出什麼樣的程式碼以及測試驗收案例；緊接著會與 GenAI 協作調教頭尾兩端（需求規格與測試驗收），再看看 GenAI 重新生出來的程式碼，會有什麼不同。">
   <meta itemprop="datePublished" content="2025-02-07T18:00:00+08:00">
   <meta itemprop="dateModified" content="2025-02-07T18:00:00+08:00">
-  <meta itemprop="wordCount" content="5235">
+  <meta itemprop="wordCount" content="5237">
   <meta itemprop="keywords" content="Agile,Ai">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="當 AI 會寫程式，程式碼會變得即寫即棄嗎？">
@@ -417,7 +417,7 @@ GenAI 進展神速。如果某一天進展到，只要提示詞下得夠精準�
 
   <div class="post-meta__right">
     <span class="post-meta-more">
-        約 5235 字 -
+        約 5237 字 -
         預計閱讀 11 分鐘
       </span>
 
@@ -932,14 +932,14 @@ Also create specification-based tests using BDD-style and property-based testing
 <li>⑥根據規格/v3 重新生成程式，並予以測試檢驗 ◄ 之前的步驟</li>
 <li>⑦逆向工程規格/v4 ◄ 現在的步驟</li>
 </ul>
-<p>請 GenAI 開啟全新的對話，用前一個實驗的程式碼及測試，設法轉譯成人類的語言。</p>
+<p>請 GenAI 開啟全新的對話，拿前一個實驗的程式碼及測試，請它設法轉譯成人類的語言。</p>
 <p>提示詞⑦如下：</p>
 <blockquote>
 <p>Generate a specification based on the following Python code and tests. The specification should include two sections: 1. Sinnet Game Rules – Clearly structured and expressed in natural language. 2. Validation Scenarios – Presented in Gherkin format.  [附上主體程式碼及測試]</p></blockquote>
 <p>我驚訝的發現，GenAI 劈頭就給我這麼一句話：</p>
 <blockquote>
 <p>The Sinnet Game is a simplified scoring system inspired by tennis. The objective is for a player to win by reaching at least four points and having a two-point lead over the opponent.</p></blockquote>
-<p>看起來，可能是程式碼寫得太好了，測試寫得太好了，變數及函示名稱取得太好了，註解寫得太好了，讓 GenAI 有足夠的線索察覺到，這和現實世界的網球規則高度雷同。</p>
+<p>看起來，可能是程式碼寫得太好了，測試寫得太好了，變數及函式名稱取得太好了，註解寫得太好了，讓 GenAI 有足夠的線索察覺到，這和現實世界的網球規則高度雷同。</p>
 <p>這也證明了，清晰易懂的程式碼，不僅讓人類舒服，連 GenAI 也受益。</p>
 <h2 id="敏捷的再思">敏捷的再思</h2>
 <p>同樣的武器，在高手與菜鳥手上，能玩出的花樣自然會有高低落差之別。</p>
