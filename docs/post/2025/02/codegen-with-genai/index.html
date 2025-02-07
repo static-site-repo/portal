@@ -95,7 +95,7 @@ GenAI 進展神速。如果某一天進展到，只要提示詞下得夠精準�
 為此，我在 ChatGPT 4o 進行一系列小小的實驗。試試看當 GenAI 收到前段的需求規格之後，能夠生出什麼樣的程式碼以及測試驗收案例；緊接著會與 GenAI 協作調教頭尾兩端（需求規格與測試驗收），再看看 GenAI 重新生出來的程式碼，會有什麼不同。">
   <meta itemprop="datePublished" content="2025-02-07T18:00:00+08:00">
   <meta itemprop="dateModified" content="2025-02-07T18:00:00+08:00">
-  <meta itemprop="wordCount" content="5217">
+  <meta itemprop="wordCount" content="5209">
   <meta itemprop="keywords" content="Agile,Ai">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="當 AI 會寫程式，程式碼會變得即寫即棄嗎？">
@@ -417,7 +417,7 @@ GenAI 進展神速。如果某一天進展到，只要提示詞下得夠精準�
 
   <div class="post-meta__right">
     <span class="post-meta-more">
-        約 5217 字 -
+        約 5209 字 -
         預計閱讀 11 分鐘
       </span>
 
@@ -599,7 +599,7 @@ GenAI 進展神速。如果某一天進展到，只要提示詞下得夠精準�
 <blockquote>
 <p>Now, you can ask me questions about the previous specification to clarify its meaning and remove any ambiguity. If you don&rsquo;t have any questions, please proceed to rephrase the specification for better clarity.</p></blockquote>
 <p>有時候，GenAI 的確會與我一來一往對話，請我釐清一些細節。</p>
-<p>最後，我收到一份更清晰易懂的規格（就把它叫做 規格/v2 吧）：</p>
+<p>最後，我收到一份更清晰易懂的規格（就把它叫做「規格/v2」吧）：</p>
 <blockquote>
 <p><strong>Sinnet Game Rules</strong></p>
 <ol>
@@ -645,9 +645,9 @@ Also create specification-based tests using BDD-style and property-based testing
   </figure>
 </div>
 
-<p>或許要歸功於調整後的 規則/v2 較清晰易懂，據以產生出來的程式邏輯也比以前更清晰易懂。</p>
+<p>或許要歸功於調整後的 規則/v2 較清晰易懂，程式邏輯也隨之變得更清晰易懂。</p>
 <p><!-- raw HTML omitted -->   <!-- raw HTML omitted -->   <!-- raw HTML omitted --></p>
-<p>對於吐出的測試案例，有時候我不滿意，會叫它再做一次，加強測試涵蓋率。譬如說，如果他只考慮到 3-3 這個 deuce 案例，我也會叫它再多考慮一下：</p>
+<p>有時候我不滿意生成的測試案例，會叫它再做一次，加強測試涵蓋率。譬如說，如果它只考慮到 3-3 這個 deuce 情況，我也會叫它再多想一下：</p>
 <blockquote>
 <p>Have you considered that deuce can also occur at 4-4, 5-5, and beyond? This appears to be a strong candidate for property-based testing.</p></blockquote>
 <p>這階段，我建議要跟 GenAI 多聊幾次，先一起弄出令人滿意的測試集，以作為下一個實驗的基礎。</p>
