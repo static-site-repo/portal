@@ -452,14 +452,14 @@ Also create specification-based tests using BDD-style and property-based testing
 &lt;p&gt;你可能會懷疑：比起之前的「初始規格/v1」及「調整規格/v2」，這份孵化出來的「規格/v3」是否真的有獨到之處？&lt;/p&gt;
 &lt;p&gt;且讓我們繼續看下去。&lt;/p&gt;
 &lt;h2 id=&#34;實驗測試驅動&#34;&gt;實驗🅓、測試驅動&lt;/h2&gt;
-&lt;p&gt;在前一個實驗中，我們和 GenAI 一起孵化出「可執行的規格」。現在，我們就來根據這份 規格/v3 開啟全新的對話，叫 GenAI 重新生成程式，並根據 規格/v3 附錄的測試集予以測試檢驗。&lt;/p&gt;
+&lt;p&gt;在前一個實驗中，我們和 GenAI 一起孵化出「可執行的規格」。現在，我們就來根據這份「規格/v3」開啟全新的對話，叫 GenAI 重新生成程式，並根據「規格/v3」附錄的測試集予以測試檢驗。&lt;/p&gt;
 &lt;p&gt;且讓我們評估看看究竟值不值得如此大費周章。&lt;/p&gt;
 &lt;p&gt;測試驅動的實驗步驟如下：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;①給初始規格/v1 ❯ ③調整規格/v2 ❯ ④生成程式及測試 ❯ ⑤將測試納入規格/v3 ◄ 之前的步驟&lt;/li&gt;
 &lt;li&gt;⑥根據規格/v3 重新生成程式，並予以測試檢驗 ◄ 現在的步驟&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;請 GenAI 開啟全新的對話，用這份熱騰騰的 規格/v3 重新生成程式。&lt;/p&gt;
+&lt;p&gt;請 GenAI 開啟全新的對話，用這份熱騰騰的「規格/v3」重新生成程式。&lt;/p&gt;
 &lt;p&gt;提示詞⑥如下：&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Now, generate a Python program based on the following specification. [貼上 規格/v3 全文]&lt;/p&gt;&lt;/blockquote&gt;
