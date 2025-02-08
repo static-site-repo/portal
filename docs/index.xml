@@ -77,6 +77,23 @@
 &lt;p&gt;🅔 逆向工程：⑥根據規格/v3 重新生成程式，並予以測試檢驗 ❯ ⑦逆向工程規格/v4&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;有些實驗之間有先後關係，有些實驗需要開啟新的對話：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2025/02/flow-all.png&#34; alt=&#34;整體實驗流程&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2025/02/flow-all.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;整體實驗流程&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
 &lt;h2 id=&#34;實驗基礎實驗&#34;&gt;實驗🅐、基礎實驗&lt;/h2&gt;
 &lt;p&gt;先從最基礎的實驗開始，直接叫 GenAI 根據我們給的初始規格，生成程式及測試。&lt;/p&gt;
 &lt;p&gt;基礎的實驗步驟如下：&lt;/p&gt;
@@ -84,6 +101,23 @@
 &lt;li&gt;①給初始規格/v1&lt;/li&gt;
 &lt;li&gt;②生成程式及測試&lt;/li&gt;
 &lt;/ul&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2025/02/flow-a.png&#34; alt=&#34;實驗🅐流程&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2025/02/flow-a.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;實驗🅐流程&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;p&gt;既然要叫 GenAI 生成測試，就順便叫它用比較好的方式來做：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -153,6 +187,23 @@
 &lt;li&gt;③調整規格/v2&lt;/li&gt;
 &lt;li&gt;④生成程式及測試&lt;/li&gt;
 &lt;/ul&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2025/02/flow-b.png&#34; alt=&#34;實驗🅑流程&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2025/02/flow-b.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;實驗🅑流程&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;p&gt;提示詞③如下：&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Now, you can ask me questions about the previous specification to clarify its meaning and remove any ambiguity. If you don&amp;rsquo;t have any questions, please proceed to rephrase the specification for better clarity.&lt;/p&gt;&lt;/blockquote&gt;
@@ -236,6 +287,23 @@ Also create specification-based tests using BDD-style and property-based testing
 &lt;li&gt;④生成程式及測試&lt;/li&gt;
 &lt;li&gt;⑤將測試納入規格/v3 ◄ 承上步驟，從這裡開始。&lt;/li&gt;
 &lt;/ul&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2025/02/flow-c.png&#34; alt=&#34;實驗🅒流程&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2025/02/flow-c.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;實驗🅒流程&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;p&gt;接續前一個實驗累積的測試集，讓我們請 GenAI 幫我們逆向轉譯為 Gherkin 形式的規格。&lt;/p&gt;
 &lt;p&gt;提示詞⑤如下：&lt;/p&gt;
 &lt;blockquote&gt;
@@ -460,6 +528,23 @@ Also create specification-based tests using BDD-style and property-based testing
 &lt;li&gt;⑥根據規格/v3 重新生成程式，並予以測試檢驗 ◄ 現在的步驟&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;請 GenAI 開啟全新的對話，用這份熱騰騰的「規格/v3」重新生成程式。&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2025/02/flow-d.png&#34; alt=&#34;實驗🅓流程&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2025/02/flow-d.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;實驗🅓流程&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;p&gt;提示詞⑥如下：&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Now, generate a Python program based on the following specification. [貼上 規格/v3 全文]&lt;/p&gt;&lt;/blockquote&gt;
@@ -480,16 +565,33 @@ Also create specification-based tests using BDD-style and property-based testing
   &lt;/figure&gt;
 &lt;/div&gt;
 
-&lt;p&gt;GenAI 有隨機性行為，未必每次都會比根據之前兩份規格（初始規格/v1 及 調整規格/v2）表現得更好，但至少這是可以通過測試的。萬一通不過測試，大可叫 GenAI 去 debug。這就是我們之前與 AI 協作，努力調教頭尾兩端（需求規格與測試驗收）的好處。只要向 AI 指出這項錯誤，它就會乖乖認錯，並且自動 debug。&lt;/p&gt;
+&lt;p&gt;GenAI 有隨機性行為，未必每次都會比根據之前兩份規格（初始規格/v1 及 調整規格/v2）產生的程式表現得更好，但至少這是可以通過測試的。萬一通不過測試，大可叫 GenAI 去 debug。這就是我們之前與 AI 協作，努力調教頭尾兩端（需求規格與測試驗收）的好處。只要向 AI 指出這項錯誤，它就會乖乖認錯，並且自動 debug。&lt;/p&gt;
 &lt;p&gt;只要程式是正確的，隨時都可以叫 GenAI 去重構，重構到滿意為止，如此即可兼顧正確性與各種內在品質標準。&lt;/p&gt;
 &lt;p&gt;這就是當初在「規格/v3」埋下「可執行的規格」伏筆的好處。&lt;/p&gt;
 &lt;h2 id=&#34;實驗逆向工程&#34;&gt;實驗🅔、逆向工程&lt;/h2&gt;
-&lt;p&gt;敏捷宣言說：「&lt;strong&gt;可用的軟體&lt;/strong&gt; 重於 &lt;strong&gt;詳盡的文件&lt;/strong&gt;」。我們想看看，GenAI 是否真的能夠從「可用的軟體」逆向工程出「詳盡的文件」，讓我們評估兩者究竟誰比較重要，可以當成 “ground truth”。&lt;/p&gt;
+&lt;p&gt;敏捷宣言說：「&lt;strong&gt;可用的軟體&lt;/strong&gt; 重於 &lt;strong&gt;詳盡的文件&lt;/strong&gt;」。我們想看看，GenAI 是否真的能夠從「可用的軟體」逆向工程出「詳盡的文件」，讓我們評估兩者究竟誰比較重要，誰可以當成 “ground truth”。&lt;/p&gt;
 &lt;p&gt;逆向工程的實驗步驟如下：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;⑥根據規格/v3 重新生成程式，並予以測試檢驗 ◄ 之前的步驟&lt;/li&gt;
 &lt;li&gt;⑦逆向工程規格/v4 ◄ 現在的步驟&lt;/li&gt;
 &lt;/ul&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2025/02/flow-e.png&#34; alt=&#34;實驗🅔流程&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2025/02/flow-e.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;實驗🅔流程&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;p&gt;請 GenAI 開啟全新的對話，拿前一個實驗的程式碼及測試，請它設法轉譯成人類的語言。&lt;/p&gt;
 &lt;p&gt;提示詞⑦如下：&lt;/p&gt;
 &lt;blockquote&gt;
@@ -512,7 +614,7 @@ Also create specification-based tests using BDD-style and property-based testing
 &lt;li&gt;Refactoring 很重要。&lt;/li&gt;
 &lt;li&gt;Shift-left 很重要。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;這些，其實都是敏捷開發領域重視的實踐。&lt;/p&gt;
+&lt;p&gt;這些，其實都是敏捷開發領域一向重視的實踐。&lt;/p&gt;
 &lt;p&gt;因此，在 GenAI 時代，就算敏捷四大宣言之一「&lt;strong&gt;可用的軟體&lt;/strong&gt; 重於 &lt;strong&gt;詳盡的文件&lt;/strong&gt;」未必依然成立，但那也是因為藉由 GenAI 之力，我們終於可以把「可用的軟體」的內涵，用更有效率的方式轉寫到「詳盡的文件」裡面，讓它成為更有意義的 “ground truth”。&lt;/p&gt;
 &lt;p&gt;不是因為敏捷宣言過時了，而是 GenAI 成全了敏捷宣言。&lt;/p&gt;
 &lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;

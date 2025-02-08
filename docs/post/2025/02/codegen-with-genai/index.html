@@ -95,7 +95,7 @@ GenAI 進展神速。如果某一天進展到，只要提示詞下得夠精準�
 為此，我在 ChatGPT 4o 進行一系列小小的實驗。試試看當 GenAI 收到前段的需求規格之後，能夠生出什麼樣的程式碼以及測試驗收案例；緊接著會與 GenAI 協作調教頭尾兩端（需求規格與測試驗收），再看看 GenAI 重新生出來的程式碼，會有什麼不同。">
   <meta itemprop="datePublished" content="2025-02-07T18:00:00+08:00">
   <meta itemprop="dateModified" content="2025-02-07T18:00:00+08:00">
-  <meta itemprop="wordCount" content="5239">
+  <meta itemprop="wordCount" content="5303">
   <meta itemprop="keywords" content="Agile,Ai">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="當 AI 會寫程式，程式碼會變得即寫即棄嗎？">
@@ -417,7 +417,7 @@ GenAI 進展神速。如果某一天進展到，只要提示詞下得夠精準�
 
   <div class="post-meta__right">
     <span class="post-meta-more">
-        約 5239 字 -
+        約 5303 字 -
         預計閱讀 11 分鐘
       </span>
 
@@ -519,6 +519,23 @@ GenAI 進展神速。如果某一天進展到，只要提示詞下得夠精準�
 <p>🅔 逆向工程：⑥根據規格/v3 重新生成程式，並予以測試檢驗 ❯ ⑦逆向工程規格/v4</p>
 </li>
 </ul>
+<p>有些實驗之間有先後關係，有些實驗需要開啟新的對話：</p>
+
+
+<div class="box">
+<figure  itemprop="associatedMedia"
+  itemscope itemtype="http://schema.org/ImageObject" 
+  style="max-width:30em" >
+    <div class="img">
+      <img itemprop="thumbnail" src="/img/2025/02/flow-all.png" alt="整體實驗流程"/>
+    </div>
+    <a href="/img/2025/02/flow-all.png" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>整體實驗流程</p>
+      </figcaption>
+  </figure>
+</div>
+
 <h2 id="實驗基礎實驗">實驗🅐、基礎實驗</h2>
 <p>先從最基礎的實驗開始，直接叫 GenAI 根據我們給的初始規格，生成程式及測試。</p>
 <p>基礎的實驗步驟如下：</p>
@@ -526,6 +543,23 @@ GenAI 進展神速。如果某一天進展到，只要提示詞下得夠精準�
 <li>①給初始規格/v1</li>
 <li>②生成程式及測試</li>
 </ul>
+
+
+<div class="box">
+<figure  itemprop="associatedMedia"
+  itemscope itemtype="http://schema.org/ImageObject" 
+  style="max-width:30em" >
+    <div class="img">
+      <img itemprop="thumbnail" src="/img/2025/02/flow-a.png" alt="實驗🅐流程"/>
+    </div>
+    <a href="/img/2025/02/flow-a.png" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>實驗🅐流程</p>
+      </figcaption>
+  </figure>
+</div>
+
+<p><!-- raw HTML omitted -->   <!-- raw HTML omitted -->   <!-- raw HTML omitted --></p>
 <p>既然要叫 GenAI 生成測試，就順便叫它用比較好的方式來做：</p>
 <ul>
 <li>
@@ -595,6 +629,23 @@ GenAI 進展神速。如果某一天進展到，只要提示詞下得夠精準�
 <li>③調整規格/v2</li>
 <li>④生成程式及測試</li>
 </ul>
+
+
+<div class="box">
+<figure  itemprop="associatedMedia"
+  itemscope itemtype="http://schema.org/ImageObject" 
+  style="max-width:30em" >
+    <div class="img">
+      <img itemprop="thumbnail" src="/img/2025/02/flow-b.png" alt="實驗🅑流程"/>
+    </div>
+    <a href="/img/2025/02/flow-b.png" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>實驗🅑流程</p>
+      </figcaption>
+  </figure>
+</div>
+
+<p><!-- raw HTML omitted -->   <!-- raw HTML omitted -->   <!-- raw HTML omitted --></p>
 <p>提示詞③如下：</p>
 <blockquote>
 <p>Now, you can ask me questions about the previous specification to clarify its meaning and remove any ambiguity. If you don&rsquo;t have any questions, please proceed to rephrase the specification for better clarity.</p></blockquote>
@@ -678,6 +729,23 @@ Also create specification-based tests using BDD-style and property-based testing
 <li>④生成程式及測試</li>
 <li>⑤將測試納入規格/v3 ◄ 承上步驟，從這裡開始。</li>
 </ul>
+
+
+<div class="box">
+<figure  itemprop="associatedMedia"
+  itemscope itemtype="http://schema.org/ImageObject" 
+  style="max-width:30em" >
+    <div class="img">
+      <img itemprop="thumbnail" src="/img/2025/02/flow-c.png" alt="實驗🅒流程"/>
+    </div>
+    <a href="/img/2025/02/flow-c.png" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>實驗🅒流程</p>
+      </figcaption>
+  </figure>
+</div>
+
+<p><!-- raw HTML omitted -->   <!-- raw HTML omitted -->   <!-- raw HTML omitted --></p>
 <p>接續前一個實驗累積的測試集，讓我們請 GenAI 幫我們逆向轉譯為 Gherkin 形式的規格。</p>
 <p>提示詞⑤如下：</p>
 <blockquote>
@@ -902,6 +970,23 @@ Also create specification-based tests using BDD-style and property-based testing
 <li>⑥根據規格/v3 重新生成程式，並予以測試檢驗 ◄ 現在的步驟</li>
 </ul>
 <p>請 GenAI 開啟全新的對話，用這份熱騰騰的「規格/v3」重新生成程式。</p>
+
+
+<div class="box">
+<figure  itemprop="associatedMedia"
+  itemscope itemtype="http://schema.org/ImageObject" 
+  style="max-width:30em" >
+    <div class="img">
+      <img itemprop="thumbnail" src="/img/2025/02/flow-d.png" alt="實驗🅓流程"/>
+    </div>
+    <a href="/img/2025/02/flow-d.png" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>實驗🅓流程</p>
+      </figcaption>
+  </figure>
+</div>
+
+<p><!-- raw HTML omitted -->   <!-- raw HTML omitted -->   <!-- raw HTML omitted --></p>
 <p>提示詞⑥如下：</p>
 <blockquote>
 <p>Now, generate a Python program based on the following specification. [貼上 規格/v3 全文]</p></blockquote>
@@ -922,16 +1007,33 @@ Also create specification-based tests using BDD-style and property-based testing
   </figure>
 </div>
 
-<p>GenAI 有隨機性行為，未必每次都會比根據之前兩份規格（初始規格/v1 及 調整規格/v2）表現得更好，但至少這是可以通過測試的。萬一通不過測試，大可叫 GenAI 去 debug。這就是我們之前與 AI 協作，努力調教頭尾兩端（需求規格與測試驗收）的好處。只要向 AI 指出這項錯誤，它就會乖乖認錯，並且自動 debug。</p>
+<p>GenAI 有隨機性行為，未必每次都會比根據之前兩份規格（初始規格/v1 及 調整規格/v2）產生的程式表現得更好，但至少這是可以通過測試的。萬一通不過測試，大可叫 GenAI 去 debug。這就是我們之前與 AI 協作，努力調教頭尾兩端（需求規格與測試驗收）的好處。只要向 AI 指出這項錯誤，它就會乖乖認錯，並且自動 debug。</p>
 <p>只要程式是正確的，隨時都可以叫 GenAI 去重構，重構到滿意為止，如此即可兼顧正確性與各種內在品質標準。</p>
 <p>這就是當初在「規格/v3」埋下「可執行的規格」伏筆的好處。</p>
 <h2 id="實驗逆向工程">實驗🅔、逆向工程</h2>
-<p>敏捷宣言說：「<strong>可用的軟體</strong> 重於 <strong>詳盡的文件</strong>」。我們想看看，GenAI 是否真的能夠從「可用的軟體」逆向工程出「詳盡的文件」，讓我們評估兩者究竟誰比較重要，可以當成 “ground truth”。</p>
+<p>敏捷宣言說：「<strong>可用的軟體</strong> 重於 <strong>詳盡的文件</strong>」。我們想看看，GenAI 是否真的能夠從「可用的軟體」逆向工程出「詳盡的文件」，讓我們評估兩者究竟誰比較重要，誰可以當成 “ground truth”。</p>
 <p>逆向工程的實驗步驟如下：</p>
 <ul>
 <li>⑥根據規格/v3 重新生成程式，並予以測試檢驗 ◄ 之前的步驟</li>
 <li>⑦逆向工程規格/v4 ◄ 現在的步驟</li>
 </ul>
+
+
+<div class="box">
+<figure  itemprop="associatedMedia"
+  itemscope itemtype="http://schema.org/ImageObject" 
+  style="max-width:30em" >
+    <div class="img">
+      <img itemprop="thumbnail" src="/img/2025/02/flow-e.png" alt="實驗🅔流程"/>
+    </div>
+    <a href="/img/2025/02/flow-e.png" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>實驗🅔流程</p>
+      </figcaption>
+  </figure>
+</div>
+
+<p><!-- raw HTML omitted -->   <!-- raw HTML omitted -->   <!-- raw HTML omitted --></p>
 <p>請 GenAI 開啟全新的對話，拿前一個實驗的程式碼及測試，請它設法轉譯成人類的語言。</p>
 <p>提示詞⑦如下：</p>
 <blockquote>
@@ -954,7 +1056,7 @@ Also create specification-based tests using BDD-style and property-based testing
 <li>Refactoring 很重要。</li>
 <li>Shift-left 很重要。</li>
 </ul>
-<p>這些，其實都是敏捷開發領域重視的實踐。</p>
+<p>這些，其實都是敏捷開發領域一向重視的實踐。</p>
 <p>因此，在 GenAI 時代，就算敏捷四大宣言之一「<strong>可用的軟體</strong> 重於 <strong>詳盡的文件</strong>」未必依然成立，但那也是因為藉由 GenAI 之力，我們終於可以把「可用的軟體」的內涵，用更有效率的方式轉寫到「詳盡的文件」裡面，讓它成為更有意義的 “ground truth”。</p>
 <p>不是因為敏捷宣言過時了，而是 GenAI 成全了敏捷宣言。</p>
 <div class="footnotes" role="doc-endnotes">
