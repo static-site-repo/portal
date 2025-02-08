@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>彙整 - Potioneer&#39;s Essays</title>
+  <title>AI 會寫程式，還要參與系統分析嗎？ - Potioneer&#39;s Essays</title>
   
 
 <meta name="renderer" content="webkit" />
@@ -23,7 +23,13 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="William Yeh" />
-  <meta name="description" content="敏捷魔藥師 (Agile Potioneer)。會說 90% 的工匠語言，會說 70% 的總管語言，正在努力提升 30% 的行腳商人語言。" />
+  <meta name="description" content="傳統上，複雜的軟體專案，除了程式設計師之外，還會搭配系統設計師，甚至系統分析師，確保領域知識及商業邏輯都有朝對的方向前進。
+生成式 AI 既然會寫程式，下一個問題就是：它也會做系統分析嗎？
+理論上來說，應該是的。畢竟我們在前一篇文章都親眼看過，GenAI 連前段的規格都能夠讀懂並潤飾，連後段的程式碼及測試案例這些最終產物都生得出來了，沒有理由無法處理像系統分析與設計 (SA/SD) 這類的中間產物。
+SA/SD 應該也納入 AI 協作。尤其是從它們擅長的塑模角度，能夠協助我們及早確認領域知識及商業邏輯，譬如說，透過狀態轉移圖 (state diagram)，就很容易規劃出高覆蓋率的黑箱測試。
+現在，就讓我們拿前一篇文章的規格作為引子，叫 GenAI 產生狀態圖吧。
+" />
+
 
 
 
@@ -33,8 +39,8 @@
 <meta name="generator" content="Hugo 0.143.1" />
 
 
-<link rel="canonical" href="//william-yeh.net/post/" />
-<link href="/post/index.xml" rel="alternate" type="application/rss+xml" title="Potioneer&#39;s Essays" />
+<link rel="canonical" href="//william-yeh.net/post/2025/02/sa-with-genai/" />
+
 
 
 
@@ -59,20 +65,41 @@
 
 
 
-<meta property="og:url" content="//william-yeh.net/post/">
+<meta property="og:url" content="//william-yeh.net/post/2025/02/sa-with-genai/">
   <meta property="og:site_name" content="Potioneer&#39;s Essays">
-  <meta property="og:title" content="Posts">
-  <meta property="og:description" content="敏捷魔藥師 (Agile Potioneer)。會說 90% 的工匠語言，會說 70% 的總管語言，正在努力提升 30% 的行腳商人語言。">
+  <meta property="og:title" content="AI 會寫程式，還要參與系統分析嗎？">
+  <meta property="og:description" content="傳統上，複雜的軟體專案，除了程式設計師之外，還會搭配系統設計師，甚至系統分析師，確保領域知識及商業邏輯都有朝對的方向前進。
+生成式 AI 既然會寫程式，下一個問題就是：它也會做系統分析嗎？
+理論上來說，應該是的。畢竟我們在前一篇文章都親眼看過，GenAI 連前段的規格都能夠讀懂並潤飾，連後段的程式碼及測試案例這些最終產物都生得出來了，沒有理由無法處理像系統分析與設計 (SA/SD) 這類的中間產物。
+SA/SD 應該也納入 AI 協作。尤其是從它們擅長的塑模角度，能夠協助我們及早確認領域知識及商業邏輯，譬如說，透過狀態轉移圖 (state diagram)，就很容易規劃出高覆蓋率的黑箱測試。
+現在，就讓我們拿前一篇文章的規格作為引子，叫 GenAI 產生狀態圖吧。">
   <meta property="og:locale" content="zh_tw">
-  <meta property="og:type" content="website">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2025-02-08T18:00:00+08:00">
+    <meta property="article:modified_time" content="2025-02-08T18:00:00+08:00">
+    <meta property="article:tag" content="Ai">
+    <meta property="article:tag" content="Ddd">
+    <meta property="article:tag" content="Programming">
+    <meta property="article:tag" content="Testing">
 
-  <meta itemprop="name" content="Posts">
-  <meta itemprop="description" content="敏捷魔藥師 (Agile Potioneer)。會說 90% 的工匠語言，會說 70% 的總管語言，正在努力提升 30% 的行腳商人語言。">
+  <meta itemprop="name" content="AI 會寫程式，還要參與系統分析嗎？">
+  <meta itemprop="description" content="傳統上，複雜的軟體專案，除了程式設計師之外，還會搭配系統設計師，甚至系統分析師，確保領域知識及商業邏輯都有朝對的方向前進。
+生成式 AI 既然會寫程式，下一個問題就是：它也會做系統分析嗎？
+理論上來說，應該是的。畢竟我們在前一篇文章都親眼看過，GenAI 連前段的規格都能夠讀懂並潤飾，連後段的程式碼及測試案例這些最終產物都生得出來了，沒有理由無法處理像系統分析與設計 (SA/SD) 這類的中間產物。
+SA/SD 應該也納入 AI 協作。尤其是從它們擅長的塑模角度，能夠協助我們及早確認領域知識及商業邏輯，譬如說，透過狀態轉移圖 (state diagram)，就很容易規劃出高覆蓋率的黑箱測試。
+現在，就讓我們拿前一篇文章的規格作為引子，叫 GenAI 產生狀態圖吧。">
   <meta itemprop="datePublished" content="2025-02-08T18:00:00+08:00">
   <meta itemprop="dateModified" content="2025-02-08T18:00:00+08:00">
+  <meta itemprop="wordCount" content="1366">
+  <meta itemprop="keywords" content="Ai,Ddd,Programming,Testing">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Posts">
-  <meta name="twitter:description" content="敏捷魔藥師 (Agile Potioneer)。會說 90% 的工匠語言，會說 70% 的總管語言，正在努力提升 30% 的行腳商人語言。">
+  <meta name="twitter:title" content="AI 會寫程式，還要參與系統分析嗎？">
+  <meta name="twitter:description" content="傳統上，複雜的軟體專案，除了程式設計師之外，還會搭配系統設計師，甚至系統分析師，確保領域知識及商業邏輯都有朝對的方向前進。
+生成式 AI 既然會寫程式，下一個問題就是：它也會做系統分析嗎？
+理論上來說，應該是的。畢竟我們在前一篇文章都親眼看過，GenAI 連前段的規格都能夠讀懂並潤飾，連後段的程式碼及測試案例這些最終產物都生得出來了，沒有理由無法處理像系統分析與設計 (SA/SD) 這類的中間產物。
+SA/SD 應該也納入 AI 協作。尤其是從它們擅長的塑模角度，能夠協助我們及早確認領域知識及商業邏輯，譬如說，透過狀態轉移圖 (state diagram)，就很容易規劃出高覆蓋率的黑箱測試。
+現在，就讓我們拿前一篇文章的規格作為引子，叫 GenAI 產生狀態圖吧。">
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -360,605 +387,292 @@
     <main id="main" class="main bg-llight wallpaper">
       <div class="content-wrapper">
         <div id="content" class="content container">
-          
-<section id="archive" class="archive">
+          <article class="post bg-white">
     
-      <div class="collection-title">
-        <h2 class="archive-year">2019</h2>
+    <header class="post-header">
+      <h1 class="post-title">AI 會寫程式，還要參與系統分析嗎？</h1>
+      
+
+      <div class="post-meta">
+  <div class="post-meta-author">
+    by
+      William Yeh
+    
+  </div>
+
+  <div class="post-meta-time">
+    <time datetime="2025-02-08">
+      2025-02-08
+    </time>
+  </div>
+
+  
+
+
+  <div class="post-meta__right">
+    <span class="post-meta-more">
+        約 1366 字 -
+        預計閱讀 3 分鐘
+      </span>
+
+    <div class="post-meta-category">
+        <a href="//william-yeh.net/categories/tech/"> tech </a>
+          
       </div>
 
-    <div class="archive-post">
-      <time datetime="2019-06-17" class="archive-post-time">
-        2019-06-17
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/2019/06/autoreload-from-configmap/" class="archive-post-link">
-          Auto-Reload from ConfigMap
-        </a>
-      </span>
-    </div>
+
+    
     
 
-    <div class="archive-post">
-      <time datetime="2019-06-17" class="archive-post-time">
-        2019-06-17
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/2019/06/containers-and-env/" class="archive-post-link">
-          Containers and Environment Variables
-        </a>
-      </span>
+
+    
+    
+  </div>
+</div>
+
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目錄</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#狀況一過於窮舉">狀況一：過於窮舉</a></li>
+    <li><a href="#狀況二濃縮過度">狀況二：濃縮過度</a></li>
+    <li><a href="#基本合格的狀態圖">基本合格的狀態圖</a></li>
+    <li><a href="#轉換成機器可讀的版本">轉換成機器可讀的版本</a></li>
+    <li><a href="#系統分析的再思">系統分析的再思</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+
+
+    
+    <div class="post-content">
+      <p>傳統上，複雜的軟體專案，除了程式設計師之外，還會搭配系統設計師，甚至系統分析師，確保領域知識及商業邏輯都有朝對的方向前進。</p>
+<p>生成式 AI 既然會寫程式，下一個問題就是：它也會做系統分析嗎？</p>
+<p>理論上來說，應該是的。畢竟我們在<a href="//william-yeh.net/post/2025/02/codegen-with-genai/">前一篇文章</a>都親眼看過，GenAI 連前段的規格都能夠讀懂並潤飾，連後段的程式碼及測試案例這些最終產物都生得出來了，沒有理由無法處理像系統分析與設計 (SA/SD) 這類的中間產物。</p>
+<p>SA/SD 應該也納入 AI 協作。尤其是從它們擅長的塑模角度，能夠協助我們及早確認領域知識及商業邏輯，譬如說，透過狀態轉移圖 (state diagram)，就很容易規劃出高覆蓋率的黑箱測試。</p>
+<p>現在，就讓我們拿<a href="//william-yeh.net/post/2025/02/codegen-with-genai/">前一篇文章</a>的規格作為引子，叫 GenAI 產生狀態圖吧。</p>
+<h2 id="狀況一過於窮舉">狀況一：過於窮舉</h2>
+<p>提示詞 #1：</p>
+<blockquote>
+<p>Generate a UML-style state diagram for the game.</p></blockquote>
+<p>吐出的狀態圖，細節可能每次都有些不同，以下是較常見的版本：</p>
+
+<link rel="stylesheet" href="/css/hugo-easy-gallery.css" />
+<div class="box">
+<figure  itemprop="associatedMedia"
+  itemscope itemtype="http://schema.org/ImageObject" 
+  style="max-width:30em" >
+    <div class="img">
+      <img itemprop="thumbnail" src="/img/2025/02/fsm-1.png" />
     </div>
+    <a href="/img/2025/02/fsm-1.png" itemprop="contentUrl"></a>
+  </figure>
+</div>
+
+<p>嚴格說起來，這份狀態圖並不符合 UML 格式⋯⋯但我暫時不挑剔這一點，等最後一步再來處理。</p>
+<p>這份狀態圖，把所有可能的狀態都窮舉了，應該很合乎測試狂人的胃口。不過，窮舉得太過於累贅，很難消化。若不予以抽象化，很難進一步發展出程式。</p>
+<h2 id="狀況二濃縮過度">狀況二：濃縮過度</h2>
+<p>我們請 GenAI 整頓一下，在不影響正確性的前提下，將過於累贅的狀態精簡濃縮一遍：</p>
+<blockquote>
+<p>Is it possible to reduce the states without compromising correctness or clarity?</p></blockquote>
+<p>吐出的狀態圖，細節可能每次都有些不同，我挑出其中一個版本來聊聊：</p>
+
+
+<div class="box">
+<figure  itemprop="associatedMedia"
+  itemscope itemtype="http://schema.org/ImageObject" 
+  style="max-width:30em" >
+    <div class="img">
+      <img itemprop="thumbnail" src="/img/2025/02/fsm-2.png" />
+    </div>
+    <a href="/img/2025/02/fsm-2.png" itemprop="contentUrl"></a>
+  </figure>
+</div>
+
+<p>有了這份濃縮過的狀態圖，就比較容易一眼看出問題。最大的問題就是，有兩個紅色箭頭的地方濃縮過頭了，誤把 2-0 及 0-2 比分判定為比賽結束。</p>
+<h2 id="基本合格的狀態圖">基本合格的狀態圖</h2>
+<p>我請 GenAI 修正三個地方：</p>
+<blockquote>
+<p>Three issues need to be addressed:</p>
+<ol>
+<li>The “Px leads by 2 points” transition is too vague. Does it account for cases like 2-0 or 0-2?</li>
+<li>The two &ldquo;Game Start&rdquo; transitions should be merged into one.</li>
+<li>Add an initial state for the 0-0 (&ldquo;Love-Love&rdquo;) score.</li>
+</ol></blockquote>
+<p>如此這般調整，通常我們很快就可以得到比較滿意的狀態圖，既清晰，又正確：</p>
+
+
+<div class="box">
+<figure  itemprop="associatedMedia"
+  itemscope itemtype="http://schema.org/ImageObject" 
+  style="max-width:30em" >
+    <div class="img">
+      <img itemprop="thumbnail" src="/img/2025/02/fsm-3.png" />
+    </div>
+    <a href="/img/2025/02/fsm-3.png" itemprop="contentUrl"></a>
+  </figure>
+</div>
+
+<h2 id="轉換成機器可讀的版本">轉換成機器可讀的版本</h2>
+<p>既然好不容易生出清晰正確的狀態圖，我們應該把圖形轉成像是 <a href="https://plantuml.com/en/">PlantUML</a> 這種可程式化的文字表述形式，以預留後續應用的可能性。</p>
+<p>提示詞：</p>
+<blockquote>
+<p>Proceed to represent the state diagram using PlantUML syntax.</p></blockquote>
+<p>我們會得到這樣的狀態圖規格文字：</p>
+
+<details>
+  <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+    PlantUML 格式的狀態圖
+    
+  </summary>
+  <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plain" data-lang="plain"><span style="display:flex;"><span>@startuml
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[*] --&gt; LoveLove : Game Start
+</span></span><span style="display:flex;"><span>LoveLove --&gt; Score : P1 or P2 Scores
+</span></span><span style="display:flex;"><span>Score --&gt; Score : Regular Scoring
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Score --&gt; Deuce : Both &gt;= 3 &amp; Equal
+</span></span><span style="display:flex;"><span>Deuce --&gt; AdvantageP1 : P1 Scores
+</span></span><span style="display:flex;"><span>Deuce --&gt; AdvantageP2 : P2 Scores
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Score --&gt; WinP1 : P1 &gt;= 4 &amp; Lead &gt;= 2
+</span></span><span style="display:flex;"><span>Score --&gt; WinP2 : P2 &gt;= 4 &amp; Lead &gt;= 2
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>AdvantageP1 --&gt; WinP1 : P1 Scores
+</span></span><span style="display:flex;"><span>AdvantageP2 --&gt; WinP2 : P2 Scores
+</span></span><span style="display:flex;"><span>AdvantageP1 --&gt; Deuce : P2 Scores
+</span></span><span style="display:flex;"><span>AdvantageP2 --&gt; Deuce : P1 Scores
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>WinP1 --&gt; [*]
+</span></span><span style="display:flex;"><span>WinP2 --&gt; [*]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>@enduml
+</span></span></code></pre></div>
+</details>
+
+<p>這份狀態圖以及 PlantUML 規格文字，很值得放進系統分析文件，甚至規格書。</p>
+<p>不過，如果你有潔癖，希望狀態圖要合乎正統的 UML 規定，可以把上面的文字丟到<a href="https://www.plantuml.com/plantuml/uml/">PlantUML 軟體</a>去產生完全合乎標準的 UML 狀態圖：</p>
+
+
+<div class="box">
+<figure  itemprop="associatedMedia"
+  itemscope itemtype="http://schema.org/ImageObject" 
+  style="max-width:30em" >
+    <div class="img">
+      <img itemprop="thumbnail" src="/img/2025/02/fsm-4.png" />
+    </div>
+    <a href="/img/2025/02/fsm-4.png" itemprop="contentUrl"></a>
+  </figure>
+</div>
+
+<h2 id="系統分析的再思">系統分析的再思</h2>
+<p>許多威力強大的機器學習與人工智慧技術，本質上是黑箱的，可觀測性與可解釋性，一直是技術發展與推廣的大挑戰。</p>
+<p>對於 GenAI 神兵利器，許多人只在程式碼的層次與 GenAI 對話，畢竟光速產生程式的快感，很難不上癮。</p>
+<p>系統分析？很抱歉，這是光速，沒有預留座位。</p>
+<p>但我還是想要稍微保守一點，寧可慢一點。在前段的規格、中段的系統分析與設計、後段的測試驗收，與 GenAI 多一點協作，在中間產物身上，多留下一些可觀測、可解釋的線索，並力求可以穩定再現。</p>
+<p>畢竟，順向工程比較容易，逆向工程比較困難。如我前一篇文章〈<a href="//william-yeh.net/post/2025/02/codegen-with-genai/">當 AI 會寫程式，程式碼會變得即寫即棄嗎？</a>〉所說，程式碼之所以會變得可以即寫即棄，是因為我們用更有效率的方式，將「可用的軟體」的內涵，轉寫到「詳盡的文件」裡面，讓它成為更有意義的 “ground truth”。</p>
+<p>在與 GenAI 協作時，別忘了「詳盡的文件」也是協作的重點。</p>
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">William Yeh</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+      2025-02-08
+      
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">授權條款</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW" target="_blank">CC BY-NC-SA 4.0</a> (姓名標示-非商業性-相同方式分享 4.0 國際)</span>
+  </p>
+</div>
+
+
+
+    
     
 
-    <div class="archive-post">
-      <time datetime="2019-06-10" class="archive-post-time">
-        2019-06-10
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/2019/06/inotify-in-containers/" class="archive-post-link">
-          Inotify in Containers
-        </a>
-      </span>
-    </div>
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="//william-yeh.net/tags/ai/">ai</a>
+            <a href="//william-yeh.net/tags/ddd/">ddd</a>
+            <a href="//william-yeh.net/tags/programming/">programming</a>
+            <a href="//william-yeh.net/tags/testing/">testing</a>
+            
+        </div>
+
+
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/post/2025/02/codegen-with-genai/">
+            <span class="next-text nav-default">當 AI 會寫程式，程式碼會變得即寫即棄嗎？</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            
+            <i class="iconfont">
+              <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311 0.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889 0.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-0.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"></path>
+</svg>
+
+            </i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+  
+  
+
+
+  
+  
+
+  
+
+  
+  
+
+  
+  
+    <div class="post bg-white">
+  <script src="https://utteranc.es/client.js"
+        repo= "William-Yeh/utterances-area"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script>
+</div>
+
+  
+
+  
+
+  
+
     
 
-    <div class="archive-post">
-      <time datetime="2019-05-17" class="archive-post-time">
-        2019-05-17
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/2019/05/k8s-lab/" class="archive-post-link">
-          Kubernetes 的入門認知與導入策略
-        </a>
-      </span>
-    </div>
-    
-
-    <div class="archive-post">
-      <time datetime="2019-04-19" class="archive-post-time">
-        2019-04-19
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/2019/04/next19-istio/" class="archive-post-link">
-          Next &#39;19 的 Istio 場次重點摘要
-        </a>
-      </span>
-    </div>
-    
-
-    <div class="archive-post">
-      <time datetime="2019-04-18" class="archive-post-time">
-        2019-04-18
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/2019/04/wsl-ansible-vagrant/" class="archive-post-link">
-          在 WSL 裡使用 Ansible &#43; Vagrant
-        </a>
-      </span>
-    </div>
-    
-
-    <div class="archive-post">
-      <time datetime="2019-04-17" class="archive-post-time">
-        2019-04-17
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/2019/04/wsltty-tmux/" class="archive-post-link">
-          WSLtty &#43; tmux 組合技
-        </a>
-      </span>
-    </div>
-    
-
-    <div class="archive-post">
-      <time datetime="2019-03-29" class="archive-post-time">
-        2019-03-29
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/2019/03/ingress-vs-ambassador/" class="archive-post-link">
-          Nginx Ingress 與 Ambassador 簡易性能比較
-        </a>
-      </span>
-    </div>
-    
-
-    <div class="archive-post">
-      <time datetime="2019-03-14" class="archive-post-time">
-        2019-03-14
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/2019/03/wsl-cmder-zsh/" class="archive-post-link">
-          在 Windows 上復刻 Mac 使用習慣
-        </a>
-      </span>
-    </div>
-    
-
-    <div class="archive-post">
-      <time datetime="2019-02-25" class="archive-post-time">
-        2019-02-25
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/2019/02/k8s-best-practice/" class="archive-post-link">
-          Kubernetes Best Practices 資料
-        </a>
-      </span>
-    </div></section>
-
-
-
-
-
-
-  
-  
   
 
   
-  
-
-  
-  
-
-  
-  
-
-  
-  
-
-    <nav class="pagination">
-      <ul>
-
-      
-      
-      <li><a href="/post/">««</a></li>
-      
-
-      
-      
-      <li><a href="/post/page/7/">«</a></li>
-      
-
-      
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-
-          
-
-        
-        
-
-        
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-              
-            
-
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/post/page/2/">
-              2
-            </a>
-          </li>
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-              
-            
-
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/post/page/3/">
-              3
-            </a>
-          </li>
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-              
-            
-
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/post/page/4/">
-              4
-            </a>
-          </li>
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-              
-            
-
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/post/page/5/">
-              5
-            </a>
-          </li>
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-              
-            
-
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/post/page/6/">
-              6
-            </a>
-          </li>
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-              
-            
-
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/post/page/7/">
-              7
-            </a>
-          </li>
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-              
-            
-
-          
-
-        
-        
-
-        
-        
-          <li class="active">
-            <a href="/post/page/8/">
-              8
-            </a>
-          </li>
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-              
-            
-
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/post/page/9/">
-              9
-            </a>
-          </li>
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-              
-            
-
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/post/page/10/">
-              10
-            </a>
-          </li>
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-              
-            
-
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/post/page/11/">
-              11
-            </a>
-          </li>
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-              
-            
-
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/post/page/12/">
-              12
-            </a>
-          </li>
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-              
-            
-
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/post/page/13/">
-              13
-            </a>
-          </li>
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-              
-            
-
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/post/page/14/">
-              14
-            </a>
-          </li>
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-
-          
-
-        
-        
-
-        
-        
-
-      
-
-      
-      
-      <li><a href="/post/page/9/">»</a></li>
-      
-
-      
-      
-      <li><a href="/post/page/15/">»»</a></li>
-      
-
-      </ul>
-    </nav>
-  
-
-
-
-
 
         </div>
       </div>

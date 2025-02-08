@@ -6,10 +6,146 @@
     <description>Recent content on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Fri, 07 Feb 2025 18:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 08 Feb 2025 18:00:00 +0800</lastBuildDate>
     
         <atom:link href="//william-yeh.net/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>AI 會寫程式，還要參與系統分析嗎？</title>
+      <link>//william-yeh.net/post/2025/02/sa-with-genai/</link>
+      <pubDate>Sat, 08 Feb 2025 18:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2025/02/sa-with-genai/</guid>
+      
+        <description>&lt;p&gt;傳統上，複雜的軟體專案，除了程式設計師之外，還會搭配系統設計師，甚至系統分析師，確保領域知識及商業邏輯都有朝對的方向前進。&lt;/p&gt;
+&lt;p&gt;生成式 AI 既然會寫程式，下一個問題就是：它也會做系統分析嗎？&lt;/p&gt;
+&lt;p&gt;理論上來說，應該是的。畢竟我們在&lt;a href=&#34;//william-yeh.net/post/2025/02/codegen-with-genai/&#34;&gt;前一篇文章&lt;/a&gt;都親眼看過，GenAI 連前段的規格都能夠讀懂並潤飾，連後段的程式碼及測試案例這些最終產物都生得出來了，沒有理由無法處理像系統分析與設計 (SA/SD) 這類的中間產物。&lt;/p&gt;
+&lt;p&gt;SA/SD 應該也納入 AI 協作。尤其是從它們擅長的塑模角度，能夠協助我們及早確認領域知識及商業邏輯，譬如說，透過狀態轉移圖 (state diagram)，就很容易規劃出高覆蓋率的黑箱測試。&lt;/p&gt;
+&lt;p&gt;現在，就讓我們拿&lt;a href=&#34;//william-yeh.net/post/2025/02/codegen-with-genai/&#34;&gt;前一篇文章&lt;/a&gt;的規格作為引子，叫 GenAI 產生狀態圖吧。&lt;/p&gt;
+&lt;h2 id=&#34;狀況一過於窮舉&#34;&gt;狀況一：過於窮舉&lt;/h2&gt;
+&lt;p&gt;提示詞 #1：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Generate a UML-style state diagram for the game.&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;吐出的狀態圖，細節可能每次都有些不同，以下是較常見的版本：&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2025/02/fsm-1.png&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2025/02/fsm-1.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;嚴格說起來，這份狀態圖並不符合 UML 格式⋯⋯但我暫時不挑剔這一點，等最後一步再來處理。&lt;/p&gt;
+&lt;p&gt;這份狀態圖，把所有可能的狀態都窮舉了，應該很合乎測試狂人的胃口。不過，窮舉得太過於累贅，很難消化。若不予以抽象化，很難進一步發展出程式。&lt;/p&gt;
+&lt;h2 id=&#34;狀況二濃縮過度&#34;&gt;狀況二：濃縮過度&lt;/h2&gt;
+&lt;p&gt;我們請 GenAI 整頓一下，在不影響正確性的前提下，將過於累贅的狀態精簡濃縮一遍：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Is it possible to reduce the states without compromising correctness or clarity?&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;吐出的狀態圖，細節可能每次都有些不同，我挑出其中一個版本來聊聊：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2025/02/fsm-2.png&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2025/02/fsm-2.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;有了這份濃縮過的狀態圖，就比較容易一眼看出問題。最大的問題就是，有兩個紅色箭頭的地方濃縮過頭了，誤把 2-0 及 0-2 比分判定為比賽結束。&lt;/p&gt;
+&lt;h2 id=&#34;基本合格的狀態圖&#34;&gt;基本合格的狀態圖&lt;/h2&gt;
+&lt;p&gt;我請 GenAI 修正三個地方：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Three issues need to be addressed:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;The “Px leads by 2 points” transition is too vague. Does it account for cases like 2-0 or 0-2?&lt;/li&gt;
+&lt;li&gt;The two &amp;ldquo;Game Start&amp;rdquo; transitions should be merged into one.&lt;/li&gt;
+&lt;li&gt;Add an initial state for the 0-0 (&amp;ldquo;Love-Love&amp;rdquo;) score.&lt;/li&gt;
+&lt;/ol&gt;&lt;/blockquote&gt;
+&lt;p&gt;如此這般調整，通常我們很快就可以得到比較滿意的狀態圖，既清晰，又正確：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2025/02/fsm-3.png&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2025/02/fsm-3.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;轉換成機器可讀的版本&#34;&gt;轉換成機器可讀的版本&lt;/h2&gt;
+&lt;p&gt;既然好不容易生出清晰正確的狀態圖，我們應該把圖形轉成像是 &lt;a href=&#34;https://plantuml.com/en/&#34;&gt;PlantUML&lt;/a&gt; 這種可程式化的文字表述形式，以預留後續應用的可能性。&lt;/p&gt;
+&lt;p&gt;提示詞：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Proceed to represent the state diagram using PlantUML syntax.&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;我們會得到這樣的狀態圖規格文字：&lt;/p&gt;
+
+&lt;details&gt;
+  &lt;summary style=&#34;background-color:#f5f5f5;border:1px solid #ccc;padding:5px;&#34;&gt;
+    PlantUML 格式的狀態圖
+    
+  &lt;/summary&gt;
+  &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-plain&#34; data-lang=&#34;plain&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;@startuml
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[*] --&amp;gt; LoveLove : Game Start
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;LoveLove --&amp;gt; Score : P1 or P2 Scores
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Score --&amp;gt; Score : Regular Scoring
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Score --&amp;gt; Deuce : Both &amp;gt;= 3 &amp;amp; Equal
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Deuce --&amp;gt; AdvantageP1 : P1 Scores
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Deuce --&amp;gt; AdvantageP2 : P2 Scores
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Score --&amp;gt; WinP1 : P1 &amp;gt;= 4 &amp;amp; Lead &amp;gt;= 2
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Score --&amp;gt; WinP2 : P2 &amp;gt;= 4 &amp;amp; Lead &amp;gt;= 2
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;AdvantageP1 --&amp;gt; WinP1 : P1 Scores
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;AdvantageP2 --&amp;gt; WinP2 : P2 Scores
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;AdvantageP1 --&amp;gt; Deuce : P2 Scores
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;AdvantageP2 --&amp;gt; Deuce : P1 Scores
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;WinP1 --&amp;gt; [*]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;WinP2 --&amp;gt; [*]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;@enduml
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/details&gt;
+
+&lt;p&gt;這份狀態圖以及 PlantUML 規格文字，很值得放進系統分析文件，甚至規格書。&lt;/p&gt;
+&lt;p&gt;不過，如果你有潔癖，希望狀態圖要合乎正統的 UML 規定，可以把上面的文字丟到&lt;a href=&#34;https://www.plantuml.com/plantuml/uml/&#34;&gt;PlantUML 軟體&lt;/a&gt;去產生完全合乎標準的 UML 狀態圖：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2025/02/fsm-4.png&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2025/02/fsm-4.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;系統分析的再思&#34;&gt;系統分析的再思&lt;/h2&gt;
+&lt;p&gt;許多威力強大的機器學習與人工智慧技術，本質上是黑箱的，可觀測性與可解釋性，一直是技術發展與推廣的大挑戰。&lt;/p&gt;
+&lt;p&gt;對於 GenAI 神兵利器，許多人只在程式碼的層次與 GenAI 對話，畢竟光速產生程式的快感，很難不上癮。&lt;/p&gt;
+&lt;p&gt;系統分析？很抱歉，這是光速，沒有預留座位。&lt;/p&gt;
+&lt;p&gt;但我還是想要稍微保守一點，寧可慢一點。在前段的規格、中段的系統分析與設計、後段的測試驗收，與 GenAI 多一點協作，在中間產物身上，多留下一些可觀測、可解釋的線索，並力求可以穩定再現。&lt;/p&gt;
+&lt;p&gt;畢竟，順向工程比較容易，逆向工程比較困難。如我前一篇文章〈&lt;a href=&#34;//william-yeh.net/post/2025/02/codegen-with-genai/&#34;&gt;當 AI 會寫程式，程式碼會變得即寫即棄嗎？&lt;/a&gt;〉所說，程式碼之所以會變得可以即寫即棄，是因為我們用更有效率的方式，將「可用的軟體」的內涵，轉寫到「詳盡的文件」裡面，讓它成為更有意義的 “ground truth”。&lt;/p&gt;
+&lt;p&gt;在與 GenAI 協作時，別忘了「詳盡的文件」也是協作的重點。&lt;/p&gt;</description>
+      
+    </item>
     
     <item>
       <title>當 AI 會寫程式，程式碼會變得即寫即棄嗎？</title>
