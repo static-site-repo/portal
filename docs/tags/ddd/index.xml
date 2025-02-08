@@ -13,7 +13,7 @@
       <link>//william-yeh.net/post/2025/02/sa-with-genai/</link>
       <pubDate>Sat, 08 Feb 2025 18:00:00 +0800</pubDate>
       <guid>//william-yeh.net/post/2025/02/sa-with-genai/</guid>
-      <description>&lt;p&gt;傳統上，複雜的軟體專案，除了程式設計師之外，還會搭配系統設計師，甚至系統分析師，確保領域知識及商業邏輯都有朝對的方向前進。&lt;/p&gt;&#xA;&lt;p&gt;生成式 AI 既然會寫程式，下一個問題就是：它也會做系統分析嗎？&lt;/p&gt;&#xA;&lt;p&gt;理論上來說，應該是的。畢竟我們在&lt;a href=&#34;//william-yeh.net/post/2025/02/codegen-with-genai/&#34;&gt;前一篇文章&lt;/a&gt;都親眼看過，GenAI 連前段的規格都能夠讀懂並潤飾，連後段的程式碼及測試案例這些最終產物都生得出來了，沒有理由無法處理像系統分析與設計 (SA/SD) 這類的中間產物。&lt;/p&gt;&#xA;&lt;p&gt;SA/SD 應該也納入 AI 協作。尤其是從它們擅長的塑模角度，能夠協助我們及早確認領域知識及商業邏輯，譬如說，透過狀態轉移圖 (state diagram)，就很容易規劃出高覆蓋率的黑箱測試。&lt;/p&gt;&#xA;&lt;p&gt;現在，就讓我們拿&lt;a href=&#34;//william-yeh.net/post/2025/02/codegen-with-genai/&#34;&gt;前一篇文章&lt;/a&gt;的規格作為引子，叫 GenAI 產生狀態圖吧。&lt;/p&gt;</description>
+      <description>&lt;p&gt;傳統上，複雜的軟體專案，除了程式設計師之外，還會搭配系統設計師，甚至系統分析師，確保領域知識及商業邏輯都有朝對的方向前進。&lt;/p&gt;&#xA;&lt;p&gt;生成式 AI 既然會寫程式，下一個問題就是：它也會做系統分析嗎？&lt;/p&gt;&#xA;&lt;p&gt;理論上來說，應該是的。畢竟我們在&lt;a href=&#34;//william-yeh.net/post/2025/02/codegen-with-genai/&#34;&gt;前一篇文章&lt;/a&gt;都親眼看過，GenAI 連前段的規格都能夠讀懂並潤飾，連後段的程式碼及測試案例這些最終產物都生得出來了，沒有理由無法處理像系統分析與設計 (SA/SD) 這類的中間產物。&lt;/p&gt;&#xA;&lt;p&gt;如果可行，SA/SD 也應該納入 AI 協作。尤其是從 SA/SD 擅長的塑模角度，能夠協助我們及早確認領域知識及商業邏輯，譬如說，透過狀態轉移圖 (state diagram)，就很容易規劃出高覆蓋率的黑箱測試。&lt;/p&gt;&#xA;&lt;p&gt;讓 AI 幫你簡化狀態圖，能省多少時間？&lt;/p&gt;&#xA;&lt;p&gt;AI 產生的狀態圖，真的比人工畫得更好嗎？&lt;/p&gt;&#xA;&lt;p&gt;現在，就讓我們拿&lt;a href=&#34;//william-yeh.net/post/2025/02/codegen-with-genai/&#34;&gt;前一篇文章&lt;/a&gt;的規格作為引子，叫 GenAI 產生狀態圖吧。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Idempotency Key：原理與實測</title>
