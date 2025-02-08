@@ -6,8 +6,15 @@
     <description>Recent content in Craftsmanship on Potioneer&#39;s Essays</description>
     <generator>Hugo</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Thu, 12 Oct 2023 20:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 07 Feb 2025 18:00:00 +0800</lastBuildDate>
     <atom:link href="//william-yeh.net/tags/craftsmanship/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>當 AI 會寫程式，程式碼會變得即寫即棄嗎？</title>
+      <link>//william-yeh.net/post/2025/02/codegen-with-genai/</link>
+      <pubDate>Fri, 07 Feb 2025 18:00:00 +0800</pubDate>
+      <guid>//william-yeh.net/post/2025/02/codegen-with-genai/</guid>
+      <description>&lt;p&gt;人類從事的領域，不斷被生成式 AI (GenAI) 入侵。&lt;/p&gt;&#xA;&lt;p&gt;社群媒體上，早就充斥一大堆「AI 體」的文案圖案，現在就連程式設計領域也開始淪陷。像 Google 執行長就透露：「在 Google，超過 1/4 的新程式碼已經是先由 AI 生成，再讓程式設計師去複審與確認。」&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; 而 GitHub 執行長更大膽預言 80% 的程式碼都將會由 GenAI 生成。&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;&#xA;&lt;p&gt;也就是說，以前，程式設計師得親手撰寫大部分的程式碼；現在則開始挪出一段時間去跟 GenAI 對話：調教提示詞 (prompt)、審核生成的程式碼、確認正確性，如此反覆進行好幾個回合。&lt;/p&gt;&#xA;&lt;p&gt;GenAI 進展神速。如果某一天進展到，只要提示詞下得夠精準，第一次生出來的程式碼幾乎就合格過關了，是否也就意謂著，程式設計師的專業訓練及工作重點，將會更轉向 ⑴ 鑽研提示工程、⑵ 審核生成的程式碼這兩條路線發展？換句話說，將會更朝向 ⑴ 前段的需求規格、⑵ 後段的測試驗收這兩條路線？&lt;/p&gt;&#xA;&lt;p&gt;如果頭尾兩端（需求規格與測試驗收）都由人來看守定義，中間步驟（撰寫程式碼）改由 GenAI 來操刀，是否也就意謂著，程式碼會變成像是可拋棄的東西，反正隨時都可以叫 GenAI 再生出一份出來？甚至當 GenAI 能力升級之後，又能夠生出比拋棄掉的還要更好的程式碼？&lt;/p&gt;&#xA;&lt;p&gt;聽起來可能有點兒瘋狂。可是如果以上屬實，那麼，敏捷四大宣言之一「&lt;strong&gt;可用的軟體&lt;/strong&gt; 重於 &lt;strong&gt;詳盡的文件&lt;/strong&gt;」，在 GenAI 時代是否依然成立，可能都值得再重新評估檢討。&lt;/p&gt;&#xA;&lt;p&gt;為此，我在 ChatGPT 4o 進行一系列小小的實驗。試試看當 GenAI 收到前段的需求規格之後，能夠生出什麼樣的程式碼以及測試驗收案例；緊接著會與 GenAI 協作調教頭尾兩端（需求規格與測試驗收），再看看 GenAI 重新生出來的程式碼，會有什麼不同。&lt;/p&gt;&#xA;&#xA;&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;&#xA;&lt;div class=&#34;box&#34;&gt;&#xA;&lt;figure  itemprop=&#34;associatedMedia&#34;&#xA;  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; &#xA;  style=&#34;max-width:30em&#34; &gt;&#xA;    &lt;div class=&#34;img&#34;&gt;&#xA;      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2025/02/work-with-genai.jpg&#34; /&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;a href=&#34;//william-yeh.net/img/2025/02/work-with-genai.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;&#xA;  &lt;/figure&gt;&#xA;&lt;/div&gt;</description>
+    </item>
     <item>
       <title>[Code Review 碎碎念] 簡化巢狀條件判斷式</title>
       <link>//william-yeh.net/post/2023/10/nested-conditional/</link>
