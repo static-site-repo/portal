@@ -4,114 +4,1420 @@
     <title>Lean on Potioneer&#39;s Essays</title>
     <link>//william-yeh.net/tags/lean/</link>
     <description>Recent content in Lean on Potioneer&#39;s Essays</description>
-    <generator>Hugo</generator>
+    <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <lastBuildDate>Tue, 12 Dec 2023 20:00:00 +0800</lastBuildDate>
-    <atom:link href="//william-yeh.net/tags/lean/index.xml" rel="self" type="application/rss+xml" />
+    
+        <atom:link href="//william-yeh.net/tags/lean/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>2023 個人回顧</title>
       <link>//william-yeh.net/post/2023/12/2023-retrospective/</link>
       <pubDate>Tue, 12 Dec 2023 20:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2023/12/2023-retrospective/</guid>
-      <description>&lt;p&gt;原本以為前幾年的冒險已經夠精彩了，沒想到今年更加刺激，簡直就是甘迺迪的登月大計。&lt;/p&gt;&#xA;&lt;p&gt;到了年終，又開始要做個總回顧，再對來年許願。去除一些不便揭露的事情，以下是簡單的回顧。&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;原本以為前幾年的冒險已經夠精彩了，沒想到今年更加刺激，簡直就是甘迺迪的登月大計。&lt;/p&gt;
+&lt;p&gt;到了年終，又開始要做個總回顧，再對來年許願。去除一些不便揭露的事情，以下是簡單的回顧。&lt;/p&gt;
+&lt;h2 id=&#34;補血課程&#34;&gt;補血課程&lt;/h2&gt;
+&lt;p&gt;這一年，因為時間因素，我上的多半是線上課程。其中，除了專業領域的 &lt;a href=&#34;//william-yeh.net/post/2023/04/gcp-on-coursera/&#34;&gt;Coursera 上面的 GCP 課程&lt;/a&gt;之外，收穫最大的，就是這兩門啟點文化的課：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.koob.com.tw/online/tk11&#34;&gt;【全方位職涯思維】深職你的未來，佈局理想人生&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.koob.com.tw/online/tk13&#34;&gt;【讓夢想著地】勇敢迎接改變，陪你生涯轉彎不孤單&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;我在 &lt;a href=&#34;//william-yeh.net/post/2019/12/2019-retrospective/&#34;&gt;2019 個人回顧文&lt;/a&gt;曾經提過，對於線上課程，真正 100% 完課，且不時還會回頭複習的，就是他們的課。&lt;/p&gt;
+&lt;p&gt;今年，個人遇到重大難題與抉擇。這兩門課，打破我許多迷思成見，協助我釐清主觀與客觀情勢，我才有辦法根據錦囊，規劃一系列行動策略：吞下去，並存，找到「那附近」，焊接軌道，翻越必要的山路，永不回頭。&lt;/p&gt;
+&lt;p&gt;我很感激這兩門課仍然常常回聽複習的課。&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/12/looking-forward.png&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2023/12/looking-forward.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;公開演講及授課&#34;&gt;公開演講及授課&lt;/h2&gt;
+&lt;p&gt;今年，身處重大轉換期，已經無法恣意 跑趴 出沒 社群活動，只參加一場線上的小座談：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=32Y2CyiQs_8&#34;&gt;時間盒 vs 工作流&lt;/a&gt; (2023-11-11)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;這場小座談，源自〈&lt;a href=&#34;//william-yeh.net/post/2023/10/criticism-about-timebox/&#34;&gt;Timebox 是死胡同嗎？&lt;/a&gt;〉一文涉及的討論，我再把沒講完的想法另外寫一篇〈&lt;a href=&#34;//william-yeh.net/post/2023/11/why-decomposition-matters/&#34;&gt;變動的時代，為什麼工作分解技能更是必備？&lt;/a&gt;〉作為補充。&lt;/p&gt;
+&lt;p&gt;如果你對 Scrum vs Kanban 議題感興趣，不妨參考一下。&lt;/p&gt;
+&lt;h2 id=&#34;不同的世界&#34;&gt;不同的世界&lt;/h2&gt;
+&lt;p&gt;看了《&lt;a href=&#34;https://www.imdb.com/title/tt9419884/&#34;&gt;奇異博士２：失控的多重宇宙&lt;/a&gt;》之後，我對片尾一段對話格外有感：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/12/are-you-happy.png&#34; alt=&#34;Are you happy?  -- Quote: Doctor Strange in the Multiverse of Madness&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2023/12/are-you-happy.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Are you happy?  -- Quote: Doctor Strange in the Multiverse of Madness&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;「拯救世界」是我想要的，但我可不想落得像 Doctor Strange 那樣感慨「原本以為拯救世界會獲得幸福⋯⋯並沒有。」&lt;/p&gt;
+&lt;p&gt;長考數月，終於做了一個決定：我要去一個既能拯救世界，又能得到 happy 的舞台。&lt;/p&gt;
+&lt;p&gt;抱著朝聖的心情，前往很不一樣的世界：製造業。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;為什麼是製造業？&lt;/p&gt;
+&lt;p&gt;我的管理初體驗，大半淵源都來自於此領域的論述。像高德拉特《&lt;a href=&#34;https://williampjyeh.notion.site/1887e85000de40d7aa80b0f04725f4bf&#34;&gt;目標&lt;/a&gt;》＆《&lt;a href=&#34;https://williampjyeh.notion.site/d179401d81ab42f79f74ca490ef1318a&#34;&gt;絕不是靠運氣&lt;/a&gt;》都是製造業場景，像《&lt;a href=&#34;https://williampjyeh.notion.site/ab699ecc3ace4c2e994d5142d9ef186f&#34;&gt;精實革命&lt;/a&gt;》則是汽車製造業。我一直從這裡取經，應用到軟體研發領域，心中不免也很好奇：這些被我轉化過來的理念，它們的原始樣貌，究竟是否真的如書本所陳述的那樣，是否真的如我所以為的那樣？&lt;/p&gt;
+&lt;p&gt;製造業的世界，很強調量化管理，交期＆品質兩方面也都不能退讓，這對於帶著濃厚自組織、自管理、經驗主義、試錯空間、人本色彩的 Agile &amp;amp; DevOps 來說，真的適用嗎？&lt;/p&gt;
+&lt;p&gt;這些疑問，只有親自朝聖，才能夠一窺究竟。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;當來自矽谷和全世界的頂尖科技，遇上半導體創新和高度製造紀律，彼此交會將帶來什麼樣的火花？這是非常令人振奮的時刻。&lt;/p&gt;
+&lt;p&gt;      &amp;mdash; Quote: CIO Chris &lt;a href=&#34;https://www.ithome.com.tw/news/149124&#34;&gt;https://www.ithome.com.tw/news/149124&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;為了迎接這份大轉變，我認真複習了一些素材，尤其是畢業生的論述。像彭建文的課程【&lt;a href=&#34;https://shop.darencademy.com/product/view/id/105&#34;&gt;工程師的職涯經營指南&lt;/a&gt;】、書籍《&lt;a href=&#34;https://williampjyeh.notion.site/cf34fbb4327f4c0596ab8b0dfb4e0f2d&#34;&gt;思維的良率&lt;/a&gt;》&amp;amp;《&lt;a href=&#34;https://williampjyeh.notion.site/82464b60686148448cf029a1854293ed&#34;&gt;思維的製程&lt;/a&gt;》，像郝旭烈的書籍《&lt;a href=&#34;https://williampjyeh.notion.site/0592c1c875ac4d0e80860dde5c03c2b6&#34;&gt;贏在邏輯思考力：玩一場擴張邊界的遊戲&lt;/a&gt;》＆《&lt;a href=&#34;https://williampjyeh.notion.site/dc2a29274dbb46c59db58958e8092b3c&#34;&gt;專案管理：玩一場從不確定到確定的遊戲&lt;/a&gt;》，都對於我融入這特殊的高績效文化，有很大的幫助。&lt;/p&gt;
+&lt;p&gt;半年以來，感觸非常多，姑且談談最深的三點。&lt;/p&gt;
+&lt;p&gt;其一、持續改善的文化。就像彭建文在這篇 &lt;a href=&#34;https://pinshuoi.com/9813/&#34;&gt;CIT 文章&lt;/a&gt;所講：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;CIT 代表「Continual Improvement Team」，這個團隊的目的是改善公司的體質，增進公司的競爭力。CIT 活動已經在公司內推行了 20 多年，是一個有系統且能持續不斷改善的活動機制。不論是同部門或跨部門，遇到問題都可以組成 CIT 團隊，共同解決問題。&lt;/p&gt;
+&lt;p&gt;CIT 需要時間，很難在短期內看到效果。許多台灣企業希望達到短期效益，較不注重這種無形的東西。當公司全面形成持續改善的文化，團隊解決問題的能力就會不斷提升，整個組織的競爭力也會形成很大的競爭優勢，帶來驚人的效益。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;突然發覺，身處有持續改善文化的地方，不必躲躲藏藏做這些事，是多麼難得。在一間公司理所當然的事，在其他公司就未必了。&lt;/p&gt;
+&lt;p&gt;其二、這是個極度講究邏輯的地方。就像&lt;a href=&#34;https://www.cw.com.tw/article/5126589&#34;&gt;這篇文章&lt;/a&gt;所說：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;其實系統設計必有其邏輯，因此在 xxx 工作，「邏輯」十分重要，只要了解整個程序跟系統的前後邏輯，並把握好基本原則，便能順利適應這樣的工作型態。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;即使領域知識仍有不足，但憑藉清晰思路的基本功，可以逐漸找到能夠貢獻洞見的地方。畢竟，系統是人設計的，作業程序是人設計的，問題也多半是人弄出來的；背後的邏輯脈絡，是非常重要的切入點。&lt;/p&gt;
+&lt;p&gt;邏輯，是個看似樸素無華，卻值得用心操練的基本功。&lt;/p&gt;
+&lt;p&gt;其三、我很驚喜的發現，過去數年刻意自我要求的本質修練，真的「可以用在世界級的舞台上」。&lt;/p&gt;
+&lt;p&gt;去年搞的一堆導讀會及課程，到頭來收穫最大的還是自己。&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/12/appliable.png&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2023/12/appliable.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;卡片盒筆記法&#34;&gt;卡片盒筆記法&lt;/h2&gt;
+&lt;p&gt;為了迎接全新的挑戰，也正好這兩年以來&lt;a href=&#34;https://readingoutpost.com/2-years-of-zettelkasten/&#34;&gt;卡片盒筆記法&lt;/a&gt; (Zettelkasten) 蔚為風潮，我便順勢升級自己行之有年的筆記系統。&lt;/p&gt;
+&lt;p&gt;我主要參考了 XDite《&lt;a href=&#34;https://williampjyeh.notion.site/fe64416e49764104b56c1a2db7d70f6d&#34;&gt;打造超人筆記&lt;/a&gt;》及朱騏《&lt;a href=&#34;https://williampjyeh.notion.site/d687fbd8766b44cbaf5c8150d64abffd&#34;&gt;知識複利筆記術&lt;/a&gt;》所載之法，並運用在 Obsidian 及 RemNote 上。&lt;/p&gt;
+&lt;p&gt;RemNote 是個滿有趣的軟體。它走的是類似 Roam 及 Logseq 的路線，如果你沒玩過這類軟體，網路上也有許多網紅錄製的教學影片，尤其是 penolopie 的示範，解除了我許多使用上的疑惑：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://youtu.be/dHQxq7xOks4&#34;&gt;https://youtu.be/dHQxq7xOks4&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://youtu.be/UX_sAokbUHk&#34;&gt;https://youtu.be/UX_sAokbUHk&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://youtu.be/-o9ePucEonU&#34;&gt;https://youtu.be/-o9ePucEonU&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://youtu.be/dEty1ryv6R8&#34;&gt;https://youtu.be/dEty1ryv6R8&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;RemNote 的 &amp;ldquo;&lt;a href=&#34;https://help.remnote.com/en/articles/6030778-universal-descriptors&#34;&gt;universal descriptor&lt;/a&gt;&amp;rdquo; 設計更是令人驚艷。這陣子我嘗試重度使用這功能，發現筆記摘要的品質及深度都截然不同了。再搭配內建的閃示卡功能，連記憶都更加固著。&lt;/p&gt;
+&lt;p&gt;值此，不禁感嘆：以前怎麼都在用土法來煉鋼呀。&lt;/p&gt;
+&lt;p&gt;認真用 RemNote &amp;amp; Obsidian 實踐卡片盒筆記法一個多月，再重讀《&lt;a href=&#34;https://williampjyeh.notion.site/03810b34083948459a55740b9b6c32a8&#34;&gt;卡片盒筆記&lt;/a&gt;》原典，就讀得出味道了。&lt;/p&gt;
+&lt;p&gt;有些書就是要先去實作一下，踩雷，困而思之習之，方能體悟。&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:20em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/12/zettelkasten.jpg&#34; alt=&#34;Zettelkasten&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2023/12/zettelkasten.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Zettelkasten&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;2024-許願&#34;&gt;2024 許願&lt;/h2&gt;
+&lt;p&gt;2024 年，希望自己能做到：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;專題式的系列講座。&lt;/li&gt;
+&lt;li&gt;Coach 值得 coach 的人。&lt;/li&gt;
+&lt;li&gt;繼續更深度的本質修練。&lt;/li&gt;
+&lt;li&gt;繼續增進商務英語聽說能力。&lt;/li&gt;
+&lt;li&gt;開放冒險選項。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;就醬。&lt;/p&gt;</description>
+      
     </item>
+    
     <item>
       <title>如何衡量敏捷對於軟體研發效能的利益？</title>
       <link>//william-yeh.net/post/2023/12/dev-metrics/</link>
       <pubDate>Sun, 03 Dec 2023 20:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2023/12/dev-metrics/</guid>
-      <description>&lt;p&gt;面對敏捷或 DevOps 藥方，病人可能帶著各種不同的動機而來，但終歸都會提出同樣的疑問：我怎麼知道敏捷有沒有效？怎麼衡量成效？&lt;/p&gt;&#xA;&lt;p&gt;這問題，可能在導入之後的某個時刻會問，但更有可能像戰國時代梁惠王那樣，才剛第一次接見孟子，居然劈頭就問：「叟，不遠千里而來，亦將有以利吾國乎？」&lt;/p&gt;&#xA;&#xA;&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;&#xA;&lt;div class=&#34;box&#34;&gt;&#xA;&lt;figure  itemprop=&#34;associatedMedia&#34;&#xA;  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; &#xA;  style=&#34;max-width:30em&#34; &gt;&#xA;    &lt;div class=&#34;img&#34;&gt;&#xA;      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/12/mencius-dialogue.png&#34; alt=&#34;孟子見梁惠王&#34;/&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;a href=&#34;//william-yeh.net/img/2023/12/mencius-dialogue.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;&#xA;      &lt;figcaption&gt;&#xA;          &lt;p&gt;孟子見梁惠王&lt;/p&gt;&#xA;      &lt;/figcaption&gt;&#xA;  &lt;/figure&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;p&gt;對這議題，常有兩種極端的反應。&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;面對敏捷或 DevOps 藥方，病人可能帶著各種不同的動機而來，但終歸都會提出同樣的疑問：我怎麼知道敏捷有沒有效？怎麼衡量成效？&lt;/p&gt;
+&lt;p&gt;這問題，可能在導入之後的某個時刻會問，但更有可能像戰國時代梁惠王那樣，才剛第一次接見孟子，居然劈頭就問：「叟，不遠千里而來，亦將有以利吾國乎？」&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/12/mencius-dialogue.png&#34; alt=&#34;孟子見梁惠王&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2023/12/mencius-dialogue.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;孟子見梁惠王&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;對這議題，常有兩種極端的反應。&lt;/p&gt;
+&lt;p&gt;如果你像孟子一樣，一開頭就企圖曉以大義： &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;總經理呀，何必一開頭就談「衡量成效利益」呢？你更應該看重的是「內涵與精神」呀！&lt;/p&gt;
+&lt;p&gt;如果總經理成天想著「對我們的公司有什麼可衡量的成效」，主管成天想著「對我們部門有什麼可衡量的成效」，員工成天想著「對我個人有什麼可衡量的成效」，上下各自算計著成效利益，整間公司就很危險了！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;只怕你會像孟子一樣，很快就離開這個國家了。&lt;/p&gt;
+&lt;p&gt;輕蔑指標固然不可取，但另一個極端「指標狂人」也很可怕。&lt;/p&gt;
+&lt;p&gt;近年來「數位轉型」蔚為顯學，延燒到傳統產業，甚至連傳統管理顧問機構也來湊熱鬧。於是乎，世界就多了更多指標，更多成熟度衡量，更多培訓、證照、鑑定標章——更多所謂的「商機」。&lt;/p&gt;
+&lt;p&gt;這世界不缺指標，缺的是能引領有效行動的指標。若不懂軟體研發的獨特性，就會訂出沒有行動意義的落後指標，或是沒有合理因果證據的偽指標。就像 Bryan Finster 在 “&lt;a href=&#34;https://bdfinst.medium.com/5-minute-devops-mckinsey-gets-developer-productivity-wrong-573b57cd6f6a&#34;&gt;5 Minute DevOps: McKinsey Gets Developer Productivity Wrong&lt;/a&gt;” 一文對於某管顧公司近日端出的  “Developer Productivity” framework 所做的批評：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The real problem is that too many in management don’t understand the work they manage. Management can understand the &lt;strong&gt;intricacies of software engineering&lt;/strong&gt; if they become leaders and study the work they manage. Not all managers are leaders. Some simply want a framework to hold people accountable.&lt;/p&gt;
+&lt;p&gt;Those who do understand tend to &lt;strong&gt;measure the right things&lt;/strong&gt;. The one thing McKinsey doesn’t do with this framework is help fix this problem. They are making it worse.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;那麼，軟體研發活動有什麼獨特性？正確的衡量角度又是什麼？Daniel Terhorst-North 的 “&lt;a href=&#34;https://dannorth.net/mckinsey-review/&#34;&gt;McKinsey Developer Productivity Review&lt;/a&gt;” 一文說得好：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Software development is a collaborative, generative enterprise, and we can easily measure the effectiveness of a team, and more importantly how this is trending over time, using &lt;strong&gt;&lt;strong&gt;Theory of Constraints&lt;/strong&gt;&lt;/strong&gt; and &lt;strong&gt;&lt;strong&gt;flow-based metrics&lt;/strong&gt;&lt;/strong&gt; like &lt;strong&gt;&lt;strong&gt;lead time&lt;/strong&gt;&lt;/strong&gt; and &lt;strong&gt;&lt;strong&gt;throughput&lt;/strong&gt;&lt;/strong&gt;. Take a look at the work of Eliyahu Goldratt and Donald Reinertsen for a deeper understanding of these. An organisation like McKinsey endorsing these approaches would be a great help to the industry.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;這段話點出幾個關鍵：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;團隊 vs 個人&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;縱貫研究 vs 橫斷研究&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Theory of constraints &amp;amp; lean thinking&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Flow, lead time &amp;amp; throughput&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;我們就從這些角度來切入，尤其是 “flow” 角度。&lt;/p&gt;
+&lt;h2 id=&#34;從-flow-角度看軟體研發效能的本質指標&#34;&gt;從 Flow 角度看軟體研發效能的本質指標&lt;/h2&gt;
+&lt;p&gt;我喜歡用以下這五個主要的 flow 指標來整體衡量軟體研發效能：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/12/dev-efficiency.png&#34; alt=&#34;軟體研發效能五大指標&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2023/12/dev-efficiency.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;軟體研發效能五大指標&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;為了對於「軟體研發效能」得出較全面的 flow 視角，我結合幾個信度效度兼具、又不複雜的論述：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;SRE 的 &lt;a href=&#34;https://sre.google/sre-book/monitoring-distributed-systems/&#34;&gt;4 golden signal&lt;/a&gt;: latency, traffic, errors, saturation。&lt;/li&gt;
+&lt;li&gt;Scrum 之父 Ken &amp;amp; Jeff 在《&lt;a href=&#34;https://williampjyeh.notion.site/Scrum-00d22ec98ca847d49f62b63d10667049&#34;&gt;告別瀑布，擁抱 Scrum&lt;/a&gt;》第 7 章提出的主要指標：productivity, quality, value。&lt;/li&gt;
+&lt;li&gt;Theory of Constraints 提到的 bottleneck/constraints 及 throughput。&lt;/li&gt;
+&lt;li&gt;Lean 提到的 lead time。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;它們之間的對應關係是：&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Flow ▼&lt;/th&gt;
+          &lt;th&gt;SRE&lt;/th&gt;
+          &lt;th&gt;Ken&amp;amp;Jeff 2012&lt;/th&gt;
+          &lt;th&gt;Theory of Constraints&lt;/th&gt;
+          &lt;th&gt;Lean&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Traffic&lt;/td&gt;
+          &lt;td&gt;Traffic&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;Pull&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Saturation&lt;/td&gt;
+          &lt;td&gt;Saturation&lt;/td&gt;
+          &lt;td&gt;Productivity&lt;/td&gt;
+          &lt;td&gt;Bottleneck; Constraints&lt;/td&gt;
+          &lt;td&gt;WIP&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Lead time&lt;/td&gt;
+          &lt;td&gt;Latency&lt;/td&gt;
+          &lt;td&gt;Productivity&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Throughput&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;Value&lt;/td&gt;
+          &lt;td&gt;Throughput&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Quality&lt;/td&gt;
+          &lt;td&gt;Error&lt;/td&gt;
+          &lt;td&gt;Quality&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;五個指標，儘管數量不多，但很容易展開成更細部的指標。譬如：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Traffic 可往下展開成 product backlog 管理、dual track、definition of ready 等指標。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Saturation 可往下展開成 velocity、queue length、WIP、cycle time、interrupt 等指標。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Lead time 可往下展開成 value stream、MTTR 等指標。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Throughput 可往下展開成 value points、cumulative flow diagram、deployment frequency、feedback 等指標。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Quality 可往下展開成 code complexity、change failure rate、rework rate 等指標。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;這五個指標以簡馭繁，很好用。&lt;/p&gt;
+&lt;p&gt;我通常會從這五大指標出發，蒐集初始資料，形成假設，求證，並佐以 Theory of Constraints 分析，找到關鍵 constraints，用&lt;a href=&#34;https://www.tocinstitute.org/five-focusing-steps.html&#34;&gt;聚焦五步驟&lt;/a&gt;界定優先順序，再去探討解決方案。&lt;/p&gt;
+&lt;h2 id=&#34;從-gsm-角度看敏捷能解決什麼問題&#34;&gt;從 GSM 角度看敏捷能解決什麼問題&lt;/h2&gt;
+&lt;p&gt;這五個指標，儘管是偏向落後指標，但很容易展開成可行動的領先指標。&lt;/p&gt;
+&lt;p&gt;當然啦，在展開成領先指標之前，最好還是先回到最原始的動機：之所以會想尋求敏捷或 DevOps 這帖藥方，一開始的痛點及原因究竟是什麼？&lt;/p&gt;
+&lt;p&gt;界定好「待解決問題」之後，我建議根據《&lt;a href=&#34;https://www.tenlong.com.tw/products/9786263242630&#34;&gt;Google 的軟體工程之道&lt;/a&gt;》所介紹的 &lt;strong&gt;GSM process&lt;/strong&gt;，一步步找出合適的領先指標：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Goal&lt;/strong&gt;：期望當問題解決之後，能夠達到什麼樣的目標狀態？&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Signal&lt;/strong&gt;：有什麼明顯的信號，可以告訴我們說：目標已經達到了？&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Measurement&lt;/strong&gt;：對於上述信號，有什麼明顯的量測值，或是具有預測效度的量測值？&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;最後，則是透過 GSM 規劃出行動策略：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Task&lt;/strong&gt;：從 Goals 找出能夠提升 Metrics 的 Tasks，而不是直接從 Metrics 找出 Task。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;價值&#34;&gt;價值&lt;/h2&gt;
+&lt;p&gt;最近看到 Howie 對五年前的老話題有感而發：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:20em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/12/howie-revisit.png&#34; alt=&#34;孟子見梁惠王&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2023/12/howie-revisit.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;孟子見梁惠王&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;經過了五年的歷練，我的&lt;a href=&#34;//william-yeh.net/post/2018/11/agile-value/&#34;&gt;回答&lt;/a&gt;還是一樣，但更多了一份篤定：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;TL;DR　對於「價值」是否有增益。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;回頭看看當初導入敏捷的痛點及原因，找出起初認定（或誤認）的價值是什麼。尤其是：這所謂的「價值」，是否可追溯至&lt;a href=&#34;https://agilemanifesto.org/&#34;&gt;敏捷宣言&lt;/a&gt;或 &lt;a href=&#34;https://modernagile.org/&#34;&gt;Modern Agile&lt;/a&gt; 四層面。若追溯不了，或許一開始就投錯藥方了。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;導入敏捷後，是否在敏捷宣言或 Modern Agile 四層面有所進展。進而檢討：這些進展，是否有對應到當初導入敏捷的痛點及原因。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;希望這份關於五大軟體研發效能指標的分析，有助於你用敏捷解決正確的問題，並用正確的方式衡量成效。&lt;/p&gt;
+
+
+&lt;div class=&#34;notice notice--note&#34;&gt;
+  &lt;div class=&#34;notice__title&#34;&gt;
+    
+      「判準與指標」系列文章
+    
+  &lt;/div&gt;
+  &lt;div class=&#34;notice__content&#34;&gt;&lt;p&gt;❶ &lt;a href=&#34;//william-yeh.net/post/2018/10/methodology-and-criteria/&#34;&gt;軟體開發，除了方法論，還有⋯⋯&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❷ &lt;a href=&#34;//william-yeh.net/post/2018/10/agile-criteria/&#34;&gt;敏捷的判準&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❸ &lt;a href=&#34;//william-yeh.net/post/2018/11/lean-startup-criteria/&#34;&gt;Lean Startup 的判準&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❹ &lt;a href=&#34;//william-yeh.net/post/2018/11/agile-value/&#34;&gt;敏捷的價值與指標&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❺ &lt;a href=&#34;//william-yeh.net/post/2018/11/devops-value/&#34;&gt;DevOps 的價值與指標&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❻ 如何衡量敏捷對於軟體研發效能的利益？&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;這段孟子與梁惠王的對話，原文是：「王何必曰利？亦有仁義而已矣！王曰『何以利吾國』，大夫曰『何以利吾家』，士庶人曰『何以利吾身』，上下交征利，而國危矣！」&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description>
+      
     </item>
+    
     <item>
       <title>變動的時代，為什麼工作分解技能更是必備？</title>
       <link>//william-yeh.net/post/2023/11/why-decomposition-matters/</link>
       <pubDate>Tue, 14 Nov 2023 20:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2023/11/why-decomposition-matters/</guid>
-      <description>&lt;p&gt;很多人認為，在變動較少的舊時代 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，一次到位的工作規劃、工作分解是必備技能，但是到了現在這個變動頻仍、朝令夕改、隕石滿天飛的時代，做再多工作分解的規劃只是不切實際的浪費。&lt;/p&gt;&#xA;&lt;p&gt;你怎麼看？&lt;/p&gt;&#xA;&lt;p&gt;我反而認為，正是因為變動頻仍，就更需要及早進行工作分解。只不過這種工作分解，不是舊時代那種一次到位的無差別分解，而是要能夠區分近光燈與遠光燈的不同層次，也就是敏捷陣營所講究的 &amp;ldquo;&lt;a href=&#34;https://scrumbook.org.datasenter.no/value-stream/product-backlog/granularity-gradient.html&#34;&gt;granularity gradient&lt;/a&gt;&amp;quot;。&lt;/p&gt;&#xA;&lt;p&gt;這個論點，我曾在去年的兩場導讀會，透過兩本書，作為公司內推動敏捷轉型的心態導正。&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt; 最近我發現，這類誤解仍然普遍存在於敏捷轉型的業界，因此特地將去年那兩場導讀會的觀點稍作整理，誌於此文。&lt;/p&gt;&#xA;&#xA;&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;&#xA;&lt;div class=&#34;box&#34;&gt;&#xA;&lt;figure  itemprop=&#34;associatedMedia&#34;&#xA;  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; &#xA;  style=&#34;max-width:30em&#34; &gt;&#xA;    &lt;div class=&#34;img&#34;&gt;&#xA;      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/11/pomodoro-timer.png&#34; alt=&#34;Generated by ChatGPT4 &amp;#43; DALL·E 3&#34;/&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;a href=&#34;//william-yeh.net/img/2023/11/pomodoro-timer.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;&#xA;      &lt;figcaption&gt;&#xA;          &lt;p&gt;Generated by ChatGPT4 &amp;#43; DALL·E 3&lt;/p&gt;&#xA;      &lt;/figcaption&gt;&#xA;  &lt;/figure&gt;&#xA;&lt;/div&gt;</description>
+      
+        <description>&lt;p&gt;很多人認為，在變動較少的舊時代 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，一次到位的工作規劃、工作分解是必備技能，但是到了現在這個變動頻仍、朝令夕改、隕石滿天飛的時代，做再多工作分解的規劃只是不切實際的浪費。&lt;/p&gt;
+&lt;p&gt;你怎麼看？&lt;/p&gt;
+&lt;p&gt;我反而認為，正是因為變動頻仍，就更需要及早進行工作分解。只不過這種工作分解，不是舊時代那種一次到位的無差別分解，而是要能夠區分近光燈與遠光燈的不同層次，也就是敏捷陣營所講究的 &amp;ldquo;&lt;a href=&#34;https://scrumbook.org.datasenter.no/value-stream/product-backlog/granularity-gradient.html&#34;&gt;granularity gradient&lt;/a&gt;&amp;quot;。&lt;/p&gt;
+&lt;p&gt;這個論點，我曾在去年的兩場導讀會，透過兩本書，作為公司內推動敏捷轉型的心態導正。&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt; 最近我發現，這類誤解仍然普遍存在於敏捷轉型的業界，因此特地將去年那兩場導讀會的觀點稍作整理，誌於此文。&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/11/pomodoro-timer.png&#34; alt=&#34;Generated by ChatGPT4 &amp;#43; DALL·E 3&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2023/11/pomodoro-timer.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Generated by ChatGPT4 &amp;#43; DALL·E 3&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;少量多樣現象與影響&#34;&gt;少量多樣現象與影響&lt;/h2&gt;
+&lt;p&gt;這個時代，「少量多樣」已是既成事實。在時間與事情上的「專注」，似乎越來越是奢求。&lt;/p&gt;
+&lt;p&gt;在職場上，我們越來越難擁有一整段專屬於個人的時間去專心做一件事。我們總是不時被打斷，不時有插單進來，這些時機與事情的正當性似乎也很難被質疑。隨著職位升高，這現象似乎也隨之加劇。&lt;/p&gt;
+&lt;p&gt;放大到團隊，甚至公司組織，亦然。隨著業務規模擴大，利害關係人數量及種類越來越多，這現象似乎也隨之加劇。&lt;/p&gt;
+&lt;p&gt;少量多樣的新現實，對習慣大批量做事的個人而言，不容易進入「心流」(flow)：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;這是一個現實的問題，尤其我們在職場與家庭裡面，都免不了會被打斷的工作狀態。這時候，我們是要堅持自己一定非要有三、四個小時的完整時間才能進入心流狀態，才能完成工作？還是我們必須想一個工作方式，可以適應這種必須被打斷，一定會分段完成的工作呢？&lt;/p&gt;
+&lt;p&gt;&amp;mdash; From: 《&lt;a href=&#34;https://www.playpcesor.com/2020/05/2020-new-book.html&#34;&gt;時間管理的 30 道難題&lt;/a&gt;》&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;對習慣大批量行事的組織而言，則會牽動到即時生產、換模換線的作業方式、甚至商業模式的巨變，可謂之「灰犀牛」衝擊：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;大多數的灰犀牛可能早在三個月前、兩年前就已經存在且默默進逼，是我們故意疏忽、固執己見、視若無睹。對食品業來說，消費市場走向「少量多樣」就是一頭兩噸重的灰犀牛，因為過去汽車業走過、科技電子業走過，食品業又怎能避免？&lt;/p&gt;
+&lt;p&gt;&amp;mdash; From: 《&lt;a href=&#34;https://williampjyeh.notion.site/d8a843cbc9c148989e6489625b6fb34d&#34;&gt;豐田精實管理的翻轉獲利秘密&lt;/a&gt;》&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;總括來說，「少量多樣」帶來效率及效能的挑戰，對於人類是 context switch，對於機器設備則是換線換模。反之，若是能夠克服這一點，就能因應少量多樣的時代趨勢，化危機為轉機，成為個人及企業的競爭優勢。&lt;/p&gt;
+&lt;p&gt;機器設備非我所長，相關的人機料法環細節，請參閱《&lt;a href=&#34;https://williampjyeh.notion.site/d8a843cbc9c148989e6489625b6fb34d&#34;&gt;豐田精實管理的翻轉獲利秘密&lt;/a&gt;》。 &lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt; 接下來我只繼續探討人類的 context switch 課題。&lt;/p&gt;
+&lt;h2 id=&#34;少量多樣的關鍵課題&#34;&gt;少量多樣的關鍵課題&lt;/h2&gt;
+&lt;p&gt;對人類來說，過度 context switch 會增加暖機以求進入狀況的時間比例，也會損耗心智注意力，阻礙心流形成。&lt;/p&gt;
+&lt;p&gt;讓我們先接受一個事實吧：context switch 是無法完全逃避的現實。那麼，接下來的關鍵課題就是：如何做好 context switch 的準備，以降低暖機的佔比，減少心智注意力的損耗。&lt;/p&gt;
+&lt;p&gt;《&lt;a href=&#34;https://www.playpcesor.com/2020/05/2020-new-book.html&#34;&gt;時間管理的 30 道難題&lt;/a&gt;》第 4.5 節對這課題有很深刻的洞見：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;我們應該要把工作方式設計成「可以被打斷」的工作流程。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;想像一下：如果工作流程被設計成本質上就是「可以被打斷」（我不想太激進的說「歡迎被打斷」或「擁抱被打斷」），也就是說，如果在這新的工作流程裡，context switch 既不會過度增加暖機佔比，也不會過度損耗我們的心智注意力，那該有多好！&lt;/p&gt;
+&lt;p&gt;要怎麼做到？可分為兩個層面。&lt;/p&gt;
+&lt;p&gt;在個人修練層面，運用近年流行的「番茄鐘工作法」來練習短時間專注。&lt;/p&gt;
+&lt;p&gt;在工作設計層面，則是作者的招牌主張「子彈行動清單」：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;我們應該要把工作方式設計成「可以被打斷」的工作流程——&lt;strong&gt;讓工作本身拆解成行動清單&lt;/strong&gt;。這樣一來，任何時候被打斷，我會知道接下來下一個可以進行的步驟是什麼，以及前面做完了什麼步驟任務，不再是一個模糊成一團的任務。&lt;/p&gt;
+&lt;p&gt;可以分段成行動清單，其實可以幫助我們更快進入心流。因為如果一個任務，我不知道它明確的步驟是什麼，不知道怎麼開始，不知道這個步驟的下一個步驟是什麼，腦袋會一直在煩惱，一直在焦慮，一直在思考，一直在做確認。這時候我們大腦負擔很多決策選擇，特別容易疲勞、容易混亂。於是，我反而需要花更多時間去進入心流。&lt;/p&gt;
+&lt;p&gt;如果這個任務，我可以拆解出行動清單，我看到非常明確的步驟，那我的注意力就可以非常專注在下一個步驟就好。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;有趣的是，儘管作者的「子彈行動清單」是在講個人的時間管理，並不是在講 Scrum 的 Sprint Planning，但精神及步驟卻若合符節，所以我很喜歡引用《&lt;a href=&#34;https://www.playpcesor.com/2020/05/2020-new-book.html&#34;&gt;時間管理的 30 道難題&lt;/a&gt;》第 3 章作為我的敏捷工作坊培訓素材。&lt;/p&gt;
+&lt;p&gt;因此，總結來說，面對 context switch 的關鍵做法是：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;短時間專注：以個人來說，就是「番茄鐘工作法」；以 Scrum 來說，就是習慣 Sprint 週期內五大活動的節奏。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;「可以被打斷」的工作流程：以個人或團隊來說，就是將工作分解至可行動的清單。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;事前做好工作分解，幫助我們面對 context switch，更有餘裕應付插單。&lt;/p&gt;
+&lt;h2 id=&#34;延伸的好處&#34;&gt;延伸的好處&lt;/h2&gt;
+&lt;p&gt;把工作方式設計成「可以被打斷」的工作流程，不僅消極的可以避免被 context switch 拖累，甚至還可以積極的善用這項優勢。譬如說，在少量多樣時代，有機會達到 Lean 所追求的「平準化」目標狀態，在市場波動時仍能保有較佳的資源調度能力：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;將每日所需生產量的落差予以平均，謀求生產量的變動縮小。&lt;/p&gt;
+&lt;p&gt;&amp;mdash; From: 《&lt;a href=&#34;https://williampjyeh.notion.site/d8a843cbc9c148989e6489625b6fb34d&#34;&gt;豐田精實管理的翻轉獲利秘密&lt;/a&gt;》&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;「平準化」不只是在汽車業、科技電子業、食品業有用，在知識工作場景也很管用。譬如說 Ailin 最近在〈&lt;a href=&#34;https://docs.google.com/presentation/d/1wG3DP8YHkxYhfO6YdnsKER3o4AXvHrkVS1aMk2aUIRI/&#34;&gt;識別出遠距團隊的 bad smell&lt;/a&gt;〉演講中提到，遠距團隊協作時，將任務分解成容易 multiplex 運作的形式，較能因應非同步的工作型態，也有較佳的依存關係：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/11/async-workflow.png&#34; alt=&#34;From: Ailin〈識別出遠距團隊的 bad smell〉&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2023/11/async-workflow.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;From: Ailin〈識別出遠距團隊的 bad smell〉&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;「平準化」是非常敏捷的目標狀態，這也呼應了我在〈&lt;a href=&#34;//william-yeh.net/post/2023/10/criticism-about-timebox/&#34;&gt;Timebox 是死胡同嗎？&lt;/a&gt;〉一文的論點。以「少量多樣」方式運作的團隊越多，工作分解得越落實，彼此之間的 dependency 就越有機會迅速解決，這樣才大規模敏捷得起來：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;granularity 愈小，也愈有將它 fit in 到相關團隊 upcoming sprints 的可能性；尤其當對方團隊也是 short timebox 風格，就更容易 fit in 進去——這是 opportunity。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;所以，在這變動的時代，工作分解技能不僅是個人必備，更是敏捷團隊必備的工作基因。在實踐敏捷時，千萬不要輕忽這個基本功。&lt;/p&gt;
+
+
+&lt;div class=&#34;notice notice--note&#34;&gt;
+  &lt;div class=&#34;notice__title&#34;&gt;
+    
+      【敏捷的工作分解方法】系列
+    
+  &lt;/div&gt;
+  &lt;div class=&#34;notice__content&#34;&gt;&lt;p&gt;❶ &lt;a href=&#34;//william-yeh.net/post/2016/10/one-week-sprint/&#34;&gt;One-Week Sprint 的節奏&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❷ &lt;a href=&#34;//william-yeh.net/post/2016/11/decomposition-reading-list/&#34;&gt;工作分解講座・閱讀材料&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❸ &lt;a href=&#34;//william-yeh.net/post/2022/10/agile-milestone/&#34;&gt;事情做一半，等於沒完成：淺談敏捷的里程碑設定&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❹ &lt;a href=&#34;//william-yeh.net/post/2022/11/spidr/&#34;&gt;以「蜘蛛法」拆分過於龐大的 User Story&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❺ &lt;a href=&#34;//william-yeh.net/post/2023/08/story-to-tasks/&#34;&gt;很簡單的 Story，也要拆分出 Tasks 嗎？&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❻ 變動的時代，為什麼工作分解技能更是必備？&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;其實舊時代並不是變動較少，而是舊時代想不出比較好的方法去處理變動，於是就只能祭出種種禁止變動的規定：合約、契約、規格書。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;請見【&lt;a href=&#34;//william-yeh.net/post/2022/08/career-reading-club-2/&#34;&gt;職涯躍升書系導讀會，Part 2：高效團隊的工作方法&lt;/a&gt;】。&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;
+&lt;p&gt;《&lt;a href=&#34;https://williampjyeh.notion.site/d8a843cbc9c148989e6489625b6fb34d&#34;&gt;豐田精實管理的翻轉獲利秘密&lt;/a&gt;》提到：「對於製造端來說，就出現幾項重點要克服：①產線小批生產的效率，②換線速度、清機速度，③新產品的品質良品條件，④生管對庫存的掌握度。」&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description>
+      
     </item>
+    
     <item>
       <title>Timebox 是死胡同嗎？</title>
       <link>//william-yeh.net/post/2023/10/criticism-about-timebox/</link>
       <pubDate>Tue, 10 Oct 2023 10:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2023/10/criticism-about-timebox/</guid>
-      <description>&lt;p&gt;許多敏捷手法都奠基於 timebox。那麼，為什麼有人會認為 timebox 路線是死胡同呢？有此論點的人，偏偏又是敏捷圈的重量級人物呢。&lt;/p&gt;&#xA;&lt;p&gt;看板方法之父 David J. Anderson 在新書 &lt;a href=&#34;https://www.amazon.com/dp/1960442074&#34;&gt;&lt;em&gt;Discovering Kanban&lt;/em&gt;&lt;/a&gt; 第 15 章對於 Scrum 之類基於 timebox 的方法有頗露骨的批評（光從標題 &amp;ldquo;The Tyranny of the Ever-Decreasing Timebox&amp;rdquo; 就看得出來）。正好好友 Derek 在 〈&lt;a href=&#34;https://medium.com/agile-coffee/discovering-kanban-18d9b2ac9be2&#34;&gt;《Discovering Kanban》心得：Scrum 可能沒有你想像的那麼美好&lt;/a&gt;〉一文整理了這一章的摘要與閱讀心得，在網路上也引發一些討論 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，我便趁此機會細讀這一章。&lt;/p&gt;&#xA;&lt;p&gt;這一章論點非常深刻。但讀著讀著，總覺得作者道出的結論 &amp;ldquo;time-constrained sprints are an evolutionary cul-de-sac, a dead end&amp;rdquo;，與我直接或間接所知的業界實踐現況，並不相符。我猜想：會不會是某個推論環節出了些問題？&lt;/p&gt;&#xA;&lt;p&gt;因此，我嘗試用系統思考角度去梳理相關論述。我試圖用更清晰的因果關係秀出 timebox 路線被點名的痛點，以及常見的因應之道。至於這痛點是否真的已被解決了，則留待讀者思考，不在此文的探討範圍。&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;許多敏捷手法都奠基於 timebox。那麼，為什麼有人會認為 timebox 路線是死胡同呢？有此論點的人，偏偏又是敏捷圈的重量級人物呢。&lt;/p&gt;
+&lt;p&gt;看板方法之父 David J. Anderson 在新書 &lt;a href=&#34;https://www.amazon.com/dp/1960442074&#34;&gt;&lt;em&gt;Discovering Kanban&lt;/em&gt;&lt;/a&gt; 第 15 章對於 Scrum 之類基於 timebox 的方法有頗露骨的批評（光從標題 &amp;ldquo;The Tyranny of the Ever-Decreasing Timebox&amp;rdquo; 就看得出來）。正好好友 Derek 在 〈&lt;a href=&#34;https://medium.com/agile-coffee/discovering-kanban-18d9b2ac9be2&#34;&gt;《Discovering Kanban》心得：Scrum 可能沒有你想像的那麼美好&lt;/a&gt;〉一文整理了這一章的摘要與閱讀心得，在網路上也引發一些討論 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，我便趁此機會細讀這一章。&lt;/p&gt;
+&lt;p&gt;這一章論點非常深刻。但讀著讀著，總覺得作者道出的結論 &amp;ldquo;time-constrained sprints are an evolutionary cul-de-sac, a dead end&amp;rdquo;，與我直接或間接所知的業界實踐現況，並不相符。我猜想：會不會是某個推論環節出了些問題？&lt;/p&gt;
+&lt;p&gt;因此，我嘗試用系統思考角度去梳理相關論述。我試圖用更清晰的因果關係秀出 timebox 路線被點名的痛點，以及常見的因應之道。至於這痛點是否真的已被解決了，則留待讀者思考，不在此文的探討範圍。&lt;/p&gt;
+&lt;h2 id=&#34;目標相同途徑各異&#34;&gt;目標相同，途徑各異&lt;/h2&gt;
+&lt;p&gt;首先，David J. Anderson 是贊同 small batch 小批量的。他明確指出小批量的三大優點：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;the advantages of smaller batches—&lt;strong&gt;higher quality&lt;/strong&gt;, &lt;strong&gt;more frequent interaction&lt;/strong&gt; between customers and the delivery organization, and potential gains from &lt;strong&gt;earlier delivery&lt;/strong&gt; of valuable work (also known as the avoidance of opportunity cost of delay)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;他接著指出，欲達小批量的目標，有兩種常見的途徑，一個是 timebox，另一個是 WIP limit：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;There are two ways to constrain the batch size of work: &lt;strong&gt;Constraining the amount of time&lt;/strong&gt; available to do the work, resulting in scoping to small numbers of requests that can be completed in the given time; or simply &lt;strong&gt;constraining the number of work items&lt;/strong&gt;, constraining the size of the batch of requests, also known as WIP constraints.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;此處姑且小結一下，David J. Anderson 是贊同 small batch 的（至少在整本書我還沒找到反對的段落），但主張透過 WIP limit 的方式達到小批量，反對透過 timebox 的方式達到小批量。&lt;/p&gt;
+&lt;p&gt;他認為 timebox 劣於 WIP 的地方是：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This switch from a time constraint to a WIP constraint free you from the tyranny of the timebox and it&amp;rsquo;s three dysfunctions of &lt;strong&gt;upfront analysis&lt;/strong&gt;, &lt;strong&gt;excessive and costly estimation&lt;/strong&gt;, and &lt;strong&gt;heavy-weight dependency management&lt;/strong&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;接下來我們就來看看他反對 timebox 的理由。&lt;/p&gt;
+&lt;h2 id=&#34;timebox-會浪費力氣在削足適履上&#34;&gt;Timebox 會浪費力氣在削足適履上？&lt;/h2&gt;
+&lt;p&gt;David J. Anderson 認為，timebox 愈短，就愈是需要花力氣在 backlog item 的事前分析上，以「削足適履」進去 timebox：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;smaller timeboxes create three types of pressure that are often difficult to cope with and adjust to: First, smaller batches require an ever more detailed approach to requirements analysis and development—the need to write ever more fine-grained user stories that can be completed within the smaller time window. Second, an ever more accurate approach to estimation is needed so that a realistic commitment can be made; with smaller time windows, greater precision is required in estimation.&lt;/p&gt;
+&lt;p&gt;The shorter the time box, the more upfront effort is required to estimate whether the work will fit into the available time.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;這段話的確指出了一部份實質存在的驅動力量，但並非全部。實務上，如果 Scrum 做得夠確實，在經驗主義的引領下，timebox 會逐漸趨於穩定態：&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/10/cld-1.png&#34; alt=&#34;Timebox 會趨於平衡迴路&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2023/10/cld-1.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Timebox 會趨於平衡迴路&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;因此，如果還需要做過多的 up-front estimation，那一定是做錯了 Scrum Planning &amp;amp; Refinement。&lt;/p&gt;
+&lt;p&gt;David J. Anderson 又進一步評論道：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;there is still, after twenty-plus years of Agile, little or no solid guidance on writing fine-grained, consistently small user stories.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;這與我直接或間接所知的業界實踐現況，並不完全相符。至少我看到許多成功運用 Mike Cohn 大師提出的 &lt;a href=&#34;//william-yeh.net/post/2022/11/spidr/&#34;&gt;SPIDR 法&lt;/a&gt;的例子。&lt;/p&gt;
+&lt;h2 id=&#34;timebox-會鼓勵低交付價值&#34;&gt;Timebox 會鼓勵低交付價值？&lt;/h2&gt;
+&lt;p&gt;David J. Anderson 認為，timebox 愈短，就只能交付出被削足適履出來的小碎片，這是難以被用戶察覺到交付價值的：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;small-scale requirements may not be meaningful to the customer—they may not enable value. This means that if one small requirement has a peer relationship to others, they all must be delivered together in order to release value.&lt;/p&gt;
+&lt;p&gt;This type of breakdown defeats the purpose of the ever-smaller timeboxes and creates a false sense of agility when, in fact, customer value and quality are not improving; perhaps even the opposite is true.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;這段話的確指出了一部份實質存在的驅動力量，但並非全部。實務上，如果 Scrum 做得夠確實，在 Scrum Planning 及 Review 時，用戶有充分機會了解如此拆解的目的，並實質參與拆解的活動。因此，在經驗主義的引領下，timebox 與交付價值之間會逐漸趨於穩定態：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/10/cld-2.png&#34; alt=&#34;Timebox 與交付價值之間會趨於平衡迴路&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2023/10/cld-2.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Timebox 與交付價值之間會趨於平衡迴路&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;事實上，從上圖可知，不只是 timebox，就連 David J. Anderson 認可的「小批量」也一樣會面臨「低交付價值」的挑戰。因此，Kanban 的淵源——Lean 陣營，即使主張小批量、one-piece flow，但對於 batch size 是否可以無限制壓縮到最小，也是持保留態度的。像《&lt;a href=&#34;https://williampjyeh.notion.site/6901e548c40c4389bf8919a74d2a1efd&#34;&gt;流的傳承&lt;/a&gt;》就提到，大野耐一主張 batch size ≥ 5。&lt;/p&gt;
+&lt;h2 id=&#34;timebox-會讓-dependency-更惡化&#34;&gt;Timebox 會讓 Dependency 更惡化？&lt;/h2&gt;
+&lt;p&gt;David J. Anderson 認為，timebox 愈短，dependency 造成 sprint fail 的機率也隨之增加：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;What if a story in our sprint backlog gets blocked because of a dependency? That might prevent it from completing on time. Hence, the shorter the sprint timebox, the greater the need to identify dependencies up front.&lt;/p&gt;
+&lt;p&gt;Fine-grained requirements analysis coupled to short timeboxed sprints introduces a dependency management problem to Agile methodologies. If a piece of work will be affected by dependencies, such dependencies need to be tracked and managed between teams and multiple sprint backlogs and potentially across sprint boundaries.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;這段話的確指出了一部份實質存在的驅動力量，但並非全部。假設 dependency 條件不變，timebox 愈短，一點點的 dependency 擾動帶來的影響的確可能較大——這是 threat。可是相對的，granularity 愈小，也愈有將它 fit in 到相關團隊 upcoming sprints 的可能性；尤其當對方團隊也是 short timebox 風格，就更容易 fit in 進去——這是 opportunity。 &lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;Threat 與 opportunity，一加一減，綜合起來的效應是好是壞，還很難說。&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/10/cld-3.png&#34; alt=&#34;Granuality 與 dependency 的關係是？&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2023/10/cld-3.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Granuality 與 dependency 的關係是？&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;實務上，如果 Scrum 做得夠確實，在跨團隊 Refinement &amp;amp; Planning 時，已經有辨識、拆解、對齊、協調 dependency 的事情在檯面上或檯面下發生了，而且不只是消極地為了處理 dependency，更是積極地處理交付價值。&lt;/p&gt;
+&lt;p&gt;事實上，這也是各家各派大規模 Scrum 框架最核心的挑戰與賣點。至於這議題是否真的已被解決了，則留待讀者思考，不在此文的探討範圍。&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/10/cld-final.png&#34; alt=&#34;timebox 的 CLD 全圖&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2023/10/cld-final.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;timebox 的 CLD 全圖&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;kanban-又是怎麼處理-dependency-的&#34;&gt;Kanban 又是怎麼處理 dependency 的？&lt;/h2&gt;
+&lt;p&gt;David J. Anderson  也承認 dependency 是個普遍現象，他也沒有神奇魔法可以讓 Kanban 免於 dependency：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Dependencies are a fact of life in all but very small-scale software development or mediocre development done by largely dilettante generalists.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Kanban 又是怎麼處理 dependency 的呢？從以下文字可以歸結出 global transparency 及 learning to coordinate/cooperate 這兩個方向：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Let dependencies happen as you discover them, create &lt;strong&gt;visibility&lt;/strong&gt; onto them, and actively track them. Use a service-oriented approach and define workflow kanban boards (and systems) that &lt;strong&gt;encourage cooperation&lt;/strong&gt; across functions. Don’t reorganize into cross-functional teams or attempt to design out dependencies from your product architecture; instead, start where you are and &lt;strong&gt;learn&lt;/strong&gt; to be proficient at &lt;strong&gt;coordinating&lt;/strong&gt; shared services.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;這段主張，我的理解是，服務導向的看板，通常會是更縱向 end to end，也更橫向 cross functional。如果做得確實，理論上 dependency 會更早浮現，也更早讓縱向橫向的人一起面對，一起 ad hoc 處理或是 systematically 處理。&lt;/p&gt;
+&lt;p&gt;看到這裡，心中不禁想到：timebox 路線不也是如此嗎？&lt;/p&gt;
+&lt;h2 id=&#34;個人總結&#34;&gt;個人總結&lt;/h2&gt;
+&lt;p&gt;至此，我個人認為，timebox 與 WIP limit 兩種途徑，長期的目標狀態「小批量」其實很類似，只是選擇的途徑不同，造成哪個要先關注、哪個可以等到成熟度提升之後自然就會去關注的不同優先順序。&lt;/p&gt;
+&lt;p&gt;兩者的差異並沒有想像中的大，雙方只是切入的角度不同，但核心要素是很接近的；尤其是繼續精進時，會發現共同點越來越多，相互取經是司空見慣。&lt;/p&gt;
+&lt;p&gt;所以我在課程中，總愛用《&lt;a href=&#34;https://zh.wikipedia.org/zh-tw/%E7%A5%9E%E4%B9%8B%E9%9B%AB&#34;&gt;神之雫&lt;/a&gt;》的最終章來比喻兩者的關係。&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;Derek 這篇文章，在 Facebook 引發一些討論，請見 &lt;a href=&#34;https://www.facebook.com/agilederek/posts/pfbid02YF8yCiY1oUUNnFkeRZgKzfmLVLSd3wBjKqFTC8tVrRkFE1mxhDQAWtKsZqEM4Z8nl&#34;&gt;link 1&lt;/a&gt; &amp;amp; &lt;a href=&#34;https://www.facebook.com/william.yeh/posts/pfbid034juT78DsgHtSYHjKnJ3uEcgXqU8KNSqh24th6ep1nYTXDgnyix8KMF4HjGDb2Z5Al&#34;&gt;link 2&lt;/a&gt;。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;關於這議題，我在後續的文章〈&lt;a href=&#34;//william-yeh.net/post/2023/11/why-decomposition-matters/&#34;&gt;變動的時代，為什麼工作分解技能更是必備？&lt;/a&gt;〉有更深入的探討。&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description>
+      
     </item>
+    
     <item>
       <title>敏捷的工作分解方法</title>
       <link>//william-yeh.net/series/agile-decomposition/</link>
       <pubDate>Sat, 26 Aug 2023 00:00:00 +0000</pubDate>
+      
       <guid>//william-yeh.net/series/agile-decomposition/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2016/10/one-week-sprint/&#34;&gt;One-Week Sprint 的節奏&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2016/11/decomposition-reading-list/&#34;&gt;工作分解講座・閱讀材料&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2022/10/agile-milestone/&#34;&gt;事情做一半，等於沒完成：淺談敏捷的里程碑設定&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2022/11/spidr/&#34;&gt;以「蜘蛛法」拆分過於龐大的 User Story&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2023/08/story-to-tasks/&#34;&gt;很簡單的 Story，也要拆分出 Tasks 嗎？&lt;/a&gt;&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2016/10/one-week-sprint/&#34;&gt;One-Week Sprint 的節奏&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2016/11/decomposition-reading-list/&#34;&gt;工作分解講座・閱讀材料&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2022/10/agile-milestone/&#34;&gt;事情做一半，等於沒完成：淺談敏捷的里程碑設定&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2022/11/spidr/&#34;&gt;以「蜘蛛法」拆分過於龐大的 User Story&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2023/08/story-to-tasks/&#34;&gt;很簡單的 Story，也要拆分出 Tasks 嗎？&lt;/a&gt;&lt;/p&gt;
+</description>
+      
     </item>
+    
     <item>
       <title>職涯躍升書系導讀會</title>
       <link>//william-yeh.net/series/career-reading-club/</link>
       <pubDate>Tue, 29 Nov 2022 00:00:00 +0000</pubDate>
+      
       <guid>//william-yeh.net/series/career-reading-club/</guid>
-      <description>&lt;p&gt;❶ Part 1: &lt;a href=&#34;//william-yeh.net/post/2022/06/career-reading-club-1/&#34;&gt;喚醒個人及團隊的成長意識&lt;/a&gt; (計 6 冊)&lt;/p&gt;&#xA;&lt;p&gt;❷ Part 2: &lt;a href=&#34;//william-yeh.net/post/2022/08/career-reading-club-2/&#34;&gt;高效團隊的工作方法&lt;/a&gt; (計 2 冊)&lt;/p&gt;&#xA;&lt;p&gt;❸ Part 3: &lt;a href=&#34;//william-yeh.net/post/2022/11/career-reading-club-3/&#34;&gt;職場心理：觀點、期待、渴望&lt;/a&gt; (計 3 冊)&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;❶ Part 1: &lt;a href=&#34;//william-yeh.net/post/2022/06/career-reading-club-1/&#34;&gt;喚醒個人及團隊的成長意識&lt;/a&gt; (計 6 冊)&lt;/p&gt;
+&lt;p&gt;❷ Part 2: &lt;a href=&#34;//william-yeh.net/post/2022/08/career-reading-club-2/&#34;&gt;高效團隊的工作方法&lt;/a&gt; (計 2 冊)&lt;/p&gt;
+&lt;p&gt;❸ Part 3: &lt;a href=&#34;//william-yeh.net/post/2022/11/career-reading-club-3/&#34;&gt;職場心理：觀點、期待、渴望&lt;/a&gt; (計 3 冊)&lt;/p&gt;
+</description>
+      
     </item>
+    
     <item>
       <title>事情做一半，等於沒完成：淺談敏捷的里程碑設定</title>
       <link>//william-yeh.net/post/2022/10/agile-milestone/</link>
       <pubDate>Mon, 31 Oct 2022 17:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2022/10/agile-milestone/</guid>
-      <description>&lt;p&gt;（改寫自公司內部 memo）&lt;/p&gt;&#xA;&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;&#xA;&lt;p&gt;Hi all guys,&lt;/p&gt;&#xA;&lt;p&gt;剛從傳統瀑布式專案管理風格轉換到敏捷風格的團隊，最常遇到第一個卡關之處是：如何以敏捷的角度設定里程碑？&lt;/p&gt;&#xA;&lt;p&gt;最近在協助兩個 Scrum teams 進行 Sprint Planning 時，我都會用以下角度提出挑戰性提問：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;能否將 User Stories &lt;strong&gt;拆分&lt;/strong&gt;到：可以在一個 sprint 結束時，端出&lt;strong&gt;利害關係人&lt;/strong&gt;可以據以給出&lt;strong&gt;建設性回饋&lt;/strong&gt;的 &lt;strong&gt;end-to-end 成果&lt;/strong&gt;？&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;這需要創意，需要練習，需要提升規劃能力，需要提升工程能力，需要時時用挑戰性提問提醒自己。但或許更重要的是：大家需要打從心裡認清且認同這樣做的理由。&lt;/p&gt;&#xA;&lt;p&gt;理由之一是：精實生產。&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;（改寫自公司內部 memo）&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;Hi all guys,&lt;/p&gt;
+&lt;p&gt;剛從傳統瀑布式專案管理風格轉換到敏捷風格的團隊，最常遇到第一個卡關之處是：如何以敏捷的角度設定里程碑？&lt;/p&gt;
+&lt;p&gt;最近在協助兩個 Scrum teams 進行 Sprint Planning 時，我都會用以下角度提出挑戰性提問：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;能否將 User Stories &lt;strong&gt;拆分&lt;/strong&gt;到：可以在一個 sprint 結束時，端出&lt;strong&gt;利害關係人&lt;/strong&gt;可以據以給出&lt;strong&gt;建設性回饋&lt;/strong&gt;的 &lt;strong&gt;end-to-end 成果&lt;/strong&gt;？&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;這需要創意，需要練習，需要提升規劃能力，需要提升工程能力，需要時時用挑戰性提問提醒自己。但或許更重要的是：大家需要打從心裡認清且認同這樣做的理由。&lt;/p&gt;
+&lt;p&gt;理由之一是：精實生產。&lt;/p&gt;
+&lt;h2 id=&#34;七大浪費&#34;&gt;七大浪費&lt;/h2&gt;
+&lt;p&gt;7/22 舉辦過的&lt;a href=&#34;//william-yeh.net/post/2022/08/career-reading-club-2/#豐田精實管理的翻轉獲利秘密&#34;&gt;《豐田精實管理的翻轉獲利秘密》導讀會&lt;/a&gt;有介紹過，馳名世界的豐田生產 (Toyota Production System) 當中有一個基本信念：「&lt;strong&gt;降低浪費，就能提升效率。&lt;/strong&gt;」另一本書《&lt;a href=&#34;https://williampjyeh.notion.site/fc98b324a0c7482f82d3a639f8b10282&#34;&gt;豐田物語&lt;/a&gt;》也如是說：&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:20em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2022/10/muda.jpg&#34; alt=&#34;From: 《豐田物語》&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2022/10/muda.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;From: 《豐田物語》&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;豐田生產會從降低七大浪費著手：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Inventory&lt;/strong&gt;：庫存、在製品。以軟體研發而言，規格書、wireframe、schema、test case⋯⋯任何無法真正迅速 go to production 轉換成實質價值的中間產物，都是 inventory。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Waiting&lt;/strong&gt;：等待。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Defects&lt;/strong&gt;：不良品。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Over-production&lt;/strong&gt;：過量生產。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Motion&lt;/strong&gt;：動作。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Transportation&lt;/strong&gt;：搬運。以軟體研發而言，「人的 transportation」就是換手、接棒、工作交接，「物的 transportation」就是工單傳遞、簽呈傳遞、規格書傳遞、契約書傳遞。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Over-processing&lt;/strong&gt;：過度加工。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;這七大浪費當中，有幾點可以直接對應到敏捷的里程碑設定心法，值得我們時時拿來作為挑戰性提問，時時自我提醒：我們在 Sprint Planning 所規劃的里程碑、進程、作法，是否一不小心就會出現以下幾種浪費？&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Inventory&lt;/strong&gt;：在 Sprint Review 當場可以端得出來的成果，真的都是可以 on production 的東西嗎？抑或只是一個又一個的在製品，徒然製造一堆 inventory？&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Waiting&lt;/strong&gt;：在 Sprint Backlog Items 的每一個細分的 tasks，彼此之間是否有無謂的 waiting 或 dependency？&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Transportation&lt;/strong&gt;：在 Sprint Backlog Items 的每一個細分的 tasks，彼此之間是否有無謂的「人」與「物」（在製品）的 transportation？&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;若出現無法立即轉換成實質價值的浪費，就該針對這些 User Stories 再予以拆分，或是對執行方式再予以重組——這是我們該發揮創意、練習、提升規劃能力、提升工程能力的地方。&lt;/p&gt;
+&lt;p&gt;「降低浪費，就能提升效率。」&lt;/p&gt;
+&lt;h2 id=&#34;已完成&#34;&gt;「已完成」&lt;/h2&gt;
+&lt;p&gt;最後，我再摘錄 Scrum 之父 Jeff Sutherland 在《&lt;a href=&#34;https://williampjyeh.notion.site/Scrum-0e354b6be58b4977bdd1c99993e79d57&#34;&gt;Scrum：用一半的時間做兩倍的事&lt;/a&gt;》第五章〈浪費是一種罪〉的相關內容作為補充。關鍵句在此：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在每一輪或是每段衝刺，團隊都要努力完成幾件事，但是「&lt;strong&gt;已完成&lt;/strong&gt;」意謂著&lt;strong&gt;能提供給客戶使用的完整功能&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;如果你有大批有價值的資源綁在沒有&lt;strong&gt;傳遞出價值&lt;/strong&gt;的東西上，這些資源就無法用來做其他的事。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;在 Sprint Planning 或是在設定專案里程碑時，請時時記得上面的提醒。&lt;/p&gt;
+&lt;p&gt;當大家致力於「降低浪費」的自我要求，同時也就等於開始實踐 &lt;a href=&#34;https://agilemanifesto.org/principles.html&#34;&gt;Agile Manifesto 背後的十二原則&lt;/a&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;原則一：Our highest priority is to satisfy the customer through early and continuous delivery of valuable software.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;原則三：Deliver working software frequently, from a couple of weeks to a couple of months, with a preference to the shorter timescale.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;原則七：Working software is the primary measure of progress.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;原則八：Agile processes promote sustainable development. The sponsors, developers, and users should be able to maintain a constant pace indefinitely.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;原則十：Simplicity&amp;ndash;the art of maximizing the amount of work not done&amp;ndash;is essential.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;大家加油！&lt;/p&gt;
+
+
+&lt;div class=&#34;notice notice--note&#34;&gt;
+  &lt;div class=&#34;notice__title&#34;&gt;
+    
+      【敏捷的工作分解方法】系列
+    
+  &lt;/div&gt;
+  &lt;div class=&#34;notice__content&#34;&gt;&lt;p&gt;❶ &lt;a href=&#34;//william-yeh.net/post/2016/10/one-week-sprint/&#34;&gt;One-Week Sprint 的節奏&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❷ &lt;a href=&#34;//william-yeh.net/post/2016/11/decomposition-reading-list/&#34;&gt;工作分解講座・閱讀材料&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❸ 事情做一半，等於沒完成：淺談敏捷的里程碑設定&lt;/p&gt;
+&lt;p&gt;❹ &lt;a href=&#34;//william-yeh.net/post/2022/11/spidr/&#34;&gt;以「蜘蛛法」拆分過於龐大的 User Story&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❺ &lt;a href=&#34;//william-yeh.net/post/2023/08/story-to-tasks/&#34;&gt;很簡單的 Story，也要拆分出 Tasks 嗎？&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❻ &lt;a href=&#34;//william-yeh.net/post/2023/11/why-decomposition-matters/&#34;&gt;變動的時代，為什麼工作分解技能更是必備？&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+      
     </item>
+    
     <item>
       <title>職涯躍升書系導讀會，Part 2：高效團隊的工作方法</title>
       <link>//william-yeh.net/post/2022/08/career-reading-club-2/</link>
       <pubDate>Sat, 20 Aug 2022 10:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2022/08/career-reading-club-2/</guid>
-      <description>&lt;p&gt;2022 年一月起，我開始每個月一次，每次兩小時的【職涯躍升書系導讀會】。&lt;a href=&#34;//william-yeh.net/post/2022/06/career-reading-club-1/&#34;&gt;前六個月&lt;/a&gt;著眼於&lt;strong&gt;喚醒個人及團隊的成長意識&lt;/strong&gt;，接下來兩個月則著眼於&lt;strong&gt;高效團隊的工作方法&lt;/strong&gt;。&lt;/p&gt;&#xA;&lt;p&gt;這兩個月的導讀會，都鎖定在 Agile 相關書籍上——儘管單純從書籍名稱上面都看不出來會與「敏捷」有關。選書如下：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;① &lt;a href=&#34;https://williampjyeh.notion.site/d8a843cbc9c148989e6489625b6fb34d&#34;&gt;豐田精實管理的翻轉獲利秘密&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;② &lt;a href=&#34;https://www.playpcesor.com/2020/05/2020-new-book.html&#34;&gt;時間管理的 30 道難題&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&#xA;&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;&#xA;&lt;div class=&#34;box&#34;&gt;&#xA;&lt;figure  itemprop=&#34;associatedMedia&#34;&#xA;  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; &#xA;  style=&#34;max-width:30em&#34; &gt;&#xA;    &lt;div class=&#34;img&#34;&gt;&#xA;      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2022/08/career-reading-club-2.jpg&#34; /&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;a href=&#34;//william-yeh.net/img/2022/08/career-reading-club-2.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;&#xA;  &lt;/figure&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;p&gt;以下列出這兩場導讀會的介紹文案。&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;2022 年一月起，我開始每個月一次，每次兩小時的【職涯躍升書系導讀會】。&lt;a href=&#34;//william-yeh.net/post/2022/06/career-reading-club-1/&#34;&gt;前六個月&lt;/a&gt;著眼於&lt;strong&gt;喚醒個人及團隊的成長意識&lt;/strong&gt;，接下來兩個月則著眼於&lt;strong&gt;高效團隊的工作方法&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;這兩個月的導讀會，都鎖定在 Agile 相關書籍上——儘管單純從書籍名稱上面都看不出來會與「敏捷」有關。選書如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;① &lt;a href=&#34;https://williampjyeh.notion.site/d8a843cbc9c148989e6489625b6fb34d&#34;&gt;豐田精實管理的翻轉獲利秘密&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;② &lt;a href=&#34;https://www.playpcesor.com/2020/05/2020-new-book.html&#34;&gt;時間管理的 30 道難題&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2022/08/career-reading-club-2.jpg&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2022/08/career-reading-club-2.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;以下列出這兩場導讀會的介紹文案。&lt;/p&gt;
+&lt;h2 id=&#34;豐田精實管理的翻轉獲利秘密&#34;&gt;豐田精實管理的翻轉獲利秘密&lt;/h2&gt;
+&lt;p&gt;Dear all,&lt;/p&gt;
+&lt;p&gt;最近一些同仁開始上 Kanban 課程，我想，也該是時候引介大家讀一讀這類書籍了。&lt;/p&gt;
+&lt;p&gt;接下來兩次導讀會，都會鎖定在 Agile 相關書籍上——儘管單純從書籍名稱上面都看不出來會與「敏捷」有關。&lt;/p&gt;
+&lt;p&gt;首先登場的是《&lt;a href=&#34;https://williampjyeh.notion.site/d8a843cbc9c148989e6489625b6fb34d&#34;&gt;豐田精實管理的翻轉獲利秘密&lt;/a&gt;》。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;原諒我又要講古了。記得 2016 年我密謀在Ｇ公司推動 &lt;a href=&#34;https://www.slideshare.net/williamyeh/devops-to-agile-transformation&#34;&gt;Agile &amp;amp; DevOps 轉型&lt;/a&gt;之前，私底下先做了一些思想溯源。畢竟，身為 INTJ，智性上的滿足是不容妥協的——我不滿足於只是「守」著使用手冊般的 &amp;ldquo;thou shalt&amp;hellip;&amp;rdquo; 敘述，我還需要知道背後的原理及演變歷史。&lt;/p&gt;
+&lt;p&gt;眾所周知，Agile &amp;amp; DevOps 其中一支重要源頭是 Toyota 引以為傲的「&lt;strong&gt;Lean 精實思想&lt;/strong&gt;」。因此，當年我從《&lt;a href=&#34;https://www.books.com.tw/products/0010662172&#34;&gt;精實革命&lt;/a&gt;》、《&lt;a href=&#34;https://www.taaze.tw/products/11100684280.html&#34;&gt;流的傳承&lt;/a&gt;》、《&lt;a href=&#34;https://www.taaze.tw/products/11100227775.html&#34;&gt;豐田形學&lt;/a&gt;》、《&lt;a href=&#34;https://www.taaze.tw/products/11100131112.html&#34;&gt;學習觀察&lt;/a&gt;》這幾本書消化吸收 Lean 思想，雖然費力，但對於 Agile &amp;amp; DevOps 背後的原理更了然於心，也更能面對現實世界的變化球。畢竟，即使我們不嚷嚷著要推動 Agile &amp;amp; DevOps，但 Lean 思想的核心要點，仍然是非常具有普遍性的，值得精熟。&lt;/p&gt;
+&lt;p&gt;再功利一點講，許多人對於 Agile 的想像是「&lt;a href=&#34;https://www.books.com.tw/products/0010785434&#34;&gt;用一半的時間做兩倍的事&lt;/a&gt;」，問題是，真的有這麼神效嗎？關於這問題，我引述憲哥在《&lt;a href=&#34;https://williampjyeh.notion.site/d8a843cbc9c148989e6489625b6fb34d&#34;&gt;豐田精實管理的翻轉獲利秘密&lt;/a&gt;》推薦序所說：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;精實管理，是提升效率的顯學。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;所以，如果導入敏捷的初衷是「&lt;a href=&#34;https://www.books.com.tw/products/0010785434&#34;&gt;用一半的時間做兩倍的事&lt;/a&gt;」，那麼，從「精實思想」這一源頭切入，或許更能直接符合期待——但我可沒說這會比較容易。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;Lean 思想雖然具有普遍性，但某些地方卻是反直覺的，需要以實際活動或模擬活動去體驗（記得嗎？我的【敏捷原理與團隊塑造】工作坊，就有一個這樣的小活動）。我也一直試圖尋找更淺易的 Lean 思想入門書，作為課後跟進的輔助讀物。&lt;/p&gt;
+&lt;p&gt;多年後終於找到了。江守智這本《&lt;a href=&#34;https://williampjyeh.notion.site/d8a843cbc9c148989e6489625b6fb34d&#34;&gt;豐田精實管理的翻轉獲利秘密&lt;/a&gt;》，儘管不是針對軟體研發產業，但如果你慧眼獨具，自然會發現「雖世殊事異，所以興懷，其致一也」。正如此書第 53 頁所說：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;「&lt;strong&gt;轉化&lt;/strong&gt;」是過去十年內我在顧問生涯中所獲得的最重要能力。因為隨著看的企業越多，就會發現大家所在乎所努力的方向其實都很相似。因此，如果說要向標竿學習，那麼這些績優企業如何應對這些&lt;strong&gt;通則性問題&lt;/strong&gt;，就是一個值得參考的地方。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;我甚至可以說：好好吸收並轉化這本書所詮釋的 Lean，將可讓 Agile 的執行更有底氣，而不致淪為花拳繡腿。&lt;/p&gt;
+&lt;h2 id=&#34;時間管理的-30-道難題&#34;&gt;時間管理的 30 道難題&lt;/h2&gt;
+&lt;p&gt;Dear all,&lt;/p&gt;
+&lt;p&gt;七月八月的兩次導讀會，都鎖定在 Agile 相關書籍上——儘管單純從書籍名稱上面都看不出來會與「敏捷」有關。&lt;/p&gt;
+&lt;p&gt;兩個月，兩本書，分別對應到當前敏捷的兩大門派：Kanban 與 Scrum。&lt;/p&gt;
+&lt;p&gt;七月份導讀會的選書《&lt;a href=&#34;https://williampjyeh.notion.site/d8a843cbc9c148989e6489625b6fb34d&#34;&gt;豐田精實管理的翻轉獲利秘密&lt;/a&gt;》談的是 Kanban 背後的「&lt;strong&gt;Lean 精實思想&lt;/strong&gt;」，八月份導讀會的選書《&lt;a href=&#34;https://www.playpcesor.com/2020/05/2020-new-book.html&#34;&gt;時間管理的 30 道難題&lt;/a&gt;》則在探討個人的&lt;strong&gt;時間管理&lt;/strong&gt;，以及（根據相同的原理）團隊的時間管理：目標選擇術、子彈行動力、時間掌控權、流程改進法——有慧眼的人會看出，其實這與 Scrum 的 4+1 活動，雷同程度極高。&lt;/p&gt;
+&lt;p&gt;Scrum 之所以常被戲稱為「&lt;a href=&#34;https://teddy-chen-tw.blogspot.com/2014/10/blog-post_24.html&#34;&gt;照妖鏡&lt;/a&gt;」的原因是，它如實照見出團隊工作流程、技能、默契的盲點（這是 Scrum 經驗主義三支柱當中的 &lt;strong&gt;transparency&lt;/strong&gt;），以及團隊是否有&lt;strong&gt;勇氣&lt;/strong&gt;（這是 Scrum 五大核心價值觀之一）面對事實去進行持續改善（這是 Scrum 經驗主義三支柱當中的 &lt;strong&gt;adaptation&lt;/strong&gt;）。&lt;/p&gt;
+&lt;p&gt;Scrum 團隊若拒絕面對殘酷的真相，半途而廢比例是非常高的。所以有的經典說「大道以多歧亡羊，學者以多方喪生」，有的經典說「你們要從窄門進去；因為通向滅亡的門是大的，路是寬的，從那裡進去的人也多。」&lt;/p&gt;
+&lt;p&gt;假使團隊真的有勇氣走向持續改善的道路，那麼，該朝什麼方向改善呢？&lt;/p&gt;
+&lt;p&gt;我認為，《&lt;a href=&#34;https://www.playpcesor.com/2020/05/2020-new-book.html&#34;&gt;時間管理的 30 道難題&lt;/a&gt;》這本書探討的個人的時間管理，以及（根據相同的原理）團隊的時間管理，是非常好的起點。跑 Scrum 的人，從這本書必會找到許多改善團隊運作的線索——這是 Scrum 4+1 活動的基本功。&lt;/p&gt;
+&lt;p&gt;就算你不跑 Scrum，這本書也一樣能夠改善個人的工作效能——這是專業工作者的職場基本功。&lt;/p&gt;
+
+
+&lt;div class=&#34;notice notice--note&#34;&gt;
+  &lt;div class=&#34;notice__title&#34;&gt;
+    
+      【職涯躍升書系導讀會】系列
+    
+  &lt;/div&gt;
+  &lt;div class=&#34;notice__content&#34;&gt;&lt;p&gt;❶ Part 1: &lt;a href=&#34;//william-yeh.net/post/2022/06/career-reading-club-1/&#34;&gt;喚醒個人及團隊的成長意識&lt;/a&gt; (計 6 冊)&lt;/p&gt;
+&lt;p&gt;❷ Part 2: 高效團隊的工作方法 (計 2 冊)&lt;/p&gt;
+&lt;p&gt;❸ Part 3: &lt;a href=&#34;//william-yeh.net/post/2022/11/career-reading-club-3/&#34;&gt;職場心理：觀點、期待、渴望&lt;/a&gt; (計 3 冊)&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+      
     </item>
+    
     <item>
       <title>「判準與指標」系列</title>
       <link>//william-yeh.net/series/criteria-series/</link>
       <pubDate>Wed, 28 Nov 2018 00:00:00 +0000</pubDate>
+      
       <guid>//william-yeh.net/series/criteria-series/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2018/10/methodology-and-criteria/&#34;&gt;軟體開發，除了方法論，還有⋯⋯&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2018/10/agile-criteria/&#34;&gt;敏捷的判準&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2018/11/lean-startup-criteria/&#34;&gt;Lean Startup 的判準&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2018/11/agile-value/&#34;&gt;敏捷的價值與指標&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2018/11/devops-value/&#34;&gt;DevOps 的價值與指標&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2023/12/dev-metrics/&#34;&gt;如何衡量敏捷對於軟體研發效能的利益？&lt;/a&gt;&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2018/10/methodology-and-criteria/&#34;&gt;軟體開發，除了方法論，還有⋯⋯&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2018/10/agile-criteria/&#34;&gt;敏捷的判準&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2018/11/lean-startup-criteria/&#34;&gt;Lean Startup 的判準&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2018/11/agile-value/&#34;&gt;敏捷的價值與指標&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2018/11/devops-value/&#34;&gt;DevOps 的價值與指標&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2023/12/dev-metrics/&#34;&gt;如何衡量敏捷對於軟體研發效能的利益？&lt;/a&gt;&lt;/p&gt;
+</description>
+      
     </item>
+    
     <item>
       <title>Lean Startup 的判準</title>
       <link>//william-yeh.net/post/2018/11/lean-startup-criteria/</link>
       <pubDate>Thu, 01 Nov 2018 08:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2018/11/lean-startup-criteria/</guid>
-      <description>&lt;p&gt;《商業周刊》第 1615 期，有一篇總編輯的話〈&lt;a href=&#34;https://www.businessweekly.com.tw/magazine/Article_mag_page.aspx?id=68134&#34;&gt;拖鞋戰法，先做了再修！&lt;/a&gt;〉：&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;網路時代的敏捷開發法，強調「先做了再修改」，中心思想不是「預測」(predict)，而是「順應」(adapt)，讓市場告訴你如何改變。因此「先做出可用、但不完美的產品」後，直接拿到市場測試，根據顧客意見，再回頭修改，反覆這個循環，直到產品上市。&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;《商業周刊》第 1615 期，有一篇總編輯的話〈&lt;a href=&#34;https://www.businessweekly.com.tw/magazine/Article_mag_page.aspx?id=68134&#34;&gt;拖鞋戰法，先做了再修！&lt;/a&gt;〉：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;網路時代的敏捷開發法，強調「先做了再修改」，中心思想不是「預測」(predict)，而是「順應」(adapt)，讓市場告訴你如何改變。因此「先做出可用、但不完美的產品」後，直接拿到市場測試，根據顧客意見，再回頭修改，反覆這個循環，直到產品上市。&lt;/p&gt;
+&lt;p&gt;在快時代下，過去強調「凡事先想透徹」的戰法出現破綻，步伐顯得沉重，而「先做了再改」的敏捷戰法則相對靈活。講到這裡，快低頭看看，你穿的是皮鞋還是拖鞋？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;這下子 PO/PdM 可高興了，拿此文所謂「拖鞋戰法」當立論基礎，向團隊臃腫的 Scrum/Kanban DoD 磨刀霍霍。這也在&lt;a href=&#34;https://www.facebook.com/groups/179345672472/&#34;&gt;台灣 Scrum 社群&lt;/a&gt;引發熱烈&lt;a href=&#34;https://www.facebook.com/groups/179345672472/permalink/10156032174387473/&#34;&gt;討論&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;我留的評論是：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;其實，這仍然是方法論&lt;strong&gt;判準&lt;/strong&gt;的老問題。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;敏捷有許多流派，不是只有 Scrum 才叫正宗，不是只有 Kanban 才叫適用。&lt;/p&gt;
+&lt;p&gt;某些 PO 心中所想的，其實既不是 Scrum 也不是 Kanban，而是 lean startup（精實創業）——儘管他們自己也不知道。&lt;/p&gt;
+&lt;p&gt;選錯方法論，選錯判準，自然扞格不入。&lt;/p&gt;
+&lt;p&gt;先搞清楚 PO 內心真正要的方法論，搞清楚這方法論背後的世界觀，搞清楚判準，才能進行&lt;del&gt;攻防&lt;/del&gt;對話。&lt;/p&gt;
+&lt;h2 id=&#34;lean-startup-的源流&#34;&gt;Lean Startup 的源流&lt;/h2&gt;
+&lt;p&gt;Lean startup 路線，比較正式的起源，據 Steve Blank 在哈佛商業評論〈&lt;a href=&#34;https://www.hbrtaiwan.com/article_content_AR0002324.html&#34;&gt;精實創業改變全世界&lt;/a&gt;〉所述：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;2004 年，我投資一家由艾瑞克．萊斯 (Eric Ries) 和威爾．哈維 (Will Harvey) 成立的新創公司，並提出一個但書，我堅持他們必須上我的課，我才會投資。&lt;/p&gt;
+&lt;p&gt;艾瑞克很快就發現，科技產業傳統採行的「瀑布式開發法」那種線性開發方式，應該改為反覆修正、敏捷回應的開發方式。艾瑞克也看出這套新創業準則，與大家耳熟能詳的、豐田「精實生產」系統之間的共同點，因此，將這套結合顧客開發與敏捷反應的方法稱為「精實創業」。&lt;/p&gt;
+&lt;p&gt;這些工具因為一連串的暢銷書，而逐漸廣為人知。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;2011 年，Eric Ries 總結自身及他人經驗，出版《&lt;a href=&#34;https://www.books.com.tw/products/0010768288&#34;&gt;精實創業&lt;/a&gt;》一書，替這種路線正式定調。身為教父，他也策展了一系列經典之作：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;《&lt;a href=&#34;https://www.books.com.tw/products/0010580487&#34;&gt;精實執行&lt;/a&gt;》&lt;/li&gt;
+&lt;li&gt;《&lt;a href=&#34;https://www.books.com.tw/products/0010753559&#34;&gt;快成長時代&lt;/a&gt;》&lt;/li&gt;
+&lt;li&gt;《&lt;a href=&#34;https://www.tenlong.com.tw/products/9787115405319&#34;&gt;精益客戶開發&lt;/a&gt;》&lt;/li&gt;
+&lt;li&gt;《&lt;a href=&#34;https://www.books.com.tw/products/CN11206479&#34;&gt;精益數據分析&lt;/a&gt;》&lt;/li&gt;
+&lt;li&gt;《&lt;a href=&#34;https://www.books.com.tw/products/0010756527&#34;&gt;精實 UX 設計&lt;/a&gt;》&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Lean startup 理念貌似常識，但若真的要有正確不偏頗的理解，這些輕薄短小的書都是必備讀物，勿等閒視之。&lt;/p&gt;
+&lt;h2 id=&#34;lean-startup-的判準&#34;&gt;Lean Startup 的判準&lt;/h2&gt;
+&lt;p&gt;Lean startup 在執行時，的確常會與 Scrum 或 Kanban 混搭。像《&lt;a href=&#34;https://www.books.com.tw/products/0010580487&#34;&gt;精實執行&lt;/a&gt;》第二版第 13 章如此建議：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;控制你的功能管線，限制同時間被處理的功能數量，並且僅於你已驗證過所部署之功能具有正面或負面的影響之後（亦即，產生經驗學習），才著手處理新功能。進行這項工作的好方法，就是運用 Kanban。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;但在方法論層面，仍然該有所區辨，尤其會涉及到接下來要談的嚴肅話題：判準。&lt;/p&gt;
+&lt;p&gt;Lean startup 理念貌似常識，但真正核心的判準，未必都被清楚地認知。&lt;/p&gt;
+&lt;p&gt;我個人認為，lean startup 的判準，就是 Ash Maurya 在《&lt;a href=&#34;https://www.books.com.tw/products/0010580487&#34;&gt;精實執行&lt;/a&gt;》書中所勾勒的三大風險、四大階段。如果以 Ash Maurya 發明的精實畫布 (lean canvas) 攤開來看：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/11/lean-startup-risk.jpg&#34; alt=&#34;《精實執行》有系統地消除三大風險&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2018/11/lean-startup-risk.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;《精實執行》有系統地消除三大風險&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;三大風險、四大階段，彼此的判讀基準如下：&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;階段&lt;/th&gt;
+          &lt;th&gt;產品風險&lt;/th&gt;
+          &lt;th&gt;顧客風險&lt;/th&gt;
+          &lt;th&gt;市場風險&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;⓵瞭解問題&lt;/td&gt;
+          &lt;td&gt;你在解決什麼問題？&lt;/td&gt;
+          &lt;td&gt;競爭對手是誰？&lt;/td&gt;
+          &lt;td&gt;誰感到痛苦？&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;⓶定義解決方案&lt;/td&gt;
+          &lt;td&gt;誰感到痛苦？&lt;/td&gt;
+          &lt;td&gt;你將如何解決這些問題？&lt;/td&gt;
+          &lt;td&gt;定價模型為何？&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;⓷定性驗證&lt;/td&gt;
+          &lt;td&gt;這項產品有什麼令人無法抗拒的地方嗎？&lt;/td&gt;
+          &lt;td&gt;你有足夠的顧客嗎？&lt;/td&gt;
+          &lt;td&gt;價格合適嗎？&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;⓸定量驗證&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;至於 lean canvas 的各個空格，該如何制訂質性與量化的指標，就得量身定做了。&lt;/p&gt;
+&lt;p&gt;看到這裡，你認為本文開頭所提到的「拖鞋戰法」，是落在 lean startup 哪一個格子呢？&lt;/p&gt;
+&lt;h3 id=&#34;合乎現實嗎&#34;&gt;合乎現實嗎？&lt;/h3&gt;
+&lt;p&gt;要走 lean startup 路線，就要弄清楚 lean startup 的判準，並致力於判準的實踐品質，這是將方法論落地實施的重要關鍵。&lt;/p&gt;
+&lt;p&gt;問題是：這個判準，合乎現實嗎？更進一步的問題是：是怎樣的世界觀，才會催生如此的判準？&lt;/p&gt;
+&lt;p&gt;Lean startup 的世界觀就是，我們對萬事萬物的認知，充斥仍待驗證的粗糙假設。能用最少的投入成本，降低最多的不確定性，就是最好的學習。&lt;/p&gt;
+&lt;p&gt;認清這個判準，以及這個判準背後代表的方法論及世界觀，有助於你成為高性價比的策略執行家。&lt;/p&gt;
+&lt;p&gt;或許更重要的是，你支持這種方法論，卻又得與一知半解者合作，你就應該在這些判準的層次上，盡一切努力守護這些判準的認知與實踐品質，並最大化這些判準的價值能見度。&lt;/p&gt;
+&lt;p&gt;在判準的層次動工，比各自表述的爭辯更有力。&lt;/p&gt;
+
+
+&lt;div class=&#34;notice notice--note&#34;&gt;
+  &lt;div class=&#34;notice__title&#34;&gt;
+    
+      「判準與指標」系列文章
+    
+  &lt;/div&gt;
+  &lt;div class=&#34;notice__content&#34;&gt;&lt;p&gt;❶ &lt;a href=&#34;//william-yeh.net/post/2018/10/methodology-and-criteria/&#34;&gt;軟體開發，除了方法論，還有⋯⋯&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❷ &lt;a href=&#34;//william-yeh.net/post/2018/10/agile-criteria/&#34;&gt;敏捷的判準&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❸ Lean Startup 的判準&lt;/p&gt;
+&lt;p&gt;❹ &lt;a href=&#34;//william-yeh.net/post/2018/11/agile-value/&#34;&gt;敏捷的價值與指標&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❺ &lt;a href=&#34;//william-yeh.net/post/2018/11/devops-value/&#34;&gt;DevOps 的價值與指標&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❻ &lt;a href=&#34;//william-yeh.net/post/2023/12/dev-metrics/&#34;&gt;如何衡量敏捷對於軟體研發效能的利益？&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+</description>
+      
     </item>
+    
     <item>
       <title>有了 Agile，為什麼還要有 DevOps？</title>
       <link>//william-yeh.net/post/2016/05/devops-a-lean-perspective/</link>
       <pubDate>Tue, 03 May 2016 08:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2016/05/devops-a-lean-perspective/</guid>
-      <description>&lt;p&gt;今晚，受 Agile Community Taiwan 之邀，在 &lt;a href=&#34;https://www.accupass.com/event/1604251622311845219210&#34;&gt;Agile Meetup Taipei&lt;/a&gt; 給了一場演講：【&lt;a href=&#34;http://www.slideshare.net/williamyeh/agile-devops&#34;&gt;有了 Agile，為什麼還要有 DevOps？&lt;/a&gt;】&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;今晚，受 Agile Community Taiwan 之邀，在 &lt;a href=&#34;https://www.accupass.com/event/1604251622311845219210&#34;&gt;Agile Meetup Taipei&lt;/a&gt; 給了一場演講：【&lt;a href=&#34;http://www.slideshare.net/williamyeh/agile-devops&#34;&gt;有了 Agile，為什麼還要有 DevOps？&lt;/a&gt;】&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/05/devops-speech-cover.jpg&#34; alt=&#34;演講現場自拍&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2016/05/devops-speech-cover.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;演講現場自拍&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;之所以會給這場演講，是因為之前在討論區、演講、講課時，總是會收到這類的 Q&amp;amp;A：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;DevOps 是不是在花大錢搞新技術？商業噱頭？&lt;/li&gt;
+&lt;li&gt;DevOps 只是大雜燴？&lt;/li&gt;
+&lt;li&gt;DevOps 只與 Agile 有關？&lt;/li&gt;
+&lt;li&gt;DevOps 就是 Dev 把魔爪伸到 Ops 嗎？&lt;/li&gt;
+&lt;li&gt;DevOps 需要改變文化嗎？&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;林林總總，不是三言兩語就能回答得完整。雖然之前也寫了幾篇文章試著回答部分問題，但總是不夠全面。&lt;/p&gt;
+&lt;p&gt;為了一勞永逸，我試著用以下的角度，完整闡釋個人觀點：&lt;/p&gt;
+
+
+&lt;div class=&#34;notice notice--note&#34;&gt;
+  &lt;div class=&#34;notice__title&#34;&gt;
+    
+      演講簡介
+    
+  &lt;/div&gt;
+  &lt;div class=&#34;notice__content&#34;&gt;&lt;p&gt;敏捷運動與 DevOps，有某些共同的淵源，但也有不同的偏重取向。&lt;/p&gt;
+&lt;p&gt;Agile 陣營的人，常會有個疑問：「聽起來，DevOps 好像只是把 Agile 觸角從 Dev 伸到 Ops 端，只是舊瓶裝新酒？」&lt;/p&gt;
+&lt;p&gt;Waterfall 陣營的人，也常會有個疑問：「聽起來，DevOps 好像只是 Agile 那一票人搞出來的；我們 Waterfall 陣營是不玩這一套的。」&lt;/p&gt;
+&lt;p&gt;真的是這樣嗎？&lt;/p&gt;
+&lt;p&gt;本次活動會以一些小活動、一些小短片，帶領大家從 Lean Thinking 角度，重新審視軟體研發的 value stream。回歸 DevOps 的原點，你將能夠自己給出上述問題的答案。&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;個人觀點，或許主觀，但至少給了一個出發點。尤其台灣似乎還沒有以較核心的 Lean Thinking 角度，好好探討 DevOps，乃至 Agile 的論述。看得到的，多半集中在「&lt;a href=&#34;http://wiki.mbalib.com/zh-tw/%E4%B8%83%E5%A4%A7%E6%B5%AA%E8%B4%B9&#34;&gt;消除七大浪費&lt;/a&gt;」這種角度；但 Lean Thinking 的核心原則，並不只有這個而已。&lt;/p&gt;
+&lt;p&gt;我認為，軟體從業人員，有必要好好認識 Lean Thinking 的五大原則：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Value&lt;/li&gt;
+&lt;li&gt;Value stream&lt;/li&gt;
+&lt;li&gt;Flow&lt;/li&gt;
+&lt;li&gt;Pull&lt;/li&gt;
+&lt;li&gt;Perfection&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;認識這五大原則，會打通 agile、Scrum、Kanban、DevOps 等新潮名詞的任督二脈。&lt;/p&gt;
+&lt;p&gt;不過，Lean Thinking 有些地方，硬是直接說理，言者諄諄，聽者藐藐；最好的方法，還是從遊戲中親身體會。所以在演講現場，我也帶大家玩一場 The Dot Game 的「William 式變形版」。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;演講的投影片在此，希望對大家有所幫助：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;//www.slideshare.net/williamyeh/agile-devops&#34;&gt;有了 Agile，為什麼還要有 DevOps？&lt;/a&gt;&lt;/strong&gt;
+&lt;iframe
+  style=&#34;width: 100%; height: 500px;&#34; frameborder=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; scrolling=&#34;no&#34;
+  src=&#34;https://www.slideshare.net/slideshow/embed_code/61628527&#34; allowfullscreen webkitallowfullscreen mozallowfullscreen&gt; &lt;/iframe&gt;
+&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;現場實況錄影在此，全長整整 2 小時，請享用：&lt;/p&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/2j3eP55Oygw?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+    &lt;/div&gt;</description>
+      
     </item>
+    
     <item>
       <title>向遊戲學習</title>
       <link>//william-yeh.net/post/2016/04/learn-process-mgmt-by-game/</link>
       <pubDate>Sat, 23 Apr 2016 08:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2016/04/learn-process-mgmt-by-game/</guid>
-      <description>&lt;p&gt;前一篇文章〈&lt;a href=&#34;//william-yeh.net/post/2016/04/learn-from-plant-mgmt/&#34;&gt;向工廠管理致敬&lt;/a&gt;〉提到，最近為了準備一場 Agile/DevOps 演講，我特地研讀了數本原典，希望能對某些核心的思考元素來一場溯源之旅。&lt;/p&gt;&#xA;&lt;p&gt;啃原典，其實還有另一個原因：為了好好替今天要去大玩特玩的&lt;strong&gt;小火車遊戲&lt;/strong&gt;⋯⋯喔，不，是為了替今天要專程去上的一門【&lt;a href=&#34;https://shop.darencademy.com/product/view/id/2&#34;&gt;102 流程設計與跨部門溝通&lt;/a&gt;】課程預作準備。&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;前一篇文章〈&lt;a href=&#34;//william-yeh.net/post/2016/04/learn-from-plant-mgmt/&#34;&gt;向工廠管理致敬&lt;/a&gt;〉提到，最近為了準備一場 Agile/DevOps 演講，我特地研讀了數本原典，希望能對某些核心的思考元素來一場溯源之旅。&lt;/p&gt;
+&lt;p&gt;啃原典，其實還有另一個原因：為了好好替今天要去大玩特玩的&lt;strong&gt;小火車遊戲&lt;/strong&gt;⋯⋯喔，不，是為了替今天要專程去上的一門【&lt;a href=&#34;https://shop.darencademy.com/product/view/id/2&#34;&gt;102 流程設計與跨部門溝通&lt;/a&gt;】課程預作準備。&lt;/p&gt;
+&lt;p&gt;盯上這門課，其實已經很久了。只是這門課⋯⋯摘錄一段課程文案：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;只有二十二個席次，因為道具很多，所以約每半年才開設一次公開班，錯過就要等很久了喔！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;這文案一點也不誇張。所以，我緊盯著每一梯次開放報名的風吹草動，委實不易呀！&lt;/p&gt;
+&lt;p&gt;上含金量這麼高的實作課程，不事先自我裝備一下，就太浪費了。但上課時，我還是盡量提醒自己要心態歸零，避免那些偷練的知識變成先入為主的反射思考，這樣才有更多 unknown unknown 可學。&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/04/102-opening.jpg&#34; alt=&#34;102 - 開場白&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2016/04/102-opening.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;102 - 開場白&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;這門課，從實際的小火車遊戲中，讓我結結實實體會到以前從書中讀過的一堆觀念：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;《&lt;a href=&#34;https://www.books.com.tw/products/0010898249&#34;&gt;目標&lt;/a&gt;》書中講的 &lt;a href=&#34;https://www.projectup.net/article/view/id/3124&#34;&gt;TOC 聚焦五步驟&lt;/a&gt;，是真的。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;《&lt;a href=&#34;http://www.books.com.tw/products/0010662172&#34;&gt;精實革命&lt;/a&gt;》書中講的&lt;a href=&#34;http://www.cardiff.ac.uk/lean/principles/&#34;&gt;精實思考五原則&lt;/a&gt;，是真的。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Toyota_Production_System&#34;&gt;豐田生產系統&lt;/a&gt;所講究的現地現物、自働化、看板、防呆、5S、反省⋯⋯，是真的。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;甚至連以前上 PMBOK 課程看到的一堆令人生厭的 &lt;a href=&#34;http://www.pmexamsmartnotes.com/how-to-remember-ittos-of-all-47-pmbok-processes/&#34;&gt;ITTO&lt;/a&gt;，也看到在組織執掌分工下的真義。&lt;/p&gt;
+&lt;p&gt;所以，不要小看小孩子玩的小火車；道在屎溺，不可不察也！&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/04/102-scene-1.jpg&#34; alt=&#34;102 - 第一回合&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2016/04/102-scene-1.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;102 - 第一回合&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;整天課程分兩回合進行。第一回合是由學生自己構思方法、執行，並自行檢討；這一回合，講師都先不予提示。&lt;/p&gt;
+&lt;p&gt;好精彩的第一回合！和一群各行各業臥虎藏龍的 22 名高手合作，過癮！&lt;/p&gt;
+&lt;p&gt;儘管差一點點就達標，但我已經從過程中體會到 lean &amp;amp; TOC 的某些原則。&lt;/p&gt;
+&lt;p&gt;這的確是一場和高手合作，很能激盪出火花的體驗活動。也很高興自己貢獻的幾個流程及防呆手法，有派上用場。&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/04/102-scene-2.jpg&#34; alt=&#34;102 - 第二回合&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2016/04/102-scene-2.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;102 - 第二回合&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;等大家都提出檢討報告之後，講師 Joe &amp;amp; Bryan 才根據現場觀察，給予精準的提示，並端出這門課的壓箱寶：品質流程六大手法。&lt;/p&gt;
+&lt;p&gt;醍醐灌頂後，大家再度自發地提出改善計畫，重新規劃流程，再進行第二回合：目標不只是達標，更要追求卓越，挑戰加分項目！&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/04/102-certificate.jpg&#34; alt=&#34;102 - 證書&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2016/04/102-certificate.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;102 - 證書&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;玩了一天小火車，收穫滿滿。&lt;/p&gt;
+&lt;p&gt;正題有收穫，也趁機向 Joe &amp;amp; Bryan 請教一些近日思考的疑點。我將把體驗到的思維角度運用在職場上（DevOps 其實非常需要這種綜觀全局的思考方式及流程改善）。&lt;/p&gt;
+&lt;p&gt;除了正題收穫之外，也更確定了另一件事：如果想傳達的要點很多，那麼，設計活動時，要選擇在依存關係及統計波動上有某種複雜度的模擬案例（這也是《&lt;a href=&#34;https://www.books.com.tw/products/0010898249&#34;&gt;目標&lt;/a&gt;》書中所提出的切入點）。&lt;/p&gt;
+&lt;p&gt;敏捷陣營素以愛玩遊戲著稱。從今天的小火車遊戲中，我也偷學了一些遊戲設計的訣竅，希望以後能運用在團隊身上。&lt;/p&gt;
+&lt;p&gt;最後，給一個 call to action：如果你也想親身體驗這麼好玩的遊戲，&lt;a href=&#34;http://www.accupass.com/event/register/1602250738221767316794&#34;&gt;最新梯次 9/03 已經開放報名&lt;/a&gt;。&lt;/p&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/DmG8VLQTobQ?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+</description>
+      
     </item>
+    
     <item>
       <title>向工廠管理致敬</title>
       <link>//william-yeh.net/post/2016/04/learn-from-plant-mgmt/</link>
       <pubDate>Fri, 22 Apr 2016 08:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2016/04/learn-from-plant-mgmt/</guid>
-      <description>&lt;p&gt;身為徹頭徹尾的軟體人，在軟體產業待久了，總會對「硬」一點的產業，尤其是製造業，有莫名的成見，以為他們是僵固的、反人性的。從 1972 年「&lt;a href=&#34;https://en.wikipedia.org/wiki/Software_crisis&#34;&gt;軟體危機&lt;/a&gt;」引發的論述當中，更加深軟體人的印象：製造業的經驗，是無法直接套用到軟體界的；我們是截然不同的國度。&lt;/p&gt;&#xA;&lt;p&gt;不過，近十年來許多軟體界的流程改革，尤其是同屬 Agile 陣營的 Scrum 及 Kanban，居然有許多元素是從製造業&lt;del&gt;偷竊&lt;/del&gt;學習而來。譬如說，由 Toyota 引領風潮的 &lt;a href=&#34;https://en.wikipedia.org/wiki/Lean_manufacturing&#34;&gt;Lean Production&lt;/a&gt; 及 &lt;a href=&#34;https://en.wikipedia.org/wiki/Just-in-time_manufacturing&#34;&gt;JIT&lt;/a&gt;、從 &lt;a href=&#34;https://en.wikipedia.org/wiki/Theory_of_constraints&#34;&gt;TOC（限制理論）&lt;/a&gt; 學來的流程分析及改善手法，都是相關文獻最常引述的。&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;身為徹頭徹尾的軟體人，在軟體產業待久了，總會對「硬」一點的產業，尤其是製造業，有莫名的成見，以為他們是僵固的、反人性的。從 1972 年「&lt;a href=&#34;https://en.wikipedia.org/wiki/Software_crisis&#34;&gt;軟體危機&lt;/a&gt;」引發的論述當中，更加深軟體人的印象：製造業的經驗，是無法直接套用到軟體界的；我們是截然不同的國度。&lt;/p&gt;
+&lt;p&gt;不過，近十年來許多軟體界的流程改革，尤其是同屬 Agile 陣營的 Scrum 及 Kanban，居然有許多元素是從製造業&lt;del&gt;偷竊&lt;/del&gt;學習而來。譬如說，由 Toyota 引領風潮的 &lt;a href=&#34;https://en.wikipedia.org/wiki/Lean_manufacturing&#34;&gt;Lean Production&lt;/a&gt; 及 &lt;a href=&#34;https://en.wikipedia.org/wiki/Just-in-time_manufacturing&#34;&gt;JIT&lt;/a&gt;、從 &lt;a href=&#34;https://en.wikipedia.org/wiki/Theory_of_constraints&#34;&gt;TOC（限制理論）&lt;/a&gt; 學來的流程分析及改善手法，都是相關文獻最常引述的。&lt;/p&gt;
+&lt;p&gt;最近為了準備一場 Agile/DevOps 演講，特地研讀數本原典，對核心元素來一場溯源之旅：&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/04/book-the-goals.jpg&#34; alt=&#34;目標&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2016/04/book-the-goals.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;目標&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/04/book-lean-revolution.jpg&#34; alt=&#34;精實方面的書籍&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2016/04/book-lean-revolution.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;精實方面的書籍&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;溯源之旅，很充實，也很有趣。&lt;/p&gt;
+&lt;p&gt;一個有趣的觀察是，儘管 TOC 及 Lean/JIT 兩者有許多交集，合併服用的人也很多，但雙方的&lt;del&gt;本位主義者&lt;/del&gt;熱情擁護者卻常常各持己見。譬如說，《&lt;a href=&#34;https://www.books.com.tw/products/0010898249&#34;&gt;目標&lt;/a&gt;》審訂者在導讀中批評 JIT 的效用：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;八十年代，日本的「及時生產觀念」(JIT, Just In Time) 令日本製造業面貌一新，帶給美國莫大的威脅，一時間，美國企業在濃烈的危機感下，紛紛學習，並如法炮製，但效果始終有限。&lt;/p&gt;
+&lt;p&gt;作者高德拉特博士強烈地認為，單靠抄襲沒有用，一定要闖出一條優於 JIT 的路才行，況且，絕大部分企業根本沒有條件和資源作 JIT 所需的巨額投資。本書所描述的「鼓—緩衝—繩子」(drum—buffer—rope)、「緩衝管理」(buffer management) 及 TOC 的各種觀念，就被業界評為比 JIT 更實用和快速見效的方法，而且投資少。美國福特汽車的電子部在花鉅資實行了兩年 JIT 後，發覺產品的生產期只縮短了少許，落後日本仍然甚遠，於是決定改用 TOC，在一年內就遠遠拋離對手。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;而精實理論重鎮 &lt;a href=&#34;http://www.lean.org/&#34;&gt;LEI&lt;/a&gt; 出版的《&lt;a href=&#34;http://www.books.com.tw/products/0010339196&#34;&gt;學習觀察&lt;/a&gt;》，則批評 TOC 只有孤立效果，不是全面的改善：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;當我們在 1996 年秋初次發行《&lt;a href=&#34;http://www.books.com.tw/products/0010662172&#34;&gt;精實革命&lt;/a&gt;》時，我們敦促讀者要以大野耐一及豐田系統的其他開拓者的精神去「實踐它」。 [&amp;hellip;] 遺憾的是，我們發現採納我們循序漸進建議的人不多，往往在一頭鑽進消除浪費的工作之前，沒有認真地完成這關鍵的一步。&lt;/p&gt;
+&lt;p&gt;這種急進性的改善和令人失望的結果，使得精實又像另一個無疾而終的運動，過了一段日子就被束之高閣，取而代之是像「消除瓶頸」（根據「制約理論」）或者六標準差方案，或者其他種種改善專案。但是這些項目都帶來了同樣的結果，在某些孤立的部分戰勝了浪費，其中的一部分甚至很有成效，但他們都不能成功地全面改善。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;如果有機會安排他們齊聚一堂&lt;del&gt;鬥嘴&lt;/del&gt;交流，一定很有趣。&lt;/p&gt;
+&lt;p&gt;補充說明一下：高德拉特本人，對大野耐一可是推崇備至喔！&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;看了原典，想再看看有現場實務經驗的教練，是如何統合運用這些原理，尤其是不預設立場、善於提問引導的教練。&lt;/p&gt;
+&lt;p&gt;《林俊哲的廠長教室》系列，就是如此趣味橫生的大補帖。尤其是〈工廠補習班〉系列文章：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.sina.com.cn/s/blog_a4c01d4a0102vryc.html&#34;&gt;工廠的口號洞悉管理的缺失&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.sina.com.cn/s/blog_a4c01d4a0102vryf.html&#34;&gt;一個作業站反映工廠穩不穩定&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://willy0936.blogspot.com/2014/12/blog-post_4.html&#34;&gt;一眼看出沒有效率的工廠&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://willy0936.blogspot.com/2018/05/blog-post.html&#34;&gt;工廠管理到底應該管什麼？&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://willy0936.blogspot.com/2014/12/blog-post_8.html&#34;&gt;工廠管理走一遭&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://willy0936.blogspot.com/2014/12/blog-post_67.html&#34;&gt;「自動化」與「流水線」的迷失&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://willy0936.blogspot.com/2014/12/blog-post_72.html&#34;&gt;工廠管理教戰守則（全文）&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;簡直就是把 TOC、Lean、JIT 等原理重組統整的問答錄。極力建議看完上述原典的人，跟著這些問答錄，一起思辨、活用。&lt;/p&gt;
+&lt;p&gt;看完之後，我還要好好思考，是否適合套用在軟體研發管理身上⋯⋯&lt;/p&gt;</description>
+      
     </item>
+    
     <item>
       <title>多工切換：有趣的 Lean 觀點</title>
       <link>//william-yeh.net/post/2016/03/lean-perspective-of-multitasking/</link>
       <pubDate>Tue, 29 Mar 2016 08:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2016/03/lean-perspective-of-multitasking/</guid>
-      <description>&lt;p&gt;系統思考，全局思考，是困難的；即使是貌似常識的場域，亦然。&lt;/p&gt;&#xA;&lt;p&gt;最近在看 &lt;a href=&#34;https://www.books.com.tw/products/0010662172&#34;&gt;&lt;em&gt;Lean Thinking&lt;/em&gt;&lt;/a&gt; 原典時，感觸更深。&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;系統思考，全局思考，是困難的；即使是貌似常識的場域，亦然。&lt;/p&gt;
+&lt;p&gt;最近在看 &lt;a href=&#34;https://www.books.com.tw/products/0010662172&#34;&gt;&lt;em&gt;Lean Thinking&lt;/em&gt;&lt;/a&gt; 原典時，感觸更深。&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:15em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/03/lean-thinking.jpg&#34; alt=&#34;精實革命 (Lean Thinking)&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2016/03/lean-thinking.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;精實革命 (Lean Thinking)&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;em&gt;Lean Thinking&lt;/em&gt; 倡議小批量 (small batch)、單件流 (one piece flow) 工作方式；這種工作方式，會觸及到多工、工作切換的議題。&lt;/p&gt;
+&lt;p&gt;以常識來說，多工、工作切換，代價是 context switch 的 overhead。因此，近代敏捷開發方法論，總是希望在制度設計上盡量降低工作切換：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;當知識工作者有三件或四件以上的工作要做，他們花費在工作切換時，所需重新設定工作模式的時間，會比實際花費在每件工作上的時間還要來的長。
+&amp;mdash; 《&lt;a href=&#34;http://www.books.com.tw/products/0010549884&#34;&gt;笑談軟體工程：敏捷開發法的逆襲&lt;/a&gt;》 p.180&lt;/p&gt;
+&lt;p&gt;多工是一種浪費，給員工同時間分配多種工作是專案產生浪費的一個根源。軟體開發人員每次在轉換工作時都會浪費大量的調換時間，因為他必須調整思路以便投入新的任務流程。當然，若是你同時參與多個開&lt;br&gt;
+發團隊的話，自然會造成更多的停頓，從而引起更多的任務調換而浪費更多時間。
+&amp;mdash; 《&lt;a href=&#34;http://www.books.com.tw/products/0010669225&#34;&gt;精實開發與看板方法&lt;/a&gt;》 p.11&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;原本我也把它當成不證自明的常識。不過，偶然看到 &lt;em&gt;Lean Thinking&lt;/em&gt; 提到的一項實驗，大大顛覆我的成見。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;先看一段 Ron Pereira 根據 &lt;em&gt;Lean Thinking&lt;/em&gt; 書中所提的實驗，錄的一段影片：&lt;/p&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/Bi9R1Hqr8dI?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+&lt;p&gt;單一動作，反覆做，練成不經大腦思考的機械式反應時，理論上，單一動作的效率會極大化。這也是科學管理之夫泰勒的觀點。&lt;/p&gt;
+&lt;p&gt;所以，看了這段實驗，真是令人咋舌。&lt;/p&gt;
+&lt;p&gt;兩年後，他又重做了一次實驗：&lt;/p&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/Dr67i5SdXiM?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+&lt;p&gt;實驗設計上，瑕疵當然很多，就連隨機對照實驗都沒做。不過，個人認為，實驗設計完美與否，並不是此例想彰顯的重點。它想彰顯的，都在第一段影片的小標上。&lt;/p&gt;
+&lt;p&gt;我們當然可以坐下來徹底分析：違反直覺的第二種方法，為什麼反而比較快（儘管這可能只是後見之明）。不過，這實驗已經突顯一件事：「工作切換」這件事情的影響，可能需要重新思考；不能只從微觀的局部角度，更要從整體、flow 的角度去檢視。&lt;/p&gt;
+&lt;p&gt;單純以「工作切換」這件事，換個 Lean Thinking 思維角度，就能得出違反直覺的結果。天知道還有多少尚未被推翻的「不證自明的常識」呢？&lt;/p&gt;
+&lt;p&gt;整體 vs 局部的判斷，委實不能等閒視之呀。&lt;/p&gt;</description>
+      
     </item>
+    
     <item>
       <title>DevOps 核心元素的考古溯源</title>
       <link>//william-yeh.net/post/2016/03/origin-of-devops-elements/</link>
       <pubDate>Mon, 07 Mar 2016 08:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2016/03/origin-of-devops-elements/</guid>
-      <description>&lt;p&gt;DevOps 和 Agile 的關係是什麼？DevOps 是源自 Agile 的嗎？&lt;/p&gt;&#xA;&lt;p&gt;我在〈&lt;a href=&#34;//william-yeh.net/post/2016/01/devops-goals-in-a-nutshell/&#34;&gt;一句話囊括 DevOps 的目標&lt;/a&gt;〉文中曾經簡略提過：&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;DevOps 和 Agile 的關係是什麼？DevOps 是源自 Agile 的嗎？&lt;/p&gt;
+&lt;p&gt;我在〈&lt;a href=&#34;//william-yeh.net/post/2016/01/devops-goals-in-a-nutshell/&#34;&gt;一句話囊括 DevOps 的目標&lt;/a&gt;〉文中曾經簡略提過：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;DevOps 雖然和 agile 運動有歷史上的臍帶關係，但嚴格來說，沒有遵循《&lt;a href=&#34;http://www.agilemanifesto.org/&#34;&gt;敏捷宣言&lt;/a&gt;》四大原則，也是能做 DevOps 的；硬是把兩個議題綁在一起，會限縮 DevOps 論述空間⋯⋯&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;這種&lt;del&gt;分離主義&lt;/del&gt;論點並不是我首創的。iThome 的〈&lt;a href=&#34;http://www.ithome.com.tw/news/96861&#34;&gt;為什麼會出現 DevOps？&lt;/a&gt;〉一開頭也提到，DevOps 的源頭不只有 agile 一系：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;DevOps 運動承襲自敏捷系統管理 (Agile System Administration) 運動以及企業系統管理 (Enterprise System Management，ESM) 運動。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;不過，我還是想替這種論述，找到更權威、更全面一點的溯源分析。&lt;/p&gt;
+&lt;p&gt;終於，我從 &lt;a href=&#34;http://www.amazon.com/dp/0988262592/ref=cm_sw_r_tw_dp_a4p3wb0PSYY97&#34;&gt;&lt;em&gt;The Phoenix Project&lt;/em&gt;&lt;/a&gt; 書中找到想要的論述。&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:15em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/03/the-phoenix-project.png&#34; alt=&#34;The Phoenix Project&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2016/03/the-phoenix-project.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;The Phoenix Project&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.amazon.com/dp/0988262592/ref=cm_sw_r_tw_dp_a4p3wb0PSYY97&#34;&gt;&lt;em&gt;The Phoenix Project&lt;/em&gt;&lt;/a&gt; 這本書，以&lt;a href=&#34;http://www.bookzone.com.tw/event/201108_goldratt/&#34;&gt;高德拉特&lt;/a&gt;那種極受歡迎的企管小說形式，闡述在一個面臨內部外部危機的 IT 組織中，DevOps 能發揮什麼樣的功效。對這本書的背景有興趣的，請讀讀該書作者 Gene Kim 的&lt;a href=&#34;http://www.infoq.com/cn/articles/phoenix-project-book-review&#34;&gt;訪談文章&lt;/a&gt;，或是 Howie 寫的&lt;a href=&#34;http://lab.howie.tw/2016/02/phoenix-project.html&#34;&gt;重點整理&lt;/a&gt;、Ruddy 寫的&lt;a href=&#34;https://ruddyblog.wordpress.com/2016/01/26/the-phoenix-project-%E5%B0%8E%E8%AE%80/&#34;&gt;導讀&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;整本書非常豐富，本篇文章只專門針對該書附錄 &amp;ldquo;&lt;em&gt;Where DevOps Came From&lt;/em&gt;&amp;rdquo; 進行導讀。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;作者如此定調 DevOps：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;We refer to &amp;ldquo;DevOps&amp;rdquo; as the outcome of &lt;em&gt;applying Lean principles to the IT value stream&lt;/em&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;出現一個近年來非常潮的字眼——&lt;a href=&#34;http://leanmanufacturingtools.org/39/lean-thinking-lean-principles/&#34;&gt;Lean principles；精實／精益原則&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;這些原則，並不是 IT 界所獨有的，而是取經自其他領域，尤其是製造業：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;These principles are based on more than a century of sound management practices. However, instead of being applied to the transformation of physical goods, we are using these principles to &lt;em&gt;accelerate flow of work through Product Management, Development, Test, IT Operations, and InfoSec.&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;所以，DevOps 算是縱貫專案管理、開發、測試、維運、資安等環節的一條鞭精實手法。&lt;/p&gt;
+&lt;p&gt;在整個 IT 價值鏈中，DevOps 的確受惠於 agile 陣營對於傳統專案管理的顛覆觀點：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;DevOps has benefited tremendously from the work the Agile Community has done, showing how small teams operating with &lt;em&gt;high trust&lt;/em&gt; combined with small batch sizes and &lt;em&gt;smaller, more frequent software releases&lt;/em&gt; can dramatically increase productivity of Development organizations. In fact, many of the key moments in the DevOps history happened at Agile conferences [&amp;hellip;]&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;因此，在技術面來說，DevOps 吸納了以下的 agile 元素：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;DevOps extends and builds upon the practices of &amp;ldquo;&lt;em&gt;infrastructure as code&lt;/em&gt;&amp;rdquo; pioneered by Dr. Mark Burgess, as well as &lt;em&gt;continuous integration&lt;/em&gt; and &lt;em&gt;continuous deployment&lt;/em&gt; (pioneered by Jez Humble and David Farley), which is a prerequisite to &lt;em&gt;achieving fast deployment flow&lt;/em&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;不過，從這裡可以清楚地看到，DevOps「向 agile 陣營取經」的元素，多半集中在對「加速部署速度」有直接助益的工具元素上。所以，只是一種選擇性的取經。&lt;/p&gt;
+&lt;p&gt;另一方面，DevOps 本身也沒有停留在「只向 agile 陣營取經」的階段，仍繼續吸納其他領域的優點。尤其 DevOps 也著重最後一哩路的 &amp;ldquo;Ops&amp;rdquo; 這一端，因此，也向其他國度取經：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;DevOps also benefits from an astounding convergence of philosophical management movements, such as &lt;em&gt;Lean Startup&lt;/em&gt;, &lt;em&gt;Innovation Culture&lt;/em&gt;, &lt;em&gt;Toyota Kata&lt;/em&gt;, &lt;em&gt;Rugged Computing&lt;/em&gt;, and the &lt;em&gt;Velocity community&lt;/em&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;有趣的是，近年來，許多人再度向日本學習。Agile 陣營的 Kanban 是一例，DevOps 也師法許多 Lean 精神及作法。DevOps 要角 John Willis 甚至還寫了一篇文章 &amp;ldquo;&lt;a href=&#34;http://itrevolution.com/japanese-words-for-devops-practitioners/&#34;&gt;Japanese Terms For DevOps Practitioners&lt;/a&gt;&amp;rdquo; 來介紹這些源自日本的時髦詞彙呢。&lt;/p&gt;
+&lt;p&gt;巨變的年代，或許正如作者所說：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;All of these mutually reinforce each other, creating the conditions of a &lt;em&gt;powerful coalition of forces&lt;/em&gt; that can accelerate DevOps adoption.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;好的東西，會互相吸引，互相融合。屆時，或許就沒有什麼考古的必要；我泥中有你，你泥中有我。就像柯仁傑在〈&lt;a href=&#34;http://kojenchieh.pixnet.net/blog/post/381131219-%E6%95%8F%E6%8D%B7%E5%92%8C%E7%B2%BE%E5%AF%A6%E7%9A%84%E9%97%9C%E4%BF%82-%281%29&#34;&gt;敏捷和精實的關係 (1)&lt;/a&gt;〉一文所說：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;早期敏捷愛好者受到精實的觀念的影響，因此在敏捷世界中也常常出現精實製造的說法。&lt;/p&gt;
+&lt;p&gt;所以敏捷跟精實兩者，在軟體開發世界中已經是混合在一起。如果你在實施敏捷，其實代表你也是在套用精實，兩者是無法很清楚地分開來。&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+      
     </item>
+    
   </channel>
 </rss>

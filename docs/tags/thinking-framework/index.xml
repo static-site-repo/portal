@@ -4,72 +4,809 @@
     <title>Thinking-Framework on Potioneer&#39;s Essays</title>
     <link>//william-yeh.net/tags/thinking-framework/</link>
     <description>Recent content in Thinking-Framework on Potioneer&#39;s Essays</description>
-    <generator>Hugo</generator>
+    <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <lastBuildDate>Tue, 13 Feb 2024 21:00:00 +0800</lastBuildDate>
-    <atom:link href="//william-yeh.net/tags/thinking-framework/index.xml" rel="self" type="application/rss+xml" />
+    
+        <atom:link href="//william-yeh.net/tags/thinking-framework/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>咬文嚼字的必要性（二）：階段性的預期成果設定</title>
       <link>//william-yeh.net/post/2024/02/outcome-sentence-patterns/</link>
       <pubDate>Tue, 13 Feb 2024 21:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2024/02/outcome-sentence-patterns/</guid>
-      <description>&lt;p&gt;不管是專案管理領域還是目標管理領域，「階段性的預期成果設定」都是很重要的基本動作。&lt;/p&gt;&#xA;&lt;p&gt;不過，多年下來，我常常看到怪怪的，但又說不上來哪裡不對勁的例子。因此，我想找找是否有建議的寫法，甚至句型，作為團隊的共同語言。&lt;/p&gt;&#xA;&lt;p&gt;此文針對 ① 專案管理領域的 milestone 與 ② 目標管理領域的 key result 兩方面來探討。&lt;/p&gt;&#xA;&#xA;&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;&#xA;&lt;div class=&#34;box&#34;&gt;&#xA;&lt;figure  itemprop=&#34;associatedMedia&#34;&#xA;  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; &#xA;  style=&#34;max-width:30em&#34; &gt;&#xA;    &lt;div class=&#34;img&#34;&gt;&#xA;      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2024/02/goal-setting.jpg&#34; /&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;a href=&#34;//william-yeh.net/img/2024/02/goal-setting.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;&#xA;  &lt;/figure&gt;&#xA;&lt;/div&gt;</description>
+      
+        <description>&lt;p&gt;不管是專案管理領域還是目標管理領域，「階段性的預期成果設定」都是很重要的基本動作。&lt;/p&gt;
+&lt;p&gt;不過，多年下來，我常常看到怪怪的，但又說不上來哪裡不對勁的例子。因此，我想找找是否有建議的寫法，甚至句型，作為團隊的共同語言。&lt;/p&gt;
+&lt;p&gt;此文針對 ① 專案管理領域的 milestone 與 ② 目標管理領域的 key result 兩方面來探討。&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2024/02/goal-setting.jpg&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2024/02/goal-setting.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;專案管理領域的-milestone&#34;&gt;專案管理領域的 Milestone&lt;/h2&gt;
+&lt;p&gt;Milestone 是很常被設錯的東西。部份原因是對於「milestone 到底是什麼、作用是什麼」有了錯誤的認知。&lt;/p&gt;
+&lt;h3 id=&#34;milestone-是什麼&#34;&gt;Milestone 是什麼？&lt;/h3&gt;
+&lt;p&gt;如果你用慣了專案管理軟體，在你的印象中，milestone 或許只是一個「duration 為 0」的 activity/task &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; 。如果從這個角度來看，milestone 應該會是帶有動詞屬性的行為——或許可稱之為「瞬間行為」。但是，根據 &lt;a href=&#34;https://www.amazon.com/dp/1628256648&#34;&gt;PMBOK 第七版&lt;/a&gt;的說法，milestone 其實並不是一個帶有動詞屬性的行為，反而比較像是個偏向名詞屬性的「可見事物」：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Milestone. A significant &lt;strong&gt;point&lt;/strong&gt; or &lt;strong&gt;event&lt;/strong&gt; in a project, program, or portfolio.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;PMI 網站的文章 &amp;ldquo;&lt;a href=&#34;https://www.pmi.org/learning/library/milestone-different-planning-approach-7635&#34;&gt;Milestone planning &amp;ndash; a different planning approach&lt;/a&gt;&amp;rdquo; 則指出：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;A milestone anticipates what the project is supposed to achieve at a pre-set date. It should describe a &lt;strong&gt;desired state&lt;/strong&gt; of affairs, a &lt;strong&gt;desired future situation&lt;/strong&gt;. A milestone should describe &lt;strong&gt;what we want to achieve&lt;/strong&gt;; when we get there, that&amp;rsquo;s the event.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;milestone-的作用是什麼&#34;&gt;Milestone 的作用是什麼？&lt;/h3&gt;
+&lt;p&gt;簡單的說，milestone 是分而治之的控制點。再引述 &amp;ldquo;Milestone planning &amp;ndash; a different planning approach&amp;rdquo;  一文的說法：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Milestones are also &lt;strong&gt;control stations&lt;/strong&gt; in the project, an opportunity for stakeholders to assure themselves that the project is moving in the right direction.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;好的-milestone-該有什麼特性&#34;&gt;好的 milestone 該有什麼特性？&lt;/h3&gt;
+&lt;p&gt;根據李君婷老師【&lt;a href=&#34;https://shop.darencademy.com/product/view/id/70&#34;&gt;510 專案監管的系統思考與規則設計&lt;/a&gt;】的課程講義，好的 milestone 應該要有三個特性：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;精簡，清楚。&lt;/li&gt;
+&lt;li&gt;足以代表專案關鍵。&lt;/li&gt;
+&lt;li&gt;可被具體檢核。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&amp;ldquo;Milestone planning &amp;ndash; a different planning approach&amp;rdquo; 一文也說：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The way a milestone is formulated should allow us to determine whether the &lt;strong&gt;desired state&lt;/strong&gt; has been &lt;strong&gt;achieved&lt;/strong&gt; or not.&lt;/p&gt;
+&lt;p&gt;It is relatively simple to say whether a milestone has been reached if it is an &lt;strong&gt;actual object&lt;/strong&gt;, something we can &lt;strong&gt;inspect&lt;/strong&gt; and &lt;strong&gt;verify&lt;/strong&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;milestone-可能的句型&#34;&gt;Milestone 可能的句型？&lt;/h3&gt;
+&lt;p&gt;雖然我比較少看到有人直接建議 milestone 的句型，但從上述的探討，不難歸納出一些方向：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Actual object.&lt;/li&gt;
+&lt;li&gt;Desired state.&lt;/li&gt;
+&lt;li&gt;Inspectable &amp;amp; verifiable.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Rita Mulcahy 在 &lt;a href=&#34;https://www.amazon.com/dp/1932735658&#34;&gt;&lt;em&gt;PMP Exam Prep&lt;/em&gt;&lt;/a&gt; 一書也舉了一些例子：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Remember that milestones have no duration; they are simply the &lt;strong&gt;completion of activities&lt;/strong&gt;. Milestones may include &amp;ldquo;requirements are &lt;strong&gt;complete&lt;/strong&gt;&amp;rdquo; or &amp;ldquo;design is &lt;strong&gt;finished&lt;/strong&gt;&amp;rdquo;&amp;hellip;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;因此，我個人喜歡借用 &lt;a href=&#34;https://www.eventstorming.com/&#34;&gt;event storming&lt;/a&gt; 圈子對於 &amp;ldquo;event&amp;rdquo; 的建議句型：「事件的內容，用 past tense (過去式) 描述」。&lt;/p&gt;
+&lt;p&gt;應用到 milestone 身上，可選用「過去式」或「現在完成式」句型：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;英文加 -ed&lt;/strong&gt;。譬如：xx% migrated, yy% done, zzz approved.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;中文加「已」&lt;/strong&gt;。譬如：xxx 已完成、yyy 已測試、zzz 已驗收。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;okr-的-key-result&#34;&gt;OKR 的 &amp;ldquo;Key Result&amp;rdquo;&lt;/h2&gt;
+&lt;h3 id=&#34;key-result-是什麼&#34;&gt;Key Result 是什麼？&lt;/h3&gt;
+&lt;p&gt;OKR 原典《&lt;a href=&#34;https://www.books.com.tw/products/0010813170&#34;&gt;OKR：做最重要的事 (Measure What Matters)&lt;/a&gt;》是如此介紹 O 與 KR 的：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;「目標」就是我們想達成的&lt;strong&gt;事&lt;/strong&gt;，不多也不少。&lt;/p&gt;
+&lt;p&gt;「關鍵結果」界定 &lt;strong&gt;目標的標準&lt;/strong&gt; ，並且監控我們 &lt;strong&gt;「如何」達成&lt;/strong&gt; 。有效的關鍵結果不僅明確，而且有時限，是進取但又可行的。最重要的是，它們是可測量也可驗證的。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;key-result-的作用是什麼&#34;&gt;Key Result 的作用是什麼？&lt;/h3&gt;
+&lt;p&gt;《OKR：做最重要的事》如此說：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;目標設計和運用得當，可以防範模糊不清的思想，以及執行時的含混摸魚。&lt;/p&gt;
+&lt;p&gt;關鍵結果的要求只有「已滿足」或「未滿足」兩種可能，中間沒有灰色地帶或存疑的餘地。到了指定的期限（通常是一季結束時），我們就宣佈關鍵結果是否已達成。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;好的-key-result-該有什麼特性&#34;&gt;好的 Key Result 該有什麼特性？&lt;/h3&gt;
+&lt;p&gt;《OKR：做最重要的事》如此說：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;目標必然是重要、具體和行動導向的，最好還能激勵人心。&lt;/p&gt;
+&lt;p&gt;關鍵結果必須可以測量，而且，最後也只要用看的，完全不必提出任何理由，證明自己是否做到了。達成？還是沒達成？答案很簡單，不需要下判斷就能回答。&lt;/p&gt;
+&lt;p&gt;必須含有完成工作的證據。這種證據必須可取得、可信和容易發現。&lt;/p&gt;
+&lt;p&gt;編寫關鍵結果時，務必做到一件事：每一項關鍵結果都百分百達成，目標也就百分百達成。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;key-result-可能的句型&#34;&gt;Key Result 可能的句型？&lt;/h3&gt;
+&lt;p&gt;原始的《OKR：做最重要的事》論述中，似乎並沒有強調 O 與 KR 的句型。我只在此書附錄看到這麼一句最接近的話：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;關鍵結果代表 &lt;strong&gt;「如何」(How)&lt;/strong&gt; ，應該要表達 &lt;strong&gt;可衡量的里程碑&lt;/strong&gt; 。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;這句話點出兩個核心元素：方法、里程碑。&lt;/p&gt;
+&lt;p&gt;後來管顧圈加入推廣 OKR 運動，才漸漸發展出一些較具規範性的寫法，但似乎尚未形成集體的共識。不過，從他們的 OKR 論述中，常常看到「里程碑型」這種 KR 類型 &lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;。 因此，我個人很喜歡沿用前面探討過的「Milestone 句型」做為 KR 的句型骨幹。&lt;/p&gt;
+&lt;p&gt;如果還要更細膩一點，不妨將「如何」(How) 也放進 KR 句型當中。譬如說，李君婷老師【&lt;a href=&#34;https://shop.darencademy.com/product/view/id/95&#34;&gt;512 目標管理與團隊績效：統整 OKR 與 KPI 的有效實務&lt;/a&gt;】的課程講義，及《&lt;a href=&#34;https://www.books.com.tw/products/0010833361&#34;&gt;OKRs 執行力：華人實踐版&lt;/a&gt;》一書，都不約而同介紹過以下這種三合一寫法：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在 xxx 日期之前，透過 yyy 方法，完成 zzz 成果。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;以此句型為基礎，你可以再添加量化元素進去：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在 xxx 日期之前，透過 yyy 方法，達到 zzz% 成果。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;你可以把量化元素的起點與終點也寫進去：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在 xxx 日期之前，透過 yyy 方法，將 zzz 指標從 aaa 推進到 bbb。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;你也可以添加「資源運用」元素進去，就變成很有 OGSM 的味道：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在 xxx 日期之前，運用 yyy 資源，完成 zzz 成果。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;運用之妙，存乎一心。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;以上就是我個人慣用的 milestone 與 key result 句型。請掌握此基本句型，展現出內行氣。&lt;/p&gt;
+
+
+&lt;div class=&#34;notice notice--note&#34;&gt;
+  &lt;div class=&#34;notice__title&#34;&gt;
+    
+      【咬文嚼字的必要性】系列
+    
+  &lt;/div&gt;
+  &lt;div class=&#34;notice__content&#34;&gt;&lt;p&gt;❶ &lt;a href=&#34;//william-yeh.net/post/2018/01/precise-expression/&#34;&gt;咬文嚼字的必要性（一）：用句型輔助思考&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❷ 咬文嚼字的必要性（二）：階段性的預期成果設定&lt;/p&gt;
+&lt;p&gt;❸ &lt;a href=&#34;//william-yeh.net/post/2022/04/passphrase-at-work/&#34;&gt;請珍惜你們學到的通關密語&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;許多專案管理軟體都是透過「把 activity/task 的 duration 設為 0」的方式來標記 milestone。像 &lt;a href=&#34;https://support.microsoft.com/en-gb/office/add-a-milestone-583be27b-1659-4a7a-a047-e9b9cb6a4834&#34;&gt;Microsoft Project&lt;/a&gt;、&lt;a href=&#34;https://community.smartsheet.com/discussion/101507/how-can-i-get-smartsheet-to-show-zero-days-for-milestone-with-zero-days-duration&#34;&gt;Smartsheet&lt;/a&gt;、&lt;a href=&#34;https://www.projectplan365.com/training/lesson-2-create-milestones/&#34;&gt;Project Plan 365&lt;/a&gt;。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;像《&lt;a href=&#34;https://www.books.com.tw/products/0010817208&#34;&gt;執行 OKR，帶出強團隊&lt;/a&gt;》就將 OKR 分成基線型、正向度量型、負向度量型、範圍型、里程碑型五大類，而《&lt;a href=&#34;https://www.books.com.tw/products/0010833361&#34;&gt;OKRs 執行力：華人實踐版&lt;/a&gt;》也將 OKR 分成比率型、數量型、里程碑型、主觀型四大類。由此可見，「里程碑型」都是很被看重的一種 KR 類型。&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description>
+      
     </item>
+    
     <item>
       <title>推動改變的評估流程</title>
       <link>//william-yeh.net/post/2022/05/evaluation-process-for-changes/</link>
       <pubDate>Mon, 16 May 2022 20:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2022/05/evaluation-process-for-changes/</guid>
-      <description>&lt;p&gt;在發出內部 memo 〈&lt;a href=&#34;//william-yeh.net/post/2022/04/passphrase-at-work/&#34;&gt;請珍惜你們學到的通關密語&lt;/a&gt;〉之後，收到這樣的來信：&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;上周假日也花了點時間，將您從去年 11 月起寫給大家的每一封信都讀了一遍，雖然還不是全部內容都完全吸收和理解，但仍然覺得受益匪淺，真的非常感謝您願意無私的分享您過去許多很棒的經驗和想法。&lt;/p&gt;&#xA;&lt;p&gt;我很喜歡您用「通關密語」來形容這些語彙，突然覺得他們不再是死板板的方法論，而像是賦予了它們魔力，雖然不至於天真到認為知道這些詞彙和正確的應用，就能馬上變成具有超能力的 superman，但至少能讓我在規劃專案時更自信和從容。&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;p&gt;溢美之詞就摘錄到此。以下是正題：&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;同時，我雖然也很認同這些詞彙確實是「通關密語」，畢竟清楚和正確的定義可以有效減少許多溝通時的落差和模糊地帶，更快的凝聚共識，但前提是和具有同為專業的人溝通，我想這也是您迫切希望大家能盡快建立起這些基本常識的原因吧~&lt;/p&gt;&#xA;&lt;p&gt;但經驗豐富如您，一定也有許多，甚至是多數時候，都是在和沒有這些基本常識的人溝通吧！過去我就有許多這樣的經驗，不管面對公司主管或是面對客戶時，要求我產出一個四不像等情況。&lt;/p&gt;&#xA;&lt;p&gt;通常這種時候我的作法會是，不再堅持使用這些專業詞彙，而是解釋我產出的每個圖表的目的、用途和邏輯，但不幸的是還是有很多時候是無法被理解的，通常結局就是我需要照著對方的邏輯和方法，做出一個我自己無法認同的東西，但因為這才是利害關係人們可以接受的作法，所以為了可以溝通和讓專案順利進行，我還是會做。&lt;/p&gt;&#xA;&lt;p&gt;所以很想問問 William 您是否有類似的經驗呢？那您是怎麼面對和解決的呢?&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;p&gt;這是大哉問。&lt;/p&gt;&#xA;&lt;p&gt;大體上，我會根據幾個角度迅速評估一下這整件事。&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;在發出內部 memo 〈&lt;a href=&#34;//william-yeh.net/post/2022/04/passphrase-at-work/&#34;&gt;請珍惜你們學到的通關密語&lt;/a&gt;〉之後，收到這樣的來信：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;上周假日也花了點時間，將您從去年 11 月起寫給大家的每一封信都讀了一遍，雖然還不是全部內容都完全吸收和理解，但仍然覺得受益匪淺，真的非常感謝您願意無私的分享您過去許多很棒的經驗和想法。&lt;/p&gt;
+&lt;p&gt;我很喜歡您用「通關密語」來形容這些語彙，突然覺得他們不再是死板板的方法論，而像是賦予了它們魔力，雖然不至於天真到認為知道這些詞彙和正確的應用，就能馬上變成具有超能力的 superman，但至少能讓我在規劃專案時更自信和從容。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;溢美之詞就摘錄到此。以下是正題：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;同時，我雖然也很認同這些詞彙確實是「通關密語」，畢竟清楚和正確的定義可以有效減少許多溝通時的落差和模糊地帶，更快的凝聚共識，但前提是和具有同為專業的人溝通，我想這也是您迫切希望大家能盡快建立起這些基本常識的原因吧~&lt;/p&gt;
+&lt;p&gt;但經驗豐富如您，一定也有許多，甚至是多數時候，都是在和沒有這些基本常識的人溝通吧！過去我就有許多這樣的經驗，不管面對公司主管或是面對客戶時，要求我產出一個四不像等情況。&lt;/p&gt;
+&lt;p&gt;通常這種時候我的作法會是，不再堅持使用這些專業詞彙，而是解釋我產出的每個圖表的目的、用途和邏輯，但不幸的是還是有很多時候是無法被理解的，通常結局就是我需要照著對方的邏輯和方法，做出一個我自己無法認同的東西，但因為這才是利害關係人們可以接受的作法，所以為了可以溝通和讓專案順利進行，我還是會做。&lt;/p&gt;
+&lt;p&gt;所以很想問問 William 您是否有類似的經驗呢？那您是怎麼面對和解決的呢?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;這是大哉問。&lt;/p&gt;
+&lt;p&gt;大體上，我會根據幾個角度迅速評估一下這整件事。&lt;/p&gt;
+&lt;h2 id=&#34;-值不值得推動改變&#34;&gt;❶ 值不值得推動改變？&lt;/h2&gt;
+&lt;p&gt;我常用 Impact Effort Matrix &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; 這種簡易的兩軸思考工具，迅速定位這項改變是否值得。橫坐標是「可付諸實現的速度」，縱座標是「效益、影響」。&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2022/05/impact-effort-matrix.jpg&#34; alt=&#34;Impact Effort Matrix&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2022/05/impact-effort-matrix.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Impact Effort Matrix&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;從圖上來看，若想推動的改變恰巧落在「1 號」位置，那就太幸運了，投資報酬率最高。萬一沒那麼幸運，落在「7 號」位置呢？&lt;/p&gt;
+&lt;p&gt;引述《&lt;a href=&#34;https://www.amazon.cn/dp/B087M3LK7P&#34;&gt;麥肯錫＆波士頓解決問題方法和創造價值技巧&lt;/a&gt;》的精闢見解：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;確實，以「1 號」著手是正確的。&lt;/p&gt;
+&lt;p&gt;那麼，「7 號」就被永久棄之不顧了嗎？並不是那樣的，「7 號」的建構化還做得不夠，還是一個大塊。所以，要花費時間把它再進一步細化，重新做成「1 號」那樣的小塊。這樣問題就容易解答了。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;把這個擱置的「7 號」建構化為「1 號」，就是諮詢顧問展現本領的地方了。&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;如果 Benefit/Impact 夠大，才值得進一步往下評估予以細化的 Effort。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;     &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;就以推動敏捷為例。「在導入敏捷的初期階段，首要焦點應放在 &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Team&lt;/span&gt;
+、&lt;span style=&#34;font-variant: small-caps;&#34;&gt;Product Owner&lt;/span&gt;
+ 及 &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Organization&lt;/span&gt;
+ 三者。」&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt; 可是，萬一組織現況無法在這三方面大刀闊斧改變呢？或者表面上似乎做了調整，但其實骨子裡的結構並沒有調整多少，又該如何是好？&lt;/p&gt;
+&lt;p&gt;此刻，就需要暫時退後一步，設法把這個「7 號」的大塊任務細化到「1 號」這種層次——這也就是〈&lt;a href=&#34;//william-yeh.net/post/2022/03/prof-common-vocabulary/&#34;&gt;敏捷啟航的專業基礎：共同語彙&lt;/a&gt;〉一文的立論。&lt;/p&gt;
+&lt;h2 id=&#34;-用-fogg-behavior-model--評估-effort&#34;&gt;❷ 用 Fogg Behavior Model  評估 Effort&lt;/h2&gt;
+&lt;p&gt;我常用 &lt;a href=&#34;https://behaviormodel.org/&#34;&gt;Fogg Behavior Model&lt;/a&gt;: B = MAP 評估可能的 Effort。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;▶︎&lt;/strong&gt; &lt;strong&gt;Motivation&lt;/strong&gt;：當事人是否有改變的&lt;strong&gt;動機&lt;/strong&gt;？&lt;/p&gt;
+&lt;p&gt;簡單一點的情況，我會用「洞」與「痛」、笨問題法則（為什麼非得如此如此⋯⋯）來判斷。 &lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;複雜一點的情況，我會用 TOC 抵制變革層次來判斷。 &lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;▶︎&lt;/strong&gt; &lt;strong&gt;Ability&lt;/strong&gt;：當事人是否有改變的&lt;strong&gt;能力&lt;/strong&gt;？&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;▶︎&lt;/strong&gt; &lt;strong&gt;Prompt&lt;/strong&gt;：當事人是否遇到推動改變的&lt;strong&gt;臨門一腳&lt;/strong&gt;？&lt;/p&gt;
+&lt;p&gt;我常用「三不四人」來判斷：不舒服、不甘於、不能停、人背叛、人出現、人離開、人不理。 &lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;     &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;B = MAP 具體的運用方法很多。對於當事人越了解，越能發掘洞見，找出有創意的方法。譬如說：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Motivation 可以訴諸權力關係，可以訴諸外部壓力，可以訴諸同儕壓力。&lt;/li&gt;
+&lt;li&gt;Ability 可以訴諸教育訓練，可以訴諸教練手法，可以訴諸新陳代謝。&lt;/li&gt;
+&lt;li&gt;Prompt 通常要訴諸善用局勢或創造局勢，或者⋯⋯機緣巧合的運氣。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;就以推動敏捷為例。想推動敏捷，要改變的事情太多了，我會視情況，分階段推動具體的敏捷實踐措施。&lt;/p&gt;
+&lt;p&gt;譬如說，剛嘗試 Scrum 的團隊，常會對我沒有主動帶領 Planning Poker 活動感到不解。我的觀點是，Planning Poker 要發揮效果，不至於淪為玩一玩而已，得先經過一番練習；練習要到位，卻可能會佔用過多時間。&lt;/p&gt;
+&lt;p&gt;我的做法是，在初期，我寧可先對「工作透明化」這件事著墨。畢竟，「工作透明化」是 Benefit/Impact 非常大的，Motivation 是很強烈的，而 Planning Poker 則未必。所以，在裁適敏捷方法時，我會優先處理工作透明化，並多方製造 Prompt 的局勢；至於 Planning Poker 則看情況。&lt;/p&gt;
+&lt;h2 id=&#34;-在這件事情上我有多少的主導權&#34;&gt;❸ 在這件事情上，我有多少的主導權？&lt;/h2&gt;
+&lt;p&gt;主導權越高，就越不需要費神在 Effort 上。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/French_and_Raven%27s_bases_of_power&#34;&gt;French and Raven (1965)&lt;/a&gt; 將權力來源分為六種：強制權 (coercive power)、酬賞權 (reward power)、參照權 (referent power)、法職權 (legitimate power)、專家權 (expert power)、資訊權 (informational power)。平時善於經營權力基礎的深度及廣度，才容易推動改變。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;     &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;     &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;以上就是我快速評估推動改變的可能性及施力點的大致流程。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;     &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+
+
+&lt;div class=&#34;notice notice--note&#34;&gt;
+  &lt;div class=&#34;notice__title&#34;&gt;
+    
+      系列文章
+    
+  &lt;/div&gt;
+  &lt;div class=&#34;notice__content&#34;&gt;&lt;p&gt;❶ &lt;a href=&#34;//william-yeh.net/post/2016/06/change-framework/&#34;&gt;改變的框架&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❷ &lt;a href=&#34;//william-yeh.net/post/2018/12/process-and-metrics/&#34;&gt;改變／改革：流程與衡量指標&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❸ 推動改變的評估流程&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;Impact Effort Matrix 又名 Benefit Effort Matrix、PICK Matrix，詳見這段&lt;a href=&#34;https://www.youtube.com/watch?v=ODr-xd8LsDI&#34;&gt;影片&lt;/a&gt;。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;出自〈&lt;a href=&#34;//william-yeh.net/post/2022/03/prof-common-vocabulary/&#34;&gt;敏捷啟航的專業基礎：共同語彙&lt;/a&gt;〉一文。&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;
+&lt;p&gt;「洞」與「痛」、笨問題法則，出自裘凱宇《&lt;a href=&#34;https://www.koob.com.tw/online/A579F23266cCC488Caa7&#34;&gt;過好人生學&lt;/a&gt;》。&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:4&#34;&gt;
+&lt;p&gt;TOC 抵制變革層次，詳見〈&lt;a href=&#34;//william-yeh.net/post/2016/06/change-framework/#限制理論的改變框架&#34;&gt;改變的框架&lt;/a&gt;〉一文。&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:5&#34;&gt;
+&lt;p&gt;「三不四人」出自憲哥《&lt;a href=&#34;https://www.books.com.tw/products/0010752512&#34;&gt;人生準備 40% 就衝了！：超乎常人的目標執行力&lt;/a&gt;》。&amp;#160;&lt;a href=&#34;#fnref:5&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description>
+      
     </item>
+    
     <item>
       <title>「改變」系列</title>
       <link>//william-yeh.net/series/change-series/</link>
       <pubDate>Mon, 16 May 2022 00:00:00 +0000</pubDate>
+      
       <guid>//william-yeh.net/series/change-series/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2016/06/change-framework/&#34;&gt;改變的框架&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2018/12/process-and-metrics/&#34;&gt;改變／改革：流程與衡量指標&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2022/05/evaluation-process-for-changes/&#34;&gt;推動改變的評估流程&lt;/a&gt;&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2016/06/change-framework/&#34;&gt;改變的框架&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2018/12/process-and-metrics/&#34;&gt;改變／改革：流程與衡量指標&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2022/05/evaluation-process-for-changes/&#34;&gt;推動改變的評估流程&lt;/a&gt;&lt;/p&gt;
+</description>
+      
     </item>
+    
     <item>
       <title>向頂尖管顧公司學習的書</title>
       <link>//william-yeh.net/post/2022/05/learn-from-consulting-firms/</link>
       <pubDate>Sun, 08 May 2022 15:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2022/05/learn-from-consulting-firms/</guid>
-      <description>&lt;p&gt;好友進了台灣前百大公司，最近有感而發：&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;請問與麥肯錫有關的書籍，你會推薦哪些？&lt;/p&gt;&#xA;&lt;p&gt;在這間公司辛苦摸索幾個月，我才意識到，大家在使用的術語都來自麥肯錫。譬如：MECE、Story Line、論述 (Issue)⋯⋯等等。&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;p&gt;突然被洽詢這問題，其實有點心虛，畢竟我沒待過麥肯錫這類頂尖的管理顧問公司，不太有資格回答。不過，既然自己去年曾經系統閱讀過相關書籍（見〈&lt;a href=&#34;//william-yeh.net/post/2021/12/2021-retrospective/#問題解決的系統閱讀之旅&#34;&gt;2021 個人回顧&lt;/a&gt;〉一文），半年以來也一直運用書本裡的方法來推動改革，對於這些方法算是小有心得，因此，野人獻曝一下也無妨。&lt;/p&gt;&#xA;&#xA;&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;&#xA;&lt;div class=&#34;box&#34;&gt;&#xA;&lt;figure  itemprop=&#34;associatedMedia&#34;&#xA;  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; &#xA;  style=&#34;max-width:30em&#34; &gt;&#xA;    &lt;div class=&#34;img&#34;&gt;&#xA;      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2022/05/problem-solving-books.jpg&#34; alt=&#34;「問題分析與解決」書單&#34;/&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;a href=&#34;//william-yeh.net/img/2022/05/problem-solving-books.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;&#xA;      &lt;figcaption&gt;&#xA;          &lt;p&gt;「問題分析與解決」書單&lt;/p&gt;&#xA;      &lt;/figcaption&gt;&#xA;  &lt;/figure&gt;&#xA;&lt;/div&gt;</description>
+      
+        <description>&lt;p&gt;好友進了台灣前百大公司，最近有感而發：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;請問與麥肯錫有關的書籍，你會推薦哪些？&lt;/p&gt;
+&lt;p&gt;在這間公司辛苦摸索幾個月，我才意識到，大家在使用的術語都來自麥肯錫。譬如：MECE、Story Line、論述 (Issue)⋯⋯等等。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;突然被洽詢這問題，其實有點心虛，畢竟我沒待過麥肯錫這類頂尖的管理顧問公司，不太有資格回答。不過，既然自己去年曾經系統閱讀過相關書籍（見〈&lt;a href=&#34;//william-yeh.net/post/2021/12/2021-retrospective/#問題解決的系統閱讀之旅&#34;&gt;2021 個人回顧&lt;/a&gt;〉一文），半年以來也一直運用書本裡的方法來推動改革，對於這些方法算是小有心得，因此，野人獻曝一下也無妨。&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2022/05/problem-solving-books.jpg&#34; alt=&#34;「問題分析與解決」書單&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2022/05/problem-solving-books.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;「問題分析與解決」書單&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;朋友問的是「與麥肯錫有關的書籍」，如果範圍稍微擴大一點，連「與 BCG 有關的書籍」也納入，那麼，值得一讀的多產作者就有勝間和代、高杉尚孝、大嶋祥譽、內田和成、安宅和人⋯⋯等人。&lt;/p&gt;
+&lt;p&gt;為了聚焦，我只挑選對「非以顧問為業」的初階至中階職場人士都能受益的書籍。&lt;/p&gt;
+&lt;p&gt;註：以下書籍，有些可能要去圖書館找。&lt;/p&gt;
+&lt;h2 id=&#34;入門篇職場基本功&#34;&gt;入門篇：職場基本功&lt;/h2&gt;
+&lt;p&gt;文章開頭提到的 MECE、Story Line、論述 (Issue)⋯⋯等等，這幾本書都有提到，我甚至認為這幾本書所觸及的內容應該成為職場的通識教育。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;大嶋祥譽：《&lt;a href=&#34;https://www.taaze.tw/products/11100741262.html&#34;&gt;麥肯錫精英最重視的 39 個工作習慣&lt;/a&gt;》&lt;/li&gt;
+&lt;li&gt;大嶋祥譽：《&lt;a href=&#34;https://www.taaze.tw/products/11100687763.html&#34;&gt;麥肯錫新人培訓 7 堂課&lt;/a&gt;》&lt;/li&gt;
+&lt;li&gt;高杉尚孝：《&lt;a href=&#34;https://www.books.com.tw/products/0010799231&#34;&gt;麥肯錫寫作技術與邏輯思考&lt;/a&gt;》&lt;/li&gt;
+&lt;li&gt;安宅和人：《&lt;a href=&#34;https://www.books.com.tw/products/0010819191&#34;&gt;議題思考&lt;/a&gt;》&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;進階篇思考框架&#34;&gt;進階篇：思考框架&lt;/h2&gt;
+&lt;p&gt;市面上談思考框架的書很多，百科類的也不少，與其貪多嚼不爛，不如先確實吸收麥肯錫專家們萃取出來的精華。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;大嶋祥譽：《&lt;a href=&#34;https://www.books.com.tw/products/0010679873&#34;&gt;麥肯錫新人邏輯思考 5 堂課&lt;/a&gt;》&lt;/li&gt;
+&lt;li&gt;大嶋祥譽：《&lt;a href=&#34;https://www.books.com.tw/products/0010902799&#34;&gt;麥肯錫思考模型活用法&lt;/a&gt;》&lt;/li&gt;
+&lt;li&gt;勝間和代：《&lt;a href=&#34;https://www.taaze.tw/products/11100153609.html&#34;&gt;新・知識生產術&lt;/a&gt;》&lt;/li&gt;
+&lt;li&gt;高杉尚孝：《&lt;a href=&#34;https://www.books.com.tw/products/0010811194&#34;&gt;麥肯錫問題分析與解決技巧&lt;/a&gt;》&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;進階篇金字塔原理&#34;&gt;進階篇：金字塔原理&lt;/h2&gt;
+&lt;p&gt;以上書籍消化完畢後，若行有餘力意猶未盡，不妨啃一啃這幾本深度探討「金字塔原理」的書。不過，在此得先提醒你一個可能的副作用：日後當你遇到不符合「金字塔原理」的商業文書或簡報，極可能感到很不耐煩——「金字塔原理」一上身，可能就回不去了。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Barbara Minto：《&lt;a href=&#34;https://www.books.com.tw/products/0010645634&#34;&gt;金字塔原理&lt;/a&gt;》(原理篇 + Workbook)&lt;/li&gt;
+&lt;li&gt;照屋華子、岡田惠子：《&lt;a href=&#34;https://www.books.com.tw/products/0010928450&#34;&gt;邏輯思考的技術&lt;/a&gt;》&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;進階篇顧問法寶&#34;&gt;進階篇：顧問法寶&lt;/h2&gt;
+&lt;p&gt;即使不是身處管理顧問業，但他們的宏觀視角是很值得學習的。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;名和高司：《&lt;a href=&#34;https://www.amazon.cn/dp/B087M3LK7P&#34;&gt;麥肯錫＆波士頓解決問題方法和創造價值技巧&lt;/a&gt;》&lt;/li&gt;
+&lt;li&gt;徐瑞廷、黃菁媺：《&lt;a href=&#34;https://www.books.com.tw/products/0010901147&#34;&gt;BCG 問題解決力：一生受用的策略顧問思考法&lt;/a&gt;》&lt;/li&gt;
+&lt;li&gt;大嶋祥譽：《&lt;a href=&#34;https://www.books.com.tw/products/0010809693&#34;&gt;麥肯錫精準提問術&lt;/a&gt;》&lt;/li&gt;
+&lt;/ul&gt;</description>
+      
     </item>
+    
     <item>
       <title>請珍惜你們學到的通關密語</title>
       <link>//william-yeh.net/post/2022/04/passphrase-at-work/</link>
       <pubDate>Fri, 29 Apr 2022 17:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2022/04/passphrase-at-work/</guid>
-      <description>&lt;p&gt;（改寫自公司內部 memo）&lt;/p&gt;&#xA;&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;&#xA;&lt;p&gt;Dear all 夥伴，&lt;/p&gt;&#xA;&lt;p&gt;過去三個月，我根據自己的職場經驗，以及我對大家的專業要求，安排許多課程及講座。從一系列 1:1 訪談中得知，不只是主管們動了起來，連小夥伴也開始試著實踐。我很欣慰。&lt;/p&gt;&#xA;&lt;p&gt;譬如說，送你們這群中階主管及資深工作者去接受專案管理培訓之後，我終於可以在大大小小會議上公然用專案管理語彙進行詢問與討論了，不必拐彎抹角替這些對我來說已經是「&lt;a href=&#34;https://zh.wikipedia.org/wiki/%E5%BF%AB%E6%80%9D%E6%85%A2%E6%83%B3&#34;&gt;系統一&lt;/a&gt;」的管理切入點逐一解釋或比喻。&lt;/p&gt;&#xA;&lt;p&gt;The bar has been raised，這才像專業場域。&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;（改寫自公司內部 memo）&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;Dear all 夥伴，&lt;/p&gt;
+&lt;p&gt;過去三個月，我根據自己的職場經驗，以及我對大家的專業要求，安排許多課程及講座。從一系列 1:1 訪談中得知，不只是主管們動了起來，連小夥伴也開始試著實踐。我很欣慰。&lt;/p&gt;
+&lt;p&gt;譬如說，送你們這群中階主管及資深工作者去接受專案管理培訓之後，我終於可以在大大小小會議上公然用專案管理語彙進行詢問與討論了，不必拐彎抹角替這些對我來說已經是「&lt;a href=&#34;https://zh.wikipedia.org/wiki/%E5%BF%AB%E6%80%9D%E6%85%A2%E6%83%B3&#34;&gt;系統一&lt;/a&gt;」的管理切入點逐一解釋或比喻。&lt;/p&gt;
+&lt;p&gt;The bar has been raised，這才像專業場域。&lt;/p&gt;
+&lt;p&gt;有些人對我說，上了這些課程，他們才知道原來這些共同語彙是專業工作所必備的。只是也不免好奇：對於這些語彙，真的有必要那麼咬文嚼字嗎？&lt;/p&gt;
+&lt;p&gt;譬如說，專案管理課堂上，老師一再強調表述形式：WBS 要以「&lt;strong&gt;名詞&lt;/strong&gt;、&lt;strong&gt;交付物&lt;/strong&gt;」表述，里程碑要以「&lt;strong&gt;時刻&lt;/strong&gt;、&lt;strong&gt;完成&lt;/strong&gt;」表述，任務要以「&lt;strong&gt;動詞&lt;/strong&gt;」表述。SBE 課堂上，老師也強調以「&lt;strong&gt;Given-When-Then 句型&lt;/strong&gt;」表述的需求。同仁們發現，不只是課堂演練時老師會要求這些細節，課程結束後，在工作上我也會繼續要求，故有此一問。&lt;/p&gt;
+&lt;p&gt;我的觀點是，請把它們當成是專業領域的「通關密語」看待。理由有三。&lt;/p&gt;
+&lt;h2 id=&#34;請試著培養英語文法意識&#34;&gt;請試著培養英語文法意識&lt;/h2&gt;
+&lt;p&gt;企業講師 Lisa Lai 曾說：目前通行的管理理論及方法，多半來自美國。&lt;/p&gt;
+&lt;p&gt;確實有道理。信手拈來幾個例子：科學管理之父泰勒 (&lt;a href=&#34;https://en.wikipedia.org/wiki/Frederick_Winslow_Taylor&#34;&gt;Taylor&lt;/a&gt;)，美國人；現代管理學之父&lt;a href=&#34;https://en.wikipedia.org/wiki/Peter_Drucker&#34;&gt;彼得．杜拉克&lt;/a&gt;，在美國成名；六標準差方法，源自美國；平衡計分卡，源自美國；OKR 之父 &lt;a href=&#34;https://en.wikipedia.org/wiki/John_Doerr&#34;&gt;John Doerr&lt;/a&gt;，美國人；OKR 思想源自 &lt;a href=&#34;https://en.wikipedia.org/wiki/Andrew_Grove&#34;&gt;Andrew Grove&lt;/a&gt;，成年即定居美國；專案管理學會 &lt;a href=&#34;https://www.pmi.org/&#34;&gt;PMI&lt;/a&gt;，總部在美國；Scrum 之父 Ken Schwaber 及 Jeff Sutherland，美國人。&lt;/p&gt;
+&lt;p&gt;主流的管理理論及方法，幾乎很難沒有美國的蹤跡。語言是思想的重要載具，英語又可算是專業領域的世界語，因此，他們所發展出來的管理工具或思考工具，帶有濃厚的英語文法色彩也就不足為奇。 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;與中文相比，英語是個文法意識較嚴謹的語言，詞類時態語態形式分明。因此，在運用英語世界發展出來的工具時，請試著將頭腦切換至同一頻道，運用起來比較順暢，也更顯得內行——你是個與國際思維接軌的專業工作者。&lt;/p&gt;
+&lt;h2 id=&#34;請展現內行氣&#34;&gt;請展現內行氣&lt;/h2&gt;
+&lt;p&gt;勝間和代在《&lt;a href=&#34;https://www.books.com.tw/products/0010434249&#34;&gt;新．知識生產術&lt;/a&gt;》曾說過自己剛到麥肯錫工作時發生的慘痛經歷：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;對麥肯錫人來說，沒有遵循金字塔結構和 MECE 的文章，就等同於「外行人在閒聊」。於是，我的提案在格式階段就已經不被接受，更不用說是內容了。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2022/04/no-logic.jpg&#34; alt=&#34;「外行人在閒聊」&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2022/04/no-logic.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;「外行人在閒聊」&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;同理，未以「&lt;strong&gt;名詞&lt;/strong&gt;、&lt;strong&gt;交付物&lt;/strong&gt;」表述的 WBS、未以「&lt;strong&gt;時刻&lt;/strong&gt;、&lt;strong&gt;完成&lt;/strong&gt;」表述的里程碑、未以「&lt;strong&gt;動詞&lt;/strong&gt;」表述的任務，看在受過專業訓練的人眼中，就等同於「外行人在閒聊」。&lt;/p&gt;
+&lt;p&gt;請大家展現「內行氣」。&lt;/p&gt;
+&lt;h2 id=&#34;守破離&#34;&gt;守破離&lt;/h2&gt;
+&lt;p&gt;學習新的事物，面對新的規範，不習慣是正常的，尤其又涉及用字遣詞。&lt;/p&gt;
+&lt;p&gt;日本劍道素有「守、破、離」三個學習階段，金庸小說《神鵰俠侶》也提到劍魔獨孤求敗的武學造詣可分為幾個階段：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;「凌厲剛猛，無堅不摧，弱冠前以之與河朔羣雄爭鋒。」&lt;/li&gt;
+&lt;li&gt;「重劍無鋒，大巧不工。四十歲前恃之橫行天下。」&lt;/li&gt;
+&lt;li&gt;「四十歲後，不滯於物，草木竹石均可為劍。自此精修，漸進於無劍勝有劍之境。」&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;如果你還處於「守」這個階段，請堅持下去，把這個階段的要求操練純熟，變成自己的「系統一」。時機成熟了，再談「破」或是「離」。切忌好高騖遠自作聰明揠苗助長。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;對我來說，這些共同語彙，可說是專業領域的「通關密語」，使用得當，能夠展現「內行氣」。&lt;/p&gt;
+&lt;p&gt;請珍惜你們學到的通關密語，並反覆在工作上下意識練習與實踐。&lt;/p&gt;
+&lt;p&gt;如果你們還想知道更多專業的通關密語，我三月份導讀會的選書：功夫老師的《&lt;a href=&#34;https://www.books.com.tw/products/0010681486&#34;&gt;不懂這些，別想加薪&lt;/a&gt;》是個不錯的起點。&lt;/p&gt;
+
+
+&lt;div class=&#34;notice notice--note&#34;&gt;
+  &lt;div class=&#34;notice__title&#34;&gt;
+    
+      【咬文嚼字的必要性】系列
+    
+  &lt;/div&gt;
+  &lt;div class=&#34;notice__content&#34;&gt;&lt;p&gt;❶ &lt;a href=&#34;//william-yeh.net/post/2018/01/precise-expression/&#34;&gt;咬文嚼字的必要性（一）：用句型輔助思考&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❷ &lt;a href=&#34;//william-yeh.net/post/2024/02/outcome-sentence-patterns/&#34;&gt;咬文嚼字的必要性（二）：階段性的預期成果設定&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❸ 請珍惜你們學到的通關密語&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;歐美系的思考框架或準則，很喜歡用「句型」式的步驟來引導思考，且多半都很注重文法的合式。我四年前的舊文〈&lt;a href=&#34;//william-yeh.net/post/2018/01/precise-expression/&#34;&gt;咬文嚼字的必要性（一）：用句型輔助思考&lt;/a&gt;〉就列了許多例子。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description>
+      
     </item>
+    
     <item>
       <title>「系統思考工作坊」系列</title>
       <link>//william-yeh.net/series/systhinking-series/</link>
       <pubDate>Sun, 28 Mar 2021 00:00:00 +0000</pubDate>
+      
       <guid>//william-yeh.net/series/systhinking-series/</guid>
-      <description>&lt;p&gt;【系統思考的四堂課】&lt;a href=&#34;//william-yeh.net/post/2018/06/sys-thinking-workshop/&#34;&gt;緣起&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;第一場公開班課後回覆：&lt;a href=&#34;//william-yeh.net/post/2018/09/thinking-weight-training/&#34;&gt;思維的重量訓練&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2021/03/sys-thinking-unicorn-project/&#34;&gt;從系統思考角度讀《獨角獸專案》&lt;/a&gt;&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;【系統思考的四堂課】&lt;a href=&#34;//william-yeh.net/post/2018/06/sys-thinking-workshop/&#34;&gt;緣起&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;第一場公開班課後回覆：&lt;a href=&#34;//william-yeh.net/post/2018/09/thinking-weight-training/&#34;&gt;思維的重量訓練&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2021/03/sys-thinking-unicorn-project/&#34;&gt;從系統思考角度讀《獨角獸專案》&lt;/a&gt;&lt;/p&gt;
+</description>
+      
     </item>
+    
     <item>
       <title>思維的重量訓練</title>
       <link>//william-yeh.net/post/2018/09/thinking-weight-training/</link>
       <pubDate>Tue, 04 Sep 2018 11:30:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2018/09/thinking-weight-training/</guid>
-      <description>&lt;p&gt;上週五【&lt;a href=&#34;https://devopsdays.tw/2018/workshop.html&#34;&gt;系統思考的四堂課・DevOps 特別版&lt;/a&gt;】，表定 7 小時，延長賽到 7.5 小時，感謝首梯公開班同學的熱情參與，共度刺激的一天。&lt;/p&gt;&#xA;&lt;p&gt;課後仍持續收到提問，我挑選幾則統一回覆。&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;上週五【&lt;a href=&#34;https://devopsdays.tw/2018/workshop.html&#34;&gt;系統思考的四堂課・DevOps 特別版&lt;/a&gt;】，表定 7 小時，延長賽到 7.5 小時，感謝首梯公開班同學的熱情參與，共度刺激的一天。&lt;/p&gt;
+&lt;p&gt;課後仍持續收到提問，我挑選幾則統一回覆。&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/09/systhinking-workshop-2018-08-31.jpg&#34; alt=&#34;【系統思考的四堂課・DevOps 特別版】2018-08-31 課堂實況&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2018/09/systhinking-workshop-2018-08-31.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;【系統思考的四堂課・DevOps 特別版】2018-08-31 課堂實況&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;     &lt;!-- raw HTML omitted --&gt;     &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;     &lt;!-- raw HTML omitted --&gt;     &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;有學員問道：「為什麼課前作業會挑選這麼難的題目？」&lt;/p&gt;
+&lt;p&gt;我承認，這兩份課前作業，有難度；但這難度是必要的。要有這樣的挑戰強度，才能反襯系統思考的威力。否則，簡簡單單就能破解的作業，為什麼還要花金錢花時間前來上課呢？&lt;/p&gt;
+&lt;p&gt;好吧，說正經的。要有這樣的挑戰強度，才能先將各位的&lt;strong&gt;思維肌肉&lt;/strong&gt;稍微鍛鍊一下，負重訓練到能夠跟得上課程現場的思辨強度。&lt;/p&gt;
+&lt;p&gt;這門課，原本在我公司裡面是分成四個禮拜，每次 1.5 小時；個案研討素材，得以在四個禮拜的自發性小組討論活動去分散腦力負荷。現在，變成公開班，一整天 7 小時，腦力挑戰嚴峻。所以，把個案研討素材提前到正式上課前就讓大家咀嚼思考，課堂進行才會有效率。&lt;/p&gt;
+&lt;p&gt;（儘管如此，份量仍然沈重到哀鴻遍野。所以，第二梯公開班，我可能會拆成兩個半天舉行，一週 4 小時，隔週上。）&lt;/p&gt;
+&lt;p&gt;這種鍛鍊思維肌肉的方法，不是我發明的。大師在《&lt;a href=&#34;https://www.books.com.tw/products/0010697445&#34;&gt;司徒賢達談個案教學&lt;/a&gt;》p.191 如此解釋「長個案」與「短個案」的選擇標準：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;缺乏工作經驗的人，應該用心研讀長個案，然後在複雜的情況下練習整合與重組資料、發掘問題，並依據資料分析的結果採取行動。此一程序對「練功」效果極好。&lt;/p&gt;
+&lt;p&gt;短個案的使用者，必須從有限的文字中進行許多邏輯推演，因此對個案中管理議題或產業相關的「互補知識」必須相當豐富，比較適合有經驗的中高階經理人。使用短個案的前提是：學員本來功力就有一定水準，而且由於必要的推論多，可以利用討論把他們的寶貴經驗萃取出來，尤其對忙碌的在職學員更是如此。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;感謝大師背書。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;     &lt;!-- raw HTML omitted --&gt;     &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;     &lt;!-- raw HTML omitted --&gt;     &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;有學員問道：「為什麼你的系統思考方法，要分&lt;strong&gt;因果關係圖&lt;/strong&gt;與 &lt;strong&gt;CLD&lt;/strong&gt; 兩部曲？」&lt;/p&gt;
+&lt;p&gt;其實這是限制理論暨豐田方法的專家稲垣公夫在《&lt;a href=&#34;http://www.books.com.tw/products/0010759729&#34;&gt;深思快想&lt;/a&gt;》這本奇書當中首先提出的，突破了我過去的盲點（詳見&lt;a href=&#34;//william-yeh.net/post/2018/06/sys-thinking-workshop/&#34;&gt;這篇文章&lt;/a&gt;），便將這實施觀點納入我的系統思考 &lt;strong&gt;SLR·CPI&lt;/strong&gt; 方法論中。&lt;/p&gt;
+&lt;p&gt;如同我在講義上提到的，如果你骨骼精奇，天生就是練武奇才，或許可以一開始就直接從 CLD 切入。可惜，我發現，很多人基本功不太扎實，容易犯下過度簡化、倒果為因等&lt;strong&gt;邏輯謬誤&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;CLD 是很犀利的工具，但也容易誤用，淪為替既有結論背書的橡皮圖章。&lt;/p&gt;
+&lt;p&gt;「有不得機得勢處，其病必於腰腿求之。」要提高系統思考的品質，還是得講究&lt;strong&gt;理則&lt;/strong&gt;的起手式才是。否則，畫出的 CLD 再犀利，一堆就倒，有什麼用？&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;     &lt;!-- raw HTML omitted --&gt;     &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;     &lt;!-- raw HTML omitted --&gt;     &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;有學員問道：「該怎樣從因果關係圖當中抽取 CLD 的&lt;strong&gt;變數&lt;/strong&gt;／&lt;strong&gt;變項&lt;/strong&gt;？」&lt;/p&gt;
+&lt;p&gt;對初學者，我建議：大量觀摩精選範例。&lt;/p&gt;
+&lt;p&gt;鋪陳一次因果陳述，自己畫一次 CLD，對照範例，看圖說故事，檢討。休息一兩天，再覆盤。如此刻意練習一陣子，你會抓到 CLD 變數／變項的感覺。&lt;/p&gt;
+&lt;p&gt;當然啦，《&lt;a href=&#34;https://www.books.com.tw/products/0010584669&#34;&gt;第五項修練 Ⅱ・實踐篇&lt;/a&gt;》及《&lt;a href=&#34;http://www.books.com.tw/products/0010759729&#34;&gt;深思快想&lt;/a&gt;》也各有建議的手法，不妨一試。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;     &lt;!-- raw HTML omitted --&gt;     &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;     &lt;!-- raw HTML omitted --&gt;     &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;有學員問道：「這方法似乎只能用來分析問題現況與原因，但似乎不能用來尋找解法？」&lt;/p&gt;
+&lt;p&gt;某方面來說，的確如此。但進一步來說，精準找到客觀局勢與根本原因，是否有助於激發你尋找槓桿解的專注力及創意呢？&lt;/p&gt;
+&lt;p&gt;再度借用大師的論點吧。《&lt;a href=&#34;https://www.books.com.tw/products/0010697445&#34;&gt;司徒賢達談個案教學&lt;/a&gt;》p.23 將狹義知識分成三大類：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;結構性知識：各種變項間的「因果關係」，以及這些因果關係背後的理由、影響因果的因素等。&lt;/li&gt;
+&lt;li&gt;行動的程序性知能：採取行動、制定決策原則、研判下一步的知識與能力。&lt;/li&gt;
+&lt;li&gt;診斷的程序性知能：針對現象找出原因的知能。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;套用這種分類，系統思考主要隸屬於「結構性知識」與「診斷的程序性知能」這兩大類。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;     &lt;!-- raw HTML omitted --&gt;     &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;《&lt;a href=&#34;https://www.books.com.tw/products/0010697445&#34;&gt;司徒賢達談個案教學&lt;/a&gt;》p.293 進一步說：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;決策過程中的重要作法「找出前提、驗證前提」。&lt;/p&gt;
+&lt;p&gt;知識庫中「資訊」和「解決方案」的存量，通常遠多於「結構性知識」。然而當面對特定問題時，有時雖然想得到的可能解決方案很多，但未必知道應該如何選取；所掌握的資訊也很豐富，但未必知道哪些資訊才對解決此一問題最具有關鍵性。這時，在決策過程中常用到的「找出各方案的前提，再來驗證前提」的思考過程，就可以幫助方案的選擇。&lt;/p&gt;
+&lt;p&gt;在此一決策分析過程中，方案的提出相當仰賴知識庫中所擁有的「解決方案」；而「找出前提」則要靠知識庫中「因果關係」或結構性知識去了解分別在哪些情況下，哪個方案更能達到預期的目標。因此，想得出來的方案要夠多、夠合理，才有得比較；而強大的「結構性知識」則可以推斷這些方案的可行性分別建立在哪些前提上。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;套用這種觀點，系統思考可協助你建構扎實的「結構性知識」，並在「驗證前提」方面替你提出的解決方案把關。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;     &lt;!-- raw HTML omitted --&gt;     &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;     &lt;!-- raw HTML omitted --&gt;     &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;以上是針對【&lt;a href=&#34;https://devopsdays.tw/2018/workshop.html&#34;&gt;系統思考的四堂課・DevOps 特別版&lt;/a&gt;】首梯公開班同學的提問，予以統一回覆。更多學員的心得分享，請見 &lt;a href=&#34;http://bit.ly/2MMtAdG&#34;&gt;1&lt;/a&gt;, &lt;a href=&#34;http://bit.ly/2NOqcv2&#34;&gt;2&lt;/a&gt;, &lt;a href=&#34;http://bit.ly/2oBvZti&#34;&gt;3&lt;/a&gt;, &lt;a href=&#34;http://bit.ly/2PAb9WF&#34;&gt;4&lt;/a&gt;, &lt;a href=&#34;http://bit.ly/2Q2bToa&#34;&gt;5&lt;/a&gt;, &lt;a href=&#34;http://bit.ly/2wDxpb2&#34;&gt;6&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;     &lt;!-- raw HTML omitted --&gt;     &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+
+
+&lt;div class=&#34;notice notice--note&#34;&gt;
+  &lt;div class=&#34;notice__title&#34;&gt;
+    
+      系統思考工作坊 - 系列文章
+    
+  &lt;/div&gt;
+  &lt;div class=&#34;notice__content&#34;&gt;&lt;p&gt;❶ 【系統思考的四堂課】&lt;a href=&#34;//william-yeh.net/post/2018/06/sys-thinking-workshop/&#34;&gt;緣起&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❷ 第一場公開班課後回覆：思維的重量訓練&lt;/p&gt;
+&lt;p&gt;❸ &lt;a href=&#34;//william-yeh.net/post/2021/03/sys-thinking-unicorn-project/&#34;&gt;從系統思考角度讀《獨角獸專案》&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;➍ &lt;a href=&#34;//william-yeh.net/post/2024/07/dissecting-devops-via-systems-thinking/&#34;&gt;從系統思考角度談 DevOps 三步工作法&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+      
     </item>
+    
     <item>
       <title>咬文嚼字的必要性（一）：用句型輔助思考</title>
       <link>//william-yeh.net/post/2018/01/precise-expression/</link>
       <pubDate>Thu, 04 Jan 2018 14:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2018/01/precise-expression/</guid>
-      <description>&lt;p&gt;前同事 Peter Su 提出他在荷蘭工作的&lt;a href=&#34;https://www.facebook.com/suppi.su.1/posts/1804748106224850&#34;&gt;觀察&lt;/a&gt;：&lt;/p&gt;&#xA;&#xA;&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;&#xA;&lt;div class=&#34;box&#34;&gt;&#xA;&lt;figure  itemprop=&#34;associatedMedia&#34;&#xA;  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; &#xA;  style=&#34;max-width:30em&#34; &gt;&#xA;    &lt;div class=&#34;img&#34;&gt;&#xA;      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/01/petersu-on-fx.png&#34; /&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;a href=&#34;//william-yeh.net/img/2018/01/petersu-on-fx.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;&#xA;  &lt;/figure&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;p&gt;貼文短短，卻已提到幾則重點：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;準則&lt;/li&gt;&#xA;&lt;li&gt;思考框架&lt;/li&gt;&#xA;&lt;li&gt;句型&lt;/li&gt;&#xA;&lt;li&gt;參考範例&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;儘管自己還沒有在國外工作過，但成天浸潤在外文書籍，也感同身受。&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;前同事 Peter Su 提出他在荷蘭工作的&lt;a href=&#34;https://www.facebook.com/suppi.su.1/posts/1804748106224850&#34;&gt;觀察&lt;/a&gt;：&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/01/petersu-on-fx.png&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2018/01/petersu-on-fx.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;貼文短短，卻已提到幾則重點：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;準則&lt;/li&gt;
+&lt;li&gt;思考框架&lt;/li&gt;
+&lt;li&gt;句型&lt;/li&gt;
+&lt;li&gt;參考範例&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;儘管自己還沒有在國外工作過，但成天浸潤在外文書籍，也感同身受。&lt;/p&gt;
+&lt;p&gt;關於「思考框架」這一點，我在〈&lt;a href=&#34;//william-yeh.net/post/2017/09/thinking-framework-practice/&#34;&gt;思考框架的刻意練習&lt;/a&gt;〉一文提過自己的看法。現在這篇文章，我想繼續談談「句型」這一點。&lt;/p&gt;
+&lt;h2 id=&#34;用句型輔助思考&#34;&gt;用句型輔助思考&lt;/h2&gt;
+&lt;p&gt;歐美系的思考框架或準則，很喜歡用「句型」式的步驟來引導思考。&lt;/p&gt;
+&lt;p&gt;譬如說，在軟體研發領域常用的 &lt;a href=&#34;https://www.mountaingoatsoftware.com/agile/user-stories&#34;&gt;user story&lt;/a&gt;，本身就有一個經典句型：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;As a&lt;/strong&gt; &amp;lt;&lt;em&gt;type of user&lt;/em&gt;&amp;gt;, &lt;strong&gt;I want&lt;/strong&gt; &amp;lt;&lt;em&gt;some goal&lt;/em&gt;&amp;gt; &lt;strong&gt;so that&lt;/strong&gt; &amp;lt;&lt;em&gt;some reason&lt;/em&gt;&amp;gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;另一個似乎開始引人注目的 &lt;a href=&#34;https://jtbd.info/&#34;&gt;JTBD (jobs to be done)&lt;/a&gt; 也有一個經典的 job story 句型：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;When&lt;/strong&gt; &amp;lt;&lt;em&gt;situation&lt;/em&gt;&amp;gt;, &lt;strong&gt;I want&lt;/strong&gt; &amp;lt;&lt;em&gt;motivation&lt;/em&gt;&amp;gt; &lt;strong&gt;so I can&lt;/strong&gt; &amp;lt;&lt;em&gt;expected outcome&lt;/em&gt;&amp;gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;在 &lt;em&gt;&lt;a href=&#34;https://www.impactmapping.org/book.html&#34;&gt;Impact Mapping&lt;/a&gt;&lt;/em&gt; 書中，Gojko Adzic 建議使用以下句型來開展 actor 及 behavior impact 的關係：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;lt;&lt;em&gt;The actor&lt;/em&gt;&amp;gt; &lt;strong&gt;can help us to achieve&lt;/strong&gt; &amp;lt;&lt;em&gt;some goal&lt;/em&gt;&amp;gt; &lt;strong&gt;by&lt;/strong&gt; &amp;lt;&lt;em&gt;behave&lt;/em&gt;&amp;gt; &lt;strong&gt;faster/better&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&amp;lt;&lt;em&gt;The actor&lt;/em&gt;&amp;gt; &lt;strong&gt;can obstruct us from achieving&lt;/strong&gt; &amp;lt;&lt;em&gt;some goal&lt;/em&gt;&amp;gt; &lt;strong&gt;by&lt;/strong&gt; &amp;lt;&lt;em&gt;behave&lt;/em&gt;&amp;gt; &lt;strong&gt;slower/worse&lt;/strong&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;在 &lt;em&gt;&lt;a href=&#34;http://www.books.com.tw/products/0010644283&#34;&gt;Specification by Example&lt;/a&gt;&lt;/em&gt; 書中，Gojko Adzic 建議使用以下 &lt;a href=&#34;https://github.com/cucumber/cucumber/wiki/Gherkin&#34;&gt;Gherkin&lt;/a&gt; 句型來制定實例化需求：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Given&lt;/strong&gt; &amp;lt;&lt;em&gt;a precondition&lt;/em&gt;&amp;gt; &lt;strong&gt;when&lt;/strong&gt; &amp;lt;&lt;em&gt;an action happens&lt;/em&gt;&amp;gt; &lt;strong&gt;then&lt;/strong&gt; &amp;lt;&lt;em&gt;the following post-conditions should be satisfied&lt;/em&gt;&amp;gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;在&lt;a href=&#34;https://en.wikipedia.org/wiki/Theory_of_constraints&#34;&gt;限制理論&lt;/a&gt;的&lt;a href=&#34;https://en.wikipedia.org/wiki/Evaporating_Cloud&#34;&gt;衝突圖（疑雲圖）&lt;/a&gt;中，針對 B→A、C→A、D→B、D′→C 四個邏輯關聯及假設，Jelena Fedurko 提出一些邏輯檢驗句型，甚至還主張要「大聲唸出來」呢：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;In order to&lt;/strong&gt; &amp;lt;&lt;em&gt;left clause&lt;/em&gt;&amp;gt; &lt;strong&gt;we must&lt;/strong&gt; &amp;lt;&lt;em&gt;right clause&lt;/em&gt;&amp;gt; &lt;strong&gt;because&lt;/strong&gt; &amp;lt;&lt;em&gt;assumption&lt;/em&gt;&amp;gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;前面示範的都是短句，但句型也可能很長。像大師 Geoffrey Moore 就提過很長的 value proposition 句型：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;For&lt;/strong&gt; &amp;lt;&lt;em&gt;bulls-eye customer&lt;/em&gt;&amp;gt; &lt;strong&gt;who&lt;/strong&gt; &amp;lt;&lt;em&gt;key purchase motivation insight&lt;/em&gt;&amp;gt; &lt;strong&gt;our product is a&lt;/strong&gt; &amp;lt;&lt;em&gt;in customer language&lt;/em&gt;&amp;gt; &lt;strong&gt;that&lt;/strong&gt; &amp;lt;&lt;em&gt;key benefit&lt;/em&gt;&amp;gt;.
+&lt;strong&gt;Unlike&lt;/strong&gt; &amp;lt;&lt;em&gt;key competitors&lt;/em&gt;&amp;gt; &lt;strong&gt;ours&lt;/strong&gt; &amp;lt;&lt;em&gt;key differentiators&lt;/em&gt;&amp;gt; &lt;strong&gt;at a price&lt;/strong&gt; &amp;lt;&lt;em&gt;than competitors&lt;/em&gt;&amp;gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;句型，讓初學者容易依循上手，但蜜月期總有結束之日。若只追求表面句型的合式，而不進一步認真雕琢句子內容，輕則無法發揮此思考框架的威力，重則誤用。&lt;/p&gt;
+&lt;p&gt;因此，有志之士，對於這些句型背後的填空之處，尤其是命名，會吹毛求疵到咬文嚼字的地步。&lt;/p&gt;
+&lt;p&gt;不明就裡的人會納悶：「真的有必要這樣嗎？」&lt;/p&gt;
+&lt;p&gt;來看幾個例子吧。&lt;/p&gt;
+&lt;h2 id=&#34;團隊共創法&#34;&gt;團隊共創法&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;http://kojenchieh.pixnet.net/blog/post/442862228-%E5%88%A9%E7%94%A8%E5%9C%98%E9%9A%8A%E5%85%B1%E5%89%B5%E6%B3%95%E4%BE%86%E9%81%94%E6%88%90%E5%85%B1%E8%AD%98&#34;&gt;團隊共創法&lt;/a&gt; (consensus workshop method) 當中，第四步驟是命名。&lt;/p&gt;
+&lt;p&gt;命名，也是有箇中眉角的。&lt;/p&gt;
+&lt;p&gt;Yves 在〈&lt;a href=&#34;https://funevo.com/2016/09/25/%E8%AE%8A%E6%95%8F%E6%8D%B7%E7%9A%84%E9%98%BB%E7%A4%99-%E5%9C%98%E9%9A%8A%E5%85%B1%E5%89%B5%E6%B3%95%E5%AF%A6%E5%81%9A/&#34;&gt;找出組織無法變敏捷的阻礙 – 團隊共創法實做&lt;/a&gt;〉一文提到「&lt;strong&gt;移除『缺乏』，讓命名更貼近核心&lt;/strong&gt;」的訣竅：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在 ICA 的課程中學到，如果阻礙是含有『缺乏』的字眼，如不夠、太少等，代表這只是表象或症狀，需要花些時間去挖掘更深層的造成原因。所以我嘗試以我的觀點再往深入去發掘，讓字面上沒有『缺乏』的字眼。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;你覺得，這是吹毛求疵咬文嚼字嗎？&lt;/p&gt;
+&lt;h2 id=&#34;專案管理&#34;&gt;專案管理&lt;/h2&gt;
+&lt;p&gt;在專案管理領域，WBS 及 activity（或稱 task）兩者，很常被人混為一談。&lt;/p&gt;
+&lt;p&gt;以 PMI 的 &lt;a href=&#34;https://en.wikipedia.org/wiki/Project_Management_Body_of_Knowledge&#34;&gt;PMBOK&lt;/a&gt; 體系而言，WBS 是屬於 scope management 知識領域，activity 則是屬於 schedule management 知識領域。一靜，一動。&lt;/p&gt;
+&lt;p&gt;本質不同，表述形式自然不應相同。&lt;/p&gt;
+&lt;p&gt;關於 WBS，在 &lt;em&gt;PMBOK Guide&lt;/em&gt; 4th 如是說：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Work Breakdown Structure (WBS)&lt;/strong&gt; [Output/Input]. A deliverable-oriented hierarchical decomposition of the work to be executed by the project team to accomplish the project objectives and create the required deliverables. It organizes and defines the total scope of the project.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;雖然到了 &lt;em&gt;PMBOK Guide&lt;/em&gt; 5th 及 6th，此定義都略作調整，刪掉 &amp;ldquo;deliverable-oriented&amp;rdquo; 字眼：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Work Breakdown Structure (WBS).&lt;/strong&gt; A hierarchical decomposition of the total scope of work to be carried out by the project team to accomplish the project objectives and create the required deliverables.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;但大體上，WBS 的表述形式，仍是以「名詞」或「名詞片語」為主。&lt;/p&gt;
+&lt;p&gt;至於 activity，在 &lt;em&gt;PMBOK Guide&lt;/em&gt; 6th 如是說：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Define Activities is the process of identifying and documenting the specific actions to be performed to produce the project deliverables. [&amp;hellip;] Activities represent the effort needed to complete a work package. The Define Activities process defines the final outputs as activities rather than deliverables, as done in the Create WBS process.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;很明顯的，activity 的表述形式，是以「動詞字句」為主。&lt;/p&gt;
+&lt;h2 id=&#34;實例化需求&#34;&gt;實例化需求&lt;/h2&gt;
+&lt;p&gt;實例化需求 (&lt;a href=&#34;https://en.wikipedia.org/wiki/Specification_by_example&#34;&gt;specification by example&lt;/a&gt;; SBE) 也是個易學難精的技藝。所幸新書 &lt;em&gt;&lt;a href=&#34;https://www.amazon.com/dp/1617294101/ref=cm_sw_r_tw_dp_U_x_eYXtAbG1TVHSA&#34;&gt;Writing Great Specifications: Using Specification by Example and Gherkin&lt;/a&gt;&lt;/em&gt; 適時出現，站在巨人的肩膀上，擔起 “Gherkin Manual of Style” 的責任。&lt;/p&gt;
+&lt;p&gt;先摘錄整體風格的建議：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Don’t write scenarios about the UI. Write about business outcomes. Nobody cares about the UI; they care if they can get their job done.&lt;/li&gt;
+&lt;li&gt;Keep your scenarios at an abstraction level that allows you to aim for as few &lt;strong&gt;Given&lt;/strong&gt;s, &lt;strong&gt;When&lt;/strong&gt;s, and &lt;strong&gt;Then&lt;/strong&gt;s as possible without sacrificing readability.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;再摘錄針對「Given/When/Then」的個別建議。某些建議，甚至咬文嚼字到「語態」及「時態」等文法層次：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Don’t phrase &lt;strong&gt;Given&lt;/strong&gt;s as actions. Use passive voice in past tense, or phrase each &lt;strong&gt;Given&lt;/strong&gt; as a list of things that need to happen before the actors can move the action forward.&lt;/li&gt;
+&lt;li&gt;Aim for one &lt;strong&gt;When&lt;/strong&gt; keyword per scenario.&lt;/li&gt;
+&lt;li&gt;User tasks take place in the present and should be phrased in active voice to differentiate them from contexts and outcomes.&lt;/li&gt;
+&lt;li&gt;User tasks should allow actors to proceed to &lt;strong&gt;Then&lt;/strong&gt;s. If a &lt;strong&gt;When&lt;/strong&gt; needs additional clarification, it’s merely a user action.&lt;/li&gt;
+&lt;li&gt;To facilitate outside-in development, use the following template to phrase most of your &lt;strong&gt;Then&lt;/strong&gt;s: &lt;em&gt;&lt;!-- raw HTML omitted --&gt;&lt;/em&gt; &lt;strong&gt;should be able to&lt;/strong&gt; &lt;em&gt;&lt;!-- raw HTML omitted --&gt;&lt;/em&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;這些風格建議，對於實際帶過 &lt;a href=&#34;https://school.soft-arch.net/blog/1207517/most-successful-sbe-team&#34;&gt;SBE workshop&lt;/a&gt; 的人，可說心有戚戚焉。&lt;/p&gt;
+&lt;h2 id=&#34;限制理論&#34;&gt;限制理論&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Theory_of_constraints&#34;&gt;限制理論&lt;/a&gt;對於清晰思考的要求非常高，&lt;a href=&#34;https://en.wikipedia.org/wiki/Thinking_processes_%28theory_of_constraints%29&#34;&gt;thinking processes (TP)&lt;/a&gt; 更是如此。&lt;/p&gt;
+&lt;p&gt;就拿只有五個框框、五個箭頭的 &lt;a href=&#34;https://en.wikipedia.org/wiki/Evaporating_Cloud&#34;&gt;evaporating cloud&lt;/a&gt;（衝突圖、疑雲圖）來說吧。如果單論表面形式，可能已經是最簡單最簡潔的了——但也沒那麼單純。&lt;/p&gt;
+&lt;p&gt;Jelena Fedurko 在《&lt;a href=&#34;https://www.amazon.cn/dp/B06WP6DNN7&#34;&gt;撥雲見日&lt;/a&gt;》一書如是說：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;絕大多數的疑雲圖之所以無效，原因是寫圖的人不理解正確、精確地遣詞用字的重要性。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;摘錄幾則「正確精準的遣詞用字」建議：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;每個框內的陳述，應該是一個簡單的句子，沒有任何因果字眼，如「因為、因此、由於、為了」等。&lt;/li&gt;
+&lt;li&gt;目標 A、需求 B、需求 C 是正面陳述。不要使用「不、非、否」之類的文字。&lt;/li&gt;
+&lt;li&gt;每個框內的陳述，都應該包含一個動詞。&lt;/li&gt;
+&lt;li&gt;B 和 C 的內容，是需求而不是行動（描述因為重複發生的動作，如：確保、維持、提供、支持、預防或避免等，而形成的持續狀態）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;書中還有更多嚴謹的建構及檢驗步驟，值得認真練習。&lt;/p&gt;
+&lt;h2 id=&#34;系統思考&#34;&gt;系統思考&lt;/h2&gt;
+&lt;p&gt;系統思考／&lt;a href=&#34;https://en.wikipedia.org/wiki/System_dynamics&#34;&gt;系統動力學&lt;/a&gt;領域常用工具有二：&lt;a href=&#34;https://en.wikipedia.org/wiki/Causal_loop_diagram&#34;&gt;CLD (causal loop diagram)&lt;/a&gt; 及 &lt;a href=&#34;https://en.wikipedia.org/wiki/Stock_and_flow&#34;&gt;SFD (stock and flow diagram)&lt;/a&gt;。其中，SFD 涉及兩種量化元素的類型：存量 (stock) 及流量 (flow)，門檻較高 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; ，因此多數人會改由較簡單的 CLD 入門。但這也意味著，這些人不一定具備該有的「變量」敏銳度。&lt;/p&gt;
+&lt;p&gt;對「變量」不敏銳，會反映在錯誤命名上。難怪 &lt;a href=&#34;https://www.amazon.com/dp/185788311X&#34;&gt;&lt;em&gt;Seeing the Forest for the Trees&lt;/em&gt;&lt;/a&gt; 一書特別提醒，在 CLD 中請堅持以「名詞」形式來表述：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;RULE 5: USE NOUNS, NOT VERBS&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;If you look at all the causal loop diagrams in this book, you will find that &lt;em&gt;every&lt;/em&gt; item is a &lt;strong&gt;noun&lt;/strong&gt; or a &lt;strong&gt;noun phrase&lt;/strong&gt;, rather than a verb or a verb phrase.&lt;/p&gt;
+&lt;p&gt;There is often a tendency to express the appropriate action as a verb (hire or fire) rather than as a noun equivalent (hiring or firing). If you can keep to nouns, even here, so emphasizing the action itself, you will find that your causal loop diagrams are clearer.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;書中也提醒，不要將「增加」或「減少」之類的字眼偷渡進來，那等於是越俎代庖：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;RULE 6: DON’T USE TERMS SUCH AS “INCREASE IN” OR “DECREASE IN”&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;When drawing causal loop diagrams you will inevitably be tempted to include these two phrases in your descriptions.&lt;/p&gt;
+&lt;p&gt;However strong the temptation, resist it. That’s what the arrows are for, especially the &lt;em&gt;S&lt;/em&gt;s and the &lt;em&gt;O&lt;/em&gt;s.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;此書的「CLD 十二條黃金法則」，值得仔細體會：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/01/cld-golden-rules.png&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2018/01/cld-golden-rules.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;結語&#34;&gt;結語&lt;/h2&gt;
+&lt;p&gt;予豈咬文嚼字哉？予不得已也。&lt;/p&gt;
+&lt;p&gt;為了充分發揮思考框架的威力，請暫時不要當差不多先生吧。&lt;/p&gt;
+&lt;p&gt;畢竟，嘗試深度掌握某些知識體系，先蹲後跳，後發先至，是划算的投資。&lt;/p&gt;
+
+
+&lt;div class=&#34;notice notice--note&#34;&gt;
+  &lt;div class=&#34;notice__title&#34;&gt;
+    
+      【咬文嚼字的必要性】系列
+    
+  &lt;/div&gt;
+  &lt;div class=&#34;notice__content&#34;&gt;&lt;p&gt;❶ 咬文嚼字的必要性（一）：用句型輔助思考&lt;/p&gt;
+&lt;p&gt;❷ &lt;a href=&#34;//william-yeh.net/post/2024/02/outcome-sentence-patterns/&#34;&gt;咬文嚼字的必要性（二）：階段性的預期成果設定&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❸ &lt;a href=&#34;//william-yeh.net/post/2022/04/passphrase-at-work/&#34;&gt;請珍惜你們學到的通關密語&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;就連系統思考經典入門小書 &lt;a href=&#34;http://www.books.com.tw/products/0010747160&#34;&gt;&lt;em&gt;Systems One&lt;/em&gt;&lt;/a&gt; 作者 Draper L. Kauffman Jr. 也自承：『常有人要求我將本書「升級」為一本正式介紹系統動態的書籍，尤其是將關鍵的「存量－流量」概念放進書中。當我一開始規劃本書前身的授課教材時，也曾嘗試向我十年級學生解釋「存量－流量」圖示及模型，但我失敗了。不到一半的學生在學習後仍記得其中有用的部分，因此我忍痛將此刪除。    我不想搞砸既有的成功基礎。本書在此領域已經被成功定位為「介紹系統思維最簡單的一本書」。增加長度或複雜度可能對某些應用有幫助，但也會降低對其他人的協助。我不確定改寫後，是否還能像現在這樣廣為大眾所接受。』    大師都如此說了，可見 SFD 門檻之高。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+      
     </item>
+    
     <item>
       <title>思考框架的刻意練習</title>
       <link>//william-yeh.net/post/2017/09/thinking-framework-practice/</link>
       <pubDate>Fri, 22 Sep 2017 11:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2017/09/thinking-framework-practice/</guid>
-      <description>&lt;h2 id=&#34;思考框架&#34;&gt;思考框架&lt;/h2&gt;&#xA;&lt;p&gt;我自認是個思考框架控。&lt;/p&gt;&#xA;&lt;p&gt;學生時代只是不自覺就這麼做了。但後來被勝間和代《&lt;a href=&#34;https://www.books.com.tw/products/0010434249&#34;&gt;新・知識生產術&lt;/a&gt;》洗腦，我就開始下意識蒐集並應用。&lt;/p&gt;&#xA;&lt;p&gt;過度依賴既定框架是不好的 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，但是，看到連鼓吹思考框架甚力的勝間和代也曾有此疑問，且給出一份建議，我就放心了。她在《&lt;a href=&#34;https://www.books.com.tw/products/0010457479&#34;&gt;培養商業腦的７種組織力&lt;/a&gt;》書中是這麼說的：&lt;/p&gt;&#xA;&#xA;&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;&#xA;&lt;div class=&#34;box&#34;&gt;&#xA;&lt;figure  itemprop=&#34;associatedMedia&#34;&#xA;  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; &#xA;  style=&#34;max-width:30em&#34; &gt;&#xA;    &lt;div class=&#34;img&#34;&gt;&#xA;      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2017/09/folk-new-fx.jpg&#34; /&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;a href=&#34;//william-yeh.net/img/2017/09/folk-new-fx.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;&#xA;  &lt;/figure&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;p&gt;另一位我很崇拜的憲哥（謝文憲），在書籍中也一再重申：&lt;/p&gt;</description>
+      
+        <description>&lt;h2 id=&#34;思考框架&#34;&gt;思考框架&lt;/h2&gt;
+&lt;p&gt;我自認是個思考框架控。&lt;/p&gt;
+&lt;p&gt;學生時代只是不自覺就這麼做了。但後來被勝間和代《&lt;a href=&#34;https://www.books.com.tw/products/0010434249&#34;&gt;新・知識生產術&lt;/a&gt;》洗腦，我就開始下意識蒐集並應用。&lt;/p&gt;
+&lt;p&gt;過度依賴既定框架是不好的 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，但是，看到連鼓吹思考框架甚力的勝間和代也曾有此疑問，且給出一份建議，我就放心了。她在《&lt;a href=&#34;https://www.books.com.tw/products/0010457479&#34;&gt;培養商業腦的７種組織力&lt;/a&gt;》書中是這麼說的：&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2017/09/folk-new-fx.jpg&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2017/09/folk-new-fx.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;另一位我很崇拜的憲哥（謝文憲），在書籍中也一再重申：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;養成持續且大量的閱讀習慣，是每個人成長，成為一個咖的必經過程。找到案例、找到一個比你更好的架構，來印證你觀點的重要時刻。&lt;/p&gt;
+&lt;p&gt;  &amp;mdash; Quote: 《&lt;a href=&#34;https://www.books.com.tw/products/0010752512&#34;&gt;人生準備 40% 就衝了&lt;/a&gt;》&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;某次演講，更是一針見血當頭棒喝：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2017/09/on-theory.png&#34; alt=&#34;謝文憲演講&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2017/09/on-theory.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;謝文憲演講&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;刻意練習&#34;&gt;刻意練習&lt;/h2&gt;
+&lt;p&gt;既然這兩位私淑對象都如此說，我就決定，做事不要只訴諸本能，要刻意練習，提升到理論層面。畢竟：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2017/09/tweet-20170726.png&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2017/09/tweet-20170726.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+  &amp;mdash; Quote: &lt;a href=&#34;https://twitter.com/william_yeh/status/889983697797001216&#34;&gt;2017-07-26 Tweet&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;同時，不只是對自己，連演講及引導場合，我也刻意朝這方向鋪陳。（所以，你會發現，近年來，我的演講內容，常會夾帶些理論框架⋯⋯）&lt;/p&gt;
+&lt;p&gt;漸漸的，開始能夠體會勝間和代所說「從現有的組織架構創造出新的組織架構」的箇中深意。譬如說，我在帶領【&lt;a href=&#34;//william-yeh.net/post/2017/08/facilitator-mindset/#引導者讀書會&#34;&gt;引導者讀書會&lt;/a&gt;】時，不知不覺就將鑽石模型 (diamond model) 與薩提爾冰山模型結合起來。也在本周兩個場合突發奇想，將《&lt;a href=&#34;https://www.eslite.com/product/1001114561006441&#34;&gt;關鍵對立&lt;/a&gt;》提出的「影響因素源頭模型」與《&lt;a href=&#34;https://www.eslite.com/product/1001122732478446&#34;&gt;鉤癮效應&lt;/a&gt;》提到的「法格行為模型 (&lt;a href=&#34;https://www.behaviormodel.org/&#34;&gt;Fogg Behavior Model&lt;/a&gt;)」結合起來，從新的角度分析《&lt;a href=&#34;https://www.books.com.tw/products/0010647956&#34;&gt;克服團隊領導的五大障礙&lt;/a&gt;》的模型。&lt;/p&gt;
+&lt;p&gt;謎之音：簡直是模型大亂鬥。&lt;/p&gt;
+&lt;p&gt;這麼做，不僅是智性的體操，不僅是一種擴充求解空間的方法，也是一種沈澱反思的過程。&lt;/p&gt;
+&lt;p&gt;《&lt;a href=&#34;https://www.books.com.tw/products/0010752714&#34;&gt;刻意練習&lt;/a&gt;》說：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;刻意練習，只在跨出舒適圈後才能奏效，需要學生不斷嘗試去突破現階段的技能水準。這意味著幾乎得傾盡全力，所以往往不會太有樂趣。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;「傾盡全力」這一點，我是承認的；但「不會太有樂趣」這一點，我倒不這麼認為——這可是非常有趣呀！&lt;/p&gt;
+&lt;p&gt;《&lt;a href=&#34;https://www.books.com.tw/products/0010752714&#34;&gt;刻意練習&lt;/a&gt;》又說：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;刻意練習，幾乎等於加強或調整先前習得的技能，必須著重該技能的特定面向，努力改善。隨著時間過去，這一步一步的改善，最終會打造出專家級表現。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;「專家級表現」這一點我還不敢苛求；但至少會朝著劉大任在《&lt;a href=&#34;https://www.books.com.tw/products/0010025396&#34;&gt;強悍而美麗&lt;/a&gt;》描述的境界邁進：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在這個世界上，你就愛一種東西，你就在你愛的這個東西裡把自己練到完美，練到無懈可擊。&lt;/p&gt;
+&lt;p&gt;你因此尋得滿足，此外的一切其實無足輕重。就這樣，你變得堅強，足以抵抗不時傾巢而來的寂寞；你變得勇敢，你學會拒絕周遭的喧嘩與熱鬧；你學會簡單而嚴肅，你形成一種風格，唯你獨有。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;是的，形成一種風格，唯你獨有。&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;像《&lt;a href=&#34;https://www.eslite.com/product/1001124272036603&#34;&gt;精準明確思考術&lt;/a&gt;》或《&lt;a href=&#34;https://www.books.com.tw/products/0010482895&#34;&gt;超神速全腦學習法&lt;/a&gt;》都一再警告依賴既定框架的陷阱：思考怠惰。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+      
     </item>
+    
   </channel>
 </rss>

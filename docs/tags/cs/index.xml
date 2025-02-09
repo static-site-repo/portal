@@ -4,23 +4,471 @@
     <title>Cs on Potioneer&#39;s Essays</title>
     <link>//william-yeh.net/tags/cs/</link>
     <description>Recent content in Cs on Potioneer&#39;s Essays</description>
-    <generator>Hugo</generator>
+    <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Tue, 09 Aug 2016 08:00:00 +0800</lastBuildDate>
-    <atom:link href="//william-yeh.net/tags/cs/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 12 Apr 2026 20:00:00 +0800</lastBuildDate>
+    
+        <atom:link href="//william-yeh.net/tags/cs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>AI 時代，該怎麼選程式語言？</title>
+      <link>//william-yeh.net/post/2026/04/genai-pl/</link>
+      <pubDate>Sun, 12 Apr 2026 20:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2026/04/genai-pl/</guid>
+      
+        <description>&lt;p&gt;在許多系統開發與工程教育脈絡中，C/C++ 曾長期佔據核心位置。後來主流答案逐漸分散，Java、C#、Python、TypeScript、Go 各自崛起，也都一度被期待成為下一個中心。&lt;/p&gt;
+&lt;p&gt;到了 LLM 時代，這個問題又被拿出來重問一次。從 agent、harness 與同類工具在 TypeScript、Python、Rust 等不同生態中並行發展、彼此競逐，就看得出這仍是秦失其鹿，天下共逐之的局面。&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;但如果問題還停在「哪門程式語言最好」，最後多半只會得到一份偏好清單。語言模型對某種語言、生態與框架是否熟悉，當然會影響起稿速度與初稿品質；可是在「生成結果不能直接被信任」的前提下，技術選型真正該看的，是依風險分層，選擇最能支撐驗證與收斂的程式語言 × 驗證鏈組合。&lt;/p&gt;
+&lt;p&gt;這不是一篇語言排名文；這是一篇重新定義選型判準的文章。&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2026/04/genai-pl.jpg&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2026/04/genai-pl.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;判準驗證回饋&#34;&gt;判準：驗證回饋&lt;/h2&gt;
+&lt;p&gt;我會把判準拆成三個面向：&lt;strong&gt;約束顯性化、錯誤可診斷性、修正迴圈成本。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;第一，是&lt;strong&gt;約束顯性化&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;系統裡真正重要的規則，有沒有被寫出來？這不只包括型別、介面、可空值與錯誤處理，也包括更高一層的架構約束：依賴方向是否受控制、重要邊界是否清楚、副作用出口是否外露、哪些規則能放在哪裡，是否已經被寫進 repo、測試與工具鏈，而不是只留在人腦與團隊默契裡。&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;關鍵約束沒有顯性化，語言模型就很容易補出一段表面合理、實際上已經穿透邊界的程式碼。&lt;/p&gt;
+&lt;p&gt;第二，是&lt;strong&gt;錯誤可診斷性&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;問題能不能提早暴露？暴露之後，位置夠不夠局部？錯誤訊息是否足夠讓人與語言模型採取下一步？有些失敗是編譯器指出型別不吻合；有些失敗是測試、靜態分析或架構規則檢查指出邊界被穿透；也有些失敗要等整段功能都跑歪之後，才以模糊症狀浮出來。前兩種通常比較容易進入修正流程；最後一種很容易把人和語言模型一起拖進猜測循環。&lt;/p&gt;
+&lt;p&gt;第三，是&lt;strong&gt;修正迴圈成本&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;從發現問題到修掉問題，這條路有多短、多穩、多能反覆？有些語言和工具鏈把回饋收得很緊：一存檔，型別錯誤、lint、測試、靜態分析就一起往前推。有些情境則要靠團隊自己把這條鏈補起來：寫測試、補 sandbox、整理 fixture、把規格拆細。這不一定是壞事，但如果修正迴圈太長、太散、太仰賴人腦維持，生成帶來的速度最後很可能會被問題分流成本吃掉。&lt;/p&gt;
+&lt;p&gt;對 AI 協作來說，程式語言的價值，很大一部分就落在這裡。實際效果通常不是由語法表面決定，而是由它背後那整套工程鏈決定：型別系統、編譯器、靜態分析、測試、sandbox、CI、架構規則、review 習慣，以及團隊是否真的把這些機制接起來。&lt;/p&gt;
+&lt;p&gt;現有研究也大致支持這個方向。像 RUSTASSISTANT 這類研究顯示，當語言模型拿到更明確、較局部、可行動的編譯器錯誤訊號時，自動修正的表現確實可能明顯改善。&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt; 另一類研究則指出，自動化回饋迴圈有機會改善 LLM 產出的可修正性與整體收斂能力。&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;這些材料還不夠弄出一份跨語言的總排名，但已經足夠支持一個實務判斷：&lt;strong&gt;AI 協作的重點，不在模型先吐出什麼，而在系統後面會怎麼承接。&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;typescript應用層的顯性契約&#34;&gt;TypeScript：應用層的顯性契約&lt;/h2&gt;
+&lt;p&gt;TypeScript 很適合放在應用層，因為它擅長把原本留在人腦裡的假設寫進程式裡。&lt;/p&gt;
+&lt;p&gt;應用層系統最麻煩的地方，不是語法，而是資料長什麼樣子、API 回傳什麼、哪個欄位可能是 &lt;code&gt;null&lt;/code&gt;、重構之後哪些地方會一起受影響。TypeScript 的強項，就是把這些原本靠默契維持的東西，寫成編輯器與工具鏈也看得懂的契約。&lt;/p&gt;
+&lt;p&gt;型別、介面、函式簽名、nullable 邊界，會把一部分原本隱含的假設直接前移；一旦這些假設被寫出來，回饋也比較容易來得早，而且夠局部。型別不吻合、介面沒對齊、重構後遺漏哪個使用點，往往在編輯器&lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt; 或編譯階段就已經浮出來。對人和語言模型來說，這種錯誤比執行期才浮現的模糊故障更容易處理。TypeScript 官方對自己的定位也很坦白：就是要成為 JavaScript 的 static type checker。&lt;sup id=&#34;fnref:6&#34;&gt;&lt;a href=&#34;#fn:6&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;6&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;這不代表用了 TypeScript 就能自動保證商業邏輯一定會正確。它真正做的，是把許多原本靠人腦維持的假設，改成比較穩定的工程訊號。對 AI 協作來說，這很重要，畢竟語言模型最常出錯的地方，不是完全不會寫，而是把邊界寫鬆、把例外漏掉，或把幾個看似相近的型別混成同一件事。&lt;/p&gt;
+&lt;p&gt;它改善得最明顯的，其實是&lt;strong&gt;重構診斷鏈&lt;/strong&gt;。改動一個型別定義、調整一個介面、收斂一個資料結構，哪些地方會一起受影響，通常可以更快浮出來。這不只幫助人類開發者，也讓語言模型生成的修改比較容易被局部檢查。&lt;/p&gt;
+&lt;p&gt;所以在複雜、壽命長、多人協作、需要反覆重構的產品系統裡，TypeScript 很自然會成為 AI 協作的預設選項。&lt;/p&gt;
+&lt;h2 id=&#34;python探索層與後補驗證&#34;&gt;Python：探索層與後補驗證&lt;/h2&gt;
+&lt;p&gt;Python 很適合探索層。&lt;/p&gt;
+&lt;p&gt;資料清洗、notebook 探索、模型實驗、工作流編排、自動化腳本、內部工具，這些工作追求的往往不是一開始就把邊界封死，而是先把想法試出來，再決定哪些約束值得前移。Python 在這一層一直很有位置，不只是因為語言模型熟，也因為它背後本來就長出了一整套成熟的探索式工作流。&lt;sup id=&#34;fnref:7&#34;&gt;&lt;a href=&#34;#fn:7&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;7&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;它的代價也很清楚。很多問題不會自己提早跳出來，而是要等到執行、測試、整合，甚至真實資料流進來之後，才逐步暴露。這在探索階段未必是問題；但當系統開始長大、模組開始互相依賴、邊界開始固定，延後暴露的成本就會愈來愈高。&lt;/p&gt;
+&lt;p&gt;所以 Python 的重點，是驗證鏈通常要靠開發者主動補齊。型別工具當然重要，但它們多半屬於後補工程，而不是預設前置約束。系統一旦開始工程化，type hints、mypy、pyright 這些工具就很有價值。它們不能把 Python 變成 TypeScript 那種強制契約環境，但確實能把一部分原本留到執行時才知道的問題，往前拉到提交之前。&lt;sup id=&#34;fnref:8&#34;&gt;&lt;a href=&#34;#fn:8&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;8&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;迭代式自我修正機制也值得注意。像 Self-Refine 的研究顯示，透過同一語言模型反覆生成批評並改寫輸出，的確可以改善部分程式相關任務的結果。&lt;sup id=&#34;fnref:9&#34;&gt;&lt;a href=&#34;#fn:9&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;9&lt;/a&gt;&lt;/sup&gt; 少了編譯期強護欄時，這類反覆回饋的機制就更重要。&lt;/p&gt;
+&lt;p&gt;對 Python 可以先下個簡單判斷：它適合探索層，但不適合長期停在鬆散狀態。任務一旦開始收斂，驗證鏈、型別工具、測試與自動化修正機制都得補上。&lt;/p&gt;
+&lt;h2 id=&#34;rust核心區的前置約束&#34;&gt;Rust：核心區的前置約束&lt;/h2&gt;
+&lt;p&gt;Rust 很適合放在核心區，因為它把更多高成本錯誤推到執行之前。&lt;/p&gt;
+&lt;p&gt;所有權、借用、顯式錯誤處理、記憶體安全，加上接近 C++ 的性能，讓 Rust 很適合放在那些真正承受不起錯的地方：系統邊界、效能瓶頸、安全敏感模組、工具鏈核心。像 Hugging Face &lt;a href=&#34;https://github.com/huggingface/tokenizers&#34;&gt;Tokenizers&lt;/a&gt; 與 &lt;a href=&#34;https://github.com/huggingface/candle&#34;&gt;Candle&lt;/a&gt; 這類專案，都把 Rust 放在很核心的位置。&lt;/p&gt;
+&lt;p&gt;從驗證回饋的角度看，Rust 最重要的地方，在於它替生成式協作加上了一個強度很高的前置驗證入口。語言模型可以先產生草稿，但草稿要放進系統前，必須先通過型別、所有權、生命週期與錯誤處理這些約束。這會帶來三個效果：約束更早顯性化、程式本體層的大量錯誤可以提早被局部定位，也有一部分問題根本進不到執行期。&lt;/p&gt;
+&lt;p&gt;不過 Rust 能使得上力的，主要還是那些已經被形式化、並寫進語言與程式結構裡的約束；它不會自動替你驗證產品規格、流程例外與商業判準。折扣規則算得對不對、權限邏輯是否符合產品政策、某個狀態組合在真實業務上是否合法，這些問題通常活在需求、文件、流程與領域知識裡，不會完整地活在型別系統裡。&lt;/p&gt;
+&lt;p&gt;這也是 Rust 的代價。探索階段未必要固定下來的結構問題，它卻要求你更早面對：資料怎麼流、邊界怎麼切、資源由誰持有、錯誤怎麼往上拋。有些錯誤很局部，修起來很快；但有些錯誤暴露的其實不是語法細節，而是資料流、API 邊界或狀態設計本身還沒有收斂。&lt;/p&gt;
+&lt;p&gt;所以 Rust 很適合那些已經開始收斂、值得把約束前移的核心任務，卻不一定適合探索層。LLM 確實降低了採用 Rust 的門檻，但 Rust 最好的位置，仍然比較像在核心層。&lt;sup id=&#34;fnref:10&#34;&gt;&lt;a href=&#34;#fn:10&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;10&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;h2 id=&#34;go平台層的穩定節奏&#34;&gt;Go：平台層的穩定節奏&lt;/h2&gt;
+&lt;p&gt;Go 的強項不花俏，就是穩。&lt;/p&gt;
+&lt;p&gt;它的優勢不在最強的護欄，也不在最大的探索彈性，而在一套簡潔、收斂、低負擔的預設模式。對 AI 協作而言，這通常代表偏航空間更小、程式風格較一致，以及修正成本較可控制。&lt;/p&gt;
+&lt;p&gt;Go 從一開始就不是為語法炫技設計的。Go at Google 那篇文章講得很直接：這門程式語言的目標，是減少大型軟體開發中的遲滯與笨重感，而且它是為那些要寫、讀、除錯與維護大型系統的人設計的。&lt;sup id=&#34;fnref:11&#34;&gt;&lt;a href=&#34;#fn:11&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;11&lt;/a&gt;&lt;/sup&gt; 這也讓 Go 的優勢比較像一組工程取向明確的選擇：語言表面積小、工具鏈單純、編譯快速、標準函式庫完整。Go 社群自己的年度調查，也持續把簡潔、可維護與穩定工具鏈列為很主要的使用理由。&lt;sup id=&#34;fnref:12&#34;&gt;&lt;a href=&#34;#fn:12&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;12&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;放進前面的框架來看，Go 的強項比較像是把日常工作流收得很緊。&lt;code&gt;go&lt;/code&gt; 命令把 build、test、fmt、fix 收在同一套官方工具鏈裡&lt;sup id=&#34;fnref:13&#34;&gt;&lt;a href=&#34;#fn:13&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;13&lt;/a&gt;&lt;/sup&gt;；語法與慣例也長期維持在相對收斂的範圍內。官方長期重視 &lt;code&gt;gofmt&lt;/code&gt;、idiomatic code 與 code review 慣例 &lt;sup id=&#34;fnref:14&#34;&gt;&lt;a href=&#34;#fn:14&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;14&lt;/a&gt;&lt;/sup&gt;，讓大家可放心：團隊與語言模型共同操作同一份程式碼時，比較不容易一路寫歪。&lt;/p&gt;
+&lt;p&gt;雖然不像 Rust 那樣把很多高成本錯誤前推到最前面，但也不容易把系統帶向過度抽象、過度分散、難以追蹤的狀態。對 CLI、基礎設施、平台工程與後端服務這類工作來說，Go 往往比表面上看起來更耐用。&lt;/p&gt;
+&lt;h2 id=&#34;分層設計&#34;&gt;分層設計&lt;/h2&gt;
+&lt;p&gt;把前面的判準落實到實務面，重點就在於，要在不同風險區，放上不同強度、不同時點的驗證機制，也就是分層設計。這裡有三個核心問題：&lt;/p&gt;
+&lt;p&gt;第一，這一層最承受不起的是什麼：速度慢、重構痛、部署複雜，還是安全、效能與可靠性風險？&lt;/p&gt;
+&lt;p&gt;第二，這一層最需要哪種驗證：型別、編譯器、靜態分析、測試、sandbox，還是高密度的人類 review？&lt;/p&gt;
+&lt;p&gt;第三，這一層的關鍵知識主要活在哪裡：活在程式語言本身、框架慣例、repo 結構與架構規則、文件、團隊的隱形知識，還是 CI 與基礎設施流程裡？&lt;/p&gt;
+&lt;p&gt;這三個問題想清楚，程式語言選型的討論才不會停留在偏好清單。&lt;/p&gt;
+&lt;p&gt;探索層，Python 仍然很自然。它適合拿來確認方向、讓資料露出形狀、把流程跑通；但當任務開始收斂，就應補上型別註記、靜態檢查、測試與自動化驗證鏈，而不是讓探索式寫法一路帶到後期。&lt;/p&gt;
+&lt;p&gt;應用層，TypeScript 的優勢在顯性型別、重構能力、多人協作與長期維護。當系統最怕的是隱含假設太多、邊界鬆動、改一處壞三處時，它常會是 AI 輔助產品開發很自然的預設選項之一。&lt;/p&gt;
+&lt;p&gt;核心區，最值得把約束前移。當錯誤代價高到不能留在後面處理，Rust 的型別、ownership 與編譯期驗證就特別有價值。它不必成為全面預設，但很適合放在真正關鍵的地方。&lt;/p&gt;
+&lt;p&gt;平台層，很多時候追求的是一致性、簡潔性、可讀性、快編譯與低樣板。Go 不一定最華麗，但常常能提供低負擔、低偏航、易維護的工程條件。對許多團隊來說，這種穩健性比語言敘事的戲劇性更有用。&lt;/p&gt;
+&lt;p&gt;補充一點，大型企業後端往往不是從零選程式語言，而是在既有堆疊、IDE、生態、人才結構與組織流程裡持續演化。從這個角度看，Java 與 C# 的問題不只是適不適合 AI 協作，而是它們原本就已經在許多團隊中形成穩定的收斂條件。若團隊已有深厚的累積，沒有必要為了語言選型的抽象論點而另起爐灶。&lt;sup id=&#34;fnref:15&#34;&gt;&lt;a href=&#34;#fn:15&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;15&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;程式語言選擇走到這裡，比較像架構設計，而不再只是口味問題。&lt;/p&gt;
+&lt;h2 id=&#34;尚未定論的部分&#34;&gt;尚未定論的部分&lt;/h2&gt;
+&lt;p&gt;有幾件事，現在還不能把結論講死。&lt;/p&gt;
+&lt;p&gt;第一，&lt;strong&gt;驗證回饋&lt;/strong&gt;這個方向大致成立；但不同程式語言在人類問題分流成本、修正效率與整體收斂速度上的差異，到底有多大，仍然缺夠乾淨的全面性證據。現在比較多的是局部研究、特定任務或特定工具鏈的結果；它們能支持方向，還不足以直接推出一份放諸各場景皆準的程式語言排名。&lt;/p&gt;
+&lt;p&gt;第二，&lt;strong&gt;前置護欄&lt;/strong&gt;的價值很真實，但護欄愈強，不代表整體開發一定愈有效率。像 Rust 這類程式語言，確實能把很多錯誤提早暴露，但提早暴露不等於提早解決。有些錯誤是局部修正，有些則會牽動資料流、API 邊界與設計本身。程式語言提供的驗證強度，不能單獨和整體生產力畫上等號；還得放回任務型態、團隊能力與系統成熟度裡一起看。&lt;/p&gt;
+&lt;p&gt;第三，程式語言本身從來不是全部。CI 有沒有真的接起來、測試與 sandbox 有沒有成形、團隊有沒有能力 review 產出、關鍵規格有沒有被整理成語言模型與工具都吃得下的形式，這些都會直接改變選型最後的實際收益。其中特別值得單獨點名的是 agentic 工作流裡的上下文管理：長上下文不是免費的。現有研究顯示，模型對於長串輸入中，位於中段的關鍵資訊，利用能力會明顯下降。情境變長，不代表使用品質會穩定提升。&lt;sup id=&#34;fnref:16&#34;&gt;&lt;a href=&#34;#fn:16&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;16&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;所以，在生成愈來愈便宜的前提下，程式語言選擇真正該優先服務的，還是驗證與收斂，而不只是起稿速度。&lt;/p&gt;
+&lt;h2 id=&#34;結語&#34;&gt;結語&lt;/h2&gt;
+&lt;p&gt;LLM 讓生成變便宜之後，型別、編譯器、測試、靜態分析、清楚的系統邊界、可被工具檢查的架構規則、可 review 的程式碼，都變得更加重要。&lt;/p&gt;
+&lt;p&gt;AI 時代的語言選型，最終選擇仍應由任務收斂程度、團隊成熟度、既有系統與工具鏈條件共同決定。重點還是&lt;strong&gt;把高成本錯誤提前到團隊還處理得起的位置&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;這有點像走山路。差別不在誰起步快，而在於你是走到彎路之前就知道路線偏了，還是衝到後面才發現整段路都走錯。好的語言與驗證鏈，價值就在這裡：讓錯誤早點露出來，修正還來得及。&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;Claude Code 是用 TypeScript 寫的；程式碼外洩事件之後，有人用 Python 復刻了一份核心 &lt;a href=&#34;https://github.com/HKUDS/OpenHarness&#34;&gt;OpenHarness&lt;/a&gt;；&lt;a href=&#34;https://github.com/openclaw/openclaw&#34;&gt;OpenClaw&lt;/a&gt; 是用 TypeScript 寫的，也有人用 Rust 復刻了一份更緊實的 &lt;a href=&#34;https://github.com/zeroclaw-labs/zeroclaw&#34;&gt;ZeroClaw&lt;/a&gt;。這些例子主要用來說明：agent 類工具的語言生態仍在快速競逐中，尚未收斂成單一主流答案。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;關於 LLM / agent 情境下，為什麼軟體架構的價值在於把邊界、依賴方向、驗證入口與治理規則外露成可被人與工具使用的訊號，可參考我稍早的一篇文章：〈&lt;a href=&#34;//william-yeh.net/post/2026/03/genai-revisit-arch/&#34;&gt;LLM 時代，傳統軟體架構該重新檢查了&lt;/a&gt;〉。這裡主要用來補強本文較窄的主張：約束顯性化不只發生在型別層，也發生在架構與治理層。&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;
+&lt;p&gt;Rust 工具鏈原本就有接近 lint auto-fix 的能力，例如 &lt;code&gt;cargo clippy --fix&lt;/code&gt;；Microsoft &amp;ldquo;&lt;a href=&#34;https://www.microsoft.com/en-us/research/wp-content/uploads/2024/08/paper.pdf&#34;&gt;RUSTASSISTANT: Using LLMs to Fix Compilation Errors in Rust Code&lt;/a&gt;&amp;rdquo; 研究顯示，當語言模型接收到 Rust 編譯器提供的明確錯誤訊號後，自動修正的準確度有機會提高。這裡主要支撐的是：清楚、局部、可行動的錯誤回饋，確實有助於程式修正收斂。&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:4&#34;&gt;
+&lt;p&gt;Ravin Ravi et al., &amp;ldquo;&lt;a href=&#34;https://arxiv.org/abs/2603.23613&#34;&gt;LLMLOOP: Improving LLM-Generated Code and Tests through Automated Iterative Feedback Loops&lt;/a&gt;&amp;quot;，IEEE ICSME 2025，arXiv:2603.23613。這裡主要支撐的是：自動化回饋迴圈，確實有機會改善 LLM 產出的可修正性與整體收斂能力。更一般化的護欄框架，可另參〈&lt;a href=&#34;//william-yeh.net/post/2026/03/genai-guardrail/&#34;&gt;GenAI 的工程護欄是什麼？&lt;/a&gt;〉。&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:5&#34;&gt;
+&lt;p&gt;TypeScript 是編輯器友好的語言；&lt;a href=&#34;https://microsoft.github.io/language-server-protocol/&#34;&gt;LSP (Language Server Protocol)&lt;/a&gt; 最初就是為了改善 TypeScript 與 VS Code 的開發體驗而發展出來的。這裡主要支撐的是：TypeScript 的回饋機制不只存在於編譯階段，也深度嵌進日常編輯與重構流程。&amp;#160;&lt;a href=&#34;#fnref:5&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:6&#34;&gt;
+&lt;p&gt;TypeScript Handbook 中的 &amp;ldquo;&lt;a href=&#34;https://www.typescriptlang.org/docs/handbook/intro.html&#34;&gt;The goal of TypeScript is to be a static typechecker for JavaScript programs&lt;/a&gt;&amp;quot;。這裡主要支撐的是：TypeScript 的官方定位，本來就把靜態檢查視為核心價值，而不只是較好寫的 JavaScript。&amp;#160;&lt;a href=&#34;#fnref:6&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:7&#34;&gt;
+&lt;p&gt;Python 在探索層的優勢，不只來自語言本身，也來自它與互動式計算、資料處理、模型實驗工具長期扣合。Jupyter 文件 &amp;ldquo;&lt;a href=&#34;https://docs.jupyter.org/en/latest/what_is_jupyter.html&#34;&gt;What is Jupyter?&lt;/a&gt;&amp;rdquo; 直接把 notebook 描述為結合程式碼、文字、資料與視覺化的共享文件；TensorFlow 官方文件 &amp;ldquo;&lt;a href=&#34;https://www.tensorflow.org/about&#34;&gt;TensorFlow Overview&lt;/a&gt;&amp;rdquo; 強調 eager execution 與原型設計、快速除錯的關係；&lt;a href=&#34;https://pytorch.org/projects/pytorch/&#34;&gt;PyTorch&lt;/a&gt; 則明確強調其 Pythonic design 與從研究原型走向生產部署的連續性。這裡主要支撐的是：Python 生態確實長出了一套成熟的探索與實驗工作流。&amp;#160;&lt;a href=&#34;#fnref:7&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:8&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://mypy.readthedocs.io/&#34;&gt;mypy&lt;/a&gt; 是 Python 社群成熟的靜態型別檢查工具；&lt;a href=&#34;https://microsoft.github.io/pyright/&#34;&gt;Pyright&lt;/a&gt; 是 Microsoft 開發的 Python 靜態型別檢查工具，也是 VS Code 裡 Pylance 的核心引擎。這裡主要支撐的是：Python 的驗證鏈可以靠後補工具逐步補強，而不必完全停留在動態語言的預設狀態。&amp;#160;&lt;a href=&#34;#fnref:8&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:9&#34;&gt;
+&lt;p&gt;Aman Madaan et al., &amp;ldquo;&lt;a href=&#34;https://arxiv.org/abs/2303.17651&#34;&gt;Self-Refine: Iterative Refinement with Self-Feedback&lt;/a&gt;&amp;quot;，arXiv:2303.17651，2023。這裡主要支撐的是：反覆回饋機制，確實有機會改善部分程式相關任務的輸出；但它不直接證明任何單一程式語言因此已具充分的工程化驗證優勢。&amp;#160;&lt;a href=&#34;#fnref:9&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:10&#34;&gt;
+&lt;p&gt;Rust 官方文件 &amp;ldquo;&lt;a href=&#34;https://doc.rust-lang.org/book/ch04-01-what-is-ownership.html&#34;&gt;What is Ownership?&lt;/a&gt;&amp;rdquo; 明確把 ownership 描述為一套不依賴垃圾回收、仍能提供記憶體安全保證的機制；Go 官方 &amp;ldquo;&lt;a href=&#34;https://go.dev/doc/gc-guide&#34;&gt;A Guide to the Go Garbage Collector&lt;/a&gt;&amp;rdquo; 則說明標準工具鏈包含追蹤式垃圾回收器，並持續針對 GC 成本與效能調校。現有材料足以支撐「清楚的編譯器錯誤回饋有助於語言模型修正 Rust 程式」這個較窄判斷；但本文目前不把 Rust ownership / borrow 與 Go 垃圾回收在 LLM 協作下的整體收斂效果，當成已有定論的比較結論。&amp;#160;&lt;a href=&#34;#fnref:10&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:11&#34;&gt;
+&lt;p&gt;Rob Pike，&amp;quot;&lt;a href=&#34;https://go.dev/talks/2012/splash.article&#34;&gt;Go at Google: Language Design in the Service of Software Engineering&lt;/a&gt;&amp;quot;。這裡主要支撐的是：Go 的原始設計取向，本來就不是語法炫技，而是大型軟體工程中的可讀、可維護與低負擔開發。&amp;#160;&lt;a href=&#34;#fnref:11&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:12&#34;&gt;
+&lt;p&gt;Go 官方 &lt;a href=&#34;https://go.dev/blog/survey2025-results&#34;&gt;&lt;em&gt;2025 Go Developer Survey Results&lt;/em&gt;&lt;/a&gt; 指出，2025 年調查共有 5,379 名 Go 開發者回覆。這裡主要用來支撐一個較窄判斷：Go 使用者長期重視簡潔、可維護與穩定工具鏈。&amp;#160;&lt;a href=&#34;#fnref:12&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:13&#34;&gt;
+&lt;p&gt;Go 官方文件 &amp;ldquo;&lt;a href=&#34;https://pkg.go.dev/cmd/go&#34;&gt;&lt;code&gt;cmd/go&lt;/code&gt;&lt;/a&gt;&amp;rdquo; 直接把 &lt;code&gt;go&lt;/code&gt; 描述為「管理 Go 原始碼的工具」；而同一套標準工具鏈內建 &lt;code&gt;build&lt;/code&gt;、&lt;code&gt;test&lt;/code&gt;、&lt;code&gt;fmt&lt;/code&gt;、&lt;code&gt;fix&lt;/code&gt; 等命令。這裡主要支撐的是：Go 的日常工程流程，本來就傾向收得較緊。&amp;#160;&lt;a href=&#34;#fnref:13&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:14&#34;&gt;
+&lt;p&gt;Go 官方長期把風格一致性與 idiomatic code 視為可維護性的一部分。&lt;a href=&#34;https://go.dev/blog/gofmt&#34;&gt;gofmt&lt;/a&gt;、&lt;a href=&#34;https://go.dev/doc/effective_go&#34;&gt;&lt;em&gt;Effective Go&lt;/em&gt;&lt;/a&gt; 與 &amp;ldquo;&lt;a href=&#34;https://go.dev/wiki/CodeReviewComments&#34;&gt;Go Code Review Comments&lt;/a&gt;&amp;rdquo; 都可支撐「Go 的語法與慣例相對收斂」這個判斷。&amp;#160;&lt;a href=&#34;#fnref:14&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:15&#34;&gt;
+&lt;p&gt;這則註腳主要補充一個較窄判斷：大型企業後端的程式語言選型，很多時候不是從零開始，而是在既有技術堆疊、工具鏈、生態系、人才結構與組織流程裡持續演化。Spring Boot 官方的 &lt;a href=&#34;https://docs.spring.io/spring-boot/index.html&#34;&gt;&lt;em&gt;Spring Boot Documentation&lt;/em&gt;&lt;/a&gt;、.NET 官方的 &amp;ldquo;&lt;a href=&#34;https://dotnet.microsoft.com/en-us/learn/dotnet/what-is-dotnet&#34;&gt;What is .NET?&lt;/a&gt;&amp;rdquo; 與 Oracle 官方的 &lt;a href=&#34;https://docs.oracle.com/en/java/javase/&#34;&gt;&lt;em&gt;Java Documentation&lt;/em&gt;&lt;/a&gt; 都足以支撐這個判斷。&amp;#160;&lt;a href=&#34;#fnref:15&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:16&#34;&gt;
+&lt;p&gt;Nelson F. Liu et al., “&lt;a href=&#34;https://direct.mit.edu/tacl/article/doi/10.1162/tacl_a_00638/119630/Lost-in-the-Middle-How-Language-Models-Use-Long&#34;&gt;Lost in the Middle: How Language Models Use Long Contexts&lt;/a&gt;”，TACL 2024。這裡主要支撐的是：長上下文不是免費的；當關鍵資訊落在中段時，模型的利用能力可能明顯下降。更完整的工作流層面討論，可另參〈&lt;a href=&#34;//william-yeh.net/post/2026/03/genai-se-level-up/&#34;&gt;AI 會寫程式之後，軟體工程真正變貴的是什麼&lt;/a&gt;〉。&amp;#160;&lt;a href=&#34;#fnref:16&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description>
+      
+    </item>
+    
     <item>
       <title>演算法也有不神祕的一面（下集）</title>
       <link>//william-yeh.net/post/2016/08/on-algorithm-myth/</link>
       <pubDate>Tue, 09 Aug 2016 08:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2016/08/on-algorithm-myth/</guid>
-      <description>&lt;p&gt;記得高中時，建中電研社社刊有一則笑話：&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;如果&lt;a href=&#34;https://en.wikipedia.org/wiki/Carl_Friedrich_Gauss&#34;&gt;高斯 (Gauss)&lt;/a&gt; 小學時就學程式設計，他可能就懶得發明&lt;a href=&#34;https://en.wikipedia.org/wiki/Arithmetic_progression&#34;&gt;等差級數&lt;/a&gt;公式了，他會直接坐在電腦前，輸入：&lt;/p&gt;&#xA;&lt;p&gt;sum := 0&lt;br&gt;&#xA;for i := 1 to 100 do&lt;br&gt;&#xA;　　　sum := sum + i&lt;br&gt;&#xA;end for&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;p&gt;雖然是笑話一則，但也很貼切點出 algorithm（演算法；演算法則）的最原始用途：提供另一種解決數學題目的方法。&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;記得高中時，建中電研社社刊有一則笑話：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如果&lt;a href=&#34;https://en.wikipedia.org/wiki/Carl_Friedrich_Gauss&#34;&gt;高斯 (Gauss)&lt;/a&gt; 小學時就學程式設計，他可能就懶得發明&lt;a href=&#34;https://en.wikipedia.org/wiki/Arithmetic_progression&#34;&gt;等差級數&lt;/a&gt;公式了，他會直接坐在電腦前，輸入：&lt;/p&gt;
+&lt;p&gt;sum := 0&lt;br&gt;
+for i := 1 to 100 do&lt;br&gt;
+　　　sum := sum + i&lt;br&gt;
+end for&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;雖然是笑話一則，但也很貼切點出 algorithm（演算法；演算法則）的最原始用途：提供另一種解決數學題目的方法。&lt;/p&gt;
+&lt;p&gt;在前一篇文章〈&lt;a href=&#34;//william-yeh.net/post/2016/08/on-computational-thinking/&#34;&gt;運算思維其實一點也不神祕&lt;/a&gt;〉中，我曾提到「運算思維，目前公認有四大核心」，其中尤以第四核心最特別：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;嚴格來說，運算思維與其他領域（非 &lt;a href=&#34;https://en.wikipedia.org/wiki/Science,_technology,_engineering,_and_mathematics&#34;&gt;STEM&lt;/a&gt; 領域尤然）最大分野，就是演算法 (algorithm) 了。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;現在，我們就來簡單看一看這個所謂的「最大分野」吧。&lt;/p&gt;
+&lt;h2 id=&#34;歷史&#34;&gt;歷史&lt;/h2&gt;
+&lt;p&gt;先談點嚴肅的歷史。沒興趣的人，可以跳過。&lt;/p&gt;
+&lt;p&gt;任何計算機概論教科書，都會提到現代通用型 computer（電腦、計算機）的一個直接源頭，是 18 世紀數學家 &lt;a href=&#34;https://en.wikipedia.org/wiki/Charles_Babbage&#34;&gt;Charles Babbage&lt;/a&gt; 製作的&lt;a href=&#34;https://en.wikipedia.org/wiki/Difference_engine&#34;&gt;差分機&lt;/a&gt;、構思的&lt;a href=&#34;https://en.wikipedia.org/wiki/Analytical_Engine&#34;&gt;分析機&lt;/a&gt;。這種機械式的自動計算儀器，之所以能夠 &amp;ldquo;let it go&amp;rdquo; 放手讓它埋頭苦幹，背後的必要條件，就是我們人類要先將演算步驟不含糊地條列出來。精準，嚴密，一點瑕疵都不行。&lt;/p&gt;
+&lt;p&gt;此處的「演算步驟」，其實就是 algorithm。&lt;/p&gt;
+&lt;p&gt;Algorithm 最古可追溯至&lt;a href=&#34;https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes&#34;&gt;質數的篩法&lt;/a&gt;，可說是流著貴族的血液呢。後來一堆長除法、輾轉相除法、因數分解，都是 algorithm 的具體實例。&lt;/p&gt;
+&lt;p&gt;這麼說，algorithm 只是附庸於數學底下的「機械性計算」層次？&lt;/p&gt;
+&lt;p&gt;其實不然。近代比較正視 algorithm 價值、予以扶正地位的，要算是 19 世紀末開始的一系列數學革命，像 1900 年德國數學家希爾伯特提出的 &lt;a href=&#34;https://en.wikipedia.org/wiki/Hilbert%27s_problems&#34;&gt;23 道難題&lt;/a&gt;，希望替數學建立起一套公理化體系＋形式化自動推導證明機制，以正本清源解決 19 世紀末開始出現的一堆撼動古典數學根基的&lt;a href=&#34;https://en.wikipedia.org/wiki/Non-Euclidean_geometry&#34;&gt;非歐幾何&lt;/a&gt;、&lt;a href=&#34;https://en.wikipedia.org/wiki/Georg_Cantor#Paradoxes_of_set_theory&#34;&gt;集合悖論&lt;/a&gt;、&lt;a href=&#34;https://en.wikipedia.org/wiki/Russell%27s_paradox&#34;&gt;邏輯悖論&lt;/a&gt;。雖然這種夢想被著名的&lt;a href=&#34;https://en.wikipedia.org/wiki/G%C3%B6del%27s_incompleteness_theorems&#34;&gt;哥爾德不完備定理&lt;/a&gt;粉碎，但也從根本提升整個 algorithm 的理論地位，不再只是單純的「計算」而已。摘錄一段維基百科對這段歷史轉折的&lt;a href=&#34;https://en.wikipedia.org/wiki/Algorithm&#34;&gt;說明&lt;/a&gt;：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The concept of &lt;em&gt;algorithm&lt;/em&gt; has existed for centuries; however, a partial formalization of what would become the modern &lt;em&gt;algorithm&lt;/em&gt; began with attempts to solve the &lt;a href=&#34;https://en.wikipedia.org/wiki/Entscheidungsproblem&#34; title=&#34;Entscheidungsproblem&#34;&gt;Entscheidungsproblem&lt;/a&gt; (the &amp;ldquo;decision problem&amp;rdquo;) posed by &lt;a href=&#34;https://en.wikipedia.org/wiki/David_Hilbert&#34; title=&#34;David Hilbert&#34;&gt;David Hilbert&lt;/a&gt; in 1928. Subsequent formalizations were framed as attempts to define &amp;ldquo;&lt;a href=&#34;https://en.wikipedia.org/wiki/Effective_calculability&#34; title=&#34;Effective calculability&#34;&gt;effective calculability&lt;/a&gt;&amp;rdquo; or &amp;ldquo;effective method&amp;rdquo;; those formalizations included the &lt;a href=&#34;https://en.wikipedia.org/wiki/Kurt_G%C3%B6del&#34; title=&#34;Kurt Gödel&#34;&gt;Gödel&lt;/a&gt;–&lt;a href=&#34;https://en.wikipedia.org/wiki/Jacques_Herbrand&#34; title=&#34;Jacques Herbrand&#34;&gt;Herbrand&lt;/a&gt;–&lt;a href=&#34;https://en.wikipedia.org/wiki/Stephen_Cole_Kleene&#34; title=&#34;Stephen Cole Kleene&#34;&gt;Kleene&lt;/a&gt; &lt;a href=&#34;https://en.wikipedia.org/wiki/Recursion_%28computer_science%29&#34; title=&#34;Recursion (computer science)&#34;&gt;recursive functions&lt;/a&gt; of 1930, 1934 and 1935, &lt;a href=&#34;https://en.wikipedia.org/wiki/Alonzo_Church&#34; title=&#34;Alonzo Church&#34;&gt;Alonzo Church&lt;/a&gt;&amp;rsquo;s &lt;a href=&#34;https://en.wikipedia.org/wiki/Lambda_calculus&#34; title=&#34;Lambda calculus&#34;&gt;lambda calculus&lt;/a&gt; of 1936, &lt;a href=&#34;https://en.wikipedia.org/wiki/Emil_Post&#34; title=&#34;Emil Post&#34;&gt;Emil Post&lt;/a&gt;&amp;rsquo;s &amp;ldquo;&lt;a href=&#34;https://en.wikipedia.org/wiki/Formulation_1&#34; title=&#34;Formulation 1&#34;&gt;Formulation 1&lt;/a&gt;&amp;rdquo; of 1936, and &lt;a href=&#34;https://en.wikipedia.org/wiki/Alan_Turing&#34; title=&#34;Alan Turing&#34;&gt;Alan Turing&lt;/a&gt;&amp;rsquo;s &lt;a href=&#34;https://en.wikipedia.org/wiki/Turing_machines&#34; title=&#34;Turing machines&#34;&gt;Turing machines&lt;/a&gt; of 1936–7 and 1939. Giving a formal definition of algorithms, corresponding to the intuitive notion, remains a challenging problem.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;這就是前面我講的「嚴格來說，運算思維與其他領域（非 &lt;a href=&#34;https://en.wikipedia.org/wiki/Science,_technology,_engineering,_and_mathematics&#34;&gt;STEM&lt;/a&gt; 領域尤然）最大分野，就是演算法 (algorithm) 了。」&lt;/p&gt;
+&lt;p&gt;所以，不要以為資訊系成天都只有在做「寫寫程式」這種連早慧的小學生都會的事呀。&lt;/p&gt;
+&lt;p&gt;（謎之音：維基百科短短的一段話，卻數盡當年 algorithms、formal languages 課程中令人生畏的高等議題呀。）&lt;/p&gt;
+&lt;h2 id=&#34;白話版解釋&#34;&gt;白話版解釋&lt;/h2&gt;
+&lt;p&gt;當然啦，大家現在常在講的 &amp;ldquo;computational thinking&amp;rdquo;，講「運算思維」，多半沒有觸及這麼深的理論層次。&lt;/p&gt;
+&lt;p&gt;如果不要扯到這麼遠，回到比較貼近一般人的角度，能不能具體講講 algorithm 是什麼，in plain English？&lt;/p&gt;
+&lt;p&gt;經典教科書 &lt;a href=&#34;https://mitpress.mit.edu/books/introduction-algorithms&#34;&gt;&lt;em&gt;Introduction to Algorithms&lt;/em&gt;&lt;/a&gt; 給了一份十分親民的解釋：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Informally, an &lt;strong&gt;algorithm&lt;/strong&gt; is any well-defined computational procedure that takes some value, or set of values, as &lt;strong&gt;input&lt;/strong&gt; and produces some value, or set of values, as &lt;strong&gt;output&lt;/strong&gt;. An algorithm is thus a sequence of computational steps that transform the input into the output.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;維基百科也給了一段親民的&lt;a href=&#34;https://en.wikipedia.org/wiki/Algorithm&#34;&gt;開場白&lt;/a&gt;：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;In mathematics and computer science, an &lt;strong&gt;algorithm&lt;/strong&gt; is a self-contained step-by-step set of operations to be performed.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;關鍵字：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;well-defined computational procedure&lt;/li&gt;
+&lt;li&gt;a sequence of computational steps&lt;/li&gt;
+&lt;li&gt;self-contained step-by-step set of operations&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;所以，如果用很粗淺的白話角度來看 algorithm，就是：根據明確給定的指示，一步步執行的有限步驟集合；自給自足，不假外求。&lt;/p&gt;
+&lt;p&gt;一點也不神秘吧？&lt;/p&gt;
+&lt;p&gt;當然啦，要再深究的話，即使是上面這段非常非常粗淺的親民說法，也是有很多值得進一步提問的：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;怎樣的指示 (computational step/procedure/operation) 才叫做明確 (well-defined)？&lt;/li&gt;
+&lt;li&gt;怎樣才叫做自給自足 (self-contained)？&lt;/li&gt;
+&lt;li&gt;怎樣才叫做一步步執行 (step by step)？&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;不斷追問，就能追問出其他領域（非 STEM 領域尤然）不太探討的深層議題了，但是，我知道你不想再回頭看到太理論的論述⋯⋯姑且就此打住。&lt;/p&gt;
+&lt;h2 id=&#34;心法&#34;&gt;心法&lt;/h2&gt;
+&lt;p&gt;看了 algorithm 的俗民版操作型定義之後，進一步思考：algorithm 的目的是什麼？&lt;/p&gt;
+&lt;p&gt;冼鏡光在《&lt;a href=&#34;http://www.books.com.tw/products/0010488984&#34;&gt;名題精選百則&lt;/a&gt;》提到：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;從某個角度來看，計算機科學都是在為寫作程式服務：吸收各行各業，各個不同科目、範疇而來的問題，分析那些問題，並且可能的話，找出一個「高效率」的演算法來解決問題。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;各行各業的問題，變化萬千，所以，單以直覺來想像，解決手法一定也是五花八門。&lt;/p&gt;
+&lt;p&gt;是的，只要翻開任何一本演算法經典級教科書的目錄，一定會震懾於演算法的數量。&lt;/p&gt;
+&lt;p&gt;不過，這些書也告訴我們，繁多花招之餘，還是有一些獨孤九劍等級的「破xx式」。&lt;/p&gt;
+&lt;p&gt;像 CLR 白皮書 &lt;a href=&#34;https://mitpress.mit.edu/books/introduction-algorithms&#34;&gt;&lt;em&gt;Introduction to Algorithms&lt;/em&gt;&lt;/a&gt; 就將 &amp;ldquo;Divide and Conquer&amp;rdquo;（分而治之）及 recursion（遞迴、遞歸）列為重要的基礎心法，而 &lt;a href=&#34;https://www.amazon.com/Introduction-Algorithms-Creative-Udi-Manber/dp/0201120372&#34;&gt;&lt;em&gt;Introduction to Algorithms: A Creative Approach&lt;/em&gt;&lt;/a&gt; 一書甚至將 &amp;ldquo;Design of Algorithms by Induction&amp;rdquo; 這種數學歸納法、遞迴法視為最值得深刻掌握的通用心法。&lt;/p&gt;
+&lt;p&gt;所以，分而治之、遞迴，是 algorithm 的重要核心。不能說是全部，但至少是重要的關鍵。&lt;/p&gt;
+&lt;h2 id=&#34;實例&#34;&gt;實例&lt;/h2&gt;
+&lt;p&gt;以文章開頭的等差級數為例，如果用&lt;strong&gt;分而治之&lt;/strong&gt;觀念來思考，該怎麼做呢？&lt;/p&gt;
+&lt;p&gt;我們可能會先把 1+2+3+&amp;hellip;+100 的大問題，拆成 1+2+3 這種較容易處理的小問題，之後再利用加法的結合律去合併出最終答案。因此，先針對 1+2+3 這個小問題來思考：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;sum := 0&lt;br&gt;
+sum := sum + 1&lt;br&gt;
+sum := sum + 2&lt;br&gt;
+sum := sum + 3&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;如果懂得觀察箇中的&lt;strong&gt;模式&lt;/strong&gt;、&lt;strong&gt;規律&lt;/strong&gt;：「啊，不就只是一直把 1 加上去，把 2 加上去，把 3 加上去嘛！」，就會用初級的迴圈改寫成：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;sum := 0&lt;br&gt;
+for i := 1 to 3 do&lt;br&gt;
+　　sum := sum + i&lt;br&gt;
+end for&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;懂得寫到這一步，基本上，1+2+3+&amp;hellip;+100 就不是難事了。&lt;/p&gt;
+&lt;p&gt;如果沒在數學課堂上睡著，學過&lt;a href=&#34;https://en.wikipedia.org/wiki/Mathematical_induction&#34;&gt;數學歸納法&lt;/a&gt;，會發現，這簡直就是天生的&lt;strong&gt;遞迴&lt;/strong&gt;應用：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;function sigma(n) :=&lt;br&gt;
+if (n &amp;lt;= 1) return 1;&lt;br&gt;
+else return n + sigma(n - 1);&lt;br&gt;
+end function&lt;/p&gt;
+&lt;p&gt;sum := sigma(100)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;所以，小結一下：&lt;strong&gt;分而治之&lt;/strong&gt;、&lt;strong&gt;遞迴&lt;/strong&gt;、觀察尋求&lt;strong&gt;模式&lt;/strong&gt;及&lt;strong&gt;規律&lt;/strong&gt;，是 algorithm 的重要核心。不能說是全部，但至少是重要的關鍵。&lt;/p&gt;
+&lt;h2 id=&#34;四大核心&#34;&gt;四大核心&lt;/h2&gt;
+&lt;p&gt;咦，「分而治之」、「遞迴」、「模式及規律」，好熟悉的字眼⋯⋯豈不正與運算思維的另外三大核心相呼應嗎？&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;呼應 &lt;strong&gt;decomposition&lt;/strong&gt; 原則：分而治之的第一階段，就是在對原始問題進行拆解、分解，變成容易解決的次問題，或是在過程中容易尋求規律。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;呼應 &lt;strong&gt;pattern recognition&lt;/strong&gt; 原則：遞迴，就是在針對初步切分的小問題，嘗試識別模式、尋求規律，以形成模式假說。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;呼應 &lt;strong&gt;abstraction&lt;/strong&gt; 原則：遞迴，就是將原始問題提升至抽象層次，在抽象層次解決。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;所以，運算思維的前三核心（decomposition、pattern recognition、abstraction），是第四核心 (algorithm) 的重要基礎。而我前一篇文章〈&lt;a href=&#34;//william-yeh.net/post/2016/08/on-computational-thinking/&#34;&gt;運算思維其實一點也不神祕&lt;/a&gt;〉就在申論：前三核心的能力，本來就是語文課程及數學課程就該好好培養的，並不是只有程式設計課程才能培養。&lt;/p&gt;
+&lt;p&gt;只不過，現今的語文課程及數學課程，花太多精力在搞背誦、蒐集解題花招，而沒有踏實聚焦在王道的議題探索及解題思維上，導致 literacy capability 及 problem solving 能力都不足。&lt;/p&gt;
+&lt;p&gt;這種貧乏的基礎，能夠進一步灌輸 computational thinking 嗎？&lt;/p&gt;
+&lt;h2 id=&#34;總結&#34;&gt;總結&lt;/h2&gt;
+&lt;p&gt;可以做個大總結了。&lt;/p&gt;
+&lt;p&gt;運算思維 (computational thinking)，目前公認的四大核心是：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Decomposition：拆解、分解。&lt;/li&gt;
+&lt;li&gt;Pattern recognition：模式識別、規律尋求。&lt;/li&gt;
+&lt;li&gt;Abstraction：抽象化。&lt;/li&gt;
+&lt;li&gt;Algorithms：演算法、演算法則。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;這些核心能力，都不盡然只有在程式設計課程才能培養。即使是與其他領域最大分野：algorithm，也有相當大的比例是奠基在前三項基本功。&lt;/p&gt;
+&lt;p&gt;君子務本，本立而道生。你看得出來基礎教育該著重在哪一個「本」了嗎？&lt;/p&gt;
+
+
+&lt;div class=&#34;notice notice--note&#34;&gt;
+  &lt;div class=&#34;notice__title&#34;&gt;
+    
+      系列文章
+    
+  &lt;/div&gt;
+  &lt;div class=&#34;notice__content&#34;&gt;&lt;p&gt;❶ &lt;a href=&#34;//william-yeh.net/post/2016/08/on-computational-thinking/&#34;&gt;運算思維其實一點也不神祕（上集）&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❷ 演算法也有不神祕的一面（下集）&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+</description>
+      
     </item>
+    
     <item>
       <title>運算思維其實一點也不神祕（上集）</title>
       <link>//william-yeh.net/post/2016/08/on-computational-thinking/</link>
       <pubDate>Mon, 08 Aug 2016 08:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2016/08/on-computational-thinking/</guid>
-      <description>&lt;p&gt;遠見雜誌 2016/04 的專題〈&lt;a href=&#34;http://store.gvm.com.tw/article_content_30968.html&#34;&gt;22 億人玩程式，擁抱跨界力&lt;/a&gt;〉一連數篇專文，提到許多驚人的趨勢：&lt;/p&gt;&#xA;&#xA;&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;&#xA;&lt;div class=&#34;box&#34;&gt;&#xA;&lt;figure  itemprop=&#34;associatedMedia&#34;&#xA;  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; &#xA;  style=&#34;max-width:20em&#34; &gt;&#xA;    &lt;div class=&#34;img&#34;&gt;&#xA;      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/08/coding-trends.jpg&#34; alt=&#34;程式設計的趨勢&#34;/&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;a href=&#34;//william-yeh.net/img/2016/08/coding-trends.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;&#xA;      &lt;figcaption&gt;&#xA;          &lt;p&gt;程式設計的趨勢&lt;/p&gt;&#xA;      &lt;/figcaption&gt;&#xA;  &lt;/figure&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;p&gt;因此，如〈&lt;a href=&#34;https://www.facebook.com/notes/shih-hao-hung/%E8%B3%87%E8%A8%8A%E7%A7%91%E6%8A%80%E6%95%99%E8%82%B2%E8%AA%B2%E7%B6%B1%E5%88%B6%E8%A8%82%E8%88%87%E5%BE%8C%E7%BA%8C%E7%99%BC%E5%B1%95/1220387071325766&#34;&gt;資訊科技教育、課綱制訂與後續發展&lt;/a&gt;〉一文所述，台灣當局也動了起來。&lt;/p&gt;&#xA;&lt;p&gt;不過，我們的政府，除了不落人後的心態，南橘北枳的習氣也叫人擔心。&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;遠見雜誌 2016/04 的專題〈&lt;a href=&#34;http://store.gvm.com.tw/article_content_30968.html&#34;&gt;22 億人玩程式，擁抱跨界力&lt;/a&gt;〉一連數篇專文，提到許多驚人的趨勢：&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:20em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/08/coding-trends.jpg&#34; alt=&#34;程式設計的趨勢&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2016/08/coding-trends.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;程式設計的趨勢&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;因此，如〈&lt;a href=&#34;https://www.facebook.com/notes/shih-hao-hung/%E8%B3%87%E8%A8%8A%E7%A7%91%E6%8A%80%E6%95%99%E8%82%B2%E8%AA%B2%E7%B6%B1%E5%88%B6%E8%A8%82%E8%88%87%E5%BE%8C%E7%BA%8C%E7%99%BC%E5%B1%95/1220387071325766&#34;&gt;資訊科技教育、課綱制訂與後續發展&lt;/a&gt;〉一文所述，台灣當局也動了起來。&lt;/p&gt;
+&lt;p&gt;不過，我們的政府，除了不落人後的心態，南橘北枳的習氣也叫人擔心。&lt;/p&gt;
+&lt;p&gt;我就忍不住調侃：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;很快的，市面上就會有給國中生的程式設計補習班了。&lt;/p&gt;
+&lt;p&gt;⋯⋯其實現在早就有給國小的 Lego Scratch 才藝班⋯⋯&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;許多有志之士紛紛為文。像蘇文鈺教授在〈&lt;a href=&#34;http://www.bnext.com.tw/article/view/id/38362&#34;&gt;資訊科學納入大學通識課程，可能嗎？&lt;/a&gt;〉提到：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;我恐怕，跟著美國人的教育政策，學到的若只是皮毛，最後還是一樣補習班或才藝班滿天飛，孩子們多了更多東西要補，豈不悲哀？但是，衡諸過去的台灣經驗，只要列入課綱，考試要考，升學必須，利之所趨，豈有不大補特補呢？家長觀念不改，教育單位政策不能慎重，恐怕台灣的競爭力會每下愈況啊！&lt;/p&gt;
+&lt;p&gt;為什麼我說過我怕資訊科學被納入通識課程呢？原因就在此，我們太擅長把一樣東西當作教條，「廣泛」施行，從教學效率上來看，這沒什麼錯，但是這卻會違反資訊作為「科學」二字的含義。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;洪士灝教授也&lt;a href=&#34;https://www.facebook.com/shihhaohung/posts/1065348180174336&#34;&gt;為文&lt;/a&gt;提到：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;這是目前教育上常見到共同問題，所以我不希望在資訊教育中教得太複雜，希望多一些實作類的專題，讓學生多些自由發揮的空間，也就是所謂的 project-based learning 的概念。同時，還希望利用資訊教育，把其他學科的東西帶進來活用，培養跨領域的概念。&lt;/p&gt;
+&lt;p&gt;這是國外大學當前在推所謂的「&lt;strong&gt;基石&lt;/strong&gt;（&lt;strong&gt;cornerstone&lt;/strong&gt;）課程」的概念，資訊系不見得要和傳統課程那樣按部就班由程式語言學起，然後是演算法、物件導向、自動機、系統程式、作業系統、計算機結構等等，而是先告訴學生資訊技術可以解決哪些有趣的問題，以及如何實際利用工具解決問題，再告訴他們裡面有哪些複雜的問題會在以後哪些課程中教到。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;另一篇文章〈&lt;a href=&#34;https://vocus.cc/tuna/5c18831338053485a15d19ac&#34;&gt;資訊通識教育與計算思維怎麼教？&lt;/a&gt;〉也提到：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;會寫程式不代表一定懂計算思維，反過來說，懂運算思維不見得會寫好程式。所以，我並不是說不要教程式設計，而是不希望過於強調程式設計，因而框限了學習內容和未來的發展性。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;在這類較中肯的意見中，&lt;strong&gt;運算思維 (computational thinking)&lt;/strong&gt; 是個反覆出現的關鍵詞。&lt;/p&gt;
+&lt;h2 id=&#34;四大核心&#34;&gt;四大核心&lt;/h2&gt;
+&lt;p&gt;「運算思維」，聽起來既神祕，又抽象。滿容易震懾外行人的。&lt;/p&gt;
+&lt;p&gt;其實並沒有太神祕複雜。網路搜尋一下，很容易找到解釋：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Wikipedia 條目：&lt;a href=&#34;https://en.wikipedia.org/wiki/Computational_thinking&#34;&gt;Computational thinking&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;某程式設計學苑介紹文：&lt;a href=&#34;http://blog.orangeapple.tw/posts/what-is-computational-thinking/&#34;&gt;程式初學者的失落之鑰 – “Computational Thinking”&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Kids Coding Studio 介紹文：&lt;a href=&#34;http://www.kidscoding.tw/2016/06/blog-post.html&#34;&gt;什麼是運算思維？如何培養運算思維？&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;某教室介紹文：&lt;a href=&#34;http://www.erichuang.com/370963385326684/computational_thinking&#34;&gt;程式設計 ⇒ 運算思維 ⇒ 數位素養&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;從這些資訊中，可看到目前公認的運算思維四大核心是：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Decomposition：拆解、分解。&lt;/li&gt;
+&lt;li&gt;Pattern recognition：模式識別、規律尋求。&lt;/li&gt;
+&lt;li&gt;Abstraction：抽象化。&lt;/li&gt;
+&lt;li&gt;Algorithms：演算法、演算法則。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;近親&#34;&gt;近親&lt;/h2&gt;
+&lt;p&gt;其實「運算思維」沒有太神祕複雜，也不全然是計算機領域的專利。像 decomposition 原則，在專案管理領域的 &lt;a href=&#34;https://en.wikipedia.org/wiki/Work_breakdown_structure&#34;&gt;WBS&lt;/a&gt;、企劃寫作的 &lt;a href=&#34;http://wiki.mbalib.com/wiki/MECE%E5%88%86%E6%9E%90%E6%B3%95&#34;&gt;MECE&lt;/a&gt;，都有類似的觀念；像 pattern recognition 原則，是任何解題活動都會運用的歸納法及假設法；像 abstraction 原則，更是所有系統化學問一致強調的心法。&lt;/p&gt;
+&lt;p&gt;其實「運算思維」沒有太神祕複雜，甚至在近親的數學領域也都有，像經典級的 &lt;a href=&#34;https://en.wikipedia.org/wiki/How_to_Solve_It&#34;&gt;&lt;em&gt;How to Solve It&lt;/em&gt;&lt;/a&gt;（中譯本：《&lt;a href=&#34;https://www.books.com.tw/products/0010786452&#34;&gt;怎樣解題&lt;/a&gt;》），或是像《&lt;a href=&#34;http://www.books.com.tw/products/0010708574&#34;&gt;德國一流大學教你數學家的 22 個思考工具&lt;/a&gt;》這本，都有許多論述。&lt;/p&gt;
+&lt;p&gt;以 George Pólya 的經典 &lt;a href=&#34;https://en.wikipedia.org/wiki/How_to_Solve_It&#34;&gt;&lt;em&gt;How to Solve It&lt;/em&gt;&lt;/a&gt; 為例，它的「啟發術小辭典」列了這些解題思維：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Analogy&lt;/li&gt;
+&lt;li&gt;Generalization&lt;/li&gt;
+&lt;li&gt;Induction&lt;/li&gt;
+&lt;li&gt;Variation of the Problem&lt;/li&gt;
+&lt;li&gt;Auxiliary Problem (subproblem/subgoal)&lt;/li&gt;
+&lt;li&gt;Pattern recognition&lt;/li&gt;
+&lt;li&gt;Pattern matching&lt;/li&gt;
+&lt;li&gt;Reduction&lt;/li&gt;
+&lt;li&gt;Specialization&lt;/li&gt;
+&lt;li&gt;Decomposing and Recombining (Divide and conquer)&lt;/li&gt;
+&lt;li&gt;Working backward&lt;/li&gt;
+&lt;li&gt;Draw a Figure&lt;/li&gt;
+&lt;li&gt;Auxiliary Elements (extension)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;你看，是不是早已把現在很潮的「運算思維」四大核心涵蓋在內了？&lt;/p&gt;
+&lt;p&gt;再以《&lt;a href=&#34;http://www.books.com.tw/products/0010708574&#34;&gt;德國一流大學教你數學家的 22 個思考工具&lt;/a&gt;》列的 22 項法寶為例：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;類比原則&lt;/li&gt;
+&lt;li&gt;富比尼原理&lt;/li&gt;
+&lt;li&gt;奇偶原理&lt;/li&gt;
+&lt;li&gt;狄利克雷原理&lt;/li&gt;
+&lt;li&gt;排容原理&lt;/li&gt;
+&lt;li&gt;相反原則&lt;/li&gt;
+&lt;li&gt;歸納原則&lt;/li&gt;
+&lt;li&gt;一般化原則&lt;/li&gt;
+&lt;li&gt;特殊化原則&lt;/li&gt;
+&lt;li&gt;變化原則&lt;/li&gt;
+&lt;li&gt;不變性原理&lt;/li&gt;
+&lt;li&gt;單向變化原則&lt;/li&gt;
+&lt;li&gt;無窮遞減法則&lt;/li&gt;
+&lt;li&gt;對稱原理&lt;/li&gt;
+&lt;li&gt;極值原理&lt;/li&gt;
+&lt;li&gt;遞迴原理&lt;/li&gt;
+&lt;li&gt;步步逼近原則&lt;/li&gt;
+&lt;li&gt;著色原理&lt;/li&gt;
+&lt;li&gt;隨機化原則&lt;/li&gt;
+&lt;li&gt;轉換觀點原則&lt;/li&gt;
+&lt;li&gt;模組化原則&lt;/li&gt;
+&lt;li&gt;蠻力原則&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;你看，是不是在實踐層次，也和現在很潮的「運算思維」四大核心高度呼應？&lt;/p&gt;
+&lt;p&gt;所以，數學教育好好落實，其實也已經在打穩「運算思維」的基礎。&lt;/p&gt;
+&lt;p&gt;只是傳統數學教學被炫麗解題花招綁架了，導致數學教育失靈。&lt;/p&gt;
+&lt;p&gt;只要第一線教育現場不重視根本思維，那麼，再多一個程式設計課，就會提升下一代素質嗎……？&lt;/p&gt;
+&lt;h2 id=&#34;最大分野&#34;&gt;最大分野&lt;/h2&gt;
+&lt;p&gt;運算思維，目前公認有四大核心。&lt;/p&gt;
+&lt;p&gt;嚴格來說，運算思維與其他領域（非 &lt;a href=&#34;https://en.wikipedia.org/wiki/Science,_technology,_engineering,_and_mathematics&#34;&gt;STEM&lt;/a&gt; 領域尤然）最大分野，就是 algorithm（演算法）了。&lt;/p&gt;
+&lt;p&gt;不過，這又是&lt;a href=&#34;//william-yeh.net/post/2016/08/on-algorithm-myth/&#34;&gt;另一篇長文&lt;/a&gt;才能探討的了。&lt;/p&gt;
+&lt;p&gt;（其實小學數學的長除法、輾轉相除法、因數分解，就是一種演算法⋯⋯）&lt;/p&gt;
+&lt;h2 id=&#34;語文素養&#34;&gt;語文素養&lt;/h2&gt;
+&lt;p&gt;最近，為了教小孩數學解題思維，重拾高中時代指定讀物 &lt;a href=&#34;https://en.wikipedia.org/wiki/How_to_Solve_It&#34;&gt;&lt;em&gt;How to Solve It&lt;/em&gt;&lt;/a&gt;（當年我用的是張憶壽教授的譯本，而不是現在市面上通行的&lt;a href=&#34;https://www.books.com.tw/products/0010786452&#34;&gt;天下文化譯本&lt;/a&gt;），尋求好的引導方法。&lt;/p&gt;
+&lt;p&gt;突然發現，這本奇書，何止數學會用到，語文的 literacy capability、電腦的 computational thinking，也都會用到這本書的思維心法。&lt;/p&gt;
+&lt;p&gt;談數學的書，也會重視 literacy capability？會不會扯太遠了？&lt;/p&gt;
+&lt;p&gt;證據在此，請看看以下的解題提示表，不折不扣的 literacy capability 應用：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/08/how-to-solve-it-hints.jpg&#34; alt=&#34;How to Solve It 解題提示表&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2016/08/how-to-solve-it-hints.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;How to Solve It 解題提示表&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;這本書也提倡：在解題的各個環節，要善加運用所謂的「啟發式問句」自我提問。譬如說，在「了解問題」方面，可以如此提問：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;What are you asked to find or show?&lt;/li&gt;
+&lt;li&gt;Can you restate the problem in your own words?&lt;/li&gt;
+&lt;li&gt;Can you think of a picture or a diagram that might help you understand the problem?&lt;/li&gt;
+&lt;li&gt;Is there enough information to enable you to find a solution?&lt;/li&gt;
+&lt;li&gt;Do you understand all the words used in stating the problem?&lt;/li&gt;
+&lt;li&gt;Do you need to ask a question to get the answer?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;看出來了嗎？像語文學習的 literacy capability，像《&lt;a href=&#34;http://www.books.com.tw/products/0010226097&#34;&gt;如何閱讀一本書&lt;/a&gt;》講的「&lt;a href=&#34;//william-yeh.net/post/2016/08/reading-vs-extensive-reading/&#34;&gt;主動閱讀&lt;/a&gt;」，不也正是要主動思索探究這類問題嗎？&lt;/p&gt;
+&lt;p&gt;許多領域，核心原則是共通的。&lt;/p&gt;
+&lt;p&gt;學苟知本，六經皆我註腳。&lt;/p&gt;
+&lt;h2 id=&#34;底子&#34;&gt;底子&lt;/h2&gt;
+&lt;p&gt;其實，好好把語文及數學的底子打好，更重要。&lt;/p&gt;
+&lt;p&gt;不過，不是成天搞背誦、蒐集解題花招，而是踏實聚焦在 &lt;a href=&#34;https://en.wikipedia.org/wiki/How_to_Solve_It&#34;&gt;&lt;em&gt;How to Solve It&lt;/em&gt;&lt;/a&gt; 這類王道的議題探索及解題思維上。&lt;/p&gt;
+&lt;p&gt;解題思維穩了，以後要進軍其他範疇，都容易許多。否則，再多的科目，再多的考試，也只是花拳繡腿。&lt;/p&gt;
+&lt;p&gt;（謎之音：連修辭格都要背誦的語文教育，是什麼樣的語文教育呀⋯⋯）&lt;/p&gt;
+&lt;h2 id=&#34;真的準備好了嗎&#34;&gt;真的準備好了嗎？&lt;/h2&gt;
+&lt;p&gt;搜尋，排序，陣列，不是不能教，而是看怎麼教。&lt;/p&gt;
+&lt;p&gt;如果用冼鏡光當年 &lt;em&gt;PC Magazine&lt;/em&gt; 連載文章所用的引導方法，或是我愛用的既有知識或現實世界類比方法，其實是辦得到的。像當年我教大學生迴圈時，就是用國中數學的等差級數、等比級數為引子。先備知識，是很重要的學習遷移資源。&lt;/p&gt;
+&lt;p&gt;數學教育好好落實，其實也已經在打穩「運算思維」的基礎。只是傳統數學教學被炫麗解題花招綁架了，導致數學教育失靈。&lt;/p&gt;
+&lt;p&gt;只要第一線教育現場不重視根本思維，那麼，再多一個程式設計課，就會提升下一代素質嗎⋯⋯？&lt;/p&gt;
+&lt;p&gt;切記洪教授諄諄提醒的：「不要教太難、教學時間要足夠、課程要設計好、師資要準備好，要做的話就要有充分的資源來做，不然會做不好。」&lt;/p&gt;
+
+
+&lt;div class=&#34;notice notice--note&#34;&gt;
+  &lt;div class=&#34;notice__title&#34;&gt;
+    
+      系列文章
+    
+  &lt;/div&gt;
+  &lt;div class=&#34;notice__content&#34;&gt;&lt;p&gt;❶ 運算思維其實一點也不神祕（上集）&lt;/p&gt;
+&lt;p&gt;❷ &lt;a href=&#34;//william-yeh.net/post/2016/08/on-algorithm-myth/&#34;&gt;演算法也有不神祕的一面（下集）&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+</description>
+      
     </item>
+    
   </channel>
 </rss>

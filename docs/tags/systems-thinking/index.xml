@@ -4,100 +4,1595 @@
     <title>Systems-Thinking on Potioneer&#39;s Essays</title>
     <link>//william-yeh.net/tags/systems-thinking/</link>
     <description>Recent content in Systems-Thinking on Potioneer&#39;s Essays</description>
-    <generator>Hugo</generator>
+    <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <lastBuildDate>Thu, 11 Jul 2024 16:00:00 +0800</lastBuildDate>
-    <atom:link href="//william-yeh.net/tags/systems-thinking/index.xml" rel="self" type="application/rss+xml" />
+    
+        <atom:link href="//william-yeh.net/tags/systems-thinking/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>從系統思考角度談 DevOps 三步工作法</title>
       <link>//william-yeh.net/post/2024/07/dissecting-devops-via-systems-thinking/</link>
       <pubDate>Thu, 11 Jul 2024 16:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2024/07/dissecting-devops-via-systems-thinking/</guid>
-      <description>&lt;p&gt;今天在 &lt;a href=&#34;https://devopsdays.tw/2024/&#34;&gt;DevOpsDays Taipei 2024&lt;/a&gt; 給了一場 Keynote Speech：【從系統思考角度談 DevOps 三步工作法】。&#xA;​&#xA;事情的緣由是這樣的。&lt;/p&gt;&#xA;&lt;p&gt;艦長想在 &lt;a href=&#34;https://devopsdays.tw/2024/&#34;&gt;DevOpsDays Taipei 2024&lt;/a&gt; 繼續開設廣受好評的新手村、入門班系列。經過討論，我決定仿照之前在 DevOpsDays Taipei &lt;a href=&#34;//william-yeh.net/post/2018/09/thinking-weight-training/&#34;&gt;2018&lt;/a&gt; &amp;amp; &lt;a href=&#34;//william-yeh.net/post/2021/03/sys-thinking-unicorn-project/&#34;&gt;2021&lt;/a&gt; 的路線，繼續以「系統思考」角度去剖析 DevOps 相關的組織文化與管理議題。&lt;/p&gt;&#xA;&lt;p&gt;我自己有一個關於演講的內規天條：演講，不只是輸出，也希望每次都有新的挑戰。因此，對於這次的演講主題【從系統思考角度談 DevOps 三步工作法】，我給自己下的挑戰是：我不要用較為人知曉的 CLD (&lt;a href=&#34;https://en.wikipedia.org/wiki/Causal_loop_diagram&#34;&gt;causal loop diagram&lt;/a&gt;)，我要挑戰更難的 SFD (&lt;a href=&#34;https://thesystemsthinker.com/step-by-step-stocks-and-flows-improving-the-rigor-of-your-thinking/&#34;&gt;stock and flow diagram&lt;/a&gt;)。&lt;/p&gt;&#xA;&lt;p&gt;改用 SFD 倒不是為了量化塑模，而是因為它能夠更嚴謹的思考「變數」。正好這幾年台灣也開始流行起存量、增量的詞彙 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，我想，不妨跟風蹭一點熱度。&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;今天在 &lt;a href=&#34;https://devopsdays.tw/2024/&#34;&gt;DevOpsDays Taipei 2024&lt;/a&gt; 給了一場 Keynote Speech：【從系統思考角度談 DevOps 三步工作法】。
+​
+事情的緣由是這樣的。&lt;/p&gt;
+&lt;p&gt;艦長想在 &lt;a href=&#34;https://devopsdays.tw/2024/&#34;&gt;DevOpsDays Taipei 2024&lt;/a&gt; 繼續開設廣受好評的新手村、入門班系列。經過討論，我決定仿照之前在 DevOpsDays Taipei &lt;a href=&#34;//william-yeh.net/post/2018/09/thinking-weight-training/&#34;&gt;2018&lt;/a&gt; &amp;amp; &lt;a href=&#34;//william-yeh.net/post/2021/03/sys-thinking-unicorn-project/&#34;&gt;2021&lt;/a&gt; 的路線，繼續以「系統思考」角度去剖析 DevOps 相關的組織文化與管理議題。&lt;/p&gt;
+&lt;p&gt;我自己有一個關於演講的內規天條：演講，不只是輸出，也希望每次都有新的挑戰。因此，對於這次的演講主題【從系統思考角度談 DevOps 三步工作法】，我給自己下的挑戰是：我不要用較為人知曉的 CLD (&lt;a href=&#34;https://en.wikipedia.org/wiki/Causal_loop_diagram&#34;&gt;causal loop diagram&lt;/a&gt;)，我要挑戰更難的 SFD (&lt;a href=&#34;https://thesystemsthinker.com/step-by-step-stocks-and-flows-improving-the-rigor-of-your-thinking/&#34;&gt;stock and flow diagram&lt;/a&gt;)。&lt;/p&gt;
+&lt;p&gt;改用 SFD 倒不是為了量化塑模，而是因為它能夠更嚴謹的思考「變數」。正好這幾年台灣也開始流行起存量、增量的詞彙 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，我想，不妨跟風蹭一點熱度。&lt;/p&gt;
+&lt;p&gt;這只是一開始的起心動念。但後來越來越覺得，SFD 雖然表面上比 CLD 多了些東西，但實際上卻比較容易詮釋。因此，我這次就把 SFD 定位在嚴謹的分析，接著再透過 CLD 予以簡化與抽象：&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2024/07/sfd-to-cld.png&#34; alt=&#34;先 SFD 再 CLD&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2024/07/sfd-to-cld.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;先 SFD 再 CLD&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;這次的嘗試，算是有達到當初設定的挑戰目標。以後還有機會的話，我會再挑戰用簡單的方式動態展示量化塑模。&lt;/p&gt;
+&lt;p&gt;▶︎ 投影片：&lt;a href=&#34;https://speakerdeck.com/williamyeh/cong-xi-tong-si-kao-jiao-du-tan-devops-san-bu-gong-zuo-fa&#34;&gt;從系統思考角度談 DevOps 三步工作法&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+
+
+&lt;div class=&#34;notice notice--note&#34;&gt;
+  &lt;div class=&#34;notice__title&#34;&gt;
+    
+      系統思考工作坊 - 系列文章
+    
+  &lt;/div&gt;
+  &lt;div class=&#34;notice__content&#34;&gt;&lt;p&gt;❶ 【系統思考的四堂課】&lt;a href=&#34;//william-yeh.net/post/2018/06/sys-thinking-workshop/&#34;&gt;緣起&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❷ 第一場公開班課後回覆：&lt;a href=&#34;//william-yeh.net/post/2018/09/thinking-weight-training/&#34;&gt;思維的重量訓練&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❸ &lt;a href=&#34;//william-yeh.net/post/2021/03/sys-thinking-unicorn-project/&#34;&gt;從系統思考角度讀《獨角獸專案》&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;➍ 從系統思考角度談 DevOps 三步工作法&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;像劉潤的書《&lt;a href=&#34;https://www.books.com.tw/products/0010902849&#34;&gt;商業洞察力&lt;/a&gt;》、汪志謙的線上課程《&lt;a href=&#34;https://sat.cool/course/74&#34;&gt;峰值體驗 2：關鍵時刻的洞察與落地&lt;/a&gt;》，都有觸及到存量與增量的觀念，但也只是稍微引用了一點觀念，探討得並不全面。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description>
+      
     </item>
+    
     <item>
       <title>Timebox 是死胡同嗎？</title>
       <link>//william-yeh.net/post/2023/10/criticism-about-timebox/</link>
       <pubDate>Tue, 10 Oct 2023 10:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2023/10/criticism-about-timebox/</guid>
-      <description>&lt;p&gt;許多敏捷手法都奠基於 timebox。那麼，為什麼有人會認為 timebox 路線是死胡同呢？有此論點的人，偏偏又是敏捷圈的重量級人物呢。&lt;/p&gt;&#xA;&lt;p&gt;看板方法之父 David J. Anderson 在新書 &lt;a href=&#34;https://www.amazon.com/dp/1960442074&#34;&gt;&lt;em&gt;Discovering Kanban&lt;/em&gt;&lt;/a&gt; 第 15 章對於 Scrum 之類基於 timebox 的方法有頗露骨的批評（光從標題 &amp;ldquo;The Tyranny of the Ever-Decreasing Timebox&amp;rdquo; 就看得出來）。正好好友 Derek 在 〈&lt;a href=&#34;https://medium.com/agile-coffee/discovering-kanban-18d9b2ac9be2&#34;&gt;《Discovering Kanban》心得：Scrum 可能沒有你想像的那麼美好&lt;/a&gt;〉一文整理了這一章的摘要與閱讀心得，在網路上也引發一些討論 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，我便趁此機會細讀這一章。&lt;/p&gt;&#xA;&lt;p&gt;這一章論點非常深刻。但讀著讀著，總覺得作者道出的結論 &amp;ldquo;time-constrained sprints are an evolutionary cul-de-sac, a dead end&amp;rdquo;，與我直接或間接所知的業界實踐現況，並不相符。我猜想：會不會是某個推論環節出了些問題？&lt;/p&gt;&#xA;&lt;p&gt;因此，我嘗試用系統思考角度去梳理相關論述。我試圖用更清晰的因果關係秀出 timebox 路線被點名的痛點，以及常見的因應之道。至於這痛點是否真的已被解決了，則留待讀者思考，不在此文的探討範圍。&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;許多敏捷手法都奠基於 timebox。那麼，為什麼有人會認為 timebox 路線是死胡同呢？有此論點的人，偏偏又是敏捷圈的重量級人物呢。&lt;/p&gt;
+&lt;p&gt;看板方法之父 David J. Anderson 在新書 &lt;a href=&#34;https://www.amazon.com/dp/1960442074&#34;&gt;&lt;em&gt;Discovering Kanban&lt;/em&gt;&lt;/a&gt; 第 15 章對於 Scrum 之類基於 timebox 的方法有頗露骨的批評（光從標題 &amp;ldquo;The Tyranny of the Ever-Decreasing Timebox&amp;rdquo; 就看得出來）。正好好友 Derek 在 〈&lt;a href=&#34;https://medium.com/agile-coffee/discovering-kanban-18d9b2ac9be2&#34;&gt;《Discovering Kanban》心得：Scrum 可能沒有你想像的那麼美好&lt;/a&gt;〉一文整理了這一章的摘要與閱讀心得，在網路上也引發一些討論 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，我便趁此機會細讀這一章。&lt;/p&gt;
+&lt;p&gt;這一章論點非常深刻。但讀著讀著，總覺得作者道出的結論 &amp;ldquo;time-constrained sprints are an evolutionary cul-de-sac, a dead end&amp;rdquo;，與我直接或間接所知的業界實踐現況，並不相符。我猜想：會不會是某個推論環節出了些問題？&lt;/p&gt;
+&lt;p&gt;因此，我嘗試用系統思考角度去梳理相關論述。我試圖用更清晰的因果關係秀出 timebox 路線被點名的痛點，以及常見的因應之道。至於這痛點是否真的已被解決了，則留待讀者思考，不在此文的探討範圍。&lt;/p&gt;
+&lt;h2 id=&#34;目標相同途徑各異&#34;&gt;目標相同，途徑各異&lt;/h2&gt;
+&lt;p&gt;首先，David J. Anderson 是贊同 small batch 小批量的。他明確指出小批量的三大優點：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;the advantages of smaller batches—&lt;strong&gt;higher quality&lt;/strong&gt;, &lt;strong&gt;more frequent interaction&lt;/strong&gt; between customers and the delivery organization, and potential gains from &lt;strong&gt;earlier delivery&lt;/strong&gt; of valuable work (also known as the avoidance of opportunity cost of delay)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;他接著指出，欲達小批量的目標，有兩種常見的途徑，一個是 timebox，另一個是 WIP limit：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;There are two ways to constrain the batch size of work: &lt;strong&gt;Constraining the amount of time&lt;/strong&gt; available to do the work, resulting in scoping to small numbers of requests that can be completed in the given time; or simply &lt;strong&gt;constraining the number of work items&lt;/strong&gt;, constraining the size of the batch of requests, also known as WIP constraints.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;此處姑且小結一下，David J. Anderson 是贊同 small batch 的（至少在整本書我還沒找到反對的段落），但主張透過 WIP limit 的方式達到小批量，反對透過 timebox 的方式達到小批量。&lt;/p&gt;
+&lt;p&gt;他認為 timebox 劣於 WIP 的地方是：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This switch from a time constraint to a WIP constraint free you from the tyranny of the timebox and it&amp;rsquo;s three dysfunctions of &lt;strong&gt;upfront analysis&lt;/strong&gt;, &lt;strong&gt;excessive and costly estimation&lt;/strong&gt;, and &lt;strong&gt;heavy-weight dependency management&lt;/strong&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;接下來我們就來看看他反對 timebox 的理由。&lt;/p&gt;
+&lt;h2 id=&#34;timebox-會浪費力氣在削足適履上&#34;&gt;Timebox 會浪費力氣在削足適履上？&lt;/h2&gt;
+&lt;p&gt;David J. Anderson 認為，timebox 愈短，就愈是需要花力氣在 backlog item 的事前分析上，以「削足適履」進去 timebox：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;smaller timeboxes create three types of pressure that are often difficult to cope with and adjust to: First, smaller batches require an ever more detailed approach to requirements analysis and development—the need to write ever more fine-grained user stories that can be completed within the smaller time window. Second, an ever more accurate approach to estimation is needed so that a realistic commitment can be made; with smaller time windows, greater precision is required in estimation.&lt;/p&gt;
+&lt;p&gt;The shorter the time box, the more upfront effort is required to estimate whether the work will fit into the available time.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;這段話的確指出了一部份實質存在的驅動力量，但並非全部。實務上，如果 Scrum 做得夠確實，在經驗主義的引領下，timebox 會逐漸趨於穩定態：&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/10/cld-1.png&#34; alt=&#34;Timebox 會趨於平衡迴路&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2023/10/cld-1.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Timebox 會趨於平衡迴路&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;因此，如果還需要做過多的 up-front estimation，那一定是做錯了 Scrum Planning &amp;amp; Refinement。&lt;/p&gt;
+&lt;p&gt;David J. Anderson 又進一步評論道：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;there is still, after twenty-plus years of Agile, little or no solid guidance on writing fine-grained, consistently small user stories.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;這與我直接或間接所知的業界實踐現況，並不完全相符。至少我看到許多成功運用 Mike Cohn 大師提出的 &lt;a href=&#34;//william-yeh.net/post/2022/11/spidr/&#34;&gt;SPIDR 法&lt;/a&gt;的例子。&lt;/p&gt;
+&lt;h2 id=&#34;timebox-會鼓勵低交付價值&#34;&gt;Timebox 會鼓勵低交付價值？&lt;/h2&gt;
+&lt;p&gt;David J. Anderson 認為，timebox 愈短，就只能交付出被削足適履出來的小碎片，這是難以被用戶察覺到交付價值的：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;small-scale requirements may not be meaningful to the customer—they may not enable value. This means that if one small requirement has a peer relationship to others, they all must be delivered together in order to release value.&lt;/p&gt;
+&lt;p&gt;This type of breakdown defeats the purpose of the ever-smaller timeboxes and creates a false sense of agility when, in fact, customer value and quality are not improving; perhaps even the opposite is true.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;這段話的確指出了一部份實質存在的驅動力量，但並非全部。實務上，如果 Scrum 做得夠確實，在 Scrum Planning 及 Review 時，用戶有充分機會了解如此拆解的目的，並實質參與拆解的活動。因此，在經驗主義的引領下，timebox 與交付價值之間會逐漸趨於穩定態：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/10/cld-2.png&#34; alt=&#34;Timebox 與交付價值之間會趨於平衡迴路&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2023/10/cld-2.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Timebox 與交付價值之間會趨於平衡迴路&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;事實上，從上圖可知，不只是 timebox，就連 David J. Anderson 認可的「小批量」也一樣會面臨「低交付價值」的挑戰。因此，Kanban 的淵源——Lean 陣營，即使主張小批量、one-piece flow，但對於 batch size 是否可以無限制壓縮到最小，也是持保留態度的。像《&lt;a href=&#34;https://williampjyeh.notion.site/6901e548c40c4389bf8919a74d2a1efd&#34;&gt;流的傳承&lt;/a&gt;》就提到，大野耐一主張 batch size ≥ 5。&lt;/p&gt;
+&lt;h2 id=&#34;timebox-會讓-dependency-更惡化&#34;&gt;Timebox 會讓 Dependency 更惡化？&lt;/h2&gt;
+&lt;p&gt;David J. Anderson 認為，timebox 愈短，dependency 造成 sprint fail 的機率也隨之增加：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;What if a story in our sprint backlog gets blocked because of a dependency? That might prevent it from completing on time. Hence, the shorter the sprint timebox, the greater the need to identify dependencies up front.&lt;/p&gt;
+&lt;p&gt;Fine-grained requirements analysis coupled to short timeboxed sprints introduces a dependency management problem to Agile methodologies. If a piece of work will be affected by dependencies, such dependencies need to be tracked and managed between teams and multiple sprint backlogs and potentially across sprint boundaries.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;這段話的確指出了一部份實質存在的驅動力量，但並非全部。假設 dependency 條件不變，timebox 愈短，一點點的 dependency 擾動帶來的影響的確可能較大——這是 threat。可是相對的，granularity 愈小，也愈有將它 fit in 到相關團隊 upcoming sprints 的可能性；尤其當對方團隊也是 short timebox 風格，就更容易 fit in 進去——這是 opportunity。 &lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;Threat 與 opportunity，一加一減，綜合起來的效應是好是壞，還很難說。&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/10/cld-3.png&#34; alt=&#34;Granuality 與 dependency 的關係是？&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2023/10/cld-3.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Granuality 與 dependency 的關係是？&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;實務上，如果 Scrum 做得夠確實，在跨團隊 Refinement &amp;amp; Planning 時，已經有辨識、拆解、對齊、協調 dependency 的事情在檯面上或檯面下發生了，而且不只是消極地為了處理 dependency，更是積極地處理交付價值。&lt;/p&gt;
+&lt;p&gt;事實上，這也是各家各派大規模 Scrum 框架最核心的挑戰與賣點。至於這議題是否真的已被解決了，則留待讀者思考，不在此文的探討範圍。&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/10/cld-final.png&#34; alt=&#34;timebox 的 CLD 全圖&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2023/10/cld-final.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;timebox 的 CLD 全圖&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;kanban-又是怎麼處理-dependency-的&#34;&gt;Kanban 又是怎麼處理 dependency 的？&lt;/h2&gt;
+&lt;p&gt;David J. Anderson  也承認 dependency 是個普遍現象，他也沒有神奇魔法可以讓 Kanban 免於 dependency：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Dependencies are a fact of life in all but very small-scale software development or mediocre development done by largely dilettante generalists.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Kanban 又是怎麼處理 dependency 的呢？從以下文字可以歸結出 global transparency 及 learning to coordinate/cooperate 這兩個方向：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Let dependencies happen as you discover them, create &lt;strong&gt;visibility&lt;/strong&gt; onto them, and actively track them. Use a service-oriented approach and define workflow kanban boards (and systems) that &lt;strong&gt;encourage cooperation&lt;/strong&gt; across functions. Don’t reorganize into cross-functional teams or attempt to design out dependencies from your product architecture; instead, start where you are and &lt;strong&gt;learn&lt;/strong&gt; to be proficient at &lt;strong&gt;coordinating&lt;/strong&gt; shared services.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;這段主張，我的理解是，服務導向的看板，通常會是更縱向 end to end，也更橫向 cross functional。如果做得確實，理論上 dependency 會更早浮現，也更早讓縱向橫向的人一起面對，一起 ad hoc 處理或是 systematically 處理。&lt;/p&gt;
+&lt;p&gt;看到這裡，心中不禁想到：timebox 路線不也是如此嗎？&lt;/p&gt;
+&lt;h2 id=&#34;個人總結&#34;&gt;個人總結&lt;/h2&gt;
+&lt;p&gt;至此，我個人認為，timebox 與 WIP limit 兩種途徑，長期的目標狀態「小批量」其實很類似，只是選擇的途徑不同，造成哪個要先關注、哪個可以等到成熟度提升之後自然就會去關注的不同優先順序。&lt;/p&gt;
+&lt;p&gt;兩者的差異並沒有想像中的大，雙方只是切入的角度不同，但核心要素是很接近的；尤其是繼續精進時，會發現共同點越來越多，相互取經是司空見慣。&lt;/p&gt;
+&lt;p&gt;所以我在課程中，總愛用《&lt;a href=&#34;https://zh.wikipedia.org/zh-tw/%E7%A5%9E%E4%B9%8B%E9%9B%AB&#34;&gt;神之雫&lt;/a&gt;》的最終章來比喻兩者的關係。&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;Derek 這篇文章，在 Facebook 引發一些討論，請見 &lt;a href=&#34;https://www.facebook.com/agilederek/posts/pfbid02YF8yCiY1oUUNnFkeRZgKzfmLVLSd3wBjKqFTC8tVrRkFE1mxhDQAWtKsZqEM4Z8nl&#34;&gt;link 1&lt;/a&gt; &amp;amp; &lt;a href=&#34;https://www.facebook.com/william.yeh/posts/pfbid034juT78DsgHtSYHjKnJ3uEcgXqU8KNSqh24th6ep1nYTXDgnyix8KMF4HjGDb2Z5Al&#34;&gt;link 2&lt;/a&gt;。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;關於這議題，我在後續的文章〈&lt;a href=&#34;//william-yeh.net/post/2023/11/why-decomposition-matters/&#34;&gt;變動的時代，為什麼工作分解技能更是必備？&lt;/a&gt;〉有更深入的探討。&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description>
+      
     </item>
+    
     <item>
       <title>職涯躍升書系導讀會</title>
       <link>//william-yeh.net/series/career-reading-club/</link>
       <pubDate>Tue, 29 Nov 2022 00:00:00 +0000</pubDate>
+      
       <guid>//william-yeh.net/series/career-reading-club/</guid>
-      <description>&lt;p&gt;❶ Part 1: &lt;a href=&#34;//william-yeh.net/post/2022/06/career-reading-club-1/&#34;&gt;喚醒個人及團隊的成長意識&lt;/a&gt; (計 6 冊)&lt;/p&gt;&#xA;&lt;p&gt;❷ Part 2: &lt;a href=&#34;//william-yeh.net/post/2022/08/career-reading-club-2/&#34;&gt;高效團隊的工作方法&lt;/a&gt; (計 2 冊)&lt;/p&gt;&#xA;&lt;p&gt;❸ Part 3: &lt;a href=&#34;//william-yeh.net/post/2022/11/career-reading-club-3/&#34;&gt;職場心理：觀點、期待、渴望&lt;/a&gt; (計 3 冊)&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;❶ Part 1: &lt;a href=&#34;//william-yeh.net/post/2022/06/career-reading-club-1/&#34;&gt;喚醒個人及團隊的成長意識&lt;/a&gt; (計 6 冊)&lt;/p&gt;
+&lt;p&gt;❷ Part 2: &lt;a href=&#34;//william-yeh.net/post/2022/08/career-reading-club-2/&#34;&gt;高效團隊的工作方法&lt;/a&gt; (計 2 冊)&lt;/p&gt;
+&lt;p&gt;❸ Part 3: &lt;a href=&#34;//william-yeh.net/post/2022/11/career-reading-club-3/&#34;&gt;職場心理：觀點、期待、渴望&lt;/a&gt; (計 3 冊)&lt;/p&gt;
+</description>
+      
     </item>
+    
     <item>
       <title>職涯躍升書系導讀會，Part 2：高效團隊的工作方法</title>
       <link>//william-yeh.net/post/2022/08/career-reading-club-2/</link>
       <pubDate>Sat, 20 Aug 2022 10:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2022/08/career-reading-club-2/</guid>
-      <description>&lt;p&gt;2022 年一月起，我開始每個月一次，每次兩小時的【職涯躍升書系導讀會】。&lt;a href=&#34;//william-yeh.net/post/2022/06/career-reading-club-1/&#34;&gt;前六個月&lt;/a&gt;著眼於&lt;strong&gt;喚醒個人及團隊的成長意識&lt;/strong&gt;，接下來兩個月則著眼於&lt;strong&gt;高效團隊的工作方法&lt;/strong&gt;。&lt;/p&gt;&#xA;&lt;p&gt;這兩個月的導讀會，都鎖定在 Agile 相關書籍上——儘管單純從書籍名稱上面都看不出來會與「敏捷」有關。選書如下：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;① &lt;a href=&#34;https://williampjyeh.notion.site/d8a843cbc9c148989e6489625b6fb34d&#34;&gt;豐田精實管理的翻轉獲利秘密&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;② &lt;a href=&#34;https://www.playpcesor.com/2020/05/2020-new-book.html&#34;&gt;時間管理的 30 道難題&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&#xA;&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;&#xA;&lt;div class=&#34;box&#34;&gt;&#xA;&lt;figure  itemprop=&#34;associatedMedia&#34;&#xA;  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; &#xA;  style=&#34;max-width:30em&#34; &gt;&#xA;    &lt;div class=&#34;img&#34;&gt;&#xA;      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2022/08/career-reading-club-2.jpg&#34; /&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;a href=&#34;//william-yeh.net/img/2022/08/career-reading-club-2.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;&#xA;  &lt;/figure&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;p&gt;以下列出這兩場導讀會的介紹文案。&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;2022 年一月起，我開始每個月一次，每次兩小時的【職涯躍升書系導讀會】。&lt;a href=&#34;//william-yeh.net/post/2022/06/career-reading-club-1/&#34;&gt;前六個月&lt;/a&gt;著眼於&lt;strong&gt;喚醒個人及團隊的成長意識&lt;/strong&gt;，接下來兩個月則著眼於&lt;strong&gt;高效團隊的工作方法&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;這兩個月的導讀會，都鎖定在 Agile 相關書籍上——儘管單純從書籍名稱上面都看不出來會與「敏捷」有關。選書如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;① &lt;a href=&#34;https://williampjyeh.notion.site/d8a843cbc9c148989e6489625b6fb34d&#34;&gt;豐田精實管理的翻轉獲利秘密&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;② &lt;a href=&#34;https://www.playpcesor.com/2020/05/2020-new-book.html&#34;&gt;時間管理的 30 道難題&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2022/08/career-reading-club-2.jpg&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2022/08/career-reading-club-2.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;以下列出這兩場導讀會的介紹文案。&lt;/p&gt;
+&lt;h2 id=&#34;豐田精實管理的翻轉獲利秘密&#34;&gt;豐田精實管理的翻轉獲利秘密&lt;/h2&gt;
+&lt;p&gt;Dear all,&lt;/p&gt;
+&lt;p&gt;最近一些同仁開始上 Kanban 課程，我想，也該是時候引介大家讀一讀這類書籍了。&lt;/p&gt;
+&lt;p&gt;接下來兩次導讀會，都會鎖定在 Agile 相關書籍上——儘管單純從書籍名稱上面都看不出來會與「敏捷」有關。&lt;/p&gt;
+&lt;p&gt;首先登場的是《&lt;a href=&#34;https://williampjyeh.notion.site/d8a843cbc9c148989e6489625b6fb34d&#34;&gt;豐田精實管理的翻轉獲利秘密&lt;/a&gt;》。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;原諒我又要講古了。記得 2016 年我密謀在Ｇ公司推動 &lt;a href=&#34;https://www.slideshare.net/williamyeh/devops-to-agile-transformation&#34;&gt;Agile &amp;amp; DevOps 轉型&lt;/a&gt;之前，私底下先做了一些思想溯源。畢竟，身為 INTJ，智性上的滿足是不容妥協的——我不滿足於只是「守」著使用手冊般的 &amp;ldquo;thou shalt&amp;hellip;&amp;rdquo; 敘述，我還需要知道背後的原理及演變歷史。&lt;/p&gt;
+&lt;p&gt;眾所周知，Agile &amp;amp; DevOps 其中一支重要源頭是 Toyota 引以為傲的「&lt;strong&gt;Lean 精實思想&lt;/strong&gt;」。因此，當年我從《&lt;a href=&#34;https://www.books.com.tw/products/0010662172&#34;&gt;精實革命&lt;/a&gt;》、《&lt;a href=&#34;https://www.taaze.tw/products/11100684280.html&#34;&gt;流的傳承&lt;/a&gt;》、《&lt;a href=&#34;https://www.taaze.tw/products/11100227775.html&#34;&gt;豐田形學&lt;/a&gt;》、《&lt;a href=&#34;https://www.taaze.tw/products/11100131112.html&#34;&gt;學習觀察&lt;/a&gt;》這幾本書消化吸收 Lean 思想，雖然費力，但對於 Agile &amp;amp; DevOps 背後的原理更了然於心，也更能面對現實世界的變化球。畢竟，即使我們不嚷嚷著要推動 Agile &amp;amp; DevOps，但 Lean 思想的核心要點，仍然是非常具有普遍性的，值得精熟。&lt;/p&gt;
+&lt;p&gt;再功利一點講，許多人對於 Agile 的想像是「&lt;a href=&#34;https://www.books.com.tw/products/0010785434&#34;&gt;用一半的時間做兩倍的事&lt;/a&gt;」，問題是，真的有這麼神效嗎？關於這問題，我引述憲哥在《&lt;a href=&#34;https://williampjyeh.notion.site/d8a843cbc9c148989e6489625b6fb34d&#34;&gt;豐田精實管理的翻轉獲利秘密&lt;/a&gt;》推薦序所說：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;精實管理，是提升效率的顯學。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;所以，如果導入敏捷的初衷是「&lt;a href=&#34;https://www.books.com.tw/products/0010785434&#34;&gt;用一半的時間做兩倍的事&lt;/a&gt;」，那麼，從「精實思想」這一源頭切入，或許更能直接符合期待——但我可沒說這會比較容易。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;Lean 思想雖然具有普遍性，但某些地方卻是反直覺的，需要以實際活動或模擬活動去體驗（記得嗎？我的【敏捷原理與團隊塑造】工作坊，就有一個這樣的小活動）。我也一直試圖尋找更淺易的 Lean 思想入門書，作為課後跟進的輔助讀物。&lt;/p&gt;
+&lt;p&gt;多年後終於找到了。江守智這本《&lt;a href=&#34;https://williampjyeh.notion.site/d8a843cbc9c148989e6489625b6fb34d&#34;&gt;豐田精實管理的翻轉獲利秘密&lt;/a&gt;》，儘管不是針對軟體研發產業，但如果你慧眼獨具，自然會發現「雖世殊事異，所以興懷，其致一也」。正如此書第 53 頁所說：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;「&lt;strong&gt;轉化&lt;/strong&gt;」是過去十年內我在顧問生涯中所獲得的最重要能力。因為隨著看的企業越多，就會發現大家所在乎所努力的方向其實都很相似。因此，如果說要向標竿學習，那麼這些績優企業如何應對這些&lt;strong&gt;通則性問題&lt;/strong&gt;，就是一個值得參考的地方。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;我甚至可以說：好好吸收並轉化這本書所詮釋的 Lean，將可讓 Agile 的執行更有底氣，而不致淪為花拳繡腿。&lt;/p&gt;
+&lt;h2 id=&#34;時間管理的-30-道難題&#34;&gt;時間管理的 30 道難題&lt;/h2&gt;
+&lt;p&gt;Dear all,&lt;/p&gt;
+&lt;p&gt;七月八月的兩次導讀會，都鎖定在 Agile 相關書籍上——儘管單純從書籍名稱上面都看不出來會與「敏捷」有關。&lt;/p&gt;
+&lt;p&gt;兩個月，兩本書，分別對應到當前敏捷的兩大門派：Kanban 與 Scrum。&lt;/p&gt;
+&lt;p&gt;七月份導讀會的選書《&lt;a href=&#34;https://williampjyeh.notion.site/d8a843cbc9c148989e6489625b6fb34d&#34;&gt;豐田精實管理的翻轉獲利秘密&lt;/a&gt;》談的是 Kanban 背後的「&lt;strong&gt;Lean 精實思想&lt;/strong&gt;」，八月份導讀會的選書《&lt;a href=&#34;https://www.playpcesor.com/2020/05/2020-new-book.html&#34;&gt;時間管理的 30 道難題&lt;/a&gt;》則在探討個人的&lt;strong&gt;時間管理&lt;/strong&gt;，以及（根據相同的原理）團隊的時間管理：目標選擇術、子彈行動力、時間掌控權、流程改進法——有慧眼的人會看出，其實這與 Scrum 的 4+1 活動，雷同程度極高。&lt;/p&gt;
+&lt;p&gt;Scrum 之所以常被戲稱為「&lt;a href=&#34;https://teddy-chen-tw.blogspot.com/2014/10/blog-post_24.html&#34;&gt;照妖鏡&lt;/a&gt;」的原因是，它如實照見出團隊工作流程、技能、默契的盲點（這是 Scrum 經驗主義三支柱當中的 &lt;strong&gt;transparency&lt;/strong&gt;），以及團隊是否有&lt;strong&gt;勇氣&lt;/strong&gt;（這是 Scrum 五大核心價值觀之一）面對事實去進行持續改善（這是 Scrum 經驗主義三支柱當中的 &lt;strong&gt;adaptation&lt;/strong&gt;）。&lt;/p&gt;
+&lt;p&gt;Scrum 團隊若拒絕面對殘酷的真相，半途而廢比例是非常高的。所以有的經典說「大道以多歧亡羊，學者以多方喪生」，有的經典說「你們要從窄門進去；因為通向滅亡的門是大的，路是寬的，從那裡進去的人也多。」&lt;/p&gt;
+&lt;p&gt;假使團隊真的有勇氣走向持續改善的道路，那麼，該朝什麼方向改善呢？&lt;/p&gt;
+&lt;p&gt;我認為，《&lt;a href=&#34;https://www.playpcesor.com/2020/05/2020-new-book.html&#34;&gt;時間管理的 30 道難題&lt;/a&gt;》這本書探討的個人的時間管理，以及（根據相同的原理）團隊的時間管理，是非常好的起點。跑 Scrum 的人，從這本書必會找到許多改善團隊運作的線索——這是 Scrum 4+1 活動的基本功。&lt;/p&gt;
+&lt;p&gt;就算你不跑 Scrum，這本書也一樣能夠改善個人的工作效能——這是專業工作者的職場基本功。&lt;/p&gt;
+
+
+&lt;div class=&#34;notice notice--note&#34;&gt;
+  &lt;div class=&#34;notice__title&#34;&gt;
+    
+      【職涯躍升書系導讀會】系列
+    
+  &lt;/div&gt;
+  &lt;div class=&#34;notice__content&#34;&gt;&lt;p&gt;❶ Part 1: &lt;a href=&#34;//william-yeh.net/post/2022/06/career-reading-club-1/&#34;&gt;喚醒個人及團隊的成長意識&lt;/a&gt; (計 6 冊)&lt;/p&gt;
+&lt;p&gt;❷ Part 2: 高效團隊的工作方法 (計 2 冊)&lt;/p&gt;
+&lt;p&gt;❸ Part 3: &lt;a href=&#34;//william-yeh.net/post/2022/11/career-reading-club-3/&#34;&gt;職場心理：觀點、期待、渴望&lt;/a&gt; (計 3 冊)&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+      
     </item>
+    
     <item>
       <title>職涯躍升書系導讀會，Part 1：喚醒個人及團隊的成長意識</title>
       <link>//william-yeh.net/post/2022/06/career-reading-club-1/</link>
       <pubDate>Fri, 17 Jun 2022 20:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2022/06/career-reading-club-1/</guid>
-      <description>&lt;p&gt;2022 年一月起，我開始每個月一次，每次兩小時的【職涯躍升書系導讀會】，讓公司同仁自由報名，希望藉由這種草根性的軟性活動，另闢一條 bottom-up 的改革路徑。畢竟，深遠持久的影響，不能少掉「喚醒基層意識」這環節。&lt;/p&gt;&#xA;&#xA;&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;&#xA;&lt;div class=&#34;box&#34;&gt;&#xA;&lt;figure  itemprop=&#34;associatedMedia&#34;&#xA;  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; &#xA;  style=&#34;max-width:30em&#34; &gt;&#xA;    &lt;div class=&#34;img&#34;&gt;&#xA;      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2022/06/reading-club-photo.jpg&#34; /&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;a href=&#34;//william-yeh.net/img/2022/06/reading-club-photo.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;&#xA;  &lt;/figure&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;p&gt;前六個月的選書如下：&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;2022 年一月起，我開始每個月一次，每次兩小時的【職涯躍升書系導讀會】，讓公司同仁自由報名，希望藉由這種草根性的軟性活動，另闢一條 bottom-up 的改革路徑。畢竟，深遠持久的影響，不能少掉「喚醒基層意識」這環節。&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2022/06/reading-club-photo.jpg&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2022/06/reading-club-photo.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;前六個月的選書如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;個人層面，喚醒個人成長意識&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;① &lt;a href=&#34;https://www.tenlong.com.tw/products/9789865027896&#34;&gt;經理人之道&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;② &lt;a href=&#34;https://williampjyeh.notion.site/cd42e217271d454aac9411b0c6fc84c7&#34;&gt;三年後，你的工作還在嗎？&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;③ &lt;a href=&#34;https://williampjyeh.notion.site/1a6d4482e2bb42329d85624c214c91fb&#34;&gt;不懂這些，別想加薪&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;團隊層面，喚醒團隊成長意識&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;④ &lt;a href=&#34;https://www.tenlong.com.tw/products/9789865026653&#34;&gt;獨角獸專案&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;⑤ &lt;a href=&#34;https://www.books.com.tw/products/0010811254&#34;&gt;Amazon 的人為什麼這麼厲害？&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;⑥ &lt;a href=&#34;https://www.books.com.tw/products/0010647956&#34;&gt;克服團隊領導的五大障礙&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;以下列出這六場導讀會的介紹文案。&lt;/p&gt;
+&lt;h2 id=&#34;經理人之道&#34;&gt;經理人之道&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;活動名稱&lt;/strong&gt;：《經理人之道》導讀會&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;時間&lt;/strong&gt;：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;導讀人&lt;/strong&gt;：William Yeh&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;目標聽眾&lt;/strong&gt;：技術領域的初階主管、地下主管、工頭、組頭，以及有志於在一兩年內成為上述身分的人。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;活動進行方式&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;活動前：請先自行讀完《&lt;a href=&#34;https://www.tenlong.com.tw/products/9789865027896&#34;&gt;經理人之道&lt;/a&gt;》至少第 1～6 章。&lt;/li&gt;
+&lt;li&gt;活動中：導讀、討論、Q&amp;amp;A。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;參考資料&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;我寫的推薦序：&lt;a href=&#34;//william-yeh.net/post/2021/02/the-managers-path-review/&#34;&gt;軟體研發者的隨身職涯教練&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;三年後你的工作還在嗎&#34;&gt;三年後，你的工作還在嗎？&lt;/h2&gt;
+&lt;p&gt;Dear all,&lt;/p&gt;
+&lt;p&gt;2014 年初，我以 architect 身分加入Ｇ公司。當時我對於 individual contributor (IC) 路線能走到什麼地步，仍然充滿疑惑，身邊也沒有 mentor 可以解惑。&lt;/p&gt;
+&lt;p&gt;幸運的是，我在 2014 年 8 月就入手《&lt;a href=&#34;https://williampjyeh.notion.site/cd42e217271d454aac9411b0c6fc84c7&#34;&gt;三年後，你的工作還在嗎？&lt;/a&gt;》這本剛出爐的新書。這本書的觀念，徹底重塑了我的認知，成為我私房的職涯祕笈。甚至當我數年後成為主管，我還自掏腰包送給屬下一人一本，以重塑整個部門的意識（有圖為證）：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2022/06/3-years-jobs.jpg&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2022/06/3-years-jobs.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;值此歲初重新檢視與訂定個人年度計畫的時機，我大力推薦用這本書伴你度過農曆新年。&lt;/p&gt;
+&lt;h2 id=&#34;不懂這些別想加薪&#34;&gt;不懂這些，別想加薪&lt;/h2&gt;
+&lt;p&gt;Dear all,&lt;/p&gt;
+&lt;p&gt;為了離開舒適圈，看看外面的世界，我去外商圈打滾了一陣子，儘管我的英語聽說能力並不算好。&lt;/p&gt;
+&lt;p&gt;在外商，異國異地 con-call 開會，讀不到共時性的空氣，已經是一種低情境的溝通了，使用英語，更是嚴重限縮語言表達力的頻寬。低情境、低頻寬，是我面對的第一個困境。&lt;/p&gt;
+&lt;p&gt;我更發現，為了突破低情境低頻寬的禁錮，不只簡報風格，不只溝通風格，甚至連更基本的職場思維也得轉變。我得盡快尋得具體的方法，從頭練習職場基本功——我需要學會在低情境、低頻寬處境下更簡潔、更高效的風格，這風格還得具有某種跨文化、跨語言的通用性。&lt;/p&gt;
+&lt;p&gt;後來，我拿出早已躺在書架上好幾年的這本書，重新蹲馬步：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;《&lt;a href=&#34;https://williampjyeh.notion.site/1a6d4482e2bb42329d85624c214c91fb&#34;&gt;不懂這些，別想加薪&lt;/a&gt;》&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;不要被狀似聳動的書名騙了。這本內容扎實的書，不僅是表格，不僅是話術，更是&lt;strong&gt;職場思考&lt;/strong&gt;的基本功。&lt;/p&gt;
+&lt;p&gt;照著這本書刻意練習幾個月，某些核心要點甚至還刻意默寫默背起來。沒有 mentor/coach 在側，自承進步緩慢，卻已經開始敏銳看到許多身邊的反例：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;口語陳述冗長，聽不到重點&lt;/li&gt;
+&lt;li&gt;簡報層次錯綜，看不到結構&lt;/li&gt;
+&lt;li&gt;簡報資料蕪雜，看不到牛肉&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;當我照著書中第一堂課「一分鐘口頭報告」的兩份表格自我操練，也照著第六堂課及第十一堂課介紹的兩種不同的簡報情境重塑自己的簡報思路之後，這類反例在我眼中就顯得粒粒分明。&lt;/p&gt;
+&lt;p&gt;看得到問題，察覺到不足，喚起意識，才容易催生改善的行動。&lt;/p&gt;
+&lt;p&gt;如果你也想重頭練習我所謂的&lt;strong&gt;職場基本功&lt;/strong&gt;，我邀請你，照著以下步驟進行：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;開始閱讀《&lt;a href=&#34;https://williampjyeh.notion.site/1a6d4482e2bb42329d85624c214c91fb&#34;&gt;不懂這些，別想加薪&lt;/a&gt;》這本書。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;拿出隨身筆記本，開始敏銳&lt;strong&gt;觀察&lt;/strong&gt;你身邊發生的這些具體事件，並&lt;strong&gt;記錄&lt;/strong&gt;下來。在下次導讀會時，秀出你所記錄的這些事件：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;口語陳述冗長，聽不到重點&lt;/li&gt;
+&lt;li&gt;簡報層次錯綜，看不到結構&lt;/li&gt;
+&lt;li&gt;簡報資料蕪雜，看不到牛肉&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;記錄之餘，請進一步思考：如果換成《&lt;a href=&#34;https://williampjyeh.notion.site/1a6d4482e2bb42329d85624c214c91fb&#34;&gt;不懂這些，別想加薪&lt;/a&gt;》這本書教的方法，應該怎麼調整？&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;另外，這本書第七堂課介紹「DISC 個性分類」，我也在 Scrum 團隊提過幾次。我建議大家可以先做一下附件的小測驗，我們在導讀會現場會聊聊這個東西。&lt;/p&gt;
+&lt;h2 id=&#34;獨角獸專案&#34;&gt;獨角獸專案&lt;/h2&gt;
+&lt;p&gt;Dear all,&lt;/p&gt;
+&lt;p&gt;近十年，軟體研發界有兩大類重要思潮。在技術面，有大數據、機器學習、immutable infrastructure、微服務、容器、函式編程、資料流水線等；在流程面，則有敏捷開發、DevOps、自助服務、混亂工程、精實 UX 等。這些思潮，有些是新發明，有些則是文藝復興，甚至是跨界學習而來。&lt;/p&gt;
+&lt;p&gt;因此，當我 2021 年底答應要來這裡時，雖然早有心理準備，但實際進來看到這邊的&lt;strong&gt;軟體技術&lt;/strong&gt;及&lt;strong&gt;行事流程&lt;/strong&gt;，與外界所謂「業界標準配備」差距甚大，仍然嚇了一跳。&lt;/p&gt;
+&lt;p&gt;當然啦，這也是我來這裡第一年的重要目標之一：「Raise the bar for 各職能工作者，至少要對齊業界水平」。&lt;/p&gt;
+&lt;p&gt;業界水平是什麼模樣？大體上，就像《&lt;a href=&#34;https://www.tenlong.com.tw/products/9789865026653&#34;&gt;獨角獸專案&lt;/a&gt;》這本小說所描繪的那樣。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;在這小說中，你可以看到在「無極限零件公司」這樣年營業額 40 億美元的製造商暨零售商中，行銷企劃部門、軟體研發部門、服務維運部門彼此爭功諉過的寫實場景。你會看到故事主角梅克辛如何在穀倉泥淖中獨自展開她的「英雄之旅」，與地下反抗軍合作，導入先進的軟體研發思潮。正當一切似乎漸入佳境時，居然還有一條懸疑支線在背後悄悄醞釀⋯⋯高潮迭起，頗有潛力改編成劇情片。&lt;/p&gt;
+&lt;p&gt;如果你是愛看熱鬧的小說族，你會喜歡它的。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;當然啦，內行看門道。這本奇書，並不止於小說，而是真正可以照表操課的。&lt;/p&gt;
+&lt;p&gt;在參加導讀會之前，我建議大家依照「速讀」及「精讀」兩階段依序進行：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;速讀階段：速讀完《&lt;a href=&#34;https://www.tenlong.com.tw/products/9789865026653&#34;&gt;獨角獸專案&lt;/a&gt;》至少一遍，先享受高潮起伏的劇情，並熟悉人物與關係。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;精讀階段：挑出書中所有與「&lt;strong&gt;系統與組織的五大理念&lt;/strong&gt;」有關的段落，越多越好。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;我自己的做法是：每讀到一個有關的地方，就用書籤標註（善用不同顏色的標籤更好）。如下圖：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:20em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2022/06/unicorn-project.jpg&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2022/06/unicorn-project.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;以上，請務必在導讀會之前確實完成。導讀會時，我們會以此為基礎，玩一場我在 &lt;a href=&#34;https://devopsdays.tw/2021/workshop-page/212&#34;&gt;DevOpsDays Taipei 2021&lt;/a&gt; 帶的工作坊。我們將以「系統思考」角度，帶你分析書中倡議的「&lt;strong&gt;五大理念&lt;/strong&gt;」，你將會得到有助於形塑適合 IT 滋長企業文化的施力線索。&lt;/p&gt;
+&lt;h2 id=&#34;amazon-的人為什麼這麼厲害&#34;&gt;Amazon 的人為什麼這麼厲害？&lt;/h2&gt;
+&lt;p&gt;Dear all,&lt;/p&gt;
+&lt;p&gt;我自認有一點點文青的基因。像詹先生寫《&lt;a href=&#34;https://www.books.com.tw/products/0010099824&#34;&gt;創意人&lt;/a&gt;》及《&lt;a href=&#34;https://www.books.com.tw/products/0010065180&#34;&gt;城市人&lt;/a&gt;》，企劃的《&lt;a href=&#34;https://www.books.com.tw/products/0010414925&#34;&gt;謀殺專門店&lt;/a&gt;》，創辦的【明日報】，都是我小時候愛讀的東西。&lt;/p&gt;
+&lt;p&gt;因此，當 2021 年 10 月初 Ｓ君 &amp;amp; Ｃ君 與我接洽，我是充滿驚喜的。當時我心想，有機會在曾經引領台灣網路圈不斷創新的Ｐ集團底下服務，應該是非常光榮的事。&lt;/p&gt;
+&lt;p&gt;是的，在我學生時期，Ｐ的確是台灣網路圈的創新火車頭。&lt;/p&gt;
+&lt;p&gt;不過，當我進來之後，我很驚訝地發現，Ｐ與我學生時期的印象已經大大不同了。就如我在上一次《獨角獸專案》導讀會的文案所說：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;當我 2021 年底答應要來這裡時，雖然早有心理準備，但實際進來看到這邊的&lt;strong&gt;軟體技術&lt;/strong&gt;及&lt;strong&gt;行事流程&lt;/strong&gt;，與外界所謂「業界標準配備」的差距甚大，仍然嚇了一跳。&lt;/p&gt;
+&lt;p&gt;當然啦，這也是我來這裡第一年的重要目標之一：「Raise the bar for 各職能工作者，至少要對齊業界水平」。&lt;/p&gt;
+&lt;p&gt;業界水平是什麼模樣？大體上，就像《獨角獸專案》這本小說所描繪的那樣。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;《獨角獸專案》描繪的是「&lt;strong&gt;軟體技術&lt;/strong&gt;及&lt;strong&gt;行事流程&lt;/strong&gt;」的業界水平，至於「&lt;strong&gt;專業主義&lt;/strong&gt;及&lt;strong&gt;企業文化&lt;/strong&gt;」的業界水平，我打算透過《&lt;a href=&#34;https://www.books.com.tw/products/0010811254&#34;&gt;Amazon 的人為什麼這麼厲害？&lt;/a&gt;》這本書來與大家一同探討。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;《&lt;a href=&#34;https://www.books.com.tw/products/0010811254&#34;&gt;Amazon 的人為什麼這麼厲害？&lt;/a&gt;》這本書所描繪的，其實不只是 Amazon 一家公司的狀況，其實不只是電商龍頭的狀況，更是許多一流外商的共同水平。&lt;/p&gt;
+&lt;p&gt;我期待大家能好好吸收這本書所勾勒的「&lt;strong&gt;專業主義&lt;/strong&gt;及&lt;strong&gt;企業文化&lt;/strong&gt;」，我也會如此要求大家，追上業界水平，成為專業的工作團隊。&lt;/p&gt;
+&lt;h2 id=&#34;克服團隊領導的五大障礙&#34;&gt;克服團隊領導的五大障礙&lt;/h2&gt;
+&lt;p&gt;Dear all,&lt;/p&gt;
+&lt;p&gt;四月五月導讀會的選書當中，《獨角獸專案》描繪的是「&lt;strong&gt;軟體技術&lt;/strong&gt;及&lt;strong&gt;行事流程&lt;/strong&gt;」的業界水平，《Amazon 的人為什麼這麼厲害？》描繪的是「&lt;strong&gt;專業主義&lt;/strong&gt;及&lt;strong&gt;企業文化&lt;/strong&gt;」的業界水平。接下來六月份的導讀會，我打算藉由《&lt;a href=&#34;https://www.books.com.tw/products/0010647956&#34;&gt;克服團隊領導的五大障礙&lt;/a&gt;》這本書，談談「&lt;strong&gt;績優團隊&lt;/strong&gt;」的業界水平。&lt;/p&gt;
+&lt;p&gt;記得自己第一次認真思考「&lt;strong&gt;績優團隊&lt;/strong&gt;」這件事，且把這件事視為己任，是在 2015 年閱讀《&lt;a href=&#34;https://www.tenlong.com.tw/products/9789864765867&#34;&gt;鳳凰專案&lt;/a&gt;》這本書的時候（記得嗎？這是《獨角獸專案》的前作）。我也注意到故事中 CEO 史蒂夫在第 18 章中運用了《&lt;a href=&#34;https://www.books.com.tw/products/0010647956&#34;&gt;克服團隊領導的五大障礙&lt;/a&gt;》所介紹的「&lt;strong&gt;個人歷史演練&lt;/strong&gt; (&lt;strong&gt;personal history exercise&lt;/strong&gt;)」來重塑團隊，擊節讚嘆於峰迴路轉的劇情之餘，不免也心生疑竇：這一招真的有那麼神嗎？&lt;/p&gt;
+&lt;p&gt;因此，我入手了《&lt;a href=&#34;https://www.books.com.tw/products/0010647956&#34;&gt;克服團隊領導的五大障礙&lt;/a&gt;》這本書，也根據這本書介紹的方法，用在團隊集體塑造上，用在新人 onboarding 上，也用在個人 1:1 上，可說是我的私房法寶。&lt;/p&gt;
+&lt;p&gt;這本書的部份重點，可參考以下幾篇文章：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://negotowin.blogspot.com/2017/05/blog-post_31.html&#34;&gt;「一個人走的快，一群人走的遠」，但為何有些團隊就是走不遠？&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://negotowin.blogspot.com/2017/06/2gabcd.html&#34;&gt;從 2G 到 ABCD：想要讓團隊走得更快又更遠？先看看建立信任的兩大目標及四項指標&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://negotowin.blogspot.com/2017/06/blog-post_7.html&#34;&gt;讓團隊走得更快又更遠第二招：用建設性衝突打造更強的團隊戰力&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://negotowin.blogspot.com/2017/06/grow.html&#34;&gt;讓團隊走得更快又更遠第三招：結合 GROW 模式的勇於許下承諾&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://negotowin.blogspot.com/2017/06/blog-post_30.html&#34;&gt;讓團隊走得更快又更遠第四招：塑造當責文化之前，你該知道規避責任者的四大類型&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://negotowin.blogspot.com/2017/07/blog-post_10.html&#34;&gt;讓團隊走得更快又更遠番外篇：從負責到當責的塑造當責文化&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://negotowin.blogspot.com/2017/07/34.html&#34;&gt;讓團隊走得更快又更遠第五招：學會重視成果的 3 個階段和 4 種對象&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;如果你對這幾篇文章頗有共鳴，想進一步學習具體做法，或是也想再一次從商業小說角度看看「績優團隊」的樣貌，那麼，極力推薦你讀一讀《&lt;a href=&#34;https://www.books.com.tw/products/0010647956&#34;&gt;克服團隊領導的五大障礙&lt;/a&gt;》這本書，並且嘗試運用書中介紹的方法。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;這次導讀會，請在參加之前，先自行做一下 pp.226～227 的【團隊評估】。&lt;/p&gt;
+&lt;p&gt;還有，這次導讀會，會有一點噁心。在此先預告一下。&lt;/p&gt;
+
+
+&lt;div class=&#34;notice notice--note&#34;&gt;
+  &lt;div class=&#34;notice__title&#34;&gt;
+    
+      【職涯躍升書系導讀會】系列
+    
+  &lt;/div&gt;
+  &lt;div class=&#34;notice__content&#34;&gt;&lt;p&gt;❶ Part 1: 喚醒個人及團隊的成長意識 (計 6 冊)&lt;/p&gt;
+&lt;p&gt;❷ Part 2: &lt;a href=&#34;//william-yeh.net/post/2022/08/career-reading-club-2/&#34;&gt;高效團隊的工作方法&lt;/a&gt; (計 2 冊)&lt;/p&gt;
+&lt;p&gt;❸ Part 3: &lt;a href=&#34;//william-yeh.net/post/2022/11/career-reading-club-3/&#34;&gt;職場心理：觀點、期待、渴望&lt;/a&gt; (計 3 冊)&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+      
     </item>
+    
     <item>
       <title>2021 個人回顧</title>
       <link>//william-yeh.net/post/2021/12/2021-retrospective/</link>
       <pubDate>Tue, 28 Dec 2021 22:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2021/12/2021-retrospective/</guid>
-      <description>&lt;p&gt;年初，從外商被挖腳到台商；年末，又再被挖腳到另一間台商。&lt;/p&gt;&#xA;&lt;p&gt;我常笑著說：今年，好像都在消費我在 &lt;a href=&#34;//william-yeh.net/post/2019/12/2019-retrospective/&#34;&gt;2019&lt;/a&gt;～&lt;a href=&#34;//william-yeh.net/post/2020/12/2020-retrospective/&#34;&gt;2020&lt;/a&gt; 年間外商經驗的戰備存糧。&lt;/p&gt;&#xA;&lt;p&gt;到了年終，又開始要做個總回顧，再對來年許願。去除一些不便揭露的事情，以下是簡單的回顧。&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;年初，從外商被挖腳到台商；年末，又再被挖腳到另一間台商。&lt;/p&gt;
+&lt;p&gt;我常笑著說：今年，好像都在消費我在 &lt;a href=&#34;//william-yeh.net/post/2019/12/2019-retrospective/&#34;&gt;2019&lt;/a&gt;～&lt;a href=&#34;//william-yeh.net/post/2020/12/2020-retrospective/&#34;&gt;2020&lt;/a&gt; 年間外商經驗的戰備存糧。&lt;/p&gt;
+&lt;p&gt;到了年終，又開始要做個總回顧，再對來年許願。去除一些不便揭露的事情，以下是簡單的回顧。&lt;/p&gt;
+&lt;h2 id=&#34;補血課程&#34;&gt;補血課程&lt;/h2&gt;
+&lt;p&gt;這一年，由於 COVID-19 因素，參加的實體課程，就只有公司舉辦的這兩場內訓，而且都是國外課程的中文化版本，很值得推薦：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.harment.com/trainShow-21-26-133-19.html&#34;&gt;勁道領導 (Fierce Conversations)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://doortraining.com/virtual-solutions/accountability-builder/&#34;&gt;Accountability Builder&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;這一年，我上的多半是線上課程。我漸漸不追求 100% 完課，反而視為書本之外的另一種素材，只要其中某些片段能夠引為己用，就算值得。畢竟，我們都不見得需要 100% 讀完一整本書，為什麼我們需要把一門線上課 100% 上完？&lt;/p&gt;
+&lt;p&gt;就以我今年重點修練科目「金字塔原理」為例，除了書本之外，在 Bryan 的《&lt;a href=&#34;https://shop.darencademy.com/product/view/id/98&#34;&gt;知識型商品的文案寫作課&lt;/a&gt;》線上課程也聽到了 26 分鐘的相關內容，在張敏敏的《&lt;a href=&#34;https://www.dada-master.com/lesson/91&#34;&gt;敏捷溝通力&lt;/a&gt;》線上課程也有 14 分鐘，里茲螞蟻《&lt;a href=&#34;https://vclass.voicetube.com/classes/leedsmayi-communication&#34;&gt;三步驟邁向進階英文口說&lt;/a&gt;》更是到處都是這種論述結構。有機會從更多角度去看這主題，滿有趣的。&lt;/p&gt;
+&lt;p&gt;我不追求 100% 完課。話雖如此，但當七月初收到 Udemy 這樣的通知，還是小小虛榮了一下。&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:20em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2021/12/udemy-statistics.jpg&#34; alt=&#34;Udemy 超過 8 小時&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2021/12/udemy-statistics.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Udemy 超過 8 小時&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;演講及授課&#34;&gt;演講及授課&lt;/h2&gt;
+&lt;p&gt;今年，由於 COVID-19 因素，再加上自覺已經過了能夠恣意 &lt;del&gt;跑趴&lt;/del&gt; 出沒 社群活動的人生階段，婉拒許多邀約，只接了一場公開工作坊：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;//william-yeh.net/post/2021/03/sys-thinking-unicorn-project/&#34;&gt;從系統思考角度讀《獨角獸專案》&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;反之，如果是在公司的上班時間、用公司的場地舉辦活動，安排起來較有餘裕，也就順勢辦了好幾場：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在Ｋ公司內部 Agile Guild 舉辦一場【&lt;a href=&#34;//william-yeh.net/post/2021/07/revisit-psm1/&#34;&gt;Scrum WHAT &amp;amp; WHY 討論：以 Scrum 認證模擬測驗為素材&lt;/a&gt;】小活動&lt;/li&gt;
+&lt;li&gt;在Ｋ集團內部讀書會舉辦一場【&lt;a href=&#34;//william-yeh.net/post/2021/02/the-managers-path-review/&#34;&gt;《經理人之道》&lt;/a&gt;導讀會】&lt;/li&gt;
+&lt;li&gt;在Ｐ集團內部舉辦兩場【Agile Workshop / 敏捷原理與團隊塑造】工作坊&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2021/12/agile-workshop-20211210.png&#34; alt=&#34;Agile Workshop @ PChome&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2021/12/agile-workshop-20211210.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Agile Workshop @ PChome&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;這次 Agile Workshop 算是初步成功將 &lt;a href=&#34;https://shop.darencademy.com/product/view/id/95&#34;&gt;OKR&lt;/a&gt;、&lt;a href=&#34;https://www.books.com.tw/products/0010855790&#34;&gt;OGSM&lt;/a&gt;、JTBD 部份精華融合到 impact mapping 當中了。也算了卻一樁塵封三年的心願。&lt;/p&gt;
+&lt;p&gt;尤其當我看到某團隊在上完課之後，自組織弄出這樣的 Scrum 空間，內心感動難以言喻。&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2021/12/sprint-0.jpg&#34; alt=&#34;某團隊的 Sprint 0 環境&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2021/12/sprint-0.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;某團隊的 Sprint 0 環境&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;問題解決的系統閱讀之旅&#34;&gt;問題解決的系統閱讀之旅&lt;/h2&gt;
+&lt;p&gt;我在〈&lt;a href=&#34;//william-yeh.net/post/2021/03/train-new-scrum-master/&#34;&gt;如何訓練一個新的 Scrum master？&lt;/a&gt;〉一文曾提到：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;視團隊狀況及他的信心指數，我會開始逐步請他主持某些 Scrum 會議。&lt;/p&gt;
+&lt;p&gt;至於 retrospective 則可能是最具挑戰性的。這階段，能否搭配更即時更精準的事後回饋，甚至事前就進行沙盤推演，是成敗關鍵。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;在我自己的 Agile Workshop 中，第二日原本就有一個名為「retrospective 進階篇」的單元。不過，隨著經驗累積，深感有重新設計的必要。因此，我默默展開一場「問題分析與解決」的系統閱讀之旅。&lt;/p&gt;
+&lt;p&gt;老書新書讀完一輪，思維相互碰撞，漸漸忘記原本的動機「訓練 Scrum master」，轉而鑽研到更深層的課題去了。此中有真意，欲辨已忘言。&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2021/12/problem-solving-books.jpg&#34; alt=&#34;「問題分析與解決」書單&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2021/12/problem-solving-books.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;「問題分析與解決」書單&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;這堆書籍當中，我對於其中兩類格外有感。&lt;/p&gt;
+&lt;p&gt;① 當了一陣子幕僚，總算比較看得懂溫老的書《&lt;a href=&#34;https://www.books.com.tw/products/0010711585&#34;&gt;顧問成功的祕密&lt;/a&gt;》。引述一段君婷老師的精闢評論：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2021/12/consultant-comment.png&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2021/12/consultant-comment.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;溫老的書狀似戲謔，但這陣子周遊列國的經歷告訴我，這是真的：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;顧問第一法則：不管客戶怎麼跟你說，一定有問題。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;顧問第二法則：無論問題乍看之下如何，問題一定出在人身上。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;顧問第四法則：如果別人沒有雇用你，千萬不要去解決他們的問題。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;費雪基本原則：你現在適應得愈好，你的適應性就變得愈差。「顧問是比較不能適應目前的一種人，這使得他們的適應性比較強。」&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;② 像《&lt;a href=&#34;https://www.books.com.tw/products/0010645634&#34;&gt;金字塔原理&lt;/a&gt;》這種經典還是該用力啃一啃。畢竟，金字塔原理的牛肉，可不只有 &lt;a href=&#34;https://wiki.mbalib.com/zh-tw/MECE%E5%88%86%E6%9E%90%E6%B3%95&#34;&gt;MECE&lt;/a&gt; 及 why so/so what 而已，許多洞見都被稀釋書籍草草帶過。&lt;/p&gt;
+&lt;p&gt;認真啃了這類書籍，刻意練習須臾，驚覺勝間和代在《&lt;a href=&#34;https://www.taaze.tw/products/11100153609.html&#34;&gt;新．知識生產術&lt;/a&gt;》預告過的副作用真的也上身了。&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2021/12/no-logic.jpg&#34; alt=&#34;「外行人在閒聊」&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2021/12/no-logic.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;「外行人在閒聊」&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;周遊列國其致一也&#34;&gt;周遊列國，其致一也&lt;/h2&gt;
+&lt;p&gt;這幾年在職場上周遊列國的經歷，讓我對王羲之《&lt;a href=&#34;https://zh.wikipedia.org/wiki/%E8%98%AD%E4%BA%AD%E9%9B%86%E5%BA%8F&#34;&gt;蘭亭集序&lt;/a&gt;》這句話格外有感：「雖世殊事異，所以興懷，其致一也。」&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:10em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2021/12/same-feeling.jpg&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2021/12/same-feeling.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;不同的是，國家、產業、公司、產品線、團隊、制度、文化、技能。&lt;/p&gt;
+&lt;p&gt;相同的是，「不管客戶怎麼跟你說，一定有問題」及「無論問題乍看之下如何，問題一定出在人身上」這兩大顧問法則，不斷上演。&lt;/p&gt;
+&lt;p&gt;相同的是，系統思考呈現出來的系統基模，也不斷現蹤。&lt;/p&gt;
+&lt;p&gt;很寫實的是，我在兩屆 &lt;a href=&#34;https://devopsdays.tw/&#34;&gt;DevOpsDays Taipei&lt;/a&gt; 帶的兩場系統思考工作坊，推演出來的 &lt;a href=&#34;https://en.wikipedia.org/wiki/Causal_loop_diagram&#34;&gt;CLD&lt;/a&gt;，無心插柳，在日後周遊列國的旅程中都親眼目睹：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;我在 2018 年根據《&lt;a href=&#34;https://www.books.com.tw/products/0010819137&#34;&gt;The DevOps Handbook 中文版&lt;/a&gt;》第七章設計的&lt;a href=&#34;//william-yeh.net/post/2018/09/thinking-weight-training/&#34;&gt;系統思考工作坊&lt;/a&gt;，描繪出來的&lt;a href=&#34;https://en.wikipedia.org/wiki/System_archetype#Fixes_that_fail&#34;&gt;飲鴆止渴&lt;/a&gt;、&lt;a href=&#34;https://en.wikipedia.org/wiki/System_archetype#Limits_to_growth&#34;&gt;成長上限&lt;/a&gt;、&lt;a href=&#34;https://en.wikipedia.org/wiki/System_archetype#Shifting_the_burden&#34;&gt;捨本逐末&lt;/a&gt;動態結構，簡直就是某公司某團隊的寫照。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;我在今年根據《&lt;a href=&#34;https://www.tenlong.com.tw/products/9789865026653&#34;&gt;獨角獸專案&lt;/a&gt;》設計的&lt;a href=&#34;//william-yeh.net/post/2021/03/sys-thinking-unicorn-project/&#34;&gt;系統思考工作坊&lt;/a&gt;，描繪出來的&lt;a href=&#34;https://en.wikipedia.org/wiki/System_archetype#Shifting_the_burden&#34;&gt;捨本逐末&lt;/a&gt;動態結構，簡直就是某公司的寫照。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;系統思考這門直探本質的技藝，很值得好好掌握。&lt;/p&gt;
+&lt;p&gt;也很慶幸看到這些年周遊列國的經歷及探索沒有白費，若干本質逐漸結晶固化下來。&lt;/p&gt;
+&lt;p&gt;吉卜林：「僅知英國的人，如何能知道英國呢？」&lt;/p&gt;
+&lt;h2 id=&#34;教練的必要&#34;&gt;教練的必要&lt;/h2&gt;
+&lt;p&gt;周遊列國也讓我看到：敏捷不起來，很多時候是因為輕忽技術實踐，甚至漠視。&lt;/p&gt;
+&lt;p&gt;就像《&lt;a href=&#34;https://zh.wikipedia.org/wiki/%E7%81%8C%E7%AF%AE%E9%AB%98%E6%89%8B&#34;&gt;灌籃高手&lt;/a&gt;》安西教練的犀利質問：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;「有人教導基本動作嗎？」&lt;/p&gt;
+&lt;p&gt;「每個人都各打各的，完全不團結。」&lt;/p&gt;
+&lt;p&gt;「球隊的教練到底在搞什麼？」&lt;/p&gt;
+&lt;/blockquote&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2021/12/basic-training.png&#34; alt=&#34;「基本動作」&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2021/12/basic-training.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;「基本動作」&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;我也漸漸體會到：其實，中高階主管也極需要 coaching。&lt;/p&gt;
+&lt;p&gt;我甚至懷疑：他們當年真的上過他們現在要初階主管接受過的培訓嗎？&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;沒有人做，就由我來起個頭吧。誰叫我現在的職稱有一個 &amp;ldquo;agile coach&amp;rdquo; 字眼呢？&lt;/p&gt;
+&lt;p&gt;技術面的培訓，已經逐步規劃與執行。&lt;/p&gt;
+&lt;p&gt;至於非技術面的培訓，一部份打算以導讀會的形式進行。目前的戰備存糧計有：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;//william-yeh.net/post/2021/02/the-managers-path-review/&#34;&gt;經理人之道&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://williampjyeh.notion.site/cd42e217271d454aac9411b0c6fc84c7&#34;&gt;三年後，你的工作還在嗎？&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;//william-yeh.net/post/2020/10/unicorn-project-review/&#34;&gt;獨角獸專案&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.books.com.tw/products/0010811254&#34;&gt;Amazon 的人為什麼這麼厲害？&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.books.com.tw/products/0010721292&#34;&gt;左思右想&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.books.com.tw/products/0010865668&#34;&gt;高產出的本事&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;勝間和代 or 麥肯錫系列的某本書&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://williampjyeh.notion.site/3e31bb4af3d74007bc0e522e268019c0&#34;&gt;薩提爾教練模式&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://williampjyeh.notion.site/eeb5d579610b40128755a17adf983c51&#34;&gt;給力&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.books.com.tw/products/0010898249&#34;&gt;目標&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;⋯⋯&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;給自己一個 2022 的小挑戰，也算是刻意練習「金字塔原理」12 回合 (是的，我以金字塔原理來進行每一場導讀會)。&lt;/p&gt;
+&lt;h2 id=&#34;2022-許願&#34;&gt;2022 許願&lt;/h2&gt;
+&lt;p&gt;2022 年，希望自己能做到：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;每個月辦一場 2hr 導讀會。&lt;/li&gt;
+&lt;li&gt;繼續更深度的本質修練。&lt;/li&gt;
+&lt;li&gt;繼續增進商務英語聽說能力。&lt;/li&gt;
+&lt;li&gt;開放冒險選項。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;就醬。&lt;/p&gt;</description>
+      
     </item>
+    
     <item>
       <title>服務事故處理的系統思考</title>
       <link>//william-yeh.net/post/2021/04/cld-for-service-incident/</link>
       <pubDate>Mon, 05 Apr 2021 20:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2021/04/cld-for-service-incident/</guid>
-      <description>&lt;p&gt;集團內 Agile CoP 定期聚會，最近都在團練「&lt;a href=&#34;https://wiki.mbalib.com/zh-tw/%E8%A1%8C%E5%8A%A8%E5%AD%A6%E4%B9%A0%E6%B3%95&#34;&gt;行動學習 (action learning)&lt;/a&gt;」。&lt;/p&gt;&#xA;&lt;p&gt;行動學習十分殊勝。多元探詢角度居然能夠同時並存，對我來說，在參加之前委實難以想像。&lt;/p&gt;&#xA;&lt;p&gt;我參加了兩次，上次我選擇的提問切入點 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; 是「問題重塑」，這次刻意換成「系統思考」來練練。&lt;/p&gt;&#xA;&lt;p&gt;某團員提出一則個案讓大家探討：&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;集團內 Agile CoP 定期聚會，最近都在團練「&lt;a href=&#34;https://wiki.mbalib.com/zh-tw/%E8%A1%8C%E5%8A%A8%E5%AD%A6%E4%B9%A0%E6%B3%95&#34;&gt;行動學習 (action learning)&lt;/a&gt;」。&lt;/p&gt;
+&lt;p&gt;行動學習十分殊勝。多元探詢角度居然能夠同時並存，對我來說，在參加之前委實難以想像。&lt;/p&gt;
+&lt;p&gt;我參加了兩次，上次我選擇的提問切入點 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; 是「問題重塑」，這次刻意換成「系統思考」來練練。&lt;/p&gt;
+&lt;p&gt;某團員提出一則個案讓大家探討：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;P0 事件令人疲於奔命，大家也認同軟體服務系統 Op-friendly 很重要。問題是：應該由誰去推動？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;一看這敘述，內心小劇場就開始了：我超想換回上次的「問題重塑」切入點呀！不過，轉念一想，「系統思考」也是能夠重塑問題的⋯⋯&lt;/p&gt;
+&lt;p&gt;於是，藉由團員夥伴們從各個角度提問，我漸漸系統思考出一些端倪（並偷偷夾帶一些問題重塑）。接下來，就要帶著這份初期假設去小步行動了。&lt;/p&gt;
+&lt;p&gt;具體細節不便在此公開揭露，我就改用有些局部類似的場景：《&lt;a href=&#34;https://www.tenlong.com.tw/products/9789865026653&#34;&gt;獨角獸專案&lt;/a&gt;》第 11 章的故事情節當例子吧。&lt;/p&gt;
+&lt;h2 id=&#34;規則&#34;&gt;規則&lt;/h2&gt;
+&lt;p&gt;《獨角獸專案》主角梅克辛很納悶：為什麼她一直陷在工單的無窮迴圈？&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;是我們一手造成的。我們制定了一系列規定，強調 QA 從開發部門分離出來的必要性，你懂的，以便保護業務不受那些瘋狂、無所顧忌的開發人員波及。每一年，我們都用任何出了差錯的事作為名堂，制定更多的規則來『提升開發人員的問責性』，然而只讓效率更加緩慢。&lt;/p&gt;
+&lt;p&gt;常聽人們說 IT 是整個組織的神經樞紐。但出於某種原因，企業卻容忍他們的中樞神經逐漸退化，好比多發性硬化症擾亂了大腦內部與在身體間流動的資訊流一樣。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;若改用系統思考 &lt;a href=&#34;https://en.wikipedia.org/wiki/Causal_loop_diagram&#34;&gt;CLD&lt;/a&gt; 圖來表達，這是企圖利用「制定更多規則」來達到平衡迴路：&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:20em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2021/04/cld-1-regulation.png&#34; alt=&#34;CLD Part 1：制定規則的平衡迴路&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2021/04/cld-1-regulation.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;CLD Part 1：制定規則的平衡迴路&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;規定，初衷是好的；可是，過度的規定，會反噬系統研發。&lt;/p&gt;
+&lt;p&gt;就像《獨角獸專案》第 8 章所描述的情景：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;第三理念的對立面是堅持程序合規性和 TWWADI 的人，你們懂吧，『The Way We&amp;rsquo;ve Always Done It.（這是我們一貫的做法）』。無數的規則、條例、流程、程序、批准和階段門檻，隨時都有新的規則出現，為了防止最近的災難再度發生。&lt;/p&gt;
+&lt;p&gt;嚴格的專案計畫、不靈活的採購流程、強勢的架構審查委員會、不頻繁的發布時程、冗長的審核流程、嚴格的職責分離⋯⋯你們對程序合規性一定深有體會。&lt;/p&gt;
+&lt;p&gt;每一項都增加了我們所做的每一件事的協調成本，也推高了延遲成本。再加上決策所在和工作執行地之間的距離不斷擴大，我們交付的成果品質每下愈況。正如戴明大師 (W. Edwards Demming) 的觀察，『一個壞系統將次次擊潰所有好人。』&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;用系統思考 &lt;a href=&#34;https://en.wikipedia.org/wiki/Causal_loop_diagram&#34;&gt;CLD&lt;/a&gt; 圖來表達，這是「制定更多規則」所產生的惡化增強迴路：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2021/04/cld-2-depression.png&#34; alt=&#34;CLD Part 2：制定規則的惡化增強迴路&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2021/04/cld-2-depression.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;CLD Part 2：制定規則的惡化增強迴路&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;欲證實是否真有如上圖所預測的惡化增強迴路，可沿著增強迴路觀察關鍵變數的增長趨勢：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Restrictions on Dev&lt;/li&gt;
+&lt;li&gt;Dev&amp;rsquo;s willingness to cooperate and contribute&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;捨本逐末系統基模&#34;&gt;捨本逐末系統基模&lt;/h2&gt;
+&lt;p&gt;上圖，像極了&lt;a href=&#34;https://en.wikipedia.org/wiki/System_archetype#Shifting_the_burden&#34;&gt;捨本逐末 (shifting the burden)&lt;/a&gt; 系統基模的「症狀解」及「副作用」部分：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2021/04/shifting_the_burden.png&#34; alt=&#34;捨本逐末 (shifting the burden) 系統基模 (摘自 Wikipedia)&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2021/04/shifting_the_burden.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;捨本逐末 (shifting the burden) 系統基模 (摘自 Wikipedia)&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;既然如此，我們就來補上「根本解」，把整幅拼圖完成：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2021/04/cld-3-devops.png&#34; alt=&#34;CLD Part 3：以整體價值流思考的平衡迴路&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2021/04/cld-3-devops.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;CLD Part 3：以整體價值流思考的平衡迴路&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;這塊拼圖，也正是 DevOps 運動講究的整體價值流思考。&lt;/p&gt;
+&lt;h2 id=&#34;適合的特質&#34;&gt;適合的特質&lt;/h2&gt;
+&lt;p&gt;剩下的問題是：這塊拼圖，該由誰來拼？&lt;/p&gt;
+&lt;p&gt;無疑的，在《獨角獸專案》故事中，適合推動這些改變的人，就是紅衫軍。&lt;/p&gt;
+&lt;p&gt;讓我們試著不要只鎖定在特定的單一英雄人物身上，而是試著重塑問題，改問：紅衫軍有什麼特質？&lt;/p&gt;
+&lt;p&gt;《獨角獸專案》第 5 章，如此形容紅衫軍：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;對鳳凰專案的大多數人來說，營運部只代表在另一頭接收任務工單的人。他們是所有人的抱怨對象。但是，庫爾特和這群烏合之眾顯然有截然不同的工作之道，他們用非正式的方法繞過正常的組織溝通管道。&lt;/p&gt;
+&lt;p&gt;梅克辛非常興奮。她對這個團隊一直致力完成的事以及自己被選來幫忙這件事，發自內心感到驚艷。我終於找到屬於我的部落了，她心想。這就是經營人脈的意義所在——你可以集結一群充滿動力的人來解決一個大問題，儘管這個組合人選和官方組織架構圖一點關係也沒有。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;第 5 章，如此形容梅克辛：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;梅克辛，你為了破解鳳凰專案軟體版本的努力成果讓我們很驚艷。我們對你所展現的技術和社交技巧深感敬畏，你成功地找出了幾乎所有的環境要素，這件事需要驚人毅力、專注，還有永不妥協的態度！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;第 12 章，如此形容香儂：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;梅克辛欣賞香儂盡量把握任何機會讓人們站在同一陣線。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;第 17 章，如此形容比爾與梅克辛：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;許多企業認識了&lt;a href=&#34;https://hbr.org/2007/07/to-succeed-in-the-long-term-focus-on-the-middle-term&#34;&gt;三層面理論&lt;/a&gt;，還是無法好好地投資新一代創新事務。換句話說，他們在核心業務投資不足，因為他們被脈絡業務綁架了。脈絡業務管理不善是一流企業的罩門。被脈絡業務耽誤的公司沒有辦法專心推動核心業務。&lt;/p&gt;
+&lt;p&gt;的確有一條改造公司的策略，但它需要近乎苛刻的專注與堅持。&lt;/p&gt;
+&lt;p&gt;最適合管理脈絡業務就是比爾和梅克辛這樣的人。這絕非易事。你需要一個真正了解公司業務的人，能夠不屈不撓地在全公司上下推動標準化，把組織的最佳利益視為第一位，清楚科技的運用時機與分寸。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;但願以上這些摘錄的段落，足以給任何有志推動改變的有志之士一些啟發。&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;行動學習三要素 &lt;em&gt;L&lt;/em&gt; = &lt;em&gt;P&lt;/em&gt; + &lt;em&gt;Q&lt;/em&gt; + &lt;em&gt;R&lt;/em&gt;，當中的 &lt;em&gt;L&lt;/em&gt; 為 learning，&lt;em&gt;P&lt;/em&gt; 為 programmed knowledge，&lt;em&gt;Q&lt;/em&gt; 為 questioning，&lt;em&gt;R&lt;/em&gt; 為 reflection。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description>
+      
     </item>
+    
     <item>
       <title>從系統思考角度讀《獨角獸專案》</title>
       <link>//william-yeh.net/post/2021/03/sys-thinking-unicorn-project/</link>
       <pubDate>Sun, 28 Mar 2021 16:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2021/03/sys-thinking-unicorn-project/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;活動名稱&lt;/strong&gt;：從系統思考角度讀《獨角獸專案》&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;時間&lt;/strong&gt;：2021-11-24 (三) / 13:30&amp;ndash;15:00 (因疫情影響延期舉辦)&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;會議&lt;/strong&gt;：&lt;a href=&#34;https://devopsdays.tw/&#34;&gt;DevOpsDays Taipei 2021&lt;/a&gt; 的 &lt;a href=&#34;https://devopsdays.tw/2021/workshop-page/212&#34;&gt;603 會議室&lt;/a&gt;&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;&lt;strong&gt;活動名稱&lt;/strong&gt;：從系統思考角度讀《獨角獸專案》&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;時間&lt;/strong&gt;：2021-11-24 (三) / 13:30&amp;ndash;15:00 (因疫情影響延期舉辦)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;會議&lt;/strong&gt;：&lt;a href=&#34;https://devopsdays.tw/&#34;&gt;DevOpsDays Taipei 2021&lt;/a&gt; 的 &lt;a href=&#34;https://devopsdays.tw/2021/workshop-page/212&#34;&gt;603 會議室&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;課程簡介&#34;&gt;課程簡介&lt;/h2&gt;
+&lt;p&gt;《&lt;a href=&#34;https://www.tenlong.com.tw/products/9789865026653&#34;&gt;獨角獸專案&lt;/a&gt;》是本寫實刻劃軟體研發者日常甘苦的商業小說，但內行看門道，這本奇書，並不止於小說，而是真正可以照表操課的，以敏捷的 IT 能力驅動並翻轉整間公司的競爭力。&lt;/p&gt;
+&lt;p&gt;我在本書&lt;a href=&#34;//william-yeh.net/post/2020/10/unicorn-project-review/&#34;&gt;推薦序&lt;/a&gt;也曾如此建議：『請以「&lt;strong&gt;系統與組織的五大理念&lt;/strong&gt;」觀點細讀，從頭分析故事的人事時地物及&lt;strong&gt;因果關係&lt;/strong&gt;。經此一番&lt;strong&gt;系統思考&lt;/strong&gt;，比起許多愛談高大上理念的敏捷、DevOps、數位轉型書籍，你將會有更深刻具體的領悟。』&lt;/p&gt;
+&lt;p&gt;問題是：如何系統思考？如何照表操課？&lt;/p&gt;
+&lt;p&gt;這場 90 分鐘的迷你工作坊，將以「系統思考」角度，帶你分析書中倡議的「五大理念」，你將會得到有助於形塑適合 IT 滋長企業文化的施力線索。&lt;/p&gt;
+&lt;h2 id=&#34;目標聽眾&#34;&gt;目標聽眾&lt;/h2&gt;
+&lt;p&gt;已有《&lt;a href=&#34;https://www.tenlong.com.tw/products/9789865026653&#34;&gt;獨角獸專案&lt;/a&gt;》一書，想從中擷取可行洞見的人。&lt;/p&gt;
+&lt;p&gt;程度分級 ★☆☆ (通識)：介紹新知給尚未具備或僅具備少許該領域知識的人，也包含非技術議題。&lt;/p&gt;
+&lt;h2 id=&#34;聽眾收穫&#34;&gt;聽眾收穫&lt;/h2&gt;
+&lt;p&gt;認識高效能研發團隊的核心特質，以及促成這些特質的關鍵施力點。&lt;/p&gt;
+&lt;h2 id=&#34;注意事項&#34;&gt;注意事項&lt;/h2&gt;
+&lt;h3 id=&#34;學員需知&#34;&gt;學員需知&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;上課前，請先完成「課前作業」（後詳）。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;上課時，請攜帶「課前作業」及《&lt;a href=&#34;https://www.tenlong.com.tw/products/9789865026653&#34;&gt;獨角獸專案&lt;/a&gt;》一書。建議攜帶繁體中文版，以備隨時照頁數檢索。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;課前作業&#34;&gt;課前作業&lt;/h2&gt;
+&lt;p&gt;根據學員不同的狀況，我將課前作業分成兩部分：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;必備作業：所有人都務必在課前確實完成。&lt;/li&gt;
+&lt;li&gt;選配作業：行有餘力，請在課前盡量做。做得越多，課堂上就越輕鬆。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;必備作業&#34;&gt;必備作業&lt;/h3&gt;
+&lt;p&gt;請依照「速讀」及「精讀」兩階段依序進行：&lt;/p&gt;
+&lt;p&gt;➊ 速讀階段：速讀完《&lt;a href=&#34;https://www.tenlong.com.tw/products/9789865026653&#34;&gt;獨角獸專案&lt;/a&gt;》至少一遍，先享受高潮起伏的劇情，並熟悉人物與關係。&lt;/p&gt;
+&lt;p&gt;➋ 精讀階段：挑出書中所有與「&lt;strong&gt;系統與組織的五大理念&lt;/strong&gt;」有關的段落，越多越好。&lt;/p&gt;
+&lt;p&gt;我自己的做法是：每讀到一個有關的地方，就用書籤標註。如下圖：&lt;/p&gt;
+
+   &lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+   &lt;div class=&#34;box&#34;&gt;
+   &lt;figure  itemprop=&#34;associatedMedia&#34;
+     itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+     style=&#34;max-width:30em&#34; &gt;
+       &lt;div class=&#34;img&#34;&gt;
+         &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2021/03/unicorn-project-bookmark.jpg&#34; alt=&#34;用書籤標註五大理念的例子&#34;/&gt;
+       &lt;/div&gt;
+       &lt;a href=&#34;//william-yeh.net/img/2021/03/unicorn-project-bookmark.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+         &lt;figcaption&gt;
+             &lt;p&gt;用書籤標註五大理念的例子&lt;/p&gt;
+         &lt;/figcaption&gt;
+     &lt;/figure&gt;
+   &lt;/div&gt;
+
+&lt;p&gt;一點小建議：請善用不同顏色的標籤，或是可寫字的標籤，以便檢索。&lt;/p&gt;
+&lt;p&gt;以上請務必在課前確實完成。&lt;/p&gt;
+&lt;h3 id=&#34;選配作業&#34;&gt;選配作業&lt;/h3&gt;
+&lt;p&gt;若行有餘力，請針對前面挑出的「&lt;strong&gt;五大理念&lt;/strong&gt;」段落，分析其中的因果關係。&lt;/p&gt;
+&lt;p&gt;就以《&lt;a href=&#34;https://www.tenlong.com.tw/products/9789865026653&#34;&gt;獨角獸專案&lt;/a&gt;》第七章為例，埃瑞克在對紅衫軍成員侃侃而談第一理念「簡潔性和區域性 (locality and simplicity)」時，有個段落提到「程式碼區域性與組織區域性」：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2021/03/unicorn-project-crt-example.jpg&#34; alt=&#34;因果關係例子：《獨角獸專案》第七章&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2021/03/unicorn-project-crt-example.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;因果關係例子：《獨角獸專案》第七章&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;讓我們先以「因果關係」角度直接翻譯這段文字吧。初期，你可能會解讀出三組因果關係：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2021/03/unicorn-project-crt-part1.png&#34; alt=&#34;因果關係 Part 1：直接翻譯&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2021/03/unicorn-project-crt-part1.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;因果關係 Part 1：直接翻譯&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;這三組因果關係貌似彼此獨立。若再仔細檢視，你可能會發現彼此之間並不是毫無關聯，而是可以辨識出一些共同結構或模式：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2021/03/unicorn-project-crt-part2.png&#34; alt=&#34;因果關係 Part 2：找出共同模式&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2021/03/unicorn-project-crt-part2.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;因果關係 Part 2：找出共同模式&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;最後，再進一步以「系統思考」常見的「增強迴路」角度來檢視，我們可以合理腦補上「正確歸因」與「錯誤歸因」兩項元素，統整出一份較完整的因果關係圖：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2021/03/unicorn-project-crt-part3.png&#34; alt=&#34;因果關係 Part 3：增強迴路&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2021/03/unicorn-project-crt-part3.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;因果關係 Part 3：增強迴路&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;因果關係圖一旦推導到這種地步，施力線索也就昭然若揭。&lt;/p&gt;
+&lt;p&gt;這就是「系統思考」的威力。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;這份「選配」作業，請盡可能在課前多做一些。課前做得越多，課堂上你就會越輕鬆。&lt;/p&gt;
+&lt;p&gt;做不出來的，也別擔心，課堂上會以分組方式進行，有隊友會與你一齊破關。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;     &lt;!-- raw HTML omitted --&gt;     &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+
+
+&lt;div class=&#34;notice notice--note&#34;&gt;
+  &lt;div class=&#34;notice__title&#34;&gt;
+    
+      《獨角獸專案》系列文章
+    
+  &lt;/div&gt;
+  &lt;div class=&#34;notice__content&#34;&gt;&lt;p&gt;❶ &lt;a href=&#34;//william-yeh.net/post/2020/10/unicorn-project-review/&#34;&gt;值得你看門道的好書——《獨角獸專案》推薦序&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❷ 從系統思考角度讀《獨角獸專案》&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;     &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+
+
+&lt;div class=&#34;notice notice--note&#34;&gt;
+  &lt;div class=&#34;notice__title&#34;&gt;
+    
+      系統思考工作坊 - 系列文章
+    
+  &lt;/div&gt;
+  &lt;div class=&#34;notice__content&#34;&gt;&lt;p&gt;❶ 【系統思考的四堂課】&lt;a href=&#34;//william-yeh.net/post/2018/06/sys-thinking-workshop/&#34;&gt;緣起&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❷ 第一場公開班課後回覆：&lt;a href=&#34;//william-yeh.net/post/2018/09/thinking-weight-training/&#34;&gt;思維的重量訓練&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❸ 從系統思考角度讀《獨角獸專案》&lt;/p&gt;
+&lt;p&gt;➍ &lt;a href=&#34;//william-yeh.net/post/2024/07/dissecting-devops-via-systems-thinking/&#34;&gt;從系統思考角度談 DevOps 三步工作法&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+      
     </item>
+    
     <item>
       <title>「系統思考工作坊」系列</title>
       <link>//william-yeh.net/series/systhinking-series/</link>
       <pubDate>Sun, 28 Mar 2021 00:00:00 +0000</pubDate>
+      
       <guid>//william-yeh.net/series/systhinking-series/</guid>
-      <description>&lt;p&gt;【系統思考的四堂課】&lt;a href=&#34;//william-yeh.net/post/2018/06/sys-thinking-workshop/&#34;&gt;緣起&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;第一場公開班課後回覆：&lt;a href=&#34;//william-yeh.net/post/2018/09/thinking-weight-training/&#34;&gt;思維的重量訓練&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2021/03/sys-thinking-unicorn-project/&#34;&gt;從系統思考角度讀《獨角獸專案》&lt;/a&gt;&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;【系統思考的四堂課】&lt;a href=&#34;//william-yeh.net/post/2018/06/sys-thinking-workshop/&#34;&gt;緣起&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;第一場公開班課後回覆：&lt;a href=&#34;//william-yeh.net/post/2018/09/thinking-weight-training/&#34;&gt;思維的重量訓練&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2021/03/sys-thinking-unicorn-project/&#34;&gt;從系統思考角度讀《獨角獸專案》&lt;/a&gt;&lt;/p&gt;
+</description>
+      
     </item>
+    
     <item>
       <title>從系統思考角度讀《目標》：第一～三章</title>
       <link>//william-yeh.net/post/2020/09/systhinking-goal-ch01-03/</link>
       <pubDate>Sun, 13 Sep 2020 22:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2020/09/systhinking-goal-ch01-03/</guid>
-      <description>&lt;h2 id=&#34;緣起&#34;&gt;緣起&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Eliyahu_M._Goldratt&#34;&gt;高德拉特&lt;/a&gt;系列著作是我的管理啟蒙書，《&lt;a href=&#34;https://www.books.com.tw/products/0010898249&#34;&gt;目標&lt;/a&gt;》更是每隔一陣子就會重讀的經典。&lt;/p&gt;&#xA;&lt;p&gt;這次，我打算以系統思考 (systems thinking) 角度重讀。尤其是以我在【&lt;a href=&#34;//william-yeh.net/post/2018/06/sys-thinking-workshop/&#34;&gt;系統思考的四堂課&lt;/a&gt;】提出的「&lt;strong&gt;SLR·CPI 法&lt;/strong&gt;」來逐步分析。&lt;/p&gt;&#xA;&lt;p&gt;土井英司在《&lt;a href=&#34;http://www.books.com.tw/products/0010762830&#34;&gt;一流的人讀書，都在哪裡畫線？&lt;/a&gt;》點出箇中訣竅：&lt;/p&gt;</description>
+      
+        <description>&lt;h2 id=&#34;緣起&#34;&gt;緣起&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Eliyahu_M._Goldratt&#34;&gt;高德拉特&lt;/a&gt;系列著作是我的管理啟蒙書，《&lt;a href=&#34;https://www.books.com.tw/products/0010898249&#34;&gt;目標&lt;/a&gt;》更是每隔一陣子就會重讀的經典。&lt;/p&gt;
+&lt;p&gt;這次，我打算以系統思考 (systems thinking) 角度重讀。尤其是以我在【&lt;a href=&#34;//william-yeh.net/post/2018/06/sys-thinking-workshop/&#34;&gt;系統思考的四堂課&lt;/a&gt;】提出的「&lt;strong&gt;SLR·CPI 法&lt;/strong&gt;」來逐步分析。&lt;/p&gt;
+&lt;p&gt;土井英司在《&lt;a href=&#34;http://www.books.com.tw/products/0010762830&#34;&gt;一流的人讀書，都在哪裡畫線？&lt;/a&gt;》點出箇中訣竅：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;世上的一切都有「原因」與「結果」，線要畫在原因上，而非結果上。只要掌握這個基礎，就能在書中畫出很好的線。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;用土井英司這種方法重啃經典，燒腦，進度慢，但在腦中結晶的速度卻快多了。&lt;/p&gt;
+&lt;p&gt;我也發現，小說體裁絲毫不減《&lt;a href=&#34;https://www.books.com.tw/products/0010898249&#34;&gt;目標&lt;/a&gt;》這本書值得劃線的區域，反而能提供更多脈絡。&lt;/p&gt;
+&lt;p&gt;就先從第一～三章開始吧。&lt;/p&gt;
+&lt;h2 id=&#34;current-reality-tree-crt&#34;&gt;Current Reality Tree (CRT)&lt;/h2&gt;
+&lt;p&gt;《目標》第一～三章主要在描述故事主角羅哥 (Alex Rogo) 所負責的工廠、以及所隸屬的事業部，目前正遭遇的困境。&lt;/p&gt;
+&lt;p&gt;根據敘事及對話，再略加推演，可繪出初步的 CRT。為了方便查考，括號中列出對應的《目標》中譯本頁碼。&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2020/09/crt-ch1-3.png&#34; alt=&#34;《目標》§1--§3 Current Reality Tree&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2020/09/crt-ch1-3.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;《目標》§1--§3 Current Reality Tree&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;causal-loop-diagram-cld&#34;&gt;Causal Loop Diagram (CLD)&lt;/h2&gt;
+&lt;p&gt;進一步萃取本質，可發現，此處至少出現了兩個&lt;a href=&#34;https://en.wikipedia.org/wiki/System_archetype&#34;&gt;系統基模&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;第一個是「飲鴆止渴」(&lt;a href=&#34;https://en.wikipedia.org/wiki/System_archetype#Fixes_that_fail&#34;&gt;fixes that fail&lt;/a&gt;)，症狀解反而會回頭加劇問題：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2020/09/cld-ch1-3-part1.png&#34; alt=&#34;《目標》§1--§3 Causal Loop Diagram (Part 1)&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2020/09/cld-ch1-3-part1.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;《目標》§1--§3 Causal Loop Diagram (Part 1)&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;  &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;第二個是「捨本逐末」(&lt;a href=&#34;https://en.wikipedia.org/wiki/System_archetype#Shifting_the_burden&#34;&gt;shifting the burden&lt;/a&gt;)，症狀解反而會侵蝕實施根本解的能力：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2020/09/cld-ch1-3-part2.png&#34; alt=&#34;《目標》§1--§3 Causal Loop Diagram (Part 2)&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2020/09/cld-ch1-3-part2.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;《目標》§1--§3 Causal Loop Diagram (Part 2)&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;  &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;合併起來，這就是《目標》第一～三章所述困境的本質：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2020/09/cld-ch1-3-all.png&#34; alt=&#34;《目標》§1--§3 Causal Loop Diagram (All)&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2020/09/cld-ch1-3-all.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;《目標》§1--§3 Causal Loop Diagram (All)&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;poogi-聚焦五步驟&#34;&gt;POOGI 聚焦五步驟&lt;/h2&gt;
+&lt;p&gt;故事中羅哥的上司：事業部副總裁皮區 (Bill Peach)，雖然一出場就幫了個倒忙，但不以人廢言，有段教訓羅哥的話值得深思：「你已經有足夠的人手了！看在老天的分上，看看你們的效率！你還有很多改進的空間。先證明給我看你可以有效運用現有人力，否則就別哭訴人手不夠！」&lt;/p&gt;
+&lt;p&gt;這還滿符合 &lt;a href=&#34;https://www.tocinstitute.org/five-focusing-steps.html&#34;&gt;POOGI&lt;/a&gt; 的起手式：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Identify 確認瓶頸／限制／制約因素：「有效運用現有人力」的能力。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Exploit 決定如何充分運用瓶頸／限制／制約因素：「先證明給我看你可以有效運用現有人力」。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;  &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;  &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;其實，在第二章的喃喃自語中，主角羅哥已經開始隱隱觸及本質議題了，只是還沒站在適當的視角。所幸，神秘人物鐘納 (Jonah) 即將在《目標》第四章登場，藉由不斷質疑最根本的商業思維，引導羅哥去大膽質疑系統思考點出的本質議題。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;  &lt;!-- raw HTML omitted --&gt;  &lt;!-- raw HTML omitted --&gt;  &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+
+
+&lt;div class=&#34;notice notice--note&#34;&gt;
+  &lt;div class=&#34;notice__title&#34;&gt;
+    
+      從系統思考角度讀《目標》 - 系列
+    
+  &lt;/div&gt;
+  &lt;div class=&#34;notice__content&#34;&gt;&lt;p&gt;REFERENCES&lt;/p&gt;
+&lt;p&gt;　🅐 &lt;a href=&#34;https://en.wikipedia.org/wiki/Current_reality_tree_%28theory_of_constraints%29&#34;&gt;&lt;strong&gt;Current reality tree&lt;/strong&gt;&lt;/a&gt; (&lt;strong&gt;CRT&lt;/strong&gt;) and &lt;a href=&#34;https://www.tocinstitute.org/five-focusing-steps.html&#34;&gt;&lt;strong&gt;POOGI&lt;/strong&gt;&lt;/a&gt; are from the field of &lt;a href=&#34;https://en.wikipedia.org/wiki/Theory_of_constraints&#34;&gt;TOC&lt;/a&gt;&amp;rsquo;s &lt;a href=&#34;https://en.wikipedia.org/wiki/Thinking_processes_%28theory_of_constraints%29&#34;&gt;thinking processes&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;　🅑 &lt;a href=&#34;https://en.wikipedia.org/wiki/Causal_loop_diagram&#34;&gt;&lt;strong&gt;Causal loop diagram&lt;/strong&gt;&lt;/a&gt; (&lt;strong&gt;CLD&lt;/strong&gt;) is from the field of &lt;a href=&#34;https://en.wikipedia.org/wiki/System_dynamics&#34;&gt;system dynamics&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;ARTICLES&lt;/p&gt;
+&lt;p&gt;　❶ 第一～三章&lt;/p&gt;
+&lt;p&gt;　❷ 第四章 (TODO)&lt;/p&gt;
+&lt;p&gt;　❸ TODO&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+      
     </item>
+    
     <item>
       <title>思維的重量訓練</title>
       <link>//william-yeh.net/post/2018/09/thinking-weight-training/</link>
       <pubDate>Tue, 04 Sep 2018 11:30:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2018/09/thinking-weight-training/</guid>
-      <description>&lt;p&gt;上週五【&lt;a href=&#34;https://devopsdays.tw/2018/workshop.html&#34;&gt;系統思考的四堂課・DevOps 特別版&lt;/a&gt;】，表定 7 小時，延長賽到 7.5 小時，感謝首梯公開班同學的熱情參與，共度刺激的一天。&lt;/p&gt;&#xA;&lt;p&gt;課後仍持續收到提問，我挑選幾則統一回覆。&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;上週五【&lt;a href=&#34;https://devopsdays.tw/2018/workshop.html&#34;&gt;系統思考的四堂課・DevOps 特別版&lt;/a&gt;】，表定 7 小時，延長賽到 7.5 小時，感謝首梯公開班同學的熱情參與，共度刺激的一天。&lt;/p&gt;
+&lt;p&gt;課後仍持續收到提問，我挑選幾則統一回覆。&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/09/systhinking-workshop-2018-08-31.jpg&#34; alt=&#34;【系統思考的四堂課・DevOps 特別版】2018-08-31 課堂實況&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2018/09/systhinking-workshop-2018-08-31.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;【系統思考的四堂課・DevOps 特別版】2018-08-31 課堂實況&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;     &lt;!-- raw HTML omitted --&gt;     &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;     &lt;!-- raw HTML omitted --&gt;     &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;有學員問道：「為什麼課前作業會挑選這麼難的題目？」&lt;/p&gt;
+&lt;p&gt;我承認，這兩份課前作業，有難度；但這難度是必要的。要有這樣的挑戰強度，才能反襯系統思考的威力。否則，簡簡單單就能破解的作業，為什麼還要花金錢花時間前來上課呢？&lt;/p&gt;
+&lt;p&gt;好吧，說正經的。要有這樣的挑戰強度，才能先將各位的&lt;strong&gt;思維肌肉&lt;/strong&gt;稍微鍛鍊一下，負重訓練到能夠跟得上課程現場的思辨強度。&lt;/p&gt;
+&lt;p&gt;這門課，原本在我公司裡面是分成四個禮拜，每次 1.5 小時；個案研討素材，得以在四個禮拜的自發性小組討論活動去分散腦力負荷。現在，變成公開班，一整天 7 小時，腦力挑戰嚴峻。所以，把個案研討素材提前到正式上課前就讓大家咀嚼思考，課堂進行才會有效率。&lt;/p&gt;
+&lt;p&gt;（儘管如此，份量仍然沈重到哀鴻遍野。所以，第二梯公開班，我可能會拆成兩個半天舉行，一週 4 小時，隔週上。）&lt;/p&gt;
+&lt;p&gt;這種鍛鍊思維肌肉的方法，不是我發明的。大師在《&lt;a href=&#34;https://www.books.com.tw/products/0010697445&#34;&gt;司徒賢達談個案教學&lt;/a&gt;》p.191 如此解釋「長個案」與「短個案」的選擇標準：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;缺乏工作經驗的人，應該用心研讀長個案，然後在複雜的情況下練習整合與重組資料、發掘問題，並依據資料分析的結果採取行動。此一程序對「練功」效果極好。&lt;/p&gt;
+&lt;p&gt;短個案的使用者，必須從有限的文字中進行許多邏輯推演，因此對個案中管理議題或產業相關的「互補知識」必須相當豐富，比較適合有經驗的中高階經理人。使用短個案的前提是：學員本來功力就有一定水準，而且由於必要的推論多，可以利用討論把他們的寶貴經驗萃取出來，尤其對忙碌的在職學員更是如此。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;感謝大師背書。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;     &lt;!-- raw HTML omitted --&gt;     &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;     &lt;!-- raw HTML omitted --&gt;     &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;有學員問道：「為什麼你的系統思考方法，要分&lt;strong&gt;因果關係圖&lt;/strong&gt;與 &lt;strong&gt;CLD&lt;/strong&gt; 兩部曲？」&lt;/p&gt;
+&lt;p&gt;其實這是限制理論暨豐田方法的專家稲垣公夫在《&lt;a href=&#34;http://www.books.com.tw/products/0010759729&#34;&gt;深思快想&lt;/a&gt;》這本奇書當中首先提出的，突破了我過去的盲點（詳見&lt;a href=&#34;//william-yeh.net/post/2018/06/sys-thinking-workshop/&#34;&gt;這篇文章&lt;/a&gt;），便將這實施觀點納入我的系統思考 &lt;strong&gt;SLR·CPI&lt;/strong&gt; 方法論中。&lt;/p&gt;
+&lt;p&gt;如同我在講義上提到的，如果你骨骼精奇，天生就是練武奇才，或許可以一開始就直接從 CLD 切入。可惜，我發現，很多人基本功不太扎實，容易犯下過度簡化、倒果為因等&lt;strong&gt;邏輯謬誤&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;CLD 是很犀利的工具，但也容易誤用，淪為替既有結論背書的橡皮圖章。&lt;/p&gt;
+&lt;p&gt;「有不得機得勢處，其病必於腰腿求之。」要提高系統思考的品質，還是得講究&lt;strong&gt;理則&lt;/strong&gt;的起手式才是。否則，畫出的 CLD 再犀利，一堆就倒，有什麼用？&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;     &lt;!-- raw HTML omitted --&gt;     &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;     &lt;!-- raw HTML omitted --&gt;     &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;有學員問道：「該怎樣從因果關係圖當中抽取 CLD 的&lt;strong&gt;變數&lt;/strong&gt;／&lt;strong&gt;變項&lt;/strong&gt;？」&lt;/p&gt;
+&lt;p&gt;對初學者，我建議：大量觀摩精選範例。&lt;/p&gt;
+&lt;p&gt;鋪陳一次因果陳述，自己畫一次 CLD，對照範例，看圖說故事，檢討。休息一兩天，再覆盤。如此刻意練習一陣子，你會抓到 CLD 變數／變項的感覺。&lt;/p&gt;
+&lt;p&gt;當然啦，《&lt;a href=&#34;https://www.books.com.tw/products/0010584669&#34;&gt;第五項修練 Ⅱ・實踐篇&lt;/a&gt;》及《&lt;a href=&#34;http://www.books.com.tw/products/0010759729&#34;&gt;深思快想&lt;/a&gt;》也各有建議的手法，不妨一試。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;     &lt;!-- raw HTML omitted --&gt;     &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;     &lt;!-- raw HTML omitted --&gt;     &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;有學員問道：「這方法似乎只能用來分析問題現況與原因，但似乎不能用來尋找解法？」&lt;/p&gt;
+&lt;p&gt;某方面來說，的確如此。但進一步來說，精準找到客觀局勢與根本原因，是否有助於激發你尋找槓桿解的專注力及創意呢？&lt;/p&gt;
+&lt;p&gt;再度借用大師的論點吧。《&lt;a href=&#34;https://www.books.com.tw/products/0010697445&#34;&gt;司徒賢達談個案教學&lt;/a&gt;》p.23 將狹義知識分成三大類：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;結構性知識：各種變項間的「因果關係」，以及這些因果關係背後的理由、影響因果的因素等。&lt;/li&gt;
+&lt;li&gt;行動的程序性知能：採取行動、制定決策原則、研判下一步的知識與能力。&lt;/li&gt;
+&lt;li&gt;診斷的程序性知能：針對現象找出原因的知能。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;套用這種分類，系統思考主要隸屬於「結構性知識」與「診斷的程序性知能」這兩大類。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;     &lt;!-- raw HTML omitted --&gt;     &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;《&lt;a href=&#34;https://www.books.com.tw/products/0010697445&#34;&gt;司徒賢達談個案教學&lt;/a&gt;》p.293 進一步說：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;決策過程中的重要作法「找出前提、驗證前提」。&lt;/p&gt;
+&lt;p&gt;知識庫中「資訊」和「解決方案」的存量，通常遠多於「結構性知識」。然而當面對特定問題時，有時雖然想得到的可能解決方案很多，但未必知道應該如何選取；所掌握的資訊也很豐富，但未必知道哪些資訊才對解決此一問題最具有關鍵性。這時，在決策過程中常用到的「找出各方案的前提，再來驗證前提」的思考過程，就可以幫助方案的選擇。&lt;/p&gt;
+&lt;p&gt;在此一決策分析過程中，方案的提出相當仰賴知識庫中所擁有的「解決方案」；而「找出前提」則要靠知識庫中「因果關係」或結構性知識去了解分別在哪些情況下，哪個方案更能達到預期的目標。因此，想得出來的方案要夠多、夠合理，才有得比較；而強大的「結構性知識」則可以推斷這些方案的可行性分別建立在哪些前提上。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;套用這種觀點，系統思考可協助你建構扎實的「結構性知識」，並在「驗證前提」方面替你提出的解決方案把關。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;     &lt;!-- raw HTML omitted --&gt;     &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;     &lt;!-- raw HTML omitted --&gt;     &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;以上是針對【&lt;a href=&#34;https://devopsdays.tw/2018/workshop.html&#34;&gt;系統思考的四堂課・DevOps 特別版&lt;/a&gt;】首梯公開班同學的提問，予以統一回覆。更多學員的心得分享，請見 &lt;a href=&#34;http://bit.ly/2MMtAdG&#34;&gt;1&lt;/a&gt;, &lt;a href=&#34;http://bit.ly/2NOqcv2&#34;&gt;2&lt;/a&gt;, &lt;a href=&#34;http://bit.ly/2oBvZti&#34;&gt;3&lt;/a&gt;, &lt;a href=&#34;http://bit.ly/2PAb9WF&#34;&gt;4&lt;/a&gt;, &lt;a href=&#34;http://bit.ly/2Q2bToa&#34;&gt;5&lt;/a&gt;, &lt;a href=&#34;http://bit.ly/2wDxpb2&#34;&gt;6&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;     &lt;!-- raw HTML omitted --&gt;     &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+
+
+&lt;div class=&#34;notice notice--note&#34;&gt;
+  &lt;div class=&#34;notice__title&#34;&gt;
+    
+      系統思考工作坊 - 系列文章
+    
+  &lt;/div&gt;
+  &lt;div class=&#34;notice__content&#34;&gt;&lt;p&gt;❶ 【系統思考的四堂課】&lt;a href=&#34;//william-yeh.net/post/2018/06/sys-thinking-workshop/&#34;&gt;緣起&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❷ 第一場公開班課後回覆：思維的重量訓練&lt;/p&gt;
+&lt;p&gt;❸ &lt;a href=&#34;//william-yeh.net/post/2021/03/sys-thinking-unicorn-project/&#34;&gt;從系統思考角度讀《獨角獸專案》&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;➍ &lt;a href=&#34;//william-yeh.net/post/2024/07/dissecting-devops-via-systems-thinking/&#34;&gt;從系統思考角度談 DevOps 三步工作法&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+      
     </item>
+    
     <item>
       <title>系統思考的四堂課</title>
       <link>//william-yeh.net/post/2018/06/sys-thinking-workshop/</link>
       <pubDate>Thu, 21 Jun 2018 23:26:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2018/06/sys-thinking-workshop/</guid>
-      <description>&lt;p&gt;過去四週，我在公司內帶了一系列【&lt;strong&gt;系統思考的四堂課&lt;/strong&gt;】。本文回顧整件事的來龍去脈，為自己做個紀錄及紀念。&lt;/p&gt;&#xA;&lt;h2 id=&#34;緣起&#34;&gt;緣起&lt;/h2&gt;&#xA;&lt;h3 id=&#34;其一&#34;&gt;其一&lt;/h3&gt;&#xA;&lt;p&gt;過去兩年，我分別以&lt;a href=&#34;https://en.wikipedia.org/wiki/Theory_of_constraints&#34;&gt;限制理論&lt;/a&gt;的 &lt;a href=&#34;https://en.wikipedia.org/wiki/Thinking_processes_%28theory_of_constraints%29&#34;&gt;thinking processes&lt;/a&gt;（思維程序；思考方式）及系統動力學 (&lt;a href=&#34;https://en.wikipedia.org/wiki/System_dynamics&#34;&gt;system dynamics&lt;/a&gt;) 兩大思維角度，給了幾場 DevOps 及 Docker 的演講（見 &lt;a href=&#34;//william-yeh.net/post/2016/08/devops-a-toc-perspective/&#34;&gt;文章 1&lt;/a&gt;、&lt;a href=&#34;https://school.soft-arch.net/blog/268878/embrace-docker&#34;&gt;文章 2&lt;/a&gt;、&lt;a href=&#34;//william-yeh.net/post/2017/10/devops-a-system-dynamics-perspective/&#34;&gt;文章 3&lt;/a&gt;）。過程中，觀察到一些有趣的事：&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;過去四週，我在公司內帶了一系列【&lt;strong&gt;系統思考的四堂課&lt;/strong&gt;】。本文回顧整件事的來龍去脈，為自己做個紀錄及紀念。&lt;/p&gt;
+&lt;h2 id=&#34;緣起&#34;&gt;緣起&lt;/h2&gt;
+&lt;h3 id=&#34;其一&#34;&gt;其一&lt;/h3&gt;
+&lt;p&gt;過去兩年，我分別以&lt;a href=&#34;https://en.wikipedia.org/wiki/Theory_of_constraints&#34;&gt;限制理論&lt;/a&gt;的 &lt;a href=&#34;https://en.wikipedia.org/wiki/Thinking_processes_%28theory_of_constraints%29&#34;&gt;thinking processes&lt;/a&gt;（思維程序；思考方式）及系統動力學 (&lt;a href=&#34;https://en.wikipedia.org/wiki/System_dynamics&#34;&gt;system dynamics&lt;/a&gt;) 兩大思維角度，給了幾場 DevOps 及 Docker 的演講（見 &lt;a href=&#34;//william-yeh.net/post/2016/08/devops-a-toc-perspective/&#34;&gt;文章 1&lt;/a&gt;、&lt;a href=&#34;https://school.soft-arch.net/blog/268878/embrace-docker&#34;&gt;文章 2&lt;/a&gt;、&lt;a href=&#34;//william-yeh.net/post/2017/10/devops-a-system-dynamics-perspective/&#34;&gt;文章 3&lt;/a&gt;）。過程中，觀察到一些有趣的事：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;DDD 要說故事，&lt;a href=&#34;https://en.wikipedia.org/wiki/Causal_loop_diagram&#34;&gt;CLD&lt;/a&gt; 要說故事，&lt;a href=&#34;https://en.wikipedia.org/wiki/Current_reality_tree_%28theory_of_constraints%29&#34;&gt;CRT&lt;/a&gt; 要說故事，user journey 要說故事，簡報要說故事。&lt;/p&gt;
+&lt;p&gt;凡事都要有說故事的能力。&lt;/p&gt;
+&lt;p&gt;&amp;mdash; Quote: &lt;a href=&#34;https://twitter.com/william_yeh/status/857385983406350337&#34;&gt;2017-04-27 Tweet&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;突然發現，&lt;a href=&#34;https://en.wikipedia.org/wiki/System_dynamics&#34;&gt;系統思考&lt;/a&gt;的&lt;a href=&#34;https://en.wikipedia.org/wiki/System_archetype&#34;&gt;系統基模&lt;/a&gt;中，大半都是雙裂結構；這恰巧與 TOC 的 &lt;a href=&#34;https://en.wikipedia.org/wiki/Evaporating_Cloud&#34;&gt;Evaporating Cloud&lt;/a&gt; 有許多相互呼應之處。&lt;/p&gt;
+&lt;p&gt;&amp;mdash; Quote: &lt;a href=&#34;https://twitter.com/william_yeh/status/887000401140105216&#34;&gt;2017-07-18 Tweet&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;我隱約察覺到，來自&lt;a href=&#34;https://en.wikipedia.org/wiki/System_dynamics&#34;&gt;系統思考&lt;/a&gt;陣營的 &lt;a href=&#34;https://en.wikipedia.org/wiki/Causal_loop_diagram&#34;&gt;CLD&lt;/a&gt; 與來自&lt;a href=&#34;https://en.wikipedia.org/wiki/Theory_of_constraints&#34;&gt;限制理論&lt;/a&gt;陣營的 &lt;a href=&#34;https://en.wikipedia.org/wiki/Current_reality_tree_%28theory_of_constraints%29&#34;&gt;CRT&lt;/a&gt;，兩者有種深層的相似性。&lt;/p&gt;
+&lt;h3 id=&#34;其二&#34;&gt;其二&lt;/h3&gt;
+&lt;p&gt;後來，在某個場合，&lt;a href=&#34;https://ruddyblog.wordpress.com/&#34;&gt;Ruddy 老師&lt;/a&gt;向我拋出一則有趣的提問：「為什麼高德拉特發展出 &lt;a href=&#34;https://en.wikipedia.org/wiki/Current_reality_tree_%28theory_of_constraints%29&#34;&gt;CRT&lt;/a&gt; 這種方法，而不直接採用現成的 &lt;a href=&#34;https://en.wikipedia.org/wiki/Causal_loop_diagram&#34;&gt;CLD&lt;/a&gt;？」&lt;/p&gt;
+&lt;p&gt;我答不出來。頂多只是憑直覺喃喃自語：「或許是比較容易溝通吧！」&lt;/p&gt;
+&lt;h3 id=&#34;其三&#34;&gt;其三&lt;/h3&gt;
+&lt;p&gt;某一天，在《&lt;a href=&#34;https://www.amazon.cn/%E6%8A%89%E6%8B%A9-%E8%89%BE%E5%88%A9%C2%B7%E9%AB%98%E5%BE%B7%E6%8B%89%E7%89%B9/dp/B006006M6U&#34;&gt;抉擇&lt;/a&gt;》第 209 頁巧遇一張 CLD。果然高德拉特也懂 CLD，只是選擇不常用它。&lt;/p&gt;
+&lt;p&gt;「或許是 CRT 比 CLD 容易溝通吧！」&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;這類思緒，不時湧出，甚至開始浮現一些狂想：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;認真思考將 CLD 與 CRT &amp;amp; FRT 混用，或在某種程度上融合的可能性。&lt;/p&gt;
+&lt;p&gt;&amp;mdash; Quote: &lt;a href=&#34;https://twitter.com/william_yeh/status/857248865396826113&#34;&gt;2017-04-26 Tweet&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;有難度的狂想。當時的我，還想不出具體的方法融合。&lt;/p&gt;
+&lt;h2 id=&#34;突破&#34;&gt;突破&lt;/h2&gt;
+&lt;p&gt;直到今年四月，在稲垣公夫《&lt;a href=&#34;http://www.books.com.tw/products/0010759729&#34;&gt;深思快想&lt;/a&gt;》這本奇書看到一線曙光：&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:20em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/06/two-maps.jpg&#34; alt=&#34;《深思快想》&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2018/06/two-maps.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;《深思快想》&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;不愧是限制理論暨豐田方法的專家，早我一步（好吧，早我好幾步）整合好 &lt;a href=&#34;https://en.wikipedia.org/wiki/Current_reality_tree_%28theory_of_constraints%29&#34;&gt;CRT&lt;/a&gt; + &lt;a href=&#34;https://en.wikipedia.org/wiki/Causal_loop_diagram&#34;&gt;CLD&lt;/a&gt; 了。&lt;/p&gt;
+&lt;p&gt;站在巨人的肩膀上，我可以省點力氣了？&lt;/p&gt;
+&lt;p&gt;沒這麼簡單。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;稲垣公夫語重心長提醒：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;「思考的深度」與「專業性程度」互不相干。也就是說，有人使用極艱深的專業知識，卻用淺薄的方式思考；有人則深入思考身邊人盡皆知的常識。&lt;/p&gt;
+&lt;p&gt;想鍛鍊深入思考的能力，與其只偶爾仔細思考困難的問題，不如養成經常對日常事務深思熟慮的習慣。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;勝間和代在《&lt;a href=&#34;http://www.books.com.tw/products/0010457479&#34;&gt;培養商業腦的七種組織力&lt;/a&gt;》也提醒過一樣的事：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;不斷進行切入重點來養成思考方式，雖看似繞遠路，其實就是最快的捷徑。沒有辦法養成邏輯思考的人，單純的原因就在於質量的不足而已。可以的話，希望各位持續進行幾年的時間來培養這個習慣。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;不照著鍛鍊，不會化成自己的血肉。&lt;/p&gt;
+&lt;p&gt;既然兩位都這麼說，我就乖乖照著做吧！&lt;/p&gt;
+&lt;h2 id=&#34;刻意練習&#34;&gt;刻意練習&lt;/h2&gt;
+&lt;p&gt;我挑選兩個案例來刻意練習。一是不太熟悉的，以當期的科技島讀&lt;a href=&#34;https://daodu.tech/04-27-2018-ep-13-crane-machine-reveals-retail-future&#34;&gt;夾娃娃機&lt;/a&gt;文章為案例；一是非常熟悉的，以現在服務的公司當案例，總結這四年工作上看遍的成敗點滴，了卻一樁長年心願。&lt;/p&gt;
+&lt;p&gt;兩個案例，仗著過往的 CRT 及 CLD 功底，個別繪出草圖並不難；但若進一步要求兩者的內在一致性，也費了好幾天功夫。&lt;/p&gt;
+&lt;p&gt;很有成就感。&lt;/p&gt;
+&lt;p&gt;既然都做到這地步，孤芳自賞太可惜了，索性拿這份商業模式分析圖找上我們家 CEO，用 CRT + CLD 連續技講了一遍，檢驗我的分析是否正確。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;之後，持續刻意練習 CRT + CLD，漸漸生出效果，更快就能勾勒出具有內在一致性的初版。&lt;/p&gt;
+&lt;p&gt;以這種角度來閱讀文本，對文本的鑑賞標準在不知不覺中提高，也更能體會《&lt;a href=&#34;http://www.books.com.tw/products/0010762830&#34;&gt;一流的人讀書，都在哪裡畫線？&lt;/a&gt;》點出的訣竅：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:20em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/06/draw-a-line.jpg&#34; alt=&#34;《一流的人讀書，都在哪裡畫線？》&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2018/06/draw-a-line.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;《一流的人讀書，都在哪裡畫線？》&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;用這種態度，何止是在書上畫線，連優質的網路分析文章也盡在狩獵範圍之內。&lt;/p&gt;
+&lt;p&gt;譬如說，面對&lt;a href=&#34;https://www.inside.com.tw/article/13190-pchome-pk-shopee-2&#34;&gt;詹宏志的演講&lt;/a&gt;，不會讀的人，只會酸他太晚才知道所謂「資本的力量」；會讀的人，就會看到其中的系統基模，以及可引為己用之處。&lt;/p&gt;
+&lt;p&gt;這才是深刻的閱讀層次。&lt;/p&gt;
+&lt;h2 id=&#34;開講&#34;&gt;開講&lt;/h2&gt;
+&lt;p&gt;今年二月，我在公司內部群組推薦好友 Taco 開的&lt;a href=&#34;https://www.accupass.com/event/1802130203009217521890&#34;&gt;系統思考工作坊&lt;/a&gt;，幾位好學的同事前來打探，令我竊喜：公司內總算有人對這主題感興趣了。&lt;/p&gt;
+&lt;p&gt;這一天，我等了好久。&lt;/p&gt;
+&lt;p&gt;也正是時候。正值自己在「系統思考」及「&lt;a href=&#34;//william-yeh.net/post/2018/04/board-game-creation/&#34;&gt;教學培訓&lt;/a&gt;」兩方面都有突破，便尋思：何不結合兩者，設計符合自己想法的教案，主動分享這方面的新體悟？&lt;/p&gt;
+&lt;p&gt;就用系統思考的方法來教系統思考吧。&lt;/p&gt;
+&lt;p&gt;算是一種 self-contained feedback loop？ (笑)&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;於是，在公司內自動請纓開辦【系統思考的四堂課】。一周一堂 90 分鐘，正好一個月結束。&lt;/p&gt;
+&lt;p&gt;課程公告：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;正如我帶讀書會及工作坊的風格，會以個案研討形式為主，有大量課堂討論及回家作業。回家作業大概需要花一個小時。能配合的，再考慮參加。&lt;/p&gt;
+&lt;p&gt;人數上限：12。&lt;/p&gt;
+&lt;p&gt;Agenda:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;課前作業 - 中等收入陷阱&lt;/li&gt;
+&lt;li&gt;Week 1 (5/31 四) - 系統思考簡介、因果分析&lt;/li&gt;
+&lt;li&gt;Week 2 (6/07 四) - 系統動力學&lt;/li&gt;
+&lt;li&gt;Week 3 (6/14 四) - 系統基模&lt;/li&gt;
+&lt;li&gt;Week 4 (6/21 四) - 應用：Large-scale Scrum 或商業模式分析&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;場地所限，設下人數上限。結果，還是有人拜託超收。 (笑)&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/06/2018-05-31-sys-thinking-workshop.jpg&#34; alt=&#34;【系統思考的四堂課】第一梯次&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2018/06/2018-05-31-sys-thinking-workshop.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;【系統思考的四堂課】第一梯次&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;為了這四堂課，努力策劃主題內容，梳理系統思考的具體步驟。最花功夫的是案例。要切題，又要多元，更要有相當程度的表面複雜性，才能對比映襯出系統思考的簡潔與犀利。&lt;/p&gt;
+&lt;p&gt;沒有單一書籍符合上述所有需求。所以，兩個月以來，重讀許多書籍，萃取精華。&lt;/p&gt;
+&lt;p&gt;系統思考：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.books.com.tw/products/0010759729&#34;&gt;深思快想&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.books.com.tw/products/0010784000&#34;&gt;第五項修練&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.books.com.tw/products/0010747160&#34;&gt;系統思考&lt;/a&gt; (&lt;em&gt;Systems One&lt;/em&gt; 中譯本)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.books.com.tw/products/0010702990&#34;&gt;系統思考&lt;/a&gt; (&lt;em&gt;Thinking in Systems: A Primer&lt;/em&gt; 中譯本)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.books.com.tw/products/0010728251&#34;&gt;問題可以一次解決&lt;/a&gt;（舊版：問題不能拆開來看）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;思維模式：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.books.com.tw/products/0010643983&#34;&gt;窮查理的普通常識&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.books.com.tw/products/0010457479&#34;&gt;培養商業腦的七種組織力&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.books.com.tw/products/0010721292&#34;&gt;左思右想&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.books.com.tw/products/0010762830&#34;&gt;一流的人讀書，都在哪裡畫線？&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;成長心態：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.books.com.tw/products/0010775968&#34;&gt;X計畫：打造人生黃金交叉線的轉機與關鍵&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.books.com.tw/products/0010752714&#34;&gt;刻意練習&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;走過一輪，提煉出可適用於 CRT 及 CLD 兩種系統思考層次的大一統方法，並將六大步驟湊出頭字詞，命名為「&lt;strong&gt;&lt;!-- raw HTML omitted --&gt;SLR·CPI 法&lt;!-- raw HTML omitted --&gt;&lt;/strong&gt;」：SLR 是單眼相機，CPI 是消費者物價指數，夠好記吧！&lt;/p&gt;
+&lt;p&gt;教第一堂課的感想是，活動設計上，要再補強 &lt;a href=&#34;http://www.dbrmfg.co.nz/Thinking%20Process%20Categories%20of%20Legitimate%20Reservation.htm&#34;&gt;CLR (categories of legitimate reservations)&lt;/a&gt; 的部分，或者，從社會科學的研究方法中取材相關內容。畢竟，「理則思考」是台灣高等教育上嚴重缺失的一環。&lt;/p&gt;
+&lt;p&gt;教第二堂課的感想是：真的需要現場手繪，並搭配 &lt;a href=&#34;https://ncase.me/loopy/&#34;&gt;LOOPY&lt;/a&gt; 推導。&lt;/p&gt;
+&lt;p&gt;教到第三堂課時，把之前課堂上分析過的種種大案例全部再拿出來對照，也順便類比到公司現況，讓大家現場立即體驗到彼得・聖吉說的「&lt;strong&gt;熟習系統基模，是組織開始將系統觀點應用於實務的第一步&lt;/strong&gt;」箇中深意。&lt;/p&gt;
+&lt;p&gt;誰說《&lt;a href=&#34;http://www.books.com.tw/products/0010784000&#34;&gt;第五項修練&lt;/a&gt;》是沒有用的老書呢？&lt;/p&gt;
+&lt;p&gt;教第四堂課時，火力全開，為【系統思考的四堂課】給了場算是高潮的完結，也鬆了一口氣。&lt;/p&gt;
+&lt;h2 id=&#34;為人也為己&#34;&gt;為人，也為己&lt;/h2&gt;
+&lt;p&gt;在公司內開這門課，長遠目標是推動並深化學習型組織，中期目標是為日後的 LeSS 鋪路，短期目標則是強化質性思考的能力。&lt;/p&gt;
+&lt;p&gt;畢竟，從「中等收入陷阱」案例的系統思考分析中，兩種競爭力取向的動力昭然若揭。為了推動高端循環，質性思考是關鍵能力。質性路線比量化路線更抽象，更虛無飄渺，更難有適切的判準，常常都是淪為事後諸葛。所以，更需要在這方面刻意練習，及早提升這方面的素養。&lt;/p&gt;
+&lt;p&gt;為別人，也為了自己。&lt;/p&gt;
+&lt;p&gt;某方面來說，我現在對別人做的許多事，部分是為了 &lt;em&gt;N&lt;/em&gt; 年前沒能從（缺席的）mentor 那邊得到的我而做的。&lt;/p&gt;
+&lt;p&gt;某種角度來說，也算是一種與內在小孩的對話。&lt;/p&gt;
+&lt;p&gt;譬如說，我真想給當年的自己，看這段窮查理的話：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/06/thinking-model.jpg&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2018/06/thinking-model.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;並且帶著他逐步分析出這樣的 CLD：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/06/thinking-model-cld.png&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2018/06/thinking-model-cld.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;有這樣的 mentor，今天的我，又會是怎麼樣的一個人呢？&lt;/p&gt;
+&lt;p&gt;沒有這樣的 mentor，就只能靠自己了。&lt;/p&gt;
+&lt;p&gt;文末，一點小雜感。人生如夢，一尊還酹江月。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;     &lt;!-- raw HTML omitted --&gt;     &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+
+
+&lt;div class=&#34;notice notice--note&#34;&gt;
+  &lt;div class=&#34;notice__title&#34;&gt;
+    
+      系統思考工作坊 - 系列文章
+    
+  &lt;/div&gt;
+  &lt;div class=&#34;notice__content&#34;&gt;&lt;p&gt;❶ 【系統思考的四堂課】緣起&lt;/p&gt;
+&lt;p&gt;❷ 第一場公開班課後回覆：&lt;a href=&#34;//william-yeh.net/post/2018/09/thinking-weight-training/&#34;&gt;思維的重量訓練&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❸ &lt;a href=&#34;//william-yeh.net/post/2021/03/sys-thinking-unicorn-project/&#34;&gt;從系統思考角度讀《獨角獸專案》&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;➍ &lt;a href=&#34;//william-yeh.net/post/2024/07/dissecting-devops-via-systems-thinking/&#34;&gt;從系統思考角度談 DevOps 三步工作法&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+</description>
+      
     </item>
+    
     <item>
       <title>從系統思考看 DevOps</title>
       <link>//william-yeh.net/post/2017/10/devops-a-system-dynamics-perspective/</link>
       <pubDate>Sun, 29 Oct 2017 11:40:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2017/10/devops-a-system-dynamics-perspective/</guid>
-      <description>&lt;p&gt;自從去年在〈&lt;a href=&#34;//william-yeh.net/post/2016/05/devops-a-lean-perspective/&#34;&gt;有了 Agile，為什麼還要有 DevOps？&lt;/a&gt;〉及〈&lt;a href=&#34;//william-yeh.net/post/2016/08/devops-a-toc-perspective/&#34;&gt;從限制理論看 DevOps&lt;/a&gt;〉兩場演講中，分別以 lean thinking 及 theory of constraints (TOC) 兩個角度探討 DevOps 之後，心中一直有個願望：想再從「&lt;a href=&#34;https://en.wikipedia.org/wiki/System_dynamics&#34;&gt;系統思考&lt;/a&gt;」角度探討 DevOps。&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;自從去年在〈&lt;a href=&#34;//william-yeh.net/post/2016/05/devops-a-lean-perspective/&#34;&gt;有了 Agile，為什麼還要有 DevOps？&lt;/a&gt;〉及〈&lt;a href=&#34;//william-yeh.net/post/2016/08/devops-a-toc-perspective/&#34;&gt;從限制理論看 DevOps&lt;/a&gt;〉兩場演講中，分別以 lean thinking 及 theory of constraints (TOC) 兩個角度探討 DevOps 之後，心中一直有個願望：想再從「&lt;a href=&#34;https://en.wikipedia.org/wiki/System_dynamics&#34;&gt;系統思考&lt;/a&gt;」角度探討 DevOps。&lt;/p&gt;
+&lt;p&gt;畢竟，「系統思考」算是名門正派，「學習型組織」更是我從研究所時代就心嚮往之的目標。當時買的《&lt;a href=&#34;http://www.books.com.tw/products/0010009556&#34;&gt;第五項修練&lt;/a&gt;》第一版，還一直在我的書架上最尊榮的位置呢。&lt;/p&gt;
+&lt;p&gt;不過，想將它應用到 DevOps 場域上，我還不太有把握。畢竟系統思考的重要思維工具 &lt;a href=&#34;https://en.wikipedia.org/wiki/Causal_loop_diagram&#34;&gt;CLD (causal loop diagram)&lt;/a&gt;，比一般因果推理的思維工具，多了變量 (variable) 及時間滯延 (delay) 觀念，燒腦程度更甚於 TOC 的 &lt;a href=&#34;https://en.wikipedia.org/wiki/Current_reality_tree_%28theory_of_constraints%29&#34;&gt;CRT (current reality tree)&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;想法，就這麼擱置了。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;直到今年初，接連聽了&lt;a href=&#34;https://blog.odd-e.com/yilv/&#34;&gt;呂毅&lt;/a&gt;老師一場演講（&lt;a href=&#34;https://www.accupass.com/event/1702051415281771146556&#34;&gt;在組織教練中看見系統性模式&lt;/a&gt;）及兩天 LeSS 課程，被老師用 CLD 貫串全場的氣勢，以及推廣系統思考的熱情所感動，決定回到初衷，勇於接受挑戰。&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2017/10/yilv-cld-speech.png&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2017/10/yilv-cld-speech.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;於是，重拾《&lt;a href=&#34;http://www.books.com.tw/products/0010009556&#34;&gt;第五項修練&lt;/a&gt;》，重新咀嚼&lt;a href=&#34;https://en.wikipedia.org/wiki/System_archetype&#34;&gt;系統基模&lt;/a&gt;，研究如何以淺顯的方式解釋 CLD。我也嘗試搭配 &lt;a href=&#34;http://ncase.me/loopy/&#34;&gt;LOOPY&lt;/a&gt; 這個有趣的軟體，降低 CLD 學習門檻。最後，從 DevOps 中挑選熱門的話題 microservices 作為箭靶，以增進實用性。萬事俱備，結果就是以下的演講。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2017/10/2017-10-26-devops-speech.jpg&#34; alt=&#34;DevOps Taiwan Meetup #8 (2017-10-26)&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2017/10/2017-10-26-devops-speech.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;DevOps Taiwan Meetup #8 (2017-10-26)&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;DevOps Taiwan Meetup #8 (2017-10-26).&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;從系統思考看 DevOps：以 microservices 為例&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;活動簡介：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;台灣第一次舉辦的 DevOpsDays Taipei，涵蓋許多精彩的文化與技術議題。&lt;/p&gt;
+&lt;p&gt;大會中，許多講者不約而同提到「系統思考」的概念，這是什麼？許多講者也提到 microservices 的重要性，但為什麼許多人想導入，卻鍛羽而歸？&lt;/p&gt;
+&lt;p&gt;此演講以系統思考的 causal loop diagram 角度，探討 microservices 常見的導入誤區：意外的敵人 (accidental adversaries) 及捨本逐末 (shifting the burden) ，並根據系統基模角度提出對應的槓桿解。&lt;/p&gt;
+&lt;p&gt;希望你聽了之後，能夠初步掌握系統思考的切入點，也對於 microservices 導入，多了一分把握。&lt;/p&gt;
+&lt;p&gt;提醒：建議先複習一下 Andrew Wu 在【DevOps Taiwan Meetup #4 (2017/02/22) ／ &lt;a href=&#34;https://devops.kktix.cc/events/meetup4-cm-tools-96091c-b7dd89&#34;&gt;這一夜讓我們來聊聊 Microservices&lt;/a&gt;】的內容：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://goo.gl/Drfeiw&#34;&gt;投影片 @ Slideshare&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://goo.gl/zXkESo&#34;&gt;部落格文章&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;投影片：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://www.slideshare.net/williamyeh/devops-system-dynamics-perspective&#34;&gt;從系統思考看 DevOps：以 microservices 為例&lt;/a&gt;&lt;/strong&gt;
+&lt;iframe
+  style=&#34;width: 100%; height: 500px;&#34; frameborder=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; scrolling=&#34;no&#34;
+  src=&#34;https://www.slideshare.net/slideshow/embed_code/81199835&#34; allowfullscreen webkitallowfullscreen mozallowfullscreen&gt; &lt;/iframe&gt;
+&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;實況錄影：&lt;/p&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/zMeA3CjOi60?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;這場演講，開宗明義就說了：只探討「動態性複雜」，不探討「細節性複雜」。因此，刻意不著重在 microservices 技術細節。正好現場有兩位深富 microservices 實務經驗的高手，就順便 cue 他們幫忙回答技術提問。&lt;/p&gt;
+&lt;p&gt;感謝 andrew 幫忙回答&lt;a href=&#34;https://www.facebook.com/andrew.blog.0928/posts/510669392641677&#34;&gt;資料儲存問題&lt;/a&gt;：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;交易處理是 RDBMS 強項，不過 RDBMS 先天就跟 microservices 不大搭，分散式的環境下要有別的處理方式。&lt;/p&gt;
+&lt;p&gt;非交易的資料可透過 Message Queue 等等非同步的方式來達成最終的一致性。如果範圍切割得夠小，也許你仍然可以在單一服務內繼續用 RDBMS 的交易控制。如果交易被迫得被分散在兩個服務之間，那麼分散式交易的機制就必須確實實作（例如 2 phase commit 之類的技巧）。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;感謝 jini 幫忙回答 &lt;a href=&#34;https://www.facebook.com/jakarta99/posts/10155786498304719&#34;&gt;transaction 問題&lt;/a&gt;：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;但在金融交易時，若該 domain object 一定要在同一個 transaction context 時，那麼該服務就不該被切割。此外，有某些狀況也許可以切割，類似客戶與訂單的關係，這部份就可以用 async 加上 status 來處理，甚至有一個 batch 來 review 最終一致性。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;最後，希望這種「系統思考」角度，對大家在導入 DevOps 的過程中，有些許幫助。更進一步，朝向學習型組織邁進。&lt;/p&gt;
+&lt;p&gt;演講最後推薦的幾本書，別忘了要去看喔！&lt;/p&gt;
+</description>
+      
     </item>
+    
   </channel>
 </rss>

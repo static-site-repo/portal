@@ -4,23 +4,1883 @@
     <title>Ai on Potioneer&#39;s Essays</title>
     <link>//william-yeh.net/tags/ai/</link>
     <description>Recent content in Ai on Potioneer&#39;s Essays</description>
-    <generator>Hugo</generator>
+    <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sat, 08 Feb 2025 18:00:00 +0800</lastBuildDate>
-    <atom:link href="//william-yeh.net/tags/ai/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 12 Apr 2026 20:00:00 +0800</lastBuildDate>
+    
+        <atom:link href="//william-yeh.net/tags/ai/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>AI 時代，該怎麼選程式語言？</title>
+      <link>//william-yeh.net/post/2026/04/genai-pl/</link>
+      <pubDate>Sun, 12 Apr 2026 20:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2026/04/genai-pl/</guid>
+      
+        <description>&lt;p&gt;在許多系統開發與工程教育脈絡中，C/C++ 曾長期佔據核心位置。後來主流答案逐漸分散，Java、C#、Python、TypeScript、Go 各自崛起，也都一度被期待成為下一個中心。&lt;/p&gt;
+&lt;p&gt;到了 LLM 時代，這個問題又被拿出來重問一次。從 agent、harness 與同類工具在 TypeScript、Python、Rust 等不同生態中並行發展、彼此競逐，就看得出這仍是秦失其鹿，天下共逐之的局面。&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;但如果問題還停在「哪門程式語言最好」，最後多半只會得到一份偏好清單。語言模型對某種語言、生態與框架是否熟悉，當然會影響起稿速度與初稿品質；可是在「生成結果不能直接被信任」的前提下，技術選型真正該看的，是依風險分層，選擇最能支撐驗證與收斂的程式語言 × 驗證鏈組合。&lt;/p&gt;
+&lt;p&gt;這不是一篇語言排名文；這是一篇重新定義選型判準的文章。&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2026/04/genai-pl.jpg&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2026/04/genai-pl.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;判準驗證回饋&#34;&gt;判準：驗證回饋&lt;/h2&gt;
+&lt;p&gt;我會把判準拆成三個面向：&lt;strong&gt;約束顯性化、錯誤可診斷性、修正迴圈成本。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;第一，是&lt;strong&gt;約束顯性化&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;系統裡真正重要的規則，有沒有被寫出來？這不只包括型別、介面、可空值與錯誤處理，也包括更高一層的架構約束：依賴方向是否受控制、重要邊界是否清楚、副作用出口是否外露、哪些規則能放在哪裡，是否已經被寫進 repo、測試與工具鏈，而不是只留在人腦與團隊默契裡。&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;關鍵約束沒有顯性化，語言模型就很容易補出一段表面合理、實際上已經穿透邊界的程式碼。&lt;/p&gt;
+&lt;p&gt;第二，是&lt;strong&gt;錯誤可診斷性&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;問題能不能提早暴露？暴露之後，位置夠不夠局部？錯誤訊息是否足夠讓人與語言模型採取下一步？有些失敗是編譯器指出型別不吻合；有些失敗是測試、靜態分析或架構規則檢查指出邊界被穿透；也有些失敗要等整段功能都跑歪之後，才以模糊症狀浮出來。前兩種通常比較容易進入修正流程；最後一種很容易把人和語言模型一起拖進猜測循環。&lt;/p&gt;
+&lt;p&gt;第三，是&lt;strong&gt;修正迴圈成本&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;從發現問題到修掉問題，這條路有多短、多穩、多能反覆？有些語言和工具鏈把回饋收得很緊：一存檔，型別錯誤、lint、測試、靜態分析就一起往前推。有些情境則要靠團隊自己把這條鏈補起來：寫測試、補 sandbox、整理 fixture、把規格拆細。這不一定是壞事，但如果修正迴圈太長、太散、太仰賴人腦維持，生成帶來的速度最後很可能會被問題分流成本吃掉。&lt;/p&gt;
+&lt;p&gt;對 AI 協作來說，程式語言的價值，很大一部分就落在這裡。實際效果通常不是由語法表面決定，而是由它背後那整套工程鏈決定：型別系統、編譯器、靜態分析、測試、sandbox、CI、架構規則、review 習慣，以及團隊是否真的把這些機制接起來。&lt;/p&gt;
+&lt;p&gt;現有研究也大致支持這個方向。像 RUSTASSISTANT 這類研究顯示，當語言模型拿到更明確、較局部、可行動的編譯器錯誤訊號時，自動修正的表現確實可能明顯改善。&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt; 另一類研究則指出，自動化回饋迴圈有機會改善 LLM 產出的可修正性與整體收斂能力。&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;這些材料還不夠弄出一份跨語言的總排名，但已經足夠支持一個實務判斷：&lt;strong&gt;AI 協作的重點，不在模型先吐出什麼，而在系統後面會怎麼承接。&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;typescript應用層的顯性契約&#34;&gt;TypeScript：應用層的顯性契約&lt;/h2&gt;
+&lt;p&gt;TypeScript 很適合放在應用層，因為它擅長把原本留在人腦裡的假設寫進程式裡。&lt;/p&gt;
+&lt;p&gt;應用層系統最麻煩的地方，不是語法，而是資料長什麼樣子、API 回傳什麼、哪個欄位可能是 &lt;code&gt;null&lt;/code&gt;、重構之後哪些地方會一起受影響。TypeScript 的強項，就是把這些原本靠默契維持的東西，寫成編輯器與工具鏈也看得懂的契約。&lt;/p&gt;
+&lt;p&gt;型別、介面、函式簽名、nullable 邊界，會把一部分原本隱含的假設直接前移；一旦這些假設被寫出來，回饋也比較容易來得早，而且夠局部。型別不吻合、介面沒對齊、重構後遺漏哪個使用點，往往在編輯器&lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt; 或編譯階段就已經浮出來。對人和語言模型來說，這種錯誤比執行期才浮現的模糊故障更容易處理。TypeScript 官方對自己的定位也很坦白：就是要成為 JavaScript 的 static type checker。&lt;sup id=&#34;fnref:6&#34;&gt;&lt;a href=&#34;#fn:6&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;6&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;這不代表用了 TypeScript 就能自動保證商業邏輯一定會正確。它真正做的，是把許多原本靠人腦維持的假設，改成比較穩定的工程訊號。對 AI 協作來說，這很重要，畢竟語言模型最常出錯的地方，不是完全不會寫，而是把邊界寫鬆、把例外漏掉，或把幾個看似相近的型別混成同一件事。&lt;/p&gt;
+&lt;p&gt;它改善得最明顯的，其實是&lt;strong&gt;重構診斷鏈&lt;/strong&gt;。改動一個型別定義、調整一個介面、收斂一個資料結構，哪些地方會一起受影響，通常可以更快浮出來。這不只幫助人類開發者，也讓語言模型生成的修改比較容易被局部檢查。&lt;/p&gt;
+&lt;p&gt;所以在複雜、壽命長、多人協作、需要反覆重構的產品系統裡，TypeScript 很自然會成為 AI 協作的預設選項。&lt;/p&gt;
+&lt;h2 id=&#34;python探索層與後補驗證&#34;&gt;Python：探索層與後補驗證&lt;/h2&gt;
+&lt;p&gt;Python 很適合探索層。&lt;/p&gt;
+&lt;p&gt;資料清洗、notebook 探索、模型實驗、工作流編排、自動化腳本、內部工具，這些工作追求的往往不是一開始就把邊界封死，而是先把想法試出來，再決定哪些約束值得前移。Python 在這一層一直很有位置，不只是因為語言模型熟，也因為它背後本來就長出了一整套成熟的探索式工作流。&lt;sup id=&#34;fnref:7&#34;&gt;&lt;a href=&#34;#fn:7&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;7&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;它的代價也很清楚。很多問題不會自己提早跳出來，而是要等到執行、測試、整合，甚至真實資料流進來之後，才逐步暴露。這在探索階段未必是問題；但當系統開始長大、模組開始互相依賴、邊界開始固定，延後暴露的成本就會愈來愈高。&lt;/p&gt;
+&lt;p&gt;所以 Python 的重點，是驗證鏈通常要靠開發者主動補齊。型別工具當然重要，但它們多半屬於後補工程，而不是預設前置約束。系統一旦開始工程化，type hints、mypy、pyright 這些工具就很有價值。它們不能把 Python 變成 TypeScript 那種強制契約環境，但確實能把一部分原本留到執行時才知道的問題，往前拉到提交之前。&lt;sup id=&#34;fnref:8&#34;&gt;&lt;a href=&#34;#fn:8&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;8&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;迭代式自我修正機制也值得注意。像 Self-Refine 的研究顯示，透過同一語言模型反覆生成批評並改寫輸出，的確可以改善部分程式相關任務的結果。&lt;sup id=&#34;fnref:9&#34;&gt;&lt;a href=&#34;#fn:9&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;9&lt;/a&gt;&lt;/sup&gt; 少了編譯期強護欄時，這類反覆回饋的機制就更重要。&lt;/p&gt;
+&lt;p&gt;對 Python 可以先下個簡單判斷：它適合探索層，但不適合長期停在鬆散狀態。任務一旦開始收斂，驗證鏈、型別工具、測試與自動化修正機制都得補上。&lt;/p&gt;
+&lt;h2 id=&#34;rust核心區的前置約束&#34;&gt;Rust：核心區的前置約束&lt;/h2&gt;
+&lt;p&gt;Rust 很適合放在核心區，因為它把更多高成本錯誤推到執行之前。&lt;/p&gt;
+&lt;p&gt;所有權、借用、顯式錯誤處理、記憶體安全，加上接近 C++ 的性能，讓 Rust 很適合放在那些真正承受不起錯的地方：系統邊界、效能瓶頸、安全敏感模組、工具鏈核心。像 Hugging Face &lt;a href=&#34;https://github.com/huggingface/tokenizers&#34;&gt;Tokenizers&lt;/a&gt; 與 &lt;a href=&#34;https://github.com/huggingface/candle&#34;&gt;Candle&lt;/a&gt; 這類專案，都把 Rust 放在很核心的位置。&lt;/p&gt;
+&lt;p&gt;從驗證回饋的角度看，Rust 最重要的地方，在於它替生成式協作加上了一個強度很高的前置驗證入口。語言模型可以先產生草稿，但草稿要放進系統前，必須先通過型別、所有權、生命週期與錯誤處理這些約束。這會帶來三個效果：約束更早顯性化、程式本體層的大量錯誤可以提早被局部定位，也有一部分問題根本進不到執行期。&lt;/p&gt;
+&lt;p&gt;不過 Rust 能使得上力的，主要還是那些已經被形式化、並寫進語言與程式結構裡的約束；它不會自動替你驗證產品規格、流程例外與商業判準。折扣規則算得對不對、權限邏輯是否符合產品政策、某個狀態組合在真實業務上是否合法，這些問題通常活在需求、文件、流程與領域知識裡，不會完整地活在型別系統裡。&lt;/p&gt;
+&lt;p&gt;這也是 Rust 的代價。探索階段未必要固定下來的結構問題，它卻要求你更早面對：資料怎麼流、邊界怎麼切、資源由誰持有、錯誤怎麼往上拋。有些錯誤很局部，修起來很快；但有些錯誤暴露的其實不是語法細節，而是資料流、API 邊界或狀態設計本身還沒有收斂。&lt;/p&gt;
+&lt;p&gt;所以 Rust 很適合那些已經開始收斂、值得把約束前移的核心任務，卻不一定適合探索層。LLM 確實降低了採用 Rust 的門檻，但 Rust 最好的位置，仍然比較像在核心層。&lt;sup id=&#34;fnref:10&#34;&gt;&lt;a href=&#34;#fn:10&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;10&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;h2 id=&#34;go平台層的穩定節奏&#34;&gt;Go：平台層的穩定節奏&lt;/h2&gt;
+&lt;p&gt;Go 的強項不花俏，就是穩。&lt;/p&gt;
+&lt;p&gt;它的優勢不在最強的護欄，也不在最大的探索彈性，而在一套簡潔、收斂、低負擔的預設模式。對 AI 協作而言，這通常代表偏航空間更小、程式風格較一致，以及修正成本較可控制。&lt;/p&gt;
+&lt;p&gt;Go 從一開始就不是為語法炫技設計的。Go at Google 那篇文章講得很直接：這門程式語言的目標，是減少大型軟體開發中的遲滯與笨重感，而且它是為那些要寫、讀、除錯與維護大型系統的人設計的。&lt;sup id=&#34;fnref:11&#34;&gt;&lt;a href=&#34;#fn:11&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;11&lt;/a&gt;&lt;/sup&gt; 這也讓 Go 的優勢比較像一組工程取向明確的選擇：語言表面積小、工具鏈單純、編譯快速、標準函式庫完整。Go 社群自己的年度調查，也持續把簡潔、可維護與穩定工具鏈列為很主要的使用理由。&lt;sup id=&#34;fnref:12&#34;&gt;&lt;a href=&#34;#fn:12&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;12&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;放進前面的框架來看，Go 的強項比較像是把日常工作流收得很緊。&lt;code&gt;go&lt;/code&gt; 命令把 build、test、fmt、fix 收在同一套官方工具鏈裡&lt;sup id=&#34;fnref:13&#34;&gt;&lt;a href=&#34;#fn:13&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;13&lt;/a&gt;&lt;/sup&gt;；語法與慣例也長期維持在相對收斂的範圍內。官方長期重視 &lt;code&gt;gofmt&lt;/code&gt;、idiomatic code 與 code review 慣例 &lt;sup id=&#34;fnref:14&#34;&gt;&lt;a href=&#34;#fn:14&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;14&lt;/a&gt;&lt;/sup&gt;，讓大家可放心：團隊與語言模型共同操作同一份程式碼時，比較不容易一路寫歪。&lt;/p&gt;
+&lt;p&gt;雖然不像 Rust 那樣把很多高成本錯誤前推到最前面，但也不容易把系統帶向過度抽象、過度分散、難以追蹤的狀態。對 CLI、基礎設施、平台工程與後端服務這類工作來說，Go 往往比表面上看起來更耐用。&lt;/p&gt;
+&lt;h2 id=&#34;分層設計&#34;&gt;分層設計&lt;/h2&gt;
+&lt;p&gt;把前面的判準落實到實務面，重點就在於，要在不同風險區，放上不同強度、不同時點的驗證機制，也就是分層設計。這裡有三個核心問題：&lt;/p&gt;
+&lt;p&gt;第一，這一層最承受不起的是什麼：速度慢、重構痛、部署複雜，還是安全、效能與可靠性風險？&lt;/p&gt;
+&lt;p&gt;第二，這一層最需要哪種驗證：型別、編譯器、靜態分析、測試、sandbox，還是高密度的人類 review？&lt;/p&gt;
+&lt;p&gt;第三，這一層的關鍵知識主要活在哪裡：活在程式語言本身、框架慣例、repo 結構與架構規則、文件、團隊的隱形知識，還是 CI 與基礎設施流程裡？&lt;/p&gt;
+&lt;p&gt;這三個問題想清楚，程式語言選型的討論才不會停留在偏好清單。&lt;/p&gt;
+&lt;p&gt;探索層，Python 仍然很自然。它適合拿來確認方向、讓資料露出形狀、把流程跑通；但當任務開始收斂，就應補上型別註記、靜態檢查、測試與自動化驗證鏈，而不是讓探索式寫法一路帶到後期。&lt;/p&gt;
+&lt;p&gt;應用層，TypeScript 的優勢在顯性型別、重構能力、多人協作與長期維護。當系統最怕的是隱含假設太多、邊界鬆動、改一處壞三處時，它常會是 AI 輔助產品開發很自然的預設選項之一。&lt;/p&gt;
+&lt;p&gt;核心區，最值得把約束前移。當錯誤代價高到不能留在後面處理，Rust 的型別、ownership 與編譯期驗證就特別有價值。它不必成為全面預設，但很適合放在真正關鍵的地方。&lt;/p&gt;
+&lt;p&gt;平台層，很多時候追求的是一致性、簡潔性、可讀性、快編譯與低樣板。Go 不一定最華麗，但常常能提供低負擔、低偏航、易維護的工程條件。對許多團隊來說，這種穩健性比語言敘事的戲劇性更有用。&lt;/p&gt;
+&lt;p&gt;補充一點，大型企業後端往往不是從零選程式語言，而是在既有堆疊、IDE、生態、人才結構與組織流程裡持續演化。從這個角度看，Java 與 C# 的問題不只是適不適合 AI 協作，而是它們原本就已經在許多團隊中形成穩定的收斂條件。若團隊已有深厚的累積，沒有必要為了語言選型的抽象論點而另起爐灶。&lt;sup id=&#34;fnref:15&#34;&gt;&lt;a href=&#34;#fn:15&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;15&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;程式語言選擇走到這裡，比較像架構設計，而不再只是口味問題。&lt;/p&gt;
+&lt;h2 id=&#34;尚未定論的部分&#34;&gt;尚未定論的部分&lt;/h2&gt;
+&lt;p&gt;有幾件事，現在還不能把結論講死。&lt;/p&gt;
+&lt;p&gt;第一，&lt;strong&gt;驗證回饋&lt;/strong&gt;這個方向大致成立；但不同程式語言在人類問題分流成本、修正效率與整體收斂速度上的差異，到底有多大，仍然缺夠乾淨的全面性證據。現在比較多的是局部研究、特定任務或特定工具鏈的結果；它們能支持方向，還不足以直接推出一份放諸各場景皆準的程式語言排名。&lt;/p&gt;
+&lt;p&gt;第二，&lt;strong&gt;前置護欄&lt;/strong&gt;的價值很真實，但護欄愈強，不代表整體開發一定愈有效率。像 Rust 這類程式語言，確實能把很多錯誤提早暴露，但提早暴露不等於提早解決。有些錯誤是局部修正，有些則會牽動資料流、API 邊界與設計本身。程式語言提供的驗證強度，不能單獨和整體生產力畫上等號；還得放回任務型態、團隊能力與系統成熟度裡一起看。&lt;/p&gt;
+&lt;p&gt;第三，程式語言本身從來不是全部。CI 有沒有真的接起來、測試與 sandbox 有沒有成形、團隊有沒有能力 review 產出、關鍵規格有沒有被整理成語言模型與工具都吃得下的形式，這些都會直接改變選型最後的實際收益。其中特別值得單獨點名的是 agentic 工作流裡的上下文管理：長上下文不是免費的。現有研究顯示，模型對於長串輸入中，位於中段的關鍵資訊，利用能力會明顯下降。情境變長，不代表使用品質會穩定提升。&lt;sup id=&#34;fnref:16&#34;&gt;&lt;a href=&#34;#fn:16&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;16&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;所以，在生成愈來愈便宜的前提下，程式語言選擇真正該優先服務的，還是驗證與收斂，而不只是起稿速度。&lt;/p&gt;
+&lt;h2 id=&#34;結語&#34;&gt;結語&lt;/h2&gt;
+&lt;p&gt;LLM 讓生成變便宜之後，型別、編譯器、測試、靜態分析、清楚的系統邊界、可被工具檢查的架構規則、可 review 的程式碼，都變得更加重要。&lt;/p&gt;
+&lt;p&gt;AI 時代的語言選型，最終選擇仍應由任務收斂程度、團隊成熟度、既有系統與工具鏈條件共同決定。重點還是&lt;strong&gt;把高成本錯誤提前到團隊還處理得起的位置&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;這有點像走山路。差別不在誰起步快，而在於你是走到彎路之前就知道路線偏了，還是衝到後面才發現整段路都走錯。好的語言與驗證鏈，價值就在這裡：讓錯誤早點露出來，修正還來得及。&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;Claude Code 是用 TypeScript 寫的；程式碼外洩事件之後，有人用 Python 復刻了一份核心 &lt;a href=&#34;https://github.com/HKUDS/OpenHarness&#34;&gt;OpenHarness&lt;/a&gt;；&lt;a href=&#34;https://github.com/openclaw/openclaw&#34;&gt;OpenClaw&lt;/a&gt; 是用 TypeScript 寫的，也有人用 Rust 復刻了一份更緊實的 &lt;a href=&#34;https://github.com/zeroclaw-labs/zeroclaw&#34;&gt;ZeroClaw&lt;/a&gt;。這些例子主要用來說明：agent 類工具的語言生態仍在快速競逐中，尚未收斂成單一主流答案。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;關於 LLM / agent 情境下，為什麼軟體架構的價值在於把邊界、依賴方向、驗證入口與治理規則外露成可被人與工具使用的訊號，可參考我稍早的一篇文章：〈&lt;a href=&#34;//william-yeh.net/post/2026/03/genai-revisit-arch/&#34;&gt;LLM 時代，傳統軟體架構該重新檢查了&lt;/a&gt;〉。這裡主要用來補強本文較窄的主張：約束顯性化不只發生在型別層，也發生在架構與治理層。&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;
+&lt;p&gt;Rust 工具鏈原本就有接近 lint auto-fix 的能力，例如 &lt;code&gt;cargo clippy --fix&lt;/code&gt;；Microsoft &amp;ldquo;&lt;a href=&#34;https://www.microsoft.com/en-us/research/wp-content/uploads/2024/08/paper.pdf&#34;&gt;RUSTASSISTANT: Using LLMs to Fix Compilation Errors in Rust Code&lt;/a&gt;&amp;rdquo; 研究顯示，當語言模型接收到 Rust 編譯器提供的明確錯誤訊號後，自動修正的準確度有機會提高。這裡主要支撐的是：清楚、局部、可行動的錯誤回饋，確實有助於程式修正收斂。&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:4&#34;&gt;
+&lt;p&gt;Ravin Ravi et al., &amp;ldquo;&lt;a href=&#34;https://arxiv.org/abs/2603.23613&#34;&gt;LLMLOOP: Improving LLM-Generated Code and Tests through Automated Iterative Feedback Loops&lt;/a&gt;&amp;quot;，IEEE ICSME 2025，arXiv:2603.23613。這裡主要支撐的是：自動化回饋迴圈，確實有機會改善 LLM 產出的可修正性與整體收斂能力。更一般化的護欄框架，可另參〈&lt;a href=&#34;//william-yeh.net/post/2026/03/genai-guardrail/&#34;&gt;GenAI 的工程護欄是什麼？&lt;/a&gt;〉。&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:5&#34;&gt;
+&lt;p&gt;TypeScript 是編輯器友好的語言；&lt;a href=&#34;https://microsoft.github.io/language-server-protocol/&#34;&gt;LSP (Language Server Protocol)&lt;/a&gt; 最初就是為了改善 TypeScript 與 VS Code 的開發體驗而發展出來的。這裡主要支撐的是：TypeScript 的回饋機制不只存在於編譯階段，也深度嵌進日常編輯與重構流程。&amp;#160;&lt;a href=&#34;#fnref:5&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:6&#34;&gt;
+&lt;p&gt;TypeScript Handbook 中的 &amp;ldquo;&lt;a href=&#34;https://www.typescriptlang.org/docs/handbook/intro.html&#34;&gt;The goal of TypeScript is to be a static typechecker for JavaScript programs&lt;/a&gt;&amp;quot;。這裡主要支撐的是：TypeScript 的官方定位，本來就把靜態檢查視為核心價值，而不只是較好寫的 JavaScript。&amp;#160;&lt;a href=&#34;#fnref:6&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:7&#34;&gt;
+&lt;p&gt;Python 在探索層的優勢，不只來自語言本身，也來自它與互動式計算、資料處理、模型實驗工具長期扣合。Jupyter 文件 &amp;ldquo;&lt;a href=&#34;https://docs.jupyter.org/en/latest/what_is_jupyter.html&#34;&gt;What is Jupyter?&lt;/a&gt;&amp;rdquo; 直接把 notebook 描述為結合程式碼、文字、資料與視覺化的共享文件；TensorFlow 官方文件 &amp;ldquo;&lt;a href=&#34;https://www.tensorflow.org/about&#34;&gt;TensorFlow Overview&lt;/a&gt;&amp;rdquo; 強調 eager execution 與原型設計、快速除錯的關係；&lt;a href=&#34;https://pytorch.org/projects/pytorch/&#34;&gt;PyTorch&lt;/a&gt; 則明確強調其 Pythonic design 與從研究原型走向生產部署的連續性。這裡主要支撐的是：Python 生態確實長出了一套成熟的探索與實驗工作流。&amp;#160;&lt;a href=&#34;#fnref:7&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:8&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://mypy.readthedocs.io/&#34;&gt;mypy&lt;/a&gt; 是 Python 社群成熟的靜態型別檢查工具；&lt;a href=&#34;https://microsoft.github.io/pyright/&#34;&gt;Pyright&lt;/a&gt; 是 Microsoft 開發的 Python 靜態型別檢查工具，也是 VS Code 裡 Pylance 的核心引擎。這裡主要支撐的是：Python 的驗證鏈可以靠後補工具逐步補強，而不必完全停留在動態語言的預設狀態。&amp;#160;&lt;a href=&#34;#fnref:8&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:9&#34;&gt;
+&lt;p&gt;Aman Madaan et al., &amp;ldquo;&lt;a href=&#34;https://arxiv.org/abs/2303.17651&#34;&gt;Self-Refine: Iterative Refinement with Self-Feedback&lt;/a&gt;&amp;quot;，arXiv:2303.17651，2023。這裡主要支撐的是：反覆回饋機制，確實有機會改善部分程式相關任務的輸出；但它不直接證明任何單一程式語言因此已具充分的工程化驗證優勢。&amp;#160;&lt;a href=&#34;#fnref:9&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:10&#34;&gt;
+&lt;p&gt;Rust 官方文件 &amp;ldquo;&lt;a href=&#34;https://doc.rust-lang.org/book/ch04-01-what-is-ownership.html&#34;&gt;What is Ownership?&lt;/a&gt;&amp;rdquo; 明確把 ownership 描述為一套不依賴垃圾回收、仍能提供記憶體安全保證的機制；Go 官方 &amp;ldquo;&lt;a href=&#34;https://go.dev/doc/gc-guide&#34;&gt;A Guide to the Go Garbage Collector&lt;/a&gt;&amp;rdquo; 則說明標準工具鏈包含追蹤式垃圾回收器，並持續針對 GC 成本與效能調校。現有材料足以支撐「清楚的編譯器錯誤回饋有助於語言模型修正 Rust 程式」這個較窄判斷；但本文目前不把 Rust ownership / borrow 與 Go 垃圾回收在 LLM 協作下的整體收斂效果，當成已有定論的比較結論。&amp;#160;&lt;a href=&#34;#fnref:10&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:11&#34;&gt;
+&lt;p&gt;Rob Pike，&amp;quot;&lt;a href=&#34;https://go.dev/talks/2012/splash.article&#34;&gt;Go at Google: Language Design in the Service of Software Engineering&lt;/a&gt;&amp;quot;。這裡主要支撐的是：Go 的原始設計取向，本來就不是語法炫技，而是大型軟體工程中的可讀、可維護與低負擔開發。&amp;#160;&lt;a href=&#34;#fnref:11&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:12&#34;&gt;
+&lt;p&gt;Go 官方 &lt;a href=&#34;https://go.dev/blog/survey2025-results&#34;&gt;&lt;em&gt;2025 Go Developer Survey Results&lt;/em&gt;&lt;/a&gt; 指出，2025 年調查共有 5,379 名 Go 開發者回覆。這裡主要用來支撐一個較窄判斷：Go 使用者長期重視簡潔、可維護與穩定工具鏈。&amp;#160;&lt;a href=&#34;#fnref:12&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:13&#34;&gt;
+&lt;p&gt;Go 官方文件 &amp;ldquo;&lt;a href=&#34;https://pkg.go.dev/cmd/go&#34;&gt;&lt;code&gt;cmd/go&lt;/code&gt;&lt;/a&gt;&amp;rdquo; 直接把 &lt;code&gt;go&lt;/code&gt; 描述為「管理 Go 原始碼的工具」；而同一套標準工具鏈內建 &lt;code&gt;build&lt;/code&gt;、&lt;code&gt;test&lt;/code&gt;、&lt;code&gt;fmt&lt;/code&gt;、&lt;code&gt;fix&lt;/code&gt; 等命令。這裡主要支撐的是：Go 的日常工程流程，本來就傾向收得較緊。&amp;#160;&lt;a href=&#34;#fnref:13&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:14&#34;&gt;
+&lt;p&gt;Go 官方長期把風格一致性與 idiomatic code 視為可維護性的一部分。&lt;a href=&#34;https://go.dev/blog/gofmt&#34;&gt;gofmt&lt;/a&gt;、&lt;a href=&#34;https://go.dev/doc/effective_go&#34;&gt;&lt;em&gt;Effective Go&lt;/em&gt;&lt;/a&gt; 與 &amp;ldquo;&lt;a href=&#34;https://go.dev/wiki/CodeReviewComments&#34;&gt;Go Code Review Comments&lt;/a&gt;&amp;rdquo; 都可支撐「Go 的語法與慣例相對收斂」這個判斷。&amp;#160;&lt;a href=&#34;#fnref:14&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:15&#34;&gt;
+&lt;p&gt;這則註腳主要補充一個較窄判斷：大型企業後端的程式語言選型，很多時候不是從零開始，而是在既有技術堆疊、工具鏈、生態系、人才結構與組織流程裡持續演化。Spring Boot 官方的 &lt;a href=&#34;https://docs.spring.io/spring-boot/index.html&#34;&gt;&lt;em&gt;Spring Boot Documentation&lt;/em&gt;&lt;/a&gt;、.NET 官方的 &amp;ldquo;&lt;a href=&#34;https://dotnet.microsoft.com/en-us/learn/dotnet/what-is-dotnet&#34;&gt;What is .NET?&lt;/a&gt;&amp;rdquo; 與 Oracle 官方的 &lt;a href=&#34;https://docs.oracle.com/en/java/javase/&#34;&gt;&lt;em&gt;Java Documentation&lt;/em&gt;&lt;/a&gt; 都足以支撐這個判斷。&amp;#160;&lt;a href=&#34;#fnref:15&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:16&#34;&gt;
+&lt;p&gt;Nelson F. Liu et al., “&lt;a href=&#34;https://direct.mit.edu/tacl/article/doi/10.1162/tacl_a_00638/119630/Lost-in-the-Middle-How-Language-Models-Use-Long&#34;&gt;Lost in the Middle: How Language Models Use Long Contexts&lt;/a&gt;”，TACL 2024。這裡主要支撐的是：長上下文不是免費的；當關鍵資訊落在中段時，模型的利用能力可能明顯下降。更完整的工作流層面討論，可另參〈&lt;a href=&#34;//william-yeh.net/post/2026/03/genai-se-level-up/&#34;&gt;AI 會寫程式之後，軟體工程真正變貴的是什麼&lt;/a&gt;〉。&amp;#160;&lt;a href=&#34;#fnref:16&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>GenAI 的工程護欄是什麼？—— 把規矩寫成工具鏈會執行的限制</title>
+      <link>//william-yeh.net/post/2026/03/genai-guardrail/</link>
+      <pubDate>Sat, 28 Mar 2026 20:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2026/03/genai-guardrail/</guid>
+      
+        <description>&lt;p&gt;Vibe coding 時，LLM 並不真的「聽話」。很多人因此去找更強的咒語，想拴住這匹脫韁的野馬。&lt;/p&gt;
+&lt;p&gt;但 prompt 裡寫一句「請遵守 Hexagonal Architecture」，效果其實很有限。它比較像在工地口頭交代一句「請按圖施工」：有提醒，沒有保證。最後沒歪掉，很多時候也不是因為工人真的照做，而是旁邊還有人在監工。&lt;/p&gt;
+&lt;p&gt;你真的相信 AI 會乖乖聽勸嗎？&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;工程上真正有約束力的規矩，不能只停在說明、默契或設計哲學。它得能被系統檢查；必要時，能拒絕、阻斷，甚至直接讓流程停下來。&lt;/p&gt;
+&lt;p&gt;所以，談 LLM 時代的工程護欄，先抓住一個判準就夠了：&lt;strong&gt;這條規矩能不能被機器檢查，並在必要時改變系統的下一步。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2026/03/genai-guardrail.jpg&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2026/03/genai-guardrail.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;一先分清鷹架驗證器與護欄&#34;&gt;一、先分清鷹架、驗證器與護欄&lt;/h2&gt;
+&lt;p&gt;談工程護欄時，最容易混在一起的，其實是三種不同功能的東西：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;鷹架 (scaffold)&lt;/strong&gt;：幫語言模型比較容易走在對的方向上。它提高做對的機率，減少誤解與偏航，但不能保證出錯時一定攔得住。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;驗證器 (verifier)&lt;/strong&gt;：回答「這份產出有沒有過關」的機制，例如測試、型別檢查、靜態分析器、形式驗證器。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;護欄 (guardrail)&lt;/strong&gt;：當語言模型做錯、做偏、做越界的事情時，能阻止它繼續往下走的機制。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;差別的關鍵，在於：&lt;strong&gt;檢查結果能不能改變系統的下一步。&lt;/strong&gt; 很多時候，護欄不是另一種神祕工具，而是把驗證器接進流程控制之後扮演的角色。測試如果只是存在於 repository 裡，它提供的是訊號；一旦接進 CI，成為合併或部署的阻斷條件，它才同時成為護欄。&lt;/p&gt;
+&lt;p&gt;像 Design by Contract、Specification by Example、static analysis、property-based testing、sandbox、deployment gate、人工批准，放進來看都會更清楚：有些是在幫你對齊，有些在幫你檢查，有些則真的會把下一步擋下來。&lt;/p&gt;
+&lt;p&gt;到了 LLM 時代，重要的不是把這些名字講得更完整，而是把重要約束盡量往可檢查、可判定、可阻斷的一端推。&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;h2 id=&#34;二spec-與架構原則在做什麼&#34;&gt;二、Spec 與架構原則在做什麼&lt;/h2&gt;
+&lt;p&gt;Spec 和架構原則都能提供約束，但它們處理的不是同一件事。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html&#34;&gt;Spec-driven development (SDD)&lt;/a&gt; 處理的是&lt;strong&gt;對齊&lt;/strong&gt;。它把需求、變更、設計、任務與實作串成同一條工作鏈，讓人和 AI 協作時，不必只靠聊天上下文去維持一致。較強版本的 SDD，會把 spec 提升成 source of truth，往下展開 plan、tasks，甚至進一步驅動 implementation。&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt; 較輕版本的 SDD，則是在 code 之前先固定一層持續存在的 spec，讓需求、變更與實作之間有穩定的承接點。&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;它的價值不在於把文件寫得更厚，而在於後續實作、驗證與變更追蹤都能對著同一組座標工作。規格一旦能持續存在、被引用、被對照，後面的檢查就不是從零開始。這能減少上下文漂移，也能降低人和語言模型各講各話的機率。&lt;/p&gt;
+&lt;p&gt;架構原則處理的，則是&lt;strong&gt;邊界&lt;/strong&gt;。它固定依賴方向、責任分配與模組之間的接觸方式，避免修改時一路穿透整個系統。&lt;/p&gt;
+&lt;p&gt;像「domain 不應依賴 infrastructure」、「application service 不應直接碰 UI adapter」、「core module 不得 import vendor SDK」這類規則，如果只存在於設計文件、團隊默契或 code review comment 裡，主要仍是在幫人理解系統。把它們寫成依賴規則、匯入限制、architecture lint、架構測試與 CI 阻斷條件之後，邊界才真的固定下來。像 &lt;a href=&#34;https://www.archunit.org/&#34;&gt;ArchUnit&lt;/a&gt; 這類工具做的，就是把依賴方向、分層限制與循環依賴寫成可自動執行、一有違規就 fail 的規則。&lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;Spec 固定的是座標；架構原則固定的是邊界。兩者都很重要，但它們做的都還是同一類事：&lt;strong&gt;讓系統比較不容易歪掉。&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;三真正握著-pass--fail-的是驗證器&#34;&gt;三、真正握著 pass / fail 的，是驗證器&lt;/h2&gt;
+&lt;p&gt;到了產出這一層，真正決定過不過關的，通常還是型別系統、schema、assertions、static analysis、property-based testing、design by contract、formal verification 這類能給出硬性判定的機制。它們檢查某個性質成不成立；不成立，就直接給出 fail signal。接進自動化流程之後，也最容易變成真正的護欄。&lt;/p&gt;
+&lt;p&gt;語言模型可以幫忙讀工具輸出、整理告警、推測可能原因，但還不適合坐在正式裁決者的位置上。近年的 benchmark 顯示，LLM 在某些程式語意推理任務上確實進步了；但碰到更深層、多步驟的靜態分析推理，表現仍然不穩。比較保守的工程結論是：現階段，語言模型可以協助 static analysis workflow，但還不能把它當成正式 static analyzer 的替代品。&lt;sup id=&#34;fnref:6&#34;&gt;&lt;a href=&#34;#fn:6&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;6&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;至於 LLM-as-reviewer，比較適合放在&lt;strong&gt;初步快篩&lt;/strong&gt;的位置。它能幫忙擴大檢查面，例如指出明顯臭味、補測試點子、列出可能漏掉的邊界情況，或整理其他工具的輸出。最近也有研究指出，它能讓檢查更聚焦、更少幻覺。&lt;sup id=&#34;fnref:7&#34;&gt;&lt;a href=&#34;#fn:7&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;7&lt;/a&gt;&lt;/sup&gt; 這些都有價值，但它的位置仍然是初步快篩，不是最後仲裁。&lt;/p&gt;
+&lt;p&gt;不過這裡還有一層更容易被忽略的問題。驗證器的強度，不只要看用的是哪個框架，也得看規則是誰寫的。以 property-based testing 為例，如果 property 是人先定義好，再交給框架展開大量案例，它仍然是很強的驗證器；但如果連 property 都交給 LLM 自己發明，就會有球員兼裁判的問題：它測的到底是原本預期的行為，還是自己最容易實現的性質？上游若把 property 的定義權一併交出去，驗證強度就可能被偷換。&lt;sup id=&#34;fnref:8&#34;&gt;&lt;a href=&#34;#fn:8&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;8&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;換到 property-based testing、design by contract 和 formal verification，也還是同一件事。語言模型可以協助補測試、補契約條件&lt;sup id=&#34;fnref:9&#34;&gt;&lt;a href=&#34;#fn:9&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;9&lt;/a&gt;&lt;/sup&gt;、整理驗證器回饋、加速迭代修正；但最後握著裁決權的，仍然是 verifier。&lt;sup id=&#34;fnref:10&#34;&gt;&lt;a href=&#34;#fn:10&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;10&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;h2 id=&#34;四當-agent-能行動護欄就得前移&#34;&gt;四、當 agent 能行動，護欄就得前移&lt;/h2&gt;
+&lt;p&gt;不過，事情一旦從「產出」走到「行動」，風險模型就變了。&lt;/p&gt;
+&lt;p&gt;如果 agent 只會補全程式碼，失誤大多還停留在寫錯；如果 agent 還能讀寫檔案、改設定、跑腳本、觸發部署，甚至反覆自我修補，失誤就變成做錯事。前者主要看驗證，後者則要先看權限。&lt;/p&gt;
+&lt;p&gt;所以，前面幾節談的那些編譯期、測試期、驗證期約束，到了這裡都還不夠。agent 一旦有了工具權限，真正重要的防線就會往前移到執行邊界本身。此時要管的，不只是它寫得對不對，而是它能不能碰、可以碰到哪裡、出了事是否留痕、哪一步需要停下來等人批准。&lt;/p&gt;
+&lt;p&gt;這時真正重要的護欄，就是權限範圍控管、沙箱隔離、稽核記錄、速率限制、部署批准，以及其他執行期的限制條件。&lt;/p&gt;
+&lt;p&gt;Agent 一旦從「生成建議」走到「執行動作」，問題就不再只是怎麼驗證產出，而是：&lt;strong&gt;哪些限制必須在它動手之前就先寫硬。&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;五哪些規矩值得寫硬&#34;&gt;五、哪些規矩值得寫硬&lt;/h2&gt;
+&lt;p&gt;到了這裡，問題已經不是要不要再多一些原則，而是：&lt;strong&gt;哪些限制如果不寫硬，代價會高到不能接受。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;判斷這件事，我會先看四個面向：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;錯誤代價&lt;/strong&gt;：出錯的成本高不高。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;行動權限&lt;/strong&gt;：agent 的行為會不會直接改變外部世界。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;審計需求&lt;/strong&gt;：事後需不需要清楚追溯，誰在什麼條件下放行。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;一致性成本&lt;/strong&gt;：這條規矩如果只靠默契，能不能跨人員、跨時間穩定維持。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;這四個維度上的壓力越大，這條規矩就越不適合只留在文件、會議紀錄或 code review comment 裡，越應該被翻成測試、schema、lint rule、approval gate 或權限控制。&lt;/p&gt;
+&lt;p&gt;反過來說，如果錯誤代價低、行動權限小、審計需求弱，而且團隊本來就能穩定維持一致，那它可能就不需要被工具鏈執法。留在慣例、review 或較弱的規格層，很多時候就夠了。&lt;/p&gt;
+&lt;p&gt;所以，真正要問的不是規矩能不能寫硬，而是：&lt;strong&gt;它值不值得被寫硬。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;這裡還是要小心另一個問題。當規矩大量轉成可由機器裁決的限制，很容易出現新的激勵錯置：大家開始為了過關而寫測試，為了通過檢查而補 schema，最後得到的未必是更好的工程品質，而可能只是更僵硬的流程。&lt;/p&gt;
+&lt;p&gt;護欄不是越多越好。好的護欄，是把高代價風險卡住，同時不要把系統變成只會通關的官僚機器。&lt;/p&gt;
+&lt;h2 id=&#34;結論&#34;&gt;結論&lt;/h2&gt;
+&lt;p&gt;所以真正要問的，往往不是這條規矩寫了沒有，而是當它出了事，有沒有機制真的在監工。&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;關於大語言模型 nondeterministic 的問題，詳見〈&lt;a href=&#34;//william-yeh.net/post/2026/03/genai-se-level-up/&#34;&gt;AI 會寫程式之後，軟體工程真正變貴的是什麼&lt;/a&gt;〉一文。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;本文主張：對 LLM 而言，穩定的約束力主要來自外部、可機器檢查、且可嵌入流程阻斷的機制，而不是語言模型是否「理解規矩」。&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;
+&lt;p&gt;參考 &lt;a href=&#34;https://github.com/github/spec-kit&#34;&gt;Spec Kit&lt;/a&gt; 對 Spec-Driven Development 的自我定義與 workflow 說明：specification 不再只是 scaffolding，而是變成 executable source，能沿著 constitution → specification → planning → tasks → implementation 的鏈條依序往下執行。&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:4&#34;&gt;
+&lt;p&gt;參考 &lt;a href=&#34;https://github.com/Fission-AI/OpenSpec&#34;&gt;OpenSpec&lt;/a&gt; 的 README、concepts 與 getting started 文件：OpenSpec 強調 &lt;em&gt;fluid not rigid&lt;/em&gt;、&lt;em&gt;iterative not waterfall&lt;/em&gt;，以 &lt;code&gt;specs/&lt;/code&gt; 作為 current behavior 的 source of truth，以 &lt;code&gt;changes/&lt;/code&gt; 保存每次 change 的 &lt;code&gt;proposal.md&lt;/code&gt;、delta specs、&lt;code&gt;design.md&lt;/code&gt;、&lt;code&gt;tasks.md&lt;/code&gt;，並沿著 proposal → specs → design → tasks → implement 的順序推進。&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:5&#34;&gt;
+&lt;p&gt;根據 &lt;a href=&#34;https://www.archunit.org/&#34;&gt;ArchUnit&lt;/a&gt; 官方使用手冊的說法，ArchUnit 可檢查 package/class 依賴、layer、slice 與循環依賴，並以一般 Java 單元測試框架自動執行 architecture 與 coding rules。&amp;#160;&lt;a href=&#34;#fnref:5&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:6&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://arxiv.org/abs/2507.05269&#34;&gt;CoRe benchmark&lt;/a&gt; 專門評估 LLM 在靜態分析型程式語意推理上的能力；結果顯示，模型雖能處理部分任務，但在更深層、多步驟的語意推理上仍有明顯限制。本文據此採取較保守的工程判斷：現階段不宜把 LLM 視為正式 static analyzer 的替代品。&amp;#160;&lt;a href=&#34;#fnref:6&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:7&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://arxiv.org/abs/2512.17540&#34;&gt;SGCR (specification-grounded code review)&lt;/a&gt; 的核心主張是把 code review 建立在明確、人工撰寫的規格上，以提升回饋的相關性與可信度；這支持較保守的結論：spec-grounded review 值得投入，但現階段更適合放在初步快篩，而非最後仲裁者的位置。&amp;#160;&lt;a href=&#34;#fnref:7&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:8&#34;&gt;
+&lt;p&gt;許多由 LLM 產生的測試程式，常常有球員兼裁判的問題。最明顯的例子，就是濫用 mock 湊出綠燈通過的假象。因此，在 &amp;ldquo;&lt;a href=&#34;https://arxiv.org/abs/2506.18315v1&#34;&gt;Use Property-Based Testing to Bridge LLM Code Generation and Validation&lt;/a&gt;&amp;rdquo; 這份研究中，也承認由 LLM 產生 property，是他們這份研究的弱點之一。&amp;#160;&lt;a href=&#34;#fnref:8&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:9&#34;&gt;
+&lt;p&gt;&amp;ldquo;&lt;a href=&#34;https://arxiv.org/abs/2510.12702&#34;&gt;Beyond Postconditions&lt;/a&gt;&amp;rdquo; 這篇研究關注的是：LLM 能不能從程式或既有規格中推導出可供自動驗證使用的 formal contracts，而且範圍不只限於傳統 postconditions。它的價值在於「協助起草與補全契約條件」：能幫忙加快 formal specification 的建構，但不等於模型已經可以取代 verifier 來正式裁決。&amp;#160;&lt;a href=&#34;#fnref:9&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:10&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://arxiv.org/abs/2509.22908&#34;&gt;Vericoding benchmark&lt;/a&gt; 與 Faria 等人的 &lt;a href=&#34;https://arxiv.org/abs/2601.12845&#34;&gt;Dafny annotation&lt;/a&gt; 研究都支持同一件事：當流程採用「生成 → verifier 檢查 → 回饋 → 再生成」時，真正掌握裁決權的仍是驗證器 (verifier)，而不是語言模型本身。&amp;#160;&lt;a href=&#34;#fnref:10&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>當 Agile 遇見 AI：變與不變</title>
+      <link>//william-yeh.net/post/2026/03/genai-revisit-scrum/</link>
+      <pubDate>Wed, 25 Mar 2026 20:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2026/03/genai-revisit-scrum/</guid>
+      
+        <description>&lt;p&gt;&lt;a href=&#34;https://scrumguides.org/&#34;&gt;Scrum Guide&lt;/a&gt; 問世至今已經超過 15 年。到了 GenAI 與 coding agents 時代，Scrum 算不算過時？&lt;/p&gt;
+&lt;p&gt;我覺得，這個問題不能只用「過不過時」來看。真正值得看的是：當 AI 已經能查 repo、寫 ticket、開 PR、跑測試之後，Agile 裡哪些工作真的被改寫了，哪些其實沒有。&lt;/p&gt;
+&lt;p&gt;現在很多團隊碰到的情況，不是工作自動做完了，而是塞車的位置換了。&lt;/p&gt;
+&lt;p&gt;你讓 agent 跑了一整晚。隔天早上，GitHub 上可能已經躺著幾個待 review 的 PR、兩三種看起來都說得通的重構方向、一些測試全綠燈卻仍讓人隱隱不安的修改，外加幾個碰了系統邊界卻未必自知的變更。 OpenClaw（龍蝦）作者 Peter Steinberger 也提過，自己曾讓系統跑上數小時，甚至隔夜處理重構；他甚至認為 “prompt requests” 也會變成新的日常。&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;這裡真正變快的，是程式碼產出。沒有一起變快的，則是審查、驗收、風險辨識、責任承擔和後續決策。表面上看起來像是寫得更快，實際上常常只是把瓶頸往後推。&lt;/p&gt;
+&lt;p&gt;瓶頸既然換了位置，接下來要重看的，就不只是 Scrum 還在不在，而是整個協作方式要怎麼調整。譬如說，很多原本得靠人類口頭交換的內容，現在可以先由機器整理、摘要、比對、補齊，甚至先展開幾種可能方案。&lt;/p&gt;
+&lt;p&gt;很多人在正式會議前，本來就會先和 AI 討論，再把整理過的結論帶進會議。既然這件事早就在發生，那差別往往只剩下：團隊要不要正式承認它。說穿了，就是要不要把那隻早就在場外跑著的龍蝦，正式接進協作流程裡。&lt;/p&gt;
+&lt;p&gt;我甚至還有個瘋狂的想法。何不開一個視窗，接上麥克風與喇叭，邀請這位 AI 本尊直接進來會議現場，說不定反而更有效率，也更有火花呢。&lt;/p&gt;
+&lt;p&gt;還有哪些需要調整的呢？&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2026/03/genai-revisit-scrum.jpg&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2026/03/genai-revisit-scrum.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;先變薄的部分&#34;&gt;先變薄的部分&lt;/h2&gt;
+&lt;h3 id=&#34;daily-scrum從同步到排除障礙&#34;&gt;Daily Scrum：從同步到排除障礙&lt;/h3&gt;
+&lt;p&gt;Daily 最容易先變形，因為它最常被實作成站會、報進度、同步阻礙。若 AI 已經能自動整理昨天的 commit、ticket 狀態、PR 變化、CI 結果、風險訊號與依賴狀況，很多原本要靠人輪流講一遍的資訊，自然可以退出例行會議。&lt;/p&gt;
+&lt;p&gt;Daily 之後會更像一個更窄、更直接的介面。平時以非同步更新為主，必要時再同步排除障礙與重新對焦 Sprint Goal。它還是有用，只是用途會收斂得更清楚。&lt;/p&gt;
+&lt;h3 id=&#34;planning--refinementagent-會先進來&#34;&gt;Planning / Refinement：agent 會先進來&lt;/h3&gt;
+&lt;p&gt;Planning 和 Refinement 會很早被改寫，因為這兩個環節本來就有大量前期整理與方案展開的工作。&lt;/p&gt;
+&lt;p&gt;Agent 可以先整理 repo 現況、歷史 issue、相依模組、潛在技術債、風險、限制條件與驗收線索，也可以先把問題空間攤開：列出幾種可能方向、補上 edge cases、模擬不同 stakeholder 的質疑，或把一句模糊需求推成幾版可比較的 backlog candidates。&lt;/p&gt;
+&lt;p&gt;這會直接改變會議本身的重心。以前團隊常常花很多時間把資料湊齊、把可能性從零展開；現在更可能直接從幾個已經展開的選項開始討論。AI 在這裡的價值，不只是幫忙整理答案，而是先把問題空間、方案空間和限制空間攤到桌上。&lt;/p&gt;
+&lt;p&gt;但這也立刻放大 artifact 品質的問題。若 backlog item 寫得模糊、驗收條件不清、優先順序背後沒有說明清楚的價值假設，agent 只會更快放大原有的模糊。AI 可以幫忙展開選項，卻不能替代產品與工程團隊對於「為什麼現在做、做到哪裡算足夠、哪種風險不能接受」的共同判斷。&lt;/p&gt;
+&lt;p&gt;所以到了 AI 時代，Planning / Refinement 的價值不會縮水，只是重心會往前移。人不再主要負責把資料從零湊齊，而是負責設邊界、做取捨、定優先順序。&lt;/p&gt;
+&lt;h3 id=&#34;review準備工作能外包判斷不能&#34;&gt;Review：準備工作能外包，判斷不能&lt;/h3&gt;
+&lt;p&gt;Review 很適合由 agent 深度前置支援。它可以先整理 demo 重點、摘要變更、用數據展示品質趨勢、風險列表，甚至預測 stakeholder 可能會問什麼。&lt;/p&gt;
+&lt;p&gt;但 Review 的核心工作還是看完成果之後，團隊要不要調整後續方向。資訊展示可以大幅前置自動化；價值判斷、取捨與 adaptation 仍然要由人承擔。&lt;/p&gt;
+&lt;h3 id=&#34;sprint-本身時間盒會重估&#34;&gt;Sprint 本身：時間盒會重估&lt;/h3&gt;
+&lt;p&gt;AI 明顯壓縮了實作與局部驗證時間，如果 Sprint 仍然固定在兩週或更長的週期，當然會開始顯得肥厚。某些團隊會把 Sprint 縮短，自動化程度高、跨團隊依賴程度低的團隊，甚至可能轉向更接近 Kanban 那種持續流動的節奏。&lt;/p&gt;
+&lt;p&gt;接下來要重新看的，是什麼節奏最適合吸收風險、整合回饋、維持責任鏈。在高合規、高風險、跨職能協作密集的環境裡，時間盒仍然可能很有用；只是到了 AI 時代，它不必再理所當然地綁定某一個固定長度。&lt;/p&gt;
+&lt;h2 id=&#34;反而變更硬的部分&#34;&gt;反而變更硬的部分&lt;/h2&gt;
+&lt;h3 id=&#34;retrospective更重要也更脆弱&#34;&gt;Retrospective：更重要，也更脆弱&lt;/h3&gt;
+&lt;p&gt;如果說 Daily、Planning、Refinement、Review 有些部分會被 AI 削薄，那麼 Retrospective 則可能會往另一個方向走：它會變得更重要。&lt;/p&gt;
+&lt;p&gt;Retro 處理的是團隊診斷、坦白與集體學習。這裡最關鍵的東西不是效率，而是心理安全、信任，以及組織能不能把一次失敗轉成下一輪行動。&lt;/p&gt;
+&lt;p&gt;同樣一句話「這次卡住，其實是因為我不敢太早提反對意見」，在純人類的 retro 裡，也許有人會講；但如果現場多了一個在記錄、歸因、評估，甚至長期留痕的 agent，這句話就很可能消失。不是因為 AI 一定會懲罰誰，而是因為人會重新計算：這句話說出去之後，會怎麼被理解、保存、引用或放大。&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;所以，如果 retrospective 還要有診斷價值，團隊就得很清楚地界定 AI 在裡面的角色。它可以幫忙整理議題、歸納模式、追蹤 action items；但只要它強化了監看感、記錄感或績效聯想，retro 最有價值的那部分就會先破壞掉。&lt;/p&gt;
+&lt;h3 id=&#34;artifacts要給人也要給機器用&#34;&gt;Artifacts：要給人，也要給機器用&lt;/h3&gt;
+&lt;p&gt;比起只盯著 Scrum 的 events，我更在意另一件事：artifacts 在 AI 時代會比以前更重要，而且得重寫。&lt;/p&gt;
+&lt;p&gt;Scrum Guide 一直強調 artifacts 的角色，是讓工作與價值具備透明性。Agent 普遍介入之後，artifact 不再只是給人看的共識載體，也會變成人機協作的介面。Backlog item、acceptance criteria、Definition of Done、測試規格、architecture decision record、runbook、incident template——這些文件如果還只是寫到「人類大概懂」，對 agent 來說通常就不夠。&lt;/p&gt;
+&lt;p&gt;AI 時代，好的 artifacts 通常得同時滿足三件事：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;讓人能理解為什麼要做。&lt;/li&gt;
+&lt;li&gt;讓機器能可靠地執行或協助執行。&lt;/li&gt;
+&lt;li&gt;讓責任可以在事後被追溯。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Artifacts 精度直接決定產出品質，因此，很多過去被嫌文件太笨重的東西，之後可能會以另一種形式回歸。&lt;/p&gt;
+&lt;p&gt;這裡說的回歸，指的是另一類 artifacts：輕量、可持續修訂、直接服務於協作、生成、驗收與追溯。它們會跟著 sprint 推進而演化，會貼著程式碼、測試、部署與實際決策一起更新，也會持續接受回饋修正。這種文件更像高精度介面，負責讓人與 agent 在同一組邊界條件下工作。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://agilemanifesto.org/&#34;&gt;Agile Manifesto&lt;/a&gt; 裡那句 &lt;em&gt;working software over comprehensive documentation&lt;/em&gt;，放到今天依然成立。關鍵不在於文件多或少，而在於它有沒有直接服務於 working software。只要文件仍然貼近交付、能被持續修訂、能幫助團隊更快收斂到可驗收的結果，它就還在敏捷的精神之內。&lt;/p&gt;
+&lt;p&gt;從傳統產品實務看，這其實並不陌生。很多團隊早就會用 &lt;a href=&#34;https://xp123.com/invest-in-good-stories-and-smart-tasks/&#34;&gt;INVEST&lt;/a&gt; 來檢查 user story 是否至少夠獨立、可協商、有價值、可估、夠小且可驗證。這些要求在 AI 時代沒有失效，反而更像最低門檻。差別在於：過去一則 story 只要寫到讓人類團隊大致能接手，常常就能往下做；現在若連 agent 都要參與展開、拆分、測試與實作準備，那 backlog 就得再往前一步，寫到目標、非目標、限制條件、驗收方法與 sign-off 都足夠明確。&lt;/p&gt;
+&lt;p&gt;舉個最簡單的例子。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;壞寫法：&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;作為使用者，我希望登入更快。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;這句對 PM 或工程師也許還能繼續聊，但對 agent 來說，邊界幾乎是空的。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;好寫法：&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;目標&lt;/strong&gt;：將登入頁可互動時間降低 30%。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;非目標&lt;/strong&gt;：不改動身份驗證供應商。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;限制&lt;/strong&gt;：不得影響現有風控規則。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;驗收&lt;/strong&gt;：iOS 與 Web 端在指定設備與網路條件下達成 X 指標；由產品經理與前端負責人共同 sign-off。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;同樣是一個 backlog item，後者才提供了真正可用的人機介面：目標是什麼、邊界在哪裡、什麼算完成、誰負責最後收件。寫得夠清楚，AI 才幫得上忙，幫忙拆工作、產生測試、準備 PR。&lt;/p&gt;
+&lt;h3 id=&#34;責任鏈與工程護欄生成越快越要卡住&#34;&gt;責任鏈與工程護欄：生成越快，越要卡住&lt;/h3&gt;
+&lt;p&gt;不少人對 AI 的第一直覺，是既然寫程式變便宜，那很多流程大概都能省掉。這種想像只對了一半。&lt;/p&gt;
+&lt;p&gt;AI 的確讓某些執行工作變便宜了，但它完全沒有削弱 accountability。事情如果上線出錯，最後還是得有人承擔；需求如果方向錯了，還是得有人為取捨負責；安全性、法遵、效能和使用者體驗，也不會因為程式碼是 agent 幫忙寫的，就自動退到後面。&lt;/p&gt;
+&lt;p&gt;接下來真正要被重構的，是整條責任鏈：誰定義任務、誰設邊界、誰接收產出、誰有權否決、誰來為結果簽名。這些問題沒先講清楚，只把 agent 接進流程，最後通常不會更敏捷，只會更快地製造混亂。&lt;/p&gt;
+&lt;p&gt;工程護欄也會一起變硬。程式碼生成量一旦上來，不可能靠線性增加人工 review、每個人更辛苦地看更多東西來搞定。最後撐得住的，是那些能把品質判斷前移、自動化、制度化的做法：持續整合、快速測試、明確的 Definition of Done、嚴格的 code review gate、穩定的 observability、必要時的 evals，以及對產線風險有感知的 release discipline。&lt;/p&gt;
+&lt;p&gt;從這個角度看，XP 裡那些常被嫌麻煩、嫌慢、嫌太講究的實踐，在 AI 時代反而更像必要基礎設施。原因不在於它們很傳統，而在於它們能承接高速生成之後帶來的品質壓力。 &lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;h2 id=&#34;別把判斷力一起外包&#34;&gt;別把判斷力一起外包&lt;/h2&gt;
+&lt;p&gt;AI 的介入，還引出另一個更根本的問題：當執行越來越便宜，我們怎麼避免把判斷力一起外包出去。&lt;/p&gt;
+&lt;p&gt;這裡說的判斷力，不是抽象的道德說教，而是幾種很具體的能力：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;看出哪裡不對勁的能力。&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;在多個看起來都合理的方案裡做取捨的能力。&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;在壓力下願意為結果簽名負責的能力。&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;如果一個團隊長期把 AI 當成「先幫我做完，我再大致看一下」的工具，被侵蝕的往往不只是「寫程式」這一項技能，而是對錯誤的敏感度、對邊界的感知、對系統後果的直覺，以及在不完整資訊下做判斷的肌肉。&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;更麻煩的是，這件事未必會以很戲劇化的方式發生。多數時候，它不是讓人突然完全不會做，而是讓人慢慢失去深入理解的動機。表面上每件事都做得更快，實際上團隊可能越來越依賴一套自己不完全理解、也不太知道怎麼挑戰的生成流程。最後留下來的，不是高效，而是脆弱。&lt;/p&gt;
+&lt;p&gt;所以我不太接受那種把 AI 對團隊的影響簡化成「速度提升」的說法。速度當然重要。真正決定團隊長期能力的，還是判斷、責任與學習能不能一起跟上。&lt;/p&gt;
+&lt;h2 id=&#34;結語agile-沒有過時介面在變&#34;&gt;結語：Agile 沒有過時，介面在變&lt;/h2&gt;
+&lt;p&gt;Scrum 未必過時。現在鬆動的，是建立在人類同步成本上的那一層介面。&lt;/p&gt;
+&lt;p&gt;接下來要進一步重構的，是人、機器與責任之間的介面。&lt;/p&gt;
+&lt;p&gt;流程會被改寫，但判斷、責任和學習不會消失，只會加重。&lt;/p&gt;
+&lt;hr&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;OpenClaw 作者 Peter Steinberger 在接受 &lt;a href=&#34;https://lexfridman.com/peter-steinberger/&#34;&gt;Lex Fridman Podcast #491&lt;/a&gt; 訪談時提到，讓系統處理重構，可能會跑上數小時，甚至隔夜，也提到 review pull request，甚至 “prompt request” 會變成他日常工作的一部分。這很適合拿來說明：當 agent 讓產出暴增時，人類瓶頸常常會被推向 review 與判斷。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;這裡的推論應該寫得保守一點。&lt;a href=&#34;https://www.jstor.org/stable/2666999?origin=JSTOR-pdf&#34;&gt;Edmondson (1999)&lt;/a&gt; 與 &lt;a href=&#34;https://rework.withgoogle.com/intl/en/guides/understanding-team-effectiveness&#34;&gt;Google re:Work&lt;/a&gt; 所談的心理安全，確實都支持「人要在團隊裡敢說真話，必須感到不會因提出疑問、異議或錯誤而受到懲罰」這件事。&lt;a href=&#34;https://partnershiponai.org/psychological-safety-in-the-ai-workplace-with-the-apa/&#34;&gt;Partnership on AI&lt;/a&gt; 與 &lt;a href=&#34;https://www.apa.org/pubs/reports/work-in-america/2024/psychological-safety&#34;&gt;APA&lt;/a&gt; 的材料也指出，當 AI 被用來強化監看、侵入隱私，或讓人感到自己正被持續觀察時，心理安全可能受損。&lt;a href=&#34;https://www.frontiersin.org/journals/behavioral-economics/articles/10.3389/frbhe.2025.1647057/full&#34;&gt;Dorner 與 Fellner-Röhling (2025)&lt;/a&gt; 的研究則更直接涉及信任與自動化控制，而不是 retro 場景本身。把這些材料放進 retrospective 的脈絡，只能支撐一個較保守的判斷：&lt;strong&gt;一旦 retro 帶出強烈的監看感、記錄感或評價感，團隊的坦白程度很可能下降。&lt;/strong&gt;&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;
+&lt;p&gt;請參考我在〈&lt;a href=&#34;//william-yeh.net/post/2026/03/genai-se-level-up/&#34;&gt;AI 會寫程式之後，軟體工程真正變貴的是什麼&lt;/a&gt;〉一文做的探討。&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:4&#34;&gt;
+&lt;p&gt;這裡我同樣刻意寫得保守。關於 AI 是否會侵蝕學習與理解，Anthropic 2026 年的一項研究 “&lt;a href=&#34;https://www.anthropic.com/research/AI-assistance-coding-skills&#34;&gt;How AI Assistance Impacts the Formation of Coding Skills&lt;/a&gt;” 發現，接受 AI 協助的學習者，在剛做過的概念測驗上分數較低；但長期的 deskilling 與組織後果，目前仍缺少更長時間尺度的直接證據。&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>LLM 時代，傳統軟體架構該重新檢查了</title>
+      <link>//william-yeh.net/post/2026/03/genai-revisit-arch/</link>
+      <pubDate>Sat, 21 Mar 2026 20:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2026/03/genai-revisit-arch/</guid>
+      
+        <description>&lt;p&gt;&lt;a href=&#34;https://github.com/openclaw/openclaw&#34;&gt;OpenClaw&lt;/a&gt; 作者 Peter Steinberger 接受 36Kr Europe 訪談時提到，多數程式碼其實很無聊，很多時候做的只是把一種資料形狀轉成另一種。這不是他真正關心的事。 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;這句話有點刺耳，但也把一件事講得很坦白：很多工程安排用久了，就會從成本與取捨，慢慢變成預設，變成僵化的教條，沒有人過問它是否還有價值。&lt;/p&gt;
+&lt;p&gt;現在 LLM 與 coding agent 已經開始直接參與 repo 級搜尋、修改與驗證。很多原本被視為理所當然的做法，也該再檢查一次。分層是不是還在隔離風險，抽象是不是還在縮小修改半徑，某些 interface、mapper 和轉發層，到底在承擔工作，還是只是在延續習慣。&lt;/p&gt;
+&lt;p&gt;以前這些東西就算有點多、有點繞，通常也還撐得過去。工程師會靠經驗補上下文，靠默契避開麻煩，再把額外成本默默吞下來。&lt;/p&gt;
+&lt;p&gt;但 agent 介入之後，很多原本人類可以硬撐過去的地方，會直接變成搜尋成本、理解成本，最後讓修改失去準頭。&lt;/p&gt;
+&lt;p&gt;這篇想處理的問題很直接：今天系統裡哪些結構還在管理複雜性，哪些只是在維持形式？&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2026/03/genai-revisit-arch.png&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2026/03/genai-revisit-arch.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;一先把問題拆開&#34;&gt;一、先把問題拆開&lt;/h2&gt;
+&lt;p&gt;很多關於「LLM 會不會淘汰傳統架構」的討論，常常一開始就把不同層次的東西攪在一起。clean architecture、hexagonal architecture、DDD、DI、repository pattern、DTO、adapter、use case、presenter，通通被包成同一團：要嘛一起捍衛，要嘛一起否定。&lt;/p&gt;
+&lt;p&gt;這樣談，很容易失焦。&lt;/p&gt;
+&lt;p&gt;至少有三個層次，應該先拆開。&lt;/p&gt;
+&lt;p&gt;第一層是&lt;strong&gt;架構原則&lt;/strong&gt;。依賴方向要受控制，核心規則要和外部機制分開，重要邊界要清楚，關鍵規則要能被測試。當年 Uncle Bob 談 clean architecture，核心是 dependency rule&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;；Alistair Cockburn 談 hexagonal architecture，重點是 inside 與 outside 的不對稱&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;；DDD 裡的 bounded context，關心的則是模型適用的邊界，以及語言一致性應該維持到什麼範圍。&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;第二層是&lt;strong&gt;工程樣板&lt;/strong&gt;。DTO、adapter、repository interface、output port、presenter、mapper，都屬於這一層。它們不是原則本身，而是某些團隊在特定條件下慣用的一組工程安排。Martin Fowler 當初談 dependency injection (DI)，重點放在 configuration 與 use 的分離；不是要你替每個類別都先鋪好抽象層。&lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;第三層是&lt;strong&gt;治理需求&lt;/strong&gt;。這一層真正關心的，不是你有幾個資料夾、幾個介面，而是系統怎麼控制依賴、分配責任、限制變更外溢，並在長期演化中把語意與成本都維持在可控範圍內。&lt;/p&gt;
+&lt;p&gt;這個拆法很重要。很多團隊死守的，其實不是第一層的原則，而是第二層那整套早已模板化的工程安排。手段用久了，會慢慢被當成信仰；原本該被追問的東西，也就變成預設。&lt;/p&gt;
+&lt;p&gt;所以今天要做的，不是宣布第二層全部過時，也不是替任何一派背書，而是把它放回可被檢查的位置：&lt;strong&gt;這個樣板，現在到底在做什麼工作？&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;它有沒有縮小修改範圍？有沒有讓規則與副作用的邊界更清楚？有沒有改善測試、型別檢查、替換成本，或跨 context 的語意翻譯？&lt;/p&gt;
+&lt;p&gt;答不出來，它就比較像儀式。答得出來，它就是在承擔治理任務。&lt;/p&gt;
+&lt;p&gt;很多爭論之所以一直失焦，不是因為立場差太遠，而是這三層太常混在一起談。&lt;/p&gt;
+&lt;h2 id=&#34;二先問它在保護什麼&#34;&gt;二、先問它在保護什麼&lt;/h2&gt;
+&lt;p&gt;人們常說「傳統架構過於虛胖，會被 LLM 淘汰」，但如果去看主流 enterprise 平台的官方文件，其實很少有人真的主張把那些模式全面鋪滿。&lt;/p&gt;
+&lt;p&gt;沒有人認真說過：所有系統都應該全面採用 clean architecture、DDD 或 CQRS。更沒有人說：你應該一開始就把 repository、port、presenter、mapper 全部鋪好，再來寫功能。&lt;/p&gt;
+&lt;p&gt;主流平台的說法，反而一直都比某些工程圈子務實。&lt;/p&gt;
+&lt;p&gt;Microsoft 在 .NET microservices 文件裡談 DDD 與 CQRS 時講得很清楚：這些模式主要適合複雜商業規則、複雜子系統與高演化壓力的情境，而不是所有服務的預設配置。&lt;sup id=&#34;fnref:6&#34;&gt;&lt;a href=&#34;#fn:6&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;6&lt;/a&gt;&lt;/sup&gt; 在更細的 persistence layer 文件裡，它甚至直接寫明：對許多 CRUD 型微服務來說，直接使用 EF &lt;code&gt;DbContext&lt;/code&gt; 往往就是最簡單的做法；自訂 repository 的價值，則主要出現在需要解耦、模擬資料存取或提升測試隔離的較複雜情境。&lt;sup id=&#34;fnref:7&#34;&gt;&lt;a href=&#34;#fn:7&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;7&lt;/a&gt;&lt;/sup&gt; Azure Architecture Center 對 CQRS 的態度也差不多：讀寫負載不對稱、效能與安全要求不同，或流程本身較複雜時，CQRS 有它的價值；但在基本 CRUD、簡單領域模型或 CRUD 式 UI 的情境下，就未必合適。&lt;sup id=&#34;fnref:8&#34;&gt;&lt;a href=&#34;#fn:8&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;8&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;AWS 對 anti-corruption layer 的說法也很直接。它不是讓系統「看起來比較有架構」，而是拿來翻譯不同系統之間的 domain semantics，避免上游 bounded context 的概念直接污染下游。尤其當遺留系統不可改、上下游語義不同，或不同團隊無法同步調整時，這類結構承擔的是整合風險與業務中斷風險。&lt;sup id=&#34;fnref:9&#34;&gt;&lt;a href=&#34;#fn:9&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;9&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;這幾份文件其實都在說同一件事：企業軟體架構的正當性，不來自名詞，而來自它是否真的在承擔治理任務。你為抽象與分層付出的成本，到底有沒有換到對應的治理能力。&lt;/p&gt;
+&lt;p&gt;這裡說的治理，不只是風險控制，也包括廣義的策略對齊、營運成本、效能壓力、跨團隊責任分配，以及系統在長期演化時的健康程度。&lt;/p&gt;
+&lt;p&gt;所以要問的從來不是「要不要架構」，而是：&lt;strong&gt;這個架構到底在保護什麼。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;一個只有單表 CRUD 的微服務，如果 repository、port、presenter、mapper 層層硬塞上去，最後真正穩定不變的，很可能只是樣板，不是邊界。&lt;/p&gt;
+&lt;p&gt;反過來說，一個真的需要隔離外部系統語意、控制商業規則演化、或讓多團隊協作互不污染的系統，那些結構就可能真的在做事。&lt;/p&gt;
+&lt;p&gt;差別不在名字，而在它有沒有承擔工作。&lt;/p&gt;
+&lt;h2 id=&#34;三repo-也需要重新檢查&#34;&gt;三、repo 也需要重新檢查&lt;/h2&gt;
+&lt;p&gt;大型系統反覆觸礁的，還是那幾個老問題：依賴控制、變更隔離、測試支撐、替換成本、跨團隊協作、責任歸屬，以及語意邊界的維護。&lt;/p&gt;
+&lt;p&gt;這些問題不會因為 LLM 變強就自動消失。但 LLM 的確改變了這些結構被檢查、被使用的方式，也改變了人們質疑它們的理由。&lt;/p&gt;
+&lt;p&gt;過去，軟體架構主要是在服務人類開發者：讓人看得懂、改得動、測得出、交接得了。現在在 LLM 時代，還多了 coding agent 參與，甚至可能同時有多個 agent。既有的 repo 結構，是否也能好好服務這些 agent？它是否足夠清楚，讓工具能穩定定位、導航、修改與驗證？&lt;/p&gt;
+&lt;p&gt;近年已經有一些 repository-level benchmark 提供線索。這裡要先分清楚：哪些是 benchmark 直接告訴我們的，哪些只是根據結果提出的合理推論。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;SWE-bench&lt;/strong&gt; 關注的是：LLM 能不能在真實的開源 repo 裡，根據 issue 描述，自動找到相關程式碼、做出修改，最後通過測試。這篇研究當時發現，最佳商業語言模型也只能解掉 1.96%，搭配較好的搜尋策略後，表現才提升到 4.8%。&lt;sup id=&#34;fnref:10&#34;&gt;&lt;a href=&#34;#fn:10&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;10&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;後來的 &lt;strong&gt;SWE-bench Pro&lt;/strong&gt; 難度更高，任務設計也更接近企業中需橫跨數日、長時程處理 issue 的情境。論文分析顯示，任務複雜度、檔案數量與脈絡線索等因素，甚至連程式語言都會影響效果。&lt;sup id=&#34;fnref:11&#34;&gt;&lt;a href=&#34;#fn:11&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;11&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;RepoBench&lt;/strong&gt; 則把 repository-level 能力拆得更細。它不是直接模擬解 issue，而是把能力拆成 retrieval、completion 與 pipeline 三部分，觀察語言模型能不能在跨檔案、跨模組的情境下，先找到真正相關的片段，再補出合理的後續程式。它提供的重要線索是：跨檔案脈絡的供給，確實有助於提升表現。&lt;sup id=&#34;fnref:12&#34;&gt;&lt;a href=&#34;#fn:12&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;12&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;把這些材料放在一起，還不足以得出「某一派架構已被證明普遍勝出」的結論。眼前比較站得住腳的說法，反而更樸素：repo 級工作的難點，高度集中在&lt;strong&gt;定位、檢索、跨檔案關聯與驗證&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;凡是能讓相關脈絡更容易被命中、讓修改範圍更容易收斂、讓驗證點更早浮現的結構，就更值得留下。&lt;/p&gt;
+&lt;p&gt;所以問題不是「LLM 要不要架構」，而是：什麼樣的結構，能讓人與 agent 都更容易動手，而且不容易把系統改壞。&lt;/p&gt;
+&lt;h2 id=&#34;四先看好不好動手&#34;&gt;四、先看好不好動手&lt;/h2&gt;
+&lt;h3 id=&#34;不要先看流派&#34;&gt;不要先看流派&lt;/h3&gt;
+&lt;p&gt;如果前一節的判斷成立，那接下來更值得處理的，就不是哪一派在理念上更完整，而是更務實地看：在真實 repo 裡，哪一種結構能用更少的間接層，換來更高的可定位性、可修改性與可驗證性。&lt;/p&gt;
+&lt;p&gt;把抽象名詞先拿掉。真正會拖慢人與 agent 的，通常是幾件很具體的事：改一條規則時，要穿過幾層；找那條規則時，要繞多少地方；改完之後，又能不能立刻知道該驗證哪裡。&lt;/p&gt;
+&lt;p&gt;至少可以看四個判準。&lt;/p&gt;
+&lt;p&gt;第一，是&lt;strong&gt;修改半徑&lt;/strong&gt;，但最好拆成兩半看。&lt;/p&gt;
+&lt;p&gt;一個是&lt;strong&gt;耦合半徑&lt;/strong&gt;：為了完成一個需求，實際必須修改多少檔案、多少模組、多少層。這主要是架構問題。&lt;/p&gt;
+&lt;p&gt;另一個是&lt;strong&gt;發現半徑&lt;/strong&gt;：人類或 agent 需要先走過多少地方，才知道真正該改哪裡。這往往牽涉到命名、目錄、型別、測試入口、工具提示與文件表達。&lt;/p&gt;
+&lt;p&gt;這兩件事很容易被混在一起，也就很容易誤判。系統如果耦合過深，該做的是重整依賴關係與責任分配；系統如果本來切分得還可以，只是訊號太亂，那麼該優先處理的，反而是命名、測試入口、型別邊界與機器可讀的規則。&lt;/p&gt;
+&lt;p&gt;第二，是&lt;strong&gt;副作用邊界是否清楚&lt;/strong&gt;。哪些地方在做純規則運算，哪些地方在碰資料庫、檔案系統、網路等外部依賴，哪些地方涉及時間、併發與平行處理，是否一眼就看得出來？&lt;/p&gt;
+&lt;p&gt;第三，是&lt;strong&gt;局部驗證是否容易&lt;/strong&gt;。改完一段規則後，能不能快速知道該跑哪些測試、哪些靜態檢查、哪些整合路徑？&lt;/p&gt;
+&lt;p&gt;第四，是&lt;strong&gt;控制流與資料流是否可追蹤&lt;/strong&gt;。如果流程被拆成一長串介面轉發、隱式注入，或分散在太多抽象層裡，再整齊的分層，也不一定比較好動手。&lt;/p&gt;
+&lt;p&gt;舉個簡單的例子。同樣是改一條商業規則，有的系統要層層穿越 controller、use case、output port、presenter、mapper、repository，才碰得到真正的規則；有的系統則能在同一個 feature 目錄下，直接定位到核心邏輯、測試與副作用出口。問題不在誰比較正統，而在誰的修改半徑、發現半徑與驗證成本更低。&lt;/p&gt;
+&lt;p&gt;要先看判準，再看流派。&lt;/p&gt;
+&lt;p&gt;Vlad Khononov 在 &lt;em&gt;Balancing Coupling in Software Design&lt;/em&gt; &lt;sup id=&#34;fnref:13&#34;&gt;&lt;a href=&#34;#fn:13&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;13&lt;/a&gt;&lt;/sup&gt; 提出的平衡耦合模型，也很適合拿來對照。他把耦合性展開成&lt;strong&gt;整合強度&lt;/strong&gt;、&lt;strong&gt;距離&lt;/strong&gt;、&lt;strong&gt;變動性&lt;/strong&gt;三個維度。把這套模型外推到 agent 場景，看的其實也是幾件事：某個結構有沒有降低跨邊界的共享知識，減少真正需要同時理解的知識量；有沒有縮短找到正確修改點與驗證點的距離；有沒有把高耦合留在較低變動、相對穩定的區域，而不是和高變動區域綁在一起。&lt;/p&gt;
+&lt;p&gt;如果答不出來，那些抽象就很可能只是把形式堆得更整齊，沒有讓系統更容易演化。&lt;/p&gt;
+&lt;h3 id=&#34;還得看看-agent-守不守得住&#34;&gt;還得看看 agent 守不守得住&lt;/h3&gt;
+&lt;p&gt;在這組判準下，函數式陣營偏愛的 functional core / imperative shell (FCIS) 結構 &lt;sup id=&#34;fnref:14&#34;&gt;&lt;a href=&#34;#fn:14&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;14&lt;/a&gt;&lt;/sup&gt;，確實值得重新拿出來看。它吸引人的地方在於：在規則明確、I/O 可外推的模組裡，純核心與副作用外殼的分離，會帶來更清楚的副作用邊界、更低的交叉依賴，以及更容易的局部驗證。Google Testing Blog 近年的實務倡議，也大致沿著這條線支持 FCIS 在測試經濟性上的好處。&lt;sup id=&#34;fnref:15&#34;&gt;&lt;a href=&#34;#fn:15&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;15&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;但我也得老實說，到目前為止，FCIS 對 agent 的吸引力，主要仍來自理論上的可追蹤性、邊界清晰度與測試經濟性。這假說很有吸引力，但還缺少直接的 repository-level 證據；目前也還沒有 benchmark 能直接比較 functional core、layered enterprise pattern、hexagonal 或 vertical slice 之間的 agent 表現差異。&lt;/p&gt;
+&lt;p&gt;更現實的是，repo 的既有結構，不一定會被 LLM 老實遵守。&lt;/p&gt;
+&lt;p&gt;目前已有一些初步研究。例如有一項 2025 年的 pilot study，要求 LLM 撰寫微服務，並明確指定必須遵守 hexagonal 架構，同時刻意加入容易誘導它抄捷徑的任務條件。結果顯示，不同模型在維持架構一致性上的表現差異很大。&lt;sup id=&#34;fnref:16&#34;&gt;&lt;a href=&#34;#fn:16&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;16&lt;/a&gt;&lt;/sup&gt; 但這類結果目前仍多屬小樣本、特定任務設定下的觀察，還不足以形成一般性結論。&lt;/p&gt;
+&lt;p&gt;這至少提醒我們：名詞喊得再響，LLM 也未必理會。&lt;/p&gt;
+&lt;p&gt;所以關鍵恐怕不只在架構標籤本身，而在於這些結構有沒有以夠清楚的方式外露出來，讓 agent 能穩定辨認、導航與遵守。&lt;/p&gt;
+&lt;p&gt;這也讓我想到 Uncle Bob 常說的「會尖叫的架構」(screaming architecture)。&lt;/p&gt;
+&lt;h2 id=&#34;五問題常出在架構沒外露&#34;&gt;五、問題常出在架構沒外露&lt;/h2&gt;
+&lt;h3 id=&#34;不外露就等於不存在&#34;&gt;不外露，就等於不存在&lt;/h3&gt;
+&lt;p&gt;這裡最常見的誤判，是把 agent 在大型 codebase 裡的失手，直接歸咎到傳統架構頭上。&lt;/p&gt;
+&lt;p&gt;這個判斷太快了。&lt;/p&gt;
+&lt;p&gt;很多團隊的真實情況，其實不是沒有邊界，而是邊界只存在於資深工程師腦中；不是沒有規則，而是規則沒有穩定外露成命名、目錄、型別、測試、CI 與工具可讀的訊號。&lt;/p&gt;
+&lt;p&gt;對人類來說，那叫默契；對 agent 來說，那叫缺席。&lt;/p&gt;
+&lt;p&gt;所以重點不是拿「機器可讀的結構」去取代「架構風格」。兩者本來就不在同一個層次上。比較準確的說法是：機器可讀的結構，是 agent 能不能動手的戰術前提；整體架構，則是這些修改能不能長期維持健康的策略背景。&lt;/p&gt;
+&lt;h3 id=&#34;文件不是答案&#34;&gt;文件不是答案&lt;/h3&gt;
+&lt;p&gt;但這裡也要小心：不要把「機器可讀」直接理解成「多放幾份給 agent 看的說明文件」。&lt;/p&gt;
+&lt;p&gt;近來關於 context files 與 &lt;code&gt;AGENTS.md&lt;/code&gt; 的研究提醒我們：這類檔案不是放了就有效，也不是零成本。有一項 2026 年跨越多種 coding agents 與語言模型的研究指出，context files 會傾向降低任務成功率，卻同時拉高推論成本 20% 以上；研究者最後的建議不是「多寫一點」，而是：&lt;strong&gt;如果要寫，就只保留最少必要要求。&lt;/strong&gt;&lt;sup id=&#34;fnref:17&#34;&gt;&lt;a href=&#34;#fn:17&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;17&lt;/a&gt;&lt;/sup&gt; 另一項同年的研究則聚焦效率面，觀察 &lt;code&gt;AGENTS.md&lt;/code&gt; 對 runtime 與 token 用量的影響；它顯示這類檔案在某些設定下可能改善執行效率，但也正因此更提醒我們：&lt;code&gt;AGENTS.md&lt;/code&gt; 並不是萬靈丹。&lt;sup id=&#34;fnref:18&#34;&gt;&lt;a href=&#34;#fn:18&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;18&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;穩定的高訊號，依靠的還是架構可見性：型別邊界、可自動檢查的依賴規則、清楚的測試入口、可信的命名約定，以及能直接落進 CI 與工具流程的約束。不是多一份摘要式文件就夠了。&lt;/p&gt;
+&lt;p&gt;沒有訊號還不打緊，靠著夠強的推理模型也許還能稍微補回來；更麻煩的是&lt;strong&gt;錯誤訊號&lt;/strong&gt;。過期的命名規則、和實作不一致的邊界文件、失真的 &lt;code&gt;AGENTS.md&lt;/code&gt;，往往比完全沒有文件更糟。不只缺資訊，還會給出錯誤的自信。&lt;/p&gt;
+&lt;p&gt;架構如果沒有外露到能被人與 agent 穩定依循的程度，問題就還在。&lt;/p&gt;
+&lt;h2 id=&#34;六架構還得為自己辯護&#34;&gt;六、架構還得為自己辯護&lt;/h2&gt;
+&lt;p&gt;不是所有抽象都有用。有些抽象真的在保護系統，有些只是讓團隊覺得這樣看起來比較像一套完整的方法。&lt;/p&gt;
+&lt;p&gt;到了 LLM 時代，架構不再只是拿來說服資深工程師，也得讓 agent 用得上。&lt;/p&gt;
+&lt;p&gt;真正有用的結構，不管面對的是人還是機器，要求其實差不多：它要能把治理價值講清楚，訊號雜訊比要夠高，也要容易被檢查、導航與驗證。否則，即使名字再完整、分層再好看，也很難說它真的在處理複雜性。&lt;/p&gt;
+&lt;p&gt;最後還是回到同一個判斷：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;你現在留下的這些結構，到底是在承受複雜性，還是在替形式續命？&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;未來真正推動軟體架構變化的，也許不是哪一派理論贏了，而是大量 coding agent 在 repo 裡反覆動手之後，哪些結構真的撐得住，哪些撐不住，會慢慢變得很清楚。&lt;/p&gt;
+&lt;p&gt;或許 coding agent 突然湧現出自己的架構審美觀——就像 AlphaGo 讓人重新理解圍棋一樣。&lt;/p&gt;
+&lt;p&gt;但在那之前，眼前比較實際的問題還是這個：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;你留下來的東西，有沒有在做事？&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;36Kr Europe, “&lt;a href=&#34;https://eu.36kr.com/en/p/3715300300468617&#34;&gt;The Rise of a New King on GitHub: How was OpenClaw Developed?&lt;/a&gt;,” March 9, 2026.&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;Robert C. Martin, “&lt;a href=&#34;https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html&#34;&gt;Clean Architecture&lt;/a&gt;,” &lt;em&gt;The Clean Code Blog&lt;/em&gt;, August 13, 2012.&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;
+&lt;p&gt;Alistair Cockburn, “&lt;a href=&#34;https://alistair.cockburn.us/hexagonal-architecture&#34;&gt;Hexagonal Architecture&lt;/a&gt;,” 2005.&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:4&#34;&gt;
+&lt;p&gt;Eric Evans, &lt;a href=&#34;https://www.amazon.com/dp/0321125215&#34;&gt;&lt;em&gt;Domain-Driven Design: Tackling Complexity in the Heart of Software&lt;/em&gt;&lt;/a&gt;, 1st ed. (Boston: Addison-Wesley, 2003), ISBN-13: 978-0321125217, ISBN-10: 0321125215.&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:5&#34;&gt;
+&lt;p&gt;Martin Fowler, “&lt;a href=&#34;https://martinfowler.com/articles/injection.html&#34;&gt;Inversion of Control Containers and the Dependency Injection Pattern&lt;/a&gt;,” &lt;em&gt;MartinFowler.com&lt;/em&gt;, January 2004.&amp;#160;&lt;a href=&#34;#fnref:5&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:6&#34;&gt;
+&lt;p&gt;Microsoft Learn, “&lt;a href=&#34;https://learn.microsoft.com/en-us/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/&#34;&gt;Tackling Business Complexity in a Microservice with DDD and CQRS Patterns&lt;/a&gt;,” February 28, 2023.&amp;#160;&lt;a href=&#34;#fnref:6&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:7&#34;&gt;
+&lt;p&gt;Microsoft Learn, “&lt;a href=&#34;https://learn.microsoft.com/en-us/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/infrastructure-persistence-layer-implementation-entity-framework-core&#34;&gt;Implementing the Infrastructure Persistence Layer with Entity Framework Core&lt;/a&gt;,” February 28, 2023.&amp;#160;&lt;a href=&#34;#fnref:7&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:8&#34;&gt;
+&lt;p&gt;Microsoft Learn, “&lt;a href=&#34;https://learn.microsoft.com/en-us/azure/architecture/patterns/cqrs&#34;&gt;CQRS Pattern&lt;/a&gt;,” &lt;em&gt;Azure Architecture Center&lt;/em&gt;, February 21, 2025.&amp;#160;&lt;a href=&#34;#fnref:8&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:9&#34;&gt;
+&lt;p&gt;AWS Prescriptive Guidance, “&lt;a href=&#34;https://docs.aws.amazon.com/prescriptive-guidance/latest/cloud-design-patterns/acl.html&#34;&gt;Anti-corruption Layer Pattern&lt;/a&gt;”.&amp;#160;&lt;a href=&#34;#fnref:9&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:10&#34;&gt;
+&lt;p&gt;Carlos E. Jimenez et al., &lt;a href=&#34;https://arxiv.org/abs/2310.06770&#34;&gt;&lt;em&gt;SWE-bench: Can Language Models Resolve Real-World GitHub Issues?&lt;/em&gt;&lt;/a&gt; (arXiv, 2023).&amp;#160;&lt;a href=&#34;#fnref:10&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:11&#34;&gt;
+&lt;p&gt;Xiang Deng et al., &lt;a href=&#34;https://arxiv.org/abs/2509.16941&#34;&gt;&lt;em&gt;SWE-Bench Pro: Can AI Agents Solve Long-Horizon Software Engineering Tasks?&lt;/em&gt;&lt;/a&gt; (arXiv, 2025).&amp;#160;&lt;a href=&#34;#fnref:11&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:12&#34;&gt;
+&lt;p&gt;Tianyang Liu, Canwen Xu, and Julian McAuley, &lt;a href=&#34;https://arxiv.org/abs/2306.03091&#34;&gt;&lt;em&gt;RepoBench: Benchmarking Repository-Level Code Auto-Completion Systems&lt;/em&gt;&lt;/a&gt; (ICLR 2024, 2024).&amp;#160;&lt;a href=&#34;#fnref:12&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:13&#34;&gt;
+&lt;p&gt;Vlad Khononov, &lt;a href=&#34;https://coupling.dev/&#34;&gt;&lt;em&gt;Balancing Coupling in Software Design&lt;/em&gt;&lt;/a&gt;, (Boston: Addison-Wesley, 2024), ISBN-10: 0137353480.&amp;#160;&lt;a href=&#34;#fnref:13&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:14&#34;&gt;
+&lt;p&gt;Gary Bernhardt, “&lt;a href=&#34;https://www.destroyallsoftware.com/screencasts/catalog/functional-core-imperative-shell&#34;&gt;Functional Core, Imperative Shell&lt;/a&gt;,” &lt;em&gt;Destroy All Software&lt;/em&gt;, July 12, 2012.&amp;#160;&lt;a href=&#34;#fnref:14&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:15&#34;&gt;
+&lt;p&gt;Arham Jain, “&lt;a href=&#34;https://testing.googleblog.com/2025/10/simplify-your-code-functional-core.html&#34;&gt;Simplify Your Code: Functional Core, Imperative Shell&lt;/a&gt;,” &lt;em&gt;Google Testing Blog&lt;/em&gt;, October 20, 2025.&amp;#160;&lt;a href=&#34;#fnref:15&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:16&#34;&gt;
+&lt;p&gt;Tyler Slater, &lt;a href=&#34;https://arxiv.org/abs/2512.04273&#34;&gt;&lt;em&gt;Quantitative Analysis of Technical Debt and Pattern Violation in Large Language Model Architectures&lt;/em&gt;&lt;/a&gt; (arXiv, 2025).&amp;#160;&lt;a href=&#34;#fnref:16&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:17&#34;&gt;
+&lt;p&gt;Thibaud Gloaguen et al., &lt;a href=&#34;https://arxiv.org/abs/2602.11988&#34;&gt;&lt;em&gt;Evaluating AGENTS.md: Are Repository-Level Context Files Helpful for Coding Agents?&lt;/em&gt;&lt;/a&gt; (arXiv, 2026).&amp;#160;&lt;a href=&#34;#fnref:17&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:18&#34;&gt;
+&lt;p&gt;Jai Lal Lulla et al., &lt;a href=&#34;https://arxiv.org/abs/2601.20404&#34;&gt;&lt;em&gt;On the Impact of AGENTS.md Files on the Efficiency of AI Coding Agents&lt;/em&gt;&lt;/a&gt; (arXiv, 2026).&amp;#160;&lt;a href=&#34;#fnref:18&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>AI 會寫程式之後，軟體工程真正變貴的是什麼</title>
+      <link>//william-yeh.net/post/2026/03/genai-se-level-up/</link>
+      <pubDate>Mon, 16 Mar 2026 20:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2026/03/genai-se-level-up/</guid>
+      
+        <description>&lt;p&gt;很多人會把這一輪 AI 寫程式的進展，直接講成「語言模型正在取代軟體工程師」，甚至進一步講成「語言模型正在取代軟體工程」。&lt;/p&gt;
+&lt;p&gt;這樣講不算全錯，但沒有對準焦點。軟體工程沒有消失，變的是成本最高的地方不一樣了。過去 SDLC 昂貴的部分，常常落在寫程式、處理低階細節、人工重構。現在語言模型可以很快產生候選實作，原本集中在實作端的成本，就開始往別的地方移。用高德拉特的 Theory of Constraints 來看，這其實就是瓶頸轉移。&lt;/p&gt;
+&lt;p&gt;接下來比較值得看的，不是軟體工程還在不在，而是瓶頸轉去哪裡了。那些新的瓶頸，比以前好處理，還是更難處理？&lt;/p&gt;
+&lt;p&gt;軟體工程的典範確實在變，但工程紀律沒有因此結束。比較貼近現況的說法是：抽象層往上拉了，驗證負擔在重分配，治理形式也得跟著調整。&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2026/03/genai-se-level-up.jpg&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2026/03/genai-se-level-up.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;一llm-不是編譯器&#34;&gt;一、LLM 不是編譯器&lt;/h2&gt;
+&lt;p&gt;軟體工程史上反覆出現的一個主題，是抽象層持續上升。&lt;/p&gt;
+&lt;p&gt;早期程式設計高度依賴機器碼與組合語言，人類必須直接處理硬體細節、暫存器配置與控制流程。高階語言與編譯器出現後，很多低階安排不再需要手動處理，工程師的注意力才逐步從「指令怎麼排」轉向「邏輯怎麼表達」。寫法變方便，人機分工也跟著重組。&lt;/p&gt;
+&lt;p&gt;從這個角度看，今天的 LLM 編程確實像新一輪抽象層提升。人類不再只寫語法層級的指令，而是更常用自然語言、規格、測試與約束來描述意圖，再由語言模型生成候選實作。意圖導向、規格導向的開發方式，現在又開始變得可行，不是因為理念突然變新，而是因為工具終於比較撐得住了。&lt;/p&gt;
+&lt;p&gt;但這個歷史類比只能拿來說明方向，還不能直接往下推論。很多人講到這裡，很快就會接一句：既然高階語言取代了低階語言，今天 LLM 也會像編譯器一樣，成為新的工程基礎設施。&lt;/p&gt;
+&lt;p&gt;這個推論太快了。&lt;/p&gt;
+&lt;p&gt;編譯器之所以能成為工程基底，關鍵不只是它很強，而是它可預期：同樣的合法輸入，在同樣條件下，應該得到語意一致的輸出。&lt;/p&gt;
+&lt;p&gt;所以這個類比真正有用的地方，只是在提醒你：抽象層又往上升了一層。把它再往前推成「LLM 已經等同於編譯器」，就走過頭了。這裡最重要的差異其實很簡單：&lt;strong&gt;編譯器可以默認信任，LLM 不行。&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;二語意層的不確定性&#34;&gt;二、語意層的不確定性&lt;/h2&gt;
+&lt;p&gt;有一種常見說法是，現代系統本來就充滿不確定性：快取未命中、垃圾回收時機、JIT 最佳化、多執行緒交錯，哪一個不是非決定性的？既然工程師早就習慣跟這些東西共處，那麼 LLM 的不穩定，看起來也只是另一種可管理的系統特性。&lt;/p&gt;
+&lt;p&gt;這種說法最大的問題，是沒有分清楚不確定性發生在哪一層。&lt;/p&gt;
+&lt;p&gt;傳統系統的非決定性，大多發生在執行路徑、資源調度與效能表現層面；在設計得當的前提下，系統的語意正確性仍可透過型別系統、同步模型、測試與形式方法加以分析與約束。LLM 的不穩定，則更常直接出現在&lt;strong&gt;語意建構本身&lt;/strong&gt;：同樣一個提示，可能對應不同的實作策略、不同的邊界條件假設、不同的錯誤處理方式，甚至引入安全弱點、違反隱含限制，或偏離原始需求。&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;這不是單純「跑法有點抖」，而是你拿到的東西本身就可能已經換了意思。&lt;/p&gt;
+&lt;p&gt;但也不能因為這樣，就滑到另一個極端，好像 LLM 完全不可工程化。那也不對。在任務範圍受限、提示結構清楚、工具介面穩定、測試充分的條件下，的確可以明顯收斂語言模型的輸出。Anthropic 對 workflow 與 agent 的區分，本身就在提醒一件事：工程上真正重要的，是&lt;strong&gt;你授予了多少自主性，又用什麼外部機制把這種自主性框住。&lt;/strong&gt;&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;比較準確的理解方式，是把 LLM 當成候選實作產生器，再用規格、測試、權限與審計把它包起來。它可以很強，但不能裸奔。&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;h2 id=&#34;三ai-擅長封閉問題&#34;&gt;三、AI 擅長封閉問題&lt;/h2&gt;
+&lt;p&gt;要理解 AI 為什麼能在某些問題上表現驚人，最好的科普材料其實不一定是寫程式，而是下棋。&lt;/p&gt;
+&lt;p&gt;2016 年，AlphaGo 贏了頂尖棋士李世乭，固然很了不起；更重要的是，它讓很多人第一次很具體地看到：只要規則固定、目標清楚、勝負可判定，而且系統可以大量自我對弈，AI 就能在封閉問題裡快速逼近甚至超過人類。圍棋雖然複雜，但它仍然是一個封閉世界：棋盤有限，合法動作明確，輸贏標準預先給定。這種問題的難，主要是搜尋空間巨大，不是目標函數模糊。AlphaGo 與後續 AlphaGo Zero 的關鍵，就是把策略學習、價值評估與搜尋結合起來，再透過大量自我對弈持續優化。&lt;sup id=&#34;fnref:6&#34;&gt;&lt;a href=&#34;#fn:6&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;6&lt;/a&gt;&lt;/sup&gt;&lt;sup id=&#34;fnref:7&#34;&gt;&lt;a href=&#34;#fn:7&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;7&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;幾年後，AlphaDev 把相近的邏輯帶進程式世界。它把「尋找更好的小型排序程式」表述成一個可搜尋的問題：每一步都是組合更好的指令序列，目標函數也相對明確，例如正確性與效能。也因為目標清楚、評估穩定、搜尋空間可封裝，AlphaDev 才能在某些小型排序問題上找到優於既有人類基準的方案。&lt;sup id=&#34;fnref:8&#34;&gt;&lt;a href=&#34;#fn:8&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;8&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;這裡真正值得抓住的，不是「AI 很強」這個空話，而是它在&lt;strong&gt;規則封閉、回饋明確、可大量試錯&lt;/strong&gt;的任務裡，確實特別能發揮搜尋能力。&lt;/p&gt;
+&lt;p&gt;也正因如此，這條路線不能直接外推到一般企業軟體工程。企業工程面對的，通常不是單一而乾淨的目標函數，而是一組彼此牴觸的要求：可維護性、模組邊界、法規遵循、事故可追溯性、部署風險、團隊交接成本、長期總持有成本。這些維度很難壓成一個簡單分數。局部效能最優，也不等於系統治理最優。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;不同層級的問題，適合不同程度的自動化。&lt;/strong&gt; AI 未必能接管所有工程決策。&lt;/p&gt;
+&lt;h2 id=&#34;四審查重心轉移&#34;&gt;四、審查重心轉移&lt;/h2&gt;
+&lt;p&gt;代理式工作流真正帶來的衝擊，在於它把一個原本就存在的問題放大了：當語言模型生成候選實作的速度，遠快於人工閱讀速度，傳統以逐行 diff 為核心的審查方式，開始很難擴展。&lt;/p&gt;
+&lt;p&gt;近年來，部分開發者與團隊開始嘗試更激進的工作流：人類主要提供需求、規格與目標，語言模型或代理則負責撰寫程式碼、執行測試、修復錯誤，甚至在一定範圍內自動迭代。&lt;/p&gt;
+&lt;p&gt;這類工作流裡，OpenClaw 作者 Peter Steinberger 算是很有代表性的一個例子。他讓語言模型在帶有工具、上下文與回合控制的環境裡，自己跑完一段工作流。這時候，人類審查的焦點就可能從逐行閱讀程式碼，轉向評估需求表述是否清楚、系統意圖是否被正確理解、代理執行路徑是否合理、測試結果是否可信，以及最終行為是否真的滿足目標。&lt;sup id=&#34;fnref:9&#34;&gt;&lt;a href=&#34;#fn:9&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;9&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;這裡最容易出現的誤解，是把「不 review code」聽成「不再審查」。比較準確的說法是：&lt;strong&gt;審查沒有消失，只是審查的對象在改變。&lt;/strong&gt; 當 AI 可以在短時間內產生大量候選實作時，人類很難再用原本的方式逐行追蹤每一段程式；比較務實的方向，是把更多信任建立在規格、測試、靜態分析、語意差異辨識與執行證據上，而不是只建立在肉眼閱讀程式文字上。&lt;/p&gt;
+&lt;p&gt;不過，OpenClaw 或 Steinberger 都不能直接拿來當成普遍結論。它們更像壓力測試：不代表所有團隊明天都要照這樣工作，但它們會提前把未來工程可能遇到的結構性問題推到檯面上。這些案例真正有價值的地方，不在於證明「所有團隊都會變成這樣」，而在於它們先把一些原本還不夠明顯的成本，暴露出來。&lt;/p&gt;
+&lt;p&gt;更值得注意的是，不同團隊在實作代理式流程時，最後常會收斂到一個很務實的原則：&lt;strong&gt;先把能確定、能驗證、能回退的部分做好，再去談更高程度的自治。&lt;/strong&gt; Anthropic 在與多個團隊合作建置 agent 的經驗中，也反覆看到這個傾向。比較穩的系統，往往不是一開始就追求「讓語言模型自己決定一切」，而是先把任務切清楚、把工具介面縮小、把失敗後的回收方式設計好，再視情況逐步放寬模型可自行決定的範圍。&lt;sup id=&#34;fnref1:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;這不只是「先從簡單開始」這種老話，而是在提醒你代理式工程的成本函數：&lt;strong&gt;自主性不是免費的。&lt;/strong&gt; 每多給語言模型一層循環控制、多一個外部工具、多一次可自行決策的機會，就同步抬高觀測、驗證、審計與回溯的要求。成熟不是把 agent 權限一次拉滿，而是知道哪些判斷可以交給語言模型，哪些邊界必須牢牢握在人類手上。&lt;/p&gt;
+&lt;p&gt;工程師沒有突然失業。但未來高價值的審查能力，未必還是看得出每一行 code 怎麼寫；更可能是看得出這套系統的規格是否清楚、證據是否充分、風險是否被控制、責任是否能被追溯。&lt;/p&gt;
+&lt;h2 id=&#34;五規格開始卡住&#34;&gt;五、規格開始卡住&lt;/h2&gt;
+&lt;p&gt;如果開發越來越依賴對話、提示與逐步澄清，那麼上下文管理就不再只是使用技巧，而會變成真正的工程問題。&lt;/p&gt;
+&lt;p&gt;原因不複雜。多輪代理式互動，不是把同一句話反覆重講，而是不斷增加限制、修正假設、引用先前輸出、放棄失敗路徑。系統不只要記住內容，還要知道哪些前提已經失效，哪些推論應該撤回，哪些局部探索不應污染全局。&lt;sup id=&#34;fnref:10&#34;&gt;&lt;a href=&#34;#fn:10&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;10&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;語言模型不是因為「對話變長」才突然變笨，而是它在多輪互動裡，常常不擅長處理自己先前留下來的推論痕跡。一旦早期對問題的理解有偏差，後面的回合就很容易不是重新定義問題，而是在錯的前提上繼續修修補補。Laban 等人的研究，可以把它看成對這個現象的系統化描述：對話越長，真正危險的往往不是記不住資訊，而是放不掉先前已經形成的錯誤解釋。&lt;sup id=&#34;fnref1:10&#34;&gt;&lt;a href=&#34;#fn:10&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;10&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;也因如此，後來像 Context Branching 這類做法才開始變得有意思。它重點不在把 prompt 包裝得更花，而是把「探索不同解法」這件事，從一條連續對話，改成可分支、可切換、可捨棄的工作流。&lt;sup id=&#34;fnref:11&#34;&gt;&lt;a href=&#34;#fn:11&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;11&lt;/a&gt;&lt;/sup&gt; 這其實是在把版本控制的觀念搬進規格管理：不是所有嘗試都值得留在主線，也不是每一次失敗都應該污染後續推理。&lt;/p&gt;
+&lt;p&gt;所以這裡的限制，不只出現在單次生成的正確率，也出現在規格如何隨著回合演化、修正與隔離。未來更重要的能力，可能不是把 prompt 問得更長，而是&lt;strong&gt;把探索過程切得更乾淨。&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;六測試開始立法&#34;&gt;六、測試開始立法&lt;/h2&gt;
+&lt;p&gt;如果 LLM 與代理式系統開始承擔更多實作、重構與局部迭代工作，那麼測試策略就不能只是沿用舊習慣，而得重新回答一個問題：&lt;strong&gt;測試的作用，到底只是查錯，還是同時在規定 AI 可以怎麼改、不能怎麼改。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;要談這個問題，得先把經典的兩個測試流派講清楚。&lt;/p&gt;
+&lt;p&gt;所謂 &lt;strong&gt;Detroit school&lt;/strong&gt;，也常被稱為 &lt;strong&gt;Chicago school&lt;/strong&gt; 或 &lt;strong&gt;classicist TDD&lt;/strong&gt;，核心想法是：測試應盡量從系統的外部行為與狀態變化來驗證，而不是過度關注物件之間的互動細節。這一派通常偏好經過真實組合的物件，較少使用 mock；只要功能完成後，系統狀態正確、輸出正確、公開介面行為正確，那麼內部到底怎麼協作，不一定需要在測試裡寫死。它的好處，是測試通常比較耐重構；只要外部契約沒變，內部實作可以持續調整。&lt;sup id=&#34;fnref:12&#34;&gt;&lt;a href=&#34;#fn:12&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;12&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;相對地，&lt;strong&gt;London school&lt;/strong&gt;，也就是常說的 &lt;strong&gt;mockist TDD&lt;/strong&gt;，更強調從物件協作與互動設計出發。這一派常採取 outside-in 的開發方式：先從外部需求開始，逐層往內設計物件之間如何分工，並在過程中大量使用 mock 驗證「誰應該呼叫誰、何時呼叫、帶什麼參數」。這種做法的優點，是它會提早暴露設計問題。當你在寫測試時，就得先把各個元件如何互動講清楚，很多模糊的責任分配也會被迫提前釐清。因此，London school 的支持者常認為，測試不只是驗證工具，也是設計工具。&lt;sup id=&#34;fnref:13&#34;&gt;&lt;a href=&#34;#fn:13&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;13&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;壓縮成一句話，Detroit / Chicago school 關心的是：&lt;strong&gt;最後系統有沒有做對事。&lt;/strong&gt; London school 關心的是：&lt;strong&gt;系統是不是用預期的協作方式做對事。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;這裡沒有誰天然比較高級。它們對應的是兩種不同的風險感知。&lt;/p&gt;
+&lt;p&gt;如果你最擔心的是重構成本、測試脆弱性、內部設計被過早綁死，那你通常會更偏向 Detroit。因為它保留了較大的內部實作自由，只要外部結果沒變，系統就能繼續演化。&lt;/p&gt;
+&lt;p&gt;如果你最擔心的是依賴邊界不清、責任分工混亂、元件互動失控，那你通常會更偏向 London。因為它要求你把協作契約提前講清楚，藉由 mock 讓設計更早成形。&lt;/p&gt;
+&lt;p&gt;問題在於，到了 AI 參與開發的場景，這兩派的權重會變。&lt;/p&gt;
+&lt;p&gt;在代理式重構或生成場景中，語言模型很可能會調整控制流程、替換內部實作、重新切分模組，甚至用一種人類原本沒想到的方式達成同樣的外部行為。如果這時候測試過度綁定方法呼叫次序、參數傳遞路徑與物件互動細節，那麼很多本來有效、甚至更好的重構，都可能被測試判定為失敗。換句話說，&lt;strong&gt;過度 London 化的測試，在 AI 場景裡特別容易把設計選擇誤寫成功能規格。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;這也是為什麼 AI 時代值得重看這場舊爭論。問題已經不只是「哪一派比較優雅」，而是「哪一種測試更能分清楚：什麼是系統真正不能變的東西，什麼只是暫時的實作路徑。」&lt;/p&gt;
+&lt;p&gt;我會把它拆成三層來看。&lt;/p&gt;
+&lt;p&gt;第一層，對於 AI 需要自由探索、自由重構的區域，測試應更接近 Detroit school 的精神。盡量用公開 API、可觀察狀態、整體行為與高階不變量來定義正確性，不要太早把內部協作方式寫死。這一層的目的，是替語言模型保留足夠的搜尋空間，讓它能在不破壞外部契約的前提下，自主改進實作。&lt;/p&gt;
+&lt;p&gt;第二層，對於那些真的不能亂動的區域，例如對外協定、錯誤處理流程、安全檢查、高成本依賴呼叫、金流與審計事件，London school 的精神仍然有價值。此時我們在意的本來就不只是結果對不對，也在意它是否以正確、可追溯、可受控的方式發生。這時互動測試不是多餘，而是在保護關鍵邊界。&lt;/p&gt;
+&lt;p&gt;第三層，是傳統 TDD 爭論比較少正面處理、但在 AI 場景中特別重要的一件事：&lt;strong&gt;測試不只要檢查答案，還要提供足夠抽象的驗證標準。&lt;/strong&gt; 只靠單一輸入對單一輸出的例子，對人類手寫程式有時還勉強夠用；但對於生成式系統來說，這種驗證往往太窄，容易讓語言模型學會的是「迎合測試」，不是「滿足規格」。也因此，property-based testing 這類方法會變得更重要，因為它驗證的不是個別樣本，而是程式在一整類情境下是否維持某些不變條件。&lt;sup id=&#34;fnref:14&#34;&gt;&lt;a href=&#34;#fn:14&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;14&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;所以，比起問 Detroit 還是 London 哪個對，更值得問的是：哪些測試在保護真正的外部契約？哪些測試其實只是把歷史實作的偶然性誤寫成規格？哪些互動細節真的是安全或合規要求？哪些地方其實應該交給語言模型自由重構？&lt;/p&gt;
+&lt;p&gt;AI 時代比較合理的方向，不是在 Detroit 和 London 之間二選一，而是把不同測試放回各自最適合的層級。對可自由重構的內部邏輯，優先保護外部結果與高階不變量；對不能出錯的依賴互動、權限流向與副作用，再用更嚴格的互動驗證去守邊界；至於生成式系統特有的風險，則再往上補一層，用 property-based 或 differential testing 去檢查「不同實作是否其實破壞了同一個規格」。&lt;sup id=&#34;fnref:15&#34;&gt;&lt;a href=&#34;#fn:15&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;15&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;測試不再只是查錯工具，也越來越像一套治理語言：一方面給模型留出探索空間，另一方面清楚告訴它，哪裡可以動，哪裡不能動。&lt;/p&gt;
+&lt;h2 id=&#34;七clean-code-變了&#34;&gt;七、Clean Code 變了&lt;/h2&gt;
+&lt;p&gt;關於 clean code，過去最常見的說法是：它能降低人類工程師的理解成本，讓維護、交接與重構變得比較容易。到了 LLM 參與開發的時代，這套論述還得再往前推一步。問題已經不只是「人看不看得懂」，而是：&lt;strong&gt;語言模型能不能穩定理解你給它的程式。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;對人類來說，命名差一點、函式大一點，也許還能硬讀；對語言模型來說，這些東西會直接改變它如何切分問題、辨認模式、推測哪裡是主幹、哪裡只是雜訊。&lt;/p&gt;
+&lt;p&gt;這裡很容易被低估的一點是，對語言模型來說，程式碼不只是執行對象，同時也是上下文材料。模型得根據這些材料去推斷命名意圖、模組邊界、控制流程與可重用模式。程式越雜亂，語言模型越難分辨什麼是核心結構，什麼只是歷史殘留；越容易把偶然寫法誤判成必要約束，把局部噪音誤當成系統規律。到了這個階段，clean code 的意義就變了：它不只是讓人比較好維護，也是在&lt;strong&gt;替語言模型降低語意負擔&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;這件事真的可能有差嗎？&lt;/p&gt;
+&lt;p&gt;Jain 等人的研究把它變成一個可以測量的假設：如果不急著增加資料量，而是先改善程式碼本身的可讀性與結構性，語言模型會不會學得更穩？&lt;sup id=&#34;fnref:16&#34;&gt;&lt;a href=&#34;#fn:16&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;16&lt;/a&gt;&lt;/sup&gt; 他們不是先去改演算法，而是改善&lt;strong&gt;語言模型接觸這段程式時看到的認知表面&lt;/strong&gt;：命名更有語意、結構更容易分段理解、高階步驟更容易被看見。&lt;/p&gt;
+&lt;p&gt;結果也很直接：在程式生成任務上，資料整理得更好，確實能帶來可觀提升；甚至在某些設定下，少量但較乾淨的資料，會比大量但混亂的資料更有價值。這對工程實務很重要，因為它提醒了一件常被忽略的事：在 AI 時代，很多時候真正拉開差距的，不是你餵了模型多少東西，而是你餵進去的材料到底有多容易被正確理解。&lt;/p&gt;
+&lt;p&gt;這個發現替 clean code 補上了一個新的經驗支持，也改變了我們對工程價值的理解。過去談工程紀律，常常像是在談一種道德要求：今天命名清楚、模組分明，未來團隊比較好維護。這當然成立。但在 AI 時代，這些做法不只服務未來的人，也立刻服務當下的語言模型。你把程式整理得越清楚，模型越容易在比較小的語意空間裡工作；上下文噪音越少，生成越穩；結構越清楚，幻覺風險和誤解成本就越低。也就是說，傳統工程紀律沒有因 AI 而過時，反而第一次在「機器可理解性」上得到很直接的操作性理由。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;在 LLM 時代，乾淨程式碼正在從人類維護性的美德，變成語言模型可生成性的基礎設施。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;下一次再談 clean code，不只問「這樣別人看不看得懂」，也要多問一句：&lt;strong&gt;這樣的結構，語言模型能不能穩定理解、穩定延續、穩定驗證。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;這不是審美問題。這是生成條件問題。&lt;/p&gt;
+&lt;h2 id=&#34;八可治理的程式碼&#34;&gt;八、可治理的程式碼&lt;/h2&gt;
+&lt;p&gt;一旦接受前面的判斷，工程問題就會改寫成另一句話：&lt;strong&gt;不是能不能生成 code，而是能不能生成可被安全吸收、可被驗證、可被審計的 code。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;這至少有三層要求。&lt;/p&gt;
+&lt;p&gt;第一層是&lt;strong&gt;執行隔離&lt;/strong&gt;。未經驗證的 AI 輸出，不應直接跑在高權限、真實資料或可對外互動的環境中。候選實作的執行，本身就是安全決策，不只是開發便利功能。&lt;sup id=&#34;fnref:17&#34;&gt;&lt;a href=&#34;#fn:17&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;17&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;第二層是&lt;strong&gt;語意審查與變更理解&lt;/strong&gt;。當產出速度遠超過人工閱讀速度，人類不可能只靠文字 diff 理解變更影響。未來的審查機制勢必更依賴語意差異分析、結構化重構辨識、靜態檢查與契約違反提示，讓人類把注意力放在真正改變業務邏輯、權限流向與風險邊界的地方。&lt;sup id=&#34;fnref:18&#34;&gt;&lt;a href=&#34;#fn:18&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;18&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;第三層是&lt;strong&gt;高保證驗證&lt;/strong&gt;。對多數一般系統來說，單元測試、整合測試與模擬環境，已足夠吸收大部分風險；但在安全關鍵、金流、基礎設施與高合規場景，這些往往不夠。這時更形式化的狀態建模、語言模型檢查與規格驗證方法，就可能變成必備品。&lt;sup id=&#34;fnref:19&#34;&gt;&lt;a href=&#34;#fn:19&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;19&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;這些要求最後都指向同一件事：&lt;strong&gt;生成加速了，但驗證不會因此自動變簡單。很多時候，它只會變得更重要。&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;九樂觀主義的邊界&#34;&gt;九、樂觀主義的邊界&lt;/h2&gt;
+&lt;p&gt;坊間流傳很多樂觀派說法。像「AI 明天就會取代工程師」這種口號，其實不必太認真。真正需要認真回應的，是它比較強的版本：真實軟體工程 benchmark 確實在快速進步，代理式 coding 也正在逼近大規模可用門檻。&lt;/p&gt;
+&lt;p&gt;的確，以 Copilot 的實驗來看，生成式工具已經能在受控任務中帶來明顯的速度提升。&lt;sup id=&#34;fnref:20&#34;&gt;&lt;a href=&#34;#fn:20&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;20&lt;/a&gt;&lt;/sup&gt; 從 SWE-bench 這類更貼近真實 issue resolution 的 benchmark 來看，代理式 coding 也確實跨過了早期那種只能做玩具題的階段。&lt;sup id=&#34;fnref:21&#34;&gt;&lt;a href=&#34;#fn:21&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;21&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;但也正因為能力上升得夠快，benchmark 本身開始暴露另一層問題。OpenAI 在 2026 年不再把 SWE-bench Verified 視為前沿能力的好指標，不是因為它不重要了，而是因為語言模型越接近高分，測試設計缺陷、資料污染與任務定義模糊，就越會主導最後的評估結果。&lt;sup id=&#34;fnref:22&#34;&gt;&lt;a href=&#34;#fn:22&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;22&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;所以，這不只是捷報，也是一份壓力測試報告。當語言模型還不夠強，大家關心的是它會不會做；一旦語言模型開始會做，真正決定結果能不能信任的，反而是測試有沒有設計好、規格有沒有寫清楚、驗證有沒有跟上。&lt;/p&gt;
+&lt;p&gt;與其說「工程快要不重要了」，不如說：&lt;strong&gt;當語言模型更強時，規格、測試與 benchmark 設計反而變得更重要。&lt;/strong&gt; 能力上來之後，先暴露出來的不是工程退場，而是驗證與治理的缺口被照得更亮。&lt;/p&gt;
+&lt;p&gt;你的治理能力，有跟著一起升上來嗎？這才是更值得擔心的事。&lt;/p&gt;
+&lt;h2 id=&#34;結論&#34;&gt;結論&lt;/h2&gt;
+&lt;p&gt;從組合語言走到 C 語言，人類並沒有完全放手，而是把約束搬到更高的抽象層級：結構化程式設計、模組化、型別系統。這些約束不是拿來限制編譯器，而是確保人類在必要時仍然能理解和控制系統。&lt;/p&gt;
+&lt;p&gt;LLM 時代的轉折其實很像。&lt;strong&gt;把邊界限縮到可掌握的顆粒度&lt;/strong&gt; 這個原則沒有消失，只是往上移了：從「人類要看懂每一行程式碼」，移到「人類要看懂每一個模組的意圖與契約」，再移到「人類要看懂系統的架構決策與約束框架」。&lt;/p&gt;
+&lt;p&gt;所以現在真正該問的，不是「AI 會不會取代程式設計」。比較重要的是：規格由誰定義，結果由誰驗證，權限由誰控制，後果由誰承擔。&lt;/p&gt;
+&lt;p&gt;這幾件事沒有設計好，語言模型越強，風險只會越大。
+這幾件事設計好了，語言模型越強，工程收益才可能真的放大。&lt;/p&gt;
+&lt;p&gt;至於將來是否會出現像 AlphaGo 那樣徹底超越人類認知的時刻？也許會。但在那之前，我們需要以歷史為師，在新的抽象層級上，重新建立一套人類能夠理解和掌控的約束體系。那套約束體系的名字，可能叫做 harness、validation loop、architectural guardrails，而不是 structured programming 和 SOLID。&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;Liu, Fang, et al. &lt;a href=&#34;https://arxiv.org/abs/2404.00971&#34;&gt;“Exploring and Evaluating Hallucinations in LLM-Powered Code Generation.”&lt;/a&gt; 2024.&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;Zhang, Ziyao, et al. &lt;a href=&#34;https://arxiv.org/abs/2409.20550&#34;&gt;“LLM Hallucinations in Practical Code Generation: Phenomena, Mechanism, and Mitigation.”&lt;/a&gt; 2024.&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;
+&lt;p&gt;Anthropic. &lt;a href=&#34;https://www.anthropic.com/engineering/building-effective-agents&#34;&gt;“Building Effective AI Agents.”&lt;/a&gt; 2024/2025.&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref1:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:4&#34;&gt;
+&lt;p&gt;Shavit, Yonadav, et al. &lt;a href=&#34;https://cdn.openai.com/papers/practices-for-governing-agentic-ai-systems.pdf&#34;&gt;&lt;em&gt;Practices for Governing Agentic AI Systems&lt;/em&gt;&lt;/a&gt;. OpenAI, 2023.&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:5&#34;&gt;
+&lt;p&gt;Google DeepMind. &lt;a href=&#34;https://storage.googleapis.com/deepmind-media/DeepMind.com/Blog/updating-the-frontier-safety-framework/Frontier%20Safety%20Framework%202.0%20%281%29.pdf&#34;&gt;&lt;em&gt;Frontier Safety Framework 2.0&lt;/em&gt;&lt;/a&gt;, 2025.&amp;#160;&lt;a href=&#34;#fnref:5&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:6&#34;&gt;
+&lt;p&gt;Silver, David, et al. &lt;a href=&#34;https://www.nature.com/articles/nature16961&#34;&gt;“Mastering the game of Go with deep neural networks and tree search.”&lt;/a&gt; &lt;em&gt;Nature&lt;/em&gt; 529 (2016): 484–489.&amp;#160;&lt;a href=&#34;#fnref:6&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:7&#34;&gt;
+&lt;p&gt;Silver, David, et al. &lt;a href=&#34;https://www.nature.com/articles/nature24270&#34;&gt;“Mastering the game of Go without human knowledge.”&lt;/a&gt; &lt;em&gt;Nature&lt;/em&gt; 550 (2017): 354–359.&amp;#160;&lt;a href=&#34;#fnref:7&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:8&#34;&gt;
+&lt;p&gt;Mankowitz, Daniel J., et al. &lt;a href=&#34;https://www.nature.com/articles/s41586-023-06004-9&#34;&gt;“Faster Sorting Algorithms Discovered Using Deep Reinforcement Learning.”&lt;/a&gt; &lt;em&gt;Nature&lt;/em&gt; 618 (2023): 257–263.&amp;#160;&lt;a href=&#34;#fnref:8&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:9&#34;&gt;
+&lt;p&gt;Steinberger, Peter. &lt;a href=&#34;https://steipete.me/posts/2025/shipping-at-inference-speed&#34;&gt;“Shipping at Inference-Speed.”&lt;/a&gt; 2025.&amp;#160;&lt;a href=&#34;#fnref:9&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:10&#34;&gt;
+&lt;p&gt;Laban, Philippe, C.-S. Wu, et al. &lt;a href=&#34;https://arxiv.org/abs/2505.06120&#34;&gt;“LLMs Get Lost In Multi-Turn Conversation.”&lt;/a&gt; 2025.&amp;#160;&lt;a href=&#34;#fnref:10&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref1:10&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:11&#34;&gt;
+&lt;p&gt;Nanjundappa, Bhargav Chickmagalur, and Spandan Maaheshwari. &lt;a href=&#34;https://arxiv.org/abs/2512.13914&#34;&gt;“Context Branching for LLM Conversations: A Version Control Approach to Exploratory Programming.”&lt;/a&gt; 2025.&amp;#160;&lt;a href=&#34;#fnref:11&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:12&#34;&gt;
+&lt;p&gt;Fowler, Martin. &lt;a href=&#34;https://martinfowler.com/articles/mocksArentStubs.html&#34;&gt;“Mocks Aren’t Stubs.”&lt;/a&gt; 2007.&amp;#160;&lt;a href=&#34;#fnref:12&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:13&#34;&gt;
+&lt;p&gt;Freeman, Steve, and Nat Pryce. &lt;a href=&#34;https://amazon.com/dp/0321503627&#34;&gt;&lt;em&gt;Growing Object-Oriented Software, Guided by Tests&lt;/em&gt;&lt;/a&gt;. Addison-Wesley, 2009.&amp;#160;&lt;a href=&#34;#fnref:13&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:14&#34;&gt;
+&lt;p&gt;He, Lehan, et al. &lt;a href=&#34;https://arxiv.org/abs/2506.18315&#34;&gt;“Use Property-Based Testing to Bridge LLM Code Generation and Validation.”&lt;/a&gt; 2025.&amp;#160;&lt;a href=&#34;#fnref:14&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:15&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://arxiv.org/html/2410.04249v3&#34;&gt;“Differential Testing with LLMs using Natural Language Specifications and Code Artifacts.”&lt;/a&gt; 2025.&amp;#160;&lt;a href=&#34;#fnref:15&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:16&#34;&gt;
+&lt;p&gt;Jain, Naman, et al. &lt;a href=&#34;https://arxiv.org/abs/2311.14904&#34;&gt;“LLM-Assisted Code Cleaning For Training Accurate Code Generators.”&lt;/a&gt; 2023 / ICLR 2024.&amp;#160;&lt;a href=&#34;#fnref:16&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:17&#34;&gt;
+&lt;p&gt;Perrone, Giuseppe, et al. &lt;a href=&#34;https://arxiv.org/abs/2407.12297&#34;&gt;“WebAssembly and Security: A Review.”&lt;/a&gt; 2024.&amp;#160;&lt;a href=&#34;#fnref:17&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:18&#34;&gt;
+&lt;p&gt;Tsantalis, Nikolaos, Ameya Ketkar, and Danny Dig. &lt;a href=&#34;https://www.computer.org/csdl/journal/ts/2022/03/09136878/1liqhds60s8&#34;&gt;“RefactoringMiner 2.0.”&lt;/a&gt; &lt;em&gt;IEEE Transactions on Software Engineering&lt;/em&gt; 48, no. 3 (2022): 930–950.&amp;#160;&lt;a href=&#34;#fnref:18&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:19&#34;&gt;
+&lt;p&gt;Lamport, Leslie. &lt;a href=&#34;https://lamport.azurewebsites.net/tla/book-02-08-08.pdf&#34;&gt;&lt;em&gt;Specifying Systems: The TLA+ Language and Tools for Hardware and Software Engineers&lt;/em&gt;&lt;/a&gt;. Addison-Wesley, 2003.&amp;#160;&lt;a href=&#34;#fnref:19&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:20&#34;&gt;
+&lt;p&gt;Peng, Sida, et al. &lt;a href=&#34;https://arxiv.org/abs/2302.06590&#34;&gt;“The Impact of AI on Developer Productivity: Evidence from GitHub Copilot.”&lt;/a&gt; 2023.&amp;#160;&lt;a href=&#34;#fnref:20&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:21&#34;&gt;
+&lt;p&gt;SWE-bench. &lt;a href=&#34;https://www.swebench.com/&#34;&gt;Official Leaderboards&lt;/a&gt;.&amp;#160;&lt;a href=&#34;#fnref:21&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:22&#34;&gt;
+&lt;p&gt;OpenAI. &lt;a href=&#34;https://openai.com/index/why-we-no-longer-evaluate-swe-bench-verified/&#34;&gt;“Why SWE-bench Verified no longer measures frontier coding capabilities.”&lt;/a&gt; 2026.&amp;#160;&lt;a href=&#34;#fnref:22&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>AI 會取代多少員工？企業真正面對的是約束條件</title>
+      <link>//william-yeh.net/post/2026/03/genai-replacement-ratio/</link>
+      <pubDate>Wed, 11 Mar 2026 20:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2026/03/genai-replacement-ratio/</guid>
+      
+        <description>&lt;details&gt;
+  &lt;summary style=&#34;background-color:#f5f5f5;border:1px solid #ccc;padding:5px;&#34;&gt;
+    這篇要問的事
+    
+  &lt;/summary&gt;
+  &lt;blockquote&gt;
+&lt;p&gt;如果公司導入 AI，真正值得問的問題不是「AI 會不會搶走工作」，而是：在成本不增加、產出不下降的前提下，企業到底有多大空間縮減人力？而這個答案，又會因為 AI 是「菁英放大器」還是「技能拉平器」而明顯不同。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;/details&gt;
+
+&lt;p&gt;幾個月前，我在社群媒體看到一張裁員通知書的截圖。底下有一行說明：「公司說是因為導入 AI 工具，現有的人力已經足夠應付產出需求。」&lt;/p&gt;
+&lt;p&gt;這類貼文底下很快就會吵成一團。有人說 AI 終於開始搶工作了；有人說這根本是景氣問題，不要什麼都怪 AI；也有人說，這只是管理層找的藉口。&lt;/p&gt;
+&lt;p&gt;如果把問題問得精確一點，真正值得分析的，其實不是口號式的「AI 會不會取代人類工作」，而是更窄、也更接近企業實際決策的問題：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如果公司導入 AI，並且希望用它減少一部分人力，那麼這個人力縮減比例，在理論上有沒有上限或下限？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;這篇想做的，就是先用一個盡量簡單的模型，把這件事的骨架抽出來。&lt;/p&gt;
+&lt;p&gt;先講在前面：這不是現實世界的完整描述。企業不只在乎成本和產出，還會在乎品質、風險、交期、客戶體驗、組織摩擦、法規責任，以及不同職位之間的互補關係。這裡只是先把問題縮到最基本的形式，看看哪些力量會一起限制企業的人力調整空間。&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2026/03/ai-and-jobs.jpg&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2026/03/ai-and-jobs.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;先把企業面對的條件寫清楚&#34;&gt;先把企業面對的條件寫清楚&lt;/h2&gt;
+&lt;p&gt;假設一家公司原本有 $L$ 位員工。&lt;/p&gt;
+&lt;p&gt;隨著分析顆粒度不同，這個 $L$ 也可以理解成某個部門或團隊的人數，方法完全一樣。只是為了說明方便，這裡先用「整家公司」做分析單位。&lt;/p&gt;
+&lt;p&gt;現在，公司決定導入 AI。導入之後，我們先考慮一個最簡單的情境：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;有一部分員工被裁減&lt;/li&gt;
+&lt;li&gt;剩下來的員工都搭配 AI 工具工作&lt;/li&gt;
+&lt;li&gt;公司至少希望滿足兩件事：
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;總成本不能增加&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;總有效產出不能下降&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;這裡的「有效產出」，你可以把它想像成餐廳的出餐量，但不是只看做出了幾道菜，而是把速度、品質、退餐率、客訴等因素都折算進去，用一個可以加總的指標來衡量。這當然是很強的假設，但如果不先這樣做，問題就很難寫成清楚的模型。&lt;/p&gt;
+&lt;p&gt;另外，這裡談的也不是嚴格意義上的「AI 直接替代率」，而是更保守地去問：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在導入 AI 之後，若公司希望同時滿足成本不升、產出不降，它&lt;strong&gt;可行的&lt;/strong&gt;人力縮減比例是多少？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;把這個比例記成 $\rho$，其中 $0 \le \rho \le 1$。下限 0 代表「一個都不裁」，上限 1 代表「一個都不留」。&lt;/p&gt;
+&lt;h3 id=&#34;幾個基本變數&#34;&gt;幾個基本變數&lt;/h3&gt;
+&lt;p&gt;再多定義幾個符號：&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;變數&lt;/th&gt;
+          &lt;th style=&#34;text-align: right&#34;&gt;符號&lt;/th&gt;
+          &lt;th&gt;意義&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;原始員工人數&lt;/td&gt;
+          &lt;td style=&#34;text-align: right&#34;&gt;$L$&lt;/td&gt;
+          &lt;td&gt;公司導入 AI 前的總雇用人數&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;員工平均月成本&lt;/td&gt;
+          &lt;td style=&#34;text-align: right&#34;&gt;$w$&lt;/td&gt;
+          &lt;td&gt;每位員工平均月薪資成本&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;AI 月成本&lt;/td&gt;
+          &lt;td style=&#34;text-align: right&#34;&gt;$C_{ai}$&lt;/td&gt;
+          &lt;td&gt;每位留任員工平均分攤到的 AI 月成本&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;人力縮減比例&lt;/td&gt;
+          &lt;td style=&#34;text-align: right&#34;&gt;$\rho$&lt;/td&gt;
+          &lt;td&gt;導入 AI 後的人力縮減比例&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;員工平均有效產出&lt;/td&gt;
+          &lt;td style=&#34;text-align: right&#34;&gt;$q$&lt;/td&gt;
+          &lt;td&gt;每位員工每單位時間的有效產出&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;AI 生產力提升率&lt;/td&gt;
+          &lt;td style=&#34;text-align: right&#34;&gt;$\phi$&lt;/td&gt;
+          &lt;td&gt;AI 讓每位留任員工產出提高的比例，$\phi \ge 0$&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;這裡有一個重要設定：我把 $C_{ai}$ 寫成「每位留任員工平均分攤到的 AI 成本」。也就是說，下面的模型考慮的是一種特定情境：AI 的使用成本，大致會隨著留任員工數增加，或至少可以等價攤分到每位留任員工身上。&lt;/p&gt;
+&lt;p&gt;在這個設定裡：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;原本公司有 $L$ 人&lt;/li&gt;
+&lt;li&gt;導入 AI 後，裁減比例是 $\rho$&lt;/li&gt;
+&lt;li&gt;所以留下來的人數是 $(1-\rho)L$&lt;/li&gt;
+&lt;li&gt;每位留任員工都搭配 AI，因此每人多一筆 $C_{ai}$ 成本&lt;/li&gt;
+&lt;li&gt;同時，AI 讓每位留任員工的有效產出變成原本的 $1+\phi$ 倍&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;現實裡，AI 成本也可能包含固定成本，例如算力硬體、模型微調、資料清洗、流程整合等。若把固定成本也放進來，企業對「是否需要更大幅度調整人力」的計算會再變一層。下面先不處理那種情況，而是專注在這個較乾淨的邊際成本版本。&lt;/p&gt;
+&lt;h2 id=&#34;可行區間成本與產出兩道約束&#34;&gt;可行區間：成本與產出兩道約束&lt;/h2&gt;
+&lt;p&gt;很多人談「AI 會取代多少工作」時，心裡其實只有一種力量：技術有多強、AI 能替代多少任務。&lt;/p&gt;
+&lt;p&gt;但在這個模型裡，人力縮減比例不是只受一個方向限制，而是同時被兩道約束夾住：一邊來自成本，一邊來自產出。先看成本，再看產出。&lt;/p&gt;
+&lt;h3 id=&#34;成本約束至少要省下多少人力&#34;&gt;成本約束：至少要省下多少人力&lt;/h3&gt;
+&lt;p&gt;導入 AI 之前，公司的總成本就是所有人的薪資總和：&lt;/p&gt;
+$$
+Lw
+$$&lt;p&gt;導入 AI 之後，員工數變成 $(1-\rho)L$，而且每位留任員工除了薪資 $w$ 之外，還多了一筆 AI 成本 $C_{ai}$，所以導入後的總成本是：&lt;/p&gt;
+$$
+(1-\rho)L(w+C_{ai})
+$$&lt;p&gt;如果公司要求「導入 AI 後，總成本不能增加」，那就必須滿足：&lt;/p&gt;
+$$
+Lw \ge (1-\rho)L(w+C_{ai})
+$$&lt;p&gt;整理之後可得：&lt;/p&gt;
+$$
+\frac{C_{ai}}{w+C_{ai}} \le \rho
+$$&lt;p&gt;也就是說，在這個模型裡，人力縮減比例 $\rho$ 有一個下限：&lt;/p&gt;
+$$
+\rho_{\min}=\frac{C_{ai}}{w+C_{ai}}
+$$&lt;p&gt;這條式子真正說的，不是「企業一定偏好裁員」，也不是「AI 越貴，公司就一定越想裁人」。它說的是更窄、但很關鍵的一件事：&lt;strong&gt;如果企業已經決定讓留任員工普遍使用 AI，且又要求總成本不能增加，那至少得縮減到某個比例，帳面上才站得住。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;直覺上：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;如果人工很貴、AI 相對便宜，只要裁掉少少一部分人，就足以把新增的 AI 成本打平&lt;/li&gt;
+&lt;li&gt;如果 AI 很貴、人工相對沒那麼貴，那麼企業就得裁掉更多人，才有辦法讓總成本不增加&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;假設每位留任員工平均分攤到的 AI 月成本為 $C_{ai}=6k$ 新台幣，員工平均月成本設為 $w=60k$ 新台幣，那麼&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;：&lt;/p&gt;
+$$
+\frac{C_{ai}}{w+C_{ai}}
+$$&lt;p&gt;大約會是 9%。意思只是：在這個簡化模型裡，如果企業想讓多數留任員工都用上這套工具，至少得省下差不多這個量級的人力成本，帳才打得平。&lt;/p&gt;
+&lt;p&gt;但這個下限只告訴你「要省到多少」，&lt;strong&gt;沒有告訴你會裁誰&lt;/strong&gt;。現實裡可能是裁員，也可能是遇缺不補、縮編某些團隊、把部分工作外包，或把人力移去新的流程與驗證環節（此文後面會探討這一點）。&lt;/p&gt;
+&lt;h3 id=&#34;產出約束人力最多能縮到哪裡&#34;&gt;產出約束：人力最多能縮到哪裡&lt;/h3&gt;
+&lt;p&gt;再來看產出。這一步會把人力縮減比例的另一端也釘住：&lt;strong&gt;AI 再強，也只能讓企業縮編到某個範圍；超過那個範圍，總產出就會掉下來。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;導入 AI 之前，公司的總有效產出是：&lt;/p&gt;
+$$
+Lq
+$$&lt;p&gt;導入 AI 之後，雖然只剩下 $(1-\rho)L$ 位員工，但每位留任員工的有效產出變成 $1+\phi$ 倍，所以總有效產出會變成：&lt;/p&gt;
+$$
+(1-\rho)Lq(1+\phi)
+$$&lt;p&gt;如果公司要求「導入 AI 後，總有效產出不能下降」，就必須滿足：&lt;/p&gt;
+$$
+Lq \le (1-\rho)Lq(1+\phi)
+$$&lt;p&gt;整理之後得到：&lt;/p&gt;
+$$
+\rho \le \frac{\phi}{1+\phi}
+$$&lt;p&gt;也就是說，在這個模型裡，人力縮減比例有一個上限：&lt;/p&gt;
+$$
+\rho_{\max}=\frac{\phi}{1+\phi}
+$$&lt;p&gt;$\phi$ 越大，人力縮減比例的上限越高；$\phi$ 越小，人力縮減比例的上限越低。&lt;/p&gt;
+&lt;p&gt;這條式子在說的其實很簡單：你不能只因為「AI 很強」這個印象，就直接決定要裁多少人。你得看它到底能不能撐住原本的有效產出。&lt;/p&gt;
+&lt;p&gt;因為你裁掉的人越多，就越需要靠留下來的人把缺口補回去。而這個補缺能力，不靠想像，只靠 $\phi$ 所代表的有效產出提升。&lt;/p&gt;
+&lt;h3 id=&#34;先決條件增益要蓋過成本&#34;&gt;先決條件：增益要蓋過成本&lt;/h3&gt;
+&lt;p&gt;前面兩條不等式要同時成立，所以 $\rho$ 必須滿足：&lt;/p&gt;
+$$
+\frac{C_{ai}}{w+C_{ai}} \le \rho \le \frac{\phi}{1+\phi}
+$$&lt;p&gt;這條式子告訴我們，在這個模型裡，人力縮減比例不是想設多高就設多高，而是被夾在一個可行區間裡：左邊是成本條件給出的下限，右邊是產出條件給出的上限。&lt;/p&gt;
+&lt;p&gt;如果左邊比右邊還大，就代表這個可行區間根本不存在。也就是說，想要「導入 AI」並同時達成「成本不升、產出不降」這件事，在這個模型裡沒有可行解。&lt;/p&gt;
+&lt;p&gt;所以，還會再多出一個先決條件：&lt;/p&gt;
+$$
+\frac{C_{ai}}{w+C_{ai}} \le \frac{\phi}{1+\phi}
+$$&lt;p&gt;化簡之後得到：&lt;/p&gt;
+$$
+\phi \ge \frac{C_{ai}}{w}
+$$&lt;p&gt;這條式子，其實才是整件事最值得記住的地方。&lt;/p&gt;
+&lt;p&gt;它說的是：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;AI 帶來的生產力提升，至少要大於它相對於人工成本的負擔，整件事才有可行空間。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;這比很多新聞標題更接近企業真正在面對的問題。真正的核心，不是抽象地問「AI 會不會取代人」，而是：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;AI 的效能／成本比，能不能支撐「人力調整」這件事成立？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;如果不能，技術再炫，企業也未必埋單。
+如果可以，那就算 AI 還遠不到「完全替代人」的程度，企業也可能開始認真重算自己的人力配置。&lt;/p&gt;
+&lt;h2 id=&#34;平均員工模型到這裡就不夠了&#34;&gt;平均員工模型，到這裡就不夠了&lt;/h2&gt;
+&lt;p&gt;到這裡為止，我們得到的是平均模型的結論；但真正接近現實的問題，從這裡才開始。因為企業不是面對一群平均員工，而是在不同類型的人之間，重新分配 AI、預算與人力。&lt;/p&gt;
+&lt;p&gt;前面一直用同一組 $w$、$q$、$\phi$ 去描述整家公司：每個人的薪資差不多、產出差不多、AI 帶來的增益也差不多。這樣做的好處，是可以把問題寫得很乾淨；限制也很明顯：它還沒有碰到企業真正麻煩的地方。&lt;/p&gt;
+&lt;h3 id=&#34;從平均模型到異質員工&#34;&gt;從平均模型到異質員工&lt;/h3&gt;
+&lt;p&gt;一個公司裡，不同職位的差異至少有四種：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;薪資不同&lt;/li&gt;
+&lt;li&gt;產出形式不同&lt;/li&gt;
+&lt;li&gt;AI 可放大的程度不同&lt;/li&gt;
+&lt;li&gt;被替代或被保留的可能性不同&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;如果要把模型往現實再推一步，就得把員工拆成不同類型，用下標 $i$ 表示。也就是說，不同職位各自有自己的：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;薪資 $w_i$&lt;/li&gt;
+&lt;li&gt;產出 $q_i$&lt;/li&gt;
+&lt;li&gt;AI 增益 $\phi_i$&lt;/li&gt;
+&lt;li&gt;人力縮減比例 $\rho_i$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;這時候，公司的約束條件就不再是一條平均式，而會變成加總：&lt;/p&gt;
+$$
+\sum_i (1-\rho_i)L_i(w_i+C_{ai,i}) \le \sum_i L_i w_i
+$$$$
+\sum_i (1-\rho_i)L_i q_i(1+\phi_i) \ge \sum_i L_i q_i
+$$&lt;p&gt;一旦寫成這樣，問題的性質就變了。&lt;/p&gt;
+&lt;p&gt;前面的平均模型，問的是：整體而言，人力縮減比例有沒有上下界；但異質員工模型問的則是：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;公司會把縮減幅度放在哪些職位？又會把 AI 資源優先配給哪些人？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;不過，這裡要先把推論邊界講清楚。&lt;strong&gt;接下來不是要解完整的異質員工最適化問題。&lt;/strong&gt; 如果真的要解那個問題，還得額外指定企業的目標函數、不同職位之間的互補關係、品質門檻，以及哪些工作可以互相替代。&lt;/p&gt;
+&lt;p&gt;下面要做的，是比較靜態地看：&lt;strong&gt;如果 AI 增益和薪資之間呈現不同關係，縮減壓力大致會往哪裡移動。&lt;/strong&gt; 這不是完整求解，但足以幫我們看出兩種很不一樣的組織方向。&lt;/p&gt;
+&lt;p&gt;另外，這裡的薪資 $w_i$，也只是職位複雜度、責任密度與市場稀缺性的粗略代理，不等於能力本身。&lt;/p&gt;
+&lt;h3 id=&#34;情境一菁英放大器&#34;&gt;情境一：菁英放大器&lt;/h3&gt;
+&lt;p&gt;第一種情境是：AI 比較像一個「菁英放大器」——薪資越高、位置越關鍵的職位，本來就在做更複雜、更高槓桿的工作，因此 AI 對他的生產力提升也越大。&lt;/p&gt;
+&lt;p&gt;如果把這個想法寫成一個簡單的線性假設，可以設：&lt;/p&gt;
+$$
+w = k\phi, \qquad k&gt;0
+$$&lt;p&gt;也就是薪資越高的職位，AI 對它的放大效果也越強。&lt;/p&gt;
+&lt;p&gt;把這個關係代回原本的區間：&lt;/p&gt;
+$$
+\frac{C_{ai}}{w+C_{ai}} \le \rho \le \frac{\phi}{1+\phi}
+$$&lt;p&gt;不等式會變成：&lt;/p&gt;
+$$
+\frac{C_{ai}}{k\phi + C_{ai}} \le \rho \le \frac{\phi}{1+\phi}
+$$&lt;p&gt;這代表當 $\phi$ 變大時，右邊的上限會上升，而左邊的下限會下降。換句話說，人力縮減比例的&lt;strong&gt;可行區間會被拉開&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;直覺上，這意味著：如果某些高薪職位剛好也是 AI 最能放大的職位，那麼企業在這些職位周圍做人力與工具配置調整的空間，理論上會變大。&lt;/p&gt;
+&lt;p&gt;這裡比較穩妥的推論，不是「高薪者一定更安全」或「高薪者一定更危險」，而是：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;某些高槓桿職位更可能成為 AI 投資的優先節點&lt;/li&gt;
+&lt;li&gt;一旦這些節點的覆蓋範圍被放大，周邊部分工作的位置壓力可能跟著上升&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;重點不在 AI 能做多少事，而在於它是否能在某些關鍵職位上形成足夠大的邊際增益。若答案是肯定的，可以推想企業較可能朝資源集中、節點化配置的方向調整；但這仍然只是組織推論，不是單靠這個簡化模型就能完全證出的結論。&lt;/p&gt;
+&lt;h3 id=&#34;情境二技能拉平器&#34;&gt;情境二：技能拉平器&lt;/h3&gt;
+&lt;p&gt;也有另一種完全不同的可能：AI 比較像一個「技能拉平器」——幫助最大的不是原本最強的人，而是原本較弱、較初階的人。&lt;/p&gt;
+&lt;p&gt;2023 年，哈佛商學院與 BCG 合作的研究發現 &lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;：使用 AI 的顧問中，原本表現低於平均的人，生產力提升了 43%；而原本表現高於平均的人，只提升了 17%。&lt;/p&gt;
+&lt;p&gt;這個結果至少提供了一個很強的線索：在某些任務環境下，AI 的效果可能比較像是在&lt;strong&gt;補強低於平均者&lt;/strong&gt;，而不只是放大原本最強的人。換句話說，資深員工本來就接近較高的人類表現水準，因此 AI 對他們的邊際補強未必那麼大；反而是初階員工，可能因為 AI 的輔助，快速從原本不穩定的狀態，被拉到接近可用的水準。&lt;/p&gt;
+&lt;p&gt;如果把這個想法寫成一個簡化的線性假設，可以設：&lt;/p&gt;
+$$
+\phi = \frac{k}{w}, \qquad k&gt;0
+$$&lt;p&gt;也就是薪資越低的職位，AI 帶來的生產力提升率越高。這裡的 $k$，可以理解成 AI 的「補強能力」：$k$ 越大，代表 AI 越能把較低技能者快速拉近可用水準。&lt;/p&gt;
+&lt;p&gt;把這個關係代回替代率區間：&lt;/p&gt;
+$$
+\frac{C_{ai}}{w+C_{ai}} \le \rho \le \frac{k}{w+k}
+$$&lt;p&gt;這會給出一個和前面幾乎相反的故事。&lt;/p&gt;
+&lt;p&gt;對高薪、資深職位來說，當 $w$ 很大時，左邊的成本下限會趨近於 0，但更關鍵的是，右邊的產出上限 $\frac{k}{w+k}$ 也會趨近於 0。這代表在這個假設下，高薪資深職位的&lt;strong&gt;人力縮減空間&lt;/strong&gt;會顯著變小。企業如果想大幅裁撤這類人力，會更容易碰到產出下降的約束。&lt;/p&gt;
+&lt;p&gt;相對地，對低薪、初階職位來說，當 $w$ 很小時，右邊的上限會快速逼近 1。這表示這些職位周圍的&lt;strong&gt;人力配置空間&lt;/strong&gt;會變得很大：企業既可能選擇用較少的人力、搭配 AI 維持原本產出，也可能反過來保留更多初階人力，利用 AI 把他們快速補到可用水準。&lt;/p&gt;
+&lt;p&gt;光靠這個模型，還無法斷定哪一種策略一定會發生；但至少可以看出，&lt;strong&gt;壓力更可能先集中在初階職位周圍的配置方式，而不是直接集中在資深職位本身。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;更有意思的是，在這個情境下重新檢視可行條件：&lt;/p&gt;
+$$
+\frac{C_{ai}}{w+C_{ai}} \le \frac{k}{w+k}
+$$&lt;p&gt;化簡之後會得到：&lt;/p&gt;
+$$
+C_{ai} \le k
+$$&lt;p&gt;工資 $w$ 竟然被消掉了。&lt;/p&gt;
+&lt;p&gt;這代表，在這個很特定的假設下，導入 AI 的可行性不再直接取決於工資高低，而更取決於 AI 的底層補強能力 $k$，能不能蓋過它本身的成本 $C_{ai}$。&lt;/p&gt;
+&lt;p&gt;如果 AI 真的是一種技能拉平器，那企業在意的就不再只是「人工貴不貴」，而會更接近這個問題：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;AI 到底能不能把原本沒那麼強的人，快速補到足夠有用的水準？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;同樣是導入-ai重整邏輯並不一樣&#34;&gt;同樣是導入 AI，重整邏輯並不一樣&lt;/h3&gt;
+&lt;p&gt;把前面兩個情境放在一起看，差別就很清楚。&lt;/p&gt;
+&lt;p&gt;如果 AI 比較像是菁英放大器，那它傾向擴大既有差異：原本就位在關鍵節點的人，被進一步放大，企業會更關心怎麼把工具集中到乘數效應最大的地方。&lt;/p&gt;
+&lt;p&gt;如果 AI 比較像是技能拉平器，那它傾向壓縮既有差異：原本較弱的人被快速拉到可用水準，企業思考的重點就會從「把最強者再放大」轉成「如何重排團隊分工與梯隊結構」。&lt;/p&gt;
+&lt;p&gt;所以，這兩種情境雖然都可能導向人力調整，但背後的組織邏輯其實不一樣：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;前者比較像：&lt;strong&gt;把關鍵節點再放大&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;後者比較像：&lt;strong&gt;把原本較弱的人補到可用&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;真正重要的差別，不在於「誰一定會被裁」，而在於：&lt;strong&gt;AI 的增益，究竟是在放大既有優勢，還是在改寫能力分布。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;不過，若把這個問題再往真實辦公室裡推一步，就會發現「技能拉平器」這條路徑還有另一層現實摩擦。數學上，它看起來給了企業更大的人力重整空間；但管理上，這個空間未必能被無摩擦地兌現。&lt;/p&gt;
+&lt;h2 id=&#34;模型之外的四個摩擦&#34;&gt;模型之外的四個摩擦&lt;/h2&gt;
+&lt;p&gt;如果只看前面的式子，「技能拉平器」這個情境會給企業一個很強的直覺：既然 AI 對初階人力的補強特別大，那麼企業似乎就有更大的空間，去重整初階與資深人力的比例。&lt;/p&gt;
+&lt;p&gt;但把這個故事往現實再推一步，麻煩往往才真正開始。&lt;/p&gt;
+&lt;p&gt;模型裡的「有效產出」雖然可以寫成一個乾淨的 $q$，但現實世界裡，企業要的從來不只是數量，還包括品質、判斷、自我校正能力，以及出錯時誰能發現、誰要負責。&lt;/p&gt;
+&lt;p&gt;換句話說，前面的式子給的是一個&lt;strong&gt;可行區間的上限感&lt;/strong&gt;；一旦把管理摩擦放回來，真正可兌現的空間，通常只會更小，不會更大。&lt;/p&gt;
+&lt;h3 id=&#34;品質門檻&#34;&gt;品質門檻&lt;/h3&gt;
+&lt;p&gt;技能拉平器最容易讓人產生一種直覺：如果 AI 能把原本只有 50 分的人拉到 80 分，那麼企業就可以用更多「80 分的人」去取代少數「95 分的人」。&lt;/p&gt;
+&lt;p&gt;但這件事未必成立。&lt;/p&gt;
+&lt;p&gt;因為很多工作不是只要「差不多可用」就行，而是必須跨過某個品質門檻。對這些任務來說，80 分和 95 分不是線性差距，而是兩種不同性質的能力。例如底層系統架構設計、高風險決策、關鍵法務與合規判斷、涉及大量例外情境的專案協調，或錯誤代價極高的醫療、金融與安全場景。在這些地方，AI 把初階員工快速補到「看起來夠用」，不代表企業就真的得到了可託付的高品質人力。&lt;/p&gt;
+&lt;p&gt;夠用不等於可託付，產出增加也不等於判斷力增加。這是「技能被拉近」和「責任能被轉移」之間最容易被忽略的一段距離。&lt;/p&gt;
+&lt;h3 id=&#34;驗證成本&#34;&gt;驗證成本&lt;/h3&gt;
+&lt;p&gt;模型裡的 $C_{ai}$ 看起來像工具成本。但現實裡還有一種常被低估的成本：驗證成本。&lt;/p&gt;
+&lt;p&gt;初階員工在 AI 幫助下，的確可以更快產出程式碼、報告、簡報、分析與文件；但資深員工未必會因此更輕鬆，反而可能要花更多時間審查內容是否正確、檢查推理是否偷渡漏洞、修正 AI 生成的低階錯誤，甚至承擔最終交付的責任，控管幻覺、合規與聲譽風險。&lt;/p&gt;
+&lt;p&gt;以軟體開發為例，junior 在 AI 協助下可以更快交出可執行的程式碼，但 senior 可能得花更多時間 review 架構一致性、邊界條件與安全問題。以顧問或分析工作來看，初稿速度變快，不代表最後判斷也能一樣快地放心交出去。&lt;/p&gt;
+&lt;p&gt;這時候，AI 對初階人力的高增益，未必是純粹增加了有效產出，也可能只是把大量工時，從「生產」轉移成「檢查」與「收尾」。這是前端看不太到、但往往更昂貴的管理成本。&lt;/p&gt;
+&lt;h3 id=&#34;人才梯隊&#34;&gt;人才梯隊&lt;/h3&gt;
+&lt;p&gt;前面的模型本質上是一張靜態快照。它問的是：在當下這一刻，企業能不能在成本不升、產出不降的前提下，縮減一部分人力。&lt;/p&gt;
+&lt;p&gt;但真實企業不是活在快照裡，而是活在時間裡。這正是技能拉平器最容易被低估的地方。&lt;/p&gt;
+&lt;p&gt;如果企業看到的是：少數初階人力加上 AI，就能完成原本更多人才能完成的工作，那短期內它確實可能選擇大幅壓縮初階職位。但問題是，初階職位不只是當期產出單位，它同時也是未來資深人力的來源。&lt;/p&gt;
+&lt;p&gt;很多行業裡，真正值錢的判斷力不是在課堂上養成的，而是在大量低難度、低風險、可犯錯的任務裡慢慢累積起來的。如果這些任務被 AI 吃掉，或這些位置被企業過度裁掉，那新人就會失去學習曲線，企業也會慢慢削弱自己的學徒制。&lt;/p&gt;
+&lt;p&gt;所以，若把時間維度放進來，$\rho$ 就不再只是當期的人力縮減比例，而會影響企業未來的人才再生產能力。今天看似合理的縮編，幾年後可能變成資深人力斷層。&lt;/p&gt;
+&lt;h3 id=&#34;市場競爭&#34;&gt;市場競爭&lt;/h3&gt;
+&lt;p&gt;還有一個更外層、但也很現實的問題。&lt;/p&gt;
+&lt;p&gt;如果 AI 真的是一種技能拉平器，不只是幫到了你，也同樣幫到了你的競爭對手，那麼它壓縮的就不只是公司內部的能力差距，也可能是整個市場裡的能力差距。&lt;/p&gt;
+&lt;p&gt;當大家都能靠 AI 更快做出 80 分的東西，80 分本身就可能不再稀缺。&lt;/p&gt;
+&lt;p&gt;此時，企業導入 AI，未必只是為了裁員省錢，更可能是為了要在更激烈的商品化競爭中存活下來。企業關心的，也就不再只是「總產出能不能不下降」，而可能變成：如果市場價格會因為能力拉平而下滑，我是不是必須讓產出成長得更快，甚至走出新的差異化路線，才能守住原本的利潤？&lt;/p&gt;
+&lt;p&gt;這已經超出前面那個簡單模型能處理的範圍了，但它提醒我們一件事：AI 若真的在壓縮能力差距，最後改變的可能不只是人力結構，而是整個市場的競爭方式。&lt;/p&gt;
+&lt;h2 id=&#34;當-ai-變強變便宜&#34;&gt;當 AI 變強、變便宜&lt;/h2&gt;
+&lt;p&gt;把前面的分析收束起來，可以得到一個相對穩健的結論：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;隨著 AI 變強，也就是 $\phi$ 上升，人力縮減比例的上限 $\frac{\phi}{1+\phi}$ 會上升。意思是：從產出角度來看，企業理論上可以承受更高的人力縮減比例。&lt;/li&gt;
+&lt;li&gt;隨著 AI 變便宜，也就是 $C_{ai}$ 下降，人力縮減比例的下限 $\frac{C_{ai}}{w+C_{ai}}$ 會下降。意思是：從成本角度來看，導入 AI 這件事更容易成立。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;因此，單就這個模型來看，AI 支持企業做人力調整的條件，理論上確實會越來越容易成立。&lt;/p&gt;
+&lt;p&gt;但這裡不能偷換概念。畢竟「調整空間變大」不等於「企業一定會大裁員」。企業也可能把 AI 用來擴大產出、降低價格、擴張市場，或者把人力移去新的流程、驗證、協作與管理工作。&lt;/p&gt;
+&lt;p&gt;所以更精確的說法是：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;AI 越強、越便宜，企業用 AI 支持人力重配的條件越容易成立；但它最終走向縮編、擴編還是重組，取決於更完整的商業情境。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;結語回到約束與配置&#34;&gt;結語：回到約束與配置&lt;/h2&gt;
+&lt;p&gt;回到最早那則裁員貼文，該問的其實不是「AI 到底有沒有搶工作」，而是：在這家公司裡，AI 是否真的讓「成本不升、產出不降」的人力重整變得可行。&lt;/p&gt;
+&lt;p&gt;這也是本文想說的重點。AI 是否會導致人力縮減，不能只看技術展示，也不能只看新聞標題，而要看它能不能同時通過層層約束：工具成本撐不撐得住，產出守不守得住，而它的增益，究竟落在哪些人身上。&lt;/p&gt;
+&lt;p&gt;一旦離開平均員工的世界，問題就不再只是 AI 強不強，而是它到底在放大既有優勢，還是在改寫能力分布。前者可能把組織推向更集中的節點配置，後者則可能帶來另一種重整邏輯，同時引進新的驗證成本、梯隊風險與管理負擔。&lt;/p&gt;
+&lt;p&gt;所以，下一次再看到「AI 導致裁員」這種說法，先別急著下判斷。先問：它是否真的有可行區間？它省下的是成本，還是只是把成本換了位置？&lt;/p&gt;
+&lt;h2 id=&#34;全文圖解&#34;&gt;全文圖解&lt;/h2&gt;
+&lt;pre class=&#34;mermaid&#34;&gt;
+  flowchart TD
+    A[企業考慮導入 AI] --&amp;gt; B[基本問題：是否存在可行的人力縮減區間？]
+    B --&amp;gt; C{是否滿足可行條件？&amp;lt;br/&amp;gt;φ ≥ C_ai / w}
+    C -- 否 --&amp;gt; D[沒有可行解&amp;lt;br/&amp;gt;在此模型下，無法同時滿足：&amp;lt;br/&amp;gt;1. 總成本不增加&amp;lt;br/&amp;gt;2. 總有效產出不下降]
+    D --&amp;gt; D1[結論：&amp;lt;br/&amp;gt;AI 可用，不代表足以支撐「減人又不傷產出」]
+    C -- 是 --&amp;gt; E[存在可行區間]
+    E --&amp;gt; E1[&amp;#34;人力縮減比例 ρ 必須落在：&amp;lt;br/&amp;gt;C_ai / (w + C_ai) ≤ ρ ≤ φ / (1 + φ)&amp;#34;]
+    E1 --&amp;gt; F[&amp;#34;離開平均員工之後：&amp;lt;br/&amp;gt;AI 的增益會先落在哪些職位？&amp;#34;]
+    F --&amp;gt; G[情境一：菁英放大器&amp;lt;br/&amp;gt;w ∝ φ]
+    F --&amp;gt; H[情境二：技能拉平器&amp;lt;br/&amp;gt;φ ∝ 1 / w]
+    G --&amp;gt; G1[高薪 / 高槓桿職位&amp;lt;br/&amp;gt;AI 增益更大]
+    G1 --&amp;gt; G2[效果：&amp;lt;br/&amp;gt;局部可行配置空間拉大]
+    G2 --&amp;gt; G3[可能推論：&amp;lt;br/&amp;gt;AI 投資更集中在關鍵節點]
+    G2 --&amp;gt; G4[周邊部分工作&amp;lt;br/&amp;gt;位置壓力可能上升]
+    H --&amp;gt; H1[低薪 / 初階職位&amp;lt;br/&amp;gt;AI 增益更大]
+    H1 --&amp;gt; H2[效果：&amp;lt;br/&amp;gt;初階職位周圍的人力配置空間變大]
+    H2 --&amp;gt; H3[可能結果 A：&amp;lt;br/&amp;gt;用更少初階人力 + AI 維持原產出]
+    H2 --&amp;gt; H4[可能結果 B：&amp;lt;br/&amp;gt;保留更多初階人力，&amp;lt;br/&amp;gt;靠 AI 快速補到可用水準]
+    H2 --&amp;gt; H5[額外條件：&amp;lt;br/&amp;gt;可行性更取決於 C_ai ≤ k]
+    H2 --&amp;gt; I[但現實裡還有管理摩擦]
+    I --&amp;gt; I1[品質門檻]
+    I --&amp;gt; I2[驗證成本]
+    I --&amp;gt; I3[人才梯隊]
+    I --&amp;gt; I4[市場競爭]
+    G4 --&amp;gt; Z[總結：&amp;lt;br/&amp;gt;AI 不只是「會不會取代人」&amp;lt;br/&amp;gt;而是會如何改寫企業的約束條件與人力配置]
+    I4 --&amp;gt; Z
+&lt;/pre&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;此處僅為示意估算。$C_{ai}=6k$ 新台幣，是根據 2026 年 3 月現行公告牌價，參照 Anthropic 的 Claude Max 20x 個人網頁版訂閱方案月費 US$200 粗略換算而來；實際成本仍會受匯率、稅額、地區計價與企業採購方式影響。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;哈佛商學院與 BCG 在 2023 年合作的研究報告 &amp;ldquo;&lt;a href=&#34;https://www.hbs.edu/faculty/Pages/item.aspx?num=64700&#34;&gt;Navigating the Jagged Technological Frontier&lt;/a&gt;&amp;rdquo; 說，&amp;ldquo;Consultants across the skills distribution benefited significantly from having AI augmentation, with those below the average performance threshold increasing by 43% and those above increasing by 17% compared to their own scores.&amp;rdquo;&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description>
+      
+    </item>
+    
     <item>
       <title>AI 會寫程式，還要參與系統分析嗎？</title>
       <link>//william-yeh.net/post/2025/02/sa-with-genai/</link>
       <pubDate>Sat, 08 Feb 2025 18:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2025/02/sa-with-genai/</guid>
-      <description>&lt;p&gt;傳統上，複雜的軟體專案，除了程式設計師之外，還會搭配系統設計師，甚至系統分析師，確保領域知識及商業邏輯都有朝對的方向前進。&lt;/p&gt;&#xA;&lt;p&gt;生成式 AI 既然會寫程式，下一個問題就是：它也會做系統分析嗎？&lt;/p&gt;&#xA;&lt;p&gt;理論上來說，應該是的。畢竟我們在&lt;a href=&#34;//william-yeh.net/post/2025/02/codegen-with-genai/&#34;&gt;前一篇文章&lt;/a&gt;都親眼看過，AI 既然能理解規格、潤飾需求、撰寫程式碼，甚至生成測試案例，那麼系統分析 (SA) 和系統設計 (SD) 這類「中間產物」，確實也難不倒它。畢竟，系統分析本質上就是資訊的整理、建模與推理，而這些都是 AI 擅長的領域。&lt;/p&gt;&#xA;&lt;p&gt;我認為，SA/SD 也應該納入 AI 協作。尤其是從 SA/SD 擅長的建模角度，能夠協助我們及早確認領域知識及商業邏輯，檢查需求規格是否有矛盾、遺漏或模稜兩可的地方，甚至提出改善建議，幫助系統分析師更快定位問題，減少後期開發的返工成本。譬如說，透過 AI 生成的狀態轉移圖，也有助於規劃黑箱測試，提高測試覆蓋率，進而提升系統的穩定性與可靠性。&lt;/p&gt;&#xA;&lt;p&gt;接下來就是現實問題了：讓 AI 產生的狀態圖，真的比人工畫得更好嗎？能省多少時間？&lt;/p&gt;&#xA;&lt;p&gt;這就要實測了！現在，就讓我們拿&lt;a href=&#34;//william-yeh.net/post/2025/02/codegen-with-genai/&#34;&gt;前一篇文章&lt;/a&gt;的規格作為引子，讓我們看看 AI 生成的狀態圖表現如何吧！&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;傳統上，複雜的軟體專案，除了程式設計師之外，還會搭配系統設計師，甚至系統分析師，確保領域知識及商業邏輯都有朝對的方向前進。&lt;/p&gt;
+&lt;p&gt;生成式 AI 既然會寫程式，下一個問題就是：它也會做系統分析嗎？&lt;/p&gt;
+&lt;p&gt;理論上來說，應該是的。畢竟我們在&lt;a href=&#34;//william-yeh.net/post/2025/02/codegen-with-genai/&#34;&gt;前一篇文章&lt;/a&gt;都親眼看過，AI 既然能理解規格、潤飾需求、撰寫程式碼，甚至生成測試案例，那麼系統分析 (SA) 和系統設計 (SD) 這類「中間產物」，確實也難不倒它。畢竟，系統分析本質上就是資訊的整理、建模與推理，而這些都是 AI 擅長的領域。&lt;/p&gt;
+&lt;p&gt;我認為，SA/SD 也應該納入 AI 協作。尤其是從 SA/SD 擅長的建模角度，能夠協助我們及早確認領域知識及商業邏輯，檢查需求規格是否有矛盾、遺漏或模稜兩可的地方，甚至提出改善建議，幫助系統分析師更快定位問題，減少後期開發的返工成本。譬如說，透過 AI 生成的狀態轉移圖，也有助於規劃黑箱測試，提高測試覆蓋率，進而提升系統的穩定性與可靠性。&lt;/p&gt;
+&lt;p&gt;接下來就是現實問題了：讓 AI 產生的狀態圖，真的比人工畫得更好嗎？能省多少時間？&lt;/p&gt;
+&lt;p&gt;這就要實測了！現在，就讓我們拿&lt;a href=&#34;//william-yeh.net/post/2025/02/codegen-with-genai/&#34;&gt;前一篇文章&lt;/a&gt;的規格作為引子，看看 AI 生成的狀態圖表現如何吧！&lt;/p&gt;
+&lt;h2 id=&#34;狀況一過於窮舉&#34;&gt;狀況一：過於窮舉&lt;/h2&gt;
+&lt;p&gt;提示詞 #1：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Generate a UML-style state diagram for the game.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;吐出的狀態圖，細節可能每次都有些不同，以下是較常見的版本：&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2025/02/fsm-1.png&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2025/02/fsm-1.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;嚴格說起來，這份狀態圖並不符合 UML 格式⋯⋯但我暫時不挑剔這一點，等最後一步再來處理。&lt;/p&gt;
+&lt;p&gt;這份狀態圖，把所有可能的狀態都窮舉了，應該很合乎測試狂人的胃口。不過，窮舉得太過於累贅，很難消化。若不予以抽象化，很難進一步發展出程式。&lt;/p&gt;
+&lt;h2 id=&#34;狀況二濃縮過度&#34;&gt;狀況二：濃縮過度&lt;/h2&gt;
+&lt;p&gt;我們請 GenAI 整頓一下，在不影響正確性的前提下，將過於累贅的狀態精簡濃縮一遍：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Is it possible to reduce the states without compromising correctness or clarity?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;吐出的狀態圖，細節可能每次都有些不同，我挑出其中一個版本來聊聊：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2025/02/fsm-2.png&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2025/02/fsm-2.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;有了這份濃縮過的狀態圖，就比較容易一眼看出問題。最大的問題就是，有兩個紅色箭頭的地方濃縮過頭了，誤把 2-0 及 0-2 比分判定為比賽結束。&lt;/p&gt;
+&lt;h2 id=&#34;基本合格的狀態圖&#34;&gt;基本合格的狀態圖&lt;/h2&gt;
+&lt;p&gt;我請 GenAI 修正三個地方：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Three issues need to be addressed:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;The “Px leads by 2 points” transition is too vague. Does it account for cases like 2-0 or 0-2?&lt;/li&gt;
+&lt;li&gt;The two &amp;ldquo;Game Start&amp;rdquo; transitions should be merged into one.&lt;/li&gt;
+&lt;li&gt;Add an initial state for the 0-0 (&amp;ldquo;Love-Love&amp;rdquo;) score.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;如此這般調整，通常我們很快就可以得到比較滿意的狀態圖，既清晰，又正確：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2025/02/fsm-3.png&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2025/02/fsm-3.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;轉換成機器可讀的版本&#34;&gt;轉換成機器可讀的版本&lt;/h2&gt;
+&lt;p&gt;既然好不容易生出清晰正確的狀態圖，我們應該把圖形轉成像是 &lt;a href=&#34;https://plantuml.com/en/&#34;&gt;PlantUML&lt;/a&gt; 這種可程式化的文字表述形式，以預留後續應用的可能性。&lt;/p&gt;
+&lt;p&gt;提示詞：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Proceed to represent the state diagram using PlantUML syntax.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;我們會得到這樣的狀態圖規格文字：&lt;/p&gt;
+
+&lt;details&gt;
+  &lt;summary style=&#34;background-color:#f5f5f5;border:1px solid #ccc;padding:5px;&#34;&gt;
+    PlantUML 格式的狀態圖
+    
+  &lt;/summary&gt;
+  &lt;div class=&#34;highlight-container&#34;&gt;
+
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+
+  
+  &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plain&#34; data-lang=&#34;plain&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;@startuml
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[*] --&amp;gt; LoveLove : Game Start
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;LoveLove --&amp;gt; Score : P1 or P2 Scores
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Score --&amp;gt; Score : Regular Scoring
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Score --&amp;gt; Deuce : Both &amp;gt;= 3 &amp;amp; Equal
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Deuce --&amp;gt; AdvantageP1 : P1 Scores
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Deuce --&amp;gt; AdvantageP2 : P2 Scores
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Score --&amp;gt; WinP1 : P1 &amp;gt;= 4 &amp;amp; Lead &amp;gt;= 2
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Score --&amp;gt; WinP2 : P2 &amp;gt;= 4 &amp;amp; Lead &amp;gt;= 2
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;AdvantageP1 --&amp;gt; WinP1 : P1 Scores
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;AdvantageP2 --&amp;gt; WinP2 : P2 Scores
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;AdvantageP1 --&amp;gt; Deuce : P2 Scores
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;AdvantageP2 --&amp;gt; Deuce : P1 Scores
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;WinP1 --&amp;gt; [*]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;WinP2 --&amp;gt; [*]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;@enduml&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/details&gt;
+
+&lt;p&gt;這份狀態圖以及 PlantUML 規格文字，很值得放進系統分析文件，甚至規格書。&lt;/p&gt;
+&lt;p&gt;不過，如果你有潔癖，希望狀態圖要合乎正統的 UML 規定，可以把上面的文字丟到&lt;a href=&#34;https://www.plantuml.com/plantuml/uml/&#34;&gt;PlantUML 軟體&lt;/a&gt;去產生完全合乎標準的 UML 狀態圖：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2025/02/fsm-4.png&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2025/02/fsm-4.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;系統分析的再思&#34;&gt;系統分析的再思&lt;/h2&gt;
+&lt;p&gt;許多威力強大的機器學習與人工智慧技術，本質上是黑箱的，可觀測性與可解釋性，一直是技術發展與推廣的大挑戰。&lt;/p&gt;
+&lt;p&gt;對於 GenAI 神兵利器，許多人只在程式碼的層次與 GenAI 對話，畢竟光速產生程式的快感，很難不上癮。&lt;/p&gt;
+&lt;p&gt;系統分析？很抱歉，這是光速領域，沒有預留座位。&lt;/p&gt;
+&lt;p&gt;但我還是想要稍微保守一點，寧可慢一點。在前段的規格、中段的系統分析與設計、後段的測試驗收，與 GenAI 多一點協作，在中間產物身上，多留下一些可觀測、可解釋的線索，並力求可以穩定再現。&lt;/p&gt;
+&lt;p&gt;畢竟，順向工程比較容易，逆向工程比較困難。如我前一篇文章〈&lt;a href=&#34;//william-yeh.net/post/2025/02/codegen-with-genai/&#34;&gt;當 AI 會寫程式，程式碼會變得即寫即棄嗎？&lt;/a&gt;〉所說，程式碼之所以會變得可以即寫即棄，是因為我們用更有效率的方式，將「可用的軟體」的內涵，轉寫到「詳盡的文件」裡面，讓它成為更有意義的 “ground truth”。&lt;/p&gt;
+&lt;p&gt;在與 GenAI 協作時，別忘了「詳盡的文件」也是協作的重點。&lt;/p&gt;</description>
+      
     </item>
+    
     <item>
       <title>當 AI 會寫程式，程式碼會變得即寫即棄嗎？</title>
       <link>//william-yeh.net/post/2025/02/codegen-with-genai/</link>
       <pubDate>Fri, 07 Feb 2025 18:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2025/02/codegen-with-genai/</guid>
-      <description>&lt;p&gt;人類從事的領域，不斷被生成式 AI (GenAI) 入侵。&lt;/p&gt;&#xA;&lt;p&gt;社群媒體上，早就充斥一大堆「AI 體」的文案圖案，現在就連程式設計領域也開始淪陷。像 Google 執行長就透露：「在 Google，超過 1/4 的新程式碼已經是先由 AI 生成，再讓程式設計師去複審與確認。」&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; 而 GitHub 執行長更大膽預言 80% 的程式碼都將會由 GenAI 生成。&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;&#xA;&lt;p&gt;也就是說，以前，程式設計師得親手撰寫大部分的程式碼；現在則開始挪出一段時間去跟 GenAI 對話：調教提示詞 (prompt)、審核生成的程式碼、確認正確性，如此反覆進行好幾個回合。&lt;/p&gt;&#xA;&lt;p&gt;GenAI 進展神速。如果某一天進展到，只要提示詞下得夠精準，第一次生出來的程式碼幾乎就合格過關了，是否也就意謂著，程式設計師的專業訓練及工作重點，將會更轉向 ⑴ 鑽研提示工程、⑵ 審核生成的程式碼這兩條路線發展？換句話說，將會更朝向 ⑴ 前段的需求規格、⑵ 後段的測試驗收這兩條路線？&lt;/p&gt;&#xA;&lt;p&gt;如果頭尾兩端（需求規格與測試驗收）都由人來看守定義，中間步驟（撰寫程式碼）改由 GenAI 來操刀，是否也就意謂著，程式碼會變成像是可拋棄的東西，反正隨時都可以叫 GenAI 再生出一份出來？甚至當 GenAI 能力升級之後，又能夠生出比拋棄掉的還要更好的程式碼？&lt;/p&gt;&#xA;&lt;p&gt;聽起來可能有點兒瘋狂。可是如果以上屬實，那麼，&lt;a href=&#34;https://agilemanifesto.org/&#34;&gt;敏捷四大宣言&lt;/a&gt;之一「&lt;strong&gt;可用的軟體&lt;/strong&gt; 重於 &lt;strong&gt;詳盡的文件&lt;/strong&gt;」，在 GenAI 時代是否依然成立，可能都值得再重新評估檢討。&lt;/p&gt;&#xA;&lt;p&gt;為此，我在 ChatGPT 4o 進行一系列小小的實驗。試試看當 GenAI 收到前段的需求規格之後，能夠生出什麼樣的程式碼以及測試驗收案例；緊接著會與 GenAI 協作調教頭尾兩端（需求規格與測試驗收），再看看 GenAI 重新生出來的程式碼，會有什麼不同。&lt;/p&gt;&#xA;&#xA;&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;&#xA;&lt;div class=&#34;box&#34;&gt;&#xA;&lt;figure  itemprop=&#34;associatedMedia&#34;&#xA;  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; &#xA;  style=&#34;max-width:30em&#34; &gt;&#xA;    &lt;div class=&#34;img&#34;&gt;&#xA;      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2025/02/work-with-genai.jpg&#34; /&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;a href=&#34;//william-yeh.net/img/2025/02/work-with-genai.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;&#xA;  &lt;/figure&gt;&#xA;&lt;/div&gt;</description>
+      
+        <description>&lt;p&gt;人類從事的領域，不斷被生成式 AI (GenAI) 入侵。&lt;/p&gt;
+&lt;p&gt;社群媒體上，早就充斥一大堆「AI 體」的文案圖案，現在就連程式設計領域也開始淪陷。像 Google 執行長就透露：「在 Google，超過 1/4 的新程式碼已經是先由 AI 生成，再讓程式設計師去複審與確認。」&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; 而 GitHub 執行長更大膽預言 80% 的程式碼都將會由 GenAI 生成。&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;也就是說，以前，程式設計師得親手撰寫大部分的程式碼；現在則開始挪出一段時間去跟 GenAI 對話：調教提示詞 (prompt)、審核生成的程式碼、確認正確性，如此反覆進行好幾個回合。&lt;/p&gt;
+&lt;p&gt;GenAI 進展神速。如果某一天進展到，只要提示詞下得夠精準，第一次生出來的程式碼幾乎就合格過關了，是否也就意謂著，程式設計師的專業訓練及工作重點，將會更轉向 ⑴ 鑽研提示工程、⑵ 審核生成的程式碼這兩條路線發展？換句話說，將會更朝向 ⑴ 前段的需求規格、⑵ 後段的測試驗收這兩條路線？&lt;/p&gt;
+&lt;p&gt;如果頭尾兩端（需求規格與測試驗收）都由人來看守定義，中間步驟（撰寫程式碼）改由 GenAI 來操刀，是否也就意謂著，程式碼會變成像是可拋棄的東西，反正隨時都可以叫 GenAI 再生出一份出來？甚至當 GenAI 能力升級之後，又能夠生出比拋棄掉的還要更好的程式碼？&lt;/p&gt;
+&lt;p&gt;聽起來可能有點兒瘋狂。可是如果以上屬實，那麼，&lt;a href=&#34;https://agilemanifesto.org/&#34;&gt;敏捷四大宣言&lt;/a&gt;之一「&lt;strong&gt;可用的軟體&lt;/strong&gt; 重於 &lt;strong&gt;詳盡的文件&lt;/strong&gt;」，在 GenAI 時代是否依然成立，可能都值得再重新評估檢討。&lt;/p&gt;
+&lt;p&gt;為此，我在 ChatGPT 4o 進行一系列小小的實驗。試試看當 GenAI 收到前段的需求規格之後，能夠生出什麼樣的程式碼以及測試驗收案例；緊接著會與 GenAI 協作調教頭尾兩端（需求規格與測試驗收），再看看 GenAI 重新生出來的程式碼，會有什麼不同。&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2025/02/work-with-genai.jpg&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2025/02/work-with-genai.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;實驗素材&#34;&gt;實驗素材&lt;/h2&gt;
+&lt;p&gt;我選用 TDD 社群常見的 Tennis Kata 作為實驗素材。
+為了怕 GenAI 早已被餵食過 Tennis Kata，想也不想就直接吐出記憶中的標準答案，也就是所謂的「資料記憶」問題，我稍加修改 Samman Technical Coaching 提供的 &lt;a href=&#34;https://sammancoaching.org/kata_descriptions/tennis.html&#34;&gt;Tennis Kata 版本&lt;/a&gt;。微調過的文字如下：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The rule of the 2-player game &amp;ldquo;Sinnet&amp;rdquo; is summarized below:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A game is won by the first player to have won at least four points in total and at least two points more than the opponent.&lt;/li&gt;
+&lt;li&gt;The running score of each game is described in a manner peculiar to this: scores from zero to three points are described as “Love”, “Fifteen”, “Thirty”, and “Forty” respectively.&lt;/li&gt;
+&lt;li&gt;If at least three points have been scored by each player, and the scores are equal, the score is “Deuce”.&lt;/li&gt;
+&lt;li&gt;If at least three points have been scored by each side and a player has one more point than his opponent, the score of the game is “Advantage” for the player in the lead.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;為了進一步消除資料記憶的疑慮，我也故意翻譯成中文（儘管在 ChatGPT 大神面前，這麼做未必真的有用，哈）：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;以下是二人遊戲 &amp;ldquo;Sinnet&amp;rdquo; 的規則：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;遊戲由首先贏得至少四分，且比對手多至少兩分的玩家獲勝。&lt;/li&gt;
+&lt;li&gt;每局的進行得分以一種特殊的方式描述：從零到三分分別描述為 “Love”、 “Fifteen”、 “Thirty” 和 “Forty”。&lt;/li&gt;
+&lt;li&gt;如果每位玩家至少得了三分，且比分相同，則比分為 “Deuce”。&lt;/li&gt;
+&lt;li&gt;如果每方至少得了三分，且有一名玩家比對手多一分，則領先玩家的比分為 “Advantage”。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;接下來的前幾個實驗，都會以這段文字作為對話的開始，姑且就把它叫做「&lt;strong&gt;初始規格/v1&lt;/strong&gt;」吧。不過，GenAI 有一些隨機性的行為，不一定每次都會得到一樣的結果，我會挑出較具代表性的來探討。&lt;/p&gt;
+&lt;p&gt;系列實驗如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;🅐 基礎實驗：①給初始規格/v1 ❯ ②生成程式及測試&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;🅑 調整規格：①給初始規格/v1 ❯ ③調整規格/v2 ❯ ④生成程式及測試&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;🅒 可執行的規格：①給初始規格/v1 ❯ ③調整規格/v2 ❯ ④生成程式及測試 ❯ ⑤將測試納入規格/v3&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;🅓 測試驅動：⑥根據規格/v3 重新生成程式，並予以測試檢驗&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;🅔 逆向工程：⑥根據規格/v3 重新生成程式，並予以測試檢驗 ❯ ⑦逆向工程規格/v4&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;有些實驗之間有先後關係，有些實驗需要開啟新的對話：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2025/02/flow-all.png&#34; alt=&#34;整體實驗流程&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2025/02/flow-all.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;整體實驗流程&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;實驗基礎實驗&#34;&gt;實驗🅐、基礎實驗&lt;/h2&gt;
+&lt;p&gt;先從最基礎的實驗開始，直接叫 GenAI 根據我們給的初始規格，生成程式及測試。&lt;/p&gt;
+&lt;p&gt;基礎的實驗步驟如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;①給初始規格/v1&lt;/li&gt;
+&lt;li&gt;②生成程式及測試&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2025/02/flow-a.png&#34; alt=&#34;實驗🅐流程&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2025/02/flow-a.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;實驗🅐流程&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;既然要叫 GenAI 生成測試，就順便叫它用比較好的方式來做：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.amazon.com/dp/1617290084&#34;&gt;&lt;em&gt;Specification by Example&lt;/em&gt;&lt;/a&gt; 提到的 BDD (behavior driven design)。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.amazon.com/dp/1633439933&#34;&gt;&lt;em&gt;Effective Software Testing&lt;/em&gt;&lt;/a&gt; 提到的 spec-based &amp;amp; property-based testing 角度以及 AAA (arrange-act-assert) 手法。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;提示詞②如下：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Now, implement a Python program to display the current game score.  Also, create specification-based tests using BDD-style and property-based testing. Each test case should follow the Arrange-Act-Assert (AAA) pattern, ensuring that only one AAA scenario is included per test case. Place Gherkin descriptions at the beginning of each test case using a docstring, annotation, or function name. Ensure these tests cover normal scenarios as well as edge cases, focusing on boundaries, partitions, and input dependencies.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;吐出的主體程式碼，細節可能每次都有些不同，以下是較常見的版本：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2025/02/code-a1.png&#34; alt=&#34;提示詞②產生的主體程式碼&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2025/02/code-a1.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;提示詞②產生的主體程式碼&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;主體程式碼看起來滿樸素的，程式邏輯大體上也是圍繞在初始規格的直接翻譯。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;吐出的測試案例，每次的差異就比較大了，以下是其中一個版本：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2025/02/code-a2.png&#34; alt=&#34;提示詞②產生的測試&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2025/02/code-a2.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;提示詞②產生的測試&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;形式上 OK，只是我認為還有些缺失：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;對於 deuce 的比分，常常只測到 3-3 的情況，沒有進一步嘗試 4-4、5-5 甚至更多。這應該是 property-based testing 的強項。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在 arrange 及 act 階段，常常少了交錯得分的劇情，譬如說像是 0-0 ❯ 1-0 ❯ 2-0 ❯ 2-1 ❯ 3-1 ❯ 3-2 ❯ 3-3 (deuce) ❯ 3-4 ❯ 4-4 (deuce) 這種緊張的情節。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Property-based testing 有點偷懶。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;實驗調整規格&#34;&gt;實驗🅑、調整規格&lt;/h2&gt;
+&lt;p&gt;我們一開始給的初始規格/v1，可能未必是最好的。這一次，讓我們邀請 AI 對我們提出疑問，一起協力把初始規格調整成較清晰、無歧義的內容，再拿這份調整過的規格去生成程式與測試。&lt;/p&gt;
+&lt;p&gt;調整規格的實驗步驟如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;①給初始規格/v1&lt;/li&gt;
+&lt;li&gt;③調整規格/v2&lt;/li&gt;
+&lt;li&gt;④生成程式及測試&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2025/02/flow-b.png&#34; alt=&#34;實驗🅑流程&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2025/02/flow-b.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;實驗🅑流程&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;提示詞③如下：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Now, you can ask me questions about the previous specification to clarify its meaning and remove any ambiguity. If you don&amp;rsquo;t have any questions, please proceed to rephrase the specification for better clarity.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;有時候，GenAI 的確會與我一來一往對話，請我釐清一些細節。&lt;/p&gt;
+&lt;p&gt;最後，我收到一份更清晰易懂的規格（就把它叫做「規格/v2」吧）：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Sinnet Game Rules&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Winning the Game&lt;/strong&gt;: A player wins by reaching at least four points and leading their opponent by at least two points.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Scoring System&lt;/strong&gt;: Points are described using specific terms:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;0 points → “Love”&lt;/li&gt;
+&lt;li&gt;1 point → “Fifteen”&lt;/li&gt;
+&lt;li&gt;2 points → “Thirty”&lt;/li&gt;
+&lt;li&gt;3 points → “Forty”&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Deuce&lt;/strong&gt;: If both players have at least three points and are tied, the score is called “Deuce.”&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Advantage&lt;/strong&gt;: If both players have at least three points, and one player leads by a single point, their score is called “Advantage.”&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;接下來，讓我們根據這份調整過的 規格/v2，試試看 GenAI 有什麼不一樣的產出？&lt;/p&gt;
+&lt;p&gt;提示詞④如下：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Based on the rephrased specification, implement a Python program to display the current game score.
+Also create specification-based tests using BDD-style and property-based testing. Each test case should follow the Arrange-Act-Assert (AAA) pattern, ensuring that only one AAA scenario is included per test case. Place Gherkin descriptions at the beginning of each test case using a docstring, annotation, or function name. Ensure these tests cover normal scenarios as well as edge cases, focusing on boundaries, partitions, and input dependencies.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;吐出的主體程式碼，細節可能每次都有些不同，以下是較常見的版本：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2025/02/code-b1.png&#34; alt=&#34;提示詞④產生的主體程式碼&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2025/02/code-b1.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;提示詞④產生的主體程式碼&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;或許要歸功於調整後的 規則/v2 較清晰易懂，程式邏輯也隨之變得更清晰易懂。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;有時候我不滿意生成的測試案例，會叫它再做一次，加強測試涵蓋率。譬如說，如果它只考慮到 3-3 這個 deuce 情況，我也會叫它再多想一下：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Have you considered that deuce can also occur at 4-4, 5-5, and beyond? This appears to be a strong candidate for property-based testing.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;這階段，我建議要跟 GenAI 多聊幾次，先一起弄出令人滿意的測試集，以作為下一個實驗的基礎。&lt;/p&gt;
+&lt;p&gt;以下是其中一個版本：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2025/02/code-b2.png&#34; alt=&#34;提示詞④產生的測試&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2025/02/code-b2.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;提示詞④產生的測試&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;看起來還不錯。我們可以繼續往下進行最關鍵的實驗了。&lt;/p&gt;
+&lt;h2 id=&#34;實驗可執行的規格&#34;&gt;實驗🅒、可執行的規格&lt;/h2&gt;
+&lt;p&gt;在前一個實驗中，我們和 GenAI 一起調整出較清晰易讀的 規格/v2，也一起調整出較周全的測試集。以敏捷開發陣營的最佳實踐來說，好的測試集，其實是可以逆向反饋到規格的，也就是所謂的「&lt;strong&gt;可執行的規格&lt;/strong&gt;」(&lt;strong&gt;executable specification&lt;/strong&gt;)。現在，我們就來弄出一份這樣的「規格/v3」吧。&lt;/p&gt;
+&lt;p&gt;「可執行的規格」實驗步驟如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;①給初始規格/v1&lt;/li&gt;
+&lt;li&gt;③調整規格/v2&lt;/li&gt;
+&lt;li&gt;④生成程式及測試&lt;/li&gt;
+&lt;li&gt;⑤將測試納入規格/v3 ◄ 承上步驟，從這裡開始。&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2025/02/flow-c.png&#34; alt=&#34;實驗🅒流程&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2025/02/flow-c.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;實驗🅒流程&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;接續前一個實驗累積的測試集，讓我們請 GenAI 幫我們逆向轉譯為 Gherkin 形式的規格。&lt;/p&gt;
+&lt;p&gt;提示詞⑤如下：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Now, incorporate the newly generated tests (including property-based tests) into the specification under a section titled &amp;ldquo;Validation Scenarios,&amp;rdquo; expressed in Gherkin format. This will make the specification more comprehensive and allow it to function as an &amp;ldquo;executable specification.&amp;rdquo; Finally, add the test codes in an appendix section titled &amp;ldquo;Tests.&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;最後會孵化出這樣的「規格/v3」：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Sinnet Game Specification&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;▋ GAME RULES&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Winning the Game&lt;/strong&gt;: A player wins by reaching at least four points and leading their opponent by at least two points.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Scoring System&lt;/strong&gt;: Points are described using specific terms:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;0 points → “Love”&lt;/li&gt;
+&lt;li&gt;1 point → “Fifteen”&lt;/li&gt;
+&lt;li&gt;2 points → “Thirty”&lt;/li&gt;
+&lt;li&gt;3 points → “Forty”&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Deuce&lt;/strong&gt;: If both players have at least three points and are tied, the score is called “Deuce.”&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Advantage&lt;/strong&gt;: If both players have at least three points, and one player leads by a single point, their score is called “Advantage.”&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;▋ VALIDATION SCENARIOS&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Normal Gameplay Scenarios&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Scenario: Initial game score is &amp;ldquo;Love - Love&amp;rdquo;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Given a new game has started&lt;/li&gt;
+&lt;li&gt;When no player has scored&lt;/li&gt;
+&lt;li&gt;Then the score should be &amp;ldquo;Love - Love&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Scenario: A player scores first&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Given a new game has started&lt;/li&gt;
+&lt;li&gt;When a player scores once&lt;/li&gt;
+&lt;li&gt;Then the score should reflect the correct score for that player&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Scenario: A player gains advantage&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Given both players have scored at least three times&lt;/li&gt;
+&lt;li&gt;When a player scores once more&lt;/li&gt;
+&lt;li&gt;Then the score should be &amp;ldquo;Advantage&amp;rdquo; for that player&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Scenario: A player wins the game&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Given a player has three points and the other player has less than three points&lt;/li&gt;
+&lt;li&gt;When the player scores the winning point&lt;/li&gt;
+&lt;li&gt;Then the player should be declared the winner&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Scenario: A player wins after having advantage&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Given a player has advantage&lt;/li&gt;
+&lt;li&gt;When the player scores one more point&lt;/li&gt;
+&lt;li&gt;Then the player should be declared the winner&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Scenario: A player gains advantage from deuce&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Given the score is deuce&lt;/li&gt;
+&lt;li&gt;When a player scores a point&lt;/li&gt;
+&lt;li&gt;Then the score should be &amp;ldquo;Advantage&amp;rdquo; for that player&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Edge Cases and Property-Based Testing&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Scenario: Deuce occurs at 3-3, 4-4, 5-5, and beyond&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Given both players have the same score of at least 3 points&lt;/li&gt;
+&lt;li&gt;When the scores are equal&lt;/li&gt;
+&lt;li&gt;Then the score should be &amp;ldquo;Deuce&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Property-Based Test: Deuce should occur at 3-3, 4-4, 5-5, and beyond&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Given both players have at least 3 points and the same score&lt;/li&gt;
+&lt;li&gt;When the scores are equal&lt;/li&gt;
+&lt;li&gt;Then the score should be &amp;ldquo;Deuce&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;▋ APPENDIX: TESTS&lt;/strong&gt;
+[測試規格如下]
+
+&lt;details&gt;
+  &lt;summary style=&#34;background-color:#f5f5f5;border:1px solid #ccc;padding:5px;&#34;&gt;
+    Python 版的測試規格
+    
+  &lt;/summary&gt;
+  &lt;div class=&#34;highlight-container&#34;&gt;
+
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+
+  
+  &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; pytest
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; hypothesis &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; given, strategies &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; st
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;test_initial_score&lt;/span&gt;():
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Scenario: Initial game score is &amp;#34;Love - Love&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Given a new game has started
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    When no player has scored
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Then the score should be &amp;#34;Love - Love&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    &amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    game &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; SinnetGame()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;assert&lt;/span&gt; game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;score() &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Love - Love&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;test_player1_scores_once&lt;/span&gt;():
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Scenario: Player 1 scores first
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Given a new game has started
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    When Player 1 scores once
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Then the score should be &amp;#34;Fifteen - Love&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    &amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    game &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; SinnetGame()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;player_scores(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;assert&lt;/span&gt; game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;score() &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Fifteen - Love&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;test_deuce_extended&lt;/span&gt;():
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Scenario: Deuce occurs at 3-3, 4-4, 5-5, and beyond
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Given both players have the same score of at least 3 points
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    When the scores are equal
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Then the score should be &amp;#34;Deuce&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    &amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; score &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; range(&lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        game &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; SinnetGame()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;scores &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [score, score]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;assert&lt;/span&gt; game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;score() &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Deuce&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;test_advantage_player1&lt;/span&gt;():
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Scenario: Player 1 gains advantage
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Given both players have scored at least three times
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    When Player 1 scores once more
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Then the score should be &amp;#34;Advantage Player 1&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    &amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    game &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; SinnetGame()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; _ &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; range(&lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;player_scores(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;player_scores(&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;player_scores(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;assert&lt;/span&gt; game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;score() &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Advantage Player 1&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;test_player1_wins&lt;/span&gt;():
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Scenario: Player 1 wins the game
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Given Player 1 has three points and Player 2 has less than three points
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    When Player 1 scores the winning point
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Then Player 1 should be declared the winner
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    &amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    game &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; SinnetGame()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; _ &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; range(&lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;player_scores(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;assert&lt;/span&gt; game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;score() &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Player 1 wins&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;test_transition_from_advantage_to_win&lt;/span&gt;():
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Scenario: Player 1 wins after having advantage
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Given Player 1 has advantage
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    When Player 1 scores one more point
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Then Player 1 should be declared the winner
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    &amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    game &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; SinnetGame()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; _ &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; range(&lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;player_scores(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;player_scores(&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;player_scores(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;player_scores(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;assert&lt;/span&gt; game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;score() &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Player 1 wins&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;test_transition_from_deuce_to_advantage&lt;/span&gt;():
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Scenario: Player 2 gains advantage from deuce
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Given the score is deuce
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    When Player 2 scores a point
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Then the score should be &amp;#34;Advantage Player 2&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    &amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    game &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; SinnetGame()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; _ &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; range(&lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;player_scores(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;player_scores(&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;player_scores(&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;assert&lt;/span&gt; game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;score() &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Advantage Player 2&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;@given&lt;/span&gt;(st&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;integers(min_value&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;, max_value&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;test_deuce_property_based&lt;/span&gt;(score):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Property-based test: Deuce should occur at 3-3, 4-4, 5-5, and beyond
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Given both players have at least 3 points and the same score
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    When the scores are equal
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Then the score should be &amp;#34;Deuce&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    &amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    game &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; SinnetGame()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;scores &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [score, score]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;assert&lt;/span&gt; game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;score() &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Deuce&amp;#34;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/details&gt;
+&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;這份「規格/v3」，不僅有規格文章，還有測試集，又臭又長，要是換成是我自己一個人來寫，我多半沒這個耐心。&lt;/p&gt;
+&lt;p&gt;你可能會懷疑：比起之前的「初始規格/v1」及「調整規格/v2」，這份孵化出來的「規格/v3」是否真的有獨到之處？&lt;/p&gt;
+&lt;p&gt;且讓我們繼續看下去。&lt;/p&gt;
+&lt;h2 id=&#34;實驗測試驅動&#34;&gt;實驗🅓、測試驅動&lt;/h2&gt;
+&lt;p&gt;在前一個實驗中，我們和 GenAI 一起孵化出「可執行的規格」。現在，我們就來根據這份「規格/v3」開啟全新的對話，叫 GenAI 重新生成程式，並根據「規格/v3」附錄的測試集予以測試檢驗。&lt;/p&gt;
+&lt;p&gt;且讓我們評估看看究竟值不值得如此大費周章。&lt;/p&gt;
+&lt;p&gt;測試驅動的實驗步驟如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;①給初始規格/v1 ❯ ③調整規格/v2 ❯ ④生成程式及測試 ❯ ⑤將測試納入規格/v3 ◄ 之前的步驟&lt;/li&gt;
+&lt;li&gt;⑥根據規格/v3 重新生成程式，並予以測試檢驗 ◄ 現在的步驟&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;請 GenAI 開啟全新的對話，用這份熱騰騰的「規格/v3」重新生成程式。&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2025/02/flow-d.png&#34; alt=&#34;實驗🅓流程&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2025/02/flow-d.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;實驗🅓流程&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;提示詞⑥如下：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Now, generate a Python program based on the following specification. [貼上 規格/v3 全文]&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;吐出的主體程式碼，細節可能每次都有些不同，以下是較常見的版本：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2025/02/code-d1.png&#34; alt=&#34;提示詞⑥產生的主體程式碼&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2025/02/code-d1.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;提示詞⑥產生的主體程式碼&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;GenAI 有隨機性行為，未必每次都會比根據之前兩份規格（初始規格/v1 及 調整規格/v2）產生的程式表現得更好，但至少這是可以通過測試的。萬一通不過測試，大可叫 GenAI 去 debug。這就是我們之前與 AI 協作，努力調教頭尾兩端（需求規格與測試驗收）的好處。只要向 AI 指出這項錯誤，它就會乖乖認錯，並且自動 debug。&lt;/p&gt;
+&lt;p&gt;只要程式是正確的，隨時都可以叫 GenAI 去重構，重構到滿意為止，如此即可兼顧正確性與各種內在品質標準。&lt;/p&gt;
+&lt;p&gt;這就是當初在「規格/v3」埋下「可執行的規格」伏筆的好處。&lt;/p&gt;
+&lt;h2 id=&#34;實驗逆向工程&#34;&gt;實驗🅔、逆向工程&lt;/h2&gt;
+&lt;p&gt;敏捷宣言說：「&lt;strong&gt;可用的軟體&lt;/strong&gt; 重於 &lt;strong&gt;詳盡的文件&lt;/strong&gt;」。我們想看看，GenAI 是否真的能夠從「可用的軟體」逆向工程出「詳盡的文件」，讓我們評估兩者究竟誰比較重要，誰可以當成 “ground truth”。&lt;/p&gt;
+&lt;p&gt;逆向工程的實驗步驟如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;⑥根據規格/v3 重新生成程式，並予以測試檢驗 ◄ 之前的步驟&lt;/li&gt;
+&lt;li&gt;⑦逆向工程規格/v4 ◄ 現在的步驟&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2025/02/flow-e.png&#34; alt=&#34;實驗🅔流程&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2025/02/flow-e.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;實驗🅔流程&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;請 GenAI 開啟全新的對話，拿前一個實驗的程式碼及測試，請它設法轉譯成人類的語言。&lt;/p&gt;
+&lt;p&gt;提示詞⑦如下：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Generate a specification based on the following Python code and tests. The specification should include two sections: 1. Sinnet Game Rules – Clearly structured and expressed in natural language. 2. Validation Scenarios – Presented in Gherkin format.  [附上主體程式碼及測試]&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;我驚訝的發現，GenAI 劈頭就給我這麼一句話：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The Sinnet Game is a simplified scoring system inspired by tennis. The objective is for a player to win by reaching at least four points and having a two-point lead over the opponent.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;看起來，可能是程式碼寫得太好了，測試寫得太好了，變數及函式名稱取得太好了，註解寫得太好了，讓 GenAI 有足夠的線索察覺到，這和現實世界的網球規則高度雷同。&lt;/p&gt;
+&lt;p&gt;這也證明了，清晰易懂的程式碼，不僅讓人類舒服，連 GenAI 也受益。&lt;/p&gt;
+&lt;h2 id=&#34;敏捷的再思&#34;&gt;敏捷的再思&lt;/h2&gt;
+&lt;p&gt;同樣的武器，在高手與菜鳥手上，能玩出的花樣自然會有高低落差之別。&lt;/p&gt;
+&lt;p&gt;儘管高手是草木竹石均可為劍的；但善用好的武器，能讓我們付出較少的精力，就做出近似高手的表現。&lt;/p&gt;
+&lt;p&gt;怎麼樣善用 GenAI 這項神兵利器？&lt;/p&gt;
+&lt;p&gt;前面幾個實驗中，儘管 GenAI 看起來非常厲害，但是別忘了，我所下的提示詞，其實已經將人類在程式設計領域的經驗高度濃縮進去。缺少這些知識，未必能夠和 GenAI 一來一往充分協作出好的成果：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Executable specification 很重要。&lt;/li&gt;
+&lt;li&gt;Specification-based testing 很重要。&lt;/li&gt;
+&lt;li&gt;Property-based testing 很重要。&lt;/li&gt;
+&lt;li&gt;AAA (arrange-act-assert) 很重要。&lt;/li&gt;
+&lt;li&gt;Refactoring 很重要。&lt;/li&gt;
+&lt;li&gt;Shift-left 很重要。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;這些，其實都是敏捷開發領域一向重視的實踐。&lt;/p&gt;
+&lt;p&gt;因此，在 GenAI 時代，就算敏捷四大宣言之一「&lt;strong&gt;可用的軟體&lt;/strong&gt; 重於 &lt;strong&gt;詳盡的文件&lt;/strong&gt;」未必依然成立，但那也是因為藉由 GenAI 之力，我們終於可以把「可用的軟體」的內涵，用更有效率的方式轉寫到「詳盡的文件」裡面，讓它成為更有意義的 “ground truth”。&lt;/p&gt;
+&lt;p&gt;不是因為敏捷宣言過時了，而是 GenAI 成全了敏捷宣言。&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;根據 Google CEO 在 &lt;a href=&#34;https://blog.google/inside-google/message-ceo/alphabet-earnings-q3-2024/&#34;&gt;(2024) Q3 earnings call: CEO’s remarks&lt;/a&gt; 的說法：“Today, more than a quarter of all new code at Google is generated by AI, then reviewed and accepted by engineers. This helps our engineers do more and move faster.”&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;GitHub CEO 在 2023 年中一場&lt;a href=&#34;https://www.freethink.com/robots-ai/github-copilot&#34;&gt;專訪&lt;/a&gt;時，大膽預言：“Sooner than later, 80% of the code is going to be written by Copilot.”&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description>
+      
     </item>
+    
   </channel>
 </rss>

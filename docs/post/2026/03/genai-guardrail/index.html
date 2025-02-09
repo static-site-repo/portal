@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="zh-tw" itemscope itemtype="http://schema.org/WebPage" data-theme="light">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>
+    
+    GenAI 的工程護欄是什麼？—— 把規矩寫成工具鏈會執行的限制 - Potioneer&#39;s Essays
+    </title>
+  
+
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes" />
+
+
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+
+
+<meta name="applicable-device" content="pc,mobile">
+<meta name="color-scheme" content="light dark" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+
+<meta name="generator" content="Hugo 0.160.1" />
+
+
+<link rel="canonical" href="//william-yeh.net/post/2026/03/genai-guardrail/" />
+
+
+
+
+<meta name="author" content="William Yeh" />
+<meta name="description" content="Vibe coding 時，LLM 並不真的「聽話」。很多人因此去找更強的咒語，想拴住這匹脫韁的野馬。
+但 prompt 裡寫一句「請遵守 Hexagonal Architecture」，效果其實很有限。它比較像在工地口頭交代一句「請按圖施工」：有提醒，沒有保證。最後沒歪掉，很多時候也不是因為工人真的照做，而是旁邊還有人在監工。
+你真的相信 AI 會乖乖聽勸嗎？1
+工程上真正有約束力的規矩，不能只停在說明、默契或設計哲學。它得能被系統檢查；必要時，能拒絕、阻斷，甚至直接讓流程停下來。
+所以，談 LLM 時代的工程護欄，先抓住一個判準就夠了：這條規矩能不能被機器檢查，並在必要時改變系統的下一步。
+" />
+
+
+
+
+
+  
+
+
+
+
+
+
+<meta name="keywords" content="ai, programming, craftsmanship, testing" />
+
+
+<meta property="og:url" content="//william-yeh.net/post/2026/03/genai-guardrail/">
+  <meta property="og:site_name" content="Potioneer&#39;s Essays">
+  <meta property="og:title" content="GenAI 的工程護欄是什麼？—— 把規矩寫成工具鏈會執行的限制">
+  <meta property="og:description" content="Vibe coding 時，LLM 並不真的「聽話」。很多人因此去找更強的咒語，想拴住這匹脫韁的野馬。
+但 prompt 裡寫一句「請遵守 Hexagonal Architecture」，效果其實很有限。它比較像在工地口頭交代一句「請按圖施工」：有提醒，沒有保證。最後沒歪掉，很多時候也不是因為工人真的照做，而是旁邊還有人在監工。
+你真的相信 AI 會乖乖聽勸嗎？1
+工程上真正有約束力的規矩，不能只停在說明、默契或設計哲學。它得能被系統檢查；必要時，能拒絕、阻斷，甚至直接讓流程停下來。
+所以，談 LLM 時代的工程護欄，先抓住一個判準就夠了：這條規矩能不能被機器檢查，並在必要時改變系統的下一步。">
+  <meta property="og:locale" content="zh_tw">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2026-03-28T20:00:00+08:00">
+    <meta property="article:modified_time" content="2026-03-28T20:00:00+08:00">
+    <meta property="article:tag" content="Ai">
+    <meta property="article:tag" content="Programming">
+    <meta property="article:tag" content="Craftsmanship">
+    <meta property="article:tag" content="Testing">
+
+  <meta itemprop="name" content="GenAI 的工程護欄是什麼？—— 把規矩寫成工具鏈會執行的限制">
+  <meta itemprop="description" content="Vibe coding 時，LLM 並不真的「聽話」。很多人因此去找更強的咒語，想拴住這匹脫韁的野馬。
+但 prompt 裡寫一句「請遵守 Hexagonal Architecture」，效果其實很有限。它比較像在工地口頭交代一句「請按圖施工」：有提醒，沒有保證。最後沒歪掉，很多時候也不是因為工人真的照做，而是旁邊還有人在監工。
+你真的相信 AI 會乖乖聽勸嗎？1
+工程上真正有約束力的規矩，不能只停在說明、默契或設計哲學。它得能被系統檢查；必要時，能拒絕、阻斷，甚至直接讓流程停下來。
+所以，談 LLM 時代的工程護欄，先抓住一個判準就夠了：這條規矩能不能被機器檢查，並在必要時改變系統的下一步。">
+  <meta itemprop="datePublished" content="2026-03-28T20:00:00+08:00">
+  <meta itemprop="dateModified" content="2026-03-28T20:00:00+08:00">
+  <meta itemprop="wordCount" content="4094">
+  <meta itemprop="keywords" content="Ai,Programming,Craftsmanship,Testing">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="GenAI 的工程護欄是什麼？—— 把規矩寫成工具鏈會執行的限制">
+  <meta name="twitter:description" content="Vibe coding 時，LLM 並不真的「聽話」。很多人因此去找更強的咒語，想拴住這匹脫韁的野馬。
+但 prompt 裡寫一句「請遵守 Hexagonal Architecture」，效果其實很有限。它比較像在工地口頭交代一句「請按圖施工」：有提醒，沒有保證。最後沒歪掉，很多時候也不是因為工人真的照做，而是旁邊還有人在監工。
+你真的相信 AI 會乖乖聽勸嗎？1
+工程上真正有約束力的規矩，不能只停在說明、默契或設計哲學。它得能被系統檢查；必要時，能拒絕、阻斷，甚至直接讓流程停下來。
+所以，談 LLM 時代的工程護欄，先抓住一個判準就夠了：這條規矩能不能被機器檢查，並在必要時改變系統的下一步。">
+
+<link rel="icon" href="/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/style.min.6edbf781d23cf7f4d65ffac62b9976b41795d197a31eb82d57c5a91867aa6ec2.css" integrity="sha256-btv3gdI89/TWX/rGK5l2tBeV0ZejHrgtV8WpGGeqbsI=" media="screen"
+  crossorigin="anonymous">
+
+
+
+<link rel="stylesheet" href="/css/custom.css">
+
+
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+<meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
+
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/katex@0.16.38/dist/katex.min.css"
+    crossorigin="anonymous"
+  >
+
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.38/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.38/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      renderMathInElement(document.body, {
+        delimiters: [
+          { left: "$$", right: "$$", display: true },
+          { left: "$", right: "$", display: false },
+          { left: "\\(", right: "\\)", display: false },
+          { left: "\\[", right: "\\]", display: true }
+        ],
+        throwOnError: false
+      });
+    });
+  </script>
+
+
+<script>
+  (function () {
+    var savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  })();
+</script>
+
+
+</head>
+
+<body>
+  <div id="back-to-top"></div>
+
+  <header class="site-header">
+    
+<div class="desktop-header">
+  <div class="desktop-header-logo">
+    <a href="/" class="logo">
+      
+      Potioneer&#39;s Essays
+      
+    </a>
+  </div>
+
+  <nav class="desktop-navbar">
+    <ul id="menu" class="menu">
+      
+      
+      <li class="menu-item">
+        
+        
+        
+        <a class="menu-item-link" href="//william-yeh.net/">♜</a>
+        
+
+        
+
+      </li>
+      
+      <li class="menu-item">
+        
+        
+        
+        <a class="menu-item-link" href="//william-yeh.net/post/">Archives</a>
+        
+
+        
+
+      </li>
+      
+      <li class="menu-item">
+        
+        
+        <a class="menu-item-link menu-parent" href="//william-yeh.net/series/">
+          Series
+          
+<svg aria-hidden="true" class="lucide lucide-chevron-down hi-svg-inline icon--chevron-down" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="m6 9 6 6 6-6"/></svg>
+        </a>
+        <ul class="submenu">
+          
+          <li class="submenu-item">
+            <a href="//william-yeh.net/series/career-reading-club/">職涯躍升書系導讀會</a>
+          </li>
+          
+          <li class="submenu-item">
+            <a href="//william-yeh.net/series/essence-of-scrum/">Essence of Scrum</a>
+          </li>
+          
+          <li class="submenu-item">
+            <a href="//william-yeh.net/series/scrum-master-training/">Scrum master 培訓系列</a>
+          </li>
+          
+          <li class="submenu-item">
+            <a href="//william-yeh.net/series/agile-decomposition/">敏捷的工作分解方法</a>
+          </li>
+          
+          <li class="submenu-item">
+            <a href="//william-yeh.net/series/systhinking-series/">「系統思考工作坊」系列</a>
+          </li>
+          
+          <li class="submenu-item">
+            <a href="//william-yeh.net/series/criteria-series/">「判準與指標」系列</a>
+          </li>
+          
+          <li class="submenu-item">
+            <a href="//william-yeh.net/series/change-series/">「改變」系列</a>
+          </li>
+          
+          <li class="submenu-item">
+            <a href="//william-yeh.net/series/book-review/">書籍／課程推薦</a>
+          </li>
+          
+        </ul>
+
+        
+
+      </li>
+      
+      <li class="menu-item">
+        
+        
+        
+        <a class="menu-item-link" href="//william-yeh.net/tags/">Tags</a>
+        
+
+        
+
+      </li>
+      
+      <li class="menu-item">
+        
+        
+        
+        <a class="menu-item-link" href="//william-yeh.net/categories/">Categories</a>
+        
+
+        
+
+      </li>
+      
+
+      
+      
+
+      
+
+      <li class="menu-item">
+        <a class="theme-toggle menu-item-link" href="javascript:void(0);">
+
+          
+<svg aria-hidden="true" class="lucide lucide-sun hi-svg-inline theme-icon-light" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+
+          
+<svg aria-hidden="true" class="lucide lucide-moon hi-svg-inline theme-icon-dark" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+
+        </a>
+      </li>
+
+      <li class="menu-item">
+        <a class="menu-item-link" href="//william-yeh.net/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
+          title="rss" target="_blank">
+          
+<svg aria-hidden="true" class="lucide lucide-rss hi-svg-inline icon--rss" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg>
+        </a>
+        
+      </li>
+    </ul>
+  </nav>
+</div>
+
+    
+
+<div class="mobile-header">
+  <div id="mobile-navbar" class="mobile-navbar">
+    <div id="mobile-navbar-icon" class="mobile-navbar-icon">
+      
+<svg aria-hidden="true" class="lucide lucide-menu hi-svg-inline icon--menu" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+    </div>
+    <div class="mobile-navbar-logo">
+      <a href="/" class="logo">Potioneer&#39;s Essays</a>
+    </div>
+  </div>
+
+  <div id="mobile-menu-close-modal" class="mobile-menu-close-modal"></div>
+  <nav id="mobile-menu" class="mobile-menu">
+    <ul class="mobile-menu-list">
+      <li class="mobile-menu-item">
+        
+        
+        
+        <a class="menu-item-link" href="//william-yeh.net/">♜</a>
+        
+        
+      </li><li class="mobile-menu-item">
+        
+        
+        
+        <a class="menu-item-link" href="//william-yeh.net/post/">Archives</a>
+        
+        
+      </li><li class="mobile-menu-item">
+        
+        
+        <div class="mobile-menu-parent">
+          <span class="mobile-submenu-open"></span>
+          <a href="//william-yeh.net/series/">
+            Series
+          </a>
+        </div>
+        <ul class="mobile-submenu-list">
+          
+          <li>
+            <a href="//william-yeh.net/series/career-reading-club/">職涯躍升書系導讀會</a>
+          </li>
+          
+          <li>
+            <a href="//william-yeh.net/series/essence-of-scrum/">Essence of Scrum</a>
+          </li>
+          
+          <li>
+            <a href="//william-yeh.net/series/scrum-master-training/">Scrum master 培訓系列</a>
+          </li>
+          
+          <li>
+            <a href="//william-yeh.net/series/agile-decomposition/">敏捷的工作分解方法</a>
+          </li>
+          
+          <li>
+            <a href="//william-yeh.net/series/systhinking-series/">「系統思考工作坊」系列</a>
+          </li>
+          
+          <li>
+            <a href="//william-yeh.net/series/criteria-series/">「判準與指標」系列</a>
+          </li>
+          
+          <li>
+            <a href="//william-yeh.net/series/change-series/">「改變」系列</a>
+          </li>
+          
+          <li>
+            <a href="//william-yeh.net/series/book-review/">書籍／課程推薦</a>
+          </li>
+          
+        </ul>
+        
+      </li><li class="mobile-menu-item">
+        
+        
+        
+        <a class="menu-item-link" href="//william-yeh.net/tags/">Tags</a>
+        
+        
+      </li><li class="mobile-menu-item">
+        
+        
+        
+        <a class="menu-item-link" href="//william-yeh.net/categories/">Categories</a>
+        
+        
+      </li>
+      
+
+      
+
+      <li class="mobile-menu-item">
+        <a class="theme-toggle menu-item-link" href="javascript:void(0);">
+
+          
+<svg aria-hidden="true" class="lucide lucide-sun hi-svg-inline theme-icon-light" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+
+          
+<svg aria-hidden="true" class="lucide lucide-moon hi-svg-inline theme-icon-dark" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+
+        </a>
+      </li>
+
+      <li class="mobile-menu-item">
+        <a class="menu-item-link" href="//william-yeh.net/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
+          title="rss" target="_blank">
+          
+<svg aria-hidden="true" class="lucide lucide-rss hi-svg-inline icon--rss" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg>
+        </a>
+        
+      </li>
+    </ul>
+  </nav>
+</div>
+
+  </header>
+
+  
+
+  
+
+
+
+  <main id="main" class="main pico container">
+    <div class="content-wrapper">
+    <aside class="left-sidebar">
+      
+<nav class="toc" id="toc">
+    <div class="toc-title">文章目錄</div>
+    <div class="toc-content custom-scrollbar">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#一先分清鷹架驗證器與護欄">一、先分清鷹架、驗證器與護欄</a></li>
+    <li><a href="#二spec-與架構原則在做什麼">二、Spec 與架構原則在做什麼</a></li>
+    <li><a href="#三真正握著-pass--fail-的是驗證器">三、真正握著 pass / fail 的，是驗證器</a></li>
+    <li><a href="#四當-agent-能行動護欄就得前移">四、當 agent 能行動，護欄就得前移</a></li>
+    <li><a href="#五哪些規矩值得寫硬">五、哪些規矩值得寫硬</a></li>
+    <li><a href="#結論">結論</a></li>
+  </ul>
+</nav>
+    </div>
+  </nav>
+
+
+    </aside>
+
+    <div id="content" class="content">
+      <article class="post">
+        
+        <header class="post-header">
+          <h1 class="post-title">GenAI 的工程護欄是什麼？—— 把規矩寫成工具鏈會執行的限制</h1>
+          
+
+
+
+          <div class="post-meta-list">
+  <div class="post-meta-item post-meta-author">
+    
+<svg aria-hidden="true" class="lucide lucide-user-round-pen hi-svg-inline" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M2 21a8 8 0 0 1 10.821-7.487"/><path d="M21.378 16.626a1 1 0 0 0-3.004-3.004l-4.01 4.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z"/><circle cx="10" cy="8" r="5"/></svg>
+    William Yeh
+    
+  </div>
+
+  <div class="post-meta-item post-meta-time">
+    
+<svg aria-hidden="true" class="lucide lucide-calendar-days hi-svg-inline" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/></svg>
+    <time datetime=" 2026-03-28">
+      2026-03-28
+    </time>
+
+
+    
+
+  </div>
+
+
+  <div class="post-meta__right">
+    <span class="post-meta-more">
+      約 4094 字 -
+      預計閱讀 9 分鐘
+      
+      
+      </span>
+
+    <div class="post-meta-item post-meta-category">
+      
+        
+          
+        <a href="//william-yeh.net/categories/tech/">tech</a>
+    </div>
+
+
+    
+    
+
+
+    
+    
+  </div>
+</div>
+
+        </header>
+
+        
+        <div class="post-content">
+          <p>Vibe coding 時，LLM 並不真的「聽話」。很多人因此去找更強的咒語，想拴住這匹脫韁的野馬。</p>
+<p>但 prompt 裡寫一句「請遵守 Hexagonal Architecture」，效果其實很有限。它比較像在工地口頭交代一句「請按圖施工」：有提醒，沒有保證。最後沒歪掉，很多時候也不是因為工人真的照做，而是旁邊還有人在監工。</p>
+<p>你真的相信 AI 會乖乖聽勸嗎？<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+<p>工程上真正有約束力的規矩，不能只停在說明、默契或設計哲學。它得能被系統檢查；必要時，能拒絕、阻斷，甚至直接讓流程停下來。</p>
+<p>所以，談 LLM 時代的工程護欄，先抓住一個判準就夠了：<strong>這條規矩能不能被機器檢查，並在必要時改變系統的下一步。</strong></p>
+
+<link rel="stylesheet" href="/css/hugo-easy-gallery.css" />
+<div class="box">
+<figure  itemprop="associatedMedia"
+  itemscope itemtype="http://schema.org/ImageObject" 
+  style="max-width:30em" >
+    <div class="img">
+      <img itemprop="thumbnail" src="/img/2026/03/genai-guardrail.jpg" />
+    </div>
+    <a href="/img/2026/03/genai-guardrail.jpg" itemprop="contentUrl"></a>
+  </figure>
+</div>
+
+<h2 id="一先分清鷹架驗證器與護欄">一、先分清鷹架、驗證器與護欄</h2>
+<p>談工程護欄時，最容易混在一起的，其實是三種不同功能的東西：</p>
+<ul>
+<li><strong>鷹架 (scaffold)</strong>：幫語言模型比較容易走在對的方向上。它提高做對的機率，減少誤解與偏航，但不能保證出錯時一定攔得住。</li>
+<li><strong>驗證器 (verifier)</strong>：回答「這份產出有沒有過關」的機制，例如測試、型別檢查、靜態分析器、形式驗證器。</li>
+<li><strong>護欄 (guardrail)</strong>：當語言模型做錯、做偏、做越界的事情時，能阻止它繼續往下走的機制。</li>
+</ul>
+<p>差別的關鍵，在於：<strong>檢查結果能不能改變系統的下一步。</strong> 很多時候，護欄不是另一種神祕工具，而是把驗證器接進流程控制之後扮演的角色。測試如果只是存在於 repository 裡，它提供的是訊號；一旦接進 CI，成為合併或部署的阻斷條件，它才同時成為護欄。</p>
+<p>像 Design by Contract、Specification by Example、static analysis、property-based testing、sandbox、deployment gate、人工批准，放進來看都會更清楚：有些是在幫你對齊，有些在幫你檢查，有些則真的會把下一步擋下來。</p>
+<p>到了 LLM 時代，重要的不是把這些名字講得更完整，而是把重要約束盡量往可檢查、可判定、可阻斷的一端推。<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></p>
+<h2 id="二spec-與架構原則在做什麼">二、Spec 與架構原則在做什麼</h2>
+<p>Spec 和架構原則都能提供約束，但它們處理的不是同一件事。</p>
+<p><a href="https://martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html">Spec-driven development (SDD)</a> 處理的是<strong>對齊</strong>。它把需求、變更、設計、任務與實作串成同一條工作鏈，讓人和 AI 協作時，不必只靠聊天上下文去維持一致。較強版本的 SDD，會把 spec 提升成 source of truth，往下展開 plan、tasks，甚至進一步驅動 implementation。<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> 較輕版本的 SDD，則是在 code 之前先固定一層持續存在的 spec，讓需求、變更與實作之間有穩定的承接點。<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup></p>
+<p>它的價值不在於把文件寫得更厚，而在於後續實作、驗證與變更追蹤都能對著同一組座標工作。規格一旦能持續存在、被引用、被對照，後面的檢查就不是從零開始。這能減少上下文漂移，也能降低人和語言模型各講各話的機率。</p>
+<p>架構原則處理的，則是<strong>邊界</strong>。它固定依賴方向、責任分配與模組之間的接觸方式，避免修改時一路穿透整個系統。</p>
+<p>像「domain 不應依賴 infrastructure」、「application service 不應直接碰 UI adapter」、「core module 不得 import vendor SDK」這類規則，如果只存在於設計文件、團隊默契或 code review comment 裡，主要仍是在幫人理解系統。把它們寫成依賴規則、匯入限制、architecture lint、架構測試與 CI 阻斷條件之後，邊界才真的固定下來。像 <a href="https://www.archunit.org/">ArchUnit</a> 這類工具做的，就是把依賴方向、分層限制與循環依賴寫成可自動執行、一有違規就 fail 的規則。<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup></p>
+<p>Spec 固定的是座標；架構原則固定的是邊界。兩者都很重要，但它們做的都還是同一類事：<strong>讓系統比較不容易歪掉。</strong></p>
+<h2 id="三真正握著-pass--fail-的是驗證器">三、真正握著 pass / fail 的，是驗證器</h2>
+<p>到了產出這一層，真正決定過不過關的，通常還是型別系統、schema、assertions、static analysis、property-based testing、design by contract、formal verification 這類能給出硬性判定的機制。它們檢查某個性質成不成立；不成立，就直接給出 fail signal。接進自動化流程之後，也最容易變成真正的護欄。</p>
+<p>語言模型可以幫忙讀工具輸出、整理告警、推測可能原因，但還不適合坐在正式裁決者的位置上。近年的 benchmark 顯示，LLM 在某些程式語意推理任務上確實進步了；但碰到更深層、多步驟的靜態分析推理，表現仍然不穩。比較保守的工程結論是：現階段，語言模型可以協助 static analysis workflow，但還不能把它當成正式 static analyzer 的替代品。<sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup></p>
+<p>至於 LLM-as-reviewer，比較適合放在<strong>初步快篩</strong>的位置。它能幫忙擴大檢查面，例如指出明顯臭味、補測試點子、列出可能漏掉的邊界情況，或整理其他工具的輸出。最近也有研究指出，它能讓檢查更聚焦、更少幻覺。<sup id="fnref:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup> 這些都有價值，但它的位置仍然是初步快篩，不是最後仲裁。</p>
+<p>不過這裡還有一層更容易被忽略的問題。驗證器的強度，不只要看用的是哪個框架，也得看規則是誰寫的。以 property-based testing 為例，如果 property 是人先定義好，再交給框架展開大量案例，它仍然是很強的驗證器；但如果連 property 都交給 LLM 自己發明，就會有球員兼裁判的問題：它測的到底是原本預期的行為，還是自己最容易實現的性質？上游若把 property 的定義權一併交出去，驗證強度就可能被偷換。<sup id="fnref:8"><a href="#fn:8" class="footnote-ref" role="doc-noteref">8</a></sup></p>
+<p>換到 property-based testing、design by contract 和 formal verification，也還是同一件事。語言模型可以協助補測試、補契約條件<sup id="fnref:9"><a href="#fn:9" class="footnote-ref" role="doc-noteref">9</a></sup>、整理驗證器回饋、加速迭代修正；但最後握著裁決權的，仍然是 verifier。<sup id="fnref:10"><a href="#fn:10" class="footnote-ref" role="doc-noteref">10</a></sup></p>
+<h2 id="四當-agent-能行動護欄就得前移">四、當 agent 能行動，護欄就得前移</h2>
+<p>不過，事情一旦從「產出」走到「行動」，風險模型就變了。</p>
+<p>如果 agent 只會補全程式碼，失誤大多還停留在寫錯；如果 agent 還能讀寫檔案、改設定、跑腳本、觸發部署，甚至反覆自我修補，失誤就變成做錯事。前者主要看驗證，後者則要先看權限。</p>
+<p>所以，前面幾節談的那些編譯期、測試期、驗證期約束，到了這裡都還不夠。agent 一旦有了工具權限，真正重要的防線就會往前移到執行邊界本身。此時要管的，不只是它寫得對不對，而是它能不能碰、可以碰到哪裡、出了事是否留痕、哪一步需要停下來等人批准。</p>
+<p>這時真正重要的護欄，就是權限範圍控管、沙箱隔離、稽核記錄、速率限制、部署批准，以及其他執行期的限制條件。</p>
+<p>Agent 一旦從「生成建議」走到「執行動作」，問題就不再只是怎麼驗證產出，而是：<strong>哪些限制必須在它動手之前就先寫硬。</strong></p>
+<h2 id="五哪些規矩值得寫硬">五、哪些規矩值得寫硬</h2>
+<p>到了這裡，問題已經不是要不要再多一些原則，而是：<strong>哪些限制如果不寫硬，代價會高到不能接受。</strong></p>
+<p>判斷這件事，我會先看四個面向：</p>
+<ol>
+<li><strong>錯誤代價</strong>：出錯的成本高不高。</li>
+<li><strong>行動權限</strong>：agent 的行為會不會直接改變外部世界。</li>
+<li><strong>審計需求</strong>：事後需不需要清楚追溯，誰在什麼條件下放行。</li>
+<li><strong>一致性成本</strong>：這條規矩如果只靠默契，能不能跨人員、跨時間穩定維持。</li>
+</ol>
+<p>這四個維度上的壓力越大，這條規矩就越不適合只留在文件、會議紀錄或 code review comment 裡，越應該被翻成測試、schema、lint rule、approval gate 或權限控制。</p>
+<p>反過來說，如果錯誤代價低、行動權限小、審計需求弱，而且團隊本來就能穩定維持一致，那它可能就不需要被工具鏈執法。留在慣例、review 或較弱的規格層，很多時候就夠了。</p>
+<p>所以，真正要問的不是規矩能不能寫硬，而是：<strong>它值不值得被寫硬。</strong></p>
+<p>這裡還是要小心另一個問題。當規矩大量轉成可由機器裁決的限制，很容易出現新的激勵錯置：大家開始為了過關而寫測試，為了通過檢查而補 schema，最後得到的未必是更好的工程品質，而可能只是更僵硬的流程。</p>
+<p>護欄不是越多越好。好的護欄，是把高代價風險卡住，同時不要把系統變成只會通關的官僚機器。</p>
+<h2 id="結論">結論</h2>
+<p>所以真正要問的，往往不是這條規矩寫了沒有，而是當它出了事，有沒有機制真的在監工。</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>關於大語言模型 nondeterministic 的問題，詳見〈<a href="//william-yeh.net/post/2026/03/genai-se-level-up/">AI 會寫程式之後，軟體工程真正變貴的是什麼</a>〉一文。&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>本文主張：對 LLM 而言，穩定的約束力主要來自外部、可機器檢查、且可嵌入流程阻斷的機制，而不是語言模型是否「理解規矩」。&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3">
+<p>參考 <a href="https://github.com/github/spec-kit">Spec Kit</a> 對 Spec-Driven Development 的自我定義與 workflow 說明：specification 不再只是 scaffolding，而是變成 executable source，能沿著 constitution → specification → planning → tasks → implementation 的鏈條依序往下執行。&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4">
+<p>參考 <a href="https://github.com/Fission-AI/OpenSpec">OpenSpec</a> 的 README、concepts 與 getting started 文件：OpenSpec 強調 <em>fluid not rigid</em>、<em>iterative not waterfall</em>，以 <code>specs/</code> 作為 current behavior 的 source of truth，以 <code>changes/</code> 保存每次 change 的 <code>proposal.md</code>、delta specs、<code>design.md</code>、<code>tasks.md</code>，並沿著 proposal → specs → design → tasks → implement 的順序推進。&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:5">
+<p>根據 <a href="https://www.archunit.org/">ArchUnit</a> 官方使用手冊的說法，ArchUnit 可檢查 package/class 依賴、layer、slice 與循環依賴，並以一般 Java 單元測試框架自動執行 architecture 與 coding rules。&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:6">
+<p><a href="https://arxiv.org/abs/2507.05269">CoRe benchmark</a> 專門評估 LLM 在靜態分析型程式語意推理上的能力；結果顯示，模型雖能處理部分任務，但在更深層、多步驟的語意推理上仍有明顯限制。本文據此採取較保守的工程判斷：現階段不宜把 LLM 視為正式 static analyzer 的替代品。&#160;<a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:7">
+<p><a href="https://arxiv.org/abs/2512.17540">SGCR (specification-grounded code review)</a> 的核心主張是把 code review 建立在明確、人工撰寫的規格上，以提升回饋的相關性與可信度；這支持較保守的結論：spec-grounded review 值得投入，但現階段更適合放在初步快篩，而非最後仲裁者的位置。&#160;<a href="#fnref:7" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:8">
+<p>許多由 LLM 產生的測試程式，常常有球員兼裁判的問題。最明顯的例子，就是濫用 mock 湊出綠燈通過的假象。因此，在 &ldquo;<a href="https://arxiv.org/abs/2506.18315v1">Use Property-Based Testing to Bridge LLM Code Generation and Validation</a>&rdquo; 這份研究中，也承認由 LLM 產生 property，是他們這份研究的弱點之一。&#160;<a href="#fnref:8" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:9">
+<p>&ldquo;<a href="https://arxiv.org/abs/2510.12702">Beyond Postconditions</a>&rdquo; 這篇研究關注的是：LLM 能不能從程式或既有規格中推導出可供自動驗證使用的 formal contracts，而且範圍不只限於傳統 postconditions。它的價值在於「協助起草與補全契約條件」：能幫忙加快 formal specification 的建構，但不等於模型已經可以取代 verifier 來正式裁決。&#160;<a href="#fnref:9" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:10">
+<p><a href="https://arxiv.org/abs/2509.22908">Vericoding benchmark</a> 與 Faria 等人的 <a href="https://arxiv.org/abs/2601.12845">Dafny annotation</a> 研究都支持同一件事：當流程採用「生成 → verifier 檢查 → 回饋 → 再生成」時，真正掌握裁決權的仍是驗證器 (verifier)，而不是語言模型本身。&#160;<a href="#fnref:10" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+        </div>
+
+        
+        
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">William Yeh</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+      2026-03-28
+      
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">授權條款</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW" target="_blank">CC BY-NC-SA 4.0</a> (姓名標示-非商業性-相同方式分享 4.0 國際)</span>
+  </p>
+</div>
+
+
+
+        
+        
+
+
+        <footer class="post-footer">
+          <div class="post-tags">
+              <a href="//william-yeh.net/tags/ai/">ai</a>
+                <a href="//william-yeh.net/tags/programming/">programming</a>
+                <a href="//william-yeh.net/tags/craftsmanship/">craftsmanship</a>
+                <a href="//william-yeh.net/tags/testing/">testing</a>
+                
+            </div>
+
+
+          
+          <nav class="post-nav">
+            
+              <a class="prev" href="/post/2026/04/genai-pl/">
+                
+                <i class="iconfont">
+                  
+<svg aria-hidden="true" class="lucide lucide-chevron-left hi-svg-inline" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="m15 18-6-6 6-6"/></svg>
+                </i>
+                <span class="prev-text nav-default">AI 時代，該怎麼選程式語言？</span>
+                <span class="prev-text nav-mobile">上一篇</span>
+              </a>
+            
+              <a class="next" href="/post/2026/03/genai-revisit-scrum/">
+                <span class="next-text nav-default">當 Agile 遇見 AI：變與不變</span>
+                <span class="prev-text nav-mobile">下一篇</span>
+                
+                <i class="iconfont">
+                  
+<svg aria-hidden="true" class="lucide lucide-chevron-right hi-svg-inline" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="m9 18 6-6-6-6"/></svg>
+                </i>
+              </a>
+          </nav>
+        </footer>
+      </article>
+
+      
+      
+
+
+      
+      
+
+  
+
+  
+  
+
+  
+  
+    <div class="post">
+  <script src="https://utteranc.es/client.js"
+        repo= "William-Yeh/utterances-area"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script>
+</div>
+
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+
+    </div>
+
+    <aside class="right-sidebar">
+      
+    </aside>
+  </div>
+  </main>
+
+  <footer id="footer" class="site-footer">
+    <div class="social-icon-links">
+  
+
+
+<a href="mailto:william.pjyeh@gmail.com" rel="me noopener" class="social-icon-link" title="email" >
+  
+<svg aria-hidden="true" class="icon hi-svg-inline" fill="currentColor" height="1em" version="1.1" viewBox="0 0 1451 1024" width="1em" xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <path d="M664.781909 681.472759 0 97.881301C0 3.997201 71.046997 0 71.046997 0L474.477909 0 961.649408 0 1361.641813 0C1361.641813 0 1432.688811 3.997201 1432.688811 97.881301L771.345323 681.472759C771.345323 681.472759 764.482731 685.154773 753.594283 688.65053L753.594283 688.664858C741.602731 693.493018 729.424896 695.068979 718.077952 694.839748 706.731093 695.068979 694.553173 693.493018 682.561621 688.664858L682.561621 688.65053C671.644501 685.140446 664.781909 681.472759 664.781909 681.472759L664.781909 681.472759ZM718.063616 811.603883C693.779541 811.016482 658.879232 802.205449 619.10784 767.734955 542.989056 701.759633 0 212.052267 0 212.052267L0 942.809523C0 942.809523 0 1024 83.726336 1024L682.532949 1024 753.579947 1024 1348.948139 1024C1432.688811 1024 1432.688811 942.809523 1432.688811 942.809523L1432.688811 212.052267C1432.688811 212.052267 893.138176 701.759633 817.019477 767.734955 777.248 802.205449 742.347691 811.03081 718.063616 811.603883L718.063616 811.603883Z"></path>
+</svg>
+
+</a>
+<a href="https://twitter.com/william_yeh" rel="me noopener" class="social-icon-link" title="twitter"  target="_blank" >
+  
+<svg aria-hidden="true" class="icon hi-svg-inline" fill="currentColor" height="1em" version="1.1" viewBox="0 0 1264 1024" width="1em" xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <path d="M1229.8616 18.043658c0 0-117.852626 63.135335-164.151872 67.344358-105.225559-164.151872-505.082682-92.598492-437.738325 223.078185C278.622548 312.675223 89.216542 47.506814 89.216542 47.506814s-117.852626 189.406006 75.762402 345.139833C127.097743 396.85567 55.544363 371.601535 55.544363 371.601535S26.081207 535.753407 253.368414 615.724832c-21.045112 29.463156-113.643603 8.418045-113.643603 8.418045s25.254134 143.10676 231.496229 180.987961c-143.10676 130.479693-387.230056 92.598492-370.393967 105.225559 206.242095 189.406006 1119.599946 231.496229 1128.01799-643.98042C1179.353331 249.539887 1263.533778 123.269217 1263.533778 123.269217s-130.479693 37.881201-138.897738 33.672179C1225.652577 98.015083 1229.8616 18.043658 1229.8616 18.043658"></path>
+</svg>
+
+</a>
+<a href="https://www.facebook.com/william.yeh" rel="me noopener" class="social-icon-link" title="facebook"  target="_blank" >
+  
+<svg aria-hidden="true" class="icon hi-svg-inline" fill="currentColor" height="1em" version="1.1" viewBox="0 0 1024 1024" width="1em" xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <path d="M965.7344 2.7648c14.848 0 28.2624 5.5296 40.2432 16.6912C1017.9584 30.5152 1024 43.52 1024 58.2656l0 910.2336c0 14.848-6.0416 27.7504-18.0224 38.8096C993.8944 1018.4704 980.48 1024 965.7344 1024L704.9216 1024 704.9216 629.9648l133.2224 0 19.456-155.4432-152.576 0L705.024 373.0432c0-50.688 25.9072-76.0832 77.7216-76.0832l80.4864 0L863.232 163.5328c-27.7504-5.4272-67.4816-8.192-119.296-8.192-59.1872 0-106.8032 18.0224-142.9504 54.0672C564.736 245.5552 546.7136 296.0384 546.7136 360.7552l0 113.7664L413.4912 474.5216l0 155.4432 133.2224 0L546.7136 1024 55.5008 1024c-14.848 0-27.7504-5.5296-38.8096-16.6912C5.5296 996.2496 0 983.3472 0 968.4992L0 58.2656C0 43.52 5.5296 30.5152 16.6912 19.456c11.0592-11.0592 24.064-16.6912 38.8096-16.6912L965.7344 2.7648z"></path>
+</svg>
+
+</a>
+<a href="https://www.linkedin.com/in/pjyeh/" rel="me noopener" class="social-icon-link" title="linkedin"  target="_blank" >
+  
+<svg aria-hidden="true" class="icon hi-svg-inline" fill="currentColor" height="1em" version="1.1" viewBox="0 0 1024 1024" width="1em" xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <path d="M872.405333 872.618667h-151.637333v-237.610667c0-56.661333-1.152-129.578667-79.018667-129.578667-79.061333 0-91.136 61.653333-91.136 125.397334v241.792H398.976V384h145.664v66.602667h1.962667c20.352-38.4 69.845333-78.933333 143.786666-78.933334 153.642667 0 182.058667 101.12 182.058667 232.746667v268.202667zM227.712 317.141333a87.978667 87.978667 0 0 1-88.021333-88.106666 88.064 88.064 0 1 1 88.021333 88.106666z m76.032 555.477334H151.68V384h152.064v488.618667zM948.266667 0H75.562667C33.792 0 0 33.024 0 73.770667v876.458666C0 991.018667 33.792 1024 75.562667 1024h872.576C989.866667 1024 1024 991.018667 1024 950.229333V73.770667C1024 33.024 989.866667 0 948.138667 0h0.128z"></path>
+</svg>
+
+</a>
+<a href="https://github.com/william-yeh" rel="me noopener" class="social-icon-link" title="github"  target="_blank" >
+  
+<svg aria-hidden="true" class="icon hi-svg-inline" fill="currentColor" height="1em" version="1.1" viewBox="0 0 1024 1024" width="1em" xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <path d="M512 12.672c-282.88 0-512 229.248-512 512 0 226.261333 146.688 418.133333 350.08 485.76 25.6 4.821333 34.986667-11.008 34.986667-24.618667 0-12.16-0.426667-44.373333-0.64-87.04-142.421333 30.890667-172.458667-68.693333-172.458667-68.693333C188.672 770.986667 155.008 755.2 155.008 755.2c-46.378667-31.744 3.584-31.104 3.584-31.104 51.413333 3.584 78.421333 52.736 78.421333 52.736 45.653333 78.293333 119.850667 55.68 149.12 42.581333 4.608-33.109333 17.792-55.68 32.426667-68.48-113.706667-12.8-233.216-56.832-233.216-253.013333 0-55.893333 19.84-101.546667 52.693333-137.386667-5.76-12.928-23.04-64.981333 4.48-135.509333 0 0 42.88-13.738667 140.8 52.48 40.96-11.392 84.48-17.024 128-17.28 43.52 0.256 87.04 5.888 128 17.28 97.28-66.218667 140.16-52.48 140.16-52.48 27.52 70.528 10.24 122.581333 5.12 135.509333 32.64 35.84 52.48 81.493333 52.48 137.386667 0 196.693333-119.68 240-233.6 252.586667 17.92 15.36 34.56 46.762667 34.56 94.72 0 68.522667-0.64 123.562667-0.64 140.202666 0 13.44 8.96 29.44 35.2 24.32C877.44 942.592 1024 750.592 1024 524.672c0-282.752-229.248-512-512-512"></path>
+</svg>
+
+</a>
+<a href="https://www.slideshare.net/williamyeh" rel="me noopener" class="social-icon-link" title="coding"  target="_blank" >
+  
+<svg aria-hidden="true" class="icon hi-svg-inline" fill="currentColor" height="1em" version="1.1" viewBox="0 0 1024 1024" width="1em">
+  <path
+      d="m 313.5359,557.51414 c 9.229,0 16.57801,8.88719 16.57801,19.99616 0,11.10899 -7.34901,19.99617 -16.57801,19.99617 -9.229,0 -16.57801,-8.88718 -16.57801,-19.99617 0,-11.10897 7.34901,-19.99616 16.57801,-19.99616 z m 393.7706,0 c 9.22899,0 16.57802,8.88719 16.57802,19.99616 0,11.10899 -7.34903,19.99617 -16.57802,19.99617 -9.229,0 -16.57802,-8.88718 -16.57802,-19.99617 0,-11.10897 7.34902,-19.99616 16.57802,-19.99616 z"
+      id="path6"/>
+  <path
+      d="m 945.8932,448.98796 c -27.17427,0 -51.1013,17.26164 -64.43208,43.23957 C 836.17066,393.44306 741.8298,302.00762 625.27096,264.23708 562.37704,239.1137 518.28294,190.57601 512.8139,134.17657 507.34486,190.74691 463.25077,239.1137 400.35685,264.23708 283.79802,301.83671 189.45714,393.44306 144.16669,492.22753 130.83591,466.2496 107.07979,448.98796 79.734607,448.98796 c -41.701401,0 -75.541066,40.84686 -75.541066,91.26454 0,50.41768 33.839665,91.26454 75.541066,91.26454 12.64715,0 24.610663,-3.75996 35.206923,-10.42536 3.58906,163.55837 180.30728,269.69186 397.87237,270.03367 217.5651,-0.34181 394.28332,-106.4753 397.87238,-270.03367 10.42535,6.6654 22.55977,10.42536 35.20692,10.42536 41.7014,0 75.541,-40.84686 75.541,-91.26454 0.171,-50.41768 -33.6687,-91.26454 -75.541,-91.26454 z M 114.2579,568.79403 c -3.58906,13.15987 -19.312535,18.79981 -35.206921,12.47625 -15.894385,-6.15267 -25.977916,-21.87616 -22.388867,-35.03602 3.58906,-13.15987 19.312533,-18.79981 35.206919,-12.47624 15.894389,6.15267 25.807019,21.87614 22.388869,35.03601 z m 398.556,276.69904 C 338.31748,845.15126 196.97707,762.603 196.97707,644.33509 c 0,-2.56361 0.1709,-4.95631 0.1709,-7.34902 0,-0.85453 0,-1.53817 0.17092,-2.3927 0.1709,-1.70908 0.34181,-3.41814 0.34181,-4.95631 0.1709,-2.22179 0.51273,-4.44359 0.85454,-6.6654 0,-0.1709 0,-0.51271 0.1709,-0.68362 3.58906,-23.2434 12.47624,-58.79214 26.14883,-79.13012 32.64331,-47.51224 90.92273,-78.9592 157.23479,-78.9592 51.1013,0 97.41721,18.79981 130.91506,49.05041 33.49784,-30.2506 79.64283,-49.05041 130.91504,-49.05041 66.48298,0 124.59148,31.61786 157.23479,78.9592 13.67259,20.50889 22.55977,55.88672 26.14883,79.13012 0,0.17091 0,0.51272 0.17091,0.68362 0.34182,2.22181 0.51272,4.44361 0.85453,6.6654 0.17091,1.70907 0.34181,3.24723 0.34181,4.95631 0,0.85453 0.17092,1.53817 0.17092,2.3927 0.17091,2.39271 0.17091,4.95631 0.17091,7.34902 C 828.82165,762.603 687.48124,845.15126 512.8139,845.49307 Z M 946.74774,581.27028 c -15.89439,6.15265 -31.61787,0.68362 -35.20692,-12.47625 -3.58906,-13.15987 6.49448,-28.88334 22.38887,-35.03601 15.89438,-6.15267 31.61786,-0.68363 35.20692,12.47624 3.41815,12.98896 -6.49448,28.71243 -22.38887,35.03602 z"
+      id="path8"/>
+</svg>
+
+</a>
+
+
+<a href="//william-yeh.net/index.xml" rel="noopener alternate" type="application/rss&#43;xml" class="social-icon-link" title="rss"
+  target="_blank">
+  
+<svg aria-hidden="true" class="lucide lucide-rss hi-svg-inline" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg>
+</a>
+
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+    2015 -
+    2026
+    <span class="heart">
+      
+      <i class="iconfont">
+        
+<svg aria-hidden="true" class="lucide lucide-heart hi-svg-inline" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+      </i>
+    </span><span class="author">
+      William Yeh
+      
+    </span></span>
+
+  
+  
+
+  
+</div>
+
+  </footer>
+
+  
+
+
+
+
+<script type="text/javascript" src="/js/main.0171f082d33f8febdbfe89876860e1624f5b622b263af5e06e31e93abd51a968.js" integrity="sha256-AXHwgtM/j&#43;vb/omHaGDhYk9bYismOvXgbjHpOr1RqWg=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/katex@0.11.0/dist/katex.min.css"
+    integrity="sha384-BdGj8xC2eZkQaxoQ8nSLefg4AV4/AwB3Fj+8SUSo7pnKP6Eoy18liIKTPn9oBYNG"
+    crossorigin="anonymous">
+
+  
+  <script defer
+    src="https://cdn.jsdelivr.net/npm/katex@0.11.0/dist/katex.min.js"
+    integrity="sha384-JiKN5O8x9Hhs/UE5cT5AAJqieYlOZbGT3CHws/y97o3ty4R7/O5poG9F3JoiOYw1"
+    crossorigin="anonymous"></script>
+
+  
+  <script defer
+    src="https://cdn.jsdelivr.net/npm/katex@0.11.0/dist/contrib/auto-render.min.js"
+    integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI"
+    crossorigin="anonymous" onload="renderMathInElement(document.body);">
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      renderMathInElement(document.body, {
+        
+      });
+    });
+  </script>
+
+
+
+
+
+
+  
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

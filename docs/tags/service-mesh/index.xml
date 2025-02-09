@@ -4,30 +4,552 @@
     <title>Service Mesh on Potioneer&#39;s Essays</title>
     <link>//william-yeh.net/tags/service-mesh/</link>
     <description>Recent content in Service Mesh on Potioneer&#39;s Essays</description>
-    <generator>Hugo</generator>
+    <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <lastBuildDate>Fri, 19 Apr 2019 23:00:00 +0800</lastBuildDate>
-    <atom:link href="//william-yeh.net/tags/service-mesh/index.xml" rel="self" type="application/rss+xml" />
+    
+        <atom:link href="//william-yeh.net/tags/service-mesh/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>Next &#39;19 的 Istio 場次重點摘要</title>
       <link>//william-yeh.net/post/2019/04/next19-istio/</link>
       <pubDate>Fri, 19 Apr 2019 23:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2019/04/next19-istio/</guid>
-      <description>&lt;p&gt;四月 9&amp;ndash;11 日去舊金山參加 Google Cloud 的 &lt;a href=&#34;https://cloud.withgoogle.com/next/sf/&#34;&gt;Next ’19&lt;/a&gt; 大會，收穫頗大。&lt;/p&gt;&#xA;&lt;p&gt;這場大會，同一時段就有近 30 場專題演講同時進行，議程滿滿，勢必得做取捨。基於工作需要及個人興趣，我主要選擇與容器相關的場次：service mesh、Windows containers、混合雲、資安實務。&lt;/p&gt;&#xA;&lt;p&gt;我發現，光是這些場次，就得花很大力氣去消化、實驗與應用。&lt;/p&gt;&#xA;&lt;p&gt;我們這些所謂的「台港團」會在 GCPUG Taipei 舉辦一場&lt;a href=&#34;https://www.meetup.com/GCPUG-Taipei/events/260555968/&#34;&gt;分享會&lt;/a&gt;。因為自己不克參加，便以這篇文章，針對我鎖定的核心議題：Istio，做一番重點摘要，以饗讀者。&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;四月 9&amp;ndash;11 日去舊金山參加 Google Cloud 的 &lt;a href=&#34;https://cloud.withgoogle.com/next/sf/&#34;&gt;Next ’19&lt;/a&gt; 大會，收穫頗大。&lt;/p&gt;
+&lt;p&gt;這場大會，同一時段就有近 30 場專題演講同時進行，議程滿滿，勢必得做取捨。基於工作需要及個人興趣，我主要選擇與容器相關的場次：service mesh、Windows containers、混合雲、資安實務。&lt;/p&gt;
+&lt;p&gt;我發現，光是這些場次，就得花很大力氣去消化、實驗與應用。&lt;/p&gt;
+&lt;p&gt;我們這些所謂的「台港團」會在 GCPUG Taipei 舉辦一場&lt;a href=&#34;https://www.meetup.com/GCPUG-Taipei/events/260555968/&#34;&gt;分享會&lt;/a&gt;。因為自己不克參加，便以這篇文章，針對我鎖定的核心議題：Istio，做一番重點摘要，以饗讀者。&lt;/p&gt;
+&lt;p&gt;以下內容，不完全按照 Next ’19 的議程時間順序，而是依照我主觀的排列。&lt;/p&gt;
+&lt;p&gt;看完後，對於 Istio 應該就有不錯的全面認知了。&lt;/p&gt;
+&lt;h2 id=&#34;漸進式導入-istio&#34;&gt;漸進式導入 Istio&lt;/h2&gt;
+&lt;p&gt;很有意思的演講，很適合作為 Istio 入門。&lt;/p&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/0cgTHQFXYPQ?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+&lt;p&gt;【演講】&lt;a href=&#34;https://cloud.withgoogle.com/next/sf/sessions?session=HYB102&#34;&gt;Incrementally Adopting Istio&lt;/a&gt;&lt;!-- raw HTML omitted --&gt;
+【重點摘要】&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/0cgTHQFXYPQ?t=3m20s&#34;&gt;3:20&lt;/a&gt; - 微服務面臨的挑戰。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/0cgTHQFXYPQ?t=6m18s&#34;&gt;6:18&lt;/a&gt; - Istio 的 control plane 三大元件，就是設計來一一對應這些問題的。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/0cgTHQFXYPQ?t=10m38s&#34;&gt;10:38&lt;/a&gt; - Istio 的 telemetry 機制。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/0cgTHQFXYPQ?t=11m42s&#34;&gt;11:42&lt;/a&gt; - Istio 的 traffic 管理機制。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/0cgTHQFXYPQ?t=15m10s&#34;&gt;15:10&lt;/a&gt; - Istio 的 security 機制。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/0cgTHQFXYPQ?t=16m27s&#34;&gt;16:27&lt;/a&gt; - 在 GKE 安裝 Istio 的方法及使用建議。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/0cgTHQFXYPQ?t=19m11s&#34;&gt;19:11&lt;/a&gt; - 接下來就是一系列的漸進式示範。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;istio-的-traffic宏觀角度&#34;&gt;Istio 的 Traffic：宏觀角度&lt;/h2&gt;
+&lt;p&gt;在 Istio + Envoy 體系中，是透過 control plane 的 Pilot 元件及 xDS 協定，去管理 data plane 的 Envoy 網路流量。&lt;/p&gt;
+&lt;p&gt;以此為基礎，Google Cloud 推出 &lt;a href=&#34;https://cloud.google.com/traffic-director/&#34;&gt;Traffic Director&lt;/a&gt; 服務，用統一的 control plane、透過同樣的 xDSv2 API，去管理 GCP 能觸及的 GKE、GCE，甚至自建的 Kubernetes cluster；也藉此處理 GCP 之專屬特性。&lt;/p&gt;
+&lt;p&gt;某種意義上，可以把 Traffic Director 視為將 Istio 的 Pilot 元件託管給 Google Cloud。&lt;/p&gt;
+&lt;p&gt;這場演講，儘管旨在&lt;del&gt;廣告&lt;/del&gt;宣傳 Google 自家的 Traffic Director 服務，但講員之一 Prajakta Joshi 非常厲害，對於一般性的 service mesh 觀念也介紹得非常生動。&lt;/p&gt;
+&lt;p&gt;這一場值得全程觀看。我僅摘錄部分重點。&lt;/p&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/FUITCYMCEhU?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+&lt;p&gt;【演講】&lt;a href=&#34;https://cloud.withgoogle.com/next/sf/sessions?session=NET207&#34;&gt;Traffic Director and Envoy-Based L7 ILB for Production-Grade Service Mesh and Istio&lt;/a&gt;&lt;!-- raw HTML omitted --&gt;
+【重點摘要】&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/FUITCYMCEhU?t=1m21s&#34;&gt;1:21&lt;/a&gt; - 很中肯的觀點：將 service mesh 視為 “&lt;strong&gt;SDN for services&lt;/strong&gt;”。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/FUITCYMCEhU?t=4m45s&#34;&gt;4:45&lt;/a&gt; - Istio 簡介。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/FUITCYMCEhU?t=5m48s&#34;&gt;5:48&lt;/a&gt; - 介紹 Istio 的 Pilot 流量管理議題。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/FUITCYMCEhU?t=5m48s&#34;&gt;6:40&lt;/a&gt; - 正式介紹 Traffic Director。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/FUITCYMCEhU?t=14m45s&#34;&gt;14:45&lt;/a&gt; - Live demo: global load balancing。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/FUITCYMCEhU?t=23m45s&#34;&gt;23:45&lt;/a&gt; - 介紹 service mesh 流量控制的特色：“&lt;strong&gt;change traffic flow without changing code&lt;/strong&gt;”，以及 traffic splitting、traffic steering、fault injection、mirroring (shadowing)、load balancing、circuit breaking、outlier detection 等高檔特性。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/FUITCYMCEhU?t=29m39s&#34;&gt;29:39&lt;/a&gt; - Live demo: traffic splitting。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/FUITCYMCEhU?t=35m37s&#34;&gt;35:37&lt;/a&gt; - 預告 Traffic Director 的產品路線圖。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/FUITCYMCEhU?t=42m56s&#34;&gt;42:56&lt;/a&gt; - 某客戶的 monolith 階段性轉型經驗。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;講員 Prajakta Joshi 另一場演講 &amp;ldquo;&lt;a href=&#34;https://cloud.withgoogle.com/next/sf/sessions?session=NET206&#34;&gt;Strategies for Bringing Kubernetes, Istio, Traffic Director, and Envoy to Brownfield with Walmart, Google, Tetrate&lt;/a&gt;&amp;rdquo; 也很棒，可惜並未釋出投影片及錄影。精彩內容，就留在我的手機相簿裡面啦。&lt;/p&gt;
+&lt;h2 id=&#34;istio-的-traffic實踐角度&#34;&gt;Istio 的 Traffic：實踐角度&lt;/h2&gt;
+&lt;p&gt;我聽了 Megan O&amp;rsquo;Keefe 兩場硬底子的演講。&lt;/p&gt;
+&lt;p&gt;第一場演講，以大量實例現場展示 Istio 的 traffic rules。&lt;/p&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/7cINRP0BFY8?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+&lt;p&gt;【演講】&lt;a href=&#34;https://cloud.withgoogle.com/next/sf/sessions?session=HYB201&#34;&gt;Istio in Production: Day 2 Traffic Routing&lt;/a&gt;&lt;!-- raw HTML omitted --&gt;
+【重點摘要】&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/7cINRP0BFY8?t=2m18s&#34;&gt;2:18&lt;/a&gt; - Istio 與 Envoy 簡介。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/7cINRP0BFY8?t=9m13s&#34;&gt;9:13&lt;/a&gt; - Live demo: rollout。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/7cINRP0BFY8?t=13m45s&#34;&gt;13:45&lt;/a&gt; - Live demo: content-based routing。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/7cINRP0BFY8?t=16m48s&#34;&gt;16:48&lt;/a&gt; - Live demo: circuit breaking。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/7cINRP0BFY8?t=20m46s&#34;&gt;20:46&lt;/a&gt; - Live demo: chaos testing。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/7cINRP0BFY8?t=24m48s&#34;&gt;24:48&lt;/a&gt; - Live demo: ingress and egress。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/7cINRP0BFY8?t=36m26s&#34;&gt;36:26&lt;/a&gt; - Istio 1.1 現況。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/7cINRP0BFY8?t=37m18s&#34;&gt;37:18&lt;/a&gt; - Istio 導入建議：“&lt;strong&gt;start slow and incrementally&lt;/strong&gt;”。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/7cINRP0BFY8?t=38m36s&#34;&gt;38:36&lt;/a&gt; - Istio 還能夠做什麼？&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;第二場演講，就更硬碰硬的處理 Istio 每天都可能遇到的幾個實踐問題，以及如何查找問題、解決問題的過程。三段 live demo，涵蓋 Istio control plane 的三大元件：Pilot、Mixer、Citadel，非常扎實。&lt;/p&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/FbYBO7Pi2d8?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+&lt;p&gt;【演講】&lt;a href=&#34;https://cloud.withgoogle.com/next/sf/sessions?session=HYB303&#34;&gt;Debugging Istio: How to Fix a Broken Service Mesh&lt;/a&gt;&lt;!-- raw HTML omitted --&gt;
+【重點摘要】&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/FbYBO7Pi2d8?t=0m35s&#34;&gt;0:35&lt;/a&gt; - Service mesh 是要解決甚麼問題？Istio 的 control plane 就是設計來一一對應這些問題的。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/FbYBO7Pi2d8?t=2m54s&#34;&gt;2:54&lt;/a&gt; - 可是，Istio 又會連帶引入哪些複雜度？&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/FbYBO7Pi2d8?t=4m46s&#34;&gt;4:46&lt;/a&gt; - Live demo: traffic management.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/FbYBO7Pi2d8?t=20m47s&#34;&gt;20:47&lt;/a&gt; - Live demo: telemetry.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/FbYBO7Pi2d8?t=27m58s&#34;&gt;27:58&lt;/a&gt; - Live demo: security.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/FbYBO7Pi2d8?t=44m23s&#34;&gt;44:23&lt;/a&gt; - 除錯工具推薦清單。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;這兩場 Megan O&amp;rsquo;Keefe 的演講，雖然硬底子，卻十分具體，可操作性高，值得全程觀看。&lt;/p&gt;
+&lt;h2 id=&#34;從-sre-角度看-istio&#34;&gt;從 SRE 角度看 Istio&lt;/h2&gt;
+&lt;p&gt;這一場，只能說，非常非常非常精彩。&lt;/p&gt;
+&lt;p&gt;對於讀過 Google 的 &lt;a href=&#34;https://landing.google.com/sre/books/&#34;&gt;&lt;em&gt;SRE&lt;/em&gt;&lt;/a&gt; 一書的人來說，看到 SLO、error budget 之類的觀念，居然可以在 Istio 上面如此實現，真是大開眼界。&lt;/p&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/AKh8uuVCpFI?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+&lt;p&gt;【演講】&lt;a href=&#34;https://cloud.withgoogle.com/next/sf/sessions?session=HYB309&#34;&gt;Understanding SLOs and Error Budgets With Istio&lt;/a&gt;&lt;!-- raw HTML omitted --&gt;
+【重點摘要】&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/AKh8uuVCpFI?t=1m40s&#34;&gt;1:40&lt;/a&gt; - SLI/SLO/SLA 基本觀念。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/AKh8uuVCpFI?t=7m41s&#34;&gt;7:41&lt;/a&gt; - &amp;ldquo;uptime&amp;rdquo; 的新觀點。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/AKh8uuVCpFI?t=9m04s&#34;&gt;9:04&lt;/a&gt; - 將 error budget 視為 “&lt;strong&gt;amount of SLOs you can spend&lt;/strong&gt;”。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/AKh8uuVCpFI?t=13m49s&#34;&gt;13:49&lt;/a&gt; - Live demo!&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/AKh8uuVCpFI?t=28m02s&#34;&gt;28:02&lt;/a&gt; - 客戶證言：Schlumberger 公司。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;把-vm-也帶進-service-mesh&#34;&gt;把 VM 也帶進 Service Mesh&lt;/h2&gt;
+&lt;p&gt;Service mesh 並不是容器的專利；古老的 VM 其實也可以納入治理體系。&lt;/p&gt;
+&lt;p&gt;透過 Istio 的 &lt;a href=&#34;https://istio.io/docs/setup/kubernetes/additional-setup/mesh-expansion/&#34;&gt;&lt;strong&gt;mesh expansion&lt;/strong&gt;&lt;/a&gt; 機制，VM 只要安裝 node agent 及 Envoy proxy，即可登記為 Kubernetes/Istio cluster 的 &lt;a href=&#34;https://istio.io/docs/reference/config/networking/v1alpha3/service-entry/&#34;&gt;service entry&lt;/a&gt; 資源，進行 service discovery 等互動。&lt;/p&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/2czElo8a7FM?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+&lt;p&gt;【演講】&lt;a href=&#34;https://cloud.withgoogle.com/next/sf/sessions?session=HYB308&#34;&gt;Istio Service Mesh for VM Native&lt;/a&gt;&lt;!-- raw HTML omitted --&gt;
+【重點摘要】&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/2czElo8a7FM?t=8m0s&#34;&gt;8:00&lt;/a&gt; - 介紹 Istio 的 mesh expansion 機制。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/2czElo8a7FM?t=11m04s&#34;&gt;11:04&lt;/a&gt; - 具體步驟。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/2czElo8a7FM?t=13m23s&#34;&gt;13:23&lt;/a&gt; - Live demo!&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;windows-containers&#34;&gt;Windows Containers&lt;/h2&gt;
+&lt;p&gt;自從 3 月底 Kubernetes 1.14 宣布正式支援 Windows 之後&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，我就很期待到 Next ’19 現場眼見為憑。&lt;/p&gt;
+&lt;p&gt;這一場值得全程觀看。我僅摘錄部分重點。&lt;/p&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/C4kW9uLmefU?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+&lt;p&gt;【演講】&lt;a href=&#34;https://cloud.withgoogle.com/next/sf/sessions?session=HYB108&#34;&gt;Windows Containers in Google Kubernetes Engine&lt;/a&gt;&lt;!-- raw HTML omitted --&gt;
+【重點摘要】&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://youtu.be/C4kW9uLmefU?t=7m50s&#34;&gt;7:50&lt;/a&gt; - &amp;ldquo;I have a dream&amp;hellip;&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://youtu.be/C4kW9uLmefU?t=12m15s&#34;&gt;12:15&lt;/a&gt; - Windows host OS and base image requirements&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://youtu.be/C4kW9uLmefU?t=17m23s&#34;&gt;17:23&lt;/a&gt; - Which to containerize?&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://youtu.be/C4kW9uLmefU?t=22m14s&#34;&gt;22:14&lt;/a&gt; - Kubernetes 1.14 stable supports Windows containers and Windows Server 2019&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://youtu.be/C4kW9uLmefU?t=25m44s&#34;&gt;25:44&lt;/a&gt; - Limitations for Windows containers (for now)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://youtu.be/C4kW9uLmefU?t=28m16s&#34;&gt;28:16&lt;/a&gt; - GKE &amp;ldquo;is working on supporting Windows containers&amp;rdquo; (preview now)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://youtu.be/C4kW9uLmefU?t=30m40s&#34;&gt;30:40&lt;/a&gt; - Live demo!&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://youtu.be/C4kW9uLmefU?t=37m0s&#34;&gt;37:00&lt;/a&gt; - Early Access Program (EAP)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;api-視角&#34;&gt;API 視角&lt;/h2&gt;
+&lt;p&gt;不管你想在容器化、微服務、service mesh 路線走到多遠，「API 管理」一直都是需要持續關注的一環。&lt;/p&gt;
+&lt;p&gt;針對這議題，Next ’19 是以 &lt;a href=&#34;https://cloud.google.com/apigee/&#34;&gt;Apigee&lt;/a&gt; 為主軸&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;，分別介紹 Apigee 如何與 service mesh 和 serverless 技術搭配運用。&lt;/p&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/IblDMVwSSk4?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+&lt;p&gt;【演講】&lt;a href=&#34;https://cloud.withgoogle.com/next/sf/sessions?session=HYB319&#34;&gt;APIs, Microservices, and the Service Mesh&lt;/a&gt;&lt;!-- raw HTML omitted --&gt;
+【重點摘要】&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/IblDMVwSSk4?t=3m21s&#34;&gt;3:21&lt;/a&gt; - 介紹 mTLS。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/IblDMVwSSk4?t=7m06s&#34;&gt;7:06&lt;/a&gt; - 用 Istio 在 control plane 層次確保 mTLS 之類的 policy。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/IblDMVwSSk4?t=12m47s&#34;&gt;12:47&lt;/a&gt; - 介紹 service mesh 時代的 API 管理架構。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/IblDMVwSSk4?t=33m09s&#34;&gt;33:09&lt;/a&gt; - 什麼時候才需要 service mesh？&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/7fcpwM-8qPo?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+&lt;p&gt;【演講】&lt;a href=&#34;https://cloud.withgoogle.com/next/sf/sessions?session=SVR102&#34;&gt;API Management for Serverless and Multi-Cloud&lt;/a&gt;&lt;!-- raw HTML omitted --&gt;
+【重點摘要】&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/7fcpwM-8qPo?t=13m35s&#34;&gt;13:35&lt;/a&gt; - 示範 Cloud Run 與 Apigee。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/7fcpwM-8qPo?t=24m15s&#34;&gt;24:15&lt;/a&gt; - 示範 Cloud Functions 與 Apigee。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;這麼多乾貨，值得花點力氣好好消化。&lt;/p&gt;
+&lt;h2 id=&#34;投影片&#34;&gt;投影片&lt;/h2&gt;
+
+
+&lt;div class=&#34;notice notice--note&#34;&gt;
+  &lt;div class=&#34;notice__title&#34;&gt;
+    
+      2019-07-02 補充
+    
+  &lt;/div&gt;
+  &lt;div class=&#34;notice__content&#34;&gt;&lt;p&gt;兩個月後，應 GCPUG Taipei 之邀，我還是在 &lt;a href=&#34;https://www.meetup.com/GCPUG-Taipei/events/262584153/&#34;&gt;Meetup #48&lt;/a&gt; 給了一場分享。投影片在此：&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://kubernetes.io/blog/2019/03/25/kubernetes-1-14-release-announcement/&#34;&gt;Kubernetes 1.14: Production-level support for Windows Nodes, Kubectl Updates, Persistent Local Volumes GA&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;Apigee 於 2016 年被 Google 併購。詳見〈&lt;a href=&#34;https://www.ithome.com.tw/news/108342&#34;&gt;Google 以 6.25 億美元收購 Apigee，強化 API 管理服務&lt;/a&gt;〉一文。&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description>
+      
     </item>
+    
     <item>
       <title>Nginx Ingress 與 Ambassador 簡易性能比較</title>
       <link>//william-yeh.net/post/2019/03/ingress-vs-ambassador/</link>
       <pubDate>Fri, 29 Mar 2019 23:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2019/03/ingress-vs-ambassador/</guid>
-      <description>&lt;p&gt;API gateway 是微服務環境，甚至 service mesh 的要角 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;。&lt;/p&gt;&#xA;&lt;p&gt;在 Kubernetes 上面，API gateway 選項眾多。有像 HAProxy 及 Nginx 這些石器時代老傢伙跨足過來，也有打從一開始就走 cloud native 路線的後起之秀。&lt;/p&gt;&#xA;&lt;p&gt;該如何選擇？&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;API gateway 是微服務環境，甚至 service mesh 的要角 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;。&lt;/p&gt;
+&lt;p&gt;在 Kubernetes 上面，API gateway 選項眾多。有像 HAProxy 及 Nginx 這些石器時代老傢伙跨足過來，也有打從一開始就走 cloud native 路線的後起之秀。&lt;/p&gt;
+&lt;p&gt;該如何選擇？&lt;/p&gt;
+&lt;p&gt;根據 Steven Acreman 寫的 &lt;a href=&#34;https://kubedex.com/ingress/&#34;&gt;Ingress 評比文章&lt;/a&gt;的看法：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;The safest choice is &lt;a href=&#34;https://kubernetes.github.io/ingress-nginx/&#34;&gt;ingress-nginx&lt;/a&gt;&lt;/em&gt;. This is the one that most people use and it’s extremely reliable. Before you begin I’d recommend you read this blog to get ahead of some of the problems you may encounter.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;My vote for the coolest ingress definitely goes to &lt;a href=&#34;https://www.getambassador.io/&#34;&gt;Ambassador&lt;/a&gt;.&lt;/em&gt;  If you’re just running standard http based micro services and fancy living on the bleeding edge then you should definitely get Istio, Ambassador and Jaeger setup as a proof of concept.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;進一步研讀 Ambassador 相關資料 &lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;，發現他們鎖定的 service mesh 路線很合我的胃口，站在 &lt;a href=&#34;https://www.envoyproxy.io/&#34;&gt;Envoy&lt;/a&gt; 巨人肩膀上更是聰明。不過，理論歸理論，我想親自試試看現在的 Ambassador 是否堪當大任？&lt;/p&gt;
+&lt;p&gt;初步，我只先拿 &lt;a href=&#34;https://kubernetes.github.io/ingress-nginx/&#34;&gt;ingress-nginx&lt;/a&gt; 這個所謂的 “the safest choice” 作簡單的性能比較。將來有機會再進行更徹底的 chaos monkey 測試。&lt;/p&gt;
+&lt;h2 id=&#34;實驗環境&#34;&gt;實驗環境&lt;/h2&gt;
+&lt;p&gt;為了簡化實驗步驟，我直接採用 Google Cloud Platform 的 &lt;a href=&#34;https://cloud.google.com/kubernetes-engine/&#34;&gt;GKE&lt;/a&gt;。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Kubernetes 版本：1.11.7-gke.12&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Node：2 台 &lt;a href=&#34;https://cloud.google.com/compute/docs/machine-types#standard_machine_types&#34;&gt;n1-standard-1&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;我選用的標靶軟體是 &lt;a href=&#34;https://github.com/GoogleCloudPlatform/kubernetes-engine-samples/tree/master/hello-app&#34;&gt;hello-app&lt;/a&gt;，分別用以下兩種 API gateway 來對外提供服務介面：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Nginx ingress 版本：0.23.0&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Ambassador 版本：0.52.0&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;最後，我利用 &lt;a href=&#34;https://github.com/William-Yeh/docker-boom&#34;&gt;boom&lt;/a&gt; 進行簡單的壓力測試。&lt;/p&gt;
+&lt;h2 id=&#34;nginx-ingress&#34;&gt;Nginx ingress&lt;/h2&gt;
+&lt;p&gt;為了簡單起見，我直接套用以下這份 Qwiklabs 的全部步驟：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.qwiklabs.com/focuses/872?parent=catalog&#34;&gt;GSP181 - NGINX Ingress Controller on Google Kubernetes Engine&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;照著做完後，Nginx ingress 會在 GKE 開放一個公開的 http 服務存取點。&lt;/p&gt;
+&lt;p&gt;我們可以先用 &lt;code&gt;kubectl get services&lt;/code&gt; 查看 API gateway 的 public IP 位址。假設是 &lt;code&gt;35.222.12.84&lt;/code&gt; 的話，這個服務路徑則是 &lt;code&gt;http://35.222.12.84/hello/&lt;/code&gt;。&lt;/p&gt;
+&lt;h2 id=&#34;ambassador&#34;&gt;Ambassador&lt;/h2&gt;
+&lt;p&gt;首先，仿造前面的 Qwiklabs 步驟，在 GKE 上建立起相同規模的 k8s cluster。也執行一份 &lt;a href=&#34;https://gist.githubusercontent.com/William-Yeh/0aab709e450b4442614ef87b0250260b/raw/daba0ba7e6b5561ec9af51a3ea020c79e572e34e/hello-app-service.yaml&#34;&gt;hello-app service&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;為了安裝 Ambassador，我們需要開啟 GKE 權限：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;% kubectl create clusterrolebinding my-cluster-admin-binding  \
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    --clusterrole=cluster-admin  \
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    --user=$(gcloud info --format=&amp;#34;value(config.account)&amp;#34;)&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;p&gt;接下來，就是正常的 Ambassador 安裝步驟：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;% kubectl create -f http://bit.ly/2UmsPuE&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;p&gt;此刻，我們終於可以透過 Ambassador，替 hello-app 設定 API gateway 規則：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;% kubectl create -f https://bit.ly/2YyZzjO&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;p&gt;照著做完後，Ambassador 會在 GKE 開放一個公開的 http 服務存取點。&lt;/p&gt;
+&lt;p&gt;我們可以先用 &lt;code&gt;kubectl get services&lt;/code&gt; 查看 API gateway 的 public IP 位址。假設是 &lt;code&gt;35.224.99.169&lt;/code&gt; 的話，這個服務路徑則是 &lt;code&gt;http://35.224.99.169/hello2/&lt;/code&gt;。&lt;/p&gt;
+&lt;h2 id=&#34;簡單的壓測&#34;&gt;簡單的壓測&lt;/h2&gt;
+&lt;p&gt;為了簡單起見，我在 GCP 的 &lt;a href=&#34;https://cloud.google.com/shell/?hl=zh-tw&#34;&gt;Cloud Shell&lt;/a&gt; 進行壓測。我會對 Nginx ingress 及 Ambassador 兩種情況，各送出一萬個 API 存取要求。&lt;/p&gt;
+&lt;p&gt;針對 Nginx ingress 的情況進行測試：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;% docker run --rm  williamyeh/boom  \
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    -n 10000 -c 100  http://35.222.12.84/hello/
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Summary:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  Total:        16.2312 secs
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  Slowest:      0.3252 secs
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  Fastest:      0.1568 secs
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  Average:      0.1616 secs
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  Requests/sec: 616.0963
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  Total data:   660000 bytes
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  Size/request: 66 bytes
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Status code distribution:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  [200] 10000 responses
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Response time histogram:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  0.157 [1]     |
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  0.174 [9803]  |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  0.190 [96]    |
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  0.207 [0]     |
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  0.224 [0]     |
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  0.241 [0]     |
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  0.258 [0]     |
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  0.275 [0]     |
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  0.292 [0]     |
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  0.308 [0]     |
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  0.325 [100]   |
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Latency distribution:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  10% in 0.1576 secs
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  25% in 0.1583 secs
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  50% in 0.1593 secs
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  75% in 0.1608 secs
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  90% in 0.1632 secs
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  95% in 0.1661 secs
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  99% in 0.3152 secs&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;p&gt;針對 Ambassador 的情況進行測試：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;% docker run --rm  williamyeh/boom  \
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    -n 10000 -c 100  http://35.224.99.169/hello2/
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Summary:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  Total:        16.8132 secs
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  Slowest:      0.3857 secs
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  Fastest:      0.1571 secs
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  Average:      0.1662 secs
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  Requests/sec: 594.7715
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  Total data:   660000 bytes
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  Size/request: 66 bytes
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Status code distribution:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  [200] 10000 responses
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Response time histogram:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  0.157 [1]     |
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  0.180 [9595]  |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  0.203 [304]   |∎
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  0.226 [0]     |
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  0.249 [0]     |
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  0.271 [0]     |
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  0.294 [0]     |
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  0.317 [0]     |
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  0.340 [0]     |
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  0.363 [8]     |
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  0.386 [92]    |
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Latency distribution:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  10% in 0.1596 secs
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  25% in 0.1607 secs
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  50% in 0.1623 secs
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  75% in 0.1656 secs
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  90% in 0.1717 secs
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  95% in 0.1786 secs
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  99% in 0.3596 secs&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;p&gt;儘管不夠嚴謹，但仍可以約略看出 Ambassador 的性能已經逼近 Nginx ingress。以才兩歲半的 Envoy &lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;、才滿兩歲的 Ambassador &lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt; 來說，已經很不容易了。&lt;/p&gt;
+&lt;p&gt;這是一個值得開始嘗試的好物。&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;對於 API gateway 來龍去脈感興趣的，可參考 Ricky 的文章〈&lt;a href=&#34;https://rickhw.github.io/2018/01/24/AWS/Study-Notes-Overview-API-Gateway/&#34;&gt;Overview API Gateway&lt;/a&gt;〉、Andrew 的文章〈&lt;a href=&#34;https://columns.chicken-house.net/2017/07/11/microservice8-case-study-p3/&#34;&gt;架構師觀點 - 轉移到微服務架構的經驗分享 (Part 3)&lt;/a&gt;〉。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;對於 Ambassador 早期發展歷程感興趣的，可參考他們寫的這兩篇文章：“&lt;a href=&#34;https://medium.com/@datawire/building-ambassador-an-open-source-api-gateway-on-kubernetes-and-envoy-33637a9fa6f8&#34;&gt;Building Ambassador, an Open Source API Gateway on Kubernetes and Envoy&lt;/a&gt;” 及 “&lt;a href=&#34;https://blog.getambassador.io/kubernetes-ingress-nodeport-load-balancers-and-ingress-controllers-6e29f1c44f2d&#34;&gt;Kubernetes Ingress 101: NodePort, Load Balancers, and Ingress Controllers&lt;/a&gt;”。&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;
+&lt;p&gt;Envoy &lt;a href=&#34;https://github.com/envoyproxy/envoy/tree/v1.0.0&#34;&gt;1.0.0 版&lt;/a&gt;發布日期為 2016 年 9 月。&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:4&#34;&gt;
+&lt;p&gt;Ambassador &lt;a href=&#34;https://github.com/datawire/ambassador/blob/master/CHANGELOG.md&#34;&gt;0.1.3 版&lt;/a&gt;發布日期為 2017 年 3 月。&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description>
+      
     </item>
+    
     <item>
       <title>「從 Ops 角度看 DevOps」的感想</title>
       <link>//william-yeh.net/post/2018/11/opsdev-talk-18/</link>
       <pubDate>Wed, 28 Nov 2018 23:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2018/11/opsdev-talk-18/</guid>
-      <description>&lt;p&gt;在台灣（或許在其他地方也是），DevOps 的話語權，很大幅度都被 Dev 一方把持。我們很少聽到 Ops 一方的說法。&lt;/p&gt;&#xA;&lt;p&gt;成功的改革，需要兼顧各方利益者的需求及痛點。隨著 DevOps 守備範圍日益擴大，這種失衡狀態必須改變。&lt;/p&gt;&#xA;&lt;p&gt;今晚參加 &lt;a href=&#34;https://www.facebook.com/DevOpsTaiwan/&#34;&gt;DevOps Taiwan 社群&lt;/a&gt;舉辦的講座：【&lt;a href=&#34;https://devops.kktix.cc/events/meetup17-opsdev&#34;&gt;從 Ops 角度看 DevOps&lt;/a&gt;】，聽聽&lt;a href=&#34;https://www.facebook.com/roberthu.tw&#34;&gt;胡士亮 (Robert Hu)&lt;/a&gt; 從正統 Ops 角度來詮釋 DevOps，甚至 OpsDev，收穫頗大。&lt;/p&gt;&#xA;&lt;p&gt;聽知識，聽心得，也聽熱情與願景。&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;在台灣（或許在其他地方也是），DevOps 的話語權，很大幅度都被 Dev 一方把持。我們很少聽到 Ops 一方的說法。&lt;/p&gt;
+&lt;p&gt;成功的改革，需要兼顧各方利益者的需求及痛點。隨著 DevOps 守備範圍日益擴大，這種失衡狀態必須改變。&lt;/p&gt;
+&lt;p&gt;今晚參加 &lt;a href=&#34;https://www.facebook.com/DevOpsTaiwan/&#34;&gt;DevOps Taiwan 社群&lt;/a&gt;舉辦的講座：【&lt;a href=&#34;https://devops.kktix.cc/events/meetup17-opsdev&#34;&gt;從 Ops 角度看 DevOps&lt;/a&gt;】，聽聽&lt;a href=&#34;https://www.facebook.com/roberthu.tw&#34;&gt;胡士亮 (Robert Hu)&lt;/a&gt; 從正統 Ops 角度來詮釋 DevOps，甚至 OpsDev，收穫頗大。&lt;/p&gt;
+&lt;p&gt;聽知識，聽心得，也聽熱情與願景。&lt;/p&gt;
+&lt;p&gt;也更確定自己設想的方向，是符合正統 Ops 下一步思維的：&lt;a href=&#34;https://dzone.com/articles/predictive-analytics-in-devops-applications-and-be&#34;&gt;predictive analysis&lt;/a&gt; &amp;amp; &lt;a href=&#34;https://www.bmc.com/blogs/what-is-aiops/&#34;&gt;AIOps&lt;/a&gt;。&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/11/opsdev-recap.jpg&#34; alt=&#34;OpsDev recap (from Robert Hu)&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2018/11/opsdev-recap.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;OpsDev recap (from Robert Hu)&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;這場講座印象最深的觀念是：同一件事情，在某些時候，由 Dev 下手較好；在某些時候，卻是由 Ops 下手較好。所以，手握 Dev 及 Ops 雙邊武器，就有較大的選擇彈性。&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/11/devops-vs-opsdev.jpg&#34; alt=&#34;DevOps vs. OpsDev (from Robert Hu)&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2018/11/devops-vs-opsdev.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;DevOps vs. OpsDev (from Robert Hu)&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;這就讓我想到，以前搞 microservices 時，如果不透過 &lt;a href=&#34;https://netflix.github.io/&#34;&gt;NetflixOSS&lt;/a&gt; 之類的 Dev 黑魔法，就很難做出那些瞠目結舌的機制。而現在，透過 &lt;a href=&#34;https://kubernetes.io/&#34;&gt;Kubernetes&lt;/a&gt; + &lt;a href=&#34;https://istio.io/&#34;&gt;Istio&lt;/a&gt; 之類的 nonintrusive Ops 黑魔法（或者更精準地說：&lt;a href=&#34;http://www.servicemesher.com/awesome-servicemesh/&#34;&gt;service mesh&lt;/a&gt;），就不必改變 Dev 的 coding 習慣。&lt;/p&gt;
+&lt;p&gt;譬如說：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://martinfowler.com/bliki/CircuitBreaker.html&#34;&gt;Circuit breaker&lt;/a&gt;：過去要靠 Java &lt;a href=&#34;https://martinfowler.com/bliki/CircuitBreaker.html&#34;&gt;Hystrix&lt;/a&gt;、C# &lt;a href=&#34;https://github.com/App-vNext/Polly&#34;&gt;Polly&lt;/a&gt;、Python &lt;a href=&#34;https://github.com/danielfm/pybreaker&#34;&gt;PyBreaker&lt;/a&gt; 這些程式語言程式庫的層次才能做到，現在，直接交給 &lt;a href=&#34;https://istio.io/docs/tasks/traffic-management/circuit-breaking/&#34;&gt;Istio&lt;/a&gt; 即可。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://microservices.io/patterns/observability/distributed-tracing.html&#34;&gt;Distributed tracing&lt;/a&gt;：過去要靠 Java &lt;a href=&#34;https://github.com/openzipkin/zipkin&#34;&gt;Zipkin&lt;/a&gt;、Java/C#/Python/etc &lt;a href=&#34;https://opentracing.io/&#34;&gt;OpenTracing&lt;/a&gt; 這些程式語言程式庫的層次才能做到，現在，直接交給 &lt;a href=&#34;https://istio.io/docs/tasks/telemetry/distributed-tracing/&#34;&gt;Istio&lt;/a&gt; 即可。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;這也意味著，好好掌握新一代的 Ops 技術，會促進內部協作，也會大幅拉大與競爭對手的差距——那些仍活在舊時代的 infra 對手們。&lt;/p&gt;
+&lt;p&gt;時代在進步，現在 Ops 已經不是只能拿冷兵器作戰的小步兵了，而是手持核武的將士——自我升級的鑰匙，在你手裡。&lt;/p&gt;
+&lt;p&gt;小小的感想。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;再次感謝 &lt;a href=&#34;https://www.facebook.com/roberthu.tw&#34;&gt;Robert Hu&lt;/a&gt; 這麼精彩的分享！&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;//www.slideshare.net/roberthutw/ops-devops-devops-from-ops-perspective&#34;&gt;從 Ops 角度看 DevOps&lt;/a&gt;&lt;/strong&gt;
+&lt;iframe
+  style=&#34;width: 100%; height: 500px;&#34; frameborder=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; scrolling=&#34;no&#34;
+  src=&#34;https://www.slideshare.net/slideshow/embed_code/124278498&#34; allowfullscreen webkitallowfullscreen mozallowfullscreen&gt; &lt;/iframe&gt;
+&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+
+
+&lt;div class=&#34;notice notice--note&#34;&gt;
+  &lt;div class=&#34;notice__title&#34;&gt;
+    
+      2018-11-29 補充
+    
+  &lt;/div&gt;
+  &lt;div class=&#34;notice__content&#34;&gt;&lt;p&gt;剛剛看完一場 live online training “&lt;a href=&#34;https://www.safaribooksonline.com/live-training/courses/istio-on-kubernetes-enter-the-service-mesh/0636920221357/&#34;&gt;Istio on Kubernetes: Enter the Service Mesh&lt;/a&gt;”，其中有一段話說得好，可作為文章的註腳：&lt;/p&gt;
+&lt;p&gt;“The first generation of microservices was primarily shaped by &lt;a href=&#34;https://netflix.github.io/&#34;&gt;Netflix OSS&lt;/a&gt; and leveraged by numerous &lt;a href=&#34;https://spring.io/projects/spring-cloud&#34;&gt;Spring Cloud&lt;/a&gt; annotations sprinkled all throughout your business logic. The next generation of cloud native apps and microservices will leverage &lt;strong&gt;sidecars&lt;/strong&gt; and a &lt;strong&gt;service mesh&lt;/strong&gt;.”&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+      
     </item>
+    
   </channel>
 </rss>

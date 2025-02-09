@@ -1,0 +1,17 @@
+/**------------------------------------------------------------------------
+ *                    CUSTOM CSS (LEGACY PLACEHOLDER)
+ *------------------------------------------------------------------------**/
+
+/**
+ * NOTE: All custom styles have been migrated to the theme's SCSS files
+ * for better maintainability and integration with the build system.
+ *
+ * Location of migrated styles:
+ * - Core theme overrides: themes/jane/assets/sass/_custom.scss
+ * - Notice shortcode enhancements: themes/jane/assets/sass/_shortcodes/_notice.scss
+ *
+ * If you need to add site-specific overrides that cannot be placed in the
+ * theme SCSS files, add them below this comment block.
+ **/
+
+/* Add your site-specific CSS overrides here if needed */

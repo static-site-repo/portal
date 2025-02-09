@@ -4,107 +4,1879 @@
     <title>Docker on Potioneer&#39;s Essays</title>
     <link>//william-yeh.net/tags/docker/</link>
     <description>Recent content in Docker on Potioneer&#39;s Essays</description>
-    <generator>Hugo</generator>
+    <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <lastBuildDate>Sat, 19 Aug 2023 20:00:00 +0800</lastBuildDate>
-    <atom:link href="//william-yeh.net/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    
+        <atom:link href="//william-yeh.net/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>透過自己的雙手，掌握那不變的容器技術核心——《Docker 實戰 6 堂課》推薦序</title>
       <link>//william-yeh.net/post/2023/08/docker-labs-review/</link>
       <pubDate>Sat, 19 Aug 2023 20:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2023/08/docker-labs-review/</guid>
-      <description>&lt;p&gt;我在 2015 年～2017 年間，開了 8 次【&lt;a href=&#34;https://william-yeh.github.io/docker-workshop/&#34;&gt;Docker 建置實戰講堂&lt;/a&gt;】一日課程。在那個大眾對於 Docker 還矇矇懂懂的年代，我就堅持不用貌似較簡便的 Docker Desktop，而是大膽採用 Vagrant + VirtualBox 作為統一的授課環境，讓學員儘早習慣在 Linux 平台上探索 Docker 的底層與應用。&lt;/p&gt;&#xA;&lt;p&gt;所以，當我在 2022 年 iThome 鐵人賽看到小賴的參賽作品【&lt;a href=&#34;https://ithelp.ithome.com.tw/users/20151857/ironman/5419&#34;&gt;那些關於 docker 你知道與不知道的事&lt;/a&gt;】中，是以 AWS EC2 的 Ubuntu instance 作為實作環境，現在更出版新書《&lt;a href=&#34;https://www.tenlong.com.tw/products/9786263335769&#34;&gt;Docker 實戰 6 堂課：56 個實驗動手做，掌握 Linux 容器核心技術&lt;/a&gt;》，就非常高興。畢竟，從最擬真的角度切入，才能夠透過自己的雙手，掌握那不變的容器技術核心。&lt;/p&gt;&#xA;&#xA;&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;&#xA;&lt;div class=&#34;box&#34;&gt;&#xA;&lt;figure  itemprop=&#34;associatedMedia&#34;&#xA;  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; &#xA;  style=&#34;max-width:30em&#34; &gt;&#xA;    &lt;div class=&#34;img&#34;&gt;&#xA;      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/08/docker-labs-book.jpg&#34; alt=&#34;《Docker 實戰 6 堂課：56 個實驗動手做，掌握 Linux 容器核心技術》&#34;/&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;a href=&#34;//william-yeh.net/img/2023/08/docker-labs-book.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;&#xA;      &lt;figcaption&gt;&#xA;          &lt;p&gt;《Docker 實戰 6 堂課：56 個實驗動手做，掌握 Linux 容器核心技術》&lt;/p&gt;&#xA;      &lt;/figcaption&gt;&#xA;  &lt;/figure&gt;&#xA;&lt;/div&gt;</description>
+      
+        <description>&lt;p&gt;我在 2015 年～2017 年間，開了 8 次【&lt;a href=&#34;https://william-yeh.github.io/docker-workshop/&#34;&gt;Docker 建置實戰講堂&lt;/a&gt;】一日課程。在那個大眾對於 Docker 還矇矇懂懂的年代，我就堅持不用貌似較簡便的 Docker Desktop，而是大膽採用 Vagrant + VirtualBox 作為統一的授課環境，讓學員儘早習慣在 Linux 平台上探索 Docker 的底層與應用。&lt;/p&gt;
+&lt;p&gt;所以，當我在 2022 年 iThome 鐵人賽看到小賴的參賽作品【&lt;a href=&#34;https://ithelp.ithome.com.tw/users/20151857/ironman/5419&#34;&gt;那些關於 docker 你知道與不知道的事&lt;/a&gt;】中，是以 AWS EC2 的 Ubuntu instance 作為實作環境，現在更出版新書《&lt;a href=&#34;https://www.tenlong.com.tw/products/9786263335769&#34;&gt;Docker 實戰 6 堂課：56 個實驗動手做，掌握 Linux 容器核心技術&lt;/a&gt;》，就非常高興。畢竟，從最擬真的角度切入，才能夠透過自己的雙手，掌握那不變的容器技術核心。&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/08/docker-labs-book.jpg&#34; alt=&#34;《Docker 實戰 6 堂課：56 個實驗動手做，掌握 Linux 容器核心技術》&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2023/08/docker-labs-book.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;《Docker 實戰 6 堂課：56 個實驗動手做，掌握 Linux 容器核心技術》&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;很多人會問：現在都已經是 Kubernetes 當道的年代，我們還需要學習落伍的 Docker 嗎？還需要用這麼刻苦的方法學習落伍的 Docker 嗎？&lt;/p&gt;
+&lt;p&gt;既然 Kubernetes 正當紅，我們就從功利一點的角度來看這議題吧。Kubernetes 的三大認證考試 (&lt;a href=&#34;https://training.linuxfoundation.org/certification/certified-kubernetes-administrator-cka/&#34;&gt;CKA&lt;/a&gt;, &lt;a href=&#34;https://training.linuxfoundation.org/certification/certified-kubernetes-application-developer-ckad/&#34;&gt;CKAD&lt;/a&gt;, &lt;a href=&#34;https://training.linuxfoundation.org/certification/certified-kubernetes-security-specialist/&#34;&gt;CKS&lt;/a&gt;) 中，不乏一堆上機實境題；如果你不懂得容器的底層技術：process、layer、namespace、network，將很難在現場上機時迅速精準排除問題——而且是用最傳統的終端機命令列方式進行。&lt;/p&gt;
+&lt;p&gt;既然這麼當紅的 Kubernetes 都要求你必須熟練這麼刻苦的方式，那麼，你為什麼不先從較單純的 Docker 容器環境下手呢？&lt;/p&gt;
+&lt;p&gt;小賴這本書有三大特點：底層知識，動手實驗，熱血工程魂。&lt;/p&gt;
+&lt;h2 id=&#34;特色一-底層知識&#34;&gt;特色一 ：底層知識&lt;/h2&gt;
+&lt;p&gt;容器世界有許多神奇的特效，尤其是不同對象、不同層次的「資源隔離性」。透過本書，你可以親自看到 process、layer、namespace、network 這些磚頭是如何一步步撐起容器的華廈。&lt;/p&gt;
+&lt;p&gt;掌握這些「資源隔離性」的基礎知識，將來再看到 Kubernetes 的種種設計，必有會心一笑的熟悉感。&lt;/p&gt;
+&lt;h2 id=&#34;特色二動手實驗&#34;&gt;特色二：動手實驗&lt;/h2&gt;
+&lt;p&gt;底層知識很枯燥，甚至抽象。透過動手實作，能具體看到這些要素活生生運作起來，而不是一堆死板板要你生吞硬背的理論。&lt;/p&gt;
+&lt;p&gt;作者以 AWS EC2 的 Linux instance 作為實驗環境，比起多數人採用 Windows 或 Mac 的 Docker Desktop 作為實驗環境，更能忠實反映容器的
+行為及底層狀況。更重要的是，及早領略在這種環境之下的操作及除錯經驗，未來在真實生產環境之下的操作、性能調教、除錯任務，自然駕輕就熟。&lt;/p&gt;
+&lt;p&gt;正如小賴所說：「親自動手做實驗與觀察，應該是工程師最基本的素養。」&lt;/p&gt;
+&lt;h2 id=&#34;特色三熱血工程魂&#34;&gt;特色三：熱血工程魂&lt;/h2&gt;
+&lt;p&gt;由 Docker 起頭，至 Kubernetes 發揚光大，容器生態圈的技術，雖然貌似複雜，但藉由生態圈的卓越工藝，已經將複雜技術下放到凡間，只要你有心，都可以在本機端或雲端建置出堪用的實驗環境供你探索。&lt;/p&gt;
+&lt;p&gt;剩下的問題就是：你是否保有熱血工程魂？&lt;/p&gt;
+&lt;p&gt;我很喜歡小賴講的這段話：「那種『知道更多了』的感覺，根本就是工程師的鴉片，讓人難以抵抗。」&lt;/p&gt;
+&lt;p&gt;容器生態圈蓬勃發展，我們更需要小賴這本書，帶我們透過自己的雙手，掌握那不變的容器技術核心。希望大家藉由這本書，拾起熱血工程魂，重視底層知識，樂於動手實驗，在容器世界游刃有餘。&lt;/p&gt;
+&lt;p&gt; 　 　 　 　 　 　—— 敏捷魔藥師　葉秉哲 (William Yeh)　2023-08-19&lt;/p&gt;</description>
+      
     </item>
+    
     <item>
       <title>Distroless Image 牛刀小試</title>
       <link>//william-yeh.net/post/2023/02/distroless-image/</link>
       <pubDate>Wed, 15 Feb 2023 22:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2023/02/distroless-image/</guid>
-      <description>&lt;p&gt;距離上次重度探討「極簡化容器」已經快六年多了&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;。這議題，以前可能只是某些人技術上的興趣，現在則可能是必要。&lt;/p&gt;&#xA;&lt;p&gt;原因是：Docker Inc 的一些措施，讓人不得不慎重考慮替代方案。&lt;/p&gt;&#xA;&lt;h2 id=&#34;搬家的必要&#34;&gt;搬家的必要&lt;/h2&gt;&#xA;&lt;p&gt;這陣子容器世界起了不少變化，除了眾所周知的「Docker Desktop 要收費了」規定 &lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;，另一個較少被提及影響是 Docker Hub 的緊縮政策：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Image CI 緊縮：Docker Hub 取消免費用戶的 automated builds 功能。 &lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;&#xA;&lt;li&gt;Image pull 緊縮：Docker Hub 開始對未付費者施以較嚴格的限流措施。 &lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;於是，未付費的人，不僅在使用 Docker Hub 時會受到管制，還會波及產製 image 的 CI pipeline，不時會遇到這樣的 &amp;ldquo;toomanyrequests&amp;rdquo; 限流警告：&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;距離上次重度探討「極簡化容器」已經快六年多了&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;。這議題，以前可能只是某些人技術上的興趣，現在則可能是必要。&lt;/p&gt;
+&lt;p&gt;原因是：Docker Inc 的一些措施，讓人不得不慎重考慮替代方案。&lt;/p&gt;
+&lt;h2 id=&#34;搬家的必要&#34;&gt;搬家的必要&lt;/h2&gt;
+&lt;p&gt;這陣子容器世界起了不少變化，除了眾所周知的「Docker Desktop 要收費了」規定 &lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;，另一個較少被提及影響是 Docker Hub 的緊縮政策：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Image CI 緊縮：Docker Hub 取消免費用戶的 automated builds 功能。 &lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
+&lt;li&gt;Image pull 緊縮：Docker Hub 開始對未付費者施以較嚴格的限流措施。 &lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;於是，未付費的人，不僅在使用 Docker Hub 時會受到管制，還會波及產製 image 的 CI pipeline，不時會遇到這樣的 &amp;ldquo;toomanyrequests&amp;rdquo; 限流警告：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/02/ratelimit.png&#34; alt=&#34;Docker Hub 的 toomanyrequests 限流警告&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2023/02/ratelimit.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Docker Hub 的 toomanyrequests 限流警告&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;要避開這限制，治標方法是：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;架設 image proxy。 &lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
+&lt;li&gt;註冊 Docker Hub 帳號，將帳密寫進 CI pipeline 裡，以獲得稍微寬鬆一點點的 rate limit 門檻。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;治本方法，則得從兩方面著手：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Image 要從 Docker Hub 搬遷到 ghcr.io 之類的地方。&lt;/li&gt;
+&lt;li&gt;直接引用的 base image(s) 也必須從 Docker Hub 換成 gcr.io 或 ghcr.io 之類的地方。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;其中 (1) 很簡單，只要會 CI pipeline 即可辦到，像 GitHub Action 就有許多現成的元件可用。&lt;/p&gt;
+&lt;p&gt;至於 (2) 則比較麻煩。當然啦，對於玩過「極簡化容器」技術的人來說，這也只是小事一樁。&lt;/p&gt;
+&lt;h2 id=&#34;distroless-image&#34;&gt;Distroless image&lt;/h2&gt;
+&lt;p&gt;以前玩 minimal image 的人，是以 &lt;a href=&#34;https://hub.docker.com/_/alpine&#34;&gt;alpine&lt;/a&gt; 系列為大宗，只要不介意背後用的是 &lt;a href=&#34;https://en.wikipedia.org/wiki/Musl&#34;&gt;musl libc&lt;/a&gt;，這可以產生非常 &amp;ldquo;minimal&amp;rdquo; 的 image。近來 Google 的 &lt;a href=&#34;https://github.com/GoogleContainerTools/distroless&#34;&gt;&amp;ldquo;distroless&amp;rdquo; images&lt;/a&gt; 則提供 glibc 偏好者的另一種選擇，儘管它不算是 &amp;ldquo;minimal&amp;rdquo;，但也稱得上是 &amp;ldquo;small-enough&amp;rdquo;。&lt;/p&gt;
+&lt;p&gt;曾經我也是追求 minimal docker image 的一族 &lt;sup id=&#34;fnref1:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，現在我只求 small-enough 就好。畢竟對大多數應用場景來說，像以下這兩個 image，一個約 8 MB，一個約 29 MB，差異其實是可以忽略不計的：&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Image&lt;/th&gt;
+          &lt;th&gt;Size (MB)&lt;/th&gt;
+          &lt;th&gt;Base&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;docker.io/williamyeh/wrk:4.0.2&lt;/td&gt;
+          &lt;td&gt;8.347&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://hub.docker.com/_/alpine&#34;&gt;alpine3&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;ghcr.io/william-yeh/wrk:4.2.0&lt;/td&gt;
+          &lt;td&gt;28.76&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://github.com/GoogleContainerTools/distroless&#34;&gt;gcr.io/distroless/cc-debian11&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/02/image-layers.png&#34; alt=&#34;兩種 image 的 layers&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2023/02/image-layers.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;兩種 image 的 layers&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;可是，若以資安角度來看，8.347 MB 的 image 被挑出許多漏洞，這很顛覆「alpine 又小又安全」的既定印象：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/02/alpine-security.png&#34; alt=&#34;以 Alpine 的 musl 生態系產製的 image 被偵測出許多資安漏洞&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2023/02/alpine-security.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;以 Alpine 的 musl 生態系產製的 image 被偵測出許多資安漏洞&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;反觀 28.76 MB 的 image 卻比較安全，這也很顛覆「glibc 系列不安全」的既定印象：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/02/distroless-security.png&#34; alt=&#34;以 Debian 的 glibc 生態系產製的 image 資安漏洞反而較少&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2023/02/distroless-security.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;以 Debian 的 glibc 生態系產製的 image 資安漏洞反而較少&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;因此，我會建議，對大多數應用程式來說，選擇 Google 的 &lt;a href=&#34;https://github.com/GoogleContainerTools/distroless&#34;&gt;distroless 路線&lt;/a&gt;，可以省下許多與 alpine 相容性搏鬥的精力，又可以享受到許多好處：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;有 Google 在維護。&lt;/li&gt;
+&lt;li&gt;Base image 的所在地 gcr.io 沒有限流問題。&lt;/li&gt;
+&lt;li&gt;透過 multi-stage builds 機制，沿用既有工具鏈即可輕鬆製作。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;對於 distroless 感興趣的，請參考 &amp;ldquo;&lt;a href=&#34;https://iximiuz.com/en/posts/containers-distroless-images/&#34;&gt;What&amp;rsquo;s Inside Of a Distroless Container Image: Taking a Deeper Look&lt;/a&gt;&amp;rdquo; 這篇文章。&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;詳見〈&lt;a href=&#34;//william-yeh.net/post/2016/08/why-minimal-docker-images/&#34;&gt;為什麼要追求極簡化的 Docker image？&lt;/a&gt;〉一文。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref1:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;Docker Desktop 新規定：只要公司超過 250 人，或是年營收超過美金千萬，就必須付費。根據 &lt;a href=&#34;https://www.docker.com/pricing/faq/&#34;&gt;Docker FAQs&lt;/a&gt; 文件所載：&amp;ldquo;Docker Desktop requires a paid, per-user subscription for organizations with more than 250 employees or more than $10 million in annual revenue per our terms of service. [..] The updated terms for Docker Desktop were effective August 31, 2021, with a grace period until January 31, 2022.&amp;rdquo;&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;
+&lt;p&gt;根據 Docker Hub &amp;ldquo;&lt;a href=&#34;https://docs.docker.com/docker-hub/builds/&#34;&gt;Set up Automated Builds&lt;/a&gt;&amp;rdquo; 文件所載：&amp;ldquo;The Automated Builds feature is available for Docker Pro, Team, and Business users. Upgrade now to automatically build and push your images.&amp;rdquo;&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:4&#34;&gt;
+&lt;p&gt;根據 Docker Hub &amp;ldquo;&lt;a href=&#34;https://docs.docker.com/docker-hub/download-rate-limit/&#34;&gt;Download rate limit&lt;/a&gt;&amp;rdquo; 文件所載：&amp;ldquo;For anonymous users, the rate limit is set to 100 pulls per 6 hours per IP address. For authenticated users, it’s 200 pulls per 6 hour period. Users with a paid Docker subscription get up to 5000 pulls per day.&amp;rdquo;&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:5&#34;&gt;
+&lt;p&gt;其實有規模的組織，本來就應該自行架設 image proxy，以做好 artifact management。對這主題感興趣的，請參考 &amp;ldquo;&lt;a href=&#34;https://ranchergovernment.com/blog/mitigate-the-docker-dilemma-with-a-proxy-cache&#34;&gt;Mitigate the Docker Dilemma with a Proxy Cache&lt;/a&gt;&amp;rdquo; 一文。&amp;#160;&lt;a href=&#34;#fnref:5&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description>
+      
     </item>
+    
     <item>
       <title>用 Podman 執行 Laravel &#43; Sail</title>
       <link>//william-yeh.net/post/2023/02/podman-laravel-sail/</link>
       <pubDate>Tue, 07 Feb 2023 22:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2023/02/podman-laravel-sail/</guid>
-      <description>&lt;p&gt;從 Docker Desktop 換到 Podman &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; ，開始需要處理某些相容性問題。有些問題不見得是 Podman 的錯，但既然遇到了，就順手記錄一下除雷經驗。&lt;/p&gt;&#xA;&lt;p&gt;此文記錄一下在 Podman 執行 Laravel 9 欽定開發環境 &lt;a href=&#34;https://laravel.com/docs/9.x/sail&#34;&gt;Sail&lt;/a&gt; 的步驟。&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;從 Docker Desktop 換到 Podman &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; ，開始需要處理某些相容性問題。有些問題不見得是 Podman 的錯，但既然遇到了，就順手記錄一下除雷經驗。&lt;/p&gt;
+&lt;p&gt;此文記錄一下在 Podman 執行 Laravel 9 欽定開發環境 &lt;a href=&#34;https://laravel.com/docs/9.x/sail&#34;&gt;Sail&lt;/a&gt; 的步驟。&lt;/p&gt;
+&lt;h2 id=&#34;前置作業安裝-podman&#34;&gt;前置作業：安裝 Podman&lt;/h2&gt;
+&lt;p&gt;如果你是 Linux 用戶，請依照 &lt;a href=&#34;https://podman.io/getting-started/installation#installing-on-linux&#34;&gt;Podman 官方文件&lt;/a&gt;所載步驟安裝 Podman。&lt;/p&gt;
+&lt;p&gt;如果你是 Windows 用戶，請根據〈&lt;a href=&#34;//william-yeh.net/post/2023/02/wsl2-podman-k3s/&#34;&gt;WSL2 + Podman + K3s 組合技&lt;/a&gt;〉一文安裝 WSL2 + Podman。&lt;/p&gt;
+&lt;p&gt;如果你是 Mac 用戶，請先用 &lt;code&gt;brew install podman&lt;/code&gt; 來安裝。但據說 multipass + Podman 方案更好，我會再找時間實驗。&lt;/p&gt;
+&lt;h2 id=&#34;前置作業podman-daemon-mode&#34;&gt;前置作業：Podman daemon mode&lt;/h2&gt;
+&lt;p&gt;Laravel 的 Sail 需要用到 Docker Compose，而且它的 docker-compose.yml 又寫得⋯⋯很需要是以 daemon mode 運作的 container engine。&lt;/p&gt;
+&lt;p&gt;所以，請根據〈&lt;a href=&#34;//william-yeh.net/post/2023/02/podman-tips/#daemon-mode&#34;&gt;Podman Tips&lt;/a&gt;〉一文的步驟，啟動一個 daemon mode 的 Podman。&lt;/p&gt;
+&lt;h2 id=&#34;前置作業解決-composer-連線問題&#34;&gt;前置作業：解決 Composer 連線問題&lt;/h2&gt;
+&lt;p&gt;有些人在透過 Composer 安裝套件的過程中，會出現 repo.packagist.org 連線 timeout 的問題：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;curl error 28 while downloading https://repo.packagist.org/packages.json:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    Connection timed out after 10000 milliseconds&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;p&gt;請參考&lt;a href=&#34;https://github.com/composer/packagist/issues/950#issuecomment-424913225&#34;&gt;這篇解法&lt;/a&gt;，將 repo.packagist.org 的 IPv4 位址直接寫死到 &lt;code&gt;/etc/hosts&lt;/code&gt;：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;% dig +short repo.packagist.org
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;% echo &amp;#34;`dig +short repo.packagist.org` repo.packagist.org&amp;#34; &amp;gt;&amp;gt; /etc/hosts&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;p&gt;如果你是身處 WSL2 環境，也請順便編輯一下 WSL 的設定檔 &lt;code&gt;/etc/wsl.conf&lt;/code&gt; 以避免設定消失：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+
+  
+  &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-ini&#34; data-lang=&#34;ini&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;[network]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Disable auto-gen /etc/hosts&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;generateHosts&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;false&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;安裝-sail&#34;&gt;安裝 Sail&lt;/h2&gt;
+&lt;p&gt;請依照 &lt;a href=&#34;https://laravel.com/docs/9.x/installation#getting-started-on-linux&#34;&gt;Laravel 官方文件&lt;/a&gt;所載步驟，安裝一整套 PHP + Composer + Laravel + Sail + blah blah blah 本地開發環境，也順便建立一個名為 &amp;ldquo;example-app&amp;rdquo; 的新專案：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;% curl -s &amp;#34;https://laravel.build/example-app&amp;#34; | bash&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;h2 id=&#34;修改-sail-產生的專案設定&#34;&gt;修改 Sail 產生的專案設定&lt;/h2&gt;
+&lt;p&gt;透過 Laravel + Sail 產生的專案，預設會跑在 port 80。我建議修改到其他 unprivileged port 以減少問題。&lt;/p&gt;
+&lt;p&gt;請在專案的 &lt;code&gt;.env&lt;/code&gt; 檔案添加這一行：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;APP_PORT=3001&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;p&gt;透過 Laravel + Sail 產生的專案，&lt;code&gt;storage&lt;/code&gt; 目錄可能會有存取權限的問題。請參考&lt;a href=&#34;https://stackoverflow.com/a/67511101/714426&#34;&gt;這篇解法&lt;/a&gt;：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;% chmod o+w ./storage/ -R&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;p&gt;或是保守一點：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;% chmod o+w ./storage/logs/       -R
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;% chmod o+w ./framework/cache/    -R
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;% chmod o+w ./framework/sessions/ -R
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;% chmod o+w ./framework/views/    -R&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;h2 id=&#34;執行-sail&#34;&gt;執行 Sail&lt;/h2&gt;
+&lt;p&gt;請依照 &lt;a href=&#34;https://laravel.com/docs/9.x/installation#getting-started-on-linux&#34;&gt;Laravel 官方文件&lt;/a&gt;所載步驟，執行 &amp;ldquo;example-app&amp;rdquo; 專案：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;% cd example-app
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;% ./vendor/bin/sail up&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;p&gt;如果一切順利，可以用瀏覽器看到 http://localhost:3001/ 順利執行：&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/02/laravel-screenshot.png&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2023/02/laravel-screenshot.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;也順便看看整個 Laravel 產生的本地開發環境含有哪些東西：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/02/laravel-process.png&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2023/02/laravel-process.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;僅以這篇文章示範，只要懂得排雷，Podman 足以勝任 Docker Desktop 的角色。&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;詳見〈&lt;a href=&#34;//william-yeh.net/post/2023/02/wsl2-podman-k3s/&#34;&gt;WSL2 + Podman + K3s 組合技&lt;/a&gt;〉一文。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description>
+      
     </item>
+    
     <item>
       <title>Podman Tips</title>
       <link>//william-yeh.net/post/2023/02/podman-tips/</link>
       <pubDate>Tue, 07 Feb 2023 20:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2023/02/podman-tips/</guid>
-      <description>&lt;p&gt;從 Docker Desktop 換成 Podman，有些習慣必須做些小調整。此文記錄一些常用的小技巧。&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;從 Docker Desktop 換成 Podman，有些習慣必須做些小調整。此文記錄一些常用的小技巧。&lt;/p&gt;
+&lt;h2 id=&#34;image-tree&#34;&gt;Image tree&lt;/h2&gt;
+&lt;p&gt;很久很久以前，我們可以用 &lt;code&gt;docker images --tree&lt;/code&gt; 來看 &lt;a href=&#34;https://docs.docker.com/storage/storagedriver/#images-and-layers&#34;&gt;image layer&lt;/a&gt; 的層次關係。此功能選項被後來某一版 Docker 廢除了，於是就有一些替代方案來做這件事：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/justone/dockviz&#34;&gt;dockviz&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/wagoodman/dive&#34;&gt;dive&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/TomasTomecek/sen&#34;&gt;sen&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;可惜的是，這些工具都假設現在是處於「有一個 daemon 跑在 &lt;code&gt;DOCKER_HOST&lt;/code&gt;」的環境（畢竟這是 Docker 的老規矩）。如果我們不想為此而刻意以 daemon 模式啟動 Podman，可透過 Podman 的 &lt;a href=&#34;https://docs.podman.io/en/latest/markdown/podman-image-tree.1.html&#34;&gt;image tree 指令&lt;/a&gt;來檢視 image：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;% podman image tree python:3.9.16&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;h2 id=&#34;daemon-mode&#34;&gt;Daemon mode&lt;/h2&gt;
+&lt;p&gt;儘管 daemonless 的好處很多，但很多舊世界的工具，會假設現在是處於「有一個 container engine daemon 跑在 &lt;code&gt;DOCKER_HOST&lt;/code&gt;」的環境。因此，有時候我們得故意讓 Podman 以 daemon mode 運行。&lt;/p&gt;
+&lt;h3 id=&#34;臨時性實驗&#34;&gt;臨時性實驗&lt;/h3&gt;
+&lt;p&gt;我們先啟動一個 rootless Podman process：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;% podman system service -t 0&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;p&gt;另開一個終端機視窗，設置 &lt;code&gt;DOCKER_HOST&lt;/code&gt; 環境變數：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;% podman info --format={{&amp;#34;.Host.RemoteSocket.Path&amp;#34;}}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;% export DOCKER_HOST=unix://$(podman info --format={{&amp;#34;.Host.RemoteSocket.Path&amp;#34;}})&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;p&gt;現在，我們可以在這個終端機實驗看看那些舊世界的工具是否可以正常運作。就以前面提到的 &lt;a href=&#34;https://github.com/wagoodman/dive&#34;&gt;dive&lt;/a&gt; 為例吧！&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;% dive python:3.9.16&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;h3 id=&#34;便利性設置&#34;&gt;便利性設置&lt;/h3&gt;
+&lt;p&gt;如果一切正常，我們可以寫一個 &lt;code&gt;/usr/local/bin/start-podman-service.sh&lt;/code&gt; 程式以簡化啟用流程：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;#!/bin/bash
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;FILE=/var/run/docker.sock
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;if [ ! -f &amp;#34;$FILE&amp;#34; ]; then
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    sudo ln -s /run/user/$(id -u)/podman/podman.sock $FILE
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;fi
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;echo &amp;#34;Starting podman as server... Ctrl-C to stop.&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;exec podman system service -t 0&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;p&gt;在不需要時，按下 &lt;code&gt;Ctrl&lt;/code&gt;+&lt;code&gt;C&lt;/code&gt; 即可關閉，非常方便。&lt;/p&gt;
+&lt;h3 id=&#34;持久性設置&#34;&gt;持久性設置&lt;/h3&gt;
+&lt;p&gt;如果你想透過 systemd 來管理，請參考 K3d 團隊提供的 &lt;a href=&#34;https://k3d.io/v5.4.7/usage/advanced/podman/&#34;&gt;Using Podman instead of Docker&lt;/a&gt; 這篇文章。&lt;/p&gt;</description>
+      
     </item>
+    
     <item>
       <title>WSL2 &#43; Podman &#43; K3s 組合技</title>
       <link>//william-yeh.net/post/2023/02/wsl2-podman-k3s/</link>
       <pubDate>Mon, 06 Feb 2023 22:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2023/02/wsl2-podman-k3s/</guid>
-      <description>&lt;p&gt;距離上次重度使用 WSL 已經快四年了。四年來 WSL 世界起了一些變化：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;WSL 已經演進到第二版。&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;以前還會為了要搭配 &lt;a href=&#34;//william-yeh.net/post/2019/03/wsl-cmder-zsh/&#34;&gt;Cmder&lt;/a&gt; 或者 &lt;a href=&#34;//william-yeh.net/post/2019/04/wsltty-tmux/&#34;&gt;WSLtty&lt;/a&gt; 而大費周章，現在則被 &lt;a href=&#34;https://learn.microsoft.com/zh-tw/windows/terminal/&#34;&gt;Windows Terminal&lt;/a&gt; 解決了大部分問題，使用體驗也開始接近 Mac 的 iTerm2。&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;容器世界也起了很大的變化：&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;距離上次重度使用 WSL 已經快四年了。四年來 WSL 世界起了一些變化：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;WSL 已經演進到第二版。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;以前還會為了要搭配 &lt;a href=&#34;//william-yeh.net/post/2019/03/wsl-cmder-zsh/&#34;&gt;Cmder&lt;/a&gt; 或者 &lt;a href=&#34;//william-yeh.net/post/2019/04/wsltty-tmux/&#34;&gt;WSLtty&lt;/a&gt; 而大費周章，現在則被 &lt;a href=&#34;https://learn.microsoft.com/zh-tw/windows/terminal/&#34;&gt;Windows Terminal&lt;/a&gt; 解決了大部分問題，使用體驗也開始接近 Mac 的 iTerm2。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;容器世界也起了很大的變化：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Docker Desktop 新規定：只要公司超過 250 人，或是年營收超過美金千萬，就必須付費。&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; Docker Hub 也開始對未付費者施以較嚴格的限流措施。 &lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Kubernetes 從 1.24 起停止支援 dockershim。 &lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;RedHat 釋出的 &lt;a href=&#34;https://podman.io/&#34;&gt;Podman&lt;/a&gt;，挾其完全免費、daemonless、rootless、pod 的特性，開始吸引對 Docker 起異心的人。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;因此，我也趁此機會更新這方面的資訊，以免費的組合技，在 Windows 上盡量復刻 Mac 的容器體驗：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;以 WSL 2 與 IDE 的整合，兼顧命令列與 GUI 體驗。&lt;/li&gt;
+&lt;li&gt;以 Podman 取代 Docker Desktop 的 container engine。&lt;/li&gt;
+&lt;li&gt;以 K3s 取代 Docker Desktop 的 Kubernetes。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;註：如果不想以 WSL 2 為工作環境 (1)，單純只想要一個 Desktop Desktop 替代方案 (2 + 3) 的人，可以直接選用 &lt;a href=&#34;https://rancherdesktop.io/&#34;&gt;Rancher Desktop&lt;/a&gt;，就不必往下看了。&lt;/p&gt;
+&lt;h2 id=&#34;wsl-2&#34;&gt;WSL 2&lt;/h2&gt;
+&lt;p&gt;請依照保哥的文章〈&lt;a href=&#34;https://blog.miniasp.com/post/2022/11/25/Useful-tool-WSL-1-0&#34;&gt;介紹好用工具：從 Microsoft Store 安裝 WSL 1.0 版&lt;/a&gt;〉進行以下步驟：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;更新 Windows 版本（譬如說，Windows 10 請更新至 &lt;code&gt;22H2&lt;/code&gt; 以上，並確定套用過  &lt;a href=&#34;https://support.microsoft.com/en-us/topic/november-15-2022-kb5020030-os-builds-19042-2311-19043-2311-19044-2311-and-19045-2311-preview-237a9048-f853-4e29-a3a2-62efdbea95e2?WT.mc_id=DT-MVP-4015686&#34;&gt;KB5020030&lt;/a&gt; patch）。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;安裝 WSL。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;更新 WSL 版本：&lt;code&gt;wsl --update&lt;/code&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;查看 WSL 版本：&lt;code&gt;wsl --version&lt;/code&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;如果一切順利，應該會看到類似以下的畫面：&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/02/wsl-version.png&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2023/02/wsl-version.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;請確定 WSL 版本是 1.0.3.0 以上，否則接下來可能會遇到一堆稀奇古怪的問題。 &lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;接下來，請繼續透過 WSL 安裝 Linux：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;安裝一個 Linux distribution。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;第一次執行 WSL，並設定 Linux 的帳號密碼。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;建議編輯一下 WSL 的設定檔 &lt;code&gt;/etc/wsl.conf&lt;/code&gt;：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+
+  
+  &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-ini&#34; data-lang=&#34;ini&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;[boot]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;systemd&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;[network]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Disable auto-gen /etc/resolv.conf&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;generateResolvConf&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;false&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Disable auto-gen /etc/hosts&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# @see https://github.com/composer/packagist/issues/950#issuecomment-424913225&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;generateHosts&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;false&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;如果要避免 WSL 占用過多系統資源，可編輯 Windows 的 &lt;code&gt;$env:USERPROFILE\.wslconfig&lt;/code&gt; 檔案如下：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+
+  
+  &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-ini&#34; data-lang=&#34;ini&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;[wsl2]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;memory&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;4GB&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;processors&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;2&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;如果要讓 Windows 慣用的 IDE 能夠與 WSL 合作順暢，請參考相關的設定：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;VS Code 需要安裝 &lt;a href=&#34;https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl&#34;&gt;WSL extension&lt;/a&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;JetBrains 的工具，各有對應的文件說明，像 &lt;a href=&#34;https://www.jetbrains.com/help/go/how-to-use-wsl-development-environment-in-product.html&#34;&gt;GoLand 可直接使用&lt;/a&gt;，PHPStorm 則需透過 &lt;a href=&#34;https://www.jetbrains.com/help/phpstorm/configuring-remote-interpreters.html&#34;&gt;PHP remote interpreters&lt;/a&gt; plugin。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;zsh--oh-my-zsh--homebrew&#34;&gt;Zsh + Oh My ZSH + Homebrew&lt;/h2&gt;
+&lt;p&gt;在 WSL 中安裝 zsh 及 oh-my-zsh：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;% sudo apt-get install zsh
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;% sh -c &amp;#34;$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&amp;#34;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;p&gt;將 zsh 設為內定 shell：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;% chsh -s $(which zsh)&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;p&gt;如果你的 zsh theme 含有許多特殊的符號字元，請順便安裝 &lt;a href=&#34;https://github.com/powerline/fonts&#34;&gt;Powerline&lt;/a&gt; 系列字型。&lt;/p&gt;
+&lt;p&gt;Mac 族群一向愛用 &lt;a href=&#34;https://brew.sh/&#34;&gt;Homebrew&lt;/a&gt;。既然它也搬到 Linux 世界了，就來安裝吧！&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;% sudo apt-get install build-essential curl file git
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;% sh -c &amp;#34;$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;% # 請記得要遵照安裝畫面出現的步驟做最後的設定！&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;h2 id=&#34;podman&#34;&gt;Podman&lt;/h2&gt;
+&lt;p&gt;透過 WSL 安裝好 Linux 之後，其實我們大可在裡面安裝純粹的 Docker Engine](&lt;a href=&#34;https://docs.docker.com/engine/install/&#34;&gt;https://docs.docker.com/engine/install/&lt;/a&gt;)，即過去俗稱的 &lt;a href=&#34;https://github.com/docker/docker-ce&#34;&gt;CE 版 (community edition)&lt;/a&gt; 或 Moby，它採用 Apache License 2.0 授權，不會有 Docker Desktop 的收費問題。&lt;/p&gt;
+&lt;p&gt;不過，我還是想玩玩具有 daemonless &amp;amp; rootless 特性的替代方案：Podman。&lt;/p&gt;
+&lt;h3 id=&#34;安裝&#34;&gt;安裝&lt;/h3&gt;
+&lt;p&gt;請依照 &lt;a href=&#34;https://podman.io/getting-started/installation#installing-on-linux&#34;&gt;Podman 官方文件&lt;/a&gt;所載步驟安裝 Podman。譬如說，如果 WSL 的 distribution 是 Ubuntu 22.04.1 LTS，可如此安裝：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;% sudo apt update
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;% sudo apt -y install podman&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;p&gt;或是直接透過 Homebrew 安裝。好處是容易更新版本，缺點是安裝較慢：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;% sudo apt install uidmap
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;% brew install podman&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;h3 id=&#34;設定&#34;&gt;設定&lt;/h3&gt;
+&lt;p&gt;Podman 是 daemonless + rootless 的架構。如果你希望讓 container 能夠自由綁定 port 80 以利本地開發，可以考慮在 &lt;code&gt;/etc/sysctl.conf&lt;/code&gt; 添加設定：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;net.ipv4.ip_unprivileged_port_start=80&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;p&gt;還有一個選擇性步驟。如果你希望讓 image 不會被綁在 &lt;code&gt;docker.io/library/&lt;/code&gt; 這個預設的 registry，可以考慮在 &lt;code&gt;/etc/containers/registries.conf&lt;/code&gt; 添加設定 &lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt; ：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;unqualified-search-registries=[
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &amp;#34;registry.access.redhat.com&amp;#34;, &amp;#34;registry.fedoraproject.org&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &amp;#34;quay.io&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &amp;#34;gcr.io&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &amp;#34;ghcr.io&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &amp;#34;docker.io&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;]&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;h3 id=&#34;便利性&#34;&gt;便利性&lt;/h3&gt;
+&lt;p&gt;為了讓 Podman 能盡量沿用過往 Docker 的使用習慣，建議在 &lt;code&gt;$HOME/.bashrc&lt;/code&gt; 添加 alias：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;alias docker=&amp;#39;podman&amp;#39;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;p&gt;如果遇到 alias 也無法避開的問題，建議索性放一個 &lt;code&gt;/usr/local/bin/docker&lt;/code&gt; 檔案：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#!/bin/bash
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;exec podman &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$@&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;h2 id=&#34;podman-play-kube&#34;&gt;Podman play kube&lt;/h2&gt;
+&lt;p&gt;Podman 有一個介於 Docker 與 Kubernetes 之間的功能：pod。如果懂得善用，在許多情況下可以取代 Docker Compose，也做為邁向 Kubernetes 的踏腳石。&lt;/p&gt;
+&lt;p&gt;譬如說，如果我們稍加修改 Kubernetes 官網的 pod 範例 &lt;a href=&#34;https://kubernetes.io/docs/concepts/workloads/pods/#using-pods&#34;&gt;simple-pod.yaml&lt;/a&gt;：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;apiVersion&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;v1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;kind&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;Pod&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;metadata&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;name&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;nginx-pod&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;spec&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;containers&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    - &lt;span style=&#34;color:#f92672&#34;&gt;name&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;nginx&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#f92672&#34;&gt;image&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;docker.io/library/nginx:1.14.2&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#f92672&#34;&gt;ports&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        - &lt;span style=&#34;color:#f92672&#34;&gt;containerPort&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;80&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          &lt;span style=&#34;color:#f92672&#34;&gt;hostPort&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;8080&lt;/span&gt;     &lt;span style=&#34;color:#75715e&#34;&gt;# add this line&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;p&gt;接下來就可用 &lt;code&gt;podman play kube&lt;/code&gt; 指令在 WSL 啟用這個 &lt;code&gt;nginx-pod&lt;/code&gt;：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;% sudo podman play kube simple-pod.yaml&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;p&gt;如果一切順利，就可以在 WSL 裡面看到 nginx pod 成功執行：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;% podman pod ps
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;POD ID        NAME        STATUS      CREATED            INFRA ID      # OF CONTAINERS
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;46be4ed3a73f  nginx-pod   Degraded    About an hour ago  93d658fa1939  2
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;% wget -O - localhost:8080&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;p&gt;也可以在 Windows host 用瀏覽器看到 nginx 順利執行：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/02/nginx-welcome.png&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2023/02/nginx-welcome.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;podman-compose&#34;&gt;Podman Compose&lt;/h2&gt;
+&lt;p&gt;Kubernetes 生態圈有一大堆媲美 Docker Compose 便利性的工具（譬如我愛用的 &lt;a href=&#34;https://skaffold.dev/&#34;&gt;Skaffold&lt;/a&gt;）。不過，如果你實在太想念 Docker Compose，有兩種做法：&lt;/p&gt;
+&lt;p&gt;➀ 可直接沿用舊的 Docker Compose，但是需要將 Podman 啟動成 daemon &lt;sup id=&#34;fnref:6&#34;&gt;&lt;a href=&#34;#fn:6&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;6&lt;/a&gt;&lt;/sup&gt; 。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/docker/compose&#34;&gt;Docker Compose&lt;/a&gt; 的安裝方法：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;% sudo curl -SL https://github.com/docker/compose/releases/download/v2.15.1/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;% sudo chmod +x /usr/local/bin/docker-compose&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;p&gt;➁ 如果不需顧及相容性，不妨試試 Podman 陣營端出的替代品 &lt;a href=&#34;https://github.com/containers/podman-compose&#34;&gt;Podman Compose&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;對於 Podman Compose 感興趣的，請參考以下文章：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://phoenixnap.com/kb/podman-compose&#34;&gt;Podman Compose - Managing Containers&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.redhat.com/sysadmin/podman-compose-docker-compose&#34;&gt;Podman Compose or Docker Compose: Which should you use in Podman?&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;k3s&#34;&gt;K3s&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://k3s.io/&#34;&gt;K3s&lt;/a&gt; 是由 Rancher Labs 貢獻給 CNCF 的輕量級 Kubernetes 開源方案，很適合應用程式開發者使用，作為 Docker Desktop 內建 Kubernetes 的替代方案。&lt;/p&gt;
+&lt;p&gt;請依照 &lt;a href=&#34;https://docs.k3s.io/installation/configuration&#34;&gt;K3s 官方文件&lt;/a&gt;所載步驟安裝： &lt;sup id=&#34;fnref:7&#34;&gt;&lt;a href=&#34;#fn:7&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;7&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;% curl -sfL https://get.k3s.io | K3S_KUBECONFIG_MODE=&amp;#34;644&amp;#34; sh -&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;p&gt;為了讓其他 Kubernetes 相關工具順利運作，建議在 &lt;code&gt;$HOME/.bashrc&lt;/code&gt; 添加 &lt;code&gt;KUBECONFIG&lt;/code&gt; 環境變數：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;export KUBECONFIG=&amp;#34;~/.kube/config:/etc/rancher/k3s/k3s.yaml&amp;#34;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;h2 id=&#34;k9s&#34;&gt;K9s&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://k9scli.io/&#34;&gt;K9s&lt;/a&gt; 是很方便的 Kubernetes 終端機工具，請依照官方文件所載步驟安裝：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;% brew install derailed/k9s/k9s&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;p&gt;現在，我們可以用 &lt;code&gt;k9s&lt;/code&gt; 指令查看剛剛安裝好的最陽春的 K3s 環境到底跑了哪些東西：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/02/k9s-screenshot.png&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2023/02/k9s-screenshot.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;全部看一遍&#34;&gt;全部看一遍&lt;/h2&gt;
+&lt;p&gt;截至目前為止，我們安裝好了 Podman 及 K3s，也利用 Podman 啟動一個 nginx pod。現在，讓我們看看整個 WSL 系統的 process tree：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/02/all-screenshot.png&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2023/02/all-screenshot.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;整個 process tree 非常扁平，是不是跟以前 Docker Desktop 的版本很不一樣呢？&lt;/p&gt;
+&lt;p&gt;希望這篇文章，能夠讓你更放心擺脫 Docker Desktop。&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;根據 &lt;a href=&#34;https://www.docker.com/pricing/faq/&#34;&gt;Docker FAQs&lt;/a&gt; 文件所載：&amp;ldquo;Docker Desktop requires a paid, per-user subscription for organizations with more than 250 employees or more than $10 million in annual revenue per our terms of service. [..] The updated terms for Docker Desktop were effective August 31, 2021, with a grace period until January 31, 2022.&amp;rdquo;&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;根據 Docker Hub &lt;a href=&#34;https://docs.docker.com/docker-hub/download-rate-limit/&#34;&gt;Download rate limit&lt;/a&gt; 文件所載：&amp;ldquo;For anonymous users, the rate limit is set to 100 pulls per 6 hours per IP address. For authenticated users, it’s 200 pulls per 6 hour period. Users with a paid Docker subscription get up to 5000 pulls per day.&amp;rdquo;&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;
+&lt;p&gt;關於 Kubernetes 1.24 停止支援 dockershim 的始末，請見 &lt;a href=&#34;https://kubernetes.io/blog/2022/02/17/dockershim-faq/&#34;&gt;Updated: Dockershim Removal FAQ&lt;/a&gt; 這份文件。&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:4&#34;&gt;
+&lt;p&gt;譬如說在 &amp;ldquo;&lt;a href=&#34;https://devblogs.microsoft.com/commandline/systemd-support-is-now-available-in-wsl/#how-can-you-get-systemd-on-your-machine&#34;&gt;Systemd support is now available in WSL!&lt;/a&gt;&amp;rdquo; 一文就提到，如果 WSL 版本過舊，甚至連 Linux systemd 功能都會有問題。&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:5&#34;&gt;
+&lt;p&gt;關於 &lt;code&gt;registries.conf&lt;/code&gt; 的更多設定內容，請見 &lt;a href=&#34;https://www.redhat.com/sysadmin/manage-container-registries&#34;&gt;How to manage Linux container registries&lt;/a&gt; 一文。&amp;#160;&lt;a href=&#34;#fnref:5&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:6&#34;&gt;
+&lt;p&gt;關於將 Podman 以 daemon mode 運作的具體步驟，請參考〈&lt;a href=&#34;//william-yeh.net/post/2023/02/podman-tips/#daemon-mode&#34;&gt;Podman Tips&lt;/a&gt;〉一文。&amp;#160;&lt;a href=&#34;#fnref:6&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:7&#34;&gt;
+&lt;p&gt;大部份的人會依照 &lt;a href=&#34;https://k3s.io/&#34;&gt;K3s 首頁&lt;/a&gt;所載的步驟 &lt;code&gt;curl -sfL https://get.k3s.io | sh -&lt;/code&gt; 來安裝 K3s，但這樣安裝好的 K3s 常會需要動用 &lt;code&gt;sudo&lt;/code&gt; 才能執行相關指令。我認為，與其事後再用 &lt;a href=&#34;https://0to1.nl/post/k3s-kubectl-permission/&#34;&gt;k3s permission denied when using kubectl&lt;/a&gt; 所介紹的方法調整設定，不如從一開始就以不需動用 &lt;code&gt;sudo&lt;/code&gt; 的方式安裝。&amp;#160;&lt;a href=&#34;#fnref:7&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description>
+      
     </item>
+    
     <item>
       <title>Docker File Permissions on Windows</title>
       <link>//william-yeh.net/post/2019/06/docker-file-permissions/</link>
       <pubDate>Mon, 24 Jun 2019 12:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2019/06/docker-file-permissions/</guid>
-      <description>&lt;p&gt;Currently Linux containers are still more popular than Windows containers. And Windows users often need to use Linux containers even from their Windows computers.&lt;/p&gt;&#xA;&lt;p&gt;Recently I&amp;rsquo;ve found something very strange about Linux-style file permissions when the Docker images are built from Windows hosts.&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; Therefore, I&amp;rsquo;ve conducted a suite of test cases to investigate whether file permissions are preserved with Docker &amp;amp; &lt;a href=&#34;https://skaffold.dev/&#34;&gt;Skaffold&lt;/a&gt; toolchains. All experiment materials are available in the &lt;a href=&#34;https://github.com/William-Yeh/container-chmod&#34;&gt;container-chmod&lt;/a&gt; repo.&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;Currently Linux containers are still more popular than Windows containers. And Windows users often need to use Linux containers even from their Windows computers.&lt;/p&gt;
+&lt;p&gt;Recently I&amp;rsquo;ve found something very strange about Linux-style file permissions when the Docker images are built from Windows hosts.&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; Therefore, I&amp;rsquo;ve conducted a suite of test cases to investigate whether file permissions are preserved with Docker &amp;amp; &lt;a href=&#34;https://skaffold.dev/&#34;&gt;Skaffold&lt;/a&gt; toolchains. All experiment materials are available in the &lt;a href=&#34;https://github.com/William-Yeh/container-chmod&#34;&gt;container-chmod&lt;/a&gt; repo.&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;% git clone https://github.com/William-Yeh/container-chmod.git&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;h2 id=&#34;experiment-setting&#34;&gt;Experiment setting&lt;/h2&gt;
+&lt;p&gt;The experiments are composed of a few files with typical Unix-style file permissions:&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;├── skaffold.yaml
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;└── src
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    ├── Dockerfile
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    ├── file-644.txt
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    └── script-755.sh
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-rw-r--r-- 1 william  70 Jun 24 17:01 Dockerfile
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-rw-r--r-- 1 william  57 Jun 24 15:17 file-644.txt
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-rwxr-xr-x 1 william  84 Jun 24 15:19 script-755.sh&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;p&gt;We will use two ways to build the Linux-container images:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;To build image with &lt;code&gt;docker build&lt;/code&gt; command (Docker Engine 18.09.2).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;To build image with &lt;code&gt;skaffold build&lt;/code&gt; command (Skaffold v0.32.0).&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;And we&amp;rsquo;ll conduct the experiments in the following environment settings:&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Host&lt;/th&gt;
+          &lt;th&gt;Built w/ Docker CLI&lt;/th&gt;
+          &lt;th&gt;Built w/ Skaffold (WSL version)&lt;/th&gt;
+          &lt;th&gt;Built w/ Skaffold (host version)&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;macOS&lt;/td&gt;
+          &lt;td&gt;➊&lt;/td&gt;
+          &lt;td&gt;N/A&lt;/td&gt;
+          &lt;td&gt;➋&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;WSL + Docker Desktop for Windows&lt;/td&gt;
+          &lt;td&gt;③&lt;/td&gt;
+          &lt;td&gt;➍&lt;/td&gt;
+          &lt;td&gt;N/A&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Windows&lt;/td&gt;
+          &lt;td&gt;⑤&lt;/td&gt;
+          &lt;td&gt;N/A&lt;/td&gt;
+          &lt;td&gt;⑹&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Will all experiments display the correct file permissions?&lt;/p&gt;
+&lt;h2 id=&#34;macos--&#34;&gt;macOS: ➊ ➋&lt;/h2&gt;
+&lt;p&gt;Let&amp;rsquo;s begin with macOS, which acts as the control group.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://asciinema.org/a/253423&#34;&gt;&lt;img src=&#34;https://asciinema.org/a/253423.svg&#34; alt=&#34;asciicast&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Perfect! All Unix-style file permissions are set correctly.&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;total 20                                                                        
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;drwxr-xr-x    1 root     root          4096 Jun 24 22:30 .                      
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;drwxr-xr-x    1 root     root          4096 Jun 24 22:30 ..                     
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-rw-r--r--    1 root     root            70 Jun 24 22:18 Dockerfile             
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-rw-r--r--    1 root     root            57 Jun 24 22:18 file-644.txt           
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-rwxr-xr-x    1 root     root            84 Jun 24 22:18 script-755.sh          &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;h2 id=&#34;wsl--&#34;&gt;WSL: ③ ➍&lt;/h2&gt;
+&lt;p&gt;On Windows, my preference is to use WSL to connect to Docker Desktop for Windows.&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;  Will this combination work well with Unix-style file permissions?&lt;/p&gt;
+&lt;p&gt;Below are experiments conducted on WSL:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://asciinema.org/a/253450&#34;&gt;&lt;img src=&#34;https://asciinema.org/a/253450.svg&#34; alt=&#34;asciicast&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;As shown in this demo, the ➍ skaffold experiment works quite well on WSL. The ③ docker-cli experiment works, though not the best-possible Unix-style file permissions:&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;SECURITY WARNING: You are building a Docker image from Windows against a non-Windows Docker host. All files and directories added to build context will have &lt;code&gt;&#39;-rwxr-xr-x&#39;&lt;/code&gt; permissions. It is recommended to double check and reset permissions for sensitive files and directories.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;pure-windows--&#34;&gt;Pure Windows: ⑤ ⑹&lt;/h2&gt;
+&lt;p&gt;What if a Windows user sticks with pure-Windows toolchains, i.e., use traditional Command Prompt (cmd) to connect to Docker Desktop for Windows?&lt;/p&gt;
+&lt;p&gt;The ⑤ docker-cli experiment shows the same result as in previous ③ &lt;code&gt;&#39;-rwxr-xr-x&#39;&lt;/code&gt; permission:&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;C:\&amp;gt; docker run -it test-docker                                           
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;File permission (script-755.sh) should be: 755  rwxr-xr-x              
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;total 20                                                               
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;drwxr-xr-x    1 root     root          4096 Jun 25 03:45 .             
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;drwxr-xr-x    1 root     root          4096 Jun 25 03:45 ..            
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-rwxr-xr-x    1 root     root            70 Jun 25 03:44 Dockerfile    
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-rwxr-xr-x    1 root     root            57 Jun 24 08:03 file-644.txt  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-rwxr-xr-x    1 root     root            84 Jun 24 08:03 script-755.sh&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;p&gt;However, the ⑹ skaffold experiment shows the &lt;em&gt;worst&lt;/em&gt; result:&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;C:\&amp;gt; skaffold-windows-amd64.exe build
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Generating tags...
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; - test-skaffold -&amp;gt; test-skaffold:dbe377c
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Tags generated in 228.0023ms
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Starting build...
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Found [docker-for-desktop] context, using local docker daemon.
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Building [test-skaffold]...
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Sending build context to Docker daemon  4.096kB
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Step 1/4 : FROM alpine:3.9.4
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;...
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;C:\&amp;gt; docker run -it 25997136449a
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker: Error response from daemon: OCI runtime create failed: container_linux.go:344:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;starting container process caused &amp;#34;exec: \&amp;#34;/app/script-755.sh\&amp;#34;: permission denied&amp;#34;: unknown.
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;C:\&amp;gt; docker run -it 25997136449a  ls -al
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;total 20
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;drwxr-xr-x    1 root     root          4096 Jun 25 03:51 .
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;drwxr-xr-x    1 root     root          4096 Jun 25 03:53 ..
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-rw-rw-rw-    1 root     root            70 Jun 25 03:44 Dockerfile
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-rw-rw-rw-    1 root     root            57 Jun 24 08:03 file-644.txt
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-rw-rw-rw-    1 root     root            84 Jun 24 08:03 script-755.sh&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;p&gt;As shown in the demo, Skaffold blindly sets all the file permissions as &lt;code&gt;&#39;-rw-rw-rw-&#39;&lt;/code&gt;, eliminating the &lt;code&gt;&#39;x&#39;&lt;/code&gt; permission required for the &lt;code&gt;script-755.sh&lt;/code&gt; script file.&lt;/p&gt;
+&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;Different Unix-style file permissions will be generated in the Docker images when building Linux containers with different combination of host operating systems, docker cli, and Skaffold toolchains:&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Host&lt;/th&gt;
+          &lt;th&gt;Built w/ Docker CLI&lt;/th&gt;
+          &lt;th&gt;Built w/ Skaffold (WSL version)&lt;/th&gt;
+          &lt;th&gt;Built w/ Skaffold (host version)&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;macOS&lt;/td&gt;
+          &lt;td&gt;➊&lt;/td&gt;
+          &lt;td&gt;N/A&lt;/td&gt;
+          &lt;td&gt;➋&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;WSL + Docker Desktop for Windows&lt;/td&gt;
+          &lt;td&gt;③&lt;/td&gt;
+          &lt;td&gt;➍&lt;/td&gt;
+          &lt;td&gt;N/A&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Windows&lt;/td&gt;
+          &lt;td&gt;⑤&lt;/td&gt;
+          &lt;td&gt;N/A&lt;/td&gt;
+          &lt;td&gt;⑹&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Results:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Best results: ➊ ➋ ➍&lt;/li&gt;
+&lt;li&gt;Acceptable results: ③ ⑤&lt;/li&gt;
+&lt;li&gt;Unacceptable results: ⑹&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;My suggestions for building Linux images are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;If your applications require adequate file permissions (especially the &lt;code&gt;&#39;x&#39;&lt;/code&gt;) and you cannot completely control the build toolchains to use, be sure to modify your &lt;code&gt;Dockerfile&lt;/code&gt; accordingly.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;If you can control the whole toolchains to use (e.g., in the CI/CD pipeline), stick with the Linux ones.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;There is also an issue about this in Skaffold: &lt;a href=&#34;https://github.com/GoogleContainerTools/skaffold/issues/1470&#34;&gt;Issue #1470: Permission denied through skaffold&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;See my article “&lt;a href=&#34;//william-yeh.net/post/2019/03/wsl-cmder-zsh/&#34;&gt;在 Windows 上復刻 Mac 使用習慣&lt;/a&gt;”.&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;
+&lt;p&gt;See &lt;a href=&#34;https://github.com/moby/moby/issues/20397#issuecomment-185471832&#34;&gt;thaJeztah&amp;rsquo;s comment on GitHub&lt;/a&gt; about this.&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description>
+      
     </item>
+    
     <item>
       <title>Auto-Reload from ConfigMap</title>
       <link>//william-yeh.net/post/2019/06/autoreload-from-configmap/</link>
       <pubDate>Mon, 17 Jun 2019 17:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2019/06/autoreload-from-configmap/</guid>
-      <description>&lt;p&gt;My previous article &amp;ldquo;&lt;a href=&#34;//william-yeh.net/post/2019/06/inotify-in-containers/&#34;&gt;Inotify in Containers&lt;/a&gt;&amp;rdquo; has demonstrated that when ConfigMap is mounted as directories, any changes in the ConfigMap will propagate to related pods, and can be detected with &lt;code&gt;inotify&lt;/code&gt;-like APIs.&lt;/p&gt;&#xA;&lt;p&gt;A follow-up question might be: what should a well-behaved application react to this trigger accordingly? What if it&amp;rsquo;s a ill-designed application?&lt;/p&gt;&#xA;&lt;p&gt;To clarify this I&amp;rsquo;ve conducted a series of experiments for 3 possible configmap-reloading  strategies:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Built-in auto-reloading apps&lt;/li&gt;&#xA;&lt;li&gt;External signals&lt;/li&gt;&#xA;&lt;li&gt;Pod rollout&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;In this article I&amp;rsquo;m going to explain the experiments and preliminary findings.  All experiment materials are available in the &lt;a href=&#34;https://github.com/William-Yeh/configmap-auto-reload&#34;&gt;configmap-auto-reload&lt;/a&gt; repo.&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;My previous article &amp;ldquo;&lt;a href=&#34;//william-yeh.net/post/2019/06/inotify-in-containers/&#34;&gt;Inotify in Containers&lt;/a&gt;&amp;rdquo; has demonstrated that when ConfigMap is mounted as directories, any changes in the ConfigMap will propagate to related pods, and can be detected with &lt;code&gt;inotify&lt;/code&gt;-like APIs.&lt;/p&gt;
+&lt;p&gt;A follow-up question might be: what should a well-behaved application react to this trigger accordingly? What if it&amp;rsquo;s a ill-designed application?&lt;/p&gt;
+&lt;p&gt;To clarify this I&amp;rsquo;ve conducted a series of experiments for 3 possible configmap-reloading  strategies:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Built-in auto-reloading apps&lt;/li&gt;
+&lt;li&gt;External signals&lt;/li&gt;
+&lt;li&gt;Pod rollout&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In this article I&amp;rsquo;m going to explain the experiments and preliminary findings.  All experiment materials are available in the &lt;a href=&#34;https://github.com/William-Yeh/configmap-auto-reload&#34;&gt;configmap-auto-reload&lt;/a&gt; repo.&lt;/p&gt;
+&lt;h2 id=&#34;built-in-auto-reloading-apps&#34;&gt;Built-in auto-reloading apps&lt;/h2&gt;
+&lt;p&gt;Some applications (e.g., &lt;a href=&#34;https://traefik.io/&#34;&gt;Traefik&lt;/a&gt;) are smart enough to gracefully reload themselves whenever they detect any configuration changes without downtime.  Will this work with Kubernetes ConfigMap?&lt;/p&gt;
+&lt;p&gt;See the &lt;a href=&#34;https://github.com/William-Yeh/configmap-auto-reload/tree/master/traefik-example&#34;&gt;traefik-example&lt;/a&gt; demo:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://asciinema.org/a/251179&#34;&gt;&lt;img src=&#34;https://asciinema.org/a/251179.svg&#34; alt=&#34;asciicast&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Perfect!  Traefik auto-reloads itself as long as you correctly mount the &lt;code&gt;traefik-config&lt;/code&gt; ConfigMap as &lt;code&gt;/etc/traefik/&lt;/code&gt; directory for the pod.  Here&amp;rsquo;s the related &lt;a href=&#34;https://github.com/William-Yeh/configmap-auto-reload/blob/master/traefik-example/traefik-config.yml#L11-L13&#34;&gt;code snippet&lt;/a&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[file]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;watch = true
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;directory = &amp;#34;/etc/traefik/&amp;#34;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;h2 id=&#34;external-signals&#34;&gt;External signals&lt;/h2&gt;
+&lt;p&gt;Some applications can &lt;em&gt;reload&lt;/em&gt; configurations; but not &lt;em&gt;auto-reload&lt;/em&gt;. Instead, they reload their configurations when they are &lt;em&gt;told&lt;/em&gt; to do so.  For example, when Nginx receives a &lt;code&gt;HUP&lt;/code&gt; signal (&lt;code&gt;nginx -s reload&lt;/code&gt;) &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;, and when Apache HTTP Server receives a &lt;code&gt;HUP&lt;/code&gt; signal (&lt;code&gt;apache -k restart&lt;/code&gt;) or &lt;code&gt;USR1&lt;/code&gt; signal (&lt;code&gt;apache -k graceful&lt;/code&gt;) &lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;, they will reload new configurations without downtime.&lt;/p&gt;
+&lt;p&gt;Who should be the &lt;code&gt;HUP&lt;/code&gt; signal sender in Kubernetes?&lt;/p&gt;
+&lt;p&gt;Before Docker and Kubernetes rule the world, there were plenty of such tools, e.g., &lt;a href=&#34;https://github.com/rvoicilas/inotify-tools&#34;&gt;inotify-tools&lt;/a&gt; and &lt;a href=&#34;https://github.com/kimmobrunfeldt/chokidar-cli&#34;&gt;Chokidar cli&lt;/a&gt;.  People used them to watch for changes in specified directories and to invoke dedicated actions accordingly (including sending signals, of course).&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2019/06/inotifywait.png&#34; alt=&#34;Combo trick: Inotifywait &amp;#43; Nginx&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2019/06/inotifywait.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Combo trick: Inotifywait &amp;#43; Nginx&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Will this combo trick work with Kubernetes ConfigMap?&lt;/p&gt;
+&lt;p&gt;See the &lt;a href=&#34;https://github.com/William-Yeh/configmap-auto-reload/tree/master/inotifywait-example&#34;&gt;inotifywait-example&lt;/a&gt; demo:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://asciinema.org/a/251666&#34;&gt;&lt;img src=&#34;https://asciinema.org/a/251666.svg&#34; alt=&#34;asciicast&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Good!  Inotifywait detects the changes and sends &lt;code&gt;HUP&lt;/code&gt; signals to Nginx as long as you correctly mount the &lt;code&gt;nginx-config&lt;/code&gt; ConfigMap as &lt;code&gt;/etc/nginx/&lt;/code&gt; directory for the pod.  Here&amp;rsquo;s the related &lt;a href=&#34;https://github.com/William-Yeh/configmap-auto-reload/blob/master/inotifywait-example/watch-nginx.sh#L13-L22&#34;&gt;code snippet&lt;/a&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;if [[ &amp;#34;$(inotifywatch -e modify,create,delete,move -t 15 /etc/nginx/ 2&amp;gt;&amp;amp;1)&amp;#34; =~ filename ]]; then
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    echo &amp;#34;Try to verify updated nginx config...&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    nginx -t
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    if [ $? -ne 0 ]; then
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        echo &amp;#34;ERROR: New configuration is invalid!!&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    else
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        echo &amp;#34;Reloading nginx with new config...&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        nginx -s reload
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    fi
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;fi;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;p&gt;DISCLAIMER: it&amp;rsquo;s just for demo; not a robust implementation. For more examples, see &lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;p&gt;CAUTION: it is against the best practice of &amp;ldquo;one process per container&amp;rdquo; policy.&lt;sup id=&#34;fnref:6&#34;&gt;&lt;a href=&#34;#fn:6&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;6&lt;/a&gt;&lt;/sup&gt;  If you really want to use this combo trick, try to model it as &amp;ldquo;multiple containers within a single pod.&amp;rdquo;&lt;/p&gt;
+&lt;h2 id=&#34;pod-rollout&#34;&gt;Pod rollout&lt;/h2&gt;
+&lt;p&gt;Some applications do not have any configuration reloading mechanism. What should we do? Maybe the only reasonable way is to rollout their running instances, and just spawn new ones with the new configurations.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/stakater/Reloader&#34;&gt;Reloader&lt;/a&gt; is a generic solution for Kubernetes. With the help of it, pods can be restarted whenever related ConfigMap has changed.&lt;/p&gt;
+&lt;p&gt;See the &lt;a href=&#34;https://github.com/William-Yeh/configmap-auto-reload/tree/master/reloader-example&#34;&gt;reloader-example&lt;/a&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://asciinema.org/a/251670&#34;&gt;&lt;img src=&#34;https://asciinema.org/a/251670.svg&#34; alt=&#34;asciicast&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Perfect!  Nginx pods get rolling updated by Reloader as long as you annotate the Nginx deployment with &lt;code&gt;configmap.reloader.stakater.com/reload&lt;/code&gt;.  Here&amp;rsquo;s the related &lt;a href=&#34;https://github.com/William-Yeh/configmap-auto-reload/blob/master/reloader-example/nginx-service.yml#L25-L26&#34;&gt;code snippet&lt;/a&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;apiVersion: apps/v1
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;kind: Deployment
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;metadata:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  name: nginx
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  annotations:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    configmap.reloader.stakater.com/reload: &amp;#34;nginx-config&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  ...&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;If your application is smart enough to gracefully reload itself whenever it detects any configuration changes, it continues working well with ConfigMap in Kubernetes.&lt;/p&gt;
+&lt;p&gt;If not so smart, an easier approach is to use automatic tools (e.g., &lt;a href=&#34;https://github.com/stakater/Reloader&#34;&gt;Reloader&lt;/a&gt;) to rolling update related pods.&lt;/p&gt;
+&lt;p&gt;I will not recommend the watch+signal approach (e.g., &lt;a href=&#34;https://github.com/rvoicilas/inotify-tools&#34;&gt;inotify-tools&lt;/a&gt;). It is prone to error and zombie processes.&lt;/p&gt;
+
+
+&lt;div class=&#34;notice notice--note&#34;&gt;
+  &lt;div class=&#34;notice__title&#34;&gt;
+    
+      Series of Articles
+    
+  &lt;/div&gt;
+  &lt;div class=&#34;notice__content&#34;&gt;&lt;p&gt;❶ &lt;a href=&#34;//william-yeh.net/post/2019/06/inotify-in-containers/&#34;&gt;Inotify in Containers&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❷ &lt;a href=&#34;//william-yeh.net/post/2019/06/containers-and-env/&#34;&gt;Containers and Environment Variables&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;➌ Auto-Reload from ConfigMap&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;Nginx official document: &lt;a href=&#34;http://nginx.org/en/docs/control.html&#34;&gt;Controlling nginx&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;Apache official document: &lt;a href=&#34;https://httpd.apache.org/docs/2.4/stopping.html&#34;&gt;Stopping and Restarting Apache HTTP Server&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;
+&lt;p&gt;An implementation worth studying: &lt;a href=&#34;https://github.com/rosskukulinski/nginx-kubernetes-reload&#34;&gt;https://github.com/rosskukulinski/nginx-kubernetes-reload&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:4&#34;&gt;
+&lt;p&gt;Q&amp;amp;A in Stack Overflow: &lt;a href=&#34;https://stackoverflow.com/questions/41031170/nginx-reload-configuration-best-practice&#34;&gt;Nginx Reload Configuration Best Practice&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:5&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/telephone/nginx-watch&#34;&gt;https://github.com/telephone/nginx-watch&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:5&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:6&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://cloud.google.com/solutions/best-practices-for-building-containers&#34;&gt;Best practices for building containers&lt;/a&gt;.&amp;#160;&lt;a href=&#34;#fnref:6&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+      
     </item>
+    
     <item>
       <title>Containers and Environment Variables</title>
       <link>//william-yeh.net/post/2019/06/containers-and-env/</link>
       <pubDate>Mon, 17 Jun 2019 14:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2019/06/containers-and-env/</guid>
-      <description>&lt;p&gt;My previous article &amp;ldquo;&lt;a href=&#34;//william-yeh.net/post/2019/06/inotify-in-containers/&#34;&gt;Inotify in Containers&lt;/a&gt;&amp;rdquo; has demonstrated that when ConfigMap is mounted as &lt;em&gt;directories&lt;/em&gt;, any changes in the ConfigMap will propagate to related pods.&lt;/p&gt;&#xA;&lt;p&gt;A follow-up question might be: what if the ConfigMap is mounted as &lt;em&gt;environment variables&lt;/em&gt;?&lt;/p&gt;&#xA;&lt;p&gt;Some said that the answer is NO in Kubernetes&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;; even in the old Docker world&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;.  Therefore, I&amp;rsquo;d like to begin with a simple experiment to try to answer the question: After a container starts, will it see any changes of environment variables?&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;My previous article &amp;ldquo;&lt;a href=&#34;//william-yeh.net/post/2019/06/inotify-in-containers/&#34;&gt;Inotify in Containers&lt;/a&gt;&amp;rdquo; has demonstrated that when ConfigMap is mounted as &lt;em&gt;directories&lt;/em&gt;, any changes in the ConfigMap will propagate to related pods.&lt;/p&gt;
+&lt;p&gt;A follow-up question might be: what if the ConfigMap is mounted as &lt;em&gt;environment variables&lt;/em&gt;?&lt;/p&gt;
+&lt;p&gt;Some said that the answer is NO in Kubernetes&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;; even in the old Docker world&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;.  Therefore, I&amp;rsquo;d like to begin with a simple experiment to try to answer the question: After a container starts, will it see any changes of environment variables?&lt;/p&gt;
+&lt;p&gt;The experiment material is available at &lt;a href=&#34;https://github.com/William-Yeh/container-and-env&#34;&gt;https://github.com/William-Yeh/container-and-env&lt;/a&gt; , and here&amp;rsquo;s a simple demo:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://asciinema.org/a/252073&#34;&gt;&lt;img src=&#34;https://asciinema.org/a/252073.svg&#34; alt=&#34;asciicast&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;It is obvious in the demo that the changes of environment variables will not affect already-running processes inside the containers &amp;mdash; let alone pods in the Kubernetes world.&lt;/p&gt;
+&lt;p&gt;To simply put, if you want ConfigMap to propagate its changes to related pods, mount the ConfigMap as &lt;em&gt;directories&lt;/em&gt;, not &lt;em&gt;environment variables&lt;/em&gt;.&lt;/p&gt;
+
+
+&lt;div class=&#34;notice notice--note&#34;&gt;
+  &lt;div class=&#34;notice__title&#34;&gt;
+    
+      Series of Articles
+    
+  &lt;/div&gt;
+  &lt;div class=&#34;notice__content&#34;&gt;&lt;p&gt;❶ &lt;a href=&#34;//william-yeh.net/post/2019/06/inotify-in-containers/&#34;&gt;Inotify in Containers&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❷ Containers and Environment Variables&lt;/p&gt;
+&lt;p&gt;➌ &lt;a href=&#34;//william-yeh.net/post/2019/06/autoreload-from-configmap/&#34;&gt;Auto-Reload from ConfigMap&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;An analysis of ConfigMap hot-reload can be found in the article by Jimmy Song: “&lt;a href=&#34;https://jimmysong.io/kubernetes-handbook/concepts/configmap-hot-update.html&#34;&gt;ConfigMap 的热更新&lt;/a&gt;”.&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;A good Q&amp;amp;A in Stack Overflow: &lt;a href=&#34;https://stackoverflow.com/a/54412751/714426&#34;&gt;Reload configuration when env variable has changed&lt;/a&gt;.&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+      
     </item>
+    
     <item>
       <title>Inotify in Containers</title>
       <link>//william-yeh.net/post/2019/06/inotify-in-containers/</link>
       <pubDate>Mon, 10 Jun 2019 18:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2019/06/inotify-in-containers/</guid>
-      <description>&lt;p&gt;It is usually necessary to watch for any changes in file systems, both in development and in production modes. For example, in the development mode &lt;a href=&#34;https://webpack.js.org/&#34;&gt;Webpack&lt;/a&gt; can watch files and recompile whenever they change; in the production mode &lt;a href=&#34;https://github.com/hashicorp/consul-template&#34;&gt;Consul Template&lt;/a&gt; can watch runtime configs and invoke specific applications whenever they change.&lt;/p&gt;&#xA;&lt;p&gt;These are well-known scenarios in traditional pre-container world.  How about the container world? Do they behave the same in the new container world?&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;It is usually necessary to watch for any changes in file systems, both in development and in production modes. For example, in the development mode &lt;a href=&#34;https://webpack.js.org/&#34;&gt;Webpack&lt;/a&gt; can watch files and recompile whenever they change; in the production mode &lt;a href=&#34;https://github.com/hashicorp/consul-template&#34;&gt;Consul Template&lt;/a&gt; can watch runtime configs and invoke specific applications whenever they change.&lt;/p&gt;
+&lt;p&gt;These are well-known scenarios in traditional pre-container world.  How about the container world? Do they behave the same in the new container world?&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;ve occasionally found that something behave differently in the container world. To clarify this I&amp;rsquo;ve conducted a series of experiments. In this article I&amp;rsquo;m going to explain the experiments and preliminary findings.  All experiment materials are available in the &lt;a href=&#34;https://github.com/William-Yeh/fswatch&#34;&gt;fswatch&lt;/a&gt; repo.&lt;/p&gt;
+&lt;h2 id=&#34;experiment-setting&#34;&gt;Experiment setting&lt;/h2&gt;
+&lt;p&gt;I&amp;rsquo;ve divided the experiments into 4 groups.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Group A (experiment 1 to 3) is the traditional native mode: run native apps in their native host operating systems, respectively. This is considered as the control group.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Group B (experiment 4 to 6) is the Linux container mode: run the same containerized Linux app in 3 different host operating systems.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Group C (experiment 7) is the Windows container mode: run the containerized Windows app in the Windows operating system.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Group D (experiment 8) is the Kubernetes mode: run the containerized Linux app in Kubernetes.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Host OS&lt;/th&gt;
+          &lt;th&gt;App run as&lt;!-- raw HTML omitted --&gt;native app&lt;/th&gt;
+          &lt;th&gt;App run as&lt;!-- raw HTML omitted --&gt;Linux Container&lt;/th&gt;
+          &lt;th&gt;App run as&lt;!-- raw HTML omitted --&gt;Windows Container&lt;/th&gt;
+          &lt;th&gt;‖&lt;/th&gt;
+          &lt;th&gt;App run in&lt;!-- raw HTML omitted --&gt;K8s (Linux Container)&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Linux&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://github.com/William-Yeh/fswatch/tree/master/test-matrix/1_native_linux&#34;&gt;1&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://github.com/William-Yeh/fswatch/blob/master/test-matrix/4_host_linux_container_linux&#34;&gt;4&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;N/A&lt;/td&gt;
+          &lt;td&gt;‖&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://github.com/William-Yeh/fswatch/blob/master/test-matrix/8_k8s_linux&#34;&gt;8&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Mac&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://github.com/William-Yeh/fswatch/tree/master/test-matrix/2_native_mac&#34;&gt;2&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://github.com/William-Yeh/fswatch/blob/master/test-matrix/5_host_mac_container_linux&#34;&gt;5&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;N/A&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Windows&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://github.com/William-Yeh/fswatch/blob/master/test-matrix/3_native_win&#34;&gt;3&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://github.com/William-Yeh/fswatch/blob/master/test-matrix/6_host_win_container_linux&#34;&gt;6&lt;/a&gt; (LCOW)&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://github.com/William-Yeh/fswatch/blob/master/test-matrix/7_host_win_container_win&#34;&gt;7&lt;/a&gt; (WCOW)&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;group-a-native-mode&#34;&gt;Group A: native mode&lt;/h2&gt;
+&lt;p&gt;Let&amp;rsquo;s start with the native mode as the control group. We&amp;rsquo;ll see how it works in the traditional world of Linux, Mac, and Windows.&lt;/p&gt;
+&lt;p&gt;To make life easier, I&amp;rsquo;m using the &lt;a href=&#34;https://github.com/fsnotify/fsnotify&#34;&gt;fsnotify&lt;/a&gt; library to unify a variety of underlying operating system APIs (e.g., &lt;a href=&#34;https://en.wikipedia.org/wiki/Inotify&#34;&gt;&lt;code&gt;inotify&lt;/code&gt;&lt;/a&gt; in Linux, &lt;a href=&#34;https://en.wikipedia.org/wiki/Kqueue&#34;&gt;&lt;code&gt;kqueue&lt;/code&gt;&lt;/a&gt; in macOS, and &lt;a href=&#34;https://docs.microsoft.com/en-us/windows/desktop/api/winbase/nf-winbase-readdirectorychangesw&#34;&gt;&lt;code&gt;ReadDirectoryChangesW&lt;/code&gt;&lt;/a&gt; in Windows).  Statically-linked binaries for the 3 platforms are generated with the Go compiler 1.12.5:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;2,943,200 (bytes) &lt;code&gt;fswatch-linux-x86_64&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;2,861,360 (bytes) &lt;code&gt;fswatch-mac&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;2,914,304 (bytes) &lt;code&gt;fswatch-x86_64.exe&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;These experiments are easy to try by yourself. Take experiment &lt;a href=&#34;https://github.com/William-Yeh/fswatch/tree/master/test-matrix/1_native_linux&#34;&gt;1&lt;/a&gt; &amp;ldquo;run native Linux app in Linux host OS&amp;rdquo; for example:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://asciinema.org/a/250732&#34;&gt;&lt;img src=&#34;https://asciinema.org/a/250732.svg&#34; alt=&#34;asciicast&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;In this group, changes in the file system can be tracked successfully by their native API mechanisms, respectively.&lt;/p&gt;
+&lt;h2 id=&#34;group-b-and-c-container-mode&#34;&gt;Group B and C: container mode&lt;/h2&gt;
+&lt;p&gt;Containers make things a little bit complicated.&lt;/p&gt;
+&lt;p&gt;TL;DR: &lt;em&gt;The LCOW version doesn&amp;rsquo;t work well.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;When there&amp;rsquo;s a mismatch between host OS and container, &lt;code&gt;inotify&lt;/code&gt; may not work well.&lt;/p&gt;
+&lt;p&gt;Take experiment &lt;a href=&#34;https://github.com/William-Yeh/fswatch/blob/master/test-matrix/6_host_win_container_linux&#34;&gt;6&lt;/a&gt; (LCOW) &amp;ldquo;run containerized Linux app in Windows host OS&amp;rdquo; for example. The &lt;a href=&#34;https://docs.docker.com/docker-for-windows/troubleshoot/#inotify-on-shared-drives-does-not-work&#34;&gt;document&lt;/a&gt; for Docker Desktop for Windows has a warning for us:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Inotify on shared drives does not work&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Currently, &lt;code&gt;inotify&lt;/code&gt; does not work on Docker Desktop for Windows. This becomes evident, for example, when an application needs to read/write to a container across a mounted drive. Instead of relying on filesystem &lt;code&gt;inotify&lt;/code&gt;, we recommend using polling features for your framework or programming language.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;For Windows users, &lt;code&gt;inotify&lt;/code&gt; works well in the WCOW mode (experiment &lt;a href=&#34;https://github.com/William-Yeh/fswatch/blob/master/test-matrix/7_host_win_container_win&#34;&gt;7&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;On the other hand, Mac users are luckier.  Docker Desktop for Mac doesn&amp;rsquo;t have much trouble here (experiment &lt;a href=&#34;https://github.com/William-Yeh/fswatch/blob/master/test-matrix/5_host_mac_container_linux&#34;&gt;5&lt;/a&gt;) thanks to excellent implementation of &lt;strong&gt;osxfs&lt;/strong&gt;.  See &amp;ldquo;&lt;a href=&#34;https://docs.docker.com/docker-for-mac/osxfs/&#34;&gt;File system sharing (osxfs)&lt;/a&gt;&amp;rdquo; and &amp;ldquo;&lt;a href=&#34;https://docs.docker.com/docker-for-mac/osxfs-caching/&#34;&gt;Performance tuning for volume mounts (shared filesystems)&lt;/a&gt;&amp;rdquo; articles for more information.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;File system events&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Most &lt;code&gt;inotify&lt;/code&gt; events are supported in bind mounts, and likely &lt;code&gt;dnotify&lt;/code&gt; and &lt;code&gt;fanotify&lt;/code&gt; (though they have not been tested) are also supported. This means that file system events from macOS are sent into containers and trigger any listening processes there.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;group-d-k8s-mode&#34;&gt;Group D: K8s mode&lt;/h2&gt;
+&lt;p&gt;How about Kubernetes?  Does &lt;code&gt;inotify&lt;/code&gt; work well with the ConfigMap?&lt;/p&gt;
+&lt;p&gt;Below is the demo for experiment &lt;a href=&#34;https://github.com/William-Yeh/fswatch/blob/master/test-matrix/8_k8s_linux&#34;&gt;8&lt;/a&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://asciinema.org/a/250736&#34;&gt;&lt;img src=&#34;https://asciinema.org/a/250736.svg&#34; alt=&#34;asciicast&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;As you can see in this demo, any changes in the ConfigMap will propagate to related pods in a couple of seconds, and &lt;code&gt;inotify&lt;/code&gt; will detect this event as well. &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;h3 id=&#34;caution-about-symbolic-links&#34;&gt;Caution about symbolic links&lt;/h3&gt;
+&lt;p&gt;In such situation, however, you should use &lt;code&gt;inotify&lt;/code&gt; to watch for &lt;em&gt;directories&lt;/em&gt; instead of merely for &lt;em&gt;files&lt;/em&gt;.  It is because Kubernetes may use symbolic links to point to versioned ConfigMap volumes, and &lt;code&gt;inotify&lt;/code&gt; doesn&amp;rsquo;t work well with such symbolic links. &lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s retry the demo, but this time we&amp;rsquo;ll focus on the directory layout from the pod&amp;rsquo;s point of view.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://asciinema.org/a/251141&#34;&gt;&lt;img src=&#34;https://asciinema.org/a/251141.svg&#34; alt=&#34;asciicast&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The demo from &lt;a href=&#34;https://asciinema.org/a/251141?t=0:38&#34;&gt;0:38&lt;/a&gt; to 1:55 shows the directory layout from the pod&amp;rsquo;s point of view:&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;/mnt/site # ls -al
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;total 12
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;drwxrwxrwx    3 root  root   4096 Jun 12 06:19 .
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;drwxr-xr-x    1 root  root   4096 Jun 12 06:19 ..
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;drwxr-xr-x    2 root  root   4096 Jun 12 06:19 ..2019_06_12_06_19_15.187277003
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;lrwxrwxrwx    1 root  root     31 Jun 12 06:19 ..data -&amp;gt; ..2019_06_12_06_19_15.187277003
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;lrwxrwxrwx    1 root  root     15 Jun 12 06:19 main.css -&amp;gt; ..data/main.css&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;p&gt;Simply put, things go well if you&amp;rsquo;re inside the pod and watch for &lt;code&gt;/mnt/site&lt;/code&gt; directory, but may not go well if you try to watch for a specific file &lt;code&gt;/mnt/site/main.css&lt;/code&gt; since it is internally a symbolic link managed by Kubernetes.&lt;/p&gt;
+&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;The &lt;code&gt;inotify&lt;/code&gt; mechanism works in the container and Kubernetes world, except for the LCOW case.&lt;/p&gt;
+&lt;p&gt;If such a feature is needed in the LCOW setting, maybe you have to seek another workaround workflow; e.g., put &lt;code&gt;inotify&lt;/code&gt; mechanism outside the container, and propagate the event explicitly into the containers if any.  This is exactly what &lt;a href=&#34;https://skaffold.dev/&#34;&gt;Skaffold&lt;/a&gt; is doing.&lt;/p&gt;
+&lt;p&gt;Also note that &lt;code&gt;inotify&lt;/code&gt; works better when ConfigMap is mounted as directories, rather than as merely files.&lt;/p&gt;
+
+
+&lt;div class=&#34;notice notice--note&#34;&gt;
+  &lt;div class=&#34;notice__title&#34;&gt;
+    
+      Series of Articles
+    
+  &lt;/div&gt;
+  &lt;div class=&#34;notice__content&#34;&gt;&lt;p&gt;❶ Inotify in Containers&lt;/p&gt;
+&lt;p&gt;❷ &lt;a href=&#34;//william-yeh.net/post/2019/06/containers-and-env/&#34;&gt;Containers and Environment Variables&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;➌ &lt;a href=&#34;//william-yeh.net/post/2019/06/autoreload-from-configmap/&#34;&gt;Auto-Reload from ConfigMap&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;Another analysis of ConfigMap hot-reload can be found in the article by Jimmy Song: “&lt;a href=&#34;https://jimmysong.io/kubernetes-handbook/concepts/configmap-hot-update.html&#34;&gt;ConfigMap 的热更新&lt;/a&gt;”.&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://stackoverflow.com/questions/28769503/use-inotify-to-watch-a-file-with-multiple-symlinks&#34;&gt;Use INotify to watch a file with multiple symlinks&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+      
     </item>
+    
     <item>
       <title>Kubernetes 的入門認知與導入策略</title>
       <link>//william-yeh.net/post/2019/05/k8s-lab/</link>
       <pubDate>Fri, 17 May 2019 12:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2019/05/k8s-lab/</guid>
-      <description>&lt;p&gt;前天我在 &lt;a href=&#34;https://cloudsummit.ithome.com.tw/2019/lab.html#0001&#34;&gt;2019 台灣雲端大會&lt;/a&gt;帶了兩個場次，一個是現場實作場次，一個是經驗分享演講：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Lab / &lt;a href=&#34;https://github.com/William-Yeh/workshop-cloud2019&#34;&gt;給 RD 的 Kubernetes 初體驗&lt;/a&gt; (90 minutes)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Speech / &lt;a href=&#34;https://www.slideshare.net/williamyeh/when-dotnetmeetskubernetes-145557464&#34;&gt;當 .NET 遇到 Kubernetes&lt;/a&gt; (30 minutes)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;兩個場次，一言以蔽之，都圍繞在 Kubernetes 的入門認知與導入策略上。&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;前天我在 &lt;a href=&#34;https://cloudsummit.ithome.com.tw/2019/lab.html#0001&#34;&gt;2019 台灣雲端大會&lt;/a&gt;帶了兩個場次，一個是現場實作場次，一個是經驗分享演講：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Lab / &lt;a href=&#34;https://github.com/William-Yeh/workshop-cloud2019&#34;&gt;給 RD 的 Kubernetes 初體驗&lt;/a&gt; (90 minutes)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Speech / &lt;a href=&#34;https://www.slideshare.net/williamyeh/when-dotnetmeetskubernetes-145557464&#34;&gt;當 .NET 遇到 Kubernetes&lt;/a&gt; (30 minutes)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;兩個場次，一言以蔽之，都圍繞在 Kubernetes 的入門認知與導入策略上。&lt;/p&gt;
+&lt;h2 id=&#34;以問題解決角度看-kubernetes-導入&#34;&gt;以「問題解決」角度看 Kubernetes 導入&lt;/h2&gt;
+&lt;p&gt;〈&lt;a href=&#34;https://www.slideshare.net/williamyeh/when-dotnetmeetskubernetes-145557464&#34;&gt;當 .NET 遇到 Kubernetes&lt;/a&gt;〉這場演講，是以「問題解決」的角度，探討導入 Kubernetes 的困難與策略，尤其是針對 .NET 族群。&lt;/p&gt;
+&lt;iframe
+  style=&#34;width: 100%; height: 500px;&#34; frameborder=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; scrolling=&#34;no&#34;
+  src=&#34;https://www.slideshare.net/slideshow/embed_code/145557464&#34; allowfullscreen webkitallowfullscreen mozallowfullscreen&gt; &lt;/iframe&gt;
+&lt;br&gt;&lt;br&gt;
+&lt;p&gt;整場演講的脈絡如下：&lt;/p&gt;
+&lt;p&gt;① 為什麼要導入 Kubernetes？&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;我們的現況是什麼？&lt;/li&gt;
+&lt;li&gt;外面的世界已經是什麼樣子？&lt;/li&gt;
+&lt;li&gt;不正視差距，會有什麼影響？&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;② 為什麼還 &lt;strong&gt;不&lt;/strong&gt; 導入 Kubernetes？&lt;/p&gt;
+&lt;p&gt;我嘗試用&lt;a href=&#34;https://www.behaviormodel.org/&#34;&gt;法格行為模型&lt;/a&gt; (B=MAP) 來歸類問題原因：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;M&lt;/strong&gt;otivation / 我們真的認識 Kubernetes 真實的利益是什麼嗎？&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;A&lt;/strong&gt;bility / 正確認識技術核心、外在因素、內在因素，才能正確評估我們的技術能力是否已經提升到足以擁抱 Kubernetes 的地步。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;P&lt;/strong&gt;rompt / 是否有臨門一腳的驅動力？&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;③ 有什麼建議的導入選項？&lt;/p&gt;
+&lt;p&gt;我發現 Prajakta Joshi 的演講 &amp;ldquo;&lt;a href=&#34;https://cloud.withgoogle.com/next/sf/sessions?session=NET206&#34;&gt;Strategies for Bringing Kubernetes, Istio, Traffic Director, and Envoy to Brownfield with Walmart, Google, Tetrate&lt;/a&gt;&amp;rdquo; &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; 已經給了很好的建議。因此，我引述她的論點，建議大家可以採用兩種路徑：(a) Container first and mesh next，(b) Mesh first and container next。&lt;/p&gt;
+&lt;p&gt;我這場演講有開放錄影。等上線了，我會再補上連結。&lt;/p&gt;
+&lt;h2 id=&#34;rd-也需要略懂-kubernetes&#34;&gt;RD 也需要略懂 Kubernetes&lt;/h2&gt;
+&lt;p&gt;Kubernetes 是目前雲端環境的顯學。可是，傳統的程式，並不是原封不動搬上去，就能夠自動享受 Kubernetes 所宣稱的種種好處。新的環境，不僅需要新的 Ops 思維，也需要新的 Dev 思維。&lt;/p&gt;
+&lt;p&gt;我設計〈&lt;a href=&#34;https://github.com/William-Yeh/workshop-cloud2019&#34;&gt;給 RD 的 Kubernetes 初體驗&lt;/a&gt;〉工作坊，嘗試以一個半小時的時間，從軟體研發者的角度，探討軟體的設計該做哪些最起碼的改變，並從實作中體驗 Kubernetes 引進的新觀念及新效益。&lt;/p&gt;
+&lt;p&gt;我希望能夠讓學員從實例中體驗，傳統 web 應用程式在搬上 Kubernetes 時，可能會經歷哪些架構面的調整，才能享受新架構的效益。&lt;/p&gt;
+&lt;p&gt;我試圖不只是 demo，也不只是讓大家能無腦照著做，還試圖進行一些觀念講解。短短一個半小時，野心太大，只好割捨原本已經準備好的 API Gateway 例子 &lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;，集中在以下課題：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;容器化&lt;/li&gt;
+&lt;li&gt;微服務&lt;/li&gt;
+&lt;li&gt;組態管理&lt;/li&gt;
+&lt;li&gt;多重環境管理：本機端與雲端（以 GKE 為例）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;iframe
+  style=&#34;width: 100%; height: 500px;&#34; frameborder=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; scrolling=&#34;no&#34;
+  src=&#34;https://www.slideshare.net/slideshow/embed_code/145761572&#34; allowfullscreen webkitallowfullscreen mozallowfullscreen&gt; &lt;/iframe&gt;
+&lt;br&gt;&lt;br&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/William-Yeh/workshop-cloud2019&#34;&gt;範例程式&lt;/a&gt;也以疊代演進的形式，逐步添加 Kubernetes 功能，呼應〈&lt;a href=&#34;https://www.slideshare.net/williamyeh/when-dotnetmeetskubernetes-145557464&#34;&gt;當 .NET 遇到 Kubernetes&lt;/a&gt;〉演講所提出的 &amp;ldquo;Container first and mesh next&amp;rdquo; 導入策略。&lt;/p&gt;
+&lt;p&gt;Container:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;1.0: Extracted from Microsoft Docs.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;2.0: Dockerize the app with simple Dockerfile and docker-compose.yml.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;3.0: Separate frontend and backend into 2 distinct containers.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Kubernetes:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;4.0: Support Kubernetes (locally).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;4.1: Use Kubernetes dashboard.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;5.0: Support ConfigMap and naming convention.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Cloud（感謝&lt;a href=&#34;https://tw.linkedin.com/in/ericsk&#34;&gt;上官林傑&lt;/a&gt;大力支援 Google Cloud 的 redeem coupon）：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;6.0: Support Kubernetes on the cloud (GKE for example).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;7.0: Support canary release.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;可惜，一個半小時的時間還是太短了，最後面 30 分鐘其實是在趕進度，跳過了一些原本應該仔細講解的環節（譬如：ConfigMap、label &amp;amp; selector、ephemeral vs static external IP 的區分⋯⋯）。我再考慮另外找個社群的場子，辦一次較完整的 workshop 吧。完整的，應該會需要 2.5～3 小時。&lt;/p&gt;
+
+
+&lt;div class=&#34;notice notice--note&#34;&gt;
+  &lt;div class=&#34;notice__title&#34;&gt;
+    
+      2019-06-16 補充
+    
+  &lt;/div&gt;
+  &lt;div class=&#34;notice__content&#34;&gt;&lt;p&gt;一個月後，應 &lt;a href=&#34;https://www.meetup.com/GCPUG-Taipei/events/261797460/&#34;&gt;GCPUG Taipei&lt;/a&gt; 之邀，我辦了一場 3+1 小時的 Workshop，&lt;a href=&#34;https://www.slideshare.net/williamyeh/rd-kubernetes-gcpug-2019-06/&#34;&gt;投影片&lt;/a&gt;及&lt;a href=&#34;https://github.com/William-Yeh/workshop-gcpug201906/&#34;&gt;實作範例&lt;/a&gt;都有更新。&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;希望這一場演講，一場實作工作坊，對大家有助益。&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;我在〈&lt;a href=&#34;//william-yeh.net/post/2019/04/next19-istio/&#34;&gt;Next ’19 的 Istio 場次重點摘要&lt;/a&gt;〉一文中，有介紹 Prajakta Joshi 在 Google Cloud Next ’19 另一場精彩的演講。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;關於 Kubernetes 的 API gateway，請參考〈&lt;a href=&#34;//william-yeh.net/post/2019/03/ingress-vs-ambassador/&#34;&gt;Nginx Ingress 與 Ambassador 簡易性能比較&lt;/a&gt;〉一文。&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description>
+      
     </item>
+    
     <item>
       <title>Next &#39;19 的 Istio 場次重點摘要</title>
       <link>//william-yeh.net/post/2019/04/next19-istio/</link>
       <pubDate>Fri, 19 Apr 2019 23:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2019/04/next19-istio/</guid>
-      <description>&lt;p&gt;四月 9&amp;ndash;11 日去舊金山參加 Google Cloud 的 &lt;a href=&#34;https://cloud.withgoogle.com/next/sf/&#34;&gt;Next ’19&lt;/a&gt; 大會，收穫頗大。&lt;/p&gt;&#xA;&lt;p&gt;這場大會，同一時段就有近 30 場專題演講同時進行，議程滿滿，勢必得做取捨。基於工作需要及個人興趣，我主要選擇與容器相關的場次：service mesh、Windows containers、混合雲、資安實務。&lt;/p&gt;&#xA;&lt;p&gt;我發現，光是這些場次，就得花很大力氣去消化、實驗與應用。&lt;/p&gt;&#xA;&lt;p&gt;我們這些所謂的「台港團」會在 GCPUG Taipei 舉辦一場&lt;a href=&#34;https://www.meetup.com/GCPUG-Taipei/events/260555968/&#34;&gt;分享會&lt;/a&gt;。因為自己不克參加，便以這篇文章，針對我鎖定的核心議題：Istio，做一番重點摘要，以饗讀者。&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;四月 9&amp;ndash;11 日去舊金山參加 Google Cloud 的 &lt;a href=&#34;https://cloud.withgoogle.com/next/sf/&#34;&gt;Next ’19&lt;/a&gt; 大會，收穫頗大。&lt;/p&gt;
+&lt;p&gt;這場大會，同一時段就有近 30 場專題演講同時進行，議程滿滿，勢必得做取捨。基於工作需要及個人興趣，我主要選擇與容器相關的場次：service mesh、Windows containers、混合雲、資安實務。&lt;/p&gt;
+&lt;p&gt;我發現，光是這些場次，就得花很大力氣去消化、實驗與應用。&lt;/p&gt;
+&lt;p&gt;我們這些所謂的「台港團」會在 GCPUG Taipei 舉辦一場&lt;a href=&#34;https://www.meetup.com/GCPUG-Taipei/events/260555968/&#34;&gt;分享會&lt;/a&gt;。因為自己不克參加，便以這篇文章，針對我鎖定的核心議題：Istio，做一番重點摘要，以饗讀者。&lt;/p&gt;
+&lt;p&gt;以下內容，不完全按照 Next ’19 的議程時間順序，而是依照我主觀的排列。&lt;/p&gt;
+&lt;p&gt;看完後，對於 Istio 應該就有不錯的全面認知了。&lt;/p&gt;
+&lt;h2 id=&#34;漸進式導入-istio&#34;&gt;漸進式導入 Istio&lt;/h2&gt;
+&lt;p&gt;很有意思的演講，很適合作為 Istio 入門。&lt;/p&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/0cgTHQFXYPQ?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+&lt;p&gt;【演講】&lt;a href=&#34;https://cloud.withgoogle.com/next/sf/sessions?session=HYB102&#34;&gt;Incrementally Adopting Istio&lt;/a&gt;&lt;!-- raw HTML omitted --&gt;
+【重點摘要】&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/0cgTHQFXYPQ?t=3m20s&#34;&gt;3:20&lt;/a&gt; - 微服務面臨的挑戰。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/0cgTHQFXYPQ?t=6m18s&#34;&gt;6:18&lt;/a&gt; - Istio 的 control plane 三大元件，就是設計來一一對應這些問題的。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/0cgTHQFXYPQ?t=10m38s&#34;&gt;10:38&lt;/a&gt; - Istio 的 telemetry 機制。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/0cgTHQFXYPQ?t=11m42s&#34;&gt;11:42&lt;/a&gt; - Istio 的 traffic 管理機制。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/0cgTHQFXYPQ?t=15m10s&#34;&gt;15:10&lt;/a&gt; - Istio 的 security 機制。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/0cgTHQFXYPQ?t=16m27s&#34;&gt;16:27&lt;/a&gt; - 在 GKE 安裝 Istio 的方法及使用建議。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/0cgTHQFXYPQ?t=19m11s&#34;&gt;19:11&lt;/a&gt; - 接下來就是一系列的漸進式示範。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;istio-的-traffic宏觀角度&#34;&gt;Istio 的 Traffic：宏觀角度&lt;/h2&gt;
+&lt;p&gt;在 Istio + Envoy 體系中，是透過 control plane 的 Pilot 元件及 xDS 協定，去管理 data plane 的 Envoy 網路流量。&lt;/p&gt;
+&lt;p&gt;以此為基礎，Google Cloud 推出 &lt;a href=&#34;https://cloud.google.com/traffic-director/&#34;&gt;Traffic Director&lt;/a&gt; 服務，用統一的 control plane、透過同樣的 xDSv2 API，去管理 GCP 能觸及的 GKE、GCE，甚至自建的 Kubernetes cluster；也藉此處理 GCP 之專屬特性。&lt;/p&gt;
+&lt;p&gt;某種意義上，可以把 Traffic Director 視為將 Istio 的 Pilot 元件託管給 Google Cloud。&lt;/p&gt;
+&lt;p&gt;這場演講，儘管旨在&lt;del&gt;廣告&lt;/del&gt;宣傳 Google 自家的 Traffic Director 服務，但講員之一 Prajakta Joshi 非常厲害，對於一般性的 service mesh 觀念也介紹得非常生動。&lt;/p&gt;
+&lt;p&gt;這一場值得全程觀看。我僅摘錄部分重點。&lt;/p&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/FUITCYMCEhU?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+&lt;p&gt;【演講】&lt;a href=&#34;https://cloud.withgoogle.com/next/sf/sessions?session=NET207&#34;&gt;Traffic Director and Envoy-Based L7 ILB for Production-Grade Service Mesh and Istio&lt;/a&gt;&lt;!-- raw HTML omitted --&gt;
+【重點摘要】&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/FUITCYMCEhU?t=1m21s&#34;&gt;1:21&lt;/a&gt; - 很中肯的觀點：將 service mesh 視為 “&lt;strong&gt;SDN for services&lt;/strong&gt;”。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/FUITCYMCEhU?t=4m45s&#34;&gt;4:45&lt;/a&gt; - Istio 簡介。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/FUITCYMCEhU?t=5m48s&#34;&gt;5:48&lt;/a&gt; - 介紹 Istio 的 Pilot 流量管理議題。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/FUITCYMCEhU?t=5m48s&#34;&gt;6:40&lt;/a&gt; - 正式介紹 Traffic Director。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/FUITCYMCEhU?t=14m45s&#34;&gt;14:45&lt;/a&gt; - Live demo: global load balancing。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/FUITCYMCEhU?t=23m45s&#34;&gt;23:45&lt;/a&gt; - 介紹 service mesh 流量控制的特色：“&lt;strong&gt;change traffic flow without changing code&lt;/strong&gt;”，以及 traffic splitting、traffic steering、fault injection、mirroring (shadowing)、load balancing、circuit breaking、outlier detection 等高檔特性。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/FUITCYMCEhU?t=29m39s&#34;&gt;29:39&lt;/a&gt; - Live demo: traffic splitting。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/FUITCYMCEhU?t=35m37s&#34;&gt;35:37&lt;/a&gt; - 預告 Traffic Director 的產品路線圖。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/FUITCYMCEhU?t=42m56s&#34;&gt;42:56&lt;/a&gt; - 某客戶的 monolith 階段性轉型經驗。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;講員 Prajakta Joshi 另一場演講 &amp;ldquo;&lt;a href=&#34;https://cloud.withgoogle.com/next/sf/sessions?session=NET206&#34;&gt;Strategies for Bringing Kubernetes, Istio, Traffic Director, and Envoy to Brownfield with Walmart, Google, Tetrate&lt;/a&gt;&amp;rdquo; 也很棒，可惜並未釋出投影片及錄影。精彩內容，就留在我的手機相簿裡面啦。&lt;/p&gt;
+&lt;h2 id=&#34;istio-的-traffic實踐角度&#34;&gt;Istio 的 Traffic：實踐角度&lt;/h2&gt;
+&lt;p&gt;我聽了 Megan O&amp;rsquo;Keefe 兩場硬底子的演講。&lt;/p&gt;
+&lt;p&gt;第一場演講，以大量實例現場展示 Istio 的 traffic rules。&lt;/p&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/7cINRP0BFY8?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+&lt;p&gt;【演講】&lt;a href=&#34;https://cloud.withgoogle.com/next/sf/sessions?session=HYB201&#34;&gt;Istio in Production: Day 2 Traffic Routing&lt;/a&gt;&lt;!-- raw HTML omitted --&gt;
+【重點摘要】&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/7cINRP0BFY8?t=2m18s&#34;&gt;2:18&lt;/a&gt; - Istio 與 Envoy 簡介。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/7cINRP0BFY8?t=9m13s&#34;&gt;9:13&lt;/a&gt; - Live demo: rollout。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/7cINRP0BFY8?t=13m45s&#34;&gt;13:45&lt;/a&gt; - Live demo: content-based routing。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/7cINRP0BFY8?t=16m48s&#34;&gt;16:48&lt;/a&gt; - Live demo: circuit breaking。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/7cINRP0BFY8?t=20m46s&#34;&gt;20:46&lt;/a&gt; - Live demo: chaos testing。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/7cINRP0BFY8?t=24m48s&#34;&gt;24:48&lt;/a&gt; - Live demo: ingress and egress。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/7cINRP0BFY8?t=36m26s&#34;&gt;36:26&lt;/a&gt; - Istio 1.1 現況。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/7cINRP0BFY8?t=37m18s&#34;&gt;37:18&lt;/a&gt; - Istio 導入建議：“&lt;strong&gt;start slow and incrementally&lt;/strong&gt;”。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/7cINRP0BFY8?t=38m36s&#34;&gt;38:36&lt;/a&gt; - Istio 還能夠做什麼？&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;第二場演講，就更硬碰硬的處理 Istio 每天都可能遇到的幾個實踐問題，以及如何查找問題、解決問題的過程。三段 live demo，涵蓋 Istio control plane 的三大元件：Pilot、Mixer、Citadel，非常扎實。&lt;/p&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/FbYBO7Pi2d8?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+&lt;p&gt;【演講】&lt;a href=&#34;https://cloud.withgoogle.com/next/sf/sessions?session=HYB303&#34;&gt;Debugging Istio: How to Fix a Broken Service Mesh&lt;/a&gt;&lt;!-- raw HTML omitted --&gt;
+【重點摘要】&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/FbYBO7Pi2d8?t=0m35s&#34;&gt;0:35&lt;/a&gt; - Service mesh 是要解決甚麼問題？Istio 的 control plane 就是設計來一一對應這些問題的。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/FbYBO7Pi2d8?t=2m54s&#34;&gt;2:54&lt;/a&gt; - 可是，Istio 又會連帶引入哪些複雜度？&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/FbYBO7Pi2d8?t=4m46s&#34;&gt;4:46&lt;/a&gt; - Live demo: traffic management.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/FbYBO7Pi2d8?t=20m47s&#34;&gt;20:47&lt;/a&gt; - Live demo: telemetry.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/FbYBO7Pi2d8?t=27m58s&#34;&gt;27:58&lt;/a&gt; - Live demo: security.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/FbYBO7Pi2d8?t=44m23s&#34;&gt;44:23&lt;/a&gt; - 除錯工具推薦清單。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;這兩場 Megan O&amp;rsquo;Keefe 的演講，雖然硬底子，卻十分具體，可操作性高，值得全程觀看。&lt;/p&gt;
+&lt;h2 id=&#34;從-sre-角度看-istio&#34;&gt;從 SRE 角度看 Istio&lt;/h2&gt;
+&lt;p&gt;這一場，只能說，非常非常非常精彩。&lt;/p&gt;
+&lt;p&gt;對於讀過 Google 的 &lt;a href=&#34;https://landing.google.com/sre/books/&#34;&gt;&lt;em&gt;SRE&lt;/em&gt;&lt;/a&gt; 一書的人來說，看到 SLO、error budget 之類的觀念，居然可以在 Istio 上面如此實現，真是大開眼界。&lt;/p&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/AKh8uuVCpFI?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+&lt;p&gt;【演講】&lt;a href=&#34;https://cloud.withgoogle.com/next/sf/sessions?session=HYB309&#34;&gt;Understanding SLOs and Error Budgets With Istio&lt;/a&gt;&lt;!-- raw HTML omitted --&gt;
+【重點摘要】&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/AKh8uuVCpFI?t=1m40s&#34;&gt;1:40&lt;/a&gt; - SLI/SLO/SLA 基本觀念。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/AKh8uuVCpFI?t=7m41s&#34;&gt;7:41&lt;/a&gt; - &amp;ldquo;uptime&amp;rdquo; 的新觀點。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/AKh8uuVCpFI?t=9m04s&#34;&gt;9:04&lt;/a&gt; - 將 error budget 視為 “&lt;strong&gt;amount of SLOs you can spend&lt;/strong&gt;”。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/AKh8uuVCpFI?t=13m49s&#34;&gt;13:49&lt;/a&gt; - Live demo!&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/AKh8uuVCpFI?t=28m02s&#34;&gt;28:02&lt;/a&gt; - 客戶證言：Schlumberger 公司。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;把-vm-也帶進-service-mesh&#34;&gt;把 VM 也帶進 Service Mesh&lt;/h2&gt;
+&lt;p&gt;Service mesh 並不是容器的專利；古老的 VM 其實也可以納入治理體系。&lt;/p&gt;
+&lt;p&gt;透過 Istio 的 &lt;a href=&#34;https://istio.io/docs/setup/kubernetes/additional-setup/mesh-expansion/&#34;&gt;&lt;strong&gt;mesh expansion&lt;/strong&gt;&lt;/a&gt; 機制，VM 只要安裝 node agent 及 Envoy proxy，即可登記為 Kubernetes/Istio cluster 的 &lt;a href=&#34;https://istio.io/docs/reference/config/networking/v1alpha3/service-entry/&#34;&gt;service entry&lt;/a&gt; 資源，進行 service discovery 等互動。&lt;/p&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/2czElo8a7FM?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+&lt;p&gt;【演講】&lt;a href=&#34;https://cloud.withgoogle.com/next/sf/sessions?session=HYB308&#34;&gt;Istio Service Mesh for VM Native&lt;/a&gt;&lt;!-- raw HTML omitted --&gt;
+【重點摘要】&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/2czElo8a7FM?t=8m0s&#34;&gt;8:00&lt;/a&gt; - 介紹 Istio 的 mesh expansion 機制。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/2czElo8a7FM?t=11m04s&#34;&gt;11:04&lt;/a&gt; - 具體步驟。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/2czElo8a7FM?t=13m23s&#34;&gt;13:23&lt;/a&gt; - Live demo!&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;windows-containers&#34;&gt;Windows Containers&lt;/h2&gt;
+&lt;p&gt;自從 3 月底 Kubernetes 1.14 宣布正式支援 Windows 之後&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，我就很期待到 Next ’19 現場眼見為憑。&lt;/p&gt;
+&lt;p&gt;這一場值得全程觀看。我僅摘錄部分重點。&lt;/p&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/C4kW9uLmefU?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+&lt;p&gt;【演講】&lt;a href=&#34;https://cloud.withgoogle.com/next/sf/sessions?session=HYB108&#34;&gt;Windows Containers in Google Kubernetes Engine&lt;/a&gt;&lt;!-- raw HTML omitted --&gt;
+【重點摘要】&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://youtu.be/C4kW9uLmefU?t=7m50s&#34;&gt;7:50&lt;/a&gt; - &amp;ldquo;I have a dream&amp;hellip;&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://youtu.be/C4kW9uLmefU?t=12m15s&#34;&gt;12:15&lt;/a&gt; - Windows host OS and base image requirements&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://youtu.be/C4kW9uLmefU?t=17m23s&#34;&gt;17:23&lt;/a&gt; - Which to containerize?&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://youtu.be/C4kW9uLmefU?t=22m14s&#34;&gt;22:14&lt;/a&gt; - Kubernetes 1.14 stable supports Windows containers and Windows Server 2019&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://youtu.be/C4kW9uLmefU?t=25m44s&#34;&gt;25:44&lt;/a&gt; - Limitations for Windows containers (for now)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://youtu.be/C4kW9uLmefU?t=28m16s&#34;&gt;28:16&lt;/a&gt; - GKE &amp;ldquo;is working on supporting Windows containers&amp;rdquo; (preview now)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://youtu.be/C4kW9uLmefU?t=30m40s&#34;&gt;30:40&lt;/a&gt; - Live demo!&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://youtu.be/C4kW9uLmefU?t=37m0s&#34;&gt;37:00&lt;/a&gt; - Early Access Program (EAP)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;api-視角&#34;&gt;API 視角&lt;/h2&gt;
+&lt;p&gt;不管你想在容器化、微服務、service mesh 路線走到多遠，「API 管理」一直都是需要持續關注的一環。&lt;/p&gt;
+&lt;p&gt;針對這議題，Next ’19 是以 &lt;a href=&#34;https://cloud.google.com/apigee/&#34;&gt;Apigee&lt;/a&gt; 為主軸&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;，分別介紹 Apigee 如何與 service mesh 和 serverless 技術搭配運用。&lt;/p&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/IblDMVwSSk4?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+&lt;p&gt;【演講】&lt;a href=&#34;https://cloud.withgoogle.com/next/sf/sessions?session=HYB319&#34;&gt;APIs, Microservices, and the Service Mesh&lt;/a&gt;&lt;!-- raw HTML omitted --&gt;
+【重點摘要】&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/IblDMVwSSk4?t=3m21s&#34;&gt;3:21&lt;/a&gt; - 介紹 mTLS。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/IblDMVwSSk4?t=7m06s&#34;&gt;7:06&lt;/a&gt; - 用 Istio 在 control plane 層次確保 mTLS 之類的 policy。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/IblDMVwSSk4?t=12m47s&#34;&gt;12:47&lt;/a&gt; - 介紹 service mesh 時代的 API 管理架構。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/IblDMVwSSk4?t=33m09s&#34;&gt;33:09&lt;/a&gt; - 什麼時候才需要 service mesh？&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/7fcpwM-8qPo?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+&lt;p&gt;【演講】&lt;a href=&#34;https://cloud.withgoogle.com/next/sf/sessions?session=SVR102&#34;&gt;API Management for Serverless and Multi-Cloud&lt;/a&gt;&lt;!-- raw HTML omitted --&gt;
+【重點摘要】&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/7fcpwM-8qPo?t=13m35s&#34;&gt;13:35&lt;/a&gt; - 示範 Cloud Run 與 Apigee。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/7fcpwM-8qPo?t=24m15s&#34;&gt;24:15&lt;/a&gt; - 示範 Cloud Functions 與 Apigee。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;這麼多乾貨，值得花點力氣好好消化。&lt;/p&gt;
+&lt;h2 id=&#34;投影片&#34;&gt;投影片&lt;/h2&gt;
+
+
+&lt;div class=&#34;notice notice--note&#34;&gt;
+  &lt;div class=&#34;notice__title&#34;&gt;
+    
+      2019-07-02 補充
+    
+  &lt;/div&gt;
+  &lt;div class=&#34;notice__content&#34;&gt;&lt;p&gt;兩個月後，應 GCPUG Taipei 之邀，我還是在 &lt;a href=&#34;https://www.meetup.com/GCPUG-Taipei/events/262584153/&#34;&gt;Meetup #48&lt;/a&gt; 給了一場分享。投影片在此：&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://kubernetes.io/blog/2019/03/25/kubernetes-1-14-release-announcement/&#34;&gt;Kubernetes 1.14: Production-level support for Windows Nodes, Kubectl Updates, Persistent Local Volumes GA&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;Apigee 於 2016 年被 Google 併購。詳見〈&lt;a href=&#34;https://www.ithome.com.tw/news/108342&#34;&gt;Google 以 6.25 億美元收購 Apigee，強化 API 管理服務&lt;/a&gt;〉一文。&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description>
+      
     </item>
+    
     <item>
       <title>為什麼要追求極簡化的 Docker image？</title>
       <link>//william-yeh.net/post/2016/08/why-minimal-docker-images/</link>
       <pubDate>Sat, 27 Aug 2016 20:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2016/08/why-minimal-docker-images/</guid>
-      <description>&lt;p&gt;今早〈&lt;a href=&#34;//william-yeh.net/post/2016/08/halfblood-docker/&#34;&gt;從 Ansible 到 Docker：混血模式&lt;/a&gt;〉演講過後，有人在聊天室提問：&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;請問為什麼要追求最小化的 Docker image？&lt;/p&gt;&lt;/blockquote&gt;</description>
+      
+        <description>&lt;p&gt;今早〈&lt;a href=&#34;//william-yeh.net/post/2016/08/halfblood-docker/&#34;&gt;從 Ansible 到 Docker：混血模式&lt;/a&gt;〉演講過後，有人在聊天室提問：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;請問為什麼要追求最小化的 Docker image？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;記得去年我在 &lt;a href=&#34;https://www.meetup.com/Docker-Taipei/&#34;&gt;Docker Taipei 社群&lt;/a&gt;主講〈&lt;a href=&#34;https://william-yeh.github.io/docker-mini/&#34;&gt;追求極簡化 Docker image 之路&lt;/a&gt;〉的時候，曾如此開場：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;部分原因是「純技術性的探討」。&lt;/p&gt;
+&lt;p&gt;經過這番探討，對 Docker 底層機制會掌握得更深刻，有助於更善用 Docker，也很自然會理解 Docker 與 VM 的明顯差別在哪裡。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;這是極度保守的理由。因為在當時，「極簡化 Docker」的實施手法不方便，地雷又多，投入成本高於獲得的效益。因此，除非為了純技術性的探討（技術狂的浪漫？），否則似乎不太值得鼓吹。&lt;/p&gt;
+&lt;p&gt;一年後的今天，「極簡化 Docker」的實施手法已經更成熟了，我們也看到更多官方的 Docker image 也額外提供以 &lt;a href=&#34;https://hub.docker.com/_/alpine&#34;&gt;Alpine&lt;/a&gt; 為 base image 的選項。對於這議題，不再能單純用「技術者的狂熱」來看待。&lt;/p&gt;
+&lt;p&gt;一年後的今天，有更多好的理由。&lt;/p&gt;
+&lt;p&gt;我就在此簡答一下，追求極簡化 Docker image，除了技術性的狂熱之外，還有什麼實質上的好處？&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;其一、在某些受限的硬體資源（如：儲存空間、網路頻寬），不佳的軟體執行環境（如：&lt;a href=&#34;https://docs.docker.com/storage/storagedriver/select-storage-driver/&#34;&gt;layered file system&lt;/a&gt; 實作品質不佳），精簡的 image 是很有吸引力的。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;其二、越大的 image，隱含的黑盒子越多，資安風險也越高。&lt;/p&gt;
+&lt;p&gt;口說無憑，請用 &lt;a href=&#34;https://www.aquasec.com/news/blog-peekr-free-security-scanner-just-got-upgraded/&#34;&gt;Peekr&lt;/a&gt; 針對幾個常見的 base image 做一番安全掃描：&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/08/peekr-scan.png&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2016/08/peekr-scan.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;看得出來哪一個的資安風險較大、哪一個較小了嗎？&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;其三、如果你用的是傳統世界的 host OS，而不是像 CoreOS、Rancher 這類所謂的 &amp;ldquo;&lt;a href=&#34;https://www.ithome.com.tw/news/95756&#34;&gt;container OS&lt;/a&gt;&amp;quot;，那麼，base image 與 host OS 可能會有一大堆重複的東西，這也是一種浪費。&lt;/p&gt;
+&lt;p&gt;寶貴的 Docker image，應該只放與 app 直接相關的東西；為什麼還要塞一大堆和 host OS 重複、且和 app 沒有直接關係的東西呢？&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;簡單給三個思考的方向，供大家參考。&lt;/p&gt;</description>
+      
     </item>
+    
     <item>
       <title>從 Ansible 到 Docker：混血模式</title>
       <link>//william-yeh.net/post/2016/08/halfblood-docker/</link>
       <pubDate>Sat, 27 Aug 2016 08:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2016/08/halfblood-docker/</guid>
-      <description>&lt;p&gt;2015 年 4 月我在 &lt;a href=&#34;https://www.meetup.com/Docker-Taipei/&#34;&gt;Docker Taipei 社群&lt;/a&gt;講了一場〈&lt;a href=&#34;https://william-yeh.github.io/docker-mini/&#34;&gt;追求極簡化 Docker image 之路&lt;/a&gt;〉。一年後，在「極簡化 Docker」這條路上，另一條途徑 Alpine Linux 開始嶄露頭角——不必像過去那麼蠻幹，地雷減少，流程優勢顯著，品質上也不見得遜於長期被 glibc 把持的傳統體系。&lt;/p&gt;&#xA;&lt;p&gt;我嘗試用這種手法重整過去的東西，結果還不算太差。因此，一直希望能有機會再給一場類似【追求極簡化 Docker image 之路，Part 2】的演講。&lt;/p&gt;&#xA;&lt;p&gt;此外，由於自己持續在使用 Ansible 來處理組態設定事宜，持續維護近 20 個 Ansible Galaxy 開源 roles，也開講了五場【&lt;a href=&#34;https://devopssummit.ithome.com.tw/workshop/ansible/&#34;&gt;Ansible Workshop&lt;/a&gt;】訓練課程，很自然的，我會常常拿 Ansible 與 Docker 並列，思考兩者的定位、運用時機，甚至未來走向；有時甚至靈光一閃，浮現一些 Ansible＋Docker 的組合技。&lt;/p&gt;&#xA;&lt;p&gt;這就是今天在 &lt;a href=&#34;https://community-open-camp.azurewebsites.net/&#34;&gt;Community Open Camp&lt;/a&gt; 這場演講【從 Ansible 到 Docker：混血模式】的由來。&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;2015 年 4 月我在 &lt;a href=&#34;https://www.meetup.com/Docker-Taipei/&#34;&gt;Docker Taipei 社群&lt;/a&gt;講了一場〈&lt;a href=&#34;https://william-yeh.github.io/docker-mini/&#34;&gt;追求極簡化 Docker image 之路&lt;/a&gt;〉。一年後，在「極簡化 Docker」這條路上，另一條途徑 Alpine Linux 開始嶄露頭角——不必像過去那麼蠻幹，地雷減少，流程優勢顯著，品質上也不見得遜於長期被 glibc 把持的傳統體系。&lt;/p&gt;
+&lt;p&gt;我嘗試用這種手法重整過去的東西，結果還不算太差。因此，一直希望能有機會再給一場類似【追求極簡化 Docker image 之路，Part 2】的演講。&lt;/p&gt;
+&lt;p&gt;此外，由於自己持續在使用 Ansible 來處理組態設定事宜，持續維護近 20 個 Ansible Galaxy 開源 roles，也開講了五場【&lt;a href=&#34;https://devopssummit.ithome.com.tw/workshop/ansible/&#34;&gt;Ansible Workshop&lt;/a&gt;】訓練課程，很自然的，我會常常拿 Ansible 與 Docker 並列，思考兩者的定位、運用時機，甚至未來走向；有時甚至靈光一閃，浮現一些 Ansible＋Docker 的組合技。&lt;/p&gt;
+&lt;p&gt;這就是今天在 &lt;a href=&#34;https://community-open-camp.azurewebsites.net/&#34;&gt;Community Open Camp&lt;/a&gt; 這場演講【從 Ansible 到 Docker：混血模式】的由來。&lt;/p&gt;
+&lt;h2 id=&#34;特色&#34;&gt;特色&lt;/h2&gt;
+&lt;p&gt;用這種手法，可以在很大程度上，維持你既有的 Ansible playbook 資產，再加上一些針對 Docker 獨有特性而微調的部分，就可以用最小的力氣，產出三種層次的 image，從肥到瘦依序是：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;統包的 Docker image（含：OS runtime、Ansible、應用軟體本體）。&lt;/li&gt;
+&lt;li&gt;稍稍瘦身過的 Docker image（含：OS runtime、應用軟體本體，不含 Ansible）。&lt;/li&gt;
+&lt;li&gt;極度瘦身的 Docker image（只含 Alpine Linux runtime 及應用軟體本體）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;以常見的兩個 client 軟體（wrk、boom）、兩個 server 軟體（nginx、json-server）為例，照著流程做到最後一步，得到的結果是：&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/08/halfblood-docker-example.png&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2016/08/halfblood-docker-example.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;這種混血手法，提供給有需要在 Docker 及 non-Docker 兩者來回穿梭的工程師參考。&lt;/p&gt;
+&lt;h2 id=&#34;提醒&#34;&gt;提醒&lt;/h2&gt;
+&lt;p&gt;最後，不管你要不要採用 Docker，不管你的 Docker 是局部導入還是全面導入，請記得兩件事：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;“Infrastructure as Code” mindset，永遠要銘記在心。&lt;/li&gt;
+&lt;li&gt;Plan B 永遠是必須考慮的。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;這樣，你就可以用比較健康的心態，去面對、評估、嘗試新的技術。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;演講投影片：&lt;/p&gt;
+&lt;iframe
+  style=&#34;width: 100%; height: 500px;&#34; frameborder=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; scrolling=&#34;no&#34;
+  src=&#34;https://www.slideshare.net/slideshow/embed_code/65362893&#34; allowfullscreen webkitallowfullscreen mozallowfullscreen&gt; &lt;/iframe&gt;
+&lt;br&gt;&lt;br&gt;
+&lt;p&gt;▷ &lt;a href=&#34;https://channel9.msdn.com/Events/Community-Open-Camp/Community-Open-Camp-2016/ComOpenCamp003&#34;&gt;演講錄影&lt;/a&gt;，擺在 Channel 9 上。&lt;/p&gt;
+&lt;p&gt;▷ &lt;a href=&#34;https://github.com/William-Yeh/build-docker-with-ansible&#34;&gt;演講範例程式碼&lt;/a&gt;，擺在 GitHub 上，請搭配服用。&lt;/p&gt;
+&lt;p&gt;▷ 後續文章：〈&lt;a href=&#34;//william-yeh.net/post/2016/08/why-minimal-docker-images/&#34;&gt;為什麼要追求極簡化的 Docker image？&lt;/a&gt;〉&lt;/p&gt;</description>
+      
     </item>
+    
     <item>
       <title>CI 怎樣帶你遠離平庸？</title>
       <link>//william-yeh.net/post/2015/12/ci-effect/</link>
       <pubDate>Tue, 22 Dec 2015 08:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2015/12/ci-effect/</guid>
-      <description>&lt;p&gt;前天我的文章〈&lt;a href=&#34;//william-yeh.net/post/2015/12/ci-no-turning-back/&#34;&gt;CI 是條不歸路&lt;/a&gt;〉提到：「CI/CD/DevOps 既是條不歸路，更是大躍進之路：一旦踏出第一步，就注定你會不斷接觸**『遠離平庸』**的新觀點、新技術。」&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;前天我的文章〈&lt;a href=&#34;//william-yeh.net/post/2015/12/ci-no-turning-back/&#34;&gt;CI 是條不歸路&lt;/a&gt;〉提到：「CI/CD/DevOps 既是條不歸路，更是大躍進之路：一旦踏出第一步，就注定你會不斷接觸**『遠離平庸』**的新觀點、新技術。」&lt;/p&gt;
+&lt;p&gt;為了避免陳義過高，這篇文章就來講一個具體的軟體研發故事吧。&lt;/p&gt;
+&lt;h2 id=&#34;護城河&#34;&gt;護城河&lt;/h2&gt;
+&lt;p&gt;我用 Ansible，也用 &lt;a href=&#34;https://prometheus.io/&#34;&gt;Prometheus&lt;/a&gt;，因此，我寫了一個 Ansible role &lt;a href=&#34;https://github.com/William-Yeh/ansible-prometheus&#34;&gt;&lt;code&gt;williamyeh.prometheus&lt;/code&gt;&lt;/a&gt; 來安裝 Prometheus。&lt;/p&gt;
+&lt;p&gt;上個禮拜，我隱約覺得對它感興趣的人似乎變多了，便好奇的去 GitHub 後台調數據來看，發現：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;原來是被 Prometheus 官網列入 &amp;ldquo;&lt;a href=&#34;http://prometheus.io/docs/introduction/install/#using-configuration-management-systems&#34;&gt;Using configuration management systems&lt;/a&gt;&amp;rdquo; 清單了，難怪最近 PR 變多，品質更是超越其他幾家 CM 的例子。&lt;/p&gt;
+&lt;p&gt;&amp;mdash; Quote: &lt;a href=&#34;https://twitter.com/william_yeh/status/676897832071241728&#34;&gt;2015-12-16 Tweet&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;被 Prometheus 官方欽點了，能見度提高了，就表示，三不五時會有人提出 bug report，提出 feature request；甚至更勤勞一點的，可能直接就會送出 PR (pull request)。&lt;/p&gt;
+&lt;p&gt;面對 PR，其實要花很大的力氣去檢驗：檢驗對錯，檢驗風格，甚至 &lt;a href=&#34;https://en.wikipedia.org/wiki/The_Mythical_Man-Month#Conceptual_integrity&#34;&gt;conceptual integrity&lt;/a&gt;（語出《&lt;a href=&#34;https://en.wikipedia.org/wiki/The_Mythical_Man-Month&#34;&gt;人月神話&lt;/a&gt;》）。而且，對方既然已經很勤勞的送出 PR 了，他會預期你高度重視他的提案。&lt;/p&gt;
+&lt;p&gt;我需要一道&lt;strong&gt;護城河&lt;/strong&gt;，讓我不必每次都事必躬親，回應每一則 PR。&lt;/p&gt;
+&lt;p&gt;所幸我早就建立好&lt;strong&gt;個人的 discipline&lt;/strong&gt;：要替自己寫的 Ansible role 加上 CI。即使只是做一點點小小的 smoke test，總是聊勝於無。&lt;/p&gt;
+&lt;p&gt;CI 是&lt;strong&gt;高度客觀中立&lt;/strong&gt;、&lt;strong&gt;不帶感情&lt;/strong&gt;的守門員。它，幫我初步過濾一些攸關對錯、風格的 PR。於是，我可以優先禮貌性回應已經被 CI 初步打勾放行的 PR；至於被打叉叉的，那就&lt;del&gt;謝謝再聯絡&lt;/del&gt;等有充裕時間精力時再說：&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2015/12/ansible-prometheus-pr.png&#34; alt=&#34;Pull requests&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2015/12/ansible-prometheus-pr.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Pull requests&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;CI，小小的投資，大大的省事。&lt;/p&gt;
+&lt;h2 id=&#34;當-ansible-遇見-docker&#34;&gt;當 Ansible 遇見 Docker&lt;/h2&gt;
+&lt;p&gt;個人還有另一項執念：自己寫的 Ansible role，要盡可能支援多種 Linux distributions 環境。&lt;/p&gt;
+&lt;p&gt;這又是一條不歸路。&lt;/p&gt;
+&lt;p&gt;在本機端研發時，我可以用各種 Vagrant box 來模擬各種 Linux （譬如：&lt;a href=&#34;https://app.vagrantup.com/bento/boxes/centos-6.7&#34;&gt;bento/centos-6.7&lt;/a&gt;、&lt;a href=&#34;https://app.vagrantup.com/bento/boxes/centos-7.1&#34;&gt;bento/centos-7.1&lt;/a&gt;、&lt;a href=&#34;https://app.vagrantup.com/debian/boxes/jessie64&#34;&gt;debian/jessie64&lt;/a&gt;），但這沒辦法 scale 到正式的 CI 流程上。此刻 Travis CI 及 CircleCI 只提供 Ubuntu 12.04 及 14.04 兩種 instance，也沒支援 &lt;a href=&#34;http://kitchen.ci&#34;&gt;Test Kitchen&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;所幸 Travis CI 和 CircleCI 都有支援 Docker，因此，我設計了 &lt;a href=&#34;https://github.com/William-Yeh/docker-ansible&#34;&gt;&lt;code&gt;williamyeh/ansible&lt;/code&gt;&lt;/a&gt; 這一系列的 Docker images，可在 Travis CI 及 CircleCI 上面模擬出 CentOS 6 &amp;amp; 7、Debian 7 &amp;amp; 8、Ubuntu 12.04 &amp;amp; 14.04 環境，來測試我的 Ansible roles。&lt;/p&gt;
+&lt;p&gt;這下子，我的 CI 護城河就更穩固了。CI 這位&lt;strong&gt;高度客觀中立&lt;/strong&gt;、&lt;strong&gt;不帶感情&lt;/strong&gt;的守門員，協助我冷靜面對以下這則算是大工程等級的 PR，不帶批判情緒的進行對話，一起搞定 CentOS/Ubuntu 雙系統：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2015/12/pr-discussion.png&#34; alt=&#34;Discussion around a pull request&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2015/12/pr-discussion.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Discussion around a pull request&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;CI，小小的投資，大大的省事。&lt;/p&gt;
+&lt;p&gt;對我而言，原本 &lt;code&gt;williamyeh/ansible&lt;/code&gt; 只是為了其他目的而順帶設計出來的副產品。但由於 Ansible 官方已不再維護它的 Docker images；而在非官方版當中，我的 &lt;code&gt;williamyeh/ansible&lt;/code&gt; 下載量居冠（統計數據&lt;a href=&#34;https://hub.docker.com/search/?q=ansible&amp;amp;page=1&amp;amp;isAutomated=0&amp;amp;isOfficial=0&amp;amp;pullCount=1&amp;amp;starCount=0&#34;&gt;在此&lt;/a&gt;），也持續有人提出 feature request⋯⋯該說是無心插柳嗎？&lt;/p&gt;
+&lt;h2 id=&#34;吃自己的狗食&#34;&gt;吃自己的狗食&lt;/h2&gt;
+&lt;p&gt;再拿另一個很受歡迎的 Ansible role：&lt;a href=&#34;https://github.com/William-Yeh/ansible-oracle-java&#34;&gt;&lt;code&gt;williamyeh.oracle-java&lt;/code&gt;&lt;/a&gt; 為例。它在 Ansible Galaxy 已經得到 &lt;a href=&#34;https://galaxy.ansible.com/william-yeh/oracle-java&#34;&gt;4.8 的高分&lt;/a&gt;，是一個已經為人所知，甚至為人所用的元件。&lt;/p&gt;
+&lt;p&gt;因此，我必須維持良好的向後相容性，以對用戶負責。&lt;/p&gt;
+&lt;p&gt;也因此，連我自己想對原始程式做更動，也不敢貿然造次。必須遵守 &lt;a href=&#34;http://nvie.com/posts/a-successful-git-branching-model/&#34;&gt;Git Flow&lt;/a&gt; 或 &lt;a href=&#34;https://guides.github.com/introduction/flow/&#34;&gt;GitHub Flow&lt;/a&gt; 之類的 &lt;strong&gt;workflow discipline&lt;/strong&gt;，一樣要看 CI 這位&lt;strong&gt;高度客觀中立&lt;/strong&gt;、&lt;strong&gt;不帶感情&lt;/strong&gt;的守門員的臉色。&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2015/12/github-graph.png&#34; alt=&#34;Network graph&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2015/12/github-graph.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Network graph&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;專業，就是對自己也有 discipline。CI，就是&lt;strong&gt;強制幫助你建立 discipline&lt;/strong&gt;。&lt;/p&gt;
+&lt;h2 id=&#34;不要輕看-ci-的紅燈&#34;&gt;不要輕看 CI 的紅燈&lt;/h2&gt;
+&lt;p&gt;對這個 Ansible role，有一點我一直耿耿於懷：Travis CI 和 CircleCI 的測試結果，時好時壞。&lt;/p&gt;
+&lt;p&gt;像以下截圖顯示，同樣都是針對 &lt;code&gt;6598bed&lt;/code&gt; 這個 commit，Travis CI 一次就通過，但 CircleCI 居然會出現一堆紅燈。不死心的我，一直按 rebuild 好幾次，總算才出現綠燈：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2015/12/circleci-error.png&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2015/12/circleci-error.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;奇怪的是，同樣都是針對 &lt;code&gt;a9c105e&lt;/code&gt; 這個 commit，這回 CircleCI 一次就通過，反倒是 Travis CI 出狀況：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2015/12/travisci-error.png&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2015/12/travisci-error.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;前幾天，我終於忍不住出手。&lt;/p&gt;
+&lt;p&gt;反覆比對兩邊的 log，發現，Oracle 疑似會對 jdk 下載點做 rate limiting。每次 Travis CI 及 CircleCI 的 CI 大隊一啟動，Oracle 就惱了。&lt;/p&gt;
+&lt;p&gt;所以，不是我的 Ansible role 有問題，是 Oracle 太神經兮兮了。&lt;/p&gt;
+&lt;p&gt;怪罪 Oracle 於事無補，問題總得解決⋯⋯&lt;/p&gt;
+&lt;p&gt;為了解決這問題，我設計一個 prefetch 機制：只向 Oracle 抓一次需要的 rpm 及 tar.gz 檔案，存放在 role 的 &lt;code&gt;files&lt;/code&gt; 目錄裡面。如此一來，不僅避開 rate limiting 的限制，連帶的也降低整體的 build time，更讓整個 role 架構 refactor 得更乾淨。&lt;/p&gt;
+&lt;p&gt;CI，小小的投資，大大的省事。&lt;/p&gt;
+&lt;h2 id=&#34;卻顧所來徑&#34;&gt;卻顧所來徑&lt;/h2&gt;
+&lt;p&gt;這一切的一切，濫觴都只是一個小起步：要替自己寫的 Ansible role 加上 CI。&lt;/p&gt;
+&lt;p&gt;一旦踏出第一步，就注定你會不斷接觸**『遠離平庸』**的新觀點、新技術。&lt;/p&gt;
+&lt;p&gt;你同意嗎？&lt;/p&gt;
+</description>
+      
     </item>
+    
   </channel>
 </rss>

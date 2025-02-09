@@ -4,37 +4,356 @@
     <title>Ansible on Potioneer&#39;s Essays</title>
     <link>//william-yeh.net/tags/ansible/</link>
     <description>Recent content in Ansible on Potioneer&#39;s Essays</description>
-    <generator>Hugo</generator>
+    <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <lastBuildDate>Thu, 18 Apr 2019 23:00:00 +0800</lastBuildDate>
-    <atom:link href="//william-yeh.net/tags/ansible/index.xml" rel="self" type="application/rss+xml" />
+    
+        <atom:link href="//william-yeh.net/tags/ansible/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>在 WSL 裡使用 Ansible &#43; Vagrant</title>
       <link>//william-yeh.net/post/2019/04/wsl-ansible-vagrant/</link>
       <pubDate>Thu, 18 Apr 2019 23:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2019/04/wsl-ansible-vagrant/</guid>
-      <description>&lt;p&gt;既然要開始在 Windows 上沿用 Mac 及 Unix 的命令列工具習慣&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，免不了要處理 &lt;a href=&#34;https://github.com/ansible/ansible&#34;&gt;Ansible&lt;/a&gt; 及 &lt;a href=&#34;https://www.vagrantup.com/&#34;&gt;Vagrant&lt;/a&gt;。&lt;/p&gt;&#xA;&lt;p&gt;雖然這兩個軟體都有對應的 Windows 版本，但據我以前的經驗，卡卡的，有許多小地雷；畢竟這些發跡自泛 Unix 家族的軟體，不是那麼容易無縫移植到對命令列不友善的 Windows 家族。&lt;/p&gt;&#xA;&lt;p&gt;如今 Windows 已經有 &lt;a href=&#34;https://docs.microsoft.com/en-us/windows/wsl/&#34;&gt;WSL (Windows Subsystem for Linux)&lt;/a&gt; 機制，是否可以更無痛享用 Ansible 及 Vagrant 呢？&lt;/p&gt;&#xA;&lt;p&gt;可以的。&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;既然要開始在 Windows 上沿用 Mac 及 Unix 的命令列工具習慣&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，免不了要處理 &lt;a href=&#34;https://github.com/ansible/ansible&#34;&gt;Ansible&lt;/a&gt; 及 &lt;a href=&#34;https://www.vagrantup.com/&#34;&gt;Vagrant&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;雖然這兩個軟體都有對應的 Windows 版本，但據我以前的經驗，卡卡的，有許多小地雷；畢竟這些發跡自泛 Unix 家族的軟體，不是那麼容易無縫移植到對命令列不友善的 Windows 家族。&lt;/p&gt;
+&lt;p&gt;如今 Windows 已經有 &lt;a href=&#34;https://docs.microsoft.com/en-us/windows/wsl/&#34;&gt;WSL (Windows Subsystem for Linux)&lt;/a&gt; 機制，是否可以更無痛享用 Ansible 及 Vagrant 呢？&lt;/p&gt;
+&lt;p&gt;可以的。&lt;/p&gt;
+&lt;p&gt;大體而言，我們會兵分二路：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;在 Windows 上，會安裝 &lt;a href=&#34;https://www.virtualbox.org/&#34;&gt;VirtualBox&lt;/a&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在 WSL 上，會安裝 &lt;a href=&#34;https://www.vagrantup.com/&#34;&gt;Vagrant&lt;/a&gt; 及 &lt;a href=&#34;https://github.com/ansible/ansible&#34;&gt;Ansible&lt;/a&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;虛擬機選項一virtualbox&#34;&gt;虛擬機選項一：VirtualBox&lt;/h2&gt;
+&lt;p&gt;用慣 Mac 或 Linux 的人，可能會想沿用 &lt;a href=&#34;https://www.virtualbox.org/&#34;&gt;VirtualBox&lt;/a&gt; 虛擬機軟體。畢竟 VirtualBox 是同屬開源生態系的一員，和其他開源軟體的相容性最高。&lt;/p&gt;
+&lt;p&gt;你可以直接去官方網站&lt;a href=&#34;https://www.virtualbox.org/wiki/Downloads&#34;&gt;下載&lt;/a&gt;安裝檔（VirtualBox 本體，以及 VirtualBox Extension Pack），或是直接透過 Chocolatey 套件管理工具來&lt;a href=&#34;https://chocolatey.org/packages/virtualbox&#34;&gt;安裝&lt;/a&gt;：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;C:\&amp;gt; choco install virtualbox&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;p&gt;安裝完後，還有一關要克服。&lt;/p&gt;
+&lt;p&gt;一般來說，在同一個 host OS 上，同一時間，只能有一個底層虛擬機制存在（除非有像「巢狀虛擬化」之類的黑魔法……吧？）。因此，VirtualBox 無法與 Windows 官方欽定的 Hyper-V 機制同時並存，一山不容二虎&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;。&lt;/p&gt;
+&lt;p&gt;如果決定要使用 VirtualBox，請用管理者權限執行以下命令，暫時關閉 Hyper-V 功能&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;C:&amp;gt; dism.exe /Online /Disable-Feature:Microsoft-Hyper-V
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;C:&amp;gt; bcdedit /set hypervisorlaunchtype off&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;p&gt;這麼做的缺點是：由於 Docker Desktop for Windows 會用到 Hyper-V 機制，所以，關閉了 Hyper-V，等於是關閉了 Docker Desktop 的使用權。如果稍後還想使用 Docker Desktop，就得手動恢復 Hyper-V 功能：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;C:&amp;gt; dism.exe /Online /Enable-Feature:Microsoft-Hyper-V-All
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;C:&amp;gt; bcdedit /set hypervisorlaunchtype auto&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;p&gt;你可能需要在 Hyper-V 與 VirtualBox 模式之間來回切換，也需要重新開機。&lt;/p&gt;
+&lt;h2 id=&#34;虛擬機選項二hyper-v&#34;&gt;虛擬機選項二：Hyper-V&lt;/h2&gt;
+&lt;p&gt;在 Windows 上面玩 VirtualBox 這麼麻煩，換成 Hyper-V 會不會比較省事？&lt;/p&gt;
+&lt;p&gt;很可惜，我在 &amp;ldquo;Hyper-V Administrators&amp;rdquo; 這一關觸礁了。嘗試一些可能的解法&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;，都無效。&lt;/p&gt;
+&lt;p&gt;真的有需要時，再回來研究吧。&lt;/p&gt;
+&lt;h2 id=&#34;vagrant&#34;&gt;Vagrant&lt;/h2&gt;
+&lt;p&gt;直接比照 Linux 安裝 Vagrant 的方法。&lt;/p&gt;
+&lt;p&gt;請在 WSL 底下，直接去官方網站&lt;a href=&#34;https://www.vagrantup.com/downloads.html&#34;&gt;下載&lt;/a&gt;安裝檔，或是用 Apt 之類的套件管理系統來安裝。&lt;/p&gt;
+&lt;p&gt;安裝完畢，請根據官方網站的&lt;a href=&#34;https://www.vagrantup.com/docs/other/wsl.html&#34;&gt;建議&lt;/a&gt;設定環境變數。尤其是 &lt;code&gt;VAGRANT_WSL_ENABLE_WINDOWS_ACCESS&lt;/code&gt; 這一項：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;export VAGRANT_WSL_ENABLE_WINDOWS_ACCESS=&amp;#34;1&amp;#34;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;h2 id=&#34;ansible&#34;&gt;Ansible&lt;/h2&gt;
+&lt;p&gt;直接比照 Linux 安裝 Ansible 的方法。&lt;/p&gt;
+&lt;p&gt;請在 WSL 底下，照著官方網站的&lt;a href=&#34;https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html#installing-the-control-machine&#34;&gt;安裝步驟&lt;/a&gt;來執行。譬如說，在 Debian/Ubuntu 系列下，可以用 Apt 套件管理系統來安裝。&lt;/p&gt;
+&lt;h2 id=&#34;ansible--vagrant&#34;&gt;Ansible + Vagrant&lt;/h2&gt;
+&lt;p&gt;現在，試試看把 Ansible 和 Vagrant 結合起來！&lt;/p&gt;
+&lt;p&gt;先準備好 &lt;code&gt;Vagrantfile&lt;/code&gt; 檔案：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-ruby&#34; data-lang=&#34;ruby&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;Vagrant&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;configure(&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;do&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;config&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  config&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;vm&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;box &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;bento/ubuntu-18.04&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  config&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;vm&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;network &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;forwarded_port&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;guest&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;80&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;host&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;8080&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  config&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;vm&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;provision &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;ansible&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;do&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;ansible&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;     ansible&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;compatibility_mode &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;2.0&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;     &lt;span style=&#34;color:#75715e&#34;&gt;#ansible.verbose = &amp;#34;vvv&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;     ansible&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;playbook &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;playbook.yml&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;     ansible&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;become &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;end&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;end&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;p&gt;還有 Ansible 的 &lt;code&gt;playbook.yml&lt;/code&gt; 檔案：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-yml&#34; data-lang=&#34;yml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;- &lt;span style=&#34;color:#f92672&#34;&gt;hosts&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;all&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;become&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;tasks&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    - &lt;span style=&#34;color:#f92672&#34;&gt;name&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;install nginx&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#f92672&#34;&gt;apt&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;name=nginx state=present update_cache=yes&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;p&gt;試著啟動看看：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;% vagrant up&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;p&gt;如果一切順利，你可以在 &lt;code&gt;http://localhost:8080/&lt;/code&gt; 看到 Nginx 歡迎畫面。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;在 Docker + Kubernetes 時代，用到 Ansible 的機會愈來愈少了，Vagrant 更是如此；不過，保有這種工具，在處理還來不及跟上腳步的舊系統仍然很管用。因此，花一點功夫湊出堪用的組合，希望能有順手的 WSL 環境。&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;這段故事，詳見〈&lt;a href=&#34;//william-yeh.net/post/2019/03/wsl-cmder-zsh/&#34;&gt;在 Windows 上復刻 Mac 使用習慣&lt;/a&gt;〉一文。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;技術上來說，Hyper-V 是屬於 type-1 hypervisor，VirtualBox 是屬於 type-2 hypervisor。詳見維基百科 &amp;ldquo;&lt;a href=&#34;https://en.wikipedia.org/wiki/Hypervisor&#34;&gt;Hypervisor&lt;/a&gt;&amp;rdquo; 條目。&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;
+&lt;p&gt;在 Windows 上關閉 Hyper-V 機制，請參考以下文章：“&lt;a href=&#34;https://www.sysprobs.com/solved-vt-x-is-not-available-verr-vmx-no-vmx-in-windows-10-virtualbox&#34;&gt;(Solved) VT-x is Not Available (verr_vmx_no_vmx) in Windows 10 – but Available for Oracle VirtualBox&lt;/a&gt;”、〈&lt;a href=&#34;https://blog.csdn.net/imilano/article/details/83038682&#34;&gt;Win10 10月更新 VirtualBox VT-x is not available (VERR_VMX_NO_VMX). 解决&lt;/a&gt;〉、“&lt;a href=&#34;https://forums.virtualbox.org/viewtopic.php?f=38&amp;amp;t=89791&#34;&gt;[Solved] VT-x is not available (VERR_VMX_NO_VMX)&lt;/a&gt;”。&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:4&#34;&gt;
+&lt;p&gt;當 Vagrant 在使用 Hyper-V 時，會出現 &amp;ldquo;Hyper-V Administrators&amp;rdquo; 權限問題。我嘗試以下幾篇文章，可惜仍未解決：“&lt;a href=&#34;https://github.com/hashicorp/vagrant/issues/4503&#34;&gt;Vagrant issue #378&lt;/a&gt;”、“&lt;a href=&#34;https://blogs.msdn.microsoft.com/virtual_pc_guy/2014/06/11/allowing-non-administrators-to-control-hyper-vupdated/&#34;&gt;Allowing non-Administrators to control Hyper-V–Updated&lt;/a&gt;”、“&lt;a href=&#34;https://dev.to/nicolus/getting-homestead-to-play-nice-with-hyper-v-4202&#34;&gt;Getting Homestead to play nice with Hyper-V&lt;/a&gt;”。&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description>
+      
     </item>
+    
     <item>
       <title>從 Ansible 到 Docker：混血模式</title>
       <link>//william-yeh.net/post/2016/08/halfblood-docker/</link>
       <pubDate>Sat, 27 Aug 2016 08:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2016/08/halfblood-docker/</guid>
-      <description>&lt;p&gt;2015 年 4 月我在 &lt;a href=&#34;https://www.meetup.com/Docker-Taipei/&#34;&gt;Docker Taipei 社群&lt;/a&gt;講了一場〈&lt;a href=&#34;https://william-yeh.github.io/docker-mini/&#34;&gt;追求極簡化 Docker image 之路&lt;/a&gt;〉。一年後，在「極簡化 Docker」這條路上，另一條途徑 Alpine Linux 開始嶄露頭角——不必像過去那麼蠻幹，地雷減少，流程優勢顯著，品質上也不見得遜於長期被 glibc 把持的傳統體系。&lt;/p&gt;&#xA;&lt;p&gt;我嘗試用這種手法重整過去的東西，結果還不算太差。因此，一直希望能有機會再給一場類似【追求極簡化 Docker image 之路，Part 2】的演講。&lt;/p&gt;&#xA;&lt;p&gt;此外，由於自己持續在使用 Ansible 來處理組態設定事宜，持續維護近 20 個 Ansible Galaxy 開源 roles，也開講了五場【&lt;a href=&#34;https://devopssummit.ithome.com.tw/workshop/ansible/&#34;&gt;Ansible Workshop&lt;/a&gt;】訓練課程，很自然的，我會常常拿 Ansible 與 Docker 並列，思考兩者的定位、運用時機，甚至未來走向；有時甚至靈光一閃，浮現一些 Ansible＋Docker 的組合技。&lt;/p&gt;&#xA;&lt;p&gt;這就是今天在 &lt;a href=&#34;https://community-open-camp.azurewebsites.net/&#34;&gt;Community Open Camp&lt;/a&gt; 這場演講【從 Ansible 到 Docker：混血模式】的由來。&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;2015 年 4 月我在 &lt;a href=&#34;https://www.meetup.com/Docker-Taipei/&#34;&gt;Docker Taipei 社群&lt;/a&gt;講了一場〈&lt;a href=&#34;https://william-yeh.github.io/docker-mini/&#34;&gt;追求極簡化 Docker image 之路&lt;/a&gt;〉。一年後，在「極簡化 Docker」這條路上，另一條途徑 Alpine Linux 開始嶄露頭角——不必像過去那麼蠻幹，地雷減少，流程優勢顯著，品質上也不見得遜於長期被 glibc 把持的傳統體系。&lt;/p&gt;
+&lt;p&gt;我嘗試用這種手法重整過去的東西，結果還不算太差。因此，一直希望能有機會再給一場類似【追求極簡化 Docker image 之路，Part 2】的演講。&lt;/p&gt;
+&lt;p&gt;此外，由於自己持續在使用 Ansible 來處理組態設定事宜，持續維護近 20 個 Ansible Galaxy 開源 roles，也開講了五場【&lt;a href=&#34;https://devopssummit.ithome.com.tw/workshop/ansible/&#34;&gt;Ansible Workshop&lt;/a&gt;】訓練課程，很自然的，我會常常拿 Ansible 與 Docker 並列，思考兩者的定位、運用時機，甚至未來走向；有時甚至靈光一閃，浮現一些 Ansible＋Docker 的組合技。&lt;/p&gt;
+&lt;p&gt;這就是今天在 &lt;a href=&#34;https://community-open-camp.azurewebsites.net/&#34;&gt;Community Open Camp&lt;/a&gt; 這場演講【從 Ansible 到 Docker：混血模式】的由來。&lt;/p&gt;
+&lt;h2 id=&#34;特色&#34;&gt;特色&lt;/h2&gt;
+&lt;p&gt;用這種手法，可以在很大程度上，維持你既有的 Ansible playbook 資產，再加上一些針對 Docker 獨有特性而微調的部分，就可以用最小的力氣，產出三種層次的 image，從肥到瘦依序是：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;統包的 Docker image（含：OS runtime、Ansible、應用軟體本體）。&lt;/li&gt;
+&lt;li&gt;稍稍瘦身過的 Docker image（含：OS runtime、應用軟體本體，不含 Ansible）。&lt;/li&gt;
+&lt;li&gt;極度瘦身的 Docker image（只含 Alpine Linux runtime 及應用軟體本體）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;以常見的兩個 client 軟體（wrk、boom）、兩個 server 軟體（nginx、json-server）為例，照著流程做到最後一步，得到的結果是：&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/08/halfblood-docker-example.png&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2016/08/halfblood-docker-example.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;這種混血手法，提供給有需要在 Docker 及 non-Docker 兩者來回穿梭的工程師參考。&lt;/p&gt;
+&lt;h2 id=&#34;提醒&#34;&gt;提醒&lt;/h2&gt;
+&lt;p&gt;最後，不管你要不要採用 Docker，不管你的 Docker 是局部導入還是全面導入，請記得兩件事：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;“Infrastructure as Code” mindset，永遠要銘記在心。&lt;/li&gt;
+&lt;li&gt;Plan B 永遠是必須考慮的。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;這樣，你就可以用比較健康的心態，去面對、評估、嘗試新的技術。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;演講投影片：&lt;/p&gt;
+&lt;iframe
+  style=&#34;width: 100%; height: 500px;&#34; frameborder=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; scrolling=&#34;no&#34;
+  src=&#34;https://www.slideshare.net/slideshow/embed_code/65362893&#34; allowfullscreen webkitallowfullscreen mozallowfullscreen&gt; &lt;/iframe&gt;
+&lt;br&gt;&lt;br&gt;
+&lt;p&gt;▷ &lt;a href=&#34;https://channel9.msdn.com/Events/Community-Open-Camp/Community-Open-Camp-2016/ComOpenCamp003&#34;&gt;演講錄影&lt;/a&gt;，擺在 Channel 9 上。&lt;/p&gt;
+&lt;p&gt;▷ &lt;a href=&#34;https://github.com/William-Yeh/build-docker-with-ansible&#34;&gt;演講範例程式碼&lt;/a&gt;，擺在 GitHub 上，請搭配服用。&lt;/p&gt;
+&lt;p&gt;▷ 後續文章：〈&lt;a href=&#34;//william-yeh.net/post/2016/08/why-minimal-docker-images/&#34;&gt;為什麼要追求極簡化的 Docker image？&lt;/a&gt;〉&lt;/p&gt;</description>
+      
     </item>
+    
     <item>
       <title>電腦界的隱喻：組態管理</title>
       <link>//william-yeh.net/post/2016/03/metaphor-in-cm/</link>
       <pubDate>Wed, 02 Mar 2016 08:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2016/03/metaphor-in-cm/</guid>
-      <description>&lt;p&gt;人類是很喜愛比喻／譬喻的。戰國時代的莊子愛用譬喻，常和莊子抬槓的惠施也愛譬喻，《說苑‧善說》甚至記載著這麼一段故事：&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;人類是很喜愛比喻／譬喻的。戰國時代的莊子愛用譬喻，常和莊子抬槓的惠施也愛譬喻，《說苑‧善說》甚至記載著這麼一段故事：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;客謂梁王曰：「惠子之言事也，善譬。王使無譬則不能言矣。」王曰：「諾。」&lt;/p&gt;
+&lt;p&gt;明日見， 謂惠子曰：「願先生言事則直言耳，無譬也。」惠子曰：「今有人於此而不知彈者，曰：『彈之狀何若？』應曰：『彈之狀如彈。』則諭乎？」王曰：「未諭也。」 「於是更應曰：『彈之狀如弓，而竹為弦』，則知乎？」王曰：「可知矣。」&lt;/p&gt;
+&lt;p&gt;惠子曰：「夫說者固以其所知，喻其所不知，而使人知之。今王曰無譬，則不可矣。」 王曰：「善。」&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;用譬喻反擊「無譬也」的要求，真是高招！&lt;/p&gt;
+&lt;p&gt;比喻／譬喻不只是修辭法，甚至是人類根深蒂固的認知媒介。認知語言學大師 George Lakoff 在 &lt;a href=&#34;http://www.amazon.com/dp/0226468011/ref=cm_sw_r_tw_dp_yQP1wb1VDN24N&#34;&gt;&lt;em&gt;Metaphors We Live By&lt;/em&gt;&lt;/a&gt; 書中，如此闡述它的地位：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Metaphor is not just a matter of language of mere words. We shall argue that, on the contrary, human &lt;em&gt;&lt;strong&gt;thought processes&lt;/strong&gt;&lt;/em&gt; are largely metaphorical.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;所以，每次看到有趣的隱喻，我都會特別留意，細細品味背後的巧思。&lt;/p&gt;
+&lt;p&gt;電腦界也很愛用隱喻，甚至還會帶出成群的隱喻。&lt;/p&gt;
+&lt;p&gt;Java 之名，取材自咖啡。JavaScript 雖然並非嫡傳血脈，但由它衍生出來的其他技術，有些就刻意以「咖啡」為隱喻。像美化 JavaScript 語法的 &lt;a href=&#34;http://coffeescript.org/&#34;&gt;CoffeeScript&lt;/a&gt;、供 JavaScript 使用的測試框架 &lt;a href=&#34;https://mochajs.org/&#34;&gt;Mocha&lt;/a&gt;，甚至連咖啡的對手：&lt;a href=&#34;https://mochajs.org/&#34;&gt;Chai&lt;/a&gt; 都搬出來了。&lt;/p&gt;
+&lt;p&gt;組態管理的四大工具，也是愛用隱喻的。&lt;/p&gt;
+&lt;p&gt;Ansible 主要的隱喻是&lt;strong&gt;演戲&lt;/strong&gt;。所以，在 Ansible 劇場中，策劃好的動作及姿勢叫做 &lt;strong&gt;play&lt;/strong&gt;，集合起來就是 &lt;strong&gt;playbook&lt;/strong&gt;（劇本）。人生就是戲，演不完的戲；在舞台上，每一台主機扮演一個或多個 &lt;strong&gt;role&lt;/strong&gt;（角色），甚至還有天外飛來一筆的空降角色 —— 來自 &lt;strong&gt;galaxy&lt;/strong&gt;（銀河系）。&lt;/p&gt;
+&lt;p&gt;Chef 主要的隱喻是&lt;strong&gt;廚師&lt;/strong&gt;。所以，在 Chef 世界中，珍藏厚厚的 &lt;strong&gt;cookbook&lt;/strong&gt;（食譜），根據裡面記載的 &lt;strong&gt;recipe&lt;/strong&gt;（料理步驟），用 &lt;strong&gt;knife&lt;/strong&gt;（菜刀）做菜，也有一個 &lt;strong&gt;kitchen&lt;/strong&gt;（廚房）可以實驗料理。&lt;/p&gt;
+&lt;p&gt;Puppet 主要的隱喻是&lt;strong&gt;傀儡&lt;/strong&gt;、&lt;strong&gt;偶戲&lt;/strong&gt;。可惜的是，在 Puppet 舞台上出現的概念：manifest、resource、module、master、agent，似乎都沒有善用最初的隱喻。&lt;/p&gt;
+&lt;p&gt;Salt 主要的隱喻是⋯⋯&lt;strong&gt;鹽&lt;/strong&gt;。可惜的是，在 Salt 世界中出現的概念：salt state、formula、master、minion，似乎都沒有善用最初的隱喻。嗯，&amp;ldquo;formula&amp;rdquo; 字眼，勉強算有沾到邊。&lt;/p&gt;
+&lt;p&gt;呃，我要修正前面那一句話：「組態管理的四大工具當中，Ansible 和 Chef 也是愛用隱喻的。」&lt;/p&gt;
+&lt;p&gt;或許這也是我對 Ansible 及 Chef 比較有好感的原因吧。&lt;/p&gt;
+&lt;p&gt;最後，如果你想對這四大工具有個快速的概念，可參考 Roland Wolters 製作的單頁掛圖：&lt;a href=&#34;http://wall-skills.com/2015/configuration-management-ansible-salt-chef-puppet/&#34;&gt;Tools for Configuration Management&lt;/a&gt;。&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/03/Ansible-Salt-Puppet-Chef-Wall-Skills.png&#34; alt=&#34;Tools for Configuration Management&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2016/03/Ansible-Salt-Puppet-Chef-Wall-Skills.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Tools for Configuration Management&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;</description>
+      
     </item>
+    
     <item>
       <title>CI 怎樣帶你遠離平庸？</title>
       <link>//william-yeh.net/post/2015/12/ci-effect/</link>
       <pubDate>Tue, 22 Dec 2015 08:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2015/12/ci-effect/</guid>
-      <description>&lt;p&gt;前天我的文章〈&lt;a href=&#34;//william-yeh.net/post/2015/12/ci-no-turning-back/&#34;&gt;CI 是條不歸路&lt;/a&gt;〉提到：「CI/CD/DevOps 既是條不歸路，更是大躍進之路：一旦踏出第一步，就注定你會不斷接觸**『遠離平庸』**的新觀點、新技術。」&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;前天我的文章〈&lt;a href=&#34;//william-yeh.net/post/2015/12/ci-no-turning-back/&#34;&gt;CI 是條不歸路&lt;/a&gt;〉提到：「CI/CD/DevOps 既是條不歸路，更是大躍進之路：一旦踏出第一步，就注定你會不斷接觸**『遠離平庸』**的新觀點、新技術。」&lt;/p&gt;
+&lt;p&gt;為了避免陳義過高，這篇文章就來講一個具體的軟體研發故事吧。&lt;/p&gt;
+&lt;h2 id=&#34;護城河&#34;&gt;護城河&lt;/h2&gt;
+&lt;p&gt;我用 Ansible，也用 &lt;a href=&#34;https://prometheus.io/&#34;&gt;Prometheus&lt;/a&gt;，因此，我寫了一個 Ansible role &lt;a href=&#34;https://github.com/William-Yeh/ansible-prometheus&#34;&gt;&lt;code&gt;williamyeh.prometheus&lt;/code&gt;&lt;/a&gt; 來安裝 Prometheus。&lt;/p&gt;
+&lt;p&gt;上個禮拜，我隱約覺得對它感興趣的人似乎變多了，便好奇的去 GitHub 後台調數據來看，發現：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;原來是被 Prometheus 官網列入 &amp;ldquo;&lt;a href=&#34;http://prometheus.io/docs/introduction/install/#using-configuration-management-systems&#34;&gt;Using configuration management systems&lt;/a&gt;&amp;rdquo; 清單了，難怪最近 PR 變多，品質更是超越其他幾家 CM 的例子。&lt;/p&gt;
+&lt;p&gt;&amp;mdash; Quote: &lt;a href=&#34;https://twitter.com/william_yeh/status/676897832071241728&#34;&gt;2015-12-16 Tweet&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;被 Prometheus 官方欽點了，能見度提高了，就表示，三不五時會有人提出 bug report，提出 feature request；甚至更勤勞一點的，可能直接就會送出 PR (pull request)。&lt;/p&gt;
+&lt;p&gt;面對 PR，其實要花很大的力氣去檢驗：檢驗對錯，檢驗風格，甚至 &lt;a href=&#34;https://en.wikipedia.org/wiki/The_Mythical_Man-Month#Conceptual_integrity&#34;&gt;conceptual integrity&lt;/a&gt;（語出《&lt;a href=&#34;https://en.wikipedia.org/wiki/The_Mythical_Man-Month&#34;&gt;人月神話&lt;/a&gt;》）。而且，對方既然已經很勤勞的送出 PR 了，他會預期你高度重視他的提案。&lt;/p&gt;
+&lt;p&gt;我需要一道&lt;strong&gt;護城河&lt;/strong&gt;，讓我不必每次都事必躬親，回應每一則 PR。&lt;/p&gt;
+&lt;p&gt;所幸我早就建立好&lt;strong&gt;個人的 discipline&lt;/strong&gt;：要替自己寫的 Ansible role 加上 CI。即使只是做一點點小小的 smoke test，總是聊勝於無。&lt;/p&gt;
+&lt;p&gt;CI 是&lt;strong&gt;高度客觀中立&lt;/strong&gt;、&lt;strong&gt;不帶感情&lt;/strong&gt;的守門員。它，幫我初步過濾一些攸關對錯、風格的 PR。於是，我可以優先禮貌性回應已經被 CI 初步打勾放行的 PR；至於被打叉叉的，那就&lt;del&gt;謝謝再聯絡&lt;/del&gt;等有充裕時間精力時再說：&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2015/12/ansible-prometheus-pr.png&#34; alt=&#34;Pull requests&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2015/12/ansible-prometheus-pr.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Pull requests&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;CI，小小的投資，大大的省事。&lt;/p&gt;
+&lt;h2 id=&#34;當-ansible-遇見-docker&#34;&gt;當 Ansible 遇見 Docker&lt;/h2&gt;
+&lt;p&gt;個人還有另一項執念：自己寫的 Ansible role，要盡可能支援多種 Linux distributions 環境。&lt;/p&gt;
+&lt;p&gt;這又是一條不歸路。&lt;/p&gt;
+&lt;p&gt;在本機端研發時，我可以用各種 Vagrant box 來模擬各種 Linux （譬如：&lt;a href=&#34;https://app.vagrantup.com/bento/boxes/centos-6.7&#34;&gt;bento/centos-6.7&lt;/a&gt;、&lt;a href=&#34;https://app.vagrantup.com/bento/boxes/centos-7.1&#34;&gt;bento/centos-7.1&lt;/a&gt;、&lt;a href=&#34;https://app.vagrantup.com/debian/boxes/jessie64&#34;&gt;debian/jessie64&lt;/a&gt;），但這沒辦法 scale 到正式的 CI 流程上。此刻 Travis CI 及 CircleCI 只提供 Ubuntu 12.04 及 14.04 兩種 instance，也沒支援 &lt;a href=&#34;http://kitchen.ci&#34;&gt;Test Kitchen&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;所幸 Travis CI 和 CircleCI 都有支援 Docker，因此，我設計了 &lt;a href=&#34;https://github.com/William-Yeh/docker-ansible&#34;&gt;&lt;code&gt;williamyeh/ansible&lt;/code&gt;&lt;/a&gt; 這一系列的 Docker images，可在 Travis CI 及 CircleCI 上面模擬出 CentOS 6 &amp;amp; 7、Debian 7 &amp;amp; 8、Ubuntu 12.04 &amp;amp; 14.04 環境，來測試我的 Ansible roles。&lt;/p&gt;
+&lt;p&gt;這下子，我的 CI 護城河就更穩固了。CI 這位&lt;strong&gt;高度客觀中立&lt;/strong&gt;、&lt;strong&gt;不帶感情&lt;/strong&gt;的守門員，協助我冷靜面對以下這則算是大工程等級的 PR，不帶批判情緒的進行對話，一起搞定 CentOS/Ubuntu 雙系統：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2015/12/pr-discussion.png&#34; alt=&#34;Discussion around a pull request&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2015/12/pr-discussion.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Discussion around a pull request&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;CI，小小的投資，大大的省事。&lt;/p&gt;
+&lt;p&gt;對我而言，原本 &lt;code&gt;williamyeh/ansible&lt;/code&gt; 只是為了其他目的而順帶設計出來的副產品。但由於 Ansible 官方已不再維護它的 Docker images；而在非官方版當中，我的 &lt;code&gt;williamyeh/ansible&lt;/code&gt; 下載量居冠（統計數據&lt;a href=&#34;https://hub.docker.com/search/?q=ansible&amp;amp;page=1&amp;amp;isAutomated=0&amp;amp;isOfficial=0&amp;amp;pullCount=1&amp;amp;starCount=0&#34;&gt;在此&lt;/a&gt;），也持續有人提出 feature request⋯⋯該說是無心插柳嗎？&lt;/p&gt;
+&lt;h2 id=&#34;吃自己的狗食&#34;&gt;吃自己的狗食&lt;/h2&gt;
+&lt;p&gt;再拿另一個很受歡迎的 Ansible role：&lt;a href=&#34;https://github.com/William-Yeh/ansible-oracle-java&#34;&gt;&lt;code&gt;williamyeh.oracle-java&lt;/code&gt;&lt;/a&gt; 為例。它在 Ansible Galaxy 已經得到 &lt;a href=&#34;https://galaxy.ansible.com/william-yeh/oracle-java&#34;&gt;4.8 的高分&lt;/a&gt;，是一個已經為人所知，甚至為人所用的元件。&lt;/p&gt;
+&lt;p&gt;因此，我必須維持良好的向後相容性，以對用戶負責。&lt;/p&gt;
+&lt;p&gt;也因此，連我自己想對原始程式做更動，也不敢貿然造次。必須遵守 &lt;a href=&#34;http://nvie.com/posts/a-successful-git-branching-model/&#34;&gt;Git Flow&lt;/a&gt; 或 &lt;a href=&#34;https://guides.github.com/introduction/flow/&#34;&gt;GitHub Flow&lt;/a&gt; 之類的 &lt;strong&gt;workflow discipline&lt;/strong&gt;，一樣要看 CI 這位&lt;strong&gt;高度客觀中立&lt;/strong&gt;、&lt;strong&gt;不帶感情&lt;/strong&gt;的守門員的臉色。&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2015/12/github-graph.png&#34; alt=&#34;Network graph&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2015/12/github-graph.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Network graph&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;專業，就是對自己也有 discipline。CI，就是&lt;strong&gt;強制幫助你建立 discipline&lt;/strong&gt;。&lt;/p&gt;
+&lt;h2 id=&#34;不要輕看-ci-的紅燈&#34;&gt;不要輕看 CI 的紅燈&lt;/h2&gt;
+&lt;p&gt;對這個 Ansible role，有一點我一直耿耿於懷：Travis CI 和 CircleCI 的測試結果，時好時壞。&lt;/p&gt;
+&lt;p&gt;像以下截圖顯示，同樣都是針對 &lt;code&gt;6598bed&lt;/code&gt; 這個 commit，Travis CI 一次就通過，但 CircleCI 居然會出現一堆紅燈。不死心的我，一直按 rebuild 好幾次，總算才出現綠燈：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2015/12/circleci-error.png&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2015/12/circleci-error.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;奇怪的是，同樣都是針對 &lt;code&gt;a9c105e&lt;/code&gt; 這個 commit，這回 CircleCI 一次就通過，反倒是 Travis CI 出狀況：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2015/12/travisci-error.png&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2015/12/travisci-error.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;前幾天，我終於忍不住出手。&lt;/p&gt;
+&lt;p&gt;反覆比對兩邊的 log，發現，Oracle 疑似會對 jdk 下載點做 rate limiting。每次 Travis CI 及 CircleCI 的 CI 大隊一啟動，Oracle 就惱了。&lt;/p&gt;
+&lt;p&gt;所以，不是我的 Ansible role 有問題，是 Oracle 太神經兮兮了。&lt;/p&gt;
+&lt;p&gt;怪罪 Oracle 於事無補，問題總得解決⋯⋯&lt;/p&gt;
+&lt;p&gt;為了解決這問題，我設計一個 prefetch 機制：只向 Oracle 抓一次需要的 rpm 及 tar.gz 檔案，存放在 role 的 &lt;code&gt;files&lt;/code&gt; 目錄裡面。如此一來，不僅避開 rate limiting 的限制，連帶的也降低整體的 build time，更讓整個 role 架構 refactor 得更乾淨。&lt;/p&gt;
+&lt;p&gt;CI，小小的投資，大大的省事。&lt;/p&gt;
+&lt;h2 id=&#34;卻顧所來徑&#34;&gt;卻顧所來徑&lt;/h2&gt;
+&lt;p&gt;這一切的一切，濫觴都只是一個小起步：要替自己寫的 Ansible role 加上 CI。&lt;/p&gt;
+&lt;p&gt;一旦踏出第一步，就注定你會不斷接觸**『遠離平庸』**的新觀點、新技術。&lt;/p&gt;
+&lt;p&gt;你同意嗎？&lt;/p&gt;
+</description>
+      
     </item>
+    
   </channel>
 </rss>

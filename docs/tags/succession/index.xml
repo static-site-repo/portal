@@ -4,44 +4,590 @@
     <title>Succession on Potioneer&#39;s Essays</title>
     <link>//william-yeh.net/tags/succession/</link>
     <description>Recent content in Succession on Potioneer&#39;s Essays</description>
-    <generator>Hugo</generator>
+    <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <lastBuildDate>Sat, 05 Mar 2022 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//william-yeh.net/tags/succession/index.xml" rel="self" type="application/rss+xml" />
+    
+        <atom:link href="//william-yeh.net/tags/succession/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>Scrum master 培訓系列</title>
       <link>//william-yeh.net/series/scrum-master-training/</link>
       <pubDate>Sat, 05 Mar 2022 00:00:00 +0000</pubDate>
+      
       <guid>//william-yeh.net/series/scrum-master-training/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2021/03/train-new-scrum-master/&#34;&gt;如何訓練一個新的 Scrum master？&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2018/09/deliberate-practice-for-agile/&#34;&gt;敏捷之途無他，刻意練習而已矣！&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2021/07/revisit-psm1/&#34;&gt;Scrum 認證模擬測驗的兩項啟發&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2022/03/prof-common-vocabulary/&#34;&gt;敏捷啟航的專業基礎：共同語彙&lt;/a&gt;&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2021/03/train-new-scrum-master/&#34;&gt;如何訓練一個新的 Scrum master？&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2018/09/deliberate-practice-for-agile/&#34;&gt;敏捷之途無他，刻意練習而已矣！&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2021/07/revisit-psm1/&#34;&gt;Scrum 認證模擬測驗的兩項啟發&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2022/03/prof-common-vocabulary/&#34;&gt;敏捷啟航的專業基礎：共同語彙&lt;/a&gt;&lt;/p&gt;
+</description>
+      
     </item>
+    
     <item>
       <title>如何訓練一個新的 Scrum master？</title>
       <link>//william-yeh.net/post/2021/03/train-new-scrum-master/</link>
       <pubDate>Wed, 17 Mar 2021 20:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2021/03/train-new-scrum-master/</guid>
-      <description>&lt;p&gt;今天在公司內 agile guild 定期聚會中，討論到一個有趣的議題：​&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;「如何訓練一個新的 Scrum master？」​&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;p&gt;邊寫便利貼，邊回想自己過往經驗，也試圖歸納統整一些層次。&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;今天在公司內 agile guild 定期聚會中，討論到一個有趣的議題：​&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;「如何訓練一個新的 Scrum master？」​&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;邊寫便利貼，邊回想自己過往經驗，也試圖歸納統整一些層次。&lt;/p&gt;
+&lt;p&gt;寫完，講完，驚覺：這跟憲哥在《&lt;a href=&#34;https://www.books.com.tw/products/0010699844&#34;&gt;教出好幫手&lt;/a&gt;》提出的 OJT 步驟、福哥在《&lt;a href=&#34;https://www.books.com.tw/products/0010810862&#34;&gt;教學的技術&lt;/a&gt;》提出的演練法，結構極為相似。&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;我的方法是分成三大階段。&lt;/p&gt;
+&lt;h2 id=&#34;-教學&#34;&gt;➊ 教學&lt;/h2&gt;
+&lt;p&gt;這位待培養的 Scrum master 置身的團隊，可能已經有跑一些 Scrum 了，也可能根本就是 Scrum 沙漠。不管是哪一種情況，在第一階段的重點是：先求對 Scrum 有個概括不偏斜的理解（但尚不須深度理解每一個細節），搭建正確穩固的鷹架。&lt;/p&gt;
+&lt;p&gt;最省事的，就是直接送去上課。當然啦，要慎選老師，不能選只顧著考證照的。&lt;/p&gt;
+&lt;p&gt;其次，就是靠自己，根據實際需要，針對特定議題，設計相關的體驗式迷你工作坊。&lt;/p&gt;
+&lt;p&gt;這階段，類似憲哥福哥講的「我說給你聽」。&lt;/p&gt;
+&lt;h2 id=&#34;-觀察員筆記&#34;&gt;➋ 觀察員筆記&lt;/h2&gt;
+&lt;p&gt;鷹架搭好了，我就會請他準備「觀察員筆記」。&lt;/p&gt;
+&lt;p&gt;在團隊中，儘管他檯面上的身分還是 product owner 或 developer，但要開始適度切出一個「觀察員」的分靈體，觀察我是怎麼扮演 Scrum master 的角色。&lt;/p&gt;
+&lt;p&gt;觀察，即時筆記，並在定期 1 on 1 場合提出來釋疑或討論。我甚至還會鼓勵並協助他們去觀察其他團隊，接觸不同的運作風格，比較，辯證，並逐漸勾勒想像出他們屬意的風格。&lt;/p&gt;
+&lt;p&gt;這階段，類似憲哥福哥講的「我做給你看」。&lt;/p&gt;
+&lt;h2 id=&#34;-登場&#34;&gt;➌ 登場&lt;/h2&gt;
+&lt;p&gt;視團隊狀況及他的信心指數，我會開始逐步請他主持某些 Scrum 會議。&lt;/p&gt;
+&lt;p&gt;Daily Scrum 及 sprint review 通常是可以最早開始嘗試的，至於 retrospective 則可能是最具挑戰性的。這階段，能否搭配更即時更精準的事後回饋，甚至事前就進行沙盤推演，是成敗關鍵。&lt;/p&gt;
+&lt;p&gt;這階段，類似憲哥福哥講的「讓你做做看」。&lt;/p&gt;
+&lt;h2 id=&#34;creditability&#34;&gt;Creditability&lt;/h2&gt;
+&lt;p&gt;為什麼要如此大費周章？Scrum 三支柱不是有一條 &amp;ldquo;adaptation&amp;rdquo; 嗎？Scrum 不是講究 &amp;ldquo;courage&amp;rdquo; 核心價值嗎？為什麼不放膽讓他從經驗中學習？&lt;/p&gt;
+&lt;p&gt;可能是我對於「Scrum master 的 &lt;strong&gt;creditability&lt;/strong&gt;」很注重吧，非常小心維護 Scrum master 見習生在團隊中的 creditability。畢竟，歪樓的 Scrum 太多太多了，Scrum 被外行人誤解已經是家常便飯。對於 Scrum master 這個常被外行人誤解的角色，我的期許是：經營好第一印象，不要曝於坐實錯誤第一印象的風險——那會導致改革的倒退。&lt;/p&gt;
+&lt;p&gt;更嚴重的是：如果置身的是一個對 Scrum 懷有戒心的組織，這極可能嚴重摧毀 Scrum master 見習生好不容易萌芽的浩然之氣。就像孟子所說：「我善養吾浩然之氣⋯⋯其為氣也，至大至剛，以直養而無害，則塞於天地之間。其為氣也，配義與道；無是，餒也。」&lt;/p&gt;
+&lt;p&gt;我寧可大費周章，以直養而無害。慢一點，比較快。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;     &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;     &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;一些個人經驗的整理，供大家參考。也願各位新的 Scrum master 都能找出自己的風格。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;     &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+
+
+&lt;div class=&#34;notice notice--note&#34;&gt;
+  &lt;div class=&#34;notice__title&#34;&gt;
+    
+      Scrum master 培訓系列
+    
+  &lt;/div&gt;
+  &lt;div class=&#34;notice__content&#34;&gt;&lt;p&gt;❶ 如何訓練一個新的 Scrum master？&lt;/p&gt;
+&lt;p&gt;❷ &lt;a href=&#34;//william-yeh.net/post/2018/09/deliberate-practice-for-agile/&#34;&gt;敏捷之途無他，刻意練習而已矣！&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❸ &lt;a href=&#34;//william-yeh.net/post/2021/07/revisit-psm1/&#34;&gt;Scrum 認證模擬測驗的兩項啟發&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❹ &lt;a href=&#34;//william-yeh.net/post/2022/03/prof-common-vocabulary/&#34;&gt;敏捷啟航的專業基礎：共同語彙&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;憲哥福哥的 PESOS 作法是：&lt;strong&gt;P&lt;/strong&gt; 學習前準備 → &lt;strong&gt;E&lt;/strong&gt; 解釋：我說給你聽 → &lt;strong&gt;S&lt;/strong&gt; 示範：我做給你看 → &lt;strong&gt;O&lt;/strong&gt; 演練：讓你做做看 → &lt;strong&gt;S&lt;/strong&gt; 成效追蹤。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description>
+      
     </item>
+    
     <item>
       <title>技術領導者微培訓</title>
       <link>//william-yeh.net/post/2019/01/tech-leader-reading/</link>
       <pubDate>Sat, 19 Jan 2019 10:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2019/01/tech-leader-reading/</guid>
-      <description>&lt;p&gt;最近，我們研發組織有幅度不算小的變動，某些技術人會被要求承擔更多的技術領導責任。&lt;/p&gt;&#xA;&lt;p&gt;不過，正如&lt;a href=&#34;https://en.wikipedia.org/wiki/Gerald_Weinberg&#34;&gt;溫伯格&lt;/a&gt;大師在《&lt;a href=&#34;https://www.books.com.tw/products/0010467750&#34;&gt;領導者，該想什麼？&lt;/a&gt;》所說，技術人常會面臨天人交戰：&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;最近，我們研發組織有幅度不算小的變動，某些技術人會被要求承擔更多的技術領導責任。&lt;/p&gt;
+&lt;p&gt;不過，正如&lt;a href=&#34;https://en.wikipedia.org/wiki/Gerald_Weinberg&#34;&gt;溫伯格&lt;/a&gt;大師在《&lt;a href=&#34;https://www.books.com.tw/products/0010467750&#34;&gt;領導者，該想什麼？&lt;/a&gt;》所說，技術人常會面臨天人交戰：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;儘管學校教育告訴我說，每一個好公民都應該負起領導責任，但痛苦經歷讓我害怕擔任任何領導者的角色。我學會盡可能推卻成為領導者的機會。面對領導的問題，我常假裝它是不存在的。為保證我永遠不會涉及到需要運用領導技能的場合，我選擇電腦軟體作為我的職業。&lt;/p&gt;
+&lt;p&gt;事情發展非我所願。每當我在所負責的技術性工作上有出色表現時，同事就知道要對我更加尊敬，似乎把我當成他們的領導者。沒有人勉強我當領導者，是我自己陷入這樣一個矛盾的情境。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;為了讓過渡階段更順暢，雖然我在這裡只剩下很短的時間能夠幫忙了，但還是想略盡棉薄之力。&lt;/p&gt;
+&lt;p&gt;以下是我的【技術領導者微培訓】企劃案。&lt;/p&gt;
+&lt;h2 id=&#34;培訓目標&#34;&gt;培訓目標&lt;/h2&gt;
+&lt;p&gt;引述《&lt;a href=&#34;https://www.books.com.tw/products/0010467750&#34;&gt;領導者，該想什麼？&lt;/a&gt;》第一章的列表，只要你對以下課題感到疑惑，這本書、這門課，對你應該都會有些幫助：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;領導者真的那麼愚蠢嗎？有時他們的確給人那種印象嗎？&lt;/li&gt;
+&lt;li&gt;我能成為領導者，但不要像一般領導者那樣嗎？&lt;/li&gt;
+&lt;li&gt;我能一面當領導者，一面繼續提升我的技術能力嗎？&lt;/li&gt;
+&lt;li&gt;一個毫無技術背景的人，有可能在技術界成為領導者嗎？&lt;/li&gt;
+&lt;li&gt;一旦成為領導者，我必須犧牲多少技術專業能力？&lt;/li&gt;
+&lt;li&gt;我能得到多少回報？&lt;/li&gt;
+&lt;li&gt;如果我是領導者，我需要擺出上司架式，對屬下頤指氣使嗎？&lt;/li&gt;
+&lt;li&gt;我能藉由讀書習得領導技能嗎？&lt;/li&gt;
+&lt;li&gt;我還可以從何處學習成為領導者呢？&lt;/li&gt;
+&lt;li&gt;為何人們視我為領導者，而我卻不認為自己是領導者呢？&lt;/li&gt;
+&lt;li&gt;為何我自認為很能幹，人們卻不把我當成領導者呢？&lt;/li&gt;
+&lt;li&gt;倘若我不想承擔領導責任，又如何？&lt;/li&gt;
+&lt;li&gt;到底什麼是領導？&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;這本書、這門課，沒辦法讓你一夕之間脫胎換骨，但能給你經過證實可行的方向。能獲得多少，端看你認真投入的程度、誠實面對自己的態度、敏銳觀察及切實反思的職場人紀律。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如果他們的態度不夠嚴謹，那麼我建議他們做的任何事情，都是在浪費我的時間。 (p. 122)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2019/01/tech-leader-book.png&#34; alt=&#34;Becoming a Technical Leader&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2019/01/tech-leader-book.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Becoming a Technical Leader&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;進度&#34;&gt;進度&lt;/h2&gt;
+&lt;p&gt;請依照指定進度，先自行&lt;strong&gt;想辦法&lt;/strong&gt;閱讀指定讀物《&lt;a href=&#34;https://www.books.com.tw/products/0010467750&#34;&gt;領導者，該想什麼？&lt;/a&gt;》，並填寫學習單。&lt;/p&gt;
+&lt;h3 id=&#34;第一週領導概說&#34;&gt;第一週／領導概說&lt;/h3&gt;
+&lt;p&gt;閱讀進度：第一章～第五章。&lt;/p&gt;
+&lt;p&gt;學習單：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;準備一張清單，列舉說明哪些情境因為你的出現，使得他人的生產力因而「提升」。請準備另一張清單，列舉說明哪些情境因為你的出現，使得他人的生產力因而「下降」。你能找出這兩類情境的差異之處，並能分辨出它們的特色嗎？列出這張清單，能讓你更認識自己，及更認識讓你獲得授權的環境嗎？ (pp. 41&amp;ndash;42)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;根據前一個問題所準備的兩張清單內容來看，你是所屬團體的&lt;strong&gt;資產&lt;/strong&gt;還是&lt;strong&gt;負債&lt;/strong&gt;？ (p. 42)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;你帶一組人做事，用什麼方法促使成員從不同角度檢討目前執行情形？獨自一人做事時，你又用什麼方法自我檢討？有任何途徑可幫助你改善目前自我檢討的方法嗎？ (p. 68)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;下一次帶一組人執行任務，列出你在行使領導技能時所做的所有事情。若未能列出至少十件事，請你再做一遍該任務，一直做到為了完成一個任務，至少要做十件有助於領導的事。列出此份清單後，試著將它們依&lt;strong&gt;瞭解問題&lt;/strong&gt;、&lt;strong&gt;控制點子的流通&lt;/strong&gt;、&lt;strong&gt;維持品質&lt;/strong&gt;分門別類。分類後，能看得出你的領導風格傾向於其中一類嗎？你做的哪些事無法歸類到這三類？ (p. 68)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;你多久沒有登上一個新的&lt;strong&gt;高原期&lt;/strong&gt;了？你還在享受目前位於高原期的好日子嗎？為順利攀登下一個高原期，你做了哪些準備？ (p. 82)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;你上一次針對職業生涯做重大改變，到現在有多久的時間了？在整個過程中，令你印象最深刻的事情或感受是什麼？ (p. 97)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;最近一次你熟識的人做了重大職業改變，你的反應為何？你有沒有藉此機會想到自身處境？ (p. 97)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;第二週創新&#34;&gt;第二週／創新&lt;/h3&gt;
+&lt;p&gt;閱讀進度：第六章～第九章。&lt;/p&gt;
+&lt;p&gt;學習單：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;至少閱讀一本你所景仰人物的自傳。在日記裡寫下該自傳中最讓你感到驚訝的事，以及最讓你感動的情節。 (p. 129)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;你想出很多點子，後來怎麼樣了？大多數都實現了嗎？有多少點子因為創新程度不夠而胎死腹中？有多少點子因為環境不支援而被迫消失？領導不當或領導能力不足，是你犯該錯誤的主因嗎？何種訓練有助於提升你在上述案例行使領導技能的品質？ (改編合併自 p. 140 &amp;amp; p. 141)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;你是否讓成功的事實變成繼續前進的絆腳石？如果你超越了目前的成就，哪些東西會跟著改變？你會怎麼做？ (p. 156)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;你記得職業生涯中最淒慘的一段經歷嗎？你難以承受的是什麼？你如何從人生的最低潮走出來？你學到了什麼功課？再遇到人生低潮時，你會用不同方式處理嗎？ (p. 156)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;和他人打交道時，他們瞭解你的動機嗎？你希望他們瞭解你的動機嗎？你如何確認他們是否瞭解你的動機？ (p. 156)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;畫出你的&lt;strong&gt;事業線&lt;/strong&gt;。可能的話，找一位或多位朋友分享你的經歷，和他們討論你的人生起伏。記得將事業線延伸到未來。設想它是一部電影或一部小說，你會取什麼樣的名字？你希望由何人擔任這部電影的主角？ (p. 156)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;第三週動機&#34;&gt;第三週／動機&lt;/h3&gt;
+&lt;p&gt;閱讀進度：第十章～第十五章。&lt;/p&gt;
+&lt;p&gt;學習單：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;試著回想你最近做過的一些蠢事。別人發現你做了那些蠢事，你作何反應？在追求攀登職涯高峰的過程中，你的&lt;strong&gt;自我防禦心理&lt;/strong&gt;越來越重或越來越輕？對於你採取的自我防禦作為，你如何處置它們？ (p. 174)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;你曾否將事務置於人之上，現在你後悔了？你曾否將人置於事務之上，現在你後悔了？ (p. 187)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;玩遊戲的時候，你對得分較有興趣，還是對遊戲本身較有興趣？玩團隊遊戲的時候，你對團隊的得分較在意？還是對自己的得分較在意？這兩種心態，如何影響你貢獻力量於團隊，對於團隊成績有何影響？如果是團隊工作呢？ (p. 225)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;你是否曾在某團隊中毫無貢獻？當你察覺到這一點時，你的感受是什麼？ (p. 239)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;回憶最近一次你進行&lt;strong&gt;力量交易&lt;/strong&gt;遭逢失敗的事例。你從這次交易中學到什麼？你能否以現在的新觀點從那件事再學習？ (p. 239)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;哪些在你內心運作的事，你努力不顯現於外？你知道其中運作的情形嗎？如果你將這些精力用在別處，結果將如何？ (p. 239)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;第四週組織&#34;&gt;第四週／組織&lt;/h3&gt;
+&lt;p&gt;閱讀進度：第十六章～第十九章。&lt;/p&gt;
+&lt;p&gt;學習單：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;在目前的工作環境裡，你擁有幾種不同的力量？你如何將這些力量轉換為更有效用的型態？你如何運用轉換得來的力量？ (p. 252)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;如果你在團隊中擔任決策者，你如何判知自己表現良好？你是否紀錄決策內容，並在事後檢視？你是否詢問團隊成員，這項決策對他們有何影響？如果你沒問，原因是什麼？ (p. 264)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;你是否因組織缺乏效率受獎勵？或給予缺乏效率的組織獎勵？你能否創造一個相反的工作環境？ (p. 273)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;列一張清單，寫出你可以&lt;strong&gt;觀察&lt;/strong&gt;並&lt;strong&gt;實驗&lt;/strong&gt;組織運作的各個機會。再列一張清單，寫出你可以觀察並實驗，但你未加以利用的各個機會。你能否從第二張清單中挑出一個項目，找出未利用的原因，然後清除？ (p. 284)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;回想一下你是否有下述經驗：全力以赴的時候，卻被認為沒有盡力。當時你有何感受？你是否為自己辯護？結果如何？ (p. 285)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;回想某次，你認為某人沒有做出貢獻的情況。你是否能解讀為，在那種情況下，他已經盡力而為？當時那個人試圖解決什麼問題？下次再發生類似狀況時，你能否找出原因？ (p. 285)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;第五週轉變&#34;&gt;第五週／轉變&lt;/h3&gt;
+&lt;p&gt;閱讀進度：第二十章～第二十四章。&lt;/p&gt;
+&lt;p&gt;學習單：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;上次新主管上任時，你首先注意到他哪一點？你花多少時間才信任這位新主管？他的哪一項動作獲得你的信任？哪一項動作減少你的信任？你積極和新主管配合，還是奮力和新主管作對？為什麼？ (p. 299)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;如果你預先知道你將接受某項考驗，你的情緒反應如何？如果你突然發現自己將接受考驗，你的情緒反應又是如何？兩者有何不同？是否有可以相互借鏡之處？ (p. 311)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;你的工作環境是否有持續發生的衝突？你能否想出三種改變&lt;strong&gt;組織&lt;/strong&gt;的方式，以避免這些衝突？或是三種改變&lt;strong&gt;人際關係&lt;/strong&gt;的方式？哪一種型態適合你發揮長處？哪一種型態你運作起來較順手？ (p. 311)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;你能否舉出三位同事，能給予你技術能力方面的指導？如果你想不出來，你為什麼還在這家公司上班？如果你有三位老師，你如何善用這項資源？ (p. 321)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;這一年來，你參加過哪些課程、讀過哪些書？這些對於你的技術能力和領導能力有何助益？你從中是否能學得更多？未來一年，你計畫參加哪些課程、讀哪些書？你應該做哪些事前準備，以獲益更多？ (p. 322)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;你能否忍受無所事事的時間？你是否有時間審視你的周遭，審視你自己，以找出沒有更多時間的原因？為什麼沒有充裕的時間？如果確實沒有時間，請停止閱讀，開始檢討。 (p. 331)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;檢視你的&lt;strong&gt;個人支援網絡&lt;/strong&gt;的成員名單。哪些人你願意維持良好關係，以繼續獲得支援？這份名單在哪個部分顯得不足，必須加以補強？ (p. 343)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;上課前&#34;&gt;上課前&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;瀏覽學習單。&lt;/li&gt;
+&lt;li&gt;速讀：每一份指定讀物，請在不超過 2 小時之內速讀完畢第一次。&lt;/li&gt;
+&lt;li&gt;填寫學習單。&lt;/li&gt;
+&lt;li&gt;如有時間，可再回頭重讀細讀內容。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;上課時&#34;&gt;上課時&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;攜帶學習單。&lt;/li&gt;
+&lt;li&gt;以 &lt;a href=&#34;http://www.liberatingstructures.com/&#34;&gt;liberating structures&lt;/a&gt; 及互動討論方式，進行個案研討。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;有些個案討論有隱私性考量，為促成坦誠討論，參與者需宣誓對現場討論內容保密 (咦)。&lt;/p&gt;
+&lt;h2 id=&#34;全部課程結束後&#34;&gt;全部課程結束後&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;從頭再看一次過去寫的學習單。這陣子，你有什麼改變了嗎？&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;從《&lt;a href=&#34;https://www.books.com.tw/products/0010467750&#34;&gt;領導者，該想什麼？&lt;/a&gt;》書中不時可看出，&lt;a href=&#34;https://en.wikipedia.org/wiki/Gerald_Weinberg&#34;&gt;溫伯格&lt;/a&gt;受到&lt;a href=&#34;https://en.wikipedia.org/wiki/Virginia_Satir&#34;&gt;薩提爾&lt;/a&gt;的影響很深。請再讀讀《&lt;a href=&#34;https://williampjyeh.notion.site/3e31bb4af3d74007bc0e522e268019c0&#34;&gt;激發員工潛力的薩提爾教練模式&lt;/a&gt;》及《&lt;a href=&#34;https://www.books.com.tw/products/0010770522&#34;&gt;薩提爾的對話練習&lt;/a&gt;》兩本書，以進一步了解如何在職場上運用薩提爾模式。或者，直接去上薩提爾課程吧！&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</description>
+      
     </item>
+    
     <item>
       <title>【主管的修練】讀書會</title>
       <link>//william-yeh.net/post/2018/12/practice-of-managers/</link>
       <pubDate>Mon, 24 Dec 2018 08:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2018/12/practice-of-managers/</guid>
-      <description>&lt;p&gt;稍早草擬的〈&lt;a href=&#34;//william-yeh.net/post/2018/11/succession-planning/&#34;&gt;接班人計畫&lt;/a&gt;〉偏向一對一的培訓。&lt;/p&gt;&#xA;&lt;p&gt;若是一對多呢？&lt;/p&gt;&#xA;&lt;p&gt;於是乎，就有了這份企劃：【主管的修練】讀書會。&lt;/p&gt;&#xA;&lt;p&gt;這一部分是模仿《&lt;a href=&#34;https://www.kingstone.com.tw/book/book_page.asp?kmcode=2014940760328&#34;&gt;利潤的故事&lt;/a&gt;》的做法 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，尤其是&lt;a href=&#34;https://wiki.mbalib.com/zh-tw/%E8%A9%B9%E5%A7%86%E6%96%AF%C2%B7%E9%9F%A6%E4%BC%AF%C2%B7%E6%89%AC&#34;&gt;楊傑美&lt;/a&gt;的「前端載入」方法。但我還融入剛學到的 &lt;a href=&#34;http://www.liberatingstructures.com/&#34;&gt;liberating structures&lt;/a&gt; 等技巧 &lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;。改成速讀 + 互動討論的形式，應該既緊湊又有趣吧。&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;稍早草擬的〈&lt;a href=&#34;//william-yeh.net/post/2018/11/succession-planning/&#34;&gt;接班人計畫&lt;/a&gt;〉偏向一對一的培訓。&lt;/p&gt;
+&lt;p&gt;若是一對多呢？&lt;/p&gt;
+&lt;p&gt;於是乎，就有了這份企劃：【主管的修練】讀書會。&lt;/p&gt;
+&lt;p&gt;這一部分是模仿《&lt;a href=&#34;https://www.kingstone.com.tw/book/book_page.asp?kmcode=2014940760328&#34;&gt;利潤的故事&lt;/a&gt;》的做法 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，尤其是&lt;a href=&#34;https://wiki.mbalib.com/zh-tw/%E8%A9%B9%E5%A7%86%E6%96%AF%C2%B7%E9%9F%A6%E4%BC%AF%C2%B7%E6%89%AC&#34;&gt;楊傑美&lt;/a&gt;的「前端載入」方法。但我還融入剛學到的 &lt;a href=&#34;http://www.liberatingstructures.com/&#34;&gt;liberating structures&lt;/a&gt; 等技巧 &lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;。改成速讀 + 互動討論的形式，應該既緊湊又有趣吧。&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/12/front-end-loading.jpg&#34; alt=&#34;「前端載入」&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2018/12/front-end-loading.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;「前端載入」&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;以下是企劃內容。&lt;/p&gt;
+&lt;h2 id=&#34;簡介&#34;&gt;簡介&lt;/h2&gt;
+&lt;p&gt;探討初階中階主管的六大課題：① 領導與管理思維、② 參與式決策、③ 人才管理教育和支持、④ 溝通與衝突化解、⑤ 團隊績效的考核標準、⑥ 團隊文化和核心信念 &lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;。&lt;/p&gt;
+&lt;p&gt;課程以&lt;strong&gt;個案研討&lt;/strong&gt;形式為主，有大量&lt;strong&gt;課堂討論&lt;/strong&gt;，學員需要依照進度先行閱讀&lt;strong&gt;指定讀物&lt;/strong&gt;。能配合的，再考慮參加。&lt;/p&gt;
+&lt;h2 id=&#34;適合對象&#34;&gt;適合對象&lt;/h2&gt;
+&lt;p&gt;已經是，或有志於在職涯中成為主管者。&lt;/p&gt;
+&lt;h2 id=&#34;進度&#34;&gt;進度&lt;/h2&gt;
+&lt;p&gt;請依照指定進度，先自行&lt;strong&gt;想辦法&lt;/strong&gt;閱讀以下指定讀物。&lt;/p&gt;
+&lt;h3 id=&#34;第一週領導&#34;&gt;第一週／領導&lt;/h3&gt;
+&lt;p&gt;主要讀物：《&lt;a href=&#34;https://www.books.com.tw/products/0010445840&#34;&gt;領導，不需要頭銜&lt;/a&gt;》&lt;/p&gt;
+&lt;p&gt;輔助讀物：〈&lt;a href=&#34;https://www.projectup.net/article/view/id/2457&#34;&gt;太多領導，太少管理&lt;/a&gt;〉，算是對《領導，不需要頭銜》pp. 78-81 的平衡報導。&lt;/p&gt;
+&lt;h3 id=&#34;第二週管理&#34;&gt;第二週／管理&lt;/h3&gt;
+&lt;p&gt;主要讀物：《&lt;a href=&#34;https://www.books.com.tw/products/0010641668&#34;&gt;三年後，你的工作還在嗎？&lt;/a&gt;》&lt;/p&gt;
+&lt;p&gt;輔助讀物：系列文 / 專案管理的藝術&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;⓪ &lt;a href=&#34;https://www.projectup.net/article/view/id/260&#34;&gt;決策的平衡點&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;① &lt;a href=&#34;https://www.projectup.net/article/view/id/259&#34;&gt;拉高視野、見林但不見樹&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;② &lt;a href=&#34;https://www.projectup.net/article/view/id/258&#34;&gt;平衡需求、但別想討好所有人&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;③ &lt;a href=&#34;https://www.projectup.net/article/view/id/256&#34;&gt;重點掌握、如何抓大放小&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;④ &lt;a href=&#34;https://www.projectup.net/article/view/id/255&#34;&gt;主動發現、弭禍於無形之中&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;⑥ &lt;a href=&#34;https://www.projectup.net/article/view/id/251&#34;&gt;品質管制、追求標準、一致、與穩定&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;⑨ &lt;a href=&#34;https://www.projectup.net/article/view/id/67&#34;&gt;避免發散、一切都跟收斂有關&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;第三週管理&#34;&gt;第三週／管理&lt;/h3&gt;
+&lt;p&gt;主要讀物：《&lt;a href=&#34;https://www.books.com.tw/products/0010805719&#34;&gt;可複製的領導力&lt;/a&gt;》&lt;/p&gt;
+&lt;p&gt;輔助讀物：系列文 / 專案管理的藝術&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;⑤ &lt;a href=&#34;https://www.projectup.net/article/view/id/253&#34;&gt;醜話先說，對事但不對人&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;⑦ &lt;a href=&#34;https://www.projectup.net/article/view/id/69&#34;&gt;降低流言、合適的訊息分享&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;第四週參與式決策&#34;&gt;第四週／參與式決策&lt;/h3&gt;
+&lt;p&gt;主要讀物：《&lt;a href=&#34;https://www.taaze.tw/sing.html?pid=11100243769&#34;&gt;誰說我們不能一起做決定&lt;/a&gt;》 ＆ 《&lt;a href=&#34;https://funevo.com/2018/06/15/%E8%AE%8A%E9%9D%A9%E9%A0%98%E5%B0%8E%E8%80%85%E4%BC%81%E6%A5%AD%E6%95%8F%E6%8D%B7%E8%BD%89%E5%9E%8B%E6%8C%87%E5%8D%97/&#34;&gt;原來你才是絆腳石&lt;/a&gt;》&lt;/p&gt;
+&lt;p&gt;輔助讀物：系列文 / Titansoft 的經驗談&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;引導：&lt;a href=&#34;https://funevo.com/2016/08/12/agile-scrum-needs-facilitation/&#34;&gt;敏捷 X 引導 – 讓 Scrum 團隊自組織的具體方法&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;開放空間 #1：&lt;a href=&#34;https://funevo.com/2016/06/25/first-open-space-technology-in-titansoft/&#34;&gt;如魔術般的神奇空間 – 公司內舉辦開放空間會議初體驗&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;開放空間 #2：&lt;a href=&#34;https://funevo.com/2016/09/29/second-open-space-technology-in-titansoft/&#34;&gt;一回生、兩回熟 – 公司內開放空間會議第二彈&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;深度匯談 #1：&lt;a href=&#34;https://funevo.com/2015/10/29/ica%E6%B7%B1%E5%BA%A6%E5%8C%AF%E8%AB%87%E8%AA%B2%E7%A8%8B%E5%BF%83%E5%BE%97-dialogue/&#34;&gt;冒點險讓關係更緊密 – ICA 引導技術之深度匯談課程心得&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;深度匯談 #2：&lt;a href=&#34;https://funevo.com/2016/08/03/%E5%85%AC%E5%8F%B8%E7%B5%84%E7%B9%94%E5%85%A7%E8%88%89%E8%BE%A6%E6%B7%B1%E5%BA%A6%E5%8C%AF%E8%AB%87%E5%BC%95%E5%B0%8E%E8%AA%B2%E7%A8%8B/&#34;&gt;再探深度匯談 – 在公司組織內舉辦引導課程&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;第五週人才管理教育和支持&#34;&gt;第五週／人才管理教育和支持&lt;/h3&gt;
+&lt;p&gt;主要讀物：《&lt;a href=&#34;https://www.books.com.tw/products/0010730316&#34;&gt;別讓績效管理毀了你的團隊&lt;/a&gt;》&lt;/p&gt;
+&lt;p&gt;輔助讀物：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;MJ老師〈我的 OKR Action Note 使用技巧說明〉&lt;a href=&#34;http://financemj.com/5782&#34;&gt;文章&lt;/a&gt;及&lt;a href=&#34;https://www.facebook.com/MJ1095/posts/10157115155824625&#34;&gt;影片&lt;/a&gt;。&lt;/li&gt;
+&lt;li&gt;《&lt;a href=&#34;https://www.books.com.tw/products/0010482108&#34;&gt;下一步，成功&lt;/a&gt;》第二章。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.hbrtaiwan.com/article_content_AR0003066.html&#34;&gt;績效管理再進化&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.managertoday.com.tw/articles/view/56451&#34;&gt;想讓組織變敏捷，導入 Scrum 工作法只是開始！人資還該做的 2 件事&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;第六週團隊文化和核心信念&#34;&gt;第六週／團隊文化和核心信念&lt;/h3&gt;
+&lt;p&gt;主要讀物：《&lt;a href=&#34;https://www.books.com.tw/products/0010796709&#34;&gt;給力&lt;/a&gt;》&lt;/p&gt;
+&lt;p&gt;輔助讀物：系列文 / 專案管理的藝術&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;⑧ &lt;a href=&#34;https://www.projectup.net/article/view/id/68&#34;&gt;沒有英雄、人員培育與接班計畫&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;輔助讀物：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;《&lt;a href=&#34;https://www.books.com.tw/products/0010482108&#34;&gt;下一步，成功&lt;/a&gt;》第四章。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.hbrtaiwan.com/article_content_AR0006825.html&#34;&gt;如何管理比你聰明的人&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;第七週總結&#34;&gt;第七週／總結&lt;/h3&gt;
+&lt;p&gt;主要讀物：《&lt;a href=&#34;https://www.books.com.tw/products/0010782941&#34;&gt;原則&lt;/a&gt;》第一部分 ＆ &lt;a href=&#34;https://tw.voicetube.com/videos/70025&#34;&gt;&lt;em&gt;Principles For Success&lt;/em&gt; 影片&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;輔助讀物：系列文 / 專案管理的藝術&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;⑩ &lt;a href=&#34;https://www.projectup.net/article/view/id/65&#34;&gt;歷史借鏡、能重複應用的才有價值&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;上課前&#34;&gt;上課前&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;瀏覽學習單。&lt;/li&gt;
+&lt;li&gt;速讀：每一份指定讀物，請在不超過 2 小時之內速讀完畢第一次。&lt;/li&gt;
+&lt;li&gt;填寫學習單，頁數不夠請自行增印。&lt;/li&gt;
+&lt;li&gt;如有時間，可再回頭重讀、細讀內容。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;上課時&#34;&gt;上課時&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;攜帶學習單。&lt;/li&gt;
+&lt;li&gt;以 &lt;a href=&#34;http://www.liberatingstructures.com/&#34;&gt;liberating structures&lt;/a&gt; 及互動討論方式，進行個案研討。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;有些個案討論有隱私性考量，為促成坦誠討論，參與者需宣誓對現場討論內容保密 (咦)。&lt;/p&gt;
+&lt;h2 id=&#34;全部課程結束後&#34;&gt;全部課程結束後&lt;/h2&gt;
+&lt;p&gt;讀一讀 Andrew Grove 的《&lt;a href=&#34;https://www.books.com.tw/products/0010816790&#34;&gt;葛洛夫給經理人的第一課&lt;/a&gt;》。&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;關於《&lt;a href=&#34;https://www.kingstone.com.tw/book/book_page.asp?kmcode=2014940760328&#34;&gt;利潤的故事&lt;/a&gt;》這本書，我在〈&lt;a href=&#34;//william-yeh.net/post/2018/12/2018-retrospective/&#34;&gt;2018 個人回顧&lt;/a&gt;〉一文有更詳細的介紹。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;我是在 Scrum.org 在台北舉辦的 &lt;a href=&#34;https://www.eventbrite.co.uk/e/scrumon-tickets-51310998578&#34;&gt;ScrumOn&lt;/a&gt; 活動中，第一次體驗有趣的 &lt;a href=&#34;http://www.liberatingstructures.com/&#34;&gt;liberating structures&lt;/a&gt; 技巧。&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;
+&lt;p&gt;這六大主題的界定，其中有五項是參考【&lt;a href=&#34;https://www.knack.com.tw/Event/ManagerSkill&#34;&gt;帶人的技術&lt;/a&gt;】線上課程的廣告文案。他們的文案列了五點：①建立成長型管理思維和觀念，②學會高素質人才管理、教育和支持，③檢視團隊內溝通與衝突化解方法，④評估團隊績效的適用考核標準，⑤樹立超強團隊文化和核心信念。&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description>
+      
     </item>
+    
     <item>
       <title>接班人計畫</title>
       <link>//william-yeh.net/post/2018/11/succession-planning/</link>
       <pubDate>Thu, 08 Nov 2018 08:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2018/11/succession-planning/</guid>
-      <description>&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;&#xA;&lt;div class=&#34;box&#34;&gt;&#xA;&lt;figure  itemprop=&#34;associatedMedia&#34;&#xA;  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; &#xA;  style=&#34;max-width:30em&#34; &gt;&#xA;    &lt;div class=&#34;img&#34;&gt;&#xA;      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/11/the-nigmatic-1068159-unsplash.jpg&#34; /&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;a href=&#34;//william-yeh.net/img/2018/11/the-nigmatic-1068159-unsplash.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;&#xA;  &lt;/figure&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;p&gt;彼得・杜拉克説：經理人的基本任務，除了平衡長短期的需要外，最重要的就是培養下一代的經理人。&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;&#xA;&lt;p&gt;諾爾・提區説：成功組織會贏，贏在它的領導人不斷栽培組織上下每個層級的其他領導人。&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;&#xA;&lt;p&gt;其實我很早就在默默做這件事了。畢竟以長遠來看，&lt;strong&gt;堅實的中階主管層，決定一個組織能走得多久多遠&lt;/strong&gt;。&lt;/p&gt;</description>
+      
+        <description>&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/11/the-nigmatic-1068159-unsplash.jpg&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2018/11/the-nigmatic-1068159-unsplash.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;彼得・杜拉克説：經理人的基本任務，除了平衡長短期的需要外，最重要的就是培養下一代的經理人。&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;諾爾・提區説：成功組織會贏，贏在它的領導人不斷栽培組織上下每個層級的其他領導人。&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;其實我很早就在默默做這件事了。畢竟以長遠來看，&lt;strong&gt;堅實的中階主管層，決定一個組織能走得多久多遠&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;就像&lt;a href=&#34;https://www.jianshu.com/p/dc2f701c166e&#34;&gt;此文&lt;/a&gt;所說：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;只要组织内部没有足够数量的领导，一个庞大的组织是无法在短时间内发生改变的。国家也好，大企业也罢，要想进行改革，需要的不是一个具备卓越能力的明星领袖，而是具备领导能力的人超过一定的数量。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;想要「具備領導能力的人，超過一定的數量」，是需要佈局的。&lt;/p&gt;
+&lt;h2 id=&#34;佈局&#34;&gt;佈局&lt;/h2&gt;
+&lt;p&gt;我 2017 年初就開始佈局了，先從共同語言開始&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;（2017 年）三月，自掏腰包，拿《&lt;a href=&#34;https://www.books.com.tw/products/0010641668&#34;&gt;三年後，你的工作還在嗎&lt;/a&gt;》及〈&lt;a href=&#34;http://drapplehuang.blogspot.com/2017/03/blog-post_23.html&#34;&gt;沒了名片你還剩下什麼？新書發表演講筆記&lt;/a&gt;〉當部門內的讀書會材料，激發大家的工匠魂及總管魂。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;非正式調查，大家對其中的〈&lt;a href=&#34;https://www.darencademy.com/article/view/id/15058&#34;&gt;職場自由之道：第一天就為離開做好準備&lt;/a&gt;〉觀點最有感——很合乎我的預期。&lt;/p&gt;
+&lt;p&gt;共同語言有了，之後再推動一些事情，就名正言順多了。&lt;/p&gt;
+&lt;p&gt;最近規模比較大的，是在部門內舉辦第一場 Open Space Technology (OST；開放空間會議) ，提煉大家對於 2019 年的部門願景：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/11/gogolook-server-ost.png&#34; alt=&#34;部門 OST 活動，一隅 (2018-10-19)&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2018/11/gogolook-server-ost.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;部門 OST 活動，一隅 (2018-10-19)&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;從活動過程及結論中，可看出某些人在心態上已經做好承接更大責任的準備。因此，我可以更積極進行這件事了。&lt;/p&gt;
+&lt;p&gt;俗氣一點講，是副手計畫；吊書袋的講法，是接班人計畫 (succession planning)。&lt;/p&gt;
+&lt;h2 id=&#34;一對一關懷式指導&#34;&gt;「一對一關懷式指導」&lt;/h2&gt;
+&lt;p&gt;我所崇敬的作家 Marcus Buckingham 在 &lt;a href=&#34;https://www.willowcreek.com/events/leadership/2017-Domestic-A/&#34;&gt;2017 領導力研習會 (Global Leadership Summit)&lt;/a&gt; 給的【重塑績效管理】演講中&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;，提出很簡單卻很有效的 &amp;ldquo;frequent strengths-based check-ins&amp;rdquo; 建議：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/11/strength-checkins.jpg&#34; alt=&#34;frequent strengths-based check-ins&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2018/11/strength-checkins.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;frequent strengths-based check-ins&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;There is one silver bullet that forms the foundation of a great team: frequent strengths-based check-ins about near-term future work. Every week. One-on-One.&lt;/p&gt;
+&lt;p&gt;In the one-on-one, managers should ask just two questions:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;What are your priorities for the week?&lt;/li&gt;
+&lt;li&gt;How can I help?&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;One year is made up of 52 little sprints. Your job is to make sure sprint #37 is as energized and focused as sprint #1.&lt;/p&gt;
+&lt;p&gt;This is not feedback. There is all sorts of research that shows we go into “fight-or-flight mode” in the face of feedback. People don’t want feedback; they want attention and coaching.&lt;/p&gt;
+&lt;p&gt;Leaders should not manage more people than they can honestly have a one-on-one check-in every week. This is leadership.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;我想，這種近身的教練模式，正是接班人計畫所需要的落地作法。&lt;/p&gt;
+&lt;h2 id=&#34;材料&#34;&gt;材料&lt;/h2&gt;
+&lt;p&gt;華倫・班尼斯在《&lt;a href=&#34;https://www.books.com.tw/products/0010445840&#34;&gt;領導，不需要頭銜&lt;/a&gt;》說道：「領導課程只能教你技巧，無法傳授&lt;strong&gt;個性&lt;/strong&gt;或&lt;strong&gt;眼光&lt;/strong&gt;。」&lt;/p&gt;
+&lt;p&gt;這也是接班人培訓困難之處。&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:20em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/11/leadership-self-pace.jpg&#34; alt=&#34;領導者：個性和眼光&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2018/11/leadership-self-pace.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;領導者：個性和眼光&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;原本是想直接套用現成的《&lt;a href=&#34;https://www.knack.com.tw/Event/ManagerSkill&#34;&gt;帶人的技術 │ 新手主管的必殺訣竅&lt;/a&gt;》線上課程內容。但稍微研究了一下，這線上課程比較適合自學，不太適合近身的教練模式——除非搭配適當的補充材料。&lt;/p&gt;
+&lt;p&gt;因此，我還是回到自己慣用的方式：指定讀物，個案研討，行動，回饋。&lt;/p&gt;
+&lt;p&gt;培育對象是中階主管，所以我只選擇簡單易讀的，不那麼高大上的材料。&lt;/p&gt;
+&lt;h4 id=&#34;基本職涯觀念&#34;&gt;基本職涯觀念&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;《&lt;a href=&#34;https://www.books.com.tw/products/0010641668&#34;&gt;三年後，你的工作還在嗎&lt;/a&gt;》&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;工具箱&#34;&gt;工具箱&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;《&lt;a href=&#34;https://www.books.com.tw/products/0010681486&#34;&gt;不懂這些，別想加薪&lt;/a&gt;》&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;領導&#34;&gt;領導&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;《&lt;a href=&#34;https://www.books.com.tw/products/0010445840&#34;&gt;領導，不需要頭銜&lt;/a&gt;》&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;指導&#34;&gt;指導&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;《&lt;a href=&#34;https://www.books.com.tw/products/0010699844&#34;&gt;教出好幫手&lt;/a&gt;》&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;問題解決&#34;&gt;問題解決&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;《&lt;a href=&#34;https://www.books.com.tw/products/0010675840&#34;&gt;破解問題的技術&lt;/a&gt;》&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;會議&#34;&gt;會議&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;繁體版《&lt;a href=&#34;https://www.taaze.tw/sing.html?pid=11100243769&#34;&gt;誰說我們不能一起做決定&lt;/a&gt;》(2/e)&lt;/li&gt;
+&lt;li&gt;簡體版《&lt;a href=&#34;http://www.sanmin.com.tw/product/index/005689892&#34;&gt;結構化研討：參與式決策操作手冊&lt;/a&gt;》(3/e)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;溝通協調&#34;&gt;溝通協調&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;二日課程：【&lt;a href=&#34;https://shop.darencademy.com/product/view/id/28&#34;&gt;A101 職場大人學 - 職場人際關係與優勢策略&lt;/a&gt;】&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;規劃力&#34;&gt;規劃力&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;一日課程：【&lt;a href=&#34;https://shop.darencademy.com/product/view/id/1&#34;&gt;101 / 專案管理一日特訓班&lt;/a&gt;】&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;至於具體的培訓議題順序，則還在研究。或許也不是獨自研究就能成形的，應該要與接班人共同議定吧。&lt;/p&gt;
+&lt;p&gt;嗯，就這麼辦。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;Photo credit: &lt;a href=&#34;https://unsplash.com/photos/Y4kw_G_xhsQ&#34;&gt;https://unsplash.com/photos/Y4kw_G_xhsQ&lt;/a&gt;&lt;/p&gt;
+
+
+&lt;div class=&#34;notice notice--note&#34;&gt;
+  &lt;div class=&#34;notice__title&#34;&gt;
+    
+      2018-12-24 後續發展
+    
+  &lt;/div&gt;
+  &lt;div class=&#34;notice__content&#34;&gt;&lt;p&gt;我又另外企劃了一對多形式的〈&lt;a href=&#34;//william-yeh.net/post/2018/12/practice-of-managers/&#34;&gt;【主管的修練】讀書會&lt;/a&gt;〉。&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;〈&lt;a href=&#34;https://www.hbrtaiwan.com/article_content_AR0000924.html&#34;&gt;人才培育與傳承的策略思維&lt;/a&gt;〉，哈佛商業評論・中文版，2008 年 10 月號。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.managertoday.com.tw/columns/view/55866&#34;&gt;「接班人」培育計畫，該有的正確觀念&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://school.soft-arch.net/blog/8494/poogi-by-questions&#34;&gt;以提問角度看 TOC 聚焦五步驟&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:4&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;http://treymcclain.com/gls-17-buckingham/&#34;&gt;Session notes&lt;/a&gt; of GLS 2017: Session 5 – &lt;em&gt;Reinventing Performance Management&lt;/em&gt; by Marcus Buckingham.&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description>
+      
     </item>
+    
   </channel>
 </rss>

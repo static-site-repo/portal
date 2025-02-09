@@ -4,16 +4,120 @@
     <title>Pmo on Potioneer&#39;s Essays</title>
     <link>//william-yeh.net/tags/pmo/</link>
     <description>Recent content in Pmo on Potioneer&#39;s Essays</description>
-    <generator>Hugo</generator>
+    <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <lastBuildDate>Thu, 15 Nov 2018 08:00:00 +0800</lastBuildDate>
-    <atom:link href="//william-yeh.net/tags/pmo/index.xml" rel="self" type="application/rss+xml" />
+    
+        <atom:link href="//william-yeh.net/tags/pmo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>Agile PMO</title>
       <link>//william-yeh.net/post/2018/11/agile-pmo/</link>
       <pubDate>Thu, 15 Nov 2018 08:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2018/11/agile-pmo/</guid>
-      <description>&lt;p&gt;&amp;ldquo;Project&amp;rdquo; 一詞，儼然成為 agile 及 DevOps 圈子的禁語。&lt;/p&gt;&#xA;&lt;p&gt;譬如說，敏捷祖師爺 Martin Fowler 的網站有一篇 &amp;ldquo;&lt;a href=&#34;https://martinfowler.com/articles/products-over-projects.html&#34;&gt;Products Over Projects&lt;/a&gt;&amp;rdquo; 文章，DevOps 巨著 &lt;a href=&#34;https://www.tenlong.com.tw/products/9787115480170&#34;&gt;&lt;em&gt;The DevOps Handbook&lt;/em&gt;&lt;/a&gt; 第 7.7 節的篇名叫做〈投資於服務和產品，而非專案〉。最近甚至還有一本新書，直接取名叫做 &lt;a href=&#34;https://itrevolution.com/book/project-to-product/&#34;&gt;&lt;em&gt;Project to Product&lt;/em&gt;&lt;/a&gt; 叫人棄暗投明呢。&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;&amp;ldquo;Project&amp;rdquo; 一詞，儼然成為 agile 及 DevOps 圈子的禁語。&lt;/p&gt;
+&lt;p&gt;譬如說，敏捷祖師爺 Martin Fowler 的網站有一篇 &amp;ldquo;&lt;a href=&#34;https://martinfowler.com/articles/products-over-projects.html&#34;&gt;Products Over Projects&lt;/a&gt;&amp;rdquo; 文章，DevOps 巨著 &lt;a href=&#34;https://www.tenlong.com.tw/products/9787115480170&#34;&gt;&lt;em&gt;The DevOps Handbook&lt;/em&gt;&lt;/a&gt; 第 7.7 節的篇名叫做〈投資於服務和產品，而非專案〉。最近甚至還有一本新書，直接取名叫做 &lt;a href=&#34;https://itrevolution.com/book/project-to-product/&#34;&gt;&lt;em&gt;Project to Product&lt;/em&gt;&lt;/a&gt; 叫人棄暗投明呢。&lt;/p&gt;
+&lt;p&gt;見微知著。這個圈子，褒 product，貶 project，是政治正確的常模。 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;這個圈子，對於 &amp;ldquo;project&amp;rdquo; 反感，對於素來予人控制與監管印象的 &amp;ldquo;PMO&amp;rdquo; (Project Management Office，專案管理辦公室) &lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt; 就更反感了。&lt;/p&gt;
+&lt;p&gt;但 PMO 真的與敏捷水火不容嗎？&lt;/p&gt;
+&lt;h2 id=&#34;敏捷陣營的聲音&#34;&gt;敏捷陣營的聲音&lt;/h2&gt;
+&lt;p&gt;聽聽看 Scrum 領域三位大神的說法吧。&lt;/p&gt;
+&lt;p&gt;頭兩位大神 &lt;a href=&#34;https://www.linkedin.com/in/jeffsutherland&#34;&gt;Jeff Sutherland&lt;/a&gt; 及 &lt;a href=&#34;https://kenschwaber.wordpress.com/&#34;&gt;Ken Schwaber&lt;/a&gt; 是 Scrum 發明人。他們合著一本小書《&lt;a href=&#34;https://www.books.com.tw/products/0010647604&#34;&gt;告別瀑布，擁抱 Scrum&lt;/a&gt;》，言簡意賅，完全是務實的經驗談。附錄Ｃ〈企業級敏捷攻略〉專門探討敏捷擴展的議題，難得看到兩位老爹發表與其他基本教義派不同的接地氣觀點。其中對於 &amp;ldquo;project&amp;rdquo; 的看法是：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Scrum 避免使用傳統的「類」瀑布式的專案&lt;strong&gt;計畫&lt;/strong&gt;，但是策略性的日常&lt;strong&gt;專案管理&lt;/strong&gt;的本質是堅定不移的。高級成員需要觀察每個團隊各自的 iteration 和發佈計畫，才能全面的評估整個專案所處的狀態。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;他們也進一步闡述遠光燈的觀點：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Scrum 是追求「近期可能性的藝術」，而不是詳細預測未來 6 到 12 個 sprints 內應該交付什麼的黑色藝術。但隨著團隊的擴大和增加，為了未來較遙遠的 sprint 做額外嚴謹的分析，將有助於避免日後需要對架構做過多的重構。為了能將系統架構未來可能的演變方向看得更清楚，進行額外的發布計畫也是合適的。因此，sprint 計畫會議中，可以「看看過去的幾個 sprint」，也可以進行一些「萬一」(what-if) 的計畫，如此將能夠協助團隊權衡產品待辦清單，並向發起者傳達一個更合理的願景和產品路線圖。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Ken Schwaber 創立的 &lt;a href=&#34;https://www.scrum.org&#34;&gt;Scrum.org&lt;/a&gt; 培訓機構，也刊登過一篇 &amp;ldquo;&lt;a href=&#34;https://www.scrum.org/resources/blog/agile-pmo&#34;&gt;The Agile PMO&lt;/a&gt;&amp;rdquo; 文章，說明他們對於 PMO 並未排斥。&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;第三位大神 &lt;a href=&#34;https://www.scrumalliance.org/community/profile/mikecohn&#34;&gt;Mike Cohn&lt;/a&gt;，是 CSM/CSPO/CST 等認證的主辦機構 &lt;a href=&#34;https://www.scrumalliance.org/&#34;&gt;Scrum Alliance&lt;/a&gt; 的共同創辦人，著作等身，都是敏捷領域的經典 &lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;。最近也在他的機構 Mountain Goat Software 開辦很精彩的 &lt;a href=&#34;http://learn.mountaingoatsoftware.com/better-user-stories/&#34;&gt;&lt;em&gt;Better User Stories&lt;/em&gt;&lt;/a&gt; 線上課程，是非常活躍的 Scrum 培訓師。&lt;/p&gt;
+&lt;p&gt;在敏捷領域，Mike Cohn 雖然是祖師爺等級的人物，但不是基本教義派。譬如說，雖然 &amp;ldquo;project&amp;rdquo; 一詞儼然成為這圈子的禁語，但他可不這麼認為：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Projects provide a planning horizon that is longer than a sprint&amp;mdash;typically in the range of two to six months. This “definite beginning and end” that is focused on a “unique product, service or result” encourages product owners to select truly important things to work on rather than whatever some customer or salesperson screamed about yesterday.&lt;/p&gt;
+&lt;p&gt;I always encourage product owners and their teams to identify a milestone they are working toward that is longer than a single sprint.&lt;/p&gt;
+&lt;p&gt;Projects remain a useful construct. They provide a motivation to accomplish something grander than could be done in a single iteration.&lt;/p&gt;
+&lt;p&gt;  &amp;mdash; “&lt;a href=&#34;https://www.mountaingoatsoftware.com/blog/is-it-time-to-stop-thinking-about-projects&#34;&gt;Is It Time to Stop Thinking about Projects?&lt;/a&gt;”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;畢竟 milestone 這種&lt;strong&gt;策略控制點&lt;/strong&gt;的設置與控制，原本就是專案管理知識體系的擅長之處。&lt;/p&gt;
+&lt;p&gt;他甚至鼓勵將傳統上 &lt;a href=&#34;https://www.pmi.org/pmbok-guide-standards&#34;&gt;PMBOK&lt;/a&gt; 重視的某些活動，引進敏捷開發的節奏中：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Becoming agile does not mean we need to throw out everything we&amp;rsquo;ve learned over the past 100 or so years of doing project management. Some things&amp;mdash;project kickoff meetings included&amp;mdash;remain valuable.&lt;/p&gt;
+&lt;p&gt;Risk management is not formally defined as part of agile frameworks like Scrum. And that’s understandable as a lot of risks do go away (or get exposed) with the short iterations common to agile. But there are still projects that benefit from lightweight but explicit risk management. I suggested starting that during the kickoff meeting.&lt;/p&gt;
+&lt;p&gt;  &amp;mdash; “&lt;a href=&#34;https://www.mountaingoatsoftware.com/blog/advice-on-conducting-agile-project-kickoff-meetings&#34;&gt;Advice on Conducting Agile Project Kickoff Meetings&lt;/a&gt;”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;三位大師的論述，像極了《&lt;a href=&#34;https://zh.wikipedia.org/wiki/%E7%A5%9E%E9%B5%B0%E4%BF%A0%E4%BE%B6&#34;&gt;神鵰俠侶&lt;/a&gt;》中「不滯於物，草木竹石均可為劍」的境界，大師風範，令人佩服。&lt;/p&gt;
+&lt;h2 id=&#34;pmo-陣營的聲音&#34;&gt;PMO 陣營的聲音&lt;/h2&gt;
+&lt;p&gt;也來聽聽看 PMO 領域的說法吧。&lt;/p&gt;
+&lt;p&gt;PMO 並不是像敏捷基本教義派陣營口中那麼僵化守舊的。像 2013 年《&lt;a href=&#34;https://www.books.com.tw/products/CN11396791&#34;&gt;業務驅動的 PMO 最佳實踐&lt;/a&gt;》一書主張，有&lt;strong&gt;成熟敏銳度&lt;/strong&gt; (maturity acumen) 的 PMO，需要根據專案類型與管理方法兩個維度，將組織層級的專案管理分成四個象限，並以宏觀視野統籌處理：&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/11/org-pm-quadrant.jpg&#34; alt=&#34;組織範圍的專案管理&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2018/11/org-pm-quadrant.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;組織範圍的專案管理&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;至於最正宗的專案管理國際組織 &lt;a href=&#34;https://www.pmi.org/&#34;&gt;PMI&lt;/a&gt; 是怎麼想的呢？&lt;/p&gt;
+&lt;p&gt;在 &amp;ldquo;&lt;a href=&#34;https://www.pmi.org/learning/library/pmo-agile-transformation-6063&#34;&gt;An agile PMO transformation&lt;/a&gt;&amp;rdquo; 一文中，列舉 &amp;ldquo;agile PMO&amp;rdquo; 的「八要八不要」，並且主張：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;For many organizations, using the words “PMO” and “agile” in the same sentence could be considered an oxymoron. It may come as a surprise to expect the PMO to lead the agile transformation, but we think that &lt;em&gt;for organizations to reach the full potential of the approaches outlined in this update, such as managing the enterprise-level portfolio and creating stable teams, the PMO will need to be engaged and lead the way.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;If PMOs are ready and willing to transform, they can greatly influence the success of their organization&amp;rsquo;s agile transformation.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;可見，狀似傳統僵化的 PMO，其實也已經正視敏捷變革。因此，我們不時可看到新名詞 &amp;ldquo;agile PMO&amp;rdquo; 出現，連管顧公司也湊熱鬧湊出一個 &amp;ldquo;Lean-Agile PMO&amp;rdquo; 呢。&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;h2 id=&#34;正名&#34;&gt;正名？&lt;/h2&gt;
+&lt;p&gt;敏捷陣營常會對 &amp;ldquo;agile PMO&amp;rdquo; 一詞嗤之以鼻，認為只是換湯不換藥。&lt;/p&gt;
+&lt;p&gt;因此，Mike Cohn 挑明地說，為了避免困擾，不妨考慮換個名字：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;A project management office (PMO) that is engaged in and supportive of transitioning to Scrum can be a tremendous boon.&lt;/p&gt;
+&lt;p&gt;Many PMOs choose to rename themselves to better match their revised role. Though there is no one standard name, I have heard these most frequently: &lt;em&gt;Scrum center of excellence&lt;/em&gt;, &lt;em&gt;Scrum competence center&lt;/em&gt;, &lt;em&gt;Scrum office&lt;/em&gt;, and &lt;em&gt;development support&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Many people have become cynical and suspicious of name changes and of well-crafted names. That cynicism will be directed at the PMO if it is renamed but remains otherwise unchanged. So, whatever it&amp;rsquo;s called, the PMO that supported the organization&amp;rsquo;s sequential development process will need to change more than just its name to succeed with Scrum.&lt;/p&gt;
+&lt;p&gt;  &amp;mdash; “&lt;a href=&#34;https://www.mountaingoatsoftware.com/articles/the-roles-of-the-project-management-office-in-scrum&#34;&gt;The Roles of the Project Management Office in Scrum&lt;/a&gt;”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;PMI 在 &lt;a href=&#34;https://www.pmi.org/pmbok-guide-standards/practice-guides/agile&#34;&gt;&lt;em&gt;Agile Practice Guide&lt;/em&gt;&lt;/a&gt; 第六章也提及 “&lt;strong&gt;center of excellence&lt;/strong&gt;” 一詞：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Some organizations have been transforming their PMOs into agile centers of excellence&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;至於崇尚極簡作風的 LeSS 陣營，則主張廢棄 &amp;ldquo;project&amp;rdquo; 或 &amp;ldquo;office&amp;rdquo; 字眼，改用 &amp;ldquo;Head of Product Group&amp;rdquo; 概念，以及 &amp;ldquo;&lt;a href=&#34;https://less.works/less/management/go-see.html&#34;&gt;Go See&lt;/a&gt;&amp;rdquo; 管理：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;No project/program organization or project/program management office (PMO). No support groups such as configuration management, continuous integration support, or “quality and process”.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Head of the Product Group&lt;/strong&gt; — Most LeSS organizations still have managers including a “head of product group.” They support the teams by Go See and help them remove obstacles and improve. LeSS organizations don’t have matrix structures and there are no “dotted-line” managers.&lt;/p&gt;
+&lt;p&gt;“Head of Product Group” is called differently in different organization, here we mean the hierarchical manager of all the teams.&lt;/p&gt;
+&lt;p&gt;  &amp;mdash; LeSS &lt;a href=&#34;https://less.works/less/structure/organizational-structure.html&#34;&gt;Organizational Structure&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;看了這麼多論點，你認為 &amp;ldquo;agile PMO&amp;rdquo; 是噱頭嗎？&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;儘管敏捷圈子普遍褒 product 而貶 project，但有趣的是，&lt;a href=&#34;https://www.scrumguides.org/&#34;&gt;&lt;em&gt;The Scrum Guide&lt;/em&gt;&lt;/a&gt; 對於 sprint 卻有這種類比：“Each Sprint may be considered a &lt;strong&gt;project&lt;/strong&gt; with no more than a one-month horizon 每個 Sprint 可視為一個不超過一個月的&lt;strong&gt;專案&lt;/strong&gt;。”&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;想在五分鐘之內快速了解 PMO 是什麼東西，可讀讀 Joe 寫的這篇文章：&lt;a href=&#34;https://www.projectup.net/article/view/id/9&#34;&gt;What is PMO&lt;/a&gt;。&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;
+&lt;p&gt;Mike Cohn 在敏捷領域的名作：&lt;a href=&#34;https://www.amazon.com/gp/product/0321205685/&#34;&gt;&lt;em&gt;User Stories Applied: For Agile Software Development&lt;/em&gt;&lt;/a&gt; (2004)、&lt;a href=&#34;https://www.amazon.com/dp/0131479415&#34;&gt;&lt;em&gt;Agile Estimating and Planning&lt;/em&gt;&lt;/a&gt; (2005)、&lt;a href=&#34;https://www.amazon.com/gp/product/0321579364/&#34;&gt;&lt;em&gt;Succeeding with Agile: Software Development Using Scrum&lt;/em&gt;&lt;/a&gt; (2009)。&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:4&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.forbes.com/sites/forbesfinancecouncil/2018/06/13/the-many-benefits-of-an-agile-pmo-what-you-should-know/&#34;&gt;The Many Benefits Of An Agile PMO: What You Should Know&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+      
     </item>
+    
   </channel>
 </rss>
