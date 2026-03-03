@@ -4,51 +4,1797 @@
     <title>Testing on Potioneer&#39;s Essays</title>
     <link>//william-yeh.net/tags/testing/</link>
     <description>Recent content in Testing on Potioneer&#39;s Essays</description>
-    <generator>Hugo</generator>
+    <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <lastBuildDate>Sat, 08 Feb 2025 18:00:00 +0800</lastBuildDate>
-    <atom:link href="//william-yeh.net/tags/testing/index.xml" rel="self" type="application/rss+xml" />
+    
+        <atom:link href="//william-yeh.net/tags/testing/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>AI 會寫程式，還要參與系統分析嗎？</title>
       <link>//william-yeh.net/post/2025/02/sa-with-genai/</link>
       <pubDate>Sat, 08 Feb 2025 18:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2025/02/sa-with-genai/</guid>
-      <description>&lt;p&gt;傳統上，複雜的軟體專案，除了程式設計師之外，還會搭配系統設計師，甚至系統分析師，確保領域知識及商業邏輯都有朝對的方向前進。&lt;/p&gt;&#xA;&lt;p&gt;生成式 AI 既然會寫程式，下一個問題就是：它也會做系統分析嗎？&lt;/p&gt;&#xA;&lt;p&gt;理論上來說，應該是的。畢竟我們在&lt;a href=&#34;//william-yeh.net/post/2025/02/codegen-with-genai/&#34;&gt;前一篇文章&lt;/a&gt;都親眼看過，AI 既然能理解規格、潤飾需求、撰寫程式碼，甚至生成測試案例，那麼系統分析 (SA) 和系統設計 (SD) 這類「中間產物」，確實也難不倒它。畢竟，系統分析本質上就是資訊的整理、建模與推理，而這些都是 AI 擅長的領域。&lt;/p&gt;&#xA;&lt;p&gt;我認為，SA/SD 也應該納入 AI 協作。尤其是從 SA/SD 擅長的建模角度，能夠協助我們及早確認領域知識及商業邏輯，檢查需求規格是否有矛盾、遺漏或模稜兩可的地方，甚至提出改善建議，幫助系統分析師更快定位問題，減少後期開發的返工成本。譬如說，透過 AI 生成的狀態轉移圖，也有助於規劃黑箱測試，提高測試覆蓋率，進而提升系統的穩定性與可靠性。&lt;/p&gt;&#xA;&lt;p&gt;接下來就是現實問題了：讓 AI 產生的狀態圖，真的比人工畫得更好嗎？能省多少時間？&lt;/p&gt;&#xA;&lt;p&gt;這就要實測了！現在，就讓我們拿&lt;a href=&#34;//william-yeh.net/post/2025/02/codegen-with-genai/&#34;&gt;前一篇文章&lt;/a&gt;的規格作為引子，看看 AI 生成的狀態圖表現如何吧！&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;傳統上，複雜的軟體專案，除了程式設計師之外，還會搭配系統設計師，甚至系統分析師，確保領域知識及商業邏輯都有朝對的方向前進。&lt;/p&gt;
+&lt;p&gt;生成式 AI 既然會寫程式，下一個問題就是：它也會做系統分析嗎？&lt;/p&gt;
+&lt;p&gt;理論上來說，應該是的。畢竟我們在&lt;a href=&#34;//william-yeh.net/post/2025/02/codegen-with-genai/&#34;&gt;前一篇文章&lt;/a&gt;都親眼看過，AI 既然能理解規格、潤飾需求、撰寫程式碼，甚至生成測試案例，那麼系統分析 (SA) 和系統設計 (SD) 這類「中間產物」，確實也難不倒它。畢竟，系統分析本質上就是資訊的整理、建模與推理，而這些都是 AI 擅長的領域。&lt;/p&gt;
+&lt;p&gt;我認為，SA/SD 也應該納入 AI 協作。尤其是從 SA/SD 擅長的建模角度，能夠協助我們及早確認領域知識及商業邏輯，檢查需求規格是否有矛盾、遺漏或模稜兩可的地方，甚至提出改善建議，幫助系統分析師更快定位問題，減少後期開發的返工成本。譬如說，透過 AI 生成的狀態轉移圖，也有助於規劃黑箱測試，提高測試覆蓋率，進而提升系統的穩定性與可靠性。&lt;/p&gt;
+&lt;p&gt;接下來就是現實問題了：讓 AI 產生的狀態圖，真的比人工畫得更好嗎？能省多少時間？&lt;/p&gt;
+&lt;p&gt;這就要實測了！現在，就讓我們拿&lt;a href=&#34;//william-yeh.net/post/2025/02/codegen-with-genai/&#34;&gt;前一篇文章&lt;/a&gt;的規格作為引子，看看 AI 生成的狀態圖表現如何吧！&lt;/p&gt;
+&lt;h2 id=&#34;狀況一過於窮舉&#34;&gt;狀況一：過於窮舉&lt;/h2&gt;
+&lt;p&gt;提示詞 #1：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Generate a UML-style state diagram for the game.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;吐出的狀態圖，細節可能每次都有些不同，以下是較常見的版本：&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2025/02/fsm-1.png&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2025/02/fsm-1.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;嚴格說起來，這份狀態圖並不符合 UML 格式⋯⋯但我暫時不挑剔這一點，等最後一步再來處理。&lt;/p&gt;
+&lt;p&gt;這份狀態圖，把所有可能的狀態都窮舉了，應該很合乎測試狂人的胃口。不過，窮舉得太過於累贅，很難消化。若不予以抽象化，很難進一步發展出程式。&lt;/p&gt;
+&lt;h2 id=&#34;狀況二濃縮過度&#34;&gt;狀況二：濃縮過度&lt;/h2&gt;
+&lt;p&gt;我們請 GenAI 整頓一下，在不影響正確性的前提下，將過於累贅的狀態精簡濃縮一遍：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Is it possible to reduce the states without compromising correctness or clarity?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;吐出的狀態圖，細節可能每次都有些不同，我挑出其中一個版本來聊聊：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2025/02/fsm-2.png&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2025/02/fsm-2.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;有了這份濃縮過的狀態圖，就比較容易一眼看出問題。最大的問題就是，有兩個紅色箭頭的地方濃縮過頭了，誤把 2-0 及 0-2 比分判定為比賽結束。&lt;/p&gt;
+&lt;h2 id=&#34;基本合格的狀態圖&#34;&gt;基本合格的狀態圖&lt;/h2&gt;
+&lt;p&gt;我請 GenAI 修正三個地方：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Three issues need to be addressed:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;The “Px leads by 2 points” transition is too vague. Does it account for cases like 2-0 or 0-2?&lt;/li&gt;
+&lt;li&gt;The two &amp;ldquo;Game Start&amp;rdquo; transitions should be merged into one.&lt;/li&gt;
+&lt;li&gt;Add an initial state for the 0-0 (&amp;ldquo;Love-Love&amp;rdquo;) score.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;如此這般調整，通常我們很快就可以得到比較滿意的狀態圖，既清晰，又正確：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2025/02/fsm-3.png&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2025/02/fsm-3.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;轉換成機器可讀的版本&#34;&gt;轉換成機器可讀的版本&lt;/h2&gt;
+&lt;p&gt;既然好不容易生出清晰正確的狀態圖，我們應該把圖形轉成像是 &lt;a href=&#34;https://plantuml.com/en/&#34;&gt;PlantUML&lt;/a&gt; 這種可程式化的文字表述形式，以預留後續應用的可能性。&lt;/p&gt;
+&lt;p&gt;提示詞：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Proceed to represent the state diagram using PlantUML syntax.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;我們會得到這樣的狀態圖規格文字：&lt;/p&gt;
+
+&lt;details&gt;
+  &lt;summary style=&#34;background-color:#f5f5f5;border:1px solid #ccc;padding:5px;&#34;&gt;
+    PlantUML 格式的狀態圖
+    
+  &lt;/summary&gt;
+  &lt;div class=&#34;highlight-container&#34;&gt;
+
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+
+  
+  &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plain&#34; data-lang=&#34;plain&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;@startuml
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[*] --&amp;gt; LoveLove : Game Start
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;LoveLove --&amp;gt; Score : P1 or P2 Scores
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Score --&amp;gt; Score : Regular Scoring
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Score --&amp;gt; Deuce : Both &amp;gt;= 3 &amp;amp; Equal
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Deuce --&amp;gt; AdvantageP1 : P1 Scores
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Deuce --&amp;gt; AdvantageP2 : P2 Scores
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Score --&amp;gt; WinP1 : P1 &amp;gt;= 4 &amp;amp; Lead &amp;gt;= 2
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Score --&amp;gt; WinP2 : P2 &amp;gt;= 4 &amp;amp; Lead &amp;gt;= 2
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;AdvantageP1 --&amp;gt; WinP1 : P1 Scores
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;AdvantageP2 --&amp;gt; WinP2 : P2 Scores
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;AdvantageP1 --&amp;gt; Deuce : P2 Scores
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;AdvantageP2 --&amp;gt; Deuce : P1 Scores
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;WinP1 --&amp;gt; [*]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;WinP2 --&amp;gt; [*]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;@enduml&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/details&gt;
+
+&lt;p&gt;這份狀態圖以及 PlantUML 規格文字，很值得放進系統分析文件，甚至規格書。&lt;/p&gt;
+&lt;p&gt;不過，如果你有潔癖，希望狀態圖要合乎正統的 UML 規定，可以把上面的文字丟到&lt;a href=&#34;https://www.plantuml.com/plantuml/uml/&#34;&gt;PlantUML 軟體&lt;/a&gt;去產生完全合乎標準的 UML 狀態圖：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2025/02/fsm-4.png&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2025/02/fsm-4.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;系統分析的再思&#34;&gt;系統分析的再思&lt;/h2&gt;
+&lt;p&gt;許多威力強大的機器學習與人工智慧技術，本質上是黑箱的，可觀測性與可解釋性，一直是技術發展與推廣的大挑戰。&lt;/p&gt;
+&lt;p&gt;對於 GenAI 神兵利器，許多人只在程式碼的層次與 GenAI 對話，畢竟光速產生程式的快感，很難不上癮。&lt;/p&gt;
+&lt;p&gt;系統分析？很抱歉，這是光速領域，沒有預留座位。&lt;/p&gt;
+&lt;p&gt;但我還是想要稍微保守一點，寧可慢一點。在前段的規格、中段的系統分析與設計、後段的測試驗收，與 GenAI 多一點協作，在中間產物身上，多留下一些可觀測、可解釋的線索，並力求可以穩定再現。&lt;/p&gt;
+&lt;p&gt;畢竟，順向工程比較容易，逆向工程比較困難。如我前一篇文章〈&lt;a href=&#34;//william-yeh.net/post/2025/02/codegen-with-genai/&#34;&gt;當 AI 會寫程式，程式碼會變得即寫即棄嗎？&lt;/a&gt;〉所說，程式碼之所以會變得可以即寫即棄，是因為我們用更有效率的方式，將「可用的軟體」的內涵，轉寫到「詳盡的文件」裡面，讓它成為更有意義的 “ground truth”。&lt;/p&gt;
+&lt;p&gt;在與 GenAI 協作時，別忘了「詳盡的文件」也是協作的重點。&lt;/p&gt;</description>
+      
     </item>
+    
     <item>
       <title>當 AI 會寫程式，程式碼會變得即寫即棄嗎？</title>
       <link>//william-yeh.net/post/2025/02/codegen-with-genai/</link>
       <pubDate>Fri, 07 Feb 2025 18:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2025/02/codegen-with-genai/</guid>
-      <description>&lt;p&gt;人類從事的領域，不斷被生成式 AI (GenAI) 入侵。&lt;/p&gt;&#xA;&lt;p&gt;社群媒體上，早就充斥一大堆「AI 體」的文案圖案，現在就連程式設計領域也開始淪陷。像 Google 執行長就透露：「在 Google，超過 1/4 的新程式碼已經是先由 AI 生成，再讓程式設計師去複審與確認。」&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; 而 GitHub 執行長更大膽預言 80% 的程式碼都將會由 GenAI 生成。&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;&#xA;&lt;p&gt;也就是說，以前，程式設計師得親手撰寫大部分的程式碼；現在則開始挪出一段時間去跟 GenAI 對話：調教提示詞 (prompt)、審核生成的程式碼、確認正確性，如此反覆進行好幾個回合。&lt;/p&gt;&#xA;&lt;p&gt;GenAI 進展神速。如果某一天進展到，只要提示詞下得夠精準，第一次生出來的程式碼幾乎就合格過關了，是否也就意謂著，程式設計師的專業訓練及工作重點，將會更轉向 ⑴ 鑽研提示工程、⑵ 審核生成的程式碼這兩條路線發展？換句話說，將會更朝向 ⑴ 前段的需求規格、⑵ 後段的測試驗收這兩條路線？&lt;/p&gt;&#xA;&lt;p&gt;如果頭尾兩端（需求規格與測試驗收）都由人來看守定義，中間步驟（撰寫程式碼）改由 GenAI 來操刀，是否也就意謂著，程式碼會變成像是可拋棄的東西，反正隨時都可以叫 GenAI 再生出一份出來？甚至當 GenAI 能力升級之後，又能夠生出比拋棄掉的還要更好的程式碼？&lt;/p&gt;&#xA;&lt;p&gt;聽起來可能有點兒瘋狂。可是如果以上屬實，那麼，&lt;a href=&#34;https://agilemanifesto.org/&#34;&gt;敏捷四大宣言&lt;/a&gt;之一「&lt;strong&gt;可用的軟體&lt;/strong&gt; 重於 &lt;strong&gt;詳盡的文件&lt;/strong&gt;」，在 GenAI 時代是否依然成立，可能都值得再重新評估檢討。&lt;/p&gt;&#xA;&lt;p&gt;為此，我在 ChatGPT 4o 進行一系列小小的實驗。試試看當 GenAI 收到前段的需求規格之後，能夠生出什麼樣的程式碼以及測試驗收案例；緊接著會與 GenAI 協作調教頭尾兩端（需求規格與測試驗收），再看看 GenAI 重新生出來的程式碼，會有什麼不同。&lt;/p&gt;&#xA;&#xA;&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;&#xA;&lt;div class=&#34;box&#34;&gt;&#xA;&lt;figure  itemprop=&#34;associatedMedia&#34;&#xA;  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; &#xA;  style=&#34;max-width:30em&#34; &gt;&#xA;    &lt;div class=&#34;img&#34;&gt;&#xA;      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2025/02/work-with-genai.jpg&#34; /&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;a href=&#34;//william-yeh.net/img/2025/02/work-with-genai.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;&#xA;  &lt;/figure&gt;&#xA;&lt;/div&gt;</description>
+      
+        <description>&lt;p&gt;人類從事的領域，不斷被生成式 AI (GenAI) 入侵。&lt;/p&gt;
+&lt;p&gt;社群媒體上，早就充斥一大堆「AI 體」的文案圖案，現在就連程式設計領域也開始淪陷。像 Google 執行長就透露：「在 Google，超過 1/4 的新程式碼已經是先由 AI 生成，再讓程式設計師去複審與確認。」&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; 而 GitHub 執行長更大膽預言 80% 的程式碼都將會由 GenAI 生成。&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;也就是說，以前，程式設計師得親手撰寫大部分的程式碼；現在則開始挪出一段時間去跟 GenAI 對話：調教提示詞 (prompt)、審核生成的程式碼、確認正確性，如此反覆進行好幾個回合。&lt;/p&gt;
+&lt;p&gt;GenAI 進展神速。如果某一天進展到，只要提示詞下得夠精準，第一次生出來的程式碼幾乎就合格過關了，是否也就意謂著，程式設計師的專業訓練及工作重點，將會更轉向 ⑴ 鑽研提示工程、⑵ 審核生成的程式碼這兩條路線發展？換句話說，將會更朝向 ⑴ 前段的需求規格、⑵ 後段的測試驗收這兩條路線？&lt;/p&gt;
+&lt;p&gt;如果頭尾兩端（需求規格與測試驗收）都由人來看守定義，中間步驟（撰寫程式碼）改由 GenAI 來操刀，是否也就意謂著，程式碼會變成像是可拋棄的東西，反正隨時都可以叫 GenAI 再生出一份出來？甚至當 GenAI 能力升級之後，又能夠生出比拋棄掉的還要更好的程式碼？&lt;/p&gt;
+&lt;p&gt;聽起來可能有點兒瘋狂。可是如果以上屬實，那麼，&lt;a href=&#34;https://agilemanifesto.org/&#34;&gt;敏捷四大宣言&lt;/a&gt;之一「&lt;strong&gt;可用的軟體&lt;/strong&gt; 重於 &lt;strong&gt;詳盡的文件&lt;/strong&gt;」，在 GenAI 時代是否依然成立，可能都值得再重新評估檢討。&lt;/p&gt;
+&lt;p&gt;為此，我在 ChatGPT 4o 進行一系列小小的實驗。試試看當 GenAI 收到前段的需求規格之後，能夠生出什麼樣的程式碼以及測試驗收案例；緊接著會與 GenAI 協作調教頭尾兩端（需求規格與測試驗收），再看看 GenAI 重新生出來的程式碼，會有什麼不同。&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2025/02/work-with-genai.jpg&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2025/02/work-with-genai.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;實驗素材&#34;&gt;實驗素材&lt;/h2&gt;
+&lt;p&gt;我選用 TDD 社群常見的 Tennis Kata 作為實驗素材。
+為了怕 GenAI 早已被餵食過 Tennis Kata，想也不想就直接吐出記憶中的標準答案，也就是所謂的「資料記憶」問題，我稍加修改 Samman Technical Coaching 提供的 &lt;a href=&#34;https://sammancoaching.org/kata_descriptions/tennis.html&#34;&gt;Tennis Kata 版本&lt;/a&gt;。微調過的文字如下：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The rule of the 2-player game &amp;ldquo;Sinnet&amp;rdquo; is summarized below:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A game is won by the first player to have won at least four points in total and at least two points more than the opponent.&lt;/li&gt;
+&lt;li&gt;The running score of each game is described in a manner peculiar to this: scores from zero to three points are described as “Love”, “Fifteen”, “Thirty”, and “Forty” respectively.&lt;/li&gt;
+&lt;li&gt;If at least three points have been scored by each player, and the scores are equal, the score is “Deuce”.&lt;/li&gt;
+&lt;li&gt;If at least three points have been scored by each side and a player has one more point than his opponent, the score of the game is “Advantage” for the player in the lead.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;為了進一步消除資料記憶的疑慮，我也故意翻譯成中文（儘管在 ChatGPT 大神面前，這麼做未必真的有用，哈）：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;以下是二人遊戲 &amp;ldquo;Sinnet&amp;rdquo; 的規則：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;遊戲由首先贏得至少四分，且比對手多至少兩分的玩家獲勝。&lt;/li&gt;
+&lt;li&gt;每局的進行得分以一種特殊的方式描述：從零到三分分別描述為 “Love”、 “Fifteen”、 “Thirty” 和 “Forty”。&lt;/li&gt;
+&lt;li&gt;如果每位玩家至少得了三分，且比分相同，則比分為 “Deuce”。&lt;/li&gt;
+&lt;li&gt;如果每方至少得了三分，且有一名玩家比對手多一分，則領先玩家的比分為 “Advantage”。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;接下來的前幾個實驗，都會以這段文字作為對話的開始，姑且就把它叫做「&lt;strong&gt;初始規格/v1&lt;/strong&gt;」吧。不過，GenAI 有一些隨機性的行為，不一定每次都會得到一樣的結果，我會挑出較具代表性的來探討。&lt;/p&gt;
+&lt;p&gt;系列實驗如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;🅐 基礎實驗：①給初始規格/v1 ❯ ②生成程式及測試&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;🅑 調整規格：①給初始規格/v1 ❯ ③調整規格/v2 ❯ ④生成程式及測試&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;🅒 可執行的規格：①給初始規格/v1 ❯ ③調整規格/v2 ❯ ④生成程式及測試 ❯ ⑤將測試納入規格/v3&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;🅓 測試驅動：⑥根據規格/v3 重新生成程式，並予以測試檢驗&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;🅔 逆向工程：⑥根據規格/v3 重新生成程式，並予以測試檢驗 ❯ ⑦逆向工程規格/v4&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;有些實驗之間有先後關係，有些實驗需要開啟新的對話：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2025/02/flow-all.png&#34; alt=&#34;整體實驗流程&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2025/02/flow-all.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;整體實驗流程&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;實驗基礎實驗&#34;&gt;實驗🅐、基礎實驗&lt;/h2&gt;
+&lt;p&gt;先從最基礎的實驗開始，直接叫 GenAI 根據我們給的初始規格，生成程式及測試。&lt;/p&gt;
+&lt;p&gt;基礎的實驗步驟如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;①給初始規格/v1&lt;/li&gt;
+&lt;li&gt;②生成程式及測試&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2025/02/flow-a.png&#34; alt=&#34;實驗🅐流程&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2025/02/flow-a.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;實驗🅐流程&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;既然要叫 GenAI 生成測試，就順便叫它用比較好的方式來做：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.amazon.com/dp/1617290084&#34;&gt;&lt;em&gt;Specification by Example&lt;/em&gt;&lt;/a&gt; 提到的 BDD (behavior driven design)。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.amazon.com/dp/1633439933&#34;&gt;&lt;em&gt;Effective Software Testing&lt;/em&gt;&lt;/a&gt; 提到的 spec-based &amp;amp; property-based testing 角度以及 AAA (arrange-act-assert) 手法。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;提示詞②如下：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Now, implement a Python program to display the current game score.  Also, create specification-based tests using BDD-style and property-based testing. Each test case should follow the Arrange-Act-Assert (AAA) pattern, ensuring that only one AAA scenario is included per test case. Place Gherkin descriptions at the beginning of each test case using a docstring, annotation, or function name. Ensure these tests cover normal scenarios as well as edge cases, focusing on boundaries, partitions, and input dependencies.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;吐出的主體程式碼，細節可能每次都有些不同，以下是較常見的版本：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2025/02/code-a1.png&#34; alt=&#34;提示詞②產生的主體程式碼&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2025/02/code-a1.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;提示詞②產生的主體程式碼&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;主體程式碼看起來滿樸素的，程式邏輯大體上也是圍繞在初始規格的直接翻譯。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;吐出的測試案例，每次的差異就比較大了，以下是其中一個版本：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2025/02/code-a2.png&#34; alt=&#34;提示詞②產生的測試&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2025/02/code-a2.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;提示詞②產生的測試&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;形式上 OK，只是我認為還有些缺失：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;對於 deuce 的比分，常常只測到 3-3 的情況，沒有進一步嘗試 4-4、5-5 甚至更多。這應該是 property-based testing 的強項。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在 arrange 及 act 階段，常常少了交錯得分的劇情，譬如說像是 0-0 ❯ 1-0 ❯ 2-0 ❯ 2-1 ❯ 3-1 ❯ 3-2 ❯ 3-3 (deuce) ❯ 3-4 ❯ 4-4 (deuce) 這種緊張的情節。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Property-based testing 有點偷懶。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;實驗調整規格&#34;&gt;實驗🅑、調整規格&lt;/h2&gt;
+&lt;p&gt;我們一開始給的初始規格/v1，可能未必是最好的。這一次，讓我們邀請 AI 對我們提出疑問，一起協力把初始規格調整成較清晰、無歧義的內容，再拿這份調整過的規格去生成程式與測試。&lt;/p&gt;
+&lt;p&gt;調整規格的實驗步驟如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;①給初始規格/v1&lt;/li&gt;
+&lt;li&gt;③調整規格/v2&lt;/li&gt;
+&lt;li&gt;④生成程式及測試&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2025/02/flow-b.png&#34; alt=&#34;實驗🅑流程&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2025/02/flow-b.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;實驗🅑流程&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;提示詞③如下：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Now, you can ask me questions about the previous specification to clarify its meaning and remove any ambiguity. If you don&amp;rsquo;t have any questions, please proceed to rephrase the specification for better clarity.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;有時候，GenAI 的確會與我一來一往對話，請我釐清一些細節。&lt;/p&gt;
+&lt;p&gt;最後，我收到一份更清晰易懂的規格（就把它叫做「規格/v2」吧）：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Sinnet Game Rules&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Winning the Game&lt;/strong&gt;: A player wins by reaching at least four points and leading their opponent by at least two points.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Scoring System&lt;/strong&gt;: Points are described using specific terms:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;0 points → “Love”&lt;/li&gt;
+&lt;li&gt;1 point → “Fifteen”&lt;/li&gt;
+&lt;li&gt;2 points → “Thirty”&lt;/li&gt;
+&lt;li&gt;3 points → “Forty”&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Deuce&lt;/strong&gt;: If both players have at least three points and are tied, the score is called “Deuce.”&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Advantage&lt;/strong&gt;: If both players have at least three points, and one player leads by a single point, their score is called “Advantage.”&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;接下來，讓我們根據這份調整過的 規格/v2，試試看 GenAI 有什麼不一樣的產出？&lt;/p&gt;
+&lt;p&gt;提示詞④如下：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Based on the rephrased specification, implement a Python program to display the current game score.
+Also create specification-based tests using BDD-style and property-based testing. Each test case should follow the Arrange-Act-Assert (AAA) pattern, ensuring that only one AAA scenario is included per test case. Place Gherkin descriptions at the beginning of each test case using a docstring, annotation, or function name. Ensure these tests cover normal scenarios as well as edge cases, focusing on boundaries, partitions, and input dependencies.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;吐出的主體程式碼，細節可能每次都有些不同，以下是較常見的版本：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2025/02/code-b1.png&#34; alt=&#34;提示詞④產生的主體程式碼&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2025/02/code-b1.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;提示詞④產生的主體程式碼&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;或許要歸功於調整後的 規則/v2 較清晰易懂，程式邏輯也隨之變得更清晰易懂。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;有時候我不滿意生成的測試案例，會叫它再做一次，加強測試涵蓋率。譬如說，如果它只考慮到 3-3 這個 deuce 情況，我也會叫它再多想一下：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Have you considered that deuce can also occur at 4-4, 5-5, and beyond? This appears to be a strong candidate for property-based testing.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;這階段，我建議要跟 GenAI 多聊幾次，先一起弄出令人滿意的測試集，以作為下一個實驗的基礎。&lt;/p&gt;
+&lt;p&gt;以下是其中一個版本：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2025/02/code-b2.png&#34; alt=&#34;提示詞④產生的測試&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2025/02/code-b2.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;提示詞④產生的測試&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;看起來還不錯。我們可以繼續往下進行最關鍵的實驗了。&lt;/p&gt;
+&lt;h2 id=&#34;實驗可執行的規格&#34;&gt;實驗🅒、可執行的規格&lt;/h2&gt;
+&lt;p&gt;在前一個實驗中，我們和 GenAI 一起調整出較清晰易讀的 規格/v2，也一起調整出較周全的測試集。以敏捷開發陣營的最佳實踐來說，好的測試集，其實是可以逆向反饋到規格的，也就是所謂的「&lt;strong&gt;可執行的規格&lt;/strong&gt;」(&lt;strong&gt;executable specification&lt;/strong&gt;)。現在，我們就來弄出一份這樣的「規格/v3」吧。&lt;/p&gt;
+&lt;p&gt;「可執行的規格」實驗步驟如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;①給初始規格/v1&lt;/li&gt;
+&lt;li&gt;③調整規格/v2&lt;/li&gt;
+&lt;li&gt;④生成程式及測試&lt;/li&gt;
+&lt;li&gt;⑤將測試納入規格/v3 ◄ 承上步驟，從這裡開始。&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2025/02/flow-c.png&#34; alt=&#34;實驗🅒流程&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2025/02/flow-c.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;實驗🅒流程&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;接續前一個實驗累積的測試集，讓我們請 GenAI 幫我們逆向轉譯為 Gherkin 形式的規格。&lt;/p&gt;
+&lt;p&gt;提示詞⑤如下：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Now, incorporate the newly generated tests (including property-based tests) into the specification under a section titled &amp;ldquo;Validation Scenarios,&amp;rdquo; expressed in Gherkin format. This will make the specification more comprehensive and allow it to function as an &amp;ldquo;executable specification.&amp;rdquo; Finally, add the test codes in an appendix section titled &amp;ldquo;Tests.&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;最後會孵化出這樣的「規格/v3」：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Sinnet Game Specification&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;▋ GAME RULES&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Winning the Game&lt;/strong&gt;: A player wins by reaching at least four points and leading their opponent by at least two points.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Scoring System&lt;/strong&gt;: Points are described using specific terms:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;0 points → “Love”&lt;/li&gt;
+&lt;li&gt;1 point → “Fifteen”&lt;/li&gt;
+&lt;li&gt;2 points → “Thirty”&lt;/li&gt;
+&lt;li&gt;3 points → “Forty”&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Deuce&lt;/strong&gt;: If both players have at least three points and are tied, the score is called “Deuce.”&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Advantage&lt;/strong&gt;: If both players have at least three points, and one player leads by a single point, their score is called “Advantage.”&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;▋ VALIDATION SCENARIOS&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Normal Gameplay Scenarios&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Scenario: Initial game score is &amp;ldquo;Love - Love&amp;rdquo;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Given a new game has started&lt;/li&gt;
+&lt;li&gt;When no player has scored&lt;/li&gt;
+&lt;li&gt;Then the score should be &amp;ldquo;Love - Love&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Scenario: A player scores first&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Given a new game has started&lt;/li&gt;
+&lt;li&gt;When a player scores once&lt;/li&gt;
+&lt;li&gt;Then the score should reflect the correct score for that player&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Scenario: A player gains advantage&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Given both players have scored at least three times&lt;/li&gt;
+&lt;li&gt;When a player scores once more&lt;/li&gt;
+&lt;li&gt;Then the score should be &amp;ldquo;Advantage&amp;rdquo; for that player&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Scenario: A player wins the game&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Given a player has three points and the other player has less than three points&lt;/li&gt;
+&lt;li&gt;When the player scores the winning point&lt;/li&gt;
+&lt;li&gt;Then the player should be declared the winner&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Scenario: A player wins after having advantage&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Given a player has advantage&lt;/li&gt;
+&lt;li&gt;When the player scores one more point&lt;/li&gt;
+&lt;li&gt;Then the player should be declared the winner&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Scenario: A player gains advantage from deuce&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Given the score is deuce&lt;/li&gt;
+&lt;li&gt;When a player scores a point&lt;/li&gt;
+&lt;li&gt;Then the score should be &amp;ldquo;Advantage&amp;rdquo; for that player&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Edge Cases and Property-Based Testing&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Scenario: Deuce occurs at 3-3, 4-4, 5-5, and beyond&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Given both players have the same score of at least 3 points&lt;/li&gt;
+&lt;li&gt;When the scores are equal&lt;/li&gt;
+&lt;li&gt;Then the score should be &amp;ldquo;Deuce&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Property-Based Test: Deuce should occur at 3-3, 4-4, 5-5, and beyond&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Given both players have at least 3 points and the same score&lt;/li&gt;
+&lt;li&gt;When the scores are equal&lt;/li&gt;
+&lt;li&gt;Then the score should be &amp;ldquo;Deuce&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;▋ APPENDIX: TESTS&lt;/strong&gt;
+[測試規格如下]
+
+&lt;details&gt;
+  &lt;summary style=&#34;background-color:#f5f5f5;border:1px solid #ccc;padding:5px;&#34;&gt;
+    Python 版的測試規格
+    
+  &lt;/summary&gt;
+  &lt;div class=&#34;highlight-container&#34;&gt;
+
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+
+  
+  &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; pytest
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; hypothesis &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; given, strategies &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; st
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;test_initial_score&lt;/span&gt;():
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Scenario: Initial game score is &amp;#34;Love - Love&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Given a new game has started
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    When no player has scored
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Then the score should be &amp;#34;Love - Love&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    &amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    game &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; SinnetGame()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;assert&lt;/span&gt; game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;score() &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Love - Love&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;test_player1_scores_once&lt;/span&gt;():
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Scenario: Player 1 scores first
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Given a new game has started
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    When Player 1 scores once
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Then the score should be &amp;#34;Fifteen - Love&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    &amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    game &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; SinnetGame()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;player_scores(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;assert&lt;/span&gt; game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;score() &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Fifteen - Love&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;test_deuce_extended&lt;/span&gt;():
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Scenario: Deuce occurs at 3-3, 4-4, 5-5, and beyond
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Given both players have the same score of at least 3 points
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    When the scores are equal
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Then the score should be &amp;#34;Deuce&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    &amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; score &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; range(&lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        game &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; SinnetGame()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;scores &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [score, score]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;assert&lt;/span&gt; game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;score() &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Deuce&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;test_advantage_player1&lt;/span&gt;():
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Scenario: Player 1 gains advantage
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Given both players have scored at least three times
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    When Player 1 scores once more
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Then the score should be &amp;#34;Advantage Player 1&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    &amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    game &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; SinnetGame()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; _ &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; range(&lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;player_scores(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;player_scores(&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;player_scores(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;assert&lt;/span&gt; game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;score() &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Advantage Player 1&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;test_player1_wins&lt;/span&gt;():
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Scenario: Player 1 wins the game
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Given Player 1 has three points and Player 2 has less than three points
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    When Player 1 scores the winning point
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Then Player 1 should be declared the winner
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    &amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    game &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; SinnetGame()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; _ &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; range(&lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;player_scores(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;assert&lt;/span&gt; game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;score() &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Player 1 wins&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;test_transition_from_advantage_to_win&lt;/span&gt;():
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Scenario: Player 1 wins after having advantage
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Given Player 1 has advantage
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    When Player 1 scores one more point
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Then Player 1 should be declared the winner
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    &amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    game &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; SinnetGame()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; _ &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; range(&lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;player_scores(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;player_scores(&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;player_scores(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;player_scores(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;assert&lt;/span&gt; game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;score() &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Player 1 wins&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;test_transition_from_deuce_to_advantage&lt;/span&gt;():
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Scenario: Player 2 gains advantage from deuce
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Given the score is deuce
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    When Player 2 scores a point
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Then the score should be &amp;#34;Advantage Player 2&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    &amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    game &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; SinnetGame()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; _ &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; range(&lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;player_scores(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;player_scores(&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;player_scores(&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;assert&lt;/span&gt; game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;score() &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Advantage Player 2&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;@given&lt;/span&gt;(st&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;integers(min_value&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;, max_value&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;test_deuce_property_based&lt;/span&gt;(score):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Property-based test: Deuce should occur at 3-3, 4-4, 5-5, and beyond
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Given both players have at least 3 points and the same score
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    When the scores are equal
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Then the score should be &amp;#34;Deuce&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    &amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    game &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; SinnetGame()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;scores &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [score, score]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;assert&lt;/span&gt; game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;score() &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Deuce&amp;#34;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/details&gt;
+&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;這份「規格/v3」，不僅有規格文章，還有測試集，又臭又長，要是換成是我自己一個人來寫，我多半沒這個耐心。&lt;/p&gt;
+&lt;p&gt;你可能會懷疑：比起之前的「初始規格/v1」及「調整規格/v2」，這份孵化出來的「規格/v3」是否真的有獨到之處？&lt;/p&gt;
+&lt;p&gt;且讓我們繼續看下去。&lt;/p&gt;
+&lt;h2 id=&#34;實驗測試驅動&#34;&gt;實驗🅓、測試驅動&lt;/h2&gt;
+&lt;p&gt;在前一個實驗中，我們和 GenAI 一起孵化出「可執行的規格」。現在，我們就來根據這份「規格/v3」開啟全新的對話，叫 GenAI 重新生成程式，並根據「規格/v3」附錄的測試集予以測試檢驗。&lt;/p&gt;
+&lt;p&gt;且讓我們評估看看究竟值不值得如此大費周章。&lt;/p&gt;
+&lt;p&gt;測試驅動的實驗步驟如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;①給初始規格/v1 ❯ ③調整規格/v2 ❯ ④生成程式及測試 ❯ ⑤將測試納入規格/v3 ◄ 之前的步驟&lt;/li&gt;
+&lt;li&gt;⑥根據規格/v3 重新生成程式，並予以測試檢驗 ◄ 現在的步驟&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;請 GenAI 開啟全新的對話，用這份熱騰騰的「規格/v3」重新生成程式。&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2025/02/flow-d.png&#34; alt=&#34;實驗🅓流程&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2025/02/flow-d.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;實驗🅓流程&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;提示詞⑥如下：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Now, generate a Python program based on the following specification. [貼上 規格/v3 全文]&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;吐出的主體程式碼，細節可能每次都有些不同，以下是較常見的版本：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2025/02/code-d1.png&#34; alt=&#34;提示詞⑥產生的主體程式碼&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2025/02/code-d1.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;提示詞⑥產生的主體程式碼&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;GenAI 有隨機性行為，未必每次都會比根據之前兩份規格（初始規格/v1 及 調整規格/v2）產生的程式表現得更好，但至少這是可以通過測試的。萬一通不過測試，大可叫 GenAI 去 debug。這就是我們之前與 AI 協作，努力調教頭尾兩端（需求規格與測試驗收）的好處。只要向 AI 指出這項錯誤，它就會乖乖認錯，並且自動 debug。&lt;/p&gt;
+&lt;p&gt;只要程式是正確的，隨時都可以叫 GenAI 去重構，重構到滿意為止，如此即可兼顧正確性與各種內在品質標準。&lt;/p&gt;
+&lt;p&gt;這就是當初在「規格/v3」埋下「可執行的規格」伏筆的好處。&lt;/p&gt;
+&lt;h2 id=&#34;實驗逆向工程&#34;&gt;實驗🅔、逆向工程&lt;/h2&gt;
+&lt;p&gt;敏捷宣言說：「&lt;strong&gt;可用的軟體&lt;/strong&gt; 重於 &lt;strong&gt;詳盡的文件&lt;/strong&gt;」。我們想看看，GenAI 是否真的能夠從「可用的軟體」逆向工程出「詳盡的文件」，讓我們評估兩者究竟誰比較重要，誰可以當成 “ground truth”。&lt;/p&gt;
+&lt;p&gt;逆向工程的實驗步驟如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;⑥根據規格/v3 重新生成程式，並予以測試檢驗 ◄ 之前的步驟&lt;/li&gt;
+&lt;li&gt;⑦逆向工程規格/v4 ◄ 現在的步驟&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2025/02/flow-e.png&#34; alt=&#34;實驗🅔流程&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2025/02/flow-e.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;實驗🅔流程&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;請 GenAI 開啟全新的對話，拿前一個實驗的程式碼及測試，請它設法轉譯成人類的語言。&lt;/p&gt;
+&lt;p&gt;提示詞⑦如下：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Generate a specification based on the following Python code and tests. The specification should include two sections: 1. Sinnet Game Rules – Clearly structured and expressed in natural language. 2. Validation Scenarios – Presented in Gherkin format.  [附上主體程式碼及測試]&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;我驚訝的發現，GenAI 劈頭就給我這麼一句話：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The Sinnet Game is a simplified scoring system inspired by tennis. The objective is for a player to win by reaching at least four points and having a two-point lead over the opponent.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;看起來，可能是程式碼寫得太好了，測試寫得太好了，變數及函式名稱取得太好了，註解寫得太好了，讓 GenAI 有足夠的線索察覺到，這和現實世界的網球規則高度雷同。&lt;/p&gt;
+&lt;p&gt;這也證明了，清晰易懂的程式碼，不僅讓人類舒服，連 GenAI 也受益。&lt;/p&gt;
+&lt;h2 id=&#34;敏捷的再思&#34;&gt;敏捷的再思&lt;/h2&gt;
+&lt;p&gt;同樣的武器，在高手與菜鳥手上，能玩出的花樣自然會有高低落差之別。&lt;/p&gt;
+&lt;p&gt;儘管高手是草木竹石均可為劍的；但善用好的武器，能讓我們付出較少的精力，就做出近似高手的表現。&lt;/p&gt;
+&lt;p&gt;怎麼樣善用 GenAI 這項神兵利器？&lt;/p&gt;
+&lt;p&gt;前面幾個實驗中，儘管 GenAI 看起來非常厲害，但是別忘了，我所下的提示詞，其實已經將人類在程式設計領域的經驗高度濃縮進去。缺少這些知識，未必能夠和 GenAI 一來一往充分協作出好的成果：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Executable specification 很重要。&lt;/li&gt;
+&lt;li&gt;Specification-based testing 很重要。&lt;/li&gt;
+&lt;li&gt;Property-based testing 很重要。&lt;/li&gt;
+&lt;li&gt;AAA (arrange-act-assert) 很重要。&lt;/li&gt;
+&lt;li&gt;Refactoring 很重要。&lt;/li&gt;
+&lt;li&gt;Shift-left 很重要。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;這些，其實都是敏捷開發領域一向重視的實踐。&lt;/p&gt;
+&lt;p&gt;因此，在 GenAI 時代，就算敏捷四大宣言之一「&lt;strong&gt;可用的軟體&lt;/strong&gt; 重於 &lt;strong&gt;詳盡的文件&lt;/strong&gt;」未必依然成立，但那也是因為藉由 GenAI 之力，我們終於可以把「可用的軟體」的內涵，用更有效率的方式轉寫到「詳盡的文件」裡面，讓它成為更有意義的 “ground truth”。&lt;/p&gt;
+&lt;p&gt;不是因為敏捷宣言過時了，而是 GenAI 成全了敏捷宣言。&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;根據 Google CEO 在 &lt;a href=&#34;https://blog.google/inside-google/message-ceo/alphabet-earnings-q3-2024/&#34;&gt;(2024) Q3 earnings call: CEO’s remarks&lt;/a&gt; 的說法：“Today, more than a quarter of all new code at Google is generated by AI, then reviewed and accepted by engineers. This helps our engineers do more and move faster.”&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;GitHub CEO 在 2023 年中一場&lt;a href=&#34;https://www.freethink.com/robots-ai/github-copilot&#34;&gt;專訪&lt;/a&gt;時，大膽預言：“Sooner than later, 80% of the code is going to be written by Copilot.”&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description>
+      
     </item>
+    
     <item>
       <title>從 Code Review 的小事看到大事</title>
       <link>//william-yeh.net/post/2023/09/on-code-review/</link>
       <pubDate>Wed, 13 Sep 2023 20:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2023/09/on-code-review/</guid>
-      <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;&#xA;&lt;p&gt;我很喜歡 Java 大師 &lt;a href=&#34;https://en.wikipedia.org/wiki/Joshua_Bloch&#34;&gt;Joshua Bloch&lt;/a&gt; 在《&lt;a href=&#34;https://williampjyeh.notion.site/d265b736b05f42d885ef40bb0a48786f&#34;&gt;編程的頂尖對話&lt;/a&gt;》所說的：&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;即使是想把一個很小的程式寫對也是非常難的。&lt;/p&gt;&#xA;&lt;p&gt;認為自己程式沒有 bug 就是在愚弄自己。程式肯定有 bug，（只是）多數情況下，程式裡的 bug 夠少，足以使其完成任務。&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;p&gt;是的，100% 正確的程式或許很難達成，或許連定義起來都很困難，但我們還是得努力趨近它，讓我們工作更有成就感，更有信心能夠交付價值，也更少因不慎流出去的瑕疵而疲於奔命。&lt;/p&gt;&#xA;&lt;p&gt;Joshua Bloch 緊接著又說：&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;既然寫正確的程式那麼困難，我們就應該盡力取得幫助。所以，能減少 bug 的所有東西都是好的。這就是我是靜態型別和靜態分析的信徒的原因。&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;p&gt;是的，我們需要動員許多力量，取得許多幫助，才能夠趨近於正確的程式。可動員的許多力量當中，無疑的 code review 是重要的基礎，可惜的是，許多團隊連這基礎都還有諸多可改善之處，這也限縮了團隊能進一步發揮的價值。&lt;/p&gt;&#xA;&lt;p&gt;Code review 乍看之下是小事，但若認真探討起來還真是不小。在我多年輔導各種成熟度團隊的經驗中，有六個基於 code review 以及衍生出來的議題可深入探討：&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;基本信念：品質來自正確地做事&lt;/li&gt;&#xA;&lt;li&gt;掌握基本功與領域知識&lt;/li&gt;&#xA;&lt;li&gt;凝聚團隊公約的共識&lt;/li&gt;&#xA;&lt;li&gt;嘗試更好的協同理解技巧&lt;/li&gt;&#xA;&lt;li&gt;讓進步看得見&lt;/li&gt;&#xA;&lt;li&gt;支持長久研發的措施&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;如果你所在的團隊已經啟動 Scrum 或 Kanban 研發流程，恭喜你，你們已經有很好的流程基礎可在這六大議題上面精進，只需要正確實施（玩真的！）你們所採用的敏捷流程。文中我會大量連結到 Scrum 及 Kanban 的要素。請確實「守」你們該守的流程，不要驟然「破」或「離」。&lt;/p&gt;&#xA;&lt;p&gt;全文很長，如果你是現役的程式設計師，可先讀①②以瞭解 engineering disciplines；如果你是 team lead，可先讀③④以瞭解團隊動力；如果你是管理層，可先讀⑤⑥，尤其是⑤關於管理面的施力點。&lt;/p&gt;</description>
+      
+        <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+&lt;p&gt;我很喜歡 Java 大師 &lt;a href=&#34;https://en.wikipedia.org/wiki/Joshua_Bloch&#34;&gt;Joshua Bloch&lt;/a&gt; 在《&lt;a href=&#34;https://williampjyeh.notion.site/d265b736b05f42d885ef40bb0a48786f&#34;&gt;編程的頂尖對話&lt;/a&gt;》所說的：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;即使是想把一個很小的程式寫對也是非常難的。&lt;/p&gt;
+&lt;p&gt;認為自己程式沒有 bug 就是在愚弄自己。程式肯定有 bug，（只是）多數情況下，程式裡的 bug 夠少，足以使其完成任務。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;是的，100% 正確的程式或許很難達成，或許連定義起來都很困難，但我們還是得努力趨近它，讓我們工作更有成就感，更有信心能夠交付價值，也更少因不慎流出去的瑕疵而疲於奔命。&lt;/p&gt;
+&lt;p&gt;Joshua Bloch 緊接著又說：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;既然寫正確的程式那麼困難，我們就應該盡力取得幫助。所以，能減少 bug 的所有東西都是好的。這就是我是靜態型別和靜態分析的信徒的原因。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;是的，我們需要動員許多力量，取得許多幫助，才能夠趨近於正確的程式。可動員的許多力量當中，無疑的 code review 是重要的基礎，可惜的是，許多團隊連這基礎都還有諸多可改善之處，這也限縮了團隊能進一步發揮的價值。&lt;/p&gt;
+&lt;p&gt;Code review 乍看之下是小事，但若認真探討起來還真是不小。在我多年輔導各種成熟度團隊的經驗中，有六個基於 code review 以及衍生出來的議題可深入探討：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;基本信念：品質來自正確地做事&lt;/li&gt;
+&lt;li&gt;掌握基本功與領域知識&lt;/li&gt;
+&lt;li&gt;凝聚團隊公約的共識&lt;/li&gt;
+&lt;li&gt;嘗試更好的協同理解技巧&lt;/li&gt;
+&lt;li&gt;讓進步看得見&lt;/li&gt;
+&lt;li&gt;支持長久研發的措施&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;如果你所在的團隊已經啟動 Scrum 或 Kanban 研發流程，恭喜你，你們已經有很好的流程基礎可在這六大議題上面精進，只需要正確實施（玩真的！）你們所採用的敏捷流程。文中我會大量連結到 Scrum 及 Kanban 的要素。請確實「守」你們該守的流程，不要驟然「破」或「離」。&lt;/p&gt;
+&lt;p&gt;全文很長，如果你是現役的程式設計師，可先讀①②以瞭解 engineering disciplines；如果你是 team lead，可先讀③④以瞭解團隊動力；如果你是管理層，可先讀⑤⑥，尤其是⑤關於管理面的施力點。&lt;/p&gt;
+&lt;h2 id=&#34;-基本信念品質來自正確地做事&#34;&gt;① 基本信念：品質來自正確地做事&lt;/h2&gt;
+&lt;p&gt;Code review，甚至任何一種 review，都源自一個單純的理由：多一個人來確保品質。&lt;/p&gt;
+&lt;p&gt;品質是計畫、設計和內建而來的，不是靠檢驗出來的。換言之，品質來自正確地做事。&lt;/p&gt;
+&lt;p&gt;怎樣才叫做「正確地做事」？&lt;/p&gt;
+&lt;p&gt;談「正確地做事」之前，先確定我們擁有共同的基本信念。&lt;/p&gt;
+&lt;h3 id=&#34;collective-ownership&#34;&gt;Collective ownership&lt;/h3&gt;
+&lt;p&gt;Odd-e 三位專家在 2023-08-31 晚上有一場很精彩的 webinar【高效 Scrum 團隊所需的能力】。在 &lt;a href=&#34;https://www.youtube.com/watch?v=13clptdw6J8&amp;amp;t=3816s&#34;&gt;1h:03m:36s&lt;/a&gt; 聊到「工程能力」時，有一句語重心長的話：「所有跟 eXtreme Programming 相關的工程能力都很重要。」&lt;/p&gt;
+&lt;p&gt;eXtreme Programming (XP) 第一版與第二版提到許多工程實踐，此刻我想特別點出 &amp;ldquo;&lt;a href=&#34;http://extremeprogramming.org/rules/collective.html&#34;&gt;collective ownership&lt;/a&gt;&amp;rdquo; 這一條：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Collective Ownership encourages everyone to contribute new ideas to all segments of the project. No one person becomes a bottleneck for changes.&lt;/p&gt;
+&lt;p&gt;In practice collective ownership is actually more reliable than putting a single person in charge of watching specific classes. Especially since a person may leave the project at any time.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;積極面來說，collective ownership 可善用集體智慧提升設計品質，可促成知識共享，消極面則可降低公車指數 (bus factor)。 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;萬一連 &amp;ldquo;collective ownership&amp;rdquo; 都不是團隊想要追求的境界，或許這個團隊從一開始的組成階段 (team forming) 就有問題了；我建議，解決了之後，再談以下的議題吧。否則，連「共同持有」的心態都沒有，還有什麼動機要去 review 別人的 code 呢？&lt;/p&gt;
+&lt;h3 id=&#34;four-eyes-principle&#34;&gt;Four-eyes principle&lt;/h3&gt;
+&lt;p&gt;Code review 的出發點很單純：多一個人來確保品質，也就是說「不要只靠自己的兩隻眼睛，要再加上別人的兩隻眼睛，總共要用四隻眼睛來確保品質。」&lt;/p&gt;
+&lt;p&gt;Four-eyes principle 雖然既古老又原始，但管用，因此就連&lt;a href=&#34;https://unido.org/overview/member-states/change-management/faq/what-four-eyes-principle&#34;&gt;聯合國&lt;/a&gt;及&lt;a href=&#34;https://cros-legacy.ec.europa.eu/content/four-eyes-principle_en&#34;&gt;歐盟&lt;/a&gt;這麼先進的國際性組織都仍在使用。&lt;/p&gt;
+&lt;p&gt;再引述一次 Joshua Block 的話：「既然寫正確的程式那麼困難，我們就應該盡力取得幫助。」&lt;/p&gt;
+&lt;p&gt;就算我們不想時時刻刻都像 XP 主張的 pair programming（甚至更激進的 mob programming），但至少在關鍵時刻，尤其是在 design review 及 code review 的時刻，就該好好善用這種原始方式取得幫助。&lt;/p&gt;
+&lt;p&gt;每當有「現在可不可以暫時跳過 four eyes？」的衝動，或許該換個角度思考「現在有沒有方法讓 four eyes 更有效率且不犧牲品質？」&lt;/p&gt;
+&lt;h3 id=&#34;working-backwards&#34;&gt;Working backwards&lt;/h3&gt;
+&lt;p&gt;「逆向工作法」或「以終為始」是很有威力的心法。用在敏捷開發上，就是熟知的 user story &amp;ldquo;&lt;a href=&#34;https://agileforall.com/new-to-agile-invest-in-good-user-stories&#34;&gt;INVEST&lt;/a&gt;&amp;rdquo; 原則當中的 V (Valuable) 及 T (Testable)：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Valuable - 品質的起頭：這個 user story 是為了交付什麼價值？是為了誰？&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Testable - 品質的末端：該怎麼確定這個 user story 已經做完了 (done)？該怎麼驗收？&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;雖然前面曾提到「品質不是靠檢驗出來的」，但若能在一開頭就設想末端的檢驗標準，甚至設計出可讓將來更容易確實檢驗的結構，就是「內建品質」的精神——這就是敏捷實踐者常講的 &amp;ldquo;acceptance criteria&amp;rdquo; 及 &amp;ldquo;test-driven/behavior-driven design&amp;rdquo; 的用意。&lt;/p&gt;
+&lt;p&gt;Code review 就是讓 four eyes 共同檢視 Valuable 及 Testable 的好時機，喔，不，甚至早在 Sprint Planning 或 Refinement 時就應該來 review 了——現在不是流行凡事都要 &amp;ldquo;shift left&amp;rdquo; 嗎？&lt;/p&gt;
+&lt;h3 id=&#34;品質不是白吃的午餐&#34;&gt;品質不是白吃的午餐&lt;/h3&gt;
+&lt;p&gt;品質是計畫、設計和內建而來的。&lt;/p&gt;
+&lt;p&gt;計畫與設計出內建品質，是需要時間、精力、技能的。孕育出 collective ownership、four eyes、working backwards 的意識及紀律，也是需要時間、精力、技能的。&lt;/p&gt;
+&lt;p&gt;畢竟品質不是白吃的午餐。&lt;/p&gt;
+&lt;p&gt;在推銷這些進步理念時，讓團隊想像藉由「追求高品質」將會帶來的效益，或是以具體事證呈現因為「漠視低品質」而正在且將會持續深陷的痛苦泥淖，讓團隊做出選擇，願意投資時間、精力、技能在品質改進上。&lt;/p&gt;
+&lt;p&gt;你能舉出「不好好進行 code review」最終會引發的災難嗎？這樣的災難是大家願意承擔的嗎？用這個來鞏固大家願意投資在品質上面的動機吧。&lt;/p&gt;
+&lt;h2 id=&#34;-掌握基本功與領域知識&#34;&gt;② 掌握基本功與領域知識&lt;/h2&gt;
+&lt;p&gt;不可諱言，code review 要做得好，不是大聲嚷嚷精神喊話就會自動美夢成真，是需要自我提升能力的，尤其是研發基本功與領域知識。&lt;/p&gt;
+&lt;p&gt;不過，以下提到的這些能力，就算不談 code review，也是工程師本來就該自我提升的。&lt;/p&gt;
+&lt;p&gt;所以，結論是：請把它們當成是必修課吧，這會讓你成為更稱職的軟體研發工程師。&lt;/p&gt;
+&lt;h3 id=&#34;clean-code&#34;&gt;Clean code&lt;/h3&gt;
+&lt;p&gt;Turing Award 得主 &lt;a href=&#34;https://en.wikipedia.org/wiki/Tony_Hoare&#34;&gt;C.A.R. Hoare&lt;/a&gt; 有一段經典名言：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;There are two ways of constructing a software design: One way is to make it so simple that there are &lt;em&gt;obviously&lt;/em&gt; no deficiencies, and the other way is to make it so complicated that there are no &lt;em&gt;obvious&lt;/em&gt; deficiencies. The first method is far more difficult.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;單純到「顯然沒有缺陷」 vs. 複雜到「沒有明顯的缺陷」，你願意選擇哪一種？&lt;/p&gt;
+&lt;p&gt;寫出 clean code，可說是程式設計師的職業道德。坊間早有 clean code 及 refactoring 相關的經典書籍，網路上也有一大堆相關文章，請花點時間自我充實吧。&lt;/p&gt;
+&lt;h3 id=&#34;guideline&#34;&gt;Guideline&lt;/h3&gt;
+&lt;p&gt;除了 clean code 技能之外，我們還需要一些讓程式變得更好的 code review 指導方針。&lt;/p&gt;
+&lt;p&gt;讓我們向 Google 取經吧 &lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;。Google 在 &amp;ldquo;&lt;a href=&#34;https://google.github.io/eng-practices/review/reviewer/looking-for.html&#34;&gt;What to look for in a code review&lt;/a&gt;&amp;rdquo; 一文建議了一些 review 的重點：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Design&lt;/li&gt;
+&lt;li&gt;Functionality&lt;/li&gt;
+&lt;li&gt;Complexity&lt;/li&gt;
+&lt;li&gt;Tests&lt;/li&gt;
+&lt;li&gt;Naming&lt;/li&gt;
+&lt;li&gt;Comments&lt;/li&gt;
+&lt;li&gt;Style&lt;/li&gt;
+&lt;li&gt;Consistency&lt;/li&gt;
+&lt;li&gt;Documentation&lt;/li&gt;
+&lt;li&gt;Every line&lt;/li&gt;
+&lt;li&gt;Context&lt;/li&gt;
+&lt;li&gt;Good things&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;《&lt;a href=&#34;https://williampjyeh.notion.site/999d5b9d126a4da39db13eaa401d6ab3&#34;&gt;軟體測試實務：業界成功案例與高效實踐（第一冊）&lt;/a&gt;》第四章也建議了一些 code review 的重點：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;是否有明顯的邏輯錯誤？&lt;/li&gt;
+&lt;li&gt;有無遵循既有的程式碼編寫規範？&lt;/li&gt;
+&lt;li&gt;邏輯的測試保護足夠嗎？&lt;/li&gt;
+&lt;li&gt;有完整實現需求嗎？&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;如果是在 DevOps 合一的團隊，甚至還會 review 一些 design for observability 的要點。以上都很值得放在團隊的 Definition of Done 或 PR/MR template。&lt;/p&gt;
+&lt;p&gt;注意事項洋洋灑灑，每當有「現在可不可以暫時跳過？」的衝動時，或許該換個角度自問：「此刻若不好好 review 這些地方，我能承擔抄捷徑的後果嗎？」&lt;/p&gt;
+&lt;h3 id=&#34;small-batch&#34;&gt;Small batch&lt;/h3&gt;
+&lt;p&gt;敏捷陣營推崇小批量開發：小批量的東西容易估算，容易寫，容易理解，容易測試，容易部署，容易取得回饋，容易歸因。&lt;/p&gt;
+&lt;p&gt;DevOps 陣營也推崇小批量。Google 在 &amp;ldquo;&lt;a href=&#34;https://cloud.google.com/architecture/devops/devops-process-working-in-small-batches&#34;&gt;DevOps process: Working in small batches&lt;/a&gt;&amp;rdquo; 一文說道：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Working in small batches is one of a set of capabilities that drive higher software delivery and organizational performance. These capabilities were discovered by the DORA State of DevOps research program, an independent, academically rigorous investigation into the practices and capabilities that drive high performance.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;如果不是因為技術問題無法小批量提交 PR/MR，而是因為上游的 backlog item 就是如此大，或許團隊可以嘗試在 Sprint Planning 或 Refinement 時套用 &lt;a href=&#34;//william-yeh.net/post/2022/11/spidr/&#34;&gt;SPIDR 法&lt;/a&gt;來拆解過大的 backlog item。&lt;/p&gt;
+&lt;h3 id=&#34;domain-knowledge&#34;&gt;Domain knowledge&lt;/h3&gt;
+&lt;p&gt;如果身處教育資源不那麼完備的團隊，想要養成領域知識，得自助加上人助：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;自助：盡量回到學生時期的好學心態，並盡量掌握有效率的學習方法。尤其是近年來流行的卡片盒筆記法，很值得一試。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;人助：尋求協助，並設法將學到的東西反饋到團隊的公共資產：文件、簡報、錄影、自動化測試，造福你的左右鄰兵，也造福後人。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;context&#34;&gt;Context&lt;/h3&gt;
+&lt;p&gt;即使有了領域知識，但論及理解需求，又是另外一回事了。&lt;/p&gt;
+&lt;p&gt;理解需求，除了老生常談的敏感度、傾聽與提問技巧之外，敏捷圈發展出來的 &lt;a href=&#34;https://gojko.net/books/specification-by-example/&#34;&gt;Specification by Example&lt;/a&gt; 技術，很值得大家嘗試。&lt;/p&gt;
+&lt;p&gt;而且，既然都已經口頭問出來這些實例了，何妨順便用驗收測試予以固化？&lt;/p&gt;
+&lt;h3 id=&#34;config&#34;&gt;Config&lt;/h3&gt;
+&lt;p&gt;現代軟體不能只顧好核心業務邏輯，還得處理全球化、客製化、混合雲、多租戶等外圍需求，要能透過 feature flag 動態即時切換，甚至還要能讓用戶自助服務。&lt;/p&gt;
+&lt;p&gt;組態管理比以往重要許多，複雜度不亞於程式碼管理，有時甚至超過。&lt;/p&gt;
+&lt;p&gt;程式碼的管理，有 git flow、GitHub flow、GitLab flow 等流行的作法，那麼，組態管理呢？&lt;/p&gt;
+&lt;p&gt;對於 legacy 系統，盤點既有組態，給予合適的現狀描述，至少是第一步。考古之餘，別忘了反饋到團隊的公共資產上。&lt;/p&gt;
+&lt;h2 id=&#34;-凝聚團隊公約的共識&#34;&gt;③ 凝聚團隊公約的共識&lt;/h2&gt;
+&lt;p&gt;Code review 是兩個人之間的活動，一個是 reviewer，另一個是 reviewee。喔，其實更常見的情況是，reviewer 要寫成複數 &amp;ldquo;reviewers&amp;rdquo;。&lt;/p&gt;
+&lt;p&gt;Code review 不只是兩個人之間的活動，更是團隊的活動。&lt;/p&gt;
+&lt;p&gt;Marcus Buckingham 在〈&lt;a href=&#34;https://www.hbrtaiwan.com/special-topics/18933/power-of-hidden-team&#34;&gt;隱藏版團隊力量大 (Power of Hidden Teams)&lt;/a&gt;〉一文提到團隊的力量 &lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;大多數工作實際上都是團隊進行的工作。團隊是你工作經驗的現實。你的責任似乎連結到其他人的責任；你的長處似乎能與其他人的長處互補；你的左右都有人幫你留意，讓你保持自信，對你的工作給予回應，分享你對「好」的想法，在你看起來快要承受不住時伸出援手，並在你陷入困境時給予意見。這種團隊體驗的品質，正是你工作體驗的品質。&lt;/p&gt;
+&lt;p&gt;你的團隊體驗會促進很多事情：你在工作時的生產力；你在工作時是否感到快樂；你有多少創意、創新和復原力；以及你選擇留在公司多久。換句話說，在你的工作上，優秀的團隊和團隊合作不是「有了也不錯」的事物，而是必須要擁有。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;現代軟體研發是一個群體的事業， &lt;del&gt;有人就有江湖&lt;/del&gt;  有人就有協作的議題。Code review 既然是團隊的活動，免不了也會有 &lt;del&gt;江湖的議題&lt;/del&gt; 協作的議題。&lt;/p&gt;
+&lt;p&gt;若你的團隊已經啟動 Scrum，以下都是很值得在 retrospective 充分探討的好議題，讓團隊公約成為團隊協作的助力。&lt;/p&gt;
+&lt;h3 id=&#34;過與不及的拿捏&#34;&gt;過與不及的拿捏&lt;/h3&gt;
+&lt;p&gt;Code review 的尺度，該鬆還是該緊？&lt;/p&gt;
+&lt;p&gt;「太鬆」當然並非我們樂見，但「太緊」呢？&lt;/p&gt;
+&lt;p&gt;如果團隊對於鬆與緊的尺度難以達到共識，不妨聽聽看 Google 怎麼說。&lt;/p&gt;
+&lt;p&gt;Google 在 &amp;ldquo;&lt;a href=&#34;https://google.github.io/eng-practices/review/reviewer/looking-for.html&#34;&gt;What to look for in a code review&lt;/a&gt;&amp;rdquo; 一文提出他們認為最起碼的品質標準是：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Don&amp;rsquo;t accept CLs (change lists) that degrade the code health of the system.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;在業界，我們常暱稱它是「童子軍規則」(The Boy Scout Rule)：「離開營地前，讓營地比使用前更加乾淨。Always leave the campground cleaner than you found it.」&lt;/p&gt;
+&lt;p&gt;至於尺度太緊的問題，Google 在 &amp;ldquo;&lt;a href=&#34;https://google.github.io/eng-practices/review/reviewer/standard.html&#34;&gt;The Standard of code review&lt;/a&gt;&amp;rdquo; 一文提出他們的看法：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;In general, reviewers should favor approving a CL once it is in a state where it definitely improves the overall code health of the system being worked on, even if the CL isn&amp;rsquo;t perfect.  That is &lt;em&gt;the&lt;/em&gt; senior principle among all of the code review guidelines.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;儘管 Google 是菁英薈萃之地，但關於這一點倒是滿務實的，不會追求完美主義。&lt;/p&gt;
+&lt;h3 id=&#34;cadence&#34;&gt;Cadence&lt;/h3&gt;
+&lt;p&gt;很多人怕 code review 會打斷別人的工作節奏，也怕自己的節奏被打斷。因此我常常看到看板上面擠壓許多有待 review 的 PR/MR，我輔導過的團隊，也幾乎都會在 retrospective 提出這項熱門議題。&lt;/p&gt;
+&lt;p&gt;聽聽看 Google 怎麼說。&amp;quot;&lt;a href=&#34;https://google.github.io/eng-practices/review/reviewer/speed.html&#34;&gt;Speed of Code Reviews&lt;/a&gt;&amp;quot; 一文主張：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;If you are not in the middle of a focused task, you should do a code review shortly after it comes in.  One business day is the maximum time it should take to respond to a code review request.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;可見 Google 很務實地將焦點放在 flow 上面：若無特殊理由，要以團隊目標為重。&lt;/p&gt;
+&lt;p&gt;《&lt;a href=&#34;https://williampjyeh.notion.site/999d5b9d126a4da39db13eaa401d6ab3&#34;&gt;軟體測試實務：業界成功案例與高效實踐（第一冊）&lt;/a&gt;》第四章則提出團隊一起 code review 的常見做法，以避免個別人士零零星星被打斷：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;除了找另一個團隊成員協助 code review 外，在多數團隊成員不熟悉相關程式碼時，我們也會有 mob code review，去加強知識擴散的效果。&lt;/p&gt;
+&lt;p&gt;鑑於此種需要專心投入的特質，有些團隊會直接定時進行 mob code review（例如：每日 daily meeting 之後或是下班之前），以避免當前工作被打斷。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;大家可以參考這些業界常見的做法，改善自己團隊的 code review 節奏。&lt;/p&gt;
+&lt;h3 id=&#34;process&#34;&gt;Process&lt;/h3&gt;
+&lt;p&gt;敏捷路線不太鼓勵過多 top-down 的流程約束，更希望團隊基於經驗主義自行湧現出合適的流程。我鼓勵團隊挑選感興趣的部份實踐看看，並在 retrospective 充分反思。&lt;/p&gt;
+&lt;p&gt;如果你是走 Scrum 路線，請善用 Definition of Done 作為品質共識。像《&lt;a href=&#34;https://williampjyeh.notion.site/999d5b9d126a4da39db13eaa401d6ab3&#34;&gt;軟體測試實務：業界成功案例與高效實踐（第一冊）&lt;/a&gt;》第四章就提到：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;有些團隊甚至在他們的實體或 Jira 的 Scrum board 上，將 code review 強制設為必需通過的一個階段，未 code review 過的任務就不算完成。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;列入 Definition of Done 還有一個好處：code review 就不再是隱藏成本，而是正大光明的 task，需要被規劃，需要被估點，也需要認真投入。&lt;/p&gt;
+&lt;p&gt;如果你是走 Kanban 路線，可考慮新增一個名叫 &amp;ldquo;code review&amp;rdquo; 的 column，並設下 WIP 及 policy。接下來，你會驚訝地發現 code review 的 flow 是多麼順暢⋯⋯或是不順暢。請善用 Kanban 視覺化的威力。&lt;/p&gt;
+&lt;h2 id=&#34;-嘗試更好的協同理解技巧&#34;&gt;④ 嘗試更好的協同理解技巧&lt;/h2&gt;
+&lt;p&gt;在理想世界中，我們程式要實作的任務很單純，所需的背景知識大家都有，程式碼寫得清晰易懂，PR/MR 也充分交代 reviewer 需注意的事項。這種情況下，reviewer 或許只需要動動眼、動動滑鼠、動動腦，就能善盡 code review 責任。&lt;/p&gt;
+&lt;p&gt;理想世界不常發生，是吧？&lt;/p&gt;
+&lt;p&gt;真實世界中，要實作的任務不那麼單純，所需的背景知識不見得大家都有，程式碼埋藏一些神祕邏輯，如果我們繼續仰賴低頻寬的程式碼溝通方式，會讓 reviewer 只能根據眼前所見的浮面資訊進行浮面的 review，最終只能算是表面工夫的 review，輸出低品質的程式。&lt;/p&gt;
+&lt;p&gt;因此，整個團隊都需要學習更好的協同理解技巧：放大溝通頻寬，尋求深度資訊。&lt;/p&gt;
+&lt;h3 id=&#34;放大溝通頻寬&#34;&gt;放大溝通頻寬&lt;/h3&gt;
+&lt;p&gt;一對一的溝通頻寬太低了，有必要的話，集體一起 code review 吧。&lt;/p&gt;
+&lt;p&gt;程式碼的溝通頻寬太低了，大家可以善用嘴巴，善用白板、螢幕（如果你們坐在附近）、投影機（如果需要多人一起看）、遠距會議軟體（如果是異地辦公的團隊）。&lt;/p&gt;
+&lt;p&gt;《&lt;a href=&#34;https://williampjyeh.notion.site/999d5b9d126a4da39db13eaa401d6ab3&#34;&gt;軟體測試實務：業界成功案例與高效實踐（第一冊）&lt;/a&gt;》第四章就介紹過這種大絕招：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;除了找另一個團隊成員協助 code review 外，在多數團隊成員不熟悉相關程式碼時，我們也會有 mob code review，去加強知識擴散的效果。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;如果連這種大絕招都無效，或許團隊成員彼此落差實在太大，需要長期治療。&lt;/p&gt;
+&lt;h3 id=&#34;尋求深度資訊&#34;&gt;尋求深度資訊&lt;/h3&gt;
+&lt;p&gt;避免 reviewer 只能根據浮面資訊進行浮面的 review，團隊需要提供更多深度資訊以協助 reviewer。&lt;/p&gt;
+&lt;p&gt;我從 &amp;ldquo;&lt;a href=&#34;https://axolo.co/blog/part-3-github-pull-request-template&#34;&gt;GitHub pull request template&lt;/a&gt;&amp;rdquo; 摘錄一些有助於 code review 的資訊，可做為大家的出發點：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Ticket number and link&lt;/li&gt;
+&lt;li&gt;How has this been tested?
+&lt;ul&gt;
+&lt;li&gt;Please describe the tests that you ran to verify your design. Provide instructions so we can &lt;em&gt;reproduce&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;Please also list any relevant details for your test configuration.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Checklist:
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; I have &lt;em&gt;commented&lt;/em&gt; my code, particularly in hard-to-understand areas&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; I have made corresponding changes to the &lt;em&gt;documentation&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; I have added tests that &lt;em&gt;prove&lt;/em&gt; my fix is effective or that my feature works&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; New and existing &lt;em&gt;unit tests&lt;/em&gt; pass locally with my changes&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Screenshots (if appropriate)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;我還曾經身處於有這種內規的團隊：「沒看到 unit test 的報表，就不予以 code review。」很硬！但那卻是我非常享受程式設計的一段經歷。&lt;/p&gt;
+&lt;h2 id=&#34;-讓進步看得見&#34;&gt;⑤ 讓進步看得見&lt;/h2&gt;
+&lt;p&gt;Code review 的目的，是善用集體智慧提升設計品質，促成知識共享，讓我們工作更有成就感，更有信心能夠交付價值，也更少因不慎流出去的瑕疵而疲於奔命。&lt;/p&gt;
+&lt;p&gt;直接的效益是：提升品質，降低風險，間接的效益是：提升團隊的長期生產力，進而縮短上市時間，提升客戶滿意度。&lt;/p&gt;
+&lt;p&gt;這些效益都是偏向企業內部流程的構面，甚至是學習與成長的構面，偏向落後指標，且都不容易直接衡量。若以系統思考角度來說，這些效益有很明顯的滯延現象，短期內甚至還可能不利，急功近利的人，很容易因此落入「捨本逐末」(shifting the burden) 及「目標侵蝕」(eroding goals) 的陷阱。&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/09/code-review-cld.png&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2023/09/code-review-cld.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;認清根本解具有滯延現象，且選擇正面對決之後，才能接下去探討如何衡量成效。&lt;/p&gt;
+&lt;p&gt;這篇從 code review 出發的文章，一路看到這裡，大家應該很清楚，對於提升品質、降低風險、提升團隊生產力⋯⋯這些我們想要的成效，code review 只是手法之一，單獨只有這一個手法是無益的，勢必得搭配衍生的配套措施。因此，code review 的成效也不宜單獨看待，需連同其他配套措施一起衡量才比較實際。&lt;/p&gt;
+&lt;p&gt;不同的團隊，成熟度各異，管理者需要正視不同的現況，擬定不同的改進措施、衡量方式及目標狀態，並且要分階段。&lt;/p&gt;
+&lt;p&gt;譬如說，以領先指標來看：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;推動 collective ownership 的同時，可嘗試衡量 Scrum 五大活動參與度、PR 參與度、Sprint Backlog Items 分工多元性。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;推動 working backwards 的同時，可嘗試衡量 Sprint Backlog Items 的 acceptance test 完備度、design for observability 完備度、test 涵蓋率。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;推動 clean code 的同時，可嘗試衡量原始碼品質指標，並搭載於 CI 系統。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;以落後指標來看：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;關注 flow cadence 的同時，可嘗試衡量看板的 cumulative flow diagram。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;關注最終交付品質的同時，可嘗試衡量 change failure rate——這正好是 DORA (DevOps Research and Assessment) 四大指標其中之一。&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;最後，即使我們已經盡其所能把關品質，但很不幸 defect 仍然流了出去造成影響，亡羊補牢之餘，我們也需要關注 regression test 是否落實：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;針對已流出去造成影響的 defect，可嘗試衡量 regression test 涵蓋率。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;-支持長久研發的措施&#34;&gt;⑥ 支持長久研發的措施&lt;/h2&gt;
+&lt;p&gt;個人具備正確的品質基本信念，掌握了基本功與領域知識，團隊擁有公約共識，也掌握了更好的協同理解技巧，接下來就是這個大哉問了：周圍的環境，是否可以促成 code review 及相關的關鍵行為？&lt;/p&gt;
+&lt;h3 id=&#34;事&#34;&gt;事&lt;/h3&gt;
+&lt;p&gt;品質不是白吃的午餐，計畫與設計出內建品質，是需要時間、精力、技能的。&lt;/p&gt;
+&lt;p&gt;如果整個團隊已經開始嘗試用更好的方法進行 code review 及相關活動，但仍然受阻於事情太多、時間太少，或許這就要回到 Product Backlog Items 的基本問題了。請團隊試著問問自己幾個問題：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;即使可能有複數個上游來源，但團隊是否最後只會有一份透明化的 Product Backlog？&lt;/li&gt;
+&lt;li&gt;團隊是認真看待 Product Backlog 的嗎？&lt;/li&gt;
+&lt;li&gt;PO 是根據什麼原則管理 Product Backlog 的？&lt;/li&gt;
+&lt;li&gt;團隊 Sprint Planning 及 Refinement 是如何進行的？&lt;/li&gt;
+&lt;li&gt;品質、flow 相關議題在 Retrospective 裡面是如何被討論的？&lt;/li&gt;
+&lt;li&gt;Retrospective 是玩真的嗎？&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;思考過一輪，應該可以更好的區隔出：究竟是外面的問題，還是自己的問題。針對前者，再去尋求協助。&lt;/p&gt;
+&lt;h3 id=&#34;物&#34;&gt;物&lt;/h3&gt;
+&lt;p&gt;想讓 PR/MR template 所要求的種種事項具體發揮效用，需要自動化環境的支持，尤其是與 CI/CD 高度連動的環境。&lt;/p&gt;
+&lt;p&gt;這是得持續投入的基礎建設，沒有捷徑。&lt;/p&gt;
+&lt;h3 id=&#34;人&#34;&gt;人&lt;/h3&gt;
+&lt;p&gt;Code review 及相關的配套措施，需要有一定的技術能力。&lt;/p&gt;
+&lt;p&gt;大規模敏捷框架 LeSS 在探討 &amp;ldquo;&lt;a href=&#34;https://less.works/less/technical-excellence&#34;&gt;technical excellence&lt;/a&gt;&amp;rdquo; 時，有一段語重心長的話：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;There is no magic to them, most people are able to learn them. However, most people are &lt;em&gt;not&lt;/em&gt; aware of these after they graduated from university and hence, your organization &lt;strong&gt;will&lt;/strong&gt; need to invest in these, usually via coaching.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;簡單的說，自立自強固然可行，但若有好的前輩或教練親自帶領，將會事半功倍。&lt;/p&gt;
+&lt;p&gt;這就是團隊裡資深同仁的責任了。我期許你們能在③④提到的種種團隊協作活動中，以身作則，起示範作用。把整個團隊的水平提升到某個地步，有團隊整體戰力當你的後盾，也才能夠發揮更大的價值。&lt;/p&gt;
+&lt;h2 id=&#34;結語&#34;&gt;結語&lt;/h2&gt;
+&lt;p&gt;品質改善具有滯延現象，需要正確思路與堅定決心，才能避免捨本逐末與目標侵蝕的陷阱。&lt;/p&gt;
+&lt;p&gt;本文探討從 code review 出發並衍生出來的六大議題，也建議一些可供個人、團隊、組織開始嘗試推動的事項。&lt;/p&gt;
+&lt;p&gt;提升品質，不必然意味著降低研發效率。讓我們持續學習與探索如何聰明地做事。&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;關於「公車指數」(bus factor)，可參考以下兩篇文章：〈&lt;a href=&#34;https://blog.yveslin.com/2015/11/24/measure-sustainability-bus-factor/&#34;&gt;少一個差很多：算算團隊的公車指數&lt;/a&gt;〉、〈&lt;a href=&#34;https://agile.ithome.com.tw/2022/news-page/271&#34;&gt;你的團隊「合作無間」嗎？嘗試用「公車指數」衡量現況吧！&lt;/a&gt;〉。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;建議大家讀讀 Google 公開的 &lt;a href=&#34;https://github.com/google/eng-practices&#34;&gt;&lt;em&gt;Google Engineering Practices Documentation&lt;/em&gt;&lt;/a&gt;，最近也有保哥的&lt;a href=&#34;https://eng-practices.gh.miniasp.com&#34;&gt;中譯版&lt;/a&gt; 。&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;
+&lt;p&gt;如果你無法閱讀全文，也可收聽這一集 podcast：〈&lt;a href=&#34;https://podcasts.google.com/feed/aHR0cHM6Ly9mZWVkcy5zb3VuZG9uLmZtL3BvZGNhc3RzLzQxNDAzM2IzLTkwNmQtNGI4YS04MDM0LWNiOTM1NzBiNjc5NS54bWw/episode/YjgyOTQ1YjYtYTdiOS00N2I3LTg5OTMtZmE5NTU4NzVlMDM5?ep=14&#34;&gt;員工投入程度來自&amp;hellip; 這個隱藏因素，你發現了嗎？&lt;/a&gt;〉&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:4&#34;&gt;
+&lt;p&gt;關於 DORA 四大指標，可參考 &amp;ldquo;&lt;a href=&#34;https://cloud.google.com/blog/products/devops-sre/using-the-four-keys-to-measure-your-devops-performance&#34;&gt;Are you an Elite DevOps performer? Find out with the Four Key Project&lt;/a&gt;&amp;rdquo; 一文，更詳細的說明，請參考《&lt;a href=&#34;https://findbook.com.tw/9789863126959&#34;&gt;Accelerate：精益軟體與 DevOps 背後的科學&lt;/a&gt;》一書。&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description>
+      
     </item>
+    
     <item>
       <title>很簡單的東西，也要單元測試嗎？</title>
       <link>//william-yeh.net/post/2022/05/need-for-unit-testing/</link>
       <pubDate>Tue, 24 May 2022 12:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2022/05/need-for-unit-testing/</guid>
-      <description>&lt;p&gt;（改寫自公司內部 memo）&lt;/p&gt;&#xA;&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;&#xA;&lt;p&gt;Hi all engineers,&lt;/p&gt;&#xA;&lt;p&gt;上完一整天單元測試課程之後，有同事問我：「有沒有標準來決定要不要寫單元測試？」&lt;/p&gt;&#xA;&lt;p&gt;剛讀完劉潤《&lt;a href=&#34;https://www.books.com.tw/products/0010919211&#34;&gt;底層邏輯&lt;/a&gt;》的我，對於這類疑似「注射器」的問句格外敏感。雖然我可以瀟灑引述 &lt;a href=&#34;https://www.tenlong.com.tw/products/9789864344000&#34;&gt;&lt;em&gt;Working Effectively with Legacy Code&lt;/em&gt;&lt;/a&gt; 的說法「我毫無疑問地將『遺留程式碼』定義為『&lt;strong&gt;沒有編寫測試的程式碼&lt;/strong&gt;』」：&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;沒有編寫測試的程式碼是糟糕的程式碼——不管我們多麼細心地編寫它們，不管它們有多漂亮、物件導向或封裝良好。有了測試，我們就能夠迅速、可驗證地修改程式碼的行為。沒有測試，我們就不知道修改後的程式碼，實際上是變得更好還是更糟。&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;p&gt;但當下我還是決定先展開一場對話。&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;（改寫自公司內部 memo）&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;Hi all engineers,&lt;/p&gt;
+&lt;p&gt;上完一整天單元測試課程之後，有同事問我：「有沒有標準來決定要不要寫單元測試？」&lt;/p&gt;
+&lt;p&gt;剛讀完劉潤《&lt;a href=&#34;https://www.books.com.tw/products/0010919211&#34;&gt;底層邏輯&lt;/a&gt;》的我，對於這類疑似「注射器」的問句格外敏感。雖然我可以瀟灑引述 &lt;a href=&#34;https://www.tenlong.com.tw/products/9789864344000&#34;&gt;&lt;em&gt;Working Effectively with Legacy Code&lt;/em&gt;&lt;/a&gt; 的說法「我毫無疑問地將『遺留程式碼』定義為『&lt;strong&gt;沒有編寫測試的程式碼&lt;/strong&gt;』」：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;沒有編寫測試的程式碼是糟糕的程式碼——不管我們多麼細心地編寫它們，不管它們有多漂亮、物件導向或封裝良好。有了測試，我們就能夠迅速、可驗證地修改程式碼的行為。沒有測試，我們就不知道修改後的程式碼，實際上是變得更好還是更糟。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;但當下我還是決定先展開一場對話。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;我：「我一時想不出來有沒有合適的標準，但我有一個簡單的 gut feeling 來判斷：如果我沒有把握證明這段程式碼會表現出該有的行為，那麼我就應該考慮替它加一段測試，用測試來表現出這段程式碼的確忠實表現出該有的行為，&lt;strong&gt;讓測試來說話&lt;/strong&gt;。」&lt;/p&gt;
+&lt;p&gt;同事：「即使是很簡單的程式碼，也需要加單元測試嗎？這會不會太麻煩了？」&lt;/p&gt;
+&lt;p&gt;我心中頓時浮現一個聲音：“如果你有 &lt;strong&gt;TDD (test-driven design)&lt;/strong&gt; 的觀念或紀律，就不會有此一問了。再簡單的程式碼，都會測試先行——何況，簡單的程式碼，對應的單元測試會很難嗎？如果很難很繁雜，那麼，或許這程式碼本身並沒有當初想像中那麼簡單。”&lt;/p&gt;
+&lt;p&gt;但當下我還是決定繼續對話，先不要說教⋯⋯&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;我：「能不能舉一個『簡單的程式碼』的例子？」&lt;/p&gt;
+&lt;p&gt;同事：「就像某一個 function，它會先檢查輸入的日期格式，如果格式不是 &lt;code&gt;yyyy/mm/dd&lt;/code&gt; 就會失敗；如果格式對了，就會繼續往下做正事⋯⋯」&lt;/p&gt;
+&lt;p&gt;我：「且慢，你所說的『如果格式不對，就會失敗』這句話，所謂的『失敗』是指什麼？」&lt;/p&gt;
+&lt;p&gt;同事：「啊⋯⋯就是失敗呀！」&lt;/p&gt;
+&lt;p&gt;我：「讓我們用程式語言的角度來講。你所謂的『失敗』，是指 return false 呢，還是 throw exception？」&lt;/p&gt;
+&lt;p&gt;同事：「嗯，以這個例子來說，是 throw exception。」&lt;/p&gt;
+&lt;p&gt;我：「好的，那麼，你怎麼證明，在遇到錯誤的日期格式時，你的程式碼真的會 throw exception？」&lt;/p&gt;
+&lt;p&gt;同事靜默中⋯⋯&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;我：「在談論寫不寫單元測試時，我想稍微區分一下問題，究竟是 ❶ 不會寫，或者是 ❷ 懶得寫？」&lt;/p&gt;
+&lt;p&gt;我：「就以這一個例子來說，你知道該怎麼單元測試嗎？」&lt;/p&gt;
+&lt;p&gt;同事靜默中⋯⋯&lt;/p&gt;
+&lt;p&gt;我：「目前的主流單元測試框架，都有 &lt;a href=&#34;https://docs.microsoft.com/en-us/dotnet/api/microsoft.visualstudio.testtools.unittesting.assert.throwsexception&#34;&gt;Assert.ThrowsException&lt;/a&gt; 或 &lt;a href=&#34;https://docs.microsoft.com/en-us/dotnet/api/microsoft.visualstudio.testtools.unittesting.assert.throwsexceptionasync&#34;&gt;Assert.ThrowsExceptionAsync&lt;/a&gt; 之類的設施去處理 exception，所以『❶ 不會寫』就不成立了。只剩下一個問題：『❷ 懶得寫』。」&lt;/p&gt;
+&lt;p&gt;我：「你會在這段 function 一開頭的 doc comment 陳述說：『如果日期格式錯誤，會 throw XXX exception』嗎？」&lt;/p&gt;
+&lt;p&gt;同事：「會。」&lt;/p&gt;
+&lt;p&gt;（他大概不敢當面說不會，因為我兩個月前才寫過一篇內部 memo 講 &amp;ldquo;doc comment&amp;rdquo; 這件事。）&lt;/p&gt;
+&lt;p&gt;我：「針對 throw exception 這個行為，既然你都已經花時間寫程式了，也都已經花時間寫 doc comment 了，為什麼不順手寫一小段單元測試來證明你的程式碼與 doc comment 是&lt;strong&gt;對齊&lt;/strong&gt;的，&lt;strong&gt;讓測試來說話&lt;/strong&gt;？」&lt;/p&gt;
+&lt;p&gt;同事靜默中⋯⋯&lt;/p&gt;
+&lt;p&gt;我：「而且，你寫的程式，不只是給現在的你自己看，不只是給 code reviewers 看，也會給幾個月後、甚至一兩年後接手維護的其他人看。萬一有一天，別人沒注意到『日期格式』這件事就改寫這段程式碼，你的程式又沒有單元測試的保護，你會不會擔心對方把你的程式改壞了？」&lt;/p&gt;
+&lt;p&gt;同事靜默中⋯⋯&lt;/p&gt;
+&lt;p&gt;我：「所以在單元測試課堂的開場致詞中，我強調：『&lt;strong&gt;單元測試是程式設計師的職業道德&lt;/strong&gt;』，就是這個意思。」&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;最後，請容我引述《&lt;a href=&#34;https://www.tenlong.com.tw/products/9787115467768&#34;&gt;修改軟件的藝術 (&lt;em&gt;Beyond Legacy Code&lt;/em&gt;)&lt;/a&gt;》裡面的金句：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在編寫程式碼之後才編寫測試，往往會發現程式碼難以測試，需要大量的清理來讓其可以測試，這可能會成為一個大工程。最好是一開始就編寫出&lt;strong&gt;可測試的程式碼&lt;/strong&gt;，而編寫可測試程式碼的最好方式是&lt;strong&gt;先編寫測試&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;沒法進行測試，則說明我有些設計問題需要重新進行思考。&lt;/p&gt;
+&lt;p&gt;應該假設測試集是對整個用戶故事的完整定義。如果沒有用測試來描述一個行為，那麼這個行為很可能是錯的。&lt;strong&gt;任何沒有在測試集中體現的行為，都被視為不存在&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;測試集不僅驗證行為，而且描述行為。&lt;strong&gt;用測試描述行為，從而建立活的文檔&lt;/strong&gt;。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;（PS. 以上情節，是根據實際對話加油添醋改編而成，請勿對號入座。）&lt;/p&gt;</description>
+      
     </item>
+    
     <item>
       <title>gRPC 測試工具</title>
       <link>//william-yeh.net/post/2020/04/grpc-testing-tools/</link>
       <pubDate>Tue, 14 Apr 2020 22:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2020/04/grpc-testing-tools/</guid>
-      <description>&lt;p&gt;RESTful API 時代，我們有許多簡單好用的測試工具：有酷炫的 &lt;a href=&#34;https://www.postman.com/&#34;&gt;Postman&lt;/a&gt;，有命令列控愛用的 &lt;a href=&#34;https://httpie.org/&#34;&gt;HTTPie&lt;/a&gt;，當然也有硬漢必備的萬用瑞士刀 &lt;a href=&#34;https://curl.haxx.se/&#34;&gt;curl&lt;/a&gt;。&lt;/p&gt;&#xA;&lt;p&gt;那麼，gRPC 呢？&lt;/p&gt;&#xA;&lt;p&gt;這篇文章介紹兩個好用的小工具：&lt;a href=&#34;https://github.com/fullstorydev/grpcurl&#34;&gt;gRPCurl&lt;/a&gt; 及 &lt;a href=&#34;https://github.com/bojand/ghz&#34;&gt;ghz&lt;/a&gt;，一個是輸入輸出介面測試工具，另一個是壓測工具，也順便介紹一些簡化測試的技巧。&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;RESTful API 時代，我們有許多簡單好用的測試工具：有酷炫的 &lt;a href=&#34;https://www.postman.com/&#34;&gt;Postman&lt;/a&gt;，有命令列控愛用的 &lt;a href=&#34;https://httpie.org/&#34;&gt;HTTPie&lt;/a&gt;，當然也有硬漢必備的萬用瑞士刀 &lt;a href=&#34;https://curl.haxx.se/&#34;&gt;curl&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;那麼，gRPC 呢？&lt;/p&gt;
+&lt;p&gt;這篇文章介紹兩個好用的小工具：&lt;a href=&#34;https://github.com/fullstorydev/grpcurl&#34;&gt;gRPCurl&lt;/a&gt; 及 &lt;a href=&#34;https://github.com/bojand/ghz&#34;&gt;ghz&lt;/a&gt;，一個是輸入輸出介面測試工具，另一個是壓測工具，也順便介紹一些簡化測試的技巧。&lt;/p&gt;
+&lt;h2 id=&#34;待測程式&#34;&gt;待測程式&lt;/h2&gt;
+&lt;p&gt;待測程式放在 &lt;a href=&#34;https://github.com/William-Yeh/grpcurl-and-ghz-demo&#34;&gt;https://github.com/William-Yeh/grpcurl-and-ghz-demo&lt;/a&gt;&lt;/p&gt;
+
+&lt;details&gt;
+  &lt;summary style=&#34;background-color:#f5f5f5;border:1px solid #ccc;padding:5px;&#34;&gt;
+    檔案簡介：
+    
+  &lt;/summary&gt;
+  
+
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;├── README.md
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;├── build.sh                 ← 編譯命令
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;├── go.mod
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;├── go.sum
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;├── out                      ← 編譯後的可執行檔
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;│   ├── server
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;│   └── server-new
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;├── routeguide               ← gRPC 介面定義；原封不動取自 &amp;#34;gRPC-Go&amp;#34; 專案
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;│   ├── route_guide.pb.go
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;│   └── route_guide.proto
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;├── server                   ← server 程式；原封不動取自 &amp;#34;gRPC-Go&amp;#34; 專案
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;│   └── server.go
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;├── server-new               ← 由我修改過的新版 server 程式
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;│   └── server-new.go
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;├── testdata.dat             ← 給 gRPCurl 的測試資料
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;└── testdata.json            ← 給 ghz 的測試資料&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+
+
+&lt;/details&gt;
+
+&lt;p&gt;為了方便起見，我挑選 &amp;ldquo;&lt;a href=&#34;https://github.com/grpc/grpc-go&#34;&gt;gRPC-Go&lt;/a&gt;&amp;rdquo; 專案裡面的 &amp;ldquo;&lt;a href=&#34;https://github.com/grpc/grpc-go/tree/master/examples/route_guide&#34;&gt;the route guide server and client&lt;/a&gt;&amp;rdquo; 範例做為待測程式。&lt;/p&gt;
+&lt;p&gt;這隻 server 程式透過 gRPC 提供 &lt;code&gt;RouteGuide&lt;/code&gt; 服務，我們這次只會測試其中的 &lt;code&gt;RecordRoute&lt;/code&gt; 呼叫。以下是從 gRPC 介面定義檔 &lt;a href=&#34;https://github.com/William-Yeh/grpcurl-and-ghz-demo/blob/master/routeguide/route_guide.proto&#34;&gt;&lt;code&gt;route_guide.proto&lt;/code&gt;&lt;/a&gt; 摘錄我們會用到的部份：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+
+  
+  &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-proto&#34; data-lang=&#34;proto&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;package&lt;/span&gt; routeguide;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;service&lt;/span&gt; RouteGuide {&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#75715e&#34;&gt;//...
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#75715e&#34;&gt;// A client-to-server streaming RPC.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#75715e&#34;&gt;//
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#75715e&#34;&gt;// Accepts a stream of Points on a route being traversed, returning a
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#75715e&#34;&gt;// RouteSummary when traversal is completed.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;rpc&lt;/span&gt; RecordRoute(stream Point) &lt;span style=&#34;color:#66d9ef&#34;&gt;returns&lt;/span&gt; (RouteSummary) {}&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;message&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Point&lt;/span&gt; {&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;int32&lt;/span&gt; latitude &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;int32&lt;/span&gt; longitude &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;message&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;RouteSummary&lt;/span&gt; {&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;int32&lt;/span&gt; point_count &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;int32&lt;/span&gt; feature_count &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;int32&lt;/span&gt; distance &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;int32&lt;/span&gt; elapsed_time &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;//...&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;我也針對 server 程式小改三個地方，弄出另一個 server-new 程式：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+
+  
+  &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ diff  server/server.go  server-new/server-new.go
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;42a43
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;gt; 	&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;google.golang.org/grpc/reflection&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;55c56
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt; 	port       &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; flag.Int&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;port&amp;#34;&lt;/span&gt;, 10000, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;The server port&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;---
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;gt; 	port       &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; flag.Int&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;port&amp;#34;&lt;/span&gt;, 20000, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;The server port&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;243a245,248
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;gt; 	// Register reflection service on gRPC server.
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;gt; 	reflection.Register&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;grpcServer&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;簡單來說，新舊兩版的差別是：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;舊版 server 的 gRPC port = 10000，新版 server-new 則是 20000。&lt;/li&gt;
+&lt;li&gt;新版 server-new 支援 &lt;a href=&#34;https://github.com/grpc/grpc/blob/master/doc/server-reflection.md&#34;&gt;server reflection&lt;/a&gt; 功能。稍後會再說明這是什麼。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;實驗環境&#34;&gt;實驗環境&lt;/h2&gt;
+&lt;p&gt;實驗所需環境：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Go 1.14 以上。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/fullstorydev/grpcurl&#34;&gt;gRPCurl&lt;/a&gt; 1.5.0 以上。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/bojand/ghz&#34;&gt;ghz&lt;/a&gt; 0.51.0 以上。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;先來編譯程式：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+
+  
+  &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ ./build.sh&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;成功後，會在 &lt;code&gt;out&lt;/code&gt; 目錄拿到兩份執行檔：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;out/server&lt;/code&gt;：原封不動來自 &amp;ldquo;gRPC-Go&amp;rdquo; 專案的 server 程式。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;out/server-new&lt;/code&gt;：由我小小修改過的新程式。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;進行實驗時，建議將你的終端機配置成這樣：&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2020/04/grpcurl-demo-layout.png&#34; alt=&#34;終端機建議配置&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2020/04/grpcurl-demo-layout.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;終端機建議配置&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;然後，請分別啟動 &lt;code&gt;out/server&lt;/code&gt; 及 &lt;code&gt;out/server-new&lt;/code&gt; 程式：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+
+  
+  &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 舊程式，跑在 10000 port&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ out/server
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 新程式，跑在 20000 port&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ out/server-new&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;一切就緒，準備要來測試它們了。&lt;/p&gt;
+&lt;h2 id=&#34;實驗一搭配-proto-檔&#34;&gt;實驗一：搭配 proto 檔&lt;/h2&gt;
+&lt;p&gt;先針對舊版的 server 來實驗。&lt;/p&gt;
+&lt;h3 id=&#34;grpcurl&#34;&gt;gRPCurl&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/fullstorydev/grpcurl&#34;&gt;gRPCurl&lt;/a&gt;，顧名思義，是在向硬漢必備的萬用瑞士刀 &lt;a href=&#34;https://curl.haxx.se/&#34;&gt;curl&lt;/a&gt; 致敬。不妨將它視為 gRPC 版的 curl。&lt;/p&gt;
+&lt;p&gt;gRPCurl 使用上最主要的差別是，因應 gRPC 的特性，必須餵給它 proto 檔案，才會知道該如何封裝訊息格式。&lt;/p&gt;
+&lt;p&gt;譬如說，我們可將 proto 檔案的路徑寫在 &lt;code&gt;-import-path&lt;/code&gt; 中、將 proto 檔案名稱寫在 &lt;code&gt;-proto&lt;/code&gt; 中、將參數寫在 &lt;code&gt;-d&lt;/code&gt; 中，再呼叫 server 的遠端程序：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+
+  
+  &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ grpcurl -plaintext  &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    -d &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;{&amp;#34;latitude&amp;#34;:-460000000,&amp;#34;longitude&amp;#34;:-1160000000} {&amp;#34;latitude&amp;#34;:720000000,&amp;#34;longitude&amp;#34;:-540000000}&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    -import-path ./routeguide        &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    -proto       route_guide.proto   &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    127.0.0.1:10000                  &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    routeguide.RouteGuide.RecordRoute
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;pointCount&amp;#34;&lt;/span&gt;: 2,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;distance&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;13975745&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;我們也可將事先備妥的資料檔餵給 gRPCurl。像是含有 100 筆資料的 &lt;code&gt;testdata.dat&lt;/code&gt;：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+
+  
+  &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ grpcurl -plaintext -d &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;@&amp;#39;&lt;/span&gt;            &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    -import-path ./routeguide          &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    -proto       route_guide.proto     &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    127.0.0.1:10000                    &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    routeguide.RouteGuide.RecordRoute  &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &amp;lt; testdata.dat
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;pointCount&amp;#34;&lt;/span&gt;: 100,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;distance&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;1003784333&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3 id=&#34;ghz&#34;&gt;ghz&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/bojand/ghz&#34;&gt;ghz&lt;/a&gt; 壓測工具，是這麼自我介紹的：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Simple gRPC benchmarking and load testing tool inspired by &lt;a href=&#34;https://github.com/rakyll/hey/&#34;&gt;hey&lt;/a&gt; and &lt;a href=&#34;https://github.com/fullstorydev/grpcurl&#34;&gt;grpcurl&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;所以，從命令列參數及統計結果上，都可看出它們的影響。&lt;/p&gt;
+&lt;p&gt;譬如說，我們可將 proto 檔案的路徑寫在 &lt;code&gt;--import-path&lt;/code&gt; 中、將 proto 檔案名稱寫在 &lt;code&gt;--proto&lt;/code&gt; 中、將參數寫在 &lt;code&gt;--data&lt;/code&gt; 中，再呼叫 server 的遠端程序：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+
+  
+  &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ ghz --insecure  -z 20s  &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      --data &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;[{&amp;#34;latitude&amp;#34;:-460000000,&amp;#34;longitude&amp;#34;:-1160000000},{&amp;#34;latitude&amp;#34;:720000000,&amp;#34;longitude&amp;#34;:-540000000}]&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      --import-paths ./routeguide         &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      --proto        route_guide.proto    &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      --call routeguide.RouteGuide.RecordRoute  &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      127.0.0.1:10000&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;details&gt;
+  &lt;summary style=&#34;background-color:#f5f5f5;border:1px solid #ccc;padding:5px;&#34;&gt;
+    壓測 20 秒，結果如下：
+    
+  &lt;/summary&gt;
+  
+
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Summary:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  Count:        548082
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  Total:        20.00 s
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  Slowest:      50.36 ms
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  Fastest:      0.12 ms
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  Average:      1.74 ms
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  Requests/sec: 27403.72
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Response time histogram:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  0.123 [1]     |
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  5.147 [543463]        |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  10.170 [4297] |
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  15.194 [271]  |
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  20.217 [8]    |
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  25.241 [3]    |
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  30.264 [1]    |
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  35.288 [0]    |
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  40.311 [0]    |
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  45.335 [0]    |
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  50.358 [1]    |
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Latency distribution:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  10 % in 0.90 ms
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  25 % in 1.21 ms
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  50 % in 1.58 ms
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  75 % in 2.04 ms
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  90 % in 2.66 ms
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  95 % in 3.24 ms
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  99 % in 4.93 ms
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Status code distribution:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  [Canceled]      33 responses
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  [Unavailable]   4 responses
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  [OK]            548045 responses
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Error distribution:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  [33]   rpc error: code = Canceled desc = grpc: the client connection is closing
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  [4]    rpc error: code = Unavailable desc = transport is closing&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+
+
+&lt;/details&gt;
+
+&lt;p&gt;同樣的，我們也可將事先備妥的資料檔餵給 ghz。像是含有 100 筆資料的 &lt;code&gt;testdata.json&lt;/code&gt;：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+
+  
+  &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ ghz --insecure --data&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;@  -z 20s  &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      --import-paths ./routeguide         &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      --proto        route_guide.proto    &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      --call routeguide.RouteGuide.RecordRoute  &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      127.0.0.1:10000  &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &amp;lt; testdata.json&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;details&gt;
+  &lt;summary style=&#34;background-color:#f5f5f5;border:1px solid #ccc;padding:5px;&#34;&gt;
+    壓測 20 秒，結果如下：
+    
+  &lt;/summary&gt;
+  
+
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Summary:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  Count:        788680
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  Total:        20.00 s
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  Slowest:      28.02 ms
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  Fastest:      0.13 ms
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  Average:      1.23 ms
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  Requests/sec: 39432.62
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Response time histogram:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  0.126 [1]     |
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  2.915 [772021]        |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  5.705 [15003] |∎
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  8.495 [1000]  |
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  11.285 [458]  |
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  14.074 [95]   |
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  16.864 [10]   |
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  19.654 [12]   |
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  22.444 [3]    |
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  25.233 [5]    |
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  28.023 [40]   |
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Latency distribution:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  10 % in 0.65 ms
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  25 % in 0.86 ms
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  50 % in 1.11 ms
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  75 % in 1.42 ms
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  90 % in 1.88 ms
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  95 % in 2.30 ms
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  99 % in 3.57 ms
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Status code distribution:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  [OK]         788648 responses
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  [Canceled]   32 responses
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Error distribution:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  [32]   rpc error: code = Canceled desc = grpc: the client connection is closing&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+
+
+&lt;/details&gt;
+
+&lt;h2 id=&#34;實驗二不需搭配-proto-檔&#34;&gt;實驗二：不需搭配 proto 檔&lt;/h2&gt;
+&lt;p&gt;使用前，每次都要先備妥待測程式的 proto 檔，其實也滿麻煩的。萬一複雜的 proto 檔案又去 import 其他 proto 檔 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，可能就得條列一堆 &lt;code&gt;-import-path&lt;/code&gt; 或 &lt;code&gt;--import-path&lt;/code&gt; 命令列參數給 gRPCurl 及 ghz。&lt;/p&gt;
+&lt;p&gt;有沒有省力一點的方法？&lt;/p&gt;
+&lt;p&gt;有的，就是透過 &lt;a href=&#34;https://github.com/grpc/grpc/blob/master/doc/server-reflection.md&#34;&gt;server reflection&lt;/a&gt; 功能。&lt;/p&gt;
+&lt;h3 id=&#34;server-reflection&#34;&gt;Server reflection&lt;/h3&gt;
+&lt;p&gt;我以這次的範例程式 server-new 為例，說明如何加上 server reflection 功能。&lt;/p&gt;
+&lt;p&gt;首先，請加上 &lt;a href=&#34;https://pkg.go.dev/google.golang.org/grpc/reflection?tab=doc&#34;&gt;&lt;code&gt;google.golang.org/grpc/reflection&lt;/code&gt;&lt;/a&gt; 套件：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+
+  
+  &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;google.golang.org/grpc/reflection&amp;#34;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;接著，在 &lt;code&gt;grpcServer.Serve&lt;/code&gt; 之前，呼叫 &lt;code&gt;reflection.Register&lt;/code&gt;：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+
+  
+  &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;grpcServer&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;grpc&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;NewServer&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;opts&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;...&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;//...&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// Register reflection service on gRPC server.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;reflection&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Register&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;grpcServer&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;grpcServer&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Serve&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;lis&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;只需要這兩個步驟，你的 gRPC 程式本身就具有 server reflection 功能，對方不再需要 proto 檔案就能直接進行遠端呼叫。&lt;/p&gt;
+&lt;p&gt;針對新版的 server-new 來實驗看看吧。&lt;/p&gt;
+&lt;h3 id=&#34;grpcurl-1&#34;&gt;gRPCurl&lt;/h3&gt;
+&lt;p&gt;我們可用 &lt;code&gt;list&lt;/code&gt; 指令查詢 server-new 提供哪些服務：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+
+  
+  &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ grpcurl -plaintext  127.0.0.1:20000  list
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;grpc.reflection.v1alpha.ServerReflection
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;routeguide.RouteGuide&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;可用 &lt;code&gt;describe&lt;/code&gt; 指令查詢 server-new 提供服務的介面：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+
+  
+  &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ grpcurl -plaintext  127.0.0.1:20000  describe
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;grpc.reflection.v1alpha.ServerReflection is a service:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;service ServerReflection &lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  rpc ServerReflectionInfo &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt; stream .grpc.reflection.v1alpha.ServerReflectionRequest &lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; returns &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt; stream .grpc.reflection.v1alpha.ServerReflectionResponse &lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;routeguide.RouteGuide is a service:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;service RouteGuide &lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  rpc GetFeature &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt; .routeguide.Point &lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; returns &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt; .routeguide.Feature &lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  rpc ListFeatures &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt; .routeguide.Rectangle &lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; returns &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt; stream .routeguide.Feature &lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  rpc RecordRoute &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt; stream .routeguide.Point &lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; returns &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt; .routeguide.RouteSummary &lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  rpc RouteChat &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt; stream .routeguide.RouteNote &lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; returns &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt; stream .routeguide.RouteNote &lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;可用 &lt;code&gt;describe&lt;/code&gt; 指令進一步查詢某參數的具體格式：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+
+  
+  &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ grpcurl -plaintext  127.0.0.1:20000  describe .routeguide.Point
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;routeguide.Point is a message:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;message Point &lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  int32 latitude &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; 1;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  int32 longitude &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; 2;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;可看出，gRPCurl 不需要 proto 檔案，就能直接向 server-new 查詢遠端呼叫所需知道的介面細節。&lt;/p&gt;
+&lt;p&gt;最後，讓我們將含有 100 筆資料的 &lt;code&gt;testdata.dat&lt;/code&gt; 餵給 gRPCurl 來測測看：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+
+  
+  &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ grpcurl -plaintext -d &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;@&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    127.0.0.1:20000         &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    routeguide.RouteGuide.RecordRoute  &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &amp;lt; testdata.dat
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;pointCount&amp;#34;&lt;/span&gt;: 100,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;distance&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;1003784333&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;有了 server reflection 功能，是不是方便多了？如果你有權修改原始程式，這是值得好好考慮的，可讓測試工作輕鬆一點。&lt;/p&gt;
+&lt;p&gt;當然啦，你可以考慮在 production 環境&lt;strong&gt;關掉&lt;/strong&gt;這功能；但在測試環境中，這真的很方便。&lt;/p&gt;
+&lt;h3 id=&#34;ghz-1&#34;&gt;ghz&lt;/h3&gt;
+&lt;p&gt;儘管 server reflection 通常不會在 production 環境啟用，不過我還是很好奇：server reflection 對執行效率的影響有多少？尤其是涉及 marshalling。&lt;/p&gt;
+&lt;p&gt;用 ghz 試試看吧！&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+
+  
+  &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ ghz --insecure --data&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;@  -z 20s  &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      --call routeguide.RouteGuide.RecordRoute  &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      127.0.0.1:20000  &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &amp;lt; testdata.json&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;details&gt;
+  &lt;summary style=&#34;background-color:#f5f5f5;border:1px solid #ccc;padding:5px;&#34;&gt;
+    壓測 20 秒，結果如下：
+    
+  &lt;/summary&gt;
+  
+
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Summary:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  Count:        826524
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  Total:        20.00 s
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  Slowest:      19.79 ms
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  Fastest:      0.12 ms
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  Average:      1.17 ms
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  Requests/sec: 41317.73
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Response time histogram:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  0.118 [1]     |
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  2.085 [776730]        |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  4.052 [45892] |∎∎
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  6.019 [3018]  |
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  7.986 [550]   |
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  9.953 [112]   |
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  11.920 [74]   |
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  13.887 [51]   |
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  15.854 [37]   |
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  17.821 [17]   |
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  19.788 [1]    |
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Latency distribution:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  10 % in 0.62 ms
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  25 % in 0.82 ms
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  50 % in 1.06 ms
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  75 % in 1.36 ms
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  90 % in 1.80 ms
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  95 % in 2.20 ms
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  99 % in 3.38 ms
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Status code distribution:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  [OK]            826483 responses
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  [Canceled]      40 responses
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  [Unavailable]   1 responses
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Error distribution:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  [40]   rpc error: code = Canceled desc = grpc: the client connection is closing
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  [1]    rpc error: code = Unavailable desc = transport is closing&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+
+
+&lt;/details&gt;
+
+&lt;p&gt;雖然這還不算非常嚴謹的實驗，但可看出，&lt;strong&gt;沒有&lt;/strong&gt; server reflection 功能的 server 版本，與&lt;strong&gt;有&lt;/strong&gt;此功能的 server-new 版本，執行效率沒有顯著差異。&lt;/p&gt;
+&lt;p&gt;因此，server reflection 功能，值得嘗試。&lt;/p&gt;
+&lt;h2 id=&#34;總結&#34;&gt;總結&lt;/h2&gt;
+&lt;p&gt;本篇文章，介紹兩個好用的 gRPC 測試小工具：輸入輸出介面測試工具 &lt;a href=&#34;https://github.com/fullstorydev/grpcurl&#34;&gt;gRPCurl&lt;/a&gt;，以及壓測工具 &lt;a href=&#34;https://github.com/bojand/ghz&#34;&gt;ghz&lt;/a&gt;。最後並推薦 &lt;a href=&#34;https://github.com/grpc/grpc/blob/master/doc/server-reflection.md&#34;&gt;server reflection&lt;/a&gt; 功能來簡化 gRPC 測試工作。&lt;/p&gt;
+&lt;p&gt;ghz 也有 web 介面，目前是 beta 狀態。有興趣的，請去 &lt;a href=&#34;https://ghz.sh/&#34;&gt;ghz 官網&lt;/a&gt;看看。&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;Proto 檔案也可以 import 其他 proto 檔。詳見 &lt;a href=&#34;https://developers.google.com/protocol-buffers/docs/proto3#importing-definitions&#34;&gt;https://developers.google.com/protocol-buffers/docs/proto3#importing-definitions&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description>
+      
     </item>
+    
     <item>
       <title>CI 怎樣帶你遠離平庸？</title>
       <link>//william-yeh.net/post/2015/12/ci-effect/</link>
       <pubDate>Tue, 22 Dec 2015 08:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2015/12/ci-effect/</guid>
-      <description>&lt;p&gt;前天我的文章〈&lt;a href=&#34;//william-yeh.net/post/2015/12/ci-no-turning-back/&#34;&gt;CI 是條不歸路&lt;/a&gt;〉提到：「CI/CD/DevOps 既是條不歸路，更是大躍進之路：一旦踏出第一步，就注定你會不斷接觸**『遠離平庸』**的新觀點、新技術。」&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;前天我的文章〈&lt;a href=&#34;//william-yeh.net/post/2015/12/ci-no-turning-back/&#34;&gt;CI 是條不歸路&lt;/a&gt;〉提到：「CI/CD/DevOps 既是條不歸路，更是大躍進之路：一旦踏出第一步，就注定你會不斷接觸**『遠離平庸』**的新觀點、新技術。」&lt;/p&gt;
+&lt;p&gt;為了避免陳義過高，這篇文章就來講一個具體的軟體研發故事吧。&lt;/p&gt;
+&lt;h2 id=&#34;護城河&#34;&gt;護城河&lt;/h2&gt;
+&lt;p&gt;我用 Ansible，也用 &lt;a href=&#34;https://prometheus.io/&#34;&gt;Prometheus&lt;/a&gt;，因此，我寫了一個 Ansible role &lt;a href=&#34;https://github.com/William-Yeh/ansible-prometheus&#34;&gt;&lt;code&gt;williamyeh.prometheus&lt;/code&gt;&lt;/a&gt; 來安裝 Prometheus。&lt;/p&gt;
+&lt;p&gt;上個禮拜，我隱約覺得對它感興趣的人似乎變多了，便好奇的去 GitHub 後台調數據來看，發現：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;原來是被 Prometheus 官網列入 &amp;ldquo;&lt;a href=&#34;http://prometheus.io/docs/introduction/install/#using-configuration-management-systems&#34;&gt;Using configuration management systems&lt;/a&gt;&amp;rdquo; 清單了，難怪最近 PR 變多，品質更是超越其他幾家 CM 的例子。&lt;/p&gt;
+&lt;p&gt;&amp;mdash; Quote: &lt;a href=&#34;https://twitter.com/william_yeh/status/676897832071241728&#34;&gt;2015-12-16 Tweet&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;被 Prometheus 官方欽點了，能見度提高了，就表示，三不五時會有人提出 bug report，提出 feature request；甚至更勤勞一點的，可能直接就會送出 PR (pull request)。&lt;/p&gt;
+&lt;p&gt;面對 PR，其實要花很大的力氣去檢驗：檢驗對錯，檢驗風格，甚至 &lt;a href=&#34;https://en.wikipedia.org/wiki/The_Mythical_Man-Month#Conceptual_integrity&#34;&gt;conceptual integrity&lt;/a&gt;（語出《&lt;a href=&#34;https://en.wikipedia.org/wiki/The_Mythical_Man-Month&#34;&gt;人月神話&lt;/a&gt;》）。而且，對方既然已經很勤勞的送出 PR 了，他會預期你高度重視他的提案。&lt;/p&gt;
+&lt;p&gt;我需要一道&lt;strong&gt;護城河&lt;/strong&gt;，讓我不必每次都事必躬親，回應每一則 PR。&lt;/p&gt;
+&lt;p&gt;所幸我早就建立好&lt;strong&gt;個人的 discipline&lt;/strong&gt;：要替自己寫的 Ansible role 加上 CI。即使只是做一點點小小的 smoke test，總是聊勝於無。&lt;/p&gt;
+&lt;p&gt;CI 是&lt;strong&gt;高度客觀中立&lt;/strong&gt;、&lt;strong&gt;不帶感情&lt;/strong&gt;的守門員。它，幫我初步過濾一些攸關對錯、風格的 PR。於是，我可以優先禮貌性回應已經被 CI 初步打勾放行的 PR；至於被打叉叉的，那就&lt;del&gt;謝謝再聯絡&lt;/del&gt;等有充裕時間精力時再說：&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2015/12/ansible-prometheus-pr.png&#34; alt=&#34;Pull requests&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2015/12/ansible-prometheus-pr.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Pull requests&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;CI，小小的投資，大大的省事。&lt;/p&gt;
+&lt;h2 id=&#34;當-ansible-遇見-docker&#34;&gt;當 Ansible 遇見 Docker&lt;/h2&gt;
+&lt;p&gt;個人還有另一項執念：自己寫的 Ansible role，要盡可能支援多種 Linux distributions 環境。&lt;/p&gt;
+&lt;p&gt;這又是一條不歸路。&lt;/p&gt;
+&lt;p&gt;在本機端研發時，我可以用各種 Vagrant box 來模擬各種 Linux （譬如：&lt;a href=&#34;https://app.vagrantup.com/bento/boxes/centos-6.7&#34;&gt;bento/centos-6.7&lt;/a&gt;、&lt;a href=&#34;https://app.vagrantup.com/bento/boxes/centos-7.1&#34;&gt;bento/centos-7.1&lt;/a&gt;、&lt;a href=&#34;https://app.vagrantup.com/debian/boxes/jessie64&#34;&gt;debian/jessie64&lt;/a&gt;），但這沒辦法 scale 到正式的 CI 流程上。此刻 Travis CI 及 CircleCI 只提供 Ubuntu 12.04 及 14.04 兩種 instance，也沒支援 &lt;a href=&#34;http://kitchen.ci&#34;&gt;Test Kitchen&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;所幸 Travis CI 和 CircleCI 都有支援 Docker，因此，我設計了 &lt;a href=&#34;https://github.com/William-Yeh/docker-ansible&#34;&gt;&lt;code&gt;williamyeh/ansible&lt;/code&gt;&lt;/a&gt; 這一系列的 Docker images，可在 Travis CI 及 CircleCI 上面模擬出 CentOS 6 &amp;amp; 7、Debian 7 &amp;amp; 8、Ubuntu 12.04 &amp;amp; 14.04 環境，來測試我的 Ansible roles。&lt;/p&gt;
+&lt;p&gt;這下子，我的 CI 護城河就更穩固了。CI 這位&lt;strong&gt;高度客觀中立&lt;/strong&gt;、&lt;strong&gt;不帶感情&lt;/strong&gt;的守門員，協助我冷靜面對以下這則算是大工程等級的 PR，不帶批判情緒的進行對話，一起搞定 CentOS/Ubuntu 雙系統：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2015/12/pr-discussion.png&#34; alt=&#34;Discussion around a pull request&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2015/12/pr-discussion.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Discussion around a pull request&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;CI，小小的投資，大大的省事。&lt;/p&gt;
+&lt;p&gt;對我而言，原本 &lt;code&gt;williamyeh/ansible&lt;/code&gt; 只是為了其他目的而順帶設計出來的副產品。但由於 Ansible 官方已不再維護它的 Docker images；而在非官方版當中，我的 &lt;code&gt;williamyeh/ansible&lt;/code&gt; 下載量居冠（統計數據&lt;a href=&#34;https://hub.docker.com/search/?q=ansible&amp;amp;page=1&amp;amp;isAutomated=0&amp;amp;isOfficial=0&amp;amp;pullCount=1&amp;amp;starCount=0&#34;&gt;在此&lt;/a&gt;），也持續有人提出 feature request⋯⋯該說是無心插柳嗎？&lt;/p&gt;
+&lt;h2 id=&#34;吃自己的狗食&#34;&gt;吃自己的狗食&lt;/h2&gt;
+&lt;p&gt;再拿另一個很受歡迎的 Ansible role：&lt;a href=&#34;https://github.com/William-Yeh/ansible-oracle-java&#34;&gt;&lt;code&gt;williamyeh.oracle-java&lt;/code&gt;&lt;/a&gt; 為例。它在 Ansible Galaxy 已經得到 &lt;a href=&#34;https://galaxy.ansible.com/william-yeh/oracle-java&#34;&gt;4.8 的高分&lt;/a&gt;，是一個已經為人所知，甚至為人所用的元件。&lt;/p&gt;
+&lt;p&gt;因此，我必須維持良好的向後相容性，以對用戶負責。&lt;/p&gt;
+&lt;p&gt;也因此，連我自己想對原始程式做更動，也不敢貿然造次。必須遵守 &lt;a href=&#34;http://nvie.com/posts/a-successful-git-branching-model/&#34;&gt;Git Flow&lt;/a&gt; 或 &lt;a href=&#34;https://guides.github.com/introduction/flow/&#34;&gt;GitHub Flow&lt;/a&gt; 之類的 &lt;strong&gt;workflow discipline&lt;/strong&gt;，一樣要看 CI 這位&lt;strong&gt;高度客觀中立&lt;/strong&gt;、&lt;strong&gt;不帶感情&lt;/strong&gt;的守門員的臉色。&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2015/12/github-graph.png&#34; alt=&#34;Network graph&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2015/12/github-graph.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Network graph&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;專業，就是對自己也有 discipline。CI，就是&lt;strong&gt;強制幫助你建立 discipline&lt;/strong&gt;。&lt;/p&gt;
+&lt;h2 id=&#34;不要輕看-ci-的紅燈&#34;&gt;不要輕看 CI 的紅燈&lt;/h2&gt;
+&lt;p&gt;對這個 Ansible role，有一點我一直耿耿於懷：Travis CI 和 CircleCI 的測試結果，時好時壞。&lt;/p&gt;
+&lt;p&gt;像以下截圖顯示，同樣都是針對 &lt;code&gt;6598bed&lt;/code&gt; 這個 commit，Travis CI 一次就通過，但 CircleCI 居然會出現一堆紅燈。不死心的我，一直按 rebuild 好幾次，總算才出現綠燈：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2015/12/circleci-error.png&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2015/12/circleci-error.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;奇怪的是，同樣都是針對 &lt;code&gt;a9c105e&lt;/code&gt; 這個 commit，這回 CircleCI 一次就通過，反倒是 Travis CI 出狀況：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2015/12/travisci-error.png&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2015/12/travisci-error.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;前幾天，我終於忍不住出手。&lt;/p&gt;
+&lt;p&gt;反覆比對兩邊的 log，發現，Oracle 疑似會對 jdk 下載點做 rate limiting。每次 Travis CI 及 CircleCI 的 CI 大隊一啟動，Oracle 就惱了。&lt;/p&gt;
+&lt;p&gt;所以，不是我的 Ansible role 有問題，是 Oracle 太神經兮兮了。&lt;/p&gt;
+&lt;p&gt;怪罪 Oracle 於事無補，問題總得解決⋯⋯&lt;/p&gt;
+&lt;p&gt;為了解決這問題，我設計一個 prefetch 機制：只向 Oracle 抓一次需要的 rpm 及 tar.gz 檔案，存放在 role 的 &lt;code&gt;files&lt;/code&gt; 目錄裡面。如此一來，不僅避開 rate limiting 的限制，連帶的也降低整體的 build time，更讓整個 role 架構 refactor 得更乾淨。&lt;/p&gt;
+&lt;p&gt;CI，小小的投資，大大的省事。&lt;/p&gt;
+&lt;h2 id=&#34;卻顧所來徑&#34;&gt;卻顧所來徑&lt;/h2&gt;
+&lt;p&gt;這一切的一切，濫觴都只是一個小起步：要替自己寫的 Ansible role 加上 CI。&lt;/p&gt;
+&lt;p&gt;一旦踏出第一步，就注定你會不斷接觸**『遠離平庸』**的新觀點、新技術。&lt;/p&gt;
+&lt;p&gt;你同意嗎？&lt;/p&gt;
+</description>
+      
     </item>
+    
   </channel>
 </rss>

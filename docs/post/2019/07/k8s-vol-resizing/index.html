@@ -1,39 +1,34 @@
 <!DOCTYPE html>
-<html lang="zh-tw" itemscope itemtype="http://schema.org/WebPage">
+<html lang="zh-tw" itemscope itemtype="http://schema.org/WebPage" data-theme="light">
+
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Volume Resizing Mechanism in Kubernetes - Potioneer&#39;s Essays</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>
+    
+    Volume Resizing Mechanism in Kubernetes - Potioneer&#39;s Essays
+    </title>
   
 
-<meta name="renderer" content="webkit" />
-<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"/>
 
-<meta name="MobileOptimized" content="width"/>
-<meta name="HandheldFriendly" content="true"/>
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes" />
+
+
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
 
 
 <meta name="applicable-device" content="pc,mobile">
-
-<meta name="theme-color" content="#f8f5ec" />
+<meta name="color-scheme" content="light dark" />
 <meta name="msapplication-navbutton-color" content="#f8f5ec">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 <meta name="mobile-web-app-capable" content="yes">
 
-<meta name="author" content="William Yeh" />
-  <meta name="description" content="Non-stop storage scaling (vertical or horizontal scaling) is essential in a data-intensive system, database servers in particular.
-Is it possible in Kubernetes?
-" />
 
-
-
-
-<meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
-
-
-<meta name="generator" content="Hugo 0.143.1" />
+<meta name="generator" content="Hugo 0.157.0" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2019/07/k8s-vol-resizing/" />
@@ -41,25 +36,23 @@ Is it possible in Kubernetes?
 
 
 
-
-<link rel="icon" href="/favicon.ico" />
-
-
-
-
+<meta name="author" content="William Yeh" />
+<meta name="description" content="Non-stop storage scaling (vertical or horizontal scaling) is essential in a data-intensive system, database servers in particular.
+Is it possible in Kubernetes?
+" />
 
 
 
 
 
-
-
-<link rel="stylesheet" href="/sass/jane.min.de22abc00de44766eebd1054fd9e0b254b071f89d5019044f893c484a9249a8d.css" integrity="sha256-3iKrwA3kR2buvRBU/Z4LJUsHH4nVAZBE&#43;JPEhKkkmo0=" media="screen" crossorigin="anonymous">
-
+  
 
 
 
 
+
+
+<meta name="keywords" content="devops, kubernetes" />
 
 
 <meta property="og:url" content="//william-yeh.net/post/2019/07/k8s-vol-resizing/">
@@ -80,12 +73,33 @@ Is it possible in Kubernetes?">
 Is it possible in Kubernetes?">
   <meta itemprop="datePublished" content="2019-07-31T13:00:00+08:00">
   <meta itemprop="dateModified" content="2019-07-31T13:00:00+08:00">
-  <meta itemprop="wordCount" content="1585">
+  <meta itemprop="wordCount" content="1605">
   <meta itemprop="keywords" content="Devops,Kubernetes">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Volume Resizing Mechanism in Kubernetes">
   <meta name="twitter:description" content="Non-stop storage scaling (vertical or horizontal scaling) is essential in a data-intensive system, database servers in particular.
 Is it possible in Kubernetes?">
+
+<link rel="icon" href="/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/style.min.53f4bb4dab681eb9ebff874ec1358eafd998d6d0c2b444ed3fc26a240b963cdf.css" integrity="sha256-U/S7TatoHrnr/4dOwTWOr9mY1tDCtETtP8JqJAuWPN8=" media="screen"
+  crossorigin="anonymous">
+
+
+
+<link rel="stylesheet" href="/css/custom.css">
+
+
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -99,331 +113,292 @@ Is it possible in Kubernetes?">
 
 
 
+<meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
+
+<script>
+  (function () {
+    var savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  })();
+</script>
+
+
 </head>
+
 <body>
-  <div id="mobile-navbar" class="mobile-navbar">
-  <div class="mobile-header-logo">
-    <a href="/" class="logo">Potioneer&#39;s Essays</a>
-  </div>
-  <div class="mobile-navbar-icon">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-</div>
-<nav id="mobile-menu" class="mobile-menu slideout-menu">
-  <ul class="mobile-menu-list">
-    <li class="mobile-menu-item">
-        
-          
-          
-            <a class="menu-item-link" href="//william-yeh.net/">♜</a>
-          
-        
-      </li><li class="mobile-menu-item">
-        
-          
-          
-            <a class="menu-item-link" href="//william-yeh.net/post/">Archives</a>
-          
-        
-      </li><li class="mobile-menu-item">
-        
-          
-          <div class="mobile-menu-parent">
-            <span class="mobile-submenu-open"></span>
-            <a href="//william-yeh.net/series/">
-              Series
-            </a>
-          </div>
-          <ul class="mobile-submenu-list">
-            
-              <li>
-                <a href="//william-yeh.net/series/career-reading-club/">職涯躍升書系導讀會</a>
-              </li>
-            
-              <li>
-                <a href="//william-yeh.net/series/essence-of-scrum/">Essence of Scrum</a>
-              </li>
-            
-              <li>
-                <a href="//william-yeh.net/series/scrum-master-training/">Scrum master 培訓系列</a>
-              </li>
-            
-              <li>
-                <a href="//william-yeh.net/series/agile-decomposition/">敏捷的工作分解方法</a>
-              </li>
-            
-              <li>
-                <a href="//william-yeh.net/series/systhinking-series/">「系統思考工作坊」系列</a>
-              </li>
-            
-              <li>
-                <a href="//william-yeh.net/series/criteria-series/">「判準與指標」系列</a>
-              </li>
-            
-              <li>
-                <a href="//william-yeh.net/series/change-series/">「改變」系列</a>
-              </li>
-            
-              <li>
-                <a href="//william-yeh.net/series/book-review/">書籍／課程推薦</a>
-              </li>
-            
-          </ul>
-        
-      </li><li class="mobile-menu-item">
-        
-          
-          
-            <a class="menu-item-link" href="//william-yeh.net/tags/">Tags</a>
-          
-        
-      </li><li class="mobile-menu-item">
-        
-          
-          
-            <a class="menu-item-link" href="//william-yeh.net/categories/">Categories</a>
-          
-        
-      </li>
+  <div id="back-to-top"></div>
+
+  <header class="site-header">
     
-
-    
-  </ul>
-</nav>
-
-
-  
-    
-
-
-
-
-
-
-  <link rel="stylesheet" href="/lib/photoswipe/photoswipe.min.css" />
-  <link rel="stylesheet" href="/lib/photoswipe/default-skin/default-skin.min.css" />
-
-
-
-
-<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-
-<div class="pswp__bg"></div>
-
-<div class="pswp__scroll-wrap">
-    
-    <div class="pswp__container">
-      <div class="pswp__item"></div>
-      <div class="pswp__item"></div>
-      <div class="pswp__item"></div>
-    </div>
-    
-    <div class="pswp__ui pswp__ui--hidden">
-    <div class="pswp__top-bar">
+<div class="desktop-header">
+  <div class="desktop-header-logo">
+    <a href="/" class="logo">
       
-      <div class="pswp__counter"></div>
-      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-      <button class="pswp__button pswp__button--share" title="Share"></button>
-      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-      
-      
-      <div class="pswp__preloader">
-        <div class="pswp__preloader__icn">
-          <div class="pswp__preloader__cut">
-            <div class="pswp__preloader__donut"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-      <div class="pswp__share-tooltip"></div>
-    </div>
-    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-    </button>
-    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-    </button>
-    <div class="pswp__caption">
-      <div class="pswp__caption__center"></div>
-    </div>
-    </div>
-    </div>
-</div>
-
-  
-
-  
-
-  
-
-  <header id="header" class="header container">
-    <div class="logo-wrapper">
-  <a href="/" class="logo">
-    
       Potioneer&#39;s Essays
-    
-  </a>
+      
+    </a>
+  </div>
+
+  <nav class="desktop-navbar">
+    <ul id="menu" class="menu">
+      
+      
+      <li class="menu-item">
+        
+        
+        
+        <a class="menu-item-link" href="//william-yeh.net/">♜</a>
+        
+
+        
+
+      </li>
+      
+      <li class="menu-item">
+        
+        
+        
+        <a class="menu-item-link" href="//william-yeh.net/post/">Archives</a>
+        
+
+        
+
+      </li>
+      
+      <li class="menu-item">
+        
+        
+        <a class="menu-item-link menu-parent" href="//william-yeh.net/series/">
+          Series
+          
+<svg aria-hidden="true" class="lucide lucide-chevron-down hi-svg-inline icon--chevron-down" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="m6 9 6 6 6-6"/></svg>
+        </a>
+        <ul class="submenu">
+          
+          <li class="submenu-item">
+            <a href="//william-yeh.net/series/career-reading-club/">職涯躍升書系導讀會</a>
+          </li>
+          
+          <li class="submenu-item">
+            <a href="//william-yeh.net/series/essence-of-scrum/">Essence of Scrum</a>
+          </li>
+          
+          <li class="submenu-item">
+            <a href="//william-yeh.net/series/scrum-master-training/">Scrum master 培訓系列</a>
+          </li>
+          
+          <li class="submenu-item">
+            <a href="//william-yeh.net/series/agile-decomposition/">敏捷的工作分解方法</a>
+          </li>
+          
+          <li class="submenu-item">
+            <a href="//william-yeh.net/series/systhinking-series/">「系統思考工作坊」系列</a>
+          </li>
+          
+          <li class="submenu-item">
+            <a href="//william-yeh.net/series/criteria-series/">「判準與指標」系列</a>
+          </li>
+          
+          <li class="submenu-item">
+            <a href="//william-yeh.net/series/change-series/">「改變」系列</a>
+          </li>
+          
+          <li class="submenu-item">
+            <a href="//william-yeh.net/series/book-review/">書籍／課程推薦</a>
+          </li>
+          
+        </ul>
+
+        
+
+      </li>
+      
+      <li class="menu-item">
+        
+        
+        
+        <a class="menu-item-link" href="//william-yeh.net/tags/">Tags</a>
+        
+
+        
+
+      </li>
+      
+      <li class="menu-item">
+        
+        
+        
+        <a class="menu-item-link" href="//william-yeh.net/categories/">Categories</a>
+        
+
+        
+
+      </li>
+      
+
+      
+      
+
+      
+
+      <li class="menu-item">
+        <a class="theme-toggle menu-item-link" href="javascript:void(0);">
+
+          
+<svg aria-hidden="true" class="lucide lucide-sun hi-svg-inline theme-icon-light" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+
+          
+<svg aria-hidden="true" class="lucide lucide-moon hi-svg-inline theme-icon-dark" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+
+        </a>
+      </li>
+
+      <li class="menu-item">
+        <a class="menu-item-link" href="//william-yeh.net/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
+          title="rss" target="_blank">
+          
+<svg aria-hidden="true" class="lucide lucide-rss hi-svg-inline icon--rss" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg>
+        </a>
+        
+      </li>
+    </ul>
+  </nav>
 </div>
 
-<nav class="site-navbar">
-  <ul id="menu" class="menu">
     
-    
-        <li class="menu-item">
-        
-          
-          
-            <a class="menu-item-link" href="//william-yeh.net/">♜</a>
-          
 
-        
+<div class="mobile-header">
+  <div id="mobile-navbar" class="mobile-navbar">
+    <div id="mobile-navbar-icon" class="mobile-navbar-icon">
+      
+<svg aria-hidden="true" class="lucide lucide-menu hi-svg-inline icon--menu" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+    </div>
+    <div class="mobile-navbar-logo">
+      <a href="/" class="logo">Potioneer&#39;s Essays</a>
+    </div>
+  </div>
 
+  <div id="mobile-menu-close-modal" class="mobile-menu-close-modal"></div>
+  <nav id="mobile-menu" class="mobile-menu">
+    <ul class="mobile-menu-list">
+      <li class="mobile-menu-item">
+        
+        
+        
+        <a class="menu-item-link" href="//william-yeh.net/">♜</a>
+        
+        
+      </li><li class="mobile-menu-item">
+        
+        
+        
+        <a class="menu-item-link" href="//william-yeh.net/post/">Archives</a>
+        
+        
+      </li><li class="mobile-menu-item">
+        
+        
+        <div class="mobile-menu-parent">
+          <span class="mobile-submenu-open"></span>
+          <a href="//william-yeh.net/series/">
+            Series
+          </a>
+        </div>
+        <ul class="mobile-submenu-list">
+          
+          <li>
+            <a href="//william-yeh.net/series/career-reading-club/">職涯躍升書系導讀會</a>
+          </li>
+          
+          <li>
+            <a href="//william-yeh.net/series/essence-of-scrum/">Essence of Scrum</a>
+          </li>
+          
+          <li>
+            <a href="//william-yeh.net/series/scrum-master-training/">Scrum master 培訓系列</a>
+          </li>
+          
+          <li>
+            <a href="//william-yeh.net/series/agile-decomposition/">敏捷的工作分解方法</a>
+          </li>
+          
+          <li>
+            <a href="//william-yeh.net/series/systhinking-series/">「系統思考工作坊」系列</a>
+          </li>
+          
+          <li>
+            <a href="//william-yeh.net/series/criteria-series/">「判準與指標」系列</a>
+          </li>
+          
+          <li>
+            <a href="//william-yeh.net/series/change-series/">「改變」系列</a>
+          </li>
+          
+          <li>
+            <a href="//william-yeh.net/series/book-review/">書籍／課程推薦</a>
+          </li>
+          
+        </ul>
+        
+      </li><li class="mobile-menu-item">
+        
+        
+        
+        <a class="menu-item-link" href="//william-yeh.net/tags/">Tags</a>
+        
+        
+      </li><li class="mobile-menu-item">
+        
+        
+        
+        <a class="menu-item-link" href="//william-yeh.net/categories/">Categories</a>
+        
+        
       </li>
-    
-        <li class="menu-item">
-        
-          
-          
-            <a class="menu-item-link" href="//william-yeh.net/post/">Archives</a>
-          
+      
 
-        
+      
 
+      <li class="mobile-menu-item">
+        <a class="theme-toggle menu-item-link" href="javascript:void(0);">
+
+          
+<svg aria-hidden="true" class="lucide lucide-sun hi-svg-inline theme-icon-light" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+
+          
+<svg aria-hidden="true" class="lucide lucide-moon hi-svg-inline theme-icon-dark" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+
+        </a>
       </li>
-    
-        <li class="menu-item">
-        
+
+      <li class="mobile-menu-item">
+        <a class="menu-item-link" href="//william-yeh.net/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
+          title="rss" target="_blank">
           
-          <a class="menu-item-link menu-parent" href="//william-yeh.net/series/">Series</a>
-          <ul class="submenu">
-            
-              <li class="submenu-item">
-                <a href="//william-yeh.net/series/career-reading-club/">職涯躍升書系導讀會</a>
-              </li>
-            
-              <li class="submenu-item">
-                <a href="//william-yeh.net/series/essence-of-scrum/">Essence of Scrum</a>
-              </li>
-            
-              <li class="submenu-item">
-                <a href="//william-yeh.net/series/scrum-master-training/">Scrum master 培訓系列</a>
-              </li>
-            
-              <li class="submenu-item">
-                <a href="//william-yeh.net/series/agile-decomposition/">敏捷的工作分解方法</a>
-              </li>
-            
-              <li class="submenu-item">
-                <a href="//william-yeh.net/series/systhinking-series/">「系統思考工作坊」系列</a>
-              </li>
-            
-              <li class="submenu-item">
-                <a href="//william-yeh.net/series/criteria-series/">「判準與指標」系列</a>
-              </li>
-            
-              <li class="submenu-item">
-                <a href="//william-yeh.net/series/change-series/">「改變」系列</a>
-              </li>
-            
-              <li class="submenu-item">
-                <a href="//william-yeh.net/series/book-review/">書籍／課程推薦</a>
-              </li>
-            
-          </ul>
-
+<svg aria-hidden="true" class="lucide lucide-rss hi-svg-inline icon--rss" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg>
+        </a>
         
-
       </li>
-    
-        <li class="menu-item">
-        
-          
-          
-            <a class="menu-item-link" href="//william-yeh.net/tags/">Tags</a>
-          
-
-        
-
-      </li>
-    
-        <li class="menu-item">
-        
-          
-          
-            <a class="menu-item-link" href="//william-yeh.net/categories/">Categories</a>
-          
-
-        
-
-      </li>
-    
-
-    
-    
-
-    
-  </ul>
-</nav>
+    </ul>
+  </nav>
+</div>
 
   </header>
 
-  <div id="mobile-panel">
-    <main id="main" class="main bg-llight wallpaper">
-      <div class="content-wrapper">
-        <div id="content" class="content container">
-          <article class="post bg-white">
-    
-    <header class="post-header">
-      <h1 class="post-title">Volume Resizing Mechanism in Kubernetes</h1>
-      
-
-      <div class="post-meta">
-  <div class="post-meta-author">
-    by
-      William Yeh
-    
-  </div>
-
-  <div class="post-meta-time">
-    <time datetime="2019-07-31">
-      2019-07-31
-    </time>
-  </div>
+  
 
   
 
 
-  <div class="post-meta__right">
-    <span class="post-meta-more">
-        約 1585 字 -
-        預計閱讀 8 分鐘
-      </span>
 
-    <div class="post-meta-category">
-        <a href="//william-yeh.net/categories/tech/"> tech </a>
-          
-      </div>
-
-
-    
-    
-
-
-    
-    
-  </div>
-</div>
-
-    </header>
-
-    
-    
-<div class="post-toc" id="post-toc">
-  <h2 class="post-toc-title">文章目錄</h2>
-  <div class="post-toc-content">
-    <nav id="TableOfContents">
+  <main id="main" class="main pico container">
+    <div class="content-wrapper">
+    <aside class="left-sidebar">
+      
+<nav class="toc" id="toc">
+    <div class="toc-title">文章目錄</div>
+    <div class="toc-content custom-scrollbar">
+      <nav id="TableOfContents">
   <ul>
     <li><a href="#about-the-sample-app">About the sample app</a></li>
     <li><a href="#experiment-part-1-initial-size">Experiment part 1: initial size</a></li>
@@ -432,13 +407,72 @@ Is it possible in Kubernetes?">
     <li><a href="#conclusion">Conclusion</a></li>
   </ul>
 </nav>
+    </div>
+  </nav>
+
+
+    </aside>
+
+    <div id="content" class="content">
+      <article class="post">
+        
+        <header class="post-header">
+          <h1 class="post-title">Volume Resizing Mechanism in Kubernetes</h1>
+          
+
+
+
+          <div class="post-meta-list">
+  <div class="post-meta-item post-meta-author">
+    
+<svg aria-hidden="true" class="lucide lucide-user-round-pen hi-svg-inline" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M2 21a8 8 0 0 1 10.821-7.487"/><path d="M21.378 16.626a1 1 0 0 0-3.004-3.004l-4.01 4.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z"/><circle cx="10" cy="8" r="5"/></svg>
+    William Yeh
+    
   </div>
-</div>
+
+  <div class="post-meta-item post-meta-time">
+    
+<svg aria-hidden="true" class="lucide lucide-calendar-days hi-svg-inline" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/></svg>
+    <time datetime=" 2019-07-31">
+      2019-07-31
+    </time>
 
 
     
-    <div class="post-content">
-      <p>Non-stop storage scaling (vertical or horizontal scaling) is essential in a data-intensive system, database servers in particular.</p>
+
+  </div>
+
+
+  <div class="post-meta__right">
+    <span class="post-meta-more">
+      約 1605 字 -
+      預計閱讀 8 分鐘
+      
+      
+      </span>
+
+    <div class="post-meta-item post-meta-category">
+      
+        
+          
+        <a href="//william-yeh.net/categories/tech/">tech</a>
+    </div>
+
+
+    
+    
+
+
+    
+    
+  </div>
+</div>
+
+        </header>
+
+        
+        <div class="post-content">
+          <p>Non-stop storage scaling (vertical or horizontal scaling) is essential in a data-intensive system, database servers in particular.</p>
 <p>Is it possible in Kubernetes?</p>
 <p>In Kubernetes v1.11 the <em>persistent volume expansion</em> feature is being promoted to beta and enabled by default.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> There is also a nontrivial real-world use case for this: <a href="https://strimzi.io/">Strimzi Kafka operator</a>. Strimzi merely builds on top of existing Kubernetes <a href="https://kubernetes.io/docs/concepts/storage/storage-classes/">storage class</a> mechanism to grow the storage of Kafka cluster.<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> Therefore, the volume resizing feature is not exclusively available for Strimzi and Kafka. You can put this feature into your own application as long as you learn the mechanism.</p>
 <p>To get a concrete knowledge of the volume resizing, I&rsquo;ve conducted a simple experiment on GCP and GKE. The experiment tries to answer the following questions:</p>
@@ -451,7 +485,9 @@ Is it possible in Kubernetes?">
 <h2 id="about-the-sample-app">About the sample app</h2>
 <p>A sample app <a href="https://github.com/William-Yeh/vol-resize/blob/master/voltest.sh">voltest.sh</a> will be used for the whole experiment.<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> It displays the size of available disk spaces in the specified mount point (as the 1st argument), and also records the data continuously in the specified output file (as the 2nd argument; default to <code>&quot;data&quot;</code>).</p>
 <p>Let&rsquo;s see how it works. Assume that we are in the <code>/home</code> directory, with available disk space about 4.5 GB:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>% pwd
+<div class="highlight-container">
+  <button class="copy-code-btn outline">Copy</button>
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>% pwd
 </span></span><span style="display:flex;"><span>/home
 </span></span><span style="display:flex;"><span>%
 </span></span><span style="display:flex;"><span>% df -h
@@ -466,8 +502,12 @@ Is it possible in Kubernetes?">
 </span></span><span style="display:flex;"><span>overlayfs       1.0M  160K  864K  16% /etc/ssh/ssh_host_dsa_key
 </span></span><span style="display:flex;"><span>tmpfs           848M  736K  847M   1% /run/metrics
 </span></span><span style="display:flex;"><span>tmpfs           848M     0  848M   0% /run/google/devshell</span></span></code></pre></div>
+  </div>
+
 <p>At first run, it shows the space of current directory and records them continuously in the <code>data</code> file within the same directory:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>% docker run -it  -v $(pwd):/mnt  williamyeh/voltest  /mnt
+<div class="highlight-container">
+  <button class="copy-code-btn outline">Copy</button>
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>% docker run -it  -v $(pwd):/mnt  williamyeh/voltest  /mnt
 </span></span><span style="display:flex;"><span>---&gt; Checking /mnt/data
 </span></span><span style="display:flex;"><span>1 : 4.5G
 </span></span><span style="display:flex;"><span>2 : 4.5G
@@ -483,8 +523,12 @@ Is it possible in Kubernetes?">
 </span></span><span style="display:flex;"><span>12 : 4.5G
 </span></span><span style="display:flex;"><span>^C
 </span></span><span style="display:flex;"><span>%</span></span></code></pre></div>
+  </div>
+
 <p>Interrupt the execution at 12 on purpose, and run again. You&rsquo;ll see that it picks up the last serial number 12 and continues counting:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>% docker run -it  -v $(pwd):/mnt  williamyeh/voltest  /mnt
+<div class="highlight-container">
+  <button class="copy-code-btn outline">Copy</button>
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>% docker run -it  -v $(pwd):/mnt  williamyeh/voltest  /mnt
 </span></span><span style="display:flex;"><span>---&gt; Checking /mnt/data
 </span></span><span style="display:flex;"><span>13 : 4.5G
 </span></span><span style="display:flex;"><span>14 : 4.5G
@@ -499,8 +543,12 @@ Is it possible in Kubernetes?">
 </span></span><span style="display:flex;"><span>23 : 4.5G
 </span></span><span style="display:flex;"><span>^C
 </span></span><span style="display:flex;"><span>%</span></span></code></pre></div>
+  </div>
+
 <p>Now the <code>data</code> file should have 23 lines of records:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>% cat data
+<div class="highlight-container">
+  <button class="copy-code-btn outline">Copy</button>
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>% cat data
 </span></span><span style="display:flex;"><span>1 : 4.5G
 </span></span><span style="display:flex;"><span>2 : 4.5G
 </span></span><span style="display:flex;"><span>3 : 4.5G
@@ -525,6 +573,8 @@ Is it possible in Kubernetes?">
 </span></span><span style="display:flex;"><span>22 : 4.5G
 </span></span><span style="display:flex;"><span>23 : 4.5G
 </span></span><span style="display:flex;"><span>%</span></span></code></pre></div>
+  </div>
+
 <p>In the following experiment we&rsquo;ll use the app and the data file to answer the 3 questions:</p>
 <ol>
 <li>
@@ -541,12 +591,20 @@ Is it possible in Kubernetes?">
 <h2 id="experiment-part-1-initial-size">Experiment part 1: initial size</h2>
 <p>The experiment is conducted on GCP and GKE. However, it should apply to other cloud Kubernetes platforms as well, with minor modification.</p>
 <p>➊ Clone the experiment repo to your workspace or Cloud Shell:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>% git clone https://github.com/William-Yeh/vol-resize.git</span></span></code></pre></div>
+<div class="highlight-container">
+  <button class="copy-code-btn outline">Copy</button>
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>% git clone https://github.com/William-Yeh/vol-resize.git</span></span></code></pre></div>
+  </div>
+
 <p>➋ Prepare a Kubernetes cluster in GKE.</p>
 <p>➌ Create a 20GB persistent disk named <code>voltest</code>.  For example, the following command will create such a persistent disk in the us-central1-a zone:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>% gcloud compute disks create         \
+<div class="highlight-container">
+  <button class="copy-code-btn outline">Copy</button>
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>% gcloud compute disks create         \
 </span></span><span style="display:flex;"><span>    --size=20GB --zone=us-central1-a  \
 </span></span><span style="display:flex;"><span>    voltest</span></span></code></pre></div>
+  </div>
+
 <p>Check if the underlying persistent disk is created:</p>
 
 <link rel="stylesheet" href="/css/hugo-easy-gallery.css" />
@@ -562,7 +620,9 @@ Is it possible in Kubernetes?">
 </div>
 
 <p>➍ We need a storage class with <code>allowVolumeExpansion</code> enabled. The manifest file <a href="https://github.com/William-Yeh/vol-resize/blob/master/expansion-ss.yml">expansion-ss.yml</a> is provided as follows:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>apiVersion: storage.k8s.io/v1
+<div class="highlight-container">
+  <button class="copy-code-btn outline">Copy</button>
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>apiVersion: storage.k8s.io/v1
 </span></span><span style="display:flex;"><span>kind: StorageClass
 </span></span><span style="display:flex;"><span>metadata:
 </span></span><span style="display:flex;"><span>  name: expansion
@@ -571,10 +631,18 @@ Is it possible in Kubernetes?">
 </span></span><span style="display:flex;"><span>provisioner: kubernetes.io/gce-pd
 </span></span><span style="display:flex;"><span>allowVolumeExpansion: true
 </span></span><span style="display:flex;"><span>reclaimPolicy: Delete</span></span></code></pre></div>
+  </div>
+
 <p>Create a storage class <code>expansion</code> for this:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>% kubectl apply -f expansion-ss.yml</span></span></code></pre></div>
+<div class="highlight-container">
+  <button class="copy-code-btn outline">Copy</button>
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>% kubectl apply -f expansion-ss.yml</span></span></code></pre></div>
+  </div>
+
 <p>➎ We need a PV manifest file <a href="https://github.com/William-Yeh/vol-resize/blob/master/voltest-pv.yml">voltest-pv.yml</a> to associate it with the existing persistent disk just created before:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>apiVersion: v1
+<div class="highlight-container">
+  <button class="copy-code-btn outline">Copy</button>
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>apiVersion: v1
 </span></span><span style="display:flex;"><span>kind: PersistentVolume
 </span></span><span style="display:flex;"><span>metadata:
 </span></span><span style="display:flex;"><span>  name: voltest
@@ -587,15 +655,23 @@ Is it possible in Kubernetes?">
 </span></span><span style="display:flex;"><span>  gcePersistentDisk:
 </span></span><span style="display:flex;"><span>    pdName: voltest
 </span></span><span style="display:flex;"><span>    fsType: ext4</span></span></code></pre></div>
+  </div>
+
 <p>Create the persistent volume <code>voltest</code> now:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>% kubectl apply -f voltest-pv.yml
+<div class="highlight-container">
+  <button class="copy-code-btn outline">Copy</button>
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>% kubectl apply -f voltest-pv.yml
 </span></span><span style="display:flex;"><span>persistentvolume/voltest created
 </span></span><span style="display:flex;"><span>% kubectl get pv
 </span></span><span style="display:flex;"><span>NAME      CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS      CLAIM   STORAGECLASS   REASON   AGE
 </span></span><span style="display:flex;"><span>voltest   20Gi       RWO            Retain           Available           expansion               8s</span></span></code></pre></div>
+  </div>
+
 <p>Note that the <code>voltest</code> PV is in &ldquo;Available&rdquo; status.</p>
 <p>➏ We need a PVC manifest file <a href="https://github.com/William-Yeh/vol-resize/blob/master/voltest-pvc.yml">voltest-pvc.yml</a> to claim the PV:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>apiVersion: v1
+<div class="highlight-container">
+  <button class="copy-code-btn outline">Copy</button>
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>apiVersion: v1
 </span></span><span style="display:flex;"><span>kind: PersistentVolumeClaim
 </span></span><span style="display:flex;"><span>metadata:
 </span></span><span style="display:flex;"><span>  name: voltest
@@ -607,8 +683,12 @@ Is it possible in Kubernetes?">
 </span></span><span style="display:flex;"><span>  resources:
 </span></span><span style="display:flex;"><span>    requests:
 </span></span><span style="display:flex;"><span>      storage: 20Gi</span></span></code></pre></div>
+  </div>
+
 <p>Claim the persistent volume now:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>% kubectl apply -f voltest-pvc.yml
+<div class="highlight-container">
+  <button class="copy-code-btn outline">Copy</button>
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>% kubectl apply -f voltest-pvc.yml
 </span></span><span style="display:flex;"><span>persistentvolumeclaim/voltest created
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>% kubectl get pvc
@@ -618,9 +698,13 @@ Is it possible in Kubernetes?">
 </span></span><span style="display:flex;"><span>% kubectl get pv
 </span></span><span style="display:flex;"><span>NAME      CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM             STORAGECLASS   REASON   AGE
 </span></span><span style="display:flex;"><span>voltest   20Gi       RWO            Retain           Bound    default/voltest   expansion               13m</span></span></code></pre></div>
+  </div>
+
 <p>Note that the <code>voltest</code> PV/PVC pair is in &ldquo;Bound&rdquo; status.</p>
 <p>➐ We need a manifest file <a href="https://github.com/William-Yeh/vol-resize/blob/master/voltest-app.yml">voltest-app.yml</a> for our sample app to access the PV/PVC:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>apiVersion: apps/v1
+<div class="highlight-container">
+  <button class="copy-code-btn outline">Copy</button>
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>apiVersion: apps/v1
 </span></span><span style="display:flex;"><span>kind: Deployment
 </span></span><span style="display:flex;"><span>...
 </span></span><span style="display:flex;"><span>spec:
@@ -640,10 +724,18 @@ Is it possible in Kubernetes?">
 </span></span><span style="display:flex;"><span>        - name: voltest
 </span></span><span style="display:flex;"><span>          persistentVolumeClaim:
 </span></span><span style="display:flex;"><span>            claimName: voltest</span></span></code></pre></div>
+  </div>
+
 <p>Invoke the sample app now:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>% kubectl apply -f voltest-app.yml</span></span></code></pre></div>
+<div class="highlight-container">
+  <button class="copy-code-btn outline">Copy</button>
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>% kubectl apply -f voltest-app.yml</span></span></code></pre></div>
+  </div>
+
 <p>Open another terminal pane to watch the logs continuously:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>% kubectl logs -f deployment/voltest
+<div class="highlight-container">
+  <button class="copy-code-btn outline">Copy</button>
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>% kubectl logs -f deployment/voltest
 </span></span><span style="display:flex;"><span>---&gt; Checking /mnt/data
 </span></span><span style="display:flex;"><span>1 : 20G
 </span></span><span style="display:flex;"><span>2 : 20G
@@ -658,12 +750,18 @@ Is it possible in Kubernetes?">
 </span></span><span style="display:flex;"><span>11 : 20G
 </span></span><span style="display:flex;"><span>12 : 20G
 </span></span><span style="display:flex;"><span>...</span></span></code></pre></div>
+  </div>
+
 <p>Quite familiar output. Everything works fine.</p>
 <p>Keep the logs running. We&rsquo;ll see it again and again.</p>
 <h2 id="experiment-part-2-resizing">Experiment part 2: resizing</h2>
 <p>Now we&rsquo;re about to resize the volume.</p>
 <p>➊ Edit the <code>voltest</code> PVC:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>% kubectl edit pvc/voltest</span></span></code></pre></div>
+<div class="highlight-container">
+  <button class="copy-code-btn outline">Copy</button>
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>% kubectl edit pvc/voltest</span></span></code></pre></div>
+  </div>
+
 <p>➋ Change the value of <code>spec.resources.requests.storage</code> from <code>20Gi</code> to <code>100Gi</code>. Save, and exit.</p>
 <p>➌ Check if the logs are still being generated, and the content of the logs.</p>
 <p>➍ Check the size of underlying persistent disk. It should be expanded to 100 GB now.</p>
@@ -681,13 +779,17 @@ Is it possible in Kubernetes?">
 </div>
 
 <p>➎ Check if the PV/PVC are both expanded:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>% kubectl get pv
+<div class="highlight-container">
+  <button class="copy-code-btn outline">Copy</button>
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>% kubectl get pv
 </span></span><span style="display:flex;"><span>NAME      CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM             STORAGECLASS   REASON   AGE
 </span></span><span style="display:flex;"><span>voltest   100Gi      RWO            Retain           Bound    default/voltest   expansion               45m
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>% kubectl get pvc
 </span></span><span style="display:flex;"><span>NAME      STATUS   VOLUME    CAPACITY   ACCESS MODES   STORAGECLASS   AGE
 </span></span><span style="display:flex;"><span>voltest   Bound    voltest   20Gi       RWO            expansion      32m</span></span></code></pre></div>
+  </div>
+
 <p>PV is expanded to 100 GB, but PVC not yet. In other words, <em>block storage volume</em> is expanded, but <em>file system</em> is not yet. The reason is described in the “<a href="https://kubernetes.io/blog/2018/07/12/resizing-persistent-volumes-using-kubernetes/">Resizing Persistent Volumes using Kubernetes</a>” article:</p>
 <ul>
 <li>
@@ -700,13 +802,19 @@ Is it possible in Kubernetes?">
 <p>For now the question <em>&ldquo;2. Is the resizing process non-stop?&rdquo;</em> should be obviously answered. Let&rsquo;s move on to handle the <code>FileSystemResizePending</code> condition by restarting the related pods.</p>
 <h2 id="experiment-part-3-restart-the-pod">Experiment part 3: restart the pod</h2>
 <p>➊ Kill the pod, and let deployment restart a new pod for us (<code>replicas=1</code>):</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>% kubectl get pods
+<div class="highlight-container">
+  <button class="copy-code-btn outline">Copy</button>
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>% kubectl get pods
 </span></span><span style="display:flex;"><span>NAME                      READY   STATUS    RESTARTS   AGE
 </span></span><span style="display:flex;"><span>voltest-d88ff8c49-66wk2   1/1     Running   0          23m
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>% kubectl delete pod voltest-d88ff8c49-66wk2</span></span></code></pre></div>
+  </div>
+
 <p>➋ Watch the logs! Our sample app will see the <em>file system expansion</em> progress on the fly:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>13465 : 20G
+<div class="highlight-container">
+  <button class="copy-code-btn outline">Copy</button>
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>13465 : 20G
 </span></span><span style="display:flex;"><span>13466 : 20G
 </span></span><span style="display:flex;"><span>13467 : 20G
 </span></span><span style="display:flex;"><span>13468 : 24G
@@ -724,14 +832,20 @@ Is it possible in Kubernetes?">
 </span></span><span style="display:flex;"><span>13480 : 99G
 </span></span><span style="display:flex;"><span>13481 : 99G
 </span></span><span style="display:flex;"><span>13482 : 99G</span></span></code></pre></div>
+  </div>
+
 <p>➌ Check if the PV/PVC are both expanded:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>% kubectl get pv
+<div class="highlight-container">
+  <button class="copy-code-btn outline">Copy</button>
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>% kubectl get pv
 </span></span><span style="display:flex;"><span>NAME      CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM             STORAGECLASS   REASON   AGE
 </span></span><span style="display:flex;"><span>voltest   100Gi      RWO            Retain           Bound    default/voltest   expansion               57m
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>% kubectl get pvc
 </span></span><span style="display:flex;"><span>NAME      STATUS   VOLUME    CAPACITY   ACCESS MODES   STORAGECLASS   AGE
 </span></span><span style="display:flex;"><span>voltest   Bound    voltest   100Gi      RWO            expansion      44m</span></span></code></pre></div>
+  </div>
+
 <p>For now the remaining questions <em>“1. Does volume resizing really work in Kubernetes?”</em> and <em>“3. Are data still persistent after resizing?”</em> should be obviously answered.</p>
 <h2 id="conclusion">Conclusion</h2>
 <p>As can be seen in this experiment, all you have to do to grow the PV/PVC are:</p>
@@ -771,10 +885,10 @@ Is it possible in Kubernetes?">
 </li>
 </ol>
 </div>
-    </div>
+        </div>
 
-    
-    
+        
+        
 <div class="post-copyright">
   <p class="copyright-item">
     <span class="item-title">文章作者</span>
@@ -796,58 +910,50 @@ Is it possible in Kubernetes?">
 
 
 
-    
-    
+        
+        
 
 
-    <footer class="post-footer">
-      <div class="post-tags">
-          <a href="//william-yeh.net/tags/devops/">devops</a>
-            <a href="//william-yeh.net/tags/kubernetes/">kubernetes</a>
+        <footer class="post-footer">
+          <div class="post-tags">
+              <a href="//william-yeh.net/tags/devops/">devops</a>
+                <a href="//william-yeh.net/tags/kubernetes/">kubernetes</a>
+                
+            </div>
+
+
+          
+          <nav class="post-nav">
             
-        </div>
+              <a class="prev" href="/post/2019/12/tech-interview/">
+                
+                <i class="iconfont">
+                  
+<svg aria-hidden="true" class="lucide lucide-chevron-left hi-svg-inline" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="m15 18-6-6 6-6"/></svg>
+                </i>
+                <span class="prev-text nav-default">技術面試的小觀點</span>
+                <span class="prev-text nav-mobile">上一篇</span>
+              </a>
+            
+              <a class="next" href="/post/2019/07/ckad-materials/">
+                <span class="next-text nav-default">CKAD (Certified Kubernetes Application Developer) 相關資料</span>
+                <span class="prev-text nav-mobile">下一篇</span>
+                
+                <i class="iconfont">
+                  
+<svg aria-hidden="true" class="lucide lucide-chevron-right hi-svg-inline" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="m9 18 6-6-6-6"/></svg>
+                </i>
+              </a>
+          </nav>
+        </footer>
+      </article>
+
+      
+      
 
 
       
-      <nav class="post-nav">
-        
-          <a class="prev" href="/post/2019/12/tech-interview/">
-            
-            <i class="iconfont">
-              <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
-  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-  width="18" height="18">
-  <path d="M691.908486 949.511495l75.369571-89.491197c10.963703-12.998035 10.285251-32.864502-1.499144-44.378743L479.499795 515.267417 757.434875 204.940602c11.338233-12.190647 11.035334-32.285311-0.638543-44.850487l-80.46666-86.564541c-11.680017-12.583596-30.356378-12.893658-41.662889-0.716314L257.233596 494.235404c-11.332093 12.183484-11.041474 32.266891 0.657986 44.844348l80.46666 86.564541c1.772366 1.910513 3.706415 3.533476 5.750981 4.877077l306.620399 321.703933C662.505829 963.726242 680.945807 962.528973 691.908486 949.511495z"></path>
-</svg>
-
-            </i>
-            <span class="prev-text nav-default">技術面試的小觀點</span>
-            <span class="prev-text nav-mobile">上一篇</span>
-          </a>
-        
-          <a class="next" href="/post/2019/07/ckad-materials/">
-            <span class="next-text nav-default">CKAD (Certified Kubernetes Application Developer) 相關資料</span>
-            <span class="prev-text nav-mobile">下一篇</span>
-            
-            <i class="iconfont">
-              <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
-  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-  width="18" height="18">
-  <path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311 0.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889 0.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-0.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"></path>
-</svg>
-
-            </i>
-          </a>
-      </nav>
-    </footer>
-  </article>
-
-  
-  
-
-
-  
-  
+      
 
   
 
@@ -856,7 +962,7 @@ Is it possible in Kubernetes?">
 
   
   
-    <div class="post bg-white">
+    <div class="post">
   <script src="https://utteranc.es/client.js"
         repo= "William-Yeh/utterances-area"
         issue-term="pathname"
@@ -878,73 +984,58 @@ Is it possible in Kubernetes?">
 
   
 
-        </div>
-      </div>
-    </main>
 
-    <footer id="footer" class="footer">
-      <div class="icon-links">
+    </div>
+
+    <aside class="right-sidebar">
+      
+    </aside>
+  </div>
+  </main>
+
+  <footer id="footer" class="site-footer">
+    <div class="social-icon-links">
   
+
+
+<a href="mailto:william.pjyeh@gmail.com" rel="me noopener" class="social-icon-link" title="email" >
   
-    <a href="mailto:william.pjyeh@gmail.com" rel="me noopener" class="iconfont"
-      title="email" >
-      <svg class="icon" viewBox="0 0 1451 1024" version="1.1"
-  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-  width="36" height="36">
+<svg aria-hidden="true" class="icon hi-svg-inline" fill="currentColor" height="1em" version="1.1" viewBox="0 0 1451 1024" width="1em" xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
   <path d="M664.781909 681.472759 0 97.881301C0 3.997201 71.046997 0 71.046997 0L474.477909 0 961.649408 0 1361.641813 0C1361.641813 0 1432.688811 3.997201 1432.688811 97.881301L771.345323 681.472759C771.345323 681.472759 764.482731 685.154773 753.594283 688.65053L753.594283 688.664858C741.602731 693.493018 729.424896 695.068979 718.077952 694.839748 706.731093 695.068979 694.553173 693.493018 682.561621 688.664858L682.561621 688.65053C671.644501 685.140446 664.781909 681.472759 664.781909 681.472759L664.781909 681.472759ZM718.063616 811.603883C693.779541 811.016482 658.879232 802.205449 619.10784 767.734955 542.989056 701.759633 0 212.052267 0 212.052267L0 942.809523C0 942.809523 0 1024 83.726336 1024L682.532949 1024 753.579947 1024 1348.948139 1024C1432.688811 1024 1432.688811 942.809523 1432.688811 942.809523L1432.688811 212.052267C1432.688811 212.052267 893.138176 701.759633 817.019477 767.734955 777.248 802.205449 742.347691 811.03081 718.063616 811.603883L718.063616 811.603883Z"></path>
 </svg>
 
-    </a>
+</a>
+<a href="https://twitter.com/william_yeh" rel="me noopener" class="social-icon-link" title="twitter"  target="_blank" >
   
-    <a href="https://twitter.com/william_yeh" rel="me noopener" class="iconfont"
-      title="twitter"  target="_blank"
-      >
-      <svg class="icon" viewBox="0 0 1264 1024" version="1.1"
-  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-  width="36" height="36">
+<svg aria-hidden="true" class="icon hi-svg-inline" fill="currentColor" height="1em" version="1.1" viewBox="0 0 1264 1024" width="1em" xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
   <path d="M1229.8616 18.043658c0 0-117.852626 63.135335-164.151872 67.344358-105.225559-164.151872-505.082682-92.598492-437.738325 223.078185C278.622548 312.675223 89.216542 47.506814 89.216542 47.506814s-117.852626 189.406006 75.762402 345.139833C127.097743 396.85567 55.544363 371.601535 55.544363 371.601535S26.081207 535.753407 253.368414 615.724832c-21.045112 29.463156-113.643603 8.418045-113.643603 8.418045s25.254134 143.10676 231.496229 180.987961c-143.10676 130.479693-387.230056 92.598492-370.393967 105.225559 206.242095 189.406006 1119.599946 231.496229 1128.01799-643.98042C1179.353331 249.539887 1263.533778 123.269217 1263.533778 123.269217s-130.479693 37.881201-138.897738 33.672179C1225.652577 98.015083 1229.8616 18.043658 1229.8616 18.043658"></path>
 </svg>
 
-    </a>
+</a>
+<a href="https://www.facebook.com/william.yeh" rel="me noopener" class="social-icon-link" title="facebook"  target="_blank" >
   
-    <a href="https://www.facebook.com/william.yeh" rel="me noopener" class="iconfont"
-      title="facebook"  target="_blank"
-      >
-      <svg class="icon" style="" viewBox="0 0 1024 1024" version="1.1"
-  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-  width="33" height="33">
+<svg aria-hidden="true" class="icon hi-svg-inline" fill="currentColor" height="1em" version="1.1" viewBox="0 0 1024 1024" width="1em" xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
   <path d="M965.7344 2.7648c14.848 0 28.2624 5.5296 40.2432 16.6912C1017.9584 30.5152 1024 43.52 1024 58.2656l0 910.2336c0 14.848-6.0416 27.7504-18.0224 38.8096C993.8944 1018.4704 980.48 1024 965.7344 1024L704.9216 1024 704.9216 629.9648l133.2224 0 19.456-155.4432-152.576 0L705.024 373.0432c0-50.688 25.9072-76.0832 77.7216-76.0832l80.4864 0L863.232 163.5328c-27.7504-5.4272-67.4816-8.192-119.296-8.192-59.1872 0-106.8032 18.0224-142.9504 54.0672C564.736 245.5552 546.7136 296.0384 546.7136 360.7552l0 113.7664L413.4912 474.5216l0 155.4432 133.2224 0L546.7136 1024 55.5008 1024c-14.848 0-27.7504-5.5296-38.8096-16.6912C5.5296 996.2496 0 983.3472 0 968.4992L0 58.2656C0 43.52 5.5296 30.5152 16.6912 19.456c11.0592-11.0592 24.064-16.6912 38.8096-16.6912L965.7344 2.7648z"></path>
 </svg>
 
-    </a>
+</a>
+<a href="https://www.linkedin.com/in/pjyeh/" rel="me noopener" class="social-icon-link" title="linkedin"  target="_blank" >
   
-    <a href="https://www.linkedin.com/in/pjyeh/" rel="me noopener" class="iconfont"
-      title="linkedin"  target="_blank"
-      >
-      <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
-  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-  width="33" height="33">
+<svg aria-hidden="true" class="icon hi-svg-inline" fill="currentColor" height="1em" version="1.1" viewBox="0 0 1024 1024" width="1em" xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
   <path d="M872.405333 872.618667h-151.637333v-237.610667c0-56.661333-1.152-129.578667-79.018667-129.578667-79.061333 0-91.136 61.653333-91.136 125.397334v241.792H398.976V384h145.664v66.602667h1.962667c20.352-38.4 69.845333-78.933333 143.786666-78.933334 153.642667 0 182.058667 101.12 182.058667 232.746667v268.202667zM227.712 317.141333a87.978667 87.978667 0 0 1-88.021333-88.106666 88.064 88.064 0 1 1 88.021333 88.106666z m76.032 555.477334H151.68V384h152.064v488.618667zM948.266667 0H75.562667C33.792 0 0 33.024 0 73.770667v876.458666C0 991.018667 33.792 1024 75.562667 1024h872.576C989.866667 1024 1024 991.018667 1024 950.229333V73.770667C1024 33.024 989.866667 0 948.138667 0h0.128z"></path>
 </svg>
 
-    </a>
+</a>
+<a href="https://github.com/william-yeh" rel="me noopener" class="social-icon-link" title="github"  target="_blank" >
   
-    <a href="https://github.com/william-yeh" rel="me noopener" class="iconfont"
-      title="github"  target="_blank"
-      >
-      <svg class="icon" style="" viewBox="0 0 1024 1024" version="1.1"
-  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-  width="36" height="36">
+<svg aria-hidden="true" class="icon hi-svg-inline" fill="currentColor" height="1em" version="1.1" viewBox="0 0 1024 1024" width="1em" xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
   <path d="M512 12.672c-282.88 0-512 229.248-512 512 0 226.261333 146.688 418.133333 350.08 485.76 25.6 4.821333 34.986667-11.008 34.986667-24.618667 0-12.16-0.426667-44.373333-0.64-87.04-142.421333 30.890667-172.458667-68.693333-172.458667-68.693333C188.672 770.986667 155.008 755.2 155.008 755.2c-46.378667-31.744 3.584-31.104 3.584-31.104 51.413333 3.584 78.421333 52.736 78.421333 52.736 45.653333 78.293333 119.850667 55.68 149.12 42.581333 4.608-33.109333 17.792-55.68 32.426667-68.48-113.706667-12.8-233.216-56.832-233.216-253.013333 0-55.893333 19.84-101.546667 52.693333-137.386667-5.76-12.928-23.04-64.981333 4.48-135.509333 0 0 42.88-13.738667 140.8 52.48 40.96-11.392 84.48-17.024 128-17.28 43.52 0.256 87.04 5.888 128 17.28 97.28-66.218667 140.16-52.48 140.16-52.48 27.52 70.528 10.24 122.581333 5.12 135.509333 32.64 35.84 52.48 81.493333 52.48 137.386667 0 196.693333-119.68 240-233.6 252.586667 17.92 15.36 34.56 46.762667 34.56 94.72 0 68.522667-0.64 123.562667-0.64 140.202666 0 13.44 8.96 29.44 35.2 24.32C877.44 942.592 1024 750.592 1024 524.672c0-282.752-229.248-512-512-512"></path>
 </svg>
 
-    </a>
+</a>
+<a href="https://www.slideshare.net/williamyeh" rel="me noopener" class="social-icon-link" title="coding"  target="_blank" >
   
-    <a href="https://www.slideshare.net/williamyeh" rel="me noopener" class="iconfont"
-      title="coding"  target="_blank"
-      >
-      <svg class="icon" style="" viewBox="0 0 1024 1024" version="1.1"
-  width="36" height="36">
+<svg aria-hidden="true" class="icon hi-svg-inline" fill="currentColor" height="1em" version="1.1" viewBox="0 0 1024 1024" width="1em">
   <path
       d="m 313.5359,557.51414 c 9.229,0 16.57801,8.88719 16.57801,19.99616 0,11.10899 -7.34901,19.99617 -16.57801,19.99617 -9.229,0 -16.57801,-8.88718 -16.57801,-19.99617 0,-11.10897 7.34901,-19.99616 16.57801,-19.99616 z m 393.7706,0 c 9.22899,0 16.57802,8.88719 16.57802,19.99616 0,11.10899 -7.34903,19.99617 -16.57802,19.99617 -9.229,0 -16.57802,-8.88718 -16.57802,-19.99617 0,-11.10897 7.34902,-19.99616 16.57802,-19.99616 z"
       id="path6"/>
@@ -953,19 +1044,15 @@ Is it possible in Kubernetes?">
       id="path8"/>
 </svg>
 
-    </a>
+</a>
 
 
-<a href="//william-yeh.net/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
-    class="iconfont" title="rss" target="_blank">
-    <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
-  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-  width="30" height="30">
-  <path d="M819.157333 1024C819.157333 574.592 449.408 204.8 0 204.8V0c561.706667 0 1024 462.293333 1024 1024h-204.842667zM140.416 743.04a140.8 140.8 0 0 1 140.501333 140.586667A140.928 140.928 0 0 1 140.074667 1024C62.72 1024 0 961.109333 0 883.626667s62.933333-140.544 140.416-140.586667zM678.784 1024h-199.04c0-263.210667-216.533333-479.786667-479.744-479.786667V345.173333c372.352 0 678.784 306.517333 678.784 678.826667z"></path>
-</svg>
-
-  </a>
+<a href="//william-yeh.net/index.xml" rel="noopener alternate" type="application/rss&#43;xml" class="social-icon-link" title="rss"
+  target="_blank">
   
+<svg aria-hidden="true" class="lucide lucide-rss hi-svg-inline" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg>
+</a>
+
 </div>
 
 <div class="copyright">
@@ -980,23 +1067,18 @@ Is it possible in Kubernetes?">
   <span class="copyright-year">
     &copy;
     
-      2015 -
-    2025
+    2015 -
+    2026
     <span class="heart">
       
       <i class="iconfont">
-        <svg class="icon" viewBox="0 0 1025 1024" version="1.1"
-  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-  width="14" height="14">
-  <path d="M1000.1 247.9c-15.5-37.3-37.6-70.6-65.7-98.9-54.4-54.8-125.8-85-201-85-85.7 0-166 39-221.4 107.4C456.6 103 376.3 64 290.6 64c-75.1 0-146.5 30.4-201.1 85.6-28.2 28.5-50.4 61.9-65.8 99.3-16 38.8-24 79.9-23.6 122.2 0.7 91.7 40.1 177.2 108.1 234.8 3.1 2.6 6 5.1 8.9 7.8 14.9 13.4 58 52.8 112.6 102.7 93.5 85.5 209.9 191.9 257.5 234.2 7 6.1 15.8 9.5 24.9 9.5 9.2 0 18.1-3.4 24.9-9.5 34.5-30.7 105.8-95.9 181.4-165 74.2-67.8 150.9-138 195.8-178.2 69.5-57.9 109.6-144.4 109.9-237.3 0.1-42.5-8-83.6-24-122.2z"
-   fill="#8a8a8a"></path>
-</svg>
-
+        
+<svg aria-hidden="true" class="lucide lucide-heart hi-svg-inline" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
       </i>
     </span><span class="author">
-        William Yeh
-        
-      </span></span>
+      William Yeh
+      
+    </span></span>
 
   
   
@@ -1004,28 +1086,14 @@ Is it possible in Kubernetes?">
   
 </div>
 
-    </footer>
+  </footer>
 
-    <div class="back-to-top" id="back-to-top">
-      <i class="iconfont">
-        
-        <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
-  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-  width="35" height="35">
-  <path d="M510.866688 227.694839 95.449397 629.218702l235.761562 0-2.057869 328.796468 362.40389 0L691.55698 628.188232l241.942331-3.089361L510.866688 227.694839zM63.840492 63.962777l894.052392 0 0 131.813095L63.840492 195.775872 63.840492 63.962777 63.840492 63.962777zM63.840492 63.962777"></path>
-</svg>
-
-      </i>
-    </div>
-  </div>
   
-<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
-  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
 
 
 
 
-<script type="text/javascript" src="/js/main.fe83e11b4fbc9193d67e2c9db78bad21f8dc59fca0cacd8c1c3bb071bb16a852.js" integrity="sha256-/oPhG0&#43;8kZPWfiydt4utIfjcWfygys2MHDuwcbsWqFI=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/js/main.0171f082d33f8febdbfe89876860e1624f5b622b263af5e06e31e93abd51a968.js" integrity="sha256-AXHwgtM/j&#43;vb/omHaGDhYk9bYismOvXgbjHpOr1RqWg=" crossorigin="anonymous"></script>
 
 
 
@@ -1039,7 +1107,6 @@ Is it possible in Kubernetes?">
 
 
   
-    <script type="text/javascript" src="/js/load-photoswipe.js"></script>
     <script type="text/javascript" src="/lib/photoswipe/photoswipe.min.js"></script>
     <script type="text/javascript" src="/lib/photoswipe/photoswipe-ui-default.min.js"></script>
   
@@ -1061,4 +1128,5 @@ Is it possible in Kubernetes?">
 
 
 </body>
+
 </html>

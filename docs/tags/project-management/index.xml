@@ -1,96 +1,1287 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Project-Management on Potioneer&#39;s Essays</title>
+    <title>Project Management on Potioneer&#39;s Essays</title>
     <link>//william-yeh.net/tags/project-management/</link>
-    <description>Recent content in Project-Management on Potioneer&#39;s Essays</description>
-    <generator>Hugo</generator>
+    <description>Recent content in Project Management on Potioneer&#39;s Essays</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <lastBuildDate>Tue, 13 Feb 2024 21:00:00 +0800</lastBuildDate>
-    <atom:link href="//william-yeh.net/tags/project-management/index.xml" rel="self" type="application/rss+xml" />
+    
+        <atom:link href="//william-yeh.net/tags/project-management/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>咬文嚼字的必要性（二）：階段性的預期成果設定</title>
       <link>//william-yeh.net/post/2024/02/outcome-sentence-patterns/</link>
       <pubDate>Tue, 13 Feb 2024 21:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2024/02/outcome-sentence-patterns/</guid>
-      <description>&lt;p&gt;不管是專案管理領域還是目標管理領域，「階段性的預期成果設定」都是很重要的基本動作。&lt;/p&gt;&#xA;&lt;p&gt;不過，多年下來，我常常看到怪怪的，但又說不上來哪裡不對勁的例子。因此，我想找找是否有建議的寫法，甚至句型，作為團隊的共同語言。&lt;/p&gt;&#xA;&lt;p&gt;此文針對 ① 專案管理領域的 milestone 與 ② 目標管理領域的 key result 兩方面來探討。&lt;/p&gt;&#xA;&#xA;&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;&#xA;&lt;div class=&#34;box&#34;&gt;&#xA;&lt;figure  itemprop=&#34;associatedMedia&#34;&#xA;  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; &#xA;  style=&#34;max-width:30em&#34; &gt;&#xA;    &lt;div class=&#34;img&#34;&gt;&#xA;      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2024/02/goal-setting.jpg&#34; /&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;a href=&#34;//william-yeh.net/img/2024/02/goal-setting.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;&#xA;  &lt;/figure&gt;&#xA;&lt;/div&gt;</description>
+      
+        <description>&lt;p&gt;不管是專案管理領域還是目標管理領域，「階段性的預期成果設定」都是很重要的基本動作。&lt;/p&gt;
+&lt;p&gt;不過，多年下來，我常常看到怪怪的，但又說不上來哪裡不對勁的例子。因此，我想找找是否有建議的寫法，甚至句型，作為團隊的共同語言。&lt;/p&gt;
+&lt;p&gt;此文針對 ① 專案管理領域的 milestone 與 ② 目標管理領域的 key result 兩方面來探討。&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2024/02/goal-setting.jpg&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2024/02/goal-setting.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;專案管理領域的-milestone&#34;&gt;專案管理領域的 Milestone&lt;/h2&gt;
+&lt;p&gt;Milestone 是很常被設錯的東西。部份原因是對於「milestone 到底是什麼、作用是什麼」有了錯誤的認知。&lt;/p&gt;
+&lt;h3 id=&#34;milestone-是什麼&#34;&gt;Milestone 是什麼？&lt;/h3&gt;
+&lt;p&gt;如果你用慣了專案管理軟體，在你的印象中，milestone 或許只是一個「duration 為 0」的 activity/task &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; 。如果從這個角度來看，milestone 應該會是帶有動詞屬性的行為——或許可稱之為「瞬間行為」。但是，根據 &lt;a href=&#34;https://www.amazon.com/dp/1628256648&#34;&gt;PMBOK 第七版&lt;/a&gt;的說法，milestone 其實並不是一個帶有動詞屬性的行為，反而比較像是個偏向名詞屬性的「可見事物」：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Milestone. A significant &lt;strong&gt;point&lt;/strong&gt; or &lt;strong&gt;event&lt;/strong&gt; in a project, program, or portfolio.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;PMI 網站的文章 &amp;ldquo;&lt;a href=&#34;https://www.pmi.org/learning/library/milestone-different-planning-approach-7635&#34;&gt;Milestone planning &amp;ndash; a different planning approach&lt;/a&gt;&amp;rdquo; 則指出：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;A milestone anticipates what the project is supposed to achieve at a pre-set date. It should describe a &lt;strong&gt;desired state&lt;/strong&gt; of affairs, a &lt;strong&gt;desired future situation&lt;/strong&gt;. A milestone should describe &lt;strong&gt;what we want to achieve&lt;/strong&gt;; when we get there, that&amp;rsquo;s the event.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;milestone-的作用是什麼&#34;&gt;Milestone 的作用是什麼？&lt;/h3&gt;
+&lt;p&gt;簡單的說，milestone 是分而治之的控制點。再引述 &amp;ldquo;Milestone planning &amp;ndash; a different planning approach&amp;rdquo;  一文的說法：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Milestones are also &lt;strong&gt;control stations&lt;/strong&gt; in the project, an opportunity for stakeholders to assure themselves that the project is moving in the right direction.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;好的-milestone-該有什麼特性&#34;&gt;好的 milestone 該有什麼特性？&lt;/h3&gt;
+&lt;p&gt;根據李君婷老師【&lt;a href=&#34;https://shop.darencademy.com/product/view/id/70&#34;&gt;510 專案監管的系統思考與規則設計&lt;/a&gt;】的課程講義，好的 milestone 應該要有三個特性：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;精簡，清楚。&lt;/li&gt;
+&lt;li&gt;足以代表專案關鍵。&lt;/li&gt;
+&lt;li&gt;可被具體檢核。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&amp;ldquo;Milestone planning &amp;ndash; a different planning approach&amp;rdquo; 一文也說：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The way a milestone is formulated should allow us to determine whether the &lt;strong&gt;desired state&lt;/strong&gt; has been &lt;strong&gt;achieved&lt;/strong&gt; or not.&lt;/p&gt;
+&lt;p&gt;It is relatively simple to say whether a milestone has been reached if it is an &lt;strong&gt;actual object&lt;/strong&gt;, something we can &lt;strong&gt;inspect&lt;/strong&gt; and &lt;strong&gt;verify&lt;/strong&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;milestone-可能的句型&#34;&gt;Milestone 可能的句型？&lt;/h3&gt;
+&lt;p&gt;雖然我比較少看到有人直接建議 milestone 的句型，但從上述的探討，不難歸納出一些方向：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Actual object.&lt;/li&gt;
+&lt;li&gt;Desired state.&lt;/li&gt;
+&lt;li&gt;Inspectable &amp;amp; verifiable.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Rita Mulcahy 在 &lt;a href=&#34;https://www.amazon.com/dp/1932735658&#34;&gt;&lt;em&gt;PMP Exam Prep&lt;/em&gt;&lt;/a&gt; 一書也舉了一些例子：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Remember that milestones have no duration; they are simply the &lt;strong&gt;completion of activities&lt;/strong&gt;. Milestones may include &amp;ldquo;requirements are &lt;strong&gt;complete&lt;/strong&gt;&amp;rdquo; or &amp;ldquo;design is &lt;strong&gt;finished&lt;/strong&gt;&amp;rdquo;&amp;hellip;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;因此，我個人喜歡借用 &lt;a href=&#34;https://www.eventstorming.com/&#34;&gt;event storming&lt;/a&gt; 圈子對於 &amp;ldquo;event&amp;rdquo; 的建議句型：「事件的內容，用 past tense (過去式) 描述」。&lt;/p&gt;
+&lt;p&gt;應用到 milestone 身上，可選用「過去式」或「現在完成式」句型：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;英文加 -ed&lt;/strong&gt;。譬如：xx% migrated, yy% done, zzz approved.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;中文加「已」&lt;/strong&gt;。譬如：xxx 已完成、yyy 已測試、zzz 已驗收。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;okr-的-key-result&#34;&gt;OKR 的 &amp;ldquo;Key Result&amp;rdquo;&lt;/h2&gt;
+&lt;h3 id=&#34;key-result-是什麼&#34;&gt;Key Result 是什麼？&lt;/h3&gt;
+&lt;p&gt;OKR 原典《&lt;a href=&#34;https://www.books.com.tw/products/0010813170&#34;&gt;OKR：做最重要的事 (Measure What Matters)&lt;/a&gt;》是如此介紹 O 與 KR 的：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;「目標」就是我們想達成的&lt;strong&gt;事&lt;/strong&gt;，不多也不少。&lt;/p&gt;
+&lt;p&gt;「關鍵結果」界定 &lt;strong&gt;目標的標準&lt;/strong&gt; ，並且監控我們 &lt;strong&gt;「如何」達成&lt;/strong&gt; 。有效的關鍵結果不僅明確，而且有時限，是進取但又可行的。最重要的是，它們是可測量也可驗證的。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;key-result-的作用是什麼&#34;&gt;Key Result 的作用是什麼？&lt;/h3&gt;
+&lt;p&gt;《OKR：做最重要的事》如此說：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;目標設計和運用得當，可以防範模糊不清的思想，以及執行時的含混摸魚。&lt;/p&gt;
+&lt;p&gt;關鍵結果的要求只有「已滿足」或「未滿足」兩種可能，中間沒有灰色地帶或存疑的餘地。到了指定的期限（通常是一季結束時），我們就宣佈關鍵結果是否已達成。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;好的-key-result-該有什麼特性&#34;&gt;好的 Key Result 該有什麼特性？&lt;/h3&gt;
+&lt;p&gt;《OKR：做最重要的事》如此說：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;目標必然是重要、具體和行動導向的，最好還能激勵人心。&lt;/p&gt;
+&lt;p&gt;關鍵結果必須可以測量，而且，最後也只要用看的，完全不必提出任何理由，證明自己是否做到了。達成？還是沒達成？答案很簡單，不需要下判斷就能回答。&lt;/p&gt;
+&lt;p&gt;必須含有完成工作的證據。這種證據必須可取得、可信和容易發現。&lt;/p&gt;
+&lt;p&gt;編寫關鍵結果時，務必做到一件事：每一項關鍵結果都百分百達成，目標也就百分百達成。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;key-result-可能的句型&#34;&gt;Key Result 可能的句型？&lt;/h3&gt;
+&lt;p&gt;原始的《OKR：做最重要的事》論述中，似乎並沒有強調 O 與 KR 的句型。我只在此書附錄看到這麼一句最接近的話：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;關鍵結果代表 &lt;strong&gt;「如何」(How)&lt;/strong&gt; ，應該要表達 &lt;strong&gt;可衡量的里程碑&lt;/strong&gt; 。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;這句話點出兩個核心元素：方法、里程碑。&lt;/p&gt;
+&lt;p&gt;後來管顧圈加入推廣 OKR 運動，才漸漸發展出一些較具規範性的寫法，但似乎尚未形成集體的共識。不過，從他們的 OKR 論述中，常常看到「里程碑型」這種 KR 類型 &lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;。 因此，我個人很喜歡沿用前面探討過的「Milestone 句型」做為 KR 的句型骨幹。&lt;/p&gt;
+&lt;p&gt;如果還要更細膩一點，不妨將「如何」(How) 也放進 KR 句型當中。譬如說，李君婷老師【&lt;a href=&#34;https://shop.darencademy.com/product/view/id/95&#34;&gt;512 目標管理與團隊績效：統整 OKR 與 KPI 的有效實務&lt;/a&gt;】的課程講義，及《&lt;a href=&#34;https://www.books.com.tw/products/0010833361&#34;&gt;OKRs 執行力：華人實踐版&lt;/a&gt;》一書，都不約而同介紹過以下這種三合一寫法：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在 xxx 日期之前，透過 yyy 方法，完成 zzz 成果。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;以此句型為基礎，你可以再添加量化元素進去：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在 xxx 日期之前，透過 yyy 方法，達到 zzz% 成果。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;你可以把量化元素的起點與終點也寫進去：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在 xxx 日期之前，透過 yyy 方法，將 zzz 指標從 aaa 推進到 bbb。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;你也可以添加「資源運用」元素進去，就變成很有 OGSM 的味道：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在 xxx 日期之前，運用 yyy 資源，完成 zzz 成果。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;運用之妙，存乎一心。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;以上就是我個人慣用的 milestone 與 key result 句型。請掌握此基本句型，展現出內行氣。&lt;/p&gt;
+
+
+&lt;div class=&#34;notice notice--note&#34;&gt;
+  &lt;div class=&#34;notice__title&#34;&gt;
+    
+      【咬文嚼字的必要性】系列
+    
+  &lt;/div&gt;
+  &lt;div class=&#34;notice__content&#34;&gt;&lt;p&gt;❶ &lt;a href=&#34;//william-yeh.net/post/2018/01/precise-expression/&#34;&gt;咬文嚼字的必要性（一）：用句型輔助思考&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❷ 咬文嚼字的必要性（二）：階段性的預期成果設定&lt;/p&gt;
+&lt;p&gt;❸ &lt;a href=&#34;//william-yeh.net/post/2022/04/passphrase-at-work/&#34;&gt;請珍惜你們學到的通關密語&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;許多專案管理軟體都是透過「把 activity/task 的 duration 設為 0」的方式來標記 milestone。像 &lt;a href=&#34;https://support.microsoft.com/en-gb/office/add-a-milestone-583be27b-1659-4a7a-a047-e9b9cb6a4834&#34;&gt;Microsoft Project&lt;/a&gt;、&lt;a href=&#34;https://community.smartsheet.com/discussion/101507/how-can-i-get-smartsheet-to-show-zero-days-for-milestone-with-zero-days-duration&#34;&gt;Smartsheet&lt;/a&gt;、&lt;a href=&#34;https://www.projectplan365.com/training/lesson-2-create-milestones/&#34;&gt;Project Plan 365&lt;/a&gt;。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;像《&lt;a href=&#34;https://www.books.com.tw/products/0010817208&#34;&gt;執行 OKR，帶出強團隊&lt;/a&gt;》就將 OKR 分成基線型、正向度量型、負向度量型、範圍型、里程碑型五大類，而《&lt;a href=&#34;https://www.books.com.tw/products/0010833361&#34;&gt;OKRs 執行力：華人實踐版&lt;/a&gt;》也將 OKR 分成比率型、數量型、里程碑型、主觀型四大類。由此可見，「里程碑型」都是很被看重的一種 KR 類型。&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description>
+      
     </item>
+    
     <item>
       <title>變動的時代，為什麼工作分解技能更是必備？</title>
       <link>//william-yeh.net/post/2023/11/why-decomposition-matters/</link>
       <pubDate>Tue, 14 Nov 2023 20:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2023/11/why-decomposition-matters/</guid>
-      <description>&lt;p&gt;很多人認為，在變動較少的舊時代 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，一次到位的工作規劃、工作分解是必備技能，但是到了現在這個變動頻仍、朝令夕改、隕石滿天飛的時代，做再多工作分解的規劃只是不切實際的浪費。&lt;/p&gt;&#xA;&lt;p&gt;你怎麼看？&lt;/p&gt;&#xA;&lt;p&gt;我反而認為，正是因為變動頻仍，就更需要及早進行工作分解。只不過這種工作分解，不是舊時代那種一次到位的無差別分解，而是要能夠區分近光燈與遠光燈的不同層次，也就是敏捷陣營所講究的 &amp;ldquo;&lt;a href=&#34;https://scrumbook.org.datasenter.no/value-stream/product-backlog/granularity-gradient.html&#34;&gt;granularity gradient&lt;/a&gt;&amp;quot;。&lt;/p&gt;&#xA;&lt;p&gt;這個論點，我曾在去年的兩場導讀會，透過兩本書，作為公司內推動敏捷轉型的心態導正。&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt; 最近我發現，這類誤解仍然普遍存在於敏捷轉型的業界，因此特地將去年那兩場導讀會的觀點稍作整理，誌於此文。&lt;/p&gt;&#xA;&#xA;&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;&#xA;&lt;div class=&#34;box&#34;&gt;&#xA;&lt;figure  itemprop=&#34;associatedMedia&#34;&#xA;  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; &#xA;  style=&#34;max-width:30em&#34; &gt;&#xA;    &lt;div class=&#34;img&#34;&gt;&#xA;      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/11/pomodoro-timer.png&#34; alt=&#34;Generated by ChatGPT4 &amp;#43; DALL·E 3&#34;/&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;a href=&#34;//william-yeh.net/img/2023/11/pomodoro-timer.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;&#xA;      &lt;figcaption&gt;&#xA;          &lt;p&gt;Generated by ChatGPT4 &amp;#43; DALL·E 3&lt;/p&gt;&#xA;      &lt;/figcaption&gt;&#xA;  &lt;/figure&gt;&#xA;&lt;/div&gt;</description>
+      
+        <description>&lt;p&gt;很多人認為，在變動較少的舊時代 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，一次到位的工作規劃、工作分解是必備技能，但是到了現在這個變動頻仍、朝令夕改、隕石滿天飛的時代，做再多工作分解的規劃只是不切實際的浪費。&lt;/p&gt;
+&lt;p&gt;你怎麼看？&lt;/p&gt;
+&lt;p&gt;我反而認為，正是因為變動頻仍，就更需要及早進行工作分解。只不過這種工作分解，不是舊時代那種一次到位的無差別分解，而是要能夠區分近光燈與遠光燈的不同層次，也就是敏捷陣營所講究的 &amp;ldquo;&lt;a href=&#34;https://scrumbook.org.datasenter.no/value-stream/product-backlog/granularity-gradient.html&#34;&gt;granularity gradient&lt;/a&gt;&amp;quot;。&lt;/p&gt;
+&lt;p&gt;這個論點，我曾在去年的兩場導讀會，透過兩本書，作為公司內推動敏捷轉型的心態導正。&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt; 最近我發現，這類誤解仍然普遍存在於敏捷轉型的業界，因此特地將去年那兩場導讀會的觀點稍作整理，誌於此文。&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/11/pomodoro-timer.png&#34; alt=&#34;Generated by ChatGPT4 &amp;#43; DALL·E 3&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2023/11/pomodoro-timer.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Generated by ChatGPT4 &amp;#43; DALL·E 3&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;少量多樣現象與影響&#34;&gt;少量多樣現象與影響&lt;/h2&gt;
+&lt;p&gt;這個時代，「少量多樣」已是既成事實。在時間與事情上的「專注」，似乎越來越是奢求。&lt;/p&gt;
+&lt;p&gt;在職場上，我們越來越難擁有一整段專屬於個人的時間去專心做一件事。我們總是不時被打斷，不時有插單進來，這些時機與事情的正當性似乎也很難被質疑。隨著職位升高，這現象似乎也隨之加劇。&lt;/p&gt;
+&lt;p&gt;放大到團隊，甚至公司組織，亦然。隨著業務規模擴大，利害關係人數量及種類越來越多，這現象似乎也隨之加劇。&lt;/p&gt;
+&lt;p&gt;少量多樣的新現實，對習慣大批量做事的個人而言，不容易進入「心流」(flow)：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;這是一個現實的問題，尤其我們在職場與家庭裡面，都免不了會被打斷的工作狀態。這時候，我們是要堅持自己一定非要有三、四個小時的完整時間才能進入心流狀態，才能完成工作？還是我們必須想一個工作方式，可以適應這種必須被打斷，一定會分段完成的工作呢？&lt;/p&gt;
+&lt;p&gt;&amp;mdash; From: 《&lt;a href=&#34;https://www.playpcesor.com/2020/05/2020-new-book.html&#34;&gt;時間管理的 30 道難題&lt;/a&gt;》&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;對習慣大批量行事的組織而言，則會牽動到即時生產、換模換線的作業方式、甚至商業模式的巨變，可謂之「灰犀牛」衝擊：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;大多數的灰犀牛可能早在三個月前、兩年前就已經存在且默默進逼，是我們故意疏忽、固執己見、視若無睹。對食品業來說，消費市場走向「少量多樣」就是一頭兩噸重的灰犀牛，因為過去汽車業走過、科技電子業走過，食品業又怎能避免？&lt;/p&gt;
+&lt;p&gt;&amp;mdash; From: 《&lt;a href=&#34;https://williampjyeh.notion.site/d8a843cbc9c148989e6489625b6fb34d&#34;&gt;豐田精實管理的翻轉獲利秘密&lt;/a&gt;》&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;總括來說，「少量多樣」帶來效率及效能的挑戰，對於人類是 context switch，對於機器設備則是換線換模。反之，若是能夠克服這一點，就能因應少量多樣的時代趨勢，化危機為轉機，成為個人及企業的競爭優勢。&lt;/p&gt;
+&lt;p&gt;機器設備非我所長，相關的人機料法環細節，請參閱《&lt;a href=&#34;https://williampjyeh.notion.site/d8a843cbc9c148989e6489625b6fb34d&#34;&gt;豐田精實管理的翻轉獲利秘密&lt;/a&gt;》。 &lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt; 接下來我只繼續探討人類的 context switch 課題。&lt;/p&gt;
+&lt;h2 id=&#34;少量多樣的關鍵課題&#34;&gt;少量多樣的關鍵課題&lt;/h2&gt;
+&lt;p&gt;對人類來說，過度 context switch 會增加暖機以求進入狀況的時間比例，也會損耗心智注意力，阻礙心流形成。&lt;/p&gt;
+&lt;p&gt;讓我們先接受一個事實吧：context switch 是無法完全逃避的現實。那麼，接下來的關鍵課題就是：如何做好 context switch 的準備，以降低暖機的佔比，減少心智注意力的損耗。&lt;/p&gt;
+&lt;p&gt;《&lt;a href=&#34;https://www.playpcesor.com/2020/05/2020-new-book.html&#34;&gt;時間管理的 30 道難題&lt;/a&gt;》第 4.5 節對這課題有很深刻的洞見：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;我們應該要把工作方式設計成「可以被打斷」的工作流程。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;想像一下：如果工作流程被設計成本質上就是「可以被打斷」（我不想太激進的說「歡迎被打斷」或「擁抱被打斷」），也就是說，如果在這新的工作流程裡，context switch 既不會過度增加暖機佔比，也不會過度損耗我們的心智注意力，那該有多好！&lt;/p&gt;
+&lt;p&gt;要怎麼做到？可分為兩個層面。&lt;/p&gt;
+&lt;p&gt;在個人修練層面，運用近年流行的「番茄鐘工作法」來練習短時間專注。&lt;/p&gt;
+&lt;p&gt;在工作設計層面，則是作者的招牌主張「子彈行動清單」：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;我們應該要把工作方式設計成「可以被打斷」的工作流程——&lt;strong&gt;讓工作本身拆解成行動清單&lt;/strong&gt;。這樣一來，任何時候被打斷，我會知道接下來下一個可以進行的步驟是什麼，以及前面做完了什麼步驟任務，不再是一個模糊成一團的任務。&lt;/p&gt;
+&lt;p&gt;可以分段成行動清單，其實可以幫助我們更快進入心流。因為如果一個任務，我不知道它明確的步驟是什麼，不知道怎麼開始，不知道這個步驟的下一個步驟是什麼，腦袋會一直在煩惱，一直在焦慮，一直在思考，一直在做確認。這時候我們大腦負擔很多決策選擇，特別容易疲勞、容易混亂。於是，我反而需要花更多時間去進入心流。&lt;/p&gt;
+&lt;p&gt;如果這個任務，我可以拆解出行動清單，我看到非常明確的步驟，那我的注意力就可以非常專注在下一個步驟就好。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;有趣的是，儘管作者的「子彈行動清單」是在講個人的時間管理，並不是在講 Scrum 的 Sprint Planning，但精神及步驟卻若合符節，所以我很喜歡引用《&lt;a href=&#34;https://www.playpcesor.com/2020/05/2020-new-book.html&#34;&gt;時間管理的 30 道難題&lt;/a&gt;》第 3 章作為我的敏捷工作坊培訓素材。&lt;/p&gt;
+&lt;p&gt;因此，總結來說，面對 context switch 的關鍵做法是：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;短時間專注：以個人來說，就是「番茄鐘工作法」；以 Scrum 來說，就是習慣 Sprint 週期內五大活動的節奏。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;「可以被打斷」的工作流程：以個人或團隊來說，就是將工作分解至可行動的清單。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;事前做好工作分解，幫助我們面對 context switch，更有餘裕應付插單。&lt;/p&gt;
+&lt;h2 id=&#34;延伸的好處&#34;&gt;延伸的好處&lt;/h2&gt;
+&lt;p&gt;把工作方式設計成「可以被打斷」的工作流程，不僅消極的可以避免被 context switch 拖累，甚至還可以積極的善用這項優勢。譬如說，在少量多樣時代，有機會達到 Lean 所追求的「平準化」目標狀態，在市場波動時仍能保有較佳的資源調度能力：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;將每日所需生產量的落差予以平均，謀求生產量的變動縮小。&lt;/p&gt;
+&lt;p&gt;&amp;mdash; From: 《&lt;a href=&#34;https://williampjyeh.notion.site/d8a843cbc9c148989e6489625b6fb34d&#34;&gt;豐田精實管理的翻轉獲利秘密&lt;/a&gt;》&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;「平準化」不只是在汽車業、科技電子業、食品業有用，在知識工作場景也很管用。譬如說 Ailin 最近在〈&lt;a href=&#34;https://docs.google.com/presentation/d/1wG3DP8YHkxYhfO6YdnsKER3o4AXvHrkVS1aMk2aUIRI/&#34;&gt;識別出遠距團隊的 bad smell&lt;/a&gt;〉演講中提到，遠距團隊協作時，將任務分解成容易 multiplex 運作的形式，較能因應非同步的工作型態，也有較佳的依存關係：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/11/async-workflow.png&#34; alt=&#34;From: Ailin〈識別出遠距團隊的 bad smell〉&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2023/11/async-workflow.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;From: Ailin〈識別出遠距團隊的 bad smell〉&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;「平準化」是非常敏捷的目標狀態，這也呼應了我在〈&lt;a href=&#34;//william-yeh.net/post/2023/10/criticism-about-timebox/&#34;&gt;Timebox 是死胡同嗎？&lt;/a&gt;〉一文的論點。以「少量多樣」方式運作的團隊越多，工作分解得越落實，彼此之間的 dependency 就越有機會迅速解決，這樣才大規模敏捷得起來：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;granularity 愈小，也愈有將它 fit in 到相關團隊 upcoming sprints 的可能性；尤其當對方團隊也是 short timebox 風格，就更容易 fit in 進去——這是 opportunity。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;所以，在這變動的時代，工作分解技能不僅是個人必備，更是敏捷團隊必備的工作基因。在實踐敏捷時，千萬不要輕忽這個基本功。&lt;/p&gt;
+
+
+&lt;div class=&#34;notice notice--note&#34;&gt;
+  &lt;div class=&#34;notice__title&#34;&gt;
+    
+      【敏捷的工作分解方法】系列
+    
+  &lt;/div&gt;
+  &lt;div class=&#34;notice__content&#34;&gt;&lt;p&gt;❶ &lt;a href=&#34;//william-yeh.net/post/2016/10/one-week-sprint/&#34;&gt;One-Week Sprint 的節奏&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❷ &lt;a href=&#34;//william-yeh.net/post/2016/11/decomposition-reading-list/&#34;&gt;工作分解講座・閱讀材料&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❸ &lt;a href=&#34;//william-yeh.net/post/2022/10/agile-milestone/&#34;&gt;事情做一半，等於沒完成：淺談敏捷的里程碑設定&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❹ &lt;a href=&#34;//william-yeh.net/post/2022/11/spidr/&#34;&gt;以「蜘蛛法」拆分過於龐大的 User Story&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❺ &lt;a href=&#34;//william-yeh.net/post/2023/08/story-to-tasks/&#34;&gt;很簡單的 Story，也要拆分出 Tasks 嗎？&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❻ 變動的時代，為什麼工作分解技能更是必備？&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;其實舊時代並不是變動較少，而是舊時代想不出比較好的方法去處理變動，於是就只能祭出種種禁止變動的規定：合約、契約、規格書。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;請見【&lt;a href=&#34;//william-yeh.net/post/2022/08/career-reading-club-2/&#34;&gt;職涯躍升書系導讀會，Part 2：高效團隊的工作方法&lt;/a&gt;】。&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;
+&lt;p&gt;《&lt;a href=&#34;https://williampjyeh.notion.site/d8a843cbc9c148989e6489625b6fb34d&#34;&gt;豐田精實管理的翻轉獲利秘密&lt;/a&gt;》提到：「對於製造端來說，就出現幾項重點要克服：①產線小批生產的效率，②換線速度、清機速度，③新產品的品質良品條件，④生管對庫存的掌握度。」&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description>
+      
     </item>
+    
     <item>
       <title>很簡單的 Story，也要拆分出 Tasks 嗎？</title>
       <link>//william-yeh.net/post/2023/08/story-to-tasks/</link>
       <pubDate>Sat, 26 Aug 2023 18:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2023/08/story-to-tasks/</guid>
-      <description>&lt;p&gt;Scrum 已經夠精簡了，但很多人還是因為嫌麻煩、省時間，就省略原本預定該做的事情。&lt;/p&gt;&#xA;&lt;p&gt;雖然在 2020 之前的 &lt;a href=&#34;https://scrumguides.org&#34;&gt;&lt;em&gt;The Scrum Guide&lt;/em&gt;&lt;/a&gt; 並沒有規定 &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Planning&lt;/span&gt;&#xA; 要分為 Part 1 &amp;amp; Part 2 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，但這可說是 Scrum 圈公認的最佳實踐。&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;&#xA;&lt;p&gt;如果團隊已經成熟到能以自己的方式把 &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Planning&lt;/span&gt;&#xA; 做好做滿，其實也未必非得硬性劃分 Part 1 &amp;amp; Part 2（畢竟 Scrum 推崇基於經驗主義的自組織、自管理）。最怕的是，不明白劃分 Part 1 &amp;amp; Part 2 的好處，不明白 Part 2 的重點及產出，甚至單純只因「嫌麻煩」、「省時間」，就省略原本預定該在 Part 2 進行的活動，往往會導致 sprint 進行途中出現種種問題。&lt;/p&gt;&#xA;&lt;p&gt;很多問題，追根究柢，就是當初沒有認真進行 Part 2。&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;Scrum 已經夠精簡了，但很多人還是因為嫌麻煩、省時間，就省略原本預定該做的事情。&lt;/p&gt;
+&lt;p&gt;雖然在 2020 之前的 &lt;a href=&#34;https://scrumguides.org&#34;&gt;&lt;em&gt;The Scrum Guide&lt;/em&gt;&lt;/a&gt; 並沒有規定 &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Planning&lt;/span&gt;
+ 要分為 Part 1 &amp;amp; Part 2 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，但這可說是 Scrum 圈公認的最佳實踐。&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;如果團隊已經成熟到能以自己的方式把 &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Planning&lt;/span&gt;
+ 做好做滿，其實也未必非得硬性劃分 Part 1 &amp;amp; Part 2（畢竟 Scrum 推崇基於經驗主義的自組織、自管理）。最怕的是，不明白劃分 Part 1 &amp;amp; Part 2 的好處，不明白 Part 2 的重點及產出，甚至單純只因「嫌麻煩」、「省時間」，就省略原本預定該在 Part 2 進行的活動，往往會導致 sprint 進行途中出現種種問題。&lt;/p&gt;
+&lt;p&gt;很多問題，追根究柢，就是當初沒有認真進行 Part 2。&lt;/p&gt;
+&lt;p&gt;在 Part 2 中，有一個重要的步驟是將 &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Backlog Items&lt;/span&gt;
+ 拆分出較小、較具體的 tasks &lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;  ——常被團隊輕看的步驟。我姑且不搬出專案管理的大道理 &lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt; ，純粹以 Scrum 日常經驗來反思「很簡單的 story，也要拆分出 tasks 嗎？」這個提問。&lt;/p&gt;
+&lt;h2 id=&#34;對自己避免低估&#34;&gt;對自己：避免低估&lt;/h2&gt;
+&lt;p&gt;工程師常會低估 story 所需耗費的時間資源。可能是刻意低估（迎合上意、打腫臉充胖子⋯⋯），也可能是不自覺的低估。前者當然不可取，後者雖然是無心之舉，但仍會造成 sprint fail 的風險，若無法道德勸說大家警覺，就得訴諸制度流程來避免。&lt;/p&gt;
+&lt;p&gt;將 story 拆分出較小、較具體的 tasks，其實就是&lt;strong&gt;切換至一個較為深入的視角來審視 story 的執行計畫&lt;/strong&gt;。拆分出來的 tasks，不僅可當成 checklist 避免自己掛一漏萬，更可忠實反映 story 的複雜度——我常常看到團隊在真正嘗試將 story 拆分出好多張 tasks 便利貼之後，才回頭修改當初對於 story 的估點，而且往往是增加點數。&lt;/p&gt;
+&lt;p&gt;我很喜歡 Mike Cohn 大師在 &lt;a href=&#34;https://www.amazon.com/dp/0321205685&#34;&gt;&lt;em&gt;User Stories Applied&lt;/em&gt;&lt;/a&gt; 所舉的 &amp;ldquo;Everything takes four hours&amp;rdquo; 例子：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;In one episode the husband is being pestered by his wife to go shopping for a couch. She insists the trip will take only an hour. He tells her that “Everything in the world takes four hours. You gotta go there, you gotta do whatever, eat, talk about where you should have eaten, and then come home. That&amp;rsquo;s four hours minimum.”&lt;/p&gt;
+&lt;p&gt;This isn’t a bad rule of thumb for software development and is
+a perfect example of how projects get in trouble when they
+don’t distinguish between ideal time and elapsed time.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;如果你堅持「這個 story 很簡單，根本不必浪費時間拆分出 tasks」，那麼，請想想 &amp;ldquo;Everything takes four hours&amp;rdquo; 這句話。&lt;/p&gt;
+&lt;h2 id=&#34;對團隊製造流動感&#34;&gt;對團隊：製造流動感&lt;/h2&gt;
+&lt;p&gt;讓 &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Daily Scrum&lt;/span&gt;
+ 無趣的方法有很多，常見的病徵是：某一張卡片，日復一日就是一直停留在某一欄 (column)，沒有前進。&lt;/p&gt;
+&lt;p&gt;某Ａ問：「這張卡片，停留在這一欄好像已經好幾天了⋯⋯請問它怎麼了？」&lt;/p&gt;
+&lt;p&gt;答：「啊，就是還在進行中，還沒做完呀。」&lt;/p&gt;
+&lt;p&gt;某Ｂ問：「好幾天都一直停留在這裡，我怎麼知道它到底有沒有任何進展呀？」&lt;/p&gt;
+&lt;p&gt;答：「啊，就是還在進行中呀⋯⋯你懷疑我喔？」&lt;/p&gt;
+&lt;p&gt;團隊需要製造任務的流動感，以區隔「沒有流動的幻覺」與「真實的 blocker」兩種情況。&lt;/p&gt;
+&lt;p&gt;Scrum 的團隊未必會採用 Kanban 陣營的做法，但 Kanban 的 flow 觀念及視覺化手法很值得 Scrum 團隊借鏡。將 story 拆分出較小、較具體的 tasks，其實就是&lt;strong&gt;切換至一個較具流動感的視角來審視 story 的執行狀況&lt;/strong&gt;。當你憑著每一天每一天 &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Daily Scrum&lt;/span&gt;
+ 的視覺印象，懷疑某張 story 似乎停滯不前，或是憑著 burndown chart &lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt; 的量化資料，懷疑整個 sprint 似乎偏離理想斜線，那麼，在進入「blocker 問題解決模式」之前，請先試著檢查看看當初 tasks 拆分是否確實。&lt;/p&gt;
+&lt;p&gt;怎樣才能夠拆分出具有「流動感」的 tasks 呢？請參考我在〈&lt;a href=&#34;//william-yeh.net/post/2016/11/decomposition-reading-list/&#34;&gt;工作分解講座‧閱讀材料&lt;/a&gt;〉文末的建議：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;努力將 task 切到不超過 2 個工作天的程度。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;當-tasks-已經變成無趣的例行公事時&#34;&gt;當 Tasks 已經變成無趣的例行公事時&lt;/h2&gt;
+&lt;p&gt;Ｃ問：「萬一我們每次將 story 拆分出來的 tasks 都長得一模一樣，還有必要浪費這些時間嗎？」&lt;/p&gt;
+&lt;p&gt;我：「請舉例。」&lt;/p&gt;
+&lt;p&gt;Ｃ：「就拿這一張 Story F 來說吧，我們會拆出這幾張 tasks：(1) Design Logic，(2) Design Schema，(3) Coding，(4) PR，(5) Deploy。」&lt;/p&gt;
+&lt;p&gt;Ｃ：「對其他那幾張 Story G、H、I 來說，其實也都是一樣的手順。每次都要同樣的複製貼上複製貼上，滿浪費青春的⋯⋯」&lt;/p&gt;
+&lt;p&gt;如果團隊面對的產品，真的如同這位Ｃ所說，在 tasks 層次的手順幾乎已經了無新意，那麼，在不犧牲前面講的「對自己：避免低估」及「對團隊：製造流動感」兩大好處的前提下，我會建議團隊：或許可試著將樸素的 Scrum task board 轉換成較精緻的 Kanban board，把例行手順變成 Kanban column。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;     &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;「很簡單的 Story，也要拆分出 Tasks 嗎？」&lt;/p&gt;
+&lt;p&gt;你認為呢？&lt;/p&gt;
+
+
+&lt;div class=&#34;notice notice--note&#34;&gt;
+  &lt;div class=&#34;notice__title&#34;&gt;
+    
+      【敏捷的工作分解方法】系列
+    
+  &lt;/div&gt;
+  &lt;div class=&#34;notice__content&#34;&gt;&lt;p&gt;❶ &lt;a href=&#34;//william-yeh.net/post/2016/10/one-week-sprint/&#34;&gt;One-Week Sprint 的節奏&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❷ &lt;a href=&#34;//william-yeh.net/post/2016/11/decomposition-reading-list/&#34;&gt;工作分解講座・閱讀材料&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❸ &lt;a href=&#34;//william-yeh.net/post/2022/10/agile-milestone/&#34;&gt;事情做一半，等於沒完成：淺談敏捷的里程碑設定&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❹ &lt;a href=&#34;//william-yeh.net/post/2022/11/spidr/&#34;&gt;以「蜘蛛法」拆分過於龐大的 User Story&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❺ 很簡單的 Story，也要拆分出 Tasks 嗎？&lt;/p&gt;
+&lt;p&gt;❻ &lt;a href=&#34;//william-yeh.net/post/2023/11/why-decomposition-matters/&#34;&gt;變動的時代，為什麼工作分解技能更是必備？&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;以前的 &lt;a href=&#34;https://scrumguides.org&#34;&gt;&lt;em&gt;The Scrum Guide&lt;/em&gt;&lt;/a&gt; 對於 Sprint Planning 執行細節著墨不多。但 2020 版的新內容，開始強調「將 SBI 拆分出 work items」這環節，圈點出 3 個核心主題：Why、What、How，只是並沒有道出 Part 1～3 之類的「步驟」、「流程」字眼。儘管如此，Scrum 陣營還是愛用習之有年的 Part 1 &amp;amp; Part 2 字眼來劃分 Sprint Planning 的階段，本篇文章亦遵照此一慣例。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;對於 Sprint Planning 是否要分成兩部曲，請參考 Teddy 的文章〈&lt;a href=&#34;https://teddy-chen-tw.blogspot.com/2014/11/sprint-planning-meeting.html&#34;&gt;談談 Sprint Planning Meeting&lt;/a&gt;〉。&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;
+&lt;p&gt;像 &lt;a href=&#34;https://less.works/less/framework/sprint-planning-one&#34;&gt;LeSS&lt;/a&gt; 就說：&amp;quot;&lt;em&gt;Sprint Planning Two focuses on creating a &lt;strong&gt;plan of work&lt;/strong&gt; to get to &amp;lsquo;done&amp;rsquo; for each item. The items and &lt;strong&gt;plan of action or tasks&lt;/strong&gt; comprise the Sprint Backlog.&lt;/em&gt;&amp;quot;&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:4&#34;&gt;
+&lt;p&gt;如果想從更宏觀的角度看待「工作分解」，請參考〈&lt;a href=&#34;//william-yeh.net/post/2016/11/decomposition-reading-list/&#34;&gt;工作分解講座‧閱讀材料&lt;/a&gt;〉一文。&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:5&#34;&gt;
+&lt;p&gt;Scrum 陣營常見的 burndown chart 有兩種，請參考〈  &lt;a href=&#34;https://medium.com/%E6%96%87%E6%80%9D%E4%B8%8D%E8%97%8F%E7%A7%81/%E6%96%87%E6%80%9D%E4%B8%8D%E8%97%8F%E7%A7%81-%E7%87%83%E7%9B%A1%E5%9C%96%E7%B0%A1%E5%96%AE%E8%AA%AA-29628f3570be&#34;&gt;燃盡圖 (Burndown) 簡單說&lt;/a&gt;〉一文。&amp;#160;&lt;a href=&#34;#fnref:5&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description>
+      
     </item>
+    
     <item>
       <title>敏捷的工作分解方法</title>
       <link>//william-yeh.net/series/agile-decomposition/</link>
       <pubDate>Sat, 26 Aug 2023 00:00:00 +0000</pubDate>
+      
       <guid>//william-yeh.net/series/agile-decomposition/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2016/10/one-week-sprint/&#34;&gt;One-Week Sprint 的節奏&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2016/11/decomposition-reading-list/&#34;&gt;工作分解講座・閱讀材料&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2022/10/agile-milestone/&#34;&gt;事情做一半，等於沒完成：淺談敏捷的里程碑設定&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2022/11/spidr/&#34;&gt;以「蜘蛛法」拆分過於龐大的 User Story&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2023/08/story-to-tasks/&#34;&gt;很簡單的 Story，也要拆分出 Tasks 嗎？&lt;/a&gt;&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2016/10/one-week-sprint/&#34;&gt;One-Week Sprint 的節奏&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2016/11/decomposition-reading-list/&#34;&gt;工作分解講座・閱讀材料&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2022/10/agile-milestone/&#34;&gt;事情做一半，等於沒完成：淺談敏捷的里程碑設定&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2022/11/spidr/&#34;&gt;以「蜘蛛法」拆分過於龐大的 User Story&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2023/08/story-to-tasks/&#34;&gt;很簡單的 Story，也要拆分出 Tasks 嗎？&lt;/a&gt;&lt;/p&gt;
+</description>
+      
     </item>
+    
     <item>
       <title>以「蜘蛛法」拆分過於龐大的 User Story</title>
       <link>//william-yeh.net/post/2022/11/spidr/</link>
       <pubDate>Tue, 01 Nov 2022 17:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2022/11/spidr/</guid>
-      <description>&lt;p&gt;（改寫自公司內部 memo）&lt;/p&gt;&#xA;&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;&#xA;&lt;p&gt;Hi all guys,&lt;/p&gt;&#xA;&lt;p&gt;剛從傳統瀑布式專案管理風格轉換到敏捷風格的團隊，最常遇到第二個卡關之處是：如何將 User Story 拆分到足以在一個 sprint 內完成的顆粒度？&lt;/p&gt;&#xA;&lt;p&gt;如果玩過我帶的「在幾分鐘以內出門」(&amp;ldquo;get out of the door in a few minutes&amp;rdquo;) 活動 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，或許可藉由喚起這段活動的體驗來得到拆分大故事的靈感。如果還想進一步知道更具體的步驟，我推薦大家試試 Mike Cohn 大師提出的 &lt;a href=&#34;https://www.mountaingoatsoftware.com/exclusive/spidr-poster-download&#34;&gt;SPIDR 法&lt;/a&gt;。&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;（改寫自公司內部 memo）&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;Hi all guys,&lt;/p&gt;
+&lt;p&gt;剛從傳統瀑布式專案管理風格轉換到敏捷風格的團隊，最常遇到第二個卡關之處是：如何將 User Story 拆分到足以在一個 sprint 內完成的顆粒度？&lt;/p&gt;
+&lt;p&gt;如果玩過我帶的「在幾分鐘以內出門」(&amp;ldquo;get out of the door in a few minutes&amp;rdquo;) 活動 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，或許可藉由喚起這段活動的體驗來得到拆分大故事的靈感。如果還想進一步知道更具體的步驟，我推薦大家試試 Mike Cohn 大師提出的 &lt;a href=&#34;https://www.mountaingoatsoftware.com/exclusive/spidr-poster-download&#34;&gt;SPIDR 法&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;SPIDR 是 Spikes, Paths, Interfaces, Data, Rules 的頭字語，音近 &amp;ldquo;spider&amp;rdquo; 蜘蛛，可以戲稱為「蜘蛛法」。它指導我們從五個角度嘗試拆分過於龐大的 User Story：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Spikes&lt;/strong&gt;: 拆分出探索性、實驗性的先遣任務。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Paths&lt;/strong&gt;: 拆分出不同的使用路徑。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Interfaces&lt;/strong&gt;: 拆分出不同的介面、軟體、設備、環境。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Data&lt;/strong&gt;: 拆分出不同的資料來源或類型。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Rules&lt;/strong&gt;: 拆分出不同鬆緊程度的商業邏輯。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;就以這個龐大的 User Story 為例：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;As a 商家，I want to 在既有的商家後台，以不同的商品分類或時間區間來檢視我家商品的種種銷售數據圖表，so that I can 對銷售行為作更即時的調整。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;這麼大的 User Story，很難放在一個 sprint 裡面實現。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;我們可以試著用 SPIDR 當中的 &amp;ldquo;Spikes&amp;rdquo; 角度來拆分：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;As a 商家，I want to 在既有的商家後台，先針對&lt;strong&gt;人工餵入的 1,000 筆假資料&lt;/strong&gt;，試試看能否&lt;strong&gt;把整個流程串起來&lt;/strong&gt;，以不同的商品分類或時間區間來檢視我家商品的種種銷售數據圖表，so that I can 確定這對我想從事的「對銷售行為作更即時的調整」會有幫助。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;我們可以試著用 SPIDR 當中的 &amp;ldquo;Paths&amp;rdquo; 角度來拆分：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;As a 商家，I want to 在既有的商家後台，以不同的&lt;strong&gt;商品分類&lt;/strong&gt;來檢視我家商品的種種銷售數據圖表，so that I can 對銷售行為作更即時的調整。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;As a 商家，I want to 在既有的商家後台，以不同的&lt;strong&gt;時間區間&lt;/strong&gt;來檢視我家商品的種種銷售數據圖表，so that I can 對銷售行為作更即時的調整。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;我們可以試著用 SPIDR 當中的 &amp;ldquo;Interfaces&amp;rdquo; 角度來拆分：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;As a 商家，I want to 在&lt;strong&gt;試算表檔案&lt;/strong&gt;中，以不同的商品分類或時間區間來檢視我家商品的種種銷售數據圖表，so that I can 對銷售行為作更即時的調整。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;我們可以試著用 SPIDR 當中的 &amp;ldquo;Data&amp;rdquo; 角度來拆分：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;As a 商家，I want to 在既有的商家後台，針對 &lt;strong&gt;3C 商品&lt;/strong&gt;來檢視&lt;strong&gt;銷售直方圖&lt;/strong&gt;，so that I can 對銷售行為作更即時的調整。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;As a 商家，I want to 在既有的商家後台，針對 &lt;strong&gt;3C 商品&lt;/strong&gt;來檢視&lt;strong&gt;訪客 PV&lt;/strong&gt;，so that I can 對銷售行為作更即時的調整。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;As a 商家，I want to 在既有的商家後台，針對&lt;strong&gt;日用品&lt;/strong&gt;來檢視&lt;strong&gt;成交率&lt;/strong&gt;，so that I can 對銷售行為作更即時的調整。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;我們可以試著用 SPIDR 當中的 &amp;ldquo;Rules&amp;rdquo; 角度來拆分：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;As a 商家，I want to 在既有的商家後台，以&lt;strong&gt;日&lt;/strong&gt;為單位來檢視我家商品的種種銷售數據圖表，so that I can 對銷售行為作更即時的調整。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;As a 商家，I want to 在既有的商家後台，以&lt;strong&gt;周&lt;/strong&gt;為單位來檢視我家商品的種種銷售數據圖表，so that I can 對銷售行為作更即時的調整。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;As a 商家，I want to 在既有的商家後台，以「商品分類」及「時間區間」&lt;strong&gt;複合條件&lt;/strong&gt;來檢視我家商品的種種銷售數據圖表，so that I can 對銷售行為作更即時的調整。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;透過 SPIDR 蜘蛛法，我們一下子就得到這麼多拆分大故事的切入點。前後對照一下，是不是覺得這些細分的 User Stories 變得更具體更有把握了呢？&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;以我的經驗來說，把 SPIDR 法練熟，足以應付大多數情況。如果你還想嘗試更多方法，請讀讀我 &lt;em&gt;N&lt;/em&gt; 年前寫的〈&lt;a href=&#34;//william-yeh.net/post/2016/11/decomposition-reading-list/&#34;&gt;工作分解講座・閱讀材料&lt;/a&gt;〉一文。&lt;/p&gt;
+
+
+&lt;div class=&#34;notice notice--note&#34;&gt;
+  &lt;div class=&#34;notice__title&#34;&gt;
+    
+      【敏捷的工作分解方法】系列
+    
+  &lt;/div&gt;
+  &lt;div class=&#34;notice__content&#34;&gt;&lt;p&gt;❶ &lt;a href=&#34;//william-yeh.net/post/2016/10/one-week-sprint/&#34;&gt;One-Week Sprint 的節奏&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❷ &lt;a href=&#34;//william-yeh.net/post/2016/11/decomposition-reading-list/&#34;&gt;工作分解講座・閱讀材料&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❸ &lt;a href=&#34;//william-yeh.net/post/2022/10/agile-milestone/&#34;&gt;事情做一半，等於沒完成：淺談敏捷的里程碑設定&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❹ 以「蜘蛛法」拆分過於龐大的 User Story&lt;/p&gt;
+&lt;p&gt;❺ &lt;a href=&#34;//william-yeh.net/post/2023/08/story-to-tasks/&#34;&gt;很簡單的 Story，也要拆分出 Tasks 嗎？&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❻ &lt;a href=&#34;//william-yeh.net/post/2023/11/why-decomposition-matters/&#34;&gt;變動的時代，為什麼工作分解技能更是必備？&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;「在幾分鐘以內出門」(&amp;ldquo;get out of the door in a few minutes&amp;rdquo;) 是出自 &lt;em&gt;&lt;a href=&#34;https://williampjyeh.notion.site/2eeb7794966b440c8856cc6fe8927658&#34;&gt;User Story Mapping&lt;/a&gt;&lt;/em&gt; 第五章的經典活動。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description>
+      
     </item>
+    
     <item>
       <title>事情做一半，等於沒完成：淺談敏捷的里程碑設定</title>
       <link>//william-yeh.net/post/2022/10/agile-milestone/</link>
       <pubDate>Mon, 31 Oct 2022 17:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2022/10/agile-milestone/</guid>
-      <description>&lt;p&gt;（改寫自公司內部 memo）&lt;/p&gt;&#xA;&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;&#xA;&lt;p&gt;Hi all guys,&lt;/p&gt;&#xA;&lt;p&gt;剛從傳統瀑布式專案管理風格轉換到敏捷風格的團隊，最常遇到第一個卡關之處是：如何以敏捷的角度設定里程碑？&lt;/p&gt;&#xA;&lt;p&gt;最近在協助兩個 Scrum teams 進行 Sprint Planning 時，我都會用以下角度提出挑戰性提問：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;能否將 User Stories &lt;strong&gt;拆分&lt;/strong&gt;到：可以在一個 sprint 結束時，端出&lt;strong&gt;利害關係人&lt;/strong&gt;可以據以給出&lt;strong&gt;建設性回饋&lt;/strong&gt;的 &lt;strong&gt;end-to-end 成果&lt;/strong&gt;？&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;這需要創意，需要練習，需要提升規劃能力，需要提升工程能力，需要時時用挑戰性提問提醒自己。但或許更重要的是：大家需要打從心裡認清且認同這樣做的理由。&lt;/p&gt;&#xA;&lt;p&gt;理由之一是：精實生產。&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;（改寫自公司內部 memo）&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;Hi all guys,&lt;/p&gt;
+&lt;p&gt;剛從傳統瀑布式專案管理風格轉換到敏捷風格的團隊，最常遇到第一個卡關之處是：如何以敏捷的角度設定里程碑？&lt;/p&gt;
+&lt;p&gt;最近在協助兩個 Scrum teams 進行 Sprint Planning 時，我都會用以下角度提出挑戰性提問：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;能否將 User Stories &lt;strong&gt;拆分&lt;/strong&gt;到：可以在一個 sprint 結束時，端出&lt;strong&gt;利害關係人&lt;/strong&gt;可以據以給出&lt;strong&gt;建設性回饋&lt;/strong&gt;的 &lt;strong&gt;end-to-end 成果&lt;/strong&gt;？&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;這需要創意，需要練習，需要提升規劃能力，需要提升工程能力，需要時時用挑戰性提問提醒自己。但或許更重要的是：大家需要打從心裡認清且認同這樣做的理由。&lt;/p&gt;
+&lt;p&gt;理由之一是：精實生產。&lt;/p&gt;
+&lt;h2 id=&#34;七大浪費&#34;&gt;七大浪費&lt;/h2&gt;
+&lt;p&gt;7/22 舉辦過的&lt;a href=&#34;//william-yeh.net/post/2022/08/career-reading-club-2/#豐田精實管理的翻轉獲利秘密&#34;&gt;《豐田精實管理的翻轉獲利秘密》導讀會&lt;/a&gt;有介紹過，馳名世界的豐田生產 (Toyota Production System) 當中有一個基本信念：「&lt;strong&gt;降低浪費，就能提升效率。&lt;/strong&gt;」另一本書《&lt;a href=&#34;https://williampjyeh.notion.site/fc98b324a0c7482f82d3a639f8b10282&#34;&gt;豐田物語&lt;/a&gt;》也如是說：&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:20em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2022/10/muda.jpg&#34; alt=&#34;From: 《豐田物語》&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2022/10/muda.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;From: 《豐田物語》&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;豐田生產會從降低七大浪費著手：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Inventory&lt;/strong&gt;：庫存、在製品。以軟體研發而言，規格書、wireframe、schema、test case⋯⋯任何無法真正迅速 go to production 轉換成實質價值的中間產物，都是 inventory。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Waiting&lt;/strong&gt;：等待。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Defects&lt;/strong&gt;：不良品。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Over-production&lt;/strong&gt;：過量生產。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Motion&lt;/strong&gt;：動作。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Transportation&lt;/strong&gt;：搬運。以軟體研發而言，「人的 transportation」就是換手、接棒、工作交接，「物的 transportation」就是工單傳遞、簽呈傳遞、規格書傳遞、契約書傳遞。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Over-processing&lt;/strong&gt;：過度加工。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;這七大浪費當中，有幾點可以直接對應到敏捷的里程碑設定心法，值得我們時時拿來作為挑戰性提問，時時自我提醒：我們在 Sprint Planning 所規劃的里程碑、進程、作法，是否一不小心就會出現以下幾種浪費？&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Inventory&lt;/strong&gt;：在 Sprint Review 當場可以端得出來的成果，真的都是可以 on production 的東西嗎？抑或只是一個又一個的在製品，徒然製造一堆 inventory？&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Waiting&lt;/strong&gt;：在 Sprint Backlog Items 的每一個細分的 tasks，彼此之間是否有無謂的 waiting 或 dependency？&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Transportation&lt;/strong&gt;：在 Sprint Backlog Items 的每一個細分的 tasks，彼此之間是否有無謂的「人」與「物」（在製品）的 transportation？&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;若出現無法立即轉換成實質價值的浪費，就該針對這些 User Stories 再予以拆分，或是對執行方式再予以重組——這是我們該發揮創意、練習、提升規劃能力、提升工程能力的地方。&lt;/p&gt;
+&lt;p&gt;「降低浪費，就能提升效率。」&lt;/p&gt;
+&lt;h2 id=&#34;已完成&#34;&gt;「已完成」&lt;/h2&gt;
+&lt;p&gt;最後，我再摘錄 Scrum 之父 Jeff Sutherland 在《&lt;a href=&#34;https://williampjyeh.notion.site/Scrum-0e354b6be58b4977bdd1c99993e79d57&#34;&gt;Scrum：用一半的時間做兩倍的事&lt;/a&gt;》第五章〈浪費是一種罪〉的相關內容作為補充。關鍵句在此：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在每一輪或是每段衝刺，團隊都要努力完成幾件事，但是「&lt;strong&gt;已完成&lt;/strong&gt;」意謂著&lt;strong&gt;能提供給客戶使用的完整功能&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;如果你有大批有價值的資源綁在沒有&lt;strong&gt;傳遞出價值&lt;/strong&gt;的東西上，這些資源就無法用來做其他的事。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;在 Sprint Planning 或是在設定專案里程碑時，請時時記得上面的提醒。&lt;/p&gt;
+&lt;p&gt;當大家致力於「降低浪費」的自我要求，同時也就等於開始實踐 &lt;a href=&#34;https://agilemanifesto.org/principles.html&#34;&gt;Agile Manifesto 背後的十二原則&lt;/a&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;原則一：Our highest priority is to satisfy the customer through early and continuous delivery of valuable software.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;原則三：Deliver working software frequently, from a couple of weeks to a couple of months, with a preference to the shorter timescale.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;原則七：Working software is the primary measure of progress.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;原則八：Agile processes promote sustainable development. The sponsors, developers, and users should be able to maintain a constant pace indefinitely.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;原則十：Simplicity&amp;ndash;the art of maximizing the amount of work not done&amp;ndash;is essential.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;大家加油！&lt;/p&gt;
+
+
+&lt;div class=&#34;notice notice--note&#34;&gt;
+  &lt;div class=&#34;notice__title&#34;&gt;
+    
+      【敏捷的工作分解方法】系列
+    
+  &lt;/div&gt;
+  &lt;div class=&#34;notice__content&#34;&gt;&lt;p&gt;❶ &lt;a href=&#34;//william-yeh.net/post/2016/10/one-week-sprint/&#34;&gt;One-Week Sprint 的節奏&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❷ &lt;a href=&#34;//william-yeh.net/post/2016/11/decomposition-reading-list/&#34;&gt;工作分解講座・閱讀材料&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❸ 事情做一半，等於沒完成：淺談敏捷的里程碑設定&lt;/p&gt;
+&lt;p&gt;❹ &lt;a href=&#34;//william-yeh.net/post/2022/11/spidr/&#34;&gt;以「蜘蛛法」拆分過於龐大的 User Story&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❺ &lt;a href=&#34;//william-yeh.net/post/2023/08/story-to-tasks/&#34;&gt;很簡單的 Story，也要拆分出 Tasks 嗎？&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❻ &lt;a href=&#34;//william-yeh.net/post/2023/11/why-decomposition-matters/&#34;&gt;變動的時代，為什麼工作分解技能更是必備？&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+      
     </item>
+    
     <item>
       <title>專案管理／專案組合管理當中，不必然需要公開透明的地方</title>
       <link>//william-yeh.net/post/2022/08/stakeholder-transparency/</link>
       <pubDate>Mon, 01 Aug 2022 17:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2022/08/stakeholder-transparency/</guid>
-      <description>&lt;p&gt;（改寫自公司內部 memo）&lt;/p&gt;&#xA;&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;&#xA;&lt;p&gt;（Target audience: 有「專案管理」職責的人）&lt;/p&gt;&#xA;&lt;p&gt;Hi all,&lt;/p&gt;&#xA;&lt;p&gt;隨著愈來愈多人開始運用專案管理課堂上學到的技術來工作，帶來更高的透明度，更成熟的專業度，欣慰之餘，我也針對其中一件事「透明度」提出一點小提醒。&lt;/p&gt;&#xA;&lt;p&gt;理想情況下，組織應該要追求專案的透明度——除非有特殊理由。&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;（改寫自公司內部 memo）&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;（Target audience: 有「專案管理」職責的人）&lt;/p&gt;
+&lt;p&gt;Hi all,&lt;/p&gt;
+&lt;p&gt;隨著愈來愈多人開始運用專案管理課堂上學到的技術來工作，帶來更高的透明度，更成熟的專業度，欣慰之餘，我也針對其中一件事「透明度」提出一點小提醒。&lt;/p&gt;
+&lt;p&gt;理想情況下，組織應該要追求專案的透明度——除非有特殊理由。&lt;/p&gt;
+&lt;p&gt;譬如說，Rex 老師在課堂上就提醒過：「&lt;a href=&#34;https://en.wikipedia.org/wiki/Stakeholder_analysis&#34;&gt;利害關係人矩陣&lt;/a&gt;」不必然需要對外公開透明。試想：如果某一位利害關係人看到自己被歸在 &amp;ldquo;High Interest but Low Power&amp;rdquo; 象限，會作何感想？&lt;/p&gt;
+&lt;p&gt;Rita Mulcahy 在 &lt;a href=&#34;https://www.amazon.com/dp/1932735658&#34;&gt;&lt;em&gt;PMP Exam Prep&lt;/em&gt;&lt;/a&gt; 書中也如此提醒：&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2022/08/rita-on-stakeholders.png&#34; alt=&#34;Source: PMP Exam Prep by Rita Mulcahy&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2022/08/rita-on-stakeholders.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Source: PMP Exam Prep by Rita Mulcahy&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;另一個例子，是專案組合管理 (project portfolio management)。&lt;/p&gt;
+&lt;p&gt;我們會根據某些質化或量化角度替專案組合做評估與分級。如果整個組織已經有公認成熟的量化評估方法（尤其是有 PMO 編制的組織），那就是走公開透明的路線；否則，可能會用簡單的質化方式，像是&lt;a href=&#34;https://en.wikipedia.org/wiki/Time_management#The_Eisenhower_Method&#34;&gt;艾森豪矩陣&lt;/a&gt;之類的二軸工具予以初步分級。&lt;/p&gt;
+&lt;p&gt;此時，請小心拿捏：這種二軸評估矩陣是否真的需要公開透明。試想：如果某一位利害關係人看到自己的專案被歸在 &amp;ldquo;Not Important&amp;rdquo; 或是 &amp;ldquo;Not Urgent&amp;rdquo; 的象限，會作何感想？&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;小總結：有些專案管理／專案組合管理資訊，可能只能在專案團隊內部揭露。不是為了隱瞞，而是為了妥善管理利害關係人。&lt;/p&gt;</description>
+      
     </item>
+    
     <item>
       <title>專案 Kick-off meeting 的前置作業</title>
       <link>//william-yeh.net/post/2022/07/prj-kickoff/</link>
       <pubDate>Mon, 11 Jul 2022 15:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2022/07/prj-kickoff/</guid>
-      <description>&lt;p&gt;（改寫自公司內部 memo）&lt;/p&gt;&#xA;&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;&#xA;&lt;p&gt;（Target audience: 上過【專案管理第一次就上手】的同仁）&lt;/p&gt;&#xA;&lt;p&gt;很高興看到二月及四月上過【專案管理第一次就上手】的同仁們，開始在工作上運用課堂所學，尤其是「&lt;strong&gt;專案管理問題清單&lt;/strong&gt;」開始被廣泛運用在大大小小專案的 kick-off meeting 上面，這是非常好的現象。&lt;/p&gt;&#xA;&lt;p&gt;這份 memo，我針對 &lt;strong&gt;kick-off meeting&lt;/strong&gt; 的定位及前置作業多做一些補充，算是這陣子貼身觀察的小小心得。&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;（改寫自公司內部 memo）&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;（Target audience: 上過【專案管理第一次就上手】的同仁）&lt;/p&gt;
+&lt;p&gt;很高興看到二月及四月上過【專案管理第一次就上手】的同仁們，開始在工作上運用課堂所學，尤其是「&lt;strong&gt;專案管理問題清單&lt;/strong&gt;」開始被廣泛運用在大大小小專案的 kick-off meeting 上面，這是非常好的現象。&lt;/p&gt;
+&lt;p&gt;這份 memo，我針對 &lt;strong&gt;kick-off meeting&lt;/strong&gt; 的定位及前置作業多做一些補充，算是這陣子貼身觀察的小小心得。&lt;/p&gt;
+&lt;h2 id=&#34;定位&#34;&gt;定位&lt;/h2&gt;
+&lt;p&gt;關於 Kick-off meeting 的&lt;strong&gt;定位&lt;/strong&gt;，Rex 老師在課堂上有提過：&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2022/07/kick-off-meeting.png&#34; alt=&#34;Source: 【專案管理第一次就上手】by Rex Feng&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2022/07/kick-off-meeting.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Source: 【專案管理第一次就上手】by Rex Feng&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;接下來的問題就是：要怎麼做，才能夠「&lt;strong&gt;獲得大家支持&lt;/strong&gt;」？畢竟，光是在會議現場「公告天下專案即將啟動」，並不必然會順水推舟達到「獲得大家支持」的結果。&lt;/p&gt;
+&lt;p&gt;我認為，關鍵就在於「&lt;strong&gt;事前的利害關係人管理&lt;/strong&gt;」。&lt;/p&gt;
+&lt;p&gt;請注意，這句話有兩個重點：「&lt;strong&gt;利害關係人管理&lt;/strong&gt;」以及「&lt;strong&gt;事前&lt;/strong&gt;」，更進一步說，這涉及到 &lt;strong&gt;WHEN&lt;/strong&gt; (事前) 與 &lt;strong&gt;DO WHAT&lt;/strong&gt; (管理) 兩個議題。&lt;/p&gt;
+&lt;h2 id=&#34;when&#34;&gt;WHEN&lt;/h2&gt;
+&lt;p&gt;既然提到「kick-off meeting 必須在『事前』先做一些事」，那麼，kick-off meeting 的時機點，會是在專案管理生命週期（亦即「五大流程群組」：initiating、planning、executing、monitoring and controlling、closing）的什麼時機進行，才算是最恰當的？&lt;/p&gt;
+&lt;p&gt;以 &lt;a href=&#34;https://www.amazon.com/dp/1628251840&#34;&gt;&lt;em&gt;The PMBOK Guide&lt;/em&gt; 6/e&lt;/a&gt; 而言，kick-off meeting 是擺在「Planning 結束」 ←→ 「Execution 開始」這個中間地帶：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2022/07/pmbok6-kickoff.png&#34; alt=&#34;Source: The PMBOK Guide, 6/e&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2022/07/pmbok6-kickoff.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Source: The PMBOK Guide, 6/e&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;do-what&#34;&gt;DO WHAT&lt;/h2&gt;
+&lt;p&gt;既然 kick-off meeting 是落在「Planning 結束」 ←→ 「Execution 開始」這個時間點，那麼，以下這幾個活動，應該都已經進行到某個完成度了：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Scope
+&lt;ul&gt;
+&lt;li&gt;Collect Requirements&lt;/li&gt;
+&lt;li&gt;Define Scope&lt;/li&gt;
+&lt;li&gt;Create WBS&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Stakeholder
+&lt;ul&gt;
+&lt;li&gt;Plan Stakeholder Engagement&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Communication
+&lt;ul&gt;
+&lt;li&gt;Plan Communications Management&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;總而言之，理論上，「利害關係人管理」應該早在 kick-off meeting 之前就已經做到某個程度了。&lt;/p&gt;
+&lt;h2 id=&#34;那麼kick-off-meeting-本身都在做什麼&#34;&gt;那麼，kick-off meeting 本身都在做什麼？&lt;/h2&gt;
+&lt;p&gt;Kick-off meeting 之前居然要做這麼多事情，那麼，kick-off meeting 本身還要做什麼？&lt;/p&gt;
+&lt;p&gt;Rita Mulcahy 在 &lt;a href=&#34;https://www.amazon.com/dp/1932735658&#34;&gt;&lt;em&gt;PMP Exam Prep&lt;/em&gt;&lt;/a&gt; 書中說得好：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2022/07/rita-kickoff.png&#34; alt=&#34;Source: PMP Exam Prep by Rita Mulcahy&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2022/07/rita-kickoff.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Source: PMP Exam Prep by Rita Mulcahy&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;事前準備若做得好，kick-off meeting 多半的時間，是在 &amp;ldquo;review&amp;rdquo; 會議前就規劃出來的 project plan（縱然這可能只是一份仍待 rolling wave planning 的版本），做些最後的對齊與釐清，然後，拍板定案。&lt;/p&gt;
+&lt;h2 id=&#34;no-surprise&#34;&gt;No Surprise&lt;/h2&gt;
+&lt;p&gt;理論上，kick-off meeting 現場，應該不會有太多的 &amp;ldquo;surprise!&amp;rdquo; 發生，更多的是一種儀式，一種畫押。&lt;/p&gt;
+&lt;p&gt;如果當場會有過多的 &amp;ldquo;surprise!&amp;quot;，那就代表事前準備仍有疏漏。&lt;/p&gt;
+&lt;p&gt;所以君婷老師在〈&lt;a href=&#34;https://www.projectup.net/article/view/id/16626&#34;&gt;老闆心，海底針：我該如何錨定老闆的目標？&lt;/a&gt;〉這篇文章就提醒過：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在某些有規模的專案當中，&lt;strong&gt;「定出專案的目標」本身就是一個專案前的專案&lt;/strong&gt;，而且是個非常重要的專案，請用看待一個「正式專案」，態度嚴謹看待之，而你必須先取得這個專案的結果（目標）。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;如果真的要 fast tracking 抄捷徑，那就得承擔對應的風險。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;願大家在專案管理路上繼續精進，讓我們的工作進展得更順利，朝向 Rex 老師所講的「諸葛亮」境界邁進。&lt;/p&gt;</description>
+      
     </item>
+    
     <item>
       <title>敏捷啟航的專業基礎：共同語彙</title>
       <link>//william-yeh.net/post/2022/03/prof-common-vocabulary/</link>
       <pubDate>Sat, 05 Mar 2022 14:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2022/03/prof-common-vocabulary/</guid>
-      <description>&lt;p&gt;LeSS 的 &amp;ldquo;&lt;a href=&#34;https://less.works/less/structure/scrummaster.html#ScrumMasterfocus&#34;&gt;Scrum Master focus over time&lt;/a&gt;&amp;rdquo; 一文主張，在導入敏捷的初期階段，首要焦點應放在 &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Team&lt;/span&gt;&#xA;、&lt;span style=&#34;font-variant: small-caps;&#34;&gt;Product Owner&lt;/span&gt;&#xA; 及 &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Organization&lt;/span&gt;&#xA; 三者。&lt;/p&gt;&#xA;&#xA;&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;&#xA;&lt;div class=&#34;box&#34;&gt;&#xA;&lt;figure  itemprop=&#34;associatedMedia&#34;&#xA;  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; &#xA;  style=&#34;max-width:30em&#34; &gt;&#xA;    &lt;div class=&#34;img&#34;&gt;&#xA;      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2019/12/scrum-master-focus-over-time.png&#34; alt=&#34;Scrum Master focus over time (from LeSS)&#34;/&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;a href=&#34;//william-yeh.net/img/2019/12/scrum-master-focus-over-time.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;&#xA;      &lt;figcaption&gt;&#xA;          &lt;p&gt;Scrum Master focus over time (from LeSS)&lt;/p&gt;&#xA;      &lt;/figcaption&gt;&#xA;  &lt;/figure&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;p&gt;如果借用&lt;a href=&#34;https://www.mckinsey.com/business-functions/strategy-and-corporate-finance/our-insights/enduring-ideas-the-7-s-framework&#34;&gt;麥肯錫 7S 模型&lt;/a&gt;來分析這些初期的施力重點，不難發現，&lt;span style=&#34;font-variant: small-caps;&#34;&gt;Organization&lt;/span&gt;&#xA; 的施力點大致可直接對應到 7S 的結構 (Structure) &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; ，至於 &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Team&lt;/span&gt;&#xA; 及 &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Product Owner&lt;/span&gt;&#xA; 的施力點，則是對應到 7S 的風格 (Style)、技能 (Skills)，甚至是共同價值觀 (Shared Values)。&lt;/p&gt;&#xA;&lt;p&gt;前者屬於硬性要素，較易理解，也較易實施；後者屬於軟性要素，較抽象，也不易立竿見影——這是敏捷啟航時需要面對的模糊題。&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;LeSS 的 &amp;ldquo;&lt;a href=&#34;https://less.works/less/structure/scrummaster.html#ScrumMasterfocus&#34;&gt;Scrum Master focus over time&lt;/a&gt;&amp;rdquo; 一文主張，在導入敏捷的初期階段，首要焦點應放在 &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Team&lt;/span&gt;
+、&lt;span style=&#34;font-variant: small-caps;&#34;&gt;Product Owner&lt;/span&gt;
+ 及 &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Organization&lt;/span&gt;
+ 三者。&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2019/12/scrum-master-focus-over-time.png&#34; alt=&#34;Scrum Master focus over time (from LeSS)&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2019/12/scrum-master-focus-over-time.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Scrum Master focus over time (from LeSS)&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;如果借用&lt;a href=&#34;https://www.mckinsey.com/business-functions/strategy-and-corporate-finance/our-insights/enduring-ideas-the-7-s-framework&#34;&gt;麥肯錫 7S 模型&lt;/a&gt;來分析這些初期的施力重點，不難發現，&lt;span style=&#34;font-variant: small-caps;&#34;&gt;Organization&lt;/span&gt;
+ 的施力點大致可直接對應到 7S 的結構 (Structure) &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; ，至於 &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Team&lt;/span&gt;
+ 及 &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Product Owner&lt;/span&gt;
+ 的施力點，則是對應到 7S 的風格 (Style)、技能 (Skills)，甚至是共同價值觀 (Shared Values)。&lt;/p&gt;
+&lt;p&gt;前者屬於硬性要素，較易理解，也較易實施；後者屬於軟性要素，較抽象，也不易立竿見影——這是敏捷啟航時需要面對的模糊題。&lt;/p&gt;
+&lt;p&gt;面對軟性要素，除了像【敏捷原理與團隊塑造】工作坊這種典型的起手式，我發現，要促成根本改變，還得致力於「&lt;strong&gt;建立共同語彙&lt;/strong&gt;」。我還更進一步發現，這些共同語彙，不只是敏捷轉型需要，就算不談敏捷轉型，也一樣需要——這應該是各職能工作者都該有的專業基礎。&lt;/p&gt;
+&lt;p&gt;其中，我最看重且亟需建立的共同語彙有三：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;5W1H&lt;/li&gt;
+&lt;li&gt;WBS &amp;amp; MECE&lt;/li&gt;
+&lt;li&gt;Working backwards collaboratively&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;5w1h&#34;&gt;5W1H&lt;/h2&gt;
+&lt;p&gt;很多人視 5W1H 為過氣的老調。有趣的是，日本人對於經典的 5W1H 似乎情有獨鍾，出了幾本專書：《&lt;a href=&#34;https://www.books.com.tw/products/0010826002&#34;&gt;5W1H 超強思考術：你的所有問題，都可以靠 5W1H 解決！&lt;/a&gt;》、《&lt;a href=&#34;https://www.books.com.tw/products/0010840745&#34;&gt;5W1H 經典思考法：容易獲得成果的人都在用&lt;/a&gt;》。&lt;/p&gt;
+&lt;p&gt;5W1H 不只是表面上「人事時地物」這麼單純的事項羅列，&lt;strong&gt;以事實為基礎&lt;/strong&gt;的行事態度才是它更深層的意涵。如果套用麥肯錫常用的「天空、下雨、雨傘」比喻，如果連「天空」這個事實層次都無法精準陳述，後續「下雨」的推論詮釋或是「雨傘」的行動決策，都是刻舟求劍。&lt;/p&gt;
+&lt;p&gt;對敏捷的影響：若行事態度不以事實為基礎，等於是推翻了 Scrum 經驗主義三支柱當中的「檢視性 (&lt;a href=&#34;https://scrumguides.org/scrum-guide.html#inspection&#34;&gt;inspection&lt;/a&gt;)」，就別奢望能夠正確發揮 Scrum 的功效。&lt;/p&gt;
+&lt;h2 id=&#34;wbs--mece&#34;&gt;WBS &amp;amp; MECE&lt;/h2&gt;
+&lt;p&gt;工作分解 &lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt; ，是專業工作者的基本功。磨練工作分解的技術，不管是 &lt;a href=&#34;https://en.wikipedia.org/wiki/Work_breakdown_structure&#34;&gt;WBS&lt;/a&gt; 形式還是 &lt;a href=&#34;https://en.wikipedia.org/wiki/MECE_principle&#34;&gt;MECE&lt;/a&gt; 意識，都能促成更專業的工作品質。&lt;/p&gt;
+&lt;p&gt;對敏捷的影響：儘管敏捷並不講究在一開頭就進行鉅細彌遺的工作分解，但這並不代表敏捷就不需要工作分解技能了。此技能若不精熟，&lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Planning&lt;/span&gt;
+ 或 &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Refinement&lt;/span&gt;
+ 等活動很快就會卡關。&lt;/p&gt;
+&lt;h2 id=&#34;working-backwards-collaboratively&#34;&gt;Working backwards collaboratively&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.amazon.com/dp/1250267595&#34;&gt;Working backwards&lt;/a&gt; 一詞，近年來因 Amazon 而聲名大噪，但這觀念其實相當古老。至少當我們還在學生時期，都懂得所謂的「逆推法」解題祕訣：面對數學證明題，有時候可以嘗試從待證明的結果往回推導個幾步；面對閱讀測驗，較有效率的做法，往往是先快速掃描後面的提問及選項，而不是傻傻地先閱讀冗長的文本。&lt;/p&gt;
+&lt;p&gt;迷宮，未必非得從入口出發；從出口往回倒著走，可能更容易破關。&lt;/p&gt;
+&lt;p&gt;Working backwards 是學生的法寶，只可惜到了職場，只有一流高效人士才懂得重拾這個絕招。像在專案管理領域中，WBS 就是最典型的 working backwards 應用：從「最終交付物」出發的分解結構 (a &lt;strong&gt;deliverable-oriented&lt;/strong&gt; hierarchical decomposition)。&lt;/p&gt;
+&lt;p&gt;一流高效人士不只是懂得 working backwards，更懂得 working backwards &lt;strong&gt;collaboratively&lt;/strong&gt;。專案管理名著 &lt;a href=&#34;https://www.amazon.com/dp/0470177128&#34;&gt;&lt;em&gt;Work Breakdown Structures: The Foundation for Project Management Excellence&lt;/em&gt;&lt;/a&gt; 就說，WBS 不是 PM 一個人悶著頭生出來的，而是靠整個團隊的力量集結完成：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Who owns the WBS, who should be involved in developing it, who keeps it up to date? The answer to each of these is the &lt;strong&gt;project manager&lt;/strong&gt; and the &lt;strong&gt;project team&lt;/strong&gt;. [&amp;hellip;] who is responsible for the upkeep of the WBS? This is the responsibility of &lt;strong&gt;the entire project team&lt;/strong&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;不靠整個團隊的力量，很難做到 WBS 所講究的 “100% rule”。&lt;/p&gt;
+&lt;p&gt;對敏捷的影響：不具備 working backwards collaboratively 的心態及技藝，就只是表面功夫的敏捷。就以敏捷圈常見的 &lt;a href=&#34;https://en.wikipedia.org/wiki/User_story&#34;&gt;user story&lt;/a&gt; 及 &lt;a href=&#34;https://en.wikipedia.org/wiki/Specification_by_example&#34;&gt;SBE&lt;/a&gt; 手法為例：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;User story：經典句型 &amp;ldquo;&lt;a href=&#34;https://www.mountaingoatsoftware.com/blog/advantages-of-the-as-a-user-i-want-user-story-template&#34;&gt;who + what + why&lt;/a&gt;&amp;rdquo; 及 acceptance criteria 就是 working backwards，&lt;a href=&#34;https://www.agilealliance.org/glossary/three-cs/&#34;&gt;3C 要素&lt;/a&gt;當中的 &amp;ldquo;conversation&amp;rdquo; 就是 working collaboratively。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;SBE：經典句型 “&lt;a href=&#34;https://martinfowler.com/bliki/GivenWhenThen.html&#34;&gt;given-when-then&lt;/a&gt;&amp;quot; 就是 working backwards，&lt;a href=&#34;https://www.agilealliance.org/glossary/three-amigos/&#34;&gt;3 amigos 活動&lt;/a&gt;就是 working collaboratively。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;交叉訓練&#34;&gt;交叉訓練&lt;/h2&gt;
+&lt;p&gt;5W1H、WBS &amp;amp; MECE、working backwards collaboratively 這些共同語彙，不只是敏捷轉型需要，就算不談敏捷轉型，也一樣需要——這應該是各職能工作者都該有的專業基礎。&lt;/p&gt;
+&lt;p&gt;檯面上沒有單一課程能深度涵蓋這三種語彙。我只好打組合牌，透過幾種課程的交叉訓練，從不同角度冶煉出這三種語彙的交集，再以我的【&lt;a href=&#34;//william-yeh.net/post/2022/06/career-reading-club-1/&#34;&gt;職涯躍升書系導讀會&lt;/a&gt;】做為佐料來提味：&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;&lt;/th&gt;
+          &lt;th&gt;Git&lt;/th&gt;
+          &lt;th&gt;專案管理入門&lt;/th&gt;
+          &lt;th&gt;SBE&lt;/th&gt;
+          &lt;th&gt;TDD&lt;/th&gt;
+          &lt;th&gt;遠距工作講座&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;5W1H&lt;/td&gt;
+          &lt;td&gt;✓&lt;/td&gt;
+          &lt;td&gt;✓&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;WBS &amp;amp; MECE&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;✓&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Working backwards&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;✓&lt;/td&gt;
+          &lt;td&gt;✓&lt;/td&gt;
+          &lt;td&gt;✓&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Working collaboratively&lt;/td&gt;
+          &lt;td&gt;✓&lt;/td&gt;
+          &lt;td&gt;✓&lt;/td&gt;
+          &lt;td&gt;✓&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;✓&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;教育訓練效果不彰，很多時候是因為：​❶ 主管自己都沒上過，❷ 沒有人致力於把它變成組織內的共同語彙，❸ 沒有人有 coaching 的意識與行動。​如此這般，就淪為徒具形式，船過水無痕。&lt;/p&gt;
+&lt;p&gt;透過交叉訓練，應用場景自然而然擴大起來，再搭配正確的 coaching 意識與行動，將更有機會成為真正實質意義上的「共同語彙」。&lt;/p&gt;
+&lt;h2 id=&#34;整土&#34;&gt;整土&lt;/h2&gt;
+&lt;p&gt;這些共同語彙一旦真正建立起來，許多 Scrum 元素就顯得理所當然。&lt;/p&gt;
+&lt;p&gt;Scrum 跑不順，不見得是 Scrum 的錯。畢竟 Scrum 是個篇幅 20 頁的擴大機，原本的天籟會增益，反之——噪音亦然。&lt;/p&gt;
+&lt;p&gt;Scrum 懷璧其罪很久了。&lt;/p&gt;
+&lt;p&gt;在敏捷啟航之前，花點時間處理這些軟性要素，在組織中種下這些共同語彙，把硬土、淺土、雜土整理成好土，整理成易於滋養敏捷的環境吧。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+
+
+&lt;div class=&#34;notice notice--note&#34;&gt;
+  &lt;div class=&#34;notice__title&#34;&gt;
+    
+      Scrum master 培訓系列
+    
+  &lt;/div&gt;
+  &lt;div class=&#34;notice__content&#34;&gt;&lt;p&gt;❶ &lt;a href=&#34;//william-yeh.net/post/2021/03/train-new-scrum-master/&#34;&gt;如何訓練一個新的 Scrum master？&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❷ &lt;a href=&#34;//william-yeh.net/post/2018/09/deliberate-practice-for-agile/&#34;&gt;敏捷之途無他，刻意練習而已矣！&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❸ &lt;a href=&#34;//william-yeh.net/post/2021/07/revisit-psm1/&#34;&gt;Scrum 認證模擬測驗的兩項啟發&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❹ 敏捷啟航的專業基礎：共同語彙&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;即使 Kanban 方法是傳説中一開始對既有組織結構衝擊最小，且明文宣稱 “Start with what you do now“ 及 “Initially, respect current processes, roles, responsibilities, and job titles”，但根據 &lt;a href=&#34;https://www.amazon.com/dp/0985305193&#34;&gt;&lt;em&gt;Kanban from the Inside&lt;/em&gt;&lt;/a&gt; 一書的說法，Kanban 最輕量的導入手法 “The Sustainability Agenda” 當中，就包含 ① Visualize, ④ Make Policies Explicit, ⑤ Implement Feedback Loops 這三項 Transparency 實踐手法——說實話，這未必是小小的衝擊！如果借用&lt;a href=&#34;https://www.mckinsey.com/business-functions/strategy-and-corporate-finance/our-insights/enduring-ideas-the-7-s-framework&#34;&gt;麥肯錫 7S 模型&lt;/a&gt;來分析這些初期的施力重點，可說是從 7S 的體制 (Systems) 這項硬性要素及風格 (Style) 這項軟性要素切入。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;請參考〈&lt;a href=&#34;//william-yeh.net/post/2016/11/decomposition-reading-list/&#34;&gt;工作分解講座・閱讀材料&lt;/a&gt;〉一文。&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description>
+      
     </item>
+    
     <item>
       <title>Agile PMO</title>
       <link>//william-yeh.net/post/2018/11/agile-pmo/</link>
       <pubDate>Thu, 15 Nov 2018 08:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2018/11/agile-pmo/</guid>
-      <description>&lt;p&gt;&amp;ldquo;Project&amp;rdquo; 一詞，儼然成為 agile 及 DevOps 圈子的禁語。&lt;/p&gt;&#xA;&lt;p&gt;譬如說，敏捷祖師爺 Martin Fowler 的網站有一篇 &amp;ldquo;&lt;a href=&#34;https://martinfowler.com/articles/products-over-projects.html&#34;&gt;Products Over Projects&lt;/a&gt;&amp;rdquo; 文章，DevOps 巨著 &lt;a href=&#34;https://www.tenlong.com.tw/products/9787115480170&#34;&gt;&lt;em&gt;The DevOps Handbook&lt;/em&gt;&lt;/a&gt; 第 7.7 節的篇名叫做〈投資於服務和產品，而非專案〉。最近甚至還有一本新書，直接取名叫做 &lt;a href=&#34;https://itrevolution.com/book/project-to-product/&#34;&gt;&lt;em&gt;Project to Product&lt;/em&gt;&lt;/a&gt; 叫人棄暗投明呢。&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;&amp;ldquo;Project&amp;rdquo; 一詞，儼然成為 agile 及 DevOps 圈子的禁語。&lt;/p&gt;
+&lt;p&gt;譬如說，敏捷祖師爺 Martin Fowler 的網站有一篇 &amp;ldquo;&lt;a href=&#34;https://martinfowler.com/articles/products-over-projects.html&#34;&gt;Products Over Projects&lt;/a&gt;&amp;rdquo; 文章，DevOps 巨著 &lt;a href=&#34;https://www.tenlong.com.tw/products/9787115480170&#34;&gt;&lt;em&gt;The DevOps Handbook&lt;/em&gt;&lt;/a&gt; 第 7.7 節的篇名叫做〈投資於服務和產品，而非專案〉。最近甚至還有一本新書，直接取名叫做 &lt;a href=&#34;https://itrevolution.com/book/project-to-product/&#34;&gt;&lt;em&gt;Project to Product&lt;/em&gt;&lt;/a&gt; 叫人棄暗投明呢。&lt;/p&gt;
+&lt;p&gt;見微知著。這個圈子，褒 product，貶 project，是政治正確的常模。 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;這個圈子，對於 &amp;ldquo;project&amp;rdquo; 反感，對於素來予人控制與監管印象的 &amp;ldquo;PMO&amp;rdquo; (Project Management Office，專案管理辦公室) &lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt; 就更反感了。&lt;/p&gt;
+&lt;p&gt;但 PMO 真的與敏捷水火不容嗎？&lt;/p&gt;
+&lt;h2 id=&#34;敏捷陣營的聲音&#34;&gt;敏捷陣營的聲音&lt;/h2&gt;
+&lt;p&gt;聽聽看 Scrum 領域三位大神的說法吧。&lt;/p&gt;
+&lt;p&gt;頭兩位大神 &lt;a href=&#34;https://www.linkedin.com/in/jeffsutherland&#34;&gt;Jeff Sutherland&lt;/a&gt; 及 &lt;a href=&#34;https://kenschwaber.wordpress.com/&#34;&gt;Ken Schwaber&lt;/a&gt; 是 Scrum 發明人。他們合著一本小書《&lt;a href=&#34;https://www.books.com.tw/products/0010647604&#34;&gt;告別瀑布，擁抱 Scrum&lt;/a&gt;》，言簡意賅，完全是務實的經驗談。附錄Ｃ〈企業級敏捷攻略〉專門探討敏捷擴展的議題，難得看到兩位老爹發表與其他基本教義派不同的接地氣觀點。其中對於 &amp;ldquo;project&amp;rdquo; 的看法是：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Scrum 避免使用傳統的「類」瀑布式的專案&lt;strong&gt;計畫&lt;/strong&gt;，但是策略性的日常&lt;strong&gt;專案管理&lt;/strong&gt;的本質是堅定不移的。高級成員需要觀察每個團隊各自的 iteration 和發佈計畫，才能全面的評估整個專案所處的狀態。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;他們也進一步闡述遠光燈的觀點：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Scrum 是追求「近期可能性的藝術」，而不是詳細預測未來 6 到 12 個 sprints 內應該交付什麼的黑色藝術。但隨著團隊的擴大和增加，為了未來較遙遠的 sprint 做額外嚴謹的分析，將有助於避免日後需要對架構做過多的重構。為了能將系統架構未來可能的演變方向看得更清楚，進行額外的發布計畫也是合適的。因此，sprint 計畫會議中，可以「看看過去的幾個 sprint」，也可以進行一些「萬一」(what-if) 的計畫，如此將能夠協助團隊權衡產品待辦清單，並向發起者傳達一個更合理的願景和產品路線圖。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Ken Schwaber 創立的 &lt;a href=&#34;https://www.scrum.org&#34;&gt;Scrum.org&lt;/a&gt; 培訓機構，也刊登過一篇 &amp;ldquo;&lt;a href=&#34;https://www.scrum.org/resources/blog/agile-pmo&#34;&gt;The Agile PMO&lt;/a&gt;&amp;rdquo; 文章，說明他們對於 PMO 並未排斥。&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;第三位大神 &lt;a href=&#34;https://www.scrumalliance.org/community/profile/mikecohn&#34;&gt;Mike Cohn&lt;/a&gt;，是 CSM/CSPO/CST 等認證的主辦機構 &lt;a href=&#34;https://www.scrumalliance.org/&#34;&gt;Scrum Alliance&lt;/a&gt; 的共同創辦人，著作等身，都是敏捷領域的經典 &lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;。最近也在他的機構 Mountain Goat Software 開辦很精彩的 &lt;a href=&#34;http://learn.mountaingoatsoftware.com/better-user-stories/&#34;&gt;&lt;em&gt;Better User Stories&lt;/em&gt;&lt;/a&gt; 線上課程，是非常活躍的 Scrum 培訓師。&lt;/p&gt;
+&lt;p&gt;在敏捷領域，Mike Cohn 雖然是祖師爺等級的人物，但不是基本教義派。譬如說，雖然 &amp;ldquo;project&amp;rdquo; 一詞儼然成為這圈子的禁語，但他可不這麼認為：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Projects provide a planning horizon that is longer than a sprint&amp;mdash;typically in the range of two to six months. This “definite beginning and end” that is focused on a “unique product, service or result” encourages product owners to select truly important things to work on rather than whatever some customer or salesperson screamed about yesterday.&lt;/p&gt;
+&lt;p&gt;I always encourage product owners and their teams to identify a milestone they are working toward that is longer than a single sprint.&lt;/p&gt;
+&lt;p&gt;Projects remain a useful construct. They provide a motivation to accomplish something grander than could be done in a single iteration.&lt;/p&gt;
+&lt;p&gt;  &amp;mdash; “&lt;a href=&#34;https://www.mountaingoatsoftware.com/blog/is-it-time-to-stop-thinking-about-projects&#34;&gt;Is It Time to Stop Thinking about Projects?&lt;/a&gt;”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;畢竟 milestone 這種&lt;strong&gt;策略控制點&lt;/strong&gt;的設置與控制，原本就是專案管理知識體系的擅長之處。&lt;/p&gt;
+&lt;p&gt;他甚至鼓勵將傳統上 &lt;a href=&#34;https://www.pmi.org/pmbok-guide-standards&#34;&gt;PMBOK&lt;/a&gt; 重視的某些活動，引進敏捷開發的節奏中：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Becoming agile does not mean we need to throw out everything we&amp;rsquo;ve learned over the past 100 or so years of doing project management. Some things&amp;mdash;project kickoff meetings included&amp;mdash;remain valuable.&lt;/p&gt;
+&lt;p&gt;Risk management is not formally defined as part of agile frameworks like Scrum. And that’s understandable as a lot of risks do go away (or get exposed) with the short iterations common to agile. But there are still projects that benefit from lightweight but explicit risk management. I suggested starting that during the kickoff meeting.&lt;/p&gt;
+&lt;p&gt;  &amp;mdash; “&lt;a href=&#34;https://www.mountaingoatsoftware.com/blog/advice-on-conducting-agile-project-kickoff-meetings&#34;&gt;Advice on Conducting Agile Project Kickoff Meetings&lt;/a&gt;”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;三位大師的論述，像極了《&lt;a href=&#34;https://zh.wikipedia.org/wiki/%E7%A5%9E%E9%B5%B0%E4%BF%A0%E4%BE%B6&#34;&gt;神鵰俠侶&lt;/a&gt;》中「不滯於物，草木竹石均可為劍」的境界，大師風範，令人佩服。&lt;/p&gt;
+&lt;h2 id=&#34;pmo-陣營的聲音&#34;&gt;PMO 陣營的聲音&lt;/h2&gt;
+&lt;p&gt;也來聽聽看 PMO 領域的說法吧。&lt;/p&gt;
+&lt;p&gt;PMO 並不是像敏捷基本教義派陣營口中那麼僵化守舊的。像 2013 年《&lt;a href=&#34;https://www.books.com.tw/products/CN11396791&#34;&gt;業務驅動的 PMO 最佳實踐&lt;/a&gt;》一書主張，有&lt;strong&gt;成熟敏銳度&lt;/strong&gt; (maturity acumen) 的 PMO，需要根據專案類型與管理方法兩個維度，將組織層級的專案管理分成四個象限，並以宏觀視野統籌處理：&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/11/org-pm-quadrant.jpg&#34; alt=&#34;組織範圍的專案管理&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2018/11/org-pm-quadrant.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;組織範圍的專案管理&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;至於最正宗的專案管理國際組織 &lt;a href=&#34;https://www.pmi.org/&#34;&gt;PMI&lt;/a&gt; 是怎麼想的呢？&lt;/p&gt;
+&lt;p&gt;在 &amp;ldquo;&lt;a href=&#34;https://www.pmi.org/learning/library/pmo-agile-transformation-6063&#34;&gt;An agile PMO transformation&lt;/a&gt;&amp;rdquo; 一文中，列舉 &amp;ldquo;agile PMO&amp;rdquo; 的「八要八不要」，並且主張：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;For many organizations, using the words “PMO” and “agile” in the same sentence could be considered an oxymoron. It may come as a surprise to expect the PMO to lead the agile transformation, but we think that &lt;em&gt;for organizations to reach the full potential of the approaches outlined in this update, such as managing the enterprise-level portfolio and creating stable teams, the PMO will need to be engaged and lead the way.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;If PMOs are ready and willing to transform, they can greatly influence the success of their organization&amp;rsquo;s agile transformation.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;可見，狀似傳統僵化的 PMO，其實也已經正視敏捷變革。因此，我們不時可看到新名詞 &amp;ldquo;agile PMO&amp;rdquo; 出現，連管顧公司也湊熱鬧湊出一個 &amp;ldquo;Lean-Agile PMO&amp;rdquo; 呢。&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;h2 id=&#34;正名&#34;&gt;正名？&lt;/h2&gt;
+&lt;p&gt;敏捷陣營常會對 &amp;ldquo;agile PMO&amp;rdquo; 一詞嗤之以鼻，認為只是換湯不換藥。&lt;/p&gt;
+&lt;p&gt;因此，Mike Cohn 挑明地說，為了避免困擾，不妨考慮換個名字：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;A project management office (PMO) that is engaged in and supportive of transitioning to Scrum can be a tremendous boon.&lt;/p&gt;
+&lt;p&gt;Many PMOs choose to rename themselves to better match their revised role. Though there is no one standard name, I have heard these most frequently: &lt;em&gt;Scrum center of excellence&lt;/em&gt;, &lt;em&gt;Scrum competence center&lt;/em&gt;, &lt;em&gt;Scrum office&lt;/em&gt;, and &lt;em&gt;development support&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Many people have become cynical and suspicious of name changes and of well-crafted names. That cynicism will be directed at the PMO if it is renamed but remains otherwise unchanged. So, whatever it&amp;rsquo;s called, the PMO that supported the organization&amp;rsquo;s sequential development process will need to change more than just its name to succeed with Scrum.&lt;/p&gt;
+&lt;p&gt;  &amp;mdash; “&lt;a href=&#34;https://www.mountaingoatsoftware.com/articles/the-roles-of-the-project-management-office-in-scrum&#34;&gt;The Roles of the Project Management Office in Scrum&lt;/a&gt;”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;PMI 在 &lt;a href=&#34;https://www.pmi.org/pmbok-guide-standards/practice-guides/agile&#34;&gt;&lt;em&gt;Agile Practice Guide&lt;/em&gt;&lt;/a&gt; 第六章也提及 “&lt;strong&gt;center of excellence&lt;/strong&gt;” 一詞：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Some organizations have been transforming their PMOs into agile centers of excellence&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;至於崇尚極簡作風的 LeSS 陣營，則主張廢棄 &amp;ldquo;project&amp;rdquo; 或 &amp;ldquo;office&amp;rdquo; 字眼，改用 &amp;ldquo;Head of Product Group&amp;rdquo; 概念，以及 &amp;ldquo;&lt;a href=&#34;https://less.works/less/management/go-see.html&#34;&gt;Go See&lt;/a&gt;&amp;rdquo; 管理：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;No project/program organization or project/program management office (PMO). No support groups such as configuration management, continuous integration support, or “quality and process”.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Head of the Product Group&lt;/strong&gt; — Most LeSS organizations still have managers including a “head of product group.” They support the teams by Go See and help them remove obstacles and improve. LeSS organizations don’t have matrix structures and there are no “dotted-line” managers.&lt;/p&gt;
+&lt;p&gt;“Head of Product Group” is called differently in different organization, here we mean the hierarchical manager of all the teams.&lt;/p&gt;
+&lt;p&gt;  &amp;mdash; LeSS &lt;a href=&#34;https://less.works/less/structure/organizational-structure.html&#34;&gt;Organizational Structure&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;看了這麼多論點，你認為 &amp;ldquo;agile PMO&amp;rdquo; 是噱頭嗎？&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;儘管敏捷圈子普遍褒 product 而貶 project，但有趣的是，&lt;a href=&#34;https://www.scrumguides.org/&#34;&gt;&lt;em&gt;The Scrum Guide&lt;/em&gt;&lt;/a&gt; 對於 sprint 卻有這種類比：“Each Sprint may be considered a &lt;strong&gt;project&lt;/strong&gt; with no more than a one-month horizon 每個 Sprint 可視為一個不超過一個月的&lt;strong&gt;專案&lt;/strong&gt;。”&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;想在五分鐘之內快速了解 PMO 是什麼東西，可讀讀 Joe 寫的這篇文章：&lt;a href=&#34;https://www.projectup.net/article/view/id/9&#34;&gt;What is PMO&lt;/a&gt;。&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;
+&lt;p&gt;Mike Cohn 在敏捷領域的名作：&lt;a href=&#34;https://www.amazon.com/gp/product/0321205685/&#34;&gt;&lt;em&gt;User Stories Applied: For Agile Software Development&lt;/em&gt;&lt;/a&gt; (2004)、&lt;a href=&#34;https://www.amazon.com/dp/0131479415&#34;&gt;&lt;em&gt;Agile Estimating and Planning&lt;/em&gt;&lt;/a&gt; (2005)、&lt;a href=&#34;https://www.amazon.com/gp/product/0321579364/&#34;&gt;&lt;em&gt;Succeeding with Agile: Software Development Using Scrum&lt;/em&gt;&lt;/a&gt; (2009)。&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:4&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.forbes.com/sites/forbesfinancecouncil/2018/06/13/the-many-benefits-of-an-agile-pmo-what-you-should-know/&#34;&gt;The Many Benefits Of An Agile PMO: What You Should Know&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+      
     </item>
+    
     <item>
       <title>工作分解講座・閱讀材料</title>
       <link>//william-yeh.net/post/2016/11/decomposition-reading-list/</link>
       <pubDate>Wed, 30 Nov 2016 08:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2016/11/decomposition-reading-list/</guid>
-      <description>&lt;h2 id=&#34;緣起&#34;&gt;緣起&lt;/h2&gt;&#xA;&lt;p&gt;我在〈&lt;a href=&#34;//william-yeh.net/post/2016/10/one-week-sprint/&#34;&gt;One-Week Sprint 的節奏&lt;/a&gt;〉一文提到個人的「迷你版 Scrum」首航經驗：&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;第一個 sprint 順利達標，儘管變數層出不窮。&lt;/p&gt;&#xA;&lt;p&gt;萬萬沒想到第一次嘗試帶 Scrum，而且是「1 舊人 + 2 新人」的高風險組合，就很有機會實現。除了天時地利人和的配合，&lt;strong&gt;事先認真的 WBS 分析&lt;/strong&gt;，應是重要因素。&lt;/p&gt;</description>
+      
+        <description>&lt;h2 id=&#34;緣起&#34;&gt;緣起&lt;/h2&gt;
+&lt;p&gt;我在〈&lt;a href=&#34;//william-yeh.net/post/2016/10/one-week-sprint/&#34;&gt;One-Week Sprint 的節奏&lt;/a&gt;〉一文提到個人的「迷你版 Scrum」首航經驗：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;第一個 sprint 順利達標，儘管變數層出不窮。&lt;/p&gt;
+&lt;p&gt;萬萬沒想到第一次嘗試帶 Scrum，而且是「1 舊人 + 2 新人」的高風險組合，就很有機會實現。除了天時地利人和的配合，&lt;strong&gt;事先認真的 WBS 分析&lt;/strong&gt;，應是重要因素。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;後來幾個 sprints，大體上也都順利達到 due-date performance。回顧經驗，我仍然認為「事先認真的 WBS 分析」是重要因素。&lt;/p&gt;
+&lt;p&gt;所以，當我想將成功經驗推廣到其他專案上面，有一個重要的前置作業，就是灌輸全員 &lt;strong&gt;decomposition 意識&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;要以「WBS + activity」為單位，還是以「user story + task」為單位，我並沒有強制規定（也不是現階段的重點）。但其中的 decomposition 意識，則必須確實掌握。&lt;/p&gt;
+&lt;p&gt;因此，第一步，我先召集大家玩一次〈&lt;a href=&#34;//william-yeh.net/post/2016/11/toc-bottleneck-principles/&#34;&gt;TOC 瓶頸處理九大原則&lt;/a&gt;〉，從樂高遊戲中學習；接下來的第二步，嗯，又是我「讀書會」招數派上用場的時機了。&lt;/p&gt;
+&lt;p&gt;讀書會的進行方式：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;活動前：各自閱讀指定材料。&lt;/li&gt;
+&lt;li&gt;活動中：搭配 workshop 演練案例，而且是以公司真實的專案為實例，不僅具體，又能直接連結每個人的工作。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;這種訓練是很重要的。畢竟，連自己經手過的專案都分解／拆解不出來了，還談什麼後續的 planning poker 呢？&lt;/p&gt;
+&lt;p&gt;真實專案 workshop 我打算分兩回合進行。以下僅列出可以公開釋出的閱讀材料，給大家參考。&lt;/p&gt;
+&lt;h2 id=&#34;part-i--基本觀念&#34;&gt;Part I / 基本觀念&lt;/h2&gt;
+&lt;p&gt;專業工作者，除了精進本職學能之外，我認為，還需要致力掌握適當的工作分解／拆解技能。&lt;/p&gt;
+&lt;p&gt;工作分解／拆解，並不只是專案經理的責任，而是實際執行者也必須參與的。這也是專業工作者的責任區。&lt;/p&gt;
+&lt;p&gt;這不是我個人的偏見，而是連 &lt;a href=&#34;https://en.wikipedia.org/wiki/Project_Management_Body_of_Knowledge&#34;&gt;PMBOK&lt;/a&gt; 5/e 都如是說：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The project manager, &lt;strong&gt;in collaboration with the project team&lt;/strong&gt;, then determines the final decomposition of the project scope into the discrete work packages that will be used to effectively manage the work of the project. (§5.4.2.2)&lt;/p&gt;
+&lt;p&gt;Each work package within the WBS is decomposed into the activities required to produce the work package deliverables. &lt;strong&gt;Involving team members&lt;/strong&gt; in the decomposition can lead to better and more accurate results. (§6.2.2.1)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;首先，請先讀讀以下這篇文章，初步了解 WBS (work breakdown structure; 工作分解結構) 的基本觀念：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.projectup.net/article/view/id/11609&#34;&gt;PM 的牛肉在哪裡？再談 WBS&lt;/a&gt; (by Bryan)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;有餘力的話，可再選讀：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.projectup.net/article/view/id/302&#34;&gt;掌握工作的第一項工具 - WBS 初探&lt;/a&gt; (by Joe)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.projectup.net/article/view/id/305&#34;&gt;專案範疇管理與 WBS 再探&lt;/a&gt; (by Joe)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.projectup.net/article/view/id/306&#34;&gt;交付標的 vs 工作&lt;/a&gt; (by Joe)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;小提醒：「工作分解結構」觀念，不管是古典的 PMP，還是近代流行的 agile、Scrum、Kanban，其實大原則是相通的。讀這幾篇文章時，請留意幾個重點：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Deliverable (用&lt;strong&gt;名詞&lt;/strong&gt;表述) 與 activity (用&lt;strong&gt;動詞片語&lt;/strong&gt;表述) 的劃分。&lt;/li&gt;
+&lt;li&gt;逆向拆解。&lt;/li&gt;
+&lt;li&gt;100% Rule。&lt;/li&gt;
+&lt;li&gt;麥肯錫的 &lt;a href=&#34;http://wiki.mbalib.com/zh-tw/MECE%E5%88%86%E6%9E%90%E6%B3%95&#34;&gt;MECE 原則&lt;/a&gt;（Mutually Exclusive, Collectively Exhaustive），也就是說，WBS 拆解要做到「彼此獨立、毫無遺漏」。此處，「毫無遺漏」是首要重點。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;part-ii--軟體界的工作分解&#34;&gt;Part II / 軟體界的工作分解&lt;/h2&gt;
+&lt;p&gt;軟體研發領域，也需要工作分解：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;&lt;a href=&#34;https://www.amazon.com/dp/0133853624/ref=cm_sw_r_tw_dp_x_0YceybZM4KKN9&#34;&gt;The Scrum Field Guide&lt;/a&gt;&lt;/em&gt;, Chapter 12: &amp;ldquo;Decomposing Stories and Tasks&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;請留意文章中這句話：“Our sprint length wasn’t the problem. Our ability to decompose work was.” 請思考背後的論述。&lt;/p&gt;
+&lt;h2 id=&#34;part-iii--好的-user-story-原則&#34;&gt;Part III / 好的 User Story 原則&lt;/h2&gt;
+&lt;p&gt;INVEST 原則簡介&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;《&lt;a href=&#34;https://williampjyeh.notion.site/Scrum-0e354b6be58b4977bdd1c99993e79d57&#34;&gt;Scrum：用一半的時間做兩倍的事&lt;/a&gt;》第六章&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;INVEST 原則細說 (by Bill Wake)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;總論: &lt;a href=&#34;http://xp123.com/articles/invest-in-good-stories-and-smart-tasks/&#34;&gt;INVEST in Good Stories, and SMART Tasks&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;分論:
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://xp123.com/articles/independent-stories-in-the-invest-model/&#34;&gt;&lt;strong&gt;I&lt;/strong&gt;ndependent Stories in the INVEST Model&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://xp123.com/articles/negotiable-stories-in-the-invest-model/&#34;&gt;&lt;strong&gt;N&lt;/strong&gt;egotiable Stories in the INVEST Model&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://xp123.com/articles/valuable-stories-in-the-invest-model/&#34;&gt;&lt;strong&gt;V&lt;/strong&gt;aluable Stories in the INVEST Model&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://xp123.com/articles/estimable-stories-in-the-invest-model/&#34;&gt;&lt;strong&gt;E&lt;/strong&gt;stimable Stories in the INVEST Model&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://xp123.com/articles/small-scalable-stories-in-the-invest-model/&#34;&gt;&lt;strong&gt;S&lt;/strong&gt;mall – &lt;strong&gt;S&lt;/strong&gt;calable – Stories in the INVEST Model&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;part-iv--user-story-拆解術&#34;&gt;Part IV / User Story 拆解術&lt;/h2&gt;
+&lt;p&gt;一般建議：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;文章: &lt;a href=&#34;https://www.humanizingwork.com/the-humanizing-work-guide-to-splitting-user-stories/&#34;&gt;The Humanizing Work Guide to Splitting User Stories&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;文章: &lt;a href=&#34;https://blogs.itemis.com/en/spidr-five-simple-techniques-for-a-perfectly-split-user-story&#34;&gt;SPIDR – five simple techniques for a perfectly split user story&lt;/a&gt; &amp;amp; &lt;a href=&#34;https://www.mountaingoatsoftware.com/exclusive/spidr-poster-download&#34;&gt;掛圖&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;針對 workflow 的拆解建議：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.mountaingoatsoftware.com/blog/five-story-splitting-mistakes-and-how-to-stop-making-them&#34;&gt;Five Story-Splitting Mistakes and How to Stop Making Them&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;part-v--切到多細&#34;&gt;Part V / 切到多細？&lt;/h2&gt;
+&lt;p&gt;User story 及 task 要切到多細，並沒有標準答案。不過，我還是蒐集一下專家們給的建議。&lt;/p&gt;
+&lt;p&gt;Scrum 共同發明人 Ken Schwaber 在 &lt;em&gt;&lt;a href=&#34;https://www.amazon.com/dp/0130676349/ref=cm_sw_r_tw_dp_x_6qMpyb2GGAJ2J&#34;&gt;Agile Software Development with Scrum&lt;/a&gt;&lt;/em&gt; 書中建議：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;“Tasks should have enough detail so that &lt;strong&gt;each task takes roughly four to sixteen hours to finish&lt;/strong&gt;.”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;em&gt;&lt;a href=&#34;https://www.amazon.com/dp/B008NAKA5O/ref=cm_sw_r_tw_dp_x_vsMpybSZC8YZY&#34;&gt;Essential Scrum&lt;/a&gt;&lt;/em&gt; 第 19 章建議：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;“Teams that take this approach typically follow a helpful rule of breaking down tasks so that &lt;strong&gt;no one task is more than eight hours of effort, although some might be a bit larger&lt;/strong&gt;. At this level of granularity the team has a good idea of what really needs to be done and whether it can accomplish those tasks in the time it has available.”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;em&gt;&lt;a href=&#34;https://www.amazon.com/dp/0133853624/ref=cm_sw_r_tw_dp_x_0YceybZM4KKN9&#34;&gt;The Scrum Field Guide&lt;/a&gt;&lt;/em&gt; 第 12 章則建議：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;“Follow the rule that &lt;strong&gt;tasks should be completed in no more than two days&lt;/strong&gt;.”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;個人經驗是，努力將 task 切到&lt;strong&gt;不超過 2 個工作天&lt;/strong&gt;的程度，能有效降低專案的不確定性及風險。&lt;/p&gt;
+
+
+&lt;div class=&#34;notice notice--note&#34;&gt;
+  &lt;div class=&#34;notice__title&#34;&gt;
+    
+      【敏捷的工作分解方法】系列
+    
+  &lt;/div&gt;
+  &lt;div class=&#34;notice__content&#34;&gt;&lt;p&gt;❶ &lt;a href=&#34;//william-yeh.net/post/2016/10/one-week-sprint/&#34;&gt;One-Week Sprint 的節奏&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❷ 工作分解講座・閱讀材料&lt;/p&gt;
+&lt;p&gt;❸ &lt;a href=&#34;//william-yeh.net/post/2022/10/agile-milestone/&#34;&gt;事情做一半，等於沒完成：淺談敏捷的里程碑設定&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❹ &lt;a href=&#34;//william-yeh.net/post/2022/11/spidr/&#34;&gt;以「蜘蛛法」拆分過於龐大的 User Story&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❺ &lt;a href=&#34;//william-yeh.net/post/2023/08/story-to-tasks/&#34;&gt;很簡單的 Story，也要拆分出 Tasks 嗎？&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❻ &lt;a href=&#34;//william-yeh.net/post/2023/11/why-decomposition-matters/&#34;&gt;變動的時代，為什麼工作分解技能更是必備？&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+</description>
+      
     </item>
+    
     <item>
       <title>One-Week Sprint 的節奏</title>
       <link>//william-yeh.net/post/2016/10/one-week-sprint/</link>
       <pubDate>Wed, 26 Oct 2016 00:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2016/10/one-week-sprint/</guid>
-      <description>&lt;p&gt;我曾在 iThome 的 &lt;a href=&#34;https://www.ithome.com.tw/tech/88496&#34;&gt;2012 年度必看好書&lt;/a&gt;中，推薦 &lt;em&gt;The Scrum Field Guide&lt;/em&gt;（當年還是&lt;a href=&#34;https://www.amazon.com/dp/0321554159/ref=cm_sw_r_tw_dp_x_-XceybJ2QN98P&#34;&gt;第一版&lt;/a&gt;，現在則有&lt;a href=&#34;https://www.amazon.com/dp/0133853624/ref=cm_sw_r_tw_dp_x_0YceybZM4KKN9&#34;&gt;第二版&lt;/a&gt;了）。當年看這本書時，還沒置身 Scrum 團隊的經驗，純粹是為了未來做準備，所以，對書中講的種種招數，只能默記在心，等待實務印證。&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;我曾在 iThome 的 &lt;a href=&#34;https://www.ithome.com.tw/tech/88496&#34;&gt;2012 年度必看好書&lt;/a&gt;中，推薦 &lt;em&gt;The Scrum Field Guide&lt;/em&gt;（當年還是&lt;a href=&#34;https://www.amazon.com/dp/0321554159/ref=cm_sw_r_tw_dp_x_-XceybJ2QN98P&#34;&gt;第一版&lt;/a&gt;，現在則有&lt;a href=&#34;https://www.amazon.com/dp/0133853624/ref=cm_sw_r_tw_dp_x_0YceybZM4KKN9&#34;&gt;第二版&lt;/a&gt;了）。當年看這本書時，還沒置身 Scrum 團隊的經驗，純粹是為了未來做準備，所以，對書中講的種種招數，只能默記在心，等待實務印證。&lt;/p&gt;
+&lt;p&gt;整本書非常精彩，但最讓我印象深刻的，就是駭人聽聞的 “one-week sprint&amp;quot; 論調：&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/10/one-week-sprint.png&#34; alt=&#34;From: The Scrum Field Guide&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2016/10/one-week-sprint.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;From: The Scrum Field Guide&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;儘管當時不甚理解箇中用意，但我是好學生，一直把 &amp;ldquo;one-week sprint&amp;rdquo; 當成心嚮往之的標竿，日後也不時把所見所聞拿來對照思考。&lt;/p&gt;
+&lt;p&gt;日後在職涯接觸了更多流程思維：由 Toyota 引領風潮的 &lt;a href=&#34;https://en.wikipedia.org/wiki/Lean_manufacturing&#34;&gt;Lean Production&lt;/a&gt; 及 &lt;a href=&#34;https://en.wikipedia.org/wiki/Just-in-time_manufacturing&#34;&gt;JIT&lt;/a&gt;、高德拉特的 &lt;a href=&#34;https://en.wikipedia.org/wiki/Theory_of_constraints&#34;&gt;TOC&lt;/a&gt;，都強調從 &amp;ldquo;&lt;strong&gt;flow&lt;/strong&gt;&amp;rdquo; 來分析系統。浸潤日久，就比較能理解 &amp;ldquo;one-week sprint&amp;rdquo; 的緣由。這也滿符合大多數地球人的時間感：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;你應該建立&lt;strong&gt;工作節奏&lt;/strong&gt;，好讓每個人都容易掌握自己在一段時間內能夠完成多少事，而最後的成果通常會讓他們自己感到訝異。&lt;/p&gt;
+&lt;p&gt;    &amp;mdash; Quote: 《&lt;a href=&#34;https://williampjyeh.notion.site/Scrum-0e354b6be58b4977bdd1c99993e79d57&#34;&gt;Scrum：用一半的時間做兩倍的事&lt;/a&gt;》&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;良善的立意，仍然要有充分的前提佈局及配套措施；不是嘴巴喊喊「我們要搞 one-week sprint」就真的能夠 one-week（天下哪有這麼簡單的事～～～）。&lt;/p&gt;
+&lt;p&gt;那麼，&amp;ldquo;one-week sprint&amp;rdquo; 能實現的前提是什麼？&lt;/p&gt;
+&lt;p&gt;從最近我第一次實踐 Scrum 的過程中，我發現，答案其實就在 &lt;em&gt;The Scrum Field Guide&lt;/em&gt; 的那一頁。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Decomposition&lt;/strong&gt;。&lt;/p&gt;
+&lt;h2 id=&#34;時機&#34;&gt;時機&lt;/h2&gt;
+&lt;p&gt;先講講背景故事。&lt;/p&gt;
+&lt;p&gt;敝公司的大節奏是以季 (quarter) 為單位。十月份是 Q4 的開始，所以各產品、專案都於此刻開始提出本季的計畫。此為其一。&lt;/p&gt;
+&lt;p&gt;我所隸屬的某產品專案，十月中旬，有兩位新人報到並分配到此專案下，此為其二。&lt;/p&gt;
+&lt;p&gt;不巧的是，這產品專案，十一月一日，有一位工程師要請增產報國假，所以，要趁著十月份，將工作交接給那兩位新人，此為其三。&lt;/p&gt;
+&lt;p&gt;因此，單以十月份來說，在這種「1 位準備交接的舊人 + 2 新人」的高風險組合，要是我不儘早作出較周密的調度規劃，屆時一定慘兮兮。&lt;/p&gt;
+&lt;p&gt;以我本身較熟悉的 PMP 訓練、&lt;a href=&#34;https://shop.darencademy.com/product/view/id/1&#34;&gt;101 專案管理一日特訓班&lt;/a&gt;、&lt;a href=&#34;https://shop.darencademy.com/product/view/id/2&#34;&gt;102 流程設計與跨部門溝通&lt;/a&gt;、&lt;a href=&#34;https://shop.darencademy.com/product/view/id/5&#34;&gt;106 動態排程基礎&lt;/a&gt;等課程，都強調 WBS、work package、activity 的層次拆解，critical path 的辨識，以及 milestone 的設置。所以，我打算以自己較有把握的專案管理手法切入，先規劃為期 3 weeks 的 WBS + activities，並每隔一週設一個 milestone。&lt;/p&gt;
+&lt;p&gt;思之於此，突然靈機一動：這不正與 &lt;em&gt;The Scrum Field Guide&lt;/em&gt; 的那一頁講的兩大要點「&lt;strong&gt;decomposition&lt;/strong&gt; 與 &lt;strong&gt;one-week sprint&lt;/strong&gt;」若合符節嗎？差別只在於，我原本是以專案管理圈慣用的 &amp;ldquo;deliverable&amp;rdquo; 字眼作為表述單位，而不是以敏捷圈慣用的 &amp;ldquo;user story&amp;rdquo; 字眼；但兩者在 task/activity 層次則是類似的，而且，我也的確將 task/activity 切得夠細了，細到符合 &lt;em&gt;The Scrum Field Guide&lt;/em&gt; 的建議：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Follow the rule that tasks should be completed in no more than two days.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;那麼，現在，我到底要用傳統的專案管理手法來執行這高風險任務，還是⋯⋯&lt;/p&gt;
+&lt;p&gt;進而一想：反正我本來就想找機會試行 Scrum 或 Kanban，那麼，擇日不如撞日，何不趁此機會，來一次個人的 Scrum (subset) 首航？&lt;/p&gt;
+&lt;p&gt;⋯⋯而且，就一口氣挑戰看看 one-week sprint 吧？&lt;/p&gt;
+&lt;h2 id=&#34;盤算&#34;&gt;盤算&lt;/h2&gt;
+&lt;p&gt;挑戰之前，還是要先秤秤自己以及團隊有幾兩重。&lt;/p&gt;
+&lt;p&gt;兩位新人是我面試的，一位是我研究所學弟，一位出自台灣某敏捷開發聖地的實驗室，對他們的背景及能力，有某種程度的信心。&lt;/p&gt;
+&lt;p&gt;至於我自己，要感謝稍早&lt;a href=&#34;https://kojenchieh.pixnet.net/blog&#34;&gt;敏捷三叔公 David Ko&lt;/a&gt; 發起的這個活動，讓我蒐集到一些阻力清單：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://kojenchieh.pixnet.net/blog/post/452519402-%E7%95%B6%E6%95%8F%E6%8D%B7%E9%81%87%E4%B8%8A%E5%BC%95%E5%B0%8E%EF%BC%9A-%E5%9C%A8%E9%A0%98%E5%B0%8E%E5%9C%98%E9%9A%8A%E8%AE%8A%E9%9D%A9%E9%81%AD%E9%81%87%E4%BB%80%E9%BA%BC&#34;&gt;當敏捷遇上引導：在領導團隊變革遭遇什麼困難&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://funevo.com/2016/09/25/%E8%AE%8A%E6%95%8F%E6%8D%B7%E7%9A%84%E9%98%BB%E7%A4%99-%E5%9C%98%E9%9A%8A%E5%85%B1%E5%89%B5%E6%B3%95%E5%AF%A6%E5%81%9A/&#34;&gt;找出組織無法變敏捷的阻礙 – 團隊共創法實做&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;有了這份清單，配上 &lt;em&gt;&lt;a href=&#34;https://www.amazon.com/dp/1574441957/ref=cm_sw_r_tw_dp_x_G7leybA7ST83J&#34;&gt;Project Management in the First Lane: Applying the Theory of Constraints&lt;/a&gt;&lt;/em&gt; 第五章的 &lt;a href=&#34;http://school.soft-arch.net/blog/325427/generic-proj-crt&#34;&gt;CRT 圖&lt;/a&gt;，有助於我設想些應對措施，才比較敢挑選戰場來試驗。&lt;/p&gt;
+&lt;p&gt;接下來，就隨時抱著開放心態，見招拆招嘍～～～&lt;/p&gt;
+&lt;h2 id=&#34;工具&#34;&gt;工具&lt;/h2&gt;
+&lt;p&gt;我用兩份專案管理工具。&lt;/p&gt;
+&lt;p&gt;第一份是只給自己看的 Microsoft Project 文件，用來掌握全貌。或許是受到 PMP 訓練的影響，即使現在是跑 (a subset of) Scrum，又是首航，還是覺得要有這種東西，看到 3 個 sprints 的 WBS、work package、activities、critical path 才安心。&lt;/p&gt;
+&lt;p&gt;另一份是給團隊成員看的 Google Spreadsheet，主要是在 daily Scrum 時，用 Kanban 之類易懂的視覺化媒介，讓團隊全體一起溝通工作進展及阻礙。&lt;/p&gt;
+&lt;p&gt;調整實驗了幾天，還是覺得秀出我在 &lt;a href=&#34;https://shop.darencademy.com/product/view/id/1&#34;&gt;101 專案管理一日特訓班&lt;/a&gt;學到的 &amp;ldquo;JB Big Table&amp;rdquo; 給團隊成員看，不僅比正統的 Kanban 更容易有&lt;strong&gt;全局觀&lt;/strong&gt;，尤其是&lt;strong&gt;層次&lt;/strong&gt;及&lt;strong&gt;時間感&lt;/strong&gt;，就連 Kanban 素來講究的 WIP 也都內建其中。&lt;/p&gt;
+&lt;p&gt;&amp;ldquo;JB Big Table&amp;rdquo; 真的很管用，儘管這次我也只有用上一小部分。&lt;/p&gt;
+&lt;h2 id=&#34;反思&#34;&gt;反思&lt;/h2&gt;
+&lt;p&gt;一週後，第一個 sprint 順利達標，儘管變數層出不窮。&lt;/p&gt;
+&lt;p&gt;萬萬沒想到第一次嘗試帶 Scrum，而且是「1 舊人 + 2 新人」的高風險組合，就很有機會實現。除了天時地利人和的配合，&lt;strong&gt;事先認真的 WBS 分析&lt;/strong&gt;，應是重要因素。&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;The Scrum Field Guide&lt;/em&gt; 說的是真的！&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Your problem isn&amp;rsquo;t your &lt;strong&gt;sprint length&lt;/strong&gt;. You need to improve your &lt;strong&gt;task decomposition&lt;/strong&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;也順便速記幾則初步的檢討反思：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;理解精神真的很重要。理解了，才知道該如何遵守規則，或許更重要的是，知道為何及如何違反規則。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;One-week sprint 對於「聚焦」的要求更高，真的更該集中鎖定在要徑上。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;儘管只有 one-week sprint，但已經出現《&lt;a href=&#34;https://www.books.com.tw/products/0010196021&#34;&gt;關鍵鏈&lt;/a&gt;》點出的「資源爭奪」問題了。在第一個 sprint 中我沒有處理得很好，但在第二個 sprint 中，我採用 &lt;a href=&#34;https://www.projectup.net/article/view/id/3124&#34;&gt;TOC 聚焦五步驟&lt;/a&gt;中的第二步 &amp;ldquo;exploit&amp;rdquo; 及第三步 &amp;ldquo;subordinate&amp;rdquo; 來處理。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;身處專案導向的矩陣型組織，初步的觀察體會：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;資源主管，如果有敏捷的正知見，滿適合當照顧小羊的 Scrum master。&lt;/li&gt;
+&lt;li&gt;PO 的確不適合身兼 Scrum master，會有難以排解的利害衝突。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;某個層次來說，選擇了 Scrum、選擇了 DevOps，甚至廣義一點來說，選擇了 lean、選擇了 TOC，就要有心理準備：這些流程或方法論，都有「持續改善」的機制在裡面，都要求你的 commitment。沒有這種心理準備，往往就是無法移除障礙的原因。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;One-week sprint 固然痛快，但我在《&lt;a href=&#34;https://williampjyeh.notion.site/b299b20f381643c9b7b0caaba1d12f44&#34;&gt;為什麼上班這麼累？其實是你心累&lt;/a&gt;》看到一則警語：「因急迫性所產生的高效率，其實也是一種心理上的成癮。」所以，要注意何時該踩剎車。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;許多議題，我也還沒有答案。但是，抱持開放心態，與團隊一同探索，應是一大樂事吧！&lt;/p&gt;
+
+
+&lt;div class=&#34;notice notice--note&#34;&gt;
+  &lt;div class=&#34;notice__title&#34;&gt;
+    
+      2022-10-31 補充
+    
+  &lt;/div&gt;
+  &lt;div class=&#34;notice__content&#34;&gt;&lt;p&gt;原理上，Scrum 並沒規定 sprint 週期是幾天。坊間多半認為，在還不知道團隊能量、產品複雜度、外部依賴性等情況下，以 2 weeks sprint 做為&lt;strong&gt;試行的起點&lt;/strong&gt;，是滿中庸的選擇。&lt;/p&gt;
+&lt;p&gt;我自己則是：在自己有把握緊密參與的情況下，我會直接以 one week sprint 做為起點，但預期第一個 sprint review 會無法 100% done，以此曝露團隊該改進之處：規劃面、技術面、協作面⋯⋯。&lt;/p&gt;
+&lt;p&gt;當然啦，若某團隊真的要走 one-week sprint 路線，利害關係人也必須理解如此行的理由及限制：每個 sprint 交付物的 “increment” (增量)，真的就只是 one-week 能夠產出的合理規模——這需要教育。&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+
+
+&lt;div class=&#34;notice notice--note&#34;&gt;
+  &lt;div class=&#34;notice__title&#34;&gt;
+    
+      【敏捷的工作分解方法】系列
+    
+  &lt;/div&gt;
+  &lt;div class=&#34;notice__content&#34;&gt;&lt;p&gt;❶ One-Week Sprint 的節奏&lt;/p&gt;
+&lt;p&gt;❷ &lt;a href=&#34;//william-yeh.net/post/2016/11/decomposition-reading-list/&#34;&gt;工作分解講座・閱讀材料&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❸ &lt;a href=&#34;//william-yeh.net/post/2022/10/agile-milestone/&#34;&gt;事情做一半，等於沒完成：淺談敏捷的里程碑設定&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❹ &lt;a href=&#34;//william-yeh.net/post/2022/11/spidr/&#34;&gt;以「蜘蛛法」拆分過於龐大的 User Story&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❺ &lt;a href=&#34;//william-yeh.net/post/2023/08/story-to-tasks/&#34;&gt;很簡單的 Story，也要拆分出 Tasks 嗎？&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❻ &lt;a href=&#34;//william-yeh.net/post/2023/11/why-decomposition-matters/&#34;&gt;變動的時代，為什麼工作分解技能更是必備？&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+</description>
+      
     </item>
+    
   </channel>
 </rss>

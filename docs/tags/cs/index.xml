@@ -4,23 +4,330 @@
     <title>Cs on Potioneer&#39;s Essays</title>
     <link>//william-yeh.net/tags/cs/</link>
     <description>Recent content in Cs on Potioneer&#39;s Essays</description>
-    <generator>Hugo</generator>
+    <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <lastBuildDate>Tue, 09 Aug 2016 08:00:00 +0800</lastBuildDate>
-    <atom:link href="//william-yeh.net/tags/cs/index.xml" rel="self" type="application/rss+xml" />
+    
+        <atom:link href="//william-yeh.net/tags/cs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>演算法也有不神祕的一面（下集）</title>
       <link>//william-yeh.net/post/2016/08/on-algorithm-myth/</link>
       <pubDate>Tue, 09 Aug 2016 08:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2016/08/on-algorithm-myth/</guid>
-      <description>&lt;p&gt;記得高中時，建中電研社社刊有一則笑話：&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;如果&lt;a href=&#34;https://en.wikipedia.org/wiki/Carl_Friedrich_Gauss&#34;&gt;高斯 (Gauss)&lt;/a&gt; 小學時就學程式設計，他可能就懶得發明&lt;a href=&#34;https://en.wikipedia.org/wiki/Arithmetic_progression&#34;&gt;等差級數&lt;/a&gt;公式了，他會直接坐在電腦前，輸入：&lt;/p&gt;&#xA;&lt;p&gt;sum := 0&lt;br&gt;&#xA;for i := 1 to 100 do&lt;br&gt;&#xA;　　　sum := sum + i&lt;br&gt;&#xA;end for&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;p&gt;雖然是笑話一則，但也很貼切點出 algorithm（演算法；演算法則）的最原始用途：提供另一種解決數學題目的方法。&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;記得高中時，建中電研社社刊有一則笑話：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如果&lt;a href=&#34;https://en.wikipedia.org/wiki/Carl_Friedrich_Gauss&#34;&gt;高斯 (Gauss)&lt;/a&gt; 小學時就學程式設計，他可能就懶得發明&lt;a href=&#34;https://en.wikipedia.org/wiki/Arithmetic_progression&#34;&gt;等差級數&lt;/a&gt;公式了，他會直接坐在電腦前，輸入：&lt;/p&gt;
+&lt;p&gt;sum := 0&lt;br&gt;
+for i := 1 to 100 do&lt;br&gt;
+　　　sum := sum + i&lt;br&gt;
+end for&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;雖然是笑話一則，但也很貼切點出 algorithm（演算法；演算法則）的最原始用途：提供另一種解決數學題目的方法。&lt;/p&gt;
+&lt;p&gt;在前一篇文章〈&lt;a href=&#34;//william-yeh.net/post/2016/08/on-computational-thinking/&#34;&gt;運算思維其實一點也不神祕&lt;/a&gt;〉中，我曾提到「運算思維，目前公認有四大核心」，其中尤以第四核心最特別：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;嚴格來說，運算思維與其他領域（非 &lt;a href=&#34;https://en.wikipedia.org/wiki/Science,_technology,_engineering,_and_mathematics&#34;&gt;STEM&lt;/a&gt; 領域尤然）最大分野，就是演算法 (algorithm) 了。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;現在，我們就來簡單看一看這個所謂的「最大分野」吧。&lt;/p&gt;
+&lt;h2 id=&#34;歷史&#34;&gt;歷史&lt;/h2&gt;
+&lt;p&gt;先談點嚴肅的歷史。沒興趣的人，可以跳過。&lt;/p&gt;
+&lt;p&gt;任何計算機概論教科書，都會提到現代通用型 computer（電腦、計算機）的一個直接源頭，是 18 世紀數學家 &lt;a href=&#34;https://en.wikipedia.org/wiki/Charles_Babbage&#34;&gt;Charles Babbage&lt;/a&gt; 製作的&lt;a href=&#34;https://en.wikipedia.org/wiki/Difference_engine&#34;&gt;差分機&lt;/a&gt;、構思的&lt;a href=&#34;https://en.wikipedia.org/wiki/Analytical_Engine&#34;&gt;分析機&lt;/a&gt;。這種機械式的自動計算儀器，之所以能夠 &amp;ldquo;let it go&amp;rdquo; 放手讓它埋頭苦幹，背後的必要條件，就是我們人類要先將演算步驟不含糊地條列出來。精準，嚴密，一點瑕疵都不行。&lt;/p&gt;
+&lt;p&gt;此處的「演算步驟」，其實就是 algorithm。&lt;/p&gt;
+&lt;p&gt;Algorithm 最古可追溯至&lt;a href=&#34;https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes&#34;&gt;質數的篩法&lt;/a&gt;，可說是流著貴族的血液呢。後來一堆長除法、輾轉相除法、因數分解，都是 algorithm 的具體實例。&lt;/p&gt;
+&lt;p&gt;這麼說，algorithm 只是附庸於數學底下的「機械性計算」層次？&lt;/p&gt;
+&lt;p&gt;其實不然。近代比較正視 algorithm 價值、予以扶正地位的，要算是 19 世紀末開始的一系列數學革命，像 1900 年德國數學家希爾伯特提出的 &lt;a href=&#34;https://en.wikipedia.org/wiki/Hilbert%27s_problems&#34;&gt;23 道難題&lt;/a&gt;，希望替數學建立起一套公理化體系＋形式化自動推導證明機制，以正本清源解決 19 世紀末開始出現的一堆撼動古典數學根基的&lt;a href=&#34;https://en.wikipedia.org/wiki/Non-Euclidean_geometry&#34;&gt;非歐幾何&lt;/a&gt;、&lt;a href=&#34;https://en.wikipedia.org/wiki/Georg_Cantor#Paradoxes_of_set_theory&#34;&gt;集合悖論&lt;/a&gt;、&lt;a href=&#34;https://en.wikipedia.org/wiki/Russell%27s_paradox&#34;&gt;邏輯悖論&lt;/a&gt;。雖然這種夢想被著名的&lt;a href=&#34;https://en.wikipedia.org/wiki/G%C3%B6del%27s_incompleteness_theorems&#34;&gt;哥爾德不完備定理&lt;/a&gt;粉碎，但也從根本提升整個 algorithm 的理論地位，不再只是單純的「計算」而已。摘錄一段維基百科對這段歷史轉折的&lt;a href=&#34;https://en.wikipedia.org/wiki/Algorithm&#34;&gt;說明&lt;/a&gt;：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The concept of &lt;em&gt;algorithm&lt;/em&gt; has existed for centuries; however, a partial formalization of what would become the modern &lt;em&gt;algorithm&lt;/em&gt; began with attempts to solve the &lt;a href=&#34;https://en.wikipedia.org/wiki/Entscheidungsproblem&#34; title=&#34;Entscheidungsproblem&#34;&gt;Entscheidungsproblem&lt;/a&gt; (the &amp;ldquo;decision problem&amp;rdquo;) posed by &lt;a href=&#34;https://en.wikipedia.org/wiki/David_Hilbert&#34; title=&#34;David Hilbert&#34;&gt;David Hilbert&lt;/a&gt; in 1928. Subsequent formalizations were framed as attempts to define &amp;ldquo;&lt;a href=&#34;https://en.wikipedia.org/wiki/Effective_calculability&#34; title=&#34;Effective calculability&#34;&gt;effective calculability&lt;/a&gt;&amp;rdquo; or &amp;ldquo;effective method&amp;rdquo;; those formalizations included the &lt;a href=&#34;https://en.wikipedia.org/wiki/Kurt_G%C3%B6del&#34; title=&#34;Kurt Gödel&#34;&gt;Gödel&lt;/a&gt;–&lt;a href=&#34;https://en.wikipedia.org/wiki/Jacques_Herbrand&#34; title=&#34;Jacques Herbrand&#34;&gt;Herbrand&lt;/a&gt;–&lt;a href=&#34;https://en.wikipedia.org/wiki/Stephen_Cole_Kleene&#34; title=&#34;Stephen Cole Kleene&#34;&gt;Kleene&lt;/a&gt; &lt;a href=&#34;https://en.wikipedia.org/wiki/Recursion_%28computer_science%29&#34; title=&#34;Recursion (computer science)&#34;&gt;recursive functions&lt;/a&gt; of 1930, 1934 and 1935, &lt;a href=&#34;https://en.wikipedia.org/wiki/Alonzo_Church&#34; title=&#34;Alonzo Church&#34;&gt;Alonzo Church&lt;/a&gt;&amp;rsquo;s &lt;a href=&#34;https://en.wikipedia.org/wiki/Lambda_calculus&#34; title=&#34;Lambda calculus&#34;&gt;lambda calculus&lt;/a&gt; of 1936, &lt;a href=&#34;https://en.wikipedia.org/wiki/Emil_Post&#34; title=&#34;Emil Post&#34;&gt;Emil Post&lt;/a&gt;&amp;rsquo;s &amp;ldquo;&lt;a href=&#34;https://en.wikipedia.org/wiki/Formulation_1&#34; title=&#34;Formulation 1&#34;&gt;Formulation 1&lt;/a&gt;&amp;rdquo; of 1936, and &lt;a href=&#34;https://en.wikipedia.org/wiki/Alan_Turing&#34; title=&#34;Alan Turing&#34;&gt;Alan Turing&lt;/a&gt;&amp;rsquo;s &lt;a href=&#34;https://en.wikipedia.org/wiki/Turing_machines&#34; title=&#34;Turing machines&#34;&gt;Turing machines&lt;/a&gt; of 1936–7 and 1939. Giving a formal definition of algorithms, corresponding to the intuitive notion, remains a challenging problem.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;這就是前面我講的「嚴格來說，運算思維與其他領域（非 &lt;a href=&#34;https://en.wikipedia.org/wiki/Science,_technology,_engineering,_and_mathematics&#34;&gt;STEM&lt;/a&gt; 領域尤然）最大分野，就是演算法 (algorithm) 了。」&lt;/p&gt;
+&lt;p&gt;所以，不要以為資訊系成天都只有在做「寫寫程式」這種連早慧的小學生都會的事呀。&lt;/p&gt;
+&lt;p&gt;（謎之音：維基百科短短的一段話，卻數盡當年 algorithms、formal languages 課程中令人生畏的高等議題呀。）&lt;/p&gt;
+&lt;h2 id=&#34;白話版解釋&#34;&gt;白話版解釋&lt;/h2&gt;
+&lt;p&gt;當然啦，大家現在常在講的 &amp;ldquo;computational thinking&amp;rdquo;，講「運算思維」，多半沒有觸及這麼深的理論層次。&lt;/p&gt;
+&lt;p&gt;如果不要扯到這麼遠，回到比較貼近一般人的角度，能不能具體講講 algorithm 是什麼，in plain English？&lt;/p&gt;
+&lt;p&gt;經典教科書 &lt;a href=&#34;https://mitpress.mit.edu/books/introduction-algorithms&#34;&gt;&lt;em&gt;Introduction to Algorithms&lt;/em&gt;&lt;/a&gt; 給了一份十分親民的解釋：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Informally, an &lt;strong&gt;algorithm&lt;/strong&gt; is any well-defined computational procedure that takes some value, or set of values, as &lt;strong&gt;input&lt;/strong&gt; and produces some value, or set of values, as &lt;strong&gt;output&lt;/strong&gt;. An algorithm is thus a sequence of computational steps that transform the input into the output.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;維基百科也給了一段親民的&lt;a href=&#34;https://en.wikipedia.org/wiki/Algorithm&#34;&gt;開場白&lt;/a&gt;：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;In mathematics and computer science, an &lt;strong&gt;algorithm&lt;/strong&gt; is a self-contained step-by-step set of operations to be performed.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;關鍵字：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;well-defined computational procedure&lt;/li&gt;
+&lt;li&gt;a sequence of computational steps&lt;/li&gt;
+&lt;li&gt;self-contained step-by-step set of operations&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;所以，如果用很粗淺的白話角度來看 algorithm，就是：根據明確給定的指示，一步步執行的有限步驟集合；自給自足，不假外求。&lt;/p&gt;
+&lt;p&gt;一點也不神秘吧？&lt;/p&gt;
+&lt;p&gt;當然啦，要再深究的話，即使是上面這段非常非常粗淺的親民說法，也是有很多值得進一步提問的：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;怎樣的指示 (computational step/procedure/operation) 才叫做明確 (well-defined)？&lt;/li&gt;
+&lt;li&gt;怎樣才叫做自給自足 (self-contained)？&lt;/li&gt;
+&lt;li&gt;怎樣才叫做一步步執行 (step by step)？&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;不斷追問，就能追問出其他領域（非 STEM 領域尤然）不太探討的深層議題了，但是，我知道你不想再回頭看到太理論的論述⋯⋯姑且就此打住。&lt;/p&gt;
+&lt;h2 id=&#34;心法&#34;&gt;心法&lt;/h2&gt;
+&lt;p&gt;看了 algorithm 的俗民版操作型定義之後，進一步思考：algorithm 的目的是什麼？&lt;/p&gt;
+&lt;p&gt;冼鏡光在《&lt;a href=&#34;http://www.books.com.tw/products/0010488984&#34;&gt;名題精選百則&lt;/a&gt;》提到：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;從某個角度來看，計算機科學都是在為寫作程式服務：吸收各行各業，各個不同科目、範疇而來的問題，分析那些問題，並且可能的話，找出一個「高效率」的演算法來解決問題。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;各行各業的問題，變化萬千，所以，單以直覺來想像，解決手法一定也是五花八門。&lt;/p&gt;
+&lt;p&gt;是的，只要翻開任何一本演算法經典級教科書的目錄，一定會震懾於演算法的數量。&lt;/p&gt;
+&lt;p&gt;不過，這些書也告訴我們，繁多花招之餘，還是有一些獨孤九劍等級的「破xx式」。&lt;/p&gt;
+&lt;p&gt;像 CLR 白皮書 &lt;a href=&#34;https://mitpress.mit.edu/books/introduction-algorithms&#34;&gt;&lt;em&gt;Introduction to Algorithms&lt;/em&gt;&lt;/a&gt; 就將 &amp;ldquo;Divide and Conquer&amp;rdquo;（分而治之）及 recursion（遞迴、遞歸）列為重要的基礎心法，而 &lt;a href=&#34;https://www.amazon.com/Introduction-Algorithms-Creative-Udi-Manber/dp/0201120372&#34;&gt;&lt;em&gt;Introduction to Algorithms: A Creative Approach&lt;/em&gt;&lt;/a&gt; 一書甚至將 &amp;ldquo;Design of Algorithms by Induction&amp;rdquo; 這種數學歸納法、遞迴法視為最值得深刻掌握的通用心法。&lt;/p&gt;
+&lt;p&gt;所以，分而治之、遞迴，是 algorithm 的重要核心。不能說是全部，但至少是重要的關鍵。&lt;/p&gt;
+&lt;h2 id=&#34;實例&#34;&gt;實例&lt;/h2&gt;
+&lt;p&gt;以文章開頭的等差級數為例，如果用&lt;strong&gt;分而治之&lt;/strong&gt;觀念來思考，該怎麼做呢？&lt;/p&gt;
+&lt;p&gt;我們可能會先把 1+2+3+&amp;hellip;+100 的大問題，拆成 1+2+3 這種較容易處理的小問題，之後再利用加法的結合律去合併出最終答案。因此，先針對 1+2+3 這個小問題來思考：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;sum := 0&lt;br&gt;
+sum := sum + 1&lt;br&gt;
+sum := sum + 2&lt;br&gt;
+sum := sum + 3&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;如果懂得觀察箇中的&lt;strong&gt;模式&lt;/strong&gt;、&lt;strong&gt;規律&lt;/strong&gt;：「啊，不就只是一直把 1 加上去，把 2 加上去，把 3 加上去嘛！」，就會用初級的迴圈改寫成：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;sum := 0&lt;br&gt;
+for i := 1 to 3 do&lt;br&gt;
+　　sum := sum + i&lt;br&gt;
+end for&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;懂得寫到這一步，基本上，1+2+3+&amp;hellip;+100 就不是難事了。&lt;/p&gt;
+&lt;p&gt;如果沒在數學課堂上睡著，學過&lt;a href=&#34;https://en.wikipedia.org/wiki/Mathematical_induction&#34;&gt;數學歸納法&lt;/a&gt;，會發現，這簡直就是天生的&lt;strong&gt;遞迴&lt;/strong&gt;應用：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;function sigma(n) :=&lt;br&gt;
+if (n &amp;lt;= 1) return 1;&lt;br&gt;
+else return n + sigma(n - 1);&lt;br&gt;
+end function&lt;/p&gt;
+&lt;p&gt;sum := sigma(100)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;所以，小結一下：&lt;strong&gt;分而治之&lt;/strong&gt;、&lt;strong&gt;遞迴&lt;/strong&gt;、觀察尋求&lt;strong&gt;模式&lt;/strong&gt;及&lt;strong&gt;規律&lt;/strong&gt;，是 algorithm 的重要核心。不能說是全部，但至少是重要的關鍵。&lt;/p&gt;
+&lt;h2 id=&#34;四大核心&#34;&gt;四大核心&lt;/h2&gt;
+&lt;p&gt;咦，「分而治之」、「遞迴」、「模式及規律」，好熟悉的字眼⋯⋯豈不正與運算思維的另外三大核心相呼應嗎？&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;呼應 &lt;strong&gt;decomposition&lt;/strong&gt; 原則：分而治之的第一階段，就是在對原始問題進行拆解、分解，變成容易解決的次問題，或是在過程中容易尋求規律。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;呼應 &lt;strong&gt;pattern recognition&lt;/strong&gt; 原則：遞迴，就是在針對初步切分的小問題，嘗試識別模式、尋求規律，以形成模式假說。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;呼應 &lt;strong&gt;abstraction&lt;/strong&gt; 原則：遞迴，就是將原始問題提升至抽象層次，在抽象層次解決。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;所以，運算思維的前三核心（decomposition、pattern recognition、abstraction），是第四核心 (algorithm) 的重要基礎。而我前一篇文章〈&lt;a href=&#34;//william-yeh.net/post/2016/08/on-computational-thinking/&#34;&gt;運算思維其實一點也不神祕&lt;/a&gt;〉就在申論：前三核心的能力，本來就是語文課程及數學課程就該好好培養的，並不是只有程式設計課程才能培養。&lt;/p&gt;
+&lt;p&gt;只不過，現今的語文課程及數學課程，花太多精力在搞背誦、蒐集解題花招，而沒有踏實聚焦在王道的議題探索及解題思維上，導致 literacy capability 及 problem solving 能力都不足。&lt;/p&gt;
+&lt;p&gt;這種貧乏的基礎，能夠進一步灌輸 computational thinking 嗎？&lt;/p&gt;
+&lt;h2 id=&#34;總結&#34;&gt;總結&lt;/h2&gt;
+&lt;p&gt;可以做個大總結了。&lt;/p&gt;
+&lt;p&gt;運算思維 (computational thinking)，目前公認的四大核心是：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Decomposition：拆解、分解。&lt;/li&gt;
+&lt;li&gt;Pattern recognition：模式識別、規律尋求。&lt;/li&gt;
+&lt;li&gt;Abstraction：抽象化。&lt;/li&gt;
+&lt;li&gt;Algorithms：演算法、演算法則。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;這些核心能力，都不盡然只有在程式設計課程才能培養。即使是與其他領域最大分野：algorithm，也有相當大的比例是奠基在前三項基本功。&lt;/p&gt;
+&lt;p&gt;君子務本，本立而道生。你看得出來基礎教育該著重在哪一個「本」了嗎？&lt;/p&gt;
+
+
+&lt;div class=&#34;notice notice--note&#34;&gt;
+  &lt;div class=&#34;notice__title&#34;&gt;
+    
+      系列文章
+    
+  &lt;/div&gt;
+  &lt;div class=&#34;notice__content&#34;&gt;&lt;p&gt;❶ &lt;a href=&#34;//william-yeh.net/post/2016/08/on-computational-thinking/&#34;&gt;運算思維其實一點也不神祕（上集）&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❷ 演算法也有不神祕的一面（下集）&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+</description>
+      
     </item>
+    
     <item>
       <title>運算思維其實一點也不神祕（上集）</title>
       <link>//william-yeh.net/post/2016/08/on-computational-thinking/</link>
       <pubDate>Mon, 08 Aug 2016 08:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2016/08/on-computational-thinking/</guid>
-      <description>&lt;p&gt;遠見雜誌 2016/04 的專題〈&lt;a href=&#34;http://store.gvm.com.tw/article_content_30968.html&#34;&gt;22 億人玩程式，擁抱跨界力&lt;/a&gt;〉一連數篇專文，提到許多驚人的趨勢：&lt;/p&gt;&#xA;&#xA;&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;&#xA;&lt;div class=&#34;box&#34;&gt;&#xA;&lt;figure  itemprop=&#34;associatedMedia&#34;&#xA;  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; &#xA;  style=&#34;max-width:20em&#34; &gt;&#xA;    &lt;div class=&#34;img&#34;&gt;&#xA;      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/08/coding-trends.jpg&#34; alt=&#34;程式設計的趨勢&#34;/&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;a href=&#34;//william-yeh.net/img/2016/08/coding-trends.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;&#xA;      &lt;figcaption&gt;&#xA;          &lt;p&gt;程式設計的趨勢&lt;/p&gt;&#xA;      &lt;/figcaption&gt;&#xA;  &lt;/figure&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;p&gt;因此，如〈&lt;a href=&#34;https://www.facebook.com/notes/shih-hao-hung/%E8%B3%87%E8%A8%8A%E7%A7%91%E6%8A%80%E6%95%99%E8%82%B2%E8%AA%B2%E7%B6%B1%E5%88%B6%E8%A8%82%E8%88%87%E5%BE%8C%E7%BA%8C%E7%99%BC%E5%B1%95/1220387071325766&#34;&gt;資訊科技教育、課綱制訂與後續發展&lt;/a&gt;〉一文所述，台灣當局也動了起來。&lt;/p&gt;&#xA;&lt;p&gt;不過，我們的政府，除了不落人後的心態，南橘北枳的習氣也叫人擔心。&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;遠見雜誌 2016/04 的專題〈&lt;a href=&#34;http://store.gvm.com.tw/article_content_30968.html&#34;&gt;22 億人玩程式，擁抱跨界力&lt;/a&gt;〉一連數篇專文，提到許多驚人的趨勢：&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:20em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/08/coding-trends.jpg&#34; alt=&#34;程式設計的趨勢&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2016/08/coding-trends.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;程式設計的趨勢&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;因此，如〈&lt;a href=&#34;https://www.facebook.com/notes/shih-hao-hung/%E8%B3%87%E8%A8%8A%E7%A7%91%E6%8A%80%E6%95%99%E8%82%B2%E8%AA%B2%E7%B6%B1%E5%88%B6%E8%A8%82%E8%88%87%E5%BE%8C%E7%BA%8C%E7%99%BC%E5%B1%95/1220387071325766&#34;&gt;資訊科技教育、課綱制訂與後續發展&lt;/a&gt;〉一文所述，台灣當局也動了起來。&lt;/p&gt;
+&lt;p&gt;不過，我們的政府，除了不落人後的心態，南橘北枳的習氣也叫人擔心。&lt;/p&gt;
+&lt;p&gt;我就忍不住調侃：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;很快的，市面上就會有給國中生的程式設計補習班了。&lt;/p&gt;
+&lt;p&gt;⋯⋯其實現在早就有給國小的 Lego Scratch 才藝班⋯⋯&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;許多有志之士紛紛為文。像蘇文鈺教授在〈&lt;a href=&#34;http://www.bnext.com.tw/article/view/id/38362&#34;&gt;資訊科學納入大學通識課程，可能嗎？&lt;/a&gt;〉提到：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;我恐怕，跟著美國人的教育政策，學到的若只是皮毛，最後還是一樣補習班或才藝班滿天飛，孩子們多了更多東西要補，豈不悲哀？但是，衡諸過去的台灣經驗，只要列入課綱，考試要考，升學必須，利之所趨，豈有不大補特補呢？家長觀念不改，教育單位政策不能慎重，恐怕台灣的競爭力會每下愈況啊！&lt;/p&gt;
+&lt;p&gt;為什麼我說過我怕資訊科學被納入通識課程呢？原因就在此，我們太擅長把一樣東西當作教條，「廣泛」施行，從教學效率上來看，這沒什麼錯，但是這卻會違反資訊作為「科學」二字的含義。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;洪士灝教授也&lt;a href=&#34;https://www.facebook.com/shihhaohung/posts/1065348180174336&#34;&gt;為文&lt;/a&gt;提到：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;這是目前教育上常見到共同問題，所以我不希望在資訊教育中教得太複雜，希望多一些實作類的專題，讓學生多些自由發揮的空間，也就是所謂的 project-based learning 的概念。同時，還希望利用資訊教育，把其他學科的東西帶進來活用，培養跨領域的概念。&lt;/p&gt;
+&lt;p&gt;這是國外大學當前在推所謂的「&lt;strong&gt;基石&lt;/strong&gt;（&lt;strong&gt;cornerstone&lt;/strong&gt;）課程」的概念，資訊系不見得要和傳統課程那樣按部就班由程式語言學起，然後是演算法、物件導向、自動機、系統程式、作業系統、計算機結構等等，而是先告訴學生資訊技術可以解決哪些有趣的問題，以及如何實際利用工具解決問題，再告訴他們裡面有哪些複雜的問題會在以後哪些課程中教到。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;另一篇文章〈&lt;a href=&#34;https://vocus.cc/tuna/5c18831338053485a15d19ac&#34;&gt;資訊通識教育與計算思維怎麼教？&lt;/a&gt;〉也提到：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;會寫程式不代表一定懂計算思維，反過來說，懂運算思維不見得會寫好程式。所以，我並不是說不要教程式設計，而是不希望過於強調程式設計，因而框限了學習內容和未來的發展性。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;在這類較中肯的意見中，&lt;strong&gt;運算思維 (computational thinking)&lt;/strong&gt; 是個反覆出現的關鍵詞。&lt;/p&gt;
+&lt;h2 id=&#34;四大核心&#34;&gt;四大核心&lt;/h2&gt;
+&lt;p&gt;「運算思維」，聽起來既神祕，又抽象。滿容易震懾外行人的。&lt;/p&gt;
+&lt;p&gt;其實並沒有太神祕複雜。網路搜尋一下，很容易找到解釋：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Wikipedia 條目：&lt;a href=&#34;https://en.wikipedia.org/wiki/Computational_thinking&#34;&gt;Computational thinking&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;某程式設計學苑介紹文：&lt;a href=&#34;http://blog.orangeapple.tw/posts/what-is-computational-thinking/&#34;&gt;程式初學者的失落之鑰 – “Computational Thinking”&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Kids Coding Studio 介紹文：&lt;a href=&#34;http://www.kidscoding.tw/2016/06/blog-post.html&#34;&gt;什麼是運算思維？如何培養運算思維？&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;某教室介紹文：&lt;a href=&#34;http://www.erichuang.com/370963385326684/computational_thinking&#34;&gt;程式設計 ⇒ 運算思維 ⇒ 數位素養&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;從這些資訊中，可看到目前公認的運算思維四大核心是：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Decomposition：拆解、分解。&lt;/li&gt;
+&lt;li&gt;Pattern recognition：模式識別、規律尋求。&lt;/li&gt;
+&lt;li&gt;Abstraction：抽象化。&lt;/li&gt;
+&lt;li&gt;Algorithms：演算法、演算法則。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;近親&#34;&gt;近親&lt;/h2&gt;
+&lt;p&gt;其實「運算思維」沒有太神祕複雜，也不全然是計算機領域的專利。像 decomposition 原則，在專案管理領域的 &lt;a href=&#34;https://en.wikipedia.org/wiki/Work_breakdown_structure&#34;&gt;WBS&lt;/a&gt;、企劃寫作的 &lt;a href=&#34;http://wiki.mbalib.com/wiki/MECE%E5%88%86%E6%9E%90%E6%B3%95&#34;&gt;MECE&lt;/a&gt;，都有類似的觀念；像 pattern recognition 原則，是任何解題活動都會運用的歸納法及假設法；像 abstraction 原則，更是所有系統化學問一致強調的心法。&lt;/p&gt;
+&lt;p&gt;其實「運算思維」沒有太神祕複雜，甚至在近親的數學領域也都有，像經典級的 &lt;a href=&#34;https://en.wikipedia.org/wiki/How_to_Solve_It&#34;&gt;&lt;em&gt;How to Solve It&lt;/em&gt;&lt;/a&gt;（中譯本：《&lt;a href=&#34;https://www.books.com.tw/products/0010786452&#34;&gt;怎樣解題&lt;/a&gt;》），或是像《&lt;a href=&#34;http://www.books.com.tw/products/0010708574&#34;&gt;德國一流大學教你數學家的 22 個思考工具&lt;/a&gt;》這本，都有許多論述。&lt;/p&gt;
+&lt;p&gt;以 George Pólya 的經典 &lt;a href=&#34;https://en.wikipedia.org/wiki/How_to_Solve_It&#34;&gt;&lt;em&gt;How to Solve It&lt;/em&gt;&lt;/a&gt; 為例，它的「啟發術小辭典」列了這些解題思維：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Analogy&lt;/li&gt;
+&lt;li&gt;Generalization&lt;/li&gt;
+&lt;li&gt;Induction&lt;/li&gt;
+&lt;li&gt;Variation of the Problem&lt;/li&gt;
+&lt;li&gt;Auxiliary Problem (subproblem/subgoal)&lt;/li&gt;
+&lt;li&gt;Pattern recognition&lt;/li&gt;
+&lt;li&gt;Pattern matching&lt;/li&gt;
+&lt;li&gt;Reduction&lt;/li&gt;
+&lt;li&gt;Specialization&lt;/li&gt;
+&lt;li&gt;Decomposing and Recombining (Divide and conquer)&lt;/li&gt;
+&lt;li&gt;Working backward&lt;/li&gt;
+&lt;li&gt;Draw a Figure&lt;/li&gt;
+&lt;li&gt;Auxiliary Elements (extension)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;你看，是不是早已把現在很潮的「運算思維」四大核心涵蓋在內了？&lt;/p&gt;
+&lt;p&gt;再以《&lt;a href=&#34;http://www.books.com.tw/products/0010708574&#34;&gt;德國一流大學教你數學家的 22 個思考工具&lt;/a&gt;》列的 22 項法寶為例：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;類比原則&lt;/li&gt;
+&lt;li&gt;富比尼原理&lt;/li&gt;
+&lt;li&gt;奇偶原理&lt;/li&gt;
+&lt;li&gt;狄利克雷原理&lt;/li&gt;
+&lt;li&gt;排容原理&lt;/li&gt;
+&lt;li&gt;相反原則&lt;/li&gt;
+&lt;li&gt;歸納原則&lt;/li&gt;
+&lt;li&gt;一般化原則&lt;/li&gt;
+&lt;li&gt;特殊化原則&lt;/li&gt;
+&lt;li&gt;變化原則&lt;/li&gt;
+&lt;li&gt;不變性原理&lt;/li&gt;
+&lt;li&gt;單向變化原則&lt;/li&gt;
+&lt;li&gt;無窮遞減法則&lt;/li&gt;
+&lt;li&gt;對稱原理&lt;/li&gt;
+&lt;li&gt;極值原理&lt;/li&gt;
+&lt;li&gt;遞迴原理&lt;/li&gt;
+&lt;li&gt;步步逼近原則&lt;/li&gt;
+&lt;li&gt;著色原理&lt;/li&gt;
+&lt;li&gt;隨機化原則&lt;/li&gt;
+&lt;li&gt;轉換觀點原則&lt;/li&gt;
+&lt;li&gt;模組化原則&lt;/li&gt;
+&lt;li&gt;蠻力原則&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;你看，是不是在實踐層次，也和現在很潮的「運算思維」四大核心高度呼應？&lt;/p&gt;
+&lt;p&gt;所以，數學教育好好落實，其實也已經在打穩「運算思維」的基礎。&lt;/p&gt;
+&lt;p&gt;只是傳統數學教學被炫麗解題花招綁架了，導致數學教育失靈。&lt;/p&gt;
+&lt;p&gt;只要第一線教育現場不重視根本思維，那麼，再多一個程式設計課，就會提升下一代素質嗎……？&lt;/p&gt;
+&lt;h2 id=&#34;最大分野&#34;&gt;最大分野&lt;/h2&gt;
+&lt;p&gt;運算思維，目前公認有四大核心。&lt;/p&gt;
+&lt;p&gt;嚴格來說，運算思維與其他領域（非 &lt;a href=&#34;https://en.wikipedia.org/wiki/Science,_technology,_engineering,_and_mathematics&#34;&gt;STEM&lt;/a&gt; 領域尤然）最大分野，就是 algorithm（演算法）了。&lt;/p&gt;
+&lt;p&gt;不過，這又是&lt;a href=&#34;//william-yeh.net/post/2016/08/on-algorithm-myth/&#34;&gt;另一篇長文&lt;/a&gt;才能探討的了。&lt;/p&gt;
+&lt;p&gt;（其實小學數學的長除法、輾轉相除法、因數分解，就是一種演算法⋯⋯）&lt;/p&gt;
+&lt;h2 id=&#34;語文素養&#34;&gt;語文素養&lt;/h2&gt;
+&lt;p&gt;最近，為了教小孩數學解題思維，重拾高中時代指定讀物 &lt;a href=&#34;https://en.wikipedia.org/wiki/How_to_Solve_It&#34;&gt;&lt;em&gt;How to Solve It&lt;/em&gt;&lt;/a&gt;（當年我用的是張憶壽教授的譯本，而不是現在市面上通行的&lt;a href=&#34;https://www.books.com.tw/products/0010786452&#34;&gt;天下文化譯本&lt;/a&gt;），尋求好的引導方法。&lt;/p&gt;
+&lt;p&gt;突然發現，這本奇書，何止數學會用到，語文的 literacy capability、電腦的 computational thinking，也都會用到這本書的思維心法。&lt;/p&gt;
+&lt;p&gt;談數學的書，也會重視 literacy capability？會不會扯太遠了？&lt;/p&gt;
+&lt;p&gt;證據在此，請看看以下的解題提示表，不折不扣的 literacy capability 應用：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/08/how-to-solve-it-hints.jpg&#34; alt=&#34;How to Solve It 解題提示表&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2016/08/how-to-solve-it-hints.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;How to Solve It 解題提示表&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;這本書也提倡：在解題的各個環節，要善加運用所謂的「啟發式問句」自我提問。譬如說，在「了解問題」方面，可以如此提問：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;What are you asked to find or show?&lt;/li&gt;
+&lt;li&gt;Can you restate the problem in your own words?&lt;/li&gt;
+&lt;li&gt;Can you think of a picture or a diagram that might help you understand the problem?&lt;/li&gt;
+&lt;li&gt;Is there enough information to enable you to find a solution?&lt;/li&gt;
+&lt;li&gt;Do you understand all the words used in stating the problem?&lt;/li&gt;
+&lt;li&gt;Do you need to ask a question to get the answer?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;看出來了嗎？像語文學習的 literacy capability，像《&lt;a href=&#34;http://www.books.com.tw/products/0010226097&#34;&gt;如何閱讀一本書&lt;/a&gt;》講的「&lt;a href=&#34;//william-yeh.net/post/2016/08/reading-vs-extensive-reading/&#34;&gt;主動閱讀&lt;/a&gt;」，不也正是要主動思索探究這類問題嗎？&lt;/p&gt;
+&lt;p&gt;許多領域，核心原則是共通的。&lt;/p&gt;
+&lt;p&gt;學苟知本，六經皆我註腳。&lt;/p&gt;
+&lt;h2 id=&#34;底子&#34;&gt;底子&lt;/h2&gt;
+&lt;p&gt;其實，好好把語文及數學的底子打好，更重要。&lt;/p&gt;
+&lt;p&gt;不過，不是成天搞背誦、蒐集解題花招，而是踏實聚焦在 &lt;a href=&#34;https://en.wikipedia.org/wiki/How_to_Solve_It&#34;&gt;&lt;em&gt;How to Solve It&lt;/em&gt;&lt;/a&gt; 這類王道的議題探索及解題思維上。&lt;/p&gt;
+&lt;p&gt;解題思維穩了，以後要進軍其他範疇，都容易許多。否則，再多的科目，再多的考試，也只是花拳繡腿。&lt;/p&gt;
+&lt;p&gt;（謎之音：連修辭格都要背誦的語文教育，是什麼樣的語文教育呀⋯⋯）&lt;/p&gt;
+&lt;h2 id=&#34;真的準備好了嗎&#34;&gt;真的準備好了嗎？&lt;/h2&gt;
+&lt;p&gt;搜尋，排序，陣列，不是不能教，而是看怎麼教。&lt;/p&gt;
+&lt;p&gt;如果用冼鏡光當年 &lt;em&gt;PC Magazine&lt;/em&gt; 連載文章所用的引導方法，或是我愛用的既有知識或現實世界類比方法，其實是辦得到的。像當年我教大學生迴圈時，就是用國中數學的等差級數、等比級數為引子。先備知識，是很重要的學習遷移資源。&lt;/p&gt;
+&lt;p&gt;數學教育好好落實，其實也已經在打穩「運算思維」的基礎。只是傳統數學教學被炫麗解題花招綁架了，導致數學教育失靈。&lt;/p&gt;
+&lt;p&gt;只要第一線教育現場不重視根本思維，那麼，再多一個程式設計課，就會提升下一代素質嗎⋯⋯？&lt;/p&gt;
+&lt;p&gt;切記洪教授諄諄提醒的：「不要教太難、教學時間要足夠、課程要設計好、師資要準備好，要做的話就要有充分的資源來做，不然會做不好。」&lt;/p&gt;
+
+
+&lt;div class=&#34;notice notice--note&#34;&gt;
+  &lt;div class=&#34;notice__title&#34;&gt;
+    
+      系列文章
+    
+  &lt;/div&gt;
+  &lt;div class=&#34;notice__content&#34;&gt;&lt;p&gt;❶ 運算思維其實一點也不神祕（上集）&lt;/p&gt;
+&lt;p&gt;❷ &lt;a href=&#34;//william-yeh.net/post/2016/08/on-algorithm-myth/&#34;&gt;演算法也有不神祕的一面（下集）&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+</description>
+      
     </item>
+    
   </channel>
 </rss>

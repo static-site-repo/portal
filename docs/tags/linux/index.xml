@@ -4,23 +4,169 @@
     <title>Linux on Potioneer&#39;s Essays</title>
     <link>//william-yeh.net/tags/linux/</link>
     <description>Recent content in Linux on Potioneer&#39;s Essays</description>
-    <generator>Hugo</generator>
+    <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <lastBuildDate>Sat, 19 Aug 2023 20:00:00 +0800</lastBuildDate>
-    <atom:link href="//william-yeh.net/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    
+        <atom:link href="//william-yeh.net/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>透過自己的雙手，掌握那不變的容器技術核心——《Docker 實戰 6 堂課》推薦序</title>
       <link>//william-yeh.net/post/2023/08/docker-labs-review/</link>
       <pubDate>Sat, 19 Aug 2023 20:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2023/08/docker-labs-review/</guid>
-      <description>&lt;p&gt;我在 2015 年～2017 年間，開了 8 次【&lt;a href=&#34;https://william-yeh.github.io/docker-workshop/&#34;&gt;Docker 建置實戰講堂&lt;/a&gt;】一日課程。在那個大眾對於 Docker 還矇矇懂懂的年代，我就堅持不用貌似較簡便的 Docker Desktop，而是大膽採用 Vagrant + VirtualBox 作為統一的授課環境，讓學員儘早習慣在 Linux 平台上探索 Docker 的底層與應用。&lt;/p&gt;&#xA;&lt;p&gt;所以，當我在 2022 年 iThome 鐵人賽看到小賴的參賽作品【&lt;a href=&#34;https://ithelp.ithome.com.tw/users/20151857/ironman/5419&#34;&gt;那些關於 docker 你知道與不知道的事&lt;/a&gt;】中，是以 AWS EC2 的 Ubuntu instance 作為實作環境，現在更出版新書《&lt;a href=&#34;https://www.tenlong.com.tw/products/9786263335769&#34;&gt;Docker 實戰 6 堂課：56 個實驗動手做，掌握 Linux 容器核心技術&lt;/a&gt;》，就非常高興。畢竟，從最擬真的角度切入，才能夠透過自己的雙手，掌握那不變的容器技術核心。&lt;/p&gt;&#xA;&#xA;&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;&#xA;&lt;div class=&#34;box&#34;&gt;&#xA;&lt;figure  itemprop=&#34;associatedMedia&#34;&#xA;  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; &#xA;  style=&#34;max-width:30em&#34; &gt;&#xA;    &lt;div class=&#34;img&#34;&gt;&#xA;      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/08/docker-labs-book.jpg&#34; alt=&#34;《Docker 實戰 6 堂課：56 個實驗動手做，掌握 Linux 容器核心技術》&#34;/&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;a href=&#34;//william-yeh.net/img/2023/08/docker-labs-book.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;&#xA;      &lt;figcaption&gt;&#xA;          &lt;p&gt;《Docker 實戰 6 堂課：56 個實驗動手做，掌握 Linux 容器核心技術》&lt;/p&gt;&#xA;      &lt;/figcaption&gt;&#xA;  &lt;/figure&gt;&#xA;&lt;/div&gt;</description>
+      
+        <description>&lt;p&gt;我在 2015 年～2017 年間，開了 8 次【&lt;a href=&#34;https://william-yeh.github.io/docker-workshop/&#34;&gt;Docker 建置實戰講堂&lt;/a&gt;】一日課程。在那個大眾對於 Docker 還矇矇懂懂的年代，我就堅持不用貌似較簡便的 Docker Desktop，而是大膽採用 Vagrant + VirtualBox 作為統一的授課環境，讓學員儘早習慣在 Linux 平台上探索 Docker 的底層與應用。&lt;/p&gt;
+&lt;p&gt;所以，當我在 2022 年 iThome 鐵人賽看到小賴的參賽作品【&lt;a href=&#34;https://ithelp.ithome.com.tw/users/20151857/ironman/5419&#34;&gt;那些關於 docker 你知道與不知道的事&lt;/a&gt;】中，是以 AWS EC2 的 Ubuntu instance 作為實作環境，現在更出版新書《&lt;a href=&#34;https://www.tenlong.com.tw/products/9786263335769&#34;&gt;Docker 實戰 6 堂課：56 個實驗動手做，掌握 Linux 容器核心技術&lt;/a&gt;》，就非常高興。畢竟，從最擬真的角度切入，才能夠透過自己的雙手，掌握那不變的容器技術核心。&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/08/docker-labs-book.jpg&#34; alt=&#34;《Docker 實戰 6 堂課：56 個實驗動手做，掌握 Linux 容器核心技術》&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2023/08/docker-labs-book.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;《Docker 實戰 6 堂課：56 個實驗動手做，掌握 Linux 容器核心技術》&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;很多人會問：現在都已經是 Kubernetes 當道的年代，我們還需要學習落伍的 Docker 嗎？還需要用這麼刻苦的方法學習落伍的 Docker 嗎？&lt;/p&gt;
+&lt;p&gt;既然 Kubernetes 正當紅，我們就從功利一點的角度來看這議題吧。Kubernetes 的三大認證考試 (&lt;a href=&#34;https://training.linuxfoundation.org/certification/certified-kubernetes-administrator-cka/&#34;&gt;CKA&lt;/a&gt;, &lt;a href=&#34;https://training.linuxfoundation.org/certification/certified-kubernetes-application-developer-ckad/&#34;&gt;CKAD&lt;/a&gt;, &lt;a href=&#34;https://training.linuxfoundation.org/certification/certified-kubernetes-security-specialist/&#34;&gt;CKS&lt;/a&gt;) 中，不乏一堆上機實境題；如果你不懂得容器的底層技術：process、layer、namespace、network，將很難在現場上機時迅速精準排除問題——而且是用最傳統的終端機命令列方式進行。&lt;/p&gt;
+&lt;p&gt;既然這麼當紅的 Kubernetes 都要求你必須熟練這麼刻苦的方式，那麼，你為什麼不先從較單純的 Docker 容器環境下手呢？&lt;/p&gt;
+&lt;p&gt;小賴這本書有三大特點：底層知識，動手實驗，熱血工程魂。&lt;/p&gt;
+&lt;h2 id=&#34;特色一-底層知識&#34;&gt;特色一 ：底層知識&lt;/h2&gt;
+&lt;p&gt;容器世界有許多神奇的特效，尤其是不同對象、不同層次的「資源隔離性」。透過本書，你可以親自看到 process、layer、namespace、network 這些磚頭是如何一步步撐起容器的華廈。&lt;/p&gt;
+&lt;p&gt;掌握這些「資源隔離性」的基礎知識，將來再看到 Kubernetes 的種種設計，必有會心一笑的熟悉感。&lt;/p&gt;
+&lt;h2 id=&#34;特色二動手實驗&#34;&gt;特色二：動手實驗&lt;/h2&gt;
+&lt;p&gt;底層知識很枯燥，甚至抽象。透過動手實作，能具體看到這些要素活生生運作起來，而不是一堆死板板要你生吞硬背的理論。&lt;/p&gt;
+&lt;p&gt;作者以 AWS EC2 的 Linux instance 作為實驗環境，比起多數人採用 Windows 或 Mac 的 Docker Desktop 作為實驗環境，更能忠實反映容器的
+行為及底層狀況。更重要的是，及早領略在這種環境之下的操作及除錯經驗，未來在真實生產環境之下的操作、性能調教、除錯任務，自然駕輕就熟。&lt;/p&gt;
+&lt;p&gt;正如小賴所說：「親自動手做實驗與觀察，應該是工程師最基本的素養。」&lt;/p&gt;
+&lt;h2 id=&#34;特色三熱血工程魂&#34;&gt;特色三：熱血工程魂&lt;/h2&gt;
+&lt;p&gt;由 Docker 起頭，至 Kubernetes 發揚光大，容器生態圈的技術，雖然貌似複雜，但藉由生態圈的卓越工藝，已經將複雜技術下放到凡間，只要你有心，都可以在本機端或雲端建置出堪用的實驗環境供你探索。&lt;/p&gt;
+&lt;p&gt;剩下的問題就是：你是否保有熱血工程魂？&lt;/p&gt;
+&lt;p&gt;我很喜歡小賴講的這段話：「那種『知道更多了』的感覺，根本就是工程師的鴉片，讓人難以抵抗。」&lt;/p&gt;
+&lt;p&gt;容器生態圈蓬勃發展，我們更需要小賴這本書，帶我們透過自己的雙手，掌握那不變的容器技術核心。希望大家藉由這本書，拾起熱血工程魂，重視底層知識，樂於動手實驗，在容器世界游刃有餘。&lt;/p&gt;
+&lt;p&gt; 　 　 　 　 　 　—— 敏捷魔藥師　葉秉哲 (William Yeh)　2023-08-19&lt;/p&gt;</description>
+      
     </item>
+    
     <item>
       <title>POLP：最小權限原則</title>
       <link>//william-yeh.net/post/2016/03/polp-intro/</link>
       <pubDate>Tue, 15 Mar 2016 08:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2016/03/polp-intro/</guid>
-      <description>&lt;p&gt;在我開的 &lt;a href=&#34;http://get.soft-arch.net/ansible/&#34;&gt;Ansible Workshop&lt;/a&gt; 中，不管是課前的【許願池】，還是課程現場的 Q&amp;amp;A，總有一個熱門議題：「如何確保系統是安全的？」&lt;/p&gt;&#xA;&lt;p&gt;這是大哉問，不是單獨一門組態管理課就能探討到令人滿意的地步（資安也不是我所擅長的⋯⋯）。不過，被問到的次數太多了，我還是給個簡單的導引吧。&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;在我開的 &lt;a href=&#34;http://get.soft-arch.net/ansible/&#34;&gt;Ansible Workshop&lt;/a&gt; 中，不管是課前的【許願池】，還是課程現場的 Q&amp;amp;A，總有一個熱門議題：「如何確保系統是安全的？」&lt;/p&gt;
+&lt;p&gt;這是大哉問，不是單獨一門組態管理課就能探討到令人滿意的地步（資安也不是我所擅長的⋯⋯）。不過，被問到的次數太多了，我還是給個簡單的導引吧。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;系統安全有許多層次。以 &lt;a href=&#34;https://www.safaribooksonline.com/library/view/learning-linux-security/9781771374194/&#34;&gt;&lt;em&gt;Learning Linux Security&lt;/em&gt;&lt;/a&gt; 教學課程的大綱來看，至少涵蓋幾個層次：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Booting：作業系統開機環節&lt;/li&gt;
+&lt;li&gt;Kernel：作業系統核心&lt;/li&gt;
+&lt;li&gt;Services：典型系統服務&lt;/li&gt;
+&lt;li&gt;Users and permissions：帳號及權限&lt;/li&gt;
+&lt;li&gt;Firewalls：防火牆&lt;/li&gt;
+&lt;li&gt;Logging and log management：日誌管理&lt;/li&gt;
+&lt;li&gt;Intrusion detection and prevention：入侵偵測及預防&lt;/li&gt;
+&lt;li&gt;Utilities：診斷工具&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;各個環節，都有各自專門知識及輔助工具（我就說這是大哉問吧⋯⋯）。這些都是傳統 admin 或 ops 的責任區。&lt;/p&gt;
+&lt;p&gt;不過，即使不是專業的 ops，身為一位 dev，至少有兩點是自己的責任區，需要好好掌握的。&lt;/p&gt;
+&lt;p&gt;首先是 &lt;strong&gt;Users and permissions 環節&lt;/strong&gt;。近年來流行的軟體設計方式，部署時，常常不會 100% 寄生在 Apache、Nginx、Tomcat 這些 application container 底下，而是像 PHP 的 &lt;a href=&#34;http://php-fpm.org/&#34;&gt;FPM 模式&lt;/a&gt;、Python 的 &lt;a href=&#34;http://gunicorn.org/&#34;&gt;Gunicorn 模式&lt;/a&gt;、Ruby 的 &lt;a href=&#34;http://unicorn.bogomips.org/&#34;&gt;Unicorn 模式&lt;/a&gt;，有一個或多個協同作業的 process；甚至像 Node.js 或 Java 硬漢，往往不假外力，直接就把程式本身設計成 daemon 了。此時，開發者就不能逃避，必須考慮如何設定該軟體的帳號及權限，包括 process 的 UID、GID，以及相關的檔案目錄存取權限。&lt;/p&gt;
+&lt;p&gt;其次是 &lt;strong&gt;Services 環節&lt;/strong&gt;。以 daemon 形式存在的軟體，通常會安裝成 service，透過 &lt;a href=&#34;https://en.wikipedia.org/wiki/Init&#34;&gt;SysV init&lt;/a&gt;、&lt;a href=&#34;https://en.wikipedia.org/wiki/Upstart&#34;&gt;Upstart&lt;/a&gt; 或 &lt;a href=&#34;https://en.wikipedia.org/wiki/Systemd&#34;&gt;systemd&lt;/a&gt; 等機制啟動與管理。這時，也必須連帶把前述的帳號權限處理好。有潔癖的，甚至還會加掛 &lt;a href=&#34;https://en.wikipedia.org/wiki/Chroot&#34;&gt;chroot&lt;/a&gt;、&lt;a href=&#34;https://en.wikipedia.org/wiki/AppArmor&#34;&gt;AppArmor&lt;/a&gt;、&lt;a href=&#34;https://en.wikipedia.org/wiki/Security-Enhanced_Linux&#34;&gt;SELinux&lt;/a&gt; 等嚇人的保護機制。&lt;/p&gt;
+&lt;p&gt;對於帳號權限不知道該如何設定的人，通常最好的方式是：觀摩別人是怎麼做的，尤其是經典級的 services。&lt;/p&gt;
+&lt;p&gt;我們就在 Ubuntu 14.04 裡面，好好觀摩一下吧。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;以 Apache 為例，如果你是透過 &lt;code&gt;apt-get install apache2&lt;/code&gt; 來安裝，可看到它是以 &lt;code&gt;www-data&lt;/code&gt; 的身份來執行 worker process：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ ps aux | grep apache2
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;root      2734  0.0  0.5  73368  2628 ?        Ss   04:36   0:00 /usr/sbin/apache2 -k start
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;www-data  2737  0.0  0.4 362532  2240 ?        Sl   04:36   0:00 /usr/sbin/apache2 -k start
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;www-data  2738  0.0  0.4 362532  2240 ?        Sl   04:36   0:00 /usr/sbin/apache2 -k start&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;p&gt;以 Nginx 為例，如果你是透過 &lt;code&gt;apt-get install nginx&lt;/code&gt; 來安裝，可看到它也是以 &lt;code&gt;www-data&lt;/code&gt; 的身份來執行 worker process：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ ps aux | grep nginx
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;root      3313  0.0  0.2  85884  1340 ?        Ss   04:44   0:00 nginx: master process /usr/sbin/nginx
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;www-data  3314  0.0  0.3  86228  1768 ?        S    04:44   0:00 nginx: worker process
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;www-data  3315  0.0  0.3  86228  1768 ?        S    04:44   0:00 nginx: worker process
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;www-data  3316  0.0  0.3  86228  1768 ?        S    04:44   0:00 nginx: worker process
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;www-data  3317  0.0  0.3  86228  1768 ?        S    04:44   0:00 nginx: worker process&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;p&gt;以 MySQL 為例，&lt;!-- raw HTML omitted --&gt;如果你是透過 &lt;code&gt;apt-get install mysql-server&lt;/code&gt; 來安裝，可看到它是以 &lt;code&gt;mysql&lt;/code&gt; 的身份來執行：&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ ps aux | grep mysql
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mysql     7004  0.5  8.8 623920 44536 ?        Ssl  04:48   0:00 /usr/sbin/mysqld&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;p&gt;從以上三個經典案例，可以歸納出一個小結論：「他們都&lt;strong&gt;盡可能不以 root 身分執行&lt;/strong&gt;。」&lt;/p&gt;
+&lt;p&gt;這些 &lt;code&gt;www-data&lt;/code&gt; 及 &lt;code&gt;mysql&lt;/code&gt; 帳號，甚至沒有登入的權力：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ cat /etc/passwd | egrep &amp;#39;(mysql|www-data)&amp;#39;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mysql:x:109:116:MySQL Server,,,:/nonexistent:/bin/false
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ cat /etc/group  | egrep &amp;#39;(mysql|www-data)&amp;#39;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;www-data:x:33:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mysql:x:116:&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;p&gt;也沒有偷開 sudo 後門：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ sudo cat /etc/sudoers
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Defaults    env_reset
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Defaults    mail_badpass
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Defaults    secure_path=&amp;#34;/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;# User privilege specification
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;root    ALL=(ALL:ALL) ALL
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;# Members of the admin group may gain root privileges
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;%admin ALL=(ALL) ALL
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;# Allow members of group sudo to execute any command
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;%sudo    ALL=(ALL:ALL) ALL&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;p&gt;所以，這些經典級的服務，他們都非常自制，極度限縮自己的權力。&lt;/p&gt;
+&lt;p&gt;用更有學問的說法：他們都遵循&lt;strong&gt;最小權限原則&lt;/strong&gt; (&lt;em&gt;principle of least privilege&lt;/em&gt;; POLP)。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;維基百科提到 POLP 的&lt;a href=&#34;https://en.wikipedia.org/wiki/Principle_of_least_privilege#History&#34;&gt;歷史淵源&lt;/a&gt;，可追溯至 1974 年：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Every program and every privileged user of the system should operate using the least amount of privilege necessary to complete the job.&lt;/p&gt;
+&lt;p&gt;— &lt;a href=&#34;https://en.wikipedia.org/wiki/Jerome_H._Saltzer&#34;&gt;Jerome Saltzer&lt;/a&gt;, &lt;a href=&#34;https://en.wikipedia.org/wiki/Communications_of_the_ACM&#34;&gt;&lt;em&gt;Communications of the ACM&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;可見這算是歷久彌新的原則了。&lt;/p&gt;
+&lt;p&gt;如果要將 POLP 套用到目前流行的 web application，我引述 &lt;em&gt;Secure Your Node.js Web Application&lt;/em&gt; 一書的&lt;a href=&#34;http://www.safaribooksonline.com/a/secure-your-nodejs/1159941/&#34;&gt;說法&lt;/a&gt;：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;From our web application standpoint, we have the following rules:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;The web application should not be run with root privileges. It should instead use a limited account that has access to only the required resources.&lt;/li&gt;
+&lt;li&gt;The database account should not be a root account. The account should have limited privileges over the database tables.&lt;/li&gt;
+&lt;li&gt;The users of the web application should be given the minimum set of privileges they need.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;也引述《Ruby on Rails 實戰聖經》的&lt;a href=&#34;https://ihower.tw/rails4/deployment.html&#34;&gt;說法&lt;/a&gt;：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;設定伺服器部署使用者&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;習慣上我們會在伺服器上開一個專門的帳號，用來放 Rails 應用程式：&lt;code&gt;sudo adduser --disabled-password deploy&lt;/code&gt; ⋯⋯&lt;/p&gt;
+&lt;p&gt;本機執行 &lt;code&gt;cap deploy:check&lt;/code&gt;，就會自動登入遠端的伺服器，在登入的帳號下新建 current、releases 和 shared 這三個目錄。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;所以，回頭檢視一下自己的軟體部署流程，有沒有遵循&lt;strong&gt;最小權限原則&lt;/strong&gt;吧！&lt;/p&gt;</description>
+      
     </item>
+    
   </channel>
 </rss>

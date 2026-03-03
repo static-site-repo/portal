@@ -4,37 +4,1228 @@
     <title>Craftsmanship on Potioneer&#39;s Essays</title>
     <link>//william-yeh.net/tags/craftsmanship/</link>
     <description>Recent content in Craftsmanship on Potioneer&#39;s Essays</description>
-    <generator>Hugo</generator>
+    <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <lastBuildDate>Fri, 07 Feb 2025 18:00:00 +0800</lastBuildDate>
-    <atom:link href="//william-yeh.net/tags/craftsmanship/index.xml" rel="self" type="application/rss+xml" />
+    
+        <atom:link href="//william-yeh.net/tags/craftsmanship/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>當 AI 會寫程式，程式碼會變得即寫即棄嗎？</title>
       <link>//william-yeh.net/post/2025/02/codegen-with-genai/</link>
       <pubDate>Fri, 07 Feb 2025 18:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2025/02/codegen-with-genai/</guid>
-      <description>&lt;p&gt;人類從事的領域，不斷被生成式 AI (GenAI) 入侵。&lt;/p&gt;&#xA;&lt;p&gt;社群媒體上，早就充斥一大堆「AI 體」的文案圖案，現在就連程式設計領域也開始淪陷。像 Google 執行長就透露：「在 Google，超過 1/4 的新程式碼已經是先由 AI 生成，再讓程式設計師去複審與確認。」&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; 而 GitHub 執行長更大膽預言 80% 的程式碼都將會由 GenAI 生成。&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;&#xA;&lt;p&gt;也就是說，以前，程式設計師得親手撰寫大部分的程式碼；現在則開始挪出一段時間去跟 GenAI 對話：調教提示詞 (prompt)、審核生成的程式碼、確認正確性，如此反覆進行好幾個回合。&lt;/p&gt;&#xA;&lt;p&gt;GenAI 進展神速。如果某一天進展到，只要提示詞下得夠精準，第一次生出來的程式碼幾乎就合格過關了，是否也就意謂著，程式設計師的專業訓練及工作重點，將會更轉向 ⑴ 鑽研提示工程、⑵ 審核生成的程式碼這兩條路線發展？換句話說，將會更朝向 ⑴ 前段的需求規格、⑵ 後段的測試驗收這兩條路線？&lt;/p&gt;&#xA;&lt;p&gt;如果頭尾兩端（需求規格與測試驗收）都由人來看守定義，中間步驟（撰寫程式碼）改由 GenAI 來操刀，是否也就意謂著，程式碼會變成像是可拋棄的東西，反正隨時都可以叫 GenAI 再生出一份出來？甚至當 GenAI 能力升級之後，又能夠生出比拋棄掉的還要更好的程式碼？&lt;/p&gt;&#xA;&lt;p&gt;聽起來可能有點兒瘋狂。可是如果以上屬實，那麼，&lt;a href=&#34;https://agilemanifesto.org/&#34;&gt;敏捷四大宣言&lt;/a&gt;之一「&lt;strong&gt;可用的軟體&lt;/strong&gt; 重於 &lt;strong&gt;詳盡的文件&lt;/strong&gt;」，在 GenAI 時代是否依然成立，可能都值得再重新評估檢討。&lt;/p&gt;&#xA;&lt;p&gt;為此，我在 ChatGPT 4o 進行一系列小小的實驗。試試看當 GenAI 收到前段的需求規格之後，能夠生出什麼樣的程式碼以及測試驗收案例；緊接著會與 GenAI 協作調教頭尾兩端（需求規格與測試驗收），再看看 GenAI 重新生出來的程式碼，會有什麼不同。&lt;/p&gt;&#xA;&#xA;&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;&#xA;&lt;div class=&#34;box&#34;&gt;&#xA;&lt;figure  itemprop=&#34;associatedMedia&#34;&#xA;  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; &#xA;  style=&#34;max-width:30em&#34; &gt;&#xA;    &lt;div class=&#34;img&#34;&gt;&#xA;      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2025/02/work-with-genai.jpg&#34; /&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;a href=&#34;//william-yeh.net/img/2025/02/work-with-genai.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;&#xA;  &lt;/figure&gt;&#xA;&lt;/div&gt;</description>
+      
+        <description>&lt;p&gt;人類從事的領域，不斷被生成式 AI (GenAI) 入侵。&lt;/p&gt;
+&lt;p&gt;社群媒體上，早就充斥一大堆「AI 體」的文案圖案，現在就連程式設計領域也開始淪陷。像 Google 執行長就透露：「在 Google，超過 1/4 的新程式碼已經是先由 AI 生成，再讓程式設計師去複審與確認。」&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; 而 GitHub 執行長更大膽預言 80% 的程式碼都將會由 GenAI 生成。&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;也就是說，以前，程式設計師得親手撰寫大部分的程式碼；現在則開始挪出一段時間去跟 GenAI 對話：調教提示詞 (prompt)、審核生成的程式碼、確認正確性，如此反覆進行好幾個回合。&lt;/p&gt;
+&lt;p&gt;GenAI 進展神速。如果某一天進展到，只要提示詞下得夠精準，第一次生出來的程式碼幾乎就合格過關了，是否也就意謂著，程式設計師的專業訓練及工作重點，將會更轉向 ⑴ 鑽研提示工程、⑵ 審核生成的程式碼這兩條路線發展？換句話說，將會更朝向 ⑴ 前段的需求規格、⑵ 後段的測試驗收這兩條路線？&lt;/p&gt;
+&lt;p&gt;如果頭尾兩端（需求規格與測試驗收）都由人來看守定義，中間步驟（撰寫程式碼）改由 GenAI 來操刀，是否也就意謂著，程式碼會變成像是可拋棄的東西，反正隨時都可以叫 GenAI 再生出一份出來？甚至當 GenAI 能力升級之後，又能夠生出比拋棄掉的還要更好的程式碼？&lt;/p&gt;
+&lt;p&gt;聽起來可能有點兒瘋狂。可是如果以上屬實，那麼，&lt;a href=&#34;https://agilemanifesto.org/&#34;&gt;敏捷四大宣言&lt;/a&gt;之一「&lt;strong&gt;可用的軟體&lt;/strong&gt; 重於 &lt;strong&gt;詳盡的文件&lt;/strong&gt;」，在 GenAI 時代是否依然成立，可能都值得再重新評估檢討。&lt;/p&gt;
+&lt;p&gt;為此，我在 ChatGPT 4o 進行一系列小小的實驗。試試看當 GenAI 收到前段的需求規格之後，能夠生出什麼樣的程式碼以及測試驗收案例；緊接著會與 GenAI 協作調教頭尾兩端（需求規格與測試驗收），再看看 GenAI 重新生出來的程式碼，會有什麼不同。&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2025/02/work-with-genai.jpg&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2025/02/work-with-genai.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;實驗素材&#34;&gt;實驗素材&lt;/h2&gt;
+&lt;p&gt;我選用 TDD 社群常見的 Tennis Kata 作為實驗素材。
+為了怕 GenAI 早已被餵食過 Tennis Kata，想也不想就直接吐出記憶中的標準答案，也就是所謂的「資料記憶」問題，我稍加修改 Samman Technical Coaching 提供的 &lt;a href=&#34;https://sammancoaching.org/kata_descriptions/tennis.html&#34;&gt;Tennis Kata 版本&lt;/a&gt;。微調過的文字如下：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The rule of the 2-player game &amp;ldquo;Sinnet&amp;rdquo; is summarized below:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A game is won by the first player to have won at least four points in total and at least two points more than the opponent.&lt;/li&gt;
+&lt;li&gt;The running score of each game is described in a manner peculiar to this: scores from zero to three points are described as “Love”, “Fifteen”, “Thirty”, and “Forty” respectively.&lt;/li&gt;
+&lt;li&gt;If at least three points have been scored by each player, and the scores are equal, the score is “Deuce”.&lt;/li&gt;
+&lt;li&gt;If at least three points have been scored by each side and a player has one more point than his opponent, the score of the game is “Advantage” for the player in the lead.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;為了進一步消除資料記憶的疑慮，我也故意翻譯成中文（儘管在 ChatGPT 大神面前，這麼做未必真的有用，哈）：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;以下是二人遊戲 &amp;ldquo;Sinnet&amp;rdquo; 的規則：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;遊戲由首先贏得至少四分，且比對手多至少兩分的玩家獲勝。&lt;/li&gt;
+&lt;li&gt;每局的進行得分以一種特殊的方式描述：從零到三分分別描述為 “Love”、 “Fifteen”、 “Thirty” 和 “Forty”。&lt;/li&gt;
+&lt;li&gt;如果每位玩家至少得了三分，且比分相同，則比分為 “Deuce”。&lt;/li&gt;
+&lt;li&gt;如果每方至少得了三分，且有一名玩家比對手多一分，則領先玩家的比分為 “Advantage”。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;接下來的前幾個實驗，都會以這段文字作為對話的開始，姑且就把它叫做「&lt;strong&gt;初始規格/v1&lt;/strong&gt;」吧。不過，GenAI 有一些隨機性的行為，不一定每次都會得到一樣的結果，我會挑出較具代表性的來探討。&lt;/p&gt;
+&lt;p&gt;系列實驗如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;🅐 基礎實驗：①給初始規格/v1 ❯ ②生成程式及測試&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;🅑 調整規格：①給初始規格/v1 ❯ ③調整規格/v2 ❯ ④生成程式及測試&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;🅒 可執行的規格：①給初始規格/v1 ❯ ③調整規格/v2 ❯ ④生成程式及測試 ❯ ⑤將測試納入規格/v3&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;🅓 測試驅動：⑥根據規格/v3 重新生成程式，並予以測試檢驗&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;🅔 逆向工程：⑥根據規格/v3 重新生成程式，並予以測試檢驗 ❯ ⑦逆向工程規格/v4&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;有些實驗之間有先後關係，有些實驗需要開啟新的對話：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2025/02/flow-all.png&#34; alt=&#34;整體實驗流程&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2025/02/flow-all.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;整體實驗流程&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;實驗基礎實驗&#34;&gt;實驗🅐、基礎實驗&lt;/h2&gt;
+&lt;p&gt;先從最基礎的實驗開始，直接叫 GenAI 根據我們給的初始規格，生成程式及測試。&lt;/p&gt;
+&lt;p&gt;基礎的實驗步驟如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;①給初始規格/v1&lt;/li&gt;
+&lt;li&gt;②生成程式及測試&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2025/02/flow-a.png&#34; alt=&#34;實驗🅐流程&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2025/02/flow-a.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;實驗🅐流程&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;既然要叫 GenAI 生成測試，就順便叫它用比較好的方式來做：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.amazon.com/dp/1617290084&#34;&gt;&lt;em&gt;Specification by Example&lt;/em&gt;&lt;/a&gt; 提到的 BDD (behavior driven design)。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.amazon.com/dp/1633439933&#34;&gt;&lt;em&gt;Effective Software Testing&lt;/em&gt;&lt;/a&gt; 提到的 spec-based &amp;amp; property-based testing 角度以及 AAA (arrange-act-assert) 手法。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;提示詞②如下：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Now, implement a Python program to display the current game score.  Also, create specification-based tests using BDD-style and property-based testing. Each test case should follow the Arrange-Act-Assert (AAA) pattern, ensuring that only one AAA scenario is included per test case. Place Gherkin descriptions at the beginning of each test case using a docstring, annotation, or function name. Ensure these tests cover normal scenarios as well as edge cases, focusing on boundaries, partitions, and input dependencies.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;吐出的主體程式碼，細節可能每次都有些不同，以下是較常見的版本：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2025/02/code-a1.png&#34; alt=&#34;提示詞②產生的主體程式碼&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2025/02/code-a1.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;提示詞②產生的主體程式碼&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;主體程式碼看起來滿樸素的，程式邏輯大體上也是圍繞在初始規格的直接翻譯。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;吐出的測試案例，每次的差異就比較大了，以下是其中一個版本：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2025/02/code-a2.png&#34; alt=&#34;提示詞②產生的測試&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2025/02/code-a2.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;提示詞②產生的測試&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;形式上 OK，只是我認為還有些缺失：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;對於 deuce 的比分，常常只測到 3-3 的情況，沒有進一步嘗試 4-4、5-5 甚至更多。這應該是 property-based testing 的強項。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在 arrange 及 act 階段，常常少了交錯得分的劇情，譬如說像是 0-0 ❯ 1-0 ❯ 2-0 ❯ 2-1 ❯ 3-1 ❯ 3-2 ❯ 3-3 (deuce) ❯ 3-4 ❯ 4-4 (deuce) 這種緊張的情節。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Property-based testing 有點偷懶。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;實驗調整規格&#34;&gt;實驗🅑、調整規格&lt;/h2&gt;
+&lt;p&gt;我們一開始給的初始規格/v1，可能未必是最好的。這一次，讓我們邀請 AI 對我們提出疑問，一起協力把初始規格調整成較清晰、無歧義的內容，再拿這份調整過的規格去生成程式與測試。&lt;/p&gt;
+&lt;p&gt;調整規格的實驗步驟如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;①給初始規格/v1&lt;/li&gt;
+&lt;li&gt;③調整規格/v2&lt;/li&gt;
+&lt;li&gt;④生成程式及測試&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2025/02/flow-b.png&#34; alt=&#34;實驗🅑流程&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2025/02/flow-b.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;實驗🅑流程&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;提示詞③如下：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Now, you can ask me questions about the previous specification to clarify its meaning and remove any ambiguity. If you don&amp;rsquo;t have any questions, please proceed to rephrase the specification for better clarity.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;有時候，GenAI 的確會與我一來一往對話，請我釐清一些細節。&lt;/p&gt;
+&lt;p&gt;最後，我收到一份更清晰易懂的規格（就把它叫做「規格/v2」吧）：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Sinnet Game Rules&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Winning the Game&lt;/strong&gt;: A player wins by reaching at least four points and leading their opponent by at least two points.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Scoring System&lt;/strong&gt;: Points are described using specific terms:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;0 points → “Love”&lt;/li&gt;
+&lt;li&gt;1 point → “Fifteen”&lt;/li&gt;
+&lt;li&gt;2 points → “Thirty”&lt;/li&gt;
+&lt;li&gt;3 points → “Forty”&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Deuce&lt;/strong&gt;: If both players have at least three points and are tied, the score is called “Deuce.”&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Advantage&lt;/strong&gt;: If both players have at least three points, and one player leads by a single point, their score is called “Advantage.”&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;接下來，讓我們根據這份調整過的 規格/v2，試試看 GenAI 有什麼不一樣的產出？&lt;/p&gt;
+&lt;p&gt;提示詞④如下：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Based on the rephrased specification, implement a Python program to display the current game score.
+Also create specification-based tests using BDD-style and property-based testing. Each test case should follow the Arrange-Act-Assert (AAA) pattern, ensuring that only one AAA scenario is included per test case. Place Gherkin descriptions at the beginning of each test case using a docstring, annotation, or function name. Ensure these tests cover normal scenarios as well as edge cases, focusing on boundaries, partitions, and input dependencies.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;吐出的主體程式碼，細節可能每次都有些不同，以下是較常見的版本：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2025/02/code-b1.png&#34; alt=&#34;提示詞④產生的主體程式碼&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2025/02/code-b1.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;提示詞④產生的主體程式碼&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;或許要歸功於調整後的 規則/v2 較清晰易懂，程式邏輯也隨之變得更清晰易懂。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;有時候我不滿意生成的測試案例，會叫它再做一次，加強測試涵蓋率。譬如說，如果它只考慮到 3-3 這個 deuce 情況，我也會叫它再多想一下：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Have you considered that deuce can also occur at 4-4, 5-5, and beyond? This appears to be a strong candidate for property-based testing.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;這階段，我建議要跟 GenAI 多聊幾次，先一起弄出令人滿意的測試集，以作為下一個實驗的基礎。&lt;/p&gt;
+&lt;p&gt;以下是其中一個版本：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2025/02/code-b2.png&#34; alt=&#34;提示詞④產生的測試&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2025/02/code-b2.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;提示詞④產生的測試&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;看起來還不錯。我們可以繼續往下進行最關鍵的實驗了。&lt;/p&gt;
+&lt;h2 id=&#34;實驗可執行的規格&#34;&gt;實驗🅒、可執行的規格&lt;/h2&gt;
+&lt;p&gt;在前一個實驗中，我們和 GenAI 一起調整出較清晰易讀的 規格/v2，也一起調整出較周全的測試集。以敏捷開發陣營的最佳實踐來說，好的測試集，其實是可以逆向反饋到規格的，也就是所謂的「&lt;strong&gt;可執行的規格&lt;/strong&gt;」(&lt;strong&gt;executable specification&lt;/strong&gt;)。現在，我們就來弄出一份這樣的「規格/v3」吧。&lt;/p&gt;
+&lt;p&gt;「可執行的規格」實驗步驟如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;①給初始規格/v1&lt;/li&gt;
+&lt;li&gt;③調整規格/v2&lt;/li&gt;
+&lt;li&gt;④生成程式及測試&lt;/li&gt;
+&lt;li&gt;⑤將測試納入規格/v3 ◄ 承上步驟，從這裡開始。&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2025/02/flow-c.png&#34; alt=&#34;實驗🅒流程&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2025/02/flow-c.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;實驗🅒流程&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;接續前一個實驗累積的測試集，讓我們請 GenAI 幫我們逆向轉譯為 Gherkin 形式的規格。&lt;/p&gt;
+&lt;p&gt;提示詞⑤如下：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Now, incorporate the newly generated tests (including property-based tests) into the specification under a section titled &amp;ldquo;Validation Scenarios,&amp;rdquo; expressed in Gherkin format. This will make the specification more comprehensive and allow it to function as an &amp;ldquo;executable specification.&amp;rdquo; Finally, add the test codes in an appendix section titled &amp;ldquo;Tests.&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;最後會孵化出這樣的「規格/v3」：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Sinnet Game Specification&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;▋ GAME RULES&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Winning the Game&lt;/strong&gt;: A player wins by reaching at least four points and leading their opponent by at least two points.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Scoring System&lt;/strong&gt;: Points are described using specific terms:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;0 points → “Love”&lt;/li&gt;
+&lt;li&gt;1 point → “Fifteen”&lt;/li&gt;
+&lt;li&gt;2 points → “Thirty”&lt;/li&gt;
+&lt;li&gt;3 points → “Forty”&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Deuce&lt;/strong&gt;: If both players have at least three points and are tied, the score is called “Deuce.”&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Advantage&lt;/strong&gt;: If both players have at least three points, and one player leads by a single point, their score is called “Advantage.”&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;▋ VALIDATION SCENARIOS&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Normal Gameplay Scenarios&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Scenario: Initial game score is &amp;ldquo;Love - Love&amp;rdquo;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Given a new game has started&lt;/li&gt;
+&lt;li&gt;When no player has scored&lt;/li&gt;
+&lt;li&gt;Then the score should be &amp;ldquo;Love - Love&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Scenario: A player scores first&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Given a new game has started&lt;/li&gt;
+&lt;li&gt;When a player scores once&lt;/li&gt;
+&lt;li&gt;Then the score should reflect the correct score for that player&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Scenario: A player gains advantage&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Given both players have scored at least three times&lt;/li&gt;
+&lt;li&gt;When a player scores once more&lt;/li&gt;
+&lt;li&gt;Then the score should be &amp;ldquo;Advantage&amp;rdquo; for that player&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Scenario: A player wins the game&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Given a player has three points and the other player has less than three points&lt;/li&gt;
+&lt;li&gt;When the player scores the winning point&lt;/li&gt;
+&lt;li&gt;Then the player should be declared the winner&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Scenario: A player wins after having advantage&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Given a player has advantage&lt;/li&gt;
+&lt;li&gt;When the player scores one more point&lt;/li&gt;
+&lt;li&gt;Then the player should be declared the winner&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Scenario: A player gains advantage from deuce&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Given the score is deuce&lt;/li&gt;
+&lt;li&gt;When a player scores a point&lt;/li&gt;
+&lt;li&gt;Then the score should be &amp;ldquo;Advantage&amp;rdquo; for that player&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Edge Cases and Property-Based Testing&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Scenario: Deuce occurs at 3-3, 4-4, 5-5, and beyond&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Given both players have the same score of at least 3 points&lt;/li&gt;
+&lt;li&gt;When the scores are equal&lt;/li&gt;
+&lt;li&gt;Then the score should be &amp;ldquo;Deuce&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Property-Based Test: Deuce should occur at 3-3, 4-4, 5-5, and beyond&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Given both players have at least 3 points and the same score&lt;/li&gt;
+&lt;li&gt;When the scores are equal&lt;/li&gt;
+&lt;li&gt;Then the score should be &amp;ldquo;Deuce&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;▋ APPENDIX: TESTS&lt;/strong&gt;
+[測試規格如下]
+
+&lt;details&gt;
+  &lt;summary style=&#34;background-color:#f5f5f5;border:1px solid #ccc;padding:5px;&#34;&gt;
+    Python 版的測試規格
+    
+  &lt;/summary&gt;
+  &lt;div class=&#34;highlight-container&#34;&gt;
+
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+
+  
+  &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; pytest
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; hypothesis &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; given, strategies &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; st
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;test_initial_score&lt;/span&gt;():
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Scenario: Initial game score is &amp;#34;Love - Love&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Given a new game has started
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    When no player has scored
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Then the score should be &amp;#34;Love - Love&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    &amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    game &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; SinnetGame()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;assert&lt;/span&gt; game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;score() &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Love - Love&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;test_player1_scores_once&lt;/span&gt;():
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Scenario: Player 1 scores first
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Given a new game has started
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    When Player 1 scores once
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Then the score should be &amp;#34;Fifteen - Love&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    &amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    game &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; SinnetGame()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;player_scores(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;assert&lt;/span&gt; game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;score() &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Fifteen - Love&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;test_deuce_extended&lt;/span&gt;():
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Scenario: Deuce occurs at 3-3, 4-4, 5-5, and beyond
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Given both players have the same score of at least 3 points
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    When the scores are equal
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Then the score should be &amp;#34;Deuce&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    &amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; score &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; range(&lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        game &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; SinnetGame()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;scores &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [score, score]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;assert&lt;/span&gt; game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;score() &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Deuce&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;test_advantage_player1&lt;/span&gt;():
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Scenario: Player 1 gains advantage
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Given both players have scored at least three times
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    When Player 1 scores once more
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Then the score should be &amp;#34;Advantage Player 1&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    &amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    game &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; SinnetGame()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; _ &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; range(&lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;player_scores(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;player_scores(&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;player_scores(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;assert&lt;/span&gt; game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;score() &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Advantage Player 1&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;test_player1_wins&lt;/span&gt;():
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Scenario: Player 1 wins the game
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Given Player 1 has three points and Player 2 has less than three points
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    When Player 1 scores the winning point
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Then Player 1 should be declared the winner
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    &amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    game &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; SinnetGame()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; _ &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; range(&lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;player_scores(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;assert&lt;/span&gt; game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;score() &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Player 1 wins&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;test_transition_from_advantage_to_win&lt;/span&gt;():
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Scenario: Player 1 wins after having advantage
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Given Player 1 has advantage
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    When Player 1 scores one more point
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Then Player 1 should be declared the winner
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    &amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    game &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; SinnetGame()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; _ &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; range(&lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;player_scores(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;player_scores(&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;player_scores(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;player_scores(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;assert&lt;/span&gt; game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;score() &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Player 1 wins&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;test_transition_from_deuce_to_advantage&lt;/span&gt;():
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Scenario: Player 2 gains advantage from deuce
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Given the score is deuce
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    When Player 2 scores a point
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Then the score should be &amp;#34;Advantage Player 2&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    &amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    game &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; SinnetGame()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; _ &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; range(&lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;player_scores(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;player_scores(&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;player_scores(&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;assert&lt;/span&gt; game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;score() &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Advantage Player 2&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;@given&lt;/span&gt;(st&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;integers(min_value&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;, max_value&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;test_deuce_property_based&lt;/span&gt;(score):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Property-based test: Deuce should occur at 3-3, 4-4, 5-5, and beyond
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Given both players have at least 3 points and the same score
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    When the scores are equal
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Then the score should be &amp;#34;Deuce&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    &amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    game &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; SinnetGame()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;scores &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [score, score]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;assert&lt;/span&gt; game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;score() &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Deuce&amp;#34;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/details&gt;
+&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;這份「規格/v3」，不僅有規格文章，還有測試集，又臭又長，要是換成是我自己一個人來寫，我多半沒這個耐心。&lt;/p&gt;
+&lt;p&gt;你可能會懷疑：比起之前的「初始規格/v1」及「調整規格/v2」，這份孵化出來的「規格/v3」是否真的有獨到之處？&lt;/p&gt;
+&lt;p&gt;且讓我們繼續看下去。&lt;/p&gt;
+&lt;h2 id=&#34;實驗測試驅動&#34;&gt;實驗🅓、測試驅動&lt;/h2&gt;
+&lt;p&gt;在前一個實驗中，我們和 GenAI 一起孵化出「可執行的規格」。現在，我們就來根據這份「規格/v3」開啟全新的對話，叫 GenAI 重新生成程式，並根據「規格/v3」附錄的測試集予以測試檢驗。&lt;/p&gt;
+&lt;p&gt;且讓我們評估看看究竟值不值得如此大費周章。&lt;/p&gt;
+&lt;p&gt;測試驅動的實驗步驟如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;①給初始規格/v1 ❯ ③調整規格/v2 ❯ ④生成程式及測試 ❯ ⑤將測試納入規格/v3 ◄ 之前的步驟&lt;/li&gt;
+&lt;li&gt;⑥根據規格/v3 重新生成程式，並予以測試檢驗 ◄ 現在的步驟&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;請 GenAI 開啟全新的對話，用這份熱騰騰的「規格/v3」重新生成程式。&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2025/02/flow-d.png&#34; alt=&#34;實驗🅓流程&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2025/02/flow-d.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;實驗🅓流程&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;提示詞⑥如下：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Now, generate a Python program based on the following specification. [貼上 規格/v3 全文]&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;吐出的主體程式碼，細節可能每次都有些不同，以下是較常見的版本：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2025/02/code-d1.png&#34; alt=&#34;提示詞⑥產生的主體程式碼&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2025/02/code-d1.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;提示詞⑥產生的主體程式碼&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;GenAI 有隨機性行為，未必每次都會比根據之前兩份規格（初始規格/v1 及 調整規格/v2）產生的程式表現得更好，但至少這是可以通過測試的。萬一通不過測試，大可叫 GenAI 去 debug。這就是我們之前與 AI 協作，努力調教頭尾兩端（需求規格與測試驗收）的好處。只要向 AI 指出這項錯誤，它就會乖乖認錯，並且自動 debug。&lt;/p&gt;
+&lt;p&gt;只要程式是正確的，隨時都可以叫 GenAI 去重構，重構到滿意為止，如此即可兼顧正確性與各種內在品質標準。&lt;/p&gt;
+&lt;p&gt;這就是當初在「規格/v3」埋下「可執行的規格」伏筆的好處。&lt;/p&gt;
+&lt;h2 id=&#34;實驗逆向工程&#34;&gt;實驗🅔、逆向工程&lt;/h2&gt;
+&lt;p&gt;敏捷宣言說：「&lt;strong&gt;可用的軟體&lt;/strong&gt; 重於 &lt;strong&gt;詳盡的文件&lt;/strong&gt;」。我們想看看，GenAI 是否真的能夠從「可用的軟體」逆向工程出「詳盡的文件」，讓我們評估兩者究竟誰比較重要，誰可以當成 “ground truth”。&lt;/p&gt;
+&lt;p&gt;逆向工程的實驗步驟如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;⑥根據規格/v3 重新生成程式，並予以測試檢驗 ◄ 之前的步驟&lt;/li&gt;
+&lt;li&gt;⑦逆向工程規格/v4 ◄ 現在的步驟&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2025/02/flow-e.png&#34; alt=&#34;實驗🅔流程&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2025/02/flow-e.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;實驗🅔流程&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;請 GenAI 開啟全新的對話，拿前一個實驗的程式碼及測試，請它設法轉譯成人類的語言。&lt;/p&gt;
+&lt;p&gt;提示詞⑦如下：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Generate a specification based on the following Python code and tests. The specification should include two sections: 1. Sinnet Game Rules – Clearly structured and expressed in natural language. 2. Validation Scenarios – Presented in Gherkin format.  [附上主體程式碼及測試]&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;我驚訝的發現，GenAI 劈頭就給我這麼一句話：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The Sinnet Game is a simplified scoring system inspired by tennis. The objective is for a player to win by reaching at least four points and having a two-point lead over the opponent.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;看起來，可能是程式碼寫得太好了，測試寫得太好了，變數及函式名稱取得太好了，註解寫得太好了，讓 GenAI 有足夠的線索察覺到，這和現實世界的網球規則高度雷同。&lt;/p&gt;
+&lt;p&gt;這也證明了，清晰易懂的程式碼，不僅讓人類舒服，連 GenAI 也受益。&lt;/p&gt;
+&lt;h2 id=&#34;敏捷的再思&#34;&gt;敏捷的再思&lt;/h2&gt;
+&lt;p&gt;同樣的武器，在高手與菜鳥手上，能玩出的花樣自然會有高低落差之別。&lt;/p&gt;
+&lt;p&gt;儘管高手是草木竹石均可為劍的；但善用好的武器，能讓我們付出較少的精力，就做出近似高手的表現。&lt;/p&gt;
+&lt;p&gt;怎麼樣善用 GenAI 這項神兵利器？&lt;/p&gt;
+&lt;p&gt;前面幾個實驗中，儘管 GenAI 看起來非常厲害，但是別忘了，我所下的提示詞，其實已經將人類在程式設計領域的經驗高度濃縮進去。缺少這些知識，未必能夠和 GenAI 一來一往充分協作出好的成果：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Executable specification 很重要。&lt;/li&gt;
+&lt;li&gt;Specification-based testing 很重要。&lt;/li&gt;
+&lt;li&gt;Property-based testing 很重要。&lt;/li&gt;
+&lt;li&gt;AAA (arrange-act-assert) 很重要。&lt;/li&gt;
+&lt;li&gt;Refactoring 很重要。&lt;/li&gt;
+&lt;li&gt;Shift-left 很重要。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;這些，其實都是敏捷開發領域一向重視的實踐。&lt;/p&gt;
+&lt;p&gt;因此，在 GenAI 時代，就算敏捷四大宣言之一「&lt;strong&gt;可用的軟體&lt;/strong&gt; 重於 &lt;strong&gt;詳盡的文件&lt;/strong&gt;」未必依然成立，但那也是因為藉由 GenAI 之力，我們終於可以把「可用的軟體」的內涵，用更有效率的方式轉寫到「詳盡的文件」裡面，讓它成為更有意義的 “ground truth”。&lt;/p&gt;
+&lt;p&gt;不是因為敏捷宣言過時了，而是 GenAI 成全了敏捷宣言。&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;根據 Google CEO 在 &lt;a href=&#34;https://blog.google/inside-google/message-ceo/alphabet-earnings-q3-2024/&#34;&gt;(2024) Q3 earnings call: CEO’s remarks&lt;/a&gt; 的說法：“Today, more than a quarter of all new code at Google is generated by AI, then reviewed and accepted by engineers. This helps our engineers do more and move faster.”&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;GitHub CEO 在 2023 年中一場&lt;a href=&#34;https://www.freethink.com/robots-ai/github-copilot&#34;&gt;專訪&lt;/a&gt;時，大膽預言：“Sooner than later, 80% of the code is going to be written by Copilot.”&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description>
+      
     </item>
+    
     <item>
       <title>[Code Review 碎碎念] 簡化巢狀條件判斷式</title>
       <link>//william-yeh.net/post/2023/10/nested-conditional/</link>
       <pubDate>Thu, 12 Oct 2023 20:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2023/10/nested-conditional/</guid>
-      <description>&lt;p&gt;讀別人的程式是一件苦差事，不僅需要具備對應的領域知識，也得了解對方的程式書寫邏輯與風格。因此，為了讓程式碼容易被人理解，整潔程式碼是必須持續精進的技藝。&lt;/p&gt;&#xA;&lt;p&gt;在 code review 進行實質審查之前，我喜歡先做一點點形式審查，尤其是某些 code smell，臭味暴風半徑大到甚至連領域知識的外行人都聞得到。&lt;/p&gt;&#xA;&lt;p&gt;我很常遇到不必要的巢狀迴圈或條件判斷式。經驗告訴我，除非真的是要設計出什麼高大尚的演算法或者刷題，否則，這有相當大的機率是需要進一步 refactor 的。&lt;/p&gt;&#xA;&lt;p&gt;像以下這段程式，即使我故意把領域知識相關細節用 &lt;code&gt;conditionXX&lt;/code&gt; 馬賽克掉了，你還是可以明顯聞到 bad smell：迴圈 + 條件判斷式，ABCDEF 深達 6 層，你能夠很快捕捉到箇中邏輯嗎？&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;讀別人的程式是一件苦差事，不僅需要具備對應的領域知識，也得了解對方的程式書寫邏輯與風格。因此，為了讓程式碼容易被人理解，整潔程式碼是必須持續精進的技藝。&lt;/p&gt;
+&lt;p&gt;在 code review 進行實質審查之前，我喜歡先做一點點形式審查，尤其是某些 code smell，臭味暴風半徑大到甚至連領域知識的外行人都聞得到。&lt;/p&gt;
+&lt;p&gt;我很常遇到不必要的巢狀迴圈或條件判斷式。經驗告訴我，除非真的是要設計出什麼高大尚的演算法或者刷題，否則，這有相當大的機率是需要進一步 refactor 的。&lt;/p&gt;
+&lt;p&gt;像以下這段程式，即使我故意把領域知識相關細節用 &lt;code&gt;conditionXX&lt;/code&gt; 馬賽克掉了，你還是可以明顯聞到 bad smell：迴圈 + 條件判斷式，ABCDEF 深達 6 層，你能夠很快捕捉到箇中邏輯嗎？&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+
+  
+  &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# condition placeholders&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;condition1 &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; condition2 &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; condition3 &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; condition4 &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; condition5 &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; condition6 &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;lambda&lt;/span&gt; x : &lt;span style=&#34;color:#66d9ef&#34;&gt;True&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;data &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;# area code -&amp;gt; city name&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    { &lt;span style=&#34;color:#ae81ff&#34;&gt;201&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Jersey City&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;206&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Seattle&amp;#39;&lt;/span&gt; },
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    { &lt;span style=&#34;color:#ae81ff&#34;&gt;212&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;New York&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;213&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Los Angeles&amp;#39;&lt;/span&gt; },
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    { &lt;span style=&#34;color:#ae81ff&#34;&gt;226&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;London&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;236&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Vancouver&amp;#39;&lt;/span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;demo1&lt;/span&gt;():
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; item &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; data:    &lt;span style=&#34;color:#75715e&#34;&gt;# A&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; condition1(item):    &lt;span style=&#34;color:#75715e&#34;&gt;# B1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; pair &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; item&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;items():  &lt;span style=&#34;color:#75715e&#34;&gt;# C&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                print(pair)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; condition2(pair):      &lt;span style=&#34;color:#75715e&#34;&gt;# D&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; condition3(pair):     &lt;span style=&#34;color:#75715e&#34;&gt;# E&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                        &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; condition4(pair):    &lt;span style=&#34;color:#75715e&#34;&gt;# F1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                            print(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;CASE 1&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                        &lt;span style=&#34;color:#66d9ef&#34;&gt;elif&lt;/span&gt; condition5(pair):  &lt;span style=&#34;color:#75715e&#34;&gt;# F2&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                            print(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;CASE 2&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt;:    &lt;span style=&#34;color:#75715e&#34;&gt;# B2&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            print(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;CASE 3&amp;#39;&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;再往下看之前，請先自己嘗試 refactor 看看。&lt;/p&gt;
+&lt;h2 id=&#34;頭重腳輕&#34;&gt;頭重腳輕&lt;/h2&gt;
+&lt;p&gt;通常我會先針對頭重腳輕的 if-else 開刀。&lt;/p&gt;
+&lt;p&gt;頭重腳輕的 if-else 有什麼問題呢？請試著將以下的程式讀到第 4 行，然後稍作暫停：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+
+  
+  &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;01&lt;/span&gt;:     &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; condition1(item):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;02&lt;/span&gt;:         &lt;span style=&#34;color:#75715e&#34;&gt;# ...&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;03&lt;/span&gt;:         &lt;span style=&#34;color:#75715e&#34;&gt;# ...&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;04&lt;/span&gt;:         &lt;span style=&#34;color:#75715e&#34;&gt;# many lines of code... (頭重)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;05&lt;/span&gt;:         &lt;span style=&#34;color:#75715e&#34;&gt;# ...&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;06&lt;/span&gt;:         &lt;span style=&#34;color:#75715e&#34;&gt;# ...&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;07&lt;/span&gt;:         &lt;span style=&#34;color:#75715e&#34;&gt;# ...&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;...&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;20&lt;/span&gt;:     &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;21&lt;/span&gt;:         &lt;span style=&#34;color:#75715e&#34;&gt;# only 1 line of code (腳輕)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;此刻，儘管你才讀到第 4 行，但應該會有個懸念：「究竟 if 的另一隻腳 else 會是什麼？」可是你要一直往下讀到第 20 行，謎底才會揭曉。&lt;/p&gt;
+&lt;p&gt;這種懸念，有個心理學名詞：Zeigarnik effect（常譯為齊加尼克效應、蔡加尼克效應）。&lt;/p&gt;
+&lt;p&gt;這種懸念，會增加我們的認知負荷，瓜分我們的專注力————閱讀程式碼，是最需要專注力的。&lt;/p&gt;
+&lt;p&gt;如果換個順序，頭輕腳重，就可以盡早排除懸念，因為懸念早在你讀到第 3 行就已結束：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+
+  
+  &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;01&lt;/span&gt;:     &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;not&lt;/span&gt; condition1(item):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;02&lt;/span&gt;:         &lt;span style=&#34;color:#75715e&#34;&gt;# only 1 line of code (頭輕)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;03&lt;/span&gt;:     &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;04&lt;/span&gt;:         &lt;span style=&#34;color:#75715e&#34;&gt;# ...&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;05&lt;/span&gt;:         &lt;span style=&#34;color:#75715e&#34;&gt;# ...&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;06&lt;/span&gt;:         &lt;span style=&#34;color:#75715e&#34;&gt;# many lines of code... (腳重)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;07&lt;/span&gt;:         &lt;span style=&#34;color:#75715e&#34;&gt;# ...&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;08&lt;/span&gt;:         &lt;span style=&#34;color:#75715e&#34;&gt;# ...&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;09&lt;/span&gt;:         &lt;span style=&#34;color:#75715e&#34;&gt;# ...&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;將這一招套用在本文一開頭的範例程式，可以改寫成：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+
+  
+  &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;demo2&lt;/span&gt;():
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; item &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; data:    &lt;span style=&#34;color:#75715e&#34;&gt;# A&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;not&lt;/span&gt; condition1(item):    &lt;span style=&#34;color:#75715e&#34;&gt;# B1 + B2&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            print(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;CASE 3&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#66d9ef&#34;&gt;continue&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; pair &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; item&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;items():   &lt;span style=&#34;color:#75715e&#34;&gt;# C&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            print(pair)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; condition2(pair):    &lt;span style=&#34;color:#75715e&#34;&gt;# D&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; condition3(pair):    &lt;span style=&#34;color:#75715e&#34;&gt;# E&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; condition4(pair):    &lt;span style=&#34;color:#75715e&#34;&gt;# F1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                        print(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;CASE 1&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    &lt;span style=&#34;color:#66d9ef&#34;&gt;elif&lt;/span&gt; condition5(pair):  &lt;span style=&#34;color:#75715e&#34;&gt;# F2&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                        print(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;CASE 2&amp;#39;&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;這一招，在 &lt;a href=&#34;https://martinfowler.com/books/refactoring.html&#34;&gt;&lt;em&gt;Refactoring&lt;/em&gt;&lt;/a&gt; 書中叫做 &amp;ldquo;Replace Nested Conditional with Guard Clauses&amp;rdquo;。 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;h2 id=&#34;整併&#34;&gt;整併&lt;/h2&gt;
+&lt;p&gt;連續的巢狀 if，往往給讀者一種「這裡一定藏著很複雜的邏輯」的感覺————或者錯覺。如有可能，應該嘗試用 and 及 or 加以整併。&lt;/p&gt;
+&lt;p&gt;像前面的範例程式，如果繼續將 condition2 &amp;amp; condition3 整併，巢狀深度降低了，是不是更易讀呢？&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+
+  
+  &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;demo3&lt;/span&gt;():
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; item &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; data:    &lt;span style=&#34;color:#75715e&#34;&gt;# A&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;not&lt;/span&gt; condition1(item):    &lt;span style=&#34;color:#75715e&#34;&gt;# B1 + B2&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            print(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;CASE 3&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#66d9ef&#34;&gt;continue&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; pair &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; item&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;items():   &lt;span style=&#34;color:#75715e&#34;&gt;# C&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            print(pair)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; condition2(pair) &lt;span style=&#34;color:#f92672&#34;&gt;and&lt;/span&gt; condition3(pair):    &lt;span style=&#34;color:#75715e&#34;&gt;# D + E&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; condition4(pair):    &lt;span style=&#34;color:#75715e&#34;&gt;# F1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    print(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;CASE 1&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#66d9ef&#34;&gt;elif&lt;/span&gt; condition5(pair):  &lt;span style=&#34;color:#75715e&#34;&gt;# F2&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    print(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;CASE 2&amp;#39;&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;如果行有餘力，甚至還可以替整併起來的條件判斷式取個有意義的名字（function 或 lambda 或 method），程式碼就更具有自我詮釋的功能：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+
+  
+  &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-python3&#34; data-lang=&#34;python3&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;demo4&lt;/span&gt;():
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; item &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; data:    &lt;span style=&#34;color:#75715e&#34;&gt;# A&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;not&lt;/span&gt; condition1(item):    &lt;span style=&#34;color:#75715e&#34;&gt;# B1 + B2&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            print(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;CASE 3&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#66d9ef&#34;&gt;continue&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; pair &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; item&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;items():   &lt;span style=&#34;color:#75715e&#34;&gt;# C&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            print(pair)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; condition6(pair):    &lt;span style=&#34;color:#75715e&#34;&gt;# D + E&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; condition4(pair):    &lt;span style=&#34;color:#75715e&#34;&gt;# F1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    print(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;CASE 1&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#66d9ef&#34;&gt;elif&lt;/span&gt; condition5(pair):  &lt;span style=&#34;color:#75715e&#34;&gt;# F2&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    print(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;CASE 2&amp;#39;&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;這一招，在 &lt;a href=&#34;https://martinfowler.com/books/refactoring.html&#34;&gt;&lt;em&gt;Refactoring&lt;/em&gt;&lt;/a&gt; 書中叫做 &amp;ldquo;Consolidate Conditional Expression&amp;rdquo;。 &lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;Refactor 到這裡，如果你還不滿意，還可以再套用一次 &amp;ldquo;Replace Nested Conditional with Guard Clauses&amp;rdquo; 手法：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+
+  
+  &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;demo5&lt;/span&gt;():
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; item &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; data:    &lt;span style=&#34;color:#75715e&#34;&gt;# A&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;not&lt;/span&gt; condition1(item):    &lt;span style=&#34;color:#75715e&#34;&gt;# B1 + B2&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            print(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;CASE 3&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#66d9ef&#34;&gt;continue&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; pair &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; item&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;items():   &lt;span style=&#34;color:#75715e&#34;&gt;# C&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            print(pair)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;not&lt;/span&gt; condition6(pair):    &lt;span style=&#34;color:#75715e&#34;&gt;# D + E&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#66d9ef&#34;&gt;continue&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; condition4(pair):    &lt;span style=&#34;color:#75715e&#34;&gt;# F1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                print(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;CASE 1&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#66d9ef&#34;&gt;elif&lt;/span&gt; condition5(pair):  &lt;span style=&#34;color:#75715e&#34;&gt;# F2&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                print(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;CASE 2&amp;#39;&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;需不需要做到這地步？&lt;/p&gt;
+&lt;p&gt;看情況。反正整段程式的邏輯結構已經很清晰易讀了，&lt;a href=&#34;https://en.wikipedia.org/wiki/Cyclomatic_complexity&#34;&gt;cyclomatic complexity&lt;/a&gt; 也已經降得很低了：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+
+  
+  &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;% radon cc -s demo.py
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;demo.py
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    F 11:0 demo1 - B &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;8&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    F 26:0 demo2 - B &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;8&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    F 42:0 demo3 - B &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;8&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    F 57:0 demo4 - B &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;7&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    F 72:0 demo5 - B &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;7&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;chatgpt-怎麼說&#34;&gt;ChatGPT 怎麼說&lt;/h2&gt;
+&lt;p&gt;聽說 ChatGPT 都快要取代程式設計師了，我們就來看看 ChatGPT 會怎麼 refactor 第一段程式。&lt;/p&gt;
+&lt;p&gt;Prompt: &lt;code&gt;Refactor the following Python code with less nested structure.&lt;/code&gt;&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/10/refactor-with-chatgpt.png&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2023/10/refactor-with-chatgpt.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;大體上方向是對的，只是在 condition3 ~ condition5 的地方疑似因為 Python 縮排判斷錯誤。&lt;/p&gt;
+&lt;p&gt;嗯，大家真的要加油了，不要輸給 ChatGPT 呀。&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;如果你手邊沒有 &lt;a href=&#34;https://martinfowler.com/books/refactoring.html&#34;&gt;&lt;em&gt;Refactoring&lt;/em&gt;&lt;/a&gt;  這本書，可參考以下兩篇文章學習 &amp;ldquo;Replace Nested Conditional with Guard Clauses&amp;rdquo; 手法：&lt;a href=&#34;https://refactoring.com/catalog/replaceNestedConditionalWithGuardClauses.html&#34;&gt;文章 1&lt;/a&gt; &amp;amp; &lt;a href=&#34;https://refactoring.guru/replace-nested-conditional-with-guard-clauses&#34;&gt;文章 2&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;如果你手邊沒有 &lt;a href=&#34;https://martinfowler.com/books/refactoring.html&#34;&gt;&lt;em&gt;Refactoring&lt;/em&gt;&lt;/a&gt;  這本書，可參考以下兩篇文章學習 &amp;ldquo;Consolidate Conditional Expression&amp;rdquo; 手法：&lt;a href=&#34;https://refactoring.com/catalog/consolidateConditionalExpression.html&#34;&gt;文章 1&lt;/a&gt; &amp;amp; &lt;a href=&#34;https://refactoring.guru/consolidate-conditional-expression&#34;&gt;文章 2&lt;/a&gt;。&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description>
+      
     </item>
+    
     <item>
       <title>從 Code Review 的小事看到大事</title>
       <link>//william-yeh.net/post/2023/09/on-code-review/</link>
       <pubDate>Wed, 13 Sep 2023 20:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2023/09/on-code-review/</guid>
-      <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;&#xA;&lt;p&gt;我很喜歡 Java 大師 &lt;a href=&#34;https://en.wikipedia.org/wiki/Joshua_Bloch&#34;&gt;Joshua Bloch&lt;/a&gt; 在《&lt;a href=&#34;https://williampjyeh.notion.site/d265b736b05f42d885ef40bb0a48786f&#34;&gt;編程的頂尖對話&lt;/a&gt;》所說的：&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;即使是想把一個很小的程式寫對也是非常難的。&lt;/p&gt;&#xA;&lt;p&gt;認為自己程式沒有 bug 就是在愚弄自己。程式肯定有 bug，（只是）多數情況下，程式裡的 bug 夠少，足以使其完成任務。&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;p&gt;是的，100% 正確的程式或許很難達成，或許連定義起來都很困難，但我們還是得努力趨近它，讓我們工作更有成就感，更有信心能夠交付價值，也更少因不慎流出去的瑕疵而疲於奔命。&lt;/p&gt;&#xA;&lt;p&gt;Joshua Bloch 緊接著又說：&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;既然寫正確的程式那麼困難，我們就應該盡力取得幫助。所以，能減少 bug 的所有東西都是好的。這就是我是靜態型別和靜態分析的信徒的原因。&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;p&gt;是的，我們需要動員許多力量，取得許多幫助，才能夠趨近於正確的程式。可動員的許多力量當中，無疑的 code review 是重要的基礎，可惜的是，許多團隊連這基礎都還有諸多可改善之處，這也限縮了團隊能進一步發揮的價值。&lt;/p&gt;&#xA;&lt;p&gt;Code review 乍看之下是小事，但若認真探討起來還真是不小。在我多年輔導各種成熟度團隊的經驗中，有六個基於 code review 以及衍生出來的議題可深入探討：&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;基本信念：品質來自正確地做事&lt;/li&gt;&#xA;&lt;li&gt;掌握基本功與領域知識&lt;/li&gt;&#xA;&lt;li&gt;凝聚團隊公約的共識&lt;/li&gt;&#xA;&lt;li&gt;嘗試更好的協同理解技巧&lt;/li&gt;&#xA;&lt;li&gt;讓進步看得見&lt;/li&gt;&#xA;&lt;li&gt;支持長久研發的措施&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;如果你所在的團隊已經啟動 Scrum 或 Kanban 研發流程，恭喜你，你們已經有很好的流程基礎可在這六大議題上面精進，只需要正確實施（玩真的！）你們所採用的敏捷流程。文中我會大量連結到 Scrum 及 Kanban 的要素。請確實「守」你們該守的流程，不要驟然「破」或「離」。&lt;/p&gt;&#xA;&lt;p&gt;全文很長，如果你是現役的程式設計師，可先讀①②以瞭解 engineering disciplines；如果你是 team lead，可先讀③④以瞭解團隊動力；如果你是管理層，可先讀⑤⑥，尤其是⑤關於管理面的施力點。&lt;/p&gt;</description>
+      
+        <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+&lt;p&gt;我很喜歡 Java 大師 &lt;a href=&#34;https://en.wikipedia.org/wiki/Joshua_Bloch&#34;&gt;Joshua Bloch&lt;/a&gt; 在《&lt;a href=&#34;https://williampjyeh.notion.site/d265b736b05f42d885ef40bb0a48786f&#34;&gt;編程的頂尖對話&lt;/a&gt;》所說的：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;即使是想把一個很小的程式寫對也是非常難的。&lt;/p&gt;
+&lt;p&gt;認為自己程式沒有 bug 就是在愚弄自己。程式肯定有 bug，（只是）多數情況下，程式裡的 bug 夠少，足以使其完成任務。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;是的，100% 正確的程式或許很難達成，或許連定義起來都很困難，但我們還是得努力趨近它，讓我們工作更有成就感，更有信心能夠交付價值，也更少因不慎流出去的瑕疵而疲於奔命。&lt;/p&gt;
+&lt;p&gt;Joshua Bloch 緊接著又說：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;既然寫正確的程式那麼困難，我們就應該盡力取得幫助。所以，能減少 bug 的所有東西都是好的。這就是我是靜態型別和靜態分析的信徒的原因。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;是的，我們需要動員許多力量，取得許多幫助，才能夠趨近於正確的程式。可動員的許多力量當中，無疑的 code review 是重要的基礎，可惜的是，許多團隊連這基礎都還有諸多可改善之處，這也限縮了團隊能進一步發揮的價值。&lt;/p&gt;
+&lt;p&gt;Code review 乍看之下是小事，但若認真探討起來還真是不小。在我多年輔導各種成熟度團隊的經驗中，有六個基於 code review 以及衍生出來的議題可深入探討：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;基本信念：品質來自正確地做事&lt;/li&gt;
+&lt;li&gt;掌握基本功與領域知識&lt;/li&gt;
+&lt;li&gt;凝聚團隊公約的共識&lt;/li&gt;
+&lt;li&gt;嘗試更好的協同理解技巧&lt;/li&gt;
+&lt;li&gt;讓進步看得見&lt;/li&gt;
+&lt;li&gt;支持長久研發的措施&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;如果你所在的團隊已經啟動 Scrum 或 Kanban 研發流程，恭喜你，你們已經有很好的流程基礎可在這六大議題上面精進，只需要正確實施（玩真的！）你們所採用的敏捷流程。文中我會大量連結到 Scrum 及 Kanban 的要素。請確實「守」你們該守的流程，不要驟然「破」或「離」。&lt;/p&gt;
+&lt;p&gt;全文很長，如果你是現役的程式設計師，可先讀①②以瞭解 engineering disciplines；如果你是 team lead，可先讀③④以瞭解團隊動力；如果你是管理層，可先讀⑤⑥，尤其是⑤關於管理面的施力點。&lt;/p&gt;
+&lt;h2 id=&#34;-基本信念品質來自正確地做事&#34;&gt;① 基本信念：品質來自正確地做事&lt;/h2&gt;
+&lt;p&gt;Code review，甚至任何一種 review，都源自一個單純的理由：多一個人來確保品質。&lt;/p&gt;
+&lt;p&gt;品質是計畫、設計和內建而來的，不是靠檢驗出來的。換言之，品質來自正確地做事。&lt;/p&gt;
+&lt;p&gt;怎樣才叫做「正確地做事」？&lt;/p&gt;
+&lt;p&gt;談「正確地做事」之前，先確定我們擁有共同的基本信念。&lt;/p&gt;
+&lt;h3 id=&#34;collective-ownership&#34;&gt;Collective ownership&lt;/h3&gt;
+&lt;p&gt;Odd-e 三位專家在 2023-08-31 晚上有一場很精彩的 webinar【高效 Scrum 團隊所需的能力】。在 &lt;a href=&#34;https://www.youtube.com/watch?v=13clptdw6J8&amp;amp;t=3816s&#34;&gt;1h:03m:36s&lt;/a&gt; 聊到「工程能力」時，有一句語重心長的話：「所有跟 eXtreme Programming 相關的工程能力都很重要。」&lt;/p&gt;
+&lt;p&gt;eXtreme Programming (XP) 第一版與第二版提到許多工程實踐，此刻我想特別點出 &amp;ldquo;&lt;a href=&#34;http://extremeprogramming.org/rules/collective.html&#34;&gt;collective ownership&lt;/a&gt;&amp;rdquo; 這一條：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Collective Ownership encourages everyone to contribute new ideas to all segments of the project. No one person becomes a bottleneck for changes.&lt;/p&gt;
+&lt;p&gt;In practice collective ownership is actually more reliable than putting a single person in charge of watching specific classes. Especially since a person may leave the project at any time.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;積極面來說，collective ownership 可善用集體智慧提升設計品質，可促成知識共享，消極面則可降低公車指數 (bus factor)。 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;萬一連 &amp;ldquo;collective ownership&amp;rdquo; 都不是團隊想要追求的境界，或許這個團隊從一開始的組成階段 (team forming) 就有問題了；我建議，解決了之後，再談以下的議題吧。否則，連「共同持有」的心態都沒有，還有什麼動機要去 review 別人的 code 呢？&lt;/p&gt;
+&lt;h3 id=&#34;four-eyes-principle&#34;&gt;Four-eyes principle&lt;/h3&gt;
+&lt;p&gt;Code review 的出發點很單純：多一個人來確保品質，也就是說「不要只靠自己的兩隻眼睛，要再加上別人的兩隻眼睛，總共要用四隻眼睛來確保品質。」&lt;/p&gt;
+&lt;p&gt;Four-eyes principle 雖然既古老又原始，但管用，因此就連&lt;a href=&#34;https://unido.org/overview/member-states/change-management/faq/what-four-eyes-principle&#34;&gt;聯合國&lt;/a&gt;及&lt;a href=&#34;https://cros-legacy.ec.europa.eu/content/four-eyes-principle_en&#34;&gt;歐盟&lt;/a&gt;這麼先進的國際性組織都仍在使用。&lt;/p&gt;
+&lt;p&gt;再引述一次 Joshua Block 的話：「既然寫正確的程式那麼困難，我們就應該盡力取得幫助。」&lt;/p&gt;
+&lt;p&gt;就算我們不想時時刻刻都像 XP 主張的 pair programming（甚至更激進的 mob programming），但至少在關鍵時刻，尤其是在 design review 及 code review 的時刻，就該好好善用這種原始方式取得幫助。&lt;/p&gt;
+&lt;p&gt;每當有「現在可不可以暫時跳過 four eyes？」的衝動，或許該換個角度思考「現在有沒有方法讓 four eyes 更有效率且不犧牲品質？」&lt;/p&gt;
+&lt;h3 id=&#34;working-backwards&#34;&gt;Working backwards&lt;/h3&gt;
+&lt;p&gt;「逆向工作法」或「以終為始」是很有威力的心法。用在敏捷開發上，就是熟知的 user story &amp;ldquo;&lt;a href=&#34;https://agileforall.com/new-to-agile-invest-in-good-user-stories&#34;&gt;INVEST&lt;/a&gt;&amp;rdquo; 原則當中的 V (Valuable) 及 T (Testable)：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Valuable - 品質的起頭：這個 user story 是為了交付什麼價值？是為了誰？&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Testable - 品質的末端：該怎麼確定這個 user story 已經做完了 (done)？該怎麼驗收？&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;雖然前面曾提到「品質不是靠檢驗出來的」，但若能在一開頭就設想末端的檢驗標準，甚至設計出可讓將來更容易確實檢驗的結構，就是「內建品質」的精神——這就是敏捷實踐者常講的 &amp;ldquo;acceptance criteria&amp;rdquo; 及 &amp;ldquo;test-driven/behavior-driven design&amp;rdquo; 的用意。&lt;/p&gt;
+&lt;p&gt;Code review 就是讓 four eyes 共同檢視 Valuable 及 Testable 的好時機，喔，不，甚至早在 Sprint Planning 或 Refinement 時就應該來 review 了——現在不是流行凡事都要 &amp;ldquo;shift left&amp;rdquo; 嗎？&lt;/p&gt;
+&lt;h3 id=&#34;品質不是白吃的午餐&#34;&gt;品質不是白吃的午餐&lt;/h3&gt;
+&lt;p&gt;品質是計畫、設計和內建而來的。&lt;/p&gt;
+&lt;p&gt;計畫與設計出內建品質，是需要時間、精力、技能的。孕育出 collective ownership、four eyes、working backwards 的意識及紀律，也是需要時間、精力、技能的。&lt;/p&gt;
+&lt;p&gt;畢竟品質不是白吃的午餐。&lt;/p&gt;
+&lt;p&gt;在推銷這些進步理念時，讓團隊想像藉由「追求高品質」將會帶來的效益，或是以具體事證呈現因為「漠視低品質」而正在且將會持續深陷的痛苦泥淖，讓團隊做出選擇，願意投資時間、精力、技能在品質改進上。&lt;/p&gt;
+&lt;p&gt;你能舉出「不好好進行 code review」最終會引發的災難嗎？這樣的災難是大家願意承擔的嗎？用這個來鞏固大家願意投資在品質上面的動機吧。&lt;/p&gt;
+&lt;h2 id=&#34;-掌握基本功與領域知識&#34;&gt;② 掌握基本功與領域知識&lt;/h2&gt;
+&lt;p&gt;不可諱言，code review 要做得好，不是大聲嚷嚷精神喊話就會自動美夢成真，是需要自我提升能力的，尤其是研發基本功與領域知識。&lt;/p&gt;
+&lt;p&gt;不過，以下提到的這些能力，就算不談 code review，也是工程師本來就該自我提升的。&lt;/p&gt;
+&lt;p&gt;所以，結論是：請把它們當成是必修課吧，這會讓你成為更稱職的軟體研發工程師。&lt;/p&gt;
+&lt;h3 id=&#34;clean-code&#34;&gt;Clean code&lt;/h3&gt;
+&lt;p&gt;Turing Award 得主 &lt;a href=&#34;https://en.wikipedia.org/wiki/Tony_Hoare&#34;&gt;C.A.R. Hoare&lt;/a&gt; 有一段經典名言：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;There are two ways of constructing a software design: One way is to make it so simple that there are &lt;em&gt;obviously&lt;/em&gt; no deficiencies, and the other way is to make it so complicated that there are no &lt;em&gt;obvious&lt;/em&gt; deficiencies. The first method is far more difficult.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;單純到「顯然沒有缺陷」 vs. 複雜到「沒有明顯的缺陷」，你願意選擇哪一種？&lt;/p&gt;
+&lt;p&gt;寫出 clean code，可說是程式設計師的職業道德。坊間早有 clean code 及 refactoring 相關的經典書籍，網路上也有一大堆相關文章，請花點時間自我充實吧。&lt;/p&gt;
+&lt;h3 id=&#34;guideline&#34;&gt;Guideline&lt;/h3&gt;
+&lt;p&gt;除了 clean code 技能之外，我們還需要一些讓程式變得更好的 code review 指導方針。&lt;/p&gt;
+&lt;p&gt;讓我們向 Google 取經吧 &lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;。Google 在 &amp;ldquo;&lt;a href=&#34;https://google.github.io/eng-practices/review/reviewer/looking-for.html&#34;&gt;What to look for in a code review&lt;/a&gt;&amp;rdquo; 一文建議了一些 review 的重點：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Design&lt;/li&gt;
+&lt;li&gt;Functionality&lt;/li&gt;
+&lt;li&gt;Complexity&lt;/li&gt;
+&lt;li&gt;Tests&lt;/li&gt;
+&lt;li&gt;Naming&lt;/li&gt;
+&lt;li&gt;Comments&lt;/li&gt;
+&lt;li&gt;Style&lt;/li&gt;
+&lt;li&gt;Consistency&lt;/li&gt;
+&lt;li&gt;Documentation&lt;/li&gt;
+&lt;li&gt;Every line&lt;/li&gt;
+&lt;li&gt;Context&lt;/li&gt;
+&lt;li&gt;Good things&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;《&lt;a href=&#34;https://williampjyeh.notion.site/999d5b9d126a4da39db13eaa401d6ab3&#34;&gt;軟體測試實務：業界成功案例與高效實踐（第一冊）&lt;/a&gt;》第四章也建議了一些 code review 的重點：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;是否有明顯的邏輯錯誤？&lt;/li&gt;
+&lt;li&gt;有無遵循既有的程式碼編寫規範？&lt;/li&gt;
+&lt;li&gt;邏輯的測試保護足夠嗎？&lt;/li&gt;
+&lt;li&gt;有完整實現需求嗎？&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;如果是在 DevOps 合一的團隊，甚至還會 review 一些 design for observability 的要點。以上都很值得放在團隊的 Definition of Done 或 PR/MR template。&lt;/p&gt;
+&lt;p&gt;注意事項洋洋灑灑，每當有「現在可不可以暫時跳過？」的衝動時，或許該換個角度自問：「此刻若不好好 review 這些地方，我能承擔抄捷徑的後果嗎？」&lt;/p&gt;
+&lt;h3 id=&#34;small-batch&#34;&gt;Small batch&lt;/h3&gt;
+&lt;p&gt;敏捷陣營推崇小批量開發：小批量的東西容易估算，容易寫，容易理解，容易測試，容易部署，容易取得回饋，容易歸因。&lt;/p&gt;
+&lt;p&gt;DevOps 陣營也推崇小批量。Google 在 &amp;ldquo;&lt;a href=&#34;https://cloud.google.com/architecture/devops/devops-process-working-in-small-batches&#34;&gt;DevOps process: Working in small batches&lt;/a&gt;&amp;rdquo; 一文說道：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Working in small batches is one of a set of capabilities that drive higher software delivery and organizational performance. These capabilities were discovered by the DORA State of DevOps research program, an independent, academically rigorous investigation into the practices and capabilities that drive high performance.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;如果不是因為技術問題無法小批量提交 PR/MR，而是因為上游的 backlog item 就是如此大，或許團隊可以嘗試在 Sprint Planning 或 Refinement 時套用 &lt;a href=&#34;//william-yeh.net/post/2022/11/spidr/&#34;&gt;SPIDR 法&lt;/a&gt;來拆解過大的 backlog item。&lt;/p&gt;
+&lt;h3 id=&#34;domain-knowledge&#34;&gt;Domain knowledge&lt;/h3&gt;
+&lt;p&gt;如果身處教育資源不那麼完備的團隊，想要養成領域知識，得自助加上人助：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;自助：盡量回到學生時期的好學心態，並盡量掌握有效率的學習方法。尤其是近年來流行的卡片盒筆記法，很值得一試。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;人助：尋求協助，並設法將學到的東西反饋到團隊的公共資產：文件、簡報、錄影、自動化測試，造福你的左右鄰兵，也造福後人。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;context&#34;&gt;Context&lt;/h3&gt;
+&lt;p&gt;即使有了領域知識，但論及理解需求，又是另外一回事了。&lt;/p&gt;
+&lt;p&gt;理解需求，除了老生常談的敏感度、傾聽與提問技巧之外，敏捷圈發展出來的 &lt;a href=&#34;https://gojko.net/books/specification-by-example/&#34;&gt;Specification by Example&lt;/a&gt; 技術，很值得大家嘗試。&lt;/p&gt;
+&lt;p&gt;而且，既然都已經口頭問出來這些實例了，何妨順便用驗收測試予以固化？&lt;/p&gt;
+&lt;h3 id=&#34;config&#34;&gt;Config&lt;/h3&gt;
+&lt;p&gt;現代軟體不能只顧好核心業務邏輯，還得處理全球化、客製化、混合雲、多租戶等外圍需求，要能透過 feature flag 動態即時切換，甚至還要能讓用戶自助服務。&lt;/p&gt;
+&lt;p&gt;組態管理比以往重要許多，複雜度不亞於程式碼管理，有時甚至超過。&lt;/p&gt;
+&lt;p&gt;程式碼的管理，有 git flow、GitHub flow、GitLab flow 等流行的作法，那麼，組態管理呢？&lt;/p&gt;
+&lt;p&gt;對於 legacy 系統，盤點既有組態，給予合適的現狀描述，至少是第一步。考古之餘，別忘了反饋到團隊的公共資產上。&lt;/p&gt;
+&lt;h2 id=&#34;-凝聚團隊公約的共識&#34;&gt;③ 凝聚團隊公約的共識&lt;/h2&gt;
+&lt;p&gt;Code review 是兩個人之間的活動，一個是 reviewer，另一個是 reviewee。喔，其實更常見的情況是，reviewer 要寫成複數 &amp;ldquo;reviewers&amp;rdquo;。&lt;/p&gt;
+&lt;p&gt;Code review 不只是兩個人之間的活動，更是團隊的活動。&lt;/p&gt;
+&lt;p&gt;Marcus Buckingham 在〈&lt;a href=&#34;https://www.hbrtaiwan.com/special-topics/18933/power-of-hidden-team&#34;&gt;隱藏版團隊力量大 (Power of Hidden Teams)&lt;/a&gt;〉一文提到團隊的力量 &lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;大多數工作實際上都是團隊進行的工作。團隊是你工作經驗的現實。你的責任似乎連結到其他人的責任；你的長處似乎能與其他人的長處互補；你的左右都有人幫你留意，讓你保持自信，對你的工作給予回應，分享你對「好」的想法，在你看起來快要承受不住時伸出援手，並在你陷入困境時給予意見。這種團隊體驗的品質，正是你工作體驗的品質。&lt;/p&gt;
+&lt;p&gt;你的團隊體驗會促進很多事情：你在工作時的生產力；你在工作時是否感到快樂；你有多少創意、創新和復原力；以及你選擇留在公司多久。換句話說，在你的工作上，優秀的團隊和團隊合作不是「有了也不錯」的事物，而是必須要擁有。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;現代軟體研發是一個群體的事業， &lt;del&gt;有人就有江湖&lt;/del&gt;  有人就有協作的議題。Code review 既然是團隊的活動，免不了也會有 &lt;del&gt;江湖的議題&lt;/del&gt; 協作的議題。&lt;/p&gt;
+&lt;p&gt;若你的團隊已經啟動 Scrum，以下都是很值得在 retrospective 充分探討的好議題，讓團隊公約成為團隊協作的助力。&lt;/p&gt;
+&lt;h3 id=&#34;過與不及的拿捏&#34;&gt;過與不及的拿捏&lt;/h3&gt;
+&lt;p&gt;Code review 的尺度，該鬆還是該緊？&lt;/p&gt;
+&lt;p&gt;「太鬆」當然並非我們樂見，但「太緊」呢？&lt;/p&gt;
+&lt;p&gt;如果團隊對於鬆與緊的尺度難以達到共識，不妨聽聽看 Google 怎麼說。&lt;/p&gt;
+&lt;p&gt;Google 在 &amp;ldquo;&lt;a href=&#34;https://google.github.io/eng-practices/review/reviewer/looking-for.html&#34;&gt;What to look for in a code review&lt;/a&gt;&amp;rdquo; 一文提出他們認為最起碼的品質標準是：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Don&amp;rsquo;t accept CLs (change lists) that degrade the code health of the system.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;在業界，我們常暱稱它是「童子軍規則」(The Boy Scout Rule)：「離開營地前，讓營地比使用前更加乾淨。Always leave the campground cleaner than you found it.」&lt;/p&gt;
+&lt;p&gt;至於尺度太緊的問題，Google 在 &amp;ldquo;&lt;a href=&#34;https://google.github.io/eng-practices/review/reviewer/standard.html&#34;&gt;The Standard of code review&lt;/a&gt;&amp;rdquo; 一文提出他們的看法：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;In general, reviewers should favor approving a CL once it is in a state where it definitely improves the overall code health of the system being worked on, even if the CL isn&amp;rsquo;t perfect.  That is &lt;em&gt;the&lt;/em&gt; senior principle among all of the code review guidelines.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;儘管 Google 是菁英薈萃之地，但關於這一點倒是滿務實的，不會追求完美主義。&lt;/p&gt;
+&lt;h3 id=&#34;cadence&#34;&gt;Cadence&lt;/h3&gt;
+&lt;p&gt;很多人怕 code review 會打斷別人的工作節奏，也怕自己的節奏被打斷。因此我常常看到看板上面擠壓許多有待 review 的 PR/MR，我輔導過的團隊，也幾乎都會在 retrospective 提出這項熱門議題。&lt;/p&gt;
+&lt;p&gt;聽聽看 Google 怎麼說。&amp;quot;&lt;a href=&#34;https://google.github.io/eng-practices/review/reviewer/speed.html&#34;&gt;Speed of Code Reviews&lt;/a&gt;&amp;quot; 一文主張：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;If you are not in the middle of a focused task, you should do a code review shortly after it comes in.  One business day is the maximum time it should take to respond to a code review request.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;可見 Google 很務實地將焦點放在 flow 上面：若無特殊理由，要以團隊目標為重。&lt;/p&gt;
+&lt;p&gt;《&lt;a href=&#34;https://williampjyeh.notion.site/999d5b9d126a4da39db13eaa401d6ab3&#34;&gt;軟體測試實務：業界成功案例與高效實踐（第一冊）&lt;/a&gt;》第四章則提出團隊一起 code review 的常見做法，以避免個別人士零零星星被打斷：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;除了找另一個團隊成員協助 code review 外，在多數團隊成員不熟悉相關程式碼時，我們也會有 mob code review，去加強知識擴散的效果。&lt;/p&gt;
+&lt;p&gt;鑑於此種需要專心投入的特質，有些團隊會直接定時進行 mob code review（例如：每日 daily meeting 之後或是下班之前），以避免當前工作被打斷。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;大家可以參考這些業界常見的做法，改善自己團隊的 code review 節奏。&lt;/p&gt;
+&lt;h3 id=&#34;process&#34;&gt;Process&lt;/h3&gt;
+&lt;p&gt;敏捷路線不太鼓勵過多 top-down 的流程約束，更希望團隊基於經驗主義自行湧現出合適的流程。我鼓勵團隊挑選感興趣的部份實踐看看，並在 retrospective 充分反思。&lt;/p&gt;
+&lt;p&gt;如果你是走 Scrum 路線，請善用 Definition of Done 作為品質共識。像《&lt;a href=&#34;https://williampjyeh.notion.site/999d5b9d126a4da39db13eaa401d6ab3&#34;&gt;軟體測試實務：業界成功案例與高效實踐（第一冊）&lt;/a&gt;》第四章就提到：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;有些團隊甚至在他們的實體或 Jira 的 Scrum board 上，將 code review 強制設為必需通過的一個階段，未 code review 過的任務就不算完成。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;列入 Definition of Done 還有一個好處：code review 就不再是隱藏成本，而是正大光明的 task，需要被規劃，需要被估點，也需要認真投入。&lt;/p&gt;
+&lt;p&gt;如果你是走 Kanban 路線，可考慮新增一個名叫 &amp;ldquo;code review&amp;rdquo; 的 column，並設下 WIP 及 policy。接下來，你會驚訝地發現 code review 的 flow 是多麼順暢⋯⋯或是不順暢。請善用 Kanban 視覺化的威力。&lt;/p&gt;
+&lt;h2 id=&#34;-嘗試更好的協同理解技巧&#34;&gt;④ 嘗試更好的協同理解技巧&lt;/h2&gt;
+&lt;p&gt;在理想世界中，我們程式要實作的任務很單純，所需的背景知識大家都有，程式碼寫得清晰易懂，PR/MR 也充分交代 reviewer 需注意的事項。這種情況下，reviewer 或許只需要動動眼、動動滑鼠、動動腦，就能善盡 code review 責任。&lt;/p&gt;
+&lt;p&gt;理想世界不常發生，是吧？&lt;/p&gt;
+&lt;p&gt;真實世界中，要實作的任務不那麼單純，所需的背景知識不見得大家都有，程式碼埋藏一些神祕邏輯，如果我們繼續仰賴低頻寬的程式碼溝通方式，會讓 reviewer 只能根據眼前所見的浮面資訊進行浮面的 review，最終只能算是表面工夫的 review，輸出低品質的程式。&lt;/p&gt;
+&lt;p&gt;因此，整個團隊都需要學習更好的協同理解技巧：放大溝通頻寬，尋求深度資訊。&lt;/p&gt;
+&lt;h3 id=&#34;放大溝通頻寬&#34;&gt;放大溝通頻寬&lt;/h3&gt;
+&lt;p&gt;一對一的溝通頻寬太低了，有必要的話，集體一起 code review 吧。&lt;/p&gt;
+&lt;p&gt;程式碼的溝通頻寬太低了，大家可以善用嘴巴，善用白板、螢幕（如果你們坐在附近）、投影機（如果需要多人一起看）、遠距會議軟體（如果是異地辦公的團隊）。&lt;/p&gt;
+&lt;p&gt;《&lt;a href=&#34;https://williampjyeh.notion.site/999d5b9d126a4da39db13eaa401d6ab3&#34;&gt;軟體測試實務：業界成功案例與高效實踐（第一冊）&lt;/a&gt;》第四章就介紹過這種大絕招：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;除了找另一個團隊成員協助 code review 外，在多數團隊成員不熟悉相關程式碼時，我們也會有 mob code review，去加強知識擴散的效果。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;如果連這種大絕招都無效，或許團隊成員彼此落差實在太大，需要長期治療。&lt;/p&gt;
+&lt;h3 id=&#34;尋求深度資訊&#34;&gt;尋求深度資訊&lt;/h3&gt;
+&lt;p&gt;避免 reviewer 只能根據浮面資訊進行浮面的 review，團隊需要提供更多深度資訊以協助 reviewer。&lt;/p&gt;
+&lt;p&gt;我從 &amp;ldquo;&lt;a href=&#34;https://axolo.co/blog/part-3-github-pull-request-template&#34;&gt;GitHub pull request template&lt;/a&gt;&amp;rdquo; 摘錄一些有助於 code review 的資訊，可做為大家的出發點：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Ticket number and link&lt;/li&gt;
+&lt;li&gt;How has this been tested?
+&lt;ul&gt;
+&lt;li&gt;Please describe the tests that you ran to verify your design. Provide instructions so we can &lt;em&gt;reproduce&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;Please also list any relevant details for your test configuration.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Checklist:
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; I have &lt;em&gt;commented&lt;/em&gt; my code, particularly in hard-to-understand areas&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; I have made corresponding changes to the &lt;em&gt;documentation&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; I have added tests that &lt;em&gt;prove&lt;/em&gt; my fix is effective or that my feature works&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; New and existing &lt;em&gt;unit tests&lt;/em&gt; pass locally with my changes&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Screenshots (if appropriate)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;我還曾經身處於有這種內規的團隊：「沒看到 unit test 的報表，就不予以 code review。」很硬！但那卻是我非常享受程式設計的一段經歷。&lt;/p&gt;
+&lt;h2 id=&#34;-讓進步看得見&#34;&gt;⑤ 讓進步看得見&lt;/h2&gt;
+&lt;p&gt;Code review 的目的，是善用集體智慧提升設計品質，促成知識共享，讓我們工作更有成就感，更有信心能夠交付價值，也更少因不慎流出去的瑕疵而疲於奔命。&lt;/p&gt;
+&lt;p&gt;直接的效益是：提升品質，降低風險，間接的效益是：提升團隊的長期生產力，進而縮短上市時間，提升客戶滿意度。&lt;/p&gt;
+&lt;p&gt;這些效益都是偏向企業內部流程的構面，甚至是學習與成長的構面，偏向落後指標，且都不容易直接衡量。若以系統思考角度來說，這些效益有很明顯的滯延現象，短期內甚至還可能不利，急功近利的人，很容易因此落入「捨本逐末」(shifting the burden) 及「目標侵蝕」(eroding goals) 的陷阱。&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/09/code-review-cld.png&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2023/09/code-review-cld.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;認清根本解具有滯延現象，且選擇正面對決之後，才能接下去探討如何衡量成效。&lt;/p&gt;
+&lt;p&gt;這篇從 code review 出發的文章，一路看到這裡，大家應該很清楚，對於提升品質、降低風險、提升團隊生產力⋯⋯這些我們想要的成效，code review 只是手法之一，單獨只有這一個手法是無益的，勢必得搭配衍生的配套措施。因此，code review 的成效也不宜單獨看待，需連同其他配套措施一起衡量才比較實際。&lt;/p&gt;
+&lt;p&gt;不同的團隊，成熟度各異，管理者需要正視不同的現況，擬定不同的改進措施、衡量方式及目標狀態，並且要分階段。&lt;/p&gt;
+&lt;p&gt;譬如說，以領先指標來看：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;推動 collective ownership 的同時，可嘗試衡量 Scrum 五大活動參與度、PR 參與度、Sprint Backlog Items 分工多元性。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;推動 working backwards 的同時，可嘗試衡量 Sprint Backlog Items 的 acceptance test 完備度、design for observability 完備度、test 涵蓋率。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;推動 clean code 的同時，可嘗試衡量原始碼品質指標，並搭載於 CI 系統。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;以落後指標來看：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;關注 flow cadence 的同時，可嘗試衡量看板的 cumulative flow diagram。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;關注最終交付品質的同時，可嘗試衡量 change failure rate——這正好是 DORA (DevOps Research and Assessment) 四大指標其中之一。&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;最後，即使我們已經盡其所能把關品質，但很不幸 defect 仍然流了出去造成影響，亡羊補牢之餘，我們也需要關注 regression test 是否落實：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;針對已流出去造成影響的 defect，可嘗試衡量 regression test 涵蓋率。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;-支持長久研發的措施&#34;&gt;⑥ 支持長久研發的措施&lt;/h2&gt;
+&lt;p&gt;個人具備正確的品質基本信念，掌握了基本功與領域知識，團隊擁有公約共識，也掌握了更好的協同理解技巧，接下來就是這個大哉問了：周圍的環境，是否可以促成 code review 及相關的關鍵行為？&lt;/p&gt;
+&lt;h3 id=&#34;事&#34;&gt;事&lt;/h3&gt;
+&lt;p&gt;品質不是白吃的午餐，計畫與設計出內建品質，是需要時間、精力、技能的。&lt;/p&gt;
+&lt;p&gt;如果整個團隊已經開始嘗試用更好的方法進行 code review 及相關活動，但仍然受阻於事情太多、時間太少，或許這就要回到 Product Backlog Items 的基本問題了。請團隊試著問問自己幾個問題：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;即使可能有複數個上游來源，但團隊是否最後只會有一份透明化的 Product Backlog？&lt;/li&gt;
+&lt;li&gt;團隊是認真看待 Product Backlog 的嗎？&lt;/li&gt;
+&lt;li&gt;PO 是根據什麼原則管理 Product Backlog 的？&lt;/li&gt;
+&lt;li&gt;團隊 Sprint Planning 及 Refinement 是如何進行的？&lt;/li&gt;
+&lt;li&gt;品質、flow 相關議題在 Retrospective 裡面是如何被討論的？&lt;/li&gt;
+&lt;li&gt;Retrospective 是玩真的嗎？&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;思考過一輪，應該可以更好的區隔出：究竟是外面的問題，還是自己的問題。針對前者，再去尋求協助。&lt;/p&gt;
+&lt;h3 id=&#34;物&#34;&gt;物&lt;/h3&gt;
+&lt;p&gt;想讓 PR/MR template 所要求的種種事項具體發揮效用，需要自動化環境的支持，尤其是與 CI/CD 高度連動的環境。&lt;/p&gt;
+&lt;p&gt;這是得持續投入的基礎建設，沒有捷徑。&lt;/p&gt;
+&lt;h3 id=&#34;人&#34;&gt;人&lt;/h3&gt;
+&lt;p&gt;Code review 及相關的配套措施，需要有一定的技術能力。&lt;/p&gt;
+&lt;p&gt;大規模敏捷框架 LeSS 在探討 &amp;ldquo;&lt;a href=&#34;https://less.works/less/technical-excellence&#34;&gt;technical excellence&lt;/a&gt;&amp;rdquo; 時，有一段語重心長的話：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;There is no magic to them, most people are able to learn them. However, most people are &lt;em&gt;not&lt;/em&gt; aware of these after they graduated from university and hence, your organization &lt;strong&gt;will&lt;/strong&gt; need to invest in these, usually via coaching.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;簡單的說，自立自強固然可行，但若有好的前輩或教練親自帶領，將會事半功倍。&lt;/p&gt;
+&lt;p&gt;這就是團隊裡資深同仁的責任了。我期許你們能在③④提到的種種團隊協作活動中，以身作則，起示範作用。把整個團隊的水平提升到某個地步，有團隊整體戰力當你的後盾，也才能夠發揮更大的價值。&lt;/p&gt;
+&lt;h2 id=&#34;結語&#34;&gt;結語&lt;/h2&gt;
+&lt;p&gt;品質改善具有滯延現象，需要正確思路與堅定決心，才能避免捨本逐末與目標侵蝕的陷阱。&lt;/p&gt;
+&lt;p&gt;本文探討從 code review 出發並衍生出來的六大議題，也建議一些可供個人、團隊、組織開始嘗試推動的事項。&lt;/p&gt;
+&lt;p&gt;提升品質，不必然意味著降低研發效率。讓我們持續學習與探索如何聰明地做事。&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;關於「公車指數」(bus factor)，可參考以下兩篇文章：〈&lt;a href=&#34;https://blog.yveslin.com/2015/11/24/measure-sustainability-bus-factor/&#34;&gt;少一個差很多：算算團隊的公車指數&lt;/a&gt;〉、〈&lt;a href=&#34;https://agile.ithome.com.tw/2022/news-page/271&#34;&gt;你的團隊「合作無間」嗎？嘗試用「公車指數」衡量現況吧！&lt;/a&gt;〉。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;建議大家讀讀 Google 公開的 &lt;a href=&#34;https://github.com/google/eng-practices&#34;&gt;&lt;em&gt;Google Engineering Practices Documentation&lt;/em&gt;&lt;/a&gt;，最近也有保哥的&lt;a href=&#34;https://eng-practices.gh.miniasp.com&#34;&gt;中譯版&lt;/a&gt; 。&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;
+&lt;p&gt;如果你無法閱讀全文，也可收聽這一集 podcast：〈&lt;a href=&#34;https://podcasts.google.com/feed/aHR0cHM6Ly9mZWVkcy5zb3VuZG9uLmZtL3BvZGNhc3RzLzQxNDAzM2IzLTkwNmQtNGI4YS04MDM0LWNiOTM1NzBiNjc5NS54bWw/episode/YjgyOTQ1YjYtYTdiOS00N2I3LTg5OTMtZmE5NTU4NzVlMDM5?ep=14&#34;&gt;員工投入程度來自&amp;hellip; 這個隱藏因素，你發現了嗎？&lt;/a&gt;〉&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:4&#34;&gt;
+&lt;p&gt;關於 DORA 四大指標，可參考 &amp;ldquo;&lt;a href=&#34;https://cloud.google.com/blog/products/devops-sre/using-the-four-keys-to-measure-your-devops-performance&#34;&gt;Are you an Elite DevOps performer? Find out with the Four Key Project&lt;/a&gt;&amp;rdquo; 一文，更詳細的說明，請參考《&lt;a href=&#34;https://findbook.com.tw/9789863126959&#34;&gt;Accelerate：精益軟體與 DevOps 背後的科學&lt;/a&gt;》一書。&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description>
+      
     </item>
+    
     <item>
       <title>很簡單的東西，也要單元測試嗎？</title>
       <link>//william-yeh.net/post/2022/05/need-for-unit-testing/</link>
       <pubDate>Tue, 24 May 2022 12:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2022/05/need-for-unit-testing/</guid>
-      <description>&lt;p&gt;（改寫自公司內部 memo）&lt;/p&gt;&#xA;&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;&#xA;&lt;p&gt;Hi all engineers,&lt;/p&gt;&#xA;&lt;p&gt;上完一整天單元測試課程之後，有同事問我：「有沒有標準來決定要不要寫單元測試？」&lt;/p&gt;&#xA;&lt;p&gt;剛讀完劉潤《&lt;a href=&#34;https://www.books.com.tw/products/0010919211&#34;&gt;底層邏輯&lt;/a&gt;》的我，對於這類疑似「注射器」的問句格外敏感。雖然我可以瀟灑引述 &lt;a href=&#34;https://www.tenlong.com.tw/products/9789864344000&#34;&gt;&lt;em&gt;Working Effectively with Legacy Code&lt;/em&gt;&lt;/a&gt; 的說法「我毫無疑問地將『遺留程式碼』定義為『&lt;strong&gt;沒有編寫測試的程式碼&lt;/strong&gt;』」：&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;沒有編寫測試的程式碼是糟糕的程式碼——不管我們多麼細心地編寫它們，不管它們有多漂亮、物件導向或封裝良好。有了測試，我們就能夠迅速、可驗證地修改程式碼的行為。沒有測試，我們就不知道修改後的程式碼，實際上是變得更好還是更糟。&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;p&gt;但當下我還是決定先展開一場對話。&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;（改寫自公司內部 memo）&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;Hi all engineers,&lt;/p&gt;
+&lt;p&gt;上完一整天單元測試課程之後，有同事問我：「有沒有標準來決定要不要寫單元測試？」&lt;/p&gt;
+&lt;p&gt;剛讀完劉潤《&lt;a href=&#34;https://www.books.com.tw/products/0010919211&#34;&gt;底層邏輯&lt;/a&gt;》的我，對於這類疑似「注射器」的問句格外敏感。雖然我可以瀟灑引述 &lt;a href=&#34;https://www.tenlong.com.tw/products/9789864344000&#34;&gt;&lt;em&gt;Working Effectively with Legacy Code&lt;/em&gt;&lt;/a&gt; 的說法「我毫無疑問地將『遺留程式碼』定義為『&lt;strong&gt;沒有編寫測試的程式碼&lt;/strong&gt;』」：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;沒有編寫測試的程式碼是糟糕的程式碼——不管我們多麼細心地編寫它們，不管它們有多漂亮、物件導向或封裝良好。有了測試，我們就能夠迅速、可驗證地修改程式碼的行為。沒有測試，我們就不知道修改後的程式碼，實際上是變得更好還是更糟。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;但當下我還是決定先展開一場對話。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;我：「我一時想不出來有沒有合適的標準，但我有一個簡單的 gut feeling 來判斷：如果我沒有把握證明這段程式碼會表現出該有的行為，那麼我就應該考慮替它加一段測試，用測試來表現出這段程式碼的確忠實表現出該有的行為，&lt;strong&gt;讓測試來說話&lt;/strong&gt;。」&lt;/p&gt;
+&lt;p&gt;同事：「即使是很簡單的程式碼，也需要加單元測試嗎？這會不會太麻煩了？」&lt;/p&gt;
+&lt;p&gt;我心中頓時浮現一個聲音：“如果你有 &lt;strong&gt;TDD (test-driven design)&lt;/strong&gt; 的觀念或紀律，就不會有此一問了。再簡單的程式碼，都會測試先行——何況，簡單的程式碼，對應的單元測試會很難嗎？如果很難很繁雜，那麼，或許這程式碼本身並沒有當初想像中那麼簡單。”&lt;/p&gt;
+&lt;p&gt;但當下我還是決定繼續對話，先不要說教⋯⋯&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;我：「能不能舉一個『簡單的程式碼』的例子？」&lt;/p&gt;
+&lt;p&gt;同事：「就像某一個 function，它會先檢查輸入的日期格式，如果格式不是 &lt;code&gt;yyyy/mm/dd&lt;/code&gt; 就會失敗；如果格式對了，就會繼續往下做正事⋯⋯」&lt;/p&gt;
+&lt;p&gt;我：「且慢，你所說的『如果格式不對，就會失敗』這句話，所謂的『失敗』是指什麼？」&lt;/p&gt;
+&lt;p&gt;同事：「啊⋯⋯就是失敗呀！」&lt;/p&gt;
+&lt;p&gt;我：「讓我們用程式語言的角度來講。你所謂的『失敗』，是指 return false 呢，還是 throw exception？」&lt;/p&gt;
+&lt;p&gt;同事：「嗯，以這個例子來說，是 throw exception。」&lt;/p&gt;
+&lt;p&gt;我：「好的，那麼，你怎麼證明，在遇到錯誤的日期格式時，你的程式碼真的會 throw exception？」&lt;/p&gt;
+&lt;p&gt;同事靜默中⋯⋯&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;我：「在談論寫不寫單元測試時，我想稍微區分一下問題，究竟是 ❶ 不會寫，或者是 ❷ 懶得寫？」&lt;/p&gt;
+&lt;p&gt;我：「就以這一個例子來說，你知道該怎麼單元測試嗎？」&lt;/p&gt;
+&lt;p&gt;同事靜默中⋯⋯&lt;/p&gt;
+&lt;p&gt;我：「目前的主流單元測試框架，都有 &lt;a href=&#34;https://docs.microsoft.com/en-us/dotnet/api/microsoft.visualstudio.testtools.unittesting.assert.throwsexception&#34;&gt;Assert.ThrowsException&lt;/a&gt; 或 &lt;a href=&#34;https://docs.microsoft.com/en-us/dotnet/api/microsoft.visualstudio.testtools.unittesting.assert.throwsexceptionasync&#34;&gt;Assert.ThrowsExceptionAsync&lt;/a&gt; 之類的設施去處理 exception，所以『❶ 不會寫』就不成立了。只剩下一個問題：『❷ 懶得寫』。」&lt;/p&gt;
+&lt;p&gt;我：「你會在這段 function 一開頭的 doc comment 陳述說：『如果日期格式錯誤，會 throw XXX exception』嗎？」&lt;/p&gt;
+&lt;p&gt;同事：「會。」&lt;/p&gt;
+&lt;p&gt;（他大概不敢當面說不會，因為我兩個月前才寫過一篇內部 memo 講 &amp;ldquo;doc comment&amp;rdquo; 這件事。）&lt;/p&gt;
+&lt;p&gt;我：「針對 throw exception 這個行為，既然你都已經花時間寫程式了，也都已經花時間寫 doc comment 了，為什麼不順手寫一小段單元測試來證明你的程式碼與 doc comment 是&lt;strong&gt;對齊&lt;/strong&gt;的，&lt;strong&gt;讓測試來說話&lt;/strong&gt;？」&lt;/p&gt;
+&lt;p&gt;同事靜默中⋯⋯&lt;/p&gt;
+&lt;p&gt;我：「而且，你寫的程式，不只是給現在的你自己看，不只是給 code reviewers 看，也會給幾個月後、甚至一兩年後接手維護的其他人看。萬一有一天，別人沒注意到『日期格式』這件事就改寫這段程式碼，你的程式又沒有單元測試的保護，你會不會擔心對方把你的程式改壞了？」&lt;/p&gt;
+&lt;p&gt;同事靜默中⋯⋯&lt;/p&gt;
+&lt;p&gt;我：「所以在單元測試課堂的開場致詞中，我強調：『&lt;strong&gt;單元測試是程式設計師的職業道德&lt;/strong&gt;』，就是這個意思。」&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;最後，請容我引述《&lt;a href=&#34;https://www.tenlong.com.tw/products/9787115467768&#34;&gt;修改軟件的藝術 (&lt;em&gt;Beyond Legacy Code&lt;/em&gt;)&lt;/a&gt;》裡面的金句：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在編寫程式碼之後才編寫測試，往往會發現程式碼難以測試，需要大量的清理來讓其可以測試，這可能會成為一個大工程。最好是一開始就編寫出&lt;strong&gt;可測試的程式碼&lt;/strong&gt;，而編寫可測試程式碼的最好方式是&lt;strong&gt;先編寫測試&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;沒法進行測試，則說明我有些設計問題需要重新進行思考。&lt;/p&gt;
+&lt;p&gt;應該假設測試集是對整個用戶故事的完整定義。如果沒有用測試來描述一個行為，那麼這個行為很可能是錯的。&lt;strong&gt;任何沒有在測試集中體現的行為，都被視為不存在&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;測試集不僅驗證行為，而且描述行為。&lt;strong&gt;用測試描述行為，從而建立活的文檔&lt;/strong&gt;。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;（PS. 以上情節，是根據實際對話加油添醋改編而成，請勿對號入座。）&lt;/p&gt;</description>
+      
     </item>
+    
   </channel>
 </rss>

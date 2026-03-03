@@ -4,72 +4,1325 @@
     <title>Measurement on Potioneer&#39;s Essays</title>
     <link>//william-yeh.net/tags/measurement/</link>
     <description>Recent content in Measurement on Potioneer&#39;s Essays</description>
-    <generator>Hugo</generator>
+    <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <lastBuildDate>Tue, 13 Feb 2024 21:00:00 +0800</lastBuildDate>
-    <atom:link href="//william-yeh.net/tags/measurement/index.xml" rel="self" type="application/rss+xml" />
+    
+        <atom:link href="//william-yeh.net/tags/measurement/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>咬文嚼字的必要性（二）：階段性的預期成果設定</title>
       <link>//william-yeh.net/post/2024/02/outcome-sentence-patterns/</link>
       <pubDate>Tue, 13 Feb 2024 21:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2024/02/outcome-sentence-patterns/</guid>
-      <description>&lt;p&gt;不管是專案管理領域還是目標管理領域，「階段性的預期成果設定」都是很重要的基本動作。&lt;/p&gt;&#xA;&lt;p&gt;不過，多年下來，我常常看到怪怪的，但又說不上來哪裡不對勁的例子。因此，我想找找是否有建議的寫法，甚至句型，作為團隊的共同語言。&lt;/p&gt;&#xA;&lt;p&gt;此文針對 ① 專案管理領域的 milestone 與 ② 目標管理領域的 key result 兩方面來探討。&lt;/p&gt;&#xA;&#xA;&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;&#xA;&lt;div class=&#34;box&#34;&gt;&#xA;&lt;figure  itemprop=&#34;associatedMedia&#34;&#xA;  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; &#xA;  style=&#34;max-width:30em&#34; &gt;&#xA;    &lt;div class=&#34;img&#34;&gt;&#xA;      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2024/02/goal-setting.jpg&#34; /&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;a href=&#34;//william-yeh.net/img/2024/02/goal-setting.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;&#xA;  &lt;/figure&gt;&#xA;&lt;/div&gt;</description>
+      
+        <description>&lt;p&gt;不管是專案管理領域還是目標管理領域，「階段性的預期成果設定」都是很重要的基本動作。&lt;/p&gt;
+&lt;p&gt;不過，多年下來，我常常看到怪怪的，但又說不上來哪裡不對勁的例子。因此，我想找找是否有建議的寫法，甚至句型，作為團隊的共同語言。&lt;/p&gt;
+&lt;p&gt;此文針對 ① 專案管理領域的 milestone 與 ② 目標管理領域的 key result 兩方面來探討。&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2024/02/goal-setting.jpg&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2024/02/goal-setting.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;專案管理領域的-milestone&#34;&gt;專案管理領域的 Milestone&lt;/h2&gt;
+&lt;p&gt;Milestone 是很常被設錯的東西。部份原因是對於「milestone 到底是什麼、作用是什麼」有了錯誤的認知。&lt;/p&gt;
+&lt;h3 id=&#34;milestone-是什麼&#34;&gt;Milestone 是什麼？&lt;/h3&gt;
+&lt;p&gt;如果你用慣了專案管理軟體，在你的印象中，milestone 或許只是一個「duration 為 0」的 activity/task &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; 。如果從這個角度來看，milestone 應該會是帶有動詞屬性的行為——或許可稱之為「瞬間行為」。但是，根據 &lt;a href=&#34;https://www.amazon.com/dp/1628256648&#34;&gt;PMBOK 第七版&lt;/a&gt;的說法，milestone 其實並不是一個帶有動詞屬性的行為，反而比較像是個偏向名詞屬性的「可見事物」：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Milestone. A significant &lt;strong&gt;point&lt;/strong&gt; or &lt;strong&gt;event&lt;/strong&gt; in a project, program, or portfolio.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;PMI 網站的文章 &amp;ldquo;&lt;a href=&#34;https://www.pmi.org/learning/library/milestone-different-planning-approach-7635&#34;&gt;Milestone planning &amp;ndash; a different planning approach&lt;/a&gt;&amp;rdquo; 則指出：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;A milestone anticipates what the project is supposed to achieve at a pre-set date. It should describe a &lt;strong&gt;desired state&lt;/strong&gt; of affairs, a &lt;strong&gt;desired future situation&lt;/strong&gt;. A milestone should describe &lt;strong&gt;what we want to achieve&lt;/strong&gt;; when we get there, that&amp;rsquo;s the event.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;milestone-的作用是什麼&#34;&gt;Milestone 的作用是什麼？&lt;/h3&gt;
+&lt;p&gt;簡單的說，milestone 是分而治之的控制點。再引述 &amp;ldquo;Milestone planning &amp;ndash; a different planning approach&amp;rdquo;  一文的說法：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Milestones are also &lt;strong&gt;control stations&lt;/strong&gt; in the project, an opportunity for stakeholders to assure themselves that the project is moving in the right direction.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;好的-milestone-該有什麼特性&#34;&gt;好的 milestone 該有什麼特性？&lt;/h3&gt;
+&lt;p&gt;根據李君婷老師【&lt;a href=&#34;https://shop.darencademy.com/product/view/id/70&#34;&gt;510 專案監管的系統思考與規則設計&lt;/a&gt;】的課程講義，好的 milestone 應該要有三個特性：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;精簡，清楚。&lt;/li&gt;
+&lt;li&gt;足以代表專案關鍵。&lt;/li&gt;
+&lt;li&gt;可被具體檢核。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&amp;ldquo;Milestone planning &amp;ndash; a different planning approach&amp;rdquo; 一文也說：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The way a milestone is formulated should allow us to determine whether the &lt;strong&gt;desired state&lt;/strong&gt; has been &lt;strong&gt;achieved&lt;/strong&gt; or not.&lt;/p&gt;
+&lt;p&gt;It is relatively simple to say whether a milestone has been reached if it is an &lt;strong&gt;actual object&lt;/strong&gt;, something we can &lt;strong&gt;inspect&lt;/strong&gt; and &lt;strong&gt;verify&lt;/strong&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;milestone-可能的句型&#34;&gt;Milestone 可能的句型？&lt;/h3&gt;
+&lt;p&gt;雖然我比較少看到有人直接建議 milestone 的句型，但從上述的探討，不難歸納出一些方向：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Actual object.&lt;/li&gt;
+&lt;li&gt;Desired state.&lt;/li&gt;
+&lt;li&gt;Inspectable &amp;amp; verifiable.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Rita Mulcahy 在 &lt;a href=&#34;https://www.amazon.com/dp/1932735658&#34;&gt;&lt;em&gt;PMP Exam Prep&lt;/em&gt;&lt;/a&gt; 一書也舉了一些例子：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Remember that milestones have no duration; they are simply the &lt;strong&gt;completion of activities&lt;/strong&gt;. Milestones may include &amp;ldquo;requirements are &lt;strong&gt;complete&lt;/strong&gt;&amp;rdquo; or &amp;ldquo;design is &lt;strong&gt;finished&lt;/strong&gt;&amp;rdquo;&amp;hellip;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;因此，我個人喜歡借用 &lt;a href=&#34;https://www.eventstorming.com/&#34;&gt;event storming&lt;/a&gt; 圈子對於 &amp;ldquo;event&amp;rdquo; 的建議句型：「事件的內容，用 past tense (過去式) 描述」。&lt;/p&gt;
+&lt;p&gt;應用到 milestone 身上，可選用「過去式」或「現在完成式」句型：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;英文加 -ed&lt;/strong&gt;。譬如：xx% migrated, yy% done, zzz approved.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;中文加「已」&lt;/strong&gt;。譬如：xxx 已完成、yyy 已測試、zzz 已驗收。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;okr-的-key-result&#34;&gt;OKR 的 &amp;ldquo;Key Result&amp;rdquo;&lt;/h2&gt;
+&lt;h3 id=&#34;key-result-是什麼&#34;&gt;Key Result 是什麼？&lt;/h3&gt;
+&lt;p&gt;OKR 原典《&lt;a href=&#34;https://www.books.com.tw/products/0010813170&#34;&gt;OKR：做最重要的事 (Measure What Matters)&lt;/a&gt;》是如此介紹 O 與 KR 的：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;「目標」就是我們想達成的&lt;strong&gt;事&lt;/strong&gt;，不多也不少。&lt;/p&gt;
+&lt;p&gt;「關鍵結果」界定 &lt;strong&gt;目標的標準&lt;/strong&gt; ，並且監控我們 &lt;strong&gt;「如何」達成&lt;/strong&gt; 。有效的關鍵結果不僅明確，而且有時限，是進取但又可行的。最重要的是，它們是可測量也可驗證的。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;key-result-的作用是什麼&#34;&gt;Key Result 的作用是什麼？&lt;/h3&gt;
+&lt;p&gt;《OKR：做最重要的事》如此說：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;目標設計和運用得當，可以防範模糊不清的思想，以及執行時的含混摸魚。&lt;/p&gt;
+&lt;p&gt;關鍵結果的要求只有「已滿足」或「未滿足」兩種可能，中間沒有灰色地帶或存疑的餘地。到了指定的期限（通常是一季結束時），我們就宣佈關鍵結果是否已達成。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;好的-key-result-該有什麼特性&#34;&gt;好的 Key Result 該有什麼特性？&lt;/h3&gt;
+&lt;p&gt;《OKR：做最重要的事》如此說：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;目標必然是重要、具體和行動導向的，最好還能激勵人心。&lt;/p&gt;
+&lt;p&gt;關鍵結果必須可以測量，而且，最後也只要用看的，完全不必提出任何理由，證明自己是否做到了。達成？還是沒達成？答案很簡單，不需要下判斷就能回答。&lt;/p&gt;
+&lt;p&gt;必須含有完成工作的證據。這種證據必須可取得、可信和容易發現。&lt;/p&gt;
+&lt;p&gt;編寫關鍵結果時，務必做到一件事：每一項關鍵結果都百分百達成，目標也就百分百達成。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;key-result-可能的句型&#34;&gt;Key Result 可能的句型？&lt;/h3&gt;
+&lt;p&gt;原始的《OKR：做最重要的事》論述中，似乎並沒有強調 O 與 KR 的句型。我只在此書附錄看到這麼一句最接近的話：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;關鍵結果代表 &lt;strong&gt;「如何」(How)&lt;/strong&gt; ，應該要表達 &lt;strong&gt;可衡量的里程碑&lt;/strong&gt; 。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;這句話點出兩個核心元素：方法、里程碑。&lt;/p&gt;
+&lt;p&gt;後來管顧圈加入推廣 OKR 運動，才漸漸發展出一些較具規範性的寫法，但似乎尚未形成集體的共識。不過，從他們的 OKR 論述中，常常看到「里程碑型」這種 KR 類型 &lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;。 因此，我個人很喜歡沿用前面探討過的「Milestone 句型」做為 KR 的句型骨幹。&lt;/p&gt;
+&lt;p&gt;如果還要更細膩一點，不妨將「如何」(How) 也放進 KR 句型當中。譬如說，李君婷老師【&lt;a href=&#34;https://shop.darencademy.com/product/view/id/95&#34;&gt;512 目標管理與團隊績效：統整 OKR 與 KPI 的有效實務&lt;/a&gt;】的課程講義，及《&lt;a href=&#34;https://www.books.com.tw/products/0010833361&#34;&gt;OKRs 執行力：華人實踐版&lt;/a&gt;》一書，都不約而同介紹過以下這種三合一寫法：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在 xxx 日期之前，透過 yyy 方法，完成 zzz 成果。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;以此句型為基礎，你可以再添加量化元素進去：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在 xxx 日期之前，透過 yyy 方法，達到 zzz% 成果。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;你可以把量化元素的起點與終點也寫進去：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在 xxx 日期之前，透過 yyy 方法，將 zzz 指標從 aaa 推進到 bbb。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;你也可以添加「資源運用」元素進去，就變成很有 OGSM 的味道：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在 xxx 日期之前，運用 yyy 資源，完成 zzz 成果。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;運用之妙，存乎一心。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;以上就是我個人慣用的 milestone 與 key result 句型。請掌握此基本句型，展現出內行氣。&lt;/p&gt;
+
+
+&lt;div class=&#34;notice notice--note&#34;&gt;
+  &lt;div class=&#34;notice__title&#34;&gt;
+    
+      【咬文嚼字的必要性】系列
+    
+  &lt;/div&gt;
+  &lt;div class=&#34;notice__content&#34;&gt;&lt;p&gt;❶ &lt;a href=&#34;//william-yeh.net/post/2018/01/precise-expression/&#34;&gt;咬文嚼字的必要性（一）：用句型輔助思考&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❷ 咬文嚼字的必要性（二）：階段性的預期成果設定&lt;/p&gt;
+&lt;p&gt;❸ &lt;a href=&#34;//william-yeh.net/post/2022/04/passphrase-at-work/&#34;&gt;請珍惜你們學到的通關密語&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;許多專案管理軟體都是透過「把 activity/task 的 duration 設為 0」的方式來標記 milestone。像 &lt;a href=&#34;https://support.microsoft.com/en-gb/office/add-a-milestone-583be27b-1659-4a7a-a047-e9b9cb6a4834&#34;&gt;Microsoft Project&lt;/a&gt;、&lt;a href=&#34;https://community.smartsheet.com/discussion/101507/how-can-i-get-smartsheet-to-show-zero-days-for-milestone-with-zero-days-duration&#34;&gt;Smartsheet&lt;/a&gt;、&lt;a href=&#34;https://www.projectplan365.com/training/lesson-2-create-milestones/&#34;&gt;Project Plan 365&lt;/a&gt;。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;像《&lt;a href=&#34;https://www.books.com.tw/products/0010817208&#34;&gt;執行 OKR，帶出強團隊&lt;/a&gt;》就將 OKR 分成基線型、正向度量型、負向度量型、範圍型、里程碑型五大類，而《&lt;a href=&#34;https://www.books.com.tw/products/0010833361&#34;&gt;OKRs 執行力：華人實踐版&lt;/a&gt;》也將 OKR 分成比率型、數量型、里程碑型、主觀型四大類。由此可見，「里程碑型」都是很被看重的一種 KR 類型。&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description>
+      
     </item>
+    
     <item>
       <title>如何衡量敏捷對於軟體研發效能的利益？</title>
       <link>//william-yeh.net/post/2023/12/dev-metrics/</link>
       <pubDate>Sun, 03 Dec 2023 20:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2023/12/dev-metrics/</guid>
-      <description>&lt;p&gt;面對敏捷或 DevOps 藥方，病人可能帶著各種不同的動機而來，但終歸都會提出同樣的疑問：我怎麼知道敏捷有沒有效？怎麼衡量成效？&lt;/p&gt;&#xA;&lt;p&gt;這問題，可能在導入之後的某個時刻會問，但更有可能像戰國時代梁惠王那樣，才剛第一次接見孟子，居然劈頭就問：「叟，不遠千里而來，亦將有以利吾國乎？」&lt;/p&gt;&#xA;&#xA;&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;&#xA;&lt;div class=&#34;box&#34;&gt;&#xA;&lt;figure  itemprop=&#34;associatedMedia&#34;&#xA;  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; &#xA;  style=&#34;max-width:30em&#34; &gt;&#xA;    &lt;div class=&#34;img&#34;&gt;&#xA;      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/12/mencius-dialogue.png&#34; alt=&#34;孟子見梁惠王&#34;/&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;a href=&#34;//william-yeh.net/img/2023/12/mencius-dialogue.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;&#xA;      &lt;figcaption&gt;&#xA;          &lt;p&gt;孟子見梁惠王&lt;/p&gt;&#xA;      &lt;/figcaption&gt;&#xA;  &lt;/figure&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;p&gt;對這議題，常有兩種極端的反應。&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;面對敏捷或 DevOps 藥方，病人可能帶著各種不同的動機而來，但終歸都會提出同樣的疑問：我怎麼知道敏捷有沒有效？怎麼衡量成效？&lt;/p&gt;
+&lt;p&gt;這問題，可能在導入之後的某個時刻會問，但更有可能像戰國時代梁惠王那樣，才剛第一次接見孟子，居然劈頭就問：「叟，不遠千里而來，亦將有以利吾國乎？」&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/12/mencius-dialogue.png&#34; alt=&#34;孟子見梁惠王&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2023/12/mencius-dialogue.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;孟子見梁惠王&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;對這議題，常有兩種極端的反應。&lt;/p&gt;
+&lt;p&gt;如果你像孟子一樣，一開頭就企圖曉以大義： &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;總經理呀，何必一開頭就談「衡量成效利益」呢？你更應該看重的是「內涵與精神」呀！&lt;/p&gt;
+&lt;p&gt;如果總經理成天想著「對我們的公司有什麼可衡量的成效」，主管成天想著「對我們部門有什麼可衡量的成效」，員工成天想著「對我個人有什麼可衡量的成效」，上下各自算計著成效利益，整間公司就很危險了！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;只怕你會像孟子一樣，很快就離開這個國家了。&lt;/p&gt;
+&lt;p&gt;輕蔑指標固然不可取，但另一個極端「指標狂人」也很可怕。&lt;/p&gt;
+&lt;p&gt;近年來「數位轉型」蔚為顯學，延燒到傳統產業，甚至連傳統管理顧問機構也來湊熱鬧。於是乎，世界就多了更多指標，更多成熟度衡量，更多培訓、證照、鑑定標章——更多所謂的「商機」。&lt;/p&gt;
+&lt;p&gt;這世界不缺指標，缺的是能引領有效行動的指標。若不懂軟體研發的獨特性，就會訂出沒有行動意義的落後指標，或是沒有合理因果證據的偽指標。就像 Bryan Finster 在 “&lt;a href=&#34;https://bdfinst.medium.com/5-minute-devops-mckinsey-gets-developer-productivity-wrong-573b57cd6f6a&#34;&gt;5 Minute DevOps: McKinsey Gets Developer Productivity Wrong&lt;/a&gt;” 一文對於某管顧公司近日端出的  “Developer Productivity” framework 所做的批評：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The real problem is that too many in management don’t understand the work they manage. Management can understand the &lt;strong&gt;intricacies of software engineering&lt;/strong&gt; if they become leaders and study the work they manage. Not all managers are leaders. Some simply want a framework to hold people accountable.&lt;/p&gt;
+&lt;p&gt;Those who do understand tend to &lt;strong&gt;measure the right things&lt;/strong&gt;. The one thing McKinsey doesn’t do with this framework is help fix this problem. They are making it worse.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;那麼，軟體研發活動有什麼獨特性？正確的衡量角度又是什麼？Daniel Terhorst-North 的 “&lt;a href=&#34;https://dannorth.net/mckinsey-review/&#34;&gt;McKinsey Developer Productivity Review&lt;/a&gt;” 一文說得好：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Software development is a collaborative, generative enterprise, and we can easily measure the effectiveness of a team, and more importantly how this is trending over time, using &lt;strong&gt;&lt;strong&gt;Theory of Constraints&lt;/strong&gt;&lt;/strong&gt; and &lt;strong&gt;&lt;strong&gt;flow-based metrics&lt;/strong&gt;&lt;/strong&gt; like &lt;strong&gt;&lt;strong&gt;lead time&lt;/strong&gt;&lt;/strong&gt; and &lt;strong&gt;&lt;strong&gt;throughput&lt;/strong&gt;&lt;/strong&gt;. Take a look at the work of Eliyahu Goldratt and Donald Reinertsen for a deeper understanding of these. An organisation like McKinsey endorsing these approaches would be a great help to the industry.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;這段話點出幾個關鍵：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;團隊 vs 個人&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;縱貫研究 vs 橫斷研究&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Theory of constraints &amp;amp; lean thinking&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Flow, lead time &amp;amp; throughput&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;我們就從這些角度來切入，尤其是 “flow” 角度。&lt;/p&gt;
+&lt;h2 id=&#34;從-flow-角度看軟體研發效能的本質指標&#34;&gt;從 Flow 角度看軟體研發效能的本質指標&lt;/h2&gt;
+&lt;p&gt;我喜歡用以下這五個主要的 flow 指標來整體衡量軟體研發效能：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/12/dev-efficiency.png&#34; alt=&#34;軟體研發效能五大指標&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2023/12/dev-efficiency.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;軟體研發效能五大指標&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;為了對於「軟體研發效能」得出較全面的 flow 視角，我結合幾個信度效度兼具、又不複雜的論述：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;SRE 的 &lt;a href=&#34;https://sre.google/sre-book/monitoring-distributed-systems/&#34;&gt;4 golden signal&lt;/a&gt;: latency, traffic, errors, saturation。&lt;/li&gt;
+&lt;li&gt;Scrum 之父 Ken &amp;amp; Jeff 在《&lt;a href=&#34;https://williampjyeh.notion.site/Scrum-00d22ec98ca847d49f62b63d10667049&#34;&gt;告別瀑布，擁抱 Scrum&lt;/a&gt;》第 7 章提出的主要指標：productivity, quality, value。&lt;/li&gt;
+&lt;li&gt;Theory of Constraints 提到的 bottleneck/constraints 及 throughput。&lt;/li&gt;
+&lt;li&gt;Lean 提到的 lead time。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;它們之間的對應關係是：&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Flow ▼&lt;/th&gt;
+          &lt;th&gt;SRE&lt;/th&gt;
+          &lt;th&gt;Ken&amp;amp;Jeff 2012&lt;/th&gt;
+          &lt;th&gt;Theory of Constraints&lt;/th&gt;
+          &lt;th&gt;Lean&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Traffic&lt;/td&gt;
+          &lt;td&gt;Traffic&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;Pull&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Saturation&lt;/td&gt;
+          &lt;td&gt;Saturation&lt;/td&gt;
+          &lt;td&gt;Productivity&lt;/td&gt;
+          &lt;td&gt;Bottleneck; Constraints&lt;/td&gt;
+          &lt;td&gt;WIP&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Lead time&lt;/td&gt;
+          &lt;td&gt;Latency&lt;/td&gt;
+          &lt;td&gt;Productivity&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Throughput&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;Value&lt;/td&gt;
+          &lt;td&gt;Throughput&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Quality&lt;/td&gt;
+          &lt;td&gt;Error&lt;/td&gt;
+          &lt;td&gt;Quality&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;五個指標，儘管數量不多，但很容易展開成更細部的指標。譬如：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Traffic 可往下展開成 product backlog 管理、dual track、definition of ready 等指標。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Saturation 可往下展開成 velocity、queue length、WIP、cycle time、interrupt 等指標。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Lead time 可往下展開成 value stream、MTTR 等指標。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Throughput 可往下展開成 value points、cumulative flow diagram、deployment frequency、feedback 等指標。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Quality 可往下展開成 code complexity、change failure rate、rework rate 等指標。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;這五個指標以簡馭繁，很好用。&lt;/p&gt;
+&lt;p&gt;我通常會從這五大指標出發，蒐集初始資料，形成假設，求證，並佐以 Theory of Constraints 分析，找到關鍵 constraints，用&lt;a href=&#34;https://www.tocinstitute.org/five-focusing-steps.html&#34;&gt;聚焦五步驟&lt;/a&gt;界定優先順序，再去探討解決方案。&lt;/p&gt;
+&lt;h2 id=&#34;從-gsm-角度看敏捷能解決什麼問題&#34;&gt;從 GSM 角度看敏捷能解決什麼問題&lt;/h2&gt;
+&lt;p&gt;這五個指標，儘管是偏向落後指標，但很容易展開成可行動的領先指標。&lt;/p&gt;
+&lt;p&gt;當然啦，在展開成領先指標之前，最好還是先回到最原始的動機：之所以會想尋求敏捷或 DevOps 這帖藥方，一開始的痛點及原因究竟是什麼？&lt;/p&gt;
+&lt;p&gt;界定好「待解決問題」之後，我建議根據《&lt;a href=&#34;https://www.tenlong.com.tw/products/9786263242630&#34;&gt;Google 的軟體工程之道&lt;/a&gt;》所介紹的 &lt;strong&gt;GSM process&lt;/strong&gt;，一步步找出合適的領先指標：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Goal&lt;/strong&gt;：期望當問題解決之後，能夠達到什麼樣的目標狀態？&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Signal&lt;/strong&gt;：有什麼明顯的信號，可以告訴我們說：目標已經達到了？&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Measurement&lt;/strong&gt;：對於上述信號，有什麼明顯的量測值，或是具有預測效度的量測值？&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;最後，則是透過 GSM 規劃出行動策略：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Task&lt;/strong&gt;：從 Goals 找出能夠提升 Metrics 的 Tasks，而不是直接從 Metrics 找出 Task。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;價值&#34;&gt;價值&lt;/h2&gt;
+&lt;p&gt;最近看到 Howie 對五年前的老話題有感而發：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:20em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/12/howie-revisit.png&#34; alt=&#34;孟子見梁惠王&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2023/12/howie-revisit.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;孟子見梁惠王&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;經過了五年的歷練，我的&lt;a href=&#34;//william-yeh.net/post/2018/11/agile-value/&#34;&gt;回答&lt;/a&gt;還是一樣，但更多了一份篤定：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;TL;DR　對於「價值」是否有增益。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;回頭看看當初導入敏捷的痛點及原因，找出起初認定（或誤認）的價值是什麼。尤其是：這所謂的「價值」，是否可追溯至&lt;a href=&#34;https://agilemanifesto.org/&#34;&gt;敏捷宣言&lt;/a&gt;或 &lt;a href=&#34;https://modernagile.org/&#34;&gt;Modern Agile&lt;/a&gt; 四層面。若追溯不了，或許一開始就投錯藥方了。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;導入敏捷後，是否在敏捷宣言或 Modern Agile 四層面有所進展。進而檢討：這些進展，是否有對應到當初導入敏捷的痛點及原因。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;希望這份關於五大軟體研發效能指標的分析，有助於你用敏捷解決正確的問題，並用正確的方式衡量成效。&lt;/p&gt;
+
+
+&lt;div class=&#34;notice notice--note&#34;&gt;
+  &lt;div class=&#34;notice__title&#34;&gt;
+    
+      「判準與指標」系列文章
+    
+  &lt;/div&gt;
+  &lt;div class=&#34;notice__content&#34;&gt;&lt;p&gt;❶ &lt;a href=&#34;//william-yeh.net/post/2018/10/methodology-and-criteria/&#34;&gt;軟體開發，除了方法論，還有⋯⋯&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❷ &lt;a href=&#34;//william-yeh.net/post/2018/10/agile-criteria/&#34;&gt;敏捷的判準&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❸ &lt;a href=&#34;//william-yeh.net/post/2018/11/lean-startup-criteria/&#34;&gt;Lean Startup 的判準&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❹ &lt;a href=&#34;//william-yeh.net/post/2018/11/agile-value/&#34;&gt;敏捷的價值與指標&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❺ &lt;a href=&#34;//william-yeh.net/post/2018/11/devops-value/&#34;&gt;DevOps 的價值與指標&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❻ 如何衡量敏捷對於軟體研發效能的利益？&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;這段孟子與梁惠王的對話，原文是：「王何必曰利？亦有仁義而已矣！王曰『何以利吾國』，大夫曰『何以利吾家』，士庶人曰『何以利吾身』，上下交征利，而國危矣！」&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description>
+      
     </item>
+    
     <item>
       <title>「改變」系列</title>
       <link>//william-yeh.net/series/change-series/</link>
       <pubDate>Mon, 16 May 2022 00:00:00 +0000</pubDate>
+      
       <guid>//william-yeh.net/series/change-series/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2016/06/change-framework/&#34;&gt;改變的框架&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2018/12/process-and-metrics/&#34;&gt;改變／改革：流程與衡量指標&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2022/05/evaluation-process-for-changes/&#34;&gt;推動改變的評估流程&lt;/a&gt;&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2016/06/change-framework/&#34;&gt;改變的框架&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2018/12/process-and-metrics/&#34;&gt;改變／改革：流程與衡量指標&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2022/05/evaluation-process-for-changes/&#34;&gt;推動改變的評估流程&lt;/a&gt;&lt;/p&gt;
+</description>
+      
     </item>
+    
     <item>
       <title>2018 個人回顧</title>
       <link>//william-yeh.net/post/2018/12/2018-retrospective/</link>
       <pubDate>Thu, 20 Dec 2018 08:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2018/12/2018-retrospective/</guid>
-      <description>&lt;p&gt;到了年終，又開始要做個總回顧，再對來年許願。&lt;/p&gt;&#xA;&lt;p&gt;如果說 &lt;a href=&#34;https://school.soft-arch.net/blog/6676/2016-retrospective&#34;&gt;2016&lt;/a&gt; 和 &lt;a href=&#34;https://school.soft-arch.net/blog/13083/2017-retrospective&#34;&gt;2017&lt;/a&gt; 都是華麗冒險年，那麼，2018 對我來說，是收攝靜觀的一年。&lt;/p&gt;&#xA;&lt;p&gt;去除一些不便揭露的事情，以下是簡單的回顧。&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;到了年終，又開始要做個總回顧，再對來年許願。&lt;/p&gt;
+&lt;p&gt;如果說 &lt;a href=&#34;https://school.soft-arch.net/blog/6676/2016-retrospective&#34;&gt;2016&lt;/a&gt; 和 &lt;a href=&#34;https://school.soft-arch.net/blog/13083/2017-retrospective&#34;&gt;2017&lt;/a&gt; 都是華麗冒險年，那麼，2018 對我來說，是收攝靜觀的一年。&lt;/p&gt;
+&lt;p&gt;去除一些不便揭露的事情，以下是簡單的回顧。&lt;/p&gt;
+&lt;h2 id=&#34;補血課程&#34;&gt;補血課程&lt;/h2&gt;
+&lt;p&gt;這一年，由於財務及時間問題，參加的補血課程大幅減少。只能精選再精選。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://jackyliu.net/experience-gamification-class-design-training-course/&#34;&gt;體驗式課程的遊戲設計與操作實務&lt;/a&gt; (&lt;a href=&#34;//william-yeh.net/post/2018/04/board-game-creation/&#34;&gt;心得&lt;/a&gt;)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://shop.darencademy.com/product/view/id/70&#34;&gt;510 / 專案監管的系統思考及 KPI 設計攻防&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;這兩門課，都是後座力十足，不管是觀念上還是實務上。後面都會提到。&lt;/p&gt;
+&lt;p&gt;至於專題演講及研討會，參加的場次就多了，不及備載。&lt;/p&gt;
+&lt;p&gt;其中悸動最深的，就屬 &lt;a href=&#34;https://en.wikipedia.org/wiki/Maria_Gomori&#34;&gt;Maria Gomori&lt;/a&gt; 的【&lt;a href=&#34;http://www.shiuhli.org.tw/class/class_detail.jsp?cp_id=CP1518514359291&#34;&gt;大師對談：在關係中重生－從糾纏到滋養&lt;/a&gt;】講座了。能親炙高齡 98 的國寶級大師，多麼難得的機緣呀！&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/12/maria-gomori.jpg&#34; alt=&#34;Maria Gomori, 2018-05-06, Taipei&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2018/12/maria-gomori.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Maria Gomori, 2018-05-06, Taipei&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;這麼難得的機緣，說什麼，都得買第一排搖滾區的座位。&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/12/listen-to-maria-gomori.jpg&#34; alt=&#34;第一排搖滾區&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2018/12/listen-to-maria-gomori.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;第一排搖滾區&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;坐在第一排，近距離觀察許多互動細節，驚喜發現，去年我在三梯次薩提爾培訓課程學到的 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，果然與 Maria Gomori 大師是一脈相承的。一整天的活動，彷彿一場總複習。&lt;/p&gt;
+&lt;p&gt;而且是大師親自帶領的總複習。超值！&lt;/p&gt;
+&lt;h2 id=&#34;演講及授課&#34;&gt;演講及授課&lt;/h2&gt;
+&lt;p&gt;今年，演講次數也大幅減少：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.slideshare.net/williamyeh/agile-transition-a-toc-perspective&#34;&gt;從限制理論角度談敏捷導入階段&lt;/a&gt; (@ Agile Summit 2018)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;取而代之的，是授課及工作坊：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;系統思考的四堂課 (@ &lt;a href=&#34;//william-yeh.net/post/2018/06/sys-thinking-workshop/&#34;&gt;公司內訓&lt;/a&gt; &amp;amp; &lt;a href=&#34;//william-yeh.net/post/2018/09/thinking-weight-training/&#34;&gt;DevOpsDays Taipei 2018&lt;/a&gt;)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;SBE 的四堂課 (@ 公司內訓)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;敏捷原理與團隊塑造・二日精修版 (&lt;a href=&#34;//william-yeh.net/post/2018/09/deliberate-practice-for-agile/&#34;&gt;給學員的話&lt;/a&gt;)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2018/12/agile-measurement/&#34;&gt;為了精準估算，你必須付出什麼代價？&lt;/a&gt; (@ Agile Tour Kaohsiung 2018)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;自從受過【&lt;a href=&#34;//william-yeh.net/post/2018/04/board-game-creation/&#34;&gt;體驗式課程的遊戲設計與操作實務&lt;/a&gt;】的洗禮，又讀過《&lt;a href=&#34;https://www.books.com.tw/products/0010752714&#34;&gt;刻意練習&lt;/a&gt;》及《&lt;a href=&#34;https://www.taaze.tw/products/11100227775.html&#34;&gt;豐田形學&lt;/a&gt;》，我越來越喜歡工作坊這種「微培訓」形式。明年應該也會繼續這樣子吧。&lt;/p&gt;
+&lt;h2 id=&#34;量化之旅&#34;&gt;量化之旅&lt;/h2&gt;
+&lt;p&gt;「精進量化技能」被我在 2017 年底列入&lt;a href=&#34;https://school.soft-arch.net/blog/13083/2017-retrospective&#34;&gt;來年許願項目&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;到了今年七月，因緣際會之下，參加了君婷老師這場開腦洞的首發課程。&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:20em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/12/510-kpi-course.jpg&#34; alt=&#34;510 / 專案監管的系統思考及 KPI 設計攻防&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2018/12/510-kpi-course.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;510 / 專案監管的系統思考及 KPI 設計攻防&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;這是專案管理課程。像「milestone 重於 WBS」的觀念，之前只是隱隱約約感覺到；但在課堂上被專家一語道破，我就更放心了。還有許許多多內容，都讓我可以融入到慣用的敏捷模型中。畢竟，人性是普遍的，箇中蘊含的系統動力也是普遍的。&lt;/p&gt;
+&lt;p&gt;後來，我持續探索〈&lt;a href=&#34;//william-yeh.net/post/2018/11/agile-pmo/&#34;&gt;Agile PMO&lt;/a&gt;〉、〈&lt;a href=&#34;//william-yeh.net/post/2018/11/agile-value/&#34;&gt;敏捷的價值與指標&lt;/a&gt;〉、〈&lt;a href=&#34;//william-yeh.net/post/2018/11/devops-value/&#34;&gt;DevOps 的價值與指標&lt;/a&gt;〉、〈&lt;a href=&#34;//william-yeh.net/post/2018/12/process-and-metrics/&#34;&gt;改變／改革：流程與衡量指標&lt;/a&gt;〉等議題，都是發軔自此課程的啟發。&lt;/p&gt;
+&lt;p&gt;但這不僅僅是專案管理課程，更是開眼的「數字」教育。之後，再看其他涉及量化管理／公司治理的書，都格外有感：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/12/510-kpi-course-effect.png&#34; alt=&#34;對數字開始懷疑&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2018/12/510-kpi-course-effect.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;對數字開始懷疑&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;的確是打通任督二脈的補血課程！&lt;/p&gt;
+&lt;h2 id=&#34;等比級數的推坑力&#34;&gt;等比級數的推坑力&lt;/h2&gt;
+&lt;p&gt;要「精進量化技能」，免不了要更認識獲利模式。&lt;/p&gt;
+&lt;p&gt;對工程背景的我來說，這是大工程。因此，我選擇用「系統閱讀」的方式去建構這方面的基本知識。&lt;/p&gt;
+&lt;p&gt;起點是《&lt;a href=&#34;http://www.books.com.tw/products/0010473958&#34;&gt;10 年後會留在書架上的 100 本書&lt;/a&gt;》&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt; 。按圖索驥，挑選勝間和代的《&lt;a href=&#34;https://www.books.com.tw/products/0010474528&#34;&gt;創造利潤的方程式&lt;/a&gt;》來讀。這真是扎實建構思維模型的好書。讀完一次花了一整個禮拜，需要沉澱。改天還真想把這本書的精髓畫成 CLD 呢。&lt;/p&gt;
+&lt;p&gt;事情還沒結束。&lt;/p&gt;
+&lt;p&gt;勝間和代還推坑了另一本奇書《&lt;a href=&#34;https://www.kingstone.com.tw/book/book_page.asp?kmcode=2014940760328&#34;&gt;利潤的故事&lt;/a&gt;》 (&lt;a href=&#34;https://www.amazon.com/dp/0446692271/&#34;&gt;&lt;em&gt;The Art of Profitability&lt;/em&gt;&lt;/a&gt;)。&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/12/the-art-of-profitability.jpg&#34; alt=&#34;創造利潤的方程式&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2018/12/the-art-of-profitability.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;創造利潤的方程式&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;拙作《創造利潤的方程式》的反面可說就是《利潤的故事》這種書。我是在「如果弄成只有一種利潤模型，會如何呢？」的想法之下，寫了那本書的。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;這就引起我的好奇心了：能夠讓勝間和代專門寫一本書來 &lt;del&gt;打對台&lt;/del&gt; 對比的，想必是不簡單的對手。&lt;/p&gt;
+&lt;p&gt;果真如此。&lt;/p&gt;
+&lt;p&gt;《利潤的故事》體裁雖然是商業小說，有趣，但不是本容易徹底消化的書。作者還特別提醒：不能讀得太快。得有耐心，照著書中的步調，乖乖寫作業（是的！有作業！）。更可怕的是，這本書居然也是個書坑，幾乎每一份作業，都順道規定一兩本指定讀物——簡直是等比級數的推坑力。&lt;/p&gt;
+&lt;p&gt;既然《利潤的故事》也暗中運用系統閱讀的方法來安排章節及作業順序，既然我也下定決心要系統閱讀這議題，那麼，就乖乖的照著最右邊這本大書坑，按圖索驥吧。&lt;/p&gt;
+&lt;p&gt;自己手邊只有老版本的《&lt;a href=&#34;https://www.books.com.tw/products/0010759410&#34;&gt;十倍速時代&lt;/a&gt;》與《&lt;a href=&#34;https://www.books.com.tw/products/0010590883&#34;&gt;愛因斯坦的夢&lt;/a&gt;》，靠著 TAAZE 才補上一些拼圖——但還是不齊。等簡體書及原文書到齊，再合拍一張吧。&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/12/profitability-books.jpg&#34; alt=&#34;《利潤的故事》及推坑的叢書&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2018/12/profitability-books.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;《利潤的故事》及推坑的叢書&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;《&lt;a href=&#34;https://www.kingstone.com.tw/book/book_page.asp?kmcode=2014940760328&#34;&gt;利潤的故事&lt;/a&gt;》推坑書單如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.books.com.tw/products/0010264438&#34;&gt;洞悉大師亞當斯&lt;/a&gt; / &lt;a href=&#34;https://www.amazon.com/dp/0990790916&#34;&gt;&lt;em&gt;Obvious Adams&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;燃燒的權力 / &lt;a href=&#34;https://www.amazon.com/dp/1559723351/&#34;&gt;&lt;em&gt;Power to Burn&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://sanmin.com.tw/Product/index/004047596&#34;&gt;數盲&lt;/a&gt; / &lt;a href=&#34;https://www.amazon.com/dp/0679726012/&#34;&gt;&lt;em&gt;Innumeracy&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.books.com.tw/products/0010759410&#34;&gt;十倍速時代&lt;/a&gt; / &lt;a href=&#34;https://www.amazon.com/dp/0385483821/&#34;&gt;&lt;em&gt;Only the Paranoid Survive&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.books.com.tw/products/0010450016&#34;&gt;創意的生成&lt;/a&gt; / &lt;a href=&#34;https://www.amazon.com/dp/1434102750/&#34;&gt;&lt;em&gt;A Technique for Producing Ideas&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.books.com.tw/products/0010590883&#34;&gt;愛因斯坦的夢&lt;/a&gt; / &lt;a href=&#34;https://www.amazon.com/dp/140007780X/&#34;&gt;&lt;em&gt;Einstein&amp;rsquo;s Dreams&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;艾西莫夫論太空 / &lt;a href=&#34;https://www.amazon.com/dp/051727924X/&#34;&gt;&lt;em&gt;Asimov On Astronomy&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.books.com.tw/products/0010791866&#34;&gt;富甲天下&lt;/a&gt; (新版) / &lt;a href=&#34;https://www.kingstone.com.tw/book/book_page.asp?kmcode=2024990010069&#34;&gt;天下第一店&lt;/a&gt; (舊版) / &lt;a href=&#34;https://www.amazon.com/dp/0385468474/&#34;&gt;&lt;em&gt;Sam Walton: Made in America: My Story&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.kingstone.com.tw/book/book_page.asp?kmcode=2014940421779&#34;&gt;獲利寶典&lt;/a&gt; / &lt;a href=&#34;https://www.amazon.com/dp/0812933044/&#34;&gt;&lt;em&gt;The Profit Zone&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://sanmin.com.tw/Product/index/005170987&#34;&gt;一個廣告人的自白&lt;/a&gt; / &lt;a href=&#34;https://www.amazon.com/dp/190491537X/&#34;&gt;&lt;em&gt;Confessions of an Advertising Man&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://sanmin.com.tw/Product/index/004045819&#34;&gt;奧格威談廣告&lt;/a&gt; / &lt;a href=&#34;https://www.amazon.com/dp/039472903X/&#34;&gt;&lt;em&gt;Ogilvy on Advertising&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;閱讀初步 / &lt;a href=&#34;https://www.amazon.com/dp/0811218937/&#34;&gt;&lt;em&gt;ABC of Reading&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;孫子兵法&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.books.com.tw/products/0010064462&#34;&gt;Starbucks 咖啡王國傳奇&lt;/a&gt; / &lt;a href=&#34;https://www.amazon.com/dp/0786883561/&#34;&gt;&lt;em&gt;Pour Your Heart Into It&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.books.com.tw/products/0010131327&#34;&gt;永恆的價值&lt;/a&gt; / &lt;a href=&#34;https://www.amazon.com/dp/1681841649/&#34;&gt;&lt;em&gt;Of Permanent Value&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;典範 / &lt;a href=&#34;https://www.amazon.com/dp/0887306470/&#34;&gt;&lt;em&gt;Paradigms&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.books.com.tw/products/0010137157&#34;&gt;利潤模式&lt;/a&gt; / &lt;a href=&#34;https://www.amazon.com/dp/0812931181/&#34;&gt;&lt;em&gt;Profit Patterns&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.kingstone.com.tw/book/book_page.asp?kmcode=2014940657314&#34;&gt;創造新財富&lt;/a&gt; / &lt;a href=&#34;https://www.amazon.com/dp/0875846327/&#34;&gt;&lt;em&gt;Value Migration&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;羅素的制勝法則 / &lt;a href=&#34;https://www.amazon.com/dp/0525945989/&#34;&gt;&lt;em&gt;Russell Rules&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;力量之泉 / &lt;a href=&#34;https://www.amazon.com/dp/0262534290/&#34;&gt;&lt;em&gt;Sources of Power&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.books.com.tw/products/0010137625&#34;&gt;數位革命&lt;/a&gt; / &lt;a href=&#34;https://www.amazon.com/dp/0679762906/&#34;&gt;&lt;em&gt;Being Digital&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.books.com.tw/products/0010190543&#34;&gt;他們的數位化經營策略&lt;/a&gt; / &lt;a href=&#34;https://www.amazon.com/dp/0609607707/&#34;&gt;&lt;em&gt;How Digital Is Your Business?&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;洋洋灑灑，這就是我這兩個月以來沈重的閱讀清單呀。&lt;/p&gt;
+&lt;p&gt;雖然沈重，但，浸潤在這種「藝術的學習」境界，也挺過癮的。&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:20em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/12/levels-of-learning.jpg&#34; alt=&#34;學習，有五種層次 -- 《利潤的故事》&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2018/12/levels-of-learning.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;學習，有五種層次 -- 《利潤的故事》&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;收攝靜觀&#34;&gt;收攝靜觀&lt;/h2&gt;
+&lt;p&gt;十二月，特地安排兩件事，讓自己有收攝靜觀的機會。&lt;/p&gt;
+&lt;p&gt;距離上次親自玩 &lt;a href=&#34;https://zh.wikipedia.org/wiki/%E6%A8%82%E9%AB%98%E8%AA%8D%E7%9C%9F%E7%8E%A9&#34;&gt;LSP&lt;/a&gt; 也已經一年半了。正巧好友 Sam 要舉辦一場【&lt;a href=&#34;https://www.accupass.com/event/1811220930071664437086&#34;&gt;策略會議引導・樂高認真玩&lt;/a&gt;】，趕緊報名參加。&lt;/p&gt;
+&lt;p&gt;年終，給自己一個沉澱的時間與空間。&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:20em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/12/lsp-artwork.jpg&#34; alt=&#34;我的 LSP 作品之一 (2018-12-12)&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2018/12/lsp-artwork.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;我的 LSP 作品之一 (2018-12-12)&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;本週二，應好友之邀，去現場看看真正的 &amp;ldquo;scrum&amp;rdquo;。&lt;/p&gt;
+&lt;p&gt;身為 Scrum Master，沒親眼去現場看橄欖球，像話嗎？呵。年末，總是要熱血一下。&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/12/rugby-game.png&#34; alt=&#34;2018 亞洲 U19 青年橄欖球錦標賽&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2018/12/rugby-game.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;2018 亞洲 U19 青年橄欖球錦標賽&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;從這兩場高強度的賽事中，領悟到不少 Scrum，甚至團隊經營的點點滴滴：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;衝刺，再衝刺&lt;/li&gt;
+&lt;li&gt;傳球&lt;/li&gt;
+&lt;li&gt;佈陣&lt;/li&gt;
+&lt;li&gt;局部最佳化&lt;/li&gt;
+&lt;li&gt;後勤&lt;/li&gt;
+&lt;li&gt;目標&lt;/li&gt;
+&lt;li&gt;Ａ咖&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;Try&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;Swarm&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;Baseline&lt;/li&gt;
+&lt;li&gt;Pivot&lt;/li&gt;
+&lt;li&gt;餘裕&lt;/li&gt;
+&lt;li&gt;下一步&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;太多太多聯想與感想。也不禁令我思考起自己的下一步。&lt;/p&gt;
+&lt;h2 id=&#34;2019-許願&#34;&gt;2019 許願&lt;/h2&gt;
+&lt;p&gt;2019 年，希望自己能做到：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;繼續更深度的 BOSA 探索與實踐。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;繼續精進量化技能。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;正式正視與深化教練技能。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;重讀一次福爾摩斯（這是這兩年遺憾沒能做到的）。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;增進商務英語聽說能力。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;開放冒險選項。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;就醬。&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;我在 2017 年上了三梯次為期九天的薩提爾培訓課程。相關心得請見〈&lt;a href=&#34;//william-yeh.net/post/2017/04/satir-workshop/&#34;&gt;六日薩提爾體驗&lt;/a&gt;〉及〈&lt;a href=&#34;//william-yeh.net/post/2017/08/facilitator-mindset/&#34;&gt;引導者，要懂心理&lt;/a&gt;〉這兩篇文章。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;我在〈&lt;a href=&#34;//william-yeh.net/post/2016/08/reading-vs-extensive-reading/&#34;&gt;精讀 vs 泛讀&lt;/a&gt;〉一文中，有提到《&lt;a href=&#34;https://www.books.com.tw/products/0010473958&#34;&gt;10 年後會留在書架上的 100 本書&lt;/a&gt;》這本書。&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description>
+      
     </item>
+    
     <item>
       <title>為了精準估算，你必須付出什麼代價？</title>
       <link>//william-yeh.net/post/2018/12/agile-measurement/</link>
       <pubDate>Wed, 19 Dec 2018 08:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2018/12/agile-measurement/</guid>
-      <description>&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;&#xA;&lt;div class=&#34;box&#34;&gt;&#xA;&lt;figure  itemprop=&#34;associatedMedia&#34;&#xA;  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; &#xA;  style=&#34;max-width:30em&#34; &gt;&#xA;    &lt;div class=&#34;img&#34;&gt;&#xA;      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/12/dilbert-measurement.jpg&#34; alt=&#34;開場對話&#34;/&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;a href=&#34;//william-yeh.net/img/2018/12/dilbert-measurement.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;&#xA;      &lt;figcaption&gt;&#xA;          &lt;p&gt;開場對話&lt;/p&gt;&#xA;      &lt;/figcaption&gt;&#xA;  &lt;/figure&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;p&gt;研發團隊，常會被問到一個問題：&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;「請問一下，這個Ａ功能，大概要多久才能完成？」&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;p&gt;這個問題，不會因為你跑的是敏捷，就自動免疫。那麼，身為經過敏捷思維洗禮的人，該如何做出合宜的應對？&lt;/p&gt;&#xA;&lt;p&gt;我在 &lt;a href=&#34;https://agilekaohsiung.kktix.cc/events/agiletourkaohsiung2018&#34;&gt;Agile Tour Kaohsiung 2018&lt;/a&gt; 開辦一場 2.5 小時的工作坊，帶領大家親自體驗這個議題。&lt;/p&gt;&#xA;&lt;p&gt;不過，這個題材的背後，其實還有三段故事。&lt;/p&gt;&#xA;&lt;p&gt;故事，要從一年半前講起。&lt;/p&gt;</description>
+      
+        <description>&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/12/dilbert-measurement.jpg&#34; alt=&#34;開場對話&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2018/12/dilbert-measurement.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;開場對話&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;研發團隊，常會被問到一個問題：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;「請問一下，這個Ａ功能，大概要多久才能完成？」&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;這個問題，不會因為你跑的是敏捷，就自動免疫。那麼，身為經過敏捷思維洗禮的人，該如何做出合宜的應對？&lt;/p&gt;
+&lt;p&gt;我在 &lt;a href=&#34;https://agilekaohsiung.kktix.cc/events/agiletourkaohsiung2018&#34;&gt;Agile Tour Kaohsiung 2018&lt;/a&gt; 開辦一場 2.5 小時的工作坊，帶領大家親自體驗這個議題。&lt;/p&gt;
+&lt;p&gt;不過，這個題材的背後，其實還有三段故事。&lt;/p&gt;
+&lt;p&gt;故事，要從一年半前講起。&lt;/p&gt;
+&lt;h2 id=&#34;第一段故事結構化流程&#34;&gt;第一段故事：結構化流程&lt;/h2&gt;
+&lt;p&gt;一年半前，我曾提過一個心願：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;我想用&lt;strong&gt;結構化的 Sprint Planning 流程&lt;/strong&gt;，讓錨定效應、以關係為中心、目的型談判自然發生，讓參與其中的人，逐漸在刻意不遮掩的建設性衝突中，潛移默化。&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;這個心願，即使我今年已經將自己的招牌課程【敏捷原理與團隊塑造】進化到二日版 &lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;，也都還未能夠實現。要完整實現，恐怕得擴充至二天半，甚至三日版。&lt;/p&gt;
+&lt;p&gt;這是一個小缺憾。&lt;/p&gt;
+&lt;p&gt;年底正好有個在 &lt;a href=&#34;https://agilekaohsiung.kktix.cc/events/agiletourkaohsiung2018&#34;&gt;Agile Tour Kaohsiung 2018&lt;/a&gt; 舉辦工作坊的機會，我就來小試一下心中設想的「結構化的 Sprint Planning 流程」，以後再看看有沒有機會將這次經驗併入招牌課程。&lt;/p&gt;
+&lt;h2 id=&#34;第二段故事衡量&#34;&gt;第二段故事：衡量&lt;/h2&gt;
+&lt;p&gt;設計工作坊，要先定義好最核心的體驗內容。&lt;/p&gt;
+&lt;p&gt;Sprint planning，或者 release planning，都有一個共同議題：&lt;strong&gt;衡量&lt;/strong&gt;。正好這陣子我一直在研究這類衡量、指標等相關議題 &lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;，便將工作坊的題目訂為【為了精準估算，你必須付出什麼代價？】。&lt;/p&gt;
+&lt;p&gt;核心的體驗內容決定好了，體驗的動線，則以《&lt;a href=&#34;https://www.books.com.tw/products/0010622743&#34;&gt;如何衡量萬事萬物&lt;/a&gt;》這本書做為參考標的。&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/12/how-to-measure-anything.jpg&#34; alt=&#34;如何衡量萬事萬物&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2018/12/how-to-measure-anything.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;如何衡量萬事萬物&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;第一次看到這本書名，是在《&lt;a href=&#34;https://www.books.com.tw/products/0010738675&#34;&gt;精實企業&lt;/a&gt;》及《&lt;a href=&#34;https://www.books.com.tw/products/0010580487&#34;&gt;精實執行&lt;/a&gt;》。能同時被這兩本經典引述，想必非泛泛之書。&lt;/p&gt;
+&lt;p&gt;當時只覺得可以從中借用到一些衡量妙法，像是&lt;a href=&#34;https://en.wikipedia.org/wiki/Fermi_problem&#34;&gt;費米推論&lt;/a&gt;之類的。萬萬沒想到，這簡直是改變三觀的奇書。恰好又跟我這陣子在系統閱讀的主軸相吻合，讀來可說是點頭如搗蒜。&lt;/p&gt;
+&lt;p&gt;看懂這本書，內化並實踐，有助於從根本解決一些盤根錯節的敏捷持久落地的企業面難題。&lt;/p&gt;
+&lt;p&gt;初步啃完這本奇書，就花了我好幾天，累積起來共十七個小時。十七小時的心得，在短短的 2.5 小時的工作坊是無法盡數展現出來的，我只能先揀選一個雖粗淺但稱得上是全貌的流程，作為工作坊的體驗主動線。&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/12/aie-flow.png&#34; alt=&#34;AIE 通用衡量方法&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2018/12/aie-flow.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;AIE 通用衡量方法&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;第三段故事pdca&#34;&gt;第三段故事：PDCA&lt;/h2&gt;
+&lt;p&gt;核心的體驗內容決定好了，體驗的動線也決定好了，就剩下體驗的劇本了。&lt;/p&gt;
+&lt;p&gt;既然要辦的是工作坊，重點自然不是說教，而是體驗，而且是能成為肌肉記憶的體驗。&lt;/p&gt;
+&lt;p&gt;這一點比較簡單。自從經過【&lt;a href=&#34;https://jackyliu.net/experience-gamification-class-design-training-course/&#34;&gt;體驗式課程的遊戲設計與操作實務&lt;/a&gt;】的洗禮 &lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;，我將招牌課程【敏捷原理與團隊塑造】調整成「&lt;strong&gt;高速高頻率 PDCA 循環&lt;/strong&gt;」的風格，廣受好評，已成為自己的拿手招術。&lt;/p&gt;
+&lt;p&gt;因此，我決定這次的工作坊，也比照辦理。&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/12/speech-1215.png&#34; alt=&#34;高速高頻率 PDCA 循環&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2018/12/speech-1215.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;高速高頻率 PDCA 循環&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;在敏捷世界裡，不管是 sprint planning 還是 release planning，都很強調全員參與。因此，我的工作坊劇本也設計成要全員參與，以反應真實情況：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在這兩個半小時的體驗活動中，我會用真實案例的改編版本，帶大家體驗 Sprint Planning 及 Backlog Refinement 的核心要素。不管你是 PO、PM、UX、RD、QA，都能從活動中親自體認到，我們到底有沒有必要追求精準的估算？以及，萬一真的有必要，我們又該做什麼樣的準備？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;分組方法有很多，有安全穩當的，也有刺激難以掌控的。當天在 &lt;a href=&#34;https://agilekaohsiung.kktix.cc/events/agiletourkaohsiung2018&#34;&gt;Agile Tour Kaohsiung 2018&lt;/a&gt; 活動現場，看到大家非常專業，便臨時起意，將現場人士分成三大組：Scrum Master 組、PO 組、developer 組。&lt;/p&gt;
+&lt;p&gt;非常冒險的決定。但，敏捷，本來就是要冒必要的險嘛！&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/12/measurement-groups.png&#34; alt=&#34;分組&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2018/12/measurement-groups.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;分組&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;整場 2.5 小時的活動，有笑聲，有&lt;del&gt;吵架聲&lt;/del&gt;激辯聲（過程中一度擦出火花），也有嚴肅的制憲大會——像極了真實的職場情境：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/12/process-meeting.png&#34; alt=&#34;流程會議&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2018/12/process-meeting.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;流程會議&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;感謝超強的參與者，尤其是始料未及的 Scrum Master 組，讓我這場首發的工作坊，得到超出我預期的效果／笑果。&lt;/p&gt;
+&lt;p&gt;「&lt;strong&gt;高速高頻率 PDCA 循環&lt;/strong&gt;」風格，在這 2.5 小時中，應該算是嚴格貫徹了。&lt;/p&gt;
+&lt;h2 id=&#34;未央歌&#34;&gt;未央歌&lt;/h2&gt;
+&lt;p&gt;一年半前許下的心願「&lt;strong&gt;結構化的 Sprint Planning 流程&lt;/strong&gt;」，這次 2.5 小時的工作坊，大約實現了六成。&lt;/p&gt;
+&lt;p&gt;要完全實現，全程可能要 3 小時。&lt;/p&gt;
+&lt;p&gt;在改版成功之前，先貼出這場 2.5 小時 Workshop 可公開的部分。&lt;/p&gt;
+&lt;iframe
+  style=&#34;width: 100%; height: 500px;&#34; frameborder=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; scrolling=&#34;no&#34;
+  src=&#34;https://www.slideshare.net/slideshow/embed_code/125954954&#34; allowfullscreen webkitallowfullscreen mozallowfullscreen&gt; &lt;/iframe&gt;
+&lt;br&gt;&lt;br&gt;
+&lt;p&gt;下一步呢？請靜待吧。&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;我在〈&lt;a href=&#34;//william-yeh.net/post/2017/07/sprint-planning-as-negotiation/&#34;&gt;以談判角度看 Sprint Planning&lt;/a&gt;〉文章中，談到我對高品質的 Sprint Planning 有著不一樣的願景。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;今年我將自己的招牌課程【敏捷原理與團隊塑造】升級成【二日精修版】，承載更多我想傳達的核心理念。最近剛結束的公開班是 &lt;a href=&#34;https://www.accupass.com/event/1807260907551870930205&#34;&gt;2018-09-13～09-14&lt;/a&gt; 這一梯次，課後感想文&lt;a href=&#34;//william-yeh.net/post/2018/09/deliberate-practice-for-agile/&#34;&gt;在此&lt;/a&gt;。&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;
+&lt;p&gt;這陣子研究衡量、指標等相關議題，相關心得請見〈&lt;a href=&#34;//william-yeh.net/post/2018/11/agile-value/&#34;&gt;敏捷的價值與指標&lt;/a&gt;〉、〈&lt;a href=&#34;//william-yeh.net/post/2018/11/devops-value/&#34;&gt;DevOps 的價值與指標&lt;/a&gt;〉、〈&lt;a href=&#34;//william-yeh.net/post/2018/12/process-and-metrics/&#34;&gt;改變／改革：流程與衡量指標&lt;/a&gt;〉等文。&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:4&#34;&gt;
+&lt;p&gt;詳見〈&lt;a href=&#34;//william-yeh.net/post/2018/04/board-game-creation/&#34;&gt;三週生出一款新桌遊，一段奇幻旅程&lt;/a&gt;〉一文。&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description>
+      
     </item>
+    
     <item>
       <title>改變／改革：流程與衡量指標</title>
       <link>//william-yeh.net/post/2018/12/process-and-metrics/</link>
       <pubDate>Fri, 07 Dec 2018 13:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2018/12/process-and-metrics/</guid>
-      <description>&lt;p&gt;改革，很不容易；摧毀改革，卻很簡單。知名的&lt;a href=&#34;//william-yeh.net/post/2016/06/change-framework/&#34;&gt;改革框架&lt;/a&gt;，莫不注重改革的&lt;strong&gt;整合&lt;/strong&gt;與&lt;strong&gt;固化&lt;/strong&gt;。&lt;/p&gt;&#xA;&lt;p&gt;敏捷亦然。像這篇文章〈&lt;a href=&#34;https://mp.weixin.qq.com/s/p8pDpC80iOMSY28SWSeZyg&#34;&gt;慢慢的，公司内敏捷的热度就退了&amp;hellip;..&lt;/a&gt;〉就訴說一則可悲的故事：&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;我並沒有告訴他們具體要怎樣做，只給了他們一些理論上的指導，然後他們就開始集思廣益，動手佈置。這其中展現出來的主動思考能力、自組織能力和執行力，讓我不由得暗地裡豎起大拇指。基於這樣良好的基礎，他們的敏捷過程推進的也非常順利，我輔導了他們 3 個月左右，他們已經熟練的掌握了一些實踐方法，加上本身已經具備的自組織能力和執行力，似乎繼續做下去，就可以達到不錯的成熟度。&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;改革，很不容易；摧毀改革，卻很簡單。知名的&lt;a href=&#34;//william-yeh.net/post/2016/06/change-framework/&#34;&gt;改革框架&lt;/a&gt;，莫不注重改革的&lt;strong&gt;整合&lt;/strong&gt;與&lt;strong&gt;固化&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;敏捷亦然。像這篇文章〈&lt;a href=&#34;https://mp.weixin.qq.com/s/p8pDpC80iOMSY28SWSeZyg&#34;&gt;慢慢的，公司内敏捷的热度就退了&amp;hellip;..&lt;/a&gt;〉就訴說一則可悲的故事：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;我並沒有告訴他們具體要怎樣做，只給了他們一些理論上的指導，然後他們就開始集思廣益，動手佈置。這其中展現出來的主動思考能力、自組織能力和執行力，讓我不由得暗地裡豎起大拇指。基於這樣良好的基礎，他們的敏捷過程推進的也非常順利，我輔導了他們 3 個月左右，他們已經熟練的掌握了一些實踐方法，加上本身已經具備的自組織能力和執行力，似乎繼續做下去，就可以達到不錯的成熟度。&lt;/p&gt;
+&lt;p&gt;然而時隔一年後，我偶然路過他們的辦公區，才發現一切並沒有照著「理所當然」發展，而是都恢復了原樣。&lt;/p&gt;
+&lt;p&gt;團隊成員坐在各自的工位上埋頭工作，他們不再聚集在白板前。專案經理每週一將工作分配好，並定期檢查狀態。工作區氣氛嚴肅而沉悶，一個似乎是 Leader 的人大聲訓斥著員工，指責他反覆犯同樣的錯誤。&lt;/p&gt;
+&lt;p&gt;似乎，敏捷從未來過。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;如何確保改革的&lt;strong&gt;整合&lt;/strong&gt;與&lt;strong&gt;固化&lt;/strong&gt;，而不只是曇花一現？&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Eliyahu_M._Goldratt&#34;&gt;高德拉特&lt;/a&gt;的《&lt;a href=&#34;https://www.books.com.tw/products/0010898249&#34;&gt;目標&lt;/a&gt;》裡頭藏有這問題的答案，藏在兩處很少被人提到的橋段。&lt;/p&gt;
+&lt;h2 id=&#34;偏執執著的伏筆&#34;&gt;偏執、執著的伏筆&lt;/h2&gt;
+&lt;p&gt;在書中，主角羅哥 (Alex Rogo) &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; 是優尼公司白靈頓鎮的工廠廠長。他與工廠財務長劉梧 (Lou)、生產經理唐納凡 (Bob Donovan) 等人，努力拯救工廠的經營危機。&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/12/rogo-and-others.png&#34; alt=&#34;羅哥、劉梧、唐納凡 (From: The Goal)&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2018/12/rogo-and-others.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;羅哥、劉梧、唐納凡 (From: The Goal)&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;經過一番奮鬥，終於立下了顯赫戰功，主角羅哥在升官執掌三個工廠的事業部之前，認真反思過去三個月跌跌撞撞的過程，試圖歸納出可複製的成功因素。他們在《目標》第 32～40 章進行多場機鋒對話，&lt;a href=&#34;https://www.tocinstitute.org/five-focusing-steps.html&#34;&gt;聚焦五步驟&lt;/a&gt;就是在這思辨交鋒過程中總結出來的。&lt;/p&gt;
+&lt;p&gt;不過，鮮為人知的是，這幾章還隱藏一個重要的改革訣竅，埋在一段獨白與一段對話中：&lt;/p&gt;
+&lt;p&gt;❶ 在第 40 章，羅哥有一段內心獨白：「唐納凡說得對，劉梧對&lt;strong&gt;衡量指標&lt;/strong&gt;簡直有一種偏執。」這是第一個哏。&lt;/p&gt;
+&lt;p&gt;❷ 在第 36 章，羅哥對唐納凡說了一句話：「假如劉梧對&lt;strong&gt;衡量指標&lt;/strong&gt;很執著，那麼你（唐納凡）一定是對&lt;strong&gt;流程&lt;/strong&gt;很執著了。」這是第二個哏。&lt;/p&gt;
+&lt;p&gt;你能體會為什麼高德拉特會刻意埋這兩個所謂偏執、執著的伏筆嗎？我也是不斷反思改革的成與敗，才漸漸體會到這伏筆的精妙。&lt;/p&gt;
+&lt;h2 id=&#34;敏捷固化的軌跡&#34;&gt;敏捷固化的軌跡&lt;/h2&gt;
+&lt;p&gt;改變／改革要固化，需要辨識出流程與衡量指標。&lt;/p&gt;
+&lt;p&gt;如果單以《目標》來說，&lt;strong&gt;流程&lt;/strong&gt;是指&lt;a href=&#34;https://www.tocinstitute.org/five-focusing-steps.html&#34;&gt;聚焦五步驟&lt;/a&gt;，&lt;strong&gt;衡量指標&lt;/strong&gt;是指 &lt;a href=&#34;https://en.wikipedia.org/wiki/Throughput_accounting&#34;&gt;T, I, OE&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;敏捷轉型，既然是一種改變／改革，也會遵循類似的軌跡。就以前面那篇&lt;a href=&#34;https://mp.weixin.qq.com/s/p8pDpC80iOMSY28SWSeZyg&#34;&gt;文章&lt;/a&gt;最後提出三點「想讓改變不再是一陣風」建議來說：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;改變考核機制，在改變的初期調低原有 KPI 指標，增加對輔助工具（敏捷、精益或其他方法）的使用情況的考核。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在改變過程中，發現對組織有益的流程，要加入到 KPI 中，變為日常考核的一部分。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;給所有好的「動因」以正向的反饋，即使結果看起來沒那麼炫目。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;這三點建議，正好與《目標》第 32～40 章的&lt;strong&gt;流程&lt;/strong&gt;與&lt;strong&gt;衡量指標&lt;/strong&gt;兩大伏筆相互呼應。&lt;/p&gt;
+&lt;p&gt;看到這裡，不禁對埋哏的高德拉特肅然起敬。《目標》第 32～40 章，真的值得用思辨的大腦多讀幾遍。&lt;/p&gt;
+&lt;p&gt;好的商業小說，需要對等的識讀力。&lt;/p&gt;
+&lt;h2 id=&#34;結語&#34;&gt;結語&lt;/h2&gt;
+&lt;p&gt;改變／改革要固化，需要內外兼修。其中，流程與衡量指標，是關鍵的硬性要素。因此，除了擘劃&lt;a href=&#34;//william-yeh.net/post/2016/06/change-framework/&#34;&gt;改變的框架&lt;/a&gt;，別忘了也要設置適當的衡量指標。&lt;/p&gt;
+&lt;p&gt;衡量指標是兩面刃，要謹慎，尤其是均衡感。&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt; 掌握到均衡感，將能促進改變／改革的固化。&lt;/p&gt;
+
+
+&lt;div class=&#34;notice notice--note&#34;&gt;
+  &lt;div class=&#34;notice__title&#34;&gt;
+    
+      系列文章
+    
+  &lt;/div&gt;
+  &lt;div class=&#34;notice__content&#34;&gt;&lt;p&gt;❶ &lt;a href=&#34;//william-yeh.net/post/2016/06/change-framework/&#34;&gt;改變的框架&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❷ 改變／改革：流程與衡量指標&lt;/p&gt;
+&lt;p&gt;❸ &lt;a href=&#34;//william-yeh.net/post/2022/05/evaluation-process-for-changes/&#34;&gt;推動改變的評估流程&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;《&lt;a href=&#34;https://www.books.com.tw/products/0010898249&#34;&gt;目標&lt;/a&gt;》主角 Alex Rogo 的中譯名，原本是「羅哥」，但 2021 的譯本卻改譯為「羅戈」。我個人較偏好舊譯。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;針對衡量指標的均衡感，請參考我的兩篇文章：〈&lt;a href=&#34;//william-yeh.net/post/2018/11/agile-value/&#34;&gt;敏捷的價值與指標&lt;/a&gt;〉與〈&lt;a href=&#34;//william-yeh.net/post/2018/11/devops-value/&#34;&gt;DevOps 的價值與指標&lt;/a&gt;〉。&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+      
     </item>
+    
     <item>
       <title>「判準與指標」系列</title>
       <link>//william-yeh.net/series/criteria-series/</link>
       <pubDate>Wed, 28 Nov 2018 00:00:00 +0000</pubDate>
+      
       <guid>//william-yeh.net/series/criteria-series/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2018/10/methodology-and-criteria/&#34;&gt;軟體開發，除了方法論，還有⋯⋯&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2018/10/agile-criteria/&#34;&gt;敏捷的判準&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2018/11/lean-startup-criteria/&#34;&gt;Lean Startup 的判準&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2018/11/agile-value/&#34;&gt;敏捷的價值與指標&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2018/11/devops-value/&#34;&gt;DevOps 的價值與指標&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2023/12/dev-metrics/&#34;&gt;如何衡量敏捷對於軟體研發效能的利益？&lt;/a&gt;&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2018/10/methodology-and-criteria/&#34;&gt;軟體開發，除了方法論，還有⋯⋯&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2018/10/agile-criteria/&#34;&gt;敏捷的判準&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2018/11/lean-startup-criteria/&#34;&gt;Lean Startup 的判準&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2018/11/agile-value/&#34;&gt;敏捷的價值與指標&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2018/11/devops-value/&#34;&gt;DevOps 的價值與指標&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2023/12/dev-metrics/&#34;&gt;如何衡量敏捷對於軟體研發效能的利益？&lt;/a&gt;&lt;/p&gt;
+</description>
+      
     </item>
+    
     <item>
       <title>DevOps 的價值與指標</title>
       <link>//william-yeh.net/post/2018/11/devops-value/</link>
       <pubDate>Wed, 28 Nov 2018 08:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2018/11/devops-value/</guid>
-      <description>&lt;p&gt;看完〈&lt;a href=&#34;//william-yeh.net/post/2018/11/agile-value/&#34;&gt;敏捷的價值與指標&lt;/a&gt;〉之後，很自然的會進一步追問：「那麼，什麼才是 DevOps 圈子所認定的價值，以及對應的指標，尤其是領先指標？」&lt;/p&gt;&#xA;&lt;p&gt;這問題其實比較容易回答。畢竟，相較於兄弟領域 agile，控制與監管，原本就是 DevOps 不可分割的一部分。&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;看完〈&lt;a href=&#34;//william-yeh.net/post/2018/11/agile-value/&#34;&gt;敏捷的價值與指標&lt;/a&gt;〉之後，很自然的會進一步追問：「那麼，什麼才是 DevOps 圈子所認定的價值，以及對應的指標，尤其是領先指標？」&lt;/p&gt;
+&lt;p&gt;這問題其實比較容易回答。畢竟，相較於兄弟領域 agile，控制與監管，原本就是 DevOps 不可分割的一部分。&lt;/p&gt;
+&lt;p&gt;再者，DevOps 的價值主張也非常明確具體。根據 SEI 提出的 DevOps 操作型定義：&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;DevOps is a set of practices intended to reduce the &lt;strong&gt;time&lt;/strong&gt; between committing a change to a system and the change being placed into normal production, while ensuring high &lt;strong&gt;quality&lt;/strong&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;因此，時間與品質，就是 DevOps 所認定的價值。&lt;/p&gt;
+&lt;p&gt;剩下來的疑問就是：指標？&lt;/p&gt;
+&lt;p&gt;來看看兩份經典的說法吧。&lt;/p&gt;
+&lt;h2 id=&#34;技術價值流&#34;&gt;技術價值流&lt;/h2&gt;
+&lt;p&gt;DevOps 巨著 &lt;a href=&#34;https://www.tenlong.com.tw/products/9787115480170&#34;&gt;&lt;em&gt;The DevOps Handbook&lt;/em&gt;&lt;/a&gt; 第一章，定義技術價值流 (technology value stream) 為：「把業務構想轉化為向客戶交付價值的、由技術驅動的服務所需要的流程。」&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;價值流始於工程師（包括開發、QA、IT 維運和資訊安全人員）向版本控制系統提交了一個變更，止於變更成功地在生產環境中運行，為客戶提供價值，並產生有效的反饋和監控資訊。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;由此觀之，DevOps 的指標，必定會緊扣在技術價值流的環節身上。&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/11/devops-value-stream.png&#34; alt=&#34;DevOps value stream (from: Lean Enterprise, p.139)&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2018/11/devops-value-stream.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;DevOps value stream (from: Lean Enterprise, p.139)&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;此書第一章，根據精實原則，提出三項 DevOps 衡量指標：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;前置時間 (lead time)。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;處理時間 (process time)，以及所佔的比例。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;返工指標 (percent complete and accurate)。&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;此書第六章，進一步建議要合理設置流程改進的優先級：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;為了積極管理技術債務，要確保至少把 20% 的開發和維運時間投入到重構、自動化工作、架構優化以及非功能需求上。&lt;/p&gt;
+&lt;p&gt;如果組織不願意支付這「20% 的税」，那麼技術債務將會最終惡化到靠近所有可用資源的程度。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/11/invisible-value.png&#34; alt=&#34;將 20% 時間用於創造用戶不可見的正面價值&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2018/11/invisible-value.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;將 20% 時間用於創造用戶不可見的正面價值&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;請思考一下，這些算是領先指標，還是落後指標？與「賺錢」之間有強烈的因果關係嗎？&lt;/p&gt;
+&lt;h2 id=&#34;高績效組織&#34;&gt;高績效組織&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://itrevolution.com/devops-research/&#34;&gt;DevOps 年度報告&lt;/a&gt;一直是 DevOps 領域的重頭戲。在 2018 年的報告 &lt;a href=&#34;https://cloudplatformonline.com/2018-state-of-devops.html&#34;&gt;&lt;em&gt;Accelerate: State of DevOps 2018&lt;/em&gt;&lt;/a&gt; 中 &lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;，從全球近兩千位專業人士的調查中，歸納出五個關鍵的&lt;strong&gt;軟體交付與維運效能&lt;/strong&gt; (software delivery and operational performance; SDO performance) 層面，以及對應的指標：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;部署頻率 (deployment frequency)&lt;/li&gt;
+&lt;li&gt;變更的前置時間 (change lead time)&lt;/li&gt;
+&lt;li&gt;服務恢復時間 (MTTR)&lt;/li&gt;
+&lt;li&gt;變更失敗率 (change fail rate)&lt;/li&gt;
+&lt;li&gt;可用性 (availability)&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/11/sdo-performance.png&#34; alt=&#34;高績效組織的 SDO 效能指標&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2018/11/sdo-performance.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;高績效組織的 SDO 效能指標&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;請思考一下，這些算是領先指標，還是落後指標？與「賺錢」之間有強烈的因果關係嗎？&lt;/p&gt;
+&lt;h2 id=&#34;均衡感&#34;&gt;均衡感&lt;/h2&gt;
+&lt;p&gt;和&lt;a href=&#34;//william-yeh.net/post/2018/11/agile-value/&#34;&gt;敏捷&lt;/a&gt;一樣，DevOps 也在追求一種巧妙的均衡感。不僅著眼於百米衝刺的短期成效，更著眼於馬拉松的長期績效。&lt;/p&gt;
+&lt;p&gt;一言以蔽之：在團隊中，如果看不到這種均衡感，那麼，鐵定不是 DevOps。&lt;/p&gt;
+&lt;p&gt;所以，在談要不要 DevOps 之前，務必誠實自問：這種均衡感，是你想追求的嗎？&lt;/p&gt;
+&lt;p&gt;若回答「是」，再試著找出這種均衡感的領先指標吧。&lt;/p&gt;
+
+
+&lt;div class=&#34;notice notice--note&#34;&gt;
+  &lt;div class=&#34;notice__title&#34;&gt;
+    
+      「判準與指標」系列文章
+    
+  &lt;/div&gt;
+  &lt;div class=&#34;notice__content&#34;&gt;&lt;p&gt;❶ &lt;a href=&#34;//william-yeh.net/post/2018/10/methodology-and-criteria/&#34;&gt;軟體開發，除了方法論，還有⋯⋯&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❷ &lt;a href=&#34;//william-yeh.net/post/2018/10/agile-criteria/&#34;&gt;敏捷的判準&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❸ &lt;a href=&#34;//william-yeh.net/post/2018/11/lean-startup-criteria/&#34;&gt;Lean Startup 的判準&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❹ &lt;a href=&#34;//william-yeh.net/post/2018/11/agile-value/&#34;&gt;敏捷的價值與指標&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❺ DevOps 的價值與指標&lt;/p&gt;
+&lt;p&gt;❻ &lt;a href=&#34;//william-yeh.net/post/2023/12/dev-metrics/&#34;&gt;如何衡量敏捷對於軟體研發效能的利益？&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;SEI 提出的 DevOps 操作型定義，可視為一種狹義的 DevOps 定義。詳見〈&lt;a href=&#34;//william-yeh.net/post/2016/01/devops-goals-in-a-nutshell/&#34;&gt;一句話囊括 DevOps 的目標&lt;/a&gt;〉一文。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;返工指標 (percent complete and accuracy)，在 &lt;a href=&#34;https://www.tenlong.com.tw/products/9787115480170&#34;&gt;&lt;em&gt;The DevOps Handbook&lt;/em&gt;&lt;/a&gt; 書中寫成 &lt;code&gt;%C/A&lt;/code&gt; 符號，但在更廣大的 lean 社群中更常用 &lt;code&gt;%C&amp;amp;A&lt;/code&gt; 符號（像 TKMG 維護的 &lt;a href=&#34;https://www.ksmartin.com/lean-terminology/#p&#34;&gt;Lean 術語表&lt;/a&gt;）。個人認為，後者比較妥當。&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;
+&lt;p&gt;這份年度報告，也有簡體中文譯版：〈&lt;a href=&#34;https://mp.weixin.qq.com/s/F5_XZ1G1PrmpNsQKdKwRSQ&#34;&gt;2018 全球 DevOps 现状报告&lt;/a&gt;〉。&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+      
     </item>
+    
     <item>
       <title>敏捷的價值與指標</title>
       <link>//william-yeh.net/post/2018/11/agile-value/</link>
       <pubDate>Tue, 27 Nov 2018 08:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2018/11/agile-value/</guid>
-      <description>&lt;p&gt;同溫層朋友提出一則有趣的&lt;a href=&#34;https://www.facebook.com/groups/179345672472/permalink/10156092663467473/&#34;&gt;提問&lt;/a&gt;：&lt;/p&gt;&#xA;&#xA;&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;&#xA;&lt;div class=&#34;box&#34;&gt;&#xA;&lt;figure  itemprop=&#34;associatedMedia&#34;&#xA;  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; &#xA;  style=&#34;max-width:30em&#34; &gt;&#xA;    &lt;div class=&#34;img&#34;&gt;&#xA;      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/11/agile-value-post.png&#34; alt=&#34;如何衡量敏捷的成效？ by Howie Yu (2018-11-23)&#34;/&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;a href=&#34;//william-yeh.net/img/2018/11/agile-value-post.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;&#xA;      &lt;figcaption&gt;&#xA;          &lt;p&gt;如何衡量敏捷的成效？ by Howie Yu (2018-11-23)&lt;/p&gt;&#xA;      &lt;/figcaption&gt;&#xA;  &lt;/figure&gt;&#xA;&lt;/div&gt;</description>
+      
+        <description>&lt;p&gt;同溫層朋友提出一則有趣的&lt;a href=&#34;https://www.facebook.com/groups/179345672472/permalink/10156092663467473/&#34;&gt;提問&lt;/a&gt;：&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/11/agile-value-post.png&#34; alt=&#34;如何衡量敏捷的成效？ by Howie Yu (2018-11-23)&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2018/11/agile-value-post.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;如何衡量敏捷的成效？ by Howie Yu (2018-11-23)&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;從該討論串，以及後續追加的其他&lt;a href=&#34;https://www.facebook.com/groups/179345672472/permalink/10156096944827473/&#34;&gt;討論&lt;/a&gt;看來，「賺錢」算是簡潔扼要又難以反駁的「成效」衡量標準。畢竟，這是商業世界。&lt;/p&gt;
+&lt;p&gt;只不過，「賺錢」畢竟已經是落後指標了，有流程改善意識的人，應該要更關注領先指標。&lt;/p&gt;
+&lt;p&gt;「錢」是很重要的價值，但「窮得只剩下錢」不該是軟體研發所追求的價值。&lt;/p&gt;
+&lt;p&gt;因此，當時我給的簡短&lt;a href=&#34;https://www.facebook.com/groups/179345672472/permalink/10156092663467473/?comment_id=10156092774837473&amp;amp;comment_tracking=%7B%22tn%22%3A%22R6%22%7D&#34;&gt;回答&lt;/a&gt;是：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;TL;DR　對於「價值」是否有增益。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;回頭看看當初導入敏捷的痛點及原因，找出起初認定（或誤認）的價值是什麼。尤其是：這所謂的「價值」，是否可追溯至&lt;a href=&#34;https://agilemanifesto.org/&#34;&gt;敏捷宣言&lt;/a&gt;或 &lt;a href=&#34;https://modernagile.org/&#34;&gt;Modern Agile&lt;/a&gt; 四層面。若追溯不了，或許一開始就投錯藥方了。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;導入敏捷後，是否在敏捷宣言或 Modern Agile 四層面有所進展。進而檢討：這些進展，是否有對應到當初導入敏捷的痛點及原因。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;在導入敏捷之初，或者說，在評估是否要導入敏捷之初，其實應該早就握有一票沈痾清單了。這份沈痾清單，就是大家最在意、最想要增益的「價值」。&lt;/p&gt;
+&lt;p&gt;沈痾清單，初期常會以「落後指標」形式來界定；但這還不夠。對於大家最在意的一些落後指標，還需要更進一步，研究出具有強烈因果關係的「領先指標」，才能夠發揮高槓桿的改善。&lt;/p&gt;
+&lt;p&gt;什麼才是敏捷圈子所認定的價值，以及對應的指標，尤其是領先指標？&lt;/p&gt;
+&lt;p&gt;來看看三本經典的說法吧。&lt;/p&gt;
+&lt;h2 id=&#34;敏捷專案儀表板&#34;&gt;敏捷專案儀表板&lt;/h2&gt;
+&lt;p&gt;Scrum 發明人 &lt;a href=&#34;https://www.linkedin.com/in/jeffsutherland&#34;&gt;Jeff Sutherland&lt;/a&gt; 及 &lt;a href=&#34;https://kenschwaber.wordpress.com/&#34;&gt;Ken Schwaber&lt;/a&gt; 合著一本小書《&lt;a href=&#34;https://williampjyeh.notion.site/Scrum-00d22ec98ca847d49f62b63d10667049&#34;&gt;告別瀑布，擁抱 Scrum&lt;/a&gt;》，第七章介紹敏捷工作室可採用的評估指標，用來「追蹤和改進專案績效，建置專案和管理報告，追蹤專案歷史，反映目前趨勢，評估工作室的成本和獲利，以此來確定是否需要擴張或縮小工作室」：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/11/scrum-studio-dashboard.png&#34; alt=&#34;Scrum studio dashboard&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2018/11/scrum-studio-dashboard.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Scrum studio dashboard&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;生產效率 (Productivity)：利用特定數量的資金，所完成的業務功能的單位個數。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;品質 (Quality)：軟體缺陷個數。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;價值 (Value)：軟體開發中，投資的每一塊錢，為組織創造價值的效率（用百分比表示）。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;請思考一下，這些算是領先指標，還是落後指標？與「賺錢」之間有強烈的因果關係嗎？&lt;/p&gt;
+&lt;h2 id=&#34;衡量敏捷的成功&#34;&gt;衡量敏捷的成功&lt;/h2&gt;
+&lt;p&gt;《&lt;a href=&#34;https://www.tenlong.com.tw/products/9787121264528&#34;&gt;洞悉敏捷&lt;/a&gt;》第八章，介紹四個度量維度，作為衡量敏捷效能的框架：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;快速性 (do it fast)：生產力、回應性 (responsiveness)。&lt;/li&gt;
+&lt;li&gt;正確性 (do it right)：品質、客戶滿意度。&lt;/li&gt;
+&lt;li&gt;及時性 (do it on time)：可預測的交付節奏。&lt;/li&gt;
+&lt;li&gt;持續性 (keep doing it)：員工滿意度。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;請思考一下，這些算是領先指標，還是落後指標？與「賺錢」之間有強烈的因果關係嗎？&lt;/p&gt;
+&lt;h2 id=&#34;敏捷輪盤&#34;&gt;敏捷輪盤&lt;/h2&gt;
+&lt;p&gt;《&lt;a href=&#34;https://www.tenlong.com.tw/products/9789864343263&#34;&gt;The Great ScrumMaster 中文版&lt;/a&gt;》第六章很懇切地提醒：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在開始改變你們的工作方式之前，先搞清楚變革原因會是個好主意，不要只是因為它是個新潮的東西就開始著手去做。&lt;/p&gt;
+&lt;p&gt;你們目前的強項有哪些？瓶頸是什麼？你期望的結果是什麼？如果這些期望不夠高、不夠好，那麼或許你還沒準備好面對變革。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;本章接著介紹 12 個度量維度，幫助我們判斷現在是否為變革的好時機：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/11/agile-wheel.jpg&#34; alt=&#34;敏捷輪盤 (Agile Wheel)&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2018/11/agile-wheel.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;敏捷輪盤 (Agile Wheel)&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;書中將這個「敏捷輪盤」視為團隊共識的探詢工具，我則進一步將它視為敏捷效能的指標：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;上市時間。&lt;/li&gt;
+&lt;li&gt;客戶滿意度。&lt;/li&gt;
+&lt;li&gt;從客戶取得的回饋。&lt;/li&gt;
+&lt;li&gt;交付的可預期性。&lt;/li&gt;
+&lt;li&gt;團隊健康。&lt;/li&gt;
+&lt;li&gt;團隊合作。&lt;/li&gt;
+&lt;li&gt;與他人的溝通。&lt;/li&gt;
+&lt;li&gt;效率。&lt;/li&gt;
+&lt;li&gt;生產力。&lt;/li&gt;
+&lt;li&gt;品質。&lt;/li&gt;
+&lt;li&gt;持續改善。&lt;/li&gt;
+&lt;li&gt;對改革的反應。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;請思考一下，這些算是領先指標，還是落後指標？與「賺錢」之間有強烈的因果關係嗎？&lt;/p&gt;
+&lt;h2 id=&#34;價值&#34;&gt;價值&lt;/h2&gt;
+&lt;p&gt;看了三本經典條列的 &lt;em&gt;N&lt;/em&gt; 項敏捷的度量指標，可以回頭審視文章開頭的大哉問了。&lt;/p&gt;
+&lt;p&gt;敏捷，對於「&lt;strong&gt;價值&lt;/strong&gt;」是否有增益？&lt;/p&gt;
+&lt;p&gt;但在試著回答這問題之前，請先試著釐清一個核心議題：&lt;strong&gt;什麼才是敏捷圈子所認定的「價值」？&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;如果你嘗試將《&lt;a href=&#34;https://www.books.com.tw/products/0010647604&#34;&gt;告別瀑布，擁抱 Scrum&lt;/a&gt;》、《&lt;a href=&#34;https://www.tenlong.com.tw/products/9787121264528&#34;&gt;洞悉敏捷&lt;/a&gt;》、《&lt;a href=&#34;https://www.tenlong.com.tw/products/9789864343263&#34;&gt;The Great ScrumMaster 中文版&lt;/a&gt;》列的 3 + 4 + 12 項價值指標分類，不難看出，敏捷，不僅著眼於百米衝刺的短期成效，更著眼於馬拉松的長期績效。&lt;/p&gt;
+&lt;p&gt;敏捷，是一種巧妙的均衡感。&lt;/p&gt;
+&lt;p&gt;這種均衡感，約略可對應到 &lt;a href=&#34;http://modernagile.org/&#34;&gt;Modern Agile&lt;/a&gt; 四層面：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Make People Awesome&lt;/li&gt;
+&lt;li&gt;Make Safety a Prerequisite&lt;/li&gt;
+&lt;li&gt;Experiment &amp;amp; Learn Rapidly&lt;/li&gt;
+&lt;li&gt;Deliver Value Continuously&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;這種均衡感，也像極了《&lt;a href=&#34;https://www.books.com.tw/products/0010780648&#34;&gt;投資前的精準判讀&lt;/a&gt;》提出的&lt;strong&gt;永續事業模型&lt;/strong&gt; (model of a sustainable business)。&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;一言以蔽之：在團隊中，如果看不到這種均衡感，那麼，鐵定不是敏捷。&lt;/p&gt;
+&lt;p&gt;所以，在談要不要敏捷之前，務必誠實自問：這種均衡感，是你想追求的嗎？&lt;/p&gt;
+&lt;p&gt;若回答「是」，再試著找出這種均衡感的領先指標吧。&lt;/p&gt;
+
+
+&lt;div class=&#34;notice notice--note&#34;&gt;
+  &lt;div class=&#34;notice__title&#34;&gt;
+    
+      「判準與指標」系列文章
+    
+  &lt;/div&gt;
+  &lt;div class=&#34;notice__content&#34;&gt;&lt;p&gt;❶ &lt;a href=&#34;//william-yeh.net/post/2018/10/methodology-and-criteria/&#34;&gt;軟體開發，除了方法論，還有⋯⋯&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❷ &lt;a href=&#34;//william-yeh.net/post/2018/10/agile-criteria/&#34;&gt;敏捷的判準&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❸ &lt;a href=&#34;//william-yeh.net/post/2018/11/lean-startup-criteria/&#34;&gt;Lean Startup 的判準&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❹ 敏捷的價值與指標&lt;/p&gt;
+&lt;p&gt;❺ &lt;a href=&#34;//william-yeh.net/post/2018/11/devops-value/&#34;&gt;DevOps 的價值與指標&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❻ &lt;a href=&#34;//william-yeh.net/post/2023/12/dev-metrics/&#34;&gt;如何衡量敏捷對於軟體研發效能的利益？&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2018/11/peak-at-enterprise-value/&#34;&gt;從小提問看企業價值&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description>
+      
     </item>
+    
   </channel>
 </rss>

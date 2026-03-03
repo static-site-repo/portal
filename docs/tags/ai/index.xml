@@ -4,23 +4,797 @@
     <title>Ai on Potioneer&#39;s Essays</title>
     <link>//william-yeh.net/tags/ai/</link>
     <description>Recent content in Ai on Potioneer&#39;s Essays</description>
-    <generator>Hugo</generator>
+    <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <lastBuildDate>Sat, 08 Feb 2025 18:00:00 +0800</lastBuildDate>
-    <atom:link href="//william-yeh.net/tags/ai/index.xml" rel="self" type="application/rss+xml" />
+    
+        <atom:link href="//william-yeh.net/tags/ai/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>AI 會寫程式，還要參與系統分析嗎？</title>
       <link>//william-yeh.net/post/2025/02/sa-with-genai/</link>
       <pubDate>Sat, 08 Feb 2025 18:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2025/02/sa-with-genai/</guid>
-      <description>&lt;p&gt;傳統上，複雜的軟體專案，除了程式設計師之外，還會搭配系統設計師，甚至系統分析師，確保領域知識及商業邏輯都有朝對的方向前進。&lt;/p&gt;&#xA;&lt;p&gt;生成式 AI 既然會寫程式，下一個問題就是：它也會做系統分析嗎？&lt;/p&gt;&#xA;&lt;p&gt;理論上來說，應該是的。畢竟我們在&lt;a href=&#34;//william-yeh.net/post/2025/02/codegen-with-genai/&#34;&gt;前一篇文章&lt;/a&gt;都親眼看過，AI 既然能理解規格、潤飾需求、撰寫程式碼，甚至生成測試案例，那麼系統分析 (SA) 和系統設計 (SD) 這類「中間產物」，確實也難不倒它。畢竟，系統分析本質上就是資訊的整理、建模與推理，而這些都是 AI 擅長的領域。&lt;/p&gt;&#xA;&lt;p&gt;我認為，SA/SD 也應該納入 AI 協作。尤其是從 SA/SD 擅長的建模角度，能夠協助我們及早確認領域知識及商業邏輯，檢查需求規格是否有矛盾、遺漏或模稜兩可的地方，甚至提出改善建議，幫助系統分析師更快定位問題，減少後期開發的返工成本。譬如說，透過 AI 生成的狀態轉移圖，也有助於規劃黑箱測試，提高測試覆蓋率，進而提升系統的穩定性與可靠性。&lt;/p&gt;&#xA;&lt;p&gt;接下來就是現實問題了：讓 AI 產生的狀態圖，真的比人工畫得更好嗎？能省多少時間？&lt;/p&gt;&#xA;&lt;p&gt;這就要實測了！現在，就讓我們拿&lt;a href=&#34;//william-yeh.net/post/2025/02/codegen-with-genai/&#34;&gt;前一篇文章&lt;/a&gt;的規格作為引子，看看 AI 生成的狀態圖表現如何吧！&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;傳統上，複雜的軟體專案，除了程式設計師之外，還會搭配系統設計師，甚至系統分析師，確保領域知識及商業邏輯都有朝對的方向前進。&lt;/p&gt;
+&lt;p&gt;生成式 AI 既然會寫程式，下一個問題就是：它也會做系統分析嗎？&lt;/p&gt;
+&lt;p&gt;理論上來說，應該是的。畢竟我們在&lt;a href=&#34;//william-yeh.net/post/2025/02/codegen-with-genai/&#34;&gt;前一篇文章&lt;/a&gt;都親眼看過，AI 既然能理解規格、潤飾需求、撰寫程式碼，甚至生成測試案例，那麼系統分析 (SA) 和系統設計 (SD) 這類「中間產物」，確實也難不倒它。畢竟，系統分析本質上就是資訊的整理、建模與推理，而這些都是 AI 擅長的領域。&lt;/p&gt;
+&lt;p&gt;我認為，SA/SD 也應該納入 AI 協作。尤其是從 SA/SD 擅長的建模角度，能夠協助我們及早確認領域知識及商業邏輯，檢查需求規格是否有矛盾、遺漏或模稜兩可的地方，甚至提出改善建議，幫助系統分析師更快定位問題，減少後期開發的返工成本。譬如說，透過 AI 生成的狀態轉移圖，也有助於規劃黑箱測試，提高測試覆蓋率，進而提升系統的穩定性與可靠性。&lt;/p&gt;
+&lt;p&gt;接下來就是現實問題了：讓 AI 產生的狀態圖，真的比人工畫得更好嗎？能省多少時間？&lt;/p&gt;
+&lt;p&gt;這就要實測了！現在，就讓我們拿&lt;a href=&#34;//william-yeh.net/post/2025/02/codegen-with-genai/&#34;&gt;前一篇文章&lt;/a&gt;的規格作為引子，看看 AI 生成的狀態圖表現如何吧！&lt;/p&gt;
+&lt;h2 id=&#34;狀況一過於窮舉&#34;&gt;狀況一：過於窮舉&lt;/h2&gt;
+&lt;p&gt;提示詞 #1：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Generate a UML-style state diagram for the game.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;吐出的狀態圖，細節可能每次都有些不同，以下是較常見的版本：&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2025/02/fsm-1.png&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2025/02/fsm-1.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;嚴格說起來，這份狀態圖並不符合 UML 格式⋯⋯但我暫時不挑剔這一點，等最後一步再來處理。&lt;/p&gt;
+&lt;p&gt;這份狀態圖，把所有可能的狀態都窮舉了，應該很合乎測試狂人的胃口。不過，窮舉得太過於累贅，很難消化。若不予以抽象化，很難進一步發展出程式。&lt;/p&gt;
+&lt;h2 id=&#34;狀況二濃縮過度&#34;&gt;狀況二：濃縮過度&lt;/h2&gt;
+&lt;p&gt;我們請 GenAI 整頓一下，在不影響正確性的前提下，將過於累贅的狀態精簡濃縮一遍：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Is it possible to reduce the states without compromising correctness or clarity?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;吐出的狀態圖，細節可能每次都有些不同，我挑出其中一個版本來聊聊：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2025/02/fsm-2.png&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2025/02/fsm-2.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;有了這份濃縮過的狀態圖，就比較容易一眼看出問題。最大的問題就是，有兩個紅色箭頭的地方濃縮過頭了，誤把 2-0 及 0-2 比分判定為比賽結束。&lt;/p&gt;
+&lt;h2 id=&#34;基本合格的狀態圖&#34;&gt;基本合格的狀態圖&lt;/h2&gt;
+&lt;p&gt;我請 GenAI 修正三個地方：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Three issues need to be addressed:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;The “Px leads by 2 points” transition is too vague. Does it account for cases like 2-0 or 0-2?&lt;/li&gt;
+&lt;li&gt;The two &amp;ldquo;Game Start&amp;rdquo; transitions should be merged into one.&lt;/li&gt;
+&lt;li&gt;Add an initial state for the 0-0 (&amp;ldquo;Love-Love&amp;rdquo;) score.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;如此這般調整，通常我們很快就可以得到比較滿意的狀態圖，既清晰，又正確：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2025/02/fsm-3.png&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2025/02/fsm-3.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;轉換成機器可讀的版本&#34;&gt;轉換成機器可讀的版本&lt;/h2&gt;
+&lt;p&gt;既然好不容易生出清晰正確的狀態圖，我們應該把圖形轉成像是 &lt;a href=&#34;https://plantuml.com/en/&#34;&gt;PlantUML&lt;/a&gt; 這種可程式化的文字表述形式，以預留後續應用的可能性。&lt;/p&gt;
+&lt;p&gt;提示詞：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Proceed to represent the state diagram using PlantUML syntax.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;我們會得到這樣的狀態圖規格文字：&lt;/p&gt;
+
+&lt;details&gt;
+  &lt;summary style=&#34;background-color:#f5f5f5;border:1px solid #ccc;padding:5px;&#34;&gt;
+    PlantUML 格式的狀態圖
+    
+  &lt;/summary&gt;
+  &lt;div class=&#34;highlight-container&#34;&gt;
+
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+
+  
+  &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plain&#34; data-lang=&#34;plain&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;@startuml
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[*] --&amp;gt; LoveLove : Game Start
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;LoveLove --&amp;gt; Score : P1 or P2 Scores
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Score --&amp;gt; Score : Regular Scoring
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Score --&amp;gt; Deuce : Both &amp;gt;= 3 &amp;amp; Equal
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Deuce --&amp;gt; AdvantageP1 : P1 Scores
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Deuce --&amp;gt; AdvantageP2 : P2 Scores
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Score --&amp;gt; WinP1 : P1 &amp;gt;= 4 &amp;amp; Lead &amp;gt;= 2
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Score --&amp;gt; WinP2 : P2 &amp;gt;= 4 &amp;amp; Lead &amp;gt;= 2
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;AdvantageP1 --&amp;gt; WinP1 : P1 Scores
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;AdvantageP2 --&amp;gt; WinP2 : P2 Scores
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;AdvantageP1 --&amp;gt; Deuce : P2 Scores
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;AdvantageP2 --&amp;gt; Deuce : P1 Scores
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;WinP1 --&amp;gt; [*]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;WinP2 --&amp;gt; [*]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;@enduml&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/details&gt;
+
+&lt;p&gt;這份狀態圖以及 PlantUML 規格文字，很值得放進系統分析文件，甚至規格書。&lt;/p&gt;
+&lt;p&gt;不過，如果你有潔癖，希望狀態圖要合乎正統的 UML 規定，可以把上面的文字丟到&lt;a href=&#34;https://www.plantuml.com/plantuml/uml/&#34;&gt;PlantUML 軟體&lt;/a&gt;去產生完全合乎標準的 UML 狀態圖：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2025/02/fsm-4.png&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2025/02/fsm-4.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;系統分析的再思&#34;&gt;系統分析的再思&lt;/h2&gt;
+&lt;p&gt;許多威力強大的機器學習與人工智慧技術，本質上是黑箱的，可觀測性與可解釋性，一直是技術發展與推廣的大挑戰。&lt;/p&gt;
+&lt;p&gt;對於 GenAI 神兵利器，許多人只在程式碼的層次與 GenAI 對話，畢竟光速產生程式的快感，很難不上癮。&lt;/p&gt;
+&lt;p&gt;系統分析？很抱歉，這是光速領域，沒有預留座位。&lt;/p&gt;
+&lt;p&gt;但我還是想要稍微保守一點，寧可慢一點。在前段的規格、中段的系統分析與設計、後段的測試驗收，與 GenAI 多一點協作，在中間產物身上，多留下一些可觀測、可解釋的線索，並力求可以穩定再現。&lt;/p&gt;
+&lt;p&gt;畢竟，順向工程比較容易，逆向工程比較困難。如我前一篇文章〈&lt;a href=&#34;//william-yeh.net/post/2025/02/codegen-with-genai/&#34;&gt;當 AI 會寫程式，程式碼會變得即寫即棄嗎？&lt;/a&gt;〉所說，程式碼之所以會變得可以即寫即棄，是因為我們用更有效率的方式，將「可用的軟體」的內涵，轉寫到「詳盡的文件」裡面，讓它成為更有意義的 “ground truth”。&lt;/p&gt;
+&lt;p&gt;在與 GenAI 協作時，別忘了「詳盡的文件」也是協作的重點。&lt;/p&gt;</description>
+      
     </item>
+    
     <item>
       <title>當 AI 會寫程式，程式碼會變得即寫即棄嗎？</title>
       <link>//william-yeh.net/post/2025/02/codegen-with-genai/</link>
       <pubDate>Fri, 07 Feb 2025 18:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2025/02/codegen-with-genai/</guid>
-      <description>&lt;p&gt;人類從事的領域，不斷被生成式 AI (GenAI) 入侵。&lt;/p&gt;&#xA;&lt;p&gt;社群媒體上，早就充斥一大堆「AI 體」的文案圖案，現在就連程式設計領域也開始淪陷。像 Google 執行長就透露：「在 Google，超過 1/4 的新程式碼已經是先由 AI 生成，再讓程式設計師去複審與確認。」&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; 而 GitHub 執行長更大膽預言 80% 的程式碼都將會由 GenAI 生成。&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;&#xA;&lt;p&gt;也就是說，以前，程式設計師得親手撰寫大部分的程式碼；現在則開始挪出一段時間去跟 GenAI 對話：調教提示詞 (prompt)、審核生成的程式碼、確認正確性，如此反覆進行好幾個回合。&lt;/p&gt;&#xA;&lt;p&gt;GenAI 進展神速。如果某一天進展到，只要提示詞下得夠精準，第一次生出來的程式碼幾乎就合格過關了，是否也就意謂著，程式設計師的專業訓練及工作重點，將會更轉向 ⑴ 鑽研提示工程、⑵ 審核生成的程式碼這兩條路線發展？換句話說，將會更朝向 ⑴ 前段的需求規格、⑵ 後段的測試驗收這兩條路線？&lt;/p&gt;&#xA;&lt;p&gt;如果頭尾兩端（需求規格與測試驗收）都由人來看守定義，中間步驟（撰寫程式碼）改由 GenAI 來操刀，是否也就意謂著，程式碼會變成像是可拋棄的東西，反正隨時都可以叫 GenAI 再生出一份出來？甚至當 GenAI 能力升級之後，又能夠生出比拋棄掉的還要更好的程式碼？&lt;/p&gt;&#xA;&lt;p&gt;聽起來可能有點兒瘋狂。可是如果以上屬實，那麼，&lt;a href=&#34;https://agilemanifesto.org/&#34;&gt;敏捷四大宣言&lt;/a&gt;之一「&lt;strong&gt;可用的軟體&lt;/strong&gt; 重於 &lt;strong&gt;詳盡的文件&lt;/strong&gt;」，在 GenAI 時代是否依然成立，可能都值得再重新評估檢討。&lt;/p&gt;&#xA;&lt;p&gt;為此，我在 ChatGPT 4o 進行一系列小小的實驗。試試看當 GenAI 收到前段的需求規格之後，能夠生出什麼樣的程式碼以及測試驗收案例；緊接著會與 GenAI 協作調教頭尾兩端（需求規格與測試驗收），再看看 GenAI 重新生出來的程式碼，會有什麼不同。&lt;/p&gt;&#xA;&#xA;&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;&#xA;&lt;div class=&#34;box&#34;&gt;&#xA;&lt;figure  itemprop=&#34;associatedMedia&#34;&#xA;  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; &#xA;  style=&#34;max-width:30em&#34; &gt;&#xA;    &lt;div class=&#34;img&#34;&gt;&#xA;      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2025/02/work-with-genai.jpg&#34; /&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;a href=&#34;//william-yeh.net/img/2025/02/work-with-genai.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;&#xA;  &lt;/figure&gt;&#xA;&lt;/div&gt;</description>
+      
+        <description>&lt;p&gt;人類從事的領域，不斷被生成式 AI (GenAI) 入侵。&lt;/p&gt;
+&lt;p&gt;社群媒體上，早就充斥一大堆「AI 體」的文案圖案，現在就連程式設計領域也開始淪陷。像 Google 執行長就透露：「在 Google，超過 1/4 的新程式碼已經是先由 AI 生成，再讓程式設計師去複審與確認。」&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; 而 GitHub 執行長更大膽預言 80% 的程式碼都將會由 GenAI 生成。&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;也就是說，以前，程式設計師得親手撰寫大部分的程式碼；現在則開始挪出一段時間去跟 GenAI 對話：調教提示詞 (prompt)、審核生成的程式碼、確認正確性，如此反覆進行好幾個回合。&lt;/p&gt;
+&lt;p&gt;GenAI 進展神速。如果某一天進展到，只要提示詞下得夠精準，第一次生出來的程式碼幾乎就合格過關了，是否也就意謂著，程式設計師的專業訓練及工作重點，將會更轉向 ⑴ 鑽研提示工程、⑵ 審核生成的程式碼這兩條路線發展？換句話說，將會更朝向 ⑴ 前段的需求規格、⑵ 後段的測試驗收這兩條路線？&lt;/p&gt;
+&lt;p&gt;如果頭尾兩端（需求規格與測試驗收）都由人來看守定義，中間步驟（撰寫程式碼）改由 GenAI 來操刀，是否也就意謂著，程式碼會變成像是可拋棄的東西，反正隨時都可以叫 GenAI 再生出一份出來？甚至當 GenAI 能力升級之後，又能夠生出比拋棄掉的還要更好的程式碼？&lt;/p&gt;
+&lt;p&gt;聽起來可能有點兒瘋狂。可是如果以上屬實，那麼，&lt;a href=&#34;https://agilemanifesto.org/&#34;&gt;敏捷四大宣言&lt;/a&gt;之一「&lt;strong&gt;可用的軟體&lt;/strong&gt; 重於 &lt;strong&gt;詳盡的文件&lt;/strong&gt;」，在 GenAI 時代是否依然成立，可能都值得再重新評估檢討。&lt;/p&gt;
+&lt;p&gt;為此，我在 ChatGPT 4o 進行一系列小小的實驗。試試看當 GenAI 收到前段的需求規格之後，能夠生出什麼樣的程式碼以及測試驗收案例；緊接著會與 GenAI 協作調教頭尾兩端（需求規格與測試驗收），再看看 GenAI 重新生出來的程式碼，會有什麼不同。&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2025/02/work-with-genai.jpg&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2025/02/work-with-genai.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;實驗素材&#34;&gt;實驗素材&lt;/h2&gt;
+&lt;p&gt;我選用 TDD 社群常見的 Tennis Kata 作為實驗素材。
+為了怕 GenAI 早已被餵食過 Tennis Kata，想也不想就直接吐出記憶中的標準答案，也就是所謂的「資料記憶」問題，我稍加修改 Samman Technical Coaching 提供的 &lt;a href=&#34;https://sammancoaching.org/kata_descriptions/tennis.html&#34;&gt;Tennis Kata 版本&lt;/a&gt;。微調過的文字如下：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The rule of the 2-player game &amp;ldquo;Sinnet&amp;rdquo; is summarized below:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A game is won by the first player to have won at least four points in total and at least two points more than the opponent.&lt;/li&gt;
+&lt;li&gt;The running score of each game is described in a manner peculiar to this: scores from zero to three points are described as “Love”, “Fifteen”, “Thirty”, and “Forty” respectively.&lt;/li&gt;
+&lt;li&gt;If at least three points have been scored by each player, and the scores are equal, the score is “Deuce”.&lt;/li&gt;
+&lt;li&gt;If at least three points have been scored by each side and a player has one more point than his opponent, the score of the game is “Advantage” for the player in the lead.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;為了進一步消除資料記憶的疑慮，我也故意翻譯成中文（儘管在 ChatGPT 大神面前，這麼做未必真的有用，哈）：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;以下是二人遊戲 &amp;ldquo;Sinnet&amp;rdquo; 的規則：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;遊戲由首先贏得至少四分，且比對手多至少兩分的玩家獲勝。&lt;/li&gt;
+&lt;li&gt;每局的進行得分以一種特殊的方式描述：從零到三分分別描述為 “Love”、 “Fifteen”、 “Thirty” 和 “Forty”。&lt;/li&gt;
+&lt;li&gt;如果每位玩家至少得了三分，且比分相同，則比分為 “Deuce”。&lt;/li&gt;
+&lt;li&gt;如果每方至少得了三分，且有一名玩家比對手多一分，則領先玩家的比分為 “Advantage”。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;接下來的前幾個實驗，都會以這段文字作為對話的開始，姑且就把它叫做「&lt;strong&gt;初始規格/v1&lt;/strong&gt;」吧。不過，GenAI 有一些隨機性的行為，不一定每次都會得到一樣的結果，我會挑出較具代表性的來探討。&lt;/p&gt;
+&lt;p&gt;系列實驗如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;🅐 基礎實驗：①給初始規格/v1 ❯ ②生成程式及測試&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;🅑 調整規格：①給初始規格/v1 ❯ ③調整規格/v2 ❯ ④生成程式及測試&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;🅒 可執行的規格：①給初始規格/v1 ❯ ③調整規格/v2 ❯ ④生成程式及測試 ❯ ⑤將測試納入規格/v3&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;🅓 測試驅動：⑥根據規格/v3 重新生成程式，並予以測試檢驗&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;🅔 逆向工程：⑥根據規格/v3 重新生成程式，並予以測試檢驗 ❯ ⑦逆向工程規格/v4&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;有些實驗之間有先後關係，有些實驗需要開啟新的對話：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2025/02/flow-all.png&#34; alt=&#34;整體實驗流程&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2025/02/flow-all.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;整體實驗流程&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;實驗基礎實驗&#34;&gt;實驗🅐、基礎實驗&lt;/h2&gt;
+&lt;p&gt;先從最基礎的實驗開始，直接叫 GenAI 根據我們給的初始規格，生成程式及測試。&lt;/p&gt;
+&lt;p&gt;基礎的實驗步驟如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;①給初始規格/v1&lt;/li&gt;
+&lt;li&gt;②生成程式及測試&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2025/02/flow-a.png&#34; alt=&#34;實驗🅐流程&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2025/02/flow-a.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;實驗🅐流程&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;既然要叫 GenAI 生成測試，就順便叫它用比較好的方式來做：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.amazon.com/dp/1617290084&#34;&gt;&lt;em&gt;Specification by Example&lt;/em&gt;&lt;/a&gt; 提到的 BDD (behavior driven design)。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.amazon.com/dp/1633439933&#34;&gt;&lt;em&gt;Effective Software Testing&lt;/em&gt;&lt;/a&gt; 提到的 spec-based &amp;amp; property-based testing 角度以及 AAA (arrange-act-assert) 手法。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;提示詞②如下：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Now, implement a Python program to display the current game score.  Also, create specification-based tests using BDD-style and property-based testing. Each test case should follow the Arrange-Act-Assert (AAA) pattern, ensuring that only one AAA scenario is included per test case. Place Gherkin descriptions at the beginning of each test case using a docstring, annotation, or function name. Ensure these tests cover normal scenarios as well as edge cases, focusing on boundaries, partitions, and input dependencies.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;吐出的主體程式碼，細節可能每次都有些不同，以下是較常見的版本：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2025/02/code-a1.png&#34; alt=&#34;提示詞②產生的主體程式碼&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2025/02/code-a1.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;提示詞②產生的主體程式碼&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;主體程式碼看起來滿樸素的，程式邏輯大體上也是圍繞在初始規格的直接翻譯。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;吐出的測試案例，每次的差異就比較大了，以下是其中一個版本：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2025/02/code-a2.png&#34; alt=&#34;提示詞②產生的測試&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2025/02/code-a2.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;提示詞②產生的測試&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;形式上 OK，只是我認為還有些缺失：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;對於 deuce 的比分，常常只測到 3-3 的情況，沒有進一步嘗試 4-4、5-5 甚至更多。這應該是 property-based testing 的強項。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在 arrange 及 act 階段，常常少了交錯得分的劇情，譬如說像是 0-0 ❯ 1-0 ❯ 2-0 ❯ 2-1 ❯ 3-1 ❯ 3-2 ❯ 3-3 (deuce) ❯ 3-4 ❯ 4-4 (deuce) 這種緊張的情節。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Property-based testing 有點偷懶。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;實驗調整規格&#34;&gt;實驗🅑、調整規格&lt;/h2&gt;
+&lt;p&gt;我們一開始給的初始規格/v1，可能未必是最好的。這一次，讓我們邀請 AI 對我們提出疑問，一起協力把初始規格調整成較清晰、無歧義的內容，再拿這份調整過的規格去生成程式與測試。&lt;/p&gt;
+&lt;p&gt;調整規格的實驗步驟如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;①給初始規格/v1&lt;/li&gt;
+&lt;li&gt;③調整規格/v2&lt;/li&gt;
+&lt;li&gt;④生成程式及測試&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2025/02/flow-b.png&#34; alt=&#34;實驗🅑流程&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2025/02/flow-b.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;實驗🅑流程&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;提示詞③如下：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Now, you can ask me questions about the previous specification to clarify its meaning and remove any ambiguity. If you don&amp;rsquo;t have any questions, please proceed to rephrase the specification for better clarity.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;有時候，GenAI 的確會與我一來一往對話，請我釐清一些細節。&lt;/p&gt;
+&lt;p&gt;最後，我收到一份更清晰易懂的規格（就把它叫做「規格/v2」吧）：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Sinnet Game Rules&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Winning the Game&lt;/strong&gt;: A player wins by reaching at least four points and leading their opponent by at least two points.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Scoring System&lt;/strong&gt;: Points are described using specific terms:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;0 points → “Love”&lt;/li&gt;
+&lt;li&gt;1 point → “Fifteen”&lt;/li&gt;
+&lt;li&gt;2 points → “Thirty”&lt;/li&gt;
+&lt;li&gt;3 points → “Forty”&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Deuce&lt;/strong&gt;: If both players have at least three points and are tied, the score is called “Deuce.”&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Advantage&lt;/strong&gt;: If both players have at least three points, and one player leads by a single point, their score is called “Advantage.”&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;接下來，讓我們根據這份調整過的 規格/v2，試試看 GenAI 有什麼不一樣的產出？&lt;/p&gt;
+&lt;p&gt;提示詞④如下：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Based on the rephrased specification, implement a Python program to display the current game score.
+Also create specification-based tests using BDD-style and property-based testing. Each test case should follow the Arrange-Act-Assert (AAA) pattern, ensuring that only one AAA scenario is included per test case. Place Gherkin descriptions at the beginning of each test case using a docstring, annotation, or function name. Ensure these tests cover normal scenarios as well as edge cases, focusing on boundaries, partitions, and input dependencies.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;吐出的主體程式碼，細節可能每次都有些不同，以下是較常見的版本：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2025/02/code-b1.png&#34; alt=&#34;提示詞④產生的主體程式碼&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2025/02/code-b1.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;提示詞④產生的主體程式碼&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;或許要歸功於調整後的 規則/v2 較清晰易懂，程式邏輯也隨之變得更清晰易懂。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;有時候我不滿意生成的測試案例，會叫它再做一次，加強測試涵蓋率。譬如說，如果它只考慮到 3-3 這個 deuce 情況，我也會叫它再多想一下：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Have you considered that deuce can also occur at 4-4, 5-5, and beyond? This appears to be a strong candidate for property-based testing.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;這階段，我建議要跟 GenAI 多聊幾次，先一起弄出令人滿意的測試集，以作為下一個實驗的基礎。&lt;/p&gt;
+&lt;p&gt;以下是其中一個版本：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2025/02/code-b2.png&#34; alt=&#34;提示詞④產生的測試&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2025/02/code-b2.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;提示詞④產生的測試&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;看起來還不錯。我們可以繼續往下進行最關鍵的實驗了。&lt;/p&gt;
+&lt;h2 id=&#34;實驗可執行的規格&#34;&gt;實驗🅒、可執行的規格&lt;/h2&gt;
+&lt;p&gt;在前一個實驗中，我們和 GenAI 一起調整出較清晰易讀的 規格/v2，也一起調整出較周全的測試集。以敏捷開發陣營的最佳實踐來說，好的測試集，其實是可以逆向反饋到規格的，也就是所謂的「&lt;strong&gt;可執行的規格&lt;/strong&gt;」(&lt;strong&gt;executable specification&lt;/strong&gt;)。現在，我們就來弄出一份這樣的「規格/v3」吧。&lt;/p&gt;
+&lt;p&gt;「可執行的規格」實驗步驟如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;①給初始規格/v1&lt;/li&gt;
+&lt;li&gt;③調整規格/v2&lt;/li&gt;
+&lt;li&gt;④生成程式及測試&lt;/li&gt;
+&lt;li&gt;⑤將測試納入規格/v3 ◄ 承上步驟，從這裡開始。&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2025/02/flow-c.png&#34; alt=&#34;實驗🅒流程&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2025/02/flow-c.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;實驗🅒流程&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;接續前一個實驗累積的測試集，讓我們請 GenAI 幫我們逆向轉譯為 Gherkin 形式的規格。&lt;/p&gt;
+&lt;p&gt;提示詞⑤如下：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Now, incorporate the newly generated tests (including property-based tests) into the specification under a section titled &amp;ldquo;Validation Scenarios,&amp;rdquo; expressed in Gherkin format. This will make the specification more comprehensive and allow it to function as an &amp;ldquo;executable specification.&amp;rdquo; Finally, add the test codes in an appendix section titled &amp;ldquo;Tests.&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;最後會孵化出這樣的「規格/v3」：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Sinnet Game Specification&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;▋ GAME RULES&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Winning the Game&lt;/strong&gt;: A player wins by reaching at least four points and leading their opponent by at least two points.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Scoring System&lt;/strong&gt;: Points are described using specific terms:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;0 points → “Love”&lt;/li&gt;
+&lt;li&gt;1 point → “Fifteen”&lt;/li&gt;
+&lt;li&gt;2 points → “Thirty”&lt;/li&gt;
+&lt;li&gt;3 points → “Forty”&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Deuce&lt;/strong&gt;: If both players have at least three points and are tied, the score is called “Deuce.”&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Advantage&lt;/strong&gt;: If both players have at least three points, and one player leads by a single point, their score is called “Advantage.”&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;▋ VALIDATION SCENARIOS&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Normal Gameplay Scenarios&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Scenario: Initial game score is &amp;ldquo;Love - Love&amp;rdquo;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Given a new game has started&lt;/li&gt;
+&lt;li&gt;When no player has scored&lt;/li&gt;
+&lt;li&gt;Then the score should be &amp;ldquo;Love - Love&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Scenario: A player scores first&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Given a new game has started&lt;/li&gt;
+&lt;li&gt;When a player scores once&lt;/li&gt;
+&lt;li&gt;Then the score should reflect the correct score for that player&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Scenario: A player gains advantage&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Given both players have scored at least three times&lt;/li&gt;
+&lt;li&gt;When a player scores once more&lt;/li&gt;
+&lt;li&gt;Then the score should be &amp;ldquo;Advantage&amp;rdquo; for that player&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Scenario: A player wins the game&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Given a player has three points and the other player has less than three points&lt;/li&gt;
+&lt;li&gt;When the player scores the winning point&lt;/li&gt;
+&lt;li&gt;Then the player should be declared the winner&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Scenario: A player wins after having advantage&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Given a player has advantage&lt;/li&gt;
+&lt;li&gt;When the player scores one more point&lt;/li&gt;
+&lt;li&gt;Then the player should be declared the winner&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Scenario: A player gains advantage from deuce&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Given the score is deuce&lt;/li&gt;
+&lt;li&gt;When a player scores a point&lt;/li&gt;
+&lt;li&gt;Then the score should be &amp;ldquo;Advantage&amp;rdquo; for that player&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Edge Cases and Property-Based Testing&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Scenario: Deuce occurs at 3-3, 4-4, 5-5, and beyond&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Given both players have the same score of at least 3 points&lt;/li&gt;
+&lt;li&gt;When the scores are equal&lt;/li&gt;
+&lt;li&gt;Then the score should be &amp;ldquo;Deuce&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Property-Based Test: Deuce should occur at 3-3, 4-4, 5-5, and beyond&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Given both players have at least 3 points and the same score&lt;/li&gt;
+&lt;li&gt;When the scores are equal&lt;/li&gt;
+&lt;li&gt;Then the score should be &amp;ldquo;Deuce&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;▋ APPENDIX: TESTS&lt;/strong&gt;
+[測試規格如下]
+
+&lt;details&gt;
+  &lt;summary style=&#34;background-color:#f5f5f5;border:1px solid #ccc;padding:5px;&#34;&gt;
+    Python 版的測試規格
+    
+  &lt;/summary&gt;
+  &lt;div class=&#34;highlight-container&#34;&gt;
+
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+
+  
+  &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; pytest
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; hypothesis &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; given, strategies &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; st
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;test_initial_score&lt;/span&gt;():
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Scenario: Initial game score is &amp;#34;Love - Love&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Given a new game has started
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    When no player has scored
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Then the score should be &amp;#34;Love - Love&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    &amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    game &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; SinnetGame()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;assert&lt;/span&gt; game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;score() &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Love - Love&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;test_player1_scores_once&lt;/span&gt;():
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Scenario: Player 1 scores first
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Given a new game has started
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    When Player 1 scores once
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Then the score should be &amp;#34;Fifteen - Love&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    &amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    game &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; SinnetGame()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;player_scores(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;assert&lt;/span&gt; game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;score() &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Fifteen - Love&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;test_deuce_extended&lt;/span&gt;():
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Scenario: Deuce occurs at 3-3, 4-4, 5-5, and beyond
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Given both players have the same score of at least 3 points
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    When the scores are equal
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Then the score should be &amp;#34;Deuce&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    &amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; score &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; range(&lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        game &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; SinnetGame()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;scores &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [score, score]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;assert&lt;/span&gt; game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;score() &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Deuce&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;test_advantage_player1&lt;/span&gt;():
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Scenario: Player 1 gains advantage
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Given both players have scored at least three times
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    When Player 1 scores once more
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Then the score should be &amp;#34;Advantage Player 1&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    &amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    game &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; SinnetGame()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; _ &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; range(&lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;player_scores(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;player_scores(&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;player_scores(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;assert&lt;/span&gt; game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;score() &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Advantage Player 1&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;test_player1_wins&lt;/span&gt;():
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Scenario: Player 1 wins the game
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Given Player 1 has three points and Player 2 has less than three points
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    When Player 1 scores the winning point
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Then Player 1 should be declared the winner
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    &amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    game &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; SinnetGame()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; _ &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; range(&lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;player_scores(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;assert&lt;/span&gt; game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;score() &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Player 1 wins&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;test_transition_from_advantage_to_win&lt;/span&gt;():
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Scenario: Player 1 wins after having advantage
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Given Player 1 has advantage
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    When Player 1 scores one more point
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Then Player 1 should be declared the winner
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    &amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    game &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; SinnetGame()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; _ &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; range(&lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;player_scores(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;player_scores(&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;player_scores(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;player_scores(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;assert&lt;/span&gt; game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;score() &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Player 1 wins&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;test_transition_from_deuce_to_advantage&lt;/span&gt;():
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Scenario: Player 2 gains advantage from deuce
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Given the score is deuce
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    When Player 2 scores a point
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Then the score should be &amp;#34;Advantage Player 2&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    &amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    game &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; SinnetGame()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; _ &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; range(&lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;player_scores(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;player_scores(&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;player_scores(&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;assert&lt;/span&gt; game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;score() &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Advantage Player 2&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;@given&lt;/span&gt;(st&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;integers(min_value&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;, max_value&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;test_deuce_property_based&lt;/span&gt;(score):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Property-based test: Deuce should occur at 3-3, 4-4, 5-5, and beyond
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Given both players have at least 3 points and the same score
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    When the scores are equal
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Then the score should be &amp;#34;Deuce&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    &amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    game &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; SinnetGame()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;scores &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [score, score]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;assert&lt;/span&gt; game&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;score() &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Deuce&amp;#34;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/details&gt;
+&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;這份「規格/v3」，不僅有規格文章，還有測試集，又臭又長，要是換成是我自己一個人來寫，我多半沒這個耐心。&lt;/p&gt;
+&lt;p&gt;你可能會懷疑：比起之前的「初始規格/v1」及「調整規格/v2」，這份孵化出來的「規格/v3」是否真的有獨到之處？&lt;/p&gt;
+&lt;p&gt;且讓我們繼續看下去。&lt;/p&gt;
+&lt;h2 id=&#34;實驗測試驅動&#34;&gt;實驗🅓、測試驅動&lt;/h2&gt;
+&lt;p&gt;在前一個實驗中，我們和 GenAI 一起孵化出「可執行的規格」。現在，我們就來根據這份「規格/v3」開啟全新的對話，叫 GenAI 重新生成程式，並根據「規格/v3」附錄的測試集予以測試檢驗。&lt;/p&gt;
+&lt;p&gt;且讓我們評估看看究竟值不值得如此大費周章。&lt;/p&gt;
+&lt;p&gt;測試驅動的實驗步驟如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;①給初始規格/v1 ❯ ③調整規格/v2 ❯ ④生成程式及測試 ❯ ⑤將測試納入規格/v3 ◄ 之前的步驟&lt;/li&gt;
+&lt;li&gt;⑥根據規格/v3 重新生成程式，並予以測試檢驗 ◄ 現在的步驟&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;請 GenAI 開啟全新的對話，用這份熱騰騰的「規格/v3」重新生成程式。&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2025/02/flow-d.png&#34; alt=&#34;實驗🅓流程&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2025/02/flow-d.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;實驗🅓流程&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;提示詞⑥如下：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Now, generate a Python program based on the following specification. [貼上 規格/v3 全文]&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;吐出的主體程式碼，細節可能每次都有些不同，以下是較常見的版本：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2025/02/code-d1.png&#34; alt=&#34;提示詞⑥產生的主體程式碼&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2025/02/code-d1.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;提示詞⑥產生的主體程式碼&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;GenAI 有隨機性行為，未必每次都會比根據之前兩份規格（初始規格/v1 及 調整規格/v2）產生的程式表現得更好，但至少這是可以通過測試的。萬一通不過測試，大可叫 GenAI 去 debug。這就是我們之前與 AI 協作，努力調教頭尾兩端（需求規格與測試驗收）的好處。只要向 AI 指出這項錯誤，它就會乖乖認錯，並且自動 debug。&lt;/p&gt;
+&lt;p&gt;只要程式是正確的，隨時都可以叫 GenAI 去重構，重構到滿意為止，如此即可兼顧正確性與各種內在品質標準。&lt;/p&gt;
+&lt;p&gt;這就是當初在「規格/v3」埋下「可執行的規格」伏筆的好處。&lt;/p&gt;
+&lt;h2 id=&#34;實驗逆向工程&#34;&gt;實驗🅔、逆向工程&lt;/h2&gt;
+&lt;p&gt;敏捷宣言說：「&lt;strong&gt;可用的軟體&lt;/strong&gt; 重於 &lt;strong&gt;詳盡的文件&lt;/strong&gt;」。我們想看看，GenAI 是否真的能夠從「可用的軟體」逆向工程出「詳盡的文件」，讓我們評估兩者究竟誰比較重要，誰可以當成 “ground truth”。&lt;/p&gt;
+&lt;p&gt;逆向工程的實驗步驟如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;⑥根據規格/v3 重新生成程式，並予以測試檢驗 ◄ 之前的步驟&lt;/li&gt;
+&lt;li&gt;⑦逆向工程規格/v4 ◄ 現在的步驟&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2025/02/flow-e.png&#34; alt=&#34;實驗🅔流程&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2025/02/flow-e.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;實驗🅔流程&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;請 GenAI 開啟全新的對話，拿前一個實驗的程式碼及測試，請它設法轉譯成人類的語言。&lt;/p&gt;
+&lt;p&gt;提示詞⑦如下：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Generate a specification based on the following Python code and tests. The specification should include two sections: 1. Sinnet Game Rules – Clearly structured and expressed in natural language. 2. Validation Scenarios – Presented in Gherkin format.  [附上主體程式碼及測試]&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;我驚訝的發現，GenAI 劈頭就給我這麼一句話：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The Sinnet Game is a simplified scoring system inspired by tennis. The objective is for a player to win by reaching at least four points and having a two-point lead over the opponent.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;看起來，可能是程式碼寫得太好了，測試寫得太好了，變數及函式名稱取得太好了，註解寫得太好了，讓 GenAI 有足夠的線索察覺到，這和現實世界的網球規則高度雷同。&lt;/p&gt;
+&lt;p&gt;這也證明了，清晰易懂的程式碼，不僅讓人類舒服，連 GenAI 也受益。&lt;/p&gt;
+&lt;h2 id=&#34;敏捷的再思&#34;&gt;敏捷的再思&lt;/h2&gt;
+&lt;p&gt;同樣的武器，在高手與菜鳥手上，能玩出的花樣自然會有高低落差之別。&lt;/p&gt;
+&lt;p&gt;儘管高手是草木竹石均可為劍的；但善用好的武器，能讓我們付出較少的精力，就做出近似高手的表現。&lt;/p&gt;
+&lt;p&gt;怎麼樣善用 GenAI 這項神兵利器？&lt;/p&gt;
+&lt;p&gt;前面幾個實驗中，儘管 GenAI 看起來非常厲害，但是別忘了，我所下的提示詞，其實已經將人類在程式設計領域的經驗高度濃縮進去。缺少這些知識，未必能夠和 GenAI 一來一往充分協作出好的成果：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Executable specification 很重要。&lt;/li&gt;
+&lt;li&gt;Specification-based testing 很重要。&lt;/li&gt;
+&lt;li&gt;Property-based testing 很重要。&lt;/li&gt;
+&lt;li&gt;AAA (arrange-act-assert) 很重要。&lt;/li&gt;
+&lt;li&gt;Refactoring 很重要。&lt;/li&gt;
+&lt;li&gt;Shift-left 很重要。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;這些，其實都是敏捷開發領域一向重視的實踐。&lt;/p&gt;
+&lt;p&gt;因此，在 GenAI 時代，就算敏捷四大宣言之一「&lt;strong&gt;可用的軟體&lt;/strong&gt; 重於 &lt;strong&gt;詳盡的文件&lt;/strong&gt;」未必依然成立，但那也是因為藉由 GenAI 之力，我們終於可以把「可用的軟體」的內涵，用更有效率的方式轉寫到「詳盡的文件」裡面，讓它成為更有意義的 “ground truth”。&lt;/p&gt;
+&lt;p&gt;不是因為敏捷宣言過時了，而是 GenAI 成全了敏捷宣言。&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;根據 Google CEO 在 &lt;a href=&#34;https://blog.google/inside-google/message-ceo/alphabet-earnings-q3-2024/&#34;&gt;(2024) Q3 earnings call: CEO’s remarks&lt;/a&gt; 的說法：“Today, more than a quarter of all new code at Google is generated by AI, then reviewed and accepted by engineers. This helps our engineers do more and move faster.”&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;GitHub CEO 在 2023 年中一場&lt;a href=&#34;https://www.freethink.com/robots-ai/github-copilot&#34;&gt;專訪&lt;/a&gt;時，大膽預言：“Sooner than later, 80% of the code is going to be written by Copilot.”&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description>
+      
     </item>
+    
   </channel>
 </rss>

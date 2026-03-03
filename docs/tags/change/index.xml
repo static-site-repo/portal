@@ -4,100 +4,1282 @@
     <title>Change on Potioneer&#39;s Essays</title>
     <link>//william-yeh.net/tags/change/</link>
     <description>Recent content in Change on Potioneer&#39;s Essays</description>
-    <generator>Hugo</generator>
+    <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <lastBuildDate>Mon, 16 May 2022 20:00:00 +0800</lastBuildDate>
-    <atom:link href="//william-yeh.net/tags/change/index.xml" rel="self" type="application/rss+xml" />
+    
+        <atom:link href="//william-yeh.net/tags/change/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>推動改變的評估流程</title>
       <link>//william-yeh.net/post/2022/05/evaluation-process-for-changes/</link>
       <pubDate>Mon, 16 May 2022 20:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2022/05/evaluation-process-for-changes/</guid>
-      <description>&lt;p&gt;在發出內部 memo 〈&lt;a href=&#34;//william-yeh.net/post/2022/04/passphrase-at-work/&#34;&gt;請珍惜你們學到的通關密語&lt;/a&gt;〉之後，收到這樣的來信：&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;上周假日也花了點時間，將您從去年 11 月起寫給大家的每一封信都讀了一遍，雖然還不是全部內容都完全吸收和理解，但仍然覺得受益匪淺，真的非常感謝您願意無私的分享您過去許多很棒的經驗和想法。&lt;/p&gt;&#xA;&lt;p&gt;我很喜歡您用「通關密語」來形容這些語彙，突然覺得他們不再是死板板的方法論，而像是賦予了它們魔力，雖然不至於天真到認為知道這些詞彙和正確的應用，就能馬上變成具有超能力的 superman，但至少能讓我在規劃專案時更自信和從容。&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;p&gt;溢美之詞就摘錄到此。以下是正題：&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;同時，我雖然也很認同這些詞彙確實是「通關密語」，畢竟清楚和正確的定義可以有效減少許多溝通時的落差和模糊地帶，更快的凝聚共識，但前提是和具有同為專業的人溝通，我想這也是您迫切希望大家能盡快建立起這些基本常識的原因吧~&lt;/p&gt;&#xA;&lt;p&gt;但經驗豐富如您，一定也有許多，甚至是多數時候，都是在和沒有這些基本常識的人溝通吧！過去我就有許多這樣的經驗，不管面對公司主管或是面對客戶時，要求我產出一個四不像等情況。&lt;/p&gt;&#xA;&lt;p&gt;通常這種時候我的作法會是，不再堅持使用這些專業詞彙，而是解釋我產出的每個圖表的目的、用途和邏輯，但不幸的是還是有很多時候是無法被理解的，通常結局就是我需要照著對方的邏輯和方法，做出一個我自己無法認同的東西，但因為這才是利害關係人們可以接受的作法，所以為了可以溝通和讓專案順利進行，我還是會做。&lt;/p&gt;&#xA;&lt;p&gt;所以很想問問 William 您是否有類似的經驗呢？那您是怎麼面對和解決的呢?&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;p&gt;這是大哉問。&lt;/p&gt;&#xA;&lt;p&gt;大體上，我會根據幾個角度迅速評估一下這整件事。&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;在發出內部 memo 〈&lt;a href=&#34;//william-yeh.net/post/2022/04/passphrase-at-work/&#34;&gt;請珍惜你們學到的通關密語&lt;/a&gt;〉之後，收到這樣的來信：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;上周假日也花了點時間，將您從去年 11 月起寫給大家的每一封信都讀了一遍，雖然還不是全部內容都完全吸收和理解，但仍然覺得受益匪淺，真的非常感謝您願意無私的分享您過去許多很棒的經驗和想法。&lt;/p&gt;
+&lt;p&gt;我很喜歡您用「通關密語」來形容這些語彙，突然覺得他們不再是死板板的方法論，而像是賦予了它們魔力，雖然不至於天真到認為知道這些詞彙和正確的應用，就能馬上變成具有超能力的 superman，但至少能讓我在規劃專案時更自信和從容。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;溢美之詞就摘錄到此。以下是正題：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;同時，我雖然也很認同這些詞彙確實是「通關密語」，畢竟清楚和正確的定義可以有效減少許多溝通時的落差和模糊地帶，更快的凝聚共識，但前提是和具有同為專業的人溝通，我想這也是您迫切希望大家能盡快建立起這些基本常識的原因吧~&lt;/p&gt;
+&lt;p&gt;但經驗豐富如您，一定也有許多，甚至是多數時候，都是在和沒有這些基本常識的人溝通吧！過去我就有許多這樣的經驗，不管面對公司主管或是面對客戶時，要求我產出一個四不像等情況。&lt;/p&gt;
+&lt;p&gt;通常這種時候我的作法會是，不再堅持使用這些專業詞彙，而是解釋我產出的每個圖表的目的、用途和邏輯，但不幸的是還是有很多時候是無法被理解的，通常結局就是我需要照著對方的邏輯和方法，做出一個我自己無法認同的東西，但因為這才是利害關係人們可以接受的作法，所以為了可以溝通和讓專案順利進行，我還是會做。&lt;/p&gt;
+&lt;p&gt;所以很想問問 William 您是否有類似的經驗呢？那您是怎麼面對和解決的呢?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;這是大哉問。&lt;/p&gt;
+&lt;p&gt;大體上，我會根據幾個角度迅速評估一下這整件事。&lt;/p&gt;
+&lt;h2 id=&#34;-值不值得推動改變&#34;&gt;❶ 值不值得推動改變？&lt;/h2&gt;
+&lt;p&gt;我常用 Impact Effort Matrix &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; 這種簡易的兩軸思考工具，迅速定位這項改變是否值得。橫坐標是「可付諸實現的速度」，縱座標是「效益、影響」。&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2022/05/impact-effort-matrix.jpg&#34; alt=&#34;Impact Effort Matrix&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2022/05/impact-effort-matrix.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Impact Effort Matrix&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;從圖上來看，若想推動的改變恰巧落在「1 號」位置，那就太幸運了，投資報酬率最高。萬一沒那麼幸運，落在「7 號」位置呢？&lt;/p&gt;
+&lt;p&gt;引述《&lt;a href=&#34;https://www.amazon.cn/dp/B087M3LK7P&#34;&gt;麥肯錫＆波士頓解決問題方法和創造價值技巧&lt;/a&gt;》的精闢見解：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;確實，以「1 號」著手是正確的。&lt;/p&gt;
+&lt;p&gt;那麼，「7 號」就被永久棄之不顧了嗎？並不是那樣的，「7 號」的建構化還做得不夠，還是一個大塊。所以，要花費時間把它再進一步細化，重新做成「1 號」那樣的小塊。這樣問題就容易解答了。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;把這個擱置的「7 號」建構化為「1 號」，就是諮詢顧問展現本領的地方了。&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;如果 Benefit/Impact 夠大，才值得進一步往下評估予以細化的 Effort。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;     &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;就以推動敏捷為例。「在導入敏捷的初期階段，首要焦點應放在 &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Team&lt;/span&gt;
+、&lt;span style=&#34;font-variant: small-caps;&#34;&gt;Product Owner&lt;/span&gt;
+ 及 &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Organization&lt;/span&gt;
+ 三者。」&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt; 可是，萬一組織現況無法在這三方面大刀闊斧改變呢？或者表面上似乎做了調整，但其實骨子裡的結構並沒有調整多少，又該如何是好？&lt;/p&gt;
+&lt;p&gt;此刻，就需要暫時退後一步，設法把這個「7 號」的大塊任務細化到「1 號」這種層次——這也就是〈&lt;a href=&#34;//william-yeh.net/post/2022/03/prof-common-vocabulary/&#34;&gt;敏捷啟航的專業基礎：共同語彙&lt;/a&gt;〉一文的立論。&lt;/p&gt;
+&lt;h2 id=&#34;-用-fogg-behavior-model--評估-effort&#34;&gt;❷ 用 Fogg Behavior Model  評估 Effort&lt;/h2&gt;
+&lt;p&gt;我常用 &lt;a href=&#34;https://behaviormodel.org/&#34;&gt;Fogg Behavior Model&lt;/a&gt;: B = MAP 評估可能的 Effort。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;▶︎&lt;/strong&gt; &lt;strong&gt;Motivation&lt;/strong&gt;：當事人是否有改變的&lt;strong&gt;動機&lt;/strong&gt;？&lt;/p&gt;
+&lt;p&gt;簡單一點的情況，我會用「洞」與「痛」、笨問題法則（為什麼非得如此如此⋯⋯）來判斷。 &lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;複雜一點的情況，我會用 TOC 抵制變革層次來判斷。 &lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;▶︎&lt;/strong&gt; &lt;strong&gt;Ability&lt;/strong&gt;：當事人是否有改變的&lt;strong&gt;能力&lt;/strong&gt;？&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;▶︎&lt;/strong&gt; &lt;strong&gt;Prompt&lt;/strong&gt;：當事人是否遇到推動改變的&lt;strong&gt;臨門一腳&lt;/strong&gt;？&lt;/p&gt;
+&lt;p&gt;我常用「三不四人」來判斷：不舒服、不甘於、不能停、人背叛、人出現、人離開、人不理。 &lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;     &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;B = MAP 具體的運用方法很多。對於當事人越了解，越能發掘洞見，找出有創意的方法。譬如說：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Motivation 可以訴諸權力關係，可以訴諸外部壓力，可以訴諸同儕壓力。&lt;/li&gt;
+&lt;li&gt;Ability 可以訴諸教育訓練，可以訴諸教練手法，可以訴諸新陳代謝。&lt;/li&gt;
+&lt;li&gt;Prompt 通常要訴諸善用局勢或創造局勢，或者⋯⋯機緣巧合的運氣。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;就以推動敏捷為例。想推動敏捷，要改變的事情太多了，我會視情況，分階段推動具體的敏捷實踐措施。&lt;/p&gt;
+&lt;p&gt;譬如說，剛嘗試 Scrum 的團隊，常會對我沒有主動帶領 Planning Poker 活動感到不解。我的觀點是，Planning Poker 要發揮效果，不至於淪為玩一玩而已，得先經過一番練習；練習要到位，卻可能會佔用過多時間。&lt;/p&gt;
+&lt;p&gt;我的做法是，在初期，我寧可先對「工作透明化」這件事著墨。畢竟，「工作透明化」是 Benefit/Impact 非常大的，Motivation 是很強烈的，而 Planning Poker 則未必。所以，在裁適敏捷方法時，我會優先處理工作透明化，並多方製造 Prompt 的局勢；至於 Planning Poker 則看情況。&lt;/p&gt;
+&lt;h2 id=&#34;-在這件事情上我有多少的主導權&#34;&gt;❸ 在這件事情上，我有多少的主導權？&lt;/h2&gt;
+&lt;p&gt;主導權越高，就越不需要費神在 Effort 上。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/French_and_Raven%27s_bases_of_power&#34;&gt;French and Raven (1965)&lt;/a&gt; 將權力來源分為六種：強制權 (coercive power)、酬賞權 (reward power)、參照權 (referent power)、法職權 (legitimate power)、專家權 (expert power)、資訊權 (informational power)。平時善於經營權力基礎的深度及廣度，才容易推動改變。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;     &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;     &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;以上就是我快速評估推動改變的可能性及施力點的大致流程。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;     &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+
+
+&lt;div class=&#34;notice notice--note&#34;&gt;
+  &lt;div class=&#34;notice__title&#34;&gt;
+    
+      系列文章
+    
+  &lt;/div&gt;
+  &lt;div class=&#34;notice__content&#34;&gt;&lt;p&gt;❶ &lt;a href=&#34;//william-yeh.net/post/2016/06/change-framework/&#34;&gt;改變的框架&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❷ &lt;a href=&#34;//william-yeh.net/post/2018/12/process-and-metrics/&#34;&gt;改變／改革：流程與衡量指標&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❸ 推動改變的評估流程&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;Impact Effort Matrix 又名 Benefit Effort Matrix、PICK Matrix，詳見這段&lt;a href=&#34;https://www.youtube.com/watch?v=ODr-xd8LsDI&#34;&gt;影片&lt;/a&gt;。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;出自〈&lt;a href=&#34;//william-yeh.net/post/2022/03/prof-common-vocabulary/&#34;&gt;敏捷啟航的專業基礎：共同語彙&lt;/a&gt;〉一文。&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;
+&lt;p&gt;「洞」與「痛」、笨問題法則，出自裘凱宇《&lt;a href=&#34;https://www.koob.com.tw/online/A579F23266cCC488Caa7&#34;&gt;過好人生學&lt;/a&gt;》。&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:4&#34;&gt;
+&lt;p&gt;TOC 抵制變革層次，詳見〈&lt;a href=&#34;//william-yeh.net/post/2016/06/change-framework/#限制理論的改變框架&#34;&gt;改變的框架&lt;/a&gt;〉一文。&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:5&#34;&gt;
+&lt;p&gt;「三不四人」出自憲哥《&lt;a href=&#34;https://www.books.com.tw/products/0010752512&#34;&gt;人生準備 40% 就衝了！：超乎常人的目標執行力&lt;/a&gt;》。&amp;#160;&lt;a href=&#34;#fnref:5&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description>
+      
     </item>
+    
     <item>
       <title>「改變」系列</title>
       <link>//william-yeh.net/series/change-series/</link>
       <pubDate>Mon, 16 May 2022 00:00:00 +0000</pubDate>
+      
       <guid>//william-yeh.net/series/change-series/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2016/06/change-framework/&#34;&gt;改變的框架&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2018/12/process-and-metrics/&#34;&gt;改變／改革：流程與衡量指標&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2022/05/evaluation-process-for-changes/&#34;&gt;推動改變的評估流程&lt;/a&gt;&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2016/06/change-framework/&#34;&gt;改變的框架&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2018/12/process-and-metrics/&#34;&gt;改變／改革：流程與衡量指標&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2022/05/evaluation-process-for-changes/&#34;&gt;推動改變的評估流程&lt;/a&gt;&lt;/p&gt;
+</description>
+      
     </item>
+    
     <item>
       <title>經理人視角的敏捷通識課</title>
       <link>//william-yeh.net/post/2022/04/yves-agile-course/</link>
       <pubDate>Sat, 16 Apr 2022 18:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2022/04/yves-agile-course/</guid>
-      <description>&lt;p&gt;[課程推薦文] &lt;strong&gt;&lt;a href=&#34;https://www.cwlearning.com.tw/course-set/109&#34;&gt;高效產出：突破資源限制的敏捷管理術&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;&#xA;&lt;p&gt;在商業世界，「敏捷」又變成流行語了。許多人風聞敏捷兩大流派 Scrum 及 Kanban 勾勒出來的美麗新世界，聽起來也頭頭是道，便以為敏捷轉型是輕而易舉、隨插即用、立竿見影的事。&lt;/p&gt;&#xA;&lt;p&gt;不過，真實世界不必然會像宣傳的那麼單純。等到真正開始嘗試時，遇到已知或未知的障礙，才開始懷疑人生，心生退轉。「敏捷轉型」這條路，怎麼走起來並沒有那麼敏捷呀？&lt;/p&gt;&#xA;&lt;p&gt;其實，「敏捷」這道處方未必有錯，錯的可能是病患未先接受過合適的衛教。&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;[課程推薦文] &lt;strong&gt;&lt;a href=&#34;https://www.cwlearning.com.tw/course-set/109&#34;&gt;高效產出：突破資源限制的敏捷管理術&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;在商業世界，「敏捷」又變成流行語了。許多人風聞敏捷兩大流派 Scrum 及 Kanban 勾勒出來的美麗新世界，聽起來也頭頭是道，便以為敏捷轉型是輕而易舉、隨插即用、立竿見影的事。&lt;/p&gt;
+&lt;p&gt;不過，真實世界不必然會像宣傳的那麼單純。等到真正開始嘗試時，遇到已知或未知的障礙，才開始懷疑人生，心生退轉。「敏捷轉型」這條路，怎麼走起來並沒有那麼敏捷呀？&lt;/p&gt;
+&lt;p&gt;其實，「敏捷」這道處方未必有錯，錯的可能是病患未先接受過合適的衛教。&lt;/p&gt;
+&lt;p&gt;坊間的敏捷衛教多半是由顧問、教練、證照供應商所提供，內容專業度是有的，但多半只呈現出乙方觀點，缺少甲方的第一人稱視角，尤其是切身之痛的視角。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;乙方觀點是：「你應該如何如何如何，不應該如何如何如何  (Thou shall&amp;hellip; Thou shall not&amp;hellip;)。」&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;甲方視角是：「你說得倒輕鬆。你又不是我，你不了解我的兩難與無奈。」&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;不對等的視角，衛教效果有限，難怪甲方容易心生退轉。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;為了平衡，除了敏捷宣傳品或培訓教材之外，我們還需要另一種敏捷通識課，以第一人稱的經理人角度現身說法，告訴我們踏上敏捷轉型之旅之前，必須要先做好哪些心理建設。&lt;/p&gt;
+&lt;p&gt;Yves 身為跨國企業經營者，帶領公司敏捷轉型，成為台灣、甚至東南亞的敏捷標竿企業。由他親自開講的這門敏捷通識課【&lt;a href=&#34;https://www.cwlearning.com.tw/course-set/109&#34;&gt;高效產出：突破資源限制的敏捷管理術&lt;/a&gt;】，格外具有說服力。畢竟這些內容，都是企業經營者親自神農嚐百草之後淬煉出來的精華，都是實證有效的作法。&lt;/p&gt;
+&lt;p&gt;這門敏捷通識課，鎖定三個必須具備的認知：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;敏捷核心觀念與流程&lt;/strong&gt;。Yves 從 Scrum 及 Kanban 擷取最精華的觀念及流程，用傳統經理人也領會得了的方式講解。這 50 分鐘的內容，既可作為敏捷的先導知識，亦可作為經理人日後的提醒：勿因阻礙而忘卻敏捷導入的初衷。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;敏捷之旅的關卡&lt;/strong&gt;。Yves 從實務中挑選敏捷之旅的五大關卡：主管權力、角色分工、團隊決策、僵化思維、與市場脫節，以 40 分鐘逐一提供對應的處方，有些處方甚至不是一般敏捷教材會談到的。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;自管理的軟性修練&lt;/strong&gt;。任何轉型都需要考慮人性層面，轉型到對於「人性」格外細膩的敏捷世界更是如此，我們甚至可以說，絕大多數的敏捷轉型失敗，追根究柢就是對於「人性」議題的無意識或無能力。Yves 以公司經營者的切身經驗，提煉出「IMPACT 影響力」六字訣：I Message、Mindfulness、Positive Language、Active Listening、Curiosity Question、Target Alignment。我誠懇建議，有心推動敏捷轉型的經理人，應該認真聆聽這 50 分鐘的內容，並有耐心將它推廣並內化到整個組織裡，由經理人帶頭改變，才容易風行草偃。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;身為敏捷推手，我過去曾從 Yves 身上學習許多。我敢保證，這門線上課，絕對是值得常常拿出來溫習的敏捷通識課。&lt;/p&gt;
+&lt;p&gt;如果你也想吸收 Yves 以企業經理人視角親自開講的敏捷通識課【&lt;a href=&#34;https://www.cwlearning.com.tw/course-set/109&#34;&gt;高效產出：突破資源限制的敏捷管理術&lt;/a&gt;】，現在到 2022-04-30 之前，你可以用以下優惠碼，享有更優惠的價格（早鳥優惠，再折價 300 元）。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;課程：【&lt;a href=&#34;https://www.cwlearning.com.tw/course-set/109&#34;&gt;高效產出：突破資源限制的敏捷管理術&lt;/a&gt;】&lt;/li&gt;
+&lt;li&gt;課程網址：&lt;a href=&#34;https://www.cwlearning.com.tw/course-set/109&#34;&gt;https://www.cwlearning.com.tw/course-set/109&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;優惠碼：&lt;code&gt;william300&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;優惠期限：2022-04-30&lt;/li&gt;
+&lt;/ul&gt;</description>
+      
     </item>
+    
     <item>
       <title>敏捷啟航的專業基礎：共同語彙</title>
       <link>//william-yeh.net/post/2022/03/prof-common-vocabulary/</link>
       <pubDate>Sat, 05 Mar 2022 14:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2022/03/prof-common-vocabulary/</guid>
-      <description>&lt;p&gt;LeSS 的 &amp;ldquo;&lt;a href=&#34;https://less.works/less/structure/scrummaster.html#ScrumMasterfocus&#34;&gt;Scrum Master focus over time&lt;/a&gt;&amp;rdquo; 一文主張，在導入敏捷的初期階段，首要焦點應放在 &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Team&lt;/span&gt;&#xA;、&lt;span style=&#34;font-variant: small-caps;&#34;&gt;Product Owner&lt;/span&gt;&#xA; 及 &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Organization&lt;/span&gt;&#xA; 三者。&lt;/p&gt;&#xA;&#xA;&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;&#xA;&lt;div class=&#34;box&#34;&gt;&#xA;&lt;figure  itemprop=&#34;associatedMedia&#34;&#xA;  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; &#xA;  style=&#34;max-width:30em&#34; &gt;&#xA;    &lt;div class=&#34;img&#34;&gt;&#xA;      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2019/12/scrum-master-focus-over-time.png&#34; alt=&#34;Scrum Master focus over time (from LeSS)&#34;/&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;a href=&#34;//william-yeh.net/img/2019/12/scrum-master-focus-over-time.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;&#xA;      &lt;figcaption&gt;&#xA;          &lt;p&gt;Scrum Master focus over time (from LeSS)&lt;/p&gt;&#xA;      &lt;/figcaption&gt;&#xA;  &lt;/figure&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;p&gt;如果借用&lt;a href=&#34;https://www.mckinsey.com/business-functions/strategy-and-corporate-finance/our-insights/enduring-ideas-the-7-s-framework&#34;&gt;麥肯錫 7S 模型&lt;/a&gt;來分析這些初期的施力重點，不難發現，&lt;span style=&#34;font-variant: small-caps;&#34;&gt;Organization&lt;/span&gt;&#xA; 的施力點大致可直接對應到 7S 的結構 (Structure) &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; ，至於 &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Team&lt;/span&gt;&#xA; 及 &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Product Owner&lt;/span&gt;&#xA; 的施力點，則是對應到 7S 的風格 (Style)、技能 (Skills)，甚至是共同價值觀 (Shared Values)。&lt;/p&gt;&#xA;&lt;p&gt;前者屬於硬性要素，較易理解，也較易實施；後者屬於軟性要素，較抽象，也不易立竿見影——這是敏捷啟航時需要面對的模糊題。&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;LeSS 的 &amp;ldquo;&lt;a href=&#34;https://less.works/less/structure/scrummaster.html#ScrumMasterfocus&#34;&gt;Scrum Master focus over time&lt;/a&gt;&amp;rdquo; 一文主張，在導入敏捷的初期階段，首要焦點應放在 &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Team&lt;/span&gt;
+、&lt;span style=&#34;font-variant: small-caps;&#34;&gt;Product Owner&lt;/span&gt;
+ 及 &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Organization&lt;/span&gt;
+ 三者。&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2019/12/scrum-master-focus-over-time.png&#34; alt=&#34;Scrum Master focus over time (from LeSS)&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2019/12/scrum-master-focus-over-time.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Scrum Master focus over time (from LeSS)&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;如果借用&lt;a href=&#34;https://www.mckinsey.com/business-functions/strategy-and-corporate-finance/our-insights/enduring-ideas-the-7-s-framework&#34;&gt;麥肯錫 7S 模型&lt;/a&gt;來分析這些初期的施力重點，不難發現，&lt;span style=&#34;font-variant: small-caps;&#34;&gt;Organization&lt;/span&gt;
+ 的施力點大致可直接對應到 7S 的結構 (Structure) &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; ，至於 &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Team&lt;/span&gt;
+ 及 &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Product Owner&lt;/span&gt;
+ 的施力點，則是對應到 7S 的風格 (Style)、技能 (Skills)，甚至是共同價值觀 (Shared Values)。&lt;/p&gt;
+&lt;p&gt;前者屬於硬性要素，較易理解，也較易實施；後者屬於軟性要素，較抽象，也不易立竿見影——這是敏捷啟航時需要面對的模糊題。&lt;/p&gt;
+&lt;p&gt;面對軟性要素，除了像【敏捷原理與團隊塑造】工作坊這種典型的起手式，我發現，要促成根本改變，還得致力於「&lt;strong&gt;建立共同語彙&lt;/strong&gt;」。我還更進一步發現，這些共同語彙，不只是敏捷轉型需要，就算不談敏捷轉型，也一樣需要——這應該是各職能工作者都該有的專業基礎。&lt;/p&gt;
+&lt;p&gt;其中，我最看重且亟需建立的共同語彙有三：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;5W1H&lt;/li&gt;
+&lt;li&gt;WBS &amp;amp; MECE&lt;/li&gt;
+&lt;li&gt;Working backwards collaboratively&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;5w1h&#34;&gt;5W1H&lt;/h2&gt;
+&lt;p&gt;很多人視 5W1H 為過氣的老調。有趣的是，日本人對於經典的 5W1H 似乎情有獨鍾，出了幾本專書：《&lt;a href=&#34;https://www.books.com.tw/products/0010826002&#34;&gt;5W1H 超強思考術：你的所有問題，都可以靠 5W1H 解決！&lt;/a&gt;》、《&lt;a href=&#34;https://www.books.com.tw/products/0010840745&#34;&gt;5W1H 經典思考法：容易獲得成果的人都在用&lt;/a&gt;》。&lt;/p&gt;
+&lt;p&gt;5W1H 不只是表面上「人事時地物」這麼單純的事項羅列，&lt;strong&gt;以事實為基礎&lt;/strong&gt;的行事態度才是它更深層的意涵。如果套用麥肯錫常用的「天空、下雨、雨傘」比喻，如果連「天空」這個事實層次都無法精準陳述，後續「下雨」的推論詮釋或是「雨傘」的行動決策，都是刻舟求劍。&lt;/p&gt;
+&lt;p&gt;對敏捷的影響：若行事態度不以事實為基礎，等於是推翻了 Scrum 經驗主義三支柱當中的「檢視性 (&lt;a href=&#34;https://scrumguides.org/scrum-guide.html#inspection&#34;&gt;inspection&lt;/a&gt;)」，就別奢望能夠正確發揮 Scrum 的功效。&lt;/p&gt;
+&lt;h2 id=&#34;wbs--mece&#34;&gt;WBS &amp;amp; MECE&lt;/h2&gt;
+&lt;p&gt;工作分解 &lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt; ，是專業工作者的基本功。磨練工作分解的技術，不管是 &lt;a href=&#34;https://en.wikipedia.org/wiki/Work_breakdown_structure&#34;&gt;WBS&lt;/a&gt; 形式還是 &lt;a href=&#34;https://en.wikipedia.org/wiki/MECE_principle&#34;&gt;MECE&lt;/a&gt; 意識，都能促成更專業的工作品質。&lt;/p&gt;
+&lt;p&gt;對敏捷的影響：儘管敏捷並不講究在一開頭就進行鉅細彌遺的工作分解，但這並不代表敏捷就不需要工作分解技能了。此技能若不精熟，&lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Planning&lt;/span&gt;
+ 或 &lt;span style=&#34;font-variant: small-caps;&#34;&gt;Sprint Refinement&lt;/span&gt;
+ 等活動很快就會卡關。&lt;/p&gt;
+&lt;h2 id=&#34;working-backwards-collaboratively&#34;&gt;Working backwards collaboratively&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.amazon.com/dp/1250267595&#34;&gt;Working backwards&lt;/a&gt; 一詞，近年來因 Amazon 而聲名大噪，但這觀念其實相當古老。至少當我們還在學生時期，都懂得所謂的「逆推法」解題祕訣：面對數學證明題，有時候可以嘗試從待證明的結果往回推導個幾步；面對閱讀測驗，較有效率的做法，往往是先快速掃描後面的提問及選項，而不是傻傻地先閱讀冗長的文本。&lt;/p&gt;
+&lt;p&gt;迷宮，未必非得從入口出發；從出口往回倒著走，可能更容易破關。&lt;/p&gt;
+&lt;p&gt;Working backwards 是學生的法寶，只可惜到了職場，只有一流高效人士才懂得重拾這個絕招。像在專案管理領域中，WBS 就是最典型的 working backwards 應用：從「最終交付物」出發的分解結構 (a &lt;strong&gt;deliverable-oriented&lt;/strong&gt; hierarchical decomposition)。&lt;/p&gt;
+&lt;p&gt;一流高效人士不只是懂得 working backwards，更懂得 working backwards &lt;strong&gt;collaboratively&lt;/strong&gt;。專案管理名著 &lt;a href=&#34;https://www.amazon.com/dp/0470177128&#34;&gt;&lt;em&gt;Work Breakdown Structures: The Foundation for Project Management Excellence&lt;/em&gt;&lt;/a&gt; 就說，WBS 不是 PM 一個人悶著頭生出來的，而是靠整個團隊的力量集結完成：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Who owns the WBS, who should be involved in developing it, who keeps it up to date? The answer to each of these is the &lt;strong&gt;project manager&lt;/strong&gt; and the &lt;strong&gt;project team&lt;/strong&gt;. [&amp;hellip;] who is responsible for the upkeep of the WBS? This is the responsibility of &lt;strong&gt;the entire project team&lt;/strong&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;不靠整個團隊的力量，很難做到 WBS 所講究的 “100% rule”。&lt;/p&gt;
+&lt;p&gt;對敏捷的影響：不具備 working backwards collaboratively 的心態及技藝，就只是表面功夫的敏捷。就以敏捷圈常見的 &lt;a href=&#34;https://en.wikipedia.org/wiki/User_story&#34;&gt;user story&lt;/a&gt; 及 &lt;a href=&#34;https://en.wikipedia.org/wiki/Specification_by_example&#34;&gt;SBE&lt;/a&gt; 手法為例：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;User story：經典句型 &amp;ldquo;&lt;a href=&#34;https://www.mountaingoatsoftware.com/blog/advantages-of-the-as-a-user-i-want-user-story-template&#34;&gt;who + what + why&lt;/a&gt;&amp;rdquo; 及 acceptance criteria 就是 working backwards，&lt;a href=&#34;https://www.agilealliance.org/glossary/three-cs/&#34;&gt;3C 要素&lt;/a&gt;當中的 &amp;ldquo;conversation&amp;rdquo; 就是 working collaboratively。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;SBE：經典句型 “&lt;a href=&#34;https://martinfowler.com/bliki/GivenWhenThen.html&#34;&gt;given-when-then&lt;/a&gt;&amp;quot; 就是 working backwards，&lt;a href=&#34;https://www.agilealliance.org/glossary/three-amigos/&#34;&gt;3 amigos 活動&lt;/a&gt;就是 working collaboratively。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;交叉訓練&#34;&gt;交叉訓練&lt;/h2&gt;
+&lt;p&gt;5W1H、WBS &amp;amp; MECE、working backwards collaboratively 這些共同語彙，不只是敏捷轉型需要，就算不談敏捷轉型，也一樣需要——這應該是各職能工作者都該有的專業基礎。&lt;/p&gt;
+&lt;p&gt;檯面上沒有單一課程能深度涵蓋這三種語彙。我只好打組合牌，透過幾種課程的交叉訓練，從不同角度冶煉出這三種語彙的交集，再以我的【&lt;a href=&#34;//william-yeh.net/post/2022/06/career-reading-club-1/&#34;&gt;職涯躍升書系導讀會&lt;/a&gt;】做為佐料來提味：&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;&lt;/th&gt;
+          &lt;th&gt;Git&lt;/th&gt;
+          &lt;th&gt;專案管理入門&lt;/th&gt;
+          &lt;th&gt;SBE&lt;/th&gt;
+          &lt;th&gt;TDD&lt;/th&gt;
+          &lt;th&gt;遠距工作講座&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;5W1H&lt;/td&gt;
+          &lt;td&gt;✓&lt;/td&gt;
+          &lt;td&gt;✓&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;WBS &amp;amp; MECE&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;✓&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Working backwards&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;✓&lt;/td&gt;
+          &lt;td&gt;✓&lt;/td&gt;
+          &lt;td&gt;✓&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Working collaboratively&lt;/td&gt;
+          &lt;td&gt;✓&lt;/td&gt;
+          &lt;td&gt;✓&lt;/td&gt;
+          &lt;td&gt;✓&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;✓&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;教育訓練效果不彰，很多時候是因為：​❶ 主管自己都沒上過，❷ 沒有人致力於把它變成組織內的共同語彙，❸ 沒有人有 coaching 的意識與行動。​如此這般，就淪為徒具形式，船過水無痕。&lt;/p&gt;
+&lt;p&gt;透過交叉訓練，應用場景自然而然擴大起來，再搭配正確的 coaching 意識與行動，將更有機會成為真正實質意義上的「共同語彙」。&lt;/p&gt;
+&lt;h2 id=&#34;整土&#34;&gt;整土&lt;/h2&gt;
+&lt;p&gt;這些共同語彙一旦真正建立起來，許多 Scrum 元素就顯得理所當然。&lt;/p&gt;
+&lt;p&gt;Scrum 跑不順，不見得是 Scrum 的錯。畢竟 Scrum 是個篇幅 20 頁的擴大機，原本的天籟會增益，反之——噪音亦然。&lt;/p&gt;
+&lt;p&gt;Scrum 懷璧其罪很久了。&lt;/p&gt;
+&lt;p&gt;在敏捷啟航之前，花點時間處理這些軟性要素，在組織中種下這些共同語彙，把硬土、淺土、雜土整理成好土，整理成易於滋養敏捷的環境吧。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+
+
+&lt;div class=&#34;notice notice--note&#34;&gt;
+  &lt;div class=&#34;notice__title&#34;&gt;
+    
+      Scrum master 培訓系列
+    
+  &lt;/div&gt;
+  &lt;div class=&#34;notice__content&#34;&gt;&lt;p&gt;❶ &lt;a href=&#34;//william-yeh.net/post/2021/03/train-new-scrum-master/&#34;&gt;如何訓練一個新的 Scrum master？&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❷ &lt;a href=&#34;//william-yeh.net/post/2018/09/deliberate-practice-for-agile/&#34;&gt;敏捷之途無他，刻意練習而已矣！&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❸ &lt;a href=&#34;//william-yeh.net/post/2021/07/revisit-psm1/&#34;&gt;Scrum 認證模擬測驗的兩項啟發&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❹ 敏捷啟航的專業基礎：共同語彙&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;即使 Kanban 方法是傳説中一開始對既有組織結構衝擊最小，且明文宣稱 “Start with what you do now“ 及 “Initially, respect current processes, roles, responsibilities, and job titles”，但根據 &lt;a href=&#34;https://www.amazon.com/dp/0985305193&#34;&gt;&lt;em&gt;Kanban from the Inside&lt;/em&gt;&lt;/a&gt; 一書的說法，Kanban 最輕量的導入手法 “The Sustainability Agenda” 當中，就包含 ① Visualize, ④ Make Policies Explicit, ⑤ Implement Feedback Loops 這三項 Transparency 實踐手法——說實話，這未必是小小的衝擊！如果借用&lt;a href=&#34;https://www.mckinsey.com/business-functions/strategy-and-corporate-finance/our-insights/enduring-ideas-the-7-s-framework&#34;&gt;麥肯錫 7S 模型&lt;/a&gt;來分析這些初期的施力重點，可說是從 7S 的體制 (Systems) 這項硬性要素及風格 (Style) 這項軟性要素切入。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;請參考〈&lt;a href=&#34;//william-yeh.net/post/2016/11/decomposition-reading-list/&#34;&gt;工作分解講座・閱讀材料&lt;/a&gt;〉一文。&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description>
+      
     </item>
+    
     <item>
       <title>被 Yves 啟發的敏捷轉型之旅</title>
       <link>//william-yeh.net/post/2021/03/agile-inspired-by-yves/</link>
       <pubDate>Wed, 31 Mar 2021 08:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2021/03/agile-inspired-by-yves/</guid>
-      <description>&lt;p&gt;（2021-06-16 補記）&#xA;在 Yves 臉書看到《&lt;a href=&#34;https://www.books.com.tw/products/0010896844&#34;&gt;敏捷管理生存指南：不是快，而是適者生存&lt;/a&gt;》這本書終於要上市的&lt;a href=&#34;https://www.facebook.com/yves.lin888/posts/10159360045030751&#34;&gt;消息&lt;/a&gt;，非常振奮。僅以此文，紀念當年 Yves &lt;a href=&#34;https://blog.yveslin.com/&#34;&gt;部落格&lt;/a&gt;文章給我的種種啟示。&lt;/p&gt;&#xA;&#xA;&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;&#xA;&lt;div class=&#34;box&#34;&gt;&#xA;&lt;figure  itemprop=&#34;associatedMedia&#34;&#xA;  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; &#xA;  style=&#34;max-width:20em&#34; &gt;&#xA;    &lt;div class=&#34;img&#34;&gt;&#xA;      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2021/03/book-agile-mgmt-survival-guide.jpg&#34; alt=&#34;《敏捷管理生存指南：不是快，而是適者生存》&#34;/&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;a href=&#34;//william-yeh.net/img/2021/03/book-agile-mgmt-survival-guide.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;&#xA;      &lt;figcaption&gt;&#xA;          &lt;p&gt;《敏捷管理生存指南：不是快，而是適者生存》&lt;/p&gt;&#xA;      &lt;/figcaption&gt;&#xA;  &lt;/figure&gt;&#xA;&lt;/div&gt;</description>
+      
+        <description>&lt;p&gt;（2021-06-16 補記）
+在 Yves 臉書看到《&lt;a href=&#34;https://www.books.com.tw/products/0010896844&#34;&gt;敏捷管理生存指南：不是快，而是適者生存&lt;/a&gt;》這本書終於要上市的&lt;a href=&#34;https://www.facebook.com/yves.lin888/posts/10159360045030751&#34;&gt;消息&lt;/a&gt;，非常振奮。僅以此文，紀念當年 Yves &lt;a href=&#34;https://blog.yveslin.com/&#34;&gt;部落格&lt;/a&gt;文章給我的種種啟示。&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:20em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2021/03/book-agile-mgmt-survival-guide.jpg&#34; alt=&#34;《敏捷管理生存指南：不是快，而是適者生存》&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2021/03/book-agile-mgmt-survival-guide.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;《敏捷管理生存指南：不是快，而是適者生存》&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;起頭&#34;&gt;起頭&lt;/h2&gt;
+&lt;p&gt;2016 年七月，剛升上 Gogolook 的部門主管，也不容我再迴避一個埋藏已久的內心交戰：公司再這樣下去是不行的，朝敏捷的方式轉型才有出路。可是「轉型」二字談何容易，「敏捷轉型」更涉及深層的心智模式，匹夫之勇是行不通的，非長期抗戰不為功。&lt;/p&gt;
+&lt;p&gt;我需要一份&lt;strong&gt;地圖&lt;/strong&gt;，告訴我敏捷轉型的航道上可能有哪些冰山或暗礁。就算還不知道該如何排除剷平，至少知道該如何趨避。&lt;/p&gt;
+&lt;p&gt;幸運的是，此刻 Yves 剛出爐的〈&lt;a href=&#34;https://funevo.com/2016/09/25/%E8%AE%8A%E6%95%8F%E6%8D%B7%E7%9A%84%E9%98%BB%E7%A4%99-%E5%9C%98%E9%9A%8A%E5%85%B1%E5%89%B5%E6%B3%95%E5%AF%A6%E5%81%9A/&#34;&gt;找出組織無法變敏捷的阻礙 – 團隊共創法實做&lt;/a&gt;〉部落格文章，恰如一場及時雨。文章不僅整理出敏捷轉型常見的 12 項阻礙，更進一步將它們分成三大類型，並開出三帖藥方：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;人員或組織的慣性&lt;/strong&gt; → 解決慣性的方法就是一直動，平衡日常營運與變革，控制前進的腳步，從走路、小碎步、健走慢慢加速到需要的節奏。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;主事者的重視程度&lt;/strong&gt; → 權力越集中的組織越有可能大幅改變組織架構與資源投注，否則就得組織扁平化，採用自組織模式。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;人員沒有能力或知識&lt;/strong&gt; → 給資源學習，給空間運用。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;綜合考慮之後，我選擇在自己有直接職位權影響力的團隊內，打破慣性，亦步亦趨植入 Scrum 相關知識與實踐。這個小團隊的成功，便成為日後在公司內進一步擴大敏捷施行範圍的指標性個案。&lt;/p&gt;
+&lt;p&gt;我很感激 Yves 這篇文章的啟示。&lt;/p&gt;
+&lt;h2 id=&#34;遊戲&#34;&gt;遊戲&lt;/h2&gt;
+&lt;p&gt;敏捷實施一小陣子，很快就會觸碰到一個迴避不了的衝突點：自組織、自管理要到什麼程度，才不是淪為玩假的敏捷？&lt;/p&gt;
+&lt;p&gt;隔壁團隊嘗試跑了 Kanban 一陣子，遇到這類問題，找我討論。&lt;/p&gt;
+&lt;p&gt;我知道這問題應該被解決，但該如何解決？當時的我並沒有頭緒，更何況這是隔壁的團隊，是我沒有直接職位權影響力的團隊。&lt;/p&gt;
+&lt;p&gt;我又向 Yves 的部落格取經。幸運的是，Yves 稍早在〈&lt;a href=&#34;https://funevo.com/2016/06/30/delegation-poker/&#34;&gt;自己來做到死！ – 玩授權撲克來學主管如何授權&lt;/a&gt;〉這篇文章裡就點出一個關鍵，也介紹一個有趣的工具：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;當主管在考慮工作的授權時，不應該問自己「要不要授權？」，而要問自己「要如何授權？」&lt;/p&gt;
+&lt;p&gt;因為跟自組織一樣，授權不是 0 跟 1 二選一，而是程度多寡的差異。授權撲克（Delegation Poker）就是幫助我們思考「要如何授權？」的一個好工具。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;這麼有趣的工具，令人躍躍欲試。於是，我開始密謀在公司月會時，帶這個團隊公開玩一場「授權撲克」遊戲，既解決他們的問題，也試圖在寓教於樂氣氛中對全公司傳達「某些不一樣的事正在發生」的訊號。&lt;/p&gt;
+&lt;p&gt;我大致上是根據 Yves 文章介紹的玩法，微調成更像 planning poker 的方式，讓團隊公開探討幾項活動的授權等級：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Refine PBI&lt;/li&gt;
+&lt;li&gt;Select SBI&lt;/li&gt;
+&lt;li&gt;Estimate SBI&lt;/li&gt;
+&lt;li&gt;Freeze spec&lt;/li&gt;
+&lt;li&gt;Unfreeze spec&lt;/li&gt;
+&lt;li&gt;Allow fast lane during sprint&lt;/li&gt;
+&lt;li&gt;Manage tech debt&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;（也感謝 Yves 慷慨贈我幾盒鈦坦科技設計的授權撲克。）&lt;/p&gt;
+&lt;p&gt;這場公開活動，不僅達到預計的效果，也讓我更敢公開進行一些非傳統的引導活動。&lt;/p&gt;
+&lt;h2 id=&#34;空間&#34;&gt;空間&lt;/h2&gt;
+&lt;p&gt;2017 上半年，公司人數成長到空間不敷使用，打算再租下另一層辦公室。&lt;/p&gt;
+&lt;p&gt;國內外敏捷先驅的經驗告訴我們，合適的&lt;strong&gt;實體空間&lt;/strong&gt;，能夠催化敏捷的成效。因此，這是千載難逢的大好機會，可以從頭開始把空間塑造成可滋養敏捷成長的模樣。&lt;/p&gt;
+&lt;p&gt;事情就是這麼湊巧。這一年來，每當我遇到相關的疑惑、需要相關的參考對象，Yves 就是會這麼湊巧的與我的敏捷探索之路產生交集。&lt;/p&gt;
+&lt;p&gt;此刻，Yves 所在的鈦坦科技也正在搬遷他們的台北辦公室，葉千綸設計師更在 3 月 30 日晚間公開分享&lt;a href=&#34;https://www.youtube.com/watch?v=kvYySCNsydE&#34;&gt;新辦公室的設計理念&lt;/a&gt;。於是，我們去取經，並設法將一些有趣的元素帶回來。&lt;/p&gt;
+&lt;p&gt;後來，與業界交流敏捷轉型甘苦談，才赫然發現，封閉的實體空間，對台灣軟體研發圈子的傷害有多大。我們真的很幸運，能在推動敏捷轉型的初期，就有可師法的對象，讓實體空間不致成為敏捷的阻力。&lt;/p&gt;
+&lt;p&gt;人的問題已經夠麻煩了，如果連空間都是麻煩製造者，怎麼能苛責敏捷轉型不順利？&lt;/p&gt;
+&lt;h2 id=&#34;引導&#34;&gt;引導&lt;/h2&gt;
+&lt;p&gt;知識性的 Scrum 課程很多，但&lt;strong&gt;軟技能&lt;/strong&gt;卻很少直接在 Scrum 課程中傳授。&lt;/p&gt;
+&lt;p&gt;這麼說或許並不公平，畢竟 Scrum 只是具體而微的框架，不是包山包海的滿漢全席，骨肉還是需要由其他地方填補。&lt;/p&gt;
+&lt;p&gt;什麼才是 Scrum 需要搭配的軟技能？&lt;/p&gt;
+&lt;p&gt;Yves 的〈&lt;a href=&#34;https://funevo.com/2016/08/12/agile-scrum-needs-facilitation/&#34;&gt;敏捷 X 引導 – 讓 Scrum 團隊自組織的具體方法&lt;/a&gt;〉部落格文章點出一個關鍵：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Scrum 架構裡有那麼多的溝通在發生，沒有人可以真正控制事情的進行，主管需要學習其他的領導方式。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;於是，我開始從這篇文章中按圖索驥，尋找與溝通、領導、引導相關的軟技能：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;焦點討論法 (Focused Conversation, ORID)&lt;/li&gt;
+&lt;li&gt;團隊共創法 (Consensus Workshop)&lt;/li&gt;
+&lt;li&gt;開放空間會議 (Open Space Technology)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;這些引導技能，水很深，我沒能全盤掌握，但已經夠讓我在公司內推動不少敏捷變革措施。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;一路以來，從 Yves 的文章受益匪淺。現在，欣見 Yves 將多年心得整理成有系統的專書《&lt;a href=&#34;https://www.books.com.tw/products/0010896844&#34;&gt;敏捷管理生存指南：不是快，而是適者生存&lt;/a&gt;》，相信更能幫助尚在摸索的芸芸眾生。&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:20em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2021/03/book-agile-mgmt-survival-guide.jpg&#34; alt=&#34;《敏捷管理生存指南：不是快，而是適者生存》&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2021/03/book-agile-mgmt-survival-guide.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;《敏捷管理生存指南：不是快，而是適者生存》&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt; 　 　 　 　 　 　—— 敏捷魔藥師　葉秉哲 (William Yeh)　2021-03-31&lt;/p&gt;</description>
+      
     </item>
+    
     <item>
       <title>改變／改革：流程與衡量指標</title>
       <link>//william-yeh.net/post/2018/12/process-and-metrics/</link>
       <pubDate>Fri, 07 Dec 2018 13:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2018/12/process-and-metrics/</guid>
-      <description>&lt;p&gt;改革，很不容易；摧毀改革，卻很簡單。知名的&lt;a href=&#34;//william-yeh.net/post/2016/06/change-framework/&#34;&gt;改革框架&lt;/a&gt;，莫不注重改革的&lt;strong&gt;整合&lt;/strong&gt;與&lt;strong&gt;固化&lt;/strong&gt;。&lt;/p&gt;&#xA;&lt;p&gt;敏捷亦然。像這篇文章〈&lt;a href=&#34;https://mp.weixin.qq.com/s/p8pDpC80iOMSY28SWSeZyg&#34;&gt;慢慢的，公司内敏捷的热度就退了&amp;hellip;..&lt;/a&gt;〉就訴說一則可悲的故事：&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;我並沒有告訴他們具體要怎樣做，只給了他們一些理論上的指導，然後他們就開始集思廣益，動手佈置。這其中展現出來的主動思考能力、自組織能力和執行力，讓我不由得暗地裡豎起大拇指。基於這樣良好的基礎，他們的敏捷過程推進的也非常順利，我輔導了他們 3 個月左右，他們已經熟練的掌握了一些實踐方法，加上本身已經具備的自組織能力和執行力，似乎繼續做下去，就可以達到不錯的成熟度。&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;改革，很不容易；摧毀改革，卻很簡單。知名的&lt;a href=&#34;//william-yeh.net/post/2016/06/change-framework/&#34;&gt;改革框架&lt;/a&gt;，莫不注重改革的&lt;strong&gt;整合&lt;/strong&gt;與&lt;strong&gt;固化&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;敏捷亦然。像這篇文章〈&lt;a href=&#34;https://mp.weixin.qq.com/s/p8pDpC80iOMSY28SWSeZyg&#34;&gt;慢慢的，公司内敏捷的热度就退了&amp;hellip;..&lt;/a&gt;〉就訴說一則可悲的故事：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;我並沒有告訴他們具體要怎樣做，只給了他們一些理論上的指導，然後他們就開始集思廣益，動手佈置。這其中展現出來的主動思考能力、自組織能力和執行力，讓我不由得暗地裡豎起大拇指。基於這樣良好的基礎，他們的敏捷過程推進的也非常順利，我輔導了他們 3 個月左右，他們已經熟練的掌握了一些實踐方法，加上本身已經具備的自組織能力和執行力，似乎繼續做下去，就可以達到不錯的成熟度。&lt;/p&gt;
+&lt;p&gt;然而時隔一年後，我偶然路過他們的辦公區，才發現一切並沒有照著「理所當然」發展，而是都恢復了原樣。&lt;/p&gt;
+&lt;p&gt;團隊成員坐在各自的工位上埋頭工作，他們不再聚集在白板前。專案經理每週一將工作分配好，並定期檢查狀態。工作區氣氛嚴肅而沉悶，一個似乎是 Leader 的人大聲訓斥著員工，指責他反覆犯同樣的錯誤。&lt;/p&gt;
+&lt;p&gt;似乎，敏捷從未來過。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;如何確保改革的&lt;strong&gt;整合&lt;/strong&gt;與&lt;strong&gt;固化&lt;/strong&gt;，而不只是曇花一現？&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Eliyahu_M._Goldratt&#34;&gt;高德拉特&lt;/a&gt;的《&lt;a href=&#34;https://www.books.com.tw/products/0010898249&#34;&gt;目標&lt;/a&gt;》裡頭藏有這問題的答案，藏在兩處很少被人提到的橋段。&lt;/p&gt;
+&lt;h2 id=&#34;偏執執著的伏筆&#34;&gt;偏執、執著的伏筆&lt;/h2&gt;
+&lt;p&gt;在書中，主角羅哥 (Alex Rogo) &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; 是優尼公司白靈頓鎮的工廠廠長。他與工廠財務長劉梧 (Lou)、生產經理唐納凡 (Bob Donovan) 等人，努力拯救工廠的經營危機。&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/12/rogo-and-others.png&#34; alt=&#34;羅哥、劉梧、唐納凡 (From: The Goal)&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2018/12/rogo-and-others.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;羅哥、劉梧、唐納凡 (From: The Goal)&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;經過一番奮鬥，終於立下了顯赫戰功，主角羅哥在升官執掌三個工廠的事業部之前，認真反思過去三個月跌跌撞撞的過程，試圖歸納出可複製的成功因素。他們在《目標》第 32～40 章進行多場機鋒對話，&lt;a href=&#34;https://www.tocinstitute.org/five-focusing-steps.html&#34;&gt;聚焦五步驟&lt;/a&gt;就是在這思辨交鋒過程中總結出來的。&lt;/p&gt;
+&lt;p&gt;不過，鮮為人知的是，這幾章還隱藏一個重要的改革訣竅，埋在一段獨白與一段對話中：&lt;/p&gt;
+&lt;p&gt;❶ 在第 40 章，羅哥有一段內心獨白：「唐納凡說得對，劉梧對&lt;strong&gt;衡量指標&lt;/strong&gt;簡直有一種偏執。」這是第一個哏。&lt;/p&gt;
+&lt;p&gt;❷ 在第 36 章，羅哥對唐納凡說了一句話：「假如劉梧對&lt;strong&gt;衡量指標&lt;/strong&gt;很執著，那麼你（唐納凡）一定是對&lt;strong&gt;流程&lt;/strong&gt;很執著了。」這是第二個哏。&lt;/p&gt;
+&lt;p&gt;你能體會為什麼高德拉特會刻意埋這兩個所謂偏執、執著的伏筆嗎？我也是不斷反思改革的成與敗，才漸漸體會到這伏筆的精妙。&lt;/p&gt;
+&lt;h2 id=&#34;敏捷固化的軌跡&#34;&gt;敏捷固化的軌跡&lt;/h2&gt;
+&lt;p&gt;改變／改革要固化，需要辨識出流程與衡量指標。&lt;/p&gt;
+&lt;p&gt;如果單以《目標》來說，&lt;strong&gt;流程&lt;/strong&gt;是指&lt;a href=&#34;https://www.tocinstitute.org/five-focusing-steps.html&#34;&gt;聚焦五步驟&lt;/a&gt;，&lt;strong&gt;衡量指標&lt;/strong&gt;是指 &lt;a href=&#34;https://en.wikipedia.org/wiki/Throughput_accounting&#34;&gt;T, I, OE&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;敏捷轉型，既然是一種改變／改革，也會遵循類似的軌跡。就以前面那篇&lt;a href=&#34;https://mp.weixin.qq.com/s/p8pDpC80iOMSY28SWSeZyg&#34;&gt;文章&lt;/a&gt;最後提出三點「想讓改變不再是一陣風」建議來說：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;改變考核機制，在改變的初期調低原有 KPI 指標，增加對輔助工具（敏捷、精益或其他方法）的使用情況的考核。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在改變過程中，發現對組織有益的流程，要加入到 KPI 中，變為日常考核的一部分。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;給所有好的「動因」以正向的反饋，即使結果看起來沒那麼炫目。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;這三點建議，正好與《目標》第 32～40 章的&lt;strong&gt;流程&lt;/strong&gt;與&lt;strong&gt;衡量指標&lt;/strong&gt;兩大伏筆相互呼應。&lt;/p&gt;
+&lt;p&gt;看到這裡，不禁對埋哏的高德拉特肅然起敬。《目標》第 32～40 章，真的值得用思辨的大腦多讀幾遍。&lt;/p&gt;
+&lt;p&gt;好的商業小說，需要對等的識讀力。&lt;/p&gt;
+&lt;h2 id=&#34;結語&#34;&gt;結語&lt;/h2&gt;
+&lt;p&gt;改變／改革要固化，需要內外兼修。其中，流程與衡量指標，是關鍵的硬性要素。因此，除了擘劃&lt;a href=&#34;//william-yeh.net/post/2016/06/change-framework/&#34;&gt;改變的框架&lt;/a&gt;，別忘了也要設置適當的衡量指標。&lt;/p&gt;
+&lt;p&gt;衡量指標是兩面刃，要謹慎，尤其是均衡感。&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt; 掌握到均衡感，將能促進改變／改革的固化。&lt;/p&gt;
+
+
+&lt;div class=&#34;notice notice--note&#34;&gt;
+  &lt;div class=&#34;notice__title&#34;&gt;
+    
+      系列文章
+    
+  &lt;/div&gt;
+  &lt;div class=&#34;notice__content&#34;&gt;&lt;p&gt;❶ &lt;a href=&#34;//william-yeh.net/post/2016/06/change-framework/&#34;&gt;改變的框架&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❷ 改變／改革：流程與衡量指標&lt;/p&gt;
+&lt;p&gt;❸ &lt;a href=&#34;//william-yeh.net/post/2022/05/evaluation-process-for-changes/&#34;&gt;推動改變的評估流程&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;《&lt;a href=&#34;https://www.books.com.tw/products/0010898249&#34;&gt;目標&lt;/a&gt;》主角 Alex Rogo 的中譯名，原本是「羅哥」，但 2021 的譯本卻改譯為「羅戈」。我個人較偏好舊譯。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;針對衡量指標的均衡感，請參考我的兩篇文章：〈&lt;a href=&#34;//william-yeh.net/post/2018/11/agile-value/&#34;&gt;敏捷的價值與指標&lt;/a&gt;〉與〈&lt;a href=&#34;//william-yeh.net/post/2018/11/devops-value/&#34;&gt;DevOps 的價值與指標&lt;/a&gt;〉。&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+      
     </item>
+    
     <item>
       <title>「判準與指標」系列</title>
       <link>//william-yeh.net/series/criteria-series/</link>
       <pubDate>Wed, 28 Nov 2018 00:00:00 +0000</pubDate>
+      
       <guid>//william-yeh.net/series/criteria-series/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2018/10/methodology-and-criteria/&#34;&gt;軟體開發，除了方法論，還有⋯⋯&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2018/10/agile-criteria/&#34;&gt;敏捷的判準&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2018/11/lean-startup-criteria/&#34;&gt;Lean Startup 的判準&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2018/11/agile-value/&#34;&gt;敏捷的價值與指標&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2018/11/devops-value/&#34;&gt;DevOps 的價值與指標&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2023/12/dev-metrics/&#34;&gt;如何衡量敏捷對於軟體研發效能的利益？&lt;/a&gt;&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2018/10/methodology-and-criteria/&#34;&gt;軟體開發，除了方法論，還有⋯⋯&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2018/10/agile-criteria/&#34;&gt;敏捷的判準&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2018/11/lean-startup-criteria/&#34;&gt;Lean Startup 的判準&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2018/11/agile-value/&#34;&gt;敏捷的價值與指標&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2018/11/devops-value/&#34;&gt;DevOps 的價值與指標&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;//william-yeh.net/post/2023/12/dev-metrics/&#34;&gt;如何衡量敏捷對於軟體研發效能的利益？&lt;/a&gt;&lt;/p&gt;
+</description>
+      
     </item>
+    
     <item>
       <title>從小提問看企業價值</title>
       <link>//william-yeh.net/post/2018/11/peak-at-enterprise-value/</link>
       <pubDate>Fri, 02 Nov 2018 08:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2018/11/peak-at-enterprise-value/</guid>
-      <description>&lt;p&gt;如何選人？&lt;/p&gt;&#xA;&lt;p&gt;我有一篇舊文〈&lt;a href=&#34;//william-yeh.net/post/2016/07/professional-attitude/&#34;&gt;專業態度的養成&lt;/a&gt;〉是針對中低階領域的提問重點；善用這些切入點，可挖掘出人才潛力股。這也是年度績效面談時，我會提問的重點之一。&lt;/p&gt;&#xA;&lt;p&gt;那麼，中高階領域呢？如何選領導者，選團隊，或者更廣泛一點講：如何選公司？&lt;/p&gt;&#xA;&lt;p&gt;我有兩個私房切入點，剛好是兩本書教我的。&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;如何選人？&lt;/p&gt;
+&lt;p&gt;我有一篇舊文〈&lt;a href=&#34;//william-yeh.net/post/2016/07/professional-attitude/&#34;&gt;專業態度的養成&lt;/a&gt;〉是針對中低階領域的提問重點；善用這些切入點，可挖掘出人才潛力股。這也是年度績效面談時，我會提問的重點之一。&lt;/p&gt;
+&lt;p&gt;那麼，中高階領域呢？如何選領導者，選團隊，或者更廣泛一點講：如何選公司？&lt;/p&gt;
+&lt;p&gt;我有兩個私房切入點，剛好是兩本書教我的。&lt;/p&gt;
+&lt;h2 id=&#34;改變的角度&#34;&gt;改變的角度&lt;/h2&gt;
+&lt;p&gt;第一本書是《&lt;a href=&#34;https://bookzone.cwgv.com.tw/books/details/BCB313&#34;&gt;關鍵領導九十天&lt;/a&gt;》。這是我每隔幾個月就會重溫的書。&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/11/first-90-days.jpg&#34; alt=&#34;關鍵領導 90 天&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2018/11/first-90-days.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;關鍵領導 90 天&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;改變，是中高階人士常會面對，甚至需要主導的議題。此書提出一套「STARS 模式」來分析所處的改善／改變／改革局勢，其中「界定你的學習程序」工具很實用：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;為了使你在學習上的投資獲得最高的報酬，就必須從眼前大量的資訊中，有效地汲取可行的洞見，才能集中力量，營造收集資訊、分析、假設、測試的良性循環。&lt;/p&gt;
+&lt;p&gt;你該如何收集初期的引導問題清單？首先，要針對過去、現在、未來提出問題。事情為何會那麼做？那樣做的理由，今天是否仍站得住腳？狀況是否改變，是否未來該有不同的做法？以下針對這三方面，提供了問題範例。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;以這套引導問題清單為基礎，再混搭下一本書的模型，可營造出絕佳的說故事時間。圍繞這類事例，正是了解這位領導者，這團隊，或者更廣泛一點講：這間公司的絕佳切入點。&lt;/p&gt;
+&lt;h2 id=&#34;永續的角度&#34;&gt;永續的角度&lt;/h2&gt;
+&lt;p&gt;第二本書是《&lt;a href=&#34;https://www.books.com.tw/products/0010780648&#34;&gt;投資前的精準判讀&lt;/a&gt;》。畢竟，針對領導者、團隊，甚至公司的價值判定洞見，誰能像價值投資教父華倫・巴菲特那樣經得起考驗呢？&lt;/p&gt;
+&lt;p&gt;《投資前的精準判讀》歸納巴菲特的洞見，提出一個很重要的羅盤：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/11/sustainable-business-model.jpg&#34; alt=&#34;永續事業模型 (model of a sustainable business)&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2018/11/sustainable-business-model.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;永續事業模型 (model of a sustainable business)&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;這個&lt;strong&gt;永續事業模型&lt;/strong&gt; (model of a sustainable business)，連指數型基金之父 Jack Bogle 都稱許道：「這張圖像哥白尼一樣，顯示了太陽真正的位置。」&lt;/p&gt;
+&lt;p&gt;有時候，連企業掌舵者也未必很清楚知道這一點，遑論各層級的負責人。&lt;/p&gt;
+&lt;p&gt;搞懂這個，搞懂這間企業對這事業模型的立場，再談推動改善／改變／改革吧。你所推動的事情，若不和這間企業自己的永續事業模型對齊，你只是努力地在當另一個唐吉訶德。&lt;/p&gt;
+&lt;p&gt;更極端的是，如果這間企業根本沒有自己的「永續」想法，那麼，你連唐吉訶德都不必去當了，直接跳船吧。畢竟，孫子兵法說：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;故校之以計，而索其情。曰：主孰有道，將孰有能，天地孰得，法令孰行，兵眾孰強，士卒孰練，賞罰孰明，吾以此知勝負矣。將聽吾計，用之必勝，留之；將不聽吾計，用之必敗，去之。&lt;/p&gt;
+&lt;p&gt;夫未戰而廟算勝者，得算多也；未戰而廟算不勝者，得算少也。多算勝，少算不勝，而況無算乎！吾以此觀之，勝負見矣。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;尋找線索&#34;&gt;尋找線索&lt;/h2&gt;
+&lt;p&gt;《投資前的精準判讀》的模型及分析角度很有用。&lt;/p&gt;
+&lt;p&gt;這本書教我們如何從對話或各種一手資訊中尋找線索：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/11/culture-clue.jpg&#34; alt=&#34;尋找文化線索&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2018/11/culture-clue.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;尋找文化線索&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;也教我們如何從對話或各種一手資訊所體現的溝通風格中，洞悉難以言說的深層事物：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/11/comm-style.jpg&#34; alt=&#34;溝通風格&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2018/11/comm-style.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;溝通風格&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;好書像寶藏，看你怎麼轉化運用。&lt;/p&gt;
+&lt;p&gt;譬如說，面談時，不要盡是在瑣碎的事情上面打轉。試著用具體的實例，探出深層的永續事業層面，這才是重點。&lt;/p&gt;
+&lt;p&gt;譬如說，專案計畫書、產品路線圖、impact map、product backlog，亦可用這些角度去測出背後的永續事業理念；或者⋯⋯沒有永續可言的理念。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;兩本有趣的私房書，給大家參考。&lt;/p&gt;</description>
+      
     </item>
+    
     <item>
       <title>軟體開發，除了方法論，還有⋯⋯</title>
       <link>//william-yeh.net/post/2018/10/methodology-and-criteria/</link>
       <pubDate>Thu, 25 Oct 2018 12:22:16 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2018/10/methodology-and-criteria/</guid>
-      <description>&lt;p&gt;在某些人眼中，「敏捷」是狂熱份子聚集的邪教。&lt;/p&gt;&#xA;&lt;p&gt;或許是被困在守舊勢力太久了，敏捷信徒不只有改變世界的熱情，更有捨我其誰的急迫感。不過，在傳播理念或推動改變時，若操之過急，忽略對方所處的情境、歷史及歷程，就很難有建設性對話。在這守舊勢力龐大的世界，自然很容易陣亡。&lt;/p&gt;&#xA;&lt;p&gt;但這還只是表象。歧見，單靠對話仍不足以化解，更需要在方法論層次達到理解，方可進退有據。&lt;/p&gt;&#xA;&lt;p&gt;尤其在看過《&lt;a href=&#34;https://www.books.com.tw/products/0010791756&#34;&gt;社會科學的理路&lt;/a&gt;》之後，我領悟到一些根源問題及槓桿解。&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;在某些人眼中，「敏捷」是狂熱份子聚集的邪教。&lt;/p&gt;
+&lt;p&gt;或許是被困在守舊勢力太久了，敏捷信徒不只有改變世界的熱情，更有捨我其誰的急迫感。不過，在傳播理念或推動改變時，若操之過急，忽略對方所處的情境、歷史及歷程，就很難有建設性對話。在這守舊勢力龐大的世界，自然很容易陣亡。&lt;/p&gt;
+&lt;p&gt;但這還只是表象。歧見，單靠對話仍不足以化解，更需要在方法論層次達到理解，方可進退有據。&lt;/p&gt;
+&lt;p&gt;尤其在看過《&lt;a href=&#34;https://www.books.com.tw/products/0010791756&#34;&gt;社會科學的理路&lt;/a&gt;》之後，我領悟到一些根源問題及槓桿解。&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/10/social-sci.jpg&#34; alt=&#34;圖一　《社會科學的理路》第一版 (2001) 及第四版 (2018)&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2018/10/social-sci.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;圖一　《社會科學的理路》第一版 (2001) 及第四版 (2018)&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;方法論形塑世界觀&#34;&gt;方法論形塑世界觀&lt;/h2&gt;
+&lt;p&gt;我們都在採用&lt;strong&gt;方法論&lt;/strong&gt;，不管我們自覺或不自覺。&lt;/p&gt;
+&lt;p&gt;瀑布模型是一種方法論，敏捷是一種方法論，Scrum 及 Kanban 則是敏捷方法論底下更具體的實踐作法。&lt;/p&gt;
+&lt;p&gt;為什麼會決定採取某一種方法論？原因可能很多，本文不予探討。本文想談的是，採取某一種方法論，就會逐漸被該方法論所形塑的&lt;strong&gt;世界觀&lt;/strong&gt;所包圍，以及接下來的連鎖效應——不管我們自覺或不自覺。&lt;/p&gt;
+&lt;p&gt;論到方法論及世界觀，我想要引述《&lt;a href=&#34;https://www.books.com.tw/products/0010791756&#34;&gt;社會科學的理路&lt;/a&gt;》的見解。&lt;/p&gt;
+&lt;p&gt;本書作者黃光國教授，是台灣社會心理學界的大老。他花了將近十年的工夫寫成本書第一版 (2001 年)，析論二十世紀發展出來的五種科學哲學主要典範之間的關聯。退休後推出的第四版 (2018 年)，將原本具有歷史意義的第一章整個抽換掉，很可惜，所以我仍然留著第一版。&lt;/p&gt;
+&lt;p&gt;《&lt;a href=&#34;https://www.books.com.tw/products/0010791756&#34;&gt;社會科學的理路&lt;/a&gt;》，從科學哲學角度指出：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/10/paradigm.jpg&#34; alt=&#34;圖二　方法論與世界觀&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2018/10/paradigm.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;圖二　方法論與世界觀&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;看起來有點抽象，讓我們從「軟體開發流程」的角度來照樣造句，就會茅塞頓開：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;任何一種&lt;strong&gt;軟體開發流程&lt;/strong&gt;所主張的「&lt;strong&gt;本體論／認識論／方法論&lt;/strong&gt;」，構成了該一開發流程的「&lt;strong&gt;世界觀&lt;/strong&gt;」，它在性質上是一種&lt;strong&gt;形而上學的預設&lt;/strong&gt;，是由軟體開發團隊的&lt;strong&gt;基本信念&lt;/strong&gt;所決定的。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;一個&lt;strong&gt;軟體開發者&lt;/strong&gt;，對於方法論的回答，必然會受到其「本體論／認識論」立場的&lt;strong&gt;限制&lt;/strong&gt;，而不能隨意選擇。當他決定採用某種方法論的時候，他也必須同時接受其「本體論／認識論」&lt;strong&gt;預設&lt;/strong&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;所以，採取瀑布模式的人，採取敏捷模式的人，兩群人的世界觀，以及信念、預設，是非常不一樣的。&lt;/p&gt;
+&lt;p&gt;想合作，或是想進一步改變對方，就得先認清這一點：你們的對話，是不同世界觀的對話。&lt;/p&gt;
+&lt;h2 id=&#34;方法論之外還有判準&#34;&gt;方法論之外，還有判準&lt;/h2&gt;
+&lt;p&gt;瀑布模型是一種方法論，敏捷是一種方法論。&lt;/p&gt;
+&lt;p&gt;不同方法論，有優劣之別嗎？&lt;/p&gt;
+&lt;p&gt;或許有吧。但更常見的事實是：不同方法論，各有擅長的場域。&lt;/p&gt;
+&lt;p&gt;《&lt;a href=&#34;https://www.books.com.tw/products/0010791756&#34;&gt;社會科學的理路&lt;/a&gt;》第一版的第一章，從科學哲學角度指出：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/10/paradigm-criteria.jpg&#34; alt=&#34;圖三　典範的判準&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2018/10/paradigm-criteria.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;圖三　典範的判準&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;文中點出很重要的觀念：「&lt;strong&gt;判準&lt;/strong&gt;」。&lt;/p&gt;
+&lt;p&gt;看起來有點抽象，讓我們再從「軟體開發流程」的角度來照樣造句吧！&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;我是贊同「敏捷運動」的。然而，我卻認為：「敏捷／不敏捷」不能夠作為軟體開發流程好壞的&lt;strong&gt;判準&lt;/strong&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;我主張的「多元典範的軟體開發取向」認為：我們可以視問題的性質，採取瀑布或敏捷軟體開發典範。然而，採取某種典範，不但要說明自己的&lt;strong&gt;方法論立場&lt;/strong&gt;，而且要採用該一典範的&lt;strong&gt;方法論判準&lt;/strong&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在我看來，軟體開發而沒有判準，是非常不可思議之事。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;判準，是將方法論落地實施的重要關鍵，也是方法論歧見的槓桿解。&lt;/p&gt;
+&lt;p&gt;試問：你對自己採用的軟體開發方法論，了解它的判準嗎？&lt;/p&gt;
+&lt;p&gt;試問：你對其他人採用的不一樣的軟體開發方法論，也了解它的判準嗎？&lt;/p&gt;
+&lt;p&gt;先賣個關子。下一篇文章，再分別針對瀑布與敏捷取向，談談我所認為的方法論判準。&lt;/p&gt;
+
+
+&lt;div class=&#34;notice notice--note&#34;&gt;
+  &lt;div class=&#34;notice__title&#34;&gt;
+    
+      「判準與指標」系列文章
+    
+  &lt;/div&gt;
+  &lt;div class=&#34;notice__content&#34;&gt;&lt;p&gt;❶ 軟體開發，除了方法論，還有⋯⋯&lt;/p&gt;
+&lt;p&gt;❷ &lt;a href=&#34;//william-yeh.net/post/2018/10/agile-criteria/&#34;&gt;敏捷的判準&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❸ &lt;a href=&#34;//william-yeh.net/post/2018/11/lean-startup-criteria/&#34;&gt;Lean Startup 的判準&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❹ &lt;a href=&#34;//william-yeh.net/post/2018/11/agile-value/&#34;&gt;敏捷的價值與指標&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❺ &lt;a href=&#34;//william-yeh.net/post/2018/11/devops-value/&#34;&gt;DevOps 的價值與指標&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;❻ &lt;a href=&#34;//william-yeh.net/post/2023/12/dev-metrics/&#34;&gt;如何衡量敏捷對於軟體研發效能的利益？&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+      
     </item>
+    
     <item>
       <title>自我改變，起點不是先挑戰意志力</title>
       <link>//william-yeh.net/post/2017/05/self-change/</link>
       <pubDate>Tue, 16 May 2017 22:44:42 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2017/05/self-change/</guid>
-      <description>&lt;p&gt;一看到 Joe 多年後重開【&lt;a href=&#34;https://shop.darencademy.com/product/view/id/85&#34;&gt;大人學講座04 : 有效自我改變的系統化做法&lt;/a&gt;】，二話不說，立刻報名。&lt;/p&gt;&#xA;&lt;p&gt;為什麼這麼有信心呢？&lt;/p&gt;&#xA;&lt;p&gt;原因之一，已經上過好幾次 Joe 的課程，尤其是與這主題風格類似的【&lt;a href=&#34;//william-yeh.net/post/2016/08/lifetime-keywords/&#34;&gt;別總是直球對決&lt;/a&gt;】。我很清楚這類課程的系統性及實用性。&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;一看到 Joe 多年後重開【&lt;a href=&#34;https://shop.darencademy.com/product/view/id/85&#34;&gt;大人學講座04 : 有效自我改變的系統化做法&lt;/a&gt;】，二話不說，立刻報名。&lt;/p&gt;
+&lt;p&gt;為什麼這麼有信心呢？&lt;/p&gt;
+&lt;p&gt;原因之一，已經上過好幾次 Joe 的課程，尤其是與這主題風格類似的【&lt;a href=&#34;//william-yeh.net/post/2016/08/lifetime-keywords/&#34;&gt;別總是直球對決&lt;/a&gt;】。我很清楚這類課程的系統性及實用性。&lt;/p&gt;
+&lt;p&gt;原因之二，看了 Joe 的幾篇文章，意猶未盡，想看看多年後重開的加長版講座，又有什麼新的體悟？&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://darencademy.com/article/view/id/11242&#34;&gt;如何才能真正的自我改變 (一) ：改變的步驟、以及最難的一點&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://darencademy.com/article/view/id/11487&#34;&gt;如何才能真正的自我改變 (二) ：大部分人其實不知道自己要甚麼&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://darencademy.com/article/view/id/12535&#34;&gt;如何才能真正的自我改變 (三) ：了解你手上的籌碼有甚麼&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://darencademy.com/article/view/id/15791&#34;&gt;為何我們很難改變周圍那些愛抱怨的朋友？&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://darencademy.com/article/view/id/16420&#34;&gt;怎麼才能有效安撫找你抱怨的朋友？&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;原因之三，儘管課程文案特別提醒「&lt;strong&gt;不適合的對象&lt;/strong&gt;：嘗試想改變別人者。改變的關鍵首重於自身的覺醒。所以若你是想聽完後去影響身邊人 (小孩、朋友) 的，我覺得幫助會有限喔，所以就請別浪費錢了。」但反骨的我，還是想嚐嚐看有沒有一些幫助。&lt;/p&gt;
+&lt;p&gt;答案是：有！&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2017/05/self-change-1.jpg&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2017/05/self-change-1.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;基於不破梗不爆雷原則，不便直接透露五糾結、五方向、五表單的內容，我只徵引一些最有感的類似觀點，作為呼應。&lt;/p&gt;
+&lt;h2 id=&#34;很多人並沒打算玩真的&#34;&gt;很多人並沒打算玩真的&lt;/h2&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2017/05/self-change-2.jpg&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2017/05/self-change-2.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Joe 說：「『不做為』本身也是一種作為；不要到了被迫改變時才改變。」&lt;/p&gt;
+&lt;p&gt;這跟《&lt;a href=&#34;https://www.books.com.tw/products/0010729881&#34;&gt;大人學選擇&lt;/a&gt;》 pp. 265&amp;ndash;266 說的「及時的責任」一樣：「大部分的人更該擔心的，是不選擇，眼睜睜地看著狀況越來越惡化，如同溫水煮青蛙般的『慢性選擇消失問題』。」&lt;/p&gt;
+&lt;h2 id=&#34;所有選擇都有代價&#34;&gt;所有選擇都有代價&lt;/h2&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2017/05/self-change-3.jpg&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2017/05/self-change-3.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Joe 說：「請先盤點思考：我願意犧牲什麼？」&lt;/p&gt;
+&lt;p&gt;這跟《&lt;a href=&#34;https://www.books.com.tw/products/0010729881&#34;&gt;大人學選擇&lt;/a&gt;》 pp. 19&amp;ndash;20 說的「原則四：預想最壞的情況會怎麼樣，並預作準備」道理一樣：「當你連最壞的狀況都想過一輪時，代表你對這項選擇也做好了全方位的規劃。後續執行時的順暢度，其實也會跟著大幅提升。」&lt;/p&gt;
+&lt;h2 id=&#34;意志會耗盡&#34;&gt;意志會耗盡&lt;/h2&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2017/05/self-change-4.jpg&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2017/05/self-change-4.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;市面上一堆《&lt;a href=&#34;https://www.books.com.tw/products/0010326543&#34;&gt;先別急著吃棉花糖&lt;/a&gt;》、《&lt;a href=&#34;https://www.books.com.tw/products/0010555281&#34;&gt;輕鬆駕馭意志力&lt;/a&gt;》、《&lt;a href=&#34;https://www.books.com.tw/products/0010867931&#34;&gt;恆毅力&lt;/a&gt;》書籍，不斷鼓吹並販賣「提升意志力」的秘方。不過，Joe 的這句話，有如當頭棒喝：「意志力就像電池，是有限資源。」&lt;/p&gt;
+&lt;p&gt;的確，日常生活的種種重要／不重要、急迫／不急迫的事，在在都在消耗我們的意志力。我們該選擇對抗天性，還是選擇順從天性？&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2017/05/self-change-5.jpg&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2017/05/self-change-5.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Joe 說：「最好的忍耐，是不忍耐；最好的判斷，是不判斷。」&lt;/p&gt;
+&lt;p&gt;聽到這裡，突然領悟到許多專案管理方法，之所以講究以簡馭繁，就是這個道理。像 Scrum 限縮 Sprint Backlog，就是為了避免面臨無盡的選擇、插單的誘惑、父子騎驢的判斷，白白消耗團隊的意志力。&lt;/p&gt;
+&lt;p&gt;意志力，是有限資源，請好好保護它，請善用它滿格的黃金時刻。&lt;/p&gt;
+&lt;h2 id=&#34;不叫我們遇見試探&#34;&gt;不叫我們遇見試探&lt;/h2&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2017/05/self-change-6.jpg&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2017/05/self-change-6.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;論語泰伯篇：「危邦不入，亂邦不居。」&lt;/p&gt;
+&lt;p&gt;新約主禱文：「不叫我們遇見（陷入）試探。」&lt;/p&gt;
+&lt;p&gt;《&lt;a href=&#34;https://www.books.com.tw/products/0010780469&#34;&gt;你要如何衡量你的人生？&lt;/a&gt;》 pp. 242&amp;ndash;244 說：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;百分之百的堅持，要比百分之九十八來得容易。&lt;/p&gt;
+&lt;p&gt;我發覺要抗拒「就這麼一次，下不為例」的誘惑，其實是我這一生最大的決定。為什麼？因為人生總有許許多多的情況要你妥協，讓你有「身不由己」之感，然而只要出現一次「下不為例」，總會再出現另一個「下不為例」。萬一我這次跨越界線，往後就會不斷出界。如果你不越界，個人道德界線的力量將非常強大。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;這道理，對個人適用，對團隊適用，對組織一樣適用。&lt;/p&gt;
+&lt;p&gt;由此也可看出為什麼 Scrum 發明人在《&lt;a href=&#34;https://www.books.com.tw/products/0010647604&#34;&gt;告別瀑布，擁抱敏捷&lt;/a&gt;》書中苦口婆心說出一段貌似專制頑固的論調：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Scrum 不是可以被隨意修改來迎合既有企業文化的流程，反而是應該調整企業文化來適應 Scrum。&lt;/p&gt;
+&lt;p&gt;在 Scrum 中，阻礙軟體開發方式的文化障礙將無所遁形。如果沒有用 Scrum 來建立敏捷、透明的開發環境，那隱藏的問題將會一直留在企業內損害企業的利益，那就失去了使用 Scrum 最主要的好處。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Kanban 的 WIP 設計，是一種隔絕誘惑的方法。Scrum 的 sprint timebox 設計，也是一種隔絕誘惑的方法。&lt;/p&gt;
+&lt;p&gt;請設計聰明的隔絕誘惑、逃離誘惑的方法。&lt;/p&gt;
+&lt;h2 id=&#34;內心的自動導航機制&#34;&gt;內心的自動導航機制&lt;/h2&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2017/05/self-change-7.jpg&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2017/05/self-change-7.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Joe 引述《&lt;a href=&#34;http://www.books.com.tw/products/0010560033&#34;&gt;為什麼我們這樣生活，那樣工作？&lt;/a&gt;》書中提出的「習慣迴路」理論，提供一些破除舊習慣、養成新習慣的自動導航機制，讓「心中善良而任性的小孩」可以整合對齊。&lt;/p&gt;
+&lt;p&gt;Joe 說：「習慣不能改，只能覆蓋。」&lt;/p&gt;
+&lt;p&gt;不過，整個誘因建構三部曲「提示」→「行為」→「期待獎勵」當中，起手式「提示」的關鍵，仍在於自我察覺力。看起來，就像任何觸及心靈的手法，「自我察覺力」仍是非常重要的鍛鍊。&lt;/p&gt;
+&lt;h2 id=&#34;兩個月的作業&#34;&gt;兩個月的作業&lt;/h2&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2017/05/self-change-8.jpg&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2017/05/self-change-8.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;這是一門值得好好沈澱，對自己許下承諾的課。&lt;/p&gt;
+&lt;p&gt;希望兩個月後回頭來看，能在某些地方邁入良性的自動導航系統。在自己身上，在家人身上，在團隊身上。&lt;/p&gt;
+&lt;p&gt;「做自我的改變，跟買 3C 產品一樣，早買早享受！」&lt;/p&gt;
+</description>
+      
     </item>
+    
     <item>
       <title>請循其本</title>
       <link>//william-yeh.net/post/2016/08/back-to-the-origin/</link>
       <pubDate>Mon, 01 Aug 2016 08:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2016/08/back-to-the-origin/</guid>
-      <description>&lt;p&gt;老子曰：「五色令人目盲，五音令人耳聾。」&lt;/p&gt;&#xA;&lt;p&gt;所以，最近我越來越喜歡從原始定義或目標下手。&lt;/p&gt;&#xA;&lt;p&gt;原理通了，邏輯通了，再加一點點創意及想像力，很多東西都是順理成章就推導得出來。&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;老子曰：「五色令人目盲，五音令人耳聾。」&lt;/p&gt;
+&lt;p&gt;所以，最近我越來越喜歡從原始定義或目標下手。&lt;/p&gt;
+&lt;p&gt;原理通了，邏輯通了，再加一點點創意及想像力，很多東西都是順理成章就推導得出來。&lt;/p&gt;
+&lt;p&gt;像物件導向設計領域常見的 &lt;a href=&#34;https://en.wikipedia.org/wiki/SOLID_%28object-oriented_design%29&#34;&gt;SOLID 原則&lt;/a&gt;，或是再精煉出來的「&lt;a href=&#34;http://teddy-chen-tw.blogspot.tw/2014/04/solid.html&#34;&gt;五則皆變&lt;/a&gt;」觀點，深刻體會後，你可以推導出許多 design patterns 或 bad smell 論述。&lt;/p&gt;
+&lt;h2 id=&#34;關於-devops&#34;&gt;關於 DevOps&lt;/h2&gt;
+&lt;p&gt;溯源能力是很重要的，才不會被狀似革新，實則舊瓶裝新酒或跨領域借用的「新觀念」所迷惑。&lt;/p&gt;
+&lt;p&gt;像近年來很潮的 DevOps，你可以說是革新，因為它的的確確顛覆許多公司的陳年作風；但你也可以說它只是舊瓶裝新酒，只是把 &lt;a href=&#34;//william-yeh.net/post/2016/05/devops-a-lean-perspective/&#34;&gt;Lean Thinking 的五大原則&lt;/a&gt;應用到軟體產業上。&lt;/p&gt;
+&lt;p&gt;是新，是舊？係主觀評論範疇，不重要；重要的是，你是否實實在在掌握到核心精髓，並予以實踐？&lt;/p&gt;
+&lt;p&gt;掌握了，實踐了，那麼，得魚忘筌，是新，是舊，根本不重要。沒有掌握，沒有實踐，那麼，是新，是舊，也不是現在的你有資格過問的事、最該過問的事。&lt;/p&gt;
+&lt;p&gt;莊子曰：「請循其本。」&lt;/p&gt;
+&lt;h2 id=&#34;關於-docker&#34;&gt;關於 Docker&lt;/h2&gt;
+&lt;p&gt;面對別人提出的技術問題或導入問題，最近也更傾向不直接給答案。&lt;/p&gt;
+&lt;p&gt;孔子曰：「吾有知乎哉？無知也。有鄙夫問於我，空空如也，我叩其兩端而竭焉。」推導過程，才是最深刻的。&lt;/p&gt;
+&lt;p&gt;像許多人對 Docker 提出的疑惑，其實只要回到 Docker slogan 所揭櫫的本質：&amp;ldquo;build, ship, run any app, anywhere&amp;rdquo;，再反思自身的 DevOps 環節，「叩其兩端而竭焉」，關鍵癥結往往呼之欲出。&lt;/p&gt;
+&lt;p&gt;我常常用這類的話作為引子，回答各種 Docker 疑難雜症：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;這和 Docker 無關。請先假設這世界上沒有 Docker。 [&amp;hellip;]&lt;/p&gt;
+&lt;p&gt;請回到還沒有 Docker 的時代，重新思考你的問題。 [&amp;hellip;]&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;或許是出現太多次了，還有網友評論道：「葉大最近挺常講這句話的&amp;hellip; 果然是 Dockerize 之前最重要的 mindset。」&lt;/p&gt;
+&lt;p&gt;也順便預告一下：我在今年九月 &lt;a href=&#34;http://containersummit.ithome.com.tw/&#34;&gt;Container Summit 2016&lt;/a&gt; 的專題演講〈[Docker 導入：障礙與對策]({{-&amp;lt; ref &amp;ldquo;embrace-docker.md&amp;rdquo; &amp;gt;}})〉，大致上就是秉持這種「叩其兩端而竭焉」加上 TOC 思維方法的角度，從 Docker 的 UDE 一路推導至核心衝突。血淋淋，但看到癥結，才能對症下藥（或許是猛藥⋯⋯）。&lt;/p&gt;
+&lt;h2 id=&#34;關於-toc--satir&#34;&gt;關於 TOC &amp;amp; Satir&lt;/h2&gt;
+&lt;p&gt;既然我在〈&lt;a href=&#34;//william-yeh.net/post/2016/06/change-framework/&#34;&gt;改變的框架&lt;/a&gt;〉一文中預告，我想以「左腦高德拉特，右腦薩提爾」作為下半年課題，那麼，「請循其本」，我也該試著抓出兩者的核心本質，作為思考或應用的指引。&lt;/p&gt;
+&lt;p&gt;關於高德拉特 TOC 的核心理念，在《&lt;a href=&#34;https://www.amazon.com/dp/B014HV1W5O&#34;&gt;抉擇&lt;/a&gt;》書中，透過高德拉特父女的機鋒對話，歸納出這幾點：&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:20em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/08/toc-core-spirits.jpg&#34; alt=&#34;TOC 核心理念&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2016/08/toc-core-spirits.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;TOC 核心理念&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;至於饒富創意的薩提爾治療手法，背後有哪些核心原則呢？&lt;/p&gt;
+&lt;p&gt;在《&lt;a href=&#34;http://www.books.com.tw/products/0010154716&#34;&gt;薩提爾治療實錄&lt;/a&gt;》書中，如此闡述薩提爾治療手法的基本價值與假設：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;欣賞各種生活風貌，並相信在適當條件下，每一種生活形式都朝向成長。&lt;/li&gt;
+&lt;li&gt;假設當事人本身擁有自我成長的因子。治療者就如同園丁，了解美麗的植物成長所需的最佳環境，提供成長需要的肥料及灌溉。&lt;/li&gt;
+&lt;li&gt;欣賞家庭歷程，及家庭的掙扎奮鬥與各種可能性。欣賞並不一定意味著喜愛，而是比較非判斷性的態度。&lt;/li&gt;
+&lt;li&gt;開放的態度，願意運用人性化作為治療的工具。必須有能力創造一個我們自己能被觀察、傾聽、觸摸和瞭解的情境。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;在《&lt;a href=&#34;http://www.books.com.tw/products/0010004784&#34;&gt;薩提爾的家族治療模式&lt;/a&gt;》書中，如此闡述薩提爾治療手法的普遍信念與原則（以下僅部分摘錄）：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;「改變」是有可能的。&lt;/li&gt;
+&lt;li&gt;我們都擁有內在資源，以成功地應對和成長。&lt;/li&gt;
+&lt;li&gt;我們有許多選擇，特別是面對壓力做出「適當回應」，而不是對情況做出「即時反應」。&lt;/li&gt;
+&lt;li&gt;治療需把重點放在健康與各種可能性上，而不是病態上。&lt;/li&gt;
+&lt;li&gt;「希望」是「改變」的一大重要成分。&lt;/li&gt;
+&lt;li&gt;人們因「相似」而聯結，因「差異」而成長。&lt;/li&gt;
+&lt;li&gt;治療的主要目標是為自己做出選擇。&lt;/li&gt;
+&lt;li&gt;「問題」不是問題；如何「應對問題」才是問題。&lt;/li&gt;
+&lt;li&gt;大部分人傾向於選擇其所熟悉的，而非舒適自在，特別是在承受壓力之際。&lt;/li&gt;
+&lt;li&gt;父母往往重複他們成長過程中所熟悉的模式，即使知道這些模式是功能不良的。&lt;/li&gt;
+&lt;li&gt;我們無法改變過去已發生的事件，只能改變該事件對我們的影響。&lt;/li&gt;
+&lt;li&gt;欣賞並接納過去，可以增加我們管理現在的能力。&lt;/li&gt;
+&lt;li&gt;「應對方式」是自我價值層次的展現；自我價值愈高，應對方式就愈統整。&lt;/li&gt;
+&lt;li&gt;「一致性」與「高自我價值感」是薩提爾模式的主要目標。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;由此可見，「一致性」與「高自我價值感」是薩提爾模式的主要目標。&lt;/p&gt;
+&lt;p&gt;其中，關於「一致性」(congruence) 的生活原則，《&lt;a href=&#34;http://www.books.com.tw/products/0010327427&#34;&gt;家庭如何塑造人&lt;/a&gt;》如此闡述：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;溝通清晰。&lt;/li&gt;
+&lt;li&gt;合作而非競爭。&lt;/li&gt;
+&lt;li&gt;賦予力量而非壓制。&lt;/li&gt;
+&lt;li&gt;強調個人的獨特性，而非將之分類。&lt;/li&gt;
+&lt;li&gt;運用權威去引導和完成「所該做的事」，而非透過獨裁的力量去強迫服從。&lt;/li&gt;
+&lt;li&gt;全然地關愛、珍視和尊重自己。&lt;/li&gt;
+&lt;li&gt;對自己和社會負責。&lt;/li&gt;
+&lt;li&gt;視問題為挑戰和機會，以獲得創造性的解決方法。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;至於「高自我價值感」，《&lt;a href=&#34;http://www.books.com.tw/products/0010004784&#34;&gt;薩提爾的家族治療模式&lt;/a&gt;》如此闡述：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:20em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/06/self-esteem.jpg&#34; alt=&#34;自我價值&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2016/06/self-esteem.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;自我價值&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt; 
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;呼！「請循其本」，其實並不簡單。&lt;/p&gt;
+&lt;p&gt;但可喜的是：兩大方法的「本」，其實交會處甚多。儘管一剛一柔，但到了某個境界，百鍊鋼化為繞指柔，組合技可達到綜效。&lt;/p&gt;
+&lt;p&gt;看完這一篇，以後看到我以問題反問你的提問，就別再驚訝了喔！&lt;/p&gt;
+</description>
+      
     </item>
+    
     <item>
       <title>改變的框架</title>
       <link>//william-yeh.net/post/2016/06/change-framework/</link>
       <pubDate>Tue, 28 Jun 2016 08:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2016/06/change-framework/</guid>
-      <description>&lt;p&gt;前幾天在 Twitter 寫道：&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;下半年自我的課題，就是左腦高德拉特，右腦薩提爾，左右互搏。&lt;/p&gt;&#xA;&lt;p&gt;   &amp;mdash; Quote: &lt;a href=&#34;https://twitter.com/william_yeh/status/746245079375876101&#34;&gt;2016-06-24 Tweet #1&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;p&gt;為什麼會把兩者相提並論呢？&lt;/p&gt;&#xA;&lt;p&gt;對我來說，&lt;a href=&#34;https://en.wikipedia.org/wiki/Eliyahu_M._Goldratt&#34;&gt;高德拉特&lt;/a&gt;代表一種極度&lt;strong&gt;陽剛&lt;/strong&gt;的思維角度，&lt;a href=&#34;https://en.wikipedia.org/wiki/Virginia_Satir&#34;&gt;薩提爾&lt;/a&gt;代表一種極度&lt;strong&gt;柔軟&lt;/strong&gt;的治療角度。&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;前幾天在 Twitter 寫道：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;下半年自我的課題，就是左腦高德拉特，右腦薩提爾，左右互搏。&lt;/p&gt;
+&lt;p&gt;   &amp;mdash; Quote: &lt;a href=&#34;https://twitter.com/william_yeh/status/746245079375876101&#34;&gt;2016-06-24 Tweet #1&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;為什麼會把兩者相提並論呢？&lt;/p&gt;
+&lt;p&gt;對我來說，&lt;a href=&#34;https://en.wikipedia.org/wiki/Eliyahu_M._Goldratt&#34;&gt;高德拉特&lt;/a&gt;代表一種極度&lt;strong&gt;陽剛&lt;/strong&gt;的思維角度，&lt;a href=&#34;https://en.wikipedia.org/wiki/Virginia_Satir&#34;&gt;薩提爾&lt;/a&gt;代表一種極度&lt;strong&gt;柔軟&lt;/strong&gt;的治療角度。&lt;/p&gt;
+&lt;p&gt;這麼形容，並不代表他們是分處「剛」與「柔」兩個極端；相反的，越深入研究，越可體會出剛柔相濟的妙境。像高德拉特在《&lt;a href=&#34;http://www.books.com.tw/products/0010588043&#34;&gt;絕不是靠運氣&lt;/a&gt;》書中，演示了許多極度柔軟的「TOC 式說服程序」；而《&lt;a href=&#34;http://www.books.com.tw/products/0010004784&#34;&gt;薩提爾的家族治療模式&lt;/a&gt;》中闡釋的「高自我價值」，健旺的生命態度，令人動容：&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:20em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/06/self-esteem.jpg&#34; alt=&#34;自我價值&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2016/06/self-esteem.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;自我價值&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;這些特質，正與「&lt;a href=&#34;//william-yeh.net/post/2016/06/upgrade-adult-thinking-part2/&#34;&gt;大人思維&lt;/a&gt;」不謀而合。&lt;/p&gt;
+&lt;p&gt;所以，在某個層次上，「剛」與「柔」並不是兩個極端，而是可以協調產生綜效的。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;回到正題。&lt;/p&gt;
+&lt;p&gt;為什麼我會想以「左腦高德拉特，右腦薩提爾」作為我的下半年課題呢？&lt;/p&gt;
+&lt;p&gt;因為，我看中兩者的一項共通性：面對「改變」的議題。&lt;/p&gt;
+&lt;h2 id=&#34;改變&#34;&gt;改變&lt;/h2&gt;
+&lt;p&gt;我在〈&lt;a href=&#34;//william-yeh.net/post/2016/05/change-viewpoint-on-lord-of-rings/&#34;&gt;從「改變」角度看《魔戒》&lt;/a&gt;〉一文提到：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;畢竟 Lean Change Canvas 只是個框架，只是建議可以從九個面向去思考，但並未給出個別面向該如何發想及收斂；這有待自己再融入其他更針對性的思考工具。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;不管是在個人層次，或在家庭層次、人際層次、團隊層次、組織層次，「改變」總是無法迴避的議題，或者說：難題。在上述的任何一個層次，想發揮更大的影響力，都必須學習「改變」的技術及藝術。&lt;/p&gt;
+&lt;h2 id=&#34;限制理論的改變框架&#34;&gt;限制理論的改變框架&lt;/h2&gt;
+&lt;p&gt;「改變」的技術及藝術，是需要學習的，更需要不斷透過精準的提問來對焦。&lt;/p&gt;
+&lt;p&gt;這也正是高德拉特《&lt;a href=&#34;https://www.books.com.tw/products/0010898249&#34;&gt;目標&lt;/a&gt;》書末揭櫫的三個大哉問：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;What to change / 應該改變哪些事情&lt;/li&gt;
+&lt;li&gt;What to change to / 要朝什麼方向改變&lt;/li&gt;
+&lt;li&gt;How to cause the change / 要如何改變&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;這是很困難的大哉問。就連高德拉特本人，也要過了十年，在《&lt;a href=&#34;http://www.books.com.tw/products/0010588043&#34;&gt;絕不是靠運氣&lt;/a&gt;》書中才正式提出具體的 &lt;a href=&#34;https://en.wikipedia.org/wiki/Thinking_processes_%28theory_of_constraints%29&#34;&gt;Thinking Processes&lt;/a&gt; 體系來處理這三大課題。&lt;/p&gt;
+&lt;p&gt;後來，高德拉特之女 Efrat Goldratt-Ashlag &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，則以組織心理學家的角度，提出 TOC 觀點的「&lt;a href=&#34;https://scholar.google.com.tw/scholar?cluster=3039241670493587705&#34;&gt;抵制變革層次&lt;/a&gt;」。 &lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:25em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/06/toc-layers-of-resistance.jpg&#34; alt=&#34;TOC 抵制變革層次&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2016/06/toc-layers-of-resistance.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;TOC 抵制變革層次&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Efrat Goldratt-Ashlag 更語重心長說道：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;為了避免浪費時間和考驗我們自己及合作夥伴的耐心，我們需要忍住隨口亂說的衝動——我們應該盡快識別出&lt;strong&gt;未能達成共識的最早的「層次」&lt;/strong&gt;，並向對方建議，應該在進入下一步之前先集中討論該問題。&lt;/p&gt;
+&lt;p&gt;抵制層次就好比一個&lt;strong&gt;路線圖&lt;/strong&gt;，標示著我們到了何處，何時適合繼續下一步討論，何時應該停在原處深呼吸一下，才不會有無所適從的感覺。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;你看，TOC 是不是也有極度柔軟細緻的一面呢？&lt;/p&gt;
+&lt;h2 id=&#34;薩提爾理論的改變框架&#34;&gt;薩提爾理論的改變框架&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Virginia_Satir&#34;&gt;薩提爾&lt;/a&gt;在從事個人及家族治療實務時，也淬煉出六階段的改變歷程：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:20em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/06/satir-change-model.jpg&#34; alt=&#34;Satir 六階段的改變歷程&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2016/06/satir-change-model.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Satir 六階段的改變歷程&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;薩提爾模式強調的一個取向是&lt;strong&gt;增添改變的概念&lt;/strong&gt; (the &lt;strong&gt;add-on&lt;/strong&gt; concept change)。從功能不良轉化到高功能的過程，往往涉及添加一些什麼到我們已經是或知道的東西上面。&lt;/p&gt;
+&lt;p&gt;要重建高的自我價值，我們需要把案主帶入改變和轉化的過程。過程是改變之道：它有很多層次，包括從簡單的順序，到小心地察看發生了什麼、如何發生的以及改變&lt;strong&gt;觀點&lt;/strong&gt;、&lt;strong&gt;期待&lt;/strong&gt;和&lt;strong&gt;感受&lt;/strong&gt;。薩提爾整個模式的精神就在於&lt;strong&gt;覺察和欣賞轉化的過程&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&amp;mdash; Quote: 《&lt;a href=&#34;http://www.books.com.tw/products/0010004784&#34;&gt;薩提爾的家族治療模式&lt;/a&gt;》&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;非常細緻，也是高度個別化的手法。&lt;/p&gt;
+&lt;p&gt;和薩提爾彼此惺惺相惜的&lt;a href=&#34;https://en.wikipedia.org/wiki/Gerald_Weinberg&#34;&gt;溫伯格&lt;/a&gt;大師，也在《&lt;a href=&#34;http://www.books.com.tw/products/0010545251&#34;&gt;擁抱變革&lt;/a&gt;》書中，根據薩提爾的改變歷程，進一步點出其中的抉擇點／施力點：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:25em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/06/weinberg-change-process.jpg&#34; alt=&#34;溫伯格 - 變革抉擇點&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2016/06/weinberg-change-process.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;溫伯格 - 變革抉擇點&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;這些對於「改變」內在外在歷程的藍圖，可讓我們做好更多的心理建設，也做更周詳的企劃。&lt;/p&gt;
+&lt;h2 id=&#34;科特的改變框架&#34;&gt;科特的改變框架&lt;/h2&gt;
+&lt;p&gt;變革大師&lt;a href=&#34;https://www.kotterinternational.com/team/john-kotter/&#34;&gt;約翰・科特&lt;/a&gt;在《&lt;a href=&#34;http://www.books.com.tw/products/0010675408&#34;&gt;超速變革&lt;/a&gt;》中，調整他早年 &lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt; 的變革步驟，提出 turbo 版的&lt;a href=&#34;http://www.kotterinternational.com/resources/landing-page/8-steps-to-accelerate-change-in-2015/&#34;&gt;變革加速器&lt;/a&gt;：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:25em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/06/kotter-8-steps.jpg&#34; alt=&#34;科特 - 變革加速器&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2016/06/kotter-8-steps.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;科特 - 變革加速器&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;本書所探討的，就是組織如何以靈活及創意，快速因應策略挑戰，把握今日更容易稍縱即逝的機會。我們從中可以明白，超前、創新的組織是如何早一步擺脫激烈競爭、處理前所未有的混亂狀況、面對技術斷層（technological discontinuies）的威脅，不必犧牲短期獲利，也不會耗損自己的人力。&lt;/p&gt;
+&lt;p&gt;我的結論很簡單。當今世界的變化之快，導致過去一個世紀以來建立的基本系統、架構與文化，都無法跟上眼前的需求。就算你再怎麼精明，現在如果採取漸進方式調整管理與策略，恐怕也會使不上力。在變化莫測與變數日增的年代，你需要一個全新策略，才能保持領先。解決方法未必要捨棄原先已知的事物，全部從頭來過，而是要用&lt;strong&gt;有機方式&lt;/strong&gt;再導入&lt;strong&gt;第二套系統&lt;/strong&gt;；多數成功企業家對這套系統也很熟悉。&lt;/p&gt;
+&lt;p&gt;新系統新增企業必備的靈活與速度；而原本的舊系統會持續運作，保持可靠與效率。兩者結合成「&lt;strong&gt;雙營運系統&lt;/strong&gt;」(dual operating system)。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;這種「雙營運系統」組織設計法，和《&lt;a href=&#34;http://www.amazon.com/dp/0988262592/ref=cm_sw_r_tw_dp_a4p3wb0PSYY97&#34;&gt;鳳凰專案&lt;/a&gt;》的解法如出一轍，也很像我在〈&lt;a href=&#34;//william-yeh.net/post/2016/06/phoenix-proj-titles/&#34;&gt;《鳳凰專案》私房標題&lt;/a&gt;〉提出的 injection。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;理論歸理論，實際歸實際。一堆改變框架，足以讓自己好好消化吸收運用了。&lt;/p&gt;
+&lt;p&gt;大人之路，就是一段華麗的冒險呀！&lt;/p&gt;
+
+
+&lt;div class=&#34;notice notice--note&#34;&gt;
+  &lt;div class=&#34;notice__title&#34;&gt;
+    
+      系列文章
+    
+  &lt;/div&gt;
+  &lt;div class=&#34;notice__content&#34;&gt;&lt;p&gt;❶ 改變的框架&lt;/p&gt;
+&lt;p&gt;❷ &lt;a href=&#34;//william-yeh.net/post/2018/12/process-and-metrics/&#34;&gt;改變／改革：流程與衡量指標&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;❸ &lt;a href=&#34;//william-yeh.net/post/2022/05/evaluation-process-for-changes/&#34;&gt;推動改變的評估流程&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;高德拉特之女 Efrat Goldratt-Ashlag，也是《&lt;a href=&#34;https://www.amazon.cn/%E6%8A%89%E6%8B%A9-%E8%89%BE%E5%88%A9%C2%B7%E9%AB%98%E5%BE%B7%E6%8B%89%E7%89%B9/dp/B006006M6U&#34;&gt;抉擇&lt;/a&gt;》一書的合著者。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;Efrat Goldratt-Ashlag 的〈&lt;a href=&#34;https://scholar.google.com.tw/scholar?cluster=3039241670493587705&#34;&gt;抵制變革層次&lt;/a&gt;〉這篇論文，亦收錄於《&lt;a href=&#34;http://www.books.com.tw/products/CN11199988&#34;&gt;瓶頸理論手冊&lt;/a&gt;》。&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;
+&lt;p&gt;科特 (John Kotter) 在變革領域著作等身。他最為人所知的，是在 1996 年《&lt;a href=&#34;https://www.books.com.tw/products/0010191080&#34;&gt;領導人的變革法則&lt;/a&gt;》提出著名的「八階段變革流程」。後來的著作，有專門探討八階段當中的特定議題（像 2008 年《&lt;a href=&#34;https://bookzone.cwgv.com.tw/books/details/BCB403&#34;&gt;急迫感&lt;/a&gt;》），也有改寫成寓言故事（像 2006 年《&lt;a href=&#34;https://www.books.com.tw/products/0010645587&#34;&gt;冰山在融化&lt;/a&gt;》）。2014 年的《&lt;a href=&#34;http://www.books.com.tw/products/0010675408&#34;&gt;超速變革&lt;/a&gt;》，則是「八階段變革流程」的進化版，也有改寫成寓言故事《&lt;a href=&#34;https://www.books.com.tw/products/0010731153&#34;&gt;這不是我們做事的方法！&lt;/a&gt;》。&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description>
+      
     </item>
+    
     <item>
       <title>從「改變」角度看《魔戒》</title>
       <link>//william-yeh.net/post/2016/05/change-viewpoint-on-lord-of-rings/</link>
       <pubDate>Wed, 25 May 2016 08:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2016/05/change-viewpoint-on-lord-of-rings/</guid>
-      <description>&lt;p&gt;今年一月，參加 &lt;a href=&#34;http://kojenchieh.pixnet.net/blog&#34;&gt;David Ko&lt;/a&gt; 舉辦的一場敏捷轉型活動，從中學到了一個有趣的分析工具：Lean Change Canvas。&lt;/p&gt;&#xA;&lt;p&gt;知道了一個好東西，自然要追本溯源，加深加廣。便研讀相關資料：&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;今年一月，參加 &lt;a href=&#34;http://kojenchieh.pixnet.net/blog&#34;&gt;David Ko&lt;/a&gt; 舉辦的一場敏捷轉型活動，從中學到了一個有趣的分析工具：Lean Change Canvas。&lt;/p&gt;
+&lt;p&gt;知道了一個好東西，自然要追本溯源，加深加廣。便研讀相關資料：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://kojenchieh.pixnet.net/blog/post/441018775-%E7%B2%BE%E5%AF%A6%E6%94%B9%E8%AE%8A%E7%95%AB%E5%B8%83&#34;&gt;精實改變畫布&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://kojenchieh.pixnet.net/blog/post/442550432-firstthing_of_agile_promotion&#34;&gt;推廣敏捷的第一要務是什麼&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://leankit.com/blog/2015/02/lean-change-method/&#34;&gt;Lean Change Method: Enabling Lean and Agile Transformations at Scale&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.safaribooksonline.com/library/view/lean-change-livelessons/9780133443912/&#34;&gt;Lean Change LiveLessons (Video Training): Achieving Agile Transformation with Kanban, Kotter, and Lean Startup&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;此外，也要找機會多演練、多思考，才會內化。於是，隔天我就在公司帶領小組討論任務時，現學現賣。數日後，也順便用在第二梯次 &lt;a href=&#34;http://get.soft-arch.net/ansible&#34;&gt;Ansible Workshop&lt;/a&gt; 課堂上：&lt;/p&gt;
+&lt;p&gt;
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/05/lord-of-rings-example.jpg&#34; alt=&#34;Ansible Workshop 第二梯次&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2016/05/lord-of-rings-example.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Ansible Workshop 第二梯次&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+    &amp;mdash; Quote: &lt;a href=&#34;https://twitter.com/brecht/status/686004657085231104&#34;&gt;Brecht&amp;rsquo;s Tweet&lt;/a&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;之後，再歷經第三、四、五梯次的 Ansible Workshop 的演練引導，不僅更了解 Lean Change Canvas 適用時機，也發展出有助於聚焦的配套措施：說故事、&lt;a href=&#34;http://www.books.com.tw/products/0010463047&#34;&gt;ORID&lt;/a&gt; 及 &lt;a href=&#34;https://en.wikipedia.org/wiki/Theory_of_constraints&#34;&gt;TOC&lt;/a&gt;。畢竟 Lean Change Canvas 只是個框架，只建議出九個思考面向，但並未具體說明個別面向該如何發想及收斂——這都有待自己再融入其他更針對性的思考工具。&lt;/p&gt;
+&lt;p&gt;我的方法是：先用某個耳熟能詳的故事，引介 Lean Change Canvas 九個格子的意涵。此處，我選擇大部分的人都看過電影版或小說版的《魔戒》為引子（應該是吧！），以求連結經驗。接著再拿真正要大家研討的案例，請大家各自照著 Lean Change Canvas 的九個面向去分析。最後的討論高潮，則以 ORID 的焦點討論法，及 TOC 的現況與衝突思辨手法，提煉出改變的共識。&lt;/p&gt;
+&lt;p&gt;在可預見的未來，我大概不太會在課堂上，慢慢引導 Lean Change Canvas 的分析流程。因此，我把剛結束的第五梯次 Ansible Workshop 課堂錄影，擷取其中第一段【&lt;strong&gt;從「改變」角度看《魔戒》&lt;/strong&gt;】的引介內容，公開出來，給有興趣進行團隊引導的人參考。&lt;/p&gt;
+&lt;p&gt;最後，要感謝 &lt;a href=&#34;http://kojenchieh.pixnet.net/blog&#34;&gt;David Ko&lt;/a&gt; 介紹 Lean Change Canvas 這麼有趣的分析框架，也要感謝過去四個梯次的 Ansible Workshop 學員，讓我有機會實際演練，反芻箇中細節。&lt;/p&gt;
+&lt;p&gt;影片全長約 11 分鐘，請慢用。&lt;/p&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/Ug5wKl8J2Ng?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+    &lt;/div&gt;</description>
+      
     </item>
+    
   </channel>
 </rss>

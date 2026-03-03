@@ -4,51 +4,1150 @@
     <title>Wsl on Potioneer&#39;s Essays</title>
     <link>//william-yeh.net/tags/wsl/</link>
     <description>Recent content in Wsl on Potioneer&#39;s Essays</description>
-    <generator>Hugo</generator>
+    <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <lastBuildDate>Thu, 09 Feb 2023 22:00:00 +0800</lastBuildDate>
-    <atom:link href="//william-yeh.net/tags/wsl/index.xml" rel="self" type="application/rss+xml" />
+    
+        <atom:link href="//william-yeh.net/tags/wsl/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>WSL Image 匯出與匯入</title>
       <link>//william-yeh.net/post/2023/02/wsl-image/</link>
       <pubDate>Thu, 09 Feb 2023 22:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2023/02/wsl-image/</guid>
-      <description>&lt;p&gt;經過一番辛苦調教，總算把 WSL 調整成可推廣到團隊使用的地步。下一步就是要輸出成 WSL 公版。&lt;/p&gt;&#xA;&lt;p&gt;謹以此文記錄匯出與匯入 WSL 映像檔的步驟與除雷經驗。&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;經過一番辛苦調教，總算把 WSL 調整成可推廣到團隊使用的地步。下一步就是要輸出成 WSL 公版。&lt;/p&gt;
+&lt;p&gt;謹以此文記錄匯出與匯入 WSL 映像檔的步驟與除雷經驗。&lt;/p&gt;
+&lt;h2 id=&#34;前置作業查看已安裝的軟體清單&#34;&gt;前置作業：查看已安裝的軟體清單&lt;/h2&gt;
+&lt;p&gt;在匯出成公版之前，先查看已安裝了哪些軟體：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;# 查看已用 apt install 安裝了哪些軟體
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;% apt list --installed
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;# 查看已用 brew install 安裝了哪些軟體
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;% brew list
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;# 查看手動下載安裝了哪些軟體
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;% ls -al /usr/local/bin&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;h2 id=&#34;前置作業清理內容&#34;&gt;前置作業：清理內容&lt;/h2&gt;
+&lt;p&gt;在匯出成公版之前，記得先清理一下機敏資料。譬如：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;檢視一下 &lt;code&gt;~/.ssh&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;檢視一下 &lt;code&gt;~/.kube&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;檢視一下 &lt;code&gt;~/.gitconfig&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;檢視一下其他重要的 &lt;a href=&#34;https://dotfiles.github.io/&#34;&gt;dotfiles&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;也記得清理一下足跡：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;清理一下 &lt;code&gt;~/.*_history&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;清理一下 &lt;code&gt;/var/log&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;前置作業預設登入用戶&#34;&gt;前置作業：預設登入用戶&lt;/h2&gt;
+&lt;p&gt;踩雷經驗：匯出再匯入 WSL 映像檔之後，再登入的身分會是 root。&lt;/p&gt;
+&lt;p&gt;為了避免此事發生，請在匯出映像檔之前，先編輯 WSL 設定檔 &lt;code&gt;/etc/wsl.conf&lt;/code&gt; 如下：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+
+  
+  &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-ini&#34; data-lang=&#34;ini&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;[user]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;default&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;預設的登入帳號名稱&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;匯出映像檔&#34;&gt;匯出映像檔&lt;/h2&gt;
+&lt;p&gt;先在 PowerShell 查看一下現在系統裡有哪些 WSL 設置：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;wsl -l -v
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;---
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  NAME            STATE           VERSION
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;* Ubuntu          Running         2
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  Ubuntu-22.04    Stopped         2&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;p&gt;假設 &lt;code&gt;Ubuntu&lt;/code&gt; 就是我們想要匯出的標的，請輸入以下命令：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 停止 &amp;#34;Ubuntu&amp;#34; 個體&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;wsl -t Ubuntu
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 將 &amp;#34;Ubuntu&amp;#34; 個體匯出至 &amp;#34;my-image.vhdx&amp;#34; 映像檔&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;wsl  --export Ubuntu  --vhd my-image.vhdx&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;p&gt;映像檔可能很大。建議對它產生一份 hash，以供比對。&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;h2 id=&#34;匯入映像檔&#34;&gt;匯入映像檔&lt;/h2&gt;
+&lt;p&gt;假設我們想從 &lt;code&gt;my-image.vhdx&lt;/code&gt; 映像檔匯入到一個名為 &lt;code&gt;dev&lt;/code&gt; 的 WSL 個體，請輸入以下指令：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;# 將 &amp;#34;my-image.vhdx&amp;#34; 映像檔匯入到名為 &amp;#34;dev&amp;#34; 的 WSL 個體，
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;# 並在 C:\WslDisk 建立虛擬硬碟
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;wsl --import dev  C:\WslDisk  my-image.vhdx  --vhd
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;# 看看是否匯入成功
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;wsl -l -v
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;---
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  NAME            STATE           VERSION
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;* Ubuntu          Stopped         2
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  dev             Stopped         2
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  Ubuntu-22.04    Stopped         2&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;p&gt;你在 Windows Terminal 應該可以看到多了一個名為 &lt;code&gt;dev&lt;/code&gt; 的終端機選項：&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/02/wsl-image-added.png&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2023/02/wsl-image-added.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;測試&#34;&gt;測試&lt;/h2&gt;
+&lt;p&gt;既然是要給研發團隊用的公版，自然要登入看看是否一切正常。就以這陣子在實驗的 Laravel Sail 環境為例 &lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;：&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://asciinema.org/a/558746&#34;&gt;&lt;img src=&#34;https://asciinema.org/a/558746.svg&#34; alt=&#34;asciicast&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;如果有問題，就得卸載這份有瑕疵的 WSL 個體，回到源頭繼續修改：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 停止 &amp;#34;dev&amp;#34; 個體&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;wsl -t dev
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 卸載 &amp;#34;dev&amp;#34; 個體&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;wsl --unregister dev&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;h2 id=&#34;如果還有預設登入帳號的問題&#34;&gt;如果還有預設登入帳號的問題&lt;/h2&gt;
+&lt;p&gt;在前置作業時，曾經透過 WSL 設定檔 &lt;code&gt;/etc/wsl.conf&lt;/code&gt; 避免預設登入帳號變成 root 的問題。如果此法無效，請根據&lt;a href=&#34;https://superuser.com/a/1566031&#34;&gt;這份建議&lt;/a&gt;，用 Windows 登錄編輯程式 &lt;code&gt;regedit.exe&lt;/code&gt; 去修改 Windows registry：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Key&lt;/strong&gt;: HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Lxss\{某一個}&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Name&lt;/strong&gt;: &lt;code&gt;DefaultUid&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Type&lt;/strong&gt;: 請切換成「十進位數字」&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Data&lt;/strong&gt;: 請設成 &lt;code&gt;1000&lt;/code&gt; （十進位數字）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;萬一還無效，請參考 &amp;ldquo;&lt;a href=&#34;https://superuser.com/questions/1566022/how-to-set-default-user-for-manually-installed-wsl-distro&#34;&gt;How to set default user for manually installed WSL distro?&lt;/a&gt;&amp;rdquo; 一文的討論。&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;在 Windows 可透過 &lt;code&gt;certutil&lt;/code&gt; 或 &lt;code&gt;Get-FileHash&lt;/code&gt; 指令取得檔案的 hash 值。詳見 &amp;ldquo;&lt;a href=&#34;https://www.nextofwindows.com/5-ways-to-generate-and-verify-md5-sha-checksum-of-any-file-in-windows-10&#34;&gt;5 Ways to Generate and Verify MD5 SHA Checksum of Any File in Windows 10&lt;/a&gt;&amp;rdquo; 一文。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;詳見〈&lt;a href=&#34;//william-yeh.net/post/2023/02/podman-laravel-sail/&#34;&gt;用 Podman 執行 Laravel + Sail&lt;/a&gt;〉一文。&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description>
+      
     </item>
+    
     <item>
       <title>WSL2 &#43; Podman &#43; K3s 組合技</title>
       <link>//william-yeh.net/post/2023/02/wsl2-podman-k3s/</link>
       <pubDate>Mon, 06 Feb 2023 22:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2023/02/wsl2-podman-k3s/</guid>
-      <description>&lt;p&gt;距離上次重度使用 WSL 已經快四年了。四年來 WSL 世界起了一些變化：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;WSL 已經演進到第二版。&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;以前還會為了要搭配 &lt;a href=&#34;//william-yeh.net/post/2019/03/wsl-cmder-zsh/&#34;&gt;Cmder&lt;/a&gt; 或者 &lt;a href=&#34;//william-yeh.net/post/2019/04/wsltty-tmux/&#34;&gt;WSLtty&lt;/a&gt; 而大費周章，現在則被 &lt;a href=&#34;https://learn.microsoft.com/zh-tw/windows/terminal/&#34;&gt;Windows Terminal&lt;/a&gt; 解決了大部分問題，使用體驗也開始接近 Mac 的 iTerm2。&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;容器世界也起了很大的變化：&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;距離上次重度使用 WSL 已經快四年了。四年來 WSL 世界起了一些變化：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;WSL 已經演進到第二版。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;以前還會為了要搭配 &lt;a href=&#34;//william-yeh.net/post/2019/03/wsl-cmder-zsh/&#34;&gt;Cmder&lt;/a&gt; 或者 &lt;a href=&#34;//william-yeh.net/post/2019/04/wsltty-tmux/&#34;&gt;WSLtty&lt;/a&gt; 而大費周章，現在則被 &lt;a href=&#34;https://learn.microsoft.com/zh-tw/windows/terminal/&#34;&gt;Windows Terminal&lt;/a&gt; 解決了大部分問題，使用體驗也開始接近 Mac 的 iTerm2。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;容器世界也起了很大的變化：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Docker Desktop 新規定：只要公司超過 250 人，或是年營收超過美金千萬，就必須付費。&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; Docker Hub 也開始對未付費者施以較嚴格的限流措施。 &lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Kubernetes 從 1.24 起停止支援 dockershim。 &lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;RedHat 釋出的 &lt;a href=&#34;https://podman.io/&#34;&gt;Podman&lt;/a&gt;，挾其完全免費、daemonless、rootless、pod 的特性，開始吸引對 Docker 起異心的人。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;因此，我也趁此機會更新這方面的資訊，以免費的組合技，在 Windows 上盡量復刻 Mac 的容器體驗：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;以 WSL 2 與 IDE 的整合，兼顧命令列與 GUI 體驗。&lt;/li&gt;
+&lt;li&gt;以 Podman 取代 Docker Desktop 的 container engine。&lt;/li&gt;
+&lt;li&gt;以 K3s 取代 Docker Desktop 的 Kubernetes。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;註：如果不想以 WSL 2 為工作環境 (1)，單純只想要一個 Desktop Desktop 替代方案 (2 + 3) 的人，可以直接選用 &lt;a href=&#34;https://rancherdesktop.io/&#34;&gt;Rancher Desktop&lt;/a&gt;，就不必往下看了。&lt;/p&gt;
+&lt;h2 id=&#34;wsl-2&#34;&gt;WSL 2&lt;/h2&gt;
+&lt;p&gt;請依照保哥的文章〈&lt;a href=&#34;https://blog.miniasp.com/post/2022/11/25/Useful-tool-WSL-1-0&#34;&gt;介紹好用工具：從 Microsoft Store 安裝 WSL 1.0 版&lt;/a&gt;〉進行以下步驟：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;更新 Windows 版本（譬如說，Windows 10 請更新至 &lt;code&gt;22H2&lt;/code&gt; 以上，並確定套用過  &lt;a href=&#34;https://support.microsoft.com/en-us/topic/november-15-2022-kb5020030-os-builds-19042-2311-19043-2311-19044-2311-and-19045-2311-preview-237a9048-f853-4e29-a3a2-62efdbea95e2?WT.mc_id=DT-MVP-4015686&#34;&gt;KB5020030&lt;/a&gt; patch）。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;安裝 WSL。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;更新 WSL 版本：&lt;code&gt;wsl --update&lt;/code&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;查看 WSL 版本：&lt;code&gt;wsl --version&lt;/code&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;如果一切順利，應該會看到類似以下的畫面：&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/02/wsl-version.png&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2023/02/wsl-version.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;請確定 WSL 版本是 1.0.3.0 以上，否則接下來可能會遇到一堆稀奇古怪的問題。 &lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;接下來，請繼續透過 WSL 安裝 Linux：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;安裝一個 Linux distribution。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;第一次執行 WSL，並設定 Linux 的帳號密碼。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;建議編輯一下 WSL 的設定檔 &lt;code&gt;/etc/wsl.conf&lt;/code&gt;：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+
+  
+  &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-ini&#34; data-lang=&#34;ini&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;[boot]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;systemd&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;[network]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Disable auto-gen /etc/resolv.conf&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;generateResolvConf&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;false&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Disable auto-gen /etc/hosts&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# @see https://github.com/composer/packagist/issues/950#issuecomment-424913225&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;generateHosts&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;false&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;如果要避免 WSL 占用過多系統資源，可編輯 Windows 的 &lt;code&gt;$env:USERPROFILE\.wslconfig&lt;/code&gt; 檔案如下：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+
+  
+  &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-ini&#34; data-lang=&#34;ini&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;[wsl2]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;memory&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;4GB&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;processors&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;2&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;如果要讓 Windows 慣用的 IDE 能夠與 WSL 合作順暢，請參考相關的設定：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;VS Code 需要安裝 &lt;a href=&#34;https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl&#34;&gt;WSL extension&lt;/a&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;JetBrains 的工具，各有對應的文件說明，像 &lt;a href=&#34;https://www.jetbrains.com/help/go/how-to-use-wsl-development-environment-in-product.html&#34;&gt;GoLand 可直接使用&lt;/a&gt;，PHPStorm 則需透過 &lt;a href=&#34;https://www.jetbrains.com/help/phpstorm/configuring-remote-interpreters.html&#34;&gt;PHP remote interpreters&lt;/a&gt; plugin。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;zsh--oh-my-zsh--homebrew&#34;&gt;Zsh + Oh My ZSH + Homebrew&lt;/h2&gt;
+&lt;p&gt;在 WSL 中安裝 zsh 及 oh-my-zsh：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;% sudo apt-get install zsh
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;% sh -c &amp;#34;$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&amp;#34;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;p&gt;將 zsh 設為內定 shell：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;% chsh -s $(which zsh)&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;p&gt;如果你的 zsh theme 含有許多特殊的符號字元，請順便安裝 &lt;a href=&#34;https://github.com/powerline/fonts&#34;&gt;Powerline&lt;/a&gt; 系列字型。&lt;/p&gt;
+&lt;p&gt;Mac 族群一向愛用 &lt;a href=&#34;https://brew.sh/&#34;&gt;Homebrew&lt;/a&gt;。既然它也搬到 Linux 世界了，就來安裝吧！&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;% sudo apt-get install build-essential curl file git
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;% sh -c &amp;#34;$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;% # 請記得要遵照安裝畫面出現的步驟做最後的設定！&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;h2 id=&#34;podman&#34;&gt;Podman&lt;/h2&gt;
+&lt;p&gt;透過 WSL 安裝好 Linux 之後，其實我們大可在裡面安裝純粹的 Docker Engine](&lt;a href=&#34;https://docs.docker.com/engine/install/&#34;&gt;https://docs.docker.com/engine/install/&lt;/a&gt;)，即過去俗稱的 &lt;a href=&#34;https://github.com/docker/docker-ce&#34;&gt;CE 版 (community edition)&lt;/a&gt; 或 Moby，它採用 Apache License 2.0 授權，不會有 Docker Desktop 的收費問題。&lt;/p&gt;
+&lt;p&gt;不過，我還是想玩玩具有 daemonless &amp;amp; rootless 特性的替代方案：Podman。&lt;/p&gt;
+&lt;h3 id=&#34;安裝&#34;&gt;安裝&lt;/h3&gt;
+&lt;p&gt;請依照 &lt;a href=&#34;https://podman.io/getting-started/installation#installing-on-linux&#34;&gt;Podman 官方文件&lt;/a&gt;所載步驟安裝 Podman。譬如說，如果 WSL 的 distribution 是 Ubuntu 22.04.1 LTS，可如此安裝：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;% sudo apt update
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;% sudo apt -y install podman&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;p&gt;或是直接透過 Homebrew 安裝。好處是容易更新版本，缺點是安裝較慢：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;% sudo apt install uidmap
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;% brew install podman&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;h3 id=&#34;設定&#34;&gt;設定&lt;/h3&gt;
+&lt;p&gt;Podman 是 daemonless + rootless 的架構。如果你希望讓 container 能夠自由綁定 port 80 以利本地開發，可以考慮在 &lt;code&gt;/etc/sysctl.conf&lt;/code&gt; 添加設定：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;net.ipv4.ip_unprivileged_port_start=80&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;p&gt;還有一個選擇性步驟。如果你希望讓 image 不會被綁在 &lt;code&gt;docker.io/library/&lt;/code&gt; 這個預設的 registry，可以考慮在 &lt;code&gt;/etc/containers/registries.conf&lt;/code&gt; 添加設定 &lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt; ：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;unqualified-search-registries=[
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &amp;#34;registry.access.redhat.com&amp;#34;, &amp;#34;registry.fedoraproject.org&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &amp;#34;quay.io&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &amp;#34;gcr.io&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &amp;#34;ghcr.io&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &amp;#34;docker.io&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;]&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;h3 id=&#34;便利性&#34;&gt;便利性&lt;/h3&gt;
+&lt;p&gt;為了讓 Podman 能盡量沿用過往 Docker 的使用習慣，建議在 &lt;code&gt;$HOME/.bashrc&lt;/code&gt; 添加 alias：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;alias docker=&amp;#39;podman&amp;#39;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;p&gt;如果遇到 alias 也無法避開的問題，建議索性放一個 &lt;code&gt;/usr/local/bin/docker&lt;/code&gt; 檔案：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#!/bin/bash
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;exec podman &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$@&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;h2 id=&#34;podman-play-kube&#34;&gt;Podman play kube&lt;/h2&gt;
+&lt;p&gt;Podman 有一個介於 Docker 與 Kubernetes 之間的功能：pod。如果懂得善用，在許多情況下可以取代 Docker Compose，也做為邁向 Kubernetes 的踏腳石。&lt;/p&gt;
+&lt;p&gt;譬如說，如果我們稍加修改 Kubernetes 官網的 pod 範例 &lt;a href=&#34;https://kubernetes.io/docs/concepts/workloads/pods/#using-pods&#34;&gt;simple-pod.yaml&lt;/a&gt;：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;apiVersion&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;v1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;kind&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;Pod&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;metadata&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;name&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;nginx-pod&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;spec&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;containers&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    - &lt;span style=&#34;color:#f92672&#34;&gt;name&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;nginx&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#f92672&#34;&gt;image&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;docker.io/library/nginx:1.14.2&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#f92672&#34;&gt;ports&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        - &lt;span style=&#34;color:#f92672&#34;&gt;containerPort&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;80&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          &lt;span style=&#34;color:#f92672&#34;&gt;hostPort&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;8080&lt;/span&gt;     &lt;span style=&#34;color:#75715e&#34;&gt;# add this line&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;p&gt;接下來就可用 &lt;code&gt;podman play kube&lt;/code&gt; 指令在 WSL 啟用這個 &lt;code&gt;nginx-pod&lt;/code&gt;：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;% sudo podman play kube simple-pod.yaml&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;p&gt;如果一切順利，就可以在 WSL 裡面看到 nginx pod 成功執行：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;% podman pod ps
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;POD ID        NAME        STATUS      CREATED            INFRA ID      # OF CONTAINERS
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;46be4ed3a73f  nginx-pod   Degraded    About an hour ago  93d658fa1939  2
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;% wget -O - localhost:8080&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;p&gt;也可以在 Windows host 用瀏覽器看到 nginx 順利執行：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/02/nginx-welcome.png&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2023/02/nginx-welcome.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;podman-compose&#34;&gt;Podman Compose&lt;/h2&gt;
+&lt;p&gt;Kubernetes 生態圈有一大堆媲美 Docker Compose 便利性的工具（譬如我愛用的 &lt;a href=&#34;https://skaffold.dev/&#34;&gt;Skaffold&lt;/a&gt;）。不過，如果你實在太想念 Docker Compose，有兩種做法：&lt;/p&gt;
+&lt;p&gt;➀ 可直接沿用舊的 Docker Compose，但是需要將 Podman 啟動成 daemon &lt;sup id=&#34;fnref:6&#34;&gt;&lt;a href=&#34;#fn:6&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;6&lt;/a&gt;&lt;/sup&gt; 。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/docker/compose&#34;&gt;Docker Compose&lt;/a&gt; 的安裝方法：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;% sudo curl -SL https://github.com/docker/compose/releases/download/v2.15.1/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;% sudo chmod +x /usr/local/bin/docker-compose&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;p&gt;➁ 如果不需顧及相容性，不妨試試 Podman 陣營端出的替代品 &lt;a href=&#34;https://github.com/containers/podman-compose&#34;&gt;Podman Compose&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;對於 Podman Compose 感興趣的，請參考以下文章：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://phoenixnap.com/kb/podman-compose&#34;&gt;Podman Compose - Managing Containers&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.redhat.com/sysadmin/podman-compose-docker-compose&#34;&gt;Podman Compose or Docker Compose: Which should you use in Podman?&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;k3s&#34;&gt;K3s&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://k3s.io/&#34;&gt;K3s&lt;/a&gt; 是由 Rancher Labs 貢獻給 CNCF 的輕量級 Kubernetes 開源方案，很適合應用程式開發者使用，作為 Docker Desktop 內建 Kubernetes 的替代方案。&lt;/p&gt;
+&lt;p&gt;請依照 &lt;a href=&#34;https://docs.k3s.io/installation/configuration&#34;&gt;K3s 官方文件&lt;/a&gt;所載步驟安裝： &lt;sup id=&#34;fnref:7&#34;&gt;&lt;a href=&#34;#fn:7&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;7&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;% curl -sfL https://get.k3s.io | K3S_KUBECONFIG_MODE=&amp;#34;644&amp;#34; sh -&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;p&gt;為了讓其他 Kubernetes 相關工具順利運作，建議在 &lt;code&gt;$HOME/.bashrc&lt;/code&gt; 添加 &lt;code&gt;KUBECONFIG&lt;/code&gt; 環境變數：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;export KUBECONFIG=&amp;#34;~/.kube/config:/etc/rancher/k3s/k3s.yaml&amp;#34;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;h2 id=&#34;k9s&#34;&gt;K9s&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://k9scli.io/&#34;&gt;K9s&lt;/a&gt; 是很方便的 Kubernetes 終端機工具，請依照官方文件所載步驟安裝：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;% brew install derailed/k9s/k9s&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;p&gt;現在，我們可以用 &lt;code&gt;k9s&lt;/code&gt; 指令查看剛剛安裝好的最陽春的 K3s 環境到底跑了哪些東西：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/02/k9s-screenshot.png&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2023/02/k9s-screenshot.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;全部看一遍&#34;&gt;全部看一遍&lt;/h2&gt;
+&lt;p&gt;截至目前為止，我們安裝好了 Podman 及 K3s，也利用 Podman 啟動一個 nginx pod。現在，讓我們看看整個 WSL 系統的 process tree：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/02/all-screenshot.png&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2023/02/all-screenshot.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;整個 process tree 非常扁平，是不是跟以前 Docker Desktop 的版本很不一樣呢？&lt;/p&gt;
+&lt;p&gt;希望這篇文章，能夠讓你更放心擺脫 Docker Desktop。&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;根據 &lt;a href=&#34;https://www.docker.com/pricing/faq/&#34;&gt;Docker FAQs&lt;/a&gt; 文件所載：&amp;ldquo;Docker Desktop requires a paid, per-user subscription for organizations with more than 250 employees or more than $10 million in annual revenue per our terms of service. [..] The updated terms for Docker Desktop were effective August 31, 2021, with a grace period until January 31, 2022.&amp;rdquo;&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;根據 Docker Hub &lt;a href=&#34;https://docs.docker.com/docker-hub/download-rate-limit/&#34;&gt;Download rate limit&lt;/a&gt; 文件所載：&amp;ldquo;For anonymous users, the rate limit is set to 100 pulls per 6 hours per IP address. For authenticated users, it’s 200 pulls per 6 hour period. Users with a paid Docker subscription get up to 5000 pulls per day.&amp;rdquo;&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;
+&lt;p&gt;關於 Kubernetes 1.24 停止支援 dockershim 的始末，請見 &lt;a href=&#34;https://kubernetes.io/blog/2022/02/17/dockershim-faq/&#34;&gt;Updated: Dockershim Removal FAQ&lt;/a&gt; 這份文件。&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:4&#34;&gt;
+&lt;p&gt;譬如說在 &amp;ldquo;&lt;a href=&#34;https://devblogs.microsoft.com/commandline/systemd-support-is-now-available-in-wsl/#how-can-you-get-systemd-on-your-machine&#34;&gt;Systemd support is now available in WSL!&lt;/a&gt;&amp;rdquo; 一文就提到，如果 WSL 版本過舊，甚至連 Linux systemd 功能都會有問題。&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:5&#34;&gt;
+&lt;p&gt;關於 &lt;code&gt;registries.conf&lt;/code&gt; 的更多設定內容，請見 &lt;a href=&#34;https://www.redhat.com/sysadmin/manage-container-registries&#34;&gt;How to manage Linux container registries&lt;/a&gt; 一文。&amp;#160;&lt;a href=&#34;#fnref:5&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:6&#34;&gt;
+&lt;p&gt;關於將 Podman 以 daemon mode 運作的具體步驟，請參考〈&lt;a href=&#34;//william-yeh.net/post/2023/02/podman-tips/#daemon-mode&#34;&gt;Podman Tips&lt;/a&gt;〉一文。&amp;#160;&lt;a href=&#34;#fnref:6&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:7&#34;&gt;
+&lt;p&gt;大部份的人會依照 &lt;a href=&#34;https://k3s.io/&#34;&gt;K3s 首頁&lt;/a&gt;所載的步驟 &lt;code&gt;curl -sfL https://get.k3s.io | sh -&lt;/code&gt; 來安裝 K3s，但這樣安裝好的 K3s 常會需要動用 &lt;code&gt;sudo&lt;/code&gt; 才能執行相關指令。我認為，與其事後再用 &lt;a href=&#34;https://0to1.nl/post/k3s-kubectl-permission/&#34;&gt;k3s permission denied when using kubectl&lt;/a&gt; 所介紹的方法調整設定，不如從一開始就以不需動用 &lt;code&gt;sudo&lt;/code&gt; 的方式安裝。&amp;#160;&lt;a href=&#34;#fnref:7&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description>
+      
     </item>
+    
     <item>
       <title>Docker File Permissions on Windows</title>
       <link>//william-yeh.net/post/2019/06/docker-file-permissions/</link>
       <pubDate>Mon, 24 Jun 2019 12:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2019/06/docker-file-permissions/</guid>
-      <description>&lt;p&gt;Currently Linux containers are still more popular than Windows containers. And Windows users often need to use Linux containers even from their Windows computers.&lt;/p&gt;&#xA;&lt;p&gt;Recently I&amp;rsquo;ve found something very strange about Linux-style file permissions when the Docker images are built from Windows hosts.&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; Therefore, I&amp;rsquo;ve conducted a suite of test cases to investigate whether file permissions are preserved with Docker &amp;amp; &lt;a href=&#34;https://skaffold.dev/&#34;&gt;Skaffold&lt;/a&gt; toolchains. All experiment materials are available in the &lt;a href=&#34;https://github.com/William-Yeh/container-chmod&#34;&gt;container-chmod&lt;/a&gt; repo.&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;Currently Linux containers are still more popular than Windows containers. And Windows users often need to use Linux containers even from their Windows computers.&lt;/p&gt;
+&lt;p&gt;Recently I&amp;rsquo;ve found something very strange about Linux-style file permissions when the Docker images are built from Windows hosts.&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; Therefore, I&amp;rsquo;ve conducted a suite of test cases to investigate whether file permissions are preserved with Docker &amp;amp; &lt;a href=&#34;https://skaffold.dev/&#34;&gt;Skaffold&lt;/a&gt; toolchains. All experiment materials are available in the &lt;a href=&#34;https://github.com/William-Yeh/container-chmod&#34;&gt;container-chmod&lt;/a&gt; repo.&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;% git clone https://github.com/William-Yeh/container-chmod.git&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;h2 id=&#34;experiment-setting&#34;&gt;Experiment setting&lt;/h2&gt;
+&lt;p&gt;The experiments are composed of a few files with typical Unix-style file permissions:&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;├── skaffold.yaml
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;└── src
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    ├── Dockerfile
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    ├── file-644.txt
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    └── script-755.sh
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-rw-r--r-- 1 william  70 Jun 24 17:01 Dockerfile
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-rw-r--r-- 1 william  57 Jun 24 15:17 file-644.txt
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-rwxr-xr-x 1 william  84 Jun 24 15:19 script-755.sh&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;p&gt;We will use two ways to build the Linux-container images:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;To build image with &lt;code&gt;docker build&lt;/code&gt; command (Docker Engine 18.09.2).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;To build image with &lt;code&gt;skaffold build&lt;/code&gt; command (Skaffold v0.32.0).&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;And we&amp;rsquo;ll conduct the experiments in the following environment settings:&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Host&lt;/th&gt;
+          &lt;th&gt;Built w/ Docker CLI&lt;/th&gt;
+          &lt;th&gt;Built w/ Skaffold (WSL version)&lt;/th&gt;
+          &lt;th&gt;Built w/ Skaffold (host version)&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;macOS&lt;/td&gt;
+          &lt;td&gt;➊&lt;/td&gt;
+          &lt;td&gt;N/A&lt;/td&gt;
+          &lt;td&gt;➋&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;WSL + Docker Desktop for Windows&lt;/td&gt;
+          &lt;td&gt;③&lt;/td&gt;
+          &lt;td&gt;➍&lt;/td&gt;
+          &lt;td&gt;N/A&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Windows&lt;/td&gt;
+          &lt;td&gt;⑤&lt;/td&gt;
+          &lt;td&gt;N/A&lt;/td&gt;
+          &lt;td&gt;⑹&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Will all experiments display the correct file permissions?&lt;/p&gt;
+&lt;h2 id=&#34;macos--&#34;&gt;macOS: ➊ ➋&lt;/h2&gt;
+&lt;p&gt;Let&amp;rsquo;s begin with macOS, which acts as the control group.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://asciinema.org/a/253423&#34;&gt;&lt;img src=&#34;https://asciinema.org/a/253423.svg&#34; alt=&#34;asciicast&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Perfect! All Unix-style file permissions are set correctly.&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;total 20                                                                        
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;drwxr-xr-x    1 root     root          4096 Jun 24 22:30 .                      
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;drwxr-xr-x    1 root     root          4096 Jun 24 22:30 ..                     
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-rw-r--r--    1 root     root            70 Jun 24 22:18 Dockerfile             
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-rw-r--r--    1 root     root            57 Jun 24 22:18 file-644.txt           
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-rwxr-xr-x    1 root     root            84 Jun 24 22:18 script-755.sh          &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;h2 id=&#34;wsl--&#34;&gt;WSL: ③ ➍&lt;/h2&gt;
+&lt;p&gt;On Windows, my preference is to use WSL to connect to Docker Desktop for Windows.&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;  Will this combination work well with Unix-style file permissions?&lt;/p&gt;
+&lt;p&gt;Below are experiments conducted on WSL:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://asciinema.org/a/253450&#34;&gt;&lt;img src=&#34;https://asciinema.org/a/253450.svg&#34; alt=&#34;asciicast&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;As shown in this demo, the ➍ skaffold experiment works quite well on WSL. The ③ docker-cli experiment works, though not the best-possible Unix-style file permissions:&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;SECURITY WARNING: You are building a Docker image from Windows against a non-Windows Docker host. All files and directories added to build context will have &lt;code&gt;&#39;-rwxr-xr-x&#39;&lt;/code&gt; permissions. It is recommended to double check and reset permissions for sensitive files and directories.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;pure-windows--&#34;&gt;Pure Windows: ⑤ ⑹&lt;/h2&gt;
+&lt;p&gt;What if a Windows user sticks with pure-Windows toolchains, i.e., use traditional Command Prompt (cmd) to connect to Docker Desktop for Windows?&lt;/p&gt;
+&lt;p&gt;The ⑤ docker-cli experiment shows the same result as in previous ③ &lt;code&gt;&#39;-rwxr-xr-x&#39;&lt;/code&gt; permission:&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;C:\&amp;gt; docker run -it test-docker                                           
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;File permission (script-755.sh) should be: 755  rwxr-xr-x              
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;total 20                                                               
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;drwxr-xr-x    1 root     root          4096 Jun 25 03:45 .             
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;drwxr-xr-x    1 root     root          4096 Jun 25 03:45 ..            
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-rwxr-xr-x    1 root     root            70 Jun 25 03:44 Dockerfile    
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-rwxr-xr-x    1 root     root            57 Jun 24 08:03 file-644.txt  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-rwxr-xr-x    1 root     root            84 Jun 24 08:03 script-755.sh&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;p&gt;However, the ⑹ skaffold experiment shows the &lt;em&gt;worst&lt;/em&gt; result:&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;C:\&amp;gt; skaffold-windows-amd64.exe build
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Generating tags...
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; - test-skaffold -&amp;gt; test-skaffold:dbe377c
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Tags generated in 228.0023ms
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Starting build...
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Found [docker-for-desktop] context, using local docker daemon.
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Building [test-skaffold]...
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Sending build context to Docker daemon  4.096kB
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Step 1/4 : FROM alpine:3.9.4
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;...
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;C:\&amp;gt; docker run -it 25997136449a
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker: Error response from daemon: OCI runtime create failed: container_linux.go:344:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;starting container process caused &amp;#34;exec: \&amp;#34;/app/script-755.sh\&amp;#34;: permission denied&amp;#34;: unknown.
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;C:\&amp;gt; docker run -it 25997136449a  ls -al
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;total 20
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;drwxr-xr-x    1 root     root          4096 Jun 25 03:51 .
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;drwxr-xr-x    1 root     root          4096 Jun 25 03:53 ..
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-rw-rw-rw-    1 root     root            70 Jun 25 03:44 Dockerfile
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-rw-rw-rw-    1 root     root            57 Jun 24 08:03 file-644.txt
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-rw-rw-rw-    1 root     root            84 Jun 24 08:03 script-755.sh&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;p&gt;As shown in the demo, Skaffold blindly sets all the file permissions as &lt;code&gt;&#39;-rw-rw-rw-&#39;&lt;/code&gt;, eliminating the &lt;code&gt;&#39;x&#39;&lt;/code&gt; permission required for the &lt;code&gt;script-755.sh&lt;/code&gt; script file.&lt;/p&gt;
+&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;Different Unix-style file permissions will be generated in the Docker images when building Linux containers with different combination of host operating systems, docker cli, and Skaffold toolchains:&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Host&lt;/th&gt;
+          &lt;th&gt;Built w/ Docker CLI&lt;/th&gt;
+          &lt;th&gt;Built w/ Skaffold (WSL version)&lt;/th&gt;
+          &lt;th&gt;Built w/ Skaffold (host version)&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;macOS&lt;/td&gt;
+          &lt;td&gt;➊&lt;/td&gt;
+          &lt;td&gt;N/A&lt;/td&gt;
+          &lt;td&gt;➋&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;WSL + Docker Desktop for Windows&lt;/td&gt;
+          &lt;td&gt;③&lt;/td&gt;
+          &lt;td&gt;➍&lt;/td&gt;
+          &lt;td&gt;N/A&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Windows&lt;/td&gt;
+          &lt;td&gt;⑤&lt;/td&gt;
+          &lt;td&gt;N/A&lt;/td&gt;
+          &lt;td&gt;⑹&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Results:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Best results: ➊ ➋ ➍&lt;/li&gt;
+&lt;li&gt;Acceptable results: ③ ⑤&lt;/li&gt;
+&lt;li&gt;Unacceptable results: ⑹&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;My suggestions for building Linux images are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;If your applications require adequate file permissions (especially the &lt;code&gt;&#39;x&#39;&lt;/code&gt;) and you cannot completely control the build toolchains to use, be sure to modify your &lt;code&gt;Dockerfile&lt;/code&gt; accordingly.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;If you can control the whole toolchains to use (e.g., in the CI/CD pipeline), stick with the Linux ones.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;There is also an issue about this in Skaffold: &lt;a href=&#34;https://github.com/GoogleContainerTools/skaffold/issues/1470&#34;&gt;Issue #1470: Permission denied through skaffold&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;See my article “&lt;a href=&#34;//william-yeh.net/post/2019/03/wsl-cmder-zsh/&#34;&gt;在 Windows 上復刻 Mac 使用習慣&lt;/a&gt;”.&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;
+&lt;p&gt;See &lt;a href=&#34;https://github.com/moby/moby/issues/20397#issuecomment-185471832&#34;&gt;thaJeztah&amp;rsquo;s comment on GitHub&lt;/a&gt; about this.&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description>
+      
     </item>
+    
     <item>
       <title>在 WSL 裡使用 Ansible &#43; Vagrant</title>
       <link>//william-yeh.net/post/2019/04/wsl-ansible-vagrant/</link>
       <pubDate>Thu, 18 Apr 2019 23:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2019/04/wsl-ansible-vagrant/</guid>
-      <description>&lt;p&gt;既然要開始在 Windows 上沿用 Mac 及 Unix 的命令列工具習慣&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，免不了要處理 &lt;a href=&#34;https://github.com/ansible/ansible&#34;&gt;Ansible&lt;/a&gt; 及 &lt;a href=&#34;https://www.vagrantup.com/&#34;&gt;Vagrant&lt;/a&gt;。&lt;/p&gt;&#xA;&lt;p&gt;雖然這兩個軟體都有對應的 Windows 版本，但據我以前的經驗，卡卡的，有許多小地雷；畢竟這些發跡自泛 Unix 家族的軟體，不是那麼容易無縫移植到對命令列不友善的 Windows 家族。&lt;/p&gt;&#xA;&lt;p&gt;如今 Windows 已經有 &lt;a href=&#34;https://docs.microsoft.com/en-us/windows/wsl/&#34;&gt;WSL (Windows Subsystem for Linux)&lt;/a&gt; 機制，是否可以更無痛享用 Ansible 及 Vagrant 呢？&lt;/p&gt;&#xA;&lt;p&gt;可以的。&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;既然要開始在 Windows 上沿用 Mac 及 Unix 的命令列工具習慣&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，免不了要處理 &lt;a href=&#34;https://github.com/ansible/ansible&#34;&gt;Ansible&lt;/a&gt; 及 &lt;a href=&#34;https://www.vagrantup.com/&#34;&gt;Vagrant&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;雖然這兩個軟體都有對應的 Windows 版本，但據我以前的經驗，卡卡的，有許多小地雷；畢竟這些發跡自泛 Unix 家族的軟體，不是那麼容易無縫移植到對命令列不友善的 Windows 家族。&lt;/p&gt;
+&lt;p&gt;如今 Windows 已經有 &lt;a href=&#34;https://docs.microsoft.com/en-us/windows/wsl/&#34;&gt;WSL (Windows Subsystem for Linux)&lt;/a&gt; 機制，是否可以更無痛享用 Ansible 及 Vagrant 呢？&lt;/p&gt;
+&lt;p&gt;可以的。&lt;/p&gt;
+&lt;p&gt;大體而言，我們會兵分二路：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;在 Windows 上，會安裝 &lt;a href=&#34;https://www.virtualbox.org/&#34;&gt;VirtualBox&lt;/a&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在 WSL 上，會安裝 &lt;a href=&#34;https://www.vagrantup.com/&#34;&gt;Vagrant&lt;/a&gt; 及 &lt;a href=&#34;https://github.com/ansible/ansible&#34;&gt;Ansible&lt;/a&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;虛擬機選項一virtualbox&#34;&gt;虛擬機選項一：VirtualBox&lt;/h2&gt;
+&lt;p&gt;用慣 Mac 或 Linux 的人，可能會想沿用 &lt;a href=&#34;https://www.virtualbox.org/&#34;&gt;VirtualBox&lt;/a&gt; 虛擬機軟體。畢竟 VirtualBox 是同屬開源生態系的一員，和其他開源軟體的相容性最高。&lt;/p&gt;
+&lt;p&gt;你可以直接去官方網站&lt;a href=&#34;https://www.virtualbox.org/wiki/Downloads&#34;&gt;下載&lt;/a&gt;安裝檔（VirtualBox 本體，以及 VirtualBox Extension Pack），或是直接透過 Chocolatey 套件管理工具來&lt;a href=&#34;https://chocolatey.org/packages/virtualbox&#34;&gt;安裝&lt;/a&gt;：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;C:\&amp;gt; choco install virtualbox&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;p&gt;安裝完後，還有一關要克服。&lt;/p&gt;
+&lt;p&gt;一般來說，在同一個 host OS 上，同一時間，只能有一個底層虛擬機制存在（除非有像「巢狀虛擬化」之類的黑魔法……吧？）。因此，VirtualBox 無法與 Windows 官方欽定的 Hyper-V 機制同時並存，一山不容二虎&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;。&lt;/p&gt;
+&lt;p&gt;如果決定要使用 VirtualBox，請用管理者權限執行以下命令，暫時關閉 Hyper-V 功能&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;C:&amp;gt; dism.exe /Online /Disable-Feature:Microsoft-Hyper-V
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;C:&amp;gt; bcdedit /set hypervisorlaunchtype off&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;p&gt;這麼做的缺點是：由於 Docker Desktop for Windows 會用到 Hyper-V 機制，所以，關閉了 Hyper-V，等於是關閉了 Docker Desktop 的使用權。如果稍後還想使用 Docker Desktop，就得手動恢復 Hyper-V 功能：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;C:&amp;gt; dism.exe /Online /Enable-Feature:Microsoft-Hyper-V-All
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;C:&amp;gt; bcdedit /set hypervisorlaunchtype auto&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;p&gt;你可能需要在 Hyper-V 與 VirtualBox 模式之間來回切換，也需要重新開機。&lt;/p&gt;
+&lt;h2 id=&#34;虛擬機選項二hyper-v&#34;&gt;虛擬機選項二：Hyper-V&lt;/h2&gt;
+&lt;p&gt;在 Windows 上面玩 VirtualBox 這麼麻煩，換成 Hyper-V 會不會比較省事？&lt;/p&gt;
+&lt;p&gt;很可惜，我在 &amp;ldquo;Hyper-V Administrators&amp;rdquo; 這一關觸礁了。嘗試一些可能的解法&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;，都無效。&lt;/p&gt;
+&lt;p&gt;真的有需要時，再回來研究吧。&lt;/p&gt;
+&lt;h2 id=&#34;vagrant&#34;&gt;Vagrant&lt;/h2&gt;
+&lt;p&gt;直接比照 Linux 安裝 Vagrant 的方法。&lt;/p&gt;
+&lt;p&gt;請在 WSL 底下，直接去官方網站&lt;a href=&#34;https://www.vagrantup.com/downloads.html&#34;&gt;下載&lt;/a&gt;安裝檔，或是用 Apt 之類的套件管理系統來安裝。&lt;/p&gt;
+&lt;p&gt;安裝完畢，請根據官方網站的&lt;a href=&#34;https://www.vagrantup.com/docs/other/wsl.html&#34;&gt;建議&lt;/a&gt;設定環境變數。尤其是 &lt;code&gt;VAGRANT_WSL_ENABLE_WINDOWS_ACCESS&lt;/code&gt; 這一項：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;export VAGRANT_WSL_ENABLE_WINDOWS_ACCESS=&amp;#34;1&amp;#34;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;h2 id=&#34;ansible&#34;&gt;Ansible&lt;/h2&gt;
+&lt;p&gt;直接比照 Linux 安裝 Ansible 的方法。&lt;/p&gt;
+&lt;p&gt;請在 WSL 底下，照著官方網站的&lt;a href=&#34;https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html#installing-the-control-machine&#34;&gt;安裝步驟&lt;/a&gt;來執行。譬如說，在 Debian/Ubuntu 系列下，可以用 Apt 套件管理系統來安裝。&lt;/p&gt;
+&lt;h2 id=&#34;ansible--vagrant&#34;&gt;Ansible + Vagrant&lt;/h2&gt;
+&lt;p&gt;現在，試試看把 Ansible 和 Vagrant 結合起來！&lt;/p&gt;
+&lt;p&gt;先準備好 &lt;code&gt;Vagrantfile&lt;/code&gt; 檔案：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-ruby&#34; data-lang=&#34;ruby&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;Vagrant&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;configure(&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;do&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;config&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  config&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;vm&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;box &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;bento/ubuntu-18.04&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  config&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;vm&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;network &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;forwarded_port&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;guest&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;80&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;host&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;8080&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  config&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;vm&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;provision &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;ansible&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;do&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;ansible&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;     ansible&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;compatibility_mode &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;2.0&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;     &lt;span style=&#34;color:#75715e&#34;&gt;#ansible.verbose = &amp;#34;vvv&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;     ansible&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;playbook &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;playbook.yml&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;     ansible&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;become &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;end&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;end&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;p&gt;還有 Ansible 的 &lt;code&gt;playbook.yml&lt;/code&gt; 檔案：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-yml&#34; data-lang=&#34;yml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;- &lt;span style=&#34;color:#f92672&#34;&gt;hosts&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;all&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;become&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;tasks&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    - &lt;span style=&#34;color:#f92672&#34;&gt;name&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;install nginx&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#f92672&#34;&gt;apt&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;name=nginx state=present update_cache=yes&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;p&gt;試著啟動看看：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;% vagrant up&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;p&gt;如果一切順利，你可以在 &lt;code&gt;http://localhost:8080/&lt;/code&gt; 看到 Nginx 歡迎畫面。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;在 Docker + Kubernetes 時代，用到 Ansible 的機會愈來愈少了，Vagrant 更是如此；不過，保有這種工具，在處理還來不及跟上腳步的舊系統仍然很管用。因此，花一點功夫湊出堪用的組合，希望能有順手的 WSL 環境。&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;這段故事，詳見〈&lt;a href=&#34;//william-yeh.net/post/2019/03/wsl-cmder-zsh/&#34;&gt;在 Windows 上復刻 Mac 使用習慣&lt;/a&gt;〉一文。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;技術上來說，Hyper-V 是屬於 type-1 hypervisor，VirtualBox 是屬於 type-2 hypervisor。詳見維基百科 &amp;ldquo;&lt;a href=&#34;https://en.wikipedia.org/wiki/Hypervisor&#34;&gt;Hypervisor&lt;/a&gt;&amp;rdquo; 條目。&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;
+&lt;p&gt;在 Windows 上關閉 Hyper-V 機制，請參考以下文章：“&lt;a href=&#34;https://www.sysprobs.com/solved-vt-x-is-not-available-verr-vmx-no-vmx-in-windows-10-virtualbox&#34;&gt;(Solved) VT-x is Not Available (verr_vmx_no_vmx) in Windows 10 – but Available for Oracle VirtualBox&lt;/a&gt;”、〈&lt;a href=&#34;https://blog.csdn.net/imilano/article/details/83038682&#34;&gt;Win10 10月更新 VirtualBox VT-x is not available (VERR_VMX_NO_VMX). 解决&lt;/a&gt;〉、“&lt;a href=&#34;https://forums.virtualbox.org/viewtopic.php?f=38&amp;amp;t=89791&#34;&gt;[Solved] VT-x is not available (VERR_VMX_NO_VMX)&lt;/a&gt;”。&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:4&#34;&gt;
+&lt;p&gt;當 Vagrant 在使用 Hyper-V 時，會出現 &amp;ldquo;Hyper-V Administrators&amp;rdquo; 權限問題。我嘗試以下幾篇文章，可惜仍未解決：“&lt;a href=&#34;https://github.com/hashicorp/vagrant/issues/4503&#34;&gt;Vagrant issue #378&lt;/a&gt;”、“&lt;a href=&#34;https://blogs.msdn.microsoft.com/virtual_pc_guy/2014/06/11/allowing-non-administrators-to-control-hyper-vupdated/&#34;&gt;Allowing non-Administrators to control Hyper-V–Updated&lt;/a&gt;”、“&lt;a href=&#34;https://dev.to/nicolus/getting-homestead-to-play-nice-with-hyper-v-4202&#34;&gt;Getting Homestead to play nice with Hyper-V&lt;/a&gt;”。&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description>
+      
     </item>
+    
     <item>
       <title>WSLtty &#43; tmux 組合技</title>
       <link>//william-yeh.net/post/2019/04/wsltty-tmux/</link>
       <pubDate>Wed, 17 Apr 2019 22:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2019/04/wsltty-tmux/</guid>
-      <description>&lt;p&gt;在 Windows 10 上面使用 WSL 已經一個月了&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;。小狀況也就罷了，但 &lt;a href=&#34;https://cmder.net/&#34;&gt;Cmder&lt;/a&gt; 不夠穩定的顯示邏輯卻最讓我頭痛，在視窗尺寸變化時，無法正確處理字元位置。更令人費解的是，即使是其他狀似更華麗（也更耗資源）的替代方案，也仍然有這些問題&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;。&lt;/p&gt;&#xA;&lt;p&gt;既然酷炫的終端機競品問題多多，乾脆回歸極簡的 WSLtty&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;，並混搭 tmux&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt; 來彌補。可惜，畢竟是組合技，無法完全複製 Mac 的 iTerm2 使用經驗。&lt;/p&gt;&#xA;&lt;p&gt;此事古難全。&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;在 Windows 10 上面使用 WSL 已經一個月了&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;。小狀況也就罷了，但 &lt;a href=&#34;https://cmder.net/&#34;&gt;Cmder&lt;/a&gt; 不夠穩定的顯示邏輯卻最讓我頭痛，在視窗尺寸變化時，無法正確處理字元位置。更令人費解的是，即使是其他狀似更華麗（也更耗資源）的替代方案，也仍然有這些問題&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;。&lt;/p&gt;
+&lt;p&gt;既然酷炫的終端機競品問題多多，乾脆回歸極簡的 WSLtty&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;，並混搭 tmux&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt; 來彌補。可惜，畢竟是組合技，無法完全複製 Mac 的 iTerm2 使用經驗。&lt;/p&gt;
+&lt;p&gt;此事古難全。&lt;/p&gt;
+&lt;h2 id=&#34;wsltty-剪貼簿&#34;&gt;WSLtty 剪貼簿&lt;/h2&gt;
+&lt;p&gt;在 X Window 或 Mac 的終端機，只要按下滑鼠右鍵就能夠 paste 文字。如果在 WSLtty 上也想這麼玩，請在 &lt;code&gt;%APPDATA%\wsltty\config&lt;/code&gt; 設定檔加上這一行：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;RightClickAction=paste&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;h2 id=&#34;tmux-與-zsh&#34;&gt;Tmux 與 zsh&lt;/h2&gt;
+&lt;p&gt;啟動 tmux 時，似乎並不會根據 &lt;code&gt;/etc/passwd&lt;/code&gt; 的資訊來喚起自訂的 shell，而是一律喚起 bash。&lt;/p&gt;
+&lt;p&gt;解決方法是，在 &lt;code&gt;~/.tmux.conf&lt;/code&gt; 加上這一行：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;set-option -g default-shell /bin/zsh&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;h2 id=&#34;tmux-的-pane&#34;&gt;Tmux 的 pane&lt;/h2&gt;
+&lt;p&gt;用慣 iTerm2 的我，對 tmux 的 pane 功能不太習慣。&lt;/p&gt;
+&lt;p&gt;譬如說，在 tmux 新增 pane 或 window 時，不會自動帶入目前的目錄 &lt;code&gt;$PWD&lt;/code&gt;，而是一律帶入 &lt;code&gt;$HOME&lt;/code&gt;，很不方便。Tmux 預設的組合鍵 &lt;code&gt;&amp;lt;prefix&amp;gt; %&lt;/code&gt; 及 &lt;code&gt;&amp;lt;prefix&amp;gt; &amp;quot;&lt;/code&gt; 難記又難按，也很令人頭痛。&lt;/p&gt;
+&lt;p&gt;因此，我綜合多人的做法&lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt;，解決目錄問題，換成好記好按的組合鍵，更可用方向鍵來切換 pane：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;# Create new window (tab) with current path
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;unbind c
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;bind -n M-t new-window -c &amp;#39;#{pane_current_path}&amp;#39;  # mimic for iTerm2 habit
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;# Split panes with current path
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;# @see https://unix.stackexchange.com/a/247449
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;unbind &amp;#39;&amp;#34;&amp;#39;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;unbind &amp;#39;%&amp;#39;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;bind -n M-d split-window -h -c &amp;#39;#{pane_current_path}&amp;#39;  # Split panes horizontal
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;bind -n M-D split-window -v -c &amp;#39;#{pane_current_path}&amp;#39;  # Split panes vertically
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;# Switch panes using Alt-arrow without prefix
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;bind -n M-Left  select-pane -L
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;bind -n M-Right select-pane -R
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;bind -n M-Up    select-pane -U
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;bind -n M-Down  select-pane -D&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;h2 id=&#34;tmux-plugin-manager&#34;&gt;Tmux Plugin Manager&lt;/h2&gt;
+&lt;p&gt;Tmux 設定太多了，就有人寫了外掛管理系統 &lt;a href=&#34;https://github.com/tmux-plugins/tpm&#34;&gt;Tmux Plugin Manager&lt;/a&gt;。雖然目前我還用不到，但還是先安裝，以備不時之需。&lt;/p&gt;
+&lt;p&gt;首先，下載 TPM：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;% git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;p&gt;將以下幾行加到 &lt;code&gt;.tmux.conf&lt;/code&gt; 最後面：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;# List of plugins
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;set -g @plugin &amp;#39;tmux-plugins/tpm&amp;#39;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;set -g @plugin &amp;#39;tmux-plugins/tmux-sensible&amp;#39;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;# Initialize TMUX plugin manager
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;# (keep this line at the very bottom of tmux.conf)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;run -b &amp;#39;~/.tmux/plugins/tpm/tpm&amp;#39;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;Tmux 還有很多高段的功能，以後有需要再研究吧。&lt;/p&gt;
+&lt;p&gt;如此這般拼湊起來，雖然還不能完全複刻 Mac 的 iTerm2 使用經驗，但也已經算是可以接受了。當然啦，私心還是希望 Cmder 或 Hyper 能夠好好解決顯示問題，就不必動用 tmux 了。&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;這段故事，詳見〈&lt;a href=&#34;//william-yeh.net/post/2019/03/wsl-cmder-zsh/&#34;&gt;在 Windows 上復刻 Mac 使用習慣&lt;/a&gt;〉一文。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;關於其他更華麗，卻也更耗資源的 Windows 終端機方案，可參考這幾篇介紹文章：〈&lt;a href=&#34;https://github.com/spencerwooo/dowww&#34;&gt;在 Windows 上面用 WSL 优雅开发&lt;/a&gt;〉、“&lt;a href=&#34;https://nickjanetakis.com/blog/conemu-vs-hyper-vs-terminus-vs-mobaxterm-terminator-vs-ubuntu-wsl&#34;&gt;ConEmu vs Hyper vs Terminus vs MobaXTerm Terminator vs Ubuntu WSL&lt;/a&gt;”。&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;
+&lt;p&gt;關於 &lt;a href=&#34;https://github.com/mintty/wsltty&#34;&gt;WSLtty&lt;/a&gt;，可參考保哥的〈&lt;a href=&#34;https://blog.miniasp.com/post/2019/02/09/Useful-tool-WSLtty-Mintty-as-a-terminal-for-WSL&#34;&gt;介紹好用工具：WSLtty (Mintty as a terminal for WSL)&lt;/a&gt;〉一文。&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:4&#34;&gt;
+&lt;p&gt;關於 &lt;a href=&#34;https://github.com/tmux/tmux&#34;&gt;tmux&lt;/a&gt;，可參考這幾篇介紹文章：〈&lt;a href=&#34;https://5xruby.tw/posts/tmux/&#34;&gt;tmux ，不只是 terminal multiplexer&lt;/a&gt;〉、〈&lt;a href=&#34;https://andyyou.github.io/2017/11/27/tmux-notes/&#34;&gt;tmux 快速入門筆記&lt;/a&gt;〉、〈&lt;a href=&#34;https://larrylu.blog/tmux-33a24e595fbc&#34;&gt;終端機 session 管理神器 — tmux&lt;/a&gt;〉。&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:5&#34;&gt;
+&lt;p&gt;Shubham 提供的&lt;a href=&#34;https://unix.stackexchange.com/a/247449&#34;&gt;做法&lt;/a&gt;，可讓新開的 pane 及 window 保持在目前所在的目錄。Ham Vocke 的&lt;a href=&#34;https://www.hamvocke.com/blog/a-guide-to-customizing-your-tmux-conf/&#34;&gt;文章&lt;/a&gt;也介紹幾種有趣的 tmux 設定。&amp;#160;&lt;a href=&#34;#fnref:5&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description>
+      
     </item>
+    
     <item>
       <title>在 Windows 上復刻 Mac 使用習慣</title>
       <link>//william-yeh.net/post/2019/03/wsl-cmder-zsh/</link>
       <pubDate>Thu, 14 Mar 2019 08:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2019/03/wsl-cmder-zsh/</guid>
-      <description>&lt;p&gt;改用 Mac 已經六年了。現在要再回頭碰 Windows，還真有點不習慣。&lt;/p&gt;&#xA;&lt;p&gt;這年頭，許多軟體其實都有 Mac 及 Windows 版了：Chrome、Firefox、Slack、Evernote、Dropbox、VSCode……最大的差別，應該是終端機命令列工具。&lt;/p&gt;&#xA;&lt;p&gt;上古時代，需要靠 &lt;a href=&#34;https://www.cygwin.com/&#34;&gt;Cygwin&lt;/a&gt; 或 &lt;a href=&#34;http://www.mingw.org/&#34;&gt;MinGW&lt;/a&gt; 方案，才能勉強湊出一點點 Unix 的命令列感覺，但地雷超級多，難以作為嚴肅用途。後來，到了 2015 年，從保哥那邊知道有 &lt;a href=&#34;https://cmder.net/&#34;&gt;Cmder&lt;/a&gt; 這個好物 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，微軟又於 2016 年推出 &lt;a href=&#34;https://docs.microsoft.com/en-us/windows/wsl/&#34;&gt;WSL (Windows Subsystem for Linux)&lt;/a&gt; 機制，Windows 這邊似乎出現曙光，對 Unix 命令列愛好者展現出久違的吸引力。&lt;/p&gt;&#xA;&lt;p&gt;為了在 Windows 10 上面復刻我的 Mac 的體驗：&lt;a href=&#34;https://www.iterm2.com/&#34;&gt;iTerm2&lt;/a&gt; + &lt;a href=&#34;https://www.zsh.org/&#34;&gt;Zsh&lt;/a&gt; + &lt;a href=&#34;https://ohmyz.sh/&#34;&gt;Oh My ZSH&lt;/a&gt;，我試了幾天，把步驟整理如下。&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;改用 Mac 已經六年了。現在要再回頭碰 Windows，還真有點不習慣。&lt;/p&gt;
+&lt;p&gt;這年頭，許多軟體其實都有 Mac 及 Windows 版了：Chrome、Firefox、Slack、Evernote、Dropbox、VSCode……最大的差別，應該是終端機命令列工具。&lt;/p&gt;
+&lt;p&gt;上古時代，需要靠 &lt;a href=&#34;https://www.cygwin.com/&#34;&gt;Cygwin&lt;/a&gt; 或 &lt;a href=&#34;http://www.mingw.org/&#34;&gt;MinGW&lt;/a&gt; 方案，才能勉強湊出一點點 Unix 的命令列感覺，但地雷超級多，難以作為嚴肅用途。後來，到了 2015 年，從保哥那邊知道有 &lt;a href=&#34;https://cmder.net/&#34;&gt;Cmder&lt;/a&gt; 這個好物 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，微軟又於 2016 年推出 &lt;a href=&#34;https://docs.microsoft.com/en-us/windows/wsl/&#34;&gt;WSL (Windows Subsystem for Linux)&lt;/a&gt; 機制，Windows 這邊似乎出現曙光，對 Unix 命令列愛好者展現出久違的吸引力。&lt;/p&gt;
+&lt;p&gt;為了在 Windows 10 上面復刻我的 Mac 的體驗：&lt;a href=&#34;https://www.iterm2.com/&#34;&gt;iTerm2&lt;/a&gt; + &lt;a href=&#34;https://www.zsh.org/&#34;&gt;Zsh&lt;/a&gt; + &lt;a href=&#34;https://ohmyz.sh/&#34;&gt;Oh My ZSH&lt;/a&gt;，我試了幾天，把步驟整理如下。&lt;/p&gt;
+&lt;h2 id=&#34;wsl&#34;&gt;WSL&lt;/h2&gt;
+&lt;p&gt;請根據保哥的文章〈&lt;a href=&#34;https://blog.miniasp.com/post/2019/02/01/Useful-tool-WSL-Windows-Subsystem-for-Linux&#34;&gt;介紹好用工具：WSL (Windows Subsystem for Linux)&lt;/a&gt;〉進行以下步驟：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;安裝 WSL。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;安裝一個 Linux distribution。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;第一次執行 WSL，並設定 Linux 的帳號密碼。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;zsh--oh-my-zsh&#34;&gt;Zsh + Oh My ZSH&lt;/h2&gt;
+&lt;p&gt;在 WSL 中安裝 zsh 及 oh-my-zsh：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;% sudo apt-get install zsh
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;% sudo sh -c &amp;#34;$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&amp;#34;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;p&gt;將 zsh 設為內定 shell：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;% chsh -s $(which zsh)&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;p&gt;如果你的 zsh theme 含有許多特殊的符號字元，請順便安裝 &lt;a href=&#34;https://github.com/powerline/fonts&#34;&gt;Powerline&lt;/a&gt; 系列字型。&lt;/p&gt;
+&lt;h2 id=&#34;cmder&#34;&gt;Cmder&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://cmder.net/&#34;&gt;Cmder&lt;/a&gt; 有「完整版」及「迷你版」兩種安裝方式。有了 WSL 之後，msysgit 可以退場，因此，我們只需安裝 Cmder 迷你版。&lt;/p&gt;
+&lt;p&gt;用 Chocolatey 套件管理工具安裝比較簡單：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;C:\&amp;gt; choco install cmdermini&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;p&gt;細節請見 &lt;a href=&#34;https://chocolatey.org/packages/cmdermini&#34;&gt;https://chocolatey.org/packages/cmdermini&lt;/a&gt; 。&lt;/p&gt;
+&lt;h2 id=&#34;整合-cmder-與-wsl&#34;&gt;整合 Cmder 與 WSL&lt;/h2&gt;
+&lt;p&gt;為了讓 Cmder 以 WSL + Zsh 模式啟動，我們需要新增一個 Cmder 的 &amp;ldquo;Startup / Tasks&amp;rdquo;。&lt;/p&gt;
+&lt;p&gt;譬如說，我們可新增一個名叫 &lt;code&gt;{WSL::zsh}&lt;/code&gt; 的 task，將 command 寫成：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+
+  
+  &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;set &amp;#34;PATH=%ConEmuBaseDirShort%\wsl;%PATH%&amp;#34; &amp;amp; %ConEmuBaseDirShort%\conemu-cyg-64.exe --wsl -C~ -cur_console:p:t:&amp;#34;zsh&amp;#34; -t zsh -l&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2019/03/cmder-wsl-zsh.png&#34; alt=&#34;新增 Cmder 啟動設定&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2019/03/cmder-wsl-zsh.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;新增 Cmder 啟動設定&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;存檔完畢，以後只要以 &lt;code&gt;{WSL::zsh}&lt;/code&gt; 模式啟動，Cmder 就會自動套用 WSL + zsh 組態。&lt;/p&gt;
+&lt;p&gt;進一步的設定細節，請參考 &lt;a href=&#34;https://conemu.github.io/en/BashOnWindows.html&#34;&gt;https://conemu.github.io/en/BashOnWindows.html&lt;/a&gt; 一文。&lt;/p&gt;
+&lt;h2 id=&#34;設定-cmder-熱鍵&#34;&gt;設定 Cmder 熱鍵&lt;/h2&gt;
+&lt;p&gt;為了復刻出類似 Mac + iTerm2 的使用習慣，我會花一些時間調整 Cmder 熱鍵設定。請參考保哥的文章〈&lt;a href=&#34;https://blog.miniasp.com/post/2015/09/27/Useful-tool-Cmder&#34;&gt;介紹好用工具：Cmder (具有 Linux 溫度的 Windows 命令提示字元工具)&lt;/a&gt;〉進行熱鍵設定。&lt;/p&gt;
+&lt;p&gt;在 Windows 與 WSL 之間進行複製貼上的剪貼簿操作時，常會遇到換行問題。此時我也會順便將 Ctrl-V 組合鍵的 “Paste mode #2” 設定成  “Multi lines” &lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2019/03/cmder-paste.png&#34; alt=&#34;調整 Cmder 剪貼簿的換行處理方式&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2019/03/cmder-paste.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;調整 Cmder 剪貼簿的換行處理方式&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;檔案系統&#34;&gt;檔案系統&lt;/h2&gt;
+&lt;p&gt;我習慣將 Windows 的 D: 作為文件儲存專用區。&lt;/p&gt;
+&lt;p&gt;預設情況下，WSL 會將 D: 掛載在 &lt;code&gt;/mnt/d&lt;/code&gt;，檔案系統則是 DrvFs：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;% mount -l
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;rootfs on / type lxfs (rw,noatime)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;none on /dev type tmpfs (rw,noatime,mode=755)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sysfs on /sys type sysfs (rw,nosuid,nodev,noexec,noatime)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;proc on /proc type proc (rw,nosuid,nodev,noexec,noatime)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;devpts on /dev/pts type devpts (rw,nosuid,noexec,noatime,gid=5,mode=620)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;none on /run type tmpfs (rw,nosuid,noexec,noatime,mode=755)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;none on /run/lock type tmpfs (rw,nosuid,nodev,noexec,noatime)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;none on /run/shm type tmpfs (rw,nosuid,nodev,noatime)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;none on /run/user type tmpfs (rw,nosuid,nodev,noexec,noatime,mode=755) binfmt_misc on /proc/sys/fs/binfmt_misc type binfmt_misc (rw,noatime)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;D: on /mnt/d type drvfs (rw,noatime,uid=1000,gid=1000,case=off)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;C: on /mnt/c type drvfs (rw,noatime,uid=1000,gid=1000,case=off)&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;p&gt;不過，因為某些複雜的原因 &lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;，我們必須重新設定 &lt;code&gt;/mnt/d&lt;/code&gt; 的 mount 參數，才能讓 Linux 的檔案讀寫權限正常運作。&lt;/p&gt;
+&lt;p&gt;我們先卸載 &lt;code&gt;/mnt/d&lt;/code&gt;，再用夾帶 &lt;code&gt;metadata&lt;/code&gt; 的方式重新掛載它：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;% sudo umount /mnt/d
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;% sudo mount -t drvfs D: /mnt/d -o metadata,uid=1000,gid=1000,umask=22,fmask=111&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;p&gt;先查看是否成功:&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;% mount -l
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;rootfs on / type lxfs (rw,noatime)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;none on /dev type tmpfs (rw,noatime,mode=755)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sysfs on /sys type sysfs (rw,nosuid,nodev,noexec,noatime)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;proc on /proc type proc (rw,nosuid,nodev,noexec,noatime)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;devpts on /dev/pts type devpts (rw,nosuid,noexec,noatime,gid=5,mode=620)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;none on /run type tmpfs (rw,nosuid,noexec,noatime,mode=755)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;none on /run/lock type tmpfs (rw,nosuid,nodev,noexec,noatime)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;none on /run/shm type tmpfs (rw,nosuid,nodev,noatime)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;none on /run/user type tmpfs (rw,nosuid,nodev,noexec,noatime,mode=755) binfmt_misc on /proc/sys/fs/binfmt_misc type binfmt_misc (rw,noatime)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;D: on /mnt/d type drvfs (rw,relatime,uid=1000,gid=1000,umask=22,fmask=111,metadata,case=off)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;C: on /mnt/c type drvfs (rw,noatime,uid=1000,gid=1000,case=off)&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;p&gt;如果成功了，請記得將這設定寫進 &lt;code&gt;/etc/fstab&lt;/code&gt; 裡面，下次 WSL 啟動時就會自動生效：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+
+  
+  &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;D: /mnt/d drvfs rw,relatime,uid=1000,gid=1000,metadata,umask=22,fmask=111 0 0&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;docker-與-kubernetes&#34;&gt;Docker 與 Kubernetes&lt;/h2&gt;
+&lt;p&gt;雖然保哥的文章推薦在 WSL 裡的 Linux 再安裝一份 Docker engine &lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;，但我比較傾向&lt;strong&gt;不要&lt;/strong&gt;。我比較傾向共用既有資源，讓 WSL 直接連接到 Docker Desktop for Windows 身上。畢竟，在同一台電腦上，要維護兩套 Docker engine，太累了。&lt;/p&gt;
+&lt;p&gt;我參考上官林傑的文章〈&lt;a href=&#34;https://medium.com/@ericsk/%E5%9C%A8-windows-subsystem-for-linux-wsl-%E4%B8%8B%E4%BD%BF%E7%94%A8-windows-%E4%B8%8A%E7%9A%84-docker-engine-8dc0040ca240&#34;&gt;在 Windows Subsystem for Linux (WSL) 下使用 Windows 上的 Docker Engine&lt;/a&gt;〉，做好必要的設定，但省略文中提到的 alias 步驟（稍後會說明為什麼）。簡單來說，請先進行這三步驟：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;打開 Docker Desktop for Windows 的 &amp;ldquo;Expose daemon on tcp://localhost:2375 without TLS.&amp;rdquo; 選項。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在 WSL 裡設定 &lt;code&gt;DOCKER_HOST&lt;/code&gt; 環境變數：&lt;!-- raw HTML omitted --&gt;
+&lt;code&gt;export DOCKER_HOST=&amp;quot;tcp://localhost:2375&amp;quot;&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在 WSL 裡 &lt;code&gt;sudo visudo&lt;/code&gt; 以下環境變數：&lt;!-- raw HTML omitted --&gt;
+&lt;code&gt;Defaults env_keep += &amp;quot;DOCKER_HOST&amp;quot;&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;上述文章建議透過 &lt;code&gt;alias docker=docker.exe&lt;/code&gt; 的方式來使用 Docker Desktop for Windows 的 docker client。不過，這些 alias 未必都能在 script 中展開 &lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt; ——有鬆綁的方法，但我不喜歡破例。我比較傾向在 WSL 裡用簡單的 wrapper script 來處理。&lt;/p&gt;
+&lt;p&gt;首先是 &lt;code&gt;/usr/local/bin/docker&lt;/code&gt; 檔案：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;#!/bin/bash
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;# allow WSL to have access to Docker Desktop for Windows
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;exec  &amp;#34;/mnt/c/Program Files/Docker/Docker/resources/bin/docker.exe&amp;#34;  &amp;#34;$@&amp;#34;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;p&gt;其次是 &lt;code&gt;/usr/local/bin/docker-compose&lt;/code&gt; 檔案：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;#!/bin/bash
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;# allow WSL to have access to Docker Desktop for Windows
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;exec  &amp;#34;/mnt/c/Program Files/Docker/Docker/resources/bin/docker-compose.exe&amp;#34;  &amp;#34;$@&amp;#34;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;p&gt;別忘記打開它們的 &lt;code&gt;&#39;x&#39;&lt;/code&gt; 權限：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;% sudo chmod a+x  /usr/local/bin/docker  /usr/local/bin/docker-compose&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;p&gt;也別忘了，要將 Windows 上面的 Kubernetes 設定連接過來：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;% ln -s /mnt/c/Users/xxx/.kube/config ~/.kube/config&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;好了，現在已經復刻一部分 Mac 的使用習慣了。是該要好好享受一下這種混血環境了。&lt;/p&gt;
+
+
+&lt;div class=&#34;notice notice--note&#34;&gt;
+  &lt;div class=&#34;notice__title&#34;&gt;
+    
+      2019-04-17 後續發展
+    
+  &lt;/div&gt;
+  &lt;div class=&#34;notice__content&#34;&gt;&lt;p&gt;使用了一個月，不太能夠忍受 Cmder 不夠穩定的顯示邏輯：在視窗尺寸變化時，無法正確處理字元位置。因此，我改用〈&lt;a href=&#34;//william-yeh.net/post/2019/04/wsltty-tmux/&#34;&gt;WSLtty + tmux 組合技&lt;/a&gt;〉。&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+
+
+&lt;div class=&#34;notice notice--note&#34;&gt;
+  &lt;div class=&#34;notice__title&#34;&gt;
+    
+      2023-02-06 後續發展
+    
+  &lt;/div&gt;
+  &lt;div class=&#34;notice__content&#34;&gt;&lt;p&gt;四年來 WSL 與容器世界都起了一些變化，本文有些內容已經不敷使用。請改用〈&lt;a href=&#34;//william-yeh.net/post/2023/02/wsl2-podman-k3s/&#34;&gt;WSL2 + Podman + K3s 組合技&lt;/a&gt;〉。&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;保哥於 2015 年九月舉辦過【&lt;a href=&#34;https://www.accupass.com/event/1509231111031581814500&#34;&gt;打造一個具有 Linux 溫度的 Windows 命令提示字元工具&lt;/a&gt;】線上講座，也寫了〈&lt;a href=&#34;https://blog.miniasp.com/post/2015/09/27/Useful-tool-Cmder&#34;&gt;介紹好用工具：Cmder&lt;/a&gt;〉一文。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;Cmder 的剪貼簿設定細節，請見 &lt;a href=&#34;https://conemu.github.io/en/SettingsPaste.html&#34;&gt;https://conemu.github.io/en/SettingsPaste.html&lt;/a&gt; 。&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;
+&lt;p&gt;關於 WSL DrvFs 的 metadata 權限設定細節，請參考這三篇文章：“&lt;a href=&#34;https://blogs.msdn.microsoft.com/commandline/2018/01/12/chmod-chown-wsl-improvements/&#34;&gt;Chmod/Chown WSL Improvements&lt;/a&gt;”、“&lt;a href=&#34;https://www.brianketelsen.com/going-overboard-with-wsl-metadata/&#34;&gt;Going Overboard with WSL metadata&lt;/a&gt;”、〈&lt;a href=&#34;https://segmentfault.com/a/1190000016677670&#34;&gt;WSL 配置指北：打造 Windows 最强命令行&lt;/a&gt;〉。&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:4&#34;&gt;
+&lt;p&gt;保哥的文章〈&lt;a href=&#34;https://blog.miniasp.com/post/2018/06/15/My-Windows-Subsystem-for-Linux-WSL-Setup-2018&#34;&gt;我的 Windows Subsystem for Linux (WSL) 終極開發人員配置 - 2018 版&lt;/a&gt;〉。&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:5&#34;&gt;
+&lt;p&gt;Bash 的行為是：“Aliases are not expanded when the shell is not interactive, unless…”，請參考 “&lt;a href=&#34;https://unix.stackexchange.com/questions/1496/why-doesnt-my-bash-script-recognize-aliases&#34;&gt;Why doesn&amp;rsquo;t my Bash script recognize aliases?&lt;/a&gt;” 這類文章。&amp;#160;&lt;a href=&#34;#fnref:5&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description>
+      
     </item>
+    
   </channel>
 </rss>

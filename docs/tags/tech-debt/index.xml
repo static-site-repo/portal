@@ -4,23 +4,203 @@
     <title>Tech-Debt on Potioneer&#39;s Essays</title>
     <link>//william-yeh.net/tags/tech-debt/</link>
     <description>Recent content in Tech-Debt on Potioneer&#39;s Essays</description>
-    <generator>Hugo</generator>
+    <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <lastBuildDate>Tue, 24 May 2022 12:00:00 +0800</lastBuildDate>
-    <atom:link href="//william-yeh.net/tags/tech-debt/index.xml" rel="self" type="application/rss+xml" />
+    
+        <atom:link href="//william-yeh.net/tags/tech-debt/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>很簡單的東西，也要單元測試嗎？</title>
       <link>//william-yeh.net/post/2022/05/need-for-unit-testing/</link>
       <pubDate>Tue, 24 May 2022 12:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2022/05/need-for-unit-testing/</guid>
-      <description>&lt;p&gt;（改寫自公司內部 memo）&lt;/p&gt;&#xA;&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;&#xA;&lt;p&gt;Hi all engineers,&lt;/p&gt;&#xA;&lt;p&gt;上完一整天單元測試課程之後，有同事問我：「有沒有標準來決定要不要寫單元測試？」&lt;/p&gt;&#xA;&lt;p&gt;剛讀完劉潤《&lt;a href=&#34;https://www.books.com.tw/products/0010919211&#34;&gt;底層邏輯&lt;/a&gt;》的我，對於這類疑似「注射器」的問句格外敏感。雖然我可以瀟灑引述 &lt;a href=&#34;https://www.tenlong.com.tw/products/9789864344000&#34;&gt;&lt;em&gt;Working Effectively with Legacy Code&lt;/em&gt;&lt;/a&gt; 的說法「我毫無疑問地將『遺留程式碼』定義為『&lt;strong&gt;沒有編寫測試的程式碼&lt;/strong&gt;』」：&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;沒有編寫測試的程式碼是糟糕的程式碼——不管我們多麼細心地編寫它們，不管它們有多漂亮、物件導向或封裝良好。有了測試，我們就能夠迅速、可驗證地修改程式碼的行為。沒有測試，我們就不知道修改後的程式碼，實際上是變得更好還是更糟。&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;p&gt;但當下我還是決定先展開一場對話。&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;（改寫自公司內部 memo）&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;Hi all engineers,&lt;/p&gt;
+&lt;p&gt;上完一整天單元測試課程之後，有同事問我：「有沒有標準來決定要不要寫單元測試？」&lt;/p&gt;
+&lt;p&gt;剛讀完劉潤《&lt;a href=&#34;https://www.books.com.tw/products/0010919211&#34;&gt;底層邏輯&lt;/a&gt;》的我，對於這類疑似「注射器」的問句格外敏感。雖然我可以瀟灑引述 &lt;a href=&#34;https://www.tenlong.com.tw/products/9789864344000&#34;&gt;&lt;em&gt;Working Effectively with Legacy Code&lt;/em&gt;&lt;/a&gt; 的說法「我毫無疑問地將『遺留程式碼』定義為『&lt;strong&gt;沒有編寫測試的程式碼&lt;/strong&gt;』」：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;沒有編寫測試的程式碼是糟糕的程式碼——不管我們多麼細心地編寫它們，不管它們有多漂亮、物件導向或封裝良好。有了測試，我們就能夠迅速、可驗證地修改程式碼的行為。沒有測試，我們就不知道修改後的程式碼，實際上是變得更好還是更糟。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;但當下我還是決定先展開一場對話。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;我：「我一時想不出來有沒有合適的標準，但我有一個簡單的 gut feeling 來判斷：如果我沒有把握證明這段程式碼會表現出該有的行為，那麼我就應該考慮替它加一段測試，用測試來表現出這段程式碼的確忠實表現出該有的行為，&lt;strong&gt;讓測試來說話&lt;/strong&gt;。」&lt;/p&gt;
+&lt;p&gt;同事：「即使是很簡單的程式碼，也需要加單元測試嗎？這會不會太麻煩了？」&lt;/p&gt;
+&lt;p&gt;我心中頓時浮現一個聲音：“如果你有 &lt;strong&gt;TDD (test-driven design)&lt;/strong&gt; 的觀念或紀律，就不會有此一問了。再簡單的程式碼，都會測試先行——何況，簡單的程式碼，對應的單元測試會很難嗎？如果很難很繁雜，那麼，或許這程式碼本身並沒有當初想像中那麼簡單。”&lt;/p&gt;
+&lt;p&gt;但當下我還是決定繼續對話，先不要說教⋯⋯&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;我：「能不能舉一個『簡單的程式碼』的例子？」&lt;/p&gt;
+&lt;p&gt;同事：「就像某一個 function，它會先檢查輸入的日期格式，如果格式不是 &lt;code&gt;yyyy/mm/dd&lt;/code&gt; 就會失敗；如果格式對了，就會繼續往下做正事⋯⋯」&lt;/p&gt;
+&lt;p&gt;我：「且慢，你所說的『如果格式不對，就會失敗』這句話，所謂的『失敗』是指什麼？」&lt;/p&gt;
+&lt;p&gt;同事：「啊⋯⋯就是失敗呀！」&lt;/p&gt;
+&lt;p&gt;我：「讓我們用程式語言的角度來講。你所謂的『失敗』，是指 return false 呢，還是 throw exception？」&lt;/p&gt;
+&lt;p&gt;同事：「嗯，以這個例子來說，是 throw exception。」&lt;/p&gt;
+&lt;p&gt;我：「好的，那麼，你怎麼證明，在遇到錯誤的日期格式時，你的程式碼真的會 throw exception？」&lt;/p&gt;
+&lt;p&gt;同事靜默中⋯⋯&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;我：「在談論寫不寫單元測試時，我想稍微區分一下問題，究竟是 ❶ 不會寫，或者是 ❷ 懶得寫？」&lt;/p&gt;
+&lt;p&gt;我：「就以這一個例子來說，你知道該怎麼單元測試嗎？」&lt;/p&gt;
+&lt;p&gt;同事靜默中⋯⋯&lt;/p&gt;
+&lt;p&gt;我：「目前的主流單元測試框架，都有 &lt;a href=&#34;https://docs.microsoft.com/en-us/dotnet/api/microsoft.visualstudio.testtools.unittesting.assert.throwsexception&#34;&gt;Assert.ThrowsException&lt;/a&gt; 或 &lt;a href=&#34;https://docs.microsoft.com/en-us/dotnet/api/microsoft.visualstudio.testtools.unittesting.assert.throwsexceptionasync&#34;&gt;Assert.ThrowsExceptionAsync&lt;/a&gt; 之類的設施去處理 exception，所以『❶ 不會寫』就不成立了。只剩下一個問題：『❷ 懶得寫』。」&lt;/p&gt;
+&lt;p&gt;我：「你會在這段 function 一開頭的 doc comment 陳述說：『如果日期格式錯誤，會 throw XXX exception』嗎？」&lt;/p&gt;
+&lt;p&gt;同事：「會。」&lt;/p&gt;
+&lt;p&gt;（他大概不敢當面說不會，因為我兩個月前才寫過一篇內部 memo 講 &amp;ldquo;doc comment&amp;rdquo; 這件事。）&lt;/p&gt;
+&lt;p&gt;我：「針對 throw exception 這個行為，既然你都已經花時間寫程式了，也都已經花時間寫 doc comment 了，為什麼不順手寫一小段單元測試來證明你的程式碼與 doc comment 是&lt;strong&gt;對齊&lt;/strong&gt;的，&lt;strong&gt;讓測試來說話&lt;/strong&gt;？」&lt;/p&gt;
+&lt;p&gt;同事靜默中⋯⋯&lt;/p&gt;
+&lt;p&gt;我：「而且，你寫的程式，不只是給現在的你自己看，不只是給 code reviewers 看，也會給幾個月後、甚至一兩年後接手維護的其他人看。萬一有一天，別人沒注意到『日期格式』這件事就改寫這段程式碼，你的程式又沒有單元測試的保護，你會不會擔心對方把你的程式改壞了？」&lt;/p&gt;
+&lt;p&gt;同事靜默中⋯⋯&lt;/p&gt;
+&lt;p&gt;我：「所以在單元測試課堂的開場致詞中，我強調：『&lt;strong&gt;單元測試是程式設計師的職業道德&lt;/strong&gt;』，就是這個意思。」&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;最後，請容我引述《&lt;a href=&#34;https://www.tenlong.com.tw/products/9787115467768&#34;&gt;修改軟件的藝術 (&lt;em&gt;Beyond Legacy Code&lt;/em&gt;)&lt;/a&gt;》裡面的金句：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在編寫程式碼之後才編寫測試，往往會發現程式碼難以測試，需要大量的清理來讓其可以測試，這可能會成為一個大工程。最好是一開始就編寫出&lt;strong&gt;可測試的程式碼&lt;/strong&gt;，而編寫可測試程式碼的最好方式是&lt;strong&gt;先編寫測試&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;沒法進行測試，則說明我有些設計問題需要重新進行思考。&lt;/p&gt;
+&lt;p&gt;應該假設測試集是對整個用戶故事的完整定義。如果沒有用測試來描述一個行為，那麼這個行為很可能是錯的。&lt;strong&gt;任何沒有在測試集中體現的行為，都被視為不存在&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;測試集不僅驗證行為，而且描述行為。&lt;strong&gt;用測試描述行為，從而建立活的文檔&lt;/strong&gt;。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;（PS. 以上情節，是根據實際對話加油添醋改編而成，請勿對號入座。）&lt;/p&gt;</description>
+      
     </item>
+    
     <item>
       <title>Scrum 沒有明說的事：休耕期</title>
       <link>//william-yeh.net/post/2018/12/fallow/</link>
       <pubDate>Tue, 04 Dec 2018 08:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2018/12/fallow/</guid>
-      <description>&lt;p&gt;Scrum 的官方白皮書 &lt;a href=&#34;https://www.scrumguides.org/&#34;&gt;&lt;em&gt;The Scrum Guide&lt;/em&gt;&lt;/a&gt; 非常輕薄短小（像 &lt;a href=&#34;https://scrumguides.org/docs/scrumguide/v2017/2017-Scrum-Guide-US.pdf&#34;&gt;Nov 2017 版&lt;/a&gt;只有 19 頁），它的理念是：只制定最核心的原則、價值、角色、活動、產出物，其餘的則交給團隊根據經驗主義 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; 去調適出最適合自己的細節。&lt;/p&gt;&#xA;&lt;p&gt;想當然爾，有很多事，Scrum 並沒有明說。&lt;/p&gt;&#xA;&lt;p&gt;那麼，沒有明說的事，就不需要做、就不能做了嗎？做了，就違反 Scrum 嗎？&lt;/p&gt;&#xA;&lt;p&gt;這是許多奉 &lt;a href=&#34;https://www.scrumguides.org/&#34;&gt;&lt;em&gt;The Scrum Guide&lt;/em&gt;&lt;/a&gt; 為圭臬的人，常有的盲點。&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;Scrum 的官方白皮書 &lt;a href=&#34;https://www.scrumguides.org/&#34;&gt;&lt;em&gt;The Scrum Guide&lt;/em&gt;&lt;/a&gt; 非常輕薄短小（像 &lt;a href=&#34;https://scrumguides.org/docs/scrumguide/v2017/2017-Scrum-Guide-US.pdf&#34;&gt;Nov 2017 版&lt;/a&gt;只有 19 頁），它的理念是：只制定最核心的原則、價值、角色、活動、產出物，其餘的則交給團隊根據經驗主義 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; 去調適出最適合自己的細節。&lt;/p&gt;
+&lt;p&gt;想當然爾，有很多事，Scrum 並沒有明說。&lt;/p&gt;
+&lt;p&gt;那麼，沒有明說的事，就不需要做、就不能做了嗎？做了，就違反 Scrum 嗎？&lt;/p&gt;
+&lt;p&gt;這是許多奉 &lt;a href=&#34;https://www.scrumguides.org/&#34;&gt;&lt;em&gt;The Scrum Guide&lt;/em&gt;&lt;/a&gt; 為圭臬的人，常有的盲點。&lt;/p&gt;
+&lt;h2 id=&#34;scrum-沒有所謂的暫停&#34;&gt;Scrum 沒有所謂的「暫停」？&lt;/h2&gt;
+&lt;p&gt;譬如說，有人對 sprint 這種百米賽跑的壓力提出&lt;a href=&#34;https://www.facebook.com/groups/179345672472/permalink/10156062491697473/&#34;&gt;疑問&lt;/a&gt;：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Run scrum 一陣子了，有感覺到一些跟傳統軟體開發專案不一樣的&lt;strong&gt;壓力&lt;/strong&gt;。以前這種方式對 team member 來說，會有&lt;strong&gt;淡季&lt;/strong&gt;跟&lt;strong&gt;旺季&lt;/strong&gt;的差別，所以大家比較好安排自己的休假，或者在淡季的時候安排一些 researching、training 的工作。&lt;/p&gt;
+&lt;p&gt;現在 run scrum 覺得每個 sprint 壓力都好大，每個 sprint 都好趕，都剛剛好在最後一刻達到 sprint goal。大家也會因為齊步走的關係，所以都不太好意思請長一點的假。以前一年可能最多面臨四次 milestone review 的壓力，現在是至少每四週都會面臨一次這種壓力，Scrum guide 又說 sprint 開始以後就是一個 sprint 接一個下去，中間不會有間斷，但我們真的好想暫停 0.5 個 sprint 讓大家喘口氣。&lt;/p&gt;
+&lt;p&gt;前輩們都怎麼處理休假問題跟這種持續性壓力的問題呢？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Scrum 真的沒有「暫停」這件事嗎？&lt;/p&gt;
+&lt;p&gt;首先，回到 &lt;a href=&#34;https://www.scrumguides.org/&#34;&gt;&lt;em&gt;The Scrum Guide&lt;/em&gt;&lt;/a&gt; 原始文本，看看它是怎麼說的：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;The Sprint&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Sprints have consistent durations throughout a development effort. A new Sprint starts immediately after the conclusion of the previous Sprint.&lt;/p&gt;
+&lt;p&gt;Sprint 長度在整個開發過程中都是固定的，前一個
+Sprint 結束後，下一個新的 Sprint 立刻接著開始。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;如果只以形式主義來說，這些 sprints 的確好像是一棒接著一棒，棒棒相傳，不漏接，無止息——沒有假期。&lt;/p&gt;
+&lt;p&gt;再進一步思考 sprint 這個載具的原始目的——即所謂 &lt;strong&gt;sprint goal&lt;/strong&gt;，就可發現，goal 的意義，是由我們 Scrum team 來賦予的。就連 &lt;em&gt;The Scrum Guide&lt;/em&gt; 都叫你要保持彈性，不要形式主義：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Each Sprint may be considered a project with no more than a one-month horizon. Like projects, Sprints are used to &lt;strong&gt;accomplish something&lt;/strong&gt;. Each Sprint has a &lt;strong&gt;goal&lt;/strong&gt; of what is to be built, a design and &lt;strong&gt;flexible plan&lt;/strong&gt; that will guide building it, the work, and the resultant product increment.&lt;/p&gt;
+&lt;p&gt;每個 Sprint 可視為一個不超過一個月的專案，如同其他專案一般，Sprint 是用來完成某些事情的。每個 Sprint 有著要打造些什麼的目標，而由一份設計和有&lt;strong&gt;彈性&lt;/strong&gt;的計畫來引導其打造的過程、工作與最後的產品 Increment。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Sprint goal 的意義，是由我們 Scrum team 來賦予的。&lt;/p&gt;
+&lt;p&gt;問題是，你想賦予什麼意義呢？&lt;/p&gt;
+&lt;p&gt;譬如說，市場探索，可不可以是一種 sprint goal 呢？用戶研究，可不可以是一種 sprint goal 呢？五日 &lt;a href=&#34;https://www.gv.com/sprint/&#34;&gt;design sprint&lt;/a&gt;，可不可以是一種 sprint goal 呢？&lt;/p&gt;
+&lt;p&gt;甚至有點離經叛道的講：恢復元氣，能不能算是一種 sprint goal 呢？&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/12/sprint-rest.png&#34; alt=&#34;地力需要恢復，人力也是。&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2018/12/sprint-rest.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;地力需要恢復，人力也是。&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;休耕期&#34;&gt;休耕期&lt;/h2&gt;
+&lt;p&gt;恢復軟體本身的元氣，有一個更正式的名詞——&lt;strong&gt;休耕期&lt;/strong&gt; (fallow)。&lt;/p&gt;
+&lt;p&gt;在《&lt;a href=&#34;https://www.books.com.tw/products/0010511808&#34;&gt;編程的頂尖對話&lt;/a&gt;》中，大神 Douglas Crockford 如此解釋軟體研發領域的&lt;strong&gt;休耕期&lt;/strong&gt;觀點： &lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/12/fallow.jpg&#34; alt=&#34;軟體研發的休耕期&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2018/12/fallow.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;軟體研發的休耕期&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;「一般來說，團隊應該知道什麼時候合適（進行這種清理程式碼、重寫的事）」，大神 Douglas Crockford 毫不客氣挑明地講：「管理層很難看到這一點⋯⋯管理層很久之後才會發現。」&lt;/p&gt;
+&lt;p&gt;如果沒有這種特地保留起來的休耕期，那麼，重構、技術債的議題，幾乎註定會一直被推遲到比馬里亞納海溝還更低的順位。這將嚴重破壞 Scrum 的基石：&lt;a href=&#34;//william-yeh.net/post/2018/10/agile-criteria/#scrum-的判準&#34;&gt;PSPI&lt;/a&gt; &lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;。&lt;/p&gt;
+&lt;p&gt;敏捷陣營也有人呼應這種想法。像 Toronto Agile Conference 2017 有一場演講 “&lt;a href=&#34;https://www.youtube.com/watch?v=iJoLe0fnWKc&amp;amp;feature=youtu.be&amp;amp;t=54m2s&#34;&gt;Technical Debt Is a Systemic Problem, Not A Personal Failing&lt;/a&gt;”，用的是 &amp;ldquo;technical-debt sprints&amp;rdquo; 一詞，還畫出 CLD 呢：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/12/td-sprints.png&#34; alt=&#34;Technical-Debt Stories and Sprints&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2018/12/td-sprints.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Technical-Debt Stories and Sprints&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;「休耕期」觀念，不是出於傳統的 Scrum 論述，&lt;a href=&#34;https://www.scrumguides.org/&#34;&gt;&lt;em&gt;The Scrum Guide&lt;/em&gt;&lt;/a&gt; 也沒講，你認為它有違反 Scrum 嗎？&lt;/p&gt;
+&lt;h2 id=&#34;如何做&#34;&gt;如何做？&lt;/h2&gt;
+&lt;p&gt;那麼，該如何踏出第一步呢？或者更敏感地講：誰該去在貓脖子上掛鈴鐺？&lt;/p&gt;
+&lt;p&gt;大神 Douglas Crockford 說：「團隊應該知道什麼時候合適，管理層很久之後才會發現。」&lt;/p&gt;
+&lt;p&gt;所以，請先自問：你們有規律地跑 retrospective 嗎？在團隊層次，甚至在更大的組織層次？&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+
+
+&lt;div class=&#34;notice notice--note&#34;&gt;
+  &lt;div class=&#34;notice__title&#34;&gt;
+    
+      2018-12-21 補充
+    
+  &lt;/div&gt;
+  &lt;div class=&#34;notice__content&#34;&gt;&lt;p&gt;我參加 Scrum.org 在台北舉辦的 &lt;a href=&#34;https://www.eventbrite.co.uk/e/scrumon-tickets-51310998578&#34;&gt;#ScrumOn&lt;/a&gt; 活動。經過六十分鐘 &lt;a href=&#34;https://www.scrum.org/professional-scrum-master-i-certification&#34;&gt;PSM I&lt;/a&gt; 洗禮，以及敏捷專家學會 Percy 的推坑，特地去查閱 &lt;a href=&#34;https://www.scrum.org/resources/nexus-guide&#34;&gt;&lt;em&gt;Nexus Guide&lt;/em&gt;&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;發現，裡面正好有特地提到技術債議題。特地摘錄於此：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;軟體開發必須在&lt;strong&gt;技術債&lt;/strong&gt;變得讓 Nexus 不可接受前，找出並解析依賴關係。若缺乏透明度，不可能有效指引 Nexus 有效地將風險最小化並將價值最大化。&lt;/p&gt;
+&lt;p&gt;Software must be developed so that dependencies are detected and resolved before &lt;strong&gt;technical debt&lt;/strong&gt; becomes unacceptable to the Nexus. A lack of complete transparency will make it impossible to guide a Nexus effectively to minimize risk and maximize value.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.scrumguides.org/&#34;&gt;&lt;em&gt;The Scrum Guide&lt;/em&gt;&lt;/a&gt; 說：「Scrum 是立基於經驗導向的流程控制理論 (empirical process control theory)，或是經驗主義。經驗主義立論於知識來自於經驗和依照已知的資訊來下判斷。Scrum 使用疊代和逐步 increment 的方式，來最大化可預測性和控制風險。」&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;Douglas Crockford 在 CUSEC 2010 Keynote - &lt;a href=&#34;https://blogs.msdn.microsoft.com/cdndevs/2010/02/06/cusec-2010-keynote-douglas-crockford-the-software-crisis/&#34;&gt;The Software Crisis&lt;/a&gt; 這場演講主張：&amp;lsquo;Perhaps we should take advice from Exodus: &amp;ldquo;Plant and harvest crops for six years, but let the land rest and lie fallow during the seventh year.&amp;rdquo; Maybe do six sprints where you add new features, but on the seventh sprint, don’t add new features at all.&amp;rsquo;&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;
+&lt;p&gt;我個人認為，Scrum 的判準，就在於 increment，以及能否在各個疊代過程中，捍衛並精進這個 increment 的整全狀態。詳見〈&lt;a href=&#34;//william-yeh.net/post/2018/10/agile-criteria/&#34;&gt;敏捷的判準&lt;/a&gt;〉一文。&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description>
+      
     </item>
+    
   </channel>
 </rss>

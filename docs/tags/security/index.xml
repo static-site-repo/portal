@@ -4,30 +4,320 @@
     <title>Security on Potioneer&#39;s Essays</title>
     <link>//william-yeh.net/tags/security/</link>
     <description>Recent content in Security on Potioneer&#39;s Essays</description>
-    <generator>Hugo</generator>
+    <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <lastBuildDate>Wed, 15 Feb 2023 22:00:00 +0800</lastBuildDate>
-    <atom:link href="//william-yeh.net/tags/security/index.xml" rel="self" type="application/rss+xml" />
+    
+        <atom:link href="//william-yeh.net/tags/security/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>Distroless Image 牛刀小試</title>
       <link>//william-yeh.net/post/2023/02/distroless-image/</link>
       <pubDate>Wed, 15 Feb 2023 22:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2023/02/distroless-image/</guid>
-      <description>&lt;p&gt;距離上次重度探討「極簡化容器」已經快六年多了&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;。這議題，以前可能只是某些人技術上的興趣，現在則可能是必要。&lt;/p&gt;&#xA;&lt;p&gt;原因是：Docker Inc 的一些措施，讓人不得不慎重考慮替代方案。&lt;/p&gt;&#xA;&lt;h2 id=&#34;搬家的必要&#34;&gt;搬家的必要&lt;/h2&gt;&#xA;&lt;p&gt;這陣子容器世界起了不少變化，除了眾所周知的「Docker Desktop 要收費了」規定 &lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;，另一個較少被提及影響是 Docker Hub 的緊縮政策：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Image CI 緊縮：Docker Hub 取消免費用戶的 automated builds 功能。 &lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;&#xA;&lt;li&gt;Image pull 緊縮：Docker Hub 開始對未付費者施以較嚴格的限流措施。 &lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;於是，未付費的人，不僅在使用 Docker Hub 時會受到管制，還會波及產製 image 的 CI pipeline，不時會遇到這樣的 &amp;ldquo;toomanyrequests&amp;rdquo; 限流警告：&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;距離上次重度探討「極簡化容器」已經快六年多了&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;。這議題，以前可能只是某些人技術上的興趣，現在則可能是必要。&lt;/p&gt;
+&lt;p&gt;原因是：Docker Inc 的一些措施，讓人不得不慎重考慮替代方案。&lt;/p&gt;
+&lt;h2 id=&#34;搬家的必要&#34;&gt;搬家的必要&lt;/h2&gt;
+&lt;p&gt;這陣子容器世界起了不少變化，除了眾所周知的「Docker Desktop 要收費了」規定 &lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;，另一個較少被提及影響是 Docker Hub 的緊縮政策：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Image CI 緊縮：Docker Hub 取消免費用戶的 automated builds 功能。 &lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
+&lt;li&gt;Image pull 緊縮：Docker Hub 開始對未付費者施以較嚴格的限流措施。 &lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;於是，未付費的人，不僅在使用 Docker Hub 時會受到管制，還會波及產製 image 的 CI pipeline，不時會遇到這樣的 &amp;ldquo;toomanyrequests&amp;rdquo; 限流警告：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/02/ratelimit.png&#34; alt=&#34;Docker Hub 的 toomanyrequests 限流警告&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2023/02/ratelimit.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Docker Hub 的 toomanyrequests 限流警告&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;要避開這限制，治標方法是：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;架設 image proxy。 &lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
+&lt;li&gt;註冊 Docker Hub 帳號，將帳密寫進 CI pipeline 裡，以獲得稍微寬鬆一點點的 rate limit 門檻。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;治本方法，則得從兩方面著手：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Image 要從 Docker Hub 搬遷到 ghcr.io 之類的地方。&lt;/li&gt;
+&lt;li&gt;直接引用的 base image(s) 也必須從 Docker Hub 換成 gcr.io 或 ghcr.io 之類的地方。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;其中 (1) 很簡單，只要會 CI pipeline 即可辦到，像 GitHub Action 就有許多現成的元件可用。&lt;/p&gt;
+&lt;p&gt;至於 (2) 則比較麻煩。當然啦，對於玩過「極簡化容器」技術的人來說，這也只是小事一樁。&lt;/p&gt;
+&lt;h2 id=&#34;distroless-image&#34;&gt;Distroless image&lt;/h2&gt;
+&lt;p&gt;以前玩 minimal image 的人，是以 &lt;a href=&#34;https://hub.docker.com/_/alpine&#34;&gt;alpine&lt;/a&gt; 系列為大宗，只要不介意背後用的是 &lt;a href=&#34;https://en.wikipedia.org/wiki/Musl&#34;&gt;musl libc&lt;/a&gt;，這可以產生非常 &amp;ldquo;minimal&amp;rdquo; 的 image。近來 Google 的 &lt;a href=&#34;https://github.com/GoogleContainerTools/distroless&#34;&gt;&amp;ldquo;distroless&amp;rdquo; images&lt;/a&gt; 則提供 glibc 偏好者的另一種選擇，儘管它不算是 &amp;ldquo;minimal&amp;rdquo;，但也稱得上是 &amp;ldquo;small-enough&amp;rdquo;。&lt;/p&gt;
+&lt;p&gt;曾經我也是追求 minimal docker image 的一族 &lt;sup id=&#34;fnref1:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，現在我只求 small-enough 就好。畢竟對大多數應用場景來說，像以下這兩個 image，一個約 8 MB，一個約 29 MB，差異其實是可以忽略不計的：&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Image&lt;/th&gt;
+          &lt;th&gt;Size (MB)&lt;/th&gt;
+          &lt;th&gt;Base&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;docker.io/williamyeh/wrk:4.0.2&lt;/td&gt;
+          &lt;td&gt;8.347&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://hub.docker.com/_/alpine&#34;&gt;alpine3&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;ghcr.io/william-yeh/wrk:4.2.0&lt;/td&gt;
+          &lt;td&gt;28.76&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://github.com/GoogleContainerTools/distroless&#34;&gt;gcr.io/distroless/cc-debian11&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/02/image-layers.png&#34; alt=&#34;兩種 image 的 layers&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2023/02/image-layers.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;兩種 image 的 layers&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;可是，若以資安角度來看，8.347 MB 的 image 被挑出許多漏洞，這很顛覆「alpine 又小又安全」的既定印象：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/02/alpine-security.png&#34; alt=&#34;以 Alpine 的 musl 生態系產製的 image 被偵測出許多資安漏洞&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2023/02/alpine-security.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;以 Alpine 的 musl 生態系產製的 image 被偵測出許多資安漏洞&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;反觀 28.76 MB 的 image 卻比較安全，這也很顛覆「glibc 系列不安全」的既定印象：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2023/02/distroless-security.png&#34; alt=&#34;以 Debian 的 glibc 生態系產製的 image 資安漏洞反而較少&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2023/02/distroless-security.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;以 Debian 的 glibc 生態系產製的 image 資安漏洞反而較少&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;因此，我會建議，對大多數應用程式來說，選擇 Google 的 &lt;a href=&#34;https://github.com/GoogleContainerTools/distroless&#34;&gt;distroless 路線&lt;/a&gt;，可以省下許多與 alpine 相容性搏鬥的精力，又可以享受到許多好處：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;有 Google 在維護。&lt;/li&gt;
+&lt;li&gt;Base image 的所在地 gcr.io 沒有限流問題。&lt;/li&gt;
+&lt;li&gt;透過 multi-stage builds 機制，沿用既有工具鏈即可輕鬆製作。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;對於 distroless 感興趣的，請參考 &amp;ldquo;&lt;a href=&#34;https://iximiuz.com/en/posts/containers-distroless-images/&#34;&gt;What&amp;rsquo;s Inside Of a Distroless Container Image: Taking a Deeper Look&lt;/a&gt;&amp;rdquo; 這篇文章。&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;詳見〈&lt;a href=&#34;//william-yeh.net/post/2016/08/why-minimal-docker-images/&#34;&gt;為什麼要追求極簡化的 Docker image？&lt;/a&gt;〉一文。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref1:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;Docker Desktop 新規定：只要公司超過 250 人，或是年營收超過美金千萬，就必須付費。根據 &lt;a href=&#34;https://www.docker.com/pricing/faq/&#34;&gt;Docker FAQs&lt;/a&gt; 文件所載：&amp;ldquo;Docker Desktop requires a paid, per-user subscription for organizations with more than 250 employees or more than $10 million in annual revenue per our terms of service. [..] The updated terms for Docker Desktop were effective August 31, 2021, with a grace period until January 31, 2022.&amp;rdquo;&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;
+&lt;p&gt;根據 Docker Hub &amp;ldquo;&lt;a href=&#34;https://docs.docker.com/docker-hub/builds/&#34;&gt;Set up Automated Builds&lt;/a&gt;&amp;rdquo; 文件所載：&amp;ldquo;The Automated Builds feature is available for Docker Pro, Team, and Business users. Upgrade now to automatically build and push your images.&amp;rdquo;&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:4&#34;&gt;
+&lt;p&gt;根據 Docker Hub &amp;ldquo;&lt;a href=&#34;https://docs.docker.com/docker-hub/download-rate-limit/&#34;&gt;Download rate limit&lt;/a&gt;&amp;rdquo; 文件所載：&amp;ldquo;For anonymous users, the rate limit is set to 100 pulls per 6 hours per IP address. For authenticated users, it’s 200 pulls per 6 hour period. Users with a paid Docker subscription get up to 5000 pulls per day.&amp;rdquo;&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:5&#34;&gt;
+&lt;p&gt;其實有規模的組織，本來就應該自行架設 image proxy，以做好 artifact management。對這主題感興趣的，請參考 &amp;ldquo;&lt;a href=&#34;https://ranchergovernment.com/blog/mitigate-the-docker-dilemma-with-a-proxy-cache&#34;&gt;Mitigate the Docker Dilemma with a Proxy Cache&lt;/a&gt;&amp;rdquo; 一文。&amp;#160;&lt;a href=&#34;#fnref:5&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description>
+      
     </item>
+    
     <item>
       <title>為什麼要追求極簡化的 Docker image？</title>
       <link>//william-yeh.net/post/2016/08/why-minimal-docker-images/</link>
       <pubDate>Sat, 27 Aug 2016 20:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2016/08/why-minimal-docker-images/</guid>
-      <description>&lt;p&gt;今早〈&lt;a href=&#34;//william-yeh.net/post/2016/08/halfblood-docker/&#34;&gt;從 Ansible 到 Docker：混血模式&lt;/a&gt;〉演講過後，有人在聊天室提問：&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;請問為什麼要追求最小化的 Docker image？&lt;/p&gt;&lt;/blockquote&gt;</description>
+      
+        <description>&lt;p&gt;今早〈&lt;a href=&#34;//william-yeh.net/post/2016/08/halfblood-docker/&#34;&gt;從 Ansible 到 Docker：混血模式&lt;/a&gt;〉演講過後，有人在聊天室提問：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;請問為什麼要追求最小化的 Docker image？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;記得去年我在 &lt;a href=&#34;https://www.meetup.com/Docker-Taipei/&#34;&gt;Docker Taipei 社群&lt;/a&gt;主講〈&lt;a href=&#34;https://william-yeh.github.io/docker-mini/&#34;&gt;追求極簡化 Docker image 之路&lt;/a&gt;〉的時候，曾如此開場：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;部分原因是「純技術性的探討」。&lt;/p&gt;
+&lt;p&gt;經過這番探討，對 Docker 底層機制會掌握得更深刻，有助於更善用 Docker，也很自然會理解 Docker 與 VM 的明顯差別在哪裡。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;這是極度保守的理由。因為在當時，「極簡化 Docker」的實施手法不方便，地雷又多，投入成本高於獲得的效益。因此，除非為了純技術性的探討（技術狂的浪漫？），否則似乎不太值得鼓吹。&lt;/p&gt;
+&lt;p&gt;一年後的今天，「極簡化 Docker」的實施手法已經更成熟了，我們也看到更多官方的 Docker image 也額外提供以 &lt;a href=&#34;https://hub.docker.com/_/alpine&#34;&gt;Alpine&lt;/a&gt; 為 base image 的選項。對於這議題，不再能單純用「技術者的狂熱」來看待。&lt;/p&gt;
+&lt;p&gt;一年後的今天，有更多好的理由。&lt;/p&gt;
+&lt;p&gt;我就在此簡答一下，追求極簡化 Docker image，除了技術性的狂熱之外，還有什麼實質上的好處？&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;其一、在某些受限的硬體資源（如：儲存空間、網路頻寬），不佳的軟體執行環境（如：&lt;a href=&#34;https://docs.docker.com/storage/storagedriver/select-storage-driver/&#34;&gt;layered file system&lt;/a&gt; 實作品質不佳），精簡的 image 是很有吸引力的。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;其二、越大的 image，隱含的黑盒子越多，資安風險也越高。&lt;/p&gt;
+&lt;p&gt;口說無憑，請用 &lt;a href=&#34;https://www.aquasec.com/news/blog-peekr-free-security-scanner-just-got-upgraded/&#34;&gt;Peekr&lt;/a&gt; 針對幾個常見的 base image 做一番安全掃描：&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/08/peekr-scan.png&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2016/08/peekr-scan.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;看得出來哪一個的資安風險較大、哪一個較小了嗎？&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;其三、如果你用的是傳統世界的 host OS，而不是像 CoreOS、Rancher 這類所謂的 &amp;ldquo;&lt;a href=&#34;https://www.ithome.com.tw/news/95756&#34;&gt;container OS&lt;/a&gt;&amp;quot;，那麼，base image 與 host OS 可能會有一大堆重複的東西，這也是一種浪費。&lt;/p&gt;
+&lt;p&gt;寶貴的 Docker image，應該只放與 app 直接相關的東西；為什麼還要塞一大堆和 host OS 重複、且和 app 沒有直接關係的東西呢？&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;簡單給三個思考的方向，供大家參考。&lt;/p&gt;</description>
+      
     </item>
+    
     <item>
       <title>POLP：最小權限原則</title>
       <link>//william-yeh.net/post/2016/03/polp-intro/</link>
       <pubDate>Tue, 15 Mar 2016 08:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2016/03/polp-intro/</guid>
-      <description>&lt;p&gt;在我開的 &lt;a href=&#34;http://get.soft-arch.net/ansible/&#34;&gt;Ansible Workshop&lt;/a&gt; 中，不管是課前的【許願池】，還是課程現場的 Q&amp;amp;A，總有一個熱門議題：「如何確保系統是安全的？」&lt;/p&gt;&#xA;&lt;p&gt;這是大哉問，不是單獨一門組態管理課就能探討到令人滿意的地步（資安也不是我所擅長的⋯⋯）。不過，被問到的次數太多了，我還是給個簡單的導引吧。&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;在我開的 &lt;a href=&#34;http://get.soft-arch.net/ansible/&#34;&gt;Ansible Workshop&lt;/a&gt; 中，不管是課前的【許願池】，還是課程現場的 Q&amp;amp;A，總有一個熱門議題：「如何確保系統是安全的？」&lt;/p&gt;
+&lt;p&gt;這是大哉問，不是單獨一門組態管理課就能探討到令人滿意的地步（資安也不是我所擅長的⋯⋯）。不過，被問到的次數太多了，我還是給個簡單的導引吧。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;系統安全有許多層次。以 &lt;a href=&#34;https://www.safaribooksonline.com/library/view/learning-linux-security/9781771374194/&#34;&gt;&lt;em&gt;Learning Linux Security&lt;/em&gt;&lt;/a&gt; 教學課程的大綱來看，至少涵蓋幾個層次：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Booting：作業系統開機環節&lt;/li&gt;
+&lt;li&gt;Kernel：作業系統核心&lt;/li&gt;
+&lt;li&gt;Services：典型系統服務&lt;/li&gt;
+&lt;li&gt;Users and permissions：帳號及權限&lt;/li&gt;
+&lt;li&gt;Firewalls：防火牆&lt;/li&gt;
+&lt;li&gt;Logging and log management：日誌管理&lt;/li&gt;
+&lt;li&gt;Intrusion detection and prevention：入侵偵測及預防&lt;/li&gt;
+&lt;li&gt;Utilities：診斷工具&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;各個環節，都有各自專門知識及輔助工具（我就說這是大哉問吧⋯⋯）。這些都是傳統 admin 或 ops 的責任區。&lt;/p&gt;
+&lt;p&gt;不過，即使不是專業的 ops，身為一位 dev，至少有兩點是自己的責任區，需要好好掌握的。&lt;/p&gt;
+&lt;p&gt;首先是 &lt;strong&gt;Users and permissions 環節&lt;/strong&gt;。近年來流行的軟體設計方式，部署時，常常不會 100% 寄生在 Apache、Nginx、Tomcat 這些 application container 底下，而是像 PHP 的 &lt;a href=&#34;http://php-fpm.org/&#34;&gt;FPM 模式&lt;/a&gt;、Python 的 &lt;a href=&#34;http://gunicorn.org/&#34;&gt;Gunicorn 模式&lt;/a&gt;、Ruby 的 &lt;a href=&#34;http://unicorn.bogomips.org/&#34;&gt;Unicorn 模式&lt;/a&gt;，有一個或多個協同作業的 process；甚至像 Node.js 或 Java 硬漢，往往不假外力，直接就把程式本身設計成 daemon 了。此時，開發者就不能逃避，必須考慮如何設定該軟體的帳號及權限，包括 process 的 UID、GID，以及相關的檔案目錄存取權限。&lt;/p&gt;
+&lt;p&gt;其次是 &lt;strong&gt;Services 環節&lt;/strong&gt;。以 daemon 形式存在的軟體，通常會安裝成 service，透過 &lt;a href=&#34;https://en.wikipedia.org/wiki/Init&#34;&gt;SysV init&lt;/a&gt;、&lt;a href=&#34;https://en.wikipedia.org/wiki/Upstart&#34;&gt;Upstart&lt;/a&gt; 或 &lt;a href=&#34;https://en.wikipedia.org/wiki/Systemd&#34;&gt;systemd&lt;/a&gt; 等機制啟動與管理。這時，也必須連帶把前述的帳號權限處理好。有潔癖的，甚至還會加掛 &lt;a href=&#34;https://en.wikipedia.org/wiki/Chroot&#34;&gt;chroot&lt;/a&gt;、&lt;a href=&#34;https://en.wikipedia.org/wiki/AppArmor&#34;&gt;AppArmor&lt;/a&gt;、&lt;a href=&#34;https://en.wikipedia.org/wiki/Security-Enhanced_Linux&#34;&gt;SELinux&lt;/a&gt; 等嚇人的保護機制。&lt;/p&gt;
+&lt;p&gt;對於帳號權限不知道該如何設定的人，通常最好的方式是：觀摩別人是怎麼做的，尤其是經典級的 services。&lt;/p&gt;
+&lt;p&gt;我們就在 Ubuntu 14.04 裡面，好好觀摩一下吧。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;以 Apache 為例，如果你是透過 &lt;code&gt;apt-get install apache2&lt;/code&gt; 來安裝，可看到它是以 &lt;code&gt;www-data&lt;/code&gt; 的身份來執行 worker process：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ ps aux | grep apache2
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;root      2734  0.0  0.5  73368  2628 ?        Ss   04:36   0:00 /usr/sbin/apache2 -k start
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;www-data  2737  0.0  0.4 362532  2240 ?        Sl   04:36   0:00 /usr/sbin/apache2 -k start
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;www-data  2738  0.0  0.4 362532  2240 ?        Sl   04:36   0:00 /usr/sbin/apache2 -k start&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;p&gt;以 Nginx 為例，如果你是透過 &lt;code&gt;apt-get install nginx&lt;/code&gt; 來安裝，可看到它也是以 &lt;code&gt;www-data&lt;/code&gt; 的身份來執行 worker process：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ ps aux | grep nginx
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;root      3313  0.0  0.2  85884  1340 ?        Ss   04:44   0:00 nginx: master process /usr/sbin/nginx
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;www-data  3314  0.0  0.3  86228  1768 ?        S    04:44   0:00 nginx: worker process
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;www-data  3315  0.0  0.3  86228  1768 ?        S    04:44   0:00 nginx: worker process
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;www-data  3316  0.0  0.3  86228  1768 ?        S    04:44   0:00 nginx: worker process
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;www-data  3317  0.0  0.3  86228  1768 ?        S    04:44   0:00 nginx: worker process&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;p&gt;以 MySQL 為例，&lt;!-- raw HTML omitted --&gt;如果你是透過 &lt;code&gt;apt-get install mysql-server&lt;/code&gt; 來安裝，可看到它是以 &lt;code&gt;mysql&lt;/code&gt; 的身份來執行：&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ ps aux | grep mysql
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mysql     7004  0.5  8.8 623920 44536 ?        Ssl  04:48   0:00 /usr/sbin/mysqld&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;p&gt;從以上三個經典案例，可以歸納出一個小結論：「他們都&lt;strong&gt;盡可能不以 root 身分執行&lt;/strong&gt;。」&lt;/p&gt;
+&lt;p&gt;這些 &lt;code&gt;www-data&lt;/code&gt; 及 &lt;code&gt;mysql&lt;/code&gt; 帳號，甚至沒有登入的權力：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ cat /etc/passwd | egrep &amp;#39;(mysql|www-data)&amp;#39;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mysql:x:109:116:MySQL Server,,,:/nonexistent:/bin/false
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ cat /etc/group  | egrep &amp;#39;(mysql|www-data)&amp;#39;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;www-data:x:33:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mysql:x:116:&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;p&gt;也沒有偷開 sudo 後門：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ sudo cat /etc/sudoers
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Defaults    env_reset
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Defaults    mail_badpass
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Defaults    secure_path=&amp;#34;/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;# User privilege specification
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;root    ALL=(ALL:ALL) ALL
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;# Members of the admin group may gain root privileges
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;%admin ALL=(ALL) ALL
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;# Allow members of group sudo to execute any command
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;%sudo    ALL=(ALL:ALL) ALL&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;p&gt;所以，這些經典級的服務，他們都非常自制，極度限縮自己的權力。&lt;/p&gt;
+&lt;p&gt;用更有學問的說法：他們都遵循&lt;strong&gt;最小權限原則&lt;/strong&gt; (&lt;em&gt;principle of least privilege&lt;/em&gt;; POLP)。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;維基百科提到 POLP 的&lt;a href=&#34;https://en.wikipedia.org/wiki/Principle_of_least_privilege#History&#34;&gt;歷史淵源&lt;/a&gt;，可追溯至 1974 年：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Every program and every privileged user of the system should operate using the least amount of privilege necessary to complete the job.&lt;/p&gt;
+&lt;p&gt;— &lt;a href=&#34;https://en.wikipedia.org/wiki/Jerome_H._Saltzer&#34;&gt;Jerome Saltzer&lt;/a&gt;, &lt;a href=&#34;https://en.wikipedia.org/wiki/Communications_of_the_ACM&#34;&gt;&lt;em&gt;Communications of the ACM&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;可見這算是歷久彌新的原則了。&lt;/p&gt;
+&lt;p&gt;如果要將 POLP 套用到目前流行的 web application，我引述 &lt;em&gt;Secure Your Node.js Web Application&lt;/em&gt; 一書的&lt;a href=&#34;http://www.safaribooksonline.com/a/secure-your-nodejs/1159941/&#34;&gt;說法&lt;/a&gt;：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;From our web application standpoint, we have the following rules:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;The web application should not be run with root privileges. It should instead use a limited account that has access to only the required resources.&lt;/li&gt;
+&lt;li&gt;The database account should not be a root account. The account should have limited privileges over the database tables.&lt;/li&gt;
+&lt;li&gt;The users of the web application should be given the minimum set of privileges they need.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;也引述《Ruby on Rails 實戰聖經》的&lt;a href=&#34;https://ihower.tw/rails4/deployment.html&#34;&gt;說法&lt;/a&gt;：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;設定伺服器部署使用者&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;習慣上我們會在伺服器上開一個專門的帳號，用來放 Rails 應用程式：&lt;code&gt;sudo adduser --disabled-password deploy&lt;/code&gt; ⋯⋯&lt;/p&gt;
+&lt;p&gt;本機執行 &lt;code&gt;cap deploy:check&lt;/code&gt;，就會自動登入遠端的伺服器，在登入的帳號下新建 current、releases 和 shared 這三個目錄。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;所以，回頭檢視一下自己的軟體部署流程，有沒有遵循&lt;strong&gt;最小權限原則&lt;/strong&gt;吧！&lt;/p&gt;</description>
+      
     </item>
+    
   </channel>
 </rss>

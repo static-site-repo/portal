@@ -4,65 +4,936 @@
     <title>Communication on Potioneer&#39;s Essays</title>
     <link>//william-yeh.net/tags/communication/</link>
     <description>Recent content in Communication on Potioneer&#39;s Essays</description>
-    <generator>Hugo</generator>
+    <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <lastBuildDate>Tue, 29 Nov 2022 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//william-yeh.net/tags/communication/index.xml" rel="self" type="application/rss+xml" />
+    
+        <atom:link href="//william-yeh.net/tags/communication/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>職涯躍升書系導讀會</title>
       <link>//william-yeh.net/series/career-reading-club/</link>
       <pubDate>Tue, 29 Nov 2022 00:00:00 +0000</pubDate>
+      
       <guid>//william-yeh.net/series/career-reading-club/</guid>
-      <description>&lt;p&gt;❶ Part 1: &lt;a href=&#34;//william-yeh.net/post/2022/06/career-reading-club-1/&#34;&gt;喚醒個人及團隊的成長意識&lt;/a&gt; (計 6 冊)&lt;/p&gt;&#xA;&lt;p&gt;❷ Part 2: &lt;a href=&#34;//william-yeh.net/post/2022/08/career-reading-club-2/&#34;&gt;高效團隊的工作方法&lt;/a&gt; (計 2 冊)&lt;/p&gt;&#xA;&lt;p&gt;❸ Part 3: &lt;a href=&#34;//william-yeh.net/post/2022/11/career-reading-club-3/&#34;&gt;職場心理：觀點、期待、渴望&lt;/a&gt; (計 3 冊)&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;❶ Part 1: &lt;a href=&#34;//william-yeh.net/post/2022/06/career-reading-club-1/&#34;&gt;喚醒個人及團隊的成長意識&lt;/a&gt; (計 6 冊)&lt;/p&gt;
+&lt;p&gt;❷ Part 2: &lt;a href=&#34;//william-yeh.net/post/2022/08/career-reading-club-2/&#34;&gt;高效團隊的工作方法&lt;/a&gt; (計 2 冊)&lt;/p&gt;
+&lt;p&gt;❸ Part 3: &lt;a href=&#34;//william-yeh.net/post/2022/11/career-reading-club-3/&#34;&gt;職場心理：觀點、期待、渴望&lt;/a&gt; (計 3 冊)&lt;/p&gt;
+</description>
+      
     </item>
+    
     <item>
       <title>請掌握「對高層簡報」的技術及習慣</title>
       <link>//william-yeh.net/post/2022/08/present-for-upper-mgmt/</link>
       <pubDate>Thu, 04 Aug 2022 19:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2022/08/present-for-upper-mgmt/</guid>
-      <description>&lt;p&gt;（改寫自公司內部 memo）&lt;/p&gt;&#xA;&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;&#xA;&lt;p&gt;Dear all guys,&lt;/p&gt;&#xA;&lt;p&gt;最近協助一些同仁潤飾簡報，尤其是對高層的簡報，有一個常見的問題，值得特別為文給大家一點建議。&lt;/p&gt;&#xA;&lt;p&gt;我們在三月份&lt;a href=&#34;//william-yeh.net/post/2022/06/career-reading-club-1/&#34;&gt;導讀會&lt;/a&gt;《&lt;a href=&#34;https://www.books.com.tw/products/0010681486&#34;&gt;不懂這些，別想加薪&lt;/a&gt;》就已經探討過，對高層的寫作與簡報，要盡量掌握「&lt;strong&gt;金字塔原理&lt;/strong&gt;」：結論先行，論證隨後。&lt;/p&gt;&#xA;&lt;p&gt;鑑於有些人沒參加這場導讀會，以下僅說明三大重點：① 一般的溝通原理，② 對高層的溝通原理，③ 對高層的溝通方法。&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;（改寫自公司內部 memo）&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;Dear all guys,&lt;/p&gt;
+&lt;p&gt;最近協助一些同仁潤飾簡報，尤其是對高層的簡報，有一個常見的問題，值得特別為文給大家一點建議。&lt;/p&gt;
+&lt;p&gt;我們在三月份&lt;a href=&#34;//william-yeh.net/post/2022/06/career-reading-club-1/&#34;&gt;導讀會&lt;/a&gt;《&lt;a href=&#34;https://www.books.com.tw/products/0010681486&#34;&gt;不懂這些，別想加薪&lt;/a&gt;》就已經探討過，對高層的寫作與簡報，要盡量掌握「&lt;strong&gt;金字塔原理&lt;/strong&gt;」：結論先行，論證隨後。&lt;/p&gt;
+&lt;p&gt;鑑於有些人沒參加這場導讀會，以下僅說明三大重點：① 一般的溝通原理，② 對高層的溝通原理，③ 對高層的溝通方法。&lt;/p&gt;
+&lt;h2 id=&#34;一般的溝通原理&#34;&gt;一般的溝通原理&lt;/h2&gt;
+&lt;p&gt;一般的寫作與簡報，高效人士會 &lt;strong&gt;working backwards&lt;/strong&gt;，先從這個自我提問開始：「我&lt;strong&gt;期望&lt;/strong&gt;在這一場溝通之後，能夠得到的&lt;strong&gt;效果&lt;/strong&gt;或&lt;strong&gt;反應&lt;/strong&gt;是什麼？」&lt;/p&gt;
+&lt;p&gt;在三月份導讀會中，我曾引述《&lt;a href=&#34;https://www.books.com.tw/products/0010928450&#34;&gt;邏輯思考的技術&lt;/a&gt;》的概念圖，將「期望得到的反應」分成三種：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;理解&lt;/li&gt;
+&lt;li&gt;決策的結果、意見、建議等回饋&lt;/li&gt;
+&lt;li&gt;行動&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;不同的期望，會影響整份寫作與簡報的動線及力道。&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2022/08/comm-flow.jpg&#34; alt=&#34;“溝通的基本原理&amp;#34;&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2022/08/comm-flow.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;“溝通的基本原理&amp;#34;&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;對高層的溝通原理&#34;&gt;對高層的溝通原理&lt;/h2&gt;
+&lt;p&gt;對高層的寫作與簡報，除了依循前述的一般溝通原理之外，還需要對於「高層」這種生物有某種理解，才能投其所好。&lt;/p&gt;
+&lt;p&gt;「高層」這種生物，是怎麼樣的生物？&lt;/p&gt;
+&lt;p&gt;在《&lt;a href=&#34;https://www.books.com.tw/products/0010681486&#34;&gt;不懂這些，別想加薪&lt;/a&gt;》書中是這麼說的：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;你可能聽過或學過許多演講技巧，例如要有令人難忘的開場白、要有力量甚至誇張的手勢、要說故事、要有抑揚頓挫的音調等，這些演講技巧都很好，可是當面對高階主管進行&lt;strong&gt;有時間壓力&lt;/strong&gt;的高層決策會議時，卻極有可能毀了這場簡報，因為這一群聽眾十分特殊，所以簡報內容、表達方式與吸引方式，都要不同於一般的簡報。&lt;/p&gt;
+&lt;p&gt;他們通常習慣&lt;strong&gt;掌控全局&lt;/strong&gt;、&lt;strong&gt;缺乏耐心&lt;/strong&gt;，&lt;strong&gt;咄咄逼人&lt;/strong&gt;又令人恐懼。簡單說，他們是一群極度不容易對付的聽眾！&lt;/p&gt;
+&lt;p&gt;因此對高層簡報必須大幅減少一堆平常演講的花招，而要展現&lt;strong&gt;迅速清晰簡潔&lt;/strong&gt;的資訊，以利進行&lt;strong&gt;決策&lt;/strong&gt;。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;換言之，如果你能夠在高層面前展現出 ①&lt;strong&gt;重點摘要&lt;/strong&gt;，②&lt;strong&gt;下一步行動&lt;/strong&gt;，③&lt;strong&gt;請示&lt;/strong&gt; 這三方面的&lt;strong&gt;組織力&lt;/strong&gt;及&lt;strong&gt;表達力&lt;/strong&gt;，不僅是體貼這種日理萬機的生物，更是在這種生物面前留下專業的印象——你應該明白這意味著什麼。&lt;/p&gt;
+&lt;h2 id=&#34;對高層的溝通方法&#34;&gt;對高層的溝通方法&lt;/h2&gt;
+&lt;p&gt;第一招，就如同《&lt;a href=&#34;https://www.books.com.tw/products/0010681486&#34;&gt;不懂這些，別想加薪&lt;/a&gt;》書中所說的：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2022/08/presentation-for-upper-mgmt.jpg&#34; alt=&#34;Source: 《不懂這些，別想加薪》&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2022/08/presentation-for-upper-mgmt.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Source: 《不懂這些，別想加薪》&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;第二招，就是我在導讀會介紹過的「&lt;strong&gt;金字塔原理&lt;/strong&gt;」：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2022/08/pyramid-principle.jpg&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2022/08/pyramid-principle.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;金字塔原理，是工作者邁向專業形象的敲門磚試金石。如有可能，請大家多多自我要求，必會有所得。就像我在導讀會引述勝間和代的說法：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2022/08/no-logic.jpg&#34; alt=&#34;Source: 《新・知識生產術》&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2022/08/no-logic.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Source: 《新・知識生產術》&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;如果還想認真學習金字塔原理，請見&lt;a href=&#34;//william-yeh.net/post/2022/05/learn-from-consulting-firms/#進階篇金字塔原理&#34;&gt;此書單&lt;/a&gt;。&lt;/p&gt;</description>
+      
     </item>
+    
     <item>
       <title>職涯躍升書系導讀會，Part 1：喚醒個人及團隊的成長意識</title>
       <link>//william-yeh.net/post/2022/06/career-reading-club-1/</link>
       <pubDate>Fri, 17 Jun 2022 20:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2022/06/career-reading-club-1/</guid>
-      <description>&lt;p&gt;2022 年一月起，我開始每個月一次，每次兩小時的【職涯躍升書系導讀會】，讓公司同仁自由報名，希望藉由這種草根性的軟性活動，另闢一條 bottom-up 的改革路徑。畢竟，深遠持久的影響，不能少掉「喚醒基層意識」這環節。&lt;/p&gt;&#xA;&#xA;&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;&#xA;&lt;div class=&#34;box&#34;&gt;&#xA;&lt;figure  itemprop=&#34;associatedMedia&#34;&#xA;  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; &#xA;  style=&#34;max-width:30em&#34; &gt;&#xA;    &lt;div class=&#34;img&#34;&gt;&#xA;      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2022/06/reading-club-photo.jpg&#34; /&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;a href=&#34;//william-yeh.net/img/2022/06/reading-club-photo.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;&#xA;  &lt;/figure&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;p&gt;前六個月的選書如下：&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;2022 年一月起，我開始每個月一次，每次兩小時的【職涯躍升書系導讀會】，讓公司同仁自由報名，希望藉由這種草根性的軟性活動，另闢一條 bottom-up 的改革路徑。畢竟，深遠持久的影響，不能少掉「喚醒基層意識」這環節。&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2022/06/reading-club-photo.jpg&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2022/06/reading-club-photo.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;前六個月的選書如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;個人層面，喚醒個人成長意識&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;① &lt;a href=&#34;https://www.tenlong.com.tw/products/9789865027896&#34;&gt;經理人之道&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;② &lt;a href=&#34;https://williampjyeh.notion.site/cd42e217271d454aac9411b0c6fc84c7&#34;&gt;三年後，你的工作還在嗎？&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;③ &lt;a href=&#34;https://williampjyeh.notion.site/1a6d4482e2bb42329d85624c214c91fb&#34;&gt;不懂這些，別想加薪&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;團隊層面，喚醒團隊成長意識&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;④ &lt;a href=&#34;https://www.tenlong.com.tw/products/9789865026653&#34;&gt;獨角獸專案&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;⑤ &lt;a href=&#34;https://www.books.com.tw/products/0010811254&#34;&gt;Amazon 的人為什麼這麼厲害？&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;⑥ &lt;a href=&#34;https://www.books.com.tw/products/0010647956&#34;&gt;克服團隊領導的五大障礙&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;以下列出這六場導讀會的介紹文案。&lt;/p&gt;
+&lt;h2 id=&#34;經理人之道&#34;&gt;經理人之道&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;活動名稱&lt;/strong&gt;：《經理人之道》導讀會&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;時間&lt;/strong&gt;：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;導讀人&lt;/strong&gt;：William Yeh&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;目標聽眾&lt;/strong&gt;：技術領域的初階主管、地下主管、工頭、組頭，以及有志於在一兩年內成為上述身分的人。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;活動進行方式&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;活動前：請先自行讀完《&lt;a href=&#34;https://www.tenlong.com.tw/products/9789865027896&#34;&gt;經理人之道&lt;/a&gt;》至少第 1～6 章。&lt;/li&gt;
+&lt;li&gt;活動中：導讀、討論、Q&amp;amp;A。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;參考資料&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;我寫的推薦序：&lt;a href=&#34;//william-yeh.net/post/2021/02/the-managers-path-review/&#34;&gt;軟體研發者的隨身職涯教練&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;三年後你的工作還在嗎&#34;&gt;三年後，你的工作還在嗎？&lt;/h2&gt;
+&lt;p&gt;Dear all,&lt;/p&gt;
+&lt;p&gt;2014 年初，我以 architect 身分加入Ｇ公司。當時我對於 individual contributor (IC) 路線能走到什麼地步，仍然充滿疑惑，身邊也沒有 mentor 可以解惑。&lt;/p&gt;
+&lt;p&gt;幸運的是，我在 2014 年 8 月就入手《&lt;a href=&#34;https://williampjyeh.notion.site/cd42e217271d454aac9411b0c6fc84c7&#34;&gt;三年後，你的工作還在嗎？&lt;/a&gt;》這本剛出爐的新書。這本書的觀念，徹底重塑了我的認知，成為我私房的職涯祕笈。甚至當我數年後成為主管，我還自掏腰包送給屬下一人一本，以重塑整個部門的意識（有圖為證）：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2022/06/3-years-jobs.jpg&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2022/06/3-years-jobs.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;值此歲初重新檢視與訂定個人年度計畫的時機，我大力推薦用這本書伴你度過農曆新年。&lt;/p&gt;
+&lt;h2 id=&#34;不懂這些別想加薪&#34;&gt;不懂這些，別想加薪&lt;/h2&gt;
+&lt;p&gt;Dear all,&lt;/p&gt;
+&lt;p&gt;為了離開舒適圈，看看外面的世界，我去外商圈打滾了一陣子，儘管我的英語聽說能力並不算好。&lt;/p&gt;
+&lt;p&gt;在外商，異國異地 con-call 開會，讀不到共時性的空氣，已經是一種低情境的溝通了，使用英語，更是嚴重限縮語言表達力的頻寬。低情境、低頻寬，是我面對的第一個困境。&lt;/p&gt;
+&lt;p&gt;我更發現，為了突破低情境低頻寬的禁錮，不只簡報風格，不只溝通風格，甚至連更基本的職場思維也得轉變。我得盡快尋得具體的方法，從頭練習職場基本功——我需要學會在低情境、低頻寬處境下更簡潔、更高效的風格，這風格還得具有某種跨文化、跨語言的通用性。&lt;/p&gt;
+&lt;p&gt;後來，我拿出早已躺在書架上好幾年的這本書，重新蹲馬步：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;《&lt;a href=&#34;https://williampjyeh.notion.site/1a6d4482e2bb42329d85624c214c91fb&#34;&gt;不懂這些，別想加薪&lt;/a&gt;》&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;不要被狀似聳動的書名騙了。這本內容扎實的書，不僅是表格，不僅是話術，更是&lt;strong&gt;職場思考&lt;/strong&gt;的基本功。&lt;/p&gt;
+&lt;p&gt;照著這本書刻意練習幾個月，某些核心要點甚至還刻意默寫默背起來。沒有 mentor/coach 在側，自承進步緩慢，卻已經開始敏銳看到許多身邊的反例：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;口語陳述冗長，聽不到重點&lt;/li&gt;
+&lt;li&gt;簡報層次錯綜，看不到結構&lt;/li&gt;
+&lt;li&gt;簡報資料蕪雜，看不到牛肉&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;當我照著書中第一堂課「一分鐘口頭報告」的兩份表格自我操練，也照著第六堂課及第十一堂課介紹的兩種不同的簡報情境重塑自己的簡報思路之後，這類反例在我眼中就顯得粒粒分明。&lt;/p&gt;
+&lt;p&gt;看得到問題，察覺到不足，喚起意識，才容易催生改善的行動。&lt;/p&gt;
+&lt;p&gt;如果你也想重頭練習我所謂的&lt;strong&gt;職場基本功&lt;/strong&gt;，我邀請你，照著以下步驟進行：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;開始閱讀《&lt;a href=&#34;https://williampjyeh.notion.site/1a6d4482e2bb42329d85624c214c91fb&#34;&gt;不懂這些，別想加薪&lt;/a&gt;》這本書。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;拿出隨身筆記本，開始敏銳&lt;strong&gt;觀察&lt;/strong&gt;你身邊發生的這些具體事件，並&lt;strong&gt;記錄&lt;/strong&gt;下來。在下次導讀會時，秀出你所記錄的這些事件：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;口語陳述冗長，聽不到重點&lt;/li&gt;
+&lt;li&gt;簡報層次錯綜，看不到結構&lt;/li&gt;
+&lt;li&gt;簡報資料蕪雜，看不到牛肉&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;記錄之餘，請進一步思考：如果換成《&lt;a href=&#34;https://williampjyeh.notion.site/1a6d4482e2bb42329d85624c214c91fb&#34;&gt;不懂這些，別想加薪&lt;/a&gt;》這本書教的方法，應該怎麼調整？&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;另外，這本書第七堂課介紹「DISC 個性分類」，我也在 Scrum 團隊提過幾次。我建議大家可以先做一下附件的小測驗，我們在導讀會現場會聊聊這個東西。&lt;/p&gt;
+&lt;h2 id=&#34;獨角獸專案&#34;&gt;獨角獸專案&lt;/h2&gt;
+&lt;p&gt;Dear all,&lt;/p&gt;
+&lt;p&gt;近十年，軟體研發界有兩大類重要思潮。在技術面，有大數據、機器學習、immutable infrastructure、微服務、容器、函式編程、資料流水線等；在流程面，則有敏捷開發、DevOps、自助服務、混亂工程、精實 UX 等。這些思潮，有些是新發明，有些則是文藝復興，甚至是跨界學習而來。&lt;/p&gt;
+&lt;p&gt;因此，當我 2021 年底答應要來這裡時，雖然早有心理準備，但實際進來看到這邊的&lt;strong&gt;軟體技術&lt;/strong&gt;及&lt;strong&gt;行事流程&lt;/strong&gt;，與外界所謂「業界標準配備」差距甚大，仍然嚇了一跳。&lt;/p&gt;
+&lt;p&gt;當然啦，這也是我來這裡第一年的重要目標之一：「Raise the bar for 各職能工作者，至少要對齊業界水平」。&lt;/p&gt;
+&lt;p&gt;業界水平是什麼模樣？大體上，就像《&lt;a href=&#34;https://www.tenlong.com.tw/products/9789865026653&#34;&gt;獨角獸專案&lt;/a&gt;》這本小說所描繪的那樣。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;在這小說中，你可以看到在「無極限零件公司」這樣年營業額 40 億美元的製造商暨零售商中，行銷企劃部門、軟體研發部門、服務維運部門彼此爭功諉過的寫實場景。你會看到故事主角梅克辛如何在穀倉泥淖中獨自展開她的「英雄之旅」，與地下反抗軍合作，導入先進的軟體研發思潮。正當一切似乎漸入佳境時，居然還有一條懸疑支線在背後悄悄醞釀⋯⋯高潮迭起，頗有潛力改編成劇情片。&lt;/p&gt;
+&lt;p&gt;如果你是愛看熱鬧的小說族，你會喜歡它的。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;當然啦，內行看門道。這本奇書，並不止於小說，而是真正可以照表操課的。&lt;/p&gt;
+&lt;p&gt;在參加導讀會之前，我建議大家依照「速讀」及「精讀」兩階段依序進行：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;速讀階段：速讀完《&lt;a href=&#34;https://www.tenlong.com.tw/products/9789865026653&#34;&gt;獨角獸專案&lt;/a&gt;》至少一遍，先享受高潮起伏的劇情，並熟悉人物與關係。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;精讀階段：挑出書中所有與「&lt;strong&gt;系統與組織的五大理念&lt;/strong&gt;」有關的段落，越多越好。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;我自己的做法是：每讀到一個有關的地方，就用書籤標註（善用不同顏色的標籤更好）。如下圖：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:20em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2022/06/unicorn-project.jpg&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2022/06/unicorn-project.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;以上，請務必在導讀會之前確實完成。導讀會時，我們會以此為基礎，玩一場我在 &lt;a href=&#34;https://devopsdays.tw/2021/workshop-page/212&#34;&gt;DevOpsDays Taipei 2021&lt;/a&gt; 帶的工作坊。我們將以「系統思考」角度，帶你分析書中倡議的「&lt;strong&gt;五大理念&lt;/strong&gt;」，你將會得到有助於形塑適合 IT 滋長企業文化的施力線索。&lt;/p&gt;
+&lt;h2 id=&#34;amazon-的人為什麼這麼厲害&#34;&gt;Amazon 的人為什麼這麼厲害？&lt;/h2&gt;
+&lt;p&gt;Dear all,&lt;/p&gt;
+&lt;p&gt;我自認有一點點文青的基因。像詹先生寫《&lt;a href=&#34;https://www.books.com.tw/products/0010099824&#34;&gt;創意人&lt;/a&gt;》及《&lt;a href=&#34;https://www.books.com.tw/products/0010065180&#34;&gt;城市人&lt;/a&gt;》，企劃的《&lt;a href=&#34;https://www.books.com.tw/products/0010414925&#34;&gt;謀殺專門店&lt;/a&gt;》，創辦的【明日報】，都是我小時候愛讀的東西。&lt;/p&gt;
+&lt;p&gt;因此，當 2021 年 10 月初 Ｓ君 &amp;amp; Ｃ君 與我接洽，我是充滿驚喜的。當時我心想，有機會在曾經引領台灣網路圈不斷創新的Ｐ集團底下服務，應該是非常光榮的事。&lt;/p&gt;
+&lt;p&gt;是的，在我學生時期，Ｐ的確是台灣網路圈的創新火車頭。&lt;/p&gt;
+&lt;p&gt;不過，當我進來之後，我很驚訝地發現，Ｐ與我學生時期的印象已經大大不同了。就如我在上一次《獨角獸專案》導讀會的文案所說：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;當我 2021 年底答應要來這裡時，雖然早有心理準備，但實際進來看到這邊的&lt;strong&gt;軟體技術&lt;/strong&gt;及&lt;strong&gt;行事流程&lt;/strong&gt;，與外界所謂「業界標準配備」的差距甚大，仍然嚇了一跳。&lt;/p&gt;
+&lt;p&gt;當然啦，這也是我來這裡第一年的重要目標之一：「Raise the bar for 各職能工作者，至少要對齊業界水平」。&lt;/p&gt;
+&lt;p&gt;業界水平是什麼模樣？大體上，就像《獨角獸專案》這本小說所描繪的那樣。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;《獨角獸專案》描繪的是「&lt;strong&gt;軟體技術&lt;/strong&gt;及&lt;strong&gt;行事流程&lt;/strong&gt;」的業界水平，至於「&lt;strong&gt;專業主義&lt;/strong&gt;及&lt;strong&gt;企業文化&lt;/strong&gt;」的業界水平，我打算透過《&lt;a href=&#34;https://www.books.com.tw/products/0010811254&#34;&gt;Amazon 的人為什麼這麼厲害？&lt;/a&gt;》這本書來與大家一同探討。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;《&lt;a href=&#34;https://www.books.com.tw/products/0010811254&#34;&gt;Amazon 的人為什麼這麼厲害？&lt;/a&gt;》這本書所描繪的，其實不只是 Amazon 一家公司的狀況，其實不只是電商龍頭的狀況，更是許多一流外商的共同水平。&lt;/p&gt;
+&lt;p&gt;我期待大家能好好吸收這本書所勾勒的「&lt;strong&gt;專業主義&lt;/strong&gt;及&lt;strong&gt;企業文化&lt;/strong&gt;」，我也會如此要求大家，追上業界水平，成為專業的工作團隊。&lt;/p&gt;
+&lt;h2 id=&#34;克服團隊領導的五大障礙&#34;&gt;克服團隊領導的五大障礙&lt;/h2&gt;
+&lt;p&gt;Dear all,&lt;/p&gt;
+&lt;p&gt;四月五月導讀會的選書當中，《獨角獸專案》描繪的是「&lt;strong&gt;軟體技術&lt;/strong&gt;及&lt;strong&gt;行事流程&lt;/strong&gt;」的業界水平，《Amazon 的人為什麼這麼厲害？》描繪的是「&lt;strong&gt;專業主義&lt;/strong&gt;及&lt;strong&gt;企業文化&lt;/strong&gt;」的業界水平。接下來六月份的導讀會，我打算藉由《&lt;a href=&#34;https://www.books.com.tw/products/0010647956&#34;&gt;克服團隊領導的五大障礙&lt;/a&gt;》這本書，談談「&lt;strong&gt;績優團隊&lt;/strong&gt;」的業界水平。&lt;/p&gt;
+&lt;p&gt;記得自己第一次認真思考「&lt;strong&gt;績優團隊&lt;/strong&gt;」這件事，且把這件事視為己任，是在 2015 年閱讀《&lt;a href=&#34;https://www.tenlong.com.tw/products/9789864765867&#34;&gt;鳳凰專案&lt;/a&gt;》這本書的時候（記得嗎？這是《獨角獸專案》的前作）。我也注意到故事中 CEO 史蒂夫在第 18 章中運用了《&lt;a href=&#34;https://www.books.com.tw/products/0010647956&#34;&gt;克服團隊領導的五大障礙&lt;/a&gt;》所介紹的「&lt;strong&gt;個人歷史演練&lt;/strong&gt; (&lt;strong&gt;personal history exercise&lt;/strong&gt;)」來重塑團隊，擊節讚嘆於峰迴路轉的劇情之餘，不免也心生疑竇：這一招真的有那麼神嗎？&lt;/p&gt;
+&lt;p&gt;因此，我入手了《&lt;a href=&#34;https://www.books.com.tw/products/0010647956&#34;&gt;克服團隊領導的五大障礙&lt;/a&gt;》這本書，也根據這本書介紹的方法，用在團隊集體塑造上，用在新人 onboarding 上，也用在個人 1:1 上，可說是我的私房法寶。&lt;/p&gt;
+&lt;p&gt;這本書的部份重點，可參考以下幾篇文章：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://negotowin.blogspot.com/2017/05/blog-post_31.html&#34;&gt;「一個人走的快，一群人走的遠」，但為何有些團隊就是走不遠？&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://negotowin.blogspot.com/2017/06/2gabcd.html&#34;&gt;從 2G 到 ABCD：想要讓團隊走得更快又更遠？先看看建立信任的兩大目標及四項指標&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://negotowin.blogspot.com/2017/06/blog-post_7.html&#34;&gt;讓團隊走得更快又更遠第二招：用建設性衝突打造更強的團隊戰力&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://negotowin.blogspot.com/2017/06/grow.html&#34;&gt;讓團隊走得更快又更遠第三招：結合 GROW 模式的勇於許下承諾&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://negotowin.blogspot.com/2017/06/blog-post_30.html&#34;&gt;讓團隊走得更快又更遠第四招：塑造當責文化之前，你該知道規避責任者的四大類型&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://negotowin.blogspot.com/2017/07/blog-post_10.html&#34;&gt;讓團隊走得更快又更遠番外篇：從負責到當責的塑造當責文化&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://negotowin.blogspot.com/2017/07/34.html&#34;&gt;讓團隊走得更快又更遠第五招：學會重視成果的 3 個階段和 4 種對象&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;如果你對這幾篇文章頗有共鳴，想進一步學習具體做法，或是也想再一次從商業小說角度看看「績優團隊」的樣貌，那麼，極力推薦你讀一讀《&lt;a href=&#34;https://www.books.com.tw/products/0010647956&#34;&gt;克服團隊領導的五大障礙&lt;/a&gt;》這本書，並且嘗試運用書中介紹的方法。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;這次導讀會，請在參加之前，先自行做一下 pp.226～227 的【團隊評估】。&lt;/p&gt;
+&lt;p&gt;還有，這次導讀會，會有一點噁心。在此先預告一下。&lt;/p&gt;
+
+
+&lt;div class=&#34;notice notice--note&#34;&gt;
+  &lt;div class=&#34;notice__title&#34;&gt;
+    
+      【職涯躍升書系導讀會】系列
+    
+  &lt;/div&gt;
+  &lt;div class=&#34;notice__content&#34;&gt;&lt;p&gt;❶ Part 1: 喚醒個人及團隊的成長意識 (計 6 冊)&lt;/p&gt;
+&lt;p&gt;❷ Part 2: &lt;a href=&#34;//william-yeh.net/post/2022/08/career-reading-club-2/&#34;&gt;高效團隊的工作方法&lt;/a&gt; (計 2 冊)&lt;/p&gt;
+&lt;p&gt;❸ Part 3: &lt;a href=&#34;//william-yeh.net/post/2022/11/career-reading-club-3/&#34;&gt;職場心理：觀點、期待、渴望&lt;/a&gt; (計 3 冊)&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+      
     </item>
+    
     <item>
       <title>圖表，要有重點訊息</title>
       <link>//william-yeh.net/post/2022/06/one-msg-per-slide/</link>
       <pubDate>Thu, 09 Jun 2022 20:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2022/06/one-msg-per-slide/</guid>
-      <description>&lt;p&gt;月前看到君婷老師提的這則&lt;a href=&#34;https://www.facebook.com/elva.lee.752/posts/5372125532799861&#34;&gt;重大發現&lt;/a&gt;：「當你沒辦法 convince 對方的時候，那就想辦法 confuse 他。」&lt;/p&gt;&#xA;&#xA;&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;&#xA;&lt;div class=&#34;box&#34;&gt;&#xA;&lt;figure  itemprop=&#34;associatedMedia&#34;&#xA;  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; &#xA;  style=&#34;max-width:20em&#34; &gt;&#xA;    &lt;div class=&#34;img&#34;&gt;&#xA;      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2022/06/elva-20220505.jpg&#34; /&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;a href=&#34;//william-yeh.net/img/2022/06/elva-20220505.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;&#xA;  &lt;/figure&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;p&gt;對於「塞一大堆無關緊要，但看起來好像很認真整理過的資料」這件事，我是感同身受的——尤其是職場的會議簡報。&lt;/p&gt;&#xA;&lt;p&gt;職場的會議簡報，下焉者，塞一大堆原始數據；中焉者，把數據整理為樸素的統計圖表；上焉者，會針對圖表的洞見予以錘鍊。&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; 上焉者的境界，可能需要一段時間訓練與即時回饋，恐非短期可奏效；但我發現，只要掌握一個&lt;strong&gt;逆向工作法&lt;/strong&gt;的小訣竅，就能找到改善中焉者表現的線索。&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;月前看到君婷老師提的這則&lt;a href=&#34;https://www.facebook.com/elva.lee.752/posts/5372125532799861&#34;&gt;重大發現&lt;/a&gt;：「當你沒辦法 convince 對方的時候，那就想辦法 confuse 他。」&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:20em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2022/06/elva-20220505.jpg&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2022/06/elva-20220505.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;對於「塞一大堆無關緊要，但看起來好像很認真整理過的資料」這件事，我是感同身受的——尤其是職場的會議簡報。&lt;/p&gt;
+&lt;p&gt;職場的會議簡報，下焉者，塞一大堆原始數據；中焉者，把數據整理為樸素的統計圖表；上焉者，會針對圖表的洞見予以錘鍊。&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; 上焉者的境界，可能需要一段時間訓練與即時回饋，恐非短期可奏效；但我發現，只要掌握一個&lt;strong&gt;逆向工作法&lt;/strong&gt;的小訣竅，就能找到改善中焉者表現的線索。&lt;/p&gt;
+&lt;h2 id=&#34;金字塔原理的-so-what-觀點&#34;&gt;金字塔原理的 &amp;ldquo;so what?&amp;rdquo; 觀點&lt;/h2&gt;
+&lt;p&gt;記得第一次看到這個訣竅，是從 Barbara Minto《&lt;a href=&#34;https://www.books.com.tw/products/0010645634&#34;&gt;金字塔原理&lt;/a&gt;》書中學來的：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;先決定你想要利用圖表回答的問題，&lt;strong&gt;將答案當作標題&lt;/strong&gt;，然後選擇最適合的圖表格式來呈現該論點。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;務必確定圖表的標題直接表達它的內容&lt;/strong&gt;。標題可以是一個完整的句子，或是包含動詞的一句片語，這麼做讓你可以&lt;strong&gt;核對&lt;/strong&gt;圖表帶給觀眾的視覺印象是否符合你希望表達的內容。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;同樣出自麥肯錫人、同樣在談金字塔原理的另一本書《&lt;a href=&#34;https://www.books.com.tw/products/0010928450&#34;&gt;邏輯思考的技術&lt;/a&gt;》，第四章舉了一個具體例子：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:20em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2022/06/logic-example.jpg&#34; alt=&#34;Source: 《邏輯思考的技術》&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2022/06/logic-example.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Source: 《邏輯思考的技術》&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;這份圖表，只有把數據整理為樸素的時序表格及初級分類，但對讀者來說，如果未經解說，其實很難一眼看出作者為什麼要秀出這份表格：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;即使觀察相同的東西，由於觀察者有興趣或關心的事情不同，很可能會得出不同的 &amp;ldquo;so what?” 內容。&lt;/p&gt;
+&lt;p&gt;不要以為「只要看到圖，應該就一目瞭然了」，因為那樣會變成把 &amp;ldquo;so what?” 全權交由接收者解釋。不可以認為「看了就會懂」而放任不管，&lt;strong&gt;明確表示出「總之，從這裡我們可以看出什麼」&lt;/strong&gt;，是非常重要的。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;這份圖表，缺少明確的 &amp;ldquo;so what?&amp;rdquo; 線索，充其量只是落於「中焉者」層次。&lt;/p&gt;
+&lt;p&gt;因此，《&lt;a href=&#34;https://www.taaze.tw/products/11100687763.html&#34;&gt;麥肯錫新人培訓 7 堂課&lt;/a&gt;》的第七課，就明確提出以下這種「&lt;strong&gt;一張圖表、一個訊息&lt;/strong&gt;」範本供新人依循 &lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;，內容包括「一個經過徹底調查，將所有資料&lt;strong&gt;結晶化&lt;/strong&gt;後的訊息，以及一張簡單表示相關情報的圖表」：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2022/06/one-message.jpg&#34; alt=&#34;Source: 《麥肯錫新人培訓 7 堂課》&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2022/06/one-message.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Source: 《麥肯錫新人培訓 7 堂課》&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;事先逆向思考這張圖表想傳達的 &amp;ldquo;so what?&amp;rdquo; 關鍵訊息是什麼，然後明確揭露在大標題或小標題上。我發現，只要掌握這個小訣竅，就有助於引導自己接下來該朝什麼方向去加工錘鍊，好讓圖表能夠支持這段 &amp;ldquo;so what?&amp;rdquo; 關鍵訊息。&lt;/p&gt;
+&lt;h2 id=&#34;簡報大師的觀點&#34;&gt;簡報大師的觀點&lt;/h2&gt;
+&lt;p&gt;以上都是麥肯錫人的觀點。那麼，簡報大師，尤其是視覺簡報大師、敘事簡報大師的觀點呢？就請 Nancy Duarte 及 Brent Dykes 兩位大師現身說法吧。&lt;/p&gt;
+&lt;p&gt;Nancy Duarte 在《&lt;a href=&#34;https://www.books.com.tw/products/0010885500&#34;&gt;矽谷簡報女王用數據說出好故事&lt;/a&gt;》第六章，將圖表簡報頁面的標題再細分成「圖表標題」與「研究心得」兩部份，並主張：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;圖表標題要合乎&lt;strong&gt;事實&lt;/strong&gt;，保持&lt;strong&gt;中性&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;研究心得則是&lt;strong&gt;敘述&lt;/strong&gt;，從圖表中你得到的&lt;strong&gt;見解&lt;/strong&gt;，支持你如何看待數據呈現的&lt;strong&gt;問題&lt;/strong&gt;或&lt;strong&gt;機會&lt;/strong&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2022/06/datastory.jpg&#34; alt=&#34;Source: 《矽谷簡報女王用數據說出好故事》&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2022/06/datastory.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Source: 《矽谷簡報女王用數據說出好故事》&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Brent Dykes 在《&lt;a href=&#34;https://www.books.com.tw/products/0010920682&#34;&gt;資料故事時代&lt;/a&gt;》第八章，主張要善用「解釋性」的標題：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;我們常在圖表上寫&lt;strong&gt;描述性&lt;/strong&gt;的標題，而不是&lt;strong&gt;解釋性&lt;/strong&gt;的標題，因此浪費了那個寶貴的空間。&lt;/p&gt;
+&lt;p&gt;你用資料講述故事時，必須把握機會，利用標題來&lt;strong&gt;強調每個圖像的重點&lt;/strong&gt;。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2022/06/data-storytelling.jpg&#34; alt=&#34;Source: 《資料故事時代》&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2022/06/data-storytelling.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Source: 《資料故事時代》&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;看起來，兩位簡報大師的觀點，都與金字塔原理的 &amp;ldquo;so what?&amp;rdquo; 觀點相吻合。&lt;/p&gt;
+&lt;h2 id=&#34;資料中立性的觀點&#34;&gt;資料中立性的觀點？&lt;/h2&gt;
+&lt;p&gt;有些人可能認為，資料，就該是客觀中性的存在，應該讓樸素的統計圖表直出，讓數字自己跳出來說話，不該滲雜人為的誘導。&lt;/p&gt;
+&lt;p&gt;真的是這樣嗎？&lt;/p&gt;
+&lt;p&gt;資料固然不能造假，統計圖表也不能刻意施以歪曲事實的加工，但這不意味著我們就要棄守主觀詮釋的權力——這不是客觀理性，而是怠惰。&lt;/p&gt;
+&lt;p&gt;尤其是職場的會議簡報。&lt;/p&gt;
+&lt;p&gt;對於資料中立性議題，《&lt;a href=&#34;https://www.books.com.tw/products/0010792433&#34;&gt;２軸思考&lt;/a&gt;》說得好：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;工作上有大成就的人，其資料一定會加上自己的意見，或說偏見。製作資料時，一定要避免完全交由對方判斷而絲毫不滲入自己的意見。&lt;/p&gt;
+&lt;p&gt;相反地，當自己是資訊接受者，就必須冷靜判斷，避免被這樣的「偏見」迷惑。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:20em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2022/06/two-axes.jpg&#34; alt=&#34;Source: 《２軸思考》&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2022/06/two-axes.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Source: 《２軸思考》&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;這也不禁讓我聯想到洪震宇在《&lt;a href=&#34;https://www.books.com.tw/products/0010846006&#34;&gt;精準寫作&lt;/a&gt;》提出的「魚骨寫作法」觀點。雖然不是針對資料圖表，但中心思想一樣適用：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;我從學員的魚骨寫作練習發現，大家並不習慣這種&lt;strong&gt;逆向思考&lt;/strong&gt;的寫作方法。學員說，要想清楚再寫，是一大挑戰，因為&lt;strong&gt;沒有勇氣第一句就破題，總喜歡鋪陳迂迴。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;問題在於過去的寫作慣性：❶ 喜歡把重點、主題&lt;strong&gt;藏&lt;/strong&gt;在段落中，&lt;strong&gt;似乎怕人一眼看穿&lt;/strong&gt;。❷ 想法不聚焦，邊寫邊想、邊想邊寫；寫完後，沒有仔細消化想法，到底要呈現什麼主題？&lt;strong&gt;沒想法，就端不出魚頭句。&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;或許，端得出想法，有勇氣破題，不僅是寫作，同樣也是職場會議簡報該學的功課吧。&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;我講的不是 TED 或 keynote speech 那種簡報。忙碌的職場人士，並不需要時時刻刻追求加工到資訊圖表 (infographic) 等級，因此，我並不把「上焉者」標準設定到這個層次。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;當我還是職場新鮮人時，好像沒有人教過我要這麼做⋯⋯唉。&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description>
+      
     </item>
+    
     <item>
       <title>你曾經變成你自己最糟糕的一面嗎？</title>
       <link>//william-yeh.net/post/2017/10/experiencing-negotiation/</link>
       <pubDate>Tue, 03 Oct 2017 21:28:27 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2017/10/experiencing-negotiation/</guid>
-      <description>&lt;p&gt;湯姆・漢克與梅格・萊恩主演的《&lt;a href=&#34;https://www.imdb.com/title/tt0128853/&#34;&gt;電子情書&lt;/a&gt;》中，有一段台詞：&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Do you ever feel you&amp;rsquo;ve become the worst version of yourself? That a Pandora&amp;rsquo;s box of all the secret, hateful parts - your arrogance, your spite, your condescension - has sprung open? Someone upsets you and instead of smiling and moving on, you zing them. &amp;ldquo;Hello, it&amp;rsquo;s Mr Nasty.&amp;rdquo; I&amp;rsquo;m sure you have no idea what I&amp;rsquo;m talking about.&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;湯姆・漢克與梅格・萊恩主演的《&lt;a href=&#34;https://www.imdb.com/title/tt0128853/&#34;&gt;電子情書&lt;/a&gt;》中，有一段台詞：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Do you ever feel you&amp;rsquo;ve become the worst version of yourself? That a Pandora&amp;rsquo;s box of all the secret, hateful parts - your arrogance, your spite, your condescension - has sprung open? Someone upsets you and instead of smiling and moving on, you zing them. &amp;ldquo;Hello, it&amp;rsquo;s Mr Nasty.&amp;rdquo; I&amp;rsquo;m sure you have no idea what I&amp;rsquo;m talking about.&lt;/p&gt;
+&lt;p&gt;妳曾經變成妳自己最糟糕的一面嗎？那就是一個裝有所有的恨意、輕蔑跟降尊紆貴的潘朵拉盒子被打開。有人讓你感到不悅，但是你沒有選擇離開，反而用毒舌回敬。「哈囉，惡毒的人來了。」我相信妳一定不知道我在說什麼⋯⋯&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;高壓情境下，的確會做出異於平日的舉動。&lt;/p&gt;
+&lt;p&gt;在 Joe 的【&lt;a href=&#34;https://shop.darencademy.com/product/view/id/13&#34;&gt;302 專案的談判與協商&lt;/a&gt;】課堂上，我就這麼扎扎實實體驗到了。&lt;/p&gt;
+&lt;h2 id=&#34;案例&#34;&gt;案例&lt;/h2&gt;
+&lt;p&gt;我在最近〈&lt;a href=&#34;//william-yeh.net/post/2017/07/sprint-planning-as-negotiation/&#34;&gt;以談判角度看 Sprint Planning&lt;/a&gt;〉及〈&lt;a href=&#34;//william-yeh.net/post/2017/08/facilitator-mindset/&#34;&gt;引導者，要懂心理&lt;/a&gt;〉兩篇文章都提到自己的感觸：談判思維，對於專案及團隊引導是有幫助的。因此，我刻意不選擇一般類型的談判課，而是先挑針對&lt;strong&gt;專案情境&lt;/strong&gt;而設計的談判課。&lt;/p&gt;
+&lt;p&gt;專案情境？首選自然是 Joe &amp;amp; Bryan 金字招牌，沒有第二。&lt;/p&gt;
+&lt;p&gt;【&lt;a href=&#34;https://shop.darencademy.com/product/view/id/13&#34;&gt;302 專案的談判與協商&lt;/a&gt;】是一門體驗課程，三個案例，六種角色，從刀刀見血的分組攻防戰中，親自品嚐箇中酸甜苦辣。&lt;/p&gt;
+&lt;p&gt;三個案例，一個很和平的談成了，一個很激烈的破局了，一個稍帶激昂的談成了。&lt;/p&gt;
+&lt;p&gt;讓我反思最多的，是破局。&lt;/p&gt;
+&lt;h2 id=&#34;習慣&#34;&gt;習慣&lt;/h2&gt;
+&lt;p&gt;這個案例，儘管應該是我最熟悉的，但在高壓情境中，竟然渾然忘記平日的我，一定會為了促成事情發生而儘早揭露某些關鍵資訊；反而陷入一種被遊戲規則設計好的陷阱（尤其是績效指標），糾結，直到最後關頭才驚覺，但局面已經難以挽回，對方亦無台階可下，可算破局。&lt;/p&gt;
+&lt;p&gt;我忘了在這種情境中，自己的角色不重要，最重要的目標應該是＿＿＿＿。&lt;/p&gt;
+&lt;p&gt;在高壓情境下，在誤判 ZOPA 時，連自以為無比自然的「做事習慣」都會被無情解體了，那麼，這真的已經變成自己的「做事習慣」嗎？更遑論其他從書裡、文章裡、課程講義裡、老師口頭提示的，但尚未充分整合融會進來的觀念及技巧。&lt;/p&gt;
+&lt;p&gt;果然還需要常保反思警醒之心。&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:20em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2017/10/nego-course-worksheet.jpg&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2017/10/nego-course-worksheet.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;另一個有趣的案例，讓我在一個安全的實驗室放膽演一回，演一個我幾乎不曾公開展現過的特質。我很享受這個過程，也發現：適度使用，的確有效果。這也令我換位思考：下一回，當我在真實人生遇到這樣的對手，是否也能冷靜地看透 position 背後的 needs？&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;「要求」(position) 是假的，「需求」(needs) 才是真的。所謂談判，就是一場「發覺對方需求」的遊戲。 &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;    &amp;mdash; 《&lt;a href=&#34;https://www.eslite.com/product/1001124182577726&#34;&gt;價值談判&lt;/a&gt;》&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;選項&#34;&gt;選項&lt;/h2&gt;
+&lt;p&gt;在隊友的交叉掩護下，仍有餘裕的小空檔，我便刻意實驗一些從其他書上看過的技法。有些如預期般有效，有些則否。頓時體會到，那些技巧，既非沒用，亦非絕對有用，而是要審時度勢，拿捏出手輕重及順序。最需要的，不是死啃理論、案例、框架、SOP，而是要在拳拳到肉的體驗中，在安全的挫折中，打破慣性，得到體悟：永遠有其他意想不到的選項。&lt;/p&gt;
+&lt;p&gt;畢竟，正如 Joe 所說：「今天，我能坐在談判桌上，代表我仍然有優勢之處。」&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2017/10/nego-prepare.jpg&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2017/10/nego-prepare.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;視角&#34;&gt;視角&lt;/h2&gt;
+&lt;p&gt;上完課隔天，立刻發現，面對高壓情境，居然比以前更能泰然處之。甚至還能夠切換廣角鏡、標準鏡、望遠鏡，從較多面向去盤算該如何出牌，或是打 pass。&lt;/p&gt;
+&lt;p&gt;簡單的說，自己的出牌選項變多了。&lt;/p&gt;
+&lt;p&gt;很感謝 Joe 在喉嚨不適的情況下，仍然用心帶領這麼一場難忘的談判體驗。收穫的，不只是談判，不只是職場關係的優勢策略，更是對自我冰山的高強度體檢。&lt;/p&gt;
+&lt;p&gt;很值得的冒險！&lt;/p&gt;
+</description>
+      
     </item>
+    
     <item>
       <title>以談判角度看 Sprint Planning</title>
       <link>//william-yeh.net/post/2017/07/sprint-planning-as-negotiation/</link>
       <pubDate>Thu, 27 Jul 2017 12:18:03 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2017/07/sprint-planning-as-negotiation/</guid>
-      <description>&lt;p&gt;自從去年 Q3 個人的 &lt;a href=&#34;//william-yeh.net/post/2016/10/one-week-sprint/&#34;&gt;Scrum 首航&lt;/a&gt;開始，讓我壓力最大的，並不是主持 Retrospective，而是 Sprint Planning。上完 &lt;a href=&#34;//william-yeh.net/post/2017/03/cspo/&#34;&gt;CSPO 課程&lt;/a&gt;後，更是對高品質的 Sprint Planning 有著不一樣的願景。&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;自從去年 Q3 個人的 &lt;a href=&#34;//william-yeh.net/post/2016/10/one-week-sprint/&#34;&gt;Scrum 首航&lt;/a&gt;開始，讓我壓力最大的，並不是主持 Retrospective，而是 Sprint Planning。上完 &lt;a href=&#34;//william-yeh.net/post/2017/03/cspo/&#34;&gt;CSPO 課程&lt;/a&gt;後，更是對高品質的 Sprint Planning 有著不一樣的願景。&lt;/p&gt;
+&lt;p&gt;研發團隊需要再教育，PO 又何嘗不是呢？&lt;/p&gt;
+&lt;p&gt;只是，不同的 PO 有不同的團隊領導風格，大多數個性鮮明的 PO 也不是那麼容易被改變。這就有待 Scrum Master 善用軟技巧去適時引導。&lt;/p&gt;
+&lt;p&gt;其中，最立竿見影直接見效的，就是會議引導技術。&lt;/p&gt;
+&lt;p&gt;最近在公司內部，受同事之邀，一連主持了幾場【&lt;a href=&#34;//william-yeh.net/post/2017/08/facilitator-mindset/#引導者讀書會&#34;&gt;引導者讀書會&lt;/a&gt;】，每次一小時。一邊帶，一邊也趁機系統化沈澱反思自己一路以來的土法煉鋼心得。&lt;/p&gt;
+&lt;h2 id=&#34;談判&#34;&gt;談判？&lt;/h2&gt;
+&lt;p&gt;在反思、設計、取材的過程中，偶然發現，《&lt;a href=&#34;https://www.eslite.com/product/1001124182577726&#34;&gt;價值談判&lt;/a&gt;》這本有趣的小書，還滿適合想要改善 Sprint Planning 的人讀讀。&lt;/p&gt;
+&lt;p&gt;尤其是 PO 及 Scrum Master。&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:10em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2017/07/value-nego.jpg&#34; alt=&#34;《價值談判》&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2017/07/value-nego.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;《價值談判》&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;雖然我不太想把 Sprint Planning 直接定位成一種「談判」，尤其是涉及「權力」的談判；但不可否認的，Sprint Planning 過程中，本來就有很多談判的元素在裡面。&lt;/p&gt;
+&lt;p&gt;工具是中性的，看你怎麼運用。&lt;/p&gt;
+&lt;p&gt;既然連「一談就贏」談判名師／明師都&lt;a href=&#34;https://negotowin.blogspot.tw/2017/05/blog-post_12.html&#34;&gt;認可&lt;/a&gt;這本書，我相信單以「談判」角度來說，這本書是可信的。那麼，下一個問題就是，這本書真的適合給 Sprint Planning 參考嗎？&lt;/p&gt;
+&lt;p&gt;且讓我摘錄幾段吧！&lt;/p&gt;
+&lt;h2 id=&#34;錨定效應&#34;&gt;錨定效應&lt;/h2&gt;
+&lt;p&gt;我常引用《&lt;a href=&#34;https://www.books.com.tw/products/0010921383&#34;&gt;執行力的修練&lt;/a&gt;》的四大紀律框架來指導敏捷開發活動。其中，紀律一「鎖定極重要目標」也正是 Sprint Planning 的起手式。&lt;/p&gt;
+&lt;p&gt;《價值談判》也有許多與此類似的論述：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;「&lt;strong&gt;要求&lt;/strong&gt;」(&lt;strong&gt;position&lt;/strong&gt;) 是假的，「&lt;strong&gt;需求&lt;/strong&gt;」(&lt;strong&gt;needs&lt;/strong&gt;) 才是真的。&lt;/p&gt;
+&lt;p&gt;所謂談判，就是一場「&lt;strong&gt;發覺對方需求&lt;/strong&gt;」的遊戲。如果你是以「我能得到什麼」為思考的出發點，這場談判絕對很難成功；記得要先從「我和對方認為的重要價值是什麼」、「如何滿足這些價值」開始思考，談判品質會在彼此專注於「價值」時得到提升。&lt;/p&gt;
+&lt;p&gt;所謂談判，最終只是一場「認知鬥爭」，先將對方的認知拉到對我自己有利的標準點上，再來開始談判。善用錨定效應。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;所以，只要是我有權主導的 Sprint Planning，都會先花些時間請 PO 重新展開 &lt;a href=&#34;https://www.impactmapping.org/&#34;&gt;Impact Mapping&lt;/a&gt; 及 &lt;a href=&#34;https://www.taaze.tw/products/11100816208.html&#34;&gt;&lt;em&gt;Scaling Lean&lt;/em&gt;&lt;/a&gt; 的內容，尤其是還沒有穩定扎實 Product Backlog Refinement 的團隊。&lt;/p&gt;
+&lt;h2 id=&#34;什麼才是贏&#34;&gt;什麼才是「贏」？&lt;/h2&gt;
+&lt;p&gt;如果沒有妥善經營共識，Sprint Planning 往往淪為 PO vs 團隊之間的拉鋸戰。一方認為「加功能」才是贏，另一方認為「清技術債」才是贏，彼此據理力爭；但殘酷的現實是，最後主導權往往都落在有職位權的那一方。&lt;/p&gt;
+&lt;p&gt;這是真的「贏」嗎？&lt;/p&gt;
+&lt;p&gt;《價值談判》是這麼說的：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;世上所有談判，大致可分為兩類，一種是以&lt;strong&gt;關係&lt;/strong&gt;為中心，另一種則是以&lt;strong&gt;利益&lt;/strong&gt;為中心。真正卓越的談判家，是能夠將原本以利益為中心的談判對象，轉換成以關係為中心。&lt;/p&gt;
+&lt;p&gt;回想你目前的談判對象，未來是否還需要碰面往來？如果需要，你們之間就會以關係為中心進行談判，在這樣的談判中，比起短期經濟利益，信任和評價等這種會有長久影響的價值更為重要。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;如果要以「關係」為中心，就不能草率了事，要花心思：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;各位認為社內協商容易或社外協商容易呢？&lt;/p&gt;
+&lt;p&gt;大部分人會認為社內協商比較困難，為什麼？我想應該是因為&lt;strong&gt;錯誤的信任&lt;/strong&gt;所導致，像是「你應該知道我在想什麼」的氛圍。因此社內員工只會越來越用「無理要求」來強迫對方接受，而不再用邏輯與根據來說服對方。&lt;/p&gt;
+&lt;p&gt;為了能有效談判，記得要拋下「你應該知道我在想什麼」這種毫無根據的錯誤信任，並以&lt;strong&gt;邏輯&lt;/strong&gt;與&lt;strong&gt;根據&lt;/strong&gt;填補空缺才行。&lt;/p&gt;
+&lt;p&gt;卓越的談判家，會在讓步時提出充分的邏輯與根據，好讓對方覺得這份讓步是有價值的。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;這些，都是慣常 command-and-control 的老派 PO 必須調整的，也是 Scrum Master 必須適時引導的。&lt;/p&gt;
+&lt;h2 id=&#34;雙人舞&#34;&gt;雙人舞&lt;/h2&gt;
+&lt;p&gt;其實，好的 Sprint Planning，不只是 PO 的責任，團隊成員也是。團隊成員不只是接案，也在提案，所以，也需要學習（或被引導）正確的協商方法。&lt;/p&gt;
+&lt;p&gt;畢竟，正如《價值談判》所說，「談判就像在跳雙人舞」：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;談判，其實就是一種表達方式、一套邏輯，不論要談什麼內容，營造能使對方開口的氛圍很重要。&lt;/p&gt;
+&lt;p&gt;在談判桌上，不要因為對方沒有採納我的提案而感到失望或憤怒，卓越的談判家只會投注更多心力在如何讓自己的提案更出色。&lt;/p&gt;
+&lt;p&gt;如果雙方都是談判專家，彼此能夠交換的條件就會越多，等於是更容易創造出創意對策。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;結構先行&#34;&gt;結構先行&lt;/h2&gt;
+&lt;p&gt;回到本文開頭的起心動念。&lt;/p&gt;
+&lt;p&gt;最近在公司內部，受同事之邀，一連主持了幾場【&lt;a href=&#34;//william-yeh.net/post/2017/08/facilitator-mindset/#引導者讀書會&#34;&gt;引導者讀書會&lt;/a&gt;】，每次一小時。一邊帶，一邊也趁機系統化沈澱反思自己一路以來的土法煉鋼心得。&lt;/p&gt;
+&lt;p&gt;突然有個感觸：好像應該開始總結這十個月以來，穿梭數個團隊帶領 Sprint Planning 的所見所聞，以 &lt;em&gt;&lt;a href=&#34;https://williampjyeh.notion.site/bab7091e6f5c42d59797fdb1bfd5422f&#34;&gt;Facilitator&amp;rsquo;s Guide to Participatory Decision-Making&lt;/a&gt;&lt;/em&gt; 書中提到的鑽石模型 (diamond model) 及串組式流程設計 (string) 加以精鍊。&lt;/p&gt;
+&lt;p&gt;我想用結構化的 Sprint Planning 流程，讓錨定效應、以關係為中心、目的型談判自然發生，讓參與其中的人，逐漸在刻意不遮掩的建設性衝突中，潛移默化。&lt;/p&gt;
+&lt;p&gt;不過，我這種流程設計，對於資淺 PO 來說，應該是備感壓力吧。呵呵。畢竟，這高度考驗著說故事能力 (story telling) 及參與式決策的開放心態 (participatory decision-making)。可是，少了這些，怎能算是合格的廿一世紀 PO 呢？&lt;/p&gt;
+&lt;p&gt;我們家的 CEO 接受這樣的挑戰了，那麼，你呢？&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2017/07/planning-20170710.jpg&#34; alt=&#34;Sprint Planning&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2017/07/planning-20170710.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Sprint Planning&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+</description>
+      
     </item>
+    
     <item>
       <title>轉大人，Part 2</title>
       <link>//william-yeh.net/post/2016/06/upgrade-adult-thinking-part2/</link>
       <pubDate>Sat, 04 Jun 2016 09:54:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2016/06/upgrade-adult-thinking-part2/</guid>
-      <description>&lt;p&gt;在我所處的軟體研發圈，最近也流行起「&lt;a href=&#34;http://www.gigihuang.com/2016/05/22/agile_meetup_show_dont_tell/&#34;&gt;18+ Adult Manifesto&lt;/a&gt;」這種話題。&lt;/p&gt;&#xA;&lt;p&gt;這就不得不佩服 J&amp;amp;B 取的「大人學」品牌名字，是多麼具有遠見。&lt;/p&gt;&#xA;&#xA;&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;&#xA;&lt;div class=&#34;box&#34;&gt;&#xA;&lt;figure  itemprop=&#34;associatedMedia&#34;&#xA;  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; &#xA;  style=&#34;max-width:30em&#34; &gt;&#xA;    &lt;div class=&#34;img&#34;&gt;&#xA;      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/06/child-vs-adult.jpg&#34; alt=&#34;小孩 vs 大人&#34;/&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;a href=&#34;//william-yeh.net/img/2016/06/child-vs-adult.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;&#xA;      &lt;figcaption&gt;&#xA;          &lt;p&gt;小孩 vs 大人&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;在我所處的軟體研發圈，最近也流行起「&lt;a href=&#34;http://www.gigihuang.com/2016/05/22/agile_meetup_show_dont_tell/&#34;&gt;18+ Adult Manifesto&lt;/a&gt;」這種話題。&lt;/p&gt;
+&lt;p&gt;這就不得不佩服 J&amp;amp;B 取的「大人學」品牌名字，是多麼具有遠見。&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/06/child-vs-adult.jpg&#34; alt=&#34;小孩 vs 大人&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2016/06/child-vs-adult.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;小孩 vs 大人&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;自從九個月前參加【&lt;a href=&#34;https://shop.darencademy.com/product/view/id/28&#34;&gt;A101 職場大人學：職場人際關係與優勢策略&lt;/a&gt;】之後，不僅在 Facebook 私密社團繼續交流，我們同梯更舉辦自發性聚會，定期交換彼此的職場及閱讀心得。算是重要的&lt;strong&gt;族人&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;這陣子，旁觀別人形形色色的遭遇，不禁深自慶幸：用 14 PDU 換來 Bryan 積蓄 15 年的內功，何等划算！雖不敢說從此就無風無浪，但至少開了眼、醒了腦，懂得用更系統化、更跳離本位的角度來審視事情／世情，從那張表格的「苦主」晉升到⋯⋯自認進入前三個等級了（雖然偶爾還是會退化到第四等級⋯⋯）。&lt;/p&gt;
+&lt;p&gt;箇中關鍵，真的就像 Bryan 反覆叮嚀的那「xx力」三字訣。&lt;/p&gt;
+&lt;h2 id=&#34;內化&#34;&gt;內化&lt;/h2&gt;
+&lt;p&gt;對老師最大的回饋，就是確實將老師所傳授的東西，反覆演練、運用，從思考及實踐中，努力內化成本能反應。&lt;/p&gt;
+&lt;p&gt;如何確認自己內化的程度呢？&lt;/p&gt;
+&lt;p&gt;這門課有學長姐回訓機制。回鍋再當一次學生，再度面對寫實案例，看看自己是否比第一次上課時更有身為「大人」的自覺，更能在所謂「關鍵四秒」中，迅速勾勒「局」與「勢」的關係，不啻是一場刺激的實境挑戰。&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/06/a101-handouts.jpg&#34; alt=&#34;回訓&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2016/06/a101-handouts.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;回訓&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;我還偷偷給自己設限。&lt;/p&gt;
+&lt;p&gt;老子曰：「五色令人目盲，五音令人耳聾。」&lt;/p&gt;
+&lt;p&gt;因此，最近在思考問題、演講授課時，越來越喜歡從原始定義或目標下手。我認為，原理通了，邏輯通了，再加一點點創意及想像力，很多東西都是順理成章就推導得出來。&lt;/p&gt;
+&lt;p&gt;於是，我想給自己一個挑戰：在回訓課堂上，要先自我歸零，就當自己是第一次來上課的學生；要自我克制，不要直接偷拿 Bryan 以前開釋過的大絕招來應付考古題。&lt;/p&gt;
+&lt;p&gt;重點是思維角度，不是招數。&lt;/p&gt;
+&lt;p&gt;結果呢？&lt;/p&gt;
+&lt;p&gt;回訓，仍然感受到強烈的衝擊，仍然是點頭如搗蒜（所以，Bryan 的 15 年功力，真是超強！再聽一次，仍然收穫滿滿）。&lt;/p&gt;
+&lt;p&gt;也很欣慰，原來自己已經不知不覺內化了某些部分。我沒有辜負去年在〈&lt;a href=&#34;//william-yeh.net/post/2015/09/upgrade-adult-thinking/&#34;&gt;升級成大人版的思維作業系統&lt;/a&gt;〉做的自我期許。&lt;/p&gt;
+&lt;h2 id=&#34;訴求-vs-需求-vs-目標&#34;&gt;訴求 vs 需求 vs 目標&lt;/h2&gt;
+&lt;p&gt;回訓，不是乖乖聽課就好，還要協助&lt;del&gt;小鮮肉&lt;/del&gt;學弟妹進行小組討論。面對組員，就像面對去年的自己，有趣之餘，也附帶了些引導（但不過度介入）的責任。&lt;/p&gt;
+&lt;p&gt;為了因應可能被組員提出的問題，也為了自我成長，我也挑選想再深度探索的主題：&lt;a href=&#34;https://en.wikipedia.org/wiki/Evaporating_Cloud&#34;&gt;衝突圖&lt;/a&gt;，在課前先自我延伸學習。&lt;/p&gt;
+&lt;p&gt;不過，在&lt;a href=&#34;https://en.wikipedia.org/wiki/Eliyahu_M._Goldratt&#34;&gt;高德拉特&lt;/a&gt;的 &lt;a href=&#34;https://en.wikipedia.org/wiki/Theory_of_constraints&#34;&gt;TOC (Theory of Constraints)&lt;/a&gt; 發展史中，&lt;a href=&#34;https://en.wikipedia.org/wiki/Evaporating_Cloud&#34;&gt;衝突圖&lt;/a&gt;其實是隸屬於更大的 &lt;a href=&#34;https://en.wikipedia.org/wiki/Thinking_processes_%5C%28theory_of_constraints%5C%29&#34;&gt;Thinking Process&lt;/a&gt; 當中的一環。為了更充分掌握這項思考方式，便將書架上擺了超過十年的高德拉特系列書籍：《目標》、《絕不是靠運氣》、《關鍵鏈》拿出來重讀一次，順便也讀一讀岸良裕司的兩本詮釋書籍。&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/06/cloud-books.jpg&#34; alt=&#34;岸良裕司的書&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2016/06/cloud-books.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;岸良裕司的書&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;學了 TOC 的 Thinking Process 之後，不知不覺很喜歡思辨幾個層次的區別：「想要 vs 需要」、「訴求 vs 需求 vs 目標」。這也逐漸內化成我的思考工具。&lt;/p&gt;
+&lt;p&gt;在此也要非常感謝 Bryan 在這門課指導的 TOC 衝突圖，算是我聽過最簡潔、最生動的詮釋。這次回頭再看那堆書，就懊惱：怎麼自己當年讀不出味道呢？&lt;/p&gt;
+&lt;p&gt;好的引導，真的很重要。聽君一席話，勝讀十年書！&lt;/p&gt;
+&lt;h2 id=&#34;集點卡&#34;&gt;集點卡&lt;/h2&gt;
+&lt;p&gt;這次回訓，某些地方給了我另一個層次的衝擊。「集點卡」是其中之一。&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/06/loyalty-card.jpg&#34; alt=&#34;Bryan 集點卡&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2016/06/loyalty-card.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Bryan 集點卡&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;看了這張集點卡，我相信 Bryan 所說的「我從 15 年前就在準備這門課了！」真實不虛。&lt;/p&gt;
+&lt;p&gt;每當面臨職涯抉擇時，多少人腦海中，有這麼一張清晰的集點卡呢？&lt;/p&gt;
+&lt;p&gt;這是很值得嚴肅面對的問題。&lt;/p&gt;
+&lt;p&gt;去年上了這門課之後，我的確開始逐漸自我裝備，但不夠清晰。這次回訓，再度看到這張圖，也再度點燃集點的熱誠。&lt;/p&gt;
+&lt;h2 id=&#34;做自己&#34;&gt;做自己&lt;/h2&gt;
+&lt;p&gt;即使是同一位老師講同一門課，但只要學生組成不同，就會有不同的氣場及火花。&lt;/p&gt;
+&lt;p&gt;這次回訓，有幾位同學針對「做自己」這一點，展開一連串的熱烈提問。&lt;/p&gt;
+&lt;p&gt;現場激起的火花，真的很過癮！連 Bryan 都有感而發，隔天就寫出了〈&lt;a href=&#34;https://www.darencademy.com/article/view/id/16421&#34;&gt;所謂做自己，就是用自己的意志扮演自己想要的角色&lt;/a&gt;〉這篇文章。&lt;/p&gt;
+&lt;p&gt;某些觀念，如果是不約而同被我私淑對象提到，那就一定值得我認真對待。&lt;/p&gt;
+&lt;p&gt;其一，Bryan 課堂闡述的職場人際基礎：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/06/job-view.jpg&#34; alt=&#34;關於職場這個局&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2016/06/job-view.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;關於職場這個局&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;其二，阿德勒的「課題分離」原則。&lt;/p&gt;
+&lt;p&gt;或許是這陣子被不同種族的&lt;strong&gt;族人&lt;/strong&gt;間接推坑（像&lt;a href=&#34;https://i-chentsai.innovarad.tw/2015/05/alfred_adler.html&#34;&gt;這位&lt;/a&gt;及&lt;a href=&#34;http://teddy-chen-tw.blogspot.com/2015/07/blog-post_30.html&#34;&gt;這位&lt;/a&gt;），讀了《&lt;a href=&#34;http://i-chentsai.innovarad.tw/2015/05/alfred_adler.html&#34;&gt;被討厭的勇氣&lt;/a&gt;》，知道適度的「課題分離」是件好事，所以，腦袋中已經埋下這些種子：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;我們必須站在「這是誰的課題？」的觀點，將自己和他人的課題切割開來。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;所有人際關係中的紛爭，差不多都是因為一腳踩進人家的課題裡，或是自己的課題遭到干涉所引起的。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;要區分是誰的課題，方法很簡單，請想一想「因為這個決定而帶來的結果，最後會由誰來承受」？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;別人不是為了滿足你的期望而活。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;關於自己的人生，你所能做的只有「選擇一條自認為最好的路」。別人要對你的選擇做出什麼樣的評論，這是別人的課題，你是無法干預的。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如果你無法不在意他人的評價、無法不害怕被人討厭，也不想付出可能得不到認同的代價，就無法貫徹自己的生活方式。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;其三，高德拉特的「清晰思考」觀點：&lt;/p&gt;
+&lt;p&gt;
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/06/toc-thinking-1.jpg&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2016/06/toc-thinking-1.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/06/toc-thinking-2.jpg&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2016/06/toc-thinking-2.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;p&gt;從【A101職場大人學】課程，到《被討厭的勇氣》書籍，再到高德拉特 TOC 系列，覺得腦袋整個被翻轉。&lt;/p&gt;
+&lt;p&gt;誠如上面《抉擇》導讀文章所說：這是一段「不斷探索、實踐和學習」的道路。&lt;/p&gt;
+&lt;p&gt;大人之路，就是一段華麗的冒險呀！&lt;/p&gt;
+&lt;h2 id=&#34;觸類旁通的新眼光&#34;&gt;觸類旁通的新眼光&lt;/h2&gt;
+&lt;p&gt;最近，為了準備幾場專題演講，我開始重讀《&lt;a href=&#34;http://www.amazon.com/dp/0988262592/ref=cm_sw_r_tw_dp_a4p3wb0PSYY97&#34;&gt;鳳凰專案&lt;/a&gt;》這本 IT 界 DevOps 的經典小說（關於這本小說，請見我在〈&lt;a href=&#34;//william-yeh.net/post/2016/03/origin-of-devops-elements/&#34;&gt;DevOps 核心元素的考古溯源&lt;/a&gt;〉及〈&lt;a href=&#34;//william-yeh.net/post/2016/05/devops-a-lean-perspective/&#34;&gt;有了 Agile，為什麼還要有 DevOps？&lt;/a&gt;〉的介紹）。&lt;/p&gt;
+&lt;p&gt;許多 IT 人，都是用工具主義的角度，求仙丹，求銀彈，想趕快翻到特效藥的章節；誰叫這本書故事內容，就是在宣傳「三個月就能將瀕危專案起死回生」的「一個 IT 運維的傳奇故事」呢？（其實《目標》及《絕不是靠運氣》兩本書的主角羅哥，不也是在短短三個月內就創下奇蹟嗎？）&lt;/p&gt;
+&lt;p&gt;可是，這類小說，就像推理小說一樣，本來就不應該直接翻到兇手揭曉的那一頁呀。&lt;/p&gt;
+&lt;p&gt;對於這陣子已經把《目標》、《絕不是靠運氣》、《關鍵鏈》重看一次的我，再回頭重看《鳳凰專案》，開始萌生另一種閱讀角度。&lt;/p&gt;
+&lt;p&gt;人性的角度。&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/06/surf.jpg&#34; alt=&#34;衝浪者的哲學&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2016/06/surf.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;衝浪者的哲學&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;這次回訓，一席「衝浪者的哲學」，感覺好像把《鳳凰專案》裡面的許多情境，找到對應的鑰匙。許多推理過程，也隨之清晰起來。&lt;/p&gt;
+&lt;p&gt;有夠神奇的。&lt;/p&gt;
+&lt;p&gt;可見，有些東西，真的是跨產業的。尤其是人性。&lt;/p&gt;
+&lt;p&gt;現在重讀《鳳凰專案》時，私底下也在替每一章取個&lt;a href=&#34;//william-yeh.net/post/2016/06/phoenix-proj-titles/&#34;&gt;私房標題&lt;/a&gt;。接下來，會再加把勁兒，自我要求：練習用 Bryan 課堂上教的分析手法，重新分析箇中情節。&lt;/p&gt;
+&lt;p&gt;有一本書叫做《&lt;a href=&#34;https://shop.campus.org.tw/ProductDetails.aspx?ProductID=000401708&#34;&gt;聖經好好吃&lt;/a&gt;》，我這種做法，也算是另一種「大人學角度」的「鳳凰專案好好吃」嗎？&lt;/p&gt;
+&lt;h2 id=&#34;以終為始&#34;&gt;以終為始&lt;/h2&gt;
+&lt;p&gt;上完兩次課，不知不覺會變得雞婆起來，遇到親朋好友的狀況，就會推坑這門課。&lt;/p&gt;
+&lt;p&gt;不過，誠如 Joe 在〈&lt;a href=&#34;https://www.darencademy.com/article/view/id/15791&#34;&gt;為何我們很難改變周圍那些愛抱怨的朋友？&lt;/a&gt;〉及〈&lt;a href=&#34;https://www.darencademy.com/article/view/id/16420&#34;&gt;怎麼才能有效安撫找你抱怨的朋友？&lt;/a&gt;〉兩篇文章的善意提醒：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;時常抱怨的人，其實抱怨的目的往往已經不是為了找到解答，而是某種隱含的自豪與炫耀。 而悲慘的境界，則是他自豪的理由！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;當你有朋友不斷來找你抱怨時，如果你很確定他壓根沒打算要跨出安適圈、沒打算做些自我根本上的改變，那你能帶給他最好的幫助，就是給他一個更慘的故事。 讓他們有種「原來我的人生還好」的感覺，進而會因此感覺舒坦。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;許多困境，不是訴諸簡單的自我轉念，就能解決的。這需要看懂局，也認清自己要的到底是什麼；這些都是需要高度理性的運作。&lt;/p&gt;
+&lt;p&gt;自我轉念，很多人都這麼說、也這麼建議他人；可是，往往只是淪為自我催眠。最後，還是走回新亭對泣的迴圈。&lt;/p&gt;
+&lt;p&gt;改變，是有方法的；但首先要先自問：自己真的想改變嗎？&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/06/career-goals.jpg&#34; alt=&#34;三大目的&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2016/06/career-goals.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;三大目的&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;相隔九個月，課堂一開始的「三大目的」便利貼，居然沒有變化。&lt;/p&gt;
+&lt;p&gt;我相信，這應該就是我想要的。&lt;/p&gt;
+&lt;p&gt;以終為始，莫忘初衷。&lt;/p&gt;
+</description>
+      
     </item>
+    
     <item>
       <title>升級成大人版的思維作業系統</title>
       <link>//william-yeh.net/post/2015/09/upgrade-adult-thinking/</link>
       <pubDate>Tue, 15 Sep 2015 23:02:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2015/09/upgrade-adult-thinking/</guid>
-      <description>&lt;p&gt;兩個週末【&lt;a href=&#34;https://shop.darencademy.com/product/view/id/28&#34;&gt;A101 職場人際關係與優勢策略工作坊&lt;/a&gt;】，一枚價值 14 PDU 的結業證書。雖然對沒有 PMP 證照企圖的我來說，帳面數字沒什麼用處；但獲得的，絕對遠遠超過這 14 PDU。&lt;/p&gt;&#xA;&lt;p&gt;用 14 PDU 換來 Bryan 積蓄 15 年的內功，還有什麼更划算的事情呢？&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;兩個週末【&lt;a href=&#34;https://shop.darencademy.com/product/view/id/28&#34;&gt;A101 職場人際關係與優勢策略工作坊&lt;/a&gt;】，一枚價值 14 PDU 的結業證書。雖然對沒有 PMP 證照企圖的我來說，帳面數字沒什麼用處；但獲得的，絕對遠遠超過這 14 PDU。&lt;/p&gt;
+&lt;p&gt;用 14 PDU 換來 Bryan 積蓄 15 年的內功，還有什麼更划算的事情呢？&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2015/09/a101-certificate.jpg&#34; alt=&#34;A101 講義與結業證書&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2015/09/a101-certificate.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;A101 講義與結業證書&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;上課也會上癮&#34;&gt;上課也會上癮&lt;/h2&gt;
+&lt;p&gt;繼六月底【&lt;a href=&#34;https://shop.darencademy.com/product/view/id/57&#34;&gt;大人學講座 03：尋找天賦與熱情的系統化做法&lt;/a&gt;】之後，這是我第二次上姚詩豪 (Bryan) 的【&lt;a href=&#34;https://shop.darencademy.com/&#34;&gt;大人學&lt;/a&gt;】系列。&lt;/p&gt;
+&lt;p&gt;Bryan 的演講或課程，承襲老本行「專案管理」的理性風格，就算主題再軟性，也一直都有「系統化做法」這五字訣。敢喊出「系統化做法」，就知道這不是洗腦催眠精神勝利喊話的&lt;del&gt;愚民&lt;/del&gt;激勵路線，而是不打高空、硬碰硬的真功夫。&lt;/p&gt;
+&lt;h2 id=&#34;案例如人生倒帶&#34;&gt;案例如人生倒帶&lt;/h2&gt;
+&lt;p&gt;課堂上，拿「人際網路圖」、「同理心地圖」、「TOC 衝突圖」這些硬底子的分析工具，運用在六個真實的職場情境上。與小組討論，聽老師闡釋，突然覺得以前被整得很慘的 PMP 模擬題，尤其是「利害關係人管理」，背後其實都真的有意義，也慶幸以前沒有白費精力搞那些東西。&lt;/p&gt;
+&lt;p&gt;謝謝 Bryan 這麼精彩且血淋淋的真實案例，讓我回想起當年誤入(?)某單位，欠缺大機構人際溝通敏感度的自己，被推上火坑，被當做兩陣營派系惡鬥的炮灰，做填充工作，還自以為是做核心任務。真是「苦主」無誤呀！&lt;/p&gt;
+&lt;p&gt;如果能夠重來一次，這次，我應該會做得更圓融。&lt;/p&gt;
+&lt;h2 id=&#34;局與勢&#34;&gt;局與勢&lt;/h2&gt;
+&lt;p&gt;案例有特定時空背景，分析工具也是現實狀況的簡化，兩者都有局限；重點是，要藉此培養出對於「局」與「勢」的判斷力。&lt;/p&gt;
+&lt;p&gt;從『&lt;a href=&#34;https://www.darencademy.com/article/view/id/16127&#34;&gt;搞懂「考試」這個「局」&lt;/a&gt;』開始，「局」就如影隨行。不認識「局」，並不代表不存在；刻意忽略「局」，也不代表自己就能灑脫地「跳出三界外，不在五行中」。&lt;/p&gt;
+&lt;p&gt;Bryan 箴言：「只會抱怨『鬼島』的人，是對『自己無能』的一種吶喊。」&lt;/p&gt;
+&lt;p&gt;課堂上每聽到局與勢這兩個字，總不禁聯想到劉必榮、嚴定暹、劉墉等人的著作。我想，藉由 Bryan 所教的這些系統化做法，再回頭看那些更險惡詭譎的事，應該更能體會「局」與「勢」的奧妙。&lt;/p&gt;
+&lt;h2 id=&#34;後遺症&#34;&gt;後遺症&lt;/h2&gt;
+&lt;p&gt;上了一些補血課，後遺症是，自己好像撐破乾坤一氣袋的張無忌，「只覺體內真氣流轉，似乎積蓄著無窮無盡的力氣，可是偏偏使不出來，就似滿江洪水給一條長堤攔住了，無法宣洩。」&lt;/p&gt;
+&lt;p&gt;我需要小昭幫我秀出羊皮上的乾坤大挪移心法⋯⋯&lt;/p&gt;
+
+
+&lt;div class=&#34;notice notice--note&#34;&gt;
+  &lt;div class=&#34;notice__title&#34;&gt;
+    
+      續集
+    
+  &lt;/div&gt;
+  &lt;div class=&#34;notice__content&#34;&gt;&lt;p&gt;▷ 九個月後的回訓心得：【&lt;a href=&#34;//william-yeh.net/post/2016/06/upgrade-adult-thinking-part2/&#34;&gt;轉大人，Part 2&lt;/a&gt;】&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+      
     </item>
+    
   </channel>
 </rss>

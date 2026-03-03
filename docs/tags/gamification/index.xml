@@ -4,23 +4,307 @@
     <title>Gamification on Potioneer&#39;s Essays</title>
     <link>//william-yeh.net/tags/gamification/</link>
     <description>Recent content in Gamification on Potioneer&#39;s Essays</description>
-    <generator>Hugo</generator>
+    <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <lastBuildDate>Thu, 26 Apr 2018 11:36:45 +0800</lastBuildDate>
-    <atom:link href="//william-yeh.net/tags/gamification/index.xml" rel="self" type="application/rss+xml" />
+    
+        <atom:link href="//william-yeh.net/tags/gamification/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>三週生出一款新桌遊，一段奇幻旅程</title>
       <link>//william-yeh.net/post/2018/04/board-game-creation/</link>
       <pubDate>Thu, 26 Apr 2018 11:36:45 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2018/04/board-game-creation/</guid>
-      <description>&lt;p&gt;這款新桌遊，從四週前動念，歷經一次小實驗，一次高裝檢，到前天第一次對外正式啟用，現在總算可以慢慢寫它的誕生歷程了。&lt;/p&gt;&#xA;&lt;h2 id=&#34;對模擬遊戲的四大疑惑&#34;&gt;對模擬遊戲的四大疑惑&lt;/h2&gt;&#xA;&lt;p&gt;學生時代從《&lt;a href=&#34;https://www.books.com.tw/products/0010832070&#34;&gt;第五項修練&lt;/a&gt;》讀到&lt;a href=&#34;https://en.wikipedia.org/wiki/Beer_distribution_game&#34;&gt;啤酒遊戲 (Beer Game)&lt;/a&gt;，就對規則簡單但意義深遠的模擬遊戲，心嚮往之。&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;這款新桌遊，從四週前動念，歷經一次小實驗，一次高裝檢，到前天第一次對外正式啟用，現在總算可以慢慢寫它的誕生歷程了。&lt;/p&gt;
+&lt;h2 id=&#34;對模擬遊戲的四大疑惑&#34;&gt;對模擬遊戲的四大疑惑&lt;/h2&gt;
+&lt;p&gt;學生時代從《&lt;a href=&#34;https://www.books.com.tw/products/0010832070&#34;&gt;第五項修練&lt;/a&gt;》讀到&lt;a href=&#34;https://en.wikipedia.org/wiki/Beer_distribution_game&#34;&gt;啤酒遊戲 (Beer Game)&lt;/a&gt;，就對規則簡單但意義深遠的模擬遊戲，心嚮往之。&lt;/p&gt;
+&lt;p&gt;但直到近幾年，才真正有機會親炙它們。&lt;/p&gt;
+&lt;p&gt;我在【&lt;a href=&#34;http://www.toc-cga.org/learning_activity_one_tc.aspx?laid=20160616104116&#34;&gt;TOC企業變革之路・體驗工作坊&lt;/a&gt;】玩了啤酒遊戲、在 &lt;a href=&#34;https://www.accupass.com/event/1608300930162091222458&#34;&gt;Agile Tour Hsinchu 2016&lt;/a&gt; 玩了 &lt;a href=&#34;https://agilebistro.com/getkanban/&#34;&gt;getKanban&lt;/a&gt;、在 &lt;a href=&#34;//william-yeh.net/post/2017/03/cspo/&#34;&gt;CSPO 課堂&lt;/a&gt;玩了 &lt;a href=&#34;https://www.agilebelgium.be/businessvaluegame/&#34;&gt;Business Value Game&lt;/a&gt;，儘管各有收穫，但心中卻也一直有個疑惑：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;啤酒遊戲、getKanban、Business Value Game，為了教育意義，好像牌卡順序都是事先設計好的？&lt;/p&gt;
+&lt;p&gt;      &amp;mdash; Quote: &lt;a href=&#34;https://twitter.com/william_yeh/status/928959597079011328&#34;&gt;2017-11-10 Tweet&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;刻意安排事件卡的出現順序或參數，比較容易控制某些障礙一定會在某些時刻被觸發，遊戲設計者想推銷的某些破關密技也一定會管用——畢竟，全部都是事先計算好的。動機良善。只不過，這也會削弱教育意義的&lt;strong&gt;效度&lt;/strong&gt;：這遊戲想傳達的理念或破關密技，會不會只適用在像這種刻意安排好的事件排列組合及參數設定上？&lt;/p&gt;
+&lt;p&gt;真實的人生，不會只有這麼一套巧合的劇本。&lt;/p&gt;
+&lt;p&gt;第二個疑惑是，這類模擬遊戲，雖然已針對現實做簡化，但仍然非常緊貼該課題所處的領域。動機良善。只不過，這也會削弱跨領域應用的&lt;strong&gt;彈性&lt;/strong&gt;。譬如說，非軟體研發領域的人，若無視 getKanban 或 Business Value Game 卡牌上一堆軟體研發流程、角色、狀況、參數，甚至短空長多的瓶頸升級招數，也能在遊戲中領悟箇中深意嗎？&lt;/p&gt;
+&lt;p&gt;尤其是我的【敏捷原理與團隊塑造】招牌課程，最初是設定給 IT 領域，但後來漸漸有非 IT 領域的企業內訓需求，甚至非營利組織也來邀約，我必須認真處理這問題，尋找或設計更合適的模擬活動。&lt;/p&gt;
+&lt;p&gt;第三個疑惑是，這類模擬遊戲，雖然已針對現實做簡化，但規則仍然複雜，不管是遊戲規則還是計分板規則。&lt;/p&gt;
+&lt;p&gt;像啤酒遊戲，主體規則非常簡單，但遊戲過程須紀錄編製的統計圖表可就令人咋舌：遊戲記錄表、庫存／缺貨圖表、需求預測圖表、出貨記錄表、訂貨記錄表、長鞭效應分析圖。鑑於計分板規則也是遊戲體驗過程的一部分，甚至是最容易出錯的一環，綜合來說，我不認為啤酒遊戲是簡單的。就算搬到電腦上玩，我也不認為啤酒遊戲是簡單的。&lt;/p&gt;
+&lt;p&gt;至於其他遊戲，有的是牌面資訊複雜，有的是流程複雜，有的是角色分工複雜，都需要詳讀使用說明書。&lt;/p&gt;
+&lt;p&gt;規則複雜，連帶產生第四個疑惑是，這類遊戲，有可能 plug and play 融入一個小時的教學單元之中嗎？這算是個人主觀的偏好，希望盡量將活動模組化，比較容易單獨施行，或視情況需要，與其他不同的活動模組混搭編排。&lt;/p&gt;
+&lt;p&gt;因此，後來陸續問世的 &lt;a href=&#34;https://www.benihi.com/en/products/uxinthejungle&#34;&gt;UX in the Jungle&lt;/a&gt; 或&lt;a href=&#34;https://lab.howie.tw/2017/09/the-phoenix-project-workshop.html&#34;&gt;鳳凰項目沙盤推演&lt;/a&gt;，顯然是定位在更大規模的商業模擬，顯然沒有同時處理這四大疑點，我就沒有親自去體驗了。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;我一直在尋找，甚至想設計出符合以下特性的模擬活動：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;簡單的規則。&lt;/li&gt;
+&lt;li&gt;抽象化場景。&lt;/li&gt;
+&lt;li&gt;隨機事件。&lt;/li&gt;
+&lt;li&gt;多重策略，多重結局。&lt;/li&gt;
+&lt;li&gt;可在一個小時內，搞定規則解說、試玩、正式玩、檢討的基本款循環。&lt;/li&gt;
+&lt;li&gt;只要調整設定，即可擴充至更長的體驗時間。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;這想法，一直埋藏在心中。直到有一天⋯⋯&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/04/tweet-20180324.png&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2018/04/tweet-20180324.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+  &amp;mdash; Quote: &lt;a href=&#34;https://twitter.com/william_yeh/status/977565728248184832&#34;&gt;2018-03-24 Tweet&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;解套的契機，就是參加了【&lt;a href=&#34;https://jackyliu.net/experience-gamification-class-design-training-course/&#34;&gt;體驗式課程的遊戲設計與操作實務&lt;/a&gt;】三天課程，而且是在第一天就出現了靈感。&lt;/p&gt;
+&lt;h2 id=&#34;三大明師現身說法&#34;&gt;三大明師現身說法&lt;/h2&gt;
+&lt;p&gt;這門匯集三大明師運課精華的合體課程，早在 2017 年首發課程消息一出，我就躍躍欲試。畢竟，我上過一堆 Bryan &amp;amp; Joe 的課，深知這種課程設計的魅力及成效；我也從&lt;a href=&#34;https://jackyliu.net/&#34;&gt;功夫老師（劉恭甫）&lt;/a&gt;的書，尤其是《&lt;a href=&#34;https://www.books.com.tw/products/0010721292&#34;&gt;左思右想&lt;/a&gt;》這本神作，學到許多實用的思考框架。三大明師黃金組合，再加上一堆神級人物搶著當首發課的學員（請見【一談就贏・鄭志豪】的這篇&lt;a href=&#34;https://negotowin.blogspot.tw/2017/04/blog-post_9.html&#34;&gt;文章&lt;/a&gt;），著實令人心動。&lt;/p&gt;
+&lt;p&gt;只可惜首發的 TTT 課程，與另一個我也很想上的&lt;a href=&#34;//william-yeh.net/post/2017/04/satir-workshop/&#34;&gt;薩提爾課程&lt;/a&gt;衝堂，只好暫緩。&lt;/p&gt;
+&lt;p&gt;就這樣過了一年。終於排除萬難，上這堂今年對我來說最重要的三天課程了。&lt;/p&gt;
+&lt;p&gt;果然滿是第一線明師替課程注入靈魂的乾貨。&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:20em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/04/gamification-ttt.jpg&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2018/04/gamification-ttt.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;頭兩天課程，老師現身說法，演示並拆解數種體驗式課程的訣竅：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;團康&lt;/li&gt;
+&lt;li&gt;一頁紙&lt;/li&gt;
+&lt;li&gt;架構地圖&lt;/li&gt;
+&lt;li&gt;模擬活動&lt;/li&gt;
+&lt;li&gt;卡牌活動&lt;/li&gt;
+&lt;li&gt;桌遊&lt;/li&gt;
+&lt;li&gt;角色扮演&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;這些形式，我都曾在課程或會議引導場合嘗試帶領過，但全都是自學：從書本學方法、從明師運課過程逆向工程些許訣竅、從自己的土炮經驗中反思調整而來，自認不到位之處仍多。這次，有系統的重新學習體驗式課程的理論及訣竅，見識第一流明師的頂級風格——原來，體驗式課程可以執行得如此細緻！&lt;/p&gt;
+&lt;p&gt;我也常在課堂上立即刺激出更多想法。&lt;/p&gt;
+&lt;p&gt;譬如說，某個我極具把握，也在公司內及公司外真槍實彈執行過四次的一小時活動【積木拼圖】，原本以為已經夠好了。沒想到經過這兩天洗禮，還能刺激我想出更有趣的調味料。翌日，在公司現學現賣印證所學，果真有加分效果！更讓緊接著要處理非常敏感且尖銳的 retrospective meeting，超出預期的成功。&lt;/p&gt;
+&lt;p&gt;取法乎上，果然有必要。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;課堂上，老師大方演示並無私拆解各自拿手的招牌課程單元，對於上過許多課的我來說，不時有意外的驚喜。&lt;/p&gt;
+&lt;p&gt;譬如說，睽違兩年，再玩一次&lt;a href=&#34;//william-yeh.net/post/2016/04/learn-process-mgmt-by-game/&#34;&gt;小火車&lt;/a&gt;，依然有感。再聽 Joe 拆解幕後的機制，更是徹底體會「障礙」與「斷點」的奧秘。&lt;/p&gt;
+&lt;p&gt;譬如說，在某個角色扮演案例中飾演觀察員，很慶幸發現自己半年前的&lt;a href=&#34;//william-yeh.net/post/2017/10/experiencing-negotiation/&#34;&gt;談判課&lt;/a&gt;沒有白學，很快就察覺雙方卡關之處。也算是意外的成果檢驗吧。&lt;/p&gt;
+&lt;h2 id=&#34;三週生出一款新桌遊&#34;&gt;三週生出一款新桌遊&lt;/h2&gt;
+&lt;p&gt;這門課，頭兩天是老師們的現身說法。兩三週之後，同學們會再回來齊聚一堂，活用兩日所學，逐一端出自己設計的課程，讓老師及其他同學體驗與點評。&lt;/p&gt;
+&lt;p&gt;就如同【一談就贏・鄭志豪】的這篇&lt;a href=&#34;https://negotowin.blogspot.tw/2017/04/blog-post_9.html&#34;&gt;文章&lt;/a&gt;所說，如果拿自己既有的教案交差，那就太犯規了。我們真的在這期間，絞盡腦汁研發出全新的單元。樸拙在所難免，但交由專家點評，才是讓自己更快速進步的捷徑。若只端出已經錘鍊過的東西，就喪失從明師身上挖寶的尚好機會。&lt;/p&gt;
+&lt;p&gt;對我來說，儘管課程第一天就開始有一些零零星星的靈感浮現，但仍歷經一整個禮拜的發散探索，才慢慢收斂出幾個較可行的方案。譬如說，從以下這份用 TTSS 角度發想的一部分概念草圖，可約略看出設計探索的軌跡：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:20em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/04/game-draft.jpg&#34; alt=&#34;桌遊草圖&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2018/04/game-draft.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;桌遊草圖&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;繼續細部設計約一個禮拜，邀請七位熱心同事幫忙試玩。當時來不及做投影片，只能先手繪分鏡圖來解釋故事及規則（這也算是一種 minimum viable product 吧）：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:20em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/04/game-rule.jpg&#34; alt=&#34;桌遊規則&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2018/04/game-rule.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;桌遊規則&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;公司同事太強大了。桌遊試車一小時，馬上對困擾我很久的機率設計，給出很實質的改善建議。也激發我新的靈感，可將此桌遊規則微調，彈性擴充成 1 小時，甚至 1.5 小時的版本。&lt;/p&gt;
+&lt;p&gt;經此實驗，主軸確定了，便放心在成果總驗收日端出來請各位老師同學點評。非常感謝大家現場給予的回饋，從主題設定、規則、學習成效，甚至控場細節，都讓我收穫滿滿。&lt;/p&gt;
+&lt;p&gt;同時，還親身體驗到其他同學端出的寶貝：人際溝通、簡體字教學、物流機制、正向思考、物理治療、牙齒修磨、乳房腫瘤治療、馬蓋先、急診室體驗，這一天，簡直是夢幻的滿漢全席！眼界大開，學到許多日後可參酌運用的手法。&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/04/fb-post-jacky.jpg&#34; alt=&#34;Comment from Jacky Liu&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2018/04/fb-post-jacky.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Comment from Jacky Liu&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;很幸運的，我的這款【先遣小姑嘗】桌遊，得到了【&lt;a href=&#34;https://jackyliu.net/experience-gamification-class-design-training-course/&#34;&gt;體驗式課程的遊戲設計與操作實務&lt;/a&gt;】第四梯次的「最佳教育設計獎」：&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/04/best-board-award.jpg&#34; alt=&#34;最佳教育設計獎&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2018/04/best-board-award.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;最佳教育設計獎&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;這些經驗及修正意見，讓我稍後在某營造業龍頭進行【敏捷原理與團隊塑造】企業內訓時，效果超出預期。&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2018/04/agile-workshop-pic.jpg&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2018/04/agile-workshop-pic.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;這段旅程，很刺激，很燒腦，也讓我對於「&lt;a href=&#34;https://www.facebook.com/photo.php?fbid=1479401428739571&#34;&gt;一線老師有各自不同注入靈魂的做法&lt;/a&gt;」這件事，不再感到虛無飄渺。&lt;/p&gt;
+&lt;p&gt;感謝 Bryan、Joe、功夫老師及同梯學伴，共度這奇幻旅程。&lt;/p&gt;
+</description>
+      
     </item>
+    
     <item>
       <title>向遊戲學習</title>
       <link>//william-yeh.net/post/2016/04/learn-process-mgmt-by-game/</link>
       <pubDate>Sat, 23 Apr 2016 08:00:00 +0800</pubDate>
+      
       <guid>//william-yeh.net/post/2016/04/learn-process-mgmt-by-game/</guid>
-      <description>&lt;p&gt;前一篇文章〈&lt;a href=&#34;//william-yeh.net/post/2016/04/learn-from-plant-mgmt/&#34;&gt;向工廠管理致敬&lt;/a&gt;〉提到，最近為了準備一場 Agile/DevOps 演講，我特地研讀了數本原典，希望能對某些核心的思考元素來一場溯源之旅。&lt;/p&gt;&#xA;&lt;p&gt;啃原典，其實還有另一個原因：為了好好替今天要去大玩特玩的&lt;strong&gt;小火車遊戲&lt;/strong&gt;⋯⋯喔，不，是為了替今天要專程去上的一門【&lt;a href=&#34;https://shop.darencademy.com/product/view/id/2&#34;&gt;102 流程設計與跨部門溝通&lt;/a&gt;】課程預作準備。&lt;/p&gt;</description>
+      
+        <description>&lt;p&gt;前一篇文章〈&lt;a href=&#34;//william-yeh.net/post/2016/04/learn-from-plant-mgmt/&#34;&gt;向工廠管理致敬&lt;/a&gt;〉提到，最近為了準備一場 Agile/DevOps 演講，我特地研讀了數本原典，希望能對某些核心的思考元素來一場溯源之旅。&lt;/p&gt;
+&lt;p&gt;啃原典，其實還有另一個原因：為了好好替今天要去大玩特玩的&lt;strong&gt;小火車遊戲&lt;/strong&gt;⋯⋯喔，不，是為了替今天要專程去上的一門【&lt;a href=&#34;https://shop.darencademy.com/product/view/id/2&#34;&gt;102 流程設計與跨部門溝通&lt;/a&gt;】課程預作準備。&lt;/p&gt;
+&lt;p&gt;盯上這門課，其實已經很久了。只是這門課⋯⋯摘錄一段課程文案：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;只有二十二個席次，因為道具很多，所以約每半年才開設一次公開班，錯過就要等很久了喔！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;這文案一點也不誇張。所以，我緊盯著每一梯次開放報名的風吹草動，委實不易呀！&lt;/p&gt;
+&lt;p&gt;上含金量這麼高的實作課程，不事先自我裝備一下，就太浪費了。但上課時，我還是盡量提醒自己要心態歸零，避免那些偷練的知識變成先入為主的反射思考，這樣才有更多 unknown unknown 可學。&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/04/102-opening.jpg&#34; alt=&#34;102 - 開場白&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2016/04/102-opening.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;102 - 開場白&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;這門課，從實際的小火車遊戲中，讓我結結實實體會到以前從書中讀過的一堆觀念：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;《&lt;a href=&#34;https://www.books.com.tw/products/0010898249&#34;&gt;目標&lt;/a&gt;》書中講的 &lt;a href=&#34;https://www.projectup.net/article/view/id/3124&#34;&gt;TOC 聚焦五步驟&lt;/a&gt;，是真的。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;《&lt;a href=&#34;http://www.books.com.tw/products/0010662172&#34;&gt;精實革命&lt;/a&gt;》書中講的&lt;a href=&#34;http://www.cardiff.ac.uk/lean/principles/&#34;&gt;精實思考五原則&lt;/a&gt;，是真的。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Toyota_Production_System&#34;&gt;豐田生產系統&lt;/a&gt;所講究的現地現物、自働化、看板、防呆、5S、反省⋯⋯，是真的。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;甚至連以前上 PMBOK 課程看到的一堆令人生厭的 &lt;a href=&#34;http://www.pmexamsmartnotes.com/how-to-remember-ittos-of-all-47-pmbok-processes/&#34;&gt;ITTO&lt;/a&gt;，也看到在組織執掌分工下的真義。&lt;/p&gt;
+&lt;p&gt;所以，不要小看小孩子玩的小火車；道在屎溺，不可不察也！&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/04/102-scene-1.jpg&#34; alt=&#34;102 - 第一回合&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2016/04/102-scene-1.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;102 - 第一回合&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;整天課程分兩回合進行。第一回合是由學生自己構思方法、執行，並自行檢討；這一回合，講師都先不予提示。&lt;/p&gt;
+&lt;p&gt;好精彩的第一回合！和一群各行各業臥虎藏龍的 22 名高手合作，過癮！&lt;/p&gt;
+&lt;p&gt;儘管差一點點就達標，但我已經從過程中體會到 lean &amp;amp; TOC 的某些原則。&lt;/p&gt;
+&lt;p&gt;這的確是一場和高手合作，很能激盪出火花的體驗活動。也很高興自己貢獻的幾個流程及防呆手法，有派上用場。&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/04/102-scene-2.jpg&#34; alt=&#34;102 - 第二回合&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2016/04/102-scene-2.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;102 - 第二回合&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;等大家都提出檢討報告之後，講師 Joe &amp;amp; Bryan 才根據現場觀察，給予精準的提示，並端出這門課的壓箱寶：品質流程六大手法。&lt;/p&gt;
+&lt;p&gt;醍醐灌頂後，大家再度自發地提出改善計畫，重新規劃流程，再進行第二回合：目標不只是達標，更要追求卓越，挑戰加分項目！&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2016/04/102-certificate.jpg&#34; alt=&#34;102 - 證書&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2016/04/102-certificate.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;102 - 證書&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;玩了一天小火車，收穫滿滿。&lt;/p&gt;
+&lt;p&gt;正題有收穫，也趁機向 Joe &amp;amp; Bryan 請教一些近日思考的疑點。我將把體驗到的思維角度運用在職場上（DevOps 其實非常需要這種綜觀全局的思考方式及流程改善）。&lt;/p&gt;
+&lt;p&gt;除了正題收穫之外，也更確定了另一件事：如果想傳達的要點很多，那麼，設計活動時，要選擇在依存關係及統計波動上有某種複雜度的模擬案例（這也是《&lt;a href=&#34;https://www.books.com.tw/products/0010898249&#34;&gt;目標&lt;/a&gt;》書中所提出的切入點）。&lt;/p&gt;
+&lt;p&gt;敏捷陣營素以愛玩遊戲著稱。從今天的小火車遊戲中，我也偷學了一些遊戲設計的訣竅，希望以後能運用在團隊身上。&lt;/p&gt;
+&lt;p&gt;最後，給一個 call to action：如果你也想親身體驗這麼好玩的遊戲，&lt;a href=&#34;http://www.accupass.com/event/register/1602250738221767316794&#34;&gt;最新梯次 9/03 已經開放報名&lt;/a&gt;。&lt;/p&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/DmG8VLQTobQ?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+</description>
+      
     </item>
+    
   </channel>
 </rss>
