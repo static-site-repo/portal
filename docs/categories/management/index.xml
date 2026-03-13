@@ -73,7 +73,7 @@
 &lt;blockquote&gt;
 &lt;p&gt;在導入 AI 之後，若公司希望同時滿足成本不升、產出不降，它「&lt;strong&gt;可行的&lt;/strong&gt;人力縮減比例」是多少？&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;把這個比例記成 $\rho$，其中 $0 \le \rho \le 1$。&lt;/p&gt;
+&lt;p&gt;把這個比例記成 $\rho$，其中 $0 \le \rho \le 1$。下限 0 代表「一個都不裁」，上限 1 代表「一個都不留」。&lt;/p&gt;
 &lt;h3 id=&#34;模型中的基本變數&#34;&gt;模型中的基本變數&lt;/h3&gt;
 &lt;p&gt;再多定義幾個符號：&lt;/p&gt;
 &lt;table&gt;
