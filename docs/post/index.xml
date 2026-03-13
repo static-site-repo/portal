@@ -6,10 +6,447 @@
     <description>Recent content in Posts on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sat, 08 Feb 2025 18:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 11 Mar 2026 20:00:00 +0800</lastBuildDate>
     
         <atom:link href="//william-yeh.net/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>AI 會取代多少員工？關鍵不在預言，而在企業的約束條件</title>
+      <link>//william-yeh.net/post/2026/03/genai-replacement-ratio/</link>
+      <pubDate>Wed, 11 Mar 2026 20:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2026/03/genai-replacement-ratio/</guid>
+      
+        <description>&lt;details&gt;
+  &lt;summary style=&#34;background-color:#f5f5f5;border:1px solid #ccc;padding:5px;&#34;&gt;
+    問題意識
+    
+  &lt;/summary&gt;
+  &lt;blockquote&gt;
+&lt;p&gt;如果公司導入 AI，真正值得問的問題不是「AI 會不會搶走工作」，而是：在成本不增加、產出不下降的前提下，企業到底有多大空間縮減人力？而這個答案，又會因為 AI 是「菁英放大器」還是「技能拉平器」而徹底不同。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;/details&gt;
+
+&lt;p&gt;幾個月前，我在社群媒體看到一張裁員通知書的截圖。底下有一行說明：「公司說是因為導入 AI 工具，現有的人力已經足夠應付產出需求。」&lt;/p&gt;
+&lt;p&gt;貼文底下，討論炸鍋了。有人說「AI 終於來搶工作了」，有人說「才不是，景氣才是主因」，有人說「這只不過是管理層找的藉口」。&lt;/p&gt;
+&lt;p&gt;你有沒有發現，每次講到 AI 取代工作，大家都搖身一變成為科幻小說作家或政論節目名嘴，但很少有人能把問題問得更精確一點？&lt;/p&gt;
+&lt;p&gt;這正是我想做的。&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2026/03/ai-and-jobs.jpg&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2026/03/ai-and-jobs.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;企業裁員本來就常常同時混著很多因素：景氣循環、利率環境、先前擴張過頭、部門重整、資本市場壓力，還有管理層自己的判斷失誤。AI 可能是其中一個原因，但通常不會是唯一原因。&lt;/p&gt;
+&lt;p&gt;即使如此，如果企業真的導入 AI，而且確實拿它來減少人力，那這件事在理論上會受到什麼限制？仍然很值得分析。&lt;/p&gt;
+&lt;p&gt;這篇想做的，不是判斷每一次裁員到底有多少能歸因於 AI，也不是「AI 會不會取代人類工作」那種容易流於口號的大哉問，而是把問題縮成一個更乾淨的版本：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如果公司導入 AI，並且希望用它減少一部分人力，那麼這個人力縮減比例，在理論上有沒有上限或下限？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;這篇想做的，就是用一個非常簡單的理性模型，把這件事的骨架先抽出來。&lt;/p&gt;
+&lt;p&gt;先講在前面：這不是現實世界的完整描述。現實裡，企業不只在乎成本和產出，還會看品質、風險、交期、客戶體驗、組織摩擦、法規責任，還有不同職位之間複雜的互補關係。這篇只是想先把問題簡化到最基本的形式，看看有哪些力量，在拉扯企業的人力調整空間。&lt;/p&gt;
+&lt;h2 id=&#34;先界定問題企業到底在調整什麼&#34;&gt;先界定問題：企業到底在調整什麼？&lt;/h2&gt;
+&lt;p&gt;假設一家公司原本有 $L$ 位員工。&lt;/p&gt;
+&lt;p&gt;當然，隨著分析顆粒度不同，這個 $L$ 也可以指涉部門或團隊的規模，分析方法是完全一樣的。為了方便說明，這裡先以「公司」為分析單位。&lt;/p&gt;
+&lt;p&gt;現在，公司決定導入 AI。導入之後，我們先考慮一個最簡單的情境：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;有一部分員工被裁減&lt;/li&gt;
+&lt;li&gt;剩下來的員工都搭配 AI 工具工作&lt;/li&gt;
+&lt;li&gt;公司至少希望滿足兩件事：
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;總成本不能增加&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;總有效產出不能下降&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;這裡的「有效產出」，你可以把它想像成一家餐廳的「出餐量」——不是單純計算出了幾道菜，而是把速度、品質、客訴退餐率都折算在內、用一個可以加總的指標來衡量。這當然是很強的假設，但如果不先這樣做，問題就很難寫成一個清楚的理性模型。&lt;/p&gt;
+&lt;p&gt;另外，這裡說的也不是嚴格意義上的「AI 直接替代率」，而是比較保守地講：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在導入 AI 之後，若公司希望同時滿足成本不升、產出不降，它「&lt;strong&gt;可行的&lt;/strong&gt;人力縮減比例」是多少？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;把這個比例記成 $\rho$，其中 $0 \le \rho \le 1$。&lt;/p&gt;
+&lt;h3 id=&#34;模型中的基本變數&#34;&gt;模型中的基本變數&lt;/h3&gt;
+&lt;p&gt;再多定義幾個符號：&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;變數&lt;/th&gt;
+          &lt;th style=&#34;text-align: right&#34;&gt;符號&lt;/th&gt;
+          &lt;th&gt;意義&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;原始員工人數&lt;/td&gt;
+          &lt;td style=&#34;text-align: right&#34;&gt;$L$&lt;/td&gt;
+          &lt;td&gt;公司導入 AI 前的總雇用人數&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;員工平均月成本&lt;/td&gt;
+          &lt;td style=&#34;text-align: right&#34;&gt;$w$&lt;/td&gt;
+          &lt;td&gt;每位員工平均月薪資成本&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;AI 月成本&lt;/td&gt;
+          &lt;td style=&#34;text-align: right&#34;&gt;$C_{ai}$&lt;/td&gt;
+          &lt;td&gt;每位留任員工平均分攤到的 AI 月成本&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;人力縮減比例&lt;/td&gt;
+          &lt;td style=&#34;text-align: right&#34;&gt;$\rho$&lt;/td&gt;
+          &lt;td&gt;導入 AI 後的人力縮減比例&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;員工平均有效產出&lt;/td&gt;
+          &lt;td style=&#34;text-align: right&#34;&gt;$q$&lt;/td&gt;
+          &lt;td&gt;每位員工每單位時間的有效產出&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;AI 生產力提升率&lt;/td&gt;
+          &lt;td style=&#34;text-align: right&#34;&gt;$\phi$&lt;/td&gt;
+          &lt;td&gt;AI 讓每位留任員工產出提高的比例，$\phi \ge 0$&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;這裡有一個重要的設定：我把 $C_{ai}$ 寫成「每位留任員工平均分攤到的 AI 成本」。也就是說，下面的模型考慮的是一種特定情境：AI 的使用成本，大致會隨著留任員工數增加（尤其是數人頭計價的 AI 服務訂閱制），或至少可以等價攤分到每位留任員工身上。&lt;/p&gt;
+&lt;p&gt;在這個設定裡：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;原本公司有 $L$ 人&lt;/li&gt;
+&lt;li&gt;導入 AI 後，裁減比例是 $\rho$&lt;/li&gt;
+&lt;li&gt;所以留下來的人數是 $(1-\rho)L$&lt;/li&gt;
+&lt;li&gt;每位留任員工都搭配 AI，因此每人多一筆 $C_{ai}$ 成本&lt;/li&gt;
+&lt;li&gt;同時，AI 讓每位留任員工的有效產出變成原本的 $1+\phi$ 倍&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;但現實裡，AI 成本也可能包含固定成本，例如算力硬體、模型微調、資料清洗、流程整合等。此時，企業會有更強的動力進行大規模調整，來補償這筆固定支出，而不只是承擔「每留一人就多一筆 $C_{ai}$」的邊際成本。&lt;/p&gt;
+&lt;p&gt;所以，下面推出來的結果，不是所有 AI 導入情境的普遍規律，而是這種成本結構下的理論結果。&lt;/p&gt;
+&lt;h2 id=&#34;人力縮減比例的可行區間兩個約束&#34;&gt;人力縮減比例的可行區間：兩個約束&lt;/h2&gt;
+&lt;p&gt;你有沒有發現，很多人討論「AI 會取代多少工作」時，只想到一個方向的力量——技術有多強、AI 能取代多少任務？&lt;/p&gt;
+&lt;p&gt;但這個模型最重要的地方在於，人力縮減比例不只會受到一種力量限制，而是同時被兩種方向不同的約束夾住：一邊來自成本，一邊來自產出。以下我們先看成本，再看產出。&lt;/p&gt;
+&lt;h3 id=&#34;第一個約束成本不能上升&#34;&gt;第一個約束：成本不能上升&lt;/h3&gt;
+&lt;p&gt;先看成本。這一步會推出有點殘酷的結果：&lt;strong&gt;如果公司決定讓每個留任員工都配 AI，那麼，在這個理性模型裡，裁掉一部分人，不再只是選項，而是打平新增成本的必要條件。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;導入 AI 之前，公司的總成本很簡單，就是所有人的薪資總和：&lt;/p&gt;
+$$
+Lw
+$$&lt;p&gt;導入 AI 之後，員工數變成 $(1-\rho)L$，而且每位留任員工除了薪資 $w$ 之外，還多了一筆 AI 成本 $C_{ai}$，所以導入後的總成本是：&lt;/p&gt;
+$$
+(1-\rho)L(w+C_{ai})
+$$&lt;p&gt;如果公司要求「導入 AI 後，總成本不能增加」，那就必須滿足：&lt;/p&gt;
+$$
+Lw \ge (1-\rho)L(w+C_{ai})
+$$&lt;p&gt;整理之後可得：&lt;/p&gt;
+$$
+\rho \ge \frac{C_{ai}}{w+C_{ai}}
+$$&lt;p&gt;也就是說，在這個模型裡，人力縮減比例 $\rho$ 有一個下限：&lt;/p&gt;
+$$
+\frac{C_{ai}}{w+C_{ai}} \le \rho
+$$&lt;h4 id=&#34;成本下限的直觀意義&#34;&gt;成本下限的直觀意義&lt;/h4&gt;
+&lt;p&gt;我也曾經直覺以為：如果 AI 很便宜，那公司導入 AI、但少裁點人，不就兩全其美了？&lt;/p&gt;
+&lt;p&gt;但這條式子告訴你，事情不完全是這樣。&lt;/p&gt;
+&lt;p&gt;簡單來說，如果公司決定讓每一位留下來的人都配 AI，那新增的 AI 成本總得有人埋單。而在這個模型裡，埋單的方法就是裁掉一部分人，省下薪資，去抵消 AI 的新增成本。&lt;/p&gt;
+&lt;p&gt;所以，關於人力縮減比例：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;如果人工很貴、AI 相對便宜，那麼，只要裁掉少少一部分人，就足以把新增的 AI 成本打平（也就是下限 $\frac{C_{ai}}{w+C_{ai}}$ 會比較低）&lt;/li&gt;
+&lt;li&gt;如果 AI 很貴、人工相對沒那麼貴，那麼，企業就得裁掉更多人，才有辦法讓總成本不增加（也就是下限 $\frac{C_{ai}}{w+C_{ai}}$ 會比較高）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;這裡要特別注意，這條式子講的並不是「企業偏好裁員」，也不是「AI 越貴，公司就越想裁人」。現實裡，AI 如果太貴，公司完全可能根本不導入。&lt;/p&gt;
+&lt;p&gt;這條式子真正描述的是一件比較窄、但很重要的事：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在「每位留任員工都要搭配 AI」且「總成本不能增加」的前提下，公司至少需要達到某個縮減比例，才能把新增的 AI 成本打平。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;不論企業想不想裁員，事實是：&lt;strong&gt;若人人都要配 AI，企業至少得裁到某個程度，導入才不會變成一筆更貴的交易。&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;第二個約束產出不能下降&#34;&gt;第二個約束：產出不能下降&lt;/h3&gt;
+&lt;p&gt;再來看產出。這一步會把替代率的另一端也釘住：&lt;strong&gt;AI 再強，也只能讓企業縮編到某個範圍；超過那個範圍，總產出就會掉下來。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;導入 AI 之前，公司的總有效產出是：&lt;/p&gt;
+$$
+Lq
+$$&lt;p&gt;導入 AI 之後，雖然只剩下 $(1-\rho)L$ 位員工，但每位留任員工的有效產出變成 $1+\phi$ 倍，所以總有效產出會變成：&lt;/p&gt;
+$$
+(1-\rho)Lq(1+\phi)
+$$&lt;p&gt;如果公司要求「導入 AI 後，總有效產出不能下降」，就必須滿足：&lt;/p&gt;
+$$
+Lq \le (1-\rho)Lq(1+\phi)
+$$&lt;p&gt;整理後可看出，在這個模型裡，人力縮減比例 $\rho$ 有一個上限：&lt;/p&gt;
+$$
+\rho \le \frac{\phi}{1+\phi}
+$$&lt;h4 id=&#34;產出上限的直觀意義&#34;&gt;產出上限的直觀意義&lt;/h4&gt;
+&lt;p&gt;拿健身來比喻：你不能光靠「想像自己在健身房」就讓肌肉長出來。這條式子在說的也一樣：你不能光靠「AI 很強」的想像就決定裁多少人，你得看它實際上能不能撐住原本的產出，而且是「有效產出」。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$\phi$ 越大，人力縮減比例的上限 $\frac{\phi}{1+\phi}$ 越高&lt;/li&gt;
+&lt;li&gt;$\phi$ 越小，人力縮減比例的上限 $\frac{\phi}{1+\phi}$ 越低&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;換句話說：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如果 AI 越能提升留任員工的有效產出，企業在維持總產出的前提下，可承受的人力縮減比例就越高。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;不論企業意願如何，事實是：&lt;strong&gt;AI 增益再高，企業的人力縮減幅度也仍然有天花板。&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;合併來看人力縮減比例落在一個可行區間&#34;&gt;合併來看：人力縮減比例落在一個可行區間&lt;/h3&gt;
+&lt;p&gt;前面兩條不等式要同時成立，所以 $\rho$ 必須滿足：&lt;/p&gt;
+$$
+\frac{C_{ai}}{w+C_{ai}} \le \rho \le \frac{\phi}{1+\phi}
+$$&lt;p&gt;這條式子告訴我們：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在這個模型裡，人力縮減比例不是想設多高就設多高，而是被夾在一個可行區間裡。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;左邊是成本條件給出的下限，右邊是產出條件給出的上限。如果左邊比右邊還大，就代表，在數學上，這個可行區間根本不存在。換句話說，導入 AI 並同時達成「成本不升、產出不降」這件事，沒有可行解。&lt;/p&gt;
+&lt;p&gt;所以，這個模型還會再多出一個先決條件：&lt;/p&gt;
+$$
+\frac{C_{ai}}{w+C_{ai}} \le \frac{\phi}{1+\phi}
+$$&lt;p&gt;化簡之後得到：&lt;/p&gt;
+$$
+\phi \ge \frac{C_{ai}}{w}
+$$&lt;p&gt;這條式子，其實才是整件事最值得記住的地方。&lt;/p&gt;
+&lt;h3 id=&#34;真正的核心ai-的效能能否覆蓋它的成本&#34;&gt;真正的核心：AI 的效能能否覆蓋它的成本&lt;/h3&gt;
+&lt;p&gt;到這裡為止，整篇其實已經推出一個最重要的小結論：&lt;strong&gt;企業真正在意的，通常不是一句「AI 很厲害」，而是 AI 的效能提升幅度，是不是大於相對的人工成本。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;把剛才的先決條件再寫一次：&lt;/p&gt;
+$$
+\phi \ge \frac{C_{ai}}{w}
+$$&lt;p&gt;這條式子在講的，其實就是：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;AI 帶來的生產力提升，至少要大於它相對於人工成本的負擔，整件事才有可行空間。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;AI 的提升，值不值得它的成本？&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;AI 越貴，就越需要證明它真的很有用&lt;/li&gt;
+&lt;li&gt;AI 越便宜，就算只幫上一點點忙，也可能值得導入&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;這比很多新聞標題更接近企業真正在面對的問題。真正的核心，不是抽象地問「AI 會不會取代人」，而是：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;AI 的效能／成本比，能不能支撐「人力調整」這件事成立？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;如果不能，技術再炫，企業也未必埋單。
+如果可以，那就算 AI 還沒有神到徹底取代人的程度，企業也可能非常認真地重新配置人力。&lt;/p&gt;
+&lt;h2 id=&#34;從平均模型走向異質員工關鍵在於-ai-幫到誰&#34;&gt;從平均模型走向異質員工：關鍵在於 AI 幫到誰&lt;/h2&gt;
+&lt;p&gt;到這裡為止，我們得到的是平均模型的結論；但真正接近現實的問題，從這裡才開始。因為企業不是面對一群平均員工，而是在不同類型的人之間，重新分配 AI、預算與人力。&lt;/p&gt;
+&lt;p&gt;也就是說，我們前面一直用同一組 $w$、$q$、$\phi$ 去描述整家公司：每個人的薪資差不多、產出差不多、AI 帶來的增益也差不多。這樣做的好處，是可以把問題寫得很乾淨；壞處是，它還沒碰到現實企業真正麻煩的地方。&lt;/p&gt;
+&lt;p&gt;你有沒有發現，一個公司裡，不同職位的人，往往有著截然不同的：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;薪資水準&lt;/li&gt;
+&lt;li&gt;產出形式&lt;/li&gt;
+&lt;li&gt;AI 可放大的程度&lt;/li&gt;
+&lt;li&gt;被替代或被保留的可能性&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;如果要把模型往現實再推一步，就得把員工拆成不同類型，用下標 $i$ 表示。也就是說，不同職位各自有自己的：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;薪資 $w_i$&lt;/li&gt;
+&lt;li&gt;產出 $q_i$&lt;/li&gt;
+&lt;li&gt;AI 增益 $\phi_i$&lt;/li&gt;
+&lt;li&gt;人力縮減比例 $\rho_i$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;這時候，公司的約束條件就不再是一條平均式，而會變成加總：&lt;/p&gt;
+$$
+\sum_i (1-\rho_i)L_i(w_i+C_{ai,i}) \le \sum_i L_i w_i
+$$$$
+\sum_i (1-\rho_i)L_i q_i(1+\phi_i) \ge \sum_i L_i q_i
+$$&lt;p&gt;一旦寫成這樣，問題的性質就變了。&lt;/p&gt;
+&lt;p&gt;前面的平均模型，問的是：整體而言，人力縮減比例有沒有上下界；但異質員工模型問的則是：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;公司會把縮減幅度放在哪些職位？又會把 AI 資源優先配給哪些人？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;AI 固然很強，但是，&lt;strong&gt;AI 增益 $\phi_i$ 到底落在了哪些人身上？&lt;/strong&gt; 也就是說，AI 究竟是在放大原本最強的人，還是在拉平不同員工的能力差距？這兩種關係，會把企業帶向完全不同的組織重整路徑。&lt;/p&gt;
+&lt;h3 id=&#34;劇本一ai-作為菁英放大器&#34;&gt;劇本一：AI 作為菁英放大器&lt;/h3&gt;
+&lt;p&gt;第一種劇本是：薪資越高的人，本來就在做更複雜、更高槓桿的工作，因此 AI 對他的生產力提升也越大。這一節要看的，就是：&lt;strong&gt;如果 AI 比較像是在放大原本就強的人，企業內部的調整空間會怎麼變。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;如果把這個想法寫成一個簡單的線性假設，可以設：&lt;/p&gt;
+$$
+w = k\phi, \qquad k&gt;0
+$$&lt;p&gt;也就是薪資越高的職位，AI 對它的放大效果也越強。&lt;/p&gt;
+&lt;p&gt;把這個關係代回原本的區間：&lt;/p&gt;
+$$
+\frac{C_{ai}}{w+C_{ai}} \le \rho \le \frac{\phi}{1+\phi}
+$$&lt;p&gt;不等式會變成：&lt;/p&gt;
+$$
+\frac{C_{ai}}{k\phi + C_{ai}} \le \rho \le \frac{\phi}{1+\phi}
+$$&lt;p&gt;這代表當 $\phi$ 變大時，右邊的上限會上升，而左邊的下限會下降。換句話說，人力縮減比例的&lt;strong&gt;可行區間會被拉開&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;直覺上，這意味著：如果某些高薪職位剛好也是 AI 最能放大的職位，那麼企業在這些職位周圍做人力與工具配置調整的空間，理論上會變大。&lt;/p&gt;
+&lt;p&gt;這可能帶來兩種結果：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;一種是，少數高槓桿人才被 AI 進一步放大，因此更值得保留&lt;/li&gt;
+&lt;li&gt;另一種是，因為這些人被 AI 放大後覆蓋面更大，企業有條件縮減其他位置&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;《從 A 到 A+》書中談到「刺蝟原則」：真正偉大的企業，不是因為做很多事，而是因為深刻理解自己在哪個點上能做到世界最好。這條不等式，有點異曲同工之妙——重要的不是 AI 能做多少事，而是在它真正能放大的那個點上，效能夠不夠強。&lt;/p&gt;
+&lt;p&gt;但這裡要很小心。這個模型能推出的是：&lt;strong&gt;可行配置空間變大了&lt;/strong&gt;；它不能直接推出「高薪者一定更安全」或「高薪者一定更危險」。&lt;/p&gt;
+&lt;p&gt;如果把公司層級的總預算與總產出都放進來看，還會出現更接近真實世界的配置問題：某些較容易被縮減的工作，所省下來的成本，可能被拿去支持另一些更高槓桿、較難替代的工作導入 AI。這是一種可能的「跨職類補貼」，但不是前面平均模型自動保證會出現的結論。&lt;/p&gt;
+&lt;p&gt;如果 AI 更偏向「放大高槓桿者」，企業的組織重整就更可能朝&lt;strong&gt;資源集中、節點化配置&lt;/strong&gt;的方向走。&lt;/p&gt;
+&lt;h3 id=&#34;劇本二ai-作為技能拉平器&#34;&gt;劇本二：AI 作為技能拉平器&lt;/h3&gt;
+&lt;p&gt;但也存在另一種完全不同的可能。這一節要看的，則是另一個反向問題：&lt;strong&gt;如果 AI 幫助最大的不是原本最強的人，而是原本較弱、較初階的人，故事會怎麼翻轉？&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;有一項研究讓我印象深刻。2023 年，哈佛商學院在與 BCG 合作的研究中發現 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; ：使用 AI 的顧問中，原本表現低於平均的人，生產力提升了 43%；而原本表現高於平均的人，只提升了 17%。&lt;/p&gt;
+&lt;p&gt;這個數字，其實就是「技能拉平器」假說最直接的現實依據。我們可以這麼詮釋：資深員工本來就接近較高的人類表現水準，因此 AI 對他們的邊際補強未必那麼大；反而是初階員工，可能因為 AI 的輔助，很快就從原本的 50 分被拉拔到 80 分。&lt;/p&gt;
+&lt;p&gt;如果把這個想法寫成一個簡化的線性假設，可以設：&lt;/p&gt;
+$$
+\phi = \frac{k}{w}, \qquad k&gt;0
+$$&lt;p&gt;也就是薪資越低的職位，AI 帶來的生產力提升率越高。這裡的 $k$，可以理解成 AI 的「技能拉平能力」：$k$ 越大，代表 AI 越能把較低技能者快速拉近可用水準。&lt;/p&gt;
+&lt;p&gt;把這個關係代回替代率區間：&lt;/p&gt;
+$$
+\frac{C_{ai}}{w+C_{ai}} \le \rho \le \frac{k}{w+k}
+$$&lt;p&gt;這會給出一個和前面幾乎完全相反的故事。&lt;/p&gt;
+&lt;p&gt;對高薪、資深職位來說，當 $w$ 很大時，左邊的成本下限會趨近於 0，但更關鍵的是，右邊的產出上限&lt;/p&gt;
+$$
+\frac{k}{w+k}
+$$&lt;p&gt;也會趨近於 0。這代表在這個假設下，高薪資深職位的人力縮減空間會顯著變小。企業如果想大幅裁撤這類人力，會更容易碰到產出下降的約束。&lt;/p&gt;
+&lt;p&gt;相對地，對低薪、初階職位來說，當 $w$ 很小時，右邊的上限會快速逼近 1。這表示這些職位周圍的&lt;strong&gt;人力配置空間&lt;/strong&gt;會變得很大：企業既可能選擇用較少的人力、搭配 AI 維持原本產出，也可能反過來保留更多初階人力，利用 AI 把他們快速拉到可用水準。光靠這個模型，還無法斷定哪一種策略一定會發生，但可以確定的是，這一類職位的組織重整壓力會更大。&lt;/p&gt;
+&lt;p&gt;更有意思的是，在這個劇本下重新檢視可行條件：&lt;/p&gt;
+$$
+\frac{C_{ai}}{w+C_{ai}} \le \frac{k}{w+k}
+$$&lt;p&gt;化簡之後會得到：&lt;/p&gt;
+$$
+C_{ai} \le k
+$$&lt;p&gt;工資 $w$ 竟然被消掉了。&lt;/p&gt;
+&lt;p&gt;這代表，在這個非常特定的假設下，導入 AI 的可行性不再直接取決於工資高低，而更取決於 AI 的底層補強能力 $k$，能不能蓋過它本身的成本 $C_{ai}$。&lt;/p&gt;
+&lt;p&gt;如果 AI 真的是一個技能拉平器，那企業在意的就不再只是「人工貴不貴」，而是：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;AI 到底能不能把原本沒那麼強的人，快速補到足夠有用的水準？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;這是一個和「菁英放大器」完全不同的世界。&lt;/p&gt;
+&lt;p&gt;如果 AI 更偏向「拉平能力差距」，那企業的重點就不再只是把資源集中到最強者身上，而是&lt;strong&gt;重新設計整個人才梯隊與團隊分工&lt;/strong&gt;。&lt;/p&gt;
+&lt;h3 id=&#34;兩種-ai-劇本對應兩種組織重整邏輯&#34;&gt;兩種 AI 劇本，對應兩種組織重整邏輯&lt;/h3&gt;
+&lt;p&gt;把前面兩個劇本放在一起看，差別就會變得很清楚。&lt;/p&gt;
+&lt;p&gt;如果 AI 比較像「菁英放大器」，那它傾向擴大既有能力差距：原本就高槓桿的人被進一步放大，企業的重點會變成怎麼把 AI 資源集中到最有乘數效應的人身上。&lt;/p&gt;
+&lt;p&gt;如果 AI 比較像「技能拉平器」，那它傾向壓縮既有能力差距：原本較弱的人被快速補強，企業的重點就不再只是把資源集中到最強者身上，而是重新設計整個人才梯隊與團隊分工。&lt;/p&gt;
+&lt;p&gt;所以，這兩種劇本雖然都可能導向人力調整，但背後的組織邏輯其實完全不同：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;前者比較像：&lt;strong&gt;把最強的人再放大&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;後者比較像：&lt;strong&gt;把原本較弱的人拉到接近可用&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;真正重要的差別，不在於「誰一定會被裁」，而在於：&lt;strong&gt;AI 的增益，究竟是在放大既有優勢，還是在改寫能力分布。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;不過，若把這個問題再往真實辦公室裡推一步，就會發現「技能拉平器」這條路徑還有另一層更麻煩的現實摩擦。數學上，它看起來給了企業更大的人力重整空間；但管理上，這個空間未必能被無摩擦地兌現。&lt;/p&gt;
+&lt;h2 id=&#34;當技能拉平器走進真實辦公室&#34;&gt;當「技能拉平器」走進真實辦公室&lt;/h2&gt;
+&lt;p&gt;如果只看前面的式子，「技能拉平器」這個劇本會給企業一個很強的直覺：既然 AI 對初階人力的補強特別大，那麼企業似乎就有更大的空間，去重整初階與資深人力的比例。&lt;/p&gt;
+&lt;p&gt;但把這個故事往現實再推一步，麻煩往往才真正開始。&lt;/p&gt;
+&lt;p&gt;原因很簡單：模型裡的「有效產出」雖然可以寫成一個乾淨的 $q$，但現實世界裡，企業要的從來不只是數量，還包括品質、判斷、自我校正能力，以及出錯時誰有能力發現、誰要負責。&lt;/p&gt;
+&lt;p&gt;換句話說，技能拉平器真正帶來的，未必只是更大的替代空間，也可能是更高的管理成本。&lt;/p&gt;
+&lt;h3 id=&#34;現實問題一不是所有-80-分都能替代-95-分&#34;&gt;現實問題一：不是所有 80 分都能替代 95 分&lt;/h3&gt;
+&lt;p&gt;技能拉平器最容易讓人產生一種直覺：如果 AI 能把原本只有 50 分的人拉到 80 分，那麼企業就可以用更多「80 分的人」去取代少數「95 分的人」。&lt;/p&gt;
+&lt;p&gt;但這件事未必成立。&lt;/p&gt;
+&lt;p&gt;因為很多工作不是只要「差不多可用」就行，而是必須跨過某個品質門檻。對這些任務來說，80 分和 95 分不是線性差距，而是兩種不同性質的能力。&lt;/p&gt;
+&lt;p&gt;例如：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;底層系統架構設計&lt;/li&gt;
+&lt;li&gt;高風險決策&lt;/li&gt;
+&lt;li&gt;關鍵法務與合規判斷&lt;/li&gt;
+&lt;li&gt;涉及例外情境的大型專案協調&lt;/li&gt;
+&lt;li&gt;錯誤代價極高的醫療、金融或安全場景&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;在這些地方，AI 把初階員工快速補到「看起來夠用」，不代表企業就真的得到了可替代的高品質人力。&lt;/p&gt;
+&lt;p&gt;更麻煩的是，技能拉平器可能會讓組織更晚發現自己出了問題。因為產出的表面形式變好了、速度變快了、完成品變多了，但真正高階的判斷力、邊界意識與自我修正能力，未必有跟著一起提升。&lt;/p&gt;
+&lt;p&gt;所以，技能拉平最危險的地方，不是它讓更多人變得夠用，而是它可能讓企業更晚才發現：&lt;strong&gt;夠用不等於可託付，產出增加也不等於判斷力增加。&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;現實問題二ai-可能把生產時間變成檢查時間&#34;&gt;現實問題二：AI 可能把生產時間變成檢查時間&lt;/h3&gt;
+&lt;p&gt;前面的模型把 AI 成本寫成 $C_{ai}$。在理論上，這可以代表授權費、算力、內部系統維運等成本。&lt;/p&gt;
+&lt;p&gt;但在技能拉平器的劇本裡，現實中往往還有另一種沒有被直接寫進去的隱形成本：&lt;strong&gt;驗證稅（verification tax）&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;也就是說，當初階員工在 AI 幫助下產出更多程式碼、報告、簡報、分析與文件時，資深員工未必因此更輕鬆，反而可能要花更多時間去審查內容是否正確、檢查推理是否偷渡漏洞、修正 AI 生成的低階錯誤，甚至承擔最終交付的責任，控制幻覺、合規與聲譽風險。&lt;/p&gt;
+&lt;p&gt;這時候，AI 對初階人力的「高增益」，未必是純粹增加了有效產出，也可能只是把大量工時，從「生產」轉移成「檢查」與「收尾」。&lt;/p&gt;
+&lt;p&gt;如果用更貼近現實的方式講，模型裡的 $C_{ai}$ 其實常常不只是一筆工具費，而更像是：&lt;/p&gt;
+$$
+C_{ai}^{\text{effective}} = C_{tool} + C_{verification}
+$$&lt;p&gt;也就是：一部分是看得見的工具成本，一部分是看不見、但常常更昂貴的管理與驗證成本。&lt;/p&gt;
+&lt;p&gt;一旦把這一層放進來，技能拉平器的故事就會變得沒那麼樂觀。因為所謂的「效率提升」，很可能只是把負擔轉移給更少數、更貴的資深人力，而不是讓整體成本真的下降。&lt;/p&gt;
+&lt;h3 id=&#34;現實問題三短期最適可能毀掉長期梯隊&#34;&gt;現實問題三：短期最適可能毀掉長期梯隊&lt;/h3&gt;
+&lt;p&gt;前面的模型本質上是一張靜態快照。它問的是：在當下這一刻，企業能不能在成本不升、產出不降的前提下，縮減一部分人力。&lt;/p&gt;
+&lt;p&gt;但真實企業不是活在快照裡，而是活在時間裡。&lt;/p&gt;
+&lt;p&gt;而這正是技能拉平器劇本最容易被低估的地方。&lt;/p&gt;
+&lt;p&gt;如果企業看到的是：少數初階人力加上 AI，就能完成原本更多人才能完成的工作，那短期內它確實可能選擇大幅壓縮初階職位。但問題是，初階職位不只是當期產出單位，它同時也是未來資深人力的來源。&lt;/p&gt;
+&lt;p&gt;很多行業裡，真正值錢的判斷力不是在課堂上養成的，而是在大量低難度、低風險、可犯錯的任務中慢慢累積起來的。如果這些任務被 AI 吃掉，或這些位置被企業過度裁掉，那麼新人就會失去學習曲線，企業也會失去自己的學徒制。&lt;/p&gt;
+&lt;p&gt;我也曾經以為，效率最優化就是好的決策。直到看到一些企業的真實案例，才意識到：你可以在這一季的 P&amp;amp;L 上做出漂亮的數字，但幾年後，整個組織裡，可能沒有人真正長成可以扛責任的人。&lt;/p&gt;
+&lt;p&gt;結果就是：短期看起來更有效率，中期開始出現資深人力斷層，長期則可能出現「沒有人真正長成可以扛責任的人」。&lt;/p&gt;
+&lt;p&gt;換句話說，若把時間維度放進來，$\rho$ 就不再只是當期的人力縮減比例，而會影響企業未來的人才再生產能力。&lt;/p&gt;
+&lt;p&gt;所以，技能拉平器給企業帶來的，不見得只有短期替代空間，也有很現實的風險：&lt;strong&gt;今天看似合理的縮編，可能會變成幾年後的人才真空。&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;再往外看當技能被拉平競爭優勢也可能被拉平&#34;&gt;再往外看：當技能被拉平，競爭優勢也可能被拉平&lt;/h3&gt;
+&lt;p&gt;還有一個更外層、但我只能點到為止的問題。&lt;/p&gt;
+&lt;p&gt;如果 AI 真的是一個技能拉平器，不只是幫到了你，也同樣幫到了你的競爭對手，那麼它壓縮的就不只是公司內部的能力差距，也可能是整個市場裡的能力差距。&lt;/p&gt;
+&lt;p&gt;當大家都能靠 AI 更快做出 80 分的東西，80 分本身就可能不再稀缺。&lt;/p&gt;
+&lt;p&gt;此時，企業導入 AI，未必只是為了裁員省錢，更可能是為了要在未來更激烈的商品化競爭中存活下來。企業關心的，也就不再只是「總產出能不能不下降」，而可能變成：如果市場價格會因為能力拉平而下滑，我是不是必須讓產出成長得更快，甚至突圍出新的價值路線，才能守住原本的利潤？&lt;/p&gt;
+&lt;p&gt;這已經超出前面那個簡單模型能處理的範圍了，但它提醒我們一件事：技能拉平器若真的成立，最後改變的可能不只是人力結構，而是整個市場的競爭方式。&lt;/p&gt;
+&lt;h3 id=&#34;小結技能拉平器沒有被推翻只是被推向現實&#34;&gt;小結：技能拉平器沒有被推翻，只是被推向現實&lt;/h3&gt;
+&lt;p&gt;所以，前面那個「技能拉平器」的劇本，不應該被理解成「AI 對初階員工幫助很大，所以企業一定更容易裁掉誰」。更精確的說法應該是：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如果 AI 主要是在拉平能力差距，那企業表面上確實會得到更大的人力重整空間；但這個空間會立刻受到品質門檻、驗證成本、人才梯隊與市場競爭等現實條件的反作用。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;也因此，企業最後付給資深員工的高薪，未必只是為了他們當下能多做多少事，而更可能是為了那些更難被 AI 直接複製的東西：判斷力、責任承擔、錯誤辨識能力，以及在不確定情境下做最後決策的能力。&lt;/p&gt;
+&lt;p&gt;如果順著這個方向再往下看，企業的結構確實可能逐漸改變：不是單純地讓所有人平均變強，而是慢慢朝向&lt;strong&gt;更小的決策核心，加上更大的 AI 輔助執行外環&lt;/strong&gt;移動。&lt;/p&gt;
+&lt;h2 id=&#34;順著-ai-的發展趨勢看可行條件如何變化&#34;&gt;順著 AI 的發展趨勢看：可行條件如何變化&lt;/h2&gt;
+&lt;p&gt;把前面的模型與兩種劇本合在一起看，可以得到一個相對穩健、但不誇張的方向判斷：&lt;strong&gt;只要 AI 持續變強、持續變便宜，企業用 AI 支持人力調整的條件，理論上會越來越容易成立。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;原因很簡單。如果 AI 越來越強，也就是 $\phi$ 上升，那麼，根據不等式的右邊&lt;/p&gt;
+$$
+\rho \le \frac{\phi}{1+\phi}
+$$&lt;p&gt;這個上限就會上升。
+意思是：從產出角度來看，企業理論上可以承受更高的人力縮減比例。&lt;/p&gt;
+&lt;p&gt;如果 AI 越來越便宜，也就是 $C_{ai}$ 下降，那麼，根據不等式的左邊&lt;/p&gt;
+$$
+\frac{C_{ai}}{w+C_{ai}} \le \rho
+$$&lt;p&gt;這個下限就會下降。
+意思是：從成本角度來看，導入 AI 這件事更容易成立。&lt;/p&gt;
+&lt;p&gt;同時，先決條件&lt;/p&gt;
+$$
+\phi \ge \frac{C_{ai}}{w}
+$$&lt;p&gt;也會更容易被滿足。&lt;/p&gt;
+&lt;p&gt;所以，如果只在這個模型裡思考，可以先得到兩個方向性的結論：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;AI 變強，會把人力縮減比例的上限往上推&lt;/li&gt;
+&lt;li&gt;AI 變便宜，會讓導入門檻下降&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;也就是說，AI 導入之後的人力調整空間，理論上會越來越大。&lt;/p&gt;
+&lt;p&gt;但這裡還是不能講得太滿。因為「調整空間變大」不等於「企業一定會大裁員」。企業也可能把 AI 用來擴大產出、降低價格、擴張市場，或者把人力移去新的流程、驗證、協作與管理工作。&lt;/p&gt;
+&lt;p&gt;所以比較穩妥的說法是：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;隨著 AI 能力提升、成本下降，企業以 AI 支持人力縮減的條件，會越來越容易成立；但是否真的走向大規模縮編，仍然取決於更完整的商業情境。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;結語真正值得討論的不是口號而是約束與配置&#34;&gt;結語：真正值得討論的，不是口號，而是約束與配置&lt;/h2&gt;
+&lt;p&gt;回到最早的那則在社群媒體的裁員貼文。&lt;/p&gt;
+&lt;p&gt;如果我要給個評論，我不會說「很遺憾，你的工作被 AI 取代了」，也不會說「放心，AI 還沒有那麼厲害」。我會說：答案，取決於你的公司在哪一個象限。在這個象限裡，AI 效能夠不夠高？工具成本夠不夠低？而在你的職位上，AI 究竟是在放大你，還是在縮小你和初階員工之間的差距？&lt;/p&gt;
+&lt;p&gt;如果要把整篇壓縮成一句話，那就是：AI 是否導致人力縮減，不能只看技術本身，而要看它能不能在成本不升、產出不降的約束下，撐出一個&lt;strong&gt;可行區間&lt;/strong&gt;；而一旦進入&lt;strong&gt;異質員工&lt;/strong&gt;的世界，真正重要的已經不是 AI 強不強，而是它究竟在放大誰。&lt;/p&gt;
+&lt;p&gt;再往前一步看，真正左右組織命運的，也許不是 AI 會不會衝擊工作，而是：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;AI 的增益，究竟是更偏向放大原本最強的人，還是更偏向拉平原本的能力差距？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;如果是前者，企業看到的會是菁英放大與資源集中；
+如果是後者，企業看到的會是技能拉平與組織重整。&lt;/p&gt;
+&lt;p&gt;《反脆弱》有一句名言：「風會熄滅蠟燭，卻能使火越燒越旺。」&lt;/p&gt;
+&lt;p&gt;AI 帶來的風，已經吹起來了。&lt;/p&gt;
+&lt;p&gt;你是蠟燭，還是火？而你的公司，是在放大最強的人，還是在拉平所有人？&lt;/p&gt;
+&lt;p&gt;這個問題，值得你認真想一想。&lt;/p&gt;
+&lt;h2 id=&#34;一張圖看完整篇論證&#34;&gt;一張圖看完整篇論證&lt;/h2&gt;
+&lt;pre class=&#34;mermaid&#34;&gt;
+  flowchart TD
+    A[企業考慮導入 AI] --&amp;gt; B[基本問題：是否存在可行的人力縮減區間？]
+    B --&amp;gt; C{是否滿足可行條件？&amp;lt;br/&amp;gt;φ ≥ C_ai / w}
+    C -- 否 --&amp;gt; D[沒有可行解&amp;lt;br/&amp;gt;在此模型下，無法同時滿足：&amp;lt;br/&amp;gt;1. 總成本不增加&amp;lt;br/&amp;gt;2. 總有效產出不下降]
+    D --&amp;gt; D1[結論：&amp;lt;br/&amp;gt;AI 雖然可用，但不足以支撐「減人又不傷產出」]
+    C -- 是 --&amp;gt; E[存在可行區間]
+    E --&amp;gt; E1[&amp;#34;人力縮減比例 ρ 必須落在：&amp;lt;br/&amp;gt;C_ai / (w + C_ai) ≤ ρ ≤ φ / (1 + φ)&amp;#34;]
+    E1 --&amp;gt; F[&amp;#34;AI 的增益 φ&amp;lt;br/&amp;gt;如何隨薪資 / 技能分布變動？&amp;#34;]
+    F --&amp;gt; G[劇本一：菁英放大器&amp;lt;br/&amp;gt;w ∝ φ]
+    F --&amp;gt; H[劇本二：技能拉平器&amp;lt;br/&amp;gt;φ ∝ 1 / w]
+    G --&amp;gt; G1[高薪 / 高槓桿職位&amp;lt;br/&amp;gt;AI 增益更大]
+    G1 --&amp;gt; G2[效果：&amp;lt;br/&amp;gt;可行配置空間拉大]
+    G2 --&amp;gt; G3[可能結果 A：&amp;lt;br/&amp;gt;高槓桿人才更值得保留與放大]
+    G2 --&amp;gt; G4[可能結果 B：&amp;lt;br/&amp;gt;少數被放大的人覆蓋更多工作，&amp;lt;br/&amp;gt;其他位置面臨縮減]
+    G2 --&amp;gt; G5[組織特徵：&amp;lt;br/&amp;gt;資源更集中，可能出現跨職類補貼]
+    H --&amp;gt; H1[低薪 / 初階職位&amp;lt;br/&amp;gt;AI 增益更大]
+    H1 --&amp;gt; H2[效果：&amp;lt;br/&amp;gt;初階職位周圍的人力配置空間變大]
+    H2 --&amp;gt; H3[可能結果 A：&amp;lt;br/&amp;gt;用更少初階人力 + AI 維持原產出]
+    H2 --&amp;gt; H4[可能結果 B：&amp;lt;br/&amp;gt;保留更多初階人力，&amp;lt;br/&amp;gt;靠 AI 快速補到可用水準]
+    H2 --&amp;gt; H5[額外條件：&amp;lt;br/&amp;gt;可行性更取決於 C_ai ≤ k]
+    H2 --&amp;gt; H6[組織特徵：&amp;lt;br/&amp;gt;能力差距被壓縮，團隊結構可能重整]
+    G5 --&amp;gt; Z[總結：&amp;lt;br/&amp;gt;AI 不只是「會不會取代人」&amp;lt;br/&amp;gt;而是會如何改寫企業的約束條件與人力配置]
+    H6 --&amp;gt; Z
+&lt;/pre&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;哈佛商學院與 BCG 在 2023 年合作的研究報告 &amp;ldquo;&lt;a href=&#34;https://www.hbs.edu/faculty/Pages/item.aspx?num=64700&#34;&gt;Navigating the Jagged Technological Frontier&lt;/a&gt;&amp;rdquo; 說，&amp;ldquo;Consultants across the skills distribution benefited significantly from having AI augmentation, with those below the average performance threshold increasing by 43% and those above increasing by 17% compared to their own scores.&amp;rdquo;&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description>
+      
+    </item>
     
     <item>
       <title>AI 會寫程式，還要參與系統分析嗎？</title>
