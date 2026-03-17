@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="zh-tw" itemscope itemtype="http://schema.org/WebPage" data-theme="light">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>
+    
+    LLM 改變的不是寫程式這件事，而是重新定義「正確」的方式 - Potioneer&#39;s Essays
+    </title>
+  
+
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes" />
+
+
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+
+
+<meta name="applicable-device" content="pc,mobile">
+<meta name="color-scheme" content="light dark" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+
+<meta name="generator" content="Hugo 0.157.0" />
+
+
+<link rel="canonical" href="//localhost:1313/post/2026/03/genai-se-level-up-v2/" />
+
+
+
+
+<meta name="author" content="William Yeh" />
+<meta name="description" content="幾個月前，一位朋友傳給我 GitHub Copilot 的研究報告，說：「你看，完成相同任務的速度提升了 55.8%。AI 要取代工程師了。」
+我當時第一個想法不是興奮，也不是恐慌，而是一個更安靜的問題：速度快了 55.8%，但那些產出，你怎麼確認它是對的？
+這個問題，才是這篇文章真正想回答的。
+不是「AI 會不會取代程式設計」。那是一個太粗糙、太容易讓人站隊的問題。真正值得問的是：當 LLM 進入開發流程之後，判準移到哪裡去了——什麼叫做對，由誰來決定，用什麼來驗證。
+把眼前這一輪變化理解成「AI 代替人寫程式」，只抓到了表面。更準確的說法是：工程成本沒有消失，而是在流程中重新分布。 過去大量成本落在實作撰寫與低階細節處理；現在，隨著模型能高速產生候選實作，真正變貴的東西轉成規格定義、上下文管理、驗證設計、權限控制與責任治理。1 AI 沒有取消軟體工程，而是把控制面往上推了一層。
+這個變化不只是抽象感受。Jain 等人的研究顯示，只靠命名清理、模組化與規劃註解，便可讓 code generation 表現最高提升 30%；甚至只用 15% 的高品質清洗資料，也能超過 100% 的原始雜亂資料。2 這說明未來更值錢的，往往不是多寫一些程式，而是把問題整理成模型能穩定理解、系統能可靠驗證的形式。
+所以，本文的核心主張很簡單：軟體工程的典範確實在變，但它變的不是工程紀律的終結，而是判準的重新定位——抽象層的提升、驗證負擔的轉移，以及治理形式的重組。
+" />
+
+
+
+
+
+  
+
+
+
+
+
+
+<meta name="keywords" content="ai, programming, testing" />
+
+
+<meta property="og:url" content="//localhost:1313/post/2026/03/genai-se-level-up-v2/">
+  <meta property="og:site_name" content="Potioneer&#39;s Essays">
+  <meta property="og:title" content="LLM 改變的不是寫程式這件事，而是重新定義「正確」的方式">
+  <meta property="og:description" content="幾個月前，一位朋友傳給我 GitHub Copilot 的研究報告，說：「你看，完成相同任務的速度提升了 55.8%。AI 要取代工程師了。」
+我當時第一個想法不是興奮，也不是恐慌，而是一個更安靜的問題：速度快了 55.8%，但那些產出，你怎麼確認它是對的？
+這個問題，才是這篇文章真正想回答的。
+不是「AI 會不會取代程式設計」。那是一個太粗糙、太容易讓人站隊的問題。真正值得問的是：當 LLM 進入開發流程之後，判準移到哪裡去了——什麼叫做對，由誰來決定，用什麼來驗證。
+把眼前這一輪變化理解成「AI 代替人寫程式」，只抓到了表面。更準確的說法是：工程成本沒有消失，而是在流程中重新分布。 過去大量成本落在實作撰寫與低階細節處理；現在，隨著模型能高速產生候選實作，真正變貴的東西轉成規格定義、上下文管理、驗證設計、權限控制與責任治理。1 AI 沒有取消軟體工程，而是把控制面往上推了一層。
+這個變化不只是抽象感受。Jain 等人的研究顯示，只靠命名清理、模組化與規劃註解，便可讓 code generation 表現最高提升 30%；甚至只用 15% 的高品質清洗資料，也能超過 100% 的原始雜亂資料。2 這說明未來更值錢的，往往不是多寫一些程式，而是把問題整理成模型能穩定理解、系統能可靠驗證的形式。
+所以，本文的核心主張很簡單：軟體工程的典範確實在變，但它變的不是工程紀律的終結，而是判準的重新定位——抽象層的提升、驗證負擔的轉移，以及治理形式的重組。">
+  <meta property="og:locale" content="zh_tw">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2026-03-16T20:00:00+08:00">
+    <meta property="article:modified_time" content="2026-03-16T20:00:00+08:00">
+    <meta property="article:tag" content="Ai">
+    <meta property="article:tag" content="Programming">
+    <meta property="article:tag" content="Testing">
+
+  <meta itemprop="name" content="LLM 改變的不是寫程式這件事，而是重新定義「正確」的方式">
+  <meta itemprop="description" content="幾個月前，一位朋友傳給我 GitHub Copilot 的研究報告，說：「你看，完成相同任務的速度提升了 55.8%。AI 要取代工程師了。」
+我當時第一個想法不是興奮，也不是恐慌，而是一個更安靜的問題：速度快了 55.8%，但那些產出，你怎麼確認它是對的？
+這個問題，才是這篇文章真正想回答的。
+不是「AI 會不會取代程式設計」。那是一個太粗糙、太容易讓人站隊的問題。真正值得問的是：當 LLM 進入開發流程之後，判準移到哪裡去了——什麼叫做對，由誰來決定，用什麼來驗證。
+把眼前這一輪變化理解成「AI 代替人寫程式」，只抓到了表面。更準確的說法是：工程成本沒有消失，而是在流程中重新分布。 過去大量成本落在實作撰寫與低階細節處理；現在，隨著模型能高速產生候選實作，真正變貴的東西轉成規格定義、上下文管理、驗證設計、權限控制與責任治理。1 AI 沒有取消軟體工程，而是把控制面往上推了一層。
+這個變化不只是抽象感受。Jain 等人的研究顯示，只靠命名清理、模組化與規劃註解，便可讓 code generation 表現最高提升 30%；甚至只用 15% 的高品質清洗資料，也能超過 100% 的原始雜亂資料。2 這說明未來更值錢的，往往不是多寫一些程式，而是把問題整理成模型能穩定理解、系統能可靠驗證的形式。
+所以，本文的核心主張很簡單：軟體工程的典範確實在變，但它變的不是工程紀律的終結，而是判準的重新定位——抽象層的提升、驗證負擔的轉移，以及治理形式的重組。">
+  <meta itemprop="datePublished" content="2026-03-16T20:00:00+08:00">
+  <meta itemprop="dateModified" content="2026-03-16T20:00:00+08:00">
+  <meta itemprop="wordCount" content="7067">
+  <meta itemprop="keywords" content="Ai,Programming,Testing">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="LLM 改變的不是寫程式這件事，而是重新定義「正確」的方式">
+  <meta name="twitter:description" content="幾個月前，一位朋友傳給我 GitHub Copilot 的研究報告，說：「你看，完成相同任務的速度提升了 55.8%。AI 要取代工程師了。」
+我當時第一個想法不是興奮，也不是恐慌，而是一個更安靜的問題：速度快了 55.8%，但那些產出，你怎麼確認它是對的？
+這個問題，才是這篇文章真正想回答的。
+不是「AI 會不會取代程式設計」。那是一個太粗糙、太容易讓人站隊的問題。真正值得問的是：當 LLM 進入開發流程之後，判準移到哪裡去了——什麼叫做對，由誰來決定，用什麼來驗證。
+把眼前這一輪變化理解成「AI 代替人寫程式」，只抓到了表面。更準確的說法是：工程成本沒有消失，而是在流程中重新分布。 過去大量成本落在實作撰寫與低階細節處理；現在，隨著模型能高速產生候選實作，真正變貴的東西轉成規格定義、上下文管理、驗證設計、權限控制與責任治理。1 AI 沒有取消軟體工程，而是把控制面往上推了一層。
+這個變化不只是抽象感受。Jain 等人的研究顯示，只靠命名清理、模組化與規劃註解，便可讓 code generation 表現最高提升 30%；甚至只用 15% 的高品質清洗資料，也能超過 100% 的原始雜亂資料。2 這說明未來更值錢的，往往不是多寫一些程式，而是把問題整理成模型能穩定理解、系統能可靠驗證的形式。
+所以，本文的核心主張很簡單：軟體工程的典範確實在變，但它變的不是工程紀律的終結，而是判準的重新定位——抽象層的提升、驗證負擔的轉移，以及治理形式的重組。">
+
+<link rel="icon" href="/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/style.min.53f4bb4dab681eb9ebff874ec1358eafd998d6d0c2b444ed3fc26a240b963cdf.css" integrity="sha256-U/S7TatoHrnr/4dOwTWOr9mY1tDCtETtP8JqJAuWPN8=" media="screen"
+  crossorigin="anonymous">
+
+
+
+<link rel="stylesheet" href="/css/custom.css">
+
+
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+<meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
+
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/katex@0.16.38/dist/katex.min.css"
+    crossorigin="anonymous"
+  >
+
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.38/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.38/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      renderMathInElement(document.body, {
+        delimiters: [
+          { left: "$$", right: "$$", display: true },
+          { left: "$", right: "$", display: false },
+          { left: "\\(", right: "\\)", display: false },
+          { left: "\\[", right: "\\]", display: true }
+        ],
+        throwOnError: false
+      });
+    });
+  </script>
+
+
+<script>
+  (function () {
+    var savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  })();
+</script>
+
+
+</head>
+
+<body>
+  <div id="back-to-top"></div>
+
+  <header class="site-header">
+    
+<div class="desktop-header">
+  <div class="desktop-header-logo">
+    <a href="/" class="logo">
+      
+      Potioneer&#39;s Essays
+      
+    </a>
+  </div>
+
+  <nav class="desktop-navbar">
+    <ul id="menu" class="menu">
+      
+      
+      <li class="menu-item">
+        
+        
+        
+        <a class="menu-item-link" href="//localhost:1313/">♜</a>
+        
+
+        
+
+      </li>
+      
+      <li class="menu-item">
+        
+        
+        
+        <a class="menu-item-link" href="//localhost:1313/post/">Archives</a>
+        
+
+        
+
+      </li>
+      
+      <li class="menu-item">
+        
+        
+        <a class="menu-item-link menu-parent" href="//localhost:1313/series/">
+          Series
+          
+<svg aria-hidden="true" class="lucide lucide-chevron-down hi-svg-inline icon--chevron-down" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="m6 9 6 6 6-6"/></svg>
+        </a>
+        <ul class="submenu">
+          
+          <li class="submenu-item">
+            <a href="//localhost:1313/series/career-reading-club/">職涯躍升書系導讀會</a>
+          </li>
+          
+          <li class="submenu-item">
+            <a href="//localhost:1313/series/essence-of-scrum/">Essence of Scrum</a>
+          </li>
+          
+          <li class="submenu-item">
+            <a href="//localhost:1313/series/scrum-master-training/">Scrum master 培訓系列</a>
+          </li>
+          
+          <li class="submenu-item">
+            <a href="//localhost:1313/series/agile-decomposition/">敏捷的工作分解方法</a>
+          </li>
+          
+          <li class="submenu-item">
+            <a href="//localhost:1313/series/systhinking-series/">「系統思考工作坊」系列</a>
+          </li>
+          
+          <li class="submenu-item">
+            <a href="//localhost:1313/series/criteria-series/">「判準與指標」系列</a>
+          </li>
+          
+          <li class="submenu-item">
+            <a href="//localhost:1313/series/change-series/">「改變」系列</a>
+          </li>
+          
+          <li class="submenu-item">
+            <a href="//localhost:1313/series/book-review/">書籍／課程推薦</a>
+          </li>
+          
+        </ul>
+
+        
+
+      </li>
+      
+      <li class="menu-item">
+        
+        
+        
+        <a class="menu-item-link" href="//localhost:1313/tags/">Tags</a>
+        
+
+        
+
+      </li>
+      
+      <li class="menu-item">
+        
+        
+        
+        <a class="menu-item-link" href="//localhost:1313/categories/">Categories</a>
+        
+
+        
+
+      </li>
+      
+
+      
+      
+
+      
+
+      <li class="menu-item">
+        <a class="theme-toggle menu-item-link" href="javascript:void(0);">
+
+          
+<svg aria-hidden="true" class="lucide lucide-sun hi-svg-inline theme-icon-light" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+
+          
+<svg aria-hidden="true" class="lucide lucide-moon hi-svg-inline theme-icon-dark" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+
+        </a>
+      </li>
+
+      <li class="menu-item">
+        <a class="menu-item-link" href="//localhost:1313/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
+          title="rss" target="_blank">
+          
+<svg aria-hidden="true" class="lucide lucide-rss hi-svg-inline icon--rss" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg>
+        </a>
+        
+      </li>
+    </ul>
+  </nav>
+</div>
+
+    
+
+<div class="mobile-header">
+  <div id="mobile-navbar" class="mobile-navbar">
+    <div id="mobile-navbar-icon" class="mobile-navbar-icon">
+      
+<svg aria-hidden="true" class="lucide lucide-menu hi-svg-inline icon--menu" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+    </div>
+    <div class="mobile-navbar-logo">
+      <a href="/" class="logo">Potioneer&#39;s Essays</a>
+    </div>
+  </div>
+
+  <div id="mobile-menu-close-modal" class="mobile-menu-close-modal"></div>
+  <nav id="mobile-menu" class="mobile-menu">
+    <ul class="mobile-menu-list">
+      <li class="mobile-menu-item">
+        
+        
+        
+        <a class="menu-item-link" href="//localhost:1313/">♜</a>
+        
+        
+      </li><li class="mobile-menu-item">
+        
+        
+        
+        <a class="menu-item-link" href="//localhost:1313/post/">Archives</a>
+        
+        
+      </li><li class="mobile-menu-item">
+        
+        
+        <div class="mobile-menu-parent">
+          <span class="mobile-submenu-open"></span>
+          <a href="//localhost:1313/series/">
+            Series
+          </a>
+        </div>
+        <ul class="mobile-submenu-list">
+          
+          <li>
+            <a href="//localhost:1313/series/career-reading-club/">職涯躍升書系導讀會</a>
+          </li>
+          
+          <li>
+            <a href="//localhost:1313/series/essence-of-scrum/">Essence of Scrum</a>
+          </li>
+          
+          <li>
+            <a href="//localhost:1313/series/scrum-master-training/">Scrum master 培訓系列</a>
+          </li>
+          
+          <li>
+            <a href="//localhost:1313/series/agile-decomposition/">敏捷的工作分解方法</a>
+          </li>
+          
+          <li>
+            <a href="//localhost:1313/series/systhinking-series/">「系統思考工作坊」系列</a>
+          </li>
+          
+          <li>
+            <a href="//localhost:1313/series/criteria-series/">「判準與指標」系列</a>
+          </li>
+          
+          <li>
+            <a href="//localhost:1313/series/change-series/">「改變」系列</a>
+          </li>
+          
+          <li>
+            <a href="//localhost:1313/series/book-review/">書籍／課程推薦</a>
+          </li>
+          
+        </ul>
+        
+      </li><li class="mobile-menu-item">
+        
+        
+        
+        <a class="menu-item-link" href="//localhost:1313/tags/">Tags</a>
+        
+        
+      </li><li class="mobile-menu-item">
+        
+        
+        
+        <a class="menu-item-link" href="//localhost:1313/categories/">Categories</a>
+        
+        
+      </li>
+      
+
+      
+
+      <li class="mobile-menu-item">
+        <a class="theme-toggle menu-item-link" href="javascript:void(0);">
+
+          
+<svg aria-hidden="true" class="lucide lucide-sun hi-svg-inline theme-icon-light" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+
+          
+<svg aria-hidden="true" class="lucide lucide-moon hi-svg-inline theme-icon-dark" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+
+        </a>
+      </li>
+
+      <li class="mobile-menu-item">
+        <a class="menu-item-link" href="//localhost:1313/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
+          title="rss" target="_blank">
+          
+<svg aria-hidden="true" class="lucide lucide-rss hi-svg-inline icon--rss" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg>
+        </a>
+        
+      </li>
+    </ul>
+  </nav>
+</div>
+
+  </header>
+
+  
+
+  
+
+
+
+  <main id="main" class="main pico container">
+    <div class="content-wrapper">
+    <aside class="left-sidebar">
+      
+<nav class="toc" id="toc">
+    <div class="toc-title">文章目錄</div>
+    <div class="toc-content custom-scrollbar">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#一歷史類比有啟發但不能把-llm-直接當成新編譯器">一、歷史類比有啟發，但不能把 LLM 直接當成新編譯器</a></li>
+    <li><a href="#二llm-的真正問題不只是非決定性而是語意層的非決定性">二、LLM 的真正問題，不只是非決定性，而是語意層的非決定性</a></li>
+    <li><a href="#三alphago-與-alphadev-告訴我們的不是-ai-什麼都能做而是它在什麼條件下特別強">三、AlphaGo 與 AlphaDev 告訴我們的，不是 AI 什麼都能做，而是它在什麼條件下特別強</a></li>
+    <li><a href="#四代理式工程真正改變的不是-coding-本身而是-review-的重心">四、代理式工程真正改變的，不是 coding 本身，而是 review 的重心</a></li>
+    <li><a href="#五多輪上下文的脆弱性正在把規格管理推成新瓶頸">五、多輪上下文的脆弱性，正在把規格管理推成新瓶頸</a></li>
+    <li><a href="#六ai-時代的測試哲學從-detroit-與-london-之爭到驗證分層">六、AI 時代的測試哲學：從 Detroit 與 London 之爭，到驗證分層</a></li>
+    <li><a href="#七乾淨程式碼的新解釋從人類可維護性到模型可理解性">七、乾淨程式碼的新解釋：從人類可維護性到模型可理解性</a></li>
+    <li><a href="#八未來真正要競爭的不是誰能產生程式碼而是誰能產生可被治理的程式碼">八、未來真正要競爭的，不是誰能產生程式碼，而是誰能產生可被治理的程式碼</a></li>
+    <li><a href="#九對技術樂觀主義最強版本的回答你說得對但你漏了更重要的一半">九、對技術樂觀主義最強版本的回答：你說得對，但你漏了更重要的一半</a></li>
+    <li><a href="#結論">結論</a></li>
+    <li><a href="#註腳">註腳</a></li>
+  </ul>
+</nav>
+    </div>
+  </nav>
+
+
+    </aside>
+
+    <div id="content" class="content">
+      <article class="post">
+        
+        <header class="post-header">
+          <h1 class="post-title">LLM 改變的不是寫程式這件事，而是重新定義「正確」的方式</h1>
+          
+
+
+
+          <div class="post-meta-list">
+  <div class="post-meta-item post-meta-author">
+    
+<svg aria-hidden="true" class="lucide lucide-user-round-pen hi-svg-inline" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M2 21a8 8 0 0 1 10.821-7.487"/><path d="M21.378 16.626a1 1 0 0 0-3.004-3.004l-4.01 4.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z"/><circle cx="10" cy="8" r="5"/></svg>
+    William Yeh
+    
+  </div>
+
+  <div class="post-meta-item post-meta-time">
+    
+<svg aria-hidden="true" class="lucide lucide-calendar-days hi-svg-inline" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/></svg>
+    <time datetime=" 2026-03-16">
+      2026-03-16
+    </time>
+
+
+    
+
+  </div>
+
+
+  <div class="post-meta__right">
+    <span class="post-meta-more">
+      約 7067 字 -
+      預計閱讀 15 分鐘
+      
+      
+      </span>
+
+    <div class="post-meta-item post-meta-category">
+      
+        
+          
+        <a href="//localhost:1313/categories/tech/">tech</a>
+    </div>
+
+
+    
+    
+
+
+    
+    
+  </div>
+</div>
+
+        </header>
+
+        
+        <div class="post-content">
+          <p>幾個月前，一位朋友傳給我 GitHub Copilot 的研究報告，說：「你看，完成相同任務的速度提升了 55.8%。AI 要取代工程師了。」</p>
+<p>我當時第一個想法不是興奮，也不是恐慌，而是一個更安靜的問題：速度快了 55.8%，但那些產出，你怎麼確認它是對的？</p>
+<p>這個問題，才是這篇文章真正想回答的。</p>
+<p>不是「AI 會不會取代程式設計」。那是一個太粗糙、太容易讓人站隊的問題。真正值得問的是：<strong>當 LLM 進入開發流程之後，判準移到哪裡去了——什麼叫做對，由誰來決定，用什麼來驗證。</strong></p>
+<p>把眼前這一輪變化理解成「AI 代替人寫程式」，只抓到了表面。更準確的說法是：<strong>工程成本沒有消失，而是在流程中重新分布。</strong> 過去大量成本落在實作撰寫與低階細節處理；現在，隨著模型能高速產生候選實作，真正變貴的東西轉成規格定義、上下文管理、驗證設計、權限控制與責任治理。<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> AI 沒有取消軟體工程，而是把控制面往上推了一層。</p>
+<p>這個變化不只是抽象感受。Jain 等人的研究顯示，只靠命名清理、模組化與規劃註解，便可讓 code generation 表現最高提升 30%；甚至只用 15% 的高品質清洗資料，也能超過 100% 的原始雜亂資料。<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> 這說明未來更值錢的，往往不是多寫一些程式，而是把問題整理成模型能穩定理解、系統能可靠驗證的形式。</p>
+<p>所以，本文的核心主張很簡單：<strong>軟體工程的典範確實在變，但它變的不是工程紀律的終結，而是判準的重新定位——抽象層的提升、驗證負擔的轉移，以及治理形式的重組。</strong></p>
+<h2 id="一歷史類比有啟發但不能把-llm-直接當成新編譯器">一、歷史類比有啟發，但不能把 LLM 直接當成新編譯器</h2>
+<p>軟體工程史上反覆出現的一個主題，是抽象層不斷上升。</p>
+<p>早期程式設計高度依賴機器碼與組合語言，人類必須直接處理硬體細節、暫存器配置與控制流程。高階語言與編譯器出現後，工程師的注意力才逐步從「這條指令怎麼排」轉向「這個邏輯怎麼表達」。這不只是寫法變方便，而是人機分工被重構了。<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></p>
+<p>從這個角度看，今天的 LLM 編程確實像另一輪抽象層提升。人類不再只寫語法層面的指令，而越來越多透過自然語言、規格、測試與約束來描述意圖，再由模型生成候選實作。<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup></p>
+<p>但這個歷史類比只能用來說明方向，不能直接偷渡結論。</p>
+<p>很多人看到這裡，下一步就想說：既然高階語言取代了低階語言，今天 LLM 也會像編譯器一樣，成為新的工程基礎設施。這個推論太快了。編譯器之所以能成為工程底座，不在於它很強，而在於它<strong>可預期</strong>：同樣的合法輸入，在同樣條件下，得到語意一致的輸出。</p>
+<p>LLM 不是這種東西。它更接近一個受語境、資料分布、提示結構與推理路徑影響的機率性實作生成器。<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup> 拿編譯器做類比，只能說「抽象層又上升了」，不能說「LLM 已經等同於編譯器」。前者幫你看清趨勢；後者則會讓你忽略最關鍵的差異：<strong>編譯器可以默認信任，LLM 不能。</strong></p>
+<p>這個「信任」問題，就是判準問題的起點。</p>
+<hr>
+<h2 id="二llm-的真正問題不只是非決定性而是語意層的非決定性">二、LLM 的真正問題，不只是非決定性，而是語意層的非決定性</h2>
+<p>一個常見說法是，現代系統本來就充滿不確定性：快取未命中、垃圾回收時機、JIT 最佳化、多執行緒交錯，哪一個不是非決定性的？既然工程師早就習慣和這些東西共處，LLM 的不穩定似乎也只是另一種可管理的系統特性。</p>
+<p>這種說法最大的問題，是沒有分清楚不確定性發生在哪一層。</p>
+<p>傳統系統的非決定性，大多發生在執行路徑、資源調度與效能表現層面；在設計得當的前提下，語意正確性仍可透過型別系統、同步模型、測試與形式方法加以分析與約束。LLM 的不穩定則更常直接出現在<strong>語意建構本身</strong>：同樣一個提示，可能對應不同的實作策略、不同的邊界條件假設、不同的錯誤處理方式，甚至引入安全弱點或違反隱含限制。<sup id="fnref1:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup></p>
+<p>這不是「跑法有點抖」，而是「你得到的東西本身可能已經換了意思」。</p>
+<p>但把話說到這裡，也不能滑向另一個極端——好像 LLM 完全不可工程化。在任務範圍受限、提示結構清楚、工具介面穩定、測試充分的條件下，模型輸出可以明顯收斂。Anthropic 對 workflow 與 agent 的區分，本身就說明了一件事：工程上真正重要的，不是抽象地問「AI 能不能用」，而是<strong>你授予了多少自主性，又用什麼外部機制把這種自主性兜住。</strong><sup id="fnref1:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+<p>所以，更合理的定位不是把 LLM 視為新一代翻譯器，而是把它視為<strong>必須被規格、測試、權限與審計包起來的候選實作產生器</strong>。它可以很強，但不能裸奔。</p>
+<hr>
+<h2 id="三alphago-與-alphadev-告訴我們的不是-ai-什麼都能做而是它在什麼條件下特別強">三、AlphaGo 與 AlphaDev 告訴我們的，不是 AI 什麼都能做，而是它在什麼條件下特別強</h2>
+<p>要理解 AI 為什麼能在某些問題上表現驚人，最好的科普入口其實不是寫程式，而是下棋。</p>
+<p>AlphaGo 的重要性，不只是它贏了人類棋手，而是它讓很多人第一次直觀看到：<strong>只要規則固定、目標清楚、勝負可判定，而且系統可以大量自我對弈，AI 就能在封閉問題裡快速逼近甚至超過人類。</strong><sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup> 圍棋雖然複雜，但它仍然是一個封閉世界：棋盤有限，合法動作明確，輸贏標準預先給定。這種問題的難，主要是搜尋空間巨大，不是判準模糊。</p>
+<p>AlphaDev 其實是同一種邏輯在程式世界裡的另一種表現。它把「尋找更好的小型排序程式」表述成一個可搜尋的問題：每一步都是組合更好的指令序列，目標函數（正確性與效能）相對明確。也正因為判準清楚、評估穩定、搜尋空間可封裝，AlphaDev 才能在某些小型排序問題上找到優於既有人類基準的方案。<sup id="fnref1:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup></p>
+<p><strong>AlphaGo 和 AlphaDev 的勝利，不是因為 AI 比人更懂世界，而是因為在規則封閉、回饋明確、可大量試錯的任務裡，AI 對搜尋的利用效率非常高。</strong></p>
+<p>這也是為什麼它們不能被直接外推到一般企業軟體工程。企業工程面對的通常不是單一且乾淨的目標函數，而是一組彼此牴觸的要求：可維護性、模組邊界、法規遵循、事故可追溯性、部署風險、團隊交接成本、長期總持有成本。這些維度很難被壓成一個簡單分數。局部效能最優，往往不等於系統治理最優。</p>
+<p>較合理的結論不是「AI 將接管所有工程決策」，而是：<strong>不同層級的問題，適合不同程度的自動化。</strong> 問題的判準越清楚，AI 越能發揮；判準越模糊，人的判斷越不可缺。</p>
+<hr>
+<h2 id="四代理式工程真正改變的不是-coding-本身而是-review-的重心">四、代理式工程真正改變的，不是 coding 本身，而是 review 的重心</h2>
+<p>代理式工作流的真正衝擊，不在於它證明了「人可以退出」，而在於它暴露了一個更現實的問題：當模型生成候選實作的速度遠快於人工閱讀速度，傳統以逐行 diff 為核心的審查方式，開始失去可擴展性。<sup id="fnref:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup></p>
+<p>過去的 code review 預設人類能逐行看、逐段比、逐點討論。這個前提在 AI 大量生成的條件下開始動搖。候選實作的產生速度，已經遠快於人工閱讀與理解速度。</p>
+<p>這時候真正該問的，不是「還要不要 code review」，而是「未來 review 到底 review 什麼」。</p>
+<p>較合理的答案是：<strong>review 的對象正在從程式文字，轉向規格、風險、證據與邊界。</strong> 或者換個說法：review 正在從「檢查實作是否正確」，轉向「確認判準是否被滿足、判準本身是否被正確定義」。自治權可以上升，但只能和驗證能力一起上升；否則，系統只是更快地犯錯。<sup id="fnref2:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+<hr>
+<h2 id="五多輪上下文的脆弱性正在把規格管理推成新瓶頸">五、多輪上下文的脆弱性，正在把規格管理推成新瓶頸</h2>
+<p>如果開發越來越依賴對話、提示與逐步澄清，那麼上下文管理就不再只是使用技巧，而會成為真正的工程問題。</p>
+<p>多輪代理式互動，不是把同一句話反覆說，而是不斷增加限制、修正假設、引用先前輸出、放棄失敗路徑。系統不只要記住內容，還要知道哪些前提已經失效，哪些推論應該撤回，哪些局部探索不應污染全局。<sup id="fnref:8"><a href="#fn:8" class="footnote-ref" role="doc-noteref">8</a></sup></p>
+<p>現有研究已經給出相當直接的警告。當任務從單輪明確指令，變成多輪漸進探索式對話時，模型表現可能顯著下降；問題不只在上下文變長，更在於模型容易過早承諾、被先前錯誤輸出錨定，之後只能在錯的基礎上做低效修補。Context Branching 之類的方法，試圖把版本控制語意帶進 prompt 管理，透過 checkpoint、branch、switch 等方式降低探索路徑彼此污染的問題。<sup id="fnref1:8"><a href="#fn:8" class="footnote-ref" role="doc-noteref">8</a></sup></p>
+<p><strong>LLM 的限制未必只在單次生成不夠準，也在跨輪次規格演化的不穩定。</strong></p>
+<p>一旦接受這個判斷，很多工程決策就會跟著變。未來關鍵能力之一，不是讓模型多生成幾輪，而是把規格、任務與對話設計成可分支、可回退、可隔離、可重組的結構。也就是說，prompt 不再只是輸入；它開始像一種新的工程工件。</p>
+<hr>
+<h2 id="六ai-時代的測試哲學從-detroit-與-london-之爭到驗證分層">六、AI 時代的測試哲學：從 Detroit 與 London 之爭，到驗證分層</h2>
+<p>如果 LLM 與代理式系統開始承擔更多實作、重構與局部迭代工作，測試策略就不能只是沿用舊習慣，而必須重新回答一個問題：<strong>測試的作用，到底只是查錯，還是同時負責定義 AI 可以怎麼改、不能怎麼改。</strong> 換句話說：測試是在表達判準。</p>
+<p>先把兩個經典測試學派的分歧講清楚。</p>
+<p><strong>Detroit school</strong>（也稱 Chicago school 或 classicist TDD）關心的是：<strong>最後系統有沒有做對事。</strong> 測試應盡量從系統的外部行為與狀態變化來驗證，而不是過度關注物件之間的互動細節。<sup id="fnref:9"><a href="#fn:9" class="footnote-ref" role="doc-noteref">9</a></sup> 好處是測試比較耐重構——只要外部契約沒變，內部怎麼調整，測試不必跟著大改。</p>
+<p><strong>London school</strong>（mockist TDD）關心的是：<strong>系統是不是用我預期的協作方式做對事。</strong> 更強調從物件協作與互動設計出發，常採取 outside-in 的開發方式，大量使用 mock 來驗證「誰應該呼叫誰、何時呼叫、帶什麼參數」。<sup id="fnref1:9"><a href="#fn:9" class="footnote-ref" role="doc-noteref">9</a></sup> 好處是把設計問題提早暴露，把責任分配的模糊性在測試撰寫時就逼出來。</p>
+<p>這裡沒有誰天然正確。它們對應兩種不同的風險感知：擔心重構成本與測試脆弱性，偏向 Detroit；擔心依賴邊界不清與責任分工混亂，偏向 London。</p>
+<p>問題在於，到了 AI 參與開發的場景，這兩派的權重會變。</p>
+<p>在代理式重構或生成場景中，模型很可能會調整控制流程、替換內部實作、重新切分模組，甚至用一種人類原本沒想到的方式達成同樣的外部行為。如果測試過度綁定方法呼叫次序、參數傳遞路徑與物件互動細節，那麼大量本來有效、甚至更好的重構，都可能被測試判定為失敗。<strong>過度 London 化的測試，在 AI 場景裡特別容易把「設計選擇」誤寫成「功能判準」。</strong></p>
+<p>這正是 AI 時代需要重新審視這場舊爭論的原因。問題已經不只是「哪一派更優雅」，而是「哪一種測試更能區分：什麼是系統真正不能變的東西，什麼只是暫時的實作路徑。」</p>
+<p>比較有建設性的結論是：兩者各自守著不同層級的邊界。</p>
+<p>① 對 AI 需要自由探索、自由重構的區域，測試應更接近 Detroit school 的精神：盡量用公開 API、可觀察狀態、整體行為與高階不變量來定義正確性，而不要過早把內部協作方式寫死。這一層的目的，是替模型保留足夠的搜尋空間，讓它能在不破壞外部契約的前提下自主改進實作。</p>
+<p>② 對那些真的不能亂動的區域——對外協定、錯誤處理流程、安全檢查、高成本依賴呼叫、金流與審計事件——London school 的精神仍然有價值。因為在這些地方，我們在意的本來就不只是結果對不對，也在意它是否以正確、可追溯、可受控的方式發生。測試不是多餘，而是在保護關鍵邊界。</p>
+<p>③ AI 時代還多出一個傳統學派爭論裡較少觸及的重點：<strong>高階可驗證性。</strong> 除了狀態驗證與互動驗證之外，還要往上加入 property-based testing、differential testing 與契約導向驗證。He 等人的研究指出，以高階不變量而不是單一 I/O 範例作為驗證核心，可以明顯改善 LLM code generation 的表現。<sup id="fnref:10"><a href="#fn:10" class="footnote-ref" role="doc-noteref">10</a></sup></p>
+<p>測試，是護城河。它的作用不只是抓錯，也是劃定邊界：AI 的搜尋空間在這裡，不能超出這裡。讓測試來說話，才是真正的判準表達。</p>
+<p>從這個角度看，AI 時代的測試哲學最終會走向一種<strong>驗證分層</strong>：用偏 Detroit 的測試保護外部行為與高階不變量；用偏 London 的測試保護關鍵依賴、權限邊界與高成本副作用；再用 property-based 與 differential testing 補上傳統單元測試難以覆蓋的生成風險。<sup id="fnref1:10"><a href="#fn:10" class="footnote-ref" role="doc-noteref">10</a></sup></p>
+<hr>
+<h2 id="七乾淨程式碼的新解釋從人類可維護性到模型可理解性">七、乾淨程式碼的新解釋：從人類可維護性到模型可理解性</h2>
+<p>過去說「乾淨程式碼」，常見的理由是：降低人類工程師的理解成本，讓維護、交接與重構變得比較容易。這個說法當然沒有錯。但到了 LLM 參與開發的時代，這套論述還得再往前走一步。今天的問題已經不只是「人看不看得懂」，而是：<strong>模型能不能穩定理解你給它的程式。</strong></p>
+<p>這裡最容易被低估的一點是，對模型來說，程式碼不是單純的執行對象，也是上下文材料。它要根據這些材料去推斷命名意圖、模組邊界、控制流程與可重用模式。程式越雜亂，模型越難分辨什麼是核心結構，什麼只是歷史殘留；越容易把偶然寫法誤判成必要約束，把局部噪音誤當成系統規律。</p>
+<p>有個比喻很貼切。武俠小說裡學武的人，必須先蹲馬步。看起來什麼都沒做，卻是一切功夫的前置條件。乾淨程式碼也是類似的邏輯：它不是最終目標，而是讓一切後續工作（包括模型的理解與生成）得以穩定發生的基礎條件。蹲馬步的功夫，AI 時代反而更值錢了。</p>
+<p>Jain 等人的研究，正好把這件事做成了可以驗證的工程問題。他們關心的不是蒐集更多程式碼資料，而是反過來問：只把現有資料清理得更有結構、更易讀，模型會不會學得更好？具體做了三件事：<strong>重新命名變數、把複雜程式拆成較小的輔助函式，以及加入自然語言形式的規劃註解。</strong> 不是改演算法，而是改「程式呈現給模型的樣子」。<sup id="fnref1:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></p>
+<p>結果很直接：使用清理後的資料，表現最高可提升 30%。更有意思的是，只用 15% 的高品質清洗資料，效果就能超過用 100% 的原始雜亂資料訓練的模型。<strong>對 code generation 來說，資料品質在某些情況下比資料數量更重要。</strong><sup id="fnref2:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></p>
+<p>這個發現改變了我們對工程價值的理解。過去談工程紀律，常常像是在談長期美德：今天命名清楚、模組分明，未來團隊比較好維護。這當然成立。但在 AI 時代，這些做法不只服務未來的人，也立刻服務當下的模型。你把程式整理得越清楚，模型越容易在較小的語意空間裡工作；上下文噪音越少，生成就越穩定；結構越清楚，幻覺風險和誤解成本就越低。</p>
+<p><strong>在 LLM 時代，乾淨程式碼正在從人類維護性的美德，變成模型可生成性的基礎設施。</strong></p>
+<p>下一次再談 clean code，不要只問「這樣別人看不看得懂」。還要多問一句：<strong>這樣的結構，模型能不能穩定理解、穩定延續、穩定驗證。</strong>
+這不是審美問題。這是生成條件問題。</p>
+<hr>
+<h2 id="八未來真正要競爭的不是誰能產生程式碼而是誰能產生可被治理的程式碼">八、未來真正要競爭的，不是誰能產生程式碼，而是誰能產生可被治理的程式碼</h2>
+<p>一旦接受前面的判斷，工程問題就會改寫成另一句話：<strong>不是能不能生成 code，而是能不能生成可被安全吸收、可被驗證、可被審計的 code。</strong></p>
+<p>這至少包含三層要求。</p>
+<p>第一層是<strong>執行隔離</strong>。未經驗證的 AI 輸出，不應直接跑在高權限、真實資料或可對外互動的環境中。候選實作的執行，本身就是安全決策，而不是普通的開發便利功能。<sup id="fnref:11"><a href="#fn:11" class="footnote-ref" role="doc-noteref">11</a></sup></p>
+<p>第二層是<strong>語意審查與變更理解</strong>。當產出速度遠超過人工閱讀速度，人類不可能只靠文字 diff 理解變更影響。未來的審查機制勢必更依賴語意差異分析、結構化重構辨識、靜態檢查與契約違反提示，協助人類把注意力集中在真正改變業務邏輯、權限流向與風險邊界的地方。<sup id="fnref:12"><a href="#fn:12" class="footnote-ref" role="doc-noteref">12</a></sup></p>
+<p>第三層是<strong>高保證驗證</strong>。對多數一般系統來說，單元測試、整合測試與模擬環境已足夠吸收大部分風險；但在安全關鍵、金流、基礎設施與高合規場景，更形式化的狀態建模、模型檢查與規格驗證方法，就可能成為必要補充。<sup id="fnref:13"><a href="#fn:13" class="footnote-ref" role="doc-noteref">13</a></sup></p>
+<p><strong>生成加速了，但驗證不會因此自動變簡單。很多時候，它只會變得更重要。</strong></p>
+<hr>
+<h2 id="九對技術樂觀主義最強版本的回答你說得對但你漏了更重要的一半">九、對技術樂觀主義最強版本的回答：你說得對，但你漏了更重要的一半</h2>
+<p>真正需要正面回應的樂觀派說法，不是「AI 明天就會取代工程師」這種口號，而是它的強版本：真實軟體工程 benchmark 確實在快速進步，代理式 coding 正在逼近大規模可用門檻。</p>
+<p>這個說法不能輕率否認。SWE-bench 與其衍生評估在 2024–2025 年確實出現顯著進展，OpenAI 甚至在 2026 年指出，SWE-bench Verified 之所以不再適合作為前沿能力指標，部分正是因為分數已逼近高位，剩餘誤差開始更多反映測試設計缺陷與訓練污染，而不只是模型能力。<sup id="fnref:14"><a href="#fn:14" class="footnote-ref" role="doc-noteref">14</a></sup></p>
+<p>很多人會把這看成一句勝利宣言。我更願意把它看成一句警報。</p>
+<p>因為它真正說明的，不是「工程快不重要了」，而是「當模型更強時，規格、測試與 benchmark 設計反而變得更重要」。能力一旦上來，先暴露出來的不是工程不再需要，而是驗證與治理的缺口被照得更亮。<strong>能力提升，沒有讓判準退場，反而把判準的必要性放大了。</strong></p>
+<hr>
+<h2 id="結論">結論</h2>
+<p>記得文章開頭那位朋友的問題嗎？「速度提升了 55.8%，AI 要取代工程師了。」</p>
+<p>我現在的回答會是：速度提升是真的。但問題本身問錯了。</p>
+<p>真正值得問的，從來不是「AI 會不會取代程式設計」，而是：</p>
+<p><strong>誰在定義規格？誰在驗證結果？誰在控制權限？誰在承擔後果？</strong></p>
+<p>如果這四件事沒有被設計好，模型越強，風險只會越大。
+如果這四件事被設計好了，模型越強，工程收益才可能真正放大。</p>
+<p>AI 沒有取消軟體工程。它只是把軟體工程重新定位了。未來高價值的工程師，未必是最快把功能寫出來的人，而更可能是能建立一套<strong>讓模型高效探索、讓結果可驗證、讓系統可維護、讓責任可追溯</strong>的工程體系的人。</p>
+<p>真正值得帶走的，不是「AI 很厲害」這句空話，而是一個新的工程判準：</p>
+<p><strong>未來軟體工程的核心，不再只是寫出程式，而是定義什麼算對、用什麼來證明、出錯時由誰負責。</strong></p>
+<p>這不是對工程師的威脅，而是對工程判準的重新定義。</p>
+<h2 id="註腳">註腳</h2>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>Shavit, Yonadav, et al. <a href="https://cdn.openai.com/papers/practices-for-governing-agentic-ai-systems.pdf"><em>Practices for Governing Agentic AI Systems</em></a>. OpenAI, 2023；Anthropic. <a href="https://www.anthropic.com/engineering/building-effective-agents">&ldquo;Building Effective AI Agents.&rdquo;</a> 2024/2025；Google DeepMind. <a href="https://storage.googleapis.com/deepmind-media/DeepMind.com/Blog/updating-the-frontier-safety-framework/Frontier%20Safety%20Framework%202.0%20%281%29.pdf"><em>Frontier Safety Framework 2.0</em></a>, 2025.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref2:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>Peng, Sida, et al. <a href="https://arxiv.org/abs/2302.06590">&ldquo;The Impact of AI on Developer Productivity: Evidence from GitHub Copilot.&rdquo;</a> 2023；SWE-bench. <a href="https://www.swebench.com/">Official Leaderboards</a>；Jain, Naman, et al. <a href="https://arxiv.org/abs/2311.14904">&ldquo;LLM-Assisted Code Cleaning For Training Accurate Code Generators.&rdquo;</a> 2023 / ICLR 2024.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref2:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3">
+<p>IBM. <a href="https://www.ibm.com/history/fortran">&ldquo;Fortran.&rdquo;</a> IBM Archives.&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4">
+<p>Mordechai, Asaf Achi, Yoav Goldberg, and Reut Tsarfaty. <a href="https://aclanthology.org/2024.tacl-1.73.pdf">&ldquo;NoviCode: Generating Programs from Natural Language Utterances by Novices.&rdquo;</a> <em>Transactions of the Association for Computational Linguistics</em>, 2024.&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:5">
+<p>Abate, Carmine, et al. <a href="https://arxiv.org/abs/1907.05320">&ldquo;Trace-Relating Compiler Correctness and Secure Compilation.&rdquo;</a> 2019；Liu, Fang, et al. <a href="https://arxiv.org/abs/2404.00971">&ldquo;Exploring and Evaluating Hallucinations in LLM-Powered Code Generation.&rdquo;</a> 2024；Zhang, Ziyao, et al. <a href="https://arxiv.org/abs/2409.20550">&ldquo;LLM Hallucinations in Practical Code Generation: Phenomena, Mechanism, and Vitigation.&rdquo;</a> 2024.&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:6">
+<p>Silver, David, et al. <a href="https://www.nature.com/articles/nature16961">&ldquo;Mastering the game of Go with deep neural networks and tree search.&rdquo;</a> <em>Nature</em> 529 (2016): 484–489；Silver, David, et al. <a href="https://www.nature.com/articles/nature24270">&ldquo;Mastering the game of Go without human knowledge.&rdquo;</a> <em>Nature</em> 550 (2017): 354–359；Mankowitz, Daniel J., et al. <a href="https://www.nature.com/articles/s41586-023-06004-9">&ldquo;Faster Sorting Algorithms Discovered Using Deep Reinforcement Learning.&rdquo;</a> <em>Nature</em> 618 (2023): 257–263.&#160;<a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:7">
+<p>OpenClaw. <a href="https://github.com/openclaw/openclaw">GitHub repository</a>, accessed 2026-03-16；Steinberger, Peter. <a href="https://steipete.me/">&ldquo;Shipping at Inference-Speed.&rdquo;</a> 2025.&#160;<a href="#fnref:7" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:8">
+<p>Laban, Philippe, C.-S. Wu, et al. <a href="https://arxiv.org/abs/2505.06120">&ldquo;LLMs Get Lost In Multi-Turn Conversation.&rdquo;</a> 2025；Nanjundappa, Bhargav Chickmagalur, and Spandan Maaheshwari. <a href="https://arxiv.org/abs/2512.13914">&ldquo;Context Branching for LLM Conversations: A Version Control Approach to Exploratory Programming.&rdquo;</a> 2025.&#160;<a href="#fnref:8" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:8" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:9">
+<p>Fowler, Martin. <a href="https://martinfowler.com/articles/mocksArentStubs.html">&ldquo;Mocks Aren&rsquo;t Stubs.&rdquo;</a> 2007；Freeman, Steve, and Nat Pryce. <em>Growing Object-Oriented Software, Guided by Tests</em>. Addison-Wesley, 2009.&#160;<a href="#fnref:9" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:9" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:10">
+<p>He, Lehan, et al. <a href="https://arxiv.org/abs/2506.18315">&ldquo;Use Property-Based Testing to Bridge LLM Code Generation and Validation.&rdquo;</a> 2025；<a href="https://arxiv.org/html/2410.04249v3">&ldquo;Differential Testing with LLMs using Natural Language Specifications and Code Artifacts.&rdquo;</a> 2025.&#160;<a href="#fnref:10" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:10" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:11">
+<p>Perrone, Giuseppe, et al. <a href="https://arxiv.org/abs/2407.12297">&ldquo;WebAssembly and Security: A Review.&rdquo;</a> 2024.&#160;<a href="#fnref:11" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:12">
+<p>Tsantalis, Nikolaos, Ameya Ketkar, and Danny Dig. <a href="https://www.computer.org/csdl/journal/ts/2022/03/09136878/1liqhds60s8">&ldquo;RefactoringMiner 2.0.&rdquo;</a> <em>IEEE Transactions on Software Engineering</em> 48, no. 3 (2022): 930–950.&#160;<a href="#fnref:12" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:13">
+<p>Lamport, Leslie. <a href="https://lamport.azurewebsites.net/tla/book-02-08-08.pdf"><em>Specifying Systems: The TLA+ Language and Tools for Hardware and Software Engineers</em></a>. Addison-Wesley, 2003.&#160;<a href="#fnref:13" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:14">
+<p>OpenAI. <a href="https://openai.com/index/why-we-no-longer-evaluate-swe-bench-verified/">&ldquo;Why SWE-bench Verified no longer measures frontier coding capabilities.&rdquo;</a> 2026；SWE-bench. <a href="https://www.swebench.com/">Official Leaderboards</a>.&#160;<a href="#fnref:14" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+        </div>
+
+        
+        
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">William Yeh</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+      2026-03-16
+      
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">授權條款</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW" target="_blank">CC BY-NC-SA 4.0</a> (姓名標示-非商業性-相同方式分享 4.0 國際)</span>
+  </p>
+</div>
+
+
+
+        
+        
+
+
+        <footer class="post-footer">
+          <div class="post-tags">
+              <a href="//localhost:1313/tags/ai/">ai</a>
+                <a href="//localhost:1313/tags/programming/">programming</a>
+                <a href="//localhost:1313/tags/testing/">testing</a>
+                
+            </div>
+
+
+          
+          <nav class="post-nav">
+            
+              <a class="prev" href="/post/2026/03/genai-se-level-up/">
+                
+                <i class="iconfont">
+                  
+<svg aria-hidden="true" class="lucide lucide-chevron-left hi-svg-inline" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="m15 18-6-6 6-6"/></svg>
+                </i>
+                <span class="prev-text nav-default">LLM 改變的不是寫程式，而是重新定義「正確」的方式</span>
+                <span class="prev-text nav-mobile">上一篇</span>
+              </a>
+            
+              <a class="next" href="/post/2026/03/genai-replacement-ratio/">
+                <span class="next-text nav-default">AI 會取代多少員工？關鍵不在預言，而在企業的約束條件</span>
+                <span class="prev-text nav-mobile">下一篇</span>
+                
+                <i class="iconfont">
+                  
+<svg aria-hidden="true" class="lucide lucide-chevron-right hi-svg-inline" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="m9 18 6-6-6-6"/></svg>
+                </i>
+              </a>
+          </nav>
+        </footer>
+      </article>
+
+      
+      
+
+
+      
+      
+
+  
+
+  
+  
+
+  
+  
+    <div class="post">
+  <script src="https://utteranc.es/client.js"
+        repo= "William-Yeh/utterances-area"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script>
+</div>
+
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+
+    </div>
+
+    <aside class="right-sidebar">
+      
+    </aside>
+  </div>
+  </main>
+
+  <footer id="footer" class="site-footer">
+    <div class="social-icon-links">
+  
+
+
+<a href="mailto:william.pjyeh@gmail.com" rel="me noopener" class="social-icon-link" title="email" >
+  
+<svg aria-hidden="true" class="icon hi-svg-inline" fill="currentColor" height="1em" version="1.1" viewBox="0 0 1451 1024" width="1em" xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <path d="M664.781909 681.472759 0 97.881301C0 3.997201 71.046997 0 71.046997 0L474.477909 0 961.649408 0 1361.641813 0C1361.641813 0 1432.688811 3.997201 1432.688811 97.881301L771.345323 681.472759C771.345323 681.472759 764.482731 685.154773 753.594283 688.65053L753.594283 688.664858C741.602731 693.493018 729.424896 695.068979 718.077952 694.839748 706.731093 695.068979 694.553173 693.493018 682.561621 688.664858L682.561621 688.65053C671.644501 685.140446 664.781909 681.472759 664.781909 681.472759L664.781909 681.472759ZM718.063616 811.603883C693.779541 811.016482 658.879232 802.205449 619.10784 767.734955 542.989056 701.759633 0 212.052267 0 212.052267L0 942.809523C0 942.809523 0 1024 83.726336 1024L682.532949 1024 753.579947 1024 1348.948139 1024C1432.688811 1024 1432.688811 942.809523 1432.688811 942.809523L1432.688811 212.052267C1432.688811 212.052267 893.138176 701.759633 817.019477 767.734955 777.248 802.205449 742.347691 811.03081 718.063616 811.603883L718.063616 811.603883Z"></path>
+</svg>
+
+</a>
+<a href="https://twitter.com/william_yeh" rel="me noopener" class="social-icon-link" title="twitter"  target="_blank" >
+  
+<svg aria-hidden="true" class="icon hi-svg-inline" fill="currentColor" height="1em" version="1.1" viewBox="0 0 1264 1024" width="1em" xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <path d="M1229.8616 18.043658c0 0-117.852626 63.135335-164.151872 67.344358-105.225559-164.151872-505.082682-92.598492-437.738325 223.078185C278.622548 312.675223 89.216542 47.506814 89.216542 47.506814s-117.852626 189.406006 75.762402 345.139833C127.097743 396.85567 55.544363 371.601535 55.544363 371.601535S26.081207 535.753407 253.368414 615.724832c-21.045112 29.463156-113.643603 8.418045-113.643603 8.418045s25.254134 143.10676 231.496229 180.987961c-143.10676 130.479693-387.230056 92.598492-370.393967 105.225559 206.242095 189.406006 1119.599946 231.496229 1128.01799-643.98042C1179.353331 249.539887 1263.533778 123.269217 1263.533778 123.269217s-130.479693 37.881201-138.897738 33.672179C1225.652577 98.015083 1229.8616 18.043658 1229.8616 18.043658"></path>
+</svg>
+
+</a>
+<a href="https://www.facebook.com/william.yeh" rel="me noopener" class="social-icon-link" title="facebook"  target="_blank" >
+  
+<svg aria-hidden="true" class="icon hi-svg-inline" fill="currentColor" height="1em" version="1.1" viewBox="0 0 1024 1024" width="1em" xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <path d="M965.7344 2.7648c14.848 0 28.2624 5.5296 40.2432 16.6912C1017.9584 30.5152 1024 43.52 1024 58.2656l0 910.2336c0 14.848-6.0416 27.7504-18.0224 38.8096C993.8944 1018.4704 980.48 1024 965.7344 1024L704.9216 1024 704.9216 629.9648l133.2224 0 19.456-155.4432-152.576 0L705.024 373.0432c0-50.688 25.9072-76.0832 77.7216-76.0832l80.4864 0L863.232 163.5328c-27.7504-5.4272-67.4816-8.192-119.296-8.192-59.1872 0-106.8032 18.0224-142.9504 54.0672C564.736 245.5552 546.7136 296.0384 546.7136 360.7552l0 113.7664L413.4912 474.5216l0 155.4432 133.2224 0L546.7136 1024 55.5008 1024c-14.848 0-27.7504-5.5296-38.8096-16.6912C5.5296 996.2496 0 983.3472 0 968.4992L0 58.2656C0 43.52 5.5296 30.5152 16.6912 19.456c11.0592-11.0592 24.064-16.6912 38.8096-16.6912L965.7344 2.7648z"></path>
+</svg>
+
+</a>
+<a href="https://www.linkedin.com/in/pjyeh/" rel="me noopener" class="social-icon-link" title="linkedin"  target="_blank" >
+  
+<svg aria-hidden="true" class="icon hi-svg-inline" fill="currentColor" height="1em" version="1.1" viewBox="0 0 1024 1024" width="1em" xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <path d="M872.405333 872.618667h-151.637333v-237.610667c0-56.661333-1.152-129.578667-79.018667-129.578667-79.061333 0-91.136 61.653333-91.136 125.397334v241.792H398.976V384h145.664v66.602667h1.962667c20.352-38.4 69.845333-78.933333 143.786666-78.933334 153.642667 0 182.058667 101.12 182.058667 232.746667v268.202667zM227.712 317.141333a87.978667 87.978667 0 0 1-88.021333-88.106666 88.064 88.064 0 1 1 88.021333 88.106666z m76.032 555.477334H151.68V384h152.064v488.618667zM948.266667 0H75.562667C33.792 0 0 33.024 0 73.770667v876.458666C0 991.018667 33.792 1024 75.562667 1024h872.576C989.866667 1024 1024 991.018667 1024 950.229333V73.770667C1024 33.024 989.866667 0 948.138667 0h0.128z"></path>
+</svg>
+
+</a>
+<a href="https://github.com/william-yeh" rel="me noopener" class="social-icon-link" title="github"  target="_blank" >
+  
+<svg aria-hidden="true" class="icon hi-svg-inline" fill="currentColor" height="1em" version="1.1" viewBox="0 0 1024 1024" width="1em" xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <path d="M512 12.672c-282.88 0-512 229.248-512 512 0 226.261333 146.688 418.133333 350.08 485.76 25.6 4.821333 34.986667-11.008 34.986667-24.618667 0-12.16-0.426667-44.373333-0.64-87.04-142.421333 30.890667-172.458667-68.693333-172.458667-68.693333C188.672 770.986667 155.008 755.2 155.008 755.2c-46.378667-31.744 3.584-31.104 3.584-31.104 51.413333 3.584 78.421333 52.736 78.421333 52.736 45.653333 78.293333 119.850667 55.68 149.12 42.581333 4.608-33.109333 17.792-55.68 32.426667-68.48-113.706667-12.8-233.216-56.832-233.216-253.013333 0-55.893333 19.84-101.546667 52.693333-137.386667-5.76-12.928-23.04-64.981333 4.48-135.509333 0 0 42.88-13.738667 140.8 52.48 40.96-11.392 84.48-17.024 128-17.28 43.52 0.256 87.04 5.888 128 17.28 97.28-66.218667 140.16-52.48 140.16-52.48 27.52 70.528 10.24 122.581333 5.12 135.509333 32.64 35.84 52.48 81.493333 52.48 137.386667 0 196.693333-119.68 240-233.6 252.586667 17.92 15.36 34.56 46.762667 34.56 94.72 0 68.522667-0.64 123.562667-0.64 140.202666 0 13.44 8.96 29.44 35.2 24.32C877.44 942.592 1024 750.592 1024 524.672c0-282.752-229.248-512-512-512"></path>
+</svg>
+
+</a>
+<a href="https://www.slideshare.net/williamyeh" rel="me noopener" class="social-icon-link" title="coding"  target="_blank" >
+  
+<svg aria-hidden="true" class="icon hi-svg-inline" fill="currentColor" height="1em" version="1.1" viewBox="0 0 1024 1024" width="1em">
+  <path
+      d="m 313.5359,557.51414 c 9.229,0 16.57801,8.88719 16.57801,19.99616 0,11.10899 -7.34901,19.99617 -16.57801,19.99617 -9.229,0 -16.57801,-8.88718 -16.57801,-19.99617 0,-11.10897 7.34901,-19.99616 16.57801,-19.99616 z m 393.7706,0 c 9.22899,0 16.57802,8.88719 16.57802,19.99616 0,11.10899 -7.34903,19.99617 -16.57802,19.99617 -9.229,0 -16.57802,-8.88718 -16.57802,-19.99617 0,-11.10897 7.34902,-19.99616 16.57802,-19.99616 z"
+      id="path6"/>
+  <path
+      d="m 945.8932,448.98796 c -27.17427,0 -51.1013,17.26164 -64.43208,43.23957 C 836.17066,393.44306 741.8298,302.00762 625.27096,264.23708 562.37704,239.1137 518.28294,190.57601 512.8139,134.17657 507.34486,190.74691 463.25077,239.1137 400.35685,264.23708 283.79802,301.83671 189.45714,393.44306 144.16669,492.22753 130.83591,466.2496 107.07979,448.98796 79.734607,448.98796 c -41.701401,0 -75.541066,40.84686 -75.541066,91.26454 0,50.41768 33.839665,91.26454 75.541066,91.26454 12.64715,0 24.610663,-3.75996 35.206923,-10.42536 3.58906,163.55837 180.30728,269.69186 397.87237,270.03367 217.5651,-0.34181 394.28332,-106.4753 397.87238,-270.03367 10.42535,6.6654 22.55977,10.42536 35.20692,10.42536 41.7014,0 75.541,-40.84686 75.541,-91.26454 0.171,-50.41768 -33.6687,-91.26454 -75.541,-91.26454 z M 114.2579,568.79403 c -3.58906,13.15987 -19.312535,18.79981 -35.206921,12.47625 -15.894385,-6.15267 -25.977916,-21.87616 -22.388867,-35.03602 3.58906,-13.15987 19.312533,-18.79981 35.206919,-12.47624 15.894389,6.15267 25.807019,21.87614 22.388869,35.03601 z m 398.556,276.69904 C 338.31748,845.15126 196.97707,762.603 196.97707,644.33509 c 0,-2.56361 0.1709,-4.95631 0.1709,-7.34902 0,-0.85453 0,-1.53817 0.17092,-2.3927 0.1709,-1.70908 0.34181,-3.41814 0.34181,-4.95631 0.1709,-2.22179 0.51273,-4.44359 0.85454,-6.6654 0,-0.1709 0,-0.51271 0.1709,-0.68362 3.58906,-23.2434 12.47624,-58.79214 26.14883,-79.13012 32.64331,-47.51224 90.92273,-78.9592 157.23479,-78.9592 51.1013,0 97.41721,18.79981 130.91506,49.05041 33.49784,-30.2506 79.64283,-49.05041 130.91504,-49.05041 66.48298,0 124.59148,31.61786 157.23479,78.9592 13.67259,20.50889 22.55977,55.88672 26.14883,79.13012 0,0.17091 0,0.51272 0.17091,0.68362 0.34182,2.22181 0.51272,4.44361 0.85453,6.6654 0.17091,1.70907 0.34181,3.24723 0.34181,4.95631 0,0.85453 0.17092,1.53817 0.17092,2.3927 0.17091,2.39271 0.17091,4.95631 0.17091,7.34902 C 828.82165,762.603 687.48124,845.15126 512.8139,845.49307 Z M 946.74774,581.27028 c -15.89439,6.15265 -31.61787,0.68362 -35.20692,-12.47625 -3.58906,-13.15987 6.49448,-28.88334 22.38887,-35.03601 15.89438,-6.15267 31.61786,-0.68363 35.20692,12.47624 3.41815,12.98896 -6.49448,28.71243 -22.38887,35.03602 z"
+      id="path8"/>
+</svg>
+
+</a>
+
+
+<a href="//localhost:1313/index.xml" rel="noopener alternate" type="application/rss&#43;xml" class="social-icon-link" title="rss"
+  target="_blank">
+  
+<svg aria-hidden="true" class="lucide lucide-rss hi-svg-inline" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg>
+</a>
+
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+    2015 -
+    2026
+    <span class="heart">
+      
+      <i class="iconfont">
+        
+<svg aria-hidden="true" class="lucide lucide-heart hi-svg-inline" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+      </i>
+    </span><span class="author">
+      William Yeh
+      
+    </span></span>
+
+  
+  
+
+  
+</div>
+
+  </footer>
+
+  
+
+
+
+
+<script type="text/javascript" src="/js/main.0171f082d33f8febdbfe89876860e1624f5b622b263af5e06e31e93abd51a968.js" integrity="sha256-AXHwgtM/j&#43;vb/omHaGDhYk9bYismOvXgbjHpOr1RqWg=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/katex@0.11.0/dist/katex.min.css"
+    integrity="sha384-BdGj8xC2eZkQaxoQ8nSLefg4AV4/AwB3Fj+8SUSo7pnKP6Eoy18liIKTPn9oBYNG"
+    crossorigin="anonymous">
+
+  
+  <script defer
+    src="https://cdn.jsdelivr.net/npm/katex@0.11.0/dist/katex.min.js"
+    integrity="sha384-JiKN5O8x9Hhs/UE5cT5AAJqieYlOZbGT3CHws/y97o3ty4R7/O5poG9F3JoiOYw1"
+    crossorigin="anonymous"></script>
+
+  
+  <script defer
+    src="https://cdn.jsdelivr.net/npm/katex@0.11.0/dist/contrib/auto-render.min.js"
+    integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI"
+    crossorigin="anonymous" onload="renderMathInElement(document.body);">
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      renderMathInElement(document.body, {
+        
+      });
+    });
+  </script>
+
+
+
+
+
+
+  
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
