@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="zh-tw" itemscope itemtype="http://schema.org/WebPage" data-theme="light">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>
+    
+    LLM 時代，傳統軟體架構該重新檢查了 - Potioneer&#39;s Essays
+    </title>
+  
+
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes" />
+
+
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+
+
+<meta name="applicable-device" content="pc,mobile">
+<meta name="color-scheme" content="light dark" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+
+<meta name="generator" content="Hugo 0.158.0" />
+
+
+<link rel="canonical" href="//william-yeh.net/post/2026/03/genai-revisit-arch/" />
+
+
+
+
+<meta name="author" content="William Yeh" />
+<meta name="description" content="OpenClaw 作者 Peter Steinberger 接受 36Kr Europe 訪談時說，多數程式碼其實很無聊，做的往往只是把一種資料形狀轉成另一種；那不是他真正關心的部分。1
+這句話聽起來有點刺耳，但它的確點出一個盲點：很多我們習以為常的工程安排，到底是在處理問題，還是在處理形式？
+當 LLM 與 coding agent 開始直接參與 repo 級搜尋、修改與驗證，就很難迴避這個問題。要重新檢查的，不只是那些躺在架構文件裡的大原則，而是整套日常工程安排：哪些分層真的在隔離風險，哪些抽象真的在縮小修改半徑，哪些則只是因為大家早就這樣寫，所以很少再有人追問：它現在還有沒有必要？
+以前，這類問題不回答，也不一定立刻出事。多幾層轉發、多幾個 mapper、多幾個永遠不會有第二個實作的 interface，頂多讓人覺得麻煩。資深工程師還是能靠經驗補完，靠默契繞過去，靠耐心把成本默默吞掉。
+但現在不一樣了。
+當搜尋、重構、局部修補與 repo 級修改，越來越多交由 agent 參與，很多原本還能被人類默默消化的成本，都會更早浮上來。原本人類可以靠背景知識硬撐過去的地方，對 agent 來說，往往就是直接失手的地方。
+傳統架構會不會被淘汰？或者我們更該探討的是另一個更具體、也更尖銳的問題：
+哪些結構仍然在管理複雜性，哪些其實只是在維持形式？
+本文想處理的，就是這個問題。
+" />
+
+
+
+
+
+  
+
+
+
+
+
+
+<meta name="keywords" content="ai, programming, craftsmanship, testing, ddd" />
+
+
+<meta property="og:url" content="//william-yeh.net/post/2026/03/genai-revisit-arch/">
+  <meta property="og:site_name" content="Potioneer&#39;s Essays">
+  <meta property="og:title" content="LLM 時代，傳統軟體架構該重新檢查了">
+  <meta property="og:description" content="OpenClaw 作者 Peter Steinberger 接受 36Kr Europe 訪談時說，多數程式碼其實很無聊，做的往往只是把一種資料形狀轉成另一種；那不是他真正關心的部分。1
+這句話聽起來有點刺耳，但它的確點出一個盲點：很多我們習以為常的工程安排，到底是在處理問題，還是在處理形式？
+當 LLM 與 coding agent 開始直接參與 repo 級搜尋、修改與驗證，就很難迴避這個問題。要重新檢查的，不只是那些躺在架構文件裡的大原則，而是整套日常工程安排：哪些分層真的在隔離風險，哪些抽象真的在縮小修改半徑，哪些則只是因為大家早就這樣寫，所以很少再有人追問：它現在還有沒有必要？
+以前，這類問題不回答，也不一定立刻出事。多幾層轉發、多幾個 mapper、多幾個永遠不會有第二個實作的 interface，頂多讓人覺得麻煩。資深工程師還是能靠經驗補完，靠默契繞過去，靠耐心把成本默默吞掉。
+但現在不一樣了。
+當搜尋、重構、局部修補與 repo 級修改，越來越多交由 agent 參與，很多原本還能被人類默默消化的成本，都會更早浮上來。原本人類可以靠背景知識硬撐過去的地方，對 agent 來說，往往就是直接失手的地方。
+傳統架構會不會被淘汰？或者我們更該探討的是另一個更具體、也更尖銳的問題：
+哪些結構仍然在管理複雜性，哪些其實只是在維持形式？
+本文想處理的，就是這個問題。">
+  <meta property="og:locale" content="zh_tw">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2026-03-21T20:00:00+08:00">
+    <meta property="article:modified_time" content="2026-03-21T20:00:00+08:00">
+    <meta property="article:tag" content="Ai">
+    <meta property="article:tag" content="Programming">
+    <meta property="article:tag" content="Craftsmanship">
+    <meta property="article:tag" content="Testing">
+    <meta property="article:tag" content="Ddd">
+
+  <meta itemprop="name" content="LLM 時代，傳統軟體架構該重新檢查了">
+  <meta itemprop="description" content="OpenClaw 作者 Peter Steinberger 接受 36Kr Europe 訪談時說，多數程式碼其實很無聊，做的往往只是把一種資料形狀轉成另一種；那不是他真正關心的部分。1
+這句話聽起來有點刺耳，但它的確點出一個盲點：很多我們習以為常的工程安排，到底是在處理問題，還是在處理形式？
+當 LLM 與 coding agent 開始直接參與 repo 級搜尋、修改與驗證，就很難迴避這個問題。要重新檢查的，不只是那些躺在架構文件裡的大原則，而是整套日常工程安排：哪些分層真的在隔離風險，哪些抽象真的在縮小修改半徑，哪些則只是因為大家早就這樣寫，所以很少再有人追問：它現在還有沒有必要？
+以前，這類問題不回答，也不一定立刻出事。多幾層轉發、多幾個 mapper、多幾個永遠不會有第二個實作的 interface，頂多讓人覺得麻煩。資深工程師還是能靠經驗補完，靠默契繞過去，靠耐心把成本默默吞掉。
+但現在不一樣了。
+當搜尋、重構、局部修補與 repo 級修改，越來越多交由 agent 參與，很多原本還能被人類默默消化的成本，都會更早浮上來。原本人類可以靠背景知識硬撐過去的地方，對 agent 來說，往往就是直接失手的地方。
+傳統架構會不會被淘汰？或者我們更該探討的是另一個更具體、也更尖銳的問題：
+哪些結構仍然在管理複雜性，哪些其實只是在維持形式？
+本文想處理的，就是這個問題。">
+  <meta itemprop="datePublished" content="2026-03-21T20:00:00+08:00">
+  <meta itemprop="dateModified" content="2026-03-21T20:00:00+08:00">
+  <meta itemprop="wordCount" content="5953">
+  <meta itemprop="keywords" content="Ai,Programming,Craftsmanship,Testing,Ddd">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="LLM 時代，傳統軟體架構該重新檢查了">
+  <meta name="twitter:description" content="OpenClaw 作者 Peter Steinberger 接受 36Kr Europe 訪談時說，多數程式碼其實很無聊，做的往往只是把一種資料形狀轉成另一種；那不是他真正關心的部分。1
+這句話聽起來有點刺耳，但它的確點出一個盲點：很多我們習以為常的工程安排，到底是在處理問題，還是在處理形式？
+當 LLM 與 coding agent 開始直接參與 repo 級搜尋、修改與驗證，就很難迴避這個問題。要重新檢查的，不只是那些躺在架構文件裡的大原則，而是整套日常工程安排：哪些分層真的在隔離風險，哪些抽象真的在縮小修改半徑，哪些則只是因為大家早就這樣寫，所以很少再有人追問：它現在還有沒有必要？
+以前，這類問題不回答，也不一定立刻出事。多幾層轉發、多幾個 mapper、多幾個永遠不會有第二個實作的 interface，頂多讓人覺得麻煩。資深工程師還是能靠經驗補完，靠默契繞過去，靠耐心把成本默默吞掉。
+但現在不一樣了。
+當搜尋、重構、局部修補與 repo 級修改，越來越多交由 agent 參與，很多原本還能被人類默默消化的成本，都會更早浮上來。原本人類可以靠背景知識硬撐過去的地方，對 agent 來說，往往就是直接失手的地方。
+傳統架構會不會被淘汰？或者我們更該探討的是另一個更具體、也更尖銳的問題：
+哪些結構仍然在管理複雜性，哪些其實只是在維持形式？
+本文想處理的，就是這個問題。">
+
+<link rel="icon" href="/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/style.min.6edbf781d23cf7f4d65ffac62b9976b41795d197a31eb82d57c5a91867aa6ec2.css" integrity="sha256-btv3gdI89/TWX/rGK5l2tBeV0ZejHrgtV8WpGGeqbsI=" media="screen"
+  crossorigin="anonymous">
+
+
+
+<link rel="stylesheet" href="/css/custom.css">
+
+
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+<meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
+
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/katex@0.16.38/dist/katex.min.css"
+    crossorigin="anonymous"
+  >
+
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.38/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.38/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      renderMathInElement(document.body, {
+        delimiters: [
+          { left: "$$", right: "$$", display: true },
+          { left: "$", right: "$", display: false },
+          { left: "\\(", right: "\\)", display: false },
+          { left: "\\[", right: "\\]", display: true }
+        ],
+        throwOnError: false
+      });
+    });
+  </script>
+
+
+<script>
+  (function () {
+    var savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  })();
+</script>
+
+
+</head>
+
+<body>
+  <div id="back-to-top"></div>
+
+  <header class="site-header">
+    
+<div class="desktop-header">
+  <div class="desktop-header-logo">
+    <a href="/" class="logo">
+      
+      Potioneer&#39;s Essays
+      
+    </a>
+  </div>
+
+  <nav class="desktop-navbar">
+    <ul id="menu" class="menu">
+      
+      
+      <li class="menu-item">
+        
+        
+        
+        <a class="menu-item-link" href="//william-yeh.net/">♜</a>
+        
+
+        
+
+      </li>
+      
+      <li class="menu-item">
+        
+        
+        
+        <a class="menu-item-link" href="//william-yeh.net/post/">Archives</a>
+        
+
+        
+
+      </li>
+      
+      <li class="menu-item">
+        
+        
+        <a class="menu-item-link menu-parent" href="//william-yeh.net/series/">
+          Series
+          
+<svg aria-hidden="true" class="lucide lucide-chevron-down hi-svg-inline icon--chevron-down" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="m6 9 6 6 6-6"/></svg>
+        </a>
+        <ul class="submenu">
+          
+          <li class="submenu-item">
+            <a href="//william-yeh.net/series/career-reading-club/">職涯躍升書系導讀會</a>
+          </li>
+          
+          <li class="submenu-item">
+            <a href="//william-yeh.net/series/essence-of-scrum/">Essence of Scrum</a>
+          </li>
+          
+          <li class="submenu-item">
+            <a href="//william-yeh.net/series/scrum-master-training/">Scrum master 培訓系列</a>
+          </li>
+          
+          <li class="submenu-item">
+            <a href="//william-yeh.net/series/agile-decomposition/">敏捷的工作分解方法</a>
+          </li>
+          
+          <li class="submenu-item">
+            <a href="//william-yeh.net/series/systhinking-series/">「系統思考工作坊」系列</a>
+          </li>
+          
+          <li class="submenu-item">
+            <a href="//william-yeh.net/series/criteria-series/">「判準與指標」系列</a>
+          </li>
+          
+          <li class="submenu-item">
+            <a href="//william-yeh.net/series/change-series/">「改變」系列</a>
+          </li>
+          
+          <li class="submenu-item">
+            <a href="//william-yeh.net/series/book-review/">書籍／課程推薦</a>
+          </li>
+          
+        </ul>
+
+        
+
+      </li>
+      
+      <li class="menu-item">
+        
+        
+        
+        <a class="menu-item-link" href="//william-yeh.net/tags/">Tags</a>
+        
+
+        
+
+      </li>
+      
+      <li class="menu-item">
+        
+        
+        
+        <a class="menu-item-link" href="//william-yeh.net/categories/">Categories</a>
+        
+
+        
+
+      </li>
+      
+
+      
+      
+
+      
+
+      <li class="menu-item">
+        <a class="theme-toggle menu-item-link" href="javascript:void(0);">
+
+          
+<svg aria-hidden="true" class="lucide lucide-sun hi-svg-inline theme-icon-light" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+
+          
+<svg aria-hidden="true" class="lucide lucide-moon hi-svg-inline theme-icon-dark" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+
+        </a>
+      </li>
+
+      <li class="menu-item">
+        <a class="menu-item-link" href="//william-yeh.net/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
+          title="rss" target="_blank">
+          
+<svg aria-hidden="true" class="lucide lucide-rss hi-svg-inline icon--rss" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg>
+        </a>
+        
+      </li>
+    </ul>
+  </nav>
+</div>
+
+    
+
+<div class="mobile-header">
+  <div id="mobile-navbar" class="mobile-navbar">
+    <div id="mobile-navbar-icon" class="mobile-navbar-icon">
+      
+<svg aria-hidden="true" class="lucide lucide-menu hi-svg-inline icon--menu" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+    </div>
+    <div class="mobile-navbar-logo">
+      <a href="/" class="logo">Potioneer&#39;s Essays</a>
+    </div>
+  </div>
+
+  <div id="mobile-menu-close-modal" class="mobile-menu-close-modal"></div>
+  <nav id="mobile-menu" class="mobile-menu">
+    <ul class="mobile-menu-list">
+      <li class="mobile-menu-item">
+        
+        
+        
+        <a class="menu-item-link" href="//william-yeh.net/">♜</a>
+        
+        
+      </li><li class="mobile-menu-item">
+        
+        
+        
+        <a class="menu-item-link" href="//william-yeh.net/post/">Archives</a>
+        
+        
+      </li><li class="mobile-menu-item">
+        
+        
+        <div class="mobile-menu-parent">
+          <span class="mobile-submenu-open"></span>
+          <a href="//william-yeh.net/series/">
+            Series
+          </a>
+        </div>
+        <ul class="mobile-submenu-list">
+          
+          <li>
+            <a href="//william-yeh.net/series/career-reading-club/">職涯躍升書系導讀會</a>
+          </li>
+          
+          <li>
+            <a href="//william-yeh.net/series/essence-of-scrum/">Essence of Scrum</a>
+          </li>
+          
+          <li>
+            <a href="//william-yeh.net/series/scrum-master-training/">Scrum master 培訓系列</a>
+          </li>
+          
+          <li>
+            <a href="//william-yeh.net/series/agile-decomposition/">敏捷的工作分解方法</a>
+          </li>
+          
+          <li>
+            <a href="//william-yeh.net/series/systhinking-series/">「系統思考工作坊」系列</a>
+          </li>
+          
+          <li>
+            <a href="//william-yeh.net/series/criteria-series/">「判準與指標」系列</a>
+          </li>
+          
+          <li>
+            <a href="//william-yeh.net/series/change-series/">「改變」系列</a>
+          </li>
+          
+          <li>
+            <a href="//william-yeh.net/series/book-review/">書籍／課程推薦</a>
+          </li>
+          
+        </ul>
+        
+      </li><li class="mobile-menu-item">
+        
+        
+        
+        <a class="menu-item-link" href="//william-yeh.net/tags/">Tags</a>
+        
+        
+      </li><li class="mobile-menu-item">
+        
+        
+        
+        <a class="menu-item-link" href="//william-yeh.net/categories/">Categories</a>
+        
+        
+      </li>
+      
+
+      
+
+      <li class="mobile-menu-item">
+        <a class="theme-toggle menu-item-link" href="javascript:void(0);">
+
+          
+<svg aria-hidden="true" class="lucide lucide-sun hi-svg-inline theme-icon-light" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+
+          
+<svg aria-hidden="true" class="lucide lucide-moon hi-svg-inline theme-icon-dark" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+
+        </a>
+      </li>
+
+      <li class="mobile-menu-item">
+        <a class="menu-item-link" href="//william-yeh.net/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
+          title="rss" target="_blank">
+          
+<svg aria-hidden="true" class="lucide lucide-rss hi-svg-inline icon--rss" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg>
+        </a>
+        
+      </li>
+    </ul>
+  </nav>
+</div>
+
+  </header>
+
+  
+
+  
+
+
+
+  <main id="main" class="main pico container">
+    <div class="content-wrapper">
+    <aside class="left-sidebar">
+      
+<nav class="toc" id="toc">
+    <div class="toc-title">文章目錄</div>
+    <div class="toc-content custom-scrollbar">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#一先把問題拆開">一、先把問題拆開</a></li>
+    <li><a href="#二先問它在保護什麼">二、先問它在保護什麼</a></li>
+    <li><a href="#三repo-開始接受新檢查">三、repo 開始接受新檢查</a></li>
+    <li><a href="#四先看好不好動手">四、先看好不好動手</a>
+      <ul>
+        <li><a href="#不先看流派">不先看流派</a></li>
+        <li><a href="#還要看-agent-守不守得住">還要看 agent 守不守得住</a></li>
+      </ul>
+    </li>
+    <li><a href="#五問題常出在架構沒外露">五、問題常出在架構沒外露</a>
+      <ul>
+        <li><a href="#不外露就等於不存在">不外露，就等於不存在</a></li>
+        <li><a href="#文件不是答案">文件不是答案</a></li>
+      </ul>
+    </li>
+    <li><a href="#六架構還得為自己辯護">六、架構還得為自己辯護</a></li>
+  </ul>
+</nav>
+    </div>
+  </nav>
+
+
+    </aside>
+
+    <div id="content" class="content">
+      <article class="post">
+        
+        <header class="post-header">
+          <h1 class="post-title">LLM 時代，傳統軟體架構該重新檢查了</h1>
+          
+
+
+
+          <div class="post-meta-list">
+  <div class="post-meta-item post-meta-author">
+    
+<svg aria-hidden="true" class="lucide lucide-user-round-pen hi-svg-inline" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M2 21a8 8 0 0 1 10.821-7.487"/><path d="M21.378 16.626a1 1 0 0 0-3.004-3.004l-4.01 4.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z"/><circle cx="10" cy="8" r="5"/></svg>
+    William Yeh
+    
+  </div>
+
+  <div class="post-meta-item post-meta-time">
+    
+<svg aria-hidden="true" class="lucide lucide-calendar-days hi-svg-inline" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/></svg>
+    <time datetime=" 2026-03-21">
+      2026-03-21
+    </time>
+
+
+    
+
+  </div>
+
+
+  <div class="post-meta__right">
+    <span class="post-meta-more">
+      約 5953 字 -
+      預計閱讀 12 分鐘
+      
+      
+      </span>
+
+    <div class="post-meta-item post-meta-category">
+      
+        
+          
+        <a href="//william-yeh.net/categories/tech/">tech</a>
+    </div>
+
+
+    
+    
+
+
+    
+    
+  </div>
+</div>
+
+        </header>
+
+        
+        <div class="post-content">
+          <p><a href="https://github.com/openclaw/openclaw">OpenClaw</a> 作者 Peter Steinberger 接受 36Kr Europe 訪談時說，多數程式碼其實很無聊，做的往往只是把一種資料形狀轉成另一種；那不是他真正關心的部分。<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+<p>這句話聽起來有點刺耳，但它的確點出一個盲點：很多我們習以為常的工程安排，到底是在處理問題，還是在處理形式？</p>
+<p>當 LLM 與 coding agent 開始直接參與 repo 級搜尋、修改與驗證，就很難迴避這個問題。要重新檢查的，不只是那些躺在架構文件裡的大原則，而是整套日常工程安排：哪些分層真的在隔離風險，哪些抽象真的在縮小修改半徑，哪些則只是因為大家早就這樣寫，所以很少再有人追問：它現在還有沒有必要？</p>
+<p>以前，這類問題不回答，也不一定立刻出事。多幾層轉發、多幾個 mapper、多幾個永遠不會有第二個實作的 interface，頂多讓人覺得麻煩。資深工程師還是能靠經驗補完，靠默契繞過去，靠耐心把成本默默吞掉。</p>
+<p>但現在不一樣了。</p>
+<p>當搜尋、重構、局部修補與 repo 級修改，越來越多交由 agent 參與，很多原本還能被人類默默消化的成本，都會更早浮上來。原本人類可以靠背景知識硬撐過去的地方，對 agent 來說，往往就是直接失手的地方。</p>
+<p>傳統架構會不會被淘汰？或者我們更該探討的是另一個更具體、也更尖銳的問題：</p>
+<p><strong>哪些結構仍然在管理複雜性，哪些其實只是在維持形式？</strong></p>
+<p>本文想處理的，就是這個問題。</p>
+
+<link rel="stylesheet" href="/css/hugo-easy-gallery.css" />
+<div class="box">
+<figure  itemprop="associatedMedia"
+  itemscope itemtype="http://schema.org/ImageObject" 
+  style="max-width:30em" >
+    <div class="img">
+      <img itemprop="thumbnail" src="/img/2026/03/genai-revisit-arch.png" />
+    </div>
+    <a href="/img/2026/03/genai-revisit-arch.png" itemprop="contentUrl"></a>
+  </figure>
+</div>
+
+<h2 id="一先把問題拆開">一、先把問題拆開</h2>
+<p>很多關於「LLM 會不會淘汰傳統架構」的討論，一開始就把不同層次的東西攪在一起。於是乎，clean architecture、hexagonal architecture、DDD、DI、repository pattern、DTO、adapter、use case、presenter，通通被打包成同一團：要嘛一起捍衛，要嘛一起否定。</p>
+<p>這樣談，幾乎一定會失焦。</p>
+<p>至少有三個層次，應該先拆開來看。</p>
+<p>第一層，是<strong>架構原則</strong>。依賴方向要受控制，核心規則要和外部機制分開，重要邊界要清楚，關鍵規則要能被測試。Uncle Bob 談 clean architecture，核心是 dependency rule<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>；Alistair Cockburn 談 hexagonal architecture，重點是 inside 與 outside 的不對稱<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>；DDD 裡的 bounded context，關心的則是模型適用的邊界，以及語言一致性應該維持到什麼範圍。<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup></p>
+<p>第二層，是<strong>工程樣板</strong>。DTO、adapter、repository interface、output port、presenter、mapper，都屬於這一層。它們不是原則本身，而是某些團隊在特定條件下慣用的一組工程安排。Martin Fowler 當初在談 dependency injection (DI)，重點放在 configuration 與 use 的分離；並不是要求你替每個類別都預先鋪好抽象層。<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup></p>
+<p>第三層，是<strong>治理需求</strong>。這一層真正關心的，不是你有幾個資料夾、幾個介面，而是系統如何控制依賴、分配責任、限制變更外溢，並在長期演化中，讓語意與成本都維持在可控的地步。</p>
+<p>這個拆法非常重要。很多團隊死守的，根本不是第一層的原則，只是第二層那整套早已模板化的工程儀式。久而久之，本來只是手段的東西，慢慢被說成了信仰；本來應該被追問的東西，反而變成預設。</p>
+<p>今天真正該做的，不是宣布第二層全部過時，也不是替任何一派補上道德光環，而是把它重新放回可被追問的位置：<strong>這個樣板，現在到底在做什麼工作？</strong></p>
+<p>它有沒有縮小修改範圍？有沒有讓規則與副作用的邊界更清楚？有沒有改善測試、型別檢查、替換成本，或跨 context 的語意翻譯？</p>
+<p>如果答不出來，它就更像裝飾或儀式；如果答得出來，它就是在承擔治理任務。</p>
+<p>很多爭論之所以失焦，不是因為大家立場差太遠，而是因為這三層太常被混著講。</p>
+<h2 id="二先問它在保護什麼">二、先問它在保護什麼</h2>
+<p>人們常說「傳統架構過於虛胖，會被 LLM 淘汰」，但如果去看主流 enterprise 平台的官方文件，其實很少有人真的主張把那些模式全面鋪滿。</p>
+<p>沒有人認真說過：所有系統都應該全面採用 clean architecture、DDD 或 CQRS。更沒有人說：你應該一開始就把 repository、port、presenter、mapper 全部鋪好，再來寫功能。</p>
+<p>主流平台的說法，反而一直都比某些工程圈子更務實。</p>
+<p>Microsoft 在 .NET microservices 文件裡談 DDD 與 CQRS 時講得很清楚：這些模式主要適合複雜商業規則、複雜子系統與高演化壓力的情境，而不是所有服務的預設配置。<sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup> 在更細的 persistence layer 文件裡，它甚至直接寫明：對許多 CRUD 型微服務來說，直接使用 EF <code>DbContext</code> 往往就是最簡單的寫法；自訂 repository 的價值，則主要出現在需要解耦、模擬資料存取或提升測試隔離的較複雜情境。<sup id="fnref:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup> Azure Architecture Center 對 CQRS 的態度也差不多：讀寫負載不對稱、效能與安全要求不同，或流程本身較複雜時，CQRS 有其價值；但在基本 CRUD、簡單領域模型或 CRUD 式 UI 的情境下，就未必合適。<sup id="fnref:8"><a href="#fn:8" class="footnote-ref" role="doc-noteref">8</a></sup></p>
+<p>AWS 對 anti-corruption layer 的說法也很直接。它的作用不是讓系統「看起來比較有架構」，而是為了翻譯不同系統之間的 domain semantics，避免上游 bounded context 的概念直接污染下游。尤其當遺留系統不可改、上下游語義不同，或不同團隊無法同步調整時，這類結構承擔的是整合風險與業務中斷風險。<sup id="fnref:9"><a href="#fn:9" class="footnote-ref" role="doc-noteref">9</a></sup></p>
+<p>這幾份文件都在說同一件事：企業軟體架構的正當性，從來不是來自名字，而是來自它是否真的在承擔治理任務；你為抽象與分層付出的成本，到底有沒有換到對應的治理能力。</p>
+<p>這裡說的治理，不只是風險控制，也包括廣義的策略對齊、營運成本、效能壓力、跨團隊責任分配，以及系統在長期演化時的健康程度。</p>
+<p>所以問題從來不是「要不要架構」，而是：<strong>這個架構到底在保護什麼。</strong></p>
+<p>一個只有單表 CRUD 的微服務，如果 repository、port、presenter、mapper 層層硬塞上去，最後真正穩定不變的，只是樣板，不是邊界。</p>
+<p>相反地，一個真的需要隔離外部系統語意、控制商業規則演化、或讓多團隊協作互不污染的系統，那些結構就可能是在承擔真實工作。</p>
+<p>差別不在名字，而在它有沒有真的做事。</p>
+<h2 id="三repo-開始接受新檢查">三、repo 開始接受新檢查</h2>
+<p>大型系統反覆觸礁的，始終是同一批問題：依賴控制、變更隔離、測試支撐、替換成本、跨團隊協作、責任歸屬，以及語意邊界的維護。</p>
+<p>這些問題不會因為 LLM 變強就自動消失。</p>
+<p>但 LLM 的確改變了這些結構被檢查、被使用，也被質疑的方式。</p>
+<p>過去，軟體架構主要是在服務人類開發者：讓人看得懂、改得動、測得出、交接得了。現在在 LLM 時代，還多了 coding agent 參與，甚至可能同時有多個 agent。既有的 repo 結構，是否一樣能夠好好服務這些 agent？它是否足夠清楚，讓工具能穩定地定位、導航、修改與驗證？</p>
+<p>關於這件事，近年已有一些 repository-level benchmark 提供線索。這裡要先分清楚：哪些是 benchmark 直接告訴我們的，哪些只是根據結果提出的合理推論。</p>
+<p><strong>SWE-bench</strong> 關注的是：LLM 能不能在真實的開源 repo 裡，根據 issue 描述，自動找到相關程式碼、做出修改，最後通過測試。這篇研究當時發現，最佳商業語言模型也只能解掉 1.96%，搭配較好的搜尋策略後，表現才提升到 4.8%。<sup id="fnref:10"><a href="#fn:10" class="footnote-ref" role="doc-noteref">10</a></sup></p>
+<p>後來的 <strong>SWE-bench Pro</strong> 難度更高，任務設計也更接近企業中需橫跨數日、長時程處理 issue 的情境。論文分析顯示，任務複雜度、檔案數量與脈絡線索等因素，甚至連程式語言都會影響效果。<sup id="fnref:11"><a href="#fn:11" class="footnote-ref" role="doc-noteref">11</a></sup></p>
+<p><strong>RepoBench</strong> 則把 repository-level 能力拆得更細。它不是直接模擬解 issue，而是把能力拆成 retrieval、completion 與 pipeline 三部分，觀察語言模型能不能在跨檔案、跨模組的情境下，先找到真正相關的片段，再補出合理的後續程式。它提供的重要線索是：跨檔案脈絡的供給，確實有助於提升表現。<sup id="fnref:12"><a href="#fn:12" class="footnote-ref" role="doc-noteref">12</a></sup></p>
+<p>把這些材料放在一起，目前還不足以得出「某一派架構已被證明普遍勝出」的結論。比較站得住腳的說法反而更樸素：repo 級工作的難點，至少高度集中在<strong>定位、檢索、跨檔案關聯與驗證</strong>。</p>
+<p>凡是能讓相關脈絡更容易被命中、讓修改範圍更容易收斂、讓驗證點更早浮現的結構，就更值得留下。</p>
+<p>這樣看來，問題其實不是「LLM 要不要架構」，而是：什麼樣的結構，能讓人與 agent 都更容易動手，而且不容易把系統改壞。</p>
+<h2 id="四先看好不好動手">四、先看好不好動手</h2>
+<h3 id="不先看流派">不先看流派</h3>
+<p>如果前一節的判斷成立，那接下來更值得處理的，就不是哪一派在理念上更完整，而是更務實地問：在真實 repo 裡，哪一種結構，能夠用更少的間接層，換來更高的可定位性、可修改性與可驗證性？</p>
+<p>把抽象名詞先拿掉。真正會拖慢人與 agent 的，通常是幾件非常具體的事：要改一條規則時，到底要穿過幾層；要找到那條規則時，到底要繞多少地方；改完之後，又能不能立刻知道該驗證哪裡。</p>
+<p>至少可以看四個判準。</p>
+<p>第一，是<strong>修改半徑</strong>，但最好拆成兩半來看。</p>
+<p>一個是<strong>耦合半徑</strong>：為了完成一個需求，實際必須修改多少檔案、多少模組、多少層。這主要是架構問題。</p>
+<p>另一個是<strong>發現半徑</strong>：人類或 agent 需要先遊歷多少地方，才知道真正該改哪裡。這往往牽涉到命名、目錄、型別、測試入口、工具提示與文件表達。</p>
+<p>這兩件事很容易被混為一談，也就很容易誤判。系統如果耦合過深，該做的是重整依賴關係與責任分配；系統如果本來切分得還可以，只是訊號太亂，那麼該優先處理的，反而是命名、測試入口、型別邊界與機器可讀的規則。</p>
+<p>第二，是<strong>副作用邊界是否清楚</strong>。哪些地方是在做純規則運算，哪些地方在碰資料庫、檔案系統、網路等外部依賴，哪些地方涉及時間、併發與平行處理，是否一眼就看得出來？</p>
+<p>第三，是<strong>局部驗證是否容易</strong>。改完一段規則後，能不能快速知道該跑哪些測試、哪些靜態檢查、哪些整合路徑？</p>
+<p>第四，是<strong>控制流與資料流是否可追蹤</strong>。如果流程被拆成一長串介面轉發、隱式注入，或分散在太多抽象層裡，再整齊的分層，也不一定等於更好操作。</p>
+<p>舉個簡單的例子。同樣是改一條商業規則，有的系統要層層穿越 controller、use case、output port、presenter、mapper、repository，才碰得到真正的規則；有的系統則能在同一個 feature 目錄下，直接定位到核心邏輯、測試與副作用出口。問題不在於誰比較正統，而在於誰的修改半徑、發現半徑與驗證成本更低。</p>
+<p>不要先看流派，先看判準。</p>
+<h3 id="還要看-agent-守不守得住">還要看 agent 守不守得住</h3>
+<p>在這組判準下，函數式陣營偏愛的 functional core / imperative shell (FCIS) 結構 <sup id="fnref:13"><a href="#fn:13" class="footnote-ref" role="doc-noteref">13</a></sup>，確實值得重新拿出來看。它的吸引力並不難理解：在規則明確、I/O 可外推的模組裡，純核心與副作用外殼的分離，通常意味著更清楚的副作用邊界、更低的交叉依賴，以及更容易的局部驗證。Google Testing Blog 近年的實務倡議，也大致沿著這條線支持 FCIS 在測試經濟性上的好處。<sup id="fnref:14"><a href="#fn:14" class="footnote-ref" role="doc-noteref">14</a></sup></p>
+<p>但我也要誠實地說，到目前為止，FCIS 對 agent 的吸引力，主要仍來自理論上的可追蹤性、邊界清晰度與測試經濟性。這是一個很有吸引力的假說，但還缺少直接的 repository-level 證據；目前也還沒有 benchmark 能直接比較 functional core、layered enterprise pattern、hexagonal 或 vertical slice 之間的 agent 表現差異。</p>
+<p>還有一個更現實的問題。就算我們人類辛辛苦苦地用某一種結構打造 repo，LLM 進來之後，真的會尊重這個既有結構嗎？</p>
+<p>答案恐怕不能太樂觀。</p>
+<p>目前已有一些初步研究。例如有一項 2025 年的 pilot study，要求 LLM 撰寫微服務，並明確指定必須遵守 hexagonal 架構，同時刻意加入容易誘導它抄捷徑的任務條件。結果顯示，不同模型在維持架構一致性上的表現差異很大。<sup id="fnref:15"><a href="#fn:15" class="footnote-ref" role="doc-noteref">15</a></sup> 但這類結果目前仍多屬小樣本、特定任務設定下的觀察，還不足以形成一般性結論。</p>
+<p>這至少提醒了一件事：名詞喊得再響，LLM 也未必理會。</p>
+<p>所以關鍵也許不在於那些架構標籤本身，而在於這些結構有沒有以足夠清楚的方式外露出來，讓 agent 能穩定辨認、導航與遵守。</p>
+<p>這讓我想到 Uncle Bob 常說的「會尖叫的架構」（screaming architecture）。</p>
+<h2 id="五問題常出在架構沒外露">五、問題常出在架構沒外露</h2>
+<h3 id="不外露就等於不存在">不外露，就等於不存在</h3>
+<p>這裡最常見的誤判，是把 agent 在大型 codebase 裡的失手，直接歸咎到傳統架構頭上。</p>
+<p>這個判斷太快了。</p>
+<p>很多團隊的真實情況，其實不是沒有邊界，而是邊界只存在於資深工程師腦中；不是沒有規則，而是規則沒有穩定地外露成命名、目錄、型別、測試、CI 與工具可讀的訊號。</p>
+<p>對人類來說，那叫默契；對 agent 來說，那叫缺席。</p>
+<p>「機器可讀的結構」是否比「架構風格」更重要？其實，兩者本來就不在同一個層次上。比較準確的說法是：機器可讀的結構，是 agent 能不能動手的戰術前提；整體架構，則是這些修改能不能長期維持健康的策略背景。</p>
+<h3 id="文件不是答案">文件不是答案</h3>
+<p>但這裡也要小心：不要把「機器可讀」誤解成「多放幾份給 agent 看的說明文件」。</p>
+<p>近來關於 context files 與 <code>AGENTS.md</code> 的研究，剛好提醒我們：這類檔案不是放了就有效，也不是零成本。有一項 2026 年跨越多種 coding agents 與語言模型的研究指出，context files 會傾向降低任務成功率，卻同時拉高推論成本 20% 以上；研究者最後的建議不是「多寫一點」，而是：<strong>如果要寫，就只保留最少必要要求。</strong><sup id="fnref:16"><a href="#fn:16" class="footnote-ref" role="doc-noteref">16</a></sup> 另一項同年的研究則聚焦效率面，觀察 <code>AGENTS.md</code> 對 runtime 與 token 用量的影響；它顯示這類檔案在某些設定下可能改善執行效率，但也正因此更提醒我們：<code>AGENTS.md</code> 不是萬靈丹。<sup id="fnref:17"><a href="#fn:17" class="footnote-ref" role="doc-noteref">17</a></sup></p>
+<p>穩定的高訊號，依靠的是架構可見性，是型別邊界、可自動檢查的依賴規則、清楚的測試入口、可信的命名約定，以及能直接落入 CI 與工具流程的約束。不是多一份摘要式文件就夠了。</p>
+<p>沒有訊號還不打緊，靠著厲害的推理語言模型或許還能稍微彌補過來；更麻煩的是<strong>錯誤訊號</strong>。過期的命名規則、和實作不一致的邊界文件、失真的 <code>AGENTS.md</code>，往往比完全沒有文件更糟。不只缺資訊，還會提供錯誤的自信。</p>
+<p>架構沒有外露，沒有外露到足以讓人類與 agent 都穩定依循的程度，是真正的問題。</p>
+<h2 id="六架構還得為自己辯護">六、架構還得為自己辯護</h2>
+<p>不是所有抽象都在保護系統；有些抽象，只是在保護團隊對「專業感」的想像。</p>
+<p>到了 LLM 時代，架構不再只需要說服資深工程師，還得說服會進去 repo 動手動腳的機器。一個結構若無法幫助定位、限制外溢、支撐驗證，那它就算名字再漂亮，也未必是在治理複雜性。</p>
+<p>人類和機器需要的，是說得出治理價值、擁有更高訊號雜訊比，也更容易被檢查、被導航、被驗證的結構。</p>
+<p>到了最後，很多東西其實都得回答同一個問題：</p>
+<p><strong>你到底是在管理複雜性，還是在維持形式？</strong></p>
+<p>說不定再過幾年，真正重新發明軟體架構的，不是架構師，而是那些每天在 repo 裡動手動腳的 coding agent，突然湧現出自己的架構審美觀——就像 AlphaGo 讓人重新理解圍棋一樣。</p>
+<p>但在那一天來之前，多半還是得先回到眼前這個比較不浪漫的問題：</p>
+<p><strong>你現在留下的這些結構，到底是在幫系統承受複雜性，還是在替形式續命？</strong></p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>36Kr Europe, “<a href="https://eu.36kr.com/en/p/3715300300468617">The Rise of a New King on GitHub: How was OpenClaw Developed?</a>,” March 9, 2026.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>Robert C. Martin, “<a href="https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html">Clean Architecture</a>,” <em>The Clean Code Blog</em>, August 13, 2012.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3">
+<p>Alistair Cockburn, “<a href="https://alistair.cockburn.us/hexagonal-architecture">Hexagonal Architecture</a>,” 2005.&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4">
+<p>Eric Evans, <a href="https://www.amazon.com/dp/0321125215"><em>Domain-Driven Design: Tackling Complexity in the Heart of Software</em></a>, 1st ed. (Boston: Addison-Wesley, 2003), ISBN-13: 978-0321125217, ISBN-10: 0321125215.&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:5">
+<p>Martin Fowler, “<a href="https://martinfowler.com/articles/injection.html">Inversion of Control Containers and the Dependency Injection Pattern</a>,” <em>MartinFowler.com</em>, January 2004.&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:6">
+<p>Microsoft Learn, “<a href="https://learn.microsoft.com/en-us/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/">Tackling Business Complexity in a Microservice with DDD and CQRS Patterns</a>,” February 28, 2023.&#160;<a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:7">
+<p>Microsoft Learn, “<a href="https://learn.microsoft.com/en-us/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/infrastructure-persistence-layer-implementation-entity-framework-core">Implementing the Infrastructure Persistence Layer with Entity Framework Core</a>,” February 28, 2023.&#160;<a href="#fnref:7" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:8">
+<p>Microsoft Learn, “<a href="https://learn.microsoft.com/en-us/azure/architecture/patterns/cqrs">CQRS Pattern</a>,” <em>Azure Architecture Center</em>, February 21, 2025.&#160;<a href="#fnref:8" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:9">
+<p>AWS Prescriptive Guidance, “<a href="https://docs.aws.amazon.com/prescriptive-guidance/latest/cloud-design-patterns/acl.html">Anti-corruption Layer Pattern</a>”.&#160;<a href="#fnref:9" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:10">
+<p>Carlos E. Jimenez et al., <a href="https://arxiv.org/abs/2310.06770"><em>SWE-bench: Can Language Models Resolve Real-World GitHub Issues?</em></a> (arXiv, 2023).&#160;<a href="#fnref:10" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:11">
+<p>Xiang Deng et al., <a href="https://arxiv.org/abs/2509.16941"><em>SWE-Bench Pro: Can AI Agents Solve Long-Horizon Software Engineering Tasks?</em></a> (arXiv, 2025).&#160;<a href="#fnref:11" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:12">
+<p>Tianyang Liu, Canwen Xu, and Julian McAuley, <a href="https://arxiv.org/abs/2306.03091"><em>RepoBench: Benchmarking Repository-Level Code Auto-Completion Systems</em></a> (ICLR 2024, 2024).&#160;<a href="#fnref:12" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:13">
+<p>Gary Bernhardt, “<a href="https://www.destroyallsoftware.com/screencasts/catalog/functional-core-imperative-shell">Functional Core, Imperative Shell</a>,” <em>Destroy All Software</em>, July 12, 2012.&#160;<a href="#fnref:13" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:14">
+<p>Arham Jain, “<a href="https://testing.googleblog.com/2025/10/simplify-your-code-functional-core.html">Simplify Your Code: Functional Core, Imperative Shell</a>,” <em>Google Testing Blog</em>, October 20, 2025.&#160;<a href="#fnref:14" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:15">
+<p>Tyler Slater, <a href="https://arxiv.org/abs/2512.04273"><em>Quantitative Analysis of Technical Debt and Pattern Violation in Large Language Model Architectures</em></a> (arXiv, 2025).&#160;<a href="#fnref:15" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:16">
+<p>Thibaud Gloaguen et al., <a href="https://arxiv.org/abs/2602.11988"><em>Evaluating AGENTS.md: Are Repository-Level Context Files Helpful for Coding Agents?</em></a> (arXiv, 2026).&#160;<a href="#fnref:16" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:17">
+<p>Jai Lal Lulla et al., <a href="https://arxiv.org/abs/2601.20404"><em>On the Impact of AGENTS.md Files on the Efficiency of AI Coding Agents</em></a> (arXiv, 2026).&#160;<a href="#fnref:17" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+        </div>
+
+        
+        
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">William Yeh</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+      2026-03-21
+      
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">授權條款</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW" target="_blank">CC BY-NC-SA 4.0</a> (姓名標示-非商業性-相同方式分享 4.0 國際)</span>
+  </p>
+</div>
+
+
+
+        
+        
+
+
+        <footer class="post-footer">
+          <div class="post-tags">
+              <a href="//william-yeh.net/tags/ai/">ai</a>
+                <a href="//william-yeh.net/tags/programming/">programming</a>
+                <a href="//william-yeh.net/tags/craftsmanship/">craftsmanship</a>
+                <a href="//william-yeh.net/tags/testing/">testing</a>
+                <a href="//william-yeh.net/tags/ddd/">ddd</a>
+                
+            </div>
+
+
+          
+          <nav class="post-nav">
+            
+            
+              <a class="next" href="/post/2026/03/genai-se-level-up/">
+                <span class="next-text nav-default">AI 會寫程式之後，軟體工程真正變貴的是什麼</span>
+                <span class="prev-text nav-mobile">下一篇</span>
+                
+                <i class="iconfont">
+                  
+<svg aria-hidden="true" class="lucide lucide-chevron-right hi-svg-inline" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="m9 18 6-6-6-6"/></svg>
+                </i>
+              </a>
+          </nav>
+        </footer>
+      </article>
+
+      
+      
+
+
+      
+      
+
+  
+
+  
+  
+
+  
+  
+    <div class="post">
+  <script src="https://utteranc.es/client.js"
+        repo= "William-Yeh/utterances-area"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script>
+</div>
+
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+
+    </div>
+
+    <aside class="right-sidebar">
+      
+    </aside>
+  </div>
+  </main>
+
+  <footer id="footer" class="site-footer">
+    <div class="social-icon-links">
+  
+
+
+<a href="mailto:william.pjyeh@gmail.com" rel="me noopener" class="social-icon-link" title="email" >
+  
+<svg aria-hidden="true" class="icon hi-svg-inline" fill="currentColor" height="1em" version="1.1" viewBox="0 0 1451 1024" width="1em" xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <path d="M664.781909 681.472759 0 97.881301C0 3.997201 71.046997 0 71.046997 0L474.477909 0 961.649408 0 1361.641813 0C1361.641813 0 1432.688811 3.997201 1432.688811 97.881301L771.345323 681.472759C771.345323 681.472759 764.482731 685.154773 753.594283 688.65053L753.594283 688.664858C741.602731 693.493018 729.424896 695.068979 718.077952 694.839748 706.731093 695.068979 694.553173 693.493018 682.561621 688.664858L682.561621 688.65053C671.644501 685.140446 664.781909 681.472759 664.781909 681.472759L664.781909 681.472759ZM718.063616 811.603883C693.779541 811.016482 658.879232 802.205449 619.10784 767.734955 542.989056 701.759633 0 212.052267 0 212.052267L0 942.809523C0 942.809523 0 1024 83.726336 1024L682.532949 1024 753.579947 1024 1348.948139 1024C1432.688811 1024 1432.688811 942.809523 1432.688811 942.809523L1432.688811 212.052267C1432.688811 212.052267 893.138176 701.759633 817.019477 767.734955 777.248 802.205449 742.347691 811.03081 718.063616 811.603883L718.063616 811.603883Z"></path>
+</svg>
+
+</a>
+<a href="https://twitter.com/william_yeh" rel="me noopener" class="social-icon-link" title="twitter"  target="_blank" >
+  
+<svg aria-hidden="true" class="icon hi-svg-inline" fill="currentColor" height="1em" version="1.1" viewBox="0 0 1264 1024" width="1em" xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <path d="M1229.8616 18.043658c0 0-117.852626 63.135335-164.151872 67.344358-105.225559-164.151872-505.082682-92.598492-437.738325 223.078185C278.622548 312.675223 89.216542 47.506814 89.216542 47.506814s-117.852626 189.406006 75.762402 345.139833C127.097743 396.85567 55.544363 371.601535 55.544363 371.601535S26.081207 535.753407 253.368414 615.724832c-21.045112 29.463156-113.643603 8.418045-113.643603 8.418045s25.254134 143.10676 231.496229 180.987961c-143.10676 130.479693-387.230056 92.598492-370.393967 105.225559 206.242095 189.406006 1119.599946 231.496229 1128.01799-643.98042C1179.353331 249.539887 1263.533778 123.269217 1263.533778 123.269217s-130.479693 37.881201-138.897738 33.672179C1225.652577 98.015083 1229.8616 18.043658 1229.8616 18.043658"></path>
+</svg>
+
+</a>
+<a href="https://www.facebook.com/william.yeh" rel="me noopener" class="social-icon-link" title="facebook"  target="_blank" >
+  
+<svg aria-hidden="true" class="icon hi-svg-inline" fill="currentColor" height="1em" version="1.1" viewBox="0 0 1024 1024" width="1em" xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <path d="M965.7344 2.7648c14.848 0 28.2624 5.5296 40.2432 16.6912C1017.9584 30.5152 1024 43.52 1024 58.2656l0 910.2336c0 14.848-6.0416 27.7504-18.0224 38.8096C993.8944 1018.4704 980.48 1024 965.7344 1024L704.9216 1024 704.9216 629.9648l133.2224 0 19.456-155.4432-152.576 0L705.024 373.0432c0-50.688 25.9072-76.0832 77.7216-76.0832l80.4864 0L863.232 163.5328c-27.7504-5.4272-67.4816-8.192-119.296-8.192-59.1872 0-106.8032 18.0224-142.9504 54.0672C564.736 245.5552 546.7136 296.0384 546.7136 360.7552l0 113.7664L413.4912 474.5216l0 155.4432 133.2224 0L546.7136 1024 55.5008 1024c-14.848 0-27.7504-5.5296-38.8096-16.6912C5.5296 996.2496 0 983.3472 0 968.4992L0 58.2656C0 43.52 5.5296 30.5152 16.6912 19.456c11.0592-11.0592 24.064-16.6912 38.8096-16.6912L965.7344 2.7648z"></path>
+</svg>
+
+</a>
+<a href="https://www.linkedin.com/in/pjyeh/" rel="me noopener" class="social-icon-link" title="linkedin"  target="_blank" >
+  
+<svg aria-hidden="true" class="icon hi-svg-inline" fill="currentColor" height="1em" version="1.1" viewBox="0 0 1024 1024" width="1em" xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <path d="M872.405333 872.618667h-151.637333v-237.610667c0-56.661333-1.152-129.578667-79.018667-129.578667-79.061333 0-91.136 61.653333-91.136 125.397334v241.792H398.976V384h145.664v66.602667h1.962667c20.352-38.4 69.845333-78.933333 143.786666-78.933334 153.642667 0 182.058667 101.12 182.058667 232.746667v268.202667zM227.712 317.141333a87.978667 87.978667 0 0 1-88.021333-88.106666 88.064 88.064 0 1 1 88.021333 88.106666z m76.032 555.477334H151.68V384h152.064v488.618667zM948.266667 0H75.562667C33.792 0 0 33.024 0 73.770667v876.458666C0 991.018667 33.792 1024 75.562667 1024h872.576C989.866667 1024 1024 991.018667 1024 950.229333V73.770667C1024 33.024 989.866667 0 948.138667 0h0.128z"></path>
+</svg>
+
+</a>
+<a href="https://github.com/william-yeh" rel="me noopener" class="social-icon-link" title="github"  target="_blank" >
+  
+<svg aria-hidden="true" class="icon hi-svg-inline" fill="currentColor" height="1em" version="1.1" viewBox="0 0 1024 1024" width="1em" xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <path d="M512 12.672c-282.88 0-512 229.248-512 512 0 226.261333 146.688 418.133333 350.08 485.76 25.6 4.821333 34.986667-11.008 34.986667-24.618667 0-12.16-0.426667-44.373333-0.64-87.04-142.421333 30.890667-172.458667-68.693333-172.458667-68.693333C188.672 770.986667 155.008 755.2 155.008 755.2c-46.378667-31.744 3.584-31.104 3.584-31.104 51.413333 3.584 78.421333 52.736 78.421333 52.736 45.653333 78.293333 119.850667 55.68 149.12 42.581333 4.608-33.109333 17.792-55.68 32.426667-68.48-113.706667-12.8-233.216-56.832-233.216-253.013333 0-55.893333 19.84-101.546667 52.693333-137.386667-5.76-12.928-23.04-64.981333 4.48-135.509333 0 0 42.88-13.738667 140.8 52.48 40.96-11.392 84.48-17.024 128-17.28 43.52 0.256 87.04 5.888 128 17.28 97.28-66.218667 140.16-52.48 140.16-52.48 27.52 70.528 10.24 122.581333 5.12 135.509333 32.64 35.84 52.48 81.493333 52.48 137.386667 0 196.693333-119.68 240-233.6 252.586667 17.92 15.36 34.56 46.762667 34.56 94.72 0 68.522667-0.64 123.562667-0.64 140.202666 0 13.44 8.96 29.44 35.2 24.32C877.44 942.592 1024 750.592 1024 524.672c0-282.752-229.248-512-512-512"></path>
+</svg>
+
+</a>
+<a href="https://www.slideshare.net/williamyeh" rel="me noopener" class="social-icon-link" title="coding"  target="_blank" >
+  
+<svg aria-hidden="true" class="icon hi-svg-inline" fill="currentColor" height="1em" version="1.1" viewBox="0 0 1024 1024" width="1em">
+  <path
+      d="m 313.5359,557.51414 c 9.229,0 16.57801,8.88719 16.57801,19.99616 0,11.10899 -7.34901,19.99617 -16.57801,19.99617 -9.229,0 -16.57801,-8.88718 -16.57801,-19.99617 0,-11.10897 7.34901,-19.99616 16.57801,-19.99616 z m 393.7706,0 c 9.22899,0 16.57802,8.88719 16.57802,19.99616 0,11.10899 -7.34903,19.99617 -16.57802,19.99617 -9.229,0 -16.57802,-8.88718 -16.57802,-19.99617 0,-11.10897 7.34902,-19.99616 16.57802,-19.99616 z"
+      id="path6"/>
+  <path
+      d="m 945.8932,448.98796 c -27.17427,0 -51.1013,17.26164 -64.43208,43.23957 C 836.17066,393.44306 741.8298,302.00762 625.27096,264.23708 562.37704,239.1137 518.28294,190.57601 512.8139,134.17657 507.34486,190.74691 463.25077,239.1137 400.35685,264.23708 283.79802,301.83671 189.45714,393.44306 144.16669,492.22753 130.83591,466.2496 107.07979,448.98796 79.734607,448.98796 c -41.701401,0 -75.541066,40.84686 -75.541066,91.26454 0,50.41768 33.839665,91.26454 75.541066,91.26454 12.64715,0 24.610663,-3.75996 35.206923,-10.42536 3.58906,163.55837 180.30728,269.69186 397.87237,270.03367 217.5651,-0.34181 394.28332,-106.4753 397.87238,-270.03367 10.42535,6.6654 22.55977,10.42536 35.20692,10.42536 41.7014,0 75.541,-40.84686 75.541,-91.26454 0.171,-50.41768 -33.6687,-91.26454 -75.541,-91.26454 z M 114.2579,568.79403 c -3.58906,13.15987 -19.312535,18.79981 -35.206921,12.47625 -15.894385,-6.15267 -25.977916,-21.87616 -22.388867,-35.03602 3.58906,-13.15987 19.312533,-18.79981 35.206919,-12.47624 15.894389,6.15267 25.807019,21.87614 22.388869,35.03601 z m 398.556,276.69904 C 338.31748,845.15126 196.97707,762.603 196.97707,644.33509 c 0,-2.56361 0.1709,-4.95631 0.1709,-7.34902 0,-0.85453 0,-1.53817 0.17092,-2.3927 0.1709,-1.70908 0.34181,-3.41814 0.34181,-4.95631 0.1709,-2.22179 0.51273,-4.44359 0.85454,-6.6654 0,-0.1709 0,-0.51271 0.1709,-0.68362 3.58906,-23.2434 12.47624,-58.79214 26.14883,-79.13012 32.64331,-47.51224 90.92273,-78.9592 157.23479,-78.9592 51.1013,0 97.41721,18.79981 130.91506,49.05041 33.49784,-30.2506 79.64283,-49.05041 130.91504,-49.05041 66.48298,0 124.59148,31.61786 157.23479,78.9592 13.67259,20.50889 22.55977,55.88672 26.14883,79.13012 0,0.17091 0,0.51272 0.17091,0.68362 0.34182,2.22181 0.51272,4.44361 0.85453,6.6654 0.17091,1.70907 0.34181,3.24723 0.34181,4.95631 0,0.85453 0.17092,1.53817 0.17092,2.3927 0.17091,2.39271 0.17091,4.95631 0.17091,7.34902 C 828.82165,762.603 687.48124,845.15126 512.8139,845.49307 Z M 946.74774,581.27028 c -15.89439,6.15265 -31.61787,0.68362 -35.20692,-12.47625 -3.58906,-13.15987 6.49448,-28.88334 22.38887,-35.03601 15.89438,-6.15267 31.61786,-0.68363 35.20692,12.47624 3.41815,12.98896 -6.49448,28.71243 -22.38887,35.03602 z"
+      id="path8"/>
+</svg>
+
+</a>
+
+
+<a href="//william-yeh.net/index.xml" rel="noopener alternate" type="application/rss&#43;xml" class="social-icon-link" title="rss"
+  target="_blank">
+  
+<svg aria-hidden="true" class="lucide lucide-rss hi-svg-inline" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg>
+</a>
+
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+    2015 -
+    2026
+    <span class="heart">
+      
+      <i class="iconfont">
+        
+<svg aria-hidden="true" class="lucide lucide-heart hi-svg-inline" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+      </i>
+    </span><span class="author">
+      William Yeh
+      
+    </span></span>
+
+  
+  
+
+  
+</div>
+
+  </footer>
+
+  
+
+
+
+
+<script type="text/javascript" src="/js/main.0171f082d33f8febdbfe89876860e1624f5b622b263af5e06e31e93abd51a968.js" integrity="sha256-AXHwgtM/j&#43;vb/omHaGDhYk9bYismOvXgbjHpOr1RqWg=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/katex@0.11.0/dist/katex.min.css"
+    integrity="sha384-BdGj8xC2eZkQaxoQ8nSLefg4AV4/AwB3Fj+8SUSo7pnKP6Eoy18liIKTPn9oBYNG"
+    crossorigin="anonymous">
+
+  
+  <script defer
+    src="https://cdn.jsdelivr.net/npm/katex@0.11.0/dist/katex.min.js"
+    integrity="sha384-JiKN5O8x9Hhs/UE5cT5AAJqieYlOZbGT3CHws/y97o3ty4R7/O5poG9F3JoiOYw1"
+    crossorigin="anonymous"></script>
+
+  
+  <script defer
+    src="https://cdn.jsdelivr.net/npm/katex@0.11.0/dist/contrib/auto-render.min.js"
+    integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI"
+    crossorigin="anonymous" onload="renderMathInElement(document.body);">
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      renderMathInElement(document.body, {
+        
+      });
+    });
+  </script>
+
+
+
+
+
+
+  
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

@@ -56,8 +56,8 @@
 
   <meta itemprop="name" content="Potioneer&#39;s Essays">
   <meta itemprop="description" content="敏捷魔藥師 (Agile Potioneer)。會說 90% 的工匠語言，會說 70% 的總管語言，正在努力提升 30% 的行腳商人語言。">
-  <meta itemprop="datePublished" content="2026-03-16T20:00:00+08:00">
-  <meta itemprop="dateModified" content="2026-03-16T20:00:00+08:00">
+  <meta itemprop="datePublished" content="2026-03-21T20:00:00+08:00">
+  <meta itemprop="dateModified" content="2026-03-21T20:00:00+08:00">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Potioneer&#39;s Essays">
   <meta name="twitter:description" content="敏捷魔藥師 (Agile Potioneer)。會說 90% 的工匠語言，會說 70% 的總管語言，正在努力提升 30% 的行腳商人語言。">
@@ -413,6 +413,71 @@
 
   <header class="post-header">
     <h1 class="post-title">
+      <a class="post-link" href="/post/2026/03/genai-revisit-arch/">
+        LLM 時代，傳統軟體架構該重新檢查了
+      </a>
+    </h1>
+    
+    
+    <div class="post-meta-list">
+      <div class="post-meta-item post-meta-author">
+        
+<svg aria-hidden="true" class="lucide lucide-user-round-pen hi-svg-inline" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M2 21a8 8 0 0 1 10.821-7.487"/><path d="M21.378 16.626a1 1 0 0 0-3.004-3.004l-4.01 4.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z"/><circle cx="10" cy="8" r="5"/></svg>
+        William Yeh
+        
+      </div>
+      <div class="post-meta-item post-meta-time">
+        
+<svg aria-hidden="true" class="lucide lucide-calendar-days hi-svg-inline" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/></svg>
+        <time datetime=" 2026-03-21">
+          2026-03-21
+        </time>
+      </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    
+    <div class="post-summary">
+      <p><a href="https://github.com/openclaw/openclaw">OpenClaw</a> 作者 Peter Steinberger 接受 36Kr Europe 訪談時說，多數程式碼其實很無聊，做的往往只是把一種資料形狀轉成另一種；那不是他真正關心的部分。<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+<p>這句話聽起來有點刺耳，但它的確點出一個盲點：很多我們習以為常的工程安排，到底是在處理問題，還是在處理形式？</p>
+<p>當 LLM 與 coding agent 開始直接參與 repo 級搜尋、修改與驗證，就很難迴避這個問題。要重新檢查的，不只是那些躺在架構文件裡的大原則，而是整套日常工程安排：哪些分層真的在隔離風險，哪些抽象真的在縮小修改半徑，哪些則只是因為大家早就這樣寫，所以很少再有人追問：它現在還有沒有必要？</p>
+<p>以前，這類問題不回答，也不一定立刻出事。多幾層轉發、多幾個 mapper、多幾個永遠不會有第二個實作的 interface，頂多讓人覺得麻煩。資深工程師還是能靠經驗補完，靠默契繞過去，靠耐心把成本默默吞掉。</p>
+<p>但現在不一樣了。</p>
+<p>當搜尋、重構、局部修補與 repo 級修改，越來越多交由 agent 參與，很多原本還能被人類默默消化的成本，都會更早浮上來。原本人類可以靠背景知識硬撐過去的地方，對 agent 來說，往往就是直接失手的地方。</p>
+<p>傳統架構會不會被淘汰？或者我們更該探討的是另一個更具體、也更尖銳的問題：</p>
+<p><strong>哪些結構仍然在管理複雜性，哪些其實只是在維持形式？</strong></p>
+<p>本文想處理的，就是這個問題。</p>
+
+<link rel="stylesheet" href="/css/hugo-easy-gallery.css" />
+<div class="box">
+<figure  itemprop="associatedMedia"
+  itemscope itemtype="http://schema.org/ImageObject" 
+  style="max-width:30em" >
+    <div class="img">
+      <img itemprop="thumbnail" src="/img/2026/03/genai-revisit-arch.png" />
+    </div>
+    <a href="/img/2026/03/genai-revisit-arch.png" itemprop="contentUrl"></a>
+  </figure>
+</div>
+    </div>
+
+    <div class="read-more">
+      <a role="button" href="/post/2026/03/genai-revisit-arch/" class="read-more-link outline">閱讀全文</a>
+    </div>
+    
+  </div>
+
+</section>
+
+  
+  
+
+<section class="jane-card post">
+  
+
+  <header class="post-header">
+    <h1 class="post-title">
       <a class="post-link" href="/post/2026/03/genai-se-level-up/">
         AI 會寫程式之後，軟體工程真正變貴的是什麼
       </a>
@@ -634,55 +699,6 @@
 
     <div class="read-more">
       <a role="button" href="/post/2025/02/codegen-with-genai/" class="read-more-link outline">閱讀全文</a>
-    </div>
-    
-  </div>
-
-</section>
-
-  
-  
-
-<section class="jane-card post">
-  
-
-  <header class="post-header">
-    <h1 class="post-title">
-      <a class="post-link" href="/post/2024/08/less-book-review/">
-        務實的長期主義路線——《多團隊高效協作密技》推薦序
-      </a>
-    </h1>
-    
-    
-    <div class="post-meta-list">
-      <div class="post-meta-item post-meta-author">
-        
-<svg aria-hidden="true" class="lucide lucide-user-round-pen hi-svg-inline" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M2 21a8 8 0 0 1 10.821-7.487"/><path d="M21.378 16.626a1 1 0 0 0-3.004-3.004l-4.01 4.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z"/><circle cx="10" cy="8" r="5"/></svg>
-        William Yeh
-        
-      </div>
-      <div class="post-meta-item post-meta-time">
-        
-<svg aria-hidden="true" class="lucide lucide-calendar-days hi-svg-inline" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/></svg>
-        <time datetime=" 2024-08-28">
-          2024-08-28
-        </time>
-      </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    
-    <div class="post-summary">
-      <p>「敏捷」這概念，台灣很晚才起步。</p>
-<p>儘管敏捷宣言 (<a href="https://agilemanifesto.org/"><em>The Agile Manifesto</em></a>) 早在 2001 年就問世，可是在台灣，如果以 <a href="https://agile3uncles.com/">David Ko</a> 在 2014 年首次舉辦的 Agile Tour Taipei 活動作為開端，「敏捷」開始成為台灣業界的話題，大概也不過十年。</p>
-<p>於是，在國外早已經百家爭鳴的「大規模敏捷」流派（連 SAFe 都出到 6.0 版了呢），在台灣，直到近年才零零星星有人談到這議題。</p>
-<p>大規模敏捷的各家流派，多半是從 Scrum 之類的原型出發。但 LeSS 與眾不同的是，它非常謹慎自制，避免在規模化過程中引進無謂的複雜。</p>
-<p>就如同《<a href="https://www.tenlong.com.tw/products/9786263339514">多團隊高效協作密技</a>》所說：「<strong>規模化，不是角色變多、流程變複雜，而是協作方式的改變</strong>。LeSS 的導入，難處都不在 LeSS 的流程，而是在<strong>環境</strong>與<strong>人</strong>的不配合。」因此，想學習 LeSS，重點不要只放在流程上，應該更留意探討這些協作、環境、人的議題。這才是形塑 LeSS 的關鍵驅力。</p>
-    </div>
-
-    <div class="read-more">
-      <a role="button" href="/post/2024/08/less-book-review/" class="read-more-link outline">閱讀全文</a>
     </div>
     
   </div>
