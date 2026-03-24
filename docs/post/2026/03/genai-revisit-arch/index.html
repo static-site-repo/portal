@@ -97,7 +97,7 @@
 本文想處理的，就是這個問題。">
   <meta itemprop="datePublished" content="2026-03-21T20:00:00+08:00">
   <meta itemprop="dateModified" content="2026-03-21T20:00:00+08:00">
-  <meta itemprop="wordCount" content="5957">
+  <meta itemprop="wordCount" content="6205">
   <meta itemprop="keywords" content="Ai,Programming,Craftsmanship,Testing,Ddd">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="LLM 時代，傳統軟體架構該重新檢查了">
@@ -511,8 +511,8 @@
 
   <div class="post-meta__right">
     <span class="post-meta-more">
-      約 5957 字 -
-      預計閱讀 12 分鐘
+      約 6205 字 -
+      預計閱讀 13 分鐘
       
       
       </span>
@@ -610,12 +610,14 @@
 <p>第四，是<strong>控制流與資料流是否可追蹤</strong>。如果流程被拆成一長串介面轉發、隱式注入，或分散在太多抽象層裡，再整齊的分層，也不一定等於更好操作。</p>
 <p>舉個簡單的例子。同樣是改一條商業規則，有的系統要層層穿越 controller、use case、output port、presenter、mapper、repository，才碰得到真正的規則；有的系統則能在同一個 feature 目錄下，直接定位到核心邏輯、測試與副作用出口。問題不在於誰比較正統，而在於誰的修改半徑、發現半徑與驗證成本更低。</p>
 <p>不要先看流派，先看判準。</p>
+<p>Vlad Khononov 在 <em>Balancing Coupling in Software Design</em> <sup id="fnref:13"><a href="#fn:13" class="footnote-ref" role="doc-noteref">13</a></sup> 提出的平衡耦合模型，也很適合拿來對照著看。他把耦合性展開成<strong>整合強度</strong>、<strong>距離</strong>、<strong>變動性</strong>三個維度，我們可以大膽地把這套模型再往前推一步，外推到 agent 場景，靈魂拷問一番——某個結構，有沒有真的降低跨邊界的共享知識，減少真正需要同時理解的知識量？有沒有把必要的耦合放在可承受的距離上，縮短找到正確修改點與驗證點的距離？有沒有把高耦合留在較低變動的區域，留在相對穩定的地方，而不是和高變動區域綁在一起？</p>
+<p>如果答不出來，那些抽象就很可能只是把形式堆得更整齊，而不是讓系統更容易演化。</p>
 <h3 id="還得看看-agent-守不守得住">還得看看 agent 守不守得住</h3>
-<p>在這組判準下，函數式陣營偏愛的 functional core / imperative shell (FCIS) 結構 <sup id="fnref:13"><a href="#fn:13" class="footnote-ref" role="doc-noteref">13</a></sup>，確實值得重新拿出來看。它的吸引力並不難理解：在規則明確、I/O 可外推的模組裡，純核心與副作用外殼的分離，通常意味著更清楚的副作用邊界、更低的交叉依賴，以及更容易的局部驗證。Google Testing Blog 近年的實務倡議，也大致沿著這條線支持 FCIS 在測試經濟性上的好處。<sup id="fnref:14"><a href="#fn:14" class="footnote-ref" role="doc-noteref">14</a></sup></p>
+<p>在這組判準下，函數式陣營偏愛的 functional core / imperative shell (FCIS) 結構 <sup id="fnref:14"><a href="#fn:14" class="footnote-ref" role="doc-noteref">14</a></sup>，確實值得重新拿出來看。它的吸引力並不難理解：在規則明確、I/O 可外推的模組裡，純核心與副作用外殼的分離，通常意味著更清楚的副作用邊界、更低的交叉依賴，以及更容易的局部驗證。Google Testing Blog 近年的實務倡議，也大致沿著這條線支持 FCIS 在測試經濟性上的好處。<sup id="fnref:15"><a href="#fn:15" class="footnote-ref" role="doc-noteref">15</a></sup></p>
 <p>但我也要誠實地說，到目前為止，FCIS 對 agent 的吸引力，主要仍來自理論上的可追蹤性、邊界清晰度與測試經濟性。這是一個很有吸引力的假說，但還缺少直接的 repository-level 證據；目前也還沒有 benchmark 能直接比較 functional core、layered enterprise pattern、hexagonal 或 vertical slice 之間的 agent 表現差異。</p>
 <p>還有一個更現實的問題。就算我們人類辛辛苦苦地用某一種結構打造 repo，LLM 進來之後，真的會尊重這個既有結構嗎？</p>
 <p>答案恐怕不能太樂觀。</p>
-<p>目前已有一些初步研究。例如有一項 2025 年的 pilot study，要求 LLM 撰寫微服務，並明確指定必須遵守 hexagonal 架構，同時刻意加入容易誘導它抄捷徑的任務條件。結果顯示，不同模型在維持架構一致性上的表現差異很大。<sup id="fnref:15"><a href="#fn:15" class="footnote-ref" role="doc-noteref">15</a></sup> 但這類結果目前仍多屬小樣本、特定任務設定下的觀察，還不足以形成一般性結論。</p>
+<p>目前已有一些初步研究。例如有一項 2025 年的 pilot study，要求 LLM 撰寫微服務，並明確指定必須遵守 hexagonal 架構，同時刻意加入容易誘導它抄捷徑的任務條件。結果顯示，不同模型在維持架構一致性上的表現差異很大。<sup id="fnref:16"><a href="#fn:16" class="footnote-ref" role="doc-noteref">16</a></sup> 但這類結果目前仍多屬小樣本、特定任務設定下的觀察，還不足以形成一般性結論。</p>
 <p>這至少提醒了一件事：名詞喊得再響，LLM 也未必理會。</p>
 <p>所以關鍵也許不在於那些架構標籤本身，而在於這些結構有沒有以足夠清楚的方式外露出來，讓 agent 能穩定辨認、導航與遵守。</p>
 <p>這讓我想到 Uncle Bob 常說的「會尖叫的架構」（screaming architecture）。</p>
@@ -628,7 +630,7 @@
 <p>「機器可讀的結構」是否比「架構風格」更重要？其實，兩者本來就不在同一個層次上。比較準確的說法是：機器可讀的結構，是 agent 能不能動手的戰術前提；整體架構，則是這些修改能不能長期維持健康的策略背景。</p>
 <h3 id="文件不是答案">文件不是答案</h3>
 <p>但這裡也要小心：不要把「機器可讀」誤解成「多放幾份給 agent 看的說明文件」。</p>
-<p>近來關於 context files 與 <code>AGENTS.md</code> 的研究，剛好提醒我們：這類檔案不是放了就有效，也不是零成本。有一項 2026 年跨越多種 coding agents 與語言模型的研究指出，context files 會傾向降低任務成功率，卻同時拉高推論成本 20% 以上；研究者最後的建議不是「多寫一點」，而是：<strong>如果要寫，就只保留最少必要要求。</strong><sup id="fnref:16"><a href="#fn:16" class="footnote-ref" role="doc-noteref">16</a></sup> 另一項同年的研究則聚焦效率面，觀察 <code>AGENTS.md</code> 對 runtime 與 token 用量的影響；它顯示這類檔案在某些設定下可能改善執行效率，但也正因此更提醒我們：<code>AGENTS.md</code> 不是萬靈丹。<sup id="fnref:17"><a href="#fn:17" class="footnote-ref" role="doc-noteref">17</a></sup></p>
+<p>近來關於 context files 與 <code>AGENTS.md</code> 的研究提醒我們：這類檔案不是放了就有效，也不是零成本。有一項 2026 年跨越多種 coding agents 與語言模型的研究指出，context files 會傾向降低任務成功率，卻同時拉高推論成本 20% 以上；研究者最後的建議不是「多寫一點」，而是：<strong>如果要寫，就只保留最少必要要求。</strong><sup id="fnref:17"><a href="#fn:17" class="footnote-ref" role="doc-noteref">17</a></sup> 另一項同年的研究則聚焦效率面，觀察 <code>AGENTS.md</code> 對 runtime 與 token 用量的影響；它顯示這類檔案在某些設定下可能改善執行效率，但也正因此更提醒我們：<code>AGENTS.md</code> 不是萬靈丹。<sup id="fnref:18"><a href="#fn:18" class="footnote-ref" role="doc-noteref">18</a></sup></p>
 <p>穩定的高訊號，依靠的是架構可見性，是型別邊界、可自動檢查的依賴規則、清楚的測試入口、可信的命名約定，以及能直接落入 CI 與工具流程的約束。不是多一份摘要式文件就夠了。</p>
 <p>沒有訊號還不打緊，靠著厲害的推理語言模型或許還能稍微彌補過來；更麻煩的是<strong>錯誤訊號</strong>。過期的命名規則、和實作不一致的邊界文件、失真的 <code>AGENTS.md</code>，往往比完全沒有文件更糟。不只缺資訊，還會提供錯誤的自信。</p>
 <p>架構沒有外露，沒有外露到足以讓人類與 agent 都穩定依循的程度，是真正的問題。</p>
@@ -681,19 +683,22 @@
 <p>Tianyang Liu, Canwen Xu, and Julian McAuley, <a href="https://arxiv.org/abs/2306.03091"><em>RepoBench: Benchmarking Repository-Level Code Auto-Completion Systems</em></a> (ICLR 2024, 2024).&#160;<a href="#fnref:12" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:13">
-<p>Gary Bernhardt, “<a href="https://www.destroyallsoftware.com/screencasts/catalog/functional-core-imperative-shell">Functional Core, Imperative Shell</a>,” <em>Destroy All Software</em>, July 12, 2012.&#160;<a href="#fnref:13" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Vlad Khononov, <a href="https://coupling.dev/"><em>Balancing Coupling in Software Design</em></a>, (Boston: Addison-Wesley, 2024), ISBN-10: 0137353480.&#160;<a href="#fnref:13" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:14">
-<p>Arham Jain, “<a href="https://testing.googleblog.com/2025/10/simplify-your-code-functional-core.html">Simplify Your Code: Functional Core, Imperative Shell</a>,” <em>Google Testing Blog</em>, October 20, 2025.&#160;<a href="#fnref:14" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Gary Bernhardt, “<a href="https://www.destroyallsoftware.com/screencasts/catalog/functional-core-imperative-shell">Functional Core, Imperative Shell</a>,” <em>Destroy All Software</em>, July 12, 2012.&#160;<a href="#fnref:14" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:15">
-<p>Tyler Slater, <a href="https://arxiv.org/abs/2512.04273"><em>Quantitative Analysis of Technical Debt and Pattern Violation in Large Language Model Architectures</em></a> (arXiv, 2025).&#160;<a href="#fnref:15" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Arham Jain, “<a href="https://testing.googleblog.com/2025/10/simplify-your-code-functional-core.html">Simplify Your Code: Functional Core, Imperative Shell</a>,” <em>Google Testing Blog</em>, October 20, 2025.&#160;<a href="#fnref:15" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:16">
-<p>Thibaud Gloaguen et al., <a href="https://arxiv.org/abs/2602.11988"><em>Evaluating AGENTS.md: Are Repository-Level Context Files Helpful for Coding Agents?</em></a> (arXiv, 2026).&#160;<a href="#fnref:16" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Tyler Slater, <a href="https://arxiv.org/abs/2512.04273"><em>Quantitative Analysis of Technical Debt and Pattern Violation in Large Language Model Architectures</em></a> (arXiv, 2025).&#160;<a href="#fnref:16" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:17">
-<p>Jai Lal Lulla et al., <a href="https://arxiv.org/abs/2601.20404"><em>On the Impact of AGENTS.md Files on the Efficiency of AI Coding Agents</em></a> (arXiv, 2026).&#160;<a href="#fnref:17" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Thibaud Gloaguen et al., <a href="https://arxiv.org/abs/2602.11988"><em>Evaluating AGENTS.md: Are Repository-Level Context Files Helpful for Coding Agents?</em></a> (arXiv, 2026).&#160;<a href="#fnref:17" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:18">
+<p>Jai Lal Lulla et al., <a href="https://arxiv.org/abs/2601.20404"><em>On the Impact of AGENTS.md Files on the Efficiency of AI Coding Agents</em></a> (arXiv, 2026).&#160;<a href="#fnref:18" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </div>
