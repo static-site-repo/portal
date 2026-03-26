@@ -37,15 +37,12 @@
 
 
 <meta name="author" content="William Yeh" />
-<meta name="description" content="OpenClaw 作者 Peter Steinberger 接受 36Kr Europe 訪談時說，多數程式碼其實很無聊，做的往往只是把一種資料形狀轉成另一種；那不是他真正關心的部分。1
-這句話聽起來有點刺耳，但它的確點出一個盲點：很多我們習以為常的工程安排，到底是在處理問題，還是在處理形式？
-當 LLM 與 coding agent 開始直接參與 repo 級搜尋、修改與驗證，就很難迴避這個問題。躺在架構文件裡的大原則固然要檢查，整套日常工程安排更是要重新審視：哪些分層真的在隔離風險，哪些抽象真的在縮小修改半徑，哪些則只是因為大家早就這樣寫，所以很少再有人追問它現在還有沒有必要？
-以前，這類問題不回答也不一定立刻出事。多幾層轉發、多幾個 mapper、多幾個永遠不會有第二個實作的 interface，頂多讓人覺得麻煩。資深工程師還是能靠經驗補完，靠默契繞過去，靠耐心把成本默默吞掉。
-但現在不一樣了。
-當搜尋、重構、局部修補與 repo 級修改，越來越多交由 agent 參與，很多原本還能被人類默默消化的成本，都會更早浮上來。原本人類可以靠背景知識硬撐過去的地方，對 agent 來說，往往就是直接失手的地方。
-傳統架構會不會被淘汰？或者⋯⋯另一個更具體、也更尖銳的問題：
-哪些結構仍然在管理複雜性，哪些其實只是在維持形式？
-這就是本文想探討的。
+<meta name="description" content="OpenClaw 作者 Peter Steinberger 接受 36Kr Europe 訪談時提到，多數程式碼其實很無聊，很多時候做的只是把一種資料形狀轉成另一種。這不是他真正關心的事。 1
+這句話有點刺耳，但也把一件事講得很坦白：很多工程安排用久了，就會從成本與取捨，慢慢變成預設，變成僵化的教條，沒有人過問它是否還有價值。
+現在 LLM 與 coding agent 已經開始直接參與 repo 級搜尋、修改與驗證。很多原本被視為理所當然的做法，也該再檢查一次。分層是不是還在隔離風險，抽象是不是還在縮小修改半徑，某些 interface、mapper 和轉發層，到底在承擔工作，還是只是在延續習慣。
+以前這些東西就算有點多、有點繞，通常也還撐得過去。工程師會靠經驗補上下文，靠默契避開麻煩，再把額外成本默默吞下來。
+但 agent 介入之後，很多原本人類可以硬撐過去的地方，會直接變成搜尋成本、理解成本，最後讓修改失去準頭。
+這篇想處理的問題很直接：今天系統裡哪些結構還在管理複雜性，哪些只是在維持形式？
 " />
 
 
@@ -65,15 +62,12 @@
 <meta property="og:url" content="//william-yeh.net/post/2026/03/genai-revisit-arch/">
   <meta property="og:site_name" content="Potioneer&#39;s Essays">
   <meta property="og:title" content="LLM 時代，傳統軟體架構該重新檢查了">
-  <meta property="og:description" content="OpenClaw 作者 Peter Steinberger 接受 36Kr Europe 訪談時說，多數程式碼其實很無聊，做的往往只是把一種資料形狀轉成另一種；那不是他真正關心的部分。1
-這句話聽起來有點刺耳，但它的確點出一個盲點：很多我們習以為常的工程安排，到底是在處理問題，還是在處理形式？
-當 LLM 與 coding agent 開始直接參與 repo 級搜尋、修改與驗證，就很難迴避這個問題。躺在架構文件裡的大原則固然要檢查，整套日常工程安排更是要重新審視：哪些分層真的在隔離風險，哪些抽象真的在縮小修改半徑，哪些則只是因為大家早就這樣寫，所以很少再有人追問它現在還有沒有必要？
-以前，這類問題不回答也不一定立刻出事。多幾層轉發、多幾個 mapper、多幾個永遠不會有第二個實作的 interface，頂多讓人覺得麻煩。資深工程師還是能靠經驗補完，靠默契繞過去，靠耐心把成本默默吞掉。
-但現在不一樣了。
-當搜尋、重構、局部修補與 repo 級修改，越來越多交由 agent 參與，很多原本還能被人類默默消化的成本，都會更早浮上來。原本人類可以靠背景知識硬撐過去的地方，對 agent 來說，往往就是直接失手的地方。
-傳統架構會不會被淘汰？或者⋯⋯另一個更具體、也更尖銳的問題：
-哪些結構仍然在管理複雜性，哪些其實只是在維持形式？
-這就是本文想探討的。">
+  <meta property="og:description" content="OpenClaw 作者 Peter Steinberger 接受 36Kr Europe 訪談時提到，多數程式碼其實很無聊，很多時候做的只是把一種資料形狀轉成另一種。這不是他真正關心的事。 1
+這句話有點刺耳，但也把一件事講得很坦白：很多工程安排用久了，就會從成本與取捨，慢慢變成預設，變成僵化的教條，沒有人過問它是否還有價值。
+現在 LLM 與 coding agent 已經開始直接參與 repo 級搜尋、修改與驗證。很多原本被視為理所當然的做法，也該再檢查一次。分層是不是還在隔離風險，抽象是不是還在縮小修改半徑，某些 interface、mapper 和轉發層，到底在承擔工作，還是只是在延續習慣。
+以前這些東西就算有點多、有點繞，通常也還撐得過去。工程師會靠經驗補上下文，靠默契避開麻煩，再把額外成本默默吞下來。
+但 agent 介入之後，很多原本人類可以硬撐過去的地方，會直接變成搜尋成本、理解成本，最後讓修改失去準頭。
+這篇想處理的問題很直接：今天系統裡哪些結構還在管理複雜性，哪些只是在維持形式？">
   <meta property="og:locale" content="zh_tw">
   <meta property="og:type" content="article">
     <meta property="article:section" content="post">
@@ -86,30 +80,24 @@
     <meta property="article:tag" content="Ddd">
 
   <meta itemprop="name" content="LLM 時代，傳統軟體架構該重新檢查了">
-  <meta itemprop="description" content="OpenClaw 作者 Peter Steinberger 接受 36Kr Europe 訪談時說，多數程式碼其實很無聊，做的往往只是把一種資料形狀轉成另一種；那不是他真正關心的部分。1
-這句話聽起來有點刺耳，但它的確點出一個盲點：很多我們習以為常的工程安排，到底是在處理問題，還是在處理形式？
-當 LLM 與 coding agent 開始直接參與 repo 級搜尋、修改與驗證，就很難迴避這個問題。躺在架構文件裡的大原則固然要檢查，整套日常工程安排更是要重新審視：哪些分層真的在隔離風險，哪些抽象真的在縮小修改半徑，哪些則只是因為大家早就這樣寫，所以很少再有人追問它現在還有沒有必要？
-以前，這類問題不回答也不一定立刻出事。多幾層轉發、多幾個 mapper、多幾個永遠不會有第二個實作的 interface，頂多讓人覺得麻煩。資深工程師還是能靠經驗補完，靠默契繞過去，靠耐心把成本默默吞掉。
-但現在不一樣了。
-當搜尋、重構、局部修補與 repo 級修改，越來越多交由 agent 參與，很多原本還能被人類默默消化的成本，都會更早浮上來。原本人類可以靠背景知識硬撐過去的地方，對 agent 來說，往往就是直接失手的地方。
-傳統架構會不會被淘汰？或者⋯⋯另一個更具體、也更尖銳的問題：
-哪些結構仍然在管理複雜性，哪些其實只是在維持形式？
-這就是本文想探討的。">
+  <meta itemprop="description" content="OpenClaw 作者 Peter Steinberger 接受 36Kr Europe 訪談時提到，多數程式碼其實很無聊，很多時候做的只是把一種資料形狀轉成另一種。這不是他真正關心的事。 1
+這句話有點刺耳，但也把一件事講得很坦白：很多工程安排用久了，就會從成本與取捨，慢慢變成預設，變成僵化的教條，沒有人過問它是否還有價值。
+現在 LLM 與 coding agent 已經開始直接參與 repo 級搜尋、修改與驗證。很多原本被視為理所當然的做法，也該再檢查一次。分層是不是還在隔離風險，抽象是不是還在縮小修改半徑，某些 interface、mapper 和轉發層，到底在承擔工作，還是只是在延續習慣。
+以前這些東西就算有點多、有點繞，通常也還撐得過去。工程師會靠經驗補上下文，靠默契避開麻煩，再把額外成本默默吞下來。
+但 agent 介入之後，很多原本人類可以硬撐過去的地方，會直接變成搜尋成本、理解成本，最後讓修改失去準頭。
+這篇想處理的問題很直接：今天系統裡哪些結構還在管理複雜性，哪些只是在維持形式？">
   <meta itemprop="datePublished" content="2026-03-21T20:00:00+08:00">
   <meta itemprop="dateModified" content="2026-03-21T20:00:00+08:00">
-  <meta itemprop="wordCount" content="6175">
+  <meta itemprop="wordCount" content="5923">
   <meta itemprop="keywords" content="Ai,Programming,Craftsmanship,Testing,Ddd">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="LLM 時代，傳統軟體架構該重新檢查了">
-  <meta name="twitter:description" content="OpenClaw 作者 Peter Steinberger 接受 36Kr Europe 訪談時說，多數程式碼其實很無聊，做的往往只是把一種資料形狀轉成另一種；那不是他真正關心的部分。1
-這句話聽起來有點刺耳，但它的確點出一個盲點：很多我們習以為常的工程安排，到底是在處理問題，還是在處理形式？
-當 LLM 與 coding agent 開始直接參與 repo 級搜尋、修改與驗證，就很難迴避這個問題。躺在架構文件裡的大原則固然要檢查，整套日常工程安排更是要重新審視：哪些分層真的在隔離風險，哪些抽象真的在縮小修改半徑，哪些則只是因為大家早就這樣寫，所以很少再有人追問它現在還有沒有必要？
-以前，這類問題不回答也不一定立刻出事。多幾層轉發、多幾個 mapper、多幾個永遠不會有第二個實作的 interface，頂多讓人覺得麻煩。資深工程師還是能靠經驗補完，靠默契繞過去，靠耐心把成本默默吞掉。
-但現在不一樣了。
-當搜尋、重構、局部修補與 repo 級修改，越來越多交由 agent 參與，很多原本還能被人類默默消化的成本，都會更早浮上來。原本人類可以靠背景知識硬撐過去的地方，對 agent 來說，往往就是直接失手的地方。
-傳統架構會不會被淘汰？或者⋯⋯另一個更具體、也更尖銳的問題：
-哪些結構仍然在管理複雜性，哪些其實只是在維持形式？
-這就是本文想探討的。">
+  <meta name="twitter:description" content="OpenClaw 作者 Peter Steinberger 接受 36Kr Europe 訪談時提到，多數程式碼其實很無聊，很多時候做的只是把一種資料形狀轉成另一種。這不是他真正關心的事。 1
+這句話有點刺耳，但也把一件事講得很坦白：很多工程安排用久了，就會從成本與取捨，慢慢變成預設，變成僵化的教條，沒有人過問它是否還有價值。
+現在 LLM 與 coding agent 已經開始直接參與 repo 級搜尋、修改與驗證。很多原本被視為理所當然的做法，也該再檢查一次。分層是不是還在隔離風險，抽象是不是還在縮小修改半徑，某些 interface、mapper 和轉發層，到底在承擔工作，還是只是在延續習慣。
+以前這些東西就算有點多、有點繞，通常也還撐得過去。工程師會靠經驗補上下文，靠默契避開麻煩，再把額外成本默默吞下來。
+但 agent 介入之後，很多原本人類可以硬撐過去的地方，會直接變成搜尋成本、理解成本，最後讓修改失去準頭。
+這篇想處理的問題很直接：今天系統裡哪些結構還在管理複雜性，哪些只是在維持形式？">
 
 <link rel="icon" href="/favicon.ico" />
 
@@ -457,7 +445,7 @@
   <ul>
     <li><a href="#一先把問題拆開">一、先把問題拆開</a></li>
     <li><a href="#二先問它在保護什麼">二、先問它在保護什麼</a></li>
-    <li><a href="#三repo-也需要重新檢查">三、Repo 也需要重新檢查</a></li>
+    <li><a href="#三repo-也需要重新檢查">三、repo 也需要重新檢查</a></li>
     <li><a href="#四先看好不好動手">四、先看好不好動手</a>
       <ul>
         <li><a href="#不要先看流派">不要先看流派</a></li>
@@ -511,8 +499,8 @@
 
   <div class="post-meta__right">
     <span class="post-meta-more">
-      約 6175 字 -
-      預計閱讀 13 分鐘
+      約 5923 字 -
+      預計閱讀 12 分鐘
       
       
       </span>
@@ -538,15 +526,12 @@
 
         
         <div class="post-content">
-          <p><a href="https://github.com/openclaw/openclaw">OpenClaw</a> 作者 Peter Steinberger 接受 36Kr Europe 訪談時說，多數程式碼其實很無聊，做的往往只是把一種資料形狀轉成另一種；那不是他真正關心的部分。<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
-<p>這句話聽起來有點刺耳，但它的確點出一個盲點：很多我們習以為常的工程安排，到底是在處理問題，還是在處理形式？</p>
-<p>當 LLM 與 coding agent 開始直接參與 repo 級搜尋、修改與驗證，就很難迴避這個問題。躺在架構文件裡的大原則固然要檢查，整套日常工程安排更是要重新審視：哪些分層真的在隔離風險，哪些抽象真的在縮小修改半徑，哪些則只是因為大家早就這樣寫，所以很少再有人追問它現在還有沒有必要？</p>
-<p>以前，這類問題不回答也不一定立刻出事。多幾層轉發、多幾個 mapper、多幾個永遠不會有第二個實作的 interface，頂多讓人覺得麻煩。資深工程師還是能靠經驗補完，靠默契繞過去，靠耐心把成本默默吞掉。</p>
-<p>但現在不一樣了。</p>
-<p>當搜尋、重構、局部修補與 repo 級修改，越來越多交由 agent 參與，很多原本還能被人類默默消化的成本，都會更早浮上來。原本人類可以靠背景知識硬撐過去的地方，對 agent 來說，往往就是直接失手的地方。</p>
-<p>傳統架構會不會被淘汰？或者⋯⋯另一個更具體、也更尖銳的問題：</p>
-<p><strong>哪些結構仍然在管理複雜性，哪些其實只是在維持形式？</strong></p>
-<p>這就是本文想探討的。</p>
+          <p><a href="https://github.com/openclaw/openclaw">OpenClaw</a> 作者 Peter Steinberger 接受 36Kr Europe 訪談時提到，多數程式碼其實很無聊，很多時候做的只是把一種資料形狀轉成另一種。這不是他真正關心的事。 <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+<p>這句話有點刺耳，但也把一件事講得很坦白：很多工程安排用久了，就會從成本與取捨，慢慢變成預設，變成僵化的教條，沒有人過問它是否還有價值。</p>
+<p>現在 LLM 與 coding agent 已經開始直接參與 repo 級搜尋、修改與驗證。很多原本被視為理所當然的做法，也該再檢查一次。分層是不是還在隔離風險，抽象是不是還在縮小修改半徑，某些 interface、mapper 和轉發層，到底在承擔工作，還是只是在延續習慣。</p>
+<p>以前這些東西就算有點多、有點繞，通常也還撐得過去。工程師會靠經驗補上下文，靠默契避開麻煩，再把額外成本默默吞下來。</p>
+<p>但 agent 介入之後，很多原本人類可以硬撐過去的地方，會直接變成搜尋成本、理解成本，最後讓修改失去準頭。</p>
+<p>這篇想處理的問題很直接：今天系統裡哪些結構還在管理複雜性，哪些只是在維持形式？</p>
 
 <link rel="stylesheet" href="/css/hugo-easy-gallery.css" />
 <div class="box">
@@ -561,87 +546,87 @@
 </div>
 
 <h2 id="一先把問題拆開">一、先把問題拆開</h2>
-<p>很多關於「LLM 會不會淘汰傳統架構」的討論，一開始就把不同層次的東西攪在一起。於是乎，clean architecture、hexagonal architecture、DDD、DI、repository pattern、DTO、adapter、use case、presenter，通通被打包成同一團：要嘛一起捍衛，要嘛一起否定。</p>
-<p>這樣談，幾乎一定會失焦。</p>
-<p>至少有三個層次，應該先拆開來看。</p>
-<p>第一層，是<strong>架構原則</strong>。依賴方向要受控制，核心規則要和外部機制分開，重要邊界要清楚，關鍵規則要能被測試。當年 Uncle Bob 談 clean architecture，核心是 dependency rule<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>；Alistair Cockburn 談 hexagonal architecture，重點是 inside 與 outside 的不對稱<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>；DDD 裡的 bounded context，關心的則是模型適用的邊界，以及語言一致性應該維持到什麼範圍。<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup></p>
-<p>第二層，是<strong>工程樣板</strong>。DTO、adapter、repository interface、output port、presenter、mapper，都屬於這一層。它們不是原則本身，而是某些團隊在特定條件下慣用的一組工程安排。Martin Fowler 當初在談 dependency injection (DI)，重點放在 configuration 與 use 的分離；並不是要求你替每個類別都預先鋪好抽象層。<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup></p>
-<p>第三層，是<strong>治理需求</strong>。這一層真正關心的，不是你有幾個資料夾、幾個介面，而是系統如何控制依賴、分配責任、限制變更外溢，並在長期演化中，讓語意與成本都維持在可控的地步。</p>
-<p>這個拆法非常重要。很多團隊死守的，根本不是第一層的原則，只是第二層那整套早已模板化的工程儀式。久而久之，本來只是手段的東西，慢慢被說成了信仰；本來應該被追問的東西，反而變成預設。</p>
-<p>今天真正該做的，不是宣布第二層全部過時，也不是替任何一派歌功頌德，而是把它重新放回可被追問的位置：<strong>這個樣板，現在到底在做什麼工作？</strong></p>
+<p>很多關於「LLM 會不會淘汰傳統架構」的討論，常常一開始就把不同層次的東西攪在一起。clean architecture、hexagonal architecture、DDD、DI、repository pattern、DTO、adapter、use case、presenter，通通被包成同一團：要嘛一起捍衛，要嘛一起否定。</p>
+<p>這樣談，很容易失焦。</p>
+<p>至少有三個層次，應該先拆開。</p>
+<p>第一層是<strong>架構原則</strong>。依賴方向要受控制，核心規則要和外部機制分開，重要邊界要清楚，關鍵規則要能被測試。當年 Uncle Bob 談 clean architecture，核心是 dependency rule<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>；Alistair Cockburn 談 hexagonal architecture，重點是 inside 與 outside 的不對稱<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>；DDD 裡的 bounded context，關心的則是模型適用的邊界，以及語言一致性應該維持到什麼範圍。<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup></p>
+<p>第二層是<strong>工程樣板</strong>。DTO、adapter、repository interface、output port、presenter、mapper，都屬於這一層。它們不是原則本身，而是某些團隊在特定條件下慣用的一組工程安排。Martin Fowler 當初談 dependency injection (DI)，重點放在 configuration 與 use 的分離；不是要你替每個類別都先鋪好抽象層。<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup></p>
+<p>第三層是<strong>治理需求</strong>。這一層真正關心的，不是你有幾個資料夾、幾個介面，而是系統怎麼控制依賴、分配責任、限制變更外溢，並在長期演化中把語意與成本都維持在可控範圍內。</p>
+<p>這個拆法很重要。很多團隊死守的，其實不是第一層的原則，而是第二層那整套早已模板化的工程安排。手段用久了，會慢慢被當成信仰；原本該被追問的東西，也就變成預設。</p>
+<p>所以今天要做的，不是宣布第二層全部過時，也不是替任何一派背書，而是把它放回可被檢查的位置：<strong>這個樣板，現在到底在做什麼工作？</strong></p>
 <p>它有沒有縮小修改範圍？有沒有讓規則與副作用的邊界更清楚？有沒有改善測試、型別檢查、替換成本，或跨 context 的語意翻譯？</p>
-<p>答不出來，它就更像裝飾或儀式；答得出來，它就是在承擔治理任務。</p>
-<p>很多爭論之所以失焦，不是因為立場差太遠，而是這三層太常混在一塊兒講。</p>
+<p>答不出來，它就比較像儀式。答得出來，它就是在承擔治理任務。</p>
+<p>很多爭論之所以一直失焦，不是因為立場差太遠，而是這三層太常混在一起談。</p>
 <h2 id="二先問它在保護什麼">二、先問它在保護什麼</h2>
 <p>人們常說「傳統架構過於虛胖，會被 LLM 淘汰」，但如果去看主流 enterprise 平台的官方文件，其實很少有人真的主張把那些模式全面鋪滿。</p>
 <p>沒有人認真說過：所有系統都應該全面採用 clean architecture、DDD 或 CQRS。更沒有人說：你應該一開始就把 repository、port、presenter、mapper 全部鋪好，再來寫功能。</p>
-<p>主流平台的說法，反而一直都比某些工程圈子更務實。</p>
-<p>Microsoft 在 .NET microservices 文件裡談 DDD 與 CQRS 時講得很清楚：這些模式主要適合複雜商業規則、複雜子系統與高演化壓力的情境，而不是所有服務的預設配置。<sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup> 在更細的 persistence layer 文件裡，甚至直接寫明：對許多 CRUD 型微服務來說，直接使用 EF <code>DbContext</code> 往往就是最簡單的寫法；自訂 repository 的價值，則主要出現在需要解耦、模擬資料存取或提升測試隔離的較複雜情境。<sup id="fnref:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup> Azure Architecture Center 對 CQRS 的態度也差不多：讀寫負載不對稱、效能與安全要求不同，或流程本身較複雜時，CQRS 有其價值；但在基本 CRUD、簡單領域模型或 CRUD 式 UI 的情境下，就未必合適。<sup id="fnref:8"><a href="#fn:8" class="footnote-ref" role="doc-noteref">8</a></sup></p>
-<p>AWS 對 anti-corruption layer 的說法也很直接。它不是讓系統「看起來比較有架構」，而是為了翻譯不同系統之間的 domain semantics，避免上游 bounded context 的概念直接污染下游。尤其當遺留系統不可改、上下游語義不同，或不同團隊無法同步調整時，這類結構承擔的是整合風險與業務中斷風險。<sup id="fnref:9"><a href="#fn:9" class="footnote-ref" role="doc-noteref">9</a></sup></p>
-<p>這幾份文件都在說同一件事：企業軟體架構的正當性，不是來自響亮的名字，要看它是否真的在承擔治理任務；你為抽象與分層付出的成本，到底有沒有換到對應的治理能力。</p>
+<p>主流平台的說法，反而一直都比某些工程圈子務實。</p>
+<p>Microsoft 在 .NET microservices 文件裡談 DDD 與 CQRS 時講得很清楚：這些模式主要適合複雜商業規則、複雜子系統與高演化壓力的情境，而不是所有服務的預設配置。<sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup> 在更細的 persistence layer 文件裡，它甚至直接寫明：對許多 CRUD 型微服務來說，直接使用 EF <code>DbContext</code> 往往就是最簡單的做法；自訂 repository 的價值，則主要出現在需要解耦、模擬資料存取或提升測試隔離的較複雜情境。<sup id="fnref:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup> Azure Architecture Center 對 CQRS 的態度也差不多：讀寫負載不對稱、效能與安全要求不同，或流程本身較複雜時，CQRS 有它的價值；但在基本 CRUD、簡單領域模型或 CRUD 式 UI 的情境下，就未必合適。<sup id="fnref:8"><a href="#fn:8" class="footnote-ref" role="doc-noteref">8</a></sup></p>
+<p>AWS 對 anti-corruption layer 的說法也很直接。它不是讓系統「看起來比較有架構」，而是拿來翻譯不同系統之間的 domain semantics，避免上游 bounded context 的概念直接污染下游。尤其當遺留系統不可改、上下游語義不同，或不同團隊無法同步調整時，這類結構承擔的是整合風險與業務中斷風險。<sup id="fnref:9"><a href="#fn:9" class="footnote-ref" role="doc-noteref">9</a></sup></p>
+<p>這幾份文件其實都在說同一件事：企業軟體架構的正當性，不來自名詞，而來自它是否真的在承擔治理任務。你為抽象與分層付出的成本，到底有沒有換到對應的治理能力。</p>
 <p>這裡說的治理，不只是風險控制，也包括廣義的策略對齊、營運成本、效能壓力、跨團隊責任分配，以及系統在長期演化時的健康程度。</p>
-<p>問題從來不是「要不要架構」，而是：<strong>這個架構到底在保護什麼。</strong></p>
-<p>一個只有單表 CRUD 的微服務，如果 repository、port、presenter、mapper 層層硬塞上去，最後真正穩定不變的，只是樣板，不是邊界。</p>
-<p>相反地，一個真的需要隔離外部系統語意、控制商業規則演化、或讓多團隊協作互不污染的系統，那些結構就可能是在承擔真實工作。</p>
-<p>差別不在名字，而在它有沒有真的做事。</p>
-<h2 id="三repo-也需要重新檢查">三、Repo 也需要重新檢查</h2>
-<p>大型系統反覆觸礁的，始終是同一批問題：依賴控制、變更隔離、測試支撐、替換成本、跨團隊協作、責任歸屬，以及語意邊界的維護。</p>
-<p>這些問題不會因為 LLM 變強就自動消失。但 LLM 的確改變了這些結構被檢查、被使用，也被質疑的方式。</p>
-<p>過去，軟體架構主要是在服務人類開發者：讓人看得懂、改得動、測得出、交接得了。現在在 LLM 時代，還多了 coding agent 參與，甚至可能同時有多個 agent。既有的 repo 結構，是否一樣能夠好好服務這些 agent？它是否足夠清楚，讓工具能穩定地定位、導航、修改與驗證？</p>
-<p>關於這件事，近年已有一些 repository-level benchmark 提供線索。這裡要先分清楚：哪些是 benchmark 直接告訴我們的，哪些只是根據結果提出的合理推論。</p>
+<p>所以要問的從來不是「要不要架構」，而是：<strong>這個架構到底在保護什麼。</strong></p>
+<p>一個只有單表 CRUD 的微服務，如果 repository、port、presenter、mapper 層層硬塞上去，最後真正穩定不變的，很可能只是樣板，不是邊界。</p>
+<p>反過來說，一個真的需要隔離外部系統語意、控制商業規則演化、或讓多團隊協作互不污染的系統，那些結構就可能真的在做事。</p>
+<p>差別不在名字，而在它有沒有承擔工作。</p>
+<h2 id="三repo-也需要重新檢查">三、repo 也需要重新檢查</h2>
+<p>大型系統反覆觸礁的，還是那幾個老問題：依賴控制、變更隔離、測試支撐、替換成本、跨團隊協作、責任歸屬，以及語意邊界的維護。</p>
+<p>這些問題不會因為 LLM 變強就自動消失。但 LLM 的確改變了這些結構被檢查、被使用的方式，也改變了人們質疑它們的理由。</p>
+<p>過去，軟體架構主要是在服務人類開發者：讓人看得懂、改得動、測得出、交接得了。現在在 LLM 時代，還多了 coding agent 參與，甚至可能同時有多個 agent。既有的 repo 結構，是否也能好好服務這些 agent？它是否足夠清楚，讓工具能穩定定位、導航、修改與驗證？</p>
+<p>近年已經有一些 repository-level benchmark 提供線索。這裡要先分清楚：哪些是 benchmark 直接告訴我們的，哪些只是根據結果提出的合理推論。</p>
 <p><strong>SWE-bench</strong> 關注的是：LLM 能不能在真實的開源 repo 裡，根據 issue 描述，自動找到相關程式碼、做出修改，最後通過測試。這篇研究當時發現，最佳商業語言模型也只能解掉 1.96%，搭配較好的搜尋策略後，表現才提升到 4.8%。<sup id="fnref:10"><a href="#fn:10" class="footnote-ref" role="doc-noteref">10</a></sup></p>
 <p>後來的 <strong>SWE-bench Pro</strong> 難度更高，任務設計也更接近企業中需橫跨數日、長時程處理 issue 的情境。論文分析顯示，任務複雜度、檔案數量與脈絡線索等因素，甚至連程式語言都會影響效果。<sup id="fnref:11"><a href="#fn:11" class="footnote-ref" role="doc-noteref">11</a></sup></p>
 <p><strong>RepoBench</strong> 則把 repository-level 能力拆得更細。它不是直接模擬解 issue，而是把能力拆成 retrieval、completion 與 pipeline 三部分，觀察語言模型能不能在跨檔案、跨模組的情境下，先找到真正相關的片段，再補出合理的後續程式。它提供的重要線索是：跨檔案脈絡的供給，確實有助於提升表現。<sup id="fnref:12"><a href="#fn:12" class="footnote-ref" role="doc-noteref">12</a></sup></p>
-<p>把這些材料放在一起，目前還不足以得出「某一派架構已被證明普遍勝出」的結論。比較站得住腳的說法反而更樸素：repo 級工作的難點，至少高度集中在<strong>定位、檢索、跨檔案關聯與驗證</strong>。</p>
+<p>把這些材料放在一起，還不足以得出「某一派架構已被證明普遍勝出」的結論。眼前比較站得住腳的說法，反而更樸素：repo 級工作的難點，高度集中在<strong>定位、檢索、跨檔案關聯與驗證</strong>。</p>
 <p>凡是能讓相關脈絡更容易被命中、讓修改範圍更容易收斂、讓驗證點更早浮現的結構，就更值得留下。</p>
-<p>這樣看來，問題其實不是「LLM 要不要架構」，而是：什麼樣的結構，能讓人與 agent 都更容易動手，而且不容易把系統改壞。</p>
+<p>所以問題不是「LLM 要不要架構」，而是：什麼樣的結構，能讓人與 agent 都更容易動手，而且不容易把系統改壞。</p>
 <h2 id="四先看好不好動手">四、先看好不好動手</h2>
 <h3 id="不要先看流派">不要先看流派</h3>
-<p>如果前一節的判斷成立，那接下來更值得處理的，就不是哪一派在理念上更完整，而是更務實地問：在真實 repo 裡，哪一種結構，能夠用更少的間接層，換來更高的可定位性、可修改性與可驗證性？</p>
-<p>把抽象名詞先拿掉。真正會拖慢人與 agent 的，通常是幾件非常具體的事：要改一條規則時，到底要穿過幾層；要找到那條規則時，到底要繞多少地方；改完之後，又能不能立刻知道該驗證哪裡。</p>
+<p>如果前一節的判斷成立，那接下來更值得處理的，就不是哪一派在理念上更完整，而是更務實地看：在真實 repo 裡，哪一種結構能用更少的間接層，換來更高的可定位性、可修改性與可驗證性。</p>
+<p>把抽象名詞先拿掉。真正會拖慢人與 agent 的，通常是幾件很具體的事：改一條規則時，要穿過幾層；找那條規則時，要繞多少地方；改完之後，又能不能立刻知道該驗證哪裡。</p>
 <p>至少可以看四個判準。</p>
-<p>第一，是<strong>修改半徑</strong>，但最好拆成兩半來看。</p>
+<p>第一，是<strong>修改半徑</strong>，但最好拆成兩半看。</p>
 <p>一個是<strong>耦合半徑</strong>：為了完成一個需求，實際必須修改多少檔案、多少模組、多少層。這主要是架構問題。</p>
-<p>另一個是<strong>發現半徑</strong>：人類或 agent 需要先遊歷多少地方，才知道真正該改哪裡。這往往牽涉到命名、目錄、型別、測試入口、工具提示與文件表達。</p>
-<p>這兩件事很容易被混為一談，也就很容易誤判。系統如果耦合過深，該做的是重整依賴關係與責任分配；系統如果本來切分得還可以，只是訊號太亂，那麼該優先處理的，反而是命名、測試入口、型別邊界與機器可讀的規則。</p>
-<p>第二，是<strong>副作用邊界是否清楚</strong>。哪些地方是在做純規則運算，哪些地方在碰資料庫、檔案系統、網路等外部依賴，哪些地方涉及時間、併發與平行處理，是否一眼就看得出來？</p>
+<p>另一個是<strong>發現半徑</strong>：人類或 agent 需要先走過多少地方，才知道真正該改哪裡。這往往牽涉到命名、目錄、型別、測試入口、工具提示與文件表達。</p>
+<p>這兩件事很容易被混在一起，也就很容易誤判。系統如果耦合過深，該做的是重整依賴關係與責任分配；系統如果本來切分得還可以，只是訊號太亂，那麼該優先處理的，反而是命名、測試入口、型別邊界與機器可讀的規則。</p>
+<p>第二，是<strong>副作用邊界是否清楚</strong>。哪些地方在做純規則運算，哪些地方在碰資料庫、檔案系統、網路等外部依賴，哪些地方涉及時間、併發與平行處理，是否一眼就看得出來？</p>
 <p>第三，是<strong>局部驗證是否容易</strong>。改完一段規則後，能不能快速知道該跑哪些測試、哪些靜態檢查、哪些整合路徑？</p>
-<p>第四，是<strong>控制流與資料流是否可追蹤</strong>。如果流程被拆成一長串介面轉發、隱式注入，或分散在太多抽象層裡，再整齊的分層，也不一定等於更好操作。</p>
-<p>舉個簡單的例子。同樣是改一條商業規則，有的系統要層層穿越 controller、use case、output port、presenter、mapper、repository，才碰得到真正的規則；有的系統則能在同一個 feature 目錄下，直接定位到核心邏輯、測試與副作用出口。問題不在於誰比較正統，而在於誰的修改半徑、發現半徑與驗證成本更低。</p>
-<p>不要先看流派，先看判準。</p>
-<p>Vlad Khononov 在 <em>Balancing Coupling in Software Design</em> <sup id="fnref:13"><a href="#fn:13" class="footnote-ref" role="doc-noteref">13</a></sup> 提出的平衡耦合模型，也很適合拿來對照著看。他把耦合性展開成<strong>整合強度</strong>、<strong>距離</strong>、<strong>變動性</strong>三個維度，我們可以大膽地把這套模型再往前推一步，外推到 agent 場景，靈魂拷問一番——某個結構，有沒有真的降低跨邊界的共享知識，減少真正需要同時理解的知識量？有沒有把必要的耦合放在可承受的距離上，縮短找到正確修改點與驗證點的距離？有沒有把高耦合留在較低變動的區域，留在相對穩定的地方，而不是和高變動區域綁在一起？</p>
-<p>如果答不出來，那些抽象就很可能只是把形式堆得更整齊，而不是讓系統更容易演化。</p>
+<p>第四，是<strong>控制流與資料流是否可追蹤</strong>。如果流程被拆成一長串介面轉發、隱式注入，或分散在太多抽象層裡，再整齊的分層，也不一定比較好動手。</p>
+<p>舉個簡單的例子。同樣是改一條商業規則，有的系統要層層穿越 controller、use case、output port、presenter、mapper、repository，才碰得到真正的規則；有的系統則能在同一個 feature 目錄下，直接定位到核心邏輯、測試與副作用出口。問題不在誰比較正統，而在誰的修改半徑、發現半徑與驗證成本更低。</p>
+<p>要先看判準，再看流派。</p>
+<p>Vlad Khononov 在 <em>Balancing Coupling in Software Design</em> <sup id="fnref:13"><a href="#fn:13" class="footnote-ref" role="doc-noteref">13</a></sup> 提出的平衡耦合模型，也很適合拿來對照。他把耦合性展開成<strong>整合強度</strong>、<strong>距離</strong>、<strong>變動性</strong>三個維度。把這套模型外推到 agent 場景，看的其實也是幾件事：某個結構有沒有降低跨邊界的共享知識，減少真正需要同時理解的知識量；有沒有縮短找到正確修改點與驗證點的距離；有沒有把高耦合留在較低變動、相對穩定的區域，而不是和高變動區域綁在一起。</p>
+<p>如果答不出來，那些抽象就很可能只是把形式堆得更整齊，沒有讓系統更容易演化。</p>
 <h3 id="還得看看-agent-守不守得住">還得看看 agent 守不守得住</h3>
-<p>在這組判準下，函數式陣營偏愛的 functional core / imperative shell (FCIS) 結構 <sup id="fnref:14"><a href="#fn:14" class="footnote-ref" role="doc-noteref">14</a></sup>，確實值得重新拿出來看。它的吸引力並不難理解：在規則明確、I/O 可外推的模組裡，純核心與副作用外殼的分離，通常意味著更清楚的副作用邊界、更低的交叉依賴，以及更容易的局部驗證。Google Testing Blog 近年的實務倡議，也大致沿著這條線支持 FCIS 在測試經濟性上的好處。<sup id="fnref:15"><a href="#fn:15" class="footnote-ref" role="doc-noteref">15</a></sup></p>
-<p>但我也要誠實地說，到目前為止，FCIS 對 agent 的吸引力，主要仍來自理論上的可追蹤性、邊界清晰度與測試經濟性。這是一個很有吸引力的假說，但還缺少直接的 repository-level 證據；目前也還沒有 benchmark 能直接比較 functional core、layered enterprise pattern、hexagonal 或 vertical slice 之間的 agent 表現差異。</p>
-<p>還有一個更現實的問題。就算我們人類辛辛苦苦地用某一種結構打造 repo，LLM 進來之後，真的會尊重這個既有結構嗎？</p>
-<p>答案恐怕不能太樂觀。</p>
+<p>在這組判準下，函數式陣營偏愛的 functional core / imperative shell (FCIS) 結構 <sup id="fnref:14"><a href="#fn:14" class="footnote-ref" role="doc-noteref">14</a></sup>，確實值得重新拿出來看。它吸引人的地方在於：在規則明確、I/O 可外推的模組裡，純核心與副作用外殼的分離，會帶來更清楚的副作用邊界、更低的交叉依賴，以及更容易的局部驗證。Google Testing Blog 近年的實務倡議，也大致沿著這條線支持 FCIS 在測試經濟性上的好處。<sup id="fnref:15"><a href="#fn:15" class="footnote-ref" role="doc-noteref">15</a></sup></p>
+<p>但我也得老實說，到目前為止，FCIS 對 agent 的吸引力，主要仍來自理論上的可追蹤性、邊界清晰度與測試經濟性。這假說很有吸引力，但還缺少直接的 repository-level 證據；目前也還沒有 benchmark 能直接比較 functional core、layered enterprise pattern、hexagonal 或 vertical slice 之間的 agent 表現差異。</p>
+<p>更現實的是，repo 的既有結構，不一定會被 LLM 老實遵守。</p>
 <p>目前已有一些初步研究。例如有一項 2025 年的 pilot study，要求 LLM 撰寫微服務，並明確指定必須遵守 hexagonal 架構，同時刻意加入容易誘導它抄捷徑的任務條件。結果顯示，不同模型在維持架構一致性上的表現差異很大。<sup id="fnref:16"><a href="#fn:16" class="footnote-ref" role="doc-noteref">16</a></sup> 但這類結果目前仍多屬小樣本、特定任務設定下的觀察，還不足以形成一般性結論。</p>
-<p>這至少提醒了一件事：名詞喊得再響，LLM 也未必理會。</p>
-<p>所以關鍵也許不在於那些架構標籤本身，而在於這些結構有沒有以足夠清楚的方式外露出來，讓 agent 能穩定辨認、導航與遵守。</p>
-<p>這讓我想到 Uncle Bob 常說的「會尖叫的架構」（screaming architecture）。</p>
+<p>這至少提醒我們：名詞喊得再響，LLM 也未必理會。</p>
+<p>所以關鍵恐怕不只在架構標籤本身，而在於這些結構有沒有以夠清楚的方式外露出來，讓 agent 能穩定辨認、導航與遵守。</p>
+<p>這也讓我想到 Uncle Bob 常說的「會尖叫的架構」(screaming architecture)。</p>
 <h2 id="五問題常出在架構沒外露">五、問題常出在架構沒外露</h2>
 <h3 id="不外露就等於不存在">不外露，就等於不存在</h3>
 <p>這裡最常見的誤判，是把 agent 在大型 codebase 裡的失手，直接歸咎到傳統架構頭上。</p>
 <p>這個判斷太快了。</p>
-<p>很多團隊的真實情況，其實不是沒有邊界，而是邊界只存在於資深工程師腦中；不是沒有規則，而是規則沒有穩定地外露成命名、目錄、型別、測試、CI 與工具可讀的訊號。</p>
+<p>很多團隊的真實情況，其實不是沒有邊界，而是邊界只存在於資深工程師腦中；不是沒有規則，而是規則沒有穩定外露成命名、目錄、型別、測試、CI 與工具可讀的訊號。</p>
 <p>對人類來說，那叫默契；對 agent 來說，那叫缺席。</p>
-<p>「機器可讀的結構」是否比「架構風格」更重要？其實，兩者本來就不在同一個層次上。比較準確的說法是：機器可讀的結構，是 agent 能不能動手的戰術前提；整體架構，則是這些修改能不能長期維持健康的策略背景。</p>
+<p>所以重點不是拿「機器可讀的結構」去取代「架構風格」。兩者本來就不在同一個層次上。比較準確的說法是：機器可讀的結構，是 agent 能不能動手的戰術前提；整體架構，則是這些修改能不能長期維持健康的策略背景。</p>
 <h3 id="文件不是答案">文件不是答案</h3>
-<p>但這裡也要小心：不要把「機器可讀」誤解成「多放幾份給 agent 看的說明文件」。</p>
-<p>近來關於 context files 與 <code>AGENTS.md</code> 的研究提醒我們：這類檔案不是放了就有效，也不是零成本。有一項 2026 年跨越多種 coding agents 與語言模型的研究指出，context files 會傾向降低任務成功率，卻同時拉高推論成本 20% 以上；研究者最後的建議不是「多寫一點」，而是：<strong>如果要寫，就只保留最少必要要求。</strong><sup id="fnref:17"><a href="#fn:17" class="footnote-ref" role="doc-noteref">17</a></sup> 另一項同年的研究則聚焦效率面，觀察 <code>AGENTS.md</code> 對 runtime 與 token 用量的影響；它顯示這類檔案在某些設定下可能改善執行效率，但也正因此更提醒我們：<code>AGENTS.md</code> 不是萬靈丹。<sup id="fnref:18"><a href="#fn:18" class="footnote-ref" role="doc-noteref">18</a></sup></p>
-<p>穩定的高訊號，依靠的是架構可見性，是型別邊界、可自動檢查的依賴規則、清楚的測試入口、可信的命名約定，以及能直接落入 CI 與工具流程的約束。不是多一份摘要式文件就夠了。</p>
-<p>沒有訊號還不打緊，靠著厲害的推理語言模型或許還能稍微彌補過來；更麻煩的是<strong>錯誤訊號</strong>。過期的命名規則、和實作不一致的邊界文件、失真的 <code>AGENTS.md</code>，往往比完全沒有文件更糟。不只缺資訊，還會提供錯誤的自信。</p>
-<p>架構沒有外露，沒有外露到足以讓人類與 agent 都穩定依循的程度，是真正的問題。</p>
+<p>但這裡也要小心：不要把「機器可讀」直接理解成「多放幾份給 agent 看的說明文件」。</p>
+<p>近來關於 context files 與 <code>AGENTS.md</code> 的研究提醒我們：這類檔案不是放了就有效，也不是零成本。有一項 2026 年跨越多種 coding agents 與語言模型的研究指出，context files 會傾向降低任務成功率，卻同時拉高推論成本 20% 以上；研究者最後的建議不是「多寫一點」，而是：<strong>如果要寫，就只保留最少必要要求。</strong><sup id="fnref:17"><a href="#fn:17" class="footnote-ref" role="doc-noteref">17</a></sup> 另一項同年的研究則聚焦效率面，觀察 <code>AGENTS.md</code> 對 runtime 與 token 用量的影響；它顯示這類檔案在某些設定下可能改善執行效率，但也正因此更提醒我們：<code>AGENTS.md</code> 並不是萬靈丹。<sup id="fnref:18"><a href="#fn:18" class="footnote-ref" role="doc-noteref">18</a></sup></p>
+<p>穩定的高訊號，依靠的還是架構可見性：型別邊界、可自動檢查的依賴規則、清楚的測試入口、可信的命名約定，以及能直接落進 CI 與工具流程的約束。不是多一份摘要式文件就夠了。</p>
+<p>沒有訊號還不打緊，靠著夠強的推理模型也許還能稍微補回來；更麻煩的是<strong>錯誤訊號</strong>。過期的命名規則、和實作不一致的邊界文件、失真的 <code>AGENTS.md</code>，往往比完全沒有文件更糟。不只缺資訊，還會給出錯誤的自信。</p>
+<p>架構如果沒有外露到能被人與 agent 穩定依循的程度，問題就還在。</p>
 <h2 id="六架構還得為自己辯護">六、架構還得為自己辯護</h2>
-<p>不是所有抽象都在保護系統；有些抽象，只是在保護團隊對「專業感」的想像。</p>
-<p>到了 LLM 時代，架構不再只需要說服資深工程師，還得說服會進去 repo 動手動腳的 agent。一個結構若無法幫助定位、限制外溢、支撐驗證，那它就算名字再漂亮，也未必是在治理複雜性。</p>
-<p>人類和機器需要的，是說得出治理價值、擁有更高訊號雜訊比，也更容易被檢查、被導航、被驗證的結構。</p>
-<p>到了最後，很多東西其實都得回答同一個問題：</p>
-<p><strong>你到底是在管理複雜性，還是在維持形式？</strong></p>
-<p>說不定再過幾年，真正重新發明軟體架構的，不是架構師，而是那些每天在 repo 裡動手動腳的 coding agent，突然湧現出自己的架構審美觀——就像 AlphaGo 讓人重新理解圍棋一樣。</p>
-<p>但在那一天來之前，多半還是得先回到眼前這個比較不浪漫的問題：</p>
-<p><strong>你現在留下的這些結構，到底是在幫系統承受複雜性，還是在替形式續命？</strong></p>
+<p>不是所有抽象都有用。有些抽象真的在保護系統，有些只是讓團隊覺得這樣看起來比較像一套完整的方法。</p>
+<p>到了 LLM 時代，架構不再只是拿來說服資深工程師，也得讓 agent 用得上。</p>
+<p>真正有用的結構，不管面對的是人還是機器，要求其實差不多：它要能把治理價值講清楚，訊號雜訊比要夠高，也要容易被檢查、導航與驗證。否則，即使名字再完整、分層再好看，也很難說它真的在處理複雜性。</p>
+<p>最後還是回到同一個判斷：</p>
+<p><strong>你現在留下的這些結構，到底是在承受複雜性，還是在替形式續命？</strong></p>
+<p>未來真正推動軟體架構變化的，也許不是哪一派理論贏了，而是大量 coding agent 在 repo 裡反覆動手之後，哪些結構真的撐得住，哪些撐不住，會慢慢變得很清楚。</p>
+<p>或許 coding agent 突然湧現出自己的架構審美觀——就像 AlphaGo 讓人重新理解圍棋一樣。</p>
+<p>但在那之前，眼前比較實際的問題還是這個：</p>
+<p><strong>你留下來的東西，有沒有在做事？</strong></p>
 <div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
