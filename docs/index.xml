@@ -6,10 +6,130 @@
     <description>Recent content on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sat, 21 Mar 2026 20:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 25 Mar 2026 20:00:00 +0800</lastBuildDate>
     
         <atom:link href="//william-yeh.net/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>當 Agile 遇見 AI：變與不變</title>
+      <link>//william-yeh.net/post/2026/03/genai-revisit-scrum/</link>
+      <pubDate>Wed, 25 Mar 2026 20:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2026/03/genai-revisit-scrum/</guid>
+      
+        <description>&lt;p&gt;&lt;a href=&#34;https://scrumguides.org/&#34;&gt;Scrum Guide&lt;/a&gt; 問世至今已經超過 15 年。到了 GenAI 與 coding agents 時代，Scrum 算不算過時？&lt;/p&gt;
+&lt;p&gt;我覺得，這個問題不能只用「過不過時」來看。真正值得看的是：當 AI 已經能查 repo、寫 ticket、開 PR、跑測試之後，Agile 裡哪些工作真的被改寫了，哪些其實沒有。&lt;/p&gt;
+&lt;p&gt;現在很多團隊碰到的情況，不是工作自動做完了，而是塞車的位置換了。&lt;/p&gt;
+&lt;p&gt;你讓 agent 跑了一整晚。隔天早上，GitHub 上可能已經躺著幾個待 review 的 PR、兩三種看起來都說得通的重構方向、一些測試全綠燈卻仍讓人隱隱不安的修改，外加幾個碰了系統邊界卻未必自知的變更。 OpenClaw（龍蝦）作者 Peter Steinberger 也提過，自己曾讓系統跑上數小時，甚至隔夜處理重構；他甚至認為 “prompt requests” 也會變成新的日常。&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;這裡真正變快的，是程式碼產出。沒有一起變快的，則是審查、驗收、風險辨識、責任承擔和後續決策。表面上看起來像是寫得更快，實際上常常只是把瓶頸往後推。&lt;/p&gt;
+&lt;p&gt;瓶頸既然換了位置，接下來要重看的，就不只是 Scrum 還在不在，而是整個協作方式要怎麼調整。譬如說，很多原本得靠人類口頭交換的內容，現在可以先由機器整理、摘要、比對、補齊，甚至先展開幾種可能方案。&lt;/p&gt;
+&lt;p&gt;很多人在正式會議前，本來就會先和 AI 討論，再把整理過的結論帶進會議。既然這件事早就在發生，那差別往往只剩下：團隊要不要正式承認它。說穿了，就是要不要把那隻早就在場外跑著的龍蝦，正式接進協作流程裡。&lt;/p&gt;
+&lt;p&gt;我甚至還有個瘋狂的想法。何不開一個視窗，接上麥克風與喇叭，邀請這位 AI 本尊直接進來會議現場，說不定反而更有效率，也更有火花呢。&lt;/p&gt;
+&lt;p&gt;還有哪些需要調整的呢？&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;//william-yeh.net/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2026/03/genai-revisit-scrum.jpg&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2026/03/genai-revisit-scrum.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;先變薄的部分&#34;&gt;先變薄的部分&lt;/h2&gt;
+&lt;h3 id=&#34;daily-scrum從同步到排除障礙&#34;&gt;Daily Scrum：從同步到排除障礙&lt;/h3&gt;
+&lt;p&gt;Daily 最容易先變形，因為它最常被實作成站會、報進度、同步阻礙。若 AI 已經能自動整理昨天的 commit、ticket 狀態、PR 變化、CI 結果、風險訊號與依賴狀況，很多原本要靠人輪流講一遍的資訊，自然可以退出例行會議。&lt;/p&gt;
+&lt;p&gt;Daily 之後會更像一個更窄、更直接的介面。平時以非同步更新為主，必要時再同步排除障礙與重新對焦 Sprint Goal。它還是有用，只是用途會收斂得更清楚。&lt;/p&gt;
+&lt;h3 id=&#34;planning--refinementagent-會先進來&#34;&gt;Planning / Refinement：agent 會先進來&lt;/h3&gt;
+&lt;p&gt;Planning 和 Refinement 會很早被改寫，因為這兩個環節本來就有大量前期整理與方案展開的工作。&lt;/p&gt;
+&lt;p&gt;Agent 可以先整理 repo 現況、歷史 issue、相依模組、潛在技術債、風險、限制條件與驗收線索，也可以先把問題空間攤開：列出幾種可能方向、補上 edge cases、模擬不同 stakeholder 的質疑，或把一句模糊需求推成幾版可比較的 backlog candidates。&lt;/p&gt;
+&lt;p&gt;這會直接改變會議本身的重心。以前團隊常常花很多時間把資料湊齊、把可能性從零展開；現在更可能直接從幾個已經展開的選項開始討論。AI 在這裡的價值，不只是幫忙整理答案，而是先把問題空間、方案空間和限制空間攤到桌上。&lt;/p&gt;
+&lt;p&gt;但這也立刻放大 artifact 品質的問題。若 backlog item 寫得模糊、驗收條件不清、優先順序背後沒有說明清楚的價值假設，agent 只會更快放大原有的模糊。AI 可以幫忙展開選項，卻不能替代產品與工程團隊對於「為什麼現在做、做到哪裡算足夠、哪種風險不能接受」的共同判斷。&lt;/p&gt;
+&lt;p&gt;所以到了 AI 時代，Planning / Refinement 的價值不會縮水，只是重心會往前移。人不再主要負責把資料從零湊齊，而是負責設邊界、做取捨、定優先順序。&lt;/p&gt;
+&lt;h3 id=&#34;review準備工作能外包判斷不能&#34;&gt;Review：準備工作能外包，判斷不能&lt;/h3&gt;
+&lt;p&gt;Review 很適合由 agent 深度前置支援。它可以先整理 demo 重點、摘要變更、用數據展示品質趨勢、風險列表，甚至預測 stakeholder 可能會問什麼。&lt;/p&gt;
+&lt;p&gt;但 Review 的核心工作還是看完成果之後，團隊要不要調整後續方向。資訊展示可以大幅前置自動化；價值判斷、取捨與 adaptation 仍然要由人承擔。&lt;/p&gt;
+&lt;h3 id=&#34;sprint-本身時間盒會重估&#34;&gt;Sprint 本身：時間盒會重估&lt;/h3&gt;
+&lt;p&gt;AI 明顯壓縮了實作與局部驗證時間，如果 Sprint 仍然固定在兩週或更長的週期，當然會開始顯得肥厚。某些團隊會把 Sprint 縮短，自動化程度高、跨團隊依賴程度低的團隊，甚至可能轉向更接近 Kanban 那種持續流動的節奏。&lt;/p&gt;
+&lt;p&gt;接下來要重新看的，是什麼節奏最適合吸收風險、整合回饋、維持責任鏈。在高合規、高風險、跨職能協作密集的環境裡，時間盒仍然可能很有用；只是到了 AI 時代，它不必再理所當然地綁定某一個固定長度。&lt;/p&gt;
+&lt;h2 id=&#34;反而變更硬的部分&#34;&gt;反而變更硬的部分&lt;/h2&gt;
+&lt;h3 id=&#34;retrospective更重要也更脆弱&#34;&gt;Retrospective：更重要，也更脆弱&lt;/h3&gt;
+&lt;p&gt;如果說 Daily、Planning、Refinement、Review 有些部分會被 AI 削薄，那麼 Retrospective 則可能會往另一個方向走：它會變得更重要。&lt;/p&gt;
+&lt;p&gt;Retro 處理的是團隊診斷、坦白與集體學習。這裡最關鍵的東西不是效率，而是心理安全、信任，以及組織能不能把一次失敗轉成下一輪行動。&lt;/p&gt;
+&lt;p&gt;同樣一句話「這次卡住，其實是因為我不敢太早提反對意見」，在純人類的 retro 裡，也許有人會講；但如果現場多了一個在記錄、歸因、評估，甚至長期留痕的 agent，這句話就很可能消失。不是因為 AI 一定會懲罰誰，而是因為人會重新計算：這句話說出去之後，會怎麼被理解、保存、引用或放大。&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;所以，如果 retrospective 還要有診斷價值，團隊就得很清楚地界定 AI 在裡面的角色。它可以幫忙整理議題、歸納模式、追蹤 action items；但只要它強化了監看感、記錄感或績效聯想，retro 最有價值的那部分就會先破壞掉。&lt;/p&gt;
+&lt;h3 id=&#34;artifacts要給人也要給機器用&#34;&gt;Artifacts：要給人，也要給機器用&lt;/h3&gt;
+&lt;p&gt;比起只盯著 Scrum 的 events，我更在意另一件事：artifacts 在 AI 時代會比以前更重要，而且得重寫。&lt;/p&gt;
+&lt;p&gt;Scrum Guide 一直強調 artifacts 的角色，是讓工作與價值具備透明性。Agent 普遍介入之後，artifact 不再只是給人看的共識載體，也會變成人機協作的介面。Backlog item、acceptance criteria、Definition of Done、測試規格、architecture decision record、runbook、incident template——這些文件如果還只是寫到「人類大概懂」，對 agent 來說通常就不夠。&lt;/p&gt;
+&lt;p&gt;AI 時代，好的 artifacts 通常得同時滿足三件事：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;讓人能理解為什麼要做。&lt;/li&gt;
+&lt;li&gt;讓機器能可靠地執行或協助執行。&lt;/li&gt;
+&lt;li&gt;讓責任可以在事後被追溯。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Artifacts 精度直接決定產出品質，因此，很多過去被嫌文件太笨重的東西，之後可能會以另一種形式回歸。&lt;/p&gt;
+&lt;p&gt;這裡說的回歸，指的是另一類 artifacts：輕量、可持續修訂、直接服務於協作、生成、驗收與追溯。它們會跟著 sprint 推進而演化，會貼著程式碼、測試、部署與實際決策一起更新，也會持續接受回饋修正。這種文件更像高精度介面，負責讓人與 agent 在同一組邊界條件下工作。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://agilemanifesto.org/&#34;&gt;Agile Manifesto&lt;/a&gt; 裡那句 &lt;em&gt;working software over comprehensive documentation&lt;/em&gt;，放到今天依然成立。關鍵不在於文件多或少，而在於它有沒有直接服務於 working software。只要文件仍然貼近交付、能被持續修訂、能幫助團隊更快收斂到可驗收的結果，它就還在敏捷的精神之內。&lt;/p&gt;
+&lt;p&gt;從傳統產品實務看，這其實並不陌生。很多團隊早就會用 &lt;a href=&#34;https://xp123.com/invest-in-good-stories-and-smart-tasks/&#34;&gt;INVEST&lt;/a&gt; 來檢查 user story 是否至少夠獨立、可協商、有價值、可估、夠小且可驗證。這些要求在 AI 時代沒有失效，反而更像最低門檻。差別在於：過去一則 story 只要寫到讓人類團隊大致能接手，常常就能往下做；現在若連 agent 都要參與展開、拆分、測試與實作準備，那 backlog 就得再往前一步，寫到目標、非目標、限制條件、驗收方法與 sign-off 都足夠明確。&lt;/p&gt;
+&lt;p&gt;舉個最簡單的例子。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;壞寫法：&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;作為使用者，我希望登入更快。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;這句對 PM 或工程師也許還能繼續聊，但對 agent 來說，邊界幾乎是空的。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;好寫法：&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;目標&lt;/strong&gt;：將登入頁可互動時間降低 30%。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;非目標&lt;/strong&gt;：不改動身份驗證供應商。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;限制&lt;/strong&gt;：不得影響現有風控規則。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;驗收&lt;/strong&gt;：iOS 與 Web 端在指定設備與網路條件下達成 X 指標；由產品經理與前端負責人共同 sign-off。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;同樣是一個 backlog item，後者才提供了真正可用的人機介面：目標是什麼、邊界在哪裡、什麼算完成、誰負責最後收件。寫得夠清楚，AI 才幫得上忙，幫忙拆工作、產生測試、準備 PR。&lt;/p&gt;
+&lt;h3 id=&#34;責任鏈與工程護欄生成越快越要卡住&#34;&gt;責任鏈與工程護欄：生成越快，越要卡住&lt;/h3&gt;
+&lt;p&gt;不少人對 AI 的第一直覺，是既然寫程式變便宜，那很多流程大概都能省掉。這種想像只對了一半。&lt;/p&gt;
+&lt;p&gt;AI 的確讓某些執行工作變便宜了，但它完全沒有削弱 accountability。事情如果上線出錯，最後還是得有人承擔；需求如果方向錯了，還是得有人為取捨負責；安全性、法遵、效能和使用者體驗，也不會因為程式碼是 agent 幫忙寫的，就自動退到後面。&lt;/p&gt;
+&lt;p&gt;接下來真正要被重構的，是整條責任鏈：誰定義任務、誰設邊界、誰接收產出、誰有權否決、誰來為結果簽名。這些問題沒先講清楚，只把 agent 接進流程，最後通常不會更敏捷，只會更快地製造混亂。&lt;/p&gt;
+&lt;p&gt;工程護欄也會一起變硬。程式碼生成量一旦上來，不可能靠線性增加人工 review、每個人更辛苦地看更多東西來搞定。最後撐得住的，是那些能把品質判斷前移、自動化、制度化的做法：持續整合、快速測試、明確的 Definition of Done、嚴格的 code review gate、穩定的 observability、必要時的 evals，以及對產線風險有感知的 release discipline。&lt;/p&gt;
+&lt;p&gt;從這個角度看，XP 裡那些常被嫌麻煩、嫌慢、嫌太講究的實踐，在 AI 時代反而更像必要基礎設施。原因不在於它們很傳統，而在於它們能承接高速生成之後帶來的品質壓力。 &lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;h2 id=&#34;別把判斷力一起外包&#34;&gt;別把判斷力一起外包&lt;/h2&gt;
+&lt;p&gt;AI 的介入，還引出另一個更根本的問題：當執行越來越便宜，我們怎麼避免把判斷力一起外包出去。&lt;/p&gt;
+&lt;p&gt;這裡說的判斷力，不是抽象的道德說教，而是幾種很具體的能力：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;看出哪裡不對勁的能力。&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;在多個看起來都合理的方案裡做取捨的能力。&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;在壓力下願意為結果簽名負責的能力。&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;如果一個團隊長期把 AI 當成「先幫我做完，我再大致看一下」的工具，被侵蝕的往往不只是「寫程式」這一項技能，而是對錯誤的敏感度、對邊界的感知、對系統後果的直覺，以及在不完整資訊下做判斷的肌肉。&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;更麻煩的是，這件事未必會以很戲劇化的方式發生。多數時候，它不是讓人突然完全不會做，而是讓人慢慢失去深入理解的動機。表面上每件事都做得更快，實際上團隊可能越來越依賴一套自己不完全理解、也不太知道怎麼挑戰的生成流程。最後留下來的，不是高效，而是脆弱。&lt;/p&gt;
+&lt;p&gt;所以我不太接受那種把 AI 對團隊的影響簡化成「速度提升」的說法。速度當然重要。真正決定團隊長期能力的，還是判斷、責任與學習能不能一起跟上。&lt;/p&gt;
+&lt;h2 id=&#34;結語agile-沒有過時介面在變&#34;&gt;結語：Agile 沒有過時，介面在變&lt;/h2&gt;
+&lt;p&gt;Scrum 未必過時。現在鬆動的，是建立在人類同步成本上的那一層介面。&lt;/p&gt;
+&lt;p&gt;接下來要進一步重構的，是人、機器與責任之間的介面。&lt;/p&gt;
+&lt;p&gt;流程會被改寫，但判斷、責任和學習不會消失，只會加重。&lt;/p&gt;
+&lt;hr&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;OpenClaw 作者 Peter Steinberger 在接受 &lt;a href=&#34;https://lexfridman.com/peter-steinberger/&#34;&gt;Lex Fridman Podcast #491&lt;/a&gt; 訪談時提到，讓系統處理重構，可能會跑上數小時，甚至隔夜，也提到 review pull request，甚至 “prompt request” 會變成他日常工作的一部分。這很適合拿來說明：當 agent 讓產出暴增時，人類瓶頸常常會被推向 review 與判斷。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;這裡的推論應該寫得保守一點。&lt;a href=&#34;https://www.jstor.org/stable/2666999?origin=JSTOR-pdf&#34;&gt;Edmondson (1999)&lt;/a&gt; 與 &lt;a href=&#34;https://rework.withgoogle.com/intl/en/guides/understanding-team-effectiveness&#34;&gt;Google re:Work&lt;/a&gt; 所談的心理安全，確實都支持「人要在團隊裡敢說真話，必須感到不會因提出疑問、異議或錯誤而受到懲罰」這件事。&lt;a href=&#34;https://partnershiponai.org/psychological-safety-in-the-ai-workplace-with-the-apa/&#34;&gt;Partnership on AI&lt;/a&gt; 與 &lt;a href=&#34;https://www.apa.org/pubs/reports/work-in-america/2024/psychological-safety&#34;&gt;APA&lt;/a&gt; 的材料也指出，當 AI 被用來強化監看、侵入隱私，或讓人感到自己正被持續觀察時，心理安全可能受損。&lt;a href=&#34;https://www.frontiersin.org/journals/behavioral-economics/articles/10.3389/frbhe.2025.1647057/full&#34;&gt;Dorner 與 Fellner-Röhling (2025)&lt;/a&gt; 的研究則更直接涉及信任與自動化控制，而不是 retro 場景本身。把這些材料放進 retrospective 的脈絡，只能支撐一個較保守的判斷：&lt;strong&gt;一旦 retro 帶出強烈的監看感、記錄感或評價感，團隊的坦白程度很可能下降。&lt;/strong&gt;&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;
+&lt;p&gt;請參考我在〈&lt;a href=&#34;//william-yeh.net/post/2026/03/genai-se-level-up/&#34;&gt;AI 會寫程式之後，軟體工程真正變貴的是什麼&lt;/a&gt;〉一文做的探討。&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:4&#34;&gt;
+&lt;p&gt;這裡我同樣刻意寫得保守。關於 AI 是否會侵蝕學習與理解，Anthropic 2026 年的一項研究 “&lt;a href=&#34;https://www.anthropic.com/research/AI-assistance-coding-skills&#34;&gt;How AI Assistance Impacts the Formation of Coding Skills&lt;/a&gt;” 發現，接受 AI 協助的學習者，在剛做過的概念測驗上分數較低；但長期的 deskilling 與組織後果，目前仍缺少更長時間尺度的直接證據。&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description>
+      
+    </item>
     
     <item>
       <title>LLM 時代，傳統軟體架構該重新檢查了</title>
