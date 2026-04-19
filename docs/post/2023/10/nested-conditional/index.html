@@ -36,12 +36,7 @@
 
 
 
-<meta name="author" content="William Yeh" />
-<meta name="description" content="讀別人的程式是一件苦差事，不僅需要具備對應的領域知識，也得了解對方的程式書寫邏輯與風格。因此，為了讓程式碼容易被人理解，整潔程式碼是必須持續精進的技藝。
-在 code review 進行實質審查之前，我喜歡先做一點點形式審查，尤其是某些 code smell，臭味暴風半徑大到甚至連領域知識的外行人都聞得到。
-我很常遇到不必要的巢狀迴圈或條件判斷式。經驗告訴我，除非真的是要設計出什麼高大尚的演算法或者刷題，否則，這有相當大的機率是需要進一步 refactor 的。
-像以下這段程式，即使我故意把領域知識相關細節用 conditionXX 馬賽克掉了，你還是可以明顯聞到 bad smell：迴圈 &#43; 條件判斷式，ABCDEF 深達 6 層，你能夠很快捕捉到箇中邏輯嗎？
-" />
+<meta name="author" content="William Yeh" /><meta name="description" content="面對嵌套條件判斷式，建議先用守衛子句提前排除無效路徑，降低認知負荷；再透過條件邏輯合併，減少層級深度。這不僅能降低循環複雜度，也讓團隊協作更高效。關鍵在於用有意義的變數名稱替代冗餘條件，使程式碼更易讀且維護。" />
 
 
 
@@ -60,10 +55,7 @@
 <meta property="og:url" content="//william-yeh.net/post/2023/10/nested-conditional/">
   <meta property="og:site_name" content="Potioneer&#39;s Essays">
   <meta property="og:title" content="[Code Review 碎碎念] 簡化巢狀條件判斷式">
-  <meta property="og:description" content="讀別人的程式是一件苦差事，不僅需要具備對應的領域知識，也得了解對方的程式書寫邏輯與風格。因此，為了讓程式碼容易被人理解，整潔程式碼是必須持續精進的技藝。
-在 code review 進行實質審查之前，我喜歡先做一點點形式審查，尤其是某些 code smell，臭味暴風半徑大到甚至連領域知識的外行人都聞得到。
-我很常遇到不必要的巢狀迴圈或條件判斷式。經驗告訴我，除非真的是要設計出什麼高大尚的演算法或者刷題，否則，這有相當大的機率是需要進一步 refactor 的。
-像以下這段程式，即使我故意把領域知識相關細節用 conditionXX 馬賽克掉了，你還是可以明顯聞到 bad smell：迴圈 &#43; 條件判斷式，ABCDEF 深達 6 層，你能夠很快捕捉到箇中邏輯嗎？">
+  <meta property="og:description" content="面對嵌套條件判斷式，建議先用守衛子句提前排除無效路徑，降低認知負荷；再透過條件邏輯合併，減少層級深度。這不僅能降低循環複雜度，也讓團隊協作更高效。關鍵在於用有意義的變數名稱替代冗餘條件，使程式碼更易讀且維護。">
   <meta property="og:locale" content="zh_tw">
   <meta property="og:type" content="article">
     <meta property="article:section" content="post">
@@ -73,20 +65,14 @@
     <meta property="article:tag" content="Craftsmanship">
 
   <meta itemprop="name" content="[Code Review 碎碎念] 簡化巢狀條件判斷式">
-  <meta itemprop="description" content="讀別人的程式是一件苦差事，不僅需要具備對應的領域知識，也得了解對方的程式書寫邏輯與風格。因此，為了讓程式碼容易被人理解，整潔程式碼是必須持續精進的技藝。
-在 code review 進行實質審查之前，我喜歡先做一點點形式審查，尤其是某些 code smell，臭味暴風半徑大到甚至連領域知識的外行人都聞得到。
-我很常遇到不必要的巢狀迴圈或條件判斷式。經驗告訴我，除非真的是要設計出什麼高大尚的演算法或者刷題，否則，這有相當大的機率是需要進一步 refactor 的。
-像以下這段程式，即使我故意把領域知識相關細節用 conditionXX 馬賽克掉了，你還是可以明顯聞到 bad smell：迴圈 &#43; 條件判斷式，ABCDEF 深達 6 層，你能夠很快捕捉到箇中邏輯嗎？">
+  <meta itemprop="description" content="面對嵌套條件判斷式，建議先用守衛子句提前排除無效路徑，降低認知負荷；再透過條件邏輯合併，減少層級深度。這不僅能降低循環複雜度，也讓團隊協作更高效。關鍵在於用有意義的變數名稱替代冗餘條件，使程式碼更易讀且維護。">
   <meta itemprop="datePublished" content="2023-10-12T20:00:00+08:00">
   <meta itemprop="dateModified" content="2023-10-12T20:00:00+08:00">
   <meta itemprop="wordCount" content="1471">
   <meta itemprop="keywords" content="Programming,Craftsmanship">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="[Code Review 碎碎念] 簡化巢狀條件判斷式">
-  <meta name="twitter:description" content="讀別人的程式是一件苦差事，不僅需要具備對應的領域知識，也得了解對方的程式書寫邏輯與風格。因此，為了讓程式碼容易被人理解，整潔程式碼是必須持續精進的技藝。
-在 code review 進行實質審查之前，我喜歡先做一點點形式審查，尤其是某些 code smell，臭味暴風半徑大到甚至連領域知識的外行人都聞得到。
-我很常遇到不必要的巢狀迴圈或條件判斷式。經驗告訴我，除非真的是要設計出什麼高大尚的演算法或者刷題，否則，這有相當大的機率是需要進一步 refactor 的。
-像以下這段程式，即使我故意把領域知識相關細節用 conditionXX 馬賽克掉了，你還是可以明顯聞到 bad smell：迴圈 &#43; 條件判斷式，ABCDEF 深達 6 層，你能夠很快捕捉到箇中邏輯嗎？">
+  <meta name="twitter:description" content="面對嵌套條件判斷式，建議先用守衛子句提前排除無效路徑，降低認知負荷；再透過條件邏輯合併，減少層級深度。這不僅能降低循環複雜度，也讓團隊協作更高效。關鍵在於用有意義的變數名稱替代冗餘條件，使程式碼更易讀且維護。">
 
 <link rel="icon" href="/favicon.ico" />
 

@@ -36,9 +36,7 @@
 
 
 
-<meta name="author" content="William Yeh" />
-<meta name="description" content="從 Docker Desktop 換成 Podman，有些習慣必須做些小調整。此文記錄一些常用的小技巧。
-" />
+<meta name="author" content="William Yeh" /><meta name="description" content="Podman 提供與 Docker 類似的容器功能，但更強調安全與資源控制。當需分析映像層結構時，可直接使用 `podman image tree` 取代 Docker 的 `--tree`，無需依賴 daemon 服務。若需相容舊工具，可透過臨時啟動 daemon 模式或設定符號連結將 `/var/run/docker.sock` 連結至 Podman 的 socket，搭配指令碼簡化流程，並透過 systemd 管理持久化服務，讓容器操作更靈活且符合現代系統需求。" />
 
 
 
@@ -57,7 +55,7 @@
 <meta property="og:url" content="//william-yeh.net/post/2023/02/podman-tips/">
   <meta property="og:site_name" content="Potioneer&#39;s Essays">
   <meta property="og:title" content="Podman Tips">
-  <meta property="og:description" content="從 Docker Desktop 換成 Podman，有些習慣必須做些小調整。此文記錄一些常用的小技巧。">
+  <meta property="og:description" content="Podman 提供與 Docker 類似的容器功能，但更強調安全與資源控制。當需分析映像層結構時，可直接使用 `podman image tree` 取代 Docker 的 `--tree`，無需依賴 daemon 服務。若需相容舊工具，可透過臨時啟動 daemon 模式或設定符號連結將 `/var/run/docker.sock` 連結至 Podman 的 socket，搭配指令碼簡化流程，並透過 systemd 管理持久化服務，讓容器操作更靈活且符合現代系統需求。">
   <meta property="og:locale" content="zh_tw">
   <meta property="og:type" content="article">
     <meta property="article:section" content="post">
@@ -68,14 +66,14 @@
     <meta property="article:tag" content="Podman">
 
   <meta itemprop="name" content="Podman Tips">
-  <meta itemprop="description" content="從 Docker Desktop 換成 Podman，有些習慣必須做些小調整。此文記錄一些常用的小技巧。">
+  <meta itemprop="description" content="Podman 提供與 Docker 類似的容器功能，但更強調安全與資源控制。當需分析映像層結構時，可直接使用 `podman image tree` 取代 Docker 的 `--tree`，無需依賴 daemon 服務。若需相容舊工具，可透過臨時啟動 daemon 模式或設定符號連結將 `/var/run/docker.sock` 連結至 Podman 的 socket，搭配指令碼簡化流程，並透過 systemd 管理持久化服務，讓容器操作更靈活且符合現代系統需求。">
   <meta itemprop="datePublished" content="2023-02-07T20:00:00+08:00">
   <meta itemprop="dateModified" content="2023-02-07T20:00:00+08:00">
   <meta itemprop="wordCount" content="493">
   <meta itemprop="keywords" content="Devops,Docker,Podman">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Podman Tips">
-  <meta name="twitter:description" content="從 Docker Desktop 換成 Podman，有些習慣必須做些小調整。此文記錄一些常用的小技巧。">
+  <meta name="twitter:description" content="Podman 提供與 Docker 類似的容器功能，但更強調安全與資源控制。當需分析映像層結構時，可直接使用 `podman image tree` 取代 Docker 的 `--tree`，無需依賴 daemon 服務。若需相容舊工具，可透過臨時啟動 daemon 模式或設定符號連結將 `/var/run/docker.sock` 連結至 Podman 的 socket，搭配指令碼簡化流程，並透過 systemd 管理持久化服務，讓容器操作更靈活且符合現代系統需求。">
 
 <link rel="icon" href="/favicon.ico" />
 

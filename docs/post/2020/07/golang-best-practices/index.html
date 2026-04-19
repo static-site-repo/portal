@@ -36,11 +36,7 @@
 
 
 
-<meta name="author" content="William Yeh" />
-<meta name="description" content="今年一月，換到一家以 Go 為主力語言的公司。
-習慣了 Java 紀律，一碰到 Go 的自由奔放，不禁想尋求一些 best practices 與 patterns。
-以前我曾蒐集過一份 Go Best Practices 清單。浸潤 Go 半年後，再回頭看這些內容，當初不甚明瞭之處，竟然也懂了許多。便想重新整理一次，並加上個人的短評。
-" />
+<meta name="author" content="William Yeh" /><meta name="description" content="Go 的設計哲學強調簡潔與直觀，避免過度工程化的結構。掌握其語法特性與慣用編碼方式，能大幅提升開發效率與系統可維護性。建議從 Effective Go 開始建立思維框架，並遵循標準專案佈局與套件組織原則，避免將其他語言的設計模式直接套用，才能真正發揮 Go 的語言優勢。" />
 
 
 
@@ -59,9 +55,7 @@
 <meta property="og:url" content="//william-yeh.net/post/2020/07/golang-best-practices/">
   <meta property="og:site_name" content="Potioneer&#39;s Essays">
   <meta property="og:title" content="Go Best Practices">
-  <meta property="og:description" content="今年一月，換到一家以 Go 為主力語言的公司。
-習慣了 Java 紀律，一碰到 Go 的自由奔放，不禁想尋求一些 best practices 與 patterns。
-以前我曾蒐集過一份 Go Best Practices 清單。浸潤 Go 半年後，再回頭看這些內容，當初不甚明瞭之處，竟然也懂了許多。便想重新整理一次，並加上個人的短評。">
+  <meta property="og:description" content="Go 的設計哲學強調簡潔與直觀，避免過度工程化的結構。掌握其語法特性與慣用編碼方式，能大幅提升開發效率與系統可維護性。建議從 Effective Go 開始建立思維框架，並遵循標準專案佈局與套件組織原則，避免將其他語言的設計模式直接套用，才能真正發揮 Go 的語言優勢。">
   <meta property="og:locale" content="zh_tw">
   <meta property="og:type" content="article">
     <meta property="article:section" content="post">
@@ -71,18 +65,14 @@
     <meta property="article:tag" content="Golang">
 
   <meta itemprop="name" content="Go Best Practices">
-  <meta itemprop="description" content="今年一月，換到一家以 Go 為主力語言的公司。
-習慣了 Java 紀律，一碰到 Go 的自由奔放，不禁想尋求一些 best practices 與 patterns。
-以前我曾蒐集過一份 Go Best Practices 清單。浸潤 Go 半年後，再回頭看這些內容，當初不甚明瞭之處，竟然也懂了許多。便想重新整理一次，並加上個人的短評。">
+  <meta itemprop="description" content="Go 的設計哲學強調簡潔與直觀，避免過度工程化的結構。掌握其語法特性與慣用編碼方式，能大幅提升開發效率與系統可維護性。建議從 Effective Go 開始建立思維框架，並遵循標準專案佈局與套件組織原則，避免將其他語言的設計模式直接套用，才能真正發揮 Go 的語言優勢。">
   <meta itemprop="datePublished" content="2020-07-10T08:00:00+08:00">
   <meta itemprop="dateModified" content="2020-07-10T08:00:00+08:00">
   <meta itemprop="wordCount" content="662">
   <meta itemprop="keywords" content="Programming,Golang">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Go Best Practices">
-  <meta name="twitter:description" content="今年一月，換到一家以 Go 為主力語言的公司。
-習慣了 Java 紀律，一碰到 Go 的自由奔放，不禁想尋求一些 best practices 與 patterns。
-以前我曾蒐集過一份 Go Best Practices 清單。浸潤 Go 半年後，再回頭看這些內容，當初不甚明瞭之處，竟然也懂了許多。便想重新整理一次，並加上個人的短評。">
+  <meta name="twitter:description" content="Go 的設計哲學強調簡潔與直觀，避免過度工程化的結構。掌握其語法特性與慣用編碼方式，能大幅提升開發效率與系統可維護性。建議從 Effective Go 開始建立思維框架，並遵循標準專案佈局與套件組織原則，避免將其他語言的設計模式直接套用，才能真正發揮 Go 的語言優勢。">
 
 <link rel="icon" href="/favicon.ico" />
 

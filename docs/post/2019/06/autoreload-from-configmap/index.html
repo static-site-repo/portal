@@ -36,12 +36,7 @@
 
 
 
-<meta name="author" content="William Yeh" />
-<meta name="description" content="My previous article &ldquo;Inotify in Containers&rdquo; has demonstrated that when ConfigMap is mounted as directories, any changes in the ConfigMap will propagate to related pods, and can be detected with inotify-like APIs.
-A follow-up question might be: what should a well-behaved application react to this trigger accordingly? What if it&rsquo;s a ill-designed application?
-To clarify this I&rsquo;ve conducted a series of experiments for 3 possible configmap-reloading strategies:
-Built-in auto-reloading apps External signals Pod rollout In this article I&rsquo;m going to explain the experiments and preliminary findings. All experiment materials are available in the configmap-auto-reload repo.
-" />
+<meta name="author" content="William Yeh" /><meta name="description" content="Kubernetes ConfigMap changes can trigger application reloads through three approaches: built-in auto-reloading tools like Traefik detect updates and refresh configurations seamlessly, external signals (e.g., HUP for Nginx) require explicit triggers but risk instability, and orchestration tools like Reloader automate pod rollouts for config propagation. While direct file-watching tools like inotify-tools are discouraged due to fragility, leveraging application-specific reload mechanisms or dedicated reloader tools ensures reliable, production-ready config updates without downtime. Prioritize native reload capabilities or orchestration tools over ad-hoc signal-based approaches for robustness, especially in environments where config changes need consistent, automated handling." />
 
 
 
@@ -60,10 +55,7 @@ Built-in auto-reloading apps External signals Pod rollout In this article I&rsqu
 <meta property="og:url" content="//william-yeh.net/post/2019/06/autoreload-from-configmap/">
   <meta property="og:site_name" content="Potioneer&#39;s Essays">
   <meta property="og:title" content="Auto-Reload from ConfigMap">
-  <meta property="og:description" content="My previous article “Inotify in Containers” has demonstrated that when ConfigMap is mounted as directories, any changes in the ConfigMap will propagate to related pods, and can be detected with inotify-like APIs.
-A follow-up question might be: what should a well-behaved application react to this trigger accordingly? What if it’s a ill-designed application?
-To clarify this I’ve conducted a series of experiments for 3 possible configmap-reloading strategies:
-Built-in auto-reloading apps External signals Pod rollout In this article I’m going to explain the experiments and preliminary findings. All experiment materials are available in the configmap-auto-reload repo.">
+  <meta property="og:description" content="Kubernetes ConfigMap changes can trigger application reloads through three approaches: built-in auto-reloading tools like Traefik detect updates and refresh configurations seamlessly, external signals (e.g., HUP for Nginx) require explicit triggers but risk instability, and orchestration tools like Reloader automate pod rollouts for config propagation. While direct file-watching tools like inotify-tools are discouraged due to fragility, leveraging application-specific reload mechanisms or dedicated reloader tools ensures reliable, production-ready config updates without downtime. Prioritize native reload capabilities or orchestration tools over ad-hoc signal-based approaches for robustness, especially in environments where config changes need consistent, automated handling.">
   <meta property="og:locale" content="zh_tw">
   <meta property="og:type" content="article">
     <meta property="article:section" content="post">
@@ -76,20 +68,14 @@ Built-in auto-reloading apps External signals Pod rollout In this article I’m 
     <meta property="article:tag" content="Configmap">
 
   <meta itemprop="name" content="Auto-Reload from ConfigMap">
-  <meta itemprop="description" content="My previous article “Inotify in Containers” has demonstrated that when ConfigMap is mounted as directories, any changes in the ConfigMap will propagate to related pods, and can be detected with inotify-like APIs.
-A follow-up question might be: what should a well-behaved application react to this trigger accordingly? What if it’s a ill-designed application?
-To clarify this I’ve conducted a series of experiments for 3 possible configmap-reloading strategies:
-Built-in auto-reloading apps External signals Pod rollout In this article I’m going to explain the experiments and preliminary findings. All experiment materials are available in the configmap-auto-reload repo.">
+  <meta itemprop="description" content="Kubernetes ConfigMap changes can trigger application reloads through three approaches: built-in auto-reloading tools like Traefik detect updates and refresh configurations seamlessly, external signals (e.g., HUP for Nginx) require explicit triggers but risk instability, and orchestration tools like Reloader automate pod rollouts for config propagation. While direct file-watching tools like inotify-tools are discouraged due to fragility, leveraging application-specific reload mechanisms or dedicated reloader tools ensures reliable, production-ready config updates without downtime. Prioritize native reload capabilities or orchestration tools over ad-hoc signal-based approaches for robustness, especially in environments where config changes need consistent, automated handling.">
   <meta itemprop="datePublished" content="2019-06-17T17:00:00+08:00">
   <meta itemprop="dateModified" content="2019-06-17T17:00:00+08:00">
   <meta itemprop="wordCount" content="615">
   <meta itemprop="keywords" content="Devops,Docker,Kubernetes,Inotify,Configmap">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Auto-Reload from ConfigMap">
-  <meta name="twitter:description" content="My previous article “Inotify in Containers” has demonstrated that when ConfigMap is mounted as directories, any changes in the ConfigMap will propagate to related pods, and can be detected with inotify-like APIs.
-A follow-up question might be: what should a well-behaved application react to this trigger accordingly? What if it’s a ill-designed application?
-To clarify this I’ve conducted a series of experiments for 3 possible configmap-reloading strategies:
-Built-in auto-reloading apps External signals Pod rollout In this article I’m going to explain the experiments and preliminary findings. All experiment materials are available in the configmap-auto-reload repo.">
+  <meta name="twitter:description" content="Kubernetes ConfigMap changes can trigger application reloads through three approaches: built-in auto-reloading tools like Traefik detect updates and refresh configurations seamlessly, external signals (e.g., HUP for Nginx) require explicit triggers but risk instability, and orchestration tools like Reloader automate pod rollouts for config propagation. While direct file-watching tools like inotify-tools are discouraged due to fragility, leveraging application-specific reload mechanisms or dedicated reloader tools ensures reliable, production-ready config updates without downtime. Prioritize native reload capabilities or orchestration tools over ad-hoc signal-based approaches for robustness, especially in environments where config changes need consistent, automated handling.">
 
 <link rel="icon" href="/favicon.ico" />
 

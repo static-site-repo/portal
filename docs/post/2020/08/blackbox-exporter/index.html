@@ -36,10 +36,7 @@
 
 
 
-<meta name="author" content="William Yeh" />
-<meta name="description" content="在用 Prometheus &#43; Grafana 監控自家服務的同時，我們也會想用同一套系統去監控第三方服務。
-本文介紹一個好用的 Prometheus 官方工具：Blackbox exporter，可以省下手刻 curl 腳本的工夫。我也順便介紹一些踩過的雷。
-" />
+<meta name="author" content="William Yeh" /><meta name="description" content="Blackbox Exporter streamlines third-party service monitoring by leveraging HTTP, TCP, DNS, and ICMP probes to assess health without requiring custom scripts. Its integration with Prometheus enables centralized metric collection, but success hinges on precise configuration—such as placing authentication details in the YAML file rather than scrape jobs—to avoid probe failures. Key considerations include handling redirects, validating probe types, and ensuring alignment with monitoring goals for reliable insights." />
 
 
 
@@ -58,8 +55,7 @@
 <meta property="og:url" content="//william-yeh.net/post/2020/08/blackbox-exporter/">
   <meta property="og:site_name" content="Potioneer&#39;s Essays">
   <meta property="og:title" content="Blackbox Exporter 小記">
-  <meta property="og:description" content="在用 Prometheus &#43; Grafana 監控自家服務的同時，我們也會想用同一套系統去監控第三方服務。
-本文介紹一個好用的 Prometheus 官方工具：Blackbox exporter，可以省下手刻 curl 腳本的工夫。我也順便介紹一些踩過的雷。">
+  <meta property="og:description" content="Blackbox Exporter streamlines third-party service monitoring by leveraging HTTP, TCP, DNS, and ICMP probes to assess health without requiring custom scripts. Its integration with Prometheus enables centralized metric collection, but success hinges on precise configuration—such as placing authentication details in the YAML file rather than scrape jobs—to avoid probe failures. Key considerations include handling redirects, validating probe types, and ensuring alignment with monitoring goals for reliable insights.">
   <meta property="og:locale" content="zh_tw">
   <meta property="og:type" content="article">
     <meta property="article:section" content="post">
@@ -70,16 +66,14 @@
     <meta property="article:tag" content="Prometheus">
 
   <meta itemprop="name" content="Blackbox Exporter 小記">
-  <meta itemprop="description" content="在用 Prometheus &#43; Grafana 監控自家服務的同時，我們也會想用同一套系統去監控第三方服務。
-本文介紹一個好用的 Prometheus 官方工具：Blackbox exporter，可以省下手刻 curl 腳本的工夫。我也順便介紹一些踩過的雷。">
+  <meta itemprop="description" content="Blackbox Exporter streamlines third-party service monitoring by leveraging HTTP, TCP, DNS, and ICMP probes to assess health without requiring custom scripts. Its integration with Prometheus enables centralized metric collection, but success hinges on precise configuration—such as placing authentication details in the YAML file rather than scrape jobs—to avoid probe failures. Key considerations include handling redirects, validating probe types, and ensuring alignment with monitoring goals for reliable insights.">
   <meta itemprop="datePublished" content="2020-08-07T08:00:00+08:00">
   <meta itemprop="dateModified" content="2020-08-07T08:00:00+08:00">
   <meta itemprop="wordCount" content="2246">
   <meta itemprop="keywords" content="Devops,Monitoring,Prometheus">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Blackbox Exporter 小記">
-  <meta name="twitter:description" content="在用 Prometheus &#43; Grafana 監控自家服務的同時，我們也會想用同一套系統去監控第三方服務。
-本文介紹一個好用的 Prometheus 官方工具：Blackbox exporter，可以省下手刻 curl 腳本的工夫。我也順便介紹一些踩過的雷。">
+  <meta name="twitter:description" content="Blackbox Exporter streamlines third-party service monitoring by leveraging HTTP, TCP, DNS, and ICMP probes to assess health without requiring custom scripts. Its integration with Prometheus enables centralized metric collection, but success hinges on precise configuration—such as placing authentication details in the YAML file rather than scrape jobs—to avoid probe failures. Key considerations include handling redirects, validating probe types, and ensuring alignment with monitoring goals for reliable insights.">
 
 <link rel="icon" href="/favicon.ico" />
 

@@ -36,14 +36,7 @@
 
 
 
-<meta name="author" content="William Yeh" />
-<meta name="description" content="（改寫自公司內部 memo）
-Hi all guys,
-最近我會對有意導入 Scrum 的任務小組個別進行一整天的 Agile Workshop。這些小組都有一項課前作業：請先準備團隊在三個月以內會進行的 User Stories 清單／陳述。
-眾所周知，user story 有一個經典句型：
-As a {XXX user persona}, I want to {do YYY} so that {ZZZ result or benefit}.
-有同仁問道：有些 user story 不容易以「&ldquo;user&rdquo; 視角」來寫。怎麼辦？真的要這麼嚴格遵守 user story 格式嗎？
-" />
+<meta name="author" content="William Yeh" /><meta name="description" content="使用者故事並非唯一的需求表達方式，但其價值在於引導團隊從使用者視角思考功能影響。當技術性需求難以轉化為使用者故事時，可直接以技術任務形式納入產品待辦清單，但需確保每項任務都連結到具體的業務目標或使用者價值。面對非功能性需求，如效能或優先順序設定，可先評估是否能整合至現有故事的驗收條件，若需獨立處理則改用技術故事敘述，並透過「影響分析」與「切蛋糕」原則，確保功能實現能真正解決使用者痛點或創造商業價值。" />
 
 
 
@@ -62,12 +55,7 @@ As a {XXX user persona}, I want to {do YYY} so that {ZZZ result or benefit}.
 <meta property="og:url" content="//william-yeh.net/post/2022/10/on-user-stories/">
   <meta property="og:site_name" content="Potioneer&#39;s Essays">
   <meta property="og:title" content="User Story 釋疑：真的要遵守嗎？">
-  <meta property="og:description" content="（改寫自公司內部 memo）
-Hi all guys,
-最近我會對有意導入 Scrum 的任務小組個別進行一整天的 Agile Workshop。這些小組都有一項課前作業：請先準備團隊在三個月以內會進行的 User Stories 清單／陳述。
-眾所周知，user story 有一個經典句型：
-As a {XXX user persona}, I want to {do YYY} so that {ZZZ result or benefit}.
-有同仁問道：有些 user story 不容易以「“user” 視角」來寫。怎麼辦？真的要這麼嚴格遵守 user story 格式嗎？">
+  <meta property="og:description" content="使用者故事並非唯一的需求表達方式，但其價值在於引導團隊從使用者視角思考功能影響。當技術性需求難以轉化為使用者故事時，可直接以技術任務形式納入產品待辦清單，但需確保每項任務都連結到具體的業務目標或使用者價值。面對非功能性需求，如效能或優先順序設定，可先評估是否能整合至現有故事的驗收條件，若需獨立處理則改用技術故事敘述，並透過「影響分析」與「切蛋糕」原則，確保功能實現能真正解決使用者痛點或創造商業價值。">
   <meta property="og:locale" content="zh_tw">
   <meta property="og:type" content="article">
     <meta property="article:section" content="post">
@@ -78,24 +66,14 @@ As a {XXX user persona}, I want to {do YYY} so that {ZZZ result or benefit}.
     <meta property="article:tag" content="Decomposition">
 
   <meta itemprop="name" content="User Story 釋疑：真的要遵守嗎？">
-  <meta itemprop="description" content="（改寫自公司內部 memo）
-Hi all guys,
-最近我會對有意導入 Scrum 的任務小組個別進行一整天的 Agile Workshop。這些小組都有一項課前作業：請先準備團隊在三個月以內會進行的 User Stories 清單／陳述。
-眾所周知，user story 有一個經典句型：
-As a {XXX user persona}, I want to {do YYY} so that {ZZZ result or benefit}.
-有同仁問道：有些 user story 不容易以「“user” 視角」來寫。怎麼辦？真的要這麼嚴格遵守 user story 格式嗎？">
+  <meta itemprop="description" content="使用者故事並非唯一的需求表達方式，但其價值在於引導團隊從使用者視角思考功能影響。當技術性需求難以轉化為使用者故事時，可直接以技術任務形式納入產品待辦清單，但需確保每項任務都連結到具體的業務目標或使用者價值。面對非功能性需求，如效能或優先順序設定，可先評估是否能整合至現有故事的驗收條件，若需獨立處理則改用技術故事敘述，並透過「影響分析」與「切蛋糕」原則，確保功能實現能真正解決使用者痛點或創造商業價值。">
   <meta itemprop="datePublished" content="2022-10-08T10:30:00+08:00">
   <meta itemprop="dateModified" content="2022-10-08T10:30:00+08:00">
   <meta itemprop="wordCount" content="1759">
   <meta itemprop="keywords" content="Agile,Scrum,Decomposition">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="User Story 釋疑：真的要遵守嗎？">
-  <meta name="twitter:description" content="（改寫自公司內部 memo）
-Hi all guys,
-最近我會對有意導入 Scrum 的任務小組個別進行一整天的 Agile Workshop。這些小組都有一項課前作業：請先準備團隊在三個月以內會進行的 User Stories 清單／陳述。
-眾所周知，user story 有一個經典句型：
-As a {XXX user persona}, I want to {do YYY} so that {ZZZ result or benefit}.
-有同仁問道：有些 user story 不容易以「“user” 視角」來寫。怎麼辦？真的要這麼嚴格遵守 user story 格式嗎？">
+  <meta name="twitter:description" content="使用者故事並非唯一的需求表達方式，但其價值在於引導團隊從使用者視角思考功能影響。當技術性需求難以轉化為使用者故事時，可直接以技術任務形式納入產品待辦清單，但需確保每項任務都連結到具體的業務目標或使用者價值。面對非功能性需求，如效能或優先順序設定，可先評估是否能整合至現有故事的驗收條件，若需獨立處理則改用技術故事敘述，並透過「影響分析」與「切蛋糕」原則，確保功能實現能真正解決使用者痛點或創造商業價值。">
 
 <link rel="icon" href="/favicon.ico" />
 

@@ -36,11 +36,7 @@
 
 
 
-<meta name="author" content="William Yeh" />
-<meta name="description" content="API gateway 是微服務環境，甚至 service mesh 的要角 1。
-在 Kubernetes 上面，API gateway 選項眾多。有像 HAProxy 及 Nginx 這些石器時代老傢伙跨足過來，也有打從一開始就走 cloud native 路線的後起之秀。
-該如何選擇？
-" />
+<meta name="author" content="William Yeh" /><meta name="description" content="在 Kubernetes 微服務架構中，Nginx Ingress 與 Ambassador 代表兩種不同路徑的 API 閘道解決方案：前者以穩定性與廣泛採用見長，後者則基於 Envoy 的現代架構，提供更強的服務網格整合能力。壓力測試結果顯示兩者在基礎效能上差距不大，但 Ambassador 的靈活性與未來可擴展性使其成為追求雲原生最佳實踐的團隊值得嘗試的選項。" />
 
 
 
@@ -59,9 +55,7 @@
 <meta property="og:url" content="//william-yeh.net/post/2019/03/ingress-vs-ambassador/">
   <meta property="og:site_name" content="Potioneer&#39;s Essays">
   <meta property="og:title" content="Nginx Ingress 與 Ambassador 簡易性能比較">
-  <meta property="og:description" content="API gateway 是微服務環境，甚至 service mesh 的要角 1。
-在 Kubernetes 上面，API gateway 選項眾多。有像 HAProxy 及 Nginx 這些石器時代老傢伙跨足過來，也有打從一開始就走 cloud native 路線的後起之秀。
-該如何選擇？">
+  <meta property="og:description" content="在 Kubernetes 微服務架構中，Nginx Ingress 與 Ambassador 代表兩種不同路徑的 API 閘道解決方案：前者以穩定性與廣泛採用見長，後者則基於 Envoy 的現代架構，提供更強的服務網格整合能力。壓力測試結果顯示兩者在基礎效能上差距不大，但 Ambassador 的靈活性與未來可擴展性使其成為追求雲原生最佳實踐的團隊值得嘗試的選項。">
   <meta property="og:locale" content="zh_tw">
   <meta property="og:type" content="article">
     <meta property="article:section" content="post">
@@ -73,18 +67,14 @@
     <meta property="article:tag" content="Service Mesh">
 
   <meta itemprop="name" content="Nginx Ingress 與 Ambassador 簡易性能比較">
-  <meta itemprop="description" content="API gateway 是微服務環境，甚至 service mesh 的要角 1。
-在 Kubernetes 上面，API gateway 選項眾多。有像 HAProxy 及 Nginx 這些石器時代老傢伙跨足過來，也有打從一開始就走 cloud native 路線的後起之秀。
-該如何選擇？">
+  <meta itemprop="description" content="在 Kubernetes 微服務架構中，Nginx Ingress 與 Ambassador 代表兩種不同路徑的 API 閘道解決方案：前者以穩定性與廣泛採用見長，後者則基於 Envoy 的現代架構，提供更強的服務網格整合能力。壓力測試結果顯示兩者在基礎效能上差距不大，但 Ambassador 的靈活性與未來可擴展性使其成為追求雲原生最佳實踐的團隊值得嘗試的選項。">
   <meta itemprop="datePublished" content="2019-03-29T23:00:00+08:00">
   <meta itemprop="dateModified" content="2019-03-29T23:00:00+08:00">
   <meta itemprop="wordCount" content="1495">
   <meta itemprop="keywords" content="Devops,Kubernetes,Microservices,Service Mesh">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Nginx Ingress 與 Ambassador 簡易性能比較">
-  <meta name="twitter:description" content="API gateway 是微服務環境，甚至 service mesh 的要角 1。
-在 Kubernetes 上面，API gateway 選項眾多。有像 HAProxy 及 Nginx 這些石器時代老傢伙跨足過來，也有打從一開始就走 cloud native 路線的後起之秀。
-該如何選擇？">
+  <meta name="twitter:description" content="在 Kubernetes 微服務架構中，Nginx Ingress 與 Ambassador 代表兩種不同路徑的 API 閘道解決方案：前者以穩定性與廣泛採用見長，後者則基於 Envoy 的現代架構，提供更強的服務網格整合能力。壓力測試結果顯示兩者在基礎效能上差距不大，但 Ambassador 的靈活性與未來可擴展性使其成為追求雲原生最佳實踐的團隊值得嘗試的選項。">
 
 <link rel="icon" href="/favicon.ico" />
 

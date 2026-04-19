@@ -36,10 +36,7 @@
 
 
 
-<meta name="author" content="William Yeh" />
-<meta name="description" content="Kubernetes 有個很方便的地方：只要修改 deployment 的 spec.replicas 數字，就能橫向擴展 pod，以應付更大的流量負載需求。
-這一招，對於 stateless 的 HTTP 服務很管用，也是 Kubernetes 入門教學愛用的例子。但是，對於 gRPC 呢？
-" />
+<meta name="author" content="William Yeh" /><meta name="description" content="Kubernetes 原生的 L4 負載均衡無法處理 gRPC 的持久連線特性，需透過 Service Mesh（如 Linkerd）實現 L7 層動態負載均衡。實務建議搭配用戶端連線池或 sidecar 代理，確保流量隨著 Pod 擴縮自動重新分配，並透過指標監控驗證效果。" />
 
 
 
@@ -58,8 +55,7 @@
 <meta property="og:url" content="//william-yeh.net/post/2020/03/grpc-load-balancing/">
   <meta property="og:site_name" content="Potioneer&#39;s Essays">
   <meta property="og:title" content="gRPC Load Balancing in Kubernetes">
-  <meta property="og:description" content="Kubernetes 有個很方便的地方：只要修改 deployment 的 spec.replicas 數字，就能橫向擴展 pod，以應付更大的流量負載需求。
-這一招，對於 stateless 的 HTTP 服務很管用，也是 Kubernetes 入門教學愛用的例子。但是，對於 gRPC 呢？">
+  <meta property="og:description" content="Kubernetes 原生的 L4 負載均衡無法處理 gRPC 的持久連線特性，需透過 Service Mesh（如 Linkerd）實現 L7 層動態負載均衡。實務建議搭配用戶端連線池或 sidecar 代理，確保流量隨著 Pod 擴縮自動重新分配，並透過指標監控驗證效果。">
   <meta property="og:locale" content="zh_tw">
   <meta property="og:type" content="article">
     <meta property="article:section" content="post">
@@ -71,16 +67,14 @@
     <meta property="article:tag" content="Devops">
 
   <meta itemprop="name" content="gRPC Load Balancing in Kubernetes">
-  <meta itemprop="description" content="Kubernetes 有個很方便的地方：只要修改 deployment 的 spec.replicas 數字，就能橫向擴展 pod，以應付更大的流量負載需求。
-這一招，對於 stateless 的 HTTP 服務很管用，也是 Kubernetes 入門教學愛用的例子。但是，對於 gRPC 呢？">
+  <meta itemprop="description" content="Kubernetes 原生的 L4 負載均衡無法處理 gRPC 的持久連線特性，需透過 Service Mesh（如 Linkerd）實現 L7 層動態負載均衡。實務建議搭配用戶端連線池或 sidecar 代理，確保流量隨著 Pod 擴縮自動重新分配，並透過指標監控驗證效果。">
   <meta itemprop="datePublished" content="2020-03-30T22:30:00+08:00">
   <meta itemprop="dateModified" content="2020-03-30T22:30:00+08:00">
   <meta itemprop="wordCount" content="2278">
   <meta itemprop="keywords" content="Microservices,Grpc,Kubernetes,Devops">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="gRPC Load Balancing in Kubernetes">
-  <meta name="twitter:description" content="Kubernetes 有個很方便的地方：只要修改 deployment 的 spec.replicas 數字，就能橫向擴展 pod，以應付更大的流量負載需求。
-這一招，對於 stateless 的 HTTP 服務很管用，也是 Kubernetes 入門教學愛用的例子。但是，對於 gRPC 呢？">
+  <meta name="twitter:description" content="Kubernetes 原生的 L4 負載均衡無法處理 gRPC 的持久連線特性，需透過 Service Mesh（如 Linkerd）實現 L7 層動態負載均衡。實務建議搭配用戶端連線池或 sidecar 代理，確保流量隨著 Pod 擴縮自動重新分配，並透過指標監控驗證效果。">
 
 <link rel="icon" href="/favicon.ico" />
 

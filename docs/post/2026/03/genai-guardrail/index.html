@@ -36,13 +36,7 @@
 
 
 
-<meta name="author" content="William Yeh" />
-<meta name="description" content="Vibe coding 時，LLM 並不真的「聽話」。很多人因此去找更強的咒語，想拴住這匹脫韁的野馬。
-但 prompt 裡寫一句「請遵守 Hexagonal Architecture」，效果其實很有限。它比較像在工地口頭交代一句「請按圖施工」：有提醒，沒有保證。最後沒歪掉，很多時候也不是因為工人真的照做，而是旁邊還有人在監工。
-你真的相信 AI 會乖乖聽勸嗎？1
-工程上真正有約束力的規矩，不能只停在說明、默契或設計哲學。它得能被系統檢查；必要時，能拒絕、阻斷，甚至直接讓流程停下來。
-所以，談 LLM 時代的工程護欄，先抓住一個判準就夠了：這條規矩能不能被機器檢查，並在必要時改變系統的下一步。
-" />
+<meta name="author" content="William Yeh" /><meta name="description" content="在生成式AI時代，強化工程約束需將架構原則轉化為可驗證的自動化規則，透過靜態分析與CI檢查阻斷越界行為。關鍵在於區分支架、驗證器與護欄角色，針對高風險領域植入權限控制與稽核追蹤，才能確保系統穩定。精準對齊規範與工具鏈執行邏輯，才能有效降低大型語言模型生成內容的不確定性。" />
 
 
 
@@ -61,11 +55,7 @@
 <meta property="og:url" content="//william-yeh.net/post/2026/03/genai-guardrail/">
   <meta property="og:site_name" content="Potioneer&#39;s Essays">
   <meta property="og:title" content="GenAI 的工程護欄是什麼？—— 把規矩寫成工具鏈會執行的限制">
-  <meta property="og:description" content="Vibe coding 時，LLM 並不真的「聽話」。很多人因此去找更強的咒語，想拴住這匹脫韁的野馬。
-但 prompt 裡寫一句「請遵守 Hexagonal Architecture」，效果其實很有限。它比較像在工地口頭交代一句「請按圖施工」：有提醒，沒有保證。最後沒歪掉，很多時候也不是因為工人真的照做，而是旁邊還有人在監工。
-你真的相信 AI 會乖乖聽勸嗎？1
-工程上真正有約束力的規矩，不能只停在說明、默契或設計哲學。它得能被系統檢查；必要時，能拒絕、阻斷，甚至直接讓流程停下來。
-所以，談 LLM 時代的工程護欄，先抓住一個判準就夠了：這條規矩能不能被機器檢查，並在必要時改變系統的下一步。">
+  <meta property="og:description" content="在生成式AI時代，強化工程約束需將架構原則轉化為可驗證的自動化規則，透過靜態分析與CI檢查阻斷越界行為。關鍵在於區分支架、驗證器與護欄角色，針對高風險領域植入權限控制與稽核追蹤，才能確保系統穩定。精準對齊規範與工具鏈執行邏輯，才能有效降低大型語言模型生成內容的不確定性。">
   <meta property="og:locale" content="zh_tw">
   <meta property="og:type" content="article">
     <meta property="article:section" content="post">
@@ -77,22 +67,14 @@
     <meta property="article:tag" content="Testing">
 
   <meta itemprop="name" content="GenAI 的工程護欄是什麼？—— 把規矩寫成工具鏈會執行的限制">
-  <meta itemprop="description" content="Vibe coding 時，LLM 並不真的「聽話」。很多人因此去找更強的咒語，想拴住這匹脫韁的野馬。
-但 prompt 裡寫一句「請遵守 Hexagonal Architecture」，效果其實很有限。它比較像在工地口頭交代一句「請按圖施工」：有提醒，沒有保證。最後沒歪掉，很多時候也不是因為工人真的照做，而是旁邊還有人在監工。
-你真的相信 AI 會乖乖聽勸嗎？1
-工程上真正有約束力的規矩，不能只停在說明、默契或設計哲學。它得能被系統檢查；必要時，能拒絕、阻斷，甚至直接讓流程停下來。
-所以，談 LLM 時代的工程護欄，先抓住一個判準就夠了：這條規矩能不能被機器檢查，並在必要時改變系統的下一步。">
+  <meta itemprop="description" content="在生成式AI時代，強化工程約束需將架構原則轉化為可驗證的自動化規則，透過靜態分析與CI檢查阻斷越界行為。關鍵在於區分支架、驗證器與護欄角色，針對高風險領域植入權限控制與稽核追蹤，才能確保系統穩定。精準對齊規範與工具鏈執行邏輯，才能有效降低大型語言模型生成內容的不確定性。">
   <meta itemprop="datePublished" content="2026-03-28T20:00:00+08:00">
   <meta itemprop="dateModified" content="2026-03-28T20:00:00+08:00">
   <meta itemprop="wordCount" content="4094">
   <meta itemprop="keywords" content="Ai,Programming,Craftsmanship,Testing">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="GenAI 的工程護欄是什麼？—— 把規矩寫成工具鏈會執行的限制">
-  <meta name="twitter:description" content="Vibe coding 時，LLM 並不真的「聽話」。很多人因此去找更強的咒語，想拴住這匹脫韁的野馬。
-但 prompt 裡寫一句「請遵守 Hexagonal Architecture」，效果其實很有限。它比較像在工地口頭交代一句「請按圖施工」：有提醒，沒有保證。最後沒歪掉，很多時候也不是因為工人真的照做，而是旁邊還有人在監工。
-你真的相信 AI 會乖乖聽勸嗎？1
-工程上真正有約束力的規矩，不能只停在說明、默契或設計哲學。它得能被系統檢查；必要時，能拒絕、阻斷，甚至直接讓流程停下來。
-所以，談 LLM 時代的工程護欄，先抓住一個判準就夠了：這條規矩能不能被機器檢查，並在必要時改變系統的下一步。">
+  <meta name="twitter:description" content="在生成式AI時代，強化工程約束需將架構原則轉化為可驗證的自動化規則，透過靜態分析與CI檢查阻斷越界行為。關鍵在於區分支架、驗證器與護欄角色，針對高風險領域植入權限控制與稽核追蹤，才能確保系統穩定。精準對齊規範與工具鏈執行邏輯，才能有效降低大型語言模型生成內容的不確定性。">
 
 <link rel="icon" href="/favicon.ico" />
 

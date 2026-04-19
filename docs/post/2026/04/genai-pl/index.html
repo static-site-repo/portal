@@ -36,12 +36,7 @@
 
 
 
-<meta name="author" content="William Yeh" />
-<meta name="description" content="在許多系統開發與工程教育脈絡中，C/C&#43;&#43; 曾長期佔據核心位置。後來主流答案逐漸分散，Java、C#、Python、TypeScript、Go 各自崛起，也都一度被期待成為下一個中心。
-到了 LLM 時代，這個問題又被拿出來重問一次。從 agent、harness 與同類工具在 TypeScript、Python、Rust 等不同生態中並行發展、彼此競逐，就看得出這仍是秦失其鹿，天下共逐之的局面。1
-但如果問題還停在「哪門程式語言最好」，最後多半只會得到一份偏好清單。語言模型對某種語言、生態與框架是否熟悉，當然會影響起稿速度與初稿品質；可是在「生成結果不能直接被信任」的前提下，技術選型真正該看的，是依風險分層，選擇最能支撐驗證與收斂的程式語言 × 驗證鏈組合。
-這不是一篇語言排名文；這是一篇重新定義選型判準的文章。
-" />
+<meta name="author" content="William Yeh" /><meta name="description" content="GenAI 時代，需優先構建形式化約束與工具鏈協同的驗證體系，TypeScript的型別檢驗適配應用層強檢驗需求，Rust的所有權模型能提前攔截核心層風險，Go的簡潔工具鏈保障平台層穩定性，Python則在探索階段提供靈活實驗空間，關鍵在於工程化驗證而非單純依賴語言特性。" />
 
 
 
@@ -60,10 +55,7 @@
 <meta property="og:url" content="//william-yeh.net/post/2026/04/genai-pl/">
   <meta property="og:site_name" content="Potioneer&#39;s Essays">
   <meta property="og:title" content="AI 時代，該怎麼選程式語言？">
-  <meta property="og:description" content="在許多系統開發與工程教育脈絡中，C/C&#43;&#43; 曾長期佔據核心位置。後來主流答案逐漸分散，Java、C#、Python、TypeScript、Go 各自崛起，也都一度被期待成為下一個中心。
-到了 LLM 時代，這個問題又被拿出來重問一次。從 agent、harness 與同類工具在 TypeScript、Python、Rust 等不同生態中並行發展、彼此競逐，就看得出這仍是秦失其鹿，天下共逐之的局面。1
-但如果問題還停在「哪門程式語言最好」，最後多半只會得到一份偏好清單。語言模型對某種語言、生態與框架是否熟悉，當然會影響起稿速度與初稿品質；可是在「生成結果不能直接被信任」的前提下，技術選型真正該看的，是依風險分層，選擇最能支撐驗證與收斂的程式語言 × 驗證鏈組合。
-這不是一篇語言排名文；這是一篇重新定義選型判準的文章。">
+  <meta property="og:description" content="GenAI 時代，需優先構建形式化約束與工具鏈協同的驗證體系，TypeScript的型別檢驗適配應用層強檢驗需求，Rust的所有權模型能提前攔截核心層風險，Go的簡潔工具鏈保障平台層穩定性，Python則在探索階段提供靈活實驗空間，關鍵在於工程化驗證而非單純依賴語言特性。">
   <meta property="og:locale" content="zh_tw">
   <meta property="og:type" content="article">
     <meta property="article:section" content="post">
@@ -77,20 +69,14 @@
     <meta property="article:tag" content="Testing">
 
   <meta itemprop="name" content="AI 時代，該怎麼選程式語言？">
-  <meta itemprop="description" content="在許多系統開發與工程教育脈絡中，C/C&#43;&#43; 曾長期佔據核心位置。後來主流答案逐漸分散，Java、C#、Python、TypeScript、Go 各自崛起，也都一度被期待成為下一個中心。
-到了 LLM 時代，這個問題又被拿出來重問一次。從 agent、harness 與同類工具在 TypeScript、Python、Rust 等不同生態中並行發展、彼此競逐，就看得出這仍是秦失其鹿，天下共逐之的局面。1
-但如果問題還停在「哪門程式語言最好」，最後多半只會得到一份偏好清單。語言模型對某種語言、生態與框架是否熟悉，當然會影響起稿速度與初稿品質；可是在「生成結果不能直接被信任」的前提下，技術選型真正該看的，是依風險分層，選擇最能支撐驗證與收斂的程式語言 × 驗證鏈組合。
-這不是一篇語言排名文；這是一篇重新定義選型判準的文章。">
+  <meta itemprop="description" content="GenAI 時代，需優先構建形式化約束與工具鏈協同的驗證體系，TypeScript的型別檢驗適配應用層強檢驗需求，Rust的所有權模型能提前攔截核心層風險，Go的簡潔工具鏈保障平台層穩定性，Python則在探索階段提供靈活實驗空間，關鍵在於工程化驗證而非單純依賴語言特性。">
   <meta itemprop="datePublished" content="2026-04-12T20:00:00+08:00">
   <meta itemprop="dateModified" content="2026-04-12T20:00:00+08:00">
   <meta itemprop="wordCount" content="7179">
   <meta itemprop="keywords" content="Ai,Cs,Programming,Craftsmanship,Criteria,Testing">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="AI 時代，該怎麼選程式語言？">
-  <meta name="twitter:description" content="在許多系統開發與工程教育脈絡中，C/C&#43;&#43; 曾長期佔據核心位置。後來主流答案逐漸分散，Java、C#、Python、TypeScript、Go 各自崛起，也都一度被期待成為下一個中心。
-到了 LLM 時代，這個問題又被拿出來重問一次。從 agent、harness 與同類工具在 TypeScript、Python、Rust 等不同生態中並行發展、彼此競逐，就看得出這仍是秦失其鹿，天下共逐之的局面。1
-但如果問題還停在「哪門程式語言最好」，最後多半只會得到一份偏好清單。語言模型對某種語言、生態與框架是否熟悉，當然會影響起稿速度與初稿品質；可是在「生成結果不能直接被信任」的前提下，技術選型真正該看的，是依風險分層，選擇最能支撐驗證與收斂的程式語言 × 驗證鏈組合。
-這不是一篇語言排名文；這是一篇重新定義選型判準的文章。">
+  <meta name="twitter:description" content="GenAI 時代，需優先構建形式化約束與工具鏈協同的驗證體系，TypeScript的型別檢驗適配應用層強檢驗需求，Rust的所有權模型能提前攔截核心層風險，Go的簡潔工具鏈保障平台層穩定性，Python則在探索階段提供靈活實驗空間，關鍵在於工程化驗證而非單純依賴語言特性。">
 
 <link rel="icon" href="/favicon.ico" />
 

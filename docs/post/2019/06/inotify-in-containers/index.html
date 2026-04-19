@@ -36,10 +36,7 @@
 
 
 
-<meta name="author" content="William Yeh" />
-<meta name="description" content="It is usually necessary to watch for any changes in file systems, both in development and in production modes. For example, in the development mode Webpack can watch files and recompile whenever they change; in the production mode Consul Template can watch runtime configs and invoke specific applications whenever they change.
-These are well-known scenarios in traditional pre-container world. How about the container world? Do they behave the same in the new container world?
-" />
+<meta name="author" content="William Yeh" /><meta name="description" content="Inotify functions effectively in Linux containers and Kubernetes for file system monitoring but encounters limitations in Linux containers on Windows (LCOW) due to path mapping complexities. Kubernetes&#39; handling of symbolic links in ConfigMaps can disrupt direct file tracking, necessitating strategies like mounting ConfigMaps as directories or leveraging external tools like Skaffold to relay events. These insights underscore the need for environment-aware configurations when implementing inotify in containerized systems." />
 
 
 
@@ -58,8 +55,7 @@ These are well-known scenarios in traditional pre-container world. How about the
 <meta property="og:url" content="//william-yeh.net/post/2019/06/inotify-in-containers/">
   <meta property="og:site_name" content="Potioneer&#39;s Essays">
   <meta property="og:title" content="Inotify in Containers">
-  <meta property="og:description" content="It is usually necessary to watch for any changes in file systems, both in development and in production modes. For example, in the development mode Webpack can watch files and recompile whenever they change; in the production mode Consul Template can watch runtime configs and invoke specific applications whenever they change.
-These are well-known scenarios in traditional pre-container world. How about the container world? Do they behave the same in the new container world?">
+  <meta property="og:description" content="Inotify functions effectively in Linux containers and Kubernetes for file system monitoring but encounters limitations in Linux containers on Windows (LCOW) due to path mapping complexities. Kubernetes&#39; handling of symbolic links in ConfigMaps can disrupt direct file tracking, necessitating strategies like mounting ConfigMaps as directories or leveraging external tools like Skaffold to relay events. These insights underscore the need for environment-aware configurations when implementing inotify in containerized systems.">
   <meta property="og:locale" content="zh_tw">
   <meta property="og:type" content="article">
     <meta property="article:section" content="post">
@@ -72,16 +68,14 @@ These are well-known scenarios in traditional pre-container world. How about the
     <meta property="article:tag" content="Configmap">
 
   <meta itemprop="name" content="Inotify in Containers">
-  <meta itemprop="description" content="It is usually necessary to watch for any changes in file systems, both in development and in production modes. For example, in the development mode Webpack can watch files and recompile whenever they change; in the production mode Consul Template can watch runtime configs and invoke specific applications whenever they change.
-These are well-known scenarios in traditional pre-container world. How about the container world? Do they behave the same in the new container world?">
+  <meta itemprop="description" content="Inotify functions effectively in Linux containers and Kubernetes for file system monitoring but encounters limitations in Linux containers on Windows (LCOW) due to path mapping complexities. Kubernetes&#39; handling of symbolic links in ConfigMaps can disrupt direct file tracking, necessitating strategies like mounting ConfigMaps as directories or leveraging external tools like Skaffold to relay events. These insights underscore the need for environment-aware configurations when implementing inotify in containerized systems.">
   <meta itemprop="datePublished" content="2019-06-10T18:00:00+08:00">
   <meta itemprop="dateModified" content="2019-06-10T18:00:00+08:00">
   <meta itemprop="wordCount" content="952">
   <meta itemprop="keywords" content="Devops,Docker,Kubernetes,Inotify,Configmap">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Inotify in Containers">
-  <meta name="twitter:description" content="It is usually necessary to watch for any changes in file systems, both in development and in production modes. For example, in the development mode Webpack can watch files and recompile whenever they change; in the production mode Consul Template can watch runtime configs and invoke specific applications whenever they change.
-These are well-known scenarios in traditional pre-container world. How about the container world? Do they behave the same in the new container world?">
+  <meta name="twitter:description" content="Inotify functions effectively in Linux containers and Kubernetes for file system monitoring but encounters limitations in Linux containers on Windows (LCOW) due to path mapping complexities. Kubernetes&#39; handling of symbolic links in ConfigMaps can disrupt direct file tracking, necessitating strategies like mounting ConfigMaps as directories or leveraging external tools like Skaffold to relay events. These insights underscore the need for environment-aware configurations when implementing inotify in containerized systems.">
 
 <link rel="icon" href="/favicon.ico" />
 

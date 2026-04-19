@@ -36,12 +36,7 @@
 
 
 
-<meta name="author" content="William Yeh" />
-<meta name="description" content="全球都在享用 Google 首屈一指的線上服務群，但直到他們在 2016 年出版了 Site Reliability Engineering 一書，世人才第一次全面認識到該如何支持這種深度廣度的系統維運。
-全球性線上服務系統，規模與複雜度遽增，只靠傳統的人力或獸力是無法長久維運下去的。面對這問題，擁有第一流軟體研發能量的 Google，大膽拋開傳統作法，改從一個獨特的提問出發：「如果我們賦予軟體研發工程師一個任務，讓他們有機會從頭去設計維運系統，那會是什麼模樣？」
-更進一步的提問是：「如果我們限制他們最多只能投入 50% 的時間在維運上，那會是怎麼樣的工作方式？」
-從這角度出發，便是目前我們現在看到的 SRE。
-" />
+<meta name="author" content="William Yeh" /><meta name="description" content="SRE 實踐強調開發工程師參與維運系統設計，透過自動化監控與故障恢復機制提升系統可靠性。建議設計階段即整合維運需求，以歸納法分析實務案例，建立不究責文化促進持續改進，並透過演繹法優化系統架構以降低人工介入風險。" />
 
 
 
@@ -60,10 +55,7 @@
 <meta property="og:url" content="//william-yeh.net/post/2024/08/sre-story-review/">
   <meta property="og:site_name" content="Potioneer&#39;s Essays">
   <meta property="og:title" content="換個 Design for Ops 的腦袋——《SRE 工作現場直擊》推薦序">
-  <meta property="og:description" content="全球都在享用 Google 首屈一指的線上服務群，但直到他們在 2016 年出版了 Site Reliability Engineering 一書，世人才第一次全面認識到該如何支持這種深度廣度的系統維運。
-全球性線上服務系統，規模與複雜度遽增，只靠傳統的人力或獸力是無法長久維運下去的。面對這問題，擁有第一流軟體研發能量的 Google，大膽拋開傳統作法，改從一個獨特的提問出發：「如果我們賦予軟體研發工程師一個任務，讓他們有機會從頭去設計維運系統，那會是什麼模樣？」
-更進一步的提問是：「如果我們限制他們最多只能投入 50% 的時間在維運上，那會是怎麼樣的工作方式？」
-從這角度出發，便是目前我們現在看到的 SRE。">
+  <meta property="og:description" content="SRE 實踐強調開發工程師參與維運系統設計，透過自動化監控與故障恢復機制提升系統可靠性。建議設計階段即整合維運需求，以歸納法分析實務案例，建立不究責文化促進持續改進，並透過演繹法優化系統架構以降低人工介入風險。">
   <meta property="og:locale" content="zh_tw">
   <meta property="og:type" content="article">
     <meta property="article:section" content="post">
@@ -74,20 +66,14 @@
     <meta property="article:tag" content="Book">
 
   <meta itemprop="name" content="換個 Design for Ops 的腦袋——《SRE 工作現場直擊》推薦序">
-  <meta itemprop="description" content="全球都在享用 Google 首屈一指的線上服務群，但直到他們在 2016 年出版了 Site Reliability Engineering 一書，世人才第一次全面認識到該如何支持這種深度廣度的系統維運。
-全球性線上服務系統，規模與複雜度遽增，只靠傳統的人力或獸力是無法長久維運下去的。面對這問題，擁有第一流軟體研發能量的 Google，大膽拋開傳統作法，改從一個獨特的提問出發：「如果我們賦予軟體研發工程師一個任務，讓他們有機會從頭去設計維運系統，那會是什麼模樣？」
-更進一步的提問是：「如果我們限制他們最多只能投入 50% 的時間在維運上，那會是怎麼樣的工作方式？」
-從這角度出發，便是目前我們現在看到的 SRE。">
+  <meta itemprop="description" content="SRE 實踐強調開發工程師參與維運系統設計，透過自動化監控與故障恢復機制提升系統可靠性。建議設計階段即整合維運需求，以歸納法分析實務案例，建立不究責文化促進持續改進，並透過演繹法優化系統架構以降低人工介入風險。">
   <meta itemprop="datePublished" content="2024-08-14T20:00:00+08:00">
   <meta itemprop="dateModified" content="2024-08-14T20:00:00+08:00">
   <meta itemprop="wordCount" content="666">
   <meta itemprop="keywords" content="Sre,Devops,Book">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="換個 Design for Ops 的腦袋——《SRE 工作現場直擊》推薦序">
-  <meta name="twitter:description" content="全球都在享用 Google 首屈一指的線上服務群，但直到他們在 2016 年出版了 Site Reliability Engineering 一書，世人才第一次全面認識到該如何支持這種深度廣度的系統維運。
-全球性線上服務系統，規模與複雜度遽增，只靠傳統的人力或獸力是無法長久維運下去的。面對這問題，擁有第一流軟體研發能量的 Google，大膽拋開傳統作法，改從一個獨特的提問出發：「如果我們賦予軟體研發工程師一個任務，讓他們有機會從頭去設計維運系統，那會是什麼模樣？」
-更進一步的提問是：「如果我們限制他們最多只能投入 50% 的時間在維運上，那會是怎麼樣的工作方式？」
-從這角度出發，便是目前我們現在看到的 SRE。">
+  <meta name="twitter:description" content="SRE 實踐強調開發工程師參與維運系統設計，透過自動化監控與故障恢復機制提升系統可靠性。建議設計階段即整合維運需求，以歸納法分析實務案例，建立不究責文化促進持續改進，並透過演繹法優化系統架構以降低人工介入風險。">
 
 <link rel="icon" href="/favicon.ico" />
 

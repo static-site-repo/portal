@@ -36,12 +36,7 @@
 
 
 
-<meta name="author" content="William Yeh" />
-<meta name="description" content="在台灣（或許在其他地方也是），DevOps 的話語權，很大幅度都被 Dev 一方把持。我們很少聽到 Ops 一方的說法。
-成功的改革，需要兼顧各方利益者的需求及痛點。隨著 DevOps 守備範圍日益擴大，這種失衡狀態必須改變。
-今晚參加 DevOps Taiwan 社群舉辦的講座：【從 Ops 角度看 DevOps】，聽聽胡士亮 (Robert Hu) 從正統 Ops 角度來詮釋 DevOps，甚至 OpsDev，收穫頗大。
-聽知識，聽心得，也聽熱情與願景。
-" />
+<meta name="author" content="William Yeh" /><meta name="description" content="DevOps 運作需平衡 Dev 與 Ops 的雙方需求，避免單向壓迫。善用 Kubernetes 與 service mesh 等 Ops 技術，能以非侵入式方式處理斷路器、追蹤等原本需 Dev 修改的邏輯，降低開發負擔。掌握 AIOps 與預測分析等新趨勢，有助團隊提升協作效率，並建立與傳統基礎設施對手的差距。" />
 
 
 
@@ -60,10 +55,7 @@
 <meta property="og:url" content="//william-yeh.net/post/2018/11/opsdev-talk-18/">
   <meta property="og:site_name" content="Potioneer&#39;s Essays">
   <meta property="og:title" content="「從 Ops 角度看 DevOps」的感想">
-  <meta property="og:description" content="在台灣（或許在其他地方也是），DevOps 的話語權，很大幅度都被 Dev 一方把持。我們很少聽到 Ops 一方的說法。
-成功的改革，需要兼顧各方利益者的需求及痛點。隨著 DevOps 守備範圍日益擴大，這種失衡狀態必須改變。
-今晚參加 DevOps Taiwan 社群舉辦的講座：【從 Ops 角度看 DevOps】，聽聽胡士亮 (Robert Hu) 從正統 Ops 角度來詮釋 DevOps，甚至 OpsDev，收穫頗大。
-聽知識，聽心得，也聽熱情與願景。">
+  <meta property="og:description" content="DevOps 運作需平衡 Dev 與 Ops 的雙方需求，避免單向壓迫。善用 Kubernetes 與 service mesh 等 Ops 技術，能以非侵入式方式處理斷路器、追蹤等原本需 Dev 修改的邏輯，降低開發負擔。掌握 AIOps 與預測分析等新趨勢，有助團隊提升協作效率，並建立與傳統基礎設施對手的差距。">
   <meta property="og:locale" content="zh_tw">
   <meta property="og:type" content="article">
     <meta property="article:section" content="post">
@@ -75,20 +67,14 @@
     <meta property="article:tag" content="Kubernetes">
 
   <meta itemprop="name" content="「從 Ops 角度看 DevOps」的感想">
-  <meta itemprop="description" content="在台灣（或許在其他地方也是），DevOps 的話語權，很大幅度都被 Dev 一方把持。我們很少聽到 Ops 一方的說法。
-成功的改革，需要兼顧各方利益者的需求及痛點。隨著 DevOps 守備範圍日益擴大，這種失衡狀態必須改變。
-今晚參加 DevOps Taiwan 社群舉辦的講座：【從 Ops 角度看 DevOps】，聽聽胡士亮 (Robert Hu) 從正統 Ops 角度來詮釋 DevOps，甚至 OpsDev，收穫頗大。
-聽知識，聽心得，也聽熱情與願景。">
+  <meta itemprop="description" content="DevOps 運作需平衡 Dev 與 Ops 的雙方需求，避免單向壓迫。善用 Kubernetes 與 service mesh 等 Ops 技術，能以非侵入式方式處理斷路器、追蹤等原本需 Dev 修改的邏輯，降低開發負擔。掌握 AIOps 與預測分析等新趨勢，有助團隊提升協作效率，並建立與傳統基礎設施對手的差距。">
   <meta itemprop="datePublished" content="2018-11-28T23:00:00+08:00">
   <meta itemprop="dateModified" content="2018-11-28T23:00:00+08:00">
   <meta itemprop="wordCount" content="759">
   <meta itemprop="keywords" content="Devops,Service Mesh,Microservices,Kubernetes">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="「從 Ops 角度看 DevOps」的感想">
-  <meta name="twitter:description" content="在台灣（或許在其他地方也是），DevOps 的話語權，很大幅度都被 Dev 一方把持。我們很少聽到 Ops 一方的說法。
-成功的改革，需要兼顧各方利益者的需求及痛點。隨著 DevOps 守備範圍日益擴大，這種失衡狀態必須改變。
-今晚參加 DevOps Taiwan 社群舉辦的講座：【從 Ops 角度看 DevOps】，聽聽胡士亮 (Robert Hu) 從正統 Ops 角度來詮釋 DevOps，甚至 OpsDev，收穫頗大。
-聽知識，聽心得，也聽熱情與願景。">
+  <meta name="twitter:description" content="DevOps 運作需平衡 Dev 與 Ops 的雙方需求，避免單向壓迫。善用 Kubernetes 與 service mesh 等 Ops 技術，能以非侵入式方式處理斷路器、追蹤等原本需 Dev 修改的邏輯，降低開發負擔。掌握 AIOps 與預測分析等新趨勢，有助團隊提升協作效率，並建立與傳統基礎設施對手的差距。">
 
 <link rel="icon" href="/favicon.ico" />
 

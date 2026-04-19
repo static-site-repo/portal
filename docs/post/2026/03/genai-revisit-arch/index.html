@@ -36,14 +36,7 @@
 
 
 
-<meta name="author" content="William Yeh" />
-<meta name="description" content="OpenClaw 作者 Peter Steinberger 接受 36Kr Europe 訪談時提到，多數程式碼其實很無聊，很多時候做的只是把一種資料形狀轉成另一種。這不是他真正關心的事。 1
-這句話有點刺耳，但也把一件事講得很坦白：很多工程安排用久了，就會從成本與取捨，慢慢變成預設，變成僵化的教條，沒有人過問它是否還有價值。
-現在 LLM 與 coding agent 已經開始直接參與 repo 級搜尋、修改與驗證。很多原本被視為理所當然的做法，也該再檢查一次。分層是不是還在隔離風險，抽象是不是還在縮小修改半徑，某些 interface、mapper 和轉發層，到底在承擔工作，還是只是在延續習慣。
-以前這些東西就算有點多、有點繞，通常也還撐得過去。工程師會靠經驗補上下文，靠默契避開麻煩，再把額外成本默默吞下來。
-但 agent 介入之後，很多原本人類可以硬撐過去的地方，會直接變成搜尋成本、理解成本，最後讓修改失去準頭。
-這篇想處理的問題很直接：今天系統裡哪些結構還在管理複雜性，哪些只是在維持形式？
-" />
+<meta name="author" content="William Yeh" /><meta name="description" content="LLM介入後，傳統架構的治理價值需重新定位，重點在於判斷分層與抽象是否真正管理複雜性。建議優先評估現有結構對修改範圍的控制力，透過修改半徑、耦合半徑等指標，判斷其是否降低替換成本，並提升人工與工具的定位效率，確保系統在LLM時代仍具可維護性與可擴展性。" />
 
 
 
@@ -62,12 +55,7 @@
 <meta property="og:url" content="//william-yeh.net/post/2026/03/genai-revisit-arch/">
   <meta property="og:site_name" content="Potioneer&#39;s Essays">
   <meta property="og:title" content="LLM 時代，傳統軟體架構該重新檢查了">
-  <meta property="og:description" content="OpenClaw 作者 Peter Steinberger 接受 36Kr Europe 訪談時提到，多數程式碼其實很無聊，很多時候做的只是把一種資料形狀轉成另一種。這不是他真正關心的事。 1
-這句話有點刺耳，但也把一件事講得很坦白：很多工程安排用久了，就會從成本與取捨，慢慢變成預設，變成僵化的教條，沒有人過問它是否還有價值。
-現在 LLM 與 coding agent 已經開始直接參與 repo 級搜尋、修改與驗證。很多原本被視為理所當然的做法，也該再檢查一次。分層是不是還在隔離風險，抽象是不是還在縮小修改半徑，某些 interface、mapper 和轉發層，到底在承擔工作，還是只是在延續習慣。
-以前這些東西就算有點多、有點繞，通常也還撐得過去。工程師會靠經驗補上下文，靠默契避開麻煩，再把額外成本默默吞下來。
-但 agent 介入之後，很多原本人類可以硬撐過去的地方，會直接變成搜尋成本、理解成本，最後讓修改失去準頭。
-這篇想處理的問題很直接：今天系統裡哪些結構還在管理複雜性，哪些只是在維持形式？">
+  <meta property="og:description" content="LLM介入後，傳統架構的治理價值需重新定位，重點在於判斷分層與抽象是否真正管理複雜性。建議優先評估現有結構對修改範圍的控制力，透過修改半徑、耦合半徑等指標，判斷其是否降低替換成本，並提升人工與工具的定位效率，確保系統在LLM時代仍具可維護性與可擴展性。">
   <meta property="og:locale" content="zh_tw">
   <meta property="og:type" content="article">
     <meta property="article:section" content="post">
@@ -80,24 +68,14 @@
     <meta property="article:tag" content="Ddd">
 
   <meta itemprop="name" content="LLM 時代，傳統軟體架構該重新檢查了">
-  <meta itemprop="description" content="OpenClaw 作者 Peter Steinberger 接受 36Kr Europe 訪談時提到，多數程式碼其實很無聊，很多時候做的只是把一種資料形狀轉成另一種。這不是他真正關心的事。 1
-這句話有點刺耳，但也把一件事講得很坦白：很多工程安排用久了，就會從成本與取捨，慢慢變成預設，變成僵化的教條，沒有人過問它是否還有價值。
-現在 LLM 與 coding agent 已經開始直接參與 repo 級搜尋、修改與驗證。很多原本被視為理所當然的做法，也該再檢查一次。分層是不是還在隔離風險，抽象是不是還在縮小修改半徑，某些 interface、mapper 和轉發層，到底在承擔工作，還是只是在延續習慣。
-以前這些東西就算有點多、有點繞，通常也還撐得過去。工程師會靠經驗補上下文，靠默契避開麻煩，再把額外成本默默吞下來。
-但 agent 介入之後，很多原本人類可以硬撐過去的地方，會直接變成搜尋成本、理解成本，最後讓修改失去準頭。
-這篇想處理的問題很直接：今天系統裡哪些結構還在管理複雜性，哪些只是在維持形式？">
+  <meta itemprop="description" content="LLM介入後，傳統架構的治理價值需重新定位，重點在於判斷分層與抽象是否真正管理複雜性。建議優先評估現有結構對修改範圍的控制力，透過修改半徑、耦合半徑等指標，判斷其是否降低替換成本，並提升人工與工具的定位效率，確保系統在LLM時代仍具可維護性與可擴展性。">
   <meta itemprop="datePublished" content="2026-03-21T20:00:00+08:00">
   <meta itemprop="dateModified" content="2026-03-21T20:00:00+08:00">
   <meta itemprop="wordCount" content="5923">
   <meta itemprop="keywords" content="Ai,Programming,Craftsmanship,Testing,Ddd">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="LLM 時代，傳統軟體架構該重新檢查了">
-  <meta name="twitter:description" content="OpenClaw 作者 Peter Steinberger 接受 36Kr Europe 訪談時提到，多數程式碼其實很無聊，很多時候做的只是把一種資料形狀轉成另一種。這不是他真正關心的事。 1
-這句話有點刺耳，但也把一件事講得很坦白：很多工程安排用久了，就會從成本與取捨，慢慢變成預設，變成僵化的教條，沒有人過問它是否還有價值。
-現在 LLM 與 coding agent 已經開始直接參與 repo 級搜尋、修改與驗證。很多原本被視為理所當然的做法，也該再檢查一次。分層是不是還在隔離風險，抽象是不是還在縮小修改半徑，某些 interface、mapper 和轉發層，到底在承擔工作，還是只是在延續習慣。
-以前這些東西就算有點多、有點繞，通常也還撐得過去。工程師會靠經驗補上下文，靠默契避開麻煩，再把額外成本默默吞下來。
-但 agent 介入之後，很多原本人類可以硬撐過去的地方，會直接變成搜尋成本、理解成本，最後讓修改失去準頭。
-這篇想處理的問題很直接：今天系統裡哪些結構還在管理複雜性，哪些只是在維持形式？">
+  <meta name="twitter:description" content="LLM介入後，傳統架構的治理價值需重新定位，重點在於判斷分層與抽象是否真正管理複雜性。建議優先評估現有結構對修改範圍的控制力，透過修改半徑、耦合半徑等指標，判斷其是否降低替換成本，並提升人工與工具的定位效率，確保系統在LLM時代仍具可維護性與可擴展性。">
 
 <link rel="icon" href="/favicon.ico" />
 

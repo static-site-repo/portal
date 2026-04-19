@@ -36,12 +36,7 @@
 
 
 
-<meta name="author" content="William Yeh" />
-<meta name="description" content="距離上次重度探討「極簡化容器」已經快六年多了1。這議題，以前可能只是某些人技術上的興趣，現在則可能是必要。
-原因是：Docker Inc 的一些措施，讓人不得不慎重考慮替代方案。
-搬家的必要 這陣子容器世界起了不少變化，除了眾所周知的「Docker Desktop 要收費了」規定 2，另一個較少被提及影響是 Docker Hub 的緊縮政策：
-Image CI 緊縮：Docker Hub 取消免費用戶的 automated builds 功能。 3 Image pull 緊縮：Docker Hub 開始對未付費者施以較嚴格的限流措施。 4 於是，未付費的人，不僅在使用 Docker Hub 時會受到管制，還會波及產製 image 的 CI pipeline，不時會遇到這樣的 &ldquo;toomanyrequests&rdquo; 限流警告：
-" />
+<meta name="author" content="William Yeh" /><meta name="description" content="Distroless Image 是 Google 提供的無系統套件管理器容器映像，基於 Debian 和 glibc，安全性優於 Alpine 系列。建議遷移至 gcr.io 或 ghcr.io 等替代儲存庫，以避免 Docker Hub 限流問題，並透過多階段建構機制簡化 CI/CD 流程的映像製作。" />
 
 
 
@@ -60,10 +55,7 @@ Image CI 緊縮：Docker Hub 取消免費用戶的 automated builds 功能。 3 
 <meta property="og:url" content="//william-yeh.net/post/2023/02/distroless-image/">
   <meta property="og:site_name" content="Potioneer&#39;s Essays">
   <meta property="og:title" content="Distroless Image 牛刀小試">
-  <meta property="og:description" content="距離上次重度探討「極簡化容器」已經快六年多了1。這議題，以前可能只是某些人技術上的興趣，現在則可能是必要。
-原因是：Docker Inc 的一些措施，讓人不得不慎重考慮替代方案。
-搬家的必要 這陣子容器世界起了不少變化，除了眾所周知的「Docker Desktop 要收費了」規定 2，另一個較少被提及影響是 Docker Hub 的緊縮政策：
-Image CI 緊縮：Docker Hub 取消免費用戶的 automated builds 功能。 3 Image pull 緊縮：Docker Hub 開始對未付費者施以較嚴格的限流措施。 4 於是，未付費的人，不僅在使用 Docker Hub 時會受到管制，還會波及產製 image 的 CI pipeline，不時會遇到這樣的 “toomanyrequests” 限流警告：">
+  <meta property="og:description" content="Distroless Image 是 Google 提供的無系統套件管理器容器映像，基於 Debian 和 glibc，安全性優於 Alpine 系列。建議遷移至 gcr.io 或 ghcr.io 等替代儲存庫，以避免 Docker Hub 限流問題，並透過多階段建構機制簡化 CI/CD 流程的映像製作。">
   <meta property="og:locale" content="zh_tw">
   <meta property="og:type" content="article">
     <meta property="article:section" content="post">
@@ -74,20 +66,14 @@ Image CI 緊縮：Docker Hub 取消免費用戶的 automated builds 功能。 3 
     <meta property="article:tag" content="Security">
 
   <meta itemprop="name" content="Distroless Image 牛刀小試">
-  <meta itemprop="description" content="距離上次重度探討「極簡化容器」已經快六年多了1。這議題，以前可能只是某些人技術上的興趣，現在則可能是必要。
-原因是：Docker Inc 的一些措施，讓人不得不慎重考慮替代方案。
-搬家的必要 這陣子容器世界起了不少變化，除了眾所周知的「Docker Desktop 要收費了」規定 2，另一個較少被提及影響是 Docker Hub 的緊縮政策：
-Image CI 緊縮：Docker Hub 取消免費用戶的 automated builds 功能。 3 Image pull 緊縮：Docker Hub 開始對未付費者施以較嚴格的限流措施。 4 於是，未付費的人，不僅在使用 Docker Hub 時會受到管制，還會波及產製 image 的 CI pipeline，不時會遇到這樣的 “toomanyrequests” 限流警告：">
+  <meta itemprop="description" content="Distroless Image 是 Google 提供的無系統套件管理器容器映像，基於 Debian 和 glibc，安全性優於 Alpine 系列。建議遷移至 gcr.io 或 ghcr.io 等替代儲存庫，以避免 Docker Hub 限流問題，並透過多階段建構機制簡化 CI/CD 流程的映像製作。">
   <meta itemprop="datePublished" content="2023-02-15T22:00:00+08:00">
   <meta itemprop="dateModified" content="2023-02-15T22:00:00+08:00">
   <meta itemprop="wordCount" content="1278">
   <meta itemprop="keywords" content="Devops,Docker,Security">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Distroless Image 牛刀小試">
-  <meta name="twitter:description" content="距離上次重度探討「極簡化容器」已經快六年多了1。這議題，以前可能只是某些人技術上的興趣，現在則可能是必要。
-原因是：Docker Inc 的一些措施，讓人不得不慎重考慮替代方案。
-搬家的必要 這陣子容器世界起了不少變化，除了眾所周知的「Docker Desktop 要收費了」規定 2，另一個較少被提及影響是 Docker Hub 的緊縮政策：
-Image CI 緊縮：Docker Hub 取消免費用戶的 automated builds 功能。 3 Image pull 緊縮：Docker Hub 開始對未付費者施以較嚴格的限流措施。 4 於是，未付費的人，不僅在使用 Docker Hub 時會受到管制，還會波及產製 image 的 CI pipeline，不時會遇到這樣的 “toomanyrequests” 限流警告：">
+  <meta name="twitter:description" content="Distroless Image 是 Google 提供的無系統套件管理器容器映像，基於 Debian 和 glibc，安全性優於 Alpine 系列。建議遷移至 gcr.io 或 ghcr.io 等替代儲存庫，以避免 Docker Hub 限流問題，並透過多階段建構機制簡化 CI/CD 流程的映像製作。">
 
 <link rel="icon" href="/favicon.ico" />
 

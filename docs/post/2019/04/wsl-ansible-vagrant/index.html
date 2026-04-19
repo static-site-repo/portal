@@ -36,12 +36,7 @@
 
 
 
-<meta name="author" content="William Yeh" />
-<meta name="description" content="既然要開始在 Windows 上沿用 Mac 及 Unix 的命令列工具習慣1，免不了要處理 Ansible 及 Vagrant。
-雖然這兩個軟體都有對應的 Windows 版本，但據我以前的經驗，卡卡的，有許多小地雷；畢竟這些發跡自泛 Unix 家族的軟體，不是那麼容易無縫移植到對命令列不友善的 Windows 家族。
-如今 Windows 已經有 WSL (Windows Subsystem for Linux) 機制，是否可以更無痛享用 Ansible 及 Vagrant 呢？
-可以的。
-" />
+<meta name="author" content="William Yeh" /><meta name="description" content="在 Windows WSL 環境部署 Ansible 與 Vagrant 需處理 VirtualBox 與 Hyper-V 衝突。建議關閉 Hyper-V 啟用 VirtualBox，或調整權限解決 Hyper-V 相容性問題。設定 VAGRANT_WSL_ENABLE_WINDOWS_ACCESS 環境變數，實現跨平台虛擬機與 Ansible 自動化任務的無縫串聯。" />
 
 
 
@@ -60,10 +55,7 @@
 <meta property="og:url" content="//william-yeh.net/post/2019/04/wsl-ansible-vagrant/">
   <meta property="og:site_name" content="Potioneer&#39;s Essays">
   <meta property="og:title" content="在 WSL 裡使用 Ansible &#43; Vagrant">
-  <meta property="og:description" content="既然要開始在 Windows 上沿用 Mac 及 Unix 的命令列工具習慣1，免不了要處理 Ansible 及 Vagrant。
-雖然這兩個軟體都有對應的 Windows 版本，但據我以前的經驗，卡卡的，有許多小地雷；畢竟這些發跡自泛 Unix 家族的軟體，不是那麼容易無縫移植到對命令列不友善的 Windows 家族。
-如今 Windows 已經有 WSL (Windows Subsystem for Linux) 機制，是否可以更無痛享用 Ansible 及 Vagrant 呢？
-可以的。">
+  <meta property="og:description" content="在 Windows WSL 環境部署 Ansible 與 Vagrant 需處理 VirtualBox 與 Hyper-V 衝突。建議關閉 Hyper-V 啟用 VirtualBox，或調整權限解決 Hyper-V 相容性問題。設定 VAGRANT_WSL_ENABLE_WINDOWS_ACCESS 環境變數，實現跨平台虛擬機與 Ansible 自動化任務的無縫串聯。">
   <meta property="og:locale" content="zh_tw">
   <meta property="og:type" content="article">
     <meta property="article:section" content="post">
@@ -75,20 +67,14 @@
     <meta property="article:tag" content="Devops">
 
   <meta itemprop="name" content="在 WSL 裡使用 Ansible &#43; Vagrant">
-  <meta itemprop="description" content="既然要開始在 Windows 上沿用 Mac 及 Unix 的命令列工具習慣1，免不了要處理 Ansible 及 Vagrant。
-雖然這兩個軟體都有對應的 Windows 版本，但據我以前的經驗，卡卡的，有許多小地雷；畢竟這些發跡自泛 Unix 家族的軟體，不是那麼容易無縫移植到對命令列不友善的 Windows 家族。
-如今 Windows 已經有 WSL (Windows Subsystem for Linux) 機制，是否可以更無痛享用 Ansible 及 Vagrant 呢？
-可以的。">
+  <meta itemprop="description" content="在 Windows WSL 環境部署 Ansible 與 Vagrant 需處理 VirtualBox 與 Hyper-V 衝突。建議關閉 Hyper-V 啟用 VirtualBox，或調整權限解決 Hyper-V 相容性問題。設定 VAGRANT_WSL_ENABLE_WINDOWS_ACCESS 環境變數，實現跨平台虛擬機與 Ansible 自動化任務的無縫串聯。">
   <meta itemprop="datePublished" content="2019-04-18T23:00:00+08:00">
   <meta itemprop="dateModified" content="2019-04-18T23:00:00+08:00">
   <meta itemprop="wordCount" content="1387">
   <meta itemprop="keywords" content="Wsl,Ansible,Vagrant,Devops">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="在 WSL 裡使用 Ansible &#43; Vagrant">
-  <meta name="twitter:description" content="既然要開始在 Windows 上沿用 Mac 及 Unix 的命令列工具習慣1，免不了要處理 Ansible 及 Vagrant。
-雖然這兩個軟體都有對應的 Windows 版本，但據我以前的經驗，卡卡的，有許多小地雷；畢竟這些發跡自泛 Unix 家族的軟體，不是那麼容易無縫移植到對命令列不友善的 Windows 家族。
-如今 Windows 已經有 WSL (Windows Subsystem for Linux) 機制，是否可以更無痛享用 Ansible 及 Vagrant 呢？
-可以的。">
+  <meta name="twitter:description" content="在 Windows WSL 環境部署 Ansible 與 Vagrant 需處理 VirtualBox 與 Hyper-V 衝突。建議關閉 Hyper-V 啟用 VirtualBox，或調整權限解決 Hyper-V 相容性問題。設定 VAGRANT_WSL_ENABLE_WINDOWS_ACCESS 環境變數，實現跨平台虛擬機與 Ansible 自動化任務的無縫串聯。">
 
 <link rel="icon" href="/favicon.ico" />
 

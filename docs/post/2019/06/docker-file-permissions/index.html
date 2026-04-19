@@ -36,10 +36,7 @@
 
 
 
-<meta name="author" content="William Yeh" />
-<meta name="description" content="Currently Linux containers are still more popular than Windows containers. And Windows users often need to use Linux containers even from their Windows computers.
-Recently I&rsquo;ve found something very strange about Linux-style file permissions when the Docker images are built from Windows hosts.1 Therefore, I&rsquo;ve conducted a suite of test cases to investigate whether file permissions are preserved with Docker &amp; Skaffold toolchains. All experiment materials are available in the container-chmod repo.
-" />
+<meta name="author" content="William Yeh" /><meta name="description" content="When building Linux containers on Windows hosts, Docker and Skaffold often mishandle Unix file permissions, leading to missing execute bits or incorrect ownership, especially with pure Windows toolchains. WSL and macOS provide better preservation of permissions, but Windows-native builds risk security warnings and failed executions due to default permission resets. To ensure correct permissions, adjust Dockerfiles explicitly or use Linux-based build environments when critical file access is required." />
 
 
 
@@ -58,8 +55,7 @@ Recently I&rsquo;ve found something very strange about Linux-style file permissi
 <meta property="og:url" content="//william-yeh.net/post/2019/06/docker-file-permissions/">
   <meta property="og:site_name" content="Potioneer&#39;s Essays">
   <meta property="og:title" content="Docker File Permissions on Windows">
-  <meta property="og:description" content="Currently Linux containers are still more popular than Windows containers. And Windows users often need to use Linux containers even from their Windows computers.
-Recently I’ve found something very strange about Linux-style file permissions when the Docker images are built from Windows hosts.1 Therefore, I’ve conducted a suite of test cases to investigate whether file permissions are preserved with Docker &amp; Skaffold toolchains. All experiment materials are available in the container-chmod repo.">
+  <meta property="og:description" content="When building Linux containers on Windows hosts, Docker and Skaffold often mishandle Unix file permissions, leading to missing execute bits or incorrect ownership, especially with pure Windows toolchains. WSL and macOS provide better preservation of permissions, but Windows-native builds risk security warnings and failed executions due to default permission resets. To ensure correct permissions, adjust Dockerfiles explicitly or use Linux-based build environments when critical file access is required.">
   <meta property="og:locale" content="zh_tw">
   <meta property="og:type" content="article">
     <meta property="article:section" content="post">
@@ -71,16 +67,14 @@ Recently I’ve found something very strange about Linux-style file permissions 
     <meta property="article:tag" content="Skaffold">
 
   <meta itemprop="name" content="Docker File Permissions on Windows">
-  <meta itemprop="description" content="Currently Linux containers are still more popular than Windows containers. And Windows users often need to use Linux containers even from their Windows computers.
-Recently I’ve found something very strange about Linux-style file permissions when the Docker images are built from Windows hosts.1 Therefore, I’ve conducted a suite of test cases to investigate whether file permissions are preserved with Docker &amp; Skaffold toolchains. All experiment materials are available in the container-chmod repo.">
+  <meta itemprop="description" content="When building Linux containers on Windows hosts, Docker and Skaffold often mishandle Unix file permissions, leading to missing execute bits or incorrect ownership, especially with pure Windows toolchains. WSL and macOS provide better preservation of permissions, but Windows-native builds risk security warnings and failed executions due to default permission resets. To ensure correct permissions, adjust Dockerfiles explicitly or use Linux-based build environments when critical file access is required.">
   <meta itemprop="datePublished" content="2019-06-24T12:00:00+08:00">
   <meta itemprop="dateModified" content="2019-06-24T12:00:00+08:00">
   <meta itemprop="wordCount" content="821">
   <meta itemprop="keywords" content="Devops,Docker,Wsl,Skaffold">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Docker File Permissions on Windows">
-  <meta name="twitter:description" content="Currently Linux containers are still more popular than Windows containers. And Windows users often need to use Linux containers even from their Windows computers.
-Recently I’ve found something very strange about Linux-style file permissions when the Docker images are built from Windows hosts.1 Therefore, I’ve conducted a suite of test cases to investigate whether file permissions are preserved with Docker &amp; Skaffold toolchains. All experiment materials are available in the container-chmod repo.">
+  <meta name="twitter:description" content="When building Linux containers on Windows hosts, Docker and Skaffold often mishandle Unix file permissions, leading to missing execute bits or incorrect ownership, especially with pure Windows toolchains. WSL and macOS provide better preservation of permissions, but Windows-native builds risk security warnings and failed executions due to default permission resets. To ensure correct permissions, adjust Dockerfiles explicitly or use Linux-based build environments when critical file access is required.">
 
 <link rel="icon" href="/favicon.ico" />
 

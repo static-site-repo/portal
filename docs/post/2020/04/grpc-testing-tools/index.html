@@ -36,11 +36,7 @@
 
 
 
-<meta name="author" content="William Yeh" />
-<meta name="description" content="RESTful API 時代，我們有許多簡單好用的測試工具：有酷炫的 Postman，有命令列控愛用的 HTTPie，當然也有硬漢必備的萬用瑞士刀 curl。
-那麼，gRPC 呢？
-這篇文章介紹兩個好用的小工具：gRPCurl 及 ghz，一個是輸入輸出介面測試工具，另一個是壓測工具，也順便介紹一些簡化測試的技巧。
-" />
+<meta name="author" content="William Yeh" /><meta name="description" content="gRPCurl 透過 proto 檔案直接操作 gRPC 服務，支援串流與批量測試，適合快速驗證介面行為；ghz 提供壓測功能，可模擬高並發情境。建議在測試環境啟用 server reflection 簡化服務探查，生產環境則應關閉以避免安全風險。" />
 
 
 
@@ -59,9 +55,7 @@
 <meta property="og:url" content="//william-yeh.net/post/2020/04/grpc-testing-tools/">
   <meta property="og:site_name" content="Potioneer&#39;s Essays">
   <meta property="og:title" content="gRPC 測試工具">
-  <meta property="og:description" content="RESTful API 時代，我們有許多簡單好用的測試工具：有酷炫的 Postman，有命令列控愛用的 HTTPie，當然也有硬漢必備的萬用瑞士刀 curl。
-那麼，gRPC 呢？
-這篇文章介紹兩個好用的小工具：gRPCurl 及 ghz，一個是輸入輸出介面測試工具，另一個是壓測工具，也順便介紹一些簡化測試的技巧。">
+  <meta property="og:description" content="gRPCurl 透過 proto 檔案直接操作 gRPC 服務，支援串流與批量測試，適合快速驗證介面行為；ghz 提供壓測功能，可模擬高並發情境。建議在測試環境啟用 server reflection 簡化服務探查，生產環境則應關閉以避免安全風險。">
   <meta property="og:locale" content="zh_tw">
   <meta property="og:type" content="article">
     <meta property="article:section" content="post">
@@ -73,18 +67,14 @@
     <meta property="article:tag" content="Testing">
 
   <meta itemprop="name" content="gRPC 測試工具">
-  <meta itemprop="description" content="RESTful API 時代，我們有許多簡單好用的測試工具：有酷炫的 Postman，有命令列控愛用的 HTTPie，當然也有硬漢必備的萬用瑞士刀 curl。
-那麼，gRPC 呢？
-這篇文章介紹兩個好用的小工具：gRPCurl 及 ghz，一個是輸入輸出介面測試工具，另一個是壓測工具，也順便介紹一些簡化測試的技巧。">
+  <meta itemprop="description" content="gRPCurl 透過 proto 檔案直接操作 gRPC 服務，支援串流與批量測試，適合快速驗證介面行為；ghz 提供壓測功能，可模擬高並發情境。建議在測試環境啟用 server reflection 簡化服務探查，生產環境則應關閉以避免安全風險。">
   <meta itemprop="datePublished" content="2020-04-14T22:00:00+08:00">
   <meta itemprop="dateModified" content="2020-04-14T22:00:00+08:00">
   <meta itemprop="wordCount" content="2547">
   <meta itemprop="keywords" content="Microservices,Grpc,Devops,Testing">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="gRPC 測試工具">
-  <meta name="twitter:description" content="RESTful API 時代，我們有許多簡單好用的測試工具：有酷炫的 Postman，有命令列控愛用的 HTTPie，當然也有硬漢必備的萬用瑞士刀 curl。
-那麼，gRPC 呢？
-這篇文章介紹兩個好用的小工具：gRPCurl 及 ghz，一個是輸入輸出介面測試工具，另一個是壓測工具，也順便介紹一些簡化測試的技巧。">
+  <meta name="twitter:description" content="gRPCurl 透過 proto 檔案直接操作 gRPC 服務，支援串流與批量測試，適合快速驗證介面行為；ghz 提供壓測功能，可模擬高並發情境。建議在測試環境啟用 server reflection 簡化服務探查，生產環境則應關閉以避免安全風險。">
 
 <link rel="icon" href="/favicon.ico" />
 

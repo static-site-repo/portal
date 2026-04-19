@@ -36,10 +36,7 @@
 
 
 
-<meta name="author" content="William Yeh" />
-<meta name="description" content="經過一番辛苦調教，總算把 WSL 調整成可推廣到團隊使用的地步。下一步就是要輸出成 WSL 公版。
-謹以此文記錄匯出與匯入 WSL 映像檔的步驟與除雷經驗。
-" />
+<meta name="author" content="William Yeh" /><meta name="description" content="WSL 映像檔匯出與匯入是建立可重複使用的開發環境關鍵步驟，需先清理敏感資料與設定預設使用者避免 root 登入風險。匯出時需停止目標執行個體，使用 `wsl --export` 產生 VHDX 檔，建議同步生成雜湊校驗檔確保完整性。匯入時透過 `wsl --import` 建立新執行個體，並於 Windows 設定正確掛載路徑，最後透過測試驗證環境一致性與功能正常性。" />
 
 
 
@@ -58,8 +55,7 @@
 <meta property="og:url" content="//william-yeh.net/post/2023/02/wsl-image/">
   <meta property="og:site_name" content="Potioneer&#39;s Essays">
   <meta property="og:title" content="WSL Image 匯出與匯入">
-  <meta property="og:description" content="經過一番辛苦調教，總算把 WSL 調整成可推廣到團隊使用的地步。下一步就是要輸出成 WSL 公版。
-謹以此文記錄匯出與匯入 WSL 映像檔的步驟與除雷經驗。">
+  <meta property="og:description" content="WSL 映像檔匯出與匯入是建立可重複使用的開發環境關鍵步驟，需先清理敏感資料與設定預設使用者避免 root 登入風險。匯出時需停止目標執行個體，使用 `wsl --export` 產生 VHDX 檔，建議同步生成雜湊校驗檔確保完整性。匯入時透過 `wsl --import` 建立新執行個體，並於 Windows 設定正確掛載路徑，最後透過測試驗證環境一致性與功能正常性。">
   <meta property="og:locale" content="zh_tw">
   <meta property="og:type" content="article">
     <meta property="article:section" content="post">
@@ -69,16 +65,14 @@
     <meta property="article:tag" content="Wsl">
 
   <meta itemprop="name" content="WSL Image 匯出與匯入">
-  <meta itemprop="description" content="經過一番辛苦調教，總算把 WSL 調整成可推廣到團隊使用的地步。下一步就是要輸出成 WSL 公版。
-謹以此文記錄匯出與匯入 WSL 映像檔的步驟與除雷經驗。">
+  <meta itemprop="description" content="WSL 映像檔匯出與匯入是建立可重複使用的開發環境關鍵步驟，需先清理敏感資料與設定預設使用者避免 root 登入風險。匯出時需停止目標執行個體，使用 `wsl --export` 產生 VHDX 檔，建議同步生成雜湊校驗檔確保完整性。匯入時透過 `wsl --import` 建立新執行個體，並於 Windows 設定正確掛載路徑，最後透過測試驗證環境一致性與功能正常性。">
   <meta itemprop="datePublished" content="2023-02-09T22:00:00+08:00">
   <meta itemprop="dateModified" content="2023-02-09T22:00:00+08:00">
   <meta itemprop="wordCount" content="956">
   <meta itemprop="keywords" content="Devops,Wsl">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="WSL Image 匯出與匯入">
-  <meta name="twitter:description" content="經過一番辛苦調教，總算把 WSL 調整成可推廣到團隊使用的地步。下一步就是要輸出成 WSL 公版。
-謹以此文記錄匯出與匯入 WSL 映像檔的步驟與除雷經驗。">
+  <meta name="twitter:description" content="WSL 映像檔匯出與匯入是建立可重複使用的開發環境關鍵步驟，需先清理敏感資料與設定預設使用者避免 root 登入風險。匯出時需停止目標執行個體，使用 `wsl --export` 產生 VHDX 檔，建議同步生成雜湊校驗檔確保完整性。匯入時透過 `wsl --import` 建立新執行個體，並於 Windows 設定正確掛載路徑，最後透過測試驗證環境一致性與功能正常性。">
 
 <link rel="icon" href="/favicon.ico" />
 

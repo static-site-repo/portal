@@ -36,12 +36,7 @@
 
 
 
-<meta name="author" content="William Yeh" />
-<meta name="description" content="很多人會把這一輪 AI 寫程式的進展，直接講成「語言模型正在取代軟體工程師」，甚至進一步講成「語言模型正在取代軟體工程」。
-這樣講不算全錯，但沒有對準焦點。軟體工程沒有消失，變的是成本最高的地方不一樣了。過去 SDLC 昂貴的部分，常常落在寫程式、處理低階細節、人工重構。現在語言模型可以很快產生候選實作，原本集中在實作端的成本，就開始往別的地方移。用高德拉特的 Theory of Constraints 來看，這其實就是瓶頸轉移。
-接下來比較值得看的，不是軟體工程還在不在，而是瓶頸轉去哪裡了。那些新的瓶頸，比以前好處理，還是更難處理？
-軟體工程的典範確實在變，但工程紀律沒有因此結束。比較貼近現況的說法是：抽象層往上拉了，驗證負擔在重分配，治理形式也得跟著調整。
-" />
+<meta name="author" content="William Yeh" /><meta name="description" content="生成式AI重塑軟體工程的核心矛盾，從編碼效率轉向驗證精準度與治理風險管控。關鍵在於以規範化語義框架限制語言模型的自主性，結合自動化測試與版本控制式規格管理，降低多輪對話中語意偏差的累積風險，取代傳統逐行審查的低效模式。" />
 
 
 
@@ -60,10 +55,7 @@
 <meta property="og:url" content="//william-yeh.net/post/2026/03/genai-se-level-up/">
   <meta property="og:site_name" content="Potioneer&#39;s Essays">
   <meta property="og:title" content="AI 會寫程式之後，軟體工程真正變貴的是什麼">
-  <meta property="og:description" content="很多人會把這一輪 AI 寫程式的進展，直接講成「語言模型正在取代軟體工程師」，甚至進一步講成「語言模型正在取代軟體工程」。
-這樣講不算全錯，但沒有對準焦點。軟體工程沒有消失，變的是成本最高的地方不一樣了。過去 SDLC 昂貴的部分，常常落在寫程式、處理低階細節、人工重構。現在語言模型可以很快產生候選實作，原本集中在實作端的成本，就開始往別的地方移。用高德拉特的 Theory of Constraints 來看，這其實就是瓶頸轉移。
-接下來比較值得看的，不是軟體工程還在不在，而是瓶頸轉去哪裡了。那些新的瓶頸，比以前好處理，還是更難處理？
-軟體工程的典範確實在變，但工程紀律沒有因此結束。比較貼近現況的說法是：抽象層往上拉了，驗證負擔在重分配，治理形式也得跟著調整。">
+  <meta property="og:description" content="生成式AI重塑軟體工程的核心矛盾，從編碼效率轉向驗證精準度與治理風險管控。關鍵在於以規範化語義框架限制語言模型的自主性，結合自動化測試與版本控制式規格管理，降低多輪對話中語意偏差的累積風險，取代傳統逐行審查的低效模式。">
   <meta property="og:locale" content="zh_tw">
   <meta property="og:type" content="article">
     <meta property="article:section" content="post">
@@ -75,20 +67,14 @@
     <meta property="article:tag" content="Testing">
 
   <meta itemprop="name" content="AI 會寫程式之後，軟體工程真正變貴的是什麼">
-  <meta itemprop="description" content="很多人會把這一輪 AI 寫程式的進展，直接講成「語言模型正在取代軟體工程師」，甚至進一步講成「語言模型正在取代軟體工程」。
-這樣講不算全錯，但沒有對準焦點。軟體工程沒有消失，變的是成本最高的地方不一樣了。過去 SDLC 昂貴的部分，常常落在寫程式、處理低階細節、人工重構。現在語言模型可以很快產生候選實作，原本集中在實作端的成本，就開始往別的地方移。用高德拉特的 Theory of Constraints 來看，這其實就是瓶頸轉移。
-接下來比較值得看的，不是軟體工程還在不在，而是瓶頸轉去哪裡了。那些新的瓶頸，比以前好處理，還是更難處理？
-軟體工程的典範確實在變，但工程紀律沒有因此結束。比較貼近現況的說法是：抽象層往上拉了，驗證負擔在重分配，治理形式也得跟著調整。">
+  <meta itemprop="description" content="生成式AI重塑軟體工程的核心矛盾，從編碼效率轉向驗證精準度與治理風險管控。關鍵在於以規範化語義框架限制語言模型的自主性，結合自動化測試與版本控制式規格管理，降低多輪對話中語意偏差的累積風險，取代傳統逐行審查的低效模式。">
   <meta itemprop="datePublished" content="2026-03-16T20:00:00+08:00">
   <meta itemprop="dateModified" content="2026-03-16T20:00:00+08:00">
   <meta itemprop="wordCount" content="8389">
   <meta itemprop="keywords" content="Ai,Programming,Craftsmanship,Testing">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="AI 會寫程式之後，軟體工程真正變貴的是什麼">
-  <meta name="twitter:description" content="很多人會把這一輪 AI 寫程式的進展，直接講成「語言模型正在取代軟體工程師」，甚至進一步講成「語言模型正在取代軟體工程」。
-這樣講不算全錯，但沒有對準焦點。軟體工程沒有消失，變的是成本最高的地方不一樣了。過去 SDLC 昂貴的部分，常常落在寫程式、處理低階細節、人工重構。現在語言模型可以很快產生候選實作，原本集中在實作端的成本，就開始往別的地方移。用高德拉特的 Theory of Constraints 來看，這其實就是瓶頸轉移。
-接下來比較值得看的，不是軟體工程還在不在，而是瓶頸轉去哪裡了。那些新的瓶頸，比以前好處理，還是更難處理？
-軟體工程的典範確實在變，但工程紀律沒有因此結束。比較貼近現況的說法是：抽象層往上拉了，驗證負擔在重分配，治理形式也得跟著調整。">
+  <meta name="twitter:description" content="生成式AI重塑軟體工程的核心矛盾，從編碼效率轉向驗證精準度與治理風險管控。關鍵在於以規範化語義框架限制語言模型的自主性，結合自動化測試與版本控制式規格管理，降低多輪對話中語意偏差的累積風險，取代傳統逐行審查的低效模式。">
 
 <link rel="icon" href="/favicon.ico" />
 
