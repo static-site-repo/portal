@@ -6,10 +6,193 @@
     <description>Recent content on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sun, 12 Apr 2026 20:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 19 Apr 2026 20:00:00 +0800</lastBuildDate>
     
         <atom:link href="//william-yeh.net/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Prompt 已經寫很細了，Workflow 為什麼還是不穩？</title>
+      <link>//william-yeh.net/post/2026/04/genai-multi-steps/</link>
+      <pubDate>Sun, 19 Apr 2026 20:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2026/04/genai-multi-steps/</guid>
+      
+        <description>&lt;p&gt;在使用 ChatGPT MyGPT 這類工具時，常會碰到這種情況：明明已經把步驟一、二、三寫得很清楚，甚至快寫到八千字長度上限，它還是不一定照順序做，也不一定會把前一步做完才往下走。&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; 結果，流程不會自己穩定推進，而是使用者得一路追著它跑，不斷補盯、補問、補救。&lt;/p&gt;
+&lt;p&gt;這時候，通常不是 prompt 還能不能再補一版，也不是 pseudo code 再寫完整一點就能自動解決。Pseudo code 形式的提示，確實可能改善局部步驟表達、問題分解與推理表現；&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt; 把部份子工作移交給外部程式處理，也可能讓某些環節更穩（這也是 agent skills 推薦的技巧）。&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt; 但這多半只是局部的改善。&lt;/p&gt;
+&lt;p&gt;同樣是處理長串流程，有些工具穩定度會明顯高於單靠 prompt 的系統。以 Claude Code 為例，它做一長串動作時，常會在中途停下來，檢查某一步有沒有成立，再決定要不要往下一步走。&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt; 這告訴我們，差別通常不只在 prompt 本身，而在外層 harness、workflow control 或執行機制，有沒有把工具結果納入後續判斷，把流程進度穩定接住。&lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;這篇文章要談的，就是這條分界。&lt;/p&gt;
+&lt;p&gt;多步驟 agent workflow 的可靠性，不能寄望於另一套更漂亮的 prompt 寫法。尤其當流程能不能往下走，已經取決於工具結果、實際狀態、驗證是否成立與副作用是否可接受時，就該認真盤點：哪些責任還適合留在 prompt，哪些責任該移交給外部控制機制。&lt;/p&gt;
+&lt;p&gt;每一步要有明確成立條件、可檢查的依據，也要知道條件不成立時流程該怎麼停下來。光寫成文字還不夠，還得有真的在處理它們的系統。&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2026/04/genai-multi-steps.jpg&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2026/04/genai-multi-steps.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;workflow-常見的失靈情況&#34;&gt;Workflow 常見的失靈情況&lt;/h2&gt;
+&lt;p&gt;多步驟 workflow 常見的失靈，不是 agent 完全沒做事，而是某一步其實還沒達到可以進入下一步的條件，流程卻已經先往下走了。&lt;/p&gt;
+&lt;p&gt;先看清楚有哪些失靈型態，才不會把所有問題都模糊地歸成「模型不穩」，最後又走回修 prompt 措辭的老路。&lt;/p&gt;
+&lt;h3 id=&#34;前一階段還沒做完後一階段就先開始&#34;&gt;前一階段還沒做完，後一階段就先開始&lt;/h3&gt;
+&lt;p&gt;很多 workflow 有明確前後順序，前一階段是否真的完成，會直接影響後一階段能不能開始。&lt;/p&gt;
+&lt;p&gt;問題是，就算 prompt 裡特別提醒「請照順序做」，agent 仍然很容易在前一段只做了一部分時就先往下走，或者把局部進展誤判成整體完成。表面上看起來流程順順地走，實際上是在偷渡。&lt;/p&gt;
+&lt;p&gt;解決這類問題的關鍵，是要有&lt;strong&gt;階段切換門檻&lt;/strong&gt;：前一階段到底要滿足什麼條件，才可以切換到下一個階段。譬如說，若 workflow 要先完成資訊蒐集、列出受影響檔案、完成某個 patch，或確認某個工具結果，這些條件就得變成可檢查的切換條件。Prompt Chaining &lt;sup id=&#34;fnref:6&#34;&gt;&lt;a href=&#34;#fn:6&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;6&lt;/a&gt;&lt;/sup&gt; 若少了這一環，後續步驟很容易過早展開。&lt;/p&gt;
+&lt;p&gt;只要 workflow 的階段切換開始依賴外部可檢查的完成條件，責任就不能只留在語言敘述層。&lt;sup id=&#34;fnref:7&#34;&gt;&lt;a href=&#34;#fn:7&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;7&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;h3 id=&#34;說是已經做了但其實並沒有&#34;&gt;說是已經做了，但其實並沒有&lt;/h3&gt;
+&lt;p&gt;模型很容易把打算做的事、以為做過的事，或上一輪口頭描述過的事，直接當成已經發生的結果。這時流程雖然還在跑，但一樣是在偷渡。&lt;/p&gt;
+&lt;p&gt;解決這類問題的關鍵，是&lt;strong&gt;把實際結果納入流程判斷&lt;/strong&gt;，而不是繼續相信 agent 的口頭自述。只要有工具在執行，workflow 的真實狀態就不只在 token 裡，也在檔案、命令輸出、測試結果、資料寫入狀態與其他可讀取的執行結果裡，甚至包成 sandbox。&lt;sup id=&#34;fnref:8&#34;&gt;&lt;a href=&#34;#fn:8&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;8&lt;/a&gt;&lt;/sup&gt; Claude Code 這類工具之所以看起來比較會在中途調整，背後也是根據外部是否有實際結果來判斷，而不是只照著一開始的語言規劃一路往前衝。&lt;sup id=&#34;fnref1:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;不能只看模型上一輪說了什麼，要看它做了沒。&lt;/p&gt;
+&lt;h3 id=&#34;驗證還沒通過系統就先算完成&#34;&gt;驗證還沒通過，系統就先算完成&lt;/h3&gt;
+&lt;p&gt;很多 workflow 不只要求產生內容，還要求它通過測試、比對、檢查、資料讀取或其他形式的驗證。&lt;/p&gt;
+&lt;p&gt;問題是，模型很容易把「答案已產生」直接當成「工作已完成」。內容也許已經生成，但還沒通過驗證，流程卻已經先宣布結案。&lt;/p&gt;
+&lt;p&gt;解決這類問題的關鍵，就是把驗證機制真正實作出來，確實併入完成條件的一部分。&lt;sup id=&#34;fnref:9&#34;&gt;&lt;a href=&#34;#fn:9&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;9&lt;/a&gt;&lt;/sup&gt; Prompt 可以要求「驗證通過才能算完成」，但如果系統沒有把驗證變成真正的完成條件與放行門檻，這句話就只是許願，算不上控制。&lt;sup id=&#34;fnref:10&#34;&gt;&lt;a href=&#34;#fn:10&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;10&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;h3 id=&#34;問題其實都落在完成判定&#34;&gt;問題其實都落在完成判定&lt;/h3&gt;
+&lt;p&gt;我把以上情況整理成一張表：&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;常見情況&lt;/th&gt;
+          &lt;th&gt;缺的是什麼&lt;/th&gt;
+          &lt;th&gt;最小控制焦點&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;前一階段還沒完成，後一階段卻已經開始&lt;/td&gt;
+          &lt;td&gt;階段切換門檻&lt;/td&gt;
+          &lt;td&gt;先確認前一步是否真的成立&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;說是已經做了，但其實並沒有&lt;/td&gt;
+          &lt;td&gt;以實際結果判斷&lt;/td&gt;
+          &lt;td&gt;先確認工具結果，再判斷下一步&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;驗證還沒通過，流程已先把這一步視為完成&lt;/td&gt;
+          &lt;td&gt;完成條件&lt;/td&gt;
+          &lt;td&gt;先分清「有產出」與「已完成」&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;這些情況表面上不同，骨子裡其實都在問同一件事：流程往下走之前，系統到底根據什麼來判定這一步已經完成，判定它已經可以繼續往下走？&lt;/p&gt;
+&lt;h2 id=&#34;prompt-的責任到哪裡系統的責任就從哪裡開始&#34;&gt;Prompt 的責任到哪裡，系統的責任就從哪裡開始&lt;/h2&gt;
+&lt;p&gt;既然已經知道，把 prompt 寫得更像 SOP 有其極限，接下來就要問：哪些責任仍適合留在語言層，哪些責任其實已經需要外部承接。&lt;/p&gt;
+&lt;p&gt;對多步驟 workflow 來說，prompt 最擅長處理的，仍然是&lt;strong&gt;流程說明&lt;/strong&gt;：任務怎麼展開、各階段如何安排、要留下哪些中間產物、哪些不確定性要揭露、輸出格式與角色邊界是什麼。這些要求會直接影響 agent 怎麼走。&lt;/p&gt;
+&lt;p&gt;所以 prompt 通常負責這些事：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;任務意圖與角色界定&lt;/li&gt;
+&lt;li&gt;階段順序與作業程序&lt;/li&gt;
+&lt;li&gt;中間產物與輸出格式&lt;/li&gt;
+&lt;li&gt;需要揭露的不確定性與限制&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;但只要 workflow 開始依賴下面這些能力，責任通常就不能只留在 prompt：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;持有真實狀態&lt;/li&gt;
+&lt;li&gt;判定某一步是否已完成&lt;/li&gt;
+&lt;li&gt;在條件未滿足時擋下後續步驟&lt;/li&gt;
+&lt;li&gt;接住高風險副作用&lt;/li&gt;
+&lt;li&gt;提供 retry、resume、rollback 與 audit&lt;/li&gt;
+&lt;li&gt;持續量測控制是否退化&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;換句話說，prompt 負責把流程講清楚；至於完成條件、階段切換條件、工具結果怎麼確認、流程卡住時怎麼處理、失敗後怎麼恢復，則比較接近系統該接手的部分。&lt;sup id=&#34;fnref:11&#34;&gt;&lt;a href=&#34;#fn:11&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;11&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;這樣拆的好處是：不會把所有問題都塞回 prompt，也不會把所有任務都誤判成一定要上到很重的外部系統。&lt;/p&gt;
+&lt;h2 id=&#34;什麼情況需要把控制交給外部機制&#34;&gt;什麼情況需要把控制交給外部機制&lt;/h2&gt;
+&lt;p&gt;談到這裡，我們可以歸納出，哪些要求值得外移，又該外移到什麼程度。&lt;/p&gt;
+&lt;p&gt;可以先看 workflow 的成敗，是否已經明顯依賴以下幾種能力：&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;若 workflow 需要……&lt;/th&gt;
+          &lt;th&gt;就不能只靠……&lt;/th&gt;
+          &lt;th&gt;至少需要……&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;前一步完成後才可切換&lt;/td&gt;
+          &lt;td&gt;prompt 提醒「照順序做」&lt;/td&gt;
+          &lt;td&gt;可檢查的階段切換門檻&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;根據真實執行結果判斷下一步&lt;/td&gt;
+          &lt;td&gt;模型口頭自述&lt;/td&gt;
+          &lt;td&gt;確認工具結果，並納入判斷&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;驗證成立才算完成&lt;/td&gt;
+          &lt;td&gt;單方面宣告完成&lt;/td&gt;
+          &lt;td&gt;明確的完成條件&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;發生錯誤後恢復流程&lt;/td&gt;
+          &lt;td&gt;人工臨時補救&lt;/td&gt;
+          &lt;td&gt;retry / resume / rollback&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;持續判斷控制是否退化&lt;/td&gt;
+          &lt;td&gt;單次案例觀察&lt;/td&gt;
+          &lt;td&gt;traces / evals / regression checks&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;只要遇到這幾種情況，相關控制責任通常就值得外移。像驗證是否成立、workflow 是否退化這類問題，已經需要可量測的 eval、trace 或 grader 來承接。像 retry、resume、rollback 這類恢復能力，則更明顯屬於系統層機制，而不是單靠語言承諾。&lt;sup id=&#34;fnref:12&#34;&gt;&lt;a href=&#34;#fn:12&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;12&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;相反地，若任務流程短、狀態依賴弱、錯誤成本低、副作用小，而且完成與否主要還是取決於文字品質、結構清楚或分析完整度，prompt 往往仍然是成本效益最高的主要承接方式。這種情況下，把要求留在 prompt，再配合適度的格式約束與中間產物揭露，通常就夠了。&lt;/p&gt;
+&lt;p&gt;不是每一個多步驟任務，都值得為了少量風險加上一整套外部控制。畢竟很多團隊真正需要的，未必是很重的 agent platform。常常只需要一層很薄的外層包裝，把幾件事真正接住。&lt;/p&gt;
+&lt;p&gt;所以判斷要不要外移，看的不是流程有幾步，也不是 prompt 已經寫了多長，而是：&lt;strong&gt;「完成」這件事，是不是已經需要由語言以外的東西來決定。&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;結論&#34;&gt;結論&lt;/h2&gt;
+&lt;p&gt;步驟明明已經寫清楚了，agent 還是不照著做，很多時候不是因為 prompt 還不夠細，而是 workflow 已經進入另一種責任分配：怎麼才算完成、什麼時候才能往下走、工具結果要不要納入判斷、驗證是否成立、失敗後果由誰接住，這些都不能只靠語言承諾支撐。&lt;/p&gt;
+&lt;p&gt;多步驟 workflow 要穩，關鍵不是再把 prompt 寫長一倍，而是先分清楚：&lt;strong&gt;某一步算不算完成，最後由誰判定。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;下一次遇到問題時，先不要急著把 prompt 再寫長一倍。&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;Xinyi Chen et al., &amp;ldquo;&lt;a href=&#34;https://arxiv.org/abs/2406.19999&#34;&gt;The SIFo Benchmark: Investigating the Sequential Instruction Following Ability of Large Language Models&lt;/a&gt;&amp;rdquo; (2024). 這裡主要用來支撐本文的較窄主張：多步驟 sequential instruction following 的失敗是可量測的常見現象。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;Iok Tong Lei et al., &amp;ldquo;&lt;a href=&#34;https://arxiv.org/abs/2305.11461&#34;&gt;Hint of Pseudo Code (HoPC): Programmatic Prompting Improves Reasoning&lt;/a&gt;&amp;rdquo;. 這裡主要用來支撐本文的較窄主張：pseudo-code 形式的提示，可能改善局部步驟表達、問題分解與推理表現；但它不直接支撐多步驟 agent workflow 在整體控制上的穩定性。&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;
+&lt;p&gt;Wenhu Chen et al., &amp;ldquo;&lt;a href=&#34;https://arxiv.org/abs/2211.12588&#34;&gt;Program of Thoughts Prompting: Disentangling Computation from Reasoning for Numerical Reasoning Tasks&lt;/a&gt;&amp;rdquo;. 這裡主要支撐的是：把部分計算工作外部化，交給程式執行或解譯器處理，可以降低模型把推理與計算混在同一段生成裡的負擔。這裡只支撐「部分工作可外部化承接」這個較窄主張，不直接支撐一般性的 workflow 控制結論。&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:4&#34;&gt;
+&lt;p&gt;Anthropic, &amp;ldquo;&lt;a href=&#34;https://code.claude.com/docs/en/how-claude-code-works&#34;&gt;How Claude Code works&lt;/a&gt;&amp;rdquo;. 這裡主要支撐的是：Claude Code 在工具使用、檔案編輯與命令執行之後，會根據新取得的結果持續更新後續行動；也就是說，後續步驟會受執行結果影響，而不是只依賴先前的語言規劃。&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref1:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:5&#34;&gt;
+&lt;p&gt;Anthropic, &amp;ldquo;&lt;a href=&#34;https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents&#34;&gt;Effective harnesses for long-running agents&lt;/a&gt;&amp;rdquo;. 這裡主要支撐的是：長時間執行的 agent application，通常需要外層 harness 來承接任務切換、artifact 傳遞、可恢復進度與執行環境互動，而不是只靠 prompt 在語言層維持流程。&amp;#160;&lt;a href=&#34;#fnref:5&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:6&#34;&gt;
+&lt;p&gt;Anthropic, &amp;ldquo;&lt;a href=&#34;https://www.anthropic.com/research/building-effective-agents&#34;&gt;Building Effective Agents&lt;/a&gt;&amp;rdquo;. 這裡主要支撐的是：Anthropic 把 prompt chaining、routing、parallelization、orchestrator-workers、evaluator-optimizer 等整理成 workflow patterns，而不是只把 agent 問題理解成單輪 prompt 技巧。&amp;#160;&lt;a href=&#34;#fnref:6&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:7&#34;&gt;
+&lt;p&gt;OpenAI Developers, &amp;ldquo;&lt;a href=&#34;https://developers.openai.com/api/docs/guides/agents-sdk&#34;&gt;Agents SDK&lt;/a&gt;&amp;rdquo; &amp;amp; &amp;ldquo;&lt;a href=&#34;https://developers.openai.com/api/docs/guides/agent-builder&#34;&gt;Agent Builder&lt;/a&gt;&amp;rdquo;. 這裡主要支撐的是：官方文件直接碰到 orchestration、results and state、tool use、workflow 組裝、multi-step work 與 runtime control。&amp;#160;&lt;a href=&#34;#fnref:7&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:8&#34;&gt;
+&lt;p&gt;OpenAI Developers, &amp;ldquo;&lt;a href=&#34;https://developers.openai.com/blog/sandbox-agents&#34;&gt;Sandbox agents&lt;/a&gt;&amp;rdquo;. 這裡主要支撐的是：sandbox agents 把 orchestration 與 execution 分離，並提供容器化 execution environment、files、commands、snapshots 與 memory。&amp;#160;&lt;a href=&#34;#fnref:8&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:9&#34;&gt;
+&lt;p&gt;OpenAI Developers, &amp;ldquo;&lt;a href=&#34;https://developers.openai.com/blog/eval-skills&#34;&gt;Testing Agent Skills Systematically with Evals&lt;/a&gt;&amp;rdquo;. 這裡主要支撐的是：evals 不應只看最終答案，而應系統性測試 workflow、skills 與 traces。&amp;#160;&lt;a href=&#34;#fnref:9&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:10&#34;&gt;
+&lt;p&gt;OpenAI Developers, &amp;ldquo;&lt;a href=&#34;https://developers.openai.com/api/docs/guides/agent-evals&#34;&gt;Evaluate agent workflows&lt;/a&gt;&amp;rdquo;. 這裡主要支撐的是：evaluation runs、graders、datasets 與 traces 可用來量測 workflow 本身，而不只量測最終答案。&amp;#160;&lt;a href=&#34;#fnref:10&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:11&#34;&gt;
+&lt;p&gt;OpenAI, &amp;ldquo;&lt;a href=&#34;https://openai.com/business/guides-and-resources/a-practical-guide-to-building-ai-agents/&#34;&gt;A practical guide to building AI agents&lt;/a&gt;&amp;rdquo;. 這裡主要支撐的是：OpenAI 把 orchestration、tools、guardrails、human review、memory / state 等放在 agent 系統設計的討論範圍內。&amp;#160;&lt;a href=&#34;#fnref:11&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:12&#34;&gt;
+&lt;p&gt;Anthropic, &amp;ldquo;&lt;a href=&#34;https://code.claude.com/docs/en/checkpointing&#34;&gt;Checkpointing&lt;/a&gt;&amp;rdquo;. 這裡主要支撐的是：Claude Code 提供 checkpointing 機制，可 rewind code、fork conversation，或同時處理兩者。這裡主要用來支撐 rollback / resume 需要系統層能力，而不是單靠語言承諾。&amp;#160;&lt;a href=&#34;#fnref:12&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description>
+      
+    </item>
     
     <item>
       <title>AI 時代，該怎麼選程式語言？</title>

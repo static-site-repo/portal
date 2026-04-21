@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>
     
-    Potioneer&#39;s Essays
+    Prompt 已經寫很細了，Workflow 為什麼還是不穩？ - Potioneer&#39;s Essays
     </title>
   
 
@@ -31,36 +31,50 @@
 <meta name="generator" content="Hugo 0.160.1" />
 
 
-<link rel="canonical" href="//william-yeh.net/" />
-
-<link href="/index.xml" rel="alternate" type="application/rss+xml" title="Potioneer&#39;s Essays" />
+<link rel="canonical" href="//william-yeh.net/post/2026/04/genai-multi-steps/" />
 
 
 
-<meta name="author" content="William Yeh" />
-<meta name="description" content="敏捷魔藥師 (Agile Potioneer)。會說 90% 的工匠語言，會說 70% 的總管語言，正在努力提升 30% 的行腳商人語言。" />
+
+<meta name="author" content="William Yeh" /><meta name="description" content="多步驟 agent 工作流程的穩定性不只看提示詞的細緻度，核心在於完成條件由誰判定。步驟再多也需明確階段切換門檻與結果驗證，否則流程可能跳過未完成階段或誤判進度。工具穩定執行取決於外層機制判斷結果，而非僅靠語言敘述。設計重點在每一步的完成條件與判定標準，而非步驟順序。" />
 
 
 
 
 
+  
 
 
 
-<meta property="og:url" content="//william-yeh.net/">
+
+
+
+<meta name="keywords" content="ai, cs, programming, testing" />
+
+
+<meta property="og:url" content="//william-yeh.net/post/2026/04/genai-multi-steps/">
   <meta property="og:site_name" content="Potioneer&#39;s Essays">
-  <meta property="og:title" content="Potioneer&#39;s Essays">
-  <meta property="og:description" content="敏捷魔藥師 (Agile Potioneer)。會說 90% 的工匠語言，會說 70% 的總管語言，正在努力提升 30% 的行腳商人語言。">
+  <meta property="og:title" content="Prompt 已經寫很細了，Workflow 為什麼還是不穩？">
+  <meta property="og:description" content="多步驟 agent 工作流程的穩定性不只看提示詞的細緻度，核心在於完成條件由誰判定。步驟再多也需明確階段切換門檻與結果驗證，否則流程可能跳過未完成階段或誤判進度。工具穩定執行取決於外層機制判斷結果，而非僅靠語言敘述。設計重點在每一步的完成條件與判定標準，而非步驟順序。">
   <meta property="og:locale" content="zh_tw">
-  <meta property="og:type" content="website">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2026-04-19T20:00:00+08:00">
+    <meta property="article:modified_time" content="2026-04-19T20:00:00+08:00">
+    <meta property="article:tag" content="Ai">
+    <meta property="article:tag" content="Cs">
+    <meta property="article:tag" content="Programming">
+    <meta property="article:tag" content="Testing">
 
-  <meta itemprop="name" content="Potioneer&#39;s Essays">
-  <meta itemprop="description" content="敏捷魔藥師 (Agile Potioneer)。會說 90% 的工匠語言，會說 70% 的總管語言，正在努力提升 30% 的行腳商人語言。">
+  <meta itemprop="name" content="Prompt 已經寫很細了，Workflow 為什麼還是不穩？">
+  <meta itemprop="description" content="多步驟 agent 工作流程的穩定性不只看提示詞的細緻度，核心在於完成條件由誰判定。步驟再多也需明確階段切換門檻與結果驗證，否則流程可能跳過未完成階段或誤判進度。工具穩定執行取決於外層機制判斷結果，而非僅靠語言敘述。設計重點在每一步的完成條件與判定標準，而非步驟順序。">
   <meta itemprop="datePublished" content="2026-04-19T20:00:00+08:00">
   <meta itemprop="dateModified" content="2026-04-19T20:00:00+08:00">
+  <meta itemprop="wordCount" content="4222">
+  <meta itemprop="keywords" content="Ai,Cs,Programming,Testing">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Potioneer&#39;s Essays">
-  <meta name="twitter:description" content="敏捷魔藥師 (Agile Potioneer)。會說 90% 的工匠語言，會說 70% 的總管語言，正在努力提升 30% 的行腳商人語言。">
+  <meta name="twitter:title" content="Prompt 已經寫很細了，Workflow 為什麼還是不穩？">
+  <meta name="twitter:description" content="多步驟 agent 工作流程的穩定性不只看提示詞的細緻度，核心在於完成條件由誰判定。步驟再多也需明確階段切換門檻與結果驗證，否則流程可能跳過未完成階段或誤判進度。工具穩定執行取決於外層機制判斷結果，而非僅靠語言敘述。設計重點在每一步的完成條件與判定標準，而非步驟順序。">
 
 <link rel="icon" href="/favicon.ico" />
 
@@ -398,238 +412,98 @@
 
 
   <main id="main" class="main pico container">
-    
-<div class="home-container">
-  
-  
-  
-  
-  
-  
-  
+    <div class="content-wrapper">
+    <aside class="left-sidebar">
+      
+<nav class="toc" id="toc">
+    <div class="toc-title">文章目錄</div>
+    <div class="toc-content custom-scrollbar">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#workflow-常見的失靈情況">Workflow 常見的失靈情況</a>
+      <ul>
+        <li><a href="#前一階段還沒做完後一階段就先開始">前一階段還沒做完，後一階段就先開始</a></li>
+        <li><a href="#說是已經做了但其實並沒有">說是已經做了，但其實並沒有</a></li>
+        <li><a href="#驗證還沒通過系統就先算完成">驗證還沒通過，系統就先算完成</a></li>
+        <li><a href="#問題其實都落在完成判定">問題其實都落在完成判定</a></li>
+      </ul>
+    </li>
+    <li><a href="#prompt-的責任到哪裡系統的責任就從哪裡開始">Prompt 的責任到哪裡，系統的責任就從哪裡開始</a></li>
+    <li><a href="#什麼情況需要把控制交給外部機制">什麼情況需要把控制交給外部機制</a></li>
+    <li><a href="#結論">結論</a></li>
+  </ul>
+</nav>
+    </div>
+  </nav>
 
-<section class="jane-card post">
-  
 
-  <header class="post-header">
-    <h1 class="post-title">
-      <a class="post-link" href="/post/2018/12/fallow/">
-        Scrum 沒有明說的事：休耕期
-      </a>
-    </h1>
-    
-    
-    <div class="post-meta-list">
-      <div class="post-meta-item post-meta-author">
+    </aside>
+
+    <div id="content" class="content">
+      <article class="post">
         
+        <header class="post-header">
+          <h1 class="post-title">Prompt 已經寫很細了，Workflow 為什麼還是不穩？</h1>
+          
+
+
+
+          <div class="post-meta-list">
+  <div class="post-meta-item post-meta-author">
+    
 <svg aria-hidden="true" class="lucide lucide-user-round-pen hi-svg-inline" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M2 21a8 8 0 0 1 10.821-7.487"/><path d="M21.378 16.626a1 1 0 0 0-3.004-3.004l-4.01 4.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z"/><circle cx="10" cy="8" r="5"/></svg>
-        William Yeh
-        
-      </div>
-      <div class="post-meta-item post-meta-time">
-        
-<svg aria-hidden="true" class="lucide lucide-calendar-days hi-svg-inline" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/></svg>
-        <time datetime=" 2018-12-04">
-          2018-12-04
-        </time>
-      </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    
-    <div class="post-summary">
-      <p>Scrum 的官方白皮書 <a href="https://www.scrumguides.org/"><em>The Scrum Guide</em></a> 非常輕薄短小（像 <a href="https://scrumguides.org/docs/scrumguide/v2017/2017-Scrum-Guide-US.pdf">Nov 2017 版</a>只有 19 頁），它的理念是：只制定最核心的原則、價值、角色、活動、產出物，其餘的則交給團隊根據經驗主義 <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> 去調適出最適合自己的細節。</p>
-<p>想當然爾，有很多事，Scrum 並沒有明說。</p>
-<p>那麼，沒有明說的事，就不需要做、就不能做了嗎？做了，就違反 Scrum 嗎？</p>
-<p>這是許多奉 <a href="https://www.scrumguides.org/"><em>The Scrum Guide</em></a> 為圭臬的人，常有的盲點。</p>
-    </div>
-
-    <div class="read-more">
-      <a role="button" href="/post/2018/12/fallow/" class="read-more-link outline">閱讀全文</a>
-    </div>
+    William Yeh
     
   </div>
 
-</section>
-
-  
-  
-
-<section class="jane-card post">
-  
-
-  <header class="post-header">
-    <h1 class="post-title">
-      <a class="post-link" href="/post/2018/11/why-safe-over-less/">
-        為什麼 LeSS 這麼迷人，可是總是輸給 SAFe？
-      </a>
-    </h1>
+  <div class="post-meta-item post-meta-time">
     
-    
-    <div class="post-meta-list">
-      <div class="post-meta-item post-meta-author">
-        
-<svg aria-hidden="true" class="lucide lucide-user-round-pen hi-svg-inline" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M2 21a8 8 0 0 1 10.821-7.487"/><path d="M21.378 16.626a1 1 0 0 0-3.004-3.004l-4.01 4.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z"/><circle cx="10" cy="8" r="5"/></svg>
-        William Yeh
-        
-      </div>
-      <div class="post-meta-item post-meta-time">
-        
 <svg aria-hidden="true" class="lucide lucide-calendar-days hi-svg-inline" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/></svg>
-        <time datetime=" 2018-11-30">
-          2018-11-30
-        </time>
-      </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    
-    <div class="post-summary">
-      <p>在一篇 <a href="https://medium.com/@wangtrying/%E9%80%99%E6%98%AF%E5%80%8B%E5%B0%8D%E8%A9%B1%E7%B4%80%E9%8C%84-ebca3a63bbde">Terry &amp; Ruddy 對話紀錄</a>中，看到一系列有趣的 <a href="https://less.works/">LeSS</a> vs. <a href="https://www.scaledagileframework.com/">SAFe</a> 討論：</p>
-<blockquote>
-<p>「為什麼 <a href="https://less.works/">LeSS</a> 這麼迷人，可是總是輸給 <a href="https://www.scaledagileframework.com/">SAFe</a>？」</p>
-<p>「SAFe 是敏捷跟辦公室政治作出了完美的妥協（應該吧？），所以大家比較 Buy-in 吧。」</p>
-    </div>
+    <time datetime=" 2026-04-19">
+      2026-04-19
+    </time>
 
-    <div class="read-more">
-      <a role="button" href="/post/2018/11/why-safe-over-less/" class="read-more-link outline">閱讀全文</a>
-    </div>
+
     
+
   </div>
 
-</section>
 
-  
-  
+  <div class="post-meta__right">
+    <span class="post-meta-more">
+      約 4222 字 -
+      預計閱讀 9 分鐘
+      
+      
+      </span>
 
-<section class="jane-card post">
-  
-
-  <header class="post-header">
-    <h1 class="post-title">
-      <a class="post-link" href="/post/2018/11/opsdev-talk-18/">
-        「從 Ops 角度看 DevOps」的感想
-      </a>
-    </h1>
-    
-    
-    <div class="post-meta-list">
-      <div class="post-meta-item post-meta-author">
+    <div class="post-meta-item post-meta-category">
+      
         
-<svg aria-hidden="true" class="lucide lucide-user-round-pen hi-svg-inline" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M2 21a8 8 0 0 1 10.821-7.487"/><path d="M21.378 16.626a1 1 0 0 0-3.004-3.004l-4.01 4.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z"/><circle cx="10" cy="8" r="5"/></svg>
-        William Yeh
-        
-      </div>
-      <div class="post-meta-item post-meta-time">
-        
-<svg aria-hidden="true" class="lucide lucide-calendar-days hi-svg-inline" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/></svg>
-        <time datetime=" 2018-11-28">
-          2018-11-28
-        </time>
-      </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    
-    <div class="post-summary">
-      <p>在台灣（或許在其他地方也是），DevOps 的話語權，很大幅度都被 Dev 一方把持。我們很少聽到 Ops 一方的說法。</p>
-<p>成功的改革，需要兼顧各方利益者的需求及痛點。隨著 DevOps 守備範圍日益擴大，這種失衡狀態必須改變。</p>
-<p>今晚參加 <a href="https://www.facebook.com/DevOpsTaiwan/">DevOps Taiwan 社群</a>舉辦的講座：【<a href="https://devops.kktix.cc/events/meetup17-opsdev">從 Ops 角度看 DevOps</a>】，聽聽<a href="https://www.facebook.com/roberthu.tw">胡士亮 (Robert Hu)</a> 從正統 Ops 角度來詮釋 DevOps，甚至 OpsDev，收穫頗大。</p>
-<p>聽知識，聽心得，也聽熱情與願景。</p>
+          
+        <a href="//william-yeh.net/categories/tech/">tech</a>
     </div>
 
-    <div class="read-more">
-      <a role="button" href="/post/2018/11/opsdev-talk-18/" class="read-more-link outline">閱讀全文</a>
-    </div>
+
+    
+    
+
+
+    
     
   </div>
+</div>
 
-</section>
+        </header>
 
-  
-  
-
-<section class="jane-card post">
-  
-
-  <header class="post-header">
-    <h1 class="post-title">
-      <a class="post-link" href="/post/2018/11/devops-value/">
-        DevOps 的價值與指標
-      </a>
-    </h1>
-    
-    
-    <div class="post-meta-list">
-      <div class="post-meta-item post-meta-author">
         
-<svg aria-hidden="true" class="lucide lucide-user-round-pen hi-svg-inline" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M2 21a8 8 0 0 1 10.821-7.487"/><path d="M21.378 16.626a1 1 0 0 0-3.004-3.004l-4.01 4.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z"/><circle cx="10" cy="8" r="5"/></svg>
-        William Yeh
-        
-      </div>
-      <div class="post-meta-item post-meta-time">
-        
-<svg aria-hidden="true" class="lucide lucide-calendar-days hi-svg-inline" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/></svg>
-        <time datetime=" 2018-11-28">
-          2018-11-28
-        </time>
-      </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    
-    <div class="post-summary">
-      <p>看完〈<a href="//william-yeh.net/post/2018/11/agile-value/">敏捷的價值與指標</a>〉之後，很自然的會進一步追問：「那麼，什麼才是 DevOps 圈子所認定的價值，以及對應的指標，尤其是領先指標？」</p>
-<p>這問題其實比較容易回答。畢竟，相較於兄弟領域 agile，控制與監管，原本就是 DevOps 不可分割的一部分。</p>
-    </div>
-
-    <div class="read-more">
-      <a role="button" href="/post/2018/11/devops-value/" class="read-more-link outline">閱讀全文</a>
-    </div>
-    
-  </div>
-
-</section>
-
-  
-  
-
-<section class="jane-card post">
-  
-
-  <header class="post-header">
-    <h1 class="post-title">
-      <a class="post-link" href="/post/2018/11/agile-value/">
-        敏捷的價值與指標
-      </a>
-    </h1>
-    
-    
-    <div class="post-meta-list">
-      <div class="post-meta-item post-meta-author">
-        
-<svg aria-hidden="true" class="lucide lucide-user-round-pen hi-svg-inline" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M2 21a8 8 0 0 1 10.821-7.487"/><path d="M21.378 16.626a1 1 0 0 0-3.004-3.004l-4.01 4.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z"/><circle cx="10" cy="8" r="5"/></svg>
-        William Yeh
-        
-      </div>
-      <div class="post-meta-item post-meta-time">
-        
-<svg aria-hidden="true" class="lucide lucide-calendar-days hi-svg-inline" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/></svg>
-        <time datetime=" 2018-11-27">
-          2018-11-27
-        </time>
-      </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    
-    <div class="post-summary">
-      <p>同溫層朋友提出一則有趣的<a href="https://www.facebook.com/groups/179345672472/permalink/10156092663467473/">提問</a>：</p>
+        <div class="post-content">
+          <p>在使用 ChatGPT MyGPT 這類工具時，常會碰到這種情況：明明已經把步驟一、二、三寫得很清楚，甚至快寫到八千字長度上限，它還是不一定照順序做，也不一定會把前一步做完才往下走。<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> 結果，流程不會自己穩定推進，而是使用者得一路追著它跑，不斷補盯、補問、補救。</p>
+<p>這時候，通常不是 prompt 還能不能再補一版，也不是 pseudo code 再寫完整一點就能自動解決。Pseudo code 形式的提示，確實可能改善局部步驟表達、問題分解與推理表現；<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> 把部份子工作移交給外部程式處理，也可能讓某些環節更穩（這也是 agent skills 推薦的技巧）。<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> 但這多半只是局部的改善。</p>
+<p>同樣是處理長串流程，有些工具穩定度會明顯高於單靠 prompt 的系統。以 Claude Code 為例，它做一長串動作時，常會在中途停下來，檢查某一步有沒有成立，再決定要不要往下一步走。<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup> 這告訴我們，差別通常不只在 prompt 本身，而在外層 harness、workflow control 或執行機制，有沒有把工具結果納入後續判斷，把流程進度穩定接住。<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup></p>
+<p>這篇文章要談的，就是這條分界。</p>
+<p>多步驟 agent workflow 的可靠性，不能寄望於另一套更漂亮的 prompt 寫法。尤其當流程能不能往下走，已經取決於工具結果、實際狀態、驗證是否成立與副作用是否可接受時，就該認真盤點：哪些責任還適合留在 prompt，哪些責任該移交給外部控制機制。</p>
+<p>每一步要有明確成立條件、可檢查的依據，也要知道條件不成立時流程該怎麼停下來。光寫成文字還不夠，還得有真的在處理它們的系統。</p>
 
 <link rel="stylesheet" href="/css/hugo-easy-gallery.css" />
 <div class="box">
@@ -637,838 +511,265 @@
   itemscope itemtype="http://schema.org/ImageObject" 
   style="max-width:30em" >
     <div class="img">
-      <img itemprop="thumbnail" src="/img/2018/11/agile-value-post.png" alt="如何衡量敏捷的成效？ by Howie Yu (2018-11-23)"/>
+      <img itemprop="thumbnail" src="/img/2026/04/genai-multi-steps.jpg" />
     </div>
-    <a href="/img/2018/11/agile-value-post.png" itemprop="contentUrl"></a>
-      <figcaption>
-          <p>如何衡量敏捷的成效？ by Howie Yu (2018-11-23)</p>
-      </figcaption>
+    <a href="/img/2026/04/genai-multi-steps.jpg" itemprop="contentUrl"></a>
   </figure>
 </div>
-    </div>
 
-    <div class="read-more">
-      <a role="button" href="/post/2018/11/agile-value/" class="read-more-link outline">閱讀全文</a>
-    </div>
-    
-  </div>
+<h2 id="workflow-常見的失靈情況">Workflow 常見的失靈情況</h2>
+<p>多步驟 workflow 常見的失靈，不是 agent 完全沒做事，而是某一步其實還沒達到可以進入下一步的條件，流程卻已經先往下走了。</p>
+<p>先看清楚有哪些失靈型態，才不會把所有問題都模糊地歸成「模型不穩」，最後又走回修 prompt 措辭的老路。</p>
+<h3 id="前一階段還沒做完後一階段就先開始">前一階段還沒做完，後一階段就先開始</h3>
+<p>很多 workflow 有明確前後順序，前一階段是否真的完成，會直接影響後一階段能不能開始。</p>
+<p>問題是，就算 prompt 裡特別提醒「請照順序做」，agent 仍然很容易在前一段只做了一部分時就先往下走，或者把局部進展誤判成整體完成。表面上看起來流程順順地走，實際上是在偷渡。</p>
+<p>解決這類問題的關鍵，是要有<strong>階段切換門檻</strong>：前一階段到底要滿足什麼條件，才可以切換到下一個階段。譬如說，若 workflow 要先完成資訊蒐集、列出受影響檔案、完成某個 patch，或確認某個工具結果，這些條件就得變成可檢查的切換條件。Prompt Chaining <sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup> 若少了這一環，後續步驟很容易過早展開。</p>
+<p>只要 workflow 的階段切換開始依賴外部可檢查的完成條件，責任就不能只留在語言敘述層。<sup id="fnref:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup></p>
+<h3 id="說是已經做了但其實並沒有">說是已經做了，但其實並沒有</h3>
+<p>模型很容易把打算做的事、以為做過的事，或上一輪口頭描述過的事，直接當成已經發生的結果。這時流程雖然還在跑，但一樣是在偷渡。</p>
+<p>解決這類問題的關鍵，是<strong>把實際結果納入流程判斷</strong>，而不是繼續相信 agent 的口頭自述。只要有工具在執行，workflow 的真實狀態就不只在 token 裡，也在檔案、命令輸出、測試結果、資料寫入狀態與其他可讀取的執行結果裡，甚至包成 sandbox。<sup id="fnref:8"><a href="#fn:8" class="footnote-ref" role="doc-noteref">8</a></sup> Claude Code 這類工具之所以看起來比較會在中途調整，背後也是根據外部是否有實際結果來判斷，而不是只照著一開始的語言規劃一路往前衝。<sup id="fnref1:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup></p>
+<p>不能只看模型上一輪說了什麼，要看它做了沒。</p>
+<h3 id="驗證還沒通過系統就先算完成">驗證還沒通過，系統就先算完成</h3>
+<p>很多 workflow 不只要求產生內容，還要求它通過測試、比對、檢查、資料讀取或其他形式的驗證。</p>
+<p>問題是，模型很容易把「答案已產生」直接當成「工作已完成」。內容也許已經生成，但還沒通過驗證，流程卻已經先宣布結案。</p>
+<p>解決這類問題的關鍵，就是把驗證機制真正實作出來，確實併入完成條件的一部分。<sup id="fnref:9"><a href="#fn:9" class="footnote-ref" role="doc-noteref">9</a></sup> Prompt 可以要求「驗證通過才能算完成」，但如果系統沒有把驗證變成真正的完成條件與放行門檻，這句話就只是許願，算不上控制。<sup id="fnref:10"><a href="#fn:10" class="footnote-ref" role="doc-noteref">10</a></sup></p>
+<h3 id="問題其實都落在完成判定">問題其實都落在完成判定</h3>
+<p>我把以上情況整理成一張表：</p>
+<table>
+  <thead>
+      <tr>
+          <th>常見情況</th>
+          <th>缺的是什麼</th>
+          <th>最小控制焦點</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>前一階段還沒完成，後一階段卻已經開始</td>
+          <td>階段切換門檻</td>
+          <td>先確認前一步是否真的成立</td>
+      </tr>
+      <tr>
+          <td>說是已經做了，但其實並沒有</td>
+          <td>以實際結果判斷</td>
+          <td>先確認工具結果，再判斷下一步</td>
+      </tr>
+      <tr>
+          <td>驗證還沒通過，流程已先把這一步視為完成</td>
+          <td>完成條件</td>
+          <td>先分清「有產出」與「已完成」</td>
+      </tr>
+  </tbody>
+</table>
+<p>這些情況表面上不同，骨子裡其實都在問同一件事：流程往下走之前，系統到底根據什麼來判定這一步已經完成，判定它已經可以繼續往下走？</p>
+<h2 id="prompt-的責任到哪裡系統的責任就從哪裡開始">Prompt 的責任到哪裡，系統的責任就從哪裡開始</h2>
+<p>既然已經知道，把 prompt 寫得更像 SOP 有其極限，接下來就要問：哪些責任仍適合留在語言層，哪些責任其實已經需要外部承接。</p>
+<p>對多步驟 workflow 來說，prompt 最擅長處理的，仍然是<strong>流程說明</strong>：任務怎麼展開、各階段如何安排、要留下哪些中間產物、哪些不確定性要揭露、輸出格式與角色邊界是什麼。這些要求會直接影響 agent 怎麼走。</p>
+<p>所以 prompt 通常負責這些事：</p>
+<ul>
+<li>任務意圖與角色界定</li>
+<li>階段順序與作業程序</li>
+<li>中間產物與輸出格式</li>
+<li>需要揭露的不確定性與限制</li>
+</ul>
+<p>但只要 workflow 開始依賴下面這些能力，責任通常就不能只留在 prompt：</p>
+<ul>
+<li>持有真實狀態</li>
+<li>判定某一步是否已完成</li>
+<li>在條件未滿足時擋下後續步驟</li>
+<li>接住高風險副作用</li>
+<li>提供 retry、resume、rollback 與 audit</li>
+<li>持續量測控制是否退化</li>
+</ul>
+<p>換句話說，prompt 負責把流程講清楚；至於完成條件、階段切換條件、工具結果怎麼確認、流程卡住時怎麼處理、失敗後怎麼恢復，則比較接近系統該接手的部分。<sup id="fnref:11"><a href="#fn:11" class="footnote-ref" role="doc-noteref">11</a></sup></p>
+<p>這樣拆的好處是：不會把所有問題都塞回 prompt，也不會把所有任務都誤判成一定要上到很重的外部系統。</p>
+<h2 id="什麼情況需要把控制交給外部機制">什麼情況需要把控制交給外部機制</h2>
+<p>談到這裡，我們可以歸納出，哪些要求值得外移，又該外移到什麼程度。</p>
+<p>可以先看 workflow 的成敗，是否已經明顯依賴以下幾種能力：</p>
+<table>
+  <thead>
+      <tr>
+          <th>若 workflow 需要……</th>
+          <th>就不能只靠……</th>
+          <th>至少需要……</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>前一步完成後才可切換</td>
+          <td>prompt 提醒「照順序做」</td>
+          <td>可檢查的階段切換門檻</td>
+      </tr>
+      <tr>
+          <td>根據真實執行結果判斷下一步</td>
+          <td>模型口頭自述</td>
+          <td>確認工具結果，並納入判斷</td>
+      </tr>
+      <tr>
+          <td>驗證成立才算完成</td>
+          <td>單方面宣告完成</td>
+          <td>明確的完成條件</td>
+      </tr>
+      <tr>
+          <td>發生錯誤後恢復流程</td>
+          <td>人工臨時補救</td>
+          <td>retry / resume / rollback</td>
+      </tr>
+      <tr>
+          <td>持續判斷控制是否退化</td>
+          <td>單次案例觀察</td>
+          <td>traces / evals / regression checks</td>
+      </tr>
+  </tbody>
+</table>
+<p>只要遇到這幾種情況，相關控制責任通常就值得外移。像驗證是否成立、workflow 是否退化這類問題，已經需要可量測的 eval、trace 或 grader 來承接。像 retry、resume、rollback 這類恢復能力，則更明顯屬於系統層機制，而不是單靠語言承諾。<sup id="fnref:12"><a href="#fn:12" class="footnote-ref" role="doc-noteref">12</a></sup></p>
+<p>相反地，若任務流程短、狀態依賴弱、錯誤成本低、副作用小，而且完成與否主要還是取決於文字品質、結構清楚或分析完整度，prompt 往往仍然是成本效益最高的主要承接方式。這種情況下，把要求留在 prompt，再配合適度的格式約束與中間產物揭露，通常就夠了。</p>
+<p>不是每一個多步驟任務，都值得為了少量風險加上一整套外部控制。畢竟很多團隊真正需要的，未必是很重的 agent platform。常常只需要一層很薄的外層包裝，把幾件事真正接住。</p>
+<p>所以判斷要不要外移，看的不是流程有幾步，也不是 prompt 已經寫了多長，而是：<strong>「完成」這件事，是不是已經需要由語言以外的東西來決定。</strong></p>
+<h2 id="結論">結論</h2>
+<p>步驟明明已經寫清楚了，agent 還是不照著做，很多時候不是因為 prompt 還不夠細，而是 workflow 已經進入另一種責任分配：怎麼才算完成、什麼時候才能往下走、工具結果要不要納入判斷、驗證是否成立、失敗後果由誰接住，這些都不能只靠語言承諾支撐。</p>
+<p>多步驟 workflow 要穩，關鍵不是再把 prompt 寫長一倍，而是先分清楚：<strong>某一步算不算完成，最後由誰判定。</strong></p>
+<p>下一次遇到問題時，先不要急著把 prompt 再寫長一倍。</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>Xinyi Chen et al., &ldquo;<a href="https://arxiv.org/abs/2406.19999">The SIFo Benchmark: Investigating the Sequential Instruction Following Ability of Large Language Models</a>&rdquo; (2024). 這裡主要用來支撐本文的較窄主張：多步驟 sequential instruction following 的失敗是可量測的常見現象。&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>Iok Tong Lei et al., &ldquo;<a href="https://arxiv.org/abs/2305.11461">Hint of Pseudo Code (HoPC): Programmatic Prompting Improves Reasoning</a>&rdquo;. 這裡主要用來支撐本文的較窄主張：pseudo-code 形式的提示，可能改善局部步驟表達、問題分解與推理表現；但它不直接支撐多步驟 agent workflow 在整體控制上的穩定性。&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3">
+<p>Wenhu Chen et al., &ldquo;<a href="https://arxiv.org/abs/2211.12588">Program of Thoughts Prompting: Disentangling Computation from Reasoning for Numerical Reasoning Tasks</a>&rdquo;. 這裡主要支撐的是：把部分計算工作外部化，交給程式執行或解譯器處理，可以降低模型把推理與計算混在同一段生成裡的負擔。這裡只支撐「部分工作可外部化承接」這個較窄主張，不直接支撐一般性的 workflow 控制結論。&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4">
+<p>Anthropic, &ldquo;<a href="https://code.claude.com/docs/en/how-claude-code-works">How Claude Code works</a>&rdquo;. 這裡主要支撐的是：Claude Code 在工具使用、檔案編輯與命令執行之後，會根據新取得的結果持續更新後續行動；也就是說，後續步驟會受執行結果影響，而不是只依賴先前的語言規劃。&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:5">
+<p>Anthropic, &ldquo;<a href="https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents">Effective harnesses for long-running agents</a>&rdquo;. 這裡主要支撐的是：長時間執行的 agent application，通常需要外層 harness 來承接任務切換、artifact 傳遞、可恢復進度與執行環境互動，而不是只靠 prompt 在語言層維持流程。&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:6">
+<p>Anthropic, &ldquo;<a href="https://www.anthropic.com/research/building-effective-agents">Building Effective Agents</a>&rdquo;. 這裡主要支撐的是：Anthropic 把 prompt chaining、routing、parallelization、orchestrator-workers、evaluator-optimizer 等整理成 workflow patterns，而不是只把 agent 問題理解成單輪 prompt 技巧。&#160;<a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:7">
+<p>OpenAI Developers, &ldquo;<a href="https://developers.openai.com/api/docs/guides/agents-sdk">Agents SDK</a>&rdquo; &amp; &ldquo;<a href="https://developers.openai.com/api/docs/guides/agent-builder">Agent Builder</a>&rdquo;. 這裡主要支撐的是：官方文件直接碰到 orchestration、results and state、tool use、workflow 組裝、multi-step work 與 runtime control。&#160;<a href="#fnref:7" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:8">
+<p>OpenAI Developers, &ldquo;<a href="https://developers.openai.com/blog/sandbox-agents">Sandbox agents</a>&rdquo;. 這裡主要支撐的是：sandbox agents 把 orchestration 與 execution 分離，並提供容器化 execution environment、files、commands、snapshots 與 memory。&#160;<a href="#fnref:8" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:9">
+<p>OpenAI Developers, &ldquo;<a href="https://developers.openai.com/blog/eval-skills">Testing Agent Skills Systematically with Evals</a>&rdquo;. 這裡主要支撐的是：evals 不應只看最終答案，而應系統性測試 workflow、skills 與 traces。&#160;<a href="#fnref:9" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:10">
+<p>OpenAI Developers, &ldquo;<a href="https://developers.openai.com/api/docs/guides/agent-evals">Evaluate agent workflows</a>&rdquo;. 這裡主要支撐的是：evaluation runs、graders、datasets 與 traces 可用來量測 workflow 本身，而不只量測最終答案。&#160;<a href="#fnref:10" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:11">
+<p>OpenAI, &ldquo;<a href="https://openai.com/business/guides-and-resources/a-practical-guide-to-building-ai-agents/">A practical guide to building AI agents</a>&rdquo;. 這裡主要支撐的是：OpenAI 把 orchestration、tools、guardrails、human review、memory / state 等放在 agent 系統設計的討論範圍內。&#160;<a href="#fnref:11" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:12">
+<p>Anthropic, &ldquo;<a href="https://code.claude.com/docs/en/checkpointing">Checkpointing</a>&rdquo;. 這裡主要支撐的是：Claude Code 提供 checkpointing 機制，可 rewind code、fork conversation，或同時處理兩者。這裡主要用來支撐 rollback / resume 需要系統層能力，而不是單靠語言承諾。&#160;<a href="#fnref:12" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+        </div>
 
-</section>
-
+        
+        
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">William Yeh</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+      2026-04-19
+      
+    </span>
+  </p>
   
-
-
-  
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<nav class="pagination">
-  <ul>
-
-    
-    
-    <li><a href="/">««</a></li>
-    
-
-    
-    
-    <li><a href="/page/19/">«</a></li>
-    
-
-    
-    
-
-    
-
-    
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-    
-
-    
-    
-
-    
-
-    
-
-    
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-    
-
-    
-    
-
-    
-
-    
-
-    
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-    
-
-    
-    
-
-    
-
-    
-
-    
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-    
-
-    
-    
-
-    
-
-    
-
-    
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-    
-
-    
-    
-
-    
-
-    
-
-    
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-    
-
-    
-    
-
-    
-
-    
-
-    
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-    
-
-    
-    
-
-    
-
-    
-
-    
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-    
-
-    
-    
-
-    
-
-    
-
-    
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-    
-
-    
-    
-
-    
-
-    
-
-    
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-    
-
-    
-    
-
-    
-
-    
-
-    
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-    
-
-    
-    
-
-    
-
-    
-
-    
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-    
-
-    
-    
-
-    
-
-    
-
-    
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-    
-
-    
-    
-
-    
-
-    
-
-    
-    
-
-    
-    
-    
-
-    
-    
-    
-
-    
-
-    
-    
-
-    
-    
-    <li class="">
-      <a href="/page/14/">
-        14
-      </a>
-    </li>
-    
-
-    
-
-    
-
-    
-    
-
-    
-    
-    
-
-    
-    
-    
-
-    
-
-    
-    
-
-    
-    
-    <li class="">
-      <a href="/page/15/">
-        15
-      </a>
-    </li>
-    
-
-    
-
-    
-
-    
-    
-
-    
-    
-    
-
-    
-    
-    
-
-    
-
-    
-    
-
-    
-    
-    <li class="">
-      <a href="/page/16/">
-        16
-      </a>
-    </li>
-    
-
-    
-
-    
-
-    
-    
-
-    
-    
-    
-
-    
-    
-    
-
-    
-
-    
-    
-
-    
-    
-    <li class="">
-      <a href="/page/17/">
-        17
-      </a>
-    </li>
-    
-
-    
-
-    
-
-    
-    
-
-    
-    
-    
-
-    
-    
-    
-
-    
-
-    
-    
-
-    
-    
-    <li class="">
-      <a href="/page/18/">
-        18
-      </a>
-    </li>
-    
-
-    
-
-    
-
-    
-    
-
-    
-    
-    
-
-    
-    
-    
-
-    
-
-    
-    
-
-    
-    
-    <li class="">
-      <a href="/page/19/">
-        19
-      </a>
-    </li>
-    
-
-    
-
-    
-
-    
-    
-
-    
-    
-    
-
-    
-    
-    
-
-    
-
-    
-    
-
-    
-    
-    <li class="active">
-      <a href="/page/20/">
-        20
-      </a>
-    </li>
-    
-
-    
-
-    
-
-    
-    
-
-    
-    
-    
-
-    
-    
-    
-
-    
-
-    
-    
-
-    
-    
-    <li class="">
-      <a href="/page/21/">
-        21
-      </a>
-    </li>
-    
-
-    
-
-    
-
-    
-    
-
-    
-    
-    
-
-    
-    
-    
-
-    
-
-    
-    
-
-    
-    
-    <li class="">
-      <a href="/page/22/">
-        22
-      </a>
-    </li>
-    
-
-    
-
-    
-
-    
-    
-
-    
-    
-    
-
-    
-    
-    
-
-    
-
-    
-    
-
-    
-    
-    <li class="">
-      <a href="/page/23/">
-        23
-      </a>
-    </li>
-    
-
-    
-
-    
-
-    
-    
-
-    
-    
-    
-
-    
-    
-    
-
-    
-
-    
-    
-
-    
-    
-    <li class="">
-      <a href="/page/24/">
-        24
-      </a>
-    </li>
-    
-
-    
-
-    
-
-    
-    
-
-    
-    
-    
-
-    
-    
-    
-
-    
-
-    
-    
-
-    
-    
-    <li class="">
-      <a href="/page/25/">
-        25
-      </a>
-    </li>
-    
-
-    
-
-    
-
-    
-    
-
-    
-    
-    
-
-    
-    
-    
-
-    
-
-    
-    
-
-    
-    
-    <li class="">
-      <a href="/page/26/">
-        26
-      </a>
-    </li>
-    
-
-    
-
-    
-
-    
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-    
-
-    
-    
-
-    
-
-    
-
-    
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-    
-
-    
-    
-
-    
-
-    
-
-    
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-    
-
-    
-    
-
-    
-
-    
-
-    
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-    
-
-    
-    
-
-    
-
-    
-
-    
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-    
-
-    
-    
-
-    
-
-    
-    
-    <li><a href="/page/21/">»</a></li>
-    
-
-    
-    
-    <li><a href="/page/31/">»»</a></li>
-    
-
-  </ul>
-</nav>
-
-
-
-
+  <p class="copyright-item">
+    <span class="item-title">授權條款</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW" target="_blank">CC BY-NC-SA 4.0</a> (姓名標示-非商業性-相同方式分享 4.0 國際)</span>
+  </p>
 </div>
 
 
+
+        
+        
+
+
+        <footer class="post-footer">
+          <div class="post-tags">
+              <a href="//william-yeh.net/tags/ai/">ai</a>
+                <a href="//william-yeh.net/tags/cs/">cs</a>
+                <a href="//william-yeh.net/tags/programming/">programming</a>
+                <a href="//william-yeh.net/tags/testing/">testing</a>
+                
+            </div>
+
+
+          
+          <nav class="post-nav">
+            
+            
+              <a class="next" href="/post/2026/04/genai-pl/">
+                <span class="next-text nav-default">AI 時代，該怎麼選程式語言？</span>
+                <span class="prev-text nav-mobile">下一篇</span>
+                
+                <i class="iconfont">
+                  
+<svg aria-hidden="true" class="lucide lucide-chevron-right hi-svg-inline" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="m9 18 6-6-6-6"/></svg>
+                </i>
+              </a>
+          </nav>
+        </footer>
+      </article>
+
+      
+      
+
+
+      
+      
+
+  
+
+  
+  
+
+  
+  
+    <div class="post">
+  <script src="https://utteranc.es/client.js"
+        repo= "William-Yeh/utterances-area"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script>
+</div>
+
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+
+    </div>
+
+    <aside class="right-sidebar">
+      
+    </aside>
+  </div>
   </main>
 
   <footer id="footer" class="site-footer">
