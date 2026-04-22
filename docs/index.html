@@ -440,11 +440,11 @@
     
     <div class="post-summary">
       <p>在使用 ChatGPT MyGPT 這類工具時，常會碰到這種情況：明明已經把步驟一、二、三寫得很清楚，甚至快寫到八千字長度上限，它還是不一定照順序做，也不一定會把前一步做完才往下走。<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> 結果，流程不會自己穩定推進，而是使用者得一路追著它跑，不斷補盯、補問、補救。</p>
-<p>這時候，通常不是 prompt 還能不能再補一版，也不是 pseudo code 再寫完整一點就能自動解決。Pseudo code 形式的提示，確實可能改善局部步驟表達、問題分解與推理表現；<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> 把部份子工作移交給外部程式處理，也可能讓某些環節更穩（這也是 agent skills 推薦的技巧）。<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> 但這多半只是局部的改善。</p>
-<p>同樣是處理長串流程，有些工具穩定度會明顯高於單靠 prompt 的系統。以 Claude Code 為例，它做一長串動作時，常會在中途停下來，檢查某一步有沒有成立，再決定要不要往下一步走。<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup> 這告訴我們，差別通常不只在 prompt 本身，而在外層 harness、workflow control 或執行機制，有沒有把工具結果納入後續判斷，把流程進度穩定接住。<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup></p>
-<p>這篇文章要談的，就是這條分界。</p>
-<p>多步驟 agent workflow 的可靠性，不能寄望於另一套更漂亮的 prompt 寫法。尤其當流程能不能往下走，已經取決於工具結果、實際狀態、驗證是否成立與副作用是否可接受時，就該認真盤點：哪些責任還適合留在 prompt，哪些責任該移交給外部控制機制。</p>
-<p>每一步要有明確成立條件、可檢查的依據，也要知道條件不成立時流程該怎麼停下來。光寫成文字還不夠，還得有真的在處理它們的系統。</p>
+<p>把 prompt 寫成 pseudo code 是否就能自動解決呢？</p>
+<p>Pseudo code 形式的提示，的確可能改善步驟描述、問題分解與推理表現；<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> 把部份子工作移交給外部程式處理，也可能讓某些環節更穩（這也是 agent skills 推薦的技巧）。<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> 但這多半只是局部的改善。</p>
+<p>反觀某些工具，處理長串流程的穩定度會明顯高於單靠 prompt 的系統。以 Claude Code 為例，它做一長串動作時，常會在中途停下來，檢查某一步有沒有成立，再決定要不要往下一步走。<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup></p>
+<p>這給了我們一個暗示，某些原本放在 prompt 裡的責任，其實應該移交給外部控制機制。<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup></p>
+<p>這篇文章要談的，就是在多步驟 workflow 下，責任該怎麼重新分配。</p>
 
 <link rel="stylesheet" href="/css/hugo-easy-gallery.css" />
 <div class="box">

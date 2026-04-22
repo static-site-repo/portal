@@ -70,7 +70,7 @@
   <meta itemprop="description" content="多步驟 agent 工作流程的穩定性不只看提示詞的細緻度，核心在於完成條件由誰判定。步驟再多也需明確階段切換門檻與結果驗證，否則流程可能跳過未完成階段或誤判進度。工具穩定執行取決於外層機制判斷結果，而非僅靠語言敘述。設計重點在每一步的完成條件與判定標準，而非步驟順序。">
   <meta itemprop="datePublished" content="2026-04-19T20:00:00+08:00">
   <meta itemprop="dateModified" content="2026-04-19T20:00:00+08:00">
-  <meta itemprop="wordCount" content="4222">
+  <meta itemprop="wordCount" content="4040">
   <meta itemprop="keywords" content="Ai,Cs,Programming,Testing">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Prompt 已經寫很細了，Workflow 為什麼還是不穩？">
@@ -471,7 +471,7 @@
 
   <div class="post-meta__right">
     <span class="post-meta-more">
-      約 4222 字 -
+      約 4040 字 -
       預計閱讀 9 分鐘
       
       
@@ -499,11 +499,11 @@
         
         <div class="post-content">
           <p>在使用 ChatGPT MyGPT 這類工具時，常會碰到這種情況：明明已經把步驟一、二、三寫得很清楚，甚至快寫到八千字長度上限，它還是不一定照順序做，也不一定會把前一步做完才往下走。<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> 結果，流程不會自己穩定推進，而是使用者得一路追著它跑，不斷補盯、補問、補救。</p>
-<p>這時候，通常不是 prompt 還能不能再補一版，也不是 pseudo code 再寫完整一點就能自動解決。Pseudo code 形式的提示，確實可能改善局部步驟表達、問題分解與推理表現；<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> 把部份子工作移交給外部程式處理，也可能讓某些環節更穩（這也是 agent skills 推薦的技巧）。<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> 但這多半只是局部的改善。</p>
-<p>同樣是處理長串流程，有些工具穩定度會明顯高於單靠 prompt 的系統。以 Claude Code 為例，它做一長串動作時，常會在中途停下來，檢查某一步有沒有成立，再決定要不要往下一步走。<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup> 這告訴我們，差別通常不只在 prompt 本身，而在外層 harness、workflow control 或執行機制，有沒有把工具結果納入後續判斷，把流程進度穩定接住。<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup></p>
-<p>這篇文章要談的，就是這條分界。</p>
-<p>多步驟 agent workflow 的可靠性，不能寄望於另一套更漂亮的 prompt 寫法。尤其當流程能不能往下走，已經取決於工具結果、實際狀態、驗證是否成立與副作用是否可接受時，就該認真盤點：哪些責任還適合留在 prompt，哪些責任該移交給外部控制機制。</p>
-<p>每一步要有明確成立條件、可檢查的依據，也要知道條件不成立時流程該怎麼停下來。光寫成文字還不夠，還得有真的在處理它們的系統。</p>
+<p>把 prompt 寫成 pseudo code 是否就能自動解決呢？</p>
+<p>Pseudo code 形式的提示，的確可能改善步驟描述、問題分解與推理表現；<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> 把部份子工作移交給外部程式處理，也可能讓某些環節更穩（這也是 agent skills 推薦的技巧）。<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> 但這多半只是局部的改善。</p>
+<p>反觀某些工具，處理長串流程的穩定度會明顯高於單靠 prompt 的系統。以 Claude Code 為例，它做一長串動作時，常會在中途停下來，檢查某一步有沒有成立，再決定要不要往下一步走。<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup></p>
+<p>這給了我們一個暗示，某些原本放在 prompt 裡的責任，其實應該移交給外部控制機制。<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup></p>
+<p>這篇文章要談的，就是在多步驟 workflow 下，責任該怎麼重新分配。</p>
 
 <link rel="stylesheet" href="/css/hugo-easy-gallery.css" />
 <div class="box">
@@ -565,7 +565,7 @@
 <h2 id="prompt-的責任到哪裡系統的責任就從哪裡開始">Prompt 的責任到哪裡，系統的責任就從哪裡開始</h2>
 <p>既然已經知道，把 prompt 寫得更像 SOP 有其極限，接下來就要問：哪些責任仍適合留在語言層，哪些責任其實已經需要外部承接。</p>
 <p>對多步驟 workflow 來說，prompt 最擅長處理的，仍然是<strong>流程說明</strong>：任務怎麼展開、各階段如何安排、要留下哪些中間產物、哪些不確定性要揭露、輸出格式與角色邊界是什麼。這些要求會直接影響 agent 怎麼走。</p>
-<p>所以 prompt 通常負責這些事：</p>
+<p>所以 prompt 通常負責這些事（這也是所謂「prompt 模板」常見的套路）：</p>
 <ul>
 <li>任務意圖與角色界定</li>
 <li>階段順序與作業程序</li>
@@ -628,7 +628,7 @@
 <p>所以判斷要不要外移，看的不是流程有幾步，也不是 prompt 已經寫了多長，而是：<strong>「完成」這件事，是不是已經需要由語言以外的東西來決定。</strong></p>
 <h2 id="結論">結論</h2>
 <p>步驟明明已經寫清楚了，agent 還是不照著做，很多時候不是因為 prompt 還不夠細，而是 workflow 已經進入另一種責任分配：怎麼才算完成、什麼時候才能往下走、工具結果要不要納入判斷、驗證是否成立、失敗後果由誰接住，這些都不能只靠語言承諾支撐。</p>
-<p>多步驟 workflow 要穩，關鍵不是再把 prompt 寫長一倍，而是先分清楚：<strong>某一步算不算完成，最後由誰判定。</strong></p>
+<p>多步驟 workflow 要穩，關鍵不是再把 prompt 步驟寫得很細，甚至改寫成 pseudo code，而是先分清楚：<strong>某一步算不算完成，最後由誰判定。</strong></p>
 <p>下一次遇到問題時，先不要急著把 prompt 再寫長一倍。</p>
 <div class="footnotes" role="doc-endnotes">
 <hr>
