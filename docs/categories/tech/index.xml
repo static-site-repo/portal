@@ -6,10 +6,356 @@
     <description>Recent content in Tech on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sun, 19 Apr 2026 20:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 30 Apr 2026 20:00:00 +0800</lastBuildDate>
     
         <atom:link href="//william-yeh.net/categories/tech/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Prompt 寫了卻還是不穩：用三組實驗看完成判定該放在哪裡</title>
+      <link>//william-yeh.net/post/2026/04/genai-multi-steps-experiment/</link>
+      <pubDate>Thu, 30 Apr 2026 20:00:00 +0800</pubDate>
+      
+      <guid>//william-yeh.net/post/2026/04/genai-multi-steps-experiment/</guid>
+      
+        <description>&lt;p&gt;上一篇文章〈&lt;a href=&#34;//william-yeh.net/post/2026/04/genai-multi-steps/&#34;&gt;Prompt 已經寫很細了，Workflow 為什麼還是不穩？&lt;/a&gt;〉談到，多步驟 agent workflow 常見的三種失靈：過早開始、假性完成、未驗證即結案。這三種現象，最後都會回到同一個控制問題：&lt;strong&gt;「完成」到底由誰判定。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;當 workflow 的成敗開始取決於真實狀態、工具結果或驗證條件時，只把完成條件寫在 prompt 裡，通常不夠。completion gate 得交給 prompt 以外的機制。&lt;/p&gt;
+&lt;p&gt;口說無憑。這篇文章想用一組小實驗看一件事：&lt;strong&gt;同一個任務、同一份 prompt，如果把「完成判定」放在不同位置，false completion 會怎麼變化？&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;我選了一個很小、但實務上很常遇到的任務：整理技術文章的註腳。&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2026/04/genai-multi-steps-experiment.jpg&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2026/04/genai-multi-steps-experiment.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;實驗任務&#34;&gt;實驗任務&lt;/h2&gt;
+&lt;h3 id=&#34;註腳重排要怎麼算完成&#34;&gt;註腳重排要怎麼算完成&lt;/h3&gt;
+&lt;p&gt;我在寫技術文章時，常會用註腳標出參考文獻。不過在定稿前，正文和參考文獻常常會反覆調整；一來一回之後，正文引用順序和文末定義順序很容易亂掉，也常會出現缺漏或重複。手動修不難，但很煩。&lt;/p&gt;
+&lt;p&gt;例如下面這篇短文：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+
+  
+  &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;這是第一段。[^3]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;這是第二段。[^1]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;這是第三段。[^4]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[^1]: 第一個註腳。
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[^2]: 這個註腳沒有被引用。
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[^3]: 第三個註腳。&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;這裡至少有三個錯誤：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;正文引用順序錯亂：數字大的 &lt;code&gt;[^3]&lt;/code&gt; 不該出現在 &lt;code&gt;[^1]&lt;/code&gt; 前面。&lt;/li&gt;
+&lt;li&gt;有引用但沒有定義：正文標了 &lt;code&gt;[^4]&lt;/code&gt;，文末沒有對應的 &lt;code&gt;[^4]:&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;有定義但沒有引用：文末有 &lt;code&gt;[^2]:&lt;/code&gt;，正文沒有用到 &lt;code&gt;[^2]&lt;/code&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;整理後應該變成這樣：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+
+  
+  &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;這是第一段。[^1]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;這是第二段。[^2]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;這是第三段。[^3]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[^1]: 第三個註腳。
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[^2]: 第一個註腳。
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[^3]: 這個註腳有引用但沒有定義。
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;!-- 已移除未引用的註腳：
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; 這個註腳沒有被引用。
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;--&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;把文件改到好，實際上要處理很多細節；但「有沒有改好」相對好判斷。&lt;/p&gt;
+&lt;p&gt;只要寫一個 checker，檢查有引用但沒有定義、有定義但沒有引用、重複定義、引用順序與定義順序，最後回傳：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+
+  
+  &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;pass&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;或：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+
+  
+  &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-jsonc&#34; data-lang=&#34;jsonc&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;pass&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;false&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;missing_definitions&amp;#34;&lt;/span&gt;: [&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;4&amp;#34;&lt;/span&gt;],     &lt;span style=&#34;color:#75715e&#34;&gt;// 有引用但沒有定義
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;unused_definitions&amp;#34;&lt;/span&gt;: [&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;2&amp;#34;&lt;/span&gt;],      &lt;span style=&#34;color:#75715e&#34;&gt;// 有定義但沒有引用
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;reference_order_errors&amp;#34;&lt;/span&gt;: [&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;...&lt;/span&gt;]   &lt;span style=&#34;color:#75715e&#34;&gt;// 引用或定義順序錯誤
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;這個 checker 不需要很複雜。有了它，Markdown 到底有沒有修好，就不必靠模型自己說了算。它就是這次實驗的外部判定者。&lt;/p&gt;
+&lt;h3 id=&#34;測試資料&#34;&gt;測試資料&lt;/h3&gt;
+&lt;p&gt;實驗還需要一組合適的測試資料。&lt;/p&gt;
+&lt;p&gt;我準備了 10 份測資，刻意涵蓋幾種常見錯誤：&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;#&lt;/th&gt;
+          &lt;th&gt;缺陷&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;case_01&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;引用順序錯亂、有引用無定義、有定義無引用&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;case_02&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;重複定義&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;case_03&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;定義區順序錯亂&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;case_04&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;多個缺漏定義&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;case_05&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;多餘的未使用定義&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;case_06&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;非連續編號&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;case_07&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;同一 footnote 多次引用（已合法，無須修改）&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;case_08&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;正文無 ref，殘留 def&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;case_09&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;含 URL 的 def，引用順序錯亂&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;case_10&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;混合缺陷（亂序、重複、缺漏、未使用）&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;修改前與修改後的對照表，可見&lt;a href=&#34;https://github.com/William-Yeh/multi-step-completion-experiment&#34;&gt;實驗 repo&lt;/a&gt; 的 &lt;a href=&#34;https://github.com/William-Yeh/multi-step-completion-experiment/blob/main/docs/cases.md&#34;&gt;docs/cases.md&lt;/a&gt; 文件。&lt;/p&gt;
+&lt;p&gt;其中三個 case 特別值得一提。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;case_07&lt;/code&gt; 是對照組。&lt;/strong&gt; 它原本就是合法的，正確回應是不改。模型如果為了交差多動一刀，checker 會抓到。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;case_10&lt;/code&gt; 是混合題。&lt;/strong&gt; 亂序、重複、缺漏、未使用四種缺陷同時存在，模型得把整套修正策略都做對才會過關。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;case_06&lt;/code&gt; 最能看出問題。&lt;/strong&gt; 技術上來說 Markdown 不要求註腳一定連續編號，甚至不用數字也可以，所以 &lt;code&gt;[^1]&lt;/code&gt; 後面接 &lt;code&gt;[^3]&lt;/code&gt; 不必然算錯；但這次實驗的 checker 規則更嚴，要求重新排成連續編號，因為這才比較符合一般讀者的直覺。&lt;/p&gt;
+&lt;h2 id=&#34;實驗設計&#34;&gt;實驗設計&lt;/h2&gt;
+&lt;p&gt;這三組實驗的主體 prompt 完全相同，只改一件事：completion gate 放在哪裡。&lt;/p&gt;
+&lt;h3 id=&#34;控制變因&#34;&gt;控制變因&lt;/h3&gt;
+&lt;p&gt;要把文件改到好，不只是改一輪編號，而是一組相互依賴的步驟：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;重新整理正文裡的註腳引用。&lt;/li&gt;
+&lt;li&gt;確認每個引用都有對應的定義。&lt;/li&gt;
+&lt;li&gt;移除沒有被引用的註腳定義。&lt;/li&gt;
+&lt;li&gt;避免重複定義。&lt;/li&gt;
+&lt;li&gt;讓正文引用順序與定義順序一致。&lt;/li&gt;
+&lt;li&gt;最後確認通過檢查，才算完成。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;這些步驟在三組實驗裡都相同。&lt;/p&gt;
+&lt;h3 id=&#34;操縱變因completion-gate-放在哪裡&#34;&gt;操縱變因：completion gate 放在哪裡&lt;/h3&gt;
+&lt;p&gt;這次要測的是：當完成條件已經寫成外部 checker 的規則時，模型會不會真的照那個規則走，還是最後仍然用自己的語言判讀來放行。&lt;/p&gt;
+&lt;p&gt;三組實驗如下：&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;實驗&lt;/th&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;有沒有 tool&lt;/th&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;有沒有 read back&lt;/th&gt;
+          &lt;th&gt;完成判定放在哪裡&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;實驗一：&lt;!-- raw HTML omitted --&gt;&lt;code&gt;prompt_only&lt;/code&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;否&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;否&lt;/td&gt;
+          &lt;td&gt;模型自我宣告&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;實驗二：&lt;!-- raw HTML omitted --&gt;&lt;code&gt;tool_no_readback&lt;/code&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;是&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;否&lt;/td&gt;
+          &lt;td&gt;模型知道工具被呼叫，但不知道結果&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;實驗三：&lt;!-- raw HTML omitted --&gt;&lt;code&gt;tool_with_readback&lt;/code&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;是&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;是&lt;/td&gt;
+          &lt;td&gt;checker result + gate&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;實驗一最單純：只給模型 prompt，不准呼叫 checker。模型只能自己檢查自己。&lt;/p&gt;
+&lt;p&gt;實驗二刻意只做半套：模型必須呼叫 checker，但 checker 只回傳 &lt;code&gt;accepted/run_id&lt;/code&gt;，不回傳真正的 pass/fail。這組對照，是想測試一個常見的假說：把任務拆成幾個 phase，要求模型每做完一段就輸出一個 marker、summary 或 artifact，流程是不是就比較不容易亂掉。&lt;/p&gt;
+&lt;p&gt;這種做法在互動式使用裡確實有幫助，因為中間輸出讓人看得見流程，也比較容易人工介入。但在這個實驗裡，重點不只是「有沒有留下東西」，而是那個東西有沒有真的被拿來判斷完成與否。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;tool_no_readback&lt;/code&gt; 測的就是這個差別。它有呼叫外部工具，也有拿到一些無關痛癢的周邊資訊；但真正關鍵的 pass/fail 沒有回到流程裡。最後仍然是由模型自己決定能不能宣告 completed。&lt;/p&gt;
+&lt;p&gt;實驗三才是真的把 completion gate 移出去：模型必須呼叫 checker、讀回完整結果，再依照 pass/fail 決定能不能宣告 completed。&lt;code&gt;pass=false&lt;/code&gt; 就得修正後重跑，&lt;code&gt;pass=true&lt;/code&gt; 才能放行。&lt;/p&gt;
+&lt;p&gt;同一個任務裡，差別就在這裡：完成判定有沒有真的離開語言層。&lt;/p&gt;
+&lt;h2 id=&#34;實驗結果&#34;&gt;實驗結果&lt;/h2&gt;
+&lt;p&gt;實驗使用本機已登入的 Claude Code CLI 與 Codex CLI 執行。&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;3 個 experiments * 10 個 cases，每個 case 都在獨立 workspace 中執行，最後由評分器 (grader) 呼叫 checker 判定結果。&lt;/p&gt;
+&lt;p&gt;以下是兩家旗艦款模型的結果。&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; 
+  style=&#34;max-width:30em&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;//william-yeh.net/img/2026/04/genai-multi-steps-demo.png&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;//william-yeh.net/img/2026/04/genai-multi-steps-demo.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&#34;claude-code-cli&#34;&gt;Claude Code CLI&lt;/h3&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Experiment&lt;/th&gt;
+          &lt;th style=&#34;text-align: right&#34;&gt;Cases&lt;/th&gt;
+          &lt;th style=&#34;text-align: right&#34;&gt;Actual Pass&lt;/th&gt;
+          &lt;th style=&#34;text-align: right&#34;&gt;False Completion&lt;/th&gt;
+          &lt;th style=&#34;text-align: right&#34;&gt;Tool Called&lt;/th&gt;
+          &lt;th style=&#34;text-align: right&#34;&gt;Readback Used&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;prompt_only&lt;/code&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: right&#34;&gt;10&lt;/td&gt;
+          &lt;td style=&#34;text-align: right&#34;&gt;&lt;strong&gt;6&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: right&#34;&gt;&lt;strong&gt;4&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: right&#34;&gt;0&lt;/td&gt;
+          &lt;td style=&#34;text-align: right&#34;&gt;0&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;tool_no_readback&lt;/code&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: right&#34;&gt;10&lt;/td&gt;
+          &lt;td style=&#34;text-align: right&#34;&gt;&lt;strong&gt;5&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: right&#34;&gt;&lt;strong&gt;5&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: right&#34;&gt;10&lt;/td&gt;
+          &lt;td style=&#34;text-align: right&#34;&gt;0&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;tool_with_readback&lt;/code&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: right&#34;&gt;10&lt;/td&gt;
+          &lt;td style=&#34;text-align: right&#34;&gt;&lt;strong&gt;10&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: right&#34;&gt;0&lt;/td&gt;
+          &lt;td style=&#34;text-align: right&#34;&gt;10&lt;/td&gt;
+          &lt;td style=&#34;text-align: right&#34;&gt;10&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;code&gt;prompt_only&lt;/code&gt; 出現 40% false completion。10 個 case 裡有 4 個是 AI 宣稱 completed，但最終 checker 判失敗；失敗的是 &lt;code&gt;case_05&lt;/code&gt;、&lt;code&gt;case_06&lt;/code&gt;、&lt;code&gt;case_08&lt;/code&gt;、&lt;code&gt;case_10&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;到了 &lt;code&gt;tool_no_readback&lt;/code&gt;，Claude 又多失敗一個 &lt;code&gt;case_01&lt;/code&gt;，false completion 升到 50%。模型確實有呼叫 checker，但沒有讀回真正的檢查結果；這次呼叫不只沒幫上忙，還讓 &lt;code&gt;case_01&lt;/code&gt; 偏移成 false completion。&lt;/p&gt;
+&lt;p&gt;到了 &lt;code&gt;tool_with_readback&lt;/code&gt;，Claude 10/10 通過，false completion 降到 0。就這組任務來看，只讓模型「有呼叫工具」不夠；checker 結果真的成為 gate，才有差別。&lt;/p&gt;
+&lt;h3 id=&#34;codex-cli&#34;&gt;Codex CLI&lt;/h3&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Experiment&lt;/th&gt;
+          &lt;th style=&#34;text-align: right&#34;&gt;Cases&lt;/th&gt;
+          &lt;th style=&#34;text-align: right&#34;&gt;Actual Pass&lt;/th&gt;
+          &lt;th style=&#34;text-align: right&#34;&gt;False Completion&lt;/th&gt;
+          &lt;th style=&#34;text-align: right&#34;&gt;Tool Called&lt;/th&gt;
+          &lt;th style=&#34;text-align: right&#34;&gt;Readback Used&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;prompt_only&lt;/code&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: right&#34;&gt;10&lt;/td&gt;
+          &lt;td style=&#34;text-align: right&#34;&gt;&lt;strong&gt;7&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: right&#34;&gt;&lt;strong&gt;3&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: right&#34;&gt;0&lt;/td&gt;
+          &lt;td style=&#34;text-align: right&#34;&gt;0&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;tool_no_readback&lt;/code&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: right&#34;&gt;10&lt;/td&gt;
+          &lt;td style=&#34;text-align: right&#34;&gt;&lt;strong&gt;7&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: right&#34;&gt;&lt;strong&gt;3&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: right&#34;&gt;10&lt;/td&gt;
+          &lt;td style=&#34;text-align: right&#34;&gt;0&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;tool_with_readback&lt;/code&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: right&#34;&gt;10&lt;/td&gt;
+          &lt;td style=&#34;text-align: right&#34;&gt;&lt;strong&gt;10&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: right&#34;&gt;0&lt;/td&gt;
+          &lt;td style=&#34;text-align: right&#34;&gt;10&lt;/td&gt;
+          &lt;td style=&#34;text-align: right&#34;&gt;10&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Codex 在 &lt;code&gt;prompt_only&lt;/code&gt; 跑出 7 / 3（actual pass / false completion）的結果；失敗的 3 個 case 是 &lt;code&gt;case_05&lt;/code&gt;、&lt;code&gt;case_08&lt;/code&gt;、&lt;code&gt;case_10&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;到了 &lt;code&gt;tool_no_readback&lt;/code&gt;，Codex 仍然是 7 / 3，但失敗的 case 換了：&lt;code&gt;case_10&lt;/code&gt; 這次過了，改成 &lt;code&gt;case_06&lt;/code&gt; 失敗。也就是說，call tool 這個動作對行為有些微影響，但沒有提升完成判定的可信度。&lt;/p&gt;
+&lt;p&gt;跟 Claude 對照也看得到類似現象：Claude 在 &lt;code&gt;prompt_only&lt;/code&gt; 失敗 4 個 case，到 &lt;code&gt;tool_no_readback&lt;/code&gt; 又多失敗一個 &lt;code&gt;case_01&lt;/code&gt;。兩個 agent 的偏移方向不一樣，但有一點相同：沒有 readback 時，false completion 都還在；接上 readback gate 後，兩邊都變成 10/10。&lt;/p&gt;
+&lt;p&gt;這不是在評比語言模型，也不是說所有 agent 都會跑出完全一樣的數字。但至少在這組任務上，趨勢很清楚：只要完成判定還留在模型自述裡，就會出現一組可觀測的 false completion；completion gate 一旦交給外部 checker，結果就明顯收斂。&lt;/p&gt;
+&lt;h3 id=&#34;case_06模型把局部合理的解釋當成完成&#34;&gt;&lt;code&gt;case_06&lt;/code&gt;：模型把局部合理的解釋當成完成&lt;/h3&gt;
+&lt;p&gt;我用 &lt;code&gt;case_06&lt;/code&gt; 來說明 &lt;code&gt;prompt_only&lt;/code&gt; 的盲區：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34;&gt;
+
+  &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
+
+  
+  &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;第一段。[^1]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;第二段。[^3]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[^1]: 第一個註腳。
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[^3]: 第三個註腳。&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;從 Markdown 規格的角度看，這份文件的 ref 和 def 是完整配對的：兩個 ref 都有對應 def、沒有 unused def，也沒有重複定義；只是編號不連續，跳過了 &lt;code&gt;[^2]&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;Claude 在 &lt;code&gt;prompt_only&lt;/code&gt; 模式下讀完後，在 notes 裡留下這樣的判斷：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Input has no defects in any of the five recognised categories (&lt;code&gt;missing_definitions&lt;/code&gt;, &lt;code&gt;unused_definitions&lt;/code&gt;, &lt;code&gt;duplicate_definitions&lt;/code&gt;, &lt;code&gt;reference_order_errors&lt;/code&gt;, &lt;code&gt;definition_order_errors&lt;/code&gt;). The label gap between 1 and 3 is not itself a defect — &lt;strong&gt;footnote labels are identifiers, not sequence positions&lt;/strong&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;所以它保留原文，直接宣告 completed。&lt;/p&gt;
+&lt;p&gt;這個判讀其實是有道理的。就 Markdown 規格來說，footnote label 確實比較像 identifier，不一定代表順序位置。問題在於：這次實驗的 checker 規則更嚴，要求註腳重新排成連續編號。&lt;/p&gt;
+&lt;p&gt;同樣的 &lt;code&gt;case_06&lt;/code&gt;，但 Codex 在 &lt;code&gt;prompt_only&lt;/code&gt; 模式下反而會把 &lt;code&gt;[^1]/[^3]&lt;/code&gt; 改成 &lt;code&gt;[^1]/[^2]&lt;/code&gt;，順利過關。也就是說，同一個任務、同一份 prompt，兩個 agent 在邊界條件上做出了不同解釋。&lt;/p&gt;
+&lt;p&gt;這正是 &lt;code&gt;prompt_only&lt;/code&gt; 脆弱的地方。當「到底要不要修」本身就是一個判斷題，而判斷依據又散在 prompt 各處時，模型很容易找到一條對自己比較寬鬆的解釋路徑，然後把那個局部合理的解釋，當成整個 workflow 裡的完成判定。&lt;/p&gt;
+&lt;p&gt;至於 &lt;code&gt;tool_with_readback&lt;/code&gt; 這做法，其實沒有讓模型突然更懂 Markdown；它只是把放行權從語言模型身上移走。若 checker 說 &lt;code&gt;pass=false&lt;/code&gt;，流程就不能結案；得一直修到 &lt;code&gt;pass=true&lt;/code&gt; 為止。&lt;/p&gt;
+&lt;h2 id=&#34;結語&#34;&gt;結語&lt;/h2&gt;
+&lt;p&gt;這組實驗至少說明了一件事：在同一個任務、同一份 prompt 下，只改 completion gate 的位置，false completion 的發生率就會跟著變。&lt;/p&gt;
+&lt;p&gt;對這組註腳重排任務來說，&lt;code&gt;prompt_only&lt;/code&gt; 與 &lt;code&gt;tool_no_readback&lt;/code&gt; 在兩個 agent 上都留下了 30–50% 的假性完成；當 checker result 被讀回並拿來當 gate 後，兩邊都降到 0%。&lt;/p&gt;
+&lt;p&gt;這篇測的是一個有明確 checker、錯誤類型清楚、完成條件可外部檢查的任務，不是嚴格的 model benchmark。但結果已經夠直接了：&lt;strong&gt;Prompt engineering 可以改善表達與引導，但不會自動把控制責任做到位。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;當 workflow 的成敗開始取決於真實狀態、工具結果、驗證通過或錯誤恢復時，completion gate 就不該再留在語言層裡。至少對這次失敗的那些 case 來說，Claude 和 Codex 給的是同一個答案：是。&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;這裡選擇 Claude Code CLI 與 Codex CLI，而不是直接呼叫 LLM API，主要是因為本文要觀察的是比較接近實務使用的 agent workflow：它們會讀檔、寫檔、跑命令，也比較容易暴露「完成判定放在哪裡」這類控制問題。因此，本文比較的是 agent CLI 在多步驟任務中的 workflow 行為，不是模型能力排行榜。缺點是結果會受模型版本、權限設定與工作目錄狀態影響，所以比較適合把它當成 workflow control demo 來看。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description>
+      
+    </item>
     
     <item>
       <title>Prompt 已經寫很細了，Workflow 為什麼還是不穩？</title>
@@ -53,7 +399,7 @@
 &lt;p&gt;很多 workflow 不只要求產生內容，還要求它通過測試、比對、檢查、資料讀取或其他形式的驗證。&lt;/p&gt;
 &lt;p&gt;問題是，模型很容易把「答案已產生」直接當成「工作已完成」。內容也許已經生成，但還沒通過驗證，流程卻已經先宣布結案。&lt;/p&gt;
 &lt;p&gt;解決這類問題的關鍵，就是把驗證機制真正實作出來，確實併入完成條件的一部分。&lt;sup id=&#34;fnref:9&#34;&gt;&lt;a href=&#34;#fn:9&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;9&lt;/a&gt;&lt;/sup&gt; Prompt 可以要求「驗證通過才能算完成」，但如果系統沒有把驗證變成真正的完成條件與放行門檻，這句話就只是許願，算不上控制。&lt;sup id=&#34;fnref:10&#34;&gt;&lt;a href=&#34;#fn:10&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;10&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-&lt;h3 id=&#34;問題其實都落在完成判定&#34;&gt;問題其實都落在完成判定&lt;/h3&gt;
+&lt;h3 id=&#34;問題其實都落在完成的判定&#34;&gt;問題其實都落在「完成的判定」&lt;/h3&gt;
 &lt;p&gt;我把以上情況整理成一張表：&lt;/p&gt;
 &lt;table&gt;
   &lt;thead&gt;
@@ -82,7 +428,7 @@
   &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;這些情況表面上不同，骨子裡其實都在問同一件事：流程往下走之前，系統到底根據什麼來判定這一步已經完成，判定它已經可以繼續往下走？&lt;/p&gt;
-&lt;h2 id=&#34;prompt-的責任到哪裡系統的責任就從哪裡開始&#34;&gt;Prompt 的責任到哪裡，系統的責任就從哪裡開始&lt;/h2&gt;
+&lt;h2 id=&#34;prompt-的極限到哪裡系統的責任就從哪裡開始&#34;&gt;Prompt 的極限到哪裡，系統的責任就從哪裡開始&lt;/h2&gt;
 &lt;p&gt;既然已經知道，把 prompt 寫得更像 SOP 有其極限，接下來就要問：哪些責任仍適合留在語言層，哪些責任其實已經需要外部承接。&lt;/p&gt;
 &lt;p&gt;對多步驟 workflow 來說，prompt 最擅長處理的，仍然是&lt;strong&gt;流程說明&lt;/strong&gt;：任務怎麼展開、各階段如何安排、要留下哪些中間產物、哪些不確定性要揭露、輸出格式與角色邊界是什麼。這些要求會直接影響 agent 怎麼走。&lt;/p&gt;
 &lt;p&gt;所以 prompt 通常負責這些事（這也是所謂「prompt 模板」常見的套路）：&lt;/p&gt;

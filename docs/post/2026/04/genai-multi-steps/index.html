@@ -28,7 +28,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 
-<meta name="generator" content="Hugo 0.160.1" />
+<meta name="generator" content="Hugo 0.161.1" />
 
 
 <link rel="canonical" href="//william-yeh.net/post/2026/04/genai-multi-steps/" />
@@ -70,7 +70,7 @@
   <meta itemprop="description" content="多步驟 agent 工作流程的穩定性不只看提示詞的細緻度，核心在於完成條件由誰判定。步驟再多也需明確階段切換門檻與結果驗證，否則流程可能跳過未完成階段或誤判進度。工具穩定執行取決於外層機制判斷結果，而非僅靠語言敘述。設計重點在每一步的完成條件與判定標準，而非步驟順序。">
   <meta itemprop="datePublished" content="2026-04-19T20:00:00+08:00">
   <meta itemprop="dateModified" content="2026-04-19T20:00:00+08:00">
-  <meta itemprop="wordCount" content="4040">
+  <meta itemprop="wordCount" content="4043">
   <meta itemprop="keywords" content="Ai,Cs,Programming,Testing">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Prompt 已經寫很細了，Workflow 為什麼還是不穩？">
@@ -425,10 +425,10 @@
         <li><a href="#前一階段還沒做完後一階段就先開始">前一階段還沒做完，後一階段就先開始</a></li>
         <li><a href="#說是已經做了但其實並沒有">說是已經做了，但其實並沒有</a></li>
         <li><a href="#驗證還沒通過系統就先算完成">驗證還沒通過，系統就先算完成</a></li>
-        <li><a href="#問題其實都落在完成判定">問題其實都落在完成判定</a></li>
+        <li><a href="#問題其實都落在完成的判定">問題其實都落在「完成的判定」</a></li>
       </ul>
     </li>
-    <li><a href="#prompt-的責任到哪裡系統的責任就從哪裡開始">Prompt 的責任到哪裡，系統的責任就從哪裡開始</a></li>
+    <li><a href="#prompt-的極限到哪裡系統的責任就從哪裡開始">Prompt 的極限到哪裡，系統的責任就從哪裡開始</a></li>
     <li><a href="#什麼情況需要把控制交給外部機制">什麼情況需要把控制交給外部機制</a></li>
     <li><a href="#結論">結論</a></li>
   </ul>
@@ -471,7 +471,7 @@
 
   <div class="post-meta__right">
     <span class="post-meta-more">
-      約 4040 字 -
+      約 4043 字 -
       預計閱讀 9 分鐘
       
       
@@ -533,7 +533,7 @@
 <p>很多 workflow 不只要求產生內容，還要求它通過測試、比對、檢查、資料讀取或其他形式的驗證。</p>
 <p>問題是，模型很容易把「答案已產生」直接當成「工作已完成」。內容也許已經生成，但還沒通過驗證，流程卻已經先宣布結案。</p>
 <p>解決這類問題的關鍵，就是把驗證機制真正實作出來，確實併入完成條件的一部分。<sup id="fnref:9"><a href="#fn:9" class="footnote-ref" role="doc-noteref">9</a></sup> Prompt 可以要求「驗證通過才能算完成」，但如果系統沒有把驗證變成真正的完成條件與放行門檻，這句話就只是許願，算不上控制。<sup id="fnref:10"><a href="#fn:10" class="footnote-ref" role="doc-noteref">10</a></sup></p>
-<h3 id="問題其實都落在完成判定">問題其實都落在完成判定</h3>
+<h3 id="問題其實都落在完成的判定">問題其實都落在「完成的判定」</h3>
 <p>我把以上情況整理成一張表：</p>
 <table>
   <thead>
@@ -562,7 +562,7 @@
   </tbody>
 </table>
 <p>這些情況表面上不同，骨子裡其實都在問同一件事：流程往下走之前，系統到底根據什麼來判定這一步已經完成，判定它已經可以繼續往下走？</p>
-<h2 id="prompt-的責任到哪裡系統的責任就從哪裡開始">Prompt 的責任到哪裡，系統的責任就從哪裡開始</h2>
+<h2 id="prompt-的極限到哪裡系統的責任就從哪裡開始">Prompt 的極限到哪裡，系統的責任就從哪裡開始</h2>
 <p>既然已經知道，把 prompt 寫得更像 SOP 有其極限，接下來就要問：哪些責任仍適合留在語言層，哪些責任其實已經需要外部承接。</p>
 <p>對多步驟 workflow 來說，prompt 最擅長處理的，仍然是<strong>流程說明</strong>：任務怎麼展開、各階段如何安排、要留下哪些中間產物、哪些不確定性要揭露、輸出格式與角色邊界是什麼。這些要求會直接影響 agent 怎麼走。</p>
 <p>所以 prompt 通常負責這些事（這也是所謂「prompt 模板」常見的套路）：</p>
@@ -713,6 +713,15 @@
           
           <nav class="post-nav">
             
+              <a class="prev" href="/post/2026/04/genai-multi-steps-experiment/">
+                
+                <i class="iconfont">
+                  
+<svg aria-hidden="true" class="lucide lucide-chevron-left hi-svg-inline" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="m15 18-6-6 6-6"/></svg>
+                </i>
+                <span class="prev-text nav-default">Prompt 寫了卻還是不穩：用三組實驗看完成判定該放在哪裡</span>
+                <span class="prev-text nav-mobile">上一篇</span>
+              </a>
             
               <a class="next" href="/post/2026/04/genai-pl/">
                 <span class="next-text nav-default">AI 時代，該怎麼選程式語言？</span>

@@ -1,0 +1,1817 @@
+<!DOCTYPE html>
+<html lang="zh-tw" itemscope itemtype="http://schema.org/WebPage" data-theme="light">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>
+    
+    AI 是個穩定可靠的測試者嗎？ - Potioneer&#39;s Essays
+    </title>
+  
+
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes" />
+
+
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+
+
+<meta name="applicable-device" content="pc,mobile">
+<meta name="color-scheme" content="light dark" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+
+<meta name="generator" content="Hugo 0.161.1" />
+
+
+<link rel="canonical" href="//localhost:1313/post/2026/04/genai-testing/" />
+
+
+
+
+<meta name="author" content="William Yeh" />
+<meta name="description" content="在 AI 時代，工程護欄重要性提高。有些人就想說，測試既然這麼重要，但又是苦差事，何不讓 AI 來做？ 譬如說，很多人都吃到這個甜頭：有了像 superpowers 這種 agent skill 來走 TDD 流程，單元測試簡直是又快又多。於是，品質就自動有了保障了嗎？ 很多人也吃到 Playwright 的甜頭，驅動它產生向來繁瑣又脆弱的 end to end 測試。於是，品質就自動有了保障了嗎？ 有人說，透過 SDD (spec driven development) 手法，甚至從源頭就可以用 acceptance criteria 角度、用 given-when-then 界定之後的測試方向。AI 掌握需求前緣了，理論上應該很能生出涵蓋面極廣、包含各種 edge case 的測試案例吧？ 以上這些想法，是否有實證資料佐證？或是反證？ Rough ideas: [ ] James Whittaker 觀光客測試法 https://www.facebook.com/share/p/1HFagr4W9D/ [ ] AI 測試常見的問題及原因 https://www.facebook.com/share/p/1DjxRR1uUA/ [ ] . https://www.facebook.com/share/p/17Vwr4RMGr/ [ ] 還有其他結構化測試 &amp; 探索式測試 的經驗可以幫助 AI 測試嗎？ consider: &ldquo;AI 讀了程式後，根據現有邏輯去推論 expected behavior，接著再寫測試去驗證那套推論。&rdquo; but 如果是像 superpowers 那樣採用 TDD 或是 SDD: 讓 AI 先從 spec/validation 角度生出測試案例，再去寫 implemention 程式，是否就不會有上述的問題？
+" />
+
+
+
+
+
+  
+
+
+
+
+
+
+<meta name="keywords" content="ai, cs, programming, testing" />
+
+
+<meta property="og:url" content="//localhost:1313/post/2026/04/genai-testing/">
+  <meta property="og:site_name" content="Potioneer&#39;s Essays">
+  <meta property="og:title" content="AI 是個穩定可靠的測試者嗎？">
+  <meta property="og:description" content="在 AI 時代，工程護欄重要性提高。有些人就想說，測試既然這麼重要，但又是苦差事，何不讓 AI 來做？ 譬如說，很多人都吃到這個甜頭：有了像 superpowers 這種 agent skill 來走 TDD 流程，單元測試簡直是又快又多。於是，品質就自動有了保障了嗎？ 很多人也吃到 Playwright 的甜頭，驅動它產生向來繁瑣又脆弱的 end to end 測試。於是，品質就自動有了保障了嗎？ 有人說，透過 SDD (spec driven development) 手法，甚至從源頭就可以用 acceptance criteria 角度、用 given-when-then 界定之後的測試方向。AI 掌握需求前緣了，理論上應該很能生出涵蓋面極廣、包含各種 edge case 的測試案例吧？ 以上這些想法，是否有實證資料佐證？或是反證？ Rough ideas: [ ] James Whittaker 觀光客測試法 https://www.facebook.com/share/p/1HFagr4W9D/ [ ] AI 測試常見的問題及原因 https://www.facebook.com/share/p/1DjxRR1uUA/ [ ] . https://www.facebook.com/share/p/17Vwr4RMGr/ [ ] 還有其他結構化測試 &amp; 探索式測試 的經驗可以幫助 AI 測試嗎？ consider: “AI 讀了程式後，根據現有邏輯去推論 expected behavior，接著再寫測試去驗證那套推論。” but 如果是像 superpowers 那樣採用 TDD 或是 SDD: 讓 AI 先從 spec/validation 角度生出測試案例，再去寫 implemention 程式，是否就不會有上述的問題？">
+  <meta property="og:locale" content="zh_tw">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2026-04-24T08:00:00+08:00">
+    <meta property="article:modified_time" content="2026-04-24T08:00:00+08:00">
+    <meta property="article:tag" content="Ai">
+    <meta property="article:tag" content="Cs">
+    <meta property="article:tag" content="Programming">
+    <meta property="article:tag" content="Testing">
+
+  <meta itemprop="name" content="AI 是個穩定可靠的測試者嗎？">
+  <meta itemprop="description" content="在 AI 時代，工程護欄重要性提高。有些人就想說，測試既然這麼重要，但又是苦差事，何不讓 AI 來做？ 譬如說，很多人都吃到這個甜頭：有了像 superpowers 這種 agent skill 來走 TDD 流程，單元測試簡直是又快又多。於是，品質就自動有了保障了嗎？ 很多人也吃到 Playwright 的甜頭，驅動它產生向來繁瑣又脆弱的 end to end 測試。於是，品質就自動有了保障了嗎？ 有人說，透過 SDD (spec driven development) 手法，甚至從源頭就可以用 acceptance criteria 角度、用 given-when-then 界定之後的測試方向。AI 掌握需求前緣了，理論上應該很能生出涵蓋面極廣、包含各種 edge case 的測試案例吧？ 以上這些想法，是否有實證資料佐證？或是反證？ Rough ideas: [ ] James Whittaker 觀光客測試法 https://www.facebook.com/share/p/1HFagr4W9D/ [ ] AI 測試常見的問題及原因 https://www.facebook.com/share/p/1DjxRR1uUA/ [ ] . https://www.facebook.com/share/p/17Vwr4RMGr/ [ ] 還有其他結構化測試 &amp; 探索式測試 的經驗可以幫助 AI 測試嗎？ consider: “AI 讀了程式後，根據現有邏輯去推論 expected behavior，接著再寫測試去驗證那套推論。” but 如果是像 superpowers 那樣採用 TDD 或是 SDD: 讓 AI 先從 spec/validation 角度生出測試案例，再去寫 implemention 程式，是否就不會有上述的問題？">
+  <meta itemprop="datePublished" content="2026-04-24T08:00:00+08:00">
+  <meta itemprop="dateModified" content="2026-04-24T08:00:00+08:00">
+  <meta itemprop="wordCount" content="27027">
+  <meta itemprop="keywords" content="Ai,Cs,Programming,Testing">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="AI 是個穩定可靠的測試者嗎？">
+  <meta name="twitter:description" content="在 AI 時代，工程護欄重要性提高。有些人就想說，測試既然這麼重要，但又是苦差事，何不讓 AI 來做？ 譬如說，很多人都吃到這個甜頭：有了像 superpowers 這種 agent skill 來走 TDD 流程，單元測試簡直是又快又多。於是，品質就自動有了保障了嗎？ 很多人也吃到 Playwright 的甜頭，驅動它產生向來繁瑣又脆弱的 end to end 測試。於是，品質就自動有了保障了嗎？ 有人說，透過 SDD (spec driven development) 手法，甚至從源頭就可以用 acceptance criteria 角度、用 given-when-then 界定之後的測試方向。AI 掌握需求前緣了，理論上應該很能生出涵蓋面極廣、包含各種 edge case 的測試案例吧？ 以上這些想法，是否有實證資料佐證？或是反證？ Rough ideas: [ ] James Whittaker 觀光客測試法 https://www.facebook.com/share/p/1HFagr4W9D/ [ ] AI 測試常見的問題及原因 https://www.facebook.com/share/p/1DjxRR1uUA/ [ ] . https://www.facebook.com/share/p/17Vwr4RMGr/ [ ] 還有其他結構化測試 &amp; 探索式測試 的經驗可以幫助 AI 測試嗎？ consider: “AI 讀了程式後，根據現有邏輯去推論 expected behavior，接著再寫測試去驗證那套推論。” but 如果是像 superpowers 那樣採用 TDD 或是 SDD: 讓 AI 先從 spec/validation 角度生出測試案例，再去寫 implemention 程式，是否就不會有上述的問題？">
+
+<link rel="icon" href="/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/style.min.6edbf781d23cf7f4d65ffac62b9976b41795d197a31eb82d57c5a91867aa6ec2.css" integrity="sha256-btv3gdI89/TWX/rGK5l2tBeV0ZejHrgtV8WpGGeqbsI=" media="screen"
+  crossorigin="anonymous">
+
+
+
+<link rel="stylesheet" href="/css/custom.css">
+
+
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+<meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
+
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/katex@0.16.38/dist/katex.min.css"
+    crossorigin="anonymous"
+  >
+
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.38/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.38/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      renderMathInElement(document.body, {
+        delimiters: [
+          { left: "$$", right: "$$", display: true },
+          { left: "$", right: "$", display: false },
+          { left: "\\(", right: "\\)", display: false },
+          { left: "\\[", right: "\\]", display: true }
+        ],
+        throwOnError: false
+      });
+    });
+  </script>
+
+
+<script>
+  (function () {
+    var savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  })();
+</script>
+
+
+</head>
+
+<body>
+  <div id="back-to-top"></div>
+
+  <header class="site-header">
+    
+<div class="desktop-header">
+  <div class="desktop-header-logo">
+    <a href="/" class="logo">
+      
+      Potioneer&#39;s Essays
+      
+    </a>
+  </div>
+
+  <nav class="desktop-navbar">
+    <ul id="menu" class="menu">
+      
+      
+      <li class="menu-item">
+        
+        
+        
+        <a class="menu-item-link" href="//localhost:1313/">♜</a>
+        
+
+        
+
+      </li>
+      
+      <li class="menu-item">
+        
+        
+        
+        <a class="menu-item-link" href="//localhost:1313/post/">Archives</a>
+        
+
+        
+
+      </li>
+      
+      <li class="menu-item">
+        
+        
+        <a class="menu-item-link menu-parent" href="//localhost:1313/series/">
+          Series
+          
+<svg aria-hidden="true" class="lucide lucide-chevron-down hi-svg-inline icon--chevron-down" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="m6 9 6 6 6-6"/></svg>
+        </a>
+        <ul class="submenu">
+          
+          <li class="submenu-item">
+            <a href="//localhost:1313/series/career-reading-club/">職涯躍升書系導讀會</a>
+          </li>
+          
+          <li class="submenu-item">
+            <a href="//localhost:1313/series/essence-of-scrum/">Essence of Scrum</a>
+          </li>
+          
+          <li class="submenu-item">
+            <a href="//localhost:1313/series/scrum-master-training/">Scrum master 培訓系列</a>
+          </li>
+          
+          <li class="submenu-item">
+            <a href="//localhost:1313/series/agile-decomposition/">敏捷的工作分解方法</a>
+          </li>
+          
+          <li class="submenu-item">
+            <a href="//localhost:1313/series/systhinking-series/">「系統思考工作坊」系列</a>
+          </li>
+          
+          <li class="submenu-item">
+            <a href="//localhost:1313/series/criteria-series/">「判準與指標」系列</a>
+          </li>
+          
+          <li class="submenu-item">
+            <a href="//localhost:1313/series/change-series/">「改變」系列</a>
+          </li>
+          
+          <li class="submenu-item">
+            <a href="//localhost:1313/series/book-review/">書籍／課程推薦</a>
+          </li>
+          
+        </ul>
+
+        
+
+      </li>
+      
+      <li class="menu-item">
+        
+        
+        
+        <a class="menu-item-link" href="//localhost:1313/tags/">Tags</a>
+        
+
+        
+
+      </li>
+      
+      <li class="menu-item">
+        
+        
+        
+        <a class="menu-item-link" href="//localhost:1313/categories/">Categories</a>
+        
+
+        
+
+      </li>
+      
+
+      
+      
+
+      
+
+      <li class="menu-item">
+        <a class="theme-toggle menu-item-link" href="javascript:void(0);">
+
+          
+<svg aria-hidden="true" class="lucide lucide-sun hi-svg-inline theme-icon-light" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+
+          
+<svg aria-hidden="true" class="lucide lucide-moon hi-svg-inline theme-icon-dark" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+
+        </a>
+      </li>
+
+      <li class="menu-item">
+        <a class="menu-item-link" href="//localhost:1313/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
+          title="rss" target="_blank">
+          
+<svg aria-hidden="true" class="lucide lucide-rss hi-svg-inline icon--rss" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg>
+        </a>
+        
+      </li>
+    </ul>
+  </nav>
+</div>
+
+    
+
+<div class="mobile-header">
+  <div id="mobile-navbar" class="mobile-navbar">
+    <div id="mobile-navbar-icon" class="mobile-navbar-icon">
+      
+<svg aria-hidden="true" class="lucide lucide-menu hi-svg-inline icon--menu" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+    </div>
+    <div class="mobile-navbar-logo">
+      <a href="/" class="logo">Potioneer&#39;s Essays</a>
+    </div>
+  </div>
+
+  <div id="mobile-menu-close-modal" class="mobile-menu-close-modal"></div>
+  <nav id="mobile-menu" class="mobile-menu">
+    <ul class="mobile-menu-list">
+      <li class="mobile-menu-item">
+        
+        
+        
+        <a class="menu-item-link" href="//localhost:1313/">♜</a>
+        
+        
+      </li><li class="mobile-menu-item">
+        
+        
+        
+        <a class="menu-item-link" href="//localhost:1313/post/">Archives</a>
+        
+        
+      </li><li class="mobile-menu-item">
+        
+        
+        <div class="mobile-menu-parent">
+          <span class="mobile-submenu-open"></span>
+          <a href="//localhost:1313/series/">
+            Series
+          </a>
+        </div>
+        <ul class="mobile-submenu-list">
+          
+          <li>
+            <a href="//localhost:1313/series/career-reading-club/">職涯躍升書系導讀會</a>
+          </li>
+          
+          <li>
+            <a href="//localhost:1313/series/essence-of-scrum/">Essence of Scrum</a>
+          </li>
+          
+          <li>
+            <a href="//localhost:1313/series/scrum-master-training/">Scrum master 培訓系列</a>
+          </li>
+          
+          <li>
+            <a href="//localhost:1313/series/agile-decomposition/">敏捷的工作分解方法</a>
+          </li>
+          
+          <li>
+            <a href="//localhost:1313/series/systhinking-series/">「系統思考工作坊」系列</a>
+          </li>
+          
+          <li>
+            <a href="//localhost:1313/series/criteria-series/">「判準與指標」系列</a>
+          </li>
+          
+          <li>
+            <a href="//localhost:1313/series/change-series/">「改變」系列</a>
+          </li>
+          
+          <li>
+            <a href="//localhost:1313/series/book-review/">書籍／課程推薦</a>
+          </li>
+          
+        </ul>
+        
+      </li><li class="mobile-menu-item">
+        
+        
+        
+        <a class="menu-item-link" href="//localhost:1313/tags/">Tags</a>
+        
+        
+      </li><li class="mobile-menu-item">
+        
+        
+        
+        <a class="menu-item-link" href="//localhost:1313/categories/">Categories</a>
+        
+        
+      </li>
+      
+
+      
+
+      <li class="mobile-menu-item">
+        <a class="theme-toggle menu-item-link" href="javascript:void(0);">
+
+          
+<svg aria-hidden="true" class="lucide lucide-sun hi-svg-inline theme-icon-light" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+
+          
+<svg aria-hidden="true" class="lucide lucide-moon hi-svg-inline theme-icon-dark" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+
+        </a>
+      </li>
+
+      <li class="mobile-menu-item">
+        <a class="menu-item-link" href="//localhost:1313/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
+          title="rss" target="_blank">
+          
+<svg aria-hidden="true" class="lucide lucide-rss hi-svg-inline icon--rss" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg>
+        </a>
+        
+      </li>
+    </ul>
+  </nav>
+</div>
+
+  </header>
+
+  
+
+  
+
+
+
+  <main id="main" class="main pico container">
+    <div class="content-wrapper">
+    <aside class="left-sidebar">
+      
+<nav class="toc" id="toc">
+    <div class="toc-title">文章目錄</div>
+    <div class="toc-content custom-scrollbar">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#knowledge-quadrants">Knowledge Quadrants</a></li>
+    <li><a href="#chatgpt-said">ChatGPT said</a></li>
+    <li><a href="#claude-said">Claude said</a></li>
+    <li><a href="#gemini-said">Gemini said</a></li>
+    <li><a href="#xai-said">XAI said</a></li>
+  </ul>
+</nav>
+    </div>
+  </nav>
+
+
+    </aside>
+
+    <div id="content" class="content">
+      <article class="post">
+        
+        <header class="post-header">
+          <h1 class="post-title">AI 是個穩定可靠的測試者嗎？</h1>
+          
+
+
+
+          <div class="post-meta-list">
+  <div class="post-meta-item post-meta-author">
+    
+<svg aria-hidden="true" class="lucide lucide-user-round-pen hi-svg-inline" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M2 21a8 8 0 0 1 10.821-7.487"/><path d="M21.378 16.626a1 1 0 0 0-3.004-3.004l-4.01 4.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z"/><circle cx="10" cy="8" r="5"/></svg>
+    William Yeh
+    
+  </div>
+
+  <div class="post-meta-item post-meta-time">
+    
+<svg aria-hidden="true" class="lucide lucide-calendar-days hi-svg-inline" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/></svg>
+    <time datetime=" 2026-04-24">
+      2026-04-24
+    </time>
+
+
+    
+
+  </div>
+
+
+  <div class="post-meta__right">
+    <span class="post-meta-more">
+      約 27027 字 -
+      預計閱讀 54 分鐘
+      
+      
+      </span>
+
+    <div class="post-meta-item post-meta-category">
+      
+        
+          
+        <a href="//localhost:1313/categories/tech/">tech</a>
+    </div>
+
+
+    
+    
+
+
+    
+    
+  </div>
+</div>
+
+        </header>
+
+        
+        <div class="post-content">
+          <pre><code>在 AI 時代，工程護欄重要性提高。有些人就想說，測試既然這麼重要，但又是苦差事，何不讓 AI 來做？
+
+譬如說，很多人都吃到這個甜頭：有了像 superpowers 這種 agent skill 來走 TDD 流程，單元測試簡直是又快又多。於是，品質就自動有了保障了嗎？
+很多人也吃到 Playwright 的甜頭，驅動它產生向來繁瑣又脆弱的 end to end 測試。於是，品質就自動有了保障了嗎？
+有人說，透過 SDD (spec driven development) 手法，甚至從源頭就可以用 acceptance criteria 角度、用 given-when-then 界定之後的測試方向。AI 掌握需求前緣了，理論上應該很能生出涵蓋面極廣、包含各種 edge case 的測試案例吧？
+以上這些想法，是否有實證資料佐證？或是反證？
+
+Rough ideas:
+[ ] James Whittaker 觀光客測試法 https://www.facebook.com/share/p/1HFagr4W9D/
+[ ] AI 測試常見的問題及原因 https://www.facebook.com/share/p/1DjxRR1uUA/
+[ ] . https://www.facebook.com/share/p/17Vwr4RMGr/
+[ ] 還有其他結構化測試 &amp; 探索式測試 的經驗可以幫助 AI 測試嗎？
+</code></pre>
+<p>consider: &ldquo;AI 讀了程式後，根據現有邏輯去推論 expected behavior，接著再寫測試去驗證那套推論。&rdquo; but 如果是像 superpowers 那樣採用
+TDD 或是 SDD: 讓 AI 先從 spec/validation 角度生出測試案例，再去寫 implemention 程式，是否就不會有上述的問題？</p>
+<p>⏺ 這個問題切到了問題核心。答案是：部分解決，而且是重要的改善 — 但 oracle 問題並沒有完全消失，只是往上游移動了一層。</p>
+<hr>
+<p>為什麼 TDD/SDD-first 確實解決了主要的 oracle poisoning 問題：</p>
+<p>測試從 spec 生出來的時候，implementation 還不存在。沒有程式可以讀 → 沒有現有邏輯可以 anchor → 斷言 (assertion) 是接地在 spec
+而不是在實作。這就打斷了研究確認的那個惡性循環：code → AI infers → test asserts inferred behavior。</p>
+<p>這正是 v1/v2 研究裡 Anthropic 堅持的那個立場：&ldquo;conditionally effective with pre-implementation spec lock + independent review.&rdquo;
+在那個條件成立的時候，SDD 確實有效。</p>
+<hr>
+<p>但 oracle 問題沒有消失 — 它移到了 spec 解讀層：</p>
+<ol>
+<li>AI 解讀 spec 時一樣會推論。spec 寫的是 &ldquo;應該正確計算折扣&rdquo;，AI 生測試案例的時候必須 解讀 什麼叫正確。這個解讀仍然是機率性的 —
+有可能跟你的業務意圖不符。Oracle poisoning 的形式從「讀 code 推論」變成「讀 spec 推論」。</li>
+<li>Spec 幾乎永遠不完整。AI 必須自行填補未指定的行為。它填補的方式來自 training data 的統計分布，不是你的意圖。</li>
+<li>最危險的情境：AI 生 spec → AI 生 tests → AI 生 implementation。三者都出自同一個模型，會對 spec 模糊點做出一致的錯誤解讀 —
+consistent but wrong。Tests pass，但測的是錯的東西。這是 correlated failure mode 在 SDD 情境下的變體。</li>
+</ol>
+<hr>
+<p>讓它真正有效的必要條件：</p>
+<p>┌──────────────────────────────────────────┬──────────────────────────────────────────────────────┐
+│                   條件                   │                         說明                         │
+├──────────────────────────────────────────┼──────────────────────────────────────────────────────┤
+│ Spec 由人類撰寫                          │ 不是 AI 生的 spec                                    │
+├──────────────────────────────────────────┼──────────────────────────────────────────────────────┤
+│ Spec 在生測試前鎖定 (spec lock)          │ 不能在實作過程中修改 spec 來讓測試過                 │
+├──────────────────────────────────────────┼──────────────────────────────────────────────────────┤
+│ 測試案例有人類審查                       │ 確認 AI 解讀 spec 的方式跟意圖一致                   │
+├──────────────────────────────────────────┼──────────────────────────────────────────────────────┤
+│ 實作跑測試失敗時，優先修程式而不是修測試 │ 一旦開始「修測試讓它過」，就回到 oracle poisoning 了 │
+└──────────────────────────────────────────┴──────────────────────────────────────────────────────┘</p>
+<p>這四個條件有任何一個缺失，問題就會悄悄回來。</p>
+<hr>
+<p>連結 v2 研究的新角度：</p>
+<p>MT (Metamorphic Testing) 提供了一個比 full SDD 更弱的前提條件的解法：你不需要完整的 spec，只需要一個結構性的
+relation（例如「加一條邊不能讓最短路徑變長」）。這個 relation 比完整的 spec 便宜得多，而且是機器可驗的。</p>
+<p>所以 TDD/SDD-first 的完整圖像是：</p>
+<p>▎ 人類寫 spec → AI 從 spec 生測試 + 人類審查 → AI 生 implementation → 跑測試
+▎ ↓ 針對 spec 無法完整覆蓋的部分
+▎ 人類補寫 MT relations / PBT invariants → AI 生 input pairs / 嘗試違反 invariant</p>
+<p>TDD/SDD-first 解決了 spec 指定到的行為 的 oracle 問題；MT/PBT 補充了 spec 沒有指定到的部分。兩者是互補的，不是競爭的。</p>
+<h2 id="knowledge-quadrants">Knowledge Quadrants</h2>
+<div class="highlight-container">
+
+  <button class="copy-code-btn outline">Copy</button>
+
+  
+  <pre tabindex="0"><code># Knowledge Quadrants: AI 是個穩定可靠的測試者嗎？
+_2026-04-23 · depth: shallow · web: off_
+
+&gt; **Seed context:** AI agent 走 TDD 流程（如 superpowers skill）、Playwright 生成 E2E 測試、SDD
+&gt; 以 given-when-then 界定 acceptance criteria——這些做法能否保障品質？有無實證支持或反證？
+&gt; Rough angles: James Whittaker 觀光客測試法、AI 測試常見問題及原因。
+
+---
+
+## 👁️ Known Knowns — Conscious Knowledge
+
+- **AI 能大量產生單元測試，速度遠超人工**: TDD agent（如 superpowers + Claude）可在秒級生成數十個測試案例；這是有目共睹的生產力增益。但量與質是兩回事。
+- **AI 生成的測試容易以實作為 oracle**: AI 讀程式碼推斷「應有行為」，再寫測試驗證它——等同對著答案抄答案，無法捕捉實作本身的錯誤。這是 AI 測試的結構性盲點。
+- **Playwright 生成的 E2E 測試覆蓋 happy path 有效，edge case 覆蓋率低**: 視覺流程容易描述，AI 據此生成 selector + assertion 的能力可接受；但需要業務語義判斷的邊界條件（如「退款金額不能超過訂單金額」）AI 常常略過。
+- **SDD / given-when-then 能給 AI 更好的 oracle，但前提是 spec 本身正確**: 若 AC 描述清晰，AI 生成的測試案例涵蓋面可以相當廣；spec 模糊或遺漏時，AI 填空的方式和人類一樣——靠猜，而且更自信。
+- **測試數量膨脹會稀釋真實訊號**: 大量 AI 生成的測試讓 CI 顯示「綠燈」，工程師的危機感下降；真正有價值的測試被淹沒在噪音裡。
+
+---
+
+## 🔍 Known Unknowns — Identified Gaps
+
+- **AI 生成的測試在缺陷偵測率（defect detection rate）上，是否有實證數據？** 目前業界觀察多為軼事，系統性量測稀少。James Whittaker 等人的觀察提供了方向，但大規模受控實驗仍缺乏。
+- **AI 能否執行「觀光客測試法」（Tourist Testing）？** Whittaker 的框架要求測試者像遊客探索陌生城市——有方法論但無特定腳本；AI 能否模擬「歷史區之旅」（找舊功能的互動問題）或「壞鄰居之旅」（找資源爭奪）尚不明。
+- **AI 生成的測試中，assertion 正確但測試對象錯誤的比率有多高？** 編譯通過、執行通過，但實際上在測試一個不重要的行為——這種「無效但有效的測試」佔比未知。
+- **SDD 流程中，AI 生成的 given-when-then 案例如何驗證完備性？** AI 可能遺漏系統性的整類邊界（如並發、逾時、部分失敗），且不自知遺漏了什麼。
+- **SDD 的 AC 是真正理解需求，還是句型改寫？** AI 擅長把「系統應允許使用者登入」改寫成 given-when-then 格式，但這不代表它理解了「登入」背後的業務語意與邊界條件。
+- **AI 生成的 E2E 測試隨時間的維護成本如何？** UI 改動後，AI 生成的 selector 脆化速度是否比人工撰寫的更快或更難修？目前缺乏縱向數據。
+- **mutation testing 角度下，AI 生成測試的突變偵測率如何？** mutation score 是測試品質的有效代理指標；AI 生成測試的突變偵測率是否系統性低於對抗性思維驅動的人工測試，值得量測。
+- **AI 測試在有狀態 UI 或多步驟業務流程中的可靠性如何？** Playwright 腳本的脆弱性（selector drift、timing dependency）在 AI 生成的腳本中是否更嚴重或更輕微？
+- **Whittaker 的觀光客分類框架能否系統性對應 AI 測試的弱點分布？** 哪幾種「旅遊類型」是 AI 完全無法執行的？哪些又是 AI 可以超越人工的？
+- **Whittaker 之外，測試專業社群對 AI 生成測試還有哪些具體建議或警示？** 值得系統性整理 QA thought leader 的觀點。
+
+---
+
+## 🌫️ Unknown Knowns — Tacit Knowledge
+
+- **有經驗的工程師看到 AI 生成的測試，隱約知道「哪裡不對」，但說不清楚**: 這種直覺通常是「測試太 happy、assertion 太弱、沒有 negative case」——是真實的信號，但很少被明確化。
+- **好的測試需要對業務語意的深度理解，這是 AI 的弱點所在**: 「訂單金額不能為負」這種約束，AI 在沒有 spec 的情況下未必會測試——而人類測試者從業務常識就能推導出來。
+- **測試審查比程式碼審查更難**: assertion 寫錯（如測了個始終為 true 的條件）肉眼很難發現；AI 大量生成測試後，人工審查的認知負荷讓這個問題更嚴重。
+- **AI 測試會讓人高估覆蓋率**: CI 全綠 + 高 coverage 數字，給人「已經測好了」的錯覺，實際上是「已經跑過了」。這個差異有經驗的工程師清楚，新人不清楚。
+
+---
+
+## 🌑 Unknown Unknowns — Hidden Risks &amp; Blind Spots
+
+- **AI 測試製造的是「測試劇場」，而且比沒有測試更危險**: 沒有測試的系統，工程師知道自己沒有安全網。有大量 AI 生成測試的系統，工程師誤以為有安全網，行動更大膽、警覺更低——偽安全感比零安全感帶來更高的系統性風險。
+
+- **測試 oracle 汙染（Oracle Poisoning）**: AI 從「當前實作」推斷預期輸出，若初始實作有 bug，生成的測試 expected value 就包含了那個 bug。未來重構修正 bug 時，大量測試反而變成阻力——紅燈代表「行為改變」而非「出了問題」。團隊通常在規模變大後才撞上這個問題，難以回溯。
+
+- **「同一個 AI 生成程式碼，再生成測試」是循環驗證，不是獨立驗證**: AI 讀懂了它自己（或同類模型）寫的程式碼，理解同一個錯誤的邏輯，並為這個邏輯寫出通過的測試。這不是 oracle——這是迴音室。隱性假設「AI 測試是獨立的第三方視角」根本不成立。
+
+- **單一模型的盲點是系統性盲點，不是隨機分布的**: 同一個模型生成幾百個測試，這些測試共享訓練資料的認知框架——相同的預設、相同的「正常路徑」偏好、相同的遺漏。Coverage 看起來高，但盲點是整批共有的。這種「測試單一文化」比不均勻的人工測試更脆弱。
+
+- **QA 判斷力的靜悄悄退化**: 當 AI 接管測試生成，人工測試思維的訓練機會消失。幾年後，團隊對「AI 測試沒抓到」的事情喪失偵測能力——不是因為沒人會，而是因為沒人練過。這種退化不會觸發任何警報。
+
+- **覆蓋面 vs. 對抗深度的結構性矛盾（TRIZ）**: 讓測試更容易生成（AI 自動化）必然降低每個測試背後的對抗性思考投入。更多測試的邊際品質遞減，但量化指標（coverage %）持續上升——量與質的訊號完全解耦。
+
+- **臨床試驗：測試設計者不應與測試執行者是同一主體**: 在醫學研究，試驗設計必須在執行前預先登記、獨立審查，防止研究者無意中將期望偏差植入試驗設計。軟體工程從未建立這個機制——AI 讓同一個「實體」同時扮演開發者與測試者，這個角色衝突在傳統開發中已存在，在 AI 時代結構性地惡化。
+
+- **財務審計 / 信用評等：誘因結構決定偏差方向**: 2008 年金融危機的結構性原因之一：Moody&#39;s、S&amp;P 由被評等的發行機構付費，造成系統性樂觀偏差——不是道德問題，是誘因結構問題。AI 測試的誘因結構完全相同：生成程式碼與生成測試的模型共享盲點，沒有對抗性動機。Sarbanes-Oxley 強制立法審計獨立性；軟體工程界的等價機制尚不存在。
+
+- **普通法對抗制：真相需要結構性對立才能浮現**: 法律制度幾百年前就發現，真相無法由單一當事人可靠地自行揭露，cross-examination 存在的原因正是自我陳述本質上不可靠。「AI 測試 AI 生成的程式碼」在結構上等同於讓被告自我交叉詰問。對抗式測試（安全 red team）在安全領域有對應，在功能正確性領域幾乎沒有。
+
+- **核電縱深防禦：獨立性不夠，需要異質性**: 核反應爐不只有一個備用冷卻系統，而是多種物理原理不同的冷卻機制，確保單一失效模式無法同時癱瘓所有層。即使有「獨立的」AI 測試工具，若它們共享相同訓練資料與模型架構，失敗模式就是高度相關的——形式上獨立，實質上單點失敗。真正的縱深防禦需要異質性驗證：不同原理、不同假設的機制並存。
+
+- **建築查驗：驗證者需要有實質停工的外部權力**: 建築查驗員不受雇於建商，法律授權他們可以停工，不受進度壓力與利益影響。軟體工程的等價物完全缺失——所有品質關卡都由開發團隊自己控制。AI 接管測試後，連「人工審查 AI 測試」這道最後防線也開始被跳過，因為量太大、看不完。
+
+- **心理學預先登記（Pre-registration）：在看到結果之前就鎖定成功條件**: 複製危機揭示：即使真誠的研究者也會系統性地產生無法複製的結果，因為在看到資料後才決定分析方式（HARKing）。Pre-registration 解法：在執行任何實驗前公開登記「什麼樣的結果算成功」。SDD 的精神接近這個，但通常缺乏獨立審查那道關卡，且 AI 往往同時生成 spec 與 code，pre-commit 的防線形同虛設。
+
+- **AI 最有價值的測試角色或許不是「寫驗證測試」，而是「產生對抗性輸入」**: 逆向前提：若 AI 不寫 assertion，只負責生成邊界輸入、異常資料、模糊輸入（fuzzing），再由人類或規則引擎判斷結果是否正確——這個分工迴避了 oracle 問題，且恰好是 AI 擅長（創意發散）而人類費力（想不到的邊界）的工作。目前業界幾乎沒有人這樣分工。
+
+- **「AI 生成測試給 AI 生成的程式碼」這件事，局外人會認為在方法論上根本不成立**: 一個社會科學研究者或臨床研究者，看到同一工具鏈自我驗證——程式碼由 Claude 生成，測試也由 Claude 生成，PR 也由 Claude review——會立刻指出這不是測試，這是自我合理化。這個方法論漏洞在軟體工程界被正常化了，但它真的很奇怪。（Novice lens）</code></pre>
+</div>
+<h2 id="chatgpt-said">ChatGPT said</h2>
+<div class="highlight-container">
+
+  <button class="copy-code-btn outline">Copy</button>
+
+  
+  <pre tabindex="0"><code>以下是依照第二份 review 修訂後的 v3 研究報告。這一版最大的調整是：不再只停在「AI 不是穩定可靠的測試者」，而是進一步整理成一套可落地的測試架構：AI 負責產生輸入與候選測試；人類、規格、property、metamorphic relation、differential comparison、mutation score 負責判斷正確性。 你提供的 review 也把新增重點放在 phantom regression、differential testing、MT、BVA/EP、combinatorial testing、ISTQB vocabulary 與 structured methodology training。
+
+Deep Research v3：AI 是個穩定可靠的測試者嗎？
+Executive Summary
+
+答案要再修得更精準：
+
+AI 不是穩定可靠的獨立測試者，也不適合單獨擔任品質閘門。AI 最可靠的位置，是高產量的輸入產生器、測試候選產生器、regression documentation 輔助者；正確性判斷必須由外部 oracle 承接。
+
+v2 review 補上的關鍵是：AI 測試的根本問題不只是一開始的 oracle poisoning，還包含重構後的 phantom regression。前者是 AI 根據目前實作推斷 expected behavior，把 bug 寫進測試；後者是語意保持不變的重構發生後，AI 生成或重寫的測試跟著表面語法走，丟掉原本該保留的 regression anchor。Haroon et al. 的研究正是從 program variants 角度檢查 LLM-generated tests 是否真的理解行為，或只是追隨表面 pattern。
+
+因此，本文的主論點應該從：
+
+AI 是否會寫測試？
+
+改成：
+
+AI 產生的測試，正確性判斷到底由誰負責？
+
+一、修訂後主結論
+
+比較成熟的結論是：
+
+AI testing 的可靠性，不來自 AI 本身，而來自架構分工。
+AI 可以負責產生更多輸入、更多變體、更多測試草稿；但 expected behavior、invariant、metamorphic relation、differential comparison、mutation feedback，必須由外部機制定義與驗證。
+
+這代表 AI 測試要從「讓 AI 寫完整測試」改成「讓 AI 參與一個有外部判準的測試系統」。
+
+最穩的分工如下：
+
+測試任務	AI 適合度	可靠作法
+產生測試想法	高	讓 AI 發散情境，人類篩選
+產生 input / edge cases	高	搭配 BVA/EP、combinatorial、fuzzing
+產生 E2E 初稿	中高	搭配 Playwright best practices、人類 review、trace
+產生 assertion	中低	必須受 spec / property / MR 約束
+判斷 expected behavior	低	不應由 AI 單獨承接
+作為品質 gate	很低	需要 mutation score、fail-to-pass、human review、CI policy
+二、Green Zone：可作為文章主幹的強結論
+G1. Oracle poisoning 與 phantom regression 是雙重根因
+
+原本報告只強調 oracle poisoning。v3 應補上 phantom regression，讓論點更完整。
+
+Oracle poisoning 發生在測試初始生成時：AI 讀目前 implementation，再推斷 expected output。如果 implementation 有 bug，AI 很可能把 buggy behavior 寫成 assertion。Konstantinou et al. 明確指出，LLM-based test generation 也容易產生捕捉 actual program behaviour、而不是 expected behaviour 的 oracle；Bodicoat et al. 也把 LLM-driven oracle generation 放回 test oracle problem 的脈絡下討論。
+
+Phantom regression 發生在重構或改寫時：系統語意沒變，但 AI 生成或更新的測試跟著新語法、新結構、新表面 pattern 走，導致原本該保留的行為錨點被丟掉。Haroon et al. 的研究把 LLM-generated tests 放到 program variants 下評估，正好可以支撐這個方向。
+
+可寫進文章的版本：
+
+AI 測試的第一個問題，是把目前實作誤認為正確規格；第二個問題，是在重構後追著表面語法跑，丟掉原本該保留的行為錨點。前者讓 bug 被寫進測試，後者讓測試失去 regression 的作用。這兩者都不是 prompt 寫得不夠細，而是 oracle 來源沒有獨立性的結果。
+
+G2. Coverage 必須降級，mutation score 才是 AI 測試的主要品質指標
+
+這點可以比前一版寫得更強。
+
+MutGen 研究指出，有些 test suites 可以達到 100% coverage，但 mutation score 只有 4%；它也提出把 mutation feedback 回饋給 LLM prompt 的 mutation-guided generation，讓測試更能殺掉 mutants。
+
+這對文章很重要，因為它直接拆掉「AI 生成很多測試，所以品質變好」這種直覺。
+
+可寫進文章的版本：
+
+Coverage 在 AI 測試時代會變成更危險的弱訊號。它只證明程式被跑過，不證明錯誤會被抓出來。當 AI 可以快速產生大量 happy-path 測試，coverage 很容易被灌高；比較該看的，是 mutation score、fail-to-pass、flaky rate、invalid assertion rate，以及人工審查後真正留下來的測試比例。
+
+G3. AI 最適合當 input generator，不適合當 assertion writer
+
+這一點應該成為本文的建設性結論。
+
+Fuzz4All 是最好的證據之一。它不是讓 LLM 判斷 correctness，而是把 LLM 當 input generation / mutation engine，在 GCC、Clang、Z3、CVC5、OpenJDK、Qiskit 等系統中找到 98 個 bugs，其中 64 個已被確認為先前未知 bug。
+
+這說明：AI 的強項是產生多樣、奇怪、邊界、接近真實語言結構的輸入；判斷則應交給 crash oracle、compiler、sanitizer、differential testing、metamorphic relation、property 或人類 domain reviewer。
+
+可寫進文章的版本：
+
+AI 在測試中最可靠的角色，可能不是替人類宣布「這個系統是對的」，而是替人類產生更多值得驗證的情境。讓 AI 產生邊界輸入、異常資料、模糊輸入與互動變體，再由 property、metamorphic relation、runtime contract、differential comparison 或人類領域知識判斷結果，會比讓 AI 同時寫 input 與 oracle 更穩。
+
+G4. Differential testing 是重構與遷移場景下最乾淨的 oracle-free 解法
+
+這是 v2 review 補得最有價值的新角度。
+
+在 refactoring / migration 場景中，通常存在兩個實作：legacy implementation 與 refactored implementation。這時候不一定需要 AI 寫 assertion。更穩的做法是：
+
+讓 AI 產生大量多樣輸入；
+同時餵給舊系統與新系統；
+比較輸出是否一致；
+差異本身就是 oracle。
+
+這可以避開 AI-generated assertion 的 oracle poisoning，也能避免 refactoring 後重新生成測試造成 phantom regression。
+
+可寫進文章的版本：
+
+對重構與遷移來說，最可靠的 AI 測試用法不是叫 AI 重寫測試，而是讓 AI 產生輸入，對舊實作與新實作做 differential testing。只要任務目標是語意等價，兩邊輸出差異本身就是 oracle；AI 不需要判斷什麼叫正確，它只需要幫忙擴大輸入空間。
+
+三、Yellow Zone：應放進文章，但要保留邊界
+Y1. Metamorphic testing 是 AI 時代非常值得補進主幹的技術
+
+Metamorphic testing 的價值是：它不直接問「這個 output 是否正確」，而是問「兩組相關 input 的 output 是否滿足某個 relation」。例如：
+
+對排序：輸入順序打亂後，排序結果應相同。
+對路徑計算：增加一條可用道路，不應讓最短路徑變長。
+對金額轉換：來回轉換不應憑空增加總額。
+
+LLMORPH 研究用 metamorphic testing 測試 LLM NLP 任務，執行超過 561,000 次測試，顯示 MT 可在缺少人工標註 ground truth 時暴露不一致行為。 另一篇 “Metamorphic Testing in the Age of LLMs” 也明確把 MT framing 成 AI / LLM 時代處理 oracle 問題的重要方式。
+
+但要小心：MR 不應完全交給 AI 自己定義。AI 可以幫忙提出候選 MR，但人類要確認 relation 是否真的代表系統語意。
+
+可寫進文章的版本：
+
+Metamorphic testing 提供了介於完整 spec 與完全沒有 oracle 之間的第三條路。它不要求人類寫出完整規格，只要求人類寫出可檢查的行為關係。AI 可以幫忙產生 follow-up inputs，但 relation 本身仍需要人類確認。
+
+Y2. Property-based testing 應與 AI input generation 搭配，而不是被 AI 完全接管
+
+PBT 的價值在於把 expected behavior 從單一 example 拉到 invariant。例如：
+
+總金額守恆；
+狀態轉移後不違反規則；
+加密再解密應回到原文；
+排序後元素集合不變。
+
+2025 年一篇 LLM-generated PBT 研究在 16 個 HumanEval 問題上比較 example-based testing 與 property-based testing，兩者個別 bug detection rate 都是 68.75%，合併後提升到 81.25%。
+
+但 PBT 也不能被神化。AI 生成 property 可能變成 vacuous property：形式上永遠成立，但沒有抓錯能力。
+
+可寫進文章的版本：
+
+PBT 的價值不是讓 AI 自己發明 correctness，而是讓人類先定義 invariant，再讓 AI 幫忙探索輸入空間。AI 負責發散，人類負責判準，這才是比較穩的分工。
+
+Y3. BVA / EP 是好用的 input-side prompting framework，但不是 oracle 解法
+
+Boundary Value Analysis 與 Equivalence Partitioning 很適合直接放進 prompt 或 agent workflow 裡。例如要求 AI：
+
+列出有效區間、無效區間；
+找最小值、最大值、邊界外一格；
+針對每個 equivalence class 產生代表案例；
+不只寫 happy path。
+
+這可以改善 AI 偏向正常路徑的問題。相關研究也開始評估用 BVA / EP 作為 LLM 測試生成的 prompt-level 結構。
+
+但這只能改善 input coverage，不能自動改善 assertion quality。邊界值測到了，不代表 expected behavior 判斷對了。
+
+可寫進文章的版本：
+
+BVA / EP 可以讓 AI 不只產生漂亮的 happy path，而是更有系統地碰到邊界與例外區間。但它解決的是輸入分布問題，不是 oracle 問題。邊界測試仍然需要外部判準，否則 AI 只是更有系統地替目前實作背書。
+
+Y4. Combinatorial testing 補上 AI 容易漏掉的 interaction fault
+
+AI 很容易產生單一參數變化的測試，但多參數交互作用才是許多業務錯誤的來源。例如：
+
+payment method × coupon type × inventory status；
+user role × feature flag × data visibility；
+shipping region × tax rule × promotion rule。
+
+NIST 的 CT4AIES project 明確把 combinatorial testing 用在 AI-enabled systems 的測試脈絡，並提供工具與課程材料。
+
+這裡的關鍵分工是：
+
+人類定義 parameter、value、constraint；
+工具產生 pairwise / t-wise combination；
+AI 幫忙把組合具體化成 realistic test cases；
+oracle 仍由規格、property、MR 或人工 review 承接。
+
+可寫進文章的版本：
+
+Combinatorial testing 可以補上 AI 測試常見的盲點：它很會列很多案例，卻未必系統性覆蓋參數交互作用。比較好的做法不是叫 AI 自由發散，而是先由人類定義參數矩陣與限制，再讓 AI 把 pairwise 或 t-wise 組合具體化成可執行測試。
+
+Y5. E2E AI agent 的問題不是只有 selector brittleness，而是 stochastic flakiness
+
+原本版本把 E2E 的問題放在 selector drift、timing dependency、維護成本。v3 要再補一層：AI agentic E2E 會引入模型推論本身的不穩定。
+
+WebTestPilot 研究指出，VLM / LLM agent 在 E2E testing 中會遇到 implicit oracle inference 與 probabilistic inference challenge；其錯誤分析也提到 oracle inference 中 39% 的錯誤來自 assertion DSL 使用錯誤，例如 hallucinated attributes、imports、method calls。
+
+可寫進文章的版本：
+
+Playwright + AI 降低的是 E2E 測試的起手成本，不是自動消除 E2E 脆弱性。傳統 E2E 脆弱在 selector、timing、test data；AI agentic E2E 則多了一層模型推論脆弱性：它可能看錯狀態、用錯 assertion DSL、幻覺出不存在的屬性或 API。這不是脆弱性消失，而是脆弱性換型態。
+
+Y6. ISTQB CT-GenAI / CT-AI 的價值在 vocabulary 與治理語言，不在自動防止 test theater
+
+ISTQB 在 2025 年正式核准 CT-GenAI syllabus，內容涵蓋 GenAI 在 testing 中的應用、prompting、hallucination、reasoning errors、LLM-powered test infrastructure、導入策略等。 CT-AI v2.0 則在 2026 年 4 月發布，焦點放在 testing AI-based systems，並強調 AI 系統的 probabilistic behavior、test oracle difficulty 與 statistical testing approaches。
+
+這些標準的作用不是保證組織不會走偏，而是提供共同語言，讓 QA / engineering / management 可以討論：
+
+LLM hallucination；
+test oracle problem；
+adversarial testing；
+metamorphic testing；
+AI testing governance；
+responsible adoption。
+
+可寫進文章的版本：
+
+ISTQB 標準不會自動阻止測試劇場，但它提供了一組組織內可溝通的語言。對重視標準與治理的組織來說，CT-GenAI 與 CT-AI v2.0 的價值，不在於考證照，而在於把 AI 測試風險從個人直覺變成可討論、可訓練、可治理的共同詞彙。
+
+Y7. QA judgment atrophy 應寫成長期監測風險，不寫成已定論
+
+這點我會保留前一版的保守語氣。
+
+v2 review 認為 structured methodology training 可以緩解 QA judgment atrophy。這個方向合理，但目前仍缺 software QA domain-specific 的長期實證。比較穩的寫法是：
+
+有 general AI cognitive offloading 的鄰近證據，但還不能直接推論到 software QA judgment 已經可量化退化。
+
+因此，文章可以把它寫成「需要監測的風險」，而不是「已被證實的結果」。
+
+可寫進文章的版本：
+
+AI 測試的長期風險不只在測試本身，也在團隊是否還保留 adversarial testing muscle。若工程師長期只接受 AI 產生的測試，而不再練習寫 property、定義 metamorphic relation、做 boundary analysis、建立 combinatorial matrix，測試判斷力可能慢慢退化。這個方向目前有 cognitive offloading 的鄰近證據，但 software QA 領域仍需要長期資料。
+
+四、修訂後的研究架構
+
+這一版可以把文章整理成四層：
+
+第一層：問題診斷
+
+AI 測試的問題不是「寫得不夠多」，而是：
+
+oracle poisoning；
+phantom regression；
+coverage inflation；
+stochastic flakiness；
+test theater；
+human testing judgment erosion。
+第二層：錯誤指標
+
+不該只看：
+
+測試數量；
+coverage；
+CI green；
+assertion count。
+
+應該看：
+
+mutation score；
+fail-to-pass；
+differential behavior divergence；
+flaky rate；
+invalid assertion rate；
+surviving mutants；
+review acceptance rate；
+production defect correlation。
+第三層：可靠分工
+
+AI 適合：
+
+產生 input；
+產生 edge cases；
+產生 fuzzing variants；
+產生 E2E drafts；
+補 scenario；
+協助具體化 combinatorial matrix。
+
+人類 / 工具 / 規格應承接：
+
+oracle definition；
+invariant；
+metamorphic relation；
+expected behavior；
+business rule；
+differential comparison；
+mutation gate；
+review gate。
+第四層：方法 toolkit
+技術	解決什麼	不解決什麼
+Mutation testing	測試是否有殺傷力	不定義業務正確性
+Differential testing	重構 / 遷移是否保持行為	無 legacy baseline 時不適用
+Metamorphic testing	沒有完整 oracle 時，用 relation 判斷	MR 仍需人類確認
+Property-based testing	用 invariant 約束行為	property 可能寫得太弱
+BVA / EP	補邊界與等價類輸入	不保證 assertion 正確
+Combinatorial testing	補參數交互作用	參數矩陣仍需人類定義
+ISTQB vocabulary	提供組織治理語言	不會自動執行品質治理
+五、修訂後的一句話 thesis
+
+AI 是很好的測試放大器，不是穩定可靠的獨立測試者；它最適合產生輸入、情境與候選測試，不能單獨決定什麼叫正確。
+
+更完整一點：
+
+AI testing 的可靠性，不在 AI 會寫多少測試，而在 oracle 是否獨立、輸入是否有系統、測試是否能殺掉 mutants、重構是否能做 differential comparison，以及組織是否保留人類對 correctness 的判斷責任。
+
+[1]: https://arxiv.org/abs/2410.21136?utm_source=chatgpt.com &#34;Do LLMs generate test oracles that capture the actual or the expected program behaviour?&#34;
+[2]: https://arxiv.org/html/2410.21136v1?utm_source=chatgpt.com &#34;Do LLMs generate test oracles that capture the actual or ...&#34;
+[3]: https://arxiv.org/abs/2506.02954?utm_source=chatgpt.com &#34;Towards More Effective Fault Detection in LLM-Based Unit Test Generation&#34;
+[4]: https://arxiv.org/abs/2402.09171?utm_source=chatgpt.com &#34;Automated Unit Test Improvement using Large Language ...&#34;
+[5]: https://www.sonarsource.com/state-of-code-developer-survey-report.pdf?utm_source=chatgpt.com &#34;State of Code Developer Survey report&#34;
+[6]: https://arxiv.org/html/2602.11724v2?utm_source=chatgpt.com &#34;WebTestPilot: Agentic End-to-End Web Testing against ...&#34;
+[7]: https://arxiv.org/abs/2604.09718?utm_source=chatgpt.com &#34;Agentic Compilation: Mitigating the LLM Rerun Crisis for Minimized-Inference-Cost Web Automation&#34;
+[8]: https://arxiv.org/abs/2308.04748?utm_source=chatgpt.com &#34;Fuzz4All: Universal Fuzzing with Large Language Models&#34;
+[9]: https://arxiv.org/abs/2510.25297?utm_source=chatgpt.com &#34;Understanding the Characteristics of LLM-Generated Property-Based Tests in Exploring Edge Cases&#34;
+[10]: https://www.scitepress.org/Papers/2025/136836/136836.pdf?utm_source=chatgpt.com &#34;Automated Test Generation Using LLM Based on BDD&#34;
+[11]: https://arxiv.org/html/2603.17150v1?utm_source=chatgpt.com &#34;A Grand Challenge for Reliable Coding in the Age of AI ...&#34;
+[12]: https://www.apa.org/news/press/releases/2026/04/overreliance-ai-undermine-confidence?utm_source=chatgpt.com &#34;Overreliance on AI programs may undermine confidence at ...&#34;</code></pre>
+</div>
+<h2 id="claude-said">Claude said</h2>
+<div class="highlight-container">
+
+  <button class="copy-code-btn outline">Copy</button>
+
+  
+  <pre tabindex="0"><code># AI 是個穩定可靠的測試者嗎？
+## Deep Research 實證綜合（v3，整合 Delphi v2 工具箱框架）
+
+_Research date: 2026-04-24 · scope: empirical evidence + structured methodology toolkit for AI-assisted testing_
+_Revision note: v3 整合 Delphi v2 review 的關鍵轉折 —— 從診斷（what&#39;s wrong with AI testing）轉為處方（what techniques to deploy and how）。v1 / v2 主要回答「AI 能不能當裁判？」v3 回答「既然不能當獨立裁判，那應該怎麼用？」核心新增五項結構化技術：Differential Testing（G3 升級）、Metamorphic Testing（Y1 新增）、BVA/EP（Y2）、ISTQB CT-AI v2.0（Y3）、Combinatorial Testing（Y4）。v1 的 R1 SDD 爭議透過 MT 得到「第三條路」的解決，紅區清空。_
+
+---
+
+## TL;DR — 核心結論
+
+經過兩輪多供應商交叉驗證，研究問題有了精確且**可行動**的答案：
+
+**AI 不能作為獨立的軟體品質閘門。** 這個發現在 v1 已確立，v2 重新確認並深化。核心問題是結構性的：LLM 沒有存取外部行為真值的管道，因此 assertion 必然鏡射「實作行為」而非「意圖行為」（oracle poisoning）。在重構下，它們進一步丟棄語義上有效的測試，根據表層語法重新生成（phantom regressions）。這些不是 prompt engineering 的失敗，是 LLM 運作方式的架構性屬性。
+
+**但 v3 的主要貢獻是一個結構化工具箱**，把問題從「該不該用 AI 做測試？」轉為「如何負責任地部署 AI 測試？」五種技術 —— Metamorphic Testing、Boundary Value Analysis / Equivalence Partitioning、ISTQB 標準化實踐、Combinatorial Testing、Differential Testing —— 從不同面向處理 oracle 問題。每一種都有明確的適用範圍。沒有一種能消除對 oracle 定義層次的人類判斷需求。
+
+**最關鍵的單一觀念升級**：AI 的最佳部署姿態 = **無約束輸入生成器 + 人類定義的 oracle**。三種 oracle 類型覆蓋互補情境：
+- **PBT invariants**：greenfield 業務邏輯（如「總餘額必須守恆」）
+- **MT relations**：複雜系統、無完整 spec（如「新增一條路不能讓最短路徑變長」）
+- **Differential comparison**：refactoring 驗證（行為等價性作為 oracle）
+
+**Zone distribution**：4 green、5 yellow、**0 red**（v1 的 SDD 爭議透過 MT 的「第三條路」得到解決）。
+
+**一句話總結**：AI 作為測試候選生成器有用；作為正確性裁判結構上不可靠。正確的組合是 **AI 生輸入 + 人工定義 implementation-independent 的判準** —— PBT 看 invariant、MT 看 relation、Differential 看兩個實作的差異。三者各自覆蓋一類情境，合起來覆蓋主要故障類別。
+
+---
+
+## 🟢 綠區 —— 完全共識
+
+_兩位獨立分析者經完整輪次辯論後確認。證據強，無待議。_
+
+---
+
+### G1. Oracle Poisoning 與 Phantom Regressions 是雙重結構性失敗
+
+**主張**：LLM 產生的 assertion 鏡射實作行為（oracle poisoning），並在語義保持的重構下因語法耦合而丟棄有效測試（phantom regressions）。**兩者都是結構性的，不是偶發的。**
+
+**證據**：
+- Oracle poisoning 跨三篇獨立論文確認：
+  - Bodicoat, Terragni &amp; Jahangirova (arXiv:2410.21136, 2024)
+  - Molinelli et al. (ASE 2025)
+  - *Understanding LLM-Driven Test Oracle Generation* (arXiv:2601.05542, 2026)
+  - 補強量測：AID paper (Liu et al. 2024) —— ChatGPT 生成 failure-inducing tests 的精確度僅 6.3%，失敗中 92.2% 來自錯誤 oracle
+- Phantom regressions：Haroon et al. (arXiv:2603.23443, 2026) —— 22,374 個程式變體上，LLM 生成的測試追蹤語法勝於語義；**SAC 下失敗的測試中 99% 在原程式上仍通過**，代表測試錨定於原行為而非偵測語義改變
+- E2E oracle 失敗：WebTestPilot (arXiv:2602.11724, 2026) —— 39% 的 oracle 失敗來自幻覺 assertion
+
+**機制**：沒有外部規格的管道時，LLM 從被測程式碼推導預期行為。對初始生成而言，這意味著把 bug 當作正確結果去 assert。對重構驗證而言，這意味著重新生成追蹤重構後表層而非保留語義的測試 —— 所有回歸錨點就這樣失去了。
+
+**實務含意**：**任何要求 LLM 寫 assertion 的架構都繼承這兩個失敗模式**。緩解不是更好的 prompting，而是**架構性地將輸入生成與 oracle 生成分開**（G3、G4、Y1 都基於這個原則）。
+
+---
+
+### G2. Mutation Score 而非 Coverage 才是 AI 測試的必要指標
+
+**主張**：AI 生成的測試套件常達到接近 100% 的行覆蓋，卻只偵測 4% 的邏輯缺陷。Coverage 對 AI 生成測試是**主動誤導**。
+
+**證據**：
+- MutGen (Wang et al., arXiv:2506.02954, 2024)：100% 行覆蓋 vs. 4% mutation score 的極端實例
+- ULT benchmark (Huang et al. arXiv:2508.00408, 2025)：在未被訓練污染的真實函式上，LLM 測試的平均 mutation score 只有 40.21%，在污染 benchmark 上則達 49.69% —— **業界對 AI 測試能力的印象至少有一半來自 benchmark 污染**
+- Haroon et al.：基線 79% 覆蓋搭配語義層的嚴重 oracle 弱化
+
+**機制**：Coverage 量的是程式路徑執行；mutation score 量的是 assertion 對注入缺陷的敏感度。Oracle-poisoned 的 assertion 執行所有分支（coverage 高）卻 assert 實作行為（無法偵測缺陷）。100% coverage ↔ 4% mutation score 的落差不是 outlier，是 oracle-poisoned 測試的**結構性屬性**。
+
+**實務含意**：
+- 以 coverage threshold 為 CI/CD gate 提供**虛假的安全保證**
+- Mutation score gate（Stryker.js、Pitest、mutmut）是正確的替換
+- MutGen 的關鍵發現：**把 mutation feedback 餵回 LLM prompt 改善缺陷偵測** —— 這是目前最有前景的閉環緩解方法
+
+---
+
+### G3. Differential Testing 是重構驗證的明確 Oracle-Free 技術
+
+**主張**：Differential testing —— 對 AI 生成的多樣化輸入跑 legacy 與 refactored 兩個實作並比較輸出 —— 提供強行為等價驗證，**不需要 LLM 生成 assertion 也不需要顯式正確性規格**。
+
+**證據**：2026 年 Delphi v2 審查中被識別為未被充分探索的角度，後被提升為主要主張。直接針對 phantom regression 失敗（G1）。
+
+**機制**：新舊實作之間的行為分歧**本身就是 oracle**。LLM 生成多樣輸入（其原生強項）；deterministic output 比較判斷正確性（將 LLM 從 oracle 路徑移除）。Phantom regressions 透過構造被消除 —— 測試從不依賴 LLM 的測試持久性。
+
+**實務含意**：
+- 任何重大重構之後，AI 生成輸入 + differential testing 是最可靠的驗證方式
+- 不需要重新生成測試套件或手動更新 assertion
+- 對 COBOL-to-Java、legacy migration、語言轉換等情境特別有用
+
+**限制**：
+- 嚴格適用於**重構與遷移情境**（兩個實作都存在）
+- **無法驗證新開發的功能**，除非有比較基線
+- 若雙方實作都有同一個 bug，differential 會誤判為「一致 = 正確」
+
+---
+
+### G4. AI 無約束輸入生成器 + 人工定義 Oracle 是最佳架構
+
+**主張**：AI 作為 assertion 寫手不可靠，但作為多樣化輸入生成器高度有效 —— 前提是搭配**人類定義的 oracle**（PBT invariants、MT metamorphic relations、或 differential comparison）。
+
+**證據**：
+- **Fuzz4All** (Xia et al., ICSE 2024, arXiv:2308.04748)：LLM 作為輸入生成器 + crash-based deterministic oracle，在 GCC / Clang / Z3 / CVC5 / OpenJDK / Qiskit 等成熟系統中發現 98 個 bug，64 個經開發者確認為先前未知
+- **PBT + EBT 組合** (Takizawa et al. 2025, arXiv:2510.25297)：81.25% 偵測率 vs. 各自 68.75%
+- **PGS: Property-Generated Solver** (arXiv:2506.18315, 2025)：明確把動機寫在 abstract —— &#34;properties are often simpler to define and verify than directly predicting exhaustive test oracles, breaking the &#39;cycle of self-deception&#39;&#34;
+- **Meta TestGen-LLM** (Alshahwan et al. arXiv:2402.09171, 2024)：工業成功案例，成功的準確原因正是把 AI 限定在擴充人工測試 + deterministic 過濾器
+
+**機制**：結構性分工透過構造消除 oracle poisoning。**三種 oracle 類型覆蓋互補情境**：
+
+| Oracle 類型 | 適用情境 | 範例 |
+|---|---|---|
+| **PBT invariants** | Greenfield 業務邏輯 | 「總餘額必須守恆」、「排序後長度不變」 |
+| **MT relations** | 複雜系統、無完整 spec | 「新增一條路不能讓最短路徑變長」、「翻譯→翻譯回來應相似」 |
+| **Differential comparison** | 重構/遷移驗證 | legacy vs. refactored 行為是否等價 |
+
+**實務含意**：正確的 AI 測試架構**將輸入生成（AI）與正確性判斷（人類定義的 oracle）解耦**。Crash-based fuzzing 抓致命錯誤；PBT + AI 抓業務邏輯缺陷；MT 抓語義關係違反；Differential 抓重構偏離。四者合起來覆蓋主要故障類別。
+
+---
+
+## 🟡 黃區 —— 經批判後收斂
+
+_初始分歧，經交叉檢討後收斂。這些是「結構化工具箱」的五項技術，v3 相對於 v1/v2 的最大增量。_
+
+---
+
+### Y1. Metamorphic Testing 是結構化測試層最高 ROI 的 Oracle-Free 技術
+
+**主張**：Metamorphic Testing（MT）—— 驗證相關輸入的輸出之間的**關係性屬性** —— 提供形式化的 oracle 獨立性，而且其前提條件**比完整的 SDD 弱**。LLM 非常適合在人類定義的 metamorphic relation 下大規模生成 follow-up 輸入。
+
+**機制**：MT 把 oracle 問題從「這個輸出對不對？」重新架構為「這個輸出是否與另一個已知輸出滿足某個結構性關係？」這提供 oracle 獨立性**而不需要完整的行為規格**。最小 oracle 單位是**一個關係（relation）**，而非一整份 spec。
+
+**典型 MR 範例**：
+- **排序**：`sort(reverse(L))` 應等於 `sort(L)` —— 不需要知道正確排序結果是什麼
+- **搜尋引擎**：擴展查詢條件不應增加命中結果
+- **最短路徑**：新增一條邊不應使任何兩點的最短路徑變長
+- **圖像分類**：旋轉 1 度後分類應不變（robustness MR）
+
+**證據**：
+- LLMorph (Cho et al., ASE 2025, arXiv:2603.23611)：56 萬次以上測試執行，在**沒有人工標註真值**的情況下發現傳統測試漏掉的缺陷
+- &#34;MT in the Age of LLMs&#34; (arXiv:2603.24774)：明確把 MT 框架為 AI 時代的 oracle 解決方案
+- ISTQB CT-AI v2.0 (2026) 明確涵蓋 metamorphic testing 作為核心技術（已驗證：ISTQB 官方發布稿）
+
+**關鍵觀念 —— MT 解決 v1 的 SDD 紅區爭議**：
+
+&gt; 團隊不需要在「完整規格（昂貴）」與「無 oracle（測試劇場）」之間二選一。MT 提供**第三條路**：部分結構性關係，比完整 spec 便宜寫、機器可檢查、oracle 獨立。
+
+v1 的 R1（SDD 是否有效？）在這個框架下溶解：**你不需要一份完整的 given-when-then 規格，只需要一組機器可檢查的 MR 關係**。這繞過了「AI 幻覺 spec」與「人工寫完整 spec 太昂貴」的兩難。
+
+**限制（必須在實務中承認）**：
+- LLM 可以生成 vacuous 或不正確的 MR —— **需要人工驗證 MR 再交由自動生成**
+- MT 不是完全自動化的 —— 人類定義關係，LLM 生成關係下的輸入
+- 某些領域的 MR 難以構造（例如純粹的查詢式 API 常常沒有自然的 metamorphic 關係）
+
+---
+
+### Y2. BVA / Equivalence Partitioning 作為 Prompting 框架改善邊界輸入覆蓋（不是 Oracle 品質）
+
+**主張**：Boundary Value Analysis（BVA）和 Equivalence Partitioning（EP）在 prompt 層注入作為結構性約束時，**強迫 LLM 觸及邊界條件**。無約束生成會低估這些邊界。BVA/EP 能抓到一類有區別性的邊界 bug —— 但**它們不解決 oracle poisoning**。邊界處生成的 assertion 仍可能是從實作推導的。
+
+**機制**：BVA/EP 約束的是**輸入生成過程**（不是 assertion 品質）。LLM 的訓練分佈偏向 happy-path 輸入；BVA/EP 校正強制邊界覆蓋。邊界覆蓋的測試執行邊界 bug 會顯現的程式路徑，使這類 bug 即使在 assertion 從實作推導的情況下也更容易浮現。
+
+**證據**：
+- arXiv:2505.09830：在 LLM 上評估 BVA/EP，有條件性改善
+- arXiv:2501.14465：透過 prompt engineering 進行 BVA 邊界輸入生成；&#34;effectiveness depends on well-designed prompts and precise requirements&#34;
+
+**關鍵區分（v2 審查糾正的重要點）**：
+
+&gt; BVA/EP **是 input-side 技術，不是 oracle-side 解決方案**。它改善「哪些輸入被測到」，不改善「輸出對不對」。
+
+這是 v1 我容易模糊的地方。BVA/EP 應該與 MT / PBT 搭配使用：
+- **BVA/EP** 約束輸入
+- **MT / PBT / Differential** 提供 oracle
+- 兩層分工，各司其職
+
+**實務含意**：
+- BVA/EP 是**最容易立即部署**的技術 —— 不需新工具
+- 只要在 prompt 裡注入 &#34;apply boundary value analysis to [function] assuming valid range [X–Y]&#34; 就能改善邊界覆蓋
+- 與 MT / PBT 組合使用才解決 oracle 問題
+
+---
+
+### Y3. ISTQB CT-GenAI 與 CT-AI v2.0 提供制度性詞彙與驗證
+
+**主張**：ISTQB 的 CT-GenAI（2025 年 7 月）與 CT-AI v2.0（2025 年 11 月發布，2026 年為現行版本）在全球認可的標準中**明確收錄 metamorphic testing、adversarial testing 與 LLM 特定風險列舉** —— 提供組織槓桿與共同詞彙，但**不保證對「快速出貨優於品質」實務的機械性防護**。
+
+**證據**：
+- CT-AI v2.0 syllabus 明確要求：model testing 包括「adversarial testing, metamorphic testing, drift testing, A/B testing, and back-to-back testing」，並對齊 ISO/IEC 25059（已驗證：ISTQB 官方發布稿）
+- CT-GenAI 涵蓋 GenAI 工具在測試中的使用，含明確的風險列舉與 LLM-powered 測試基礎設施實作練習
+
+**制度性價值**：
+- (a) CT-AI v2.0 把 MT **驗證為業界認可的技術** —— 把內部辯論從「要不要採用這個學術技術？」轉為「要不要實作已公布的 ISTQB 標準？」
+- (b) 標準化詞彙讓跨團隊與跨組織對「負責任的 AI 測試」取得共識
+
+**限制（必須承認）**：
+- 認證不會機械性防止測試劇場
+- 在忽略標準的 agile 環境中，槓桿不存在
+- 採用取決於工程文化，不取決於認證本身
+
+**實務含意**：在 ISTQB 標準有合規份量的組織中，CT-AI v2.0 為倡導結構化測試的 QA 團隊提供**對抗交付壓力的槓桿**。在金融、醫療、汽車等監管產業特別有用。
+
+---
+
+### Y4. Combinatorial Testing 針對 AI 系統性漏掉的「交互作用故障類」
+
+**主張**：Pairwise / t-wise combinatorial testing —— 涵蓋所有 t-參數交互 —— 針對的是**一個 AI 無約束生成會系統性漏掉的故障類**（70–90% 的 bug 來自 ≤2 參數交互）。架構：**人類定義參數交互矩陣；LLM 以具體測試案例實例化**。
+
+**機制**：AI 無約束測試生成強烈偏向單參數 happy-path 變化。Combinatorial testing 的需求（所有 t-tuple 都被執行）與這個偏向**正交**。
+- 人類定義組合矩陣（參數、值、約束）
+- LLM 以具體的寫實測試案例實例化
+
+**證據**：
+- NIST CT4AIES：AI-enabled 系統的 combinatorial testing，記錄 t-wise 覆蓋必要性
+- 產業資料：70–90% bug 來自 ≤2 參數交互（Pairwise.org）
+
+**架構對稱性**：這個架構與 PBT（人類定義 invariant；LLM 試圖違反）與 MT（人類定義關係；LLM 生成輸入對）**結構上同構**。**Human-at-oracle-definition 是共同模式**。
+
+**實務含意**：
+- 對有多個參數軸的系統（付款方式 × 運送層級 × 促銷狀態 × 庫存狀態），pairwise testing 可以把組合爆炸大幅減少（例如 60 個窮舉組合 → 約 8 個 pairwise 組合）同時覆蓋主要交互故障空間
+- LLM 用寫實資料實例化矩陣；人類定義軸
+- 工具成熟（pict-tool、AllPairs、Hypothesis 的 `@given` stateful testing）
+
+**限制**：參數域與交互約束的定義**無法可靠地委派給 LLM** —— 人類關鍵步驟是**矩陣定義**，不是實例化。
+
+---
+
+### Y5. 結構化方法論訓練緩解 QA 判斷力退化；退化幅度實證不確定
+
+**主張**：**刻意練習形式化測試方法論** —— 指定 MT relation、定義 BVA 分區、構造 combinatorial 矩陣 —— **以 AI 測試無法取代的形式鍛鍊對抗性推理**，維持被認知卸載到 AI 後會侵蝕的工程判斷力。退化的**具體幅度在實證上不確定**。
+
+**退化機制的實證**：
+- Walther (Psychology Today, 2025/2026)：「agency decay」分析
+- Technology, Mind, and Behavior (April 2026, n=1,923)：一般 AI 使用下的 cognitive offloading
+- 航空類比（飛行員 autopilot 後的手動技能退化）、醫學影像類比（放射科醫師使用 AI 後的去技能化）
+
+**注意一個值得警惕的引用問題（v2 Delphi review 明確標記）**：
+&gt; 一些二手報導引用「17% debugging score drop」作為軟體特定的退化證據。此數字源自 Hivel.ai 引用未識別的「Anthropic/MIT studies on cognitive offloading」。**此具體數字未經驗證**；退化的方向並未撤回，但具體幅度不應作為決策依據。
+
+**緩解機制**：緩解不是「少用 AI」，而是**主動練習 oracle specification**。一個主動寫 metamorphic relation、BVA 分區或 combinatorial 矩陣的工程師，**正在鍛鍊 AI 測試無法取代的那部分對抗性思考** —— 對 invariant 的思考、對邊界的感受、對交互的敏感。
+
+**實務含意**：
+- 結構化測試工具箱（MT、BVA/EP、Combinatorial）**一箭雙鵰**：改善測試品質 **且** 維持工程師對抗性推理能力
+- 採用這些技術的組織因品質理由得到技能保留作為複利效益
+- 即使你相信 AI 測試有用，也要刻意保留工程師手寫對抗性測試的習慣練習 —— 如同飛行員仍需定期手動飛行
+
+---
+
+## 🔴 紅區 —— 無
+
+**v1 的兩個紅區在 v3 均得到解決**：
+
+- **R1（SDD 是否打破 oracle 迴圈）**：透過 Y1 的 MT 得到「第三條路」的解決。MT 的最小 oracle 單位是關係而非完整規格，繞過了「自動化 SDD 失敗 vs. 手動 SDD 昂貴」的兩難。
+- **R2（QA 判斷力退化是否可量測）**：透過 Y5 的結構化方法論訓練從「診斷爭議」轉為「處方建議」。退化的一般機制已實證，具體幅度不確定但方向性足以支持緩解策略。
+
+---
+
+## Whittaker 觀光客框架 × 工具箱對映
+
+我在 v1 / v2 納入的 Whittaker 測試 tour 分類，在 v3 的工具箱框架下有了更精確的對應：
+
+| Whittaker Tour | AI 能力 | 對應工具箱技術 |
+|---|---|---|
+| Guidebook（happy path） | 🟢 強 | AI 無約束生成 |
+| Antisocial（無效輸入、fuzzing） | 🟢 強 | **Fuzz4All (G4) + BVA (Y2)** |
+| Garbage Collector（機械化走訪） | 🟡 中 | **Combinatorial Testing (Y4)** |
+| Bad Neighborhood（歷史 bug 熱點） | 🔴 無 | 人工 + MT relation 歷史重演 |
+| FedEx（資料生命週期） | 🔴 無 | **MT (Y1)** —— 端到端不變量 |
+| Landmark（架構理解） | 🔴 無 | 人工 |
+| Saboteur（資源搶占） | 🔴 無 | 人工 + chaos engineering |
+| Prior Version Tour | 🔴 無 | **Differential Testing (G3)** |
+
+最有趣的對應：**Prior Version Tour 的 AI 化**就是 G3 的 differential testing。Whittaker 直覺上知道有價值但手工成本高的 tour，在 AI 加上 differential oracle 後變得經濟可行。
+
+---
+
+## 實務架構（v3 整合版）
+
+### 三層架構總覽</code></pre>
+</div>
+<p>┌───────────────────────────────────────────────────────────────┐
+│  AI 生成層（Input Layer）                                       │
+│  - 測試輸入（fuzzing、BVA 邊界、Combinatorial 矩陣實例化）      │
+│  - 測試骨架（pattern-based scaffolding）                        │
+│  - 候選 MR / invariant（人工審核前的草稿）                      │
+└───────────────────────────────────────────────────────────────┘
+↓
+┌───────────────────────────────────────────────────────────────┐
+│  Oracle 層（Human-Defined，三選一或多選）                       │
+│  - PBT invariant（greenfield 業務邏輯）                         │
+│  - MT relation（複雜系統、無完整 spec）                         │
+│  - Differential comparison（refactoring / migration）           │
+│  - Crash / exception（fatal errors）                            │
+└───────────────────────────────────────────────────────────────┘
+↓
+┌───────────────────────────────────────────────────────────────┐
+│  Deterministic 過濾層（TestGen-LLM 模型）                       │
+│  - 必須能編譯                                                    │
+│  - 必須可靠通過                                                  │
+│  - 必須增加 mutation score（不只是 coverage）                    │
+│  - 違反 property / MR 的 input 優先保留                          │
+└───────────────────────────────────────────────────────────────┘
+↓
+┌───────────────────────────────────────────────────────────────┐
+│  人工裁判層（不可或缺）                                          │
+│  - Bad Neighborhood / Saboteur / Landmark tours                 │
+│  - 業務語意審查                                                  │
+│  - MR / invariant 的品質審核                                     │
+│  - 對抗性姿態的刻意練習（Y5）                                    │
+└───────────────────────────────────────────────────────────────┘</p>
+<div class="highlight-container">
+
+  <button class="copy-code-btn outline">Copy</button>
+
+  
+  <pre tabindex="0"><code>
+### 技術選擇指南 —— 何時用哪個工具
+
+| 情境 | 主要技術 | 搭配 |
+|---|---|---|
+| 新開發、業務邏輯複雜 | **PBT (Y1 架構)** | BVA/EP、Mutation testing |
+| 複雜系統、無完整 spec | **MT (Y1)** | BVA/EP、Combinatorial |
+| 重構 / legacy migration | **Differential Testing (G3)** | Fuzz4All-style input generation |
+| 多參數交互系統 | **Combinatorial Testing (Y4)** | MT 或 PBT |
+| 編譯器 / 解析器 / 引擎 | **Fuzz4All-style fuzzing** | Differential (若有多實作) |
+| 邊界條件密集的函式 | **BVA/EP (Y2)** + PBT | Mutation testing |
+| 所有 AI 生成測試 | **Mutation score gate (G2)** | —— |
+
+### 方法異質性優於供應商多樣性
+
+v1 / v2 已建立：單靠「Claude 寫 code + GPT 寫 test」不夠。**真正的 defense-in-depth 需要原理不同的驗證機制並用**：
+
+- Mutation testing（deterministic bug injection）
+- Property-Based Testing（implementation-independent invariants）
+- Metamorphic Testing（relational properties）
+- Differential testing（behavioral equivalence）
+- Fuzzing（crash / exception oracles）
+- Combinatorial testing（interaction coverage）
+- 人工探索式測試（對抗性姿態）
+
+這些機制**原理不同、假設不同**，失敗模式才是真正不相關的 —— 這是核電縱深防禦的軟體對應物（Kim et al. 2025 的 60% 同錯率實證支持此路線）。
+
+**最小可行組合**：MT + Mutation testing + 少量人工 exploratory tests —— 就比「三個 LLM 互相審查」強得多。
+
+---
+
+## 校準：對原始 Knowledge Quadrants 的總結
+
+### 已確認（通過兩輪 Delphi 驗證）
+
+- ✅ AI 以實作為 oracle（從直覺升級為可量測事實）
+- ✅ 覆蓋率 vs. 突變偵測訊號解耦（MutGen 的 100% / 4%）
+- ✅ 單一模型盲點是系統性的（Kim et al. 2025 的 60% 同錯率）
+- ✅ Test theatre 是有調查資料的組織現象（Sonar 2026 的 96% / 48%）
+- ✅ Oracle 汙染 + Phantom regressions 是雙重結構性失敗
+
+### 新增處方（v3 工具箱）
+
+- ✨ **Metamorphic Testing 作為 oracle-free 的第三條路**
+- ✨ **Differential testing 作為 refactoring 的明確 oracle-free 技術**
+- ✨ **BVA/EP 是 input-side 技術（不是 oracle 解方）** —— 重要區分
+- ✨ **Combinatorial testing 針對 AI 系統性漏掉的交互故障類**
+- ✨ **ISTQB CT-AI v2.0 提供制度性詞彙與槓桿**
+
+### 已解決的爭議
+
+- R1（SDD）→ MT 提供「第三條路」，不需完整 spec 也不是無 oracle
+- R2（QA 退化）→ 結構化方法論訓練作為主動緩解
+
+### 仍是真正的 Known Unknowns
+
+1. **AI 測試長期維護成本的縱貫研究**（2–3 年跨專案資料）
+2. **AI 測試對新人學習 QA 判斷力的特定影響**（軟體領域的縱貫數據）
+3. **AI flakiness vs. selector drift 的縱向比較**
+4. **Continuous mutation testing 作為 CI gate 的產業化實踐**
+5. **Formal specification 語言（Alloy、TLA+）+ AI 的整合** —— 是否讓 MT relation 生成更可靠？
+6. **AI 測試套件的長期 CI/CD 計算經濟學**（高量低品質測試的複利成本）
+
+---
+
+## 核心參考資料
+
+### Oracle 問題與循環驗證
+- Bodicoat, Terragni &amp; Jahangirova (2024). *Do LLMs generate test oracles that capture the actual or the expected program behaviour?* arXiv:2410.21136
+- Liu et al. (2024). *LLM-Powered Test Case Generation for Detecting Tricky Bugs* (AID). arXiv:2404.10304
+- Molinelli et al. (2025). *Do LLMs Generate Useful Test Oracles?* ASE 2025
+- *Understanding LLM-Driven Test Oracle Generation* (2026). arXiv:2601.05542
+- Tsiokos (2025). *Circular Validation: The Hidden Risk in AI-Generated Tests*
+- Zietsman (2026). *The Specification as Quality Gate*. arXiv:2603.25773
+
+### 覆蓋率 vs. 突變分數
+- Wang et al. (2024). *MutGen*. arXiv:2506.02954
+- Huang et al. (2025). *Benchmarking LLMs for Real-World Functions (ULT)*. arXiv:2508.00408
+- Dakhel et al. (2024). *MuTAP*. Journal of Systems and Software
+
+### 演化與 Phantom Regressions
+- Haroon, Khan &amp; Gulzar (2026). *Evaluating LLM-Based Test Generation Under Software Evolution*. arXiv:2603.23443
+
+### 相關性錯誤
+- Kim et al. (2025). *Correlated Errors in Large Language Models*. arXiv:2506.07962
+- Gao et al. (2025). *Rethinking Verification for LLM Code Generation*. arXiv:2507.06920
+- Vallecillos-Ruiz et al. (2025). *Popularity trap in LLM ensembles*. arXiv:2510.21513
+
+### Fuzzing / 輸入生成（G4）
+- Xia et al. (2024). *Fuzz4All*. ICSE 2024 / arXiv:2308.04748
+
+### Property-Based Testing（Y1 架構）
+- Takizawa et al. (2025). *LLM-Generated Property-Based Tests*. arXiv:2510.25297
+- PGS (2025). *Property-Generated Solver*. arXiv:2506.18315
+- Agentic PBT (2025). *Finding Bugs Across the Python Ecosystem*. arXiv:2510.09907
+
+### Metamorphic Testing（Y1）
+- Cho et al. (2025). *LLMorph*. ASE 2025 / arXiv:2603.23611
+- *From Untestable to Testable: MT in the Age of LLMs* (2026). arXiv:2603.24774
+
+### Boundary Value Analysis（Y2）
+- arXiv:2505.09830 (2025)
+- arXiv:2501.14465 (2025)
+
+### ISTQB 標準（Y3）
+- ISTQB (2025). *CT-AI v2.0 Syllabus*. &lt;https://istqb.org/certifications/certified-tester-ai-testing-ct-ai/&gt;
+- ISTQB (2025). *CT-GenAI Syllabus*.
+
+### Combinatorial Testing（Y4）
+- NIST. *CT4AIES: Combinatorial Testing for AI-Enabled Systems*.
+
+### Differential Testing（G3）
+- 經典參考：McKeeman (1998). *Differential Testing for Software*.
+
+### 工業部署
+- Alshahwan et al. (2024). *TestGen-LLM at Meta*. arXiv:2402.09171
+- Alshahwan et al. (2024). *Observation-based TestGen*. arXiv:2402.06111
+
+### E2E / Playwright（Y2 區 E2E 子情境）
+- WebTestPilot (2026). arXiv:2602.11724
+- Leapwork (2026). *QA &amp; Test Automation Survey*.
+
+### 產業調查
+- Sonar (2026). *State of Code Developer Survey*, n=1,149. 96%/48% trust/verification gap.
+- DORA 2026 report.
+
+### 認知卸載（Y5 機制）
+- *Technology, Mind, and Behavior* (April 2026, n=1,923).
+- Walther (2025/2026). &#34;Agency decay&#34; analysis in *Psychology Today*.
+
+### 經典方法論基礎
+- Whittaker, J. A. (2009). *Exploratory Software Testing*. Addison-Wesley.
+- Whittaker, J. A. (2024). &#34;The Resurrection of Software Testing.&#34; Medium.
+- Dietterich (2000). Ensemble methods in machine learning.
+
+---
+
+_v3 revision note_:
+v1 提供診斷：「AI 不能當獨立裁判」。
+v2 修正：「這個診斷有條件性 —— SDD 在某些條件下可以有效」。
+v3 轉向處方：「既然 AI 不能當裁判，這裡是五個結構化技術，每個針對 oracle 問題的一個面向」。
+
+v3 的核心觀念升級在於認識到 **MT 提供了 SDD 與無 oracle 之間的第三條路**。這個觀念不是我獨立發現的 —— 是 Delphi v2 cross-provider 審查中由 Anthropic 提出、被 Google 在 R3 明確認可為「saving the synthesis」的關鍵突破。多供應商結構化辯論的價值在此：它強迫單一 perspective（v1 的「SDD 不夠」）被轉化為更精確的位置（「SDD 不是唯一選項，MT 是更有效的 oracle-free 替代」）。
+
+**實務上**，如果你只能從這份綜述帶走三件事：
+1. **把 mutation score 設成 CI gate**（G2，立即可行）
+2. **在重構專案導入 differential testing**（G3，下次 legacy migration 時）
+3. **讓你的團隊學會寫 metamorphic relations**（Y1，中期能力建設 —— ISTQB CT-AI v2.0 是現成教材）
+
+這三個步驟覆蓋了 oracle 問題的三個主要面向，且都不依賴 AI 當裁判。</code></pre>
+</div>
+<hr>
+<h2 id="gemini-said">Gemini said</h2>
+<div class="highlight-container">
+
+  <button class="copy-code-btn outline">Copy</button>
+
+  
+  <pre tabindex="0"><code>AI 作為穩定可靠測試者的深度研究：從 TDD、E2E 到探索式測試的實證與風險評估
+核心結論：角色重構而非完全替代
+研究指出，AI 目前並非軟體正確性的可靠獨立驗證者，但它是高效的「輸入生成器」與「回歸紀錄系統」。在 2024 年後的 AI 工程實踐中，最顯著的發現是「神諭汙染（Oracle Poisoning）」問題：AI 往往透過閱讀現有代碼來推導預期結果，這導致測試套件可能達成 100% 的覆蓋率，但在捕捉真實邏輯漏洞的「突變分數（Mutation Score）」上可能低至 4% 1。
+1. 傳統測試方法的復活：James Whittaker 的旅遊測試模型
+詹姆斯·惠特克（James Whittaker）在 2024 年提出，軟體測試的思維必須在 AI 時代「復活」3。他將測試比喻為城市旅遊，將應用程序劃分為不同「區塊（Districts）」，並指出 AI 在不同巡遊路徑上的能力落差：
+
+旅遊路徑 (Tour Type)
+AI 的貢獻與局限性
+實證與風險點
+導遊手冊巡遊 (Guidebook Tour)
+高。AI 擅長生成 happy path 與文件定義的功能。
+容易流於表面，產生「測試劇場」現象。
+反社會巡遊 (Antisocial Tour)
+高。AI 作為「模糊測試 (Fuzzing)」工具，能生成大量極端輸入。
+Fuzz4All 實證發現 LLM 生成的輸入能抓到 GCC 等工具的 98 個新 Bug。
+壞鄰居巡遊 (Bad-Neighborhood)
+低。需要對歷史 Bug 密集區的「機構記憶」，AI 較難掌握。
+AI 缺乏對特定遺留代碼演化過程的認知 4。
+薩博特巡遊 (Saboteur Tour)
+極低。涉及資源耗盡、環境破壞等具備「惡意直覺」的對抗性測試。
+這是人類測試者展現「認知工藝」的核心領域 5。
+
+實證啟示： 探索式測試的核心在於「邊做邊學（Learning while doing）」5。雖然 AI 代理（如 Playwright Agents）能模擬部分行為，但缺乏人類對業務脈絡的深層懷疑。
+2. 結構化測試的實證：LLM 支持 vs. 手動撰寫
+根據 2025 年針對 Java 集合類庫的對抗性實驗 6，AI 在結構化單元測試中的表現數據如下：
+缺陷偵測率 (Defect Detection Rate)：LLM 支持組平均偵測到 6.5 個缺陷，顯著高於手動組的 3.71 個 6。
+測試產量：LLM 組生成的測試數量是手動組的 1.3 倍以上 7。
+副作用 (假陽性)：LLM 支持組產生的假陽性（False Positives）顯著較高（153 vs 130），且隨著算法複雜度增加，準確性會下降約 25% 7。
+關鍵發現： 覆蓋率（Coverage）在 AI 測試中是一個誤導性指標。AI 能輕易達成 95% 以上的覆蓋，但若沒有進行「突變測試（Mutation Testing）」，這些測試往往無法抓到隱藏的邊界錯誤 2。
+3. TDD 與 SDD：建立工程護欄
+為了克服 AI 測試的不穩定性，業界轉向強化的流程約束：
+3.1 代理型 TDD (如 Superpowers 框架)
+Superpowers 框架強制執行「先測試、後代碼」的七階段管線。其核心在於「微觀計劃 (Micro-tasking)」，將任務拆解為 2 到 5 分鐘的小單元 10。
+實證效果：chardet 庫的維護者使用此方法重寫 v7.0.0，在保證準確性的前提下實現了 41 倍的效能增長。
+3.2 規格驅動開發 (SDD) 與對抗性模式
+SDD 透過 Given-When-Then 格式將 AC (Acceptance Criteria) 轉化為合約 12。
+對抗性代理模式 (Adversarial Agent Pattern)：由「實作代理」撰寫代碼，由獨立的「驗證代理」根據規格查找漏洞 12。這能有效防止「神諭汙染」，因為驗證者的標準來自規格而非現有代碼。
+4. E2E 測試：從脆弱定位器到語義自癒
+傳統 E2E (如 Playwright) 最大的問題是 UI 改動導致的維修成本（佔自動化時間 40-50%） 14。
+AI 的解法：利用 Playwright MCP 或視覺插件。AI 不再依賴脆弱的 CSS Selector，而是透過「語義定位（Semantic Locators）」識別功能（如「購物車按鈕」）15。
+局限性：2026 年的研究《WebTestPilot》指出，39% 的 AI E2E 失敗來自「幻想斷言（Hallucinated Assertions）」，即 AI 驗證了不存在的 UI 狀態。
+5. 警示：測試劇場與認知萎縮
+過度依賴 AI 測試會帶來系統性風險：
+測試劇場 (Testing Theater)：團隊因「全綠」的 CI 報告而產生虛假的安全感。AI 傾向驗證「快樂路徑」，卻忽略分散式系統的失敗模式（如網路分區、數據庫競爭條件） 14。
+認知萎縮 (Cognitive Atrophy)：2026 年 4 月的一項研究（n=1,923）發現，58% 的受試者承認在使用 AI 時「讓 AI 做了大部分思考」，導致他們對獨立邏輯推理的信心下降。
+總結：給工程團隊的行動建議
+分離角色：讓 AI 擔任「輸入生成者（Input Generator）」，由人類撰寫「屬性/不變量（Invariants）」作為判斷標準（Property-Based Testing）。
+採用突變分數作為 KPI：不要再看行覆蓋率，改用 Mutation Kill Rate 衡量測試套件的真實偵測力 1。
+實施 SDD 護欄：規格必須在代碼產生前鎖定，並由人類進行獨立審查，以切斷 AI 的循環驗證迴路 17。
+結合探索式旅遊：定期手動執行 James Whittaker 的「薩博特」或「壞鄰居」巡遊，捕捉 AI 邏輯盲區中的架構性缺陷 18。
+AI 是個極佳的「測試助理」，但由於其天生的「神諭污染」傾向，它目前還不能成為一個「獨立且穩定」的測試者。
+引用的著作
+Unit Testing Past vs. Present: Examining LLMs&#39; Impact on Defect Detection and Efficiency, 檢索日期：4月 24, 2026， https://www.researchgate.net/publication/389055965_Unit_Testing_Past_vs_Present_Examining_LLMs&#39;_Impact_on_Defect_Detection_and_Efficiency
+On Mutation-Guided Unit Test Generation - arXiv, 檢索日期：4月 24, 2026， https://arxiv.org/html/2506.02954v2
+The Resurrection of Software Testing | by James Whittaker | Medium, 檢索日期：4月 24, 2026， https://medium.com/@docjamesw/the-resurrection-of-software-testing-634423cd8411
+Exploratory Testing Tours: To Ensure Thorough Testing - Software Testing Help, 檢索日期：4月 24, 2026， https://www.softwaretestinghelp.com/exploratory-testing-tours/
+Exploratory Software Testing by James A. Whittaker - The Tester Library, 檢索日期：4月 24, 2026， https://thetesterlibrary.com/acceptance-testing/exploratory-software-testing-by-james-a-whittaker/
+Unit Testing Past vs. Present: Examining LLMs&#39; Impact on Defect Detection and Efficiency, 檢索日期：4月 24, 2026， https://arxiv.org/html/2502.09801v1
+Unit Testing Past vs. Present: Examining LLMs&#39; Impact on Defect Detection and Efficiency - arXiv, 檢索日期：4月 24, 2026， https://arxiv.org/pdf/2502.09801
+Is AI Improving Software Testing? Key Insights - QAble, 檢索日期：4月 24, 2026， https://www.qable.io/blog/is-ai-really-helping-to-improve-the-testing
+Why Mutation Testing Is Essential for Trustworthy AI - - Nimble Approach, 檢索日期：4月 24, 2026， https://nimbleapproach.com/blog/why-mutation-testing-is-essential-for-trustworthy-ai/
+Superpowers, GSD, and GSTACK: Picking the Right Framework for Your Coding Agent | Pulumi Blog, 檢索日期：4月 24, 2026， https://www.pulumi.com/blog/claude-code-orchestration-frameworks/
+What Is Superpowers? Agent Skills Framework for AI Coding - Verdent Guides, 檢索日期：4月 24, 2026， https://www.verdent.ai/guides/what-is-superpowers-ai-coding-framework
+What Is Spec-Driven Development? A Practitioner&#39;s Guide for AI ..., 檢索日期：4月 24, 2026， https://www.augmentcode.com/guides/what-is-spec-driven-development
+A Practical Guide to Spec-Driven Development - Zencoder Docs, 檢索日期：4月 24, 2026， https://docs.zencoder.ai/user-guides/tutorials/spec-driven-development-guide
+What AI-Generated Playwright Tests Get Wrong in Production, 檢索日期：4月 24, 2026， https://getdecipher.com/blog/what-ai-generated-playwright-tests-get-wrong-in-production
+Playwright AI Test Automation: What&#39;s Ahead in 2026 - Devōt, 檢索日期：4月 24, 2026， https://devot.team/blog/playwright-ai
+The AI Architecture Illusion: Why Generated Code Works in Demos but Dies in Production, 檢索日期：4月 24, 2026， https://medium.com/similarweb-engineering/the-ai-architecture-illusion-why-generated-code-works-in-demos-but-dies-in-production-41c7d40557e9
+Spec-Driven Development: From Code to Contract in the Age of AI Coding Assistants - arXiv, 檢索日期：4月 24, 2026， https://arxiv.org/html/2602.00180v1
+Exploratory Software Testing, 檢索日期：4月 24, 2026， https://www.pearson.de/media/muster/toc/toc_9780321647788.pdf</code></pre>
+</div>
+<h2 id="xai-said">XAI said</h2>
+<div class="highlight-container">
+
+  <button class="copy-code-btn outline">Copy</button>
+
+  
+  <pre tabindex="0"><code>
+AI 是否是個穩定可靠的測試者？這個問題的核心不在於 AI 能否「產生」大量測試（它確實能），而在於這些測試能否真正**保障品質**——也就是偵測缺陷、抵抗未來變更、避免偽安全感。從你提供的 Known Knowns、Known Unknowns 到 Unknown Unknowns，以及 James Whittaker 的觀光客測試法（Tourist Testing）、AI 測試常見問題等角度，實證資料顯示：**AI 在生產力上帶來明顯甜頭，但在可靠性上存在結構性局限**。它更適合輔助，而非完全取代人類對抗性思考。以下是基於 2024–2026 年實證研究與業界觀察的深度分析。&lt;grok:render card_id=&#34;35b4e1&#34; card_type=&#34;citation_card&#34; type=&#34;render_inline_citation&#34;&gt;&lt;argument name=&#34;citation_id&#34;&gt;31&lt;/argument&gt;&lt;/grok:render&gt;
+
+### 1. AI 生成單元測試與 TDD Agent（如 Superpowers）的實證
+許多團隊使用 AI agent（如 Claude + Superpowers skill）走 TDD 流程，確實能秒級產生數十個測試，覆蓋率（code coverage）快速提升。這是已知甜頭：生產力大幅增加，特別適合 boilerplate 或 happy path。
+
+**但反證強烈**：
+- **缺陷偵測率有限**：一項針對 LLM 生成單元測試的實證研究顯示，許多生成的測試無法編譯（invalid tests），導致平均 87% 的缺陷無法被偵測。即使可執行的測試，也主要因「低有效性」（low validity）而失效。LLM 常從現有實作推斷「應有行為」，等於對著答案抄答案，無法捕捉實作本身的 bug。&lt;grok:render card_id=&#34;240fea&#34; card_type=&#34;citation_card&#34; type=&#34;render_inline_citation&#34;&gt;&lt;argument name=&#34;citation_id&#34;&gt;31&lt;/argument&gt;&lt;/grok:render&gt;
+- **Oracle 問題（測試預期值污染）**：LLM 生成的 assertion 往往反映「當前實作」而非「預期行為」。如果初始程式碼有 bug，測試就會把 bug 鎖定為「正確」。後續重構修正 bug 時，測試反而變成阻力（pass-to-pass failures）。研究明確指出，這是「circularity of error」：同一模型（或同類模型）生成程式碼與測試，形成迴音室，而非獨立驗證。&lt;grok:render card_id=&#34;56936f&#34; card_type=&#34;citation_card&#34; type=&#34;render_inline_citation&#34;&gt;&lt;argument name=&#34;citation_id&#34;&gt;48&lt;/argument&gt;&lt;/grok:render&gt;
+- **Mutation testing 作為品質代理指標**：這是評估測試真實強度的好方法（注入小 bug，看測試能否「殺死」mutant）。研究顯示，純 LLM 生成的測試 mutation score 常在 50–70% 左右（甚至低至 57%），遠低於生產級 80%+ 門檻。高 coverage 但低 mutation score 的現象很常見——測試看起來多，卻錯過許多真實故障。某些進階 prompting（如 full context 或 mutation-guided）能把 Gemini 等模型推到 87%+，但仍需人類精煉，且計算成本高（sequential multi-turn prompting 可達 187% 額外成本）。&lt;grok:render card_id=&#34;ea2fde&#34; card_type=&#34;citation_card&#34; type=&#34;render_inline_citation&#34;&gt;&lt;argument name=&#34;citation_id&#34;&gt;2&lt;/argument&gt;&lt;/grok:render&gt;
+
+Superpowers 等工具強調嚴格 TDD（red-green-refactor），在小專案或特定 benchmark 上有不錯表現（如高準確率、低 token 消耗），但在大型專案中，AI 常跳過嚴格驗證、一次產生多個測試，或產生弱 assertion（e.g., 只檢查 NotNull）。業界觀察：AI TDD 容易變成「proxy specification」，而非真正澄清意圖。
+
+**結論在此層級**：量多質未必高。AI 適合生成高量測試作為起點，但「品質自動保障」是幻覺。
+
+### 2. Playwright 等工具生成的 E2E 測試
+AI 驅動 Playwright 生成 E2E 測試，在視覺流程（happy path）上表現不錯：selector + assertion 的產生速度快，覆蓋常見使用者路徑有效。
+
+**實證與反證**：
+- **優勢**：AI 能從描述快速產生腳本，某些自癒（self-healing）機制可降低 flakiness（e.g., 從 15% 降到 5% 在某些 fintech 案例）。AI 也幫助偵測 flaky patterns、建議穩定 locator。
+- **弱點**：Edge case 覆蓋率低，尤其需要業務語義判斷的邊界（如金額約束、並發、逾時、部分失敗）。Selector drift（UI 小改就壞）仍是問題，AI 生成的腳本脆化速度不一定比人工慢，但維護時人類仍需大量介入。Flakiness 根源常不在 timing，而在狀態洩漏、環境差異或非確定性行為——AI 並未系統性解決。&lt;grok:render card_id=&#34;1e79d9&#34; card_type=&#34;citation_card&#34; type=&#34;render_inline_citation&#34;&gt;&lt;argument name=&#34;citation_id&#34;&gt;70&lt;/argument&gt;&lt;/grok:render&gt;
+- 縱向數據不足，但業界反饋：大量 AI 生成 E2E 會讓 CI 全綠，卻掩蓋真實問題。維護成本未「自動消失」，特別在有狀態 UI 或多步驟業務流程中。
+
+甜頭存在，但「品質自動保障」不成立——E2E 本就脆弱，AI 放大了 happy-path 偏好。
+
+### 3. SDD（Spec Driven Development）與 Given-When-Then Acceptance Criteria
+從 acceptance criteria 出發，用 GWT 格式界定測試方向，這是理論上最有希望的做法：給 AI 更好的 oracle，理論上能產生涵蓋廣、含 edge case 的測試。
+
+**實證現況**：
+- **優勢**：清晰 spec 能提升 AI 輸出品質。SDD 工具（如 GitHub spec-kit）強調 spec 先於 code，包含 AC、邊界、驗證步驟，能讓測試更對齊需求。協作式 spec（analyst + dev + tester 貢獻）效果更好，AI 可從同一來源生成 code 與 tests。
+- **反證與局限**：如果 spec 本身模糊、遺漏或錯誤，AI 會「猜」並自信地填空（類似人類，但更不自知）。研究顯示，LLM 常產生「未在 spec 中請求的行為」（hallucination，佔 invalid tests 的 28%）。SDD 仍需人類驗證 spec 的完備性——AI 擅長句型改寫，但不一定理解業務語意（如登入背後的邊界條件）。&lt;grok:render card_id=&#34;e2a714&#34; card_type=&#34;citation_card&#34; type=&#34;render_inline_citation&#34;&gt;&lt;argument name=&#34;citation_id&#34;&gt;46&lt;/argument&gt;&lt;/grok:render&gt;
+- 完備性驗證難：AI 易遺漏系統性類別（如並發、安全），且不自知。Pre-registration 類似精神（spec 先鎖定）有幫助，但缺乏獨立審查時，角色衝突（同一 AI 生成 spec/code/test）仍存在。
+
+SDD 比純 prompt 好，但前提是**高品質、活的 spec** + 人類審查。它不是從源頭自動保障品質，而是放大 spec 品質的倍數器。
+
+### 4. James Whittaker 觀光客測試法與 AI 的對應
+Whittaker 的 Tourist Testing（把軟體當陌生城市，設計不同「旅遊」類型：歷史區之旅找舊功能互動、壞鄰居之旅找資源爭奪、導遊之旅等）強調**無特定腳本的探索性、對抗性思維**。這是 AI 的明顯弱點。
+
+- AI 擅長有腳本、可描述的路徑（happy path、基於現有 code 的測試），但難模擬「像遊客探索陌生城市」的開放式、基於直覺與業務常識的探索。
+- 已知未知：AI 是否能系統性對應 Whittaker 框架？目前缺乏大規模實驗，但從結構看，AI 的盲點是系統性的（共享訓練資料的認知框架），而非隨機。單一模型生成的數百測試，盲點會整批共有——這比人類不均勻的測試更脆弱。
+- 探索性測試需要對業務語意的深度理解與「壞事發生時的直覺」，AI 常缺少負面案例、弱 assertion，或對非明顯邊界的敏感度。人類經驗工程師常「隱約知道哪裡不對」，但 AI 生成的測試審查認知負荷更高（量大 + assertion 錯很難肉眼發現）。
+
+Whittaker 框架突顯 AI 的適合角色：產生對抗性輸入（fuzzing-like）、邊界資料，由人類或規則引擎判斷結果。這能避開 oracle 問題，利用 AI 的發散能力。
+
+### 5. 更廣的結構性風險（Unknown Unknowns 的實證支持）
+你的分析非常精準，許多點有研究佐證：
+- **測試劇場與偽安全感**：大量綠燈測試讓危機感下降。Mutation testing 研究反复證明，高 coverage 不等於高品質。
+- **Oracle Poisoning 與同一主體衝突**：LLM 測試反映實作而非 spec，這在醫學試驗或審計中會被視為嚴重偏差。軟體工程缺乏等價的「獨立性」機制（e.g., 異質驗證、多原理防禦）。
+- **QA 判斷力退化**：當 AI 接管生成，人類練習對抗性思維的機會減少。這是長期風險，無即時警報。
+- **誘因結構**：AI 生成 code + test 類似「被評等者付費給評等機構」的偏差，無內建對抗動機。
+- Hallucination 與 invalid tests：常見比率高，assertion 錯誤是主因。
+
+正面：AI 在缺陷預測、log 分析、flaky 偵測、自癒上有幫助。有些研究顯示 AI 輔助測試在某些情境下 defect detection rate 高於傳統，但多為「增強」而非取代，且需人類 oversight。
+
+### 總結與務實建議
+**AI 不是穩定可靠的獨立測試者**。它在速度、量與 routine 任務上優秀，能吃到甜頭（TDD 加速、E2E 快速原型、SDD 結構化），但在 edge case、業務語意、對抗深度、長期維護與真實缺陷偵測上，有系統性弱點。實證多為「有限有效 + 需人類介入」，而非「自動保障品質」。純 AI 自我驗證更像「測試劇場」，比零測試還危險（偽安全感）。
+
+**如何最大化價值（混合方法）**：
+- **人類主導 spec**：用 GWT 等清晰 AC 作為起點，AI 輔助生成測試案例，但人類審查完備性與業務邊界。
+- **Mutation testing 作為守門員**：定期跑，目標 80%+ score；用它精煉 AI 生成的測試。
+- **分工優化**：AI 強在產生對抗性輸入、大量候選測試、flaky 分析；人類強在 oracle 判斷、探索性（Whittaker 式）、負面案例與審查。
+- **異質防禦**：結合人工探索測試、合約測試、不同模型/工具，避免單一文化盲點。
+- **持續監控**：追蹤不僅 coverage，還包括 mutation score、false positive、維護成本、生產逃脫缺陷率。
+- **文化層面**：保留人類危機感，不要讓 AI 測試稀釋警覺。測試審查比 code review 更重要。
+
+AI 時代，工程護欄更重要——不是把測試全丟給 AI，而是把 AI 當強大工具，搭配人類對抗性思維與結構性獨立性。業界仍缺乏大規模長期受控實驗，但現有證據強烈建議：**輔助而非依賴**。如果你的團隊在實作這些，建議從小模組開始測 mutation score 與生產 bug 逃脫率，累積自家數據。
+
+這個主題值得持續追蹤，特別是 2026 年後更多縱向研究。若你有特定專案情境或想深挖某個子角度（如某篇論文細節），我可以再針對性挖掘。</code></pre>
+</div>
+
+        </div>
+
+        
+        
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">William Yeh</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+      2026-04-24
+      
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">授權條款</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW" target="_blank">CC BY-NC-SA 4.0</a> (姓名標示-非商業性-相同方式分享 4.0 國際)</span>
+  </p>
+</div>
+
+
+
+        
+        
+
+
+        <footer class="post-footer">
+          <div class="post-tags">
+              <a href="//localhost:1313/tags/ai/">ai</a>
+                <a href="//localhost:1313/tags/cs/">cs</a>
+                <a href="//localhost:1313/tags/programming/">programming</a>
+                <a href="//localhost:1313/tags/testing/">testing</a>
+                
+            </div>
+
+
+          
+          <nav class="post-nav">
+            
+              <a class="prev" href="/post/2026/04/genai-multi-steps-experiment/">
+                
+                <i class="iconfont">
+                  
+<svg aria-hidden="true" class="lucide lucide-chevron-left hi-svg-inline" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="m15 18-6-6 6-6"/></svg>
+                </i>
+                <span class="prev-text nav-default">Prompt 寫了卻還是不穩：用三組實驗看完成判定該放在哪裡</span>
+                <span class="prev-text nav-mobile">上一篇</span>
+              </a>
+            
+              <a class="next" href="/post/2026/04/genai-multi-steps/">
+                <span class="next-text nav-default">Prompt 已經寫很細了，Workflow 為什麼還是不穩？</span>
+                <span class="prev-text nav-mobile">下一篇</span>
+                
+                <i class="iconfont">
+                  
+<svg aria-hidden="true" class="lucide lucide-chevron-right hi-svg-inline" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="m9 18 6-6-6-6"/></svg>
+                </i>
+              </a>
+          </nav>
+        </footer>
+      </article>
+
+      
+      
+
+
+      
+      
+
+  
+
+  
+  
+
+  
+  
+    <div class="post">
+  <script src="https://utteranc.es/client.js"
+        repo= "William-Yeh/utterances-area"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script>
+</div>
+
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+
+    </div>
+
+    <aside class="right-sidebar">
+      
+    </aside>
+  </div>
+  </main>
+
+  <footer id="footer" class="site-footer">
+    <div class="social-icon-links">
+  
+
+
+<a href="mailto:william.pjyeh@gmail.com" rel="me noopener" class="social-icon-link" title="email" >
+  
+<svg aria-hidden="true" class="icon hi-svg-inline" fill="currentColor" height="1em" version="1.1" viewBox="0 0 1451 1024" width="1em" xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <path d="M664.781909 681.472759 0 97.881301C0 3.997201 71.046997 0 71.046997 0L474.477909 0 961.649408 0 1361.641813 0C1361.641813 0 1432.688811 3.997201 1432.688811 97.881301L771.345323 681.472759C771.345323 681.472759 764.482731 685.154773 753.594283 688.65053L753.594283 688.664858C741.602731 693.493018 729.424896 695.068979 718.077952 694.839748 706.731093 695.068979 694.553173 693.493018 682.561621 688.664858L682.561621 688.65053C671.644501 685.140446 664.781909 681.472759 664.781909 681.472759L664.781909 681.472759ZM718.063616 811.603883C693.779541 811.016482 658.879232 802.205449 619.10784 767.734955 542.989056 701.759633 0 212.052267 0 212.052267L0 942.809523C0 942.809523 0 1024 83.726336 1024L682.532949 1024 753.579947 1024 1348.948139 1024C1432.688811 1024 1432.688811 942.809523 1432.688811 942.809523L1432.688811 212.052267C1432.688811 212.052267 893.138176 701.759633 817.019477 767.734955 777.248 802.205449 742.347691 811.03081 718.063616 811.603883L718.063616 811.603883Z"></path>
+</svg>
+
+</a>
+<a href="https://twitter.com/william_yeh" rel="me noopener" class="social-icon-link" title="twitter"  target="_blank" >
+  
+<svg aria-hidden="true" class="icon hi-svg-inline" fill="currentColor" height="1em" version="1.1" viewBox="0 0 1264 1024" width="1em" xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <path d="M1229.8616 18.043658c0 0-117.852626 63.135335-164.151872 67.344358-105.225559-164.151872-505.082682-92.598492-437.738325 223.078185C278.622548 312.675223 89.216542 47.506814 89.216542 47.506814s-117.852626 189.406006 75.762402 345.139833C127.097743 396.85567 55.544363 371.601535 55.544363 371.601535S26.081207 535.753407 253.368414 615.724832c-21.045112 29.463156-113.643603 8.418045-113.643603 8.418045s25.254134 143.10676 231.496229 180.987961c-143.10676 130.479693-387.230056 92.598492-370.393967 105.225559 206.242095 189.406006 1119.599946 231.496229 1128.01799-643.98042C1179.353331 249.539887 1263.533778 123.269217 1263.533778 123.269217s-130.479693 37.881201-138.897738 33.672179C1225.652577 98.015083 1229.8616 18.043658 1229.8616 18.043658"></path>
+</svg>
+
+</a>
+<a href="https://www.facebook.com/william.yeh" rel="me noopener" class="social-icon-link" title="facebook"  target="_blank" >
+  
+<svg aria-hidden="true" class="icon hi-svg-inline" fill="currentColor" height="1em" version="1.1" viewBox="0 0 1024 1024" width="1em" xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <path d="M965.7344 2.7648c14.848 0 28.2624 5.5296 40.2432 16.6912C1017.9584 30.5152 1024 43.52 1024 58.2656l0 910.2336c0 14.848-6.0416 27.7504-18.0224 38.8096C993.8944 1018.4704 980.48 1024 965.7344 1024L704.9216 1024 704.9216 629.9648l133.2224 0 19.456-155.4432-152.576 0L705.024 373.0432c0-50.688 25.9072-76.0832 77.7216-76.0832l80.4864 0L863.232 163.5328c-27.7504-5.4272-67.4816-8.192-119.296-8.192-59.1872 0-106.8032 18.0224-142.9504 54.0672C564.736 245.5552 546.7136 296.0384 546.7136 360.7552l0 113.7664L413.4912 474.5216l0 155.4432 133.2224 0L546.7136 1024 55.5008 1024c-14.848 0-27.7504-5.5296-38.8096-16.6912C5.5296 996.2496 0 983.3472 0 968.4992L0 58.2656C0 43.52 5.5296 30.5152 16.6912 19.456c11.0592-11.0592 24.064-16.6912 38.8096-16.6912L965.7344 2.7648z"></path>
+</svg>
+
+</a>
+<a href="https://www.linkedin.com/in/pjyeh/" rel="me noopener" class="social-icon-link" title="linkedin"  target="_blank" >
+  
+<svg aria-hidden="true" class="icon hi-svg-inline" fill="currentColor" height="1em" version="1.1" viewBox="0 0 1024 1024" width="1em" xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <path d="M872.405333 872.618667h-151.637333v-237.610667c0-56.661333-1.152-129.578667-79.018667-129.578667-79.061333 0-91.136 61.653333-91.136 125.397334v241.792H398.976V384h145.664v66.602667h1.962667c20.352-38.4 69.845333-78.933333 143.786666-78.933334 153.642667 0 182.058667 101.12 182.058667 232.746667v268.202667zM227.712 317.141333a87.978667 87.978667 0 0 1-88.021333-88.106666 88.064 88.064 0 1 1 88.021333 88.106666z m76.032 555.477334H151.68V384h152.064v488.618667zM948.266667 0H75.562667C33.792 0 0 33.024 0 73.770667v876.458666C0 991.018667 33.792 1024 75.562667 1024h872.576C989.866667 1024 1024 991.018667 1024 950.229333V73.770667C1024 33.024 989.866667 0 948.138667 0h0.128z"></path>
+</svg>
+
+</a>
+<a href="https://github.com/william-yeh" rel="me noopener" class="social-icon-link" title="github"  target="_blank" >
+  
+<svg aria-hidden="true" class="icon hi-svg-inline" fill="currentColor" height="1em" version="1.1" viewBox="0 0 1024 1024" width="1em" xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <path d="M512 12.672c-282.88 0-512 229.248-512 512 0 226.261333 146.688 418.133333 350.08 485.76 25.6 4.821333 34.986667-11.008 34.986667-24.618667 0-12.16-0.426667-44.373333-0.64-87.04-142.421333 30.890667-172.458667-68.693333-172.458667-68.693333C188.672 770.986667 155.008 755.2 155.008 755.2c-46.378667-31.744 3.584-31.104 3.584-31.104 51.413333 3.584 78.421333 52.736 78.421333 52.736 45.653333 78.293333 119.850667 55.68 149.12 42.581333 4.608-33.109333 17.792-55.68 32.426667-68.48-113.706667-12.8-233.216-56.832-233.216-253.013333 0-55.893333 19.84-101.546667 52.693333-137.386667-5.76-12.928-23.04-64.981333 4.48-135.509333 0 0 42.88-13.738667 140.8 52.48 40.96-11.392 84.48-17.024 128-17.28 43.52 0.256 87.04 5.888 128 17.28 97.28-66.218667 140.16-52.48 140.16-52.48 27.52 70.528 10.24 122.581333 5.12 135.509333 32.64 35.84 52.48 81.493333 52.48 137.386667 0 196.693333-119.68 240-233.6 252.586667 17.92 15.36 34.56 46.762667 34.56 94.72 0 68.522667-0.64 123.562667-0.64 140.202666 0 13.44 8.96 29.44 35.2 24.32C877.44 942.592 1024 750.592 1024 524.672c0-282.752-229.248-512-512-512"></path>
+</svg>
+
+</a>
+<a href="https://www.slideshare.net/williamyeh" rel="me noopener" class="social-icon-link" title="coding"  target="_blank" >
+  
+<svg aria-hidden="true" class="icon hi-svg-inline" fill="currentColor" height="1em" version="1.1" viewBox="0 0 1024 1024" width="1em">
+  <path
+      d="m 313.5359,557.51414 c 9.229,0 16.57801,8.88719 16.57801,19.99616 0,11.10899 -7.34901,19.99617 -16.57801,19.99617 -9.229,0 -16.57801,-8.88718 -16.57801,-19.99617 0,-11.10897 7.34901,-19.99616 16.57801,-19.99616 z m 393.7706,0 c 9.22899,0 16.57802,8.88719 16.57802,19.99616 0,11.10899 -7.34903,19.99617 -16.57802,19.99617 -9.229,0 -16.57802,-8.88718 -16.57802,-19.99617 0,-11.10897 7.34902,-19.99616 16.57802,-19.99616 z"
+      id="path6"/>
+  <path
+      d="m 945.8932,448.98796 c -27.17427,0 -51.1013,17.26164 -64.43208,43.23957 C 836.17066,393.44306 741.8298,302.00762 625.27096,264.23708 562.37704,239.1137 518.28294,190.57601 512.8139,134.17657 507.34486,190.74691 463.25077,239.1137 400.35685,264.23708 283.79802,301.83671 189.45714,393.44306 144.16669,492.22753 130.83591,466.2496 107.07979,448.98796 79.734607,448.98796 c -41.701401,0 -75.541066,40.84686 -75.541066,91.26454 0,50.41768 33.839665,91.26454 75.541066,91.26454 12.64715,0 24.610663,-3.75996 35.206923,-10.42536 3.58906,163.55837 180.30728,269.69186 397.87237,270.03367 217.5651,-0.34181 394.28332,-106.4753 397.87238,-270.03367 10.42535,6.6654 22.55977,10.42536 35.20692,10.42536 41.7014,0 75.541,-40.84686 75.541,-91.26454 0.171,-50.41768 -33.6687,-91.26454 -75.541,-91.26454 z M 114.2579,568.79403 c -3.58906,13.15987 -19.312535,18.79981 -35.206921,12.47625 -15.894385,-6.15267 -25.977916,-21.87616 -22.388867,-35.03602 3.58906,-13.15987 19.312533,-18.79981 35.206919,-12.47624 15.894389,6.15267 25.807019,21.87614 22.388869,35.03601 z m 398.556,276.69904 C 338.31748,845.15126 196.97707,762.603 196.97707,644.33509 c 0,-2.56361 0.1709,-4.95631 0.1709,-7.34902 0,-0.85453 0,-1.53817 0.17092,-2.3927 0.1709,-1.70908 0.34181,-3.41814 0.34181,-4.95631 0.1709,-2.22179 0.51273,-4.44359 0.85454,-6.6654 0,-0.1709 0,-0.51271 0.1709,-0.68362 3.58906,-23.2434 12.47624,-58.79214 26.14883,-79.13012 32.64331,-47.51224 90.92273,-78.9592 157.23479,-78.9592 51.1013,0 97.41721,18.79981 130.91506,49.05041 33.49784,-30.2506 79.64283,-49.05041 130.91504,-49.05041 66.48298,0 124.59148,31.61786 157.23479,78.9592 13.67259,20.50889 22.55977,55.88672 26.14883,79.13012 0,0.17091 0,0.51272 0.17091,0.68362 0.34182,2.22181 0.51272,4.44361 0.85453,6.6654 0.17091,1.70907 0.34181,3.24723 0.34181,4.95631 0,0.85453 0.17092,1.53817 0.17092,2.3927 0.17091,2.39271 0.17091,4.95631 0.17091,7.34902 C 828.82165,762.603 687.48124,845.15126 512.8139,845.49307 Z M 946.74774,581.27028 c -15.89439,6.15265 -31.61787,0.68362 -35.20692,-12.47625 -3.58906,-13.15987 6.49448,-28.88334 22.38887,-35.03601 15.89438,-6.15267 31.61786,-0.68363 35.20692,12.47624 3.41815,12.98896 -6.49448,28.71243 -22.38887,35.03602 z"
+      id="path8"/>
+</svg>
+
+</a>
+
+
+<a href="//localhost:1313/index.xml" rel="noopener alternate" type="application/rss&#43;xml" class="social-icon-link" title="rss"
+  target="_blank">
+  
+<svg aria-hidden="true" class="lucide lucide-rss hi-svg-inline" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg>
+</a>
+
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+    2015 -
+    2026
+    <span class="heart">
+      
+      <i class="iconfont">
+        
+<svg aria-hidden="true" class="lucide lucide-heart hi-svg-inline" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+      </i>
+    </span><span class="author">
+      William Yeh
+      
+    </span></span>
+
+  
+  
+
+  
+</div>
+
+  </footer>
+
+  
+
+
+
+
+<script type="text/javascript" src="/js/main.0171f082d33f8febdbfe89876860e1624f5b622b263af5e06e31e93abd51a968.js" integrity="sha256-AXHwgtM/j&#43;vb/omHaGDhYk9bYismOvXgbjHpOr1RqWg=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/katex@0.11.0/dist/katex.min.css"
+    integrity="sha384-BdGj8xC2eZkQaxoQ8nSLefg4AV4/AwB3Fj+8SUSo7pnKP6Eoy18liIKTPn9oBYNG"
+    crossorigin="anonymous">
+
+  
+  <script defer
+    src="https://cdn.jsdelivr.net/npm/katex@0.11.0/dist/katex.min.js"
+    integrity="sha384-JiKN5O8x9Hhs/UE5cT5AAJqieYlOZbGT3CHws/y97o3ty4R7/O5poG9F3JoiOYw1"
+    crossorigin="anonymous"></script>
+
+  
+  <script defer
+    src="https://cdn.jsdelivr.net/npm/katex@0.11.0/dist/contrib/auto-render.min.js"
+    integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI"
+    crossorigin="anonymous" onload="renderMathInElement(document.body);">
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      renderMathInElement(document.body, {
+        
+      });
+    });
+  </script>
+
+
+
+
+
+
+  
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
