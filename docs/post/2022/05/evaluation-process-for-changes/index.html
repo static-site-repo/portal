@@ -87,7 +87,7 @@
 
 
 
-<link rel="stylesheet" href="/css/style.min.d1f027a5016f97358b1b660bb027b8c4e06613cc19f915c77d527094db189278.css" integrity="sha256-0fAnpQFvlzWLG2YLsCe4xOBmE8wZ&#43;RXHfVJwlNsYkng=" media="screen"
+<link rel="stylesheet" href="/css/style.min.2df24a9369ef451417152444fd9e6b737249a18eee5e5ea2219f273ae430f206.css" integrity="sha256-LfJKk2nvRRQXFSRE/Z5rc3JJoY7uXl6iIZ8nOuQw8gY=" media="screen"
   crossorigin="anonymous">
 
 
@@ -109,6 +109,11 @@
 
 
 <meta name="google-site-verification" content="yB1imGx4TfWC72pIx33DNfg9RWg2gzU9CizwtvY5Hqo" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Sans+TC:wght@400;500;600;700&display=swap" rel="stylesheet">
+
 
   <link
     rel="stylesheet"
@@ -413,8 +418,23 @@
   <main id="main" class="main pico container">
     <div class="content-wrapper">
     <aside class="left-sidebar">
-      
-<nav class="toc" id="toc">
+      <input type="checkbox" id="toc-toggle" class="toc-toggle-input" aria-hidden="true">
+
+  <label for="toc-toggle" class="toc-toggle-button" aria-label="文章目錄">
+    <svg class="toc-icon-open" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="12" x2="15" y2="12"></line>
+      <line x1="3" y1="18" x2="18" y2="18"></line>
+    </svg>
+    <svg class="toc-icon-close" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <line x1="18" y1="6" x2="6" y2="18"></line>
+      <line x1="6" y1="6" x2="18" y2="18"></line>
+    </svg>
+  </label>
+
+  <label for="toc-toggle" class="toc-backdrop" aria-hidden="true"></label>
+
+  <nav class="toc" id="toc">
     <div class="toc-title">文章目錄</div>
     <div class="toc-content custom-scrollbar">
       <nav id="TableOfContents">
@@ -426,7 +446,6 @@
 </nav>
     </div>
   </nav>
-
 
     </aside>
 
@@ -766,31 +785,28 @@
 </div>
 
 <div class="copyright">
-  <span class="power-by">
-    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
-  </span>
-  <span class="division">|</span>
-  <span class="theme-info">
-    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
-  </span>
+  
+  <p class="footer-tagline">敏捷魔藥師 (Agile Potioneer)。會說 90% 的工匠語言，會說 70% 的總管語言，正在努力提升 30% 的行腳商人語言。</p>
+  
 
-  <span class="copyright-year">
-    &copy;
-    
-    2015 -
-    2026
-    <span class="heart">
+  <p class="footer-meta">
+    <span class="copyright-year">
+      &copy;
       
-      <i class="iconfont">
-        
-<svg aria-hidden="true" class="lucide lucide-heart hi-svg-inline" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
-      </i>
-    </span><span class="author">
+      2015–2026
+      
+    </span><span class="footer-sep">·</span>
+    <span class="author">
       William Yeh
       
-    </span></span>
+    </span></p>
 
-  
+  <p class="footer-credit">
+    <a href="https://gohugo.io">Hugo</a>
+    <span class="footer-sep">·</span>
+    <a href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </p>
+
   
 
   

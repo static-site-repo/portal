@@ -3,15 +3,19 @@
  *------------------------------------------------------------------------**/
 
 /**
- * NOTE: All custom styles have been migrated to the theme's SCSS files
- * for better maintainability and integration with the build system.
+ * NOTE: All custom styles live in the project's SCSS, processed by Hugo Pipes.
  *
- * Location of migrated styles:
- * - Core theme overrides: themes/jane/assets/sass/_custom.scss
+ * Location of project-level styles (override the theme via Hugo's asset
+ * lookup — project root is searched before themes):
+ * - Core overrides:                assets/sass/_custom.scss
  * - Notice shortcode enhancements: themes/jane/assets/sass/_shortcodes/_notice.scss
  *
- * If you need to add site-specific overrides that cannot be placed in the
- * theme SCSS files, add them below this comment block.
+ * The theme submodule (themes/jane/) is left pristine. Any new SCSS
+ * customization should be added to assets/sass/_custom.scss at the project
+ * root, NOT inside the theme.
+ *
+ * This file is kept only as a fallback for site-specific plain-CSS overrides
+ * that for some reason cannot live in the SCSS pipeline.
  **/
 
 /* Add your site-specific CSS overrides here if needed */
