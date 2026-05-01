@@ -440,7 +440,7 @@
     
     <div class="post-summary">
       <p>上一篇文章〈<a href="//william-yeh.net/post/2026/04/genai-multi-steps/">Prompt 已經寫很細了，Workflow 為什麼還是不穩？</a>〉談到，多步驟 agent workflow 常見的三種失靈：過早開始、假性完成、未驗證即結案。這三種現象，最後都會回到同一個控制問題：<strong>「完成」到底由誰判定。</strong></p>
-<p>當 workflow 的成敗開始取決於真實狀態、工具結果或驗證條件時，只把完成條件寫在 prompt 裡，通常不夠。completion gate 得交給 prompt 以外的機制。</p>
+<p>當 workflow 的成敗開始取決於真實狀態、工具結果或驗證條件時，只把完成條件寫在 prompt 裡，通常是不夠的，得交給 prompt 以外的機制。</p>
 <p>口說無憑。這篇文章想用一組小實驗看一件事：<strong>同一個任務、同一份 prompt，如果把「完成判定」放在不同位置，false completion 會怎麼變化？</strong></p>
 <p>我選了一個很小、但實務上很常遇到的任務：整理技術文章的註腳。</p>
 

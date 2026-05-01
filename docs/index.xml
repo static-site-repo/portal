@@ -19,7 +19,7 @@
       <guid>//william-yeh.net/post/2026/04/genai-multi-steps-experiment/</guid>
       
         <description>&lt;p&gt;上一篇文章〈&lt;a href=&#34;//william-yeh.net/post/2026/04/genai-multi-steps/&#34;&gt;Prompt 已經寫很細了，Workflow 為什麼還是不穩？&lt;/a&gt;〉談到，多步驟 agent workflow 常見的三種失靈：過早開始、假性完成、未驗證即結案。這三種現象，最後都會回到同一個控制問題：&lt;strong&gt;「完成」到底由誰判定。&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;當 workflow 的成敗開始取決於真實狀態、工具結果或驗證條件時，只把完成條件寫在 prompt 裡，通常不夠。completion gate 得交給 prompt 以外的機制。&lt;/p&gt;
+&lt;p&gt;當 workflow 的成敗開始取決於真實狀態、工具結果或驗證條件時，只把完成條件寫在 prompt 裡，通常是不夠的，得交給 prompt 以外的機制。&lt;/p&gt;
 &lt;p&gt;口說無憑。這篇文章想用一組小實驗看一件事：&lt;strong&gt;同一個任務、同一份 prompt，如果把「完成判定」放在不同位置，false completion 會怎麼變化？&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;我選了一個很小、但實務上很常遇到的任務：整理技術文章的註腳。&lt;/p&gt;
 
@@ -80,8 +80,9 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; 這個註腳沒有被引用。
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;--&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;把文件改到好，實際上要處理很多細節；但「有沒有改好」相對好判斷。&lt;/p&gt;
-&lt;p&gt;只要寫一個 checker，檢查有引用但沒有定義、有定義但沒有引用、重複定義、引用順序與定義順序，最後回傳：&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;   &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;「把文件改到好」，實際上要處理很多細節；但「有沒有改好」相對起來比較好判斷。&lt;/p&gt;
+&lt;p&gt;只要寫一個 checker 小工具，檢查有引用但沒有定義、有定義但沒有引用、重複定義、引用順序與定義順序，最後回傳：&lt;/p&gt;
 &lt;div class=&#34;highlight-container&#34;&gt;
 
   &lt;button class=&#34;copy-code-btn outline&#34;&gt;Copy&lt;/button&gt;
@@ -104,7 +105,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;reference_order_errors&amp;#34;&lt;/span&gt;: [&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;...&lt;/span&gt;]   &lt;span style=&#34;color:#75715e&#34;&gt;// 引用或定義順序錯誤
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;這個 checker 不需要很複雜。有了它，Markdown 到底有沒有修好，就不必靠模型自己說了算。它就是這次實驗的外部判定者。&lt;/p&gt;
+&lt;p&gt;這個 checker 不需要很複雜（甚至可能只到 LeetCode 的 easy 程度）。有了它，Markdown 到底有沒有修好，就不必靠模型自己說了算。它就是這次實驗的外部判定者。&lt;/p&gt;
 &lt;h3 id=&#34;測試資料&#34;&gt;測試資料&lt;/h3&gt;
 &lt;p&gt;實驗還需要一組合適的測試資料。&lt;/p&gt;
 &lt;p&gt;我準備了 10 份測資，刻意涵蓋幾種常見錯誤：&lt;/p&gt;
@@ -183,9 +184,9 @@
   &lt;thead&gt;
       &lt;tr&gt;
           &lt;th&gt;實驗&lt;/th&gt;
-          &lt;th style=&#34;text-align: center&#34;&gt;有沒有 tool&lt;/th&gt;
-          &lt;th style=&#34;text-align: center&#34;&gt;有沒有 read back&lt;/th&gt;
-          &lt;th&gt;完成判定放在哪裡&lt;/th&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;呼叫 tool？&lt;/th&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;read back？&lt;/th&gt;
+          &lt;th&gt;完成判定放在哪裡？&lt;/th&gt;
       &lt;/tr&gt;
   &lt;/thead&gt;
   &lt;tbody&gt;
@@ -237,7 +238,6 @@
   &lt;thead&gt;
       &lt;tr&gt;
           &lt;th&gt;Experiment&lt;/th&gt;
-          &lt;th style=&#34;text-align: right&#34;&gt;Cases&lt;/th&gt;
           &lt;th style=&#34;text-align: right&#34;&gt;Actual Pass&lt;/th&gt;
           &lt;th style=&#34;text-align: right&#34;&gt;False Completion&lt;/th&gt;
           &lt;th style=&#34;text-align: right&#34;&gt;Tool Called&lt;/th&gt;
@@ -246,24 +246,21 @@
   &lt;/thead&gt;
   &lt;tbody&gt;
       &lt;tr&gt;
-          &lt;td&gt;&lt;code&gt;prompt_only&lt;/code&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: right&#34;&gt;10&lt;/td&gt;
+          &lt;td&gt;prompt_only&lt;/td&gt;
           &lt;td style=&#34;text-align: right&#34;&gt;&lt;strong&gt;6&lt;/strong&gt;&lt;/td&gt;
           &lt;td style=&#34;text-align: right&#34;&gt;&lt;strong&gt;4&lt;/strong&gt;&lt;/td&gt;
           &lt;td style=&#34;text-align: right&#34;&gt;0&lt;/td&gt;
           &lt;td style=&#34;text-align: right&#34;&gt;0&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td&gt;&lt;code&gt;tool_no_readback&lt;/code&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: right&#34;&gt;10&lt;/td&gt;
+          &lt;td&gt;tool_no_readback&lt;/td&gt;
           &lt;td style=&#34;text-align: right&#34;&gt;&lt;strong&gt;5&lt;/strong&gt;&lt;/td&gt;
           &lt;td style=&#34;text-align: right&#34;&gt;&lt;strong&gt;5&lt;/strong&gt;&lt;/td&gt;
           &lt;td style=&#34;text-align: right&#34;&gt;10&lt;/td&gt;
           &lt;td style=&#34;text-align: right&#34;&gt;0&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td&gt;&lt;code&gt;tool_with_readback&lt;/code&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: right&#34;&gt;10&lt;/td&gt;
+          &lt;td&gt;tool_with_readback&lt;/td&gt;
           &lt;td style=&#34;text-align: right&#34;&gt;&lt;strong&gt;10&lt;/strong&gt;&lt;/td&gt;
           &lt;td style=&#34;text-align: right&#34;&gt;0&lt;/td&gt;
           &lt;td style=&#34;text-align: right&#34;&gt;10&lt;/td&gt;
@@ -273,13 +270,12 @@
 &lt;/table&gt;
 &lt;p&gt;&lt;code&gt;prompt_only&lt;/code&gt; 出現 40% false completion。10 個 case 裡有 4 個是 AI 宣稱 completed，但最終 checker 判失敗；失敗的是 &lt;code&gt;case_05&lt;/code&gt;、&lt;code&gt;case_06&lt;/code&gt;、&lt;code&gt;case_08&lt;/code&gt;、&lt;code&gt;case_10&lt;/code&gt;。&lt;/p&gt;
 &lt;p&gt;到了 &lt;code&gt;tool_no_readback&lt;/code&gt;，Claude 又多失敗一個 &lt;code&gt;case_01&lt;/code&gt;，false completion 升到 50%。模型確實有呼叫 checker，但沒有讀回真正的檢查結果；這次呼叫不只沒幫上忙，還讓 &lt;code&gt;case_01&lt;/code&gt; 偏移成 false completion。&lt;/p&gt;
-&lt;p&gt;到了 &lt;code&gt;tool_with_readback&lt;/code&gt;，Claude 10/10 通過，false completion 降到 0。就這組任務來看，只讓模型「有呼叫工具」不夠；checker 結果真的成為 gate，才有差別。&lt;/p&gt;
+&lt;p&gt;到了 &lt;code&gt;tool_with_readback&lt;/code&gt;，Claude 100% 通過，false completion 降到 0。就這組任務來看，只讓模型「有呼叫工具」不夠；checker 結果真的成為 gate，才有差別。&lt;/p&gt;
 &lt;h3 id=&#34;codex-cli&#34;&gt;Codex CLI&lt;/h3&gt;
 &lt;table&gt;
   &lt;thead&gt;
       &lt;tr&gt;
           &lt;th&gt;Experiment&lt;/th&gt;
-          &lt;th style=&#34;text-align: right&#34;&gt;Cases&lt;/th&gt;
           &lt;th style=&#34;text-align: right&#34;&gt;Actual Pass&lt;/th&gt;
           &lt;th style=&#34;text-align: right&#34;&gt;False Completion&lt;/th&gt;
           &lt;th style=&#34;text-align: right&#34;&gt;Tool Called&lt;/th&gt;
@@ -288,24 +284,21 @@
   &lt;/thead&gt;
   &lt;tbody&gt;
       &lt;tr&gt;
-          &lt;td&gt;&lt;code&gt;prompt_only&lt;/code&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: right&#34;&gt;10&lt;/td&gt;
+          &lt;td&gt;prompt_only&lt;/td&gt;
           &lt;td style=&#34;text-align: right&#34;&gt;&lt;strong&gt;7&lt;/strong&gt;&lt;/td&gt;
           &lt;td style=&#34;text-align: right&#34;&gt;&lt;strong&gt;3&lt;/strong&gt;&lt;/td&gt;
           &lt;td style=&#34;text-align: right&#34;&gt;0&lt;/td&gt;
           &lt;td style=&#34;text-align: right&#34;&gt;0&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td&gt;&lt;code&gt;tool_no_readback&lt;/code&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: right&#34;&gt;10&lt;/td&gt;
+          &lt;td&gt;tool_no_readback&lt;/td&gt;
           &lt;td style=&#34;text-align: right&#34;&gt;&lt;strong&gt;7&lt;/strong&gt;&lt;/td&gt;
           &lt;td style=&#34;text-align: right&#34;&gt;&lt;strong&gt;3&lt;/strong&gt;&lt;/td&gt;
           &lt;td style=&#34;text-align: right&#34;&gt;10&lt;/td&gt;
           &lt;td style=&#34;text-align: right&#34;&gt;0&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td&gt;&lt;code&gt;tool_with_readback&lt;/code&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: right&#34;&gt;10&lt;/td&gt;
+          &lt;td&gt;tool_with_readback&lt;/td&gt;
           &lt;td style=&#34;text-align: right&#34;&gt;&lt;strong&gt;10&lt;/strong&gt;&lt;/td&gt;
           &lt;td style=&#34;text-align: right&#34;&gt;0&lt;/td&gt;
           &lt;td style=&#34;text-align: right&#34;&gt;10&lt;/td&gt;
@@ -342,10 +335,10 @@
 &lt;p&gt;這正是 &lt;code&gt;prompt_only&lt;/code&gt; 脆弱的地方。當「到底要不要修」本身就是一個判斷題，而判斷依據又散在 prompt 各處時，模型很容易找到一條對自己比較寬鬆的解釋路徑，然後把那個局部合理的解釋，當成整個 workflow 裡的完成判定。&lt;/p&gt;
 &lt;p&gt;至於 &lt;code&gt;tool_with_readback&lt;/code&gt; 這做法，其實沒有讓模型突然更懂 Markdown；它只是把放行權從語言模型身上移走。若 checker 說 &lt;code&gt;pass=false&lt;/code&gt;，流程就不能結案；得一直修到 &lt;code&gt;pass=true&lt;/code&gt; 為止。&lt;/p&gt;
 &lt;h2 id=&#34;結語&#34;&gt;結語&lt;/h2&gt;
-&lt;p&gt;這組實驗至少說明了一件事：在同一個任務、同一份 prompt 下，只改 completion gate 的位置，false completion 的發生率就會跟著變。&lt;/p&gt;
-&lt;p&gt;對這組註腳重排任務來說，&lt;code&gt;prompt_only&lt;/code&gt; 與 &lt;code&gt;tool_no_readback&lt;/code&gt; 在兩個 agent 上都留下了 30–50% 的假性完成；當 checker result 被讀回並拿來當 gate 後，兩邊都降到 0%。&lt;/p&gt;
+&lt;p&gt;這組實驗主要在表明：在同一個任務、同一份 prompt 下，只改 completion gate 的位置，假性完成的發生率就會跟著變。&lt;/p&gt;
+&lt;p&gt;以這次的註腳重排任務來說，當 workflow 的成敗開始取決於真實狀態、工具結果、驗證通過或錯誤恢復時，如果 completion gate 只停留在語言層，假性完成率高達 30–50%；當 completion gate 真正搬到外面的 checker，假性完成率則降到 0%。&lt;/p&gt;
 &lt;p&gt;這篇測的是一個有明確 checker、錯誤類型清楚、完成條件可外部檢查的任務，不是嚴格的 model benchmark。但結果已經夠直接了：&lt;strong&gt;Prompt engineering 可以改善表達與引導，但不會自動把控制責任做到位。&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;當 workflow 的成敗開始取決於真實狀態、工具結果、驗證通過或錯誤恢復時，completion gate 就不該再留在語言層裡。至少對這次失敗的那些 case 來說，Claude 和 Codex 給的是同一個答案：是。&lt;/p&gt;
+&lt;p&gt;至少對這次失敗的 case 來說，Claude 和 Codex 給的是同一個答案：是。&lt;/p&gt;
 &lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
 &lt;hr&gt;
 &lt;ol&gt;
