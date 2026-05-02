@@ -5,7 +5,7 @@
     <link>//william-yeh.net/</link>
     <description>Recent content on Potioneer&#39;s Essays</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-tw</language>
+    <language>zh-TW</language>
     <lastBuildDate>Thu, 30 Apr 2026 20:00:00 +0800</lastBuildDate>
     
         <atom:link href="//william-yeh.net/index.xml" rel="self" type="application/rss+xml" />
@@ -233,7 +233,7 @@
   &lt;/figure&gt;
 &lt;/div&gt;
 
-&lt;h3 id=&#34;claude-code-cli&#34;&gt;Claude Code CLI&lt;/h3&gt;
+&lt;h3 id=&#34;claude-code-cli-的實驗結果&#34;&gt;Claude Code CLI 的實驗結果&lt;/h3&gt;
 &lt;table&gt;
   &lt;thead&gt;
       &lt;tr&gt;
@@ -271,7 +271,7 @@
 &lt;p&gt;&lt;code&gt;prompt_only&lt;/code&gt; 出現 40% false completion。10 個 case 裡有 4 個是 AI 宣稱 completed，但最終 checker 判失敗；失敗的是 &lt;code&gt;case_05&lt;/code&gt;、&lt;code&gt;case_06&lt;/code&gt;、&lt;code&gt;case_08&lt;/code&gt;、&lt;code&gt;case_10&lt;/code&gt;。&lt;/p&gt;
 &lt;p&gt;到了 &lt;code&gt;tool_no_readback&lt;/code&gt;，Claude 又多失敗一個 &lt;code&gt;case_01&lt;/code&gt;，false completion 升到 50%。模型確實有呼叫 checker，但沒有讀回真正的檢查結果；這次呼叫不只沒幫上忙，還讓 &lt;code&gt;case_01&lt;/code&gt; 偏移成 false completion。&lt;/p&gt;
 &lt;p&gt;到了 &lt;code&gt;tool_with_readback&lt;/code&gt;，Claude 100% 通過，false completion 降到 0。就這組任務來看，只讓模型「有呼叫工具」不夠；checker 結果真的成為 gate，才有差別。&lt;/p&gt;
-&lt;h3 id=&#34;codex-cli&#34;&gt;Codex CLI&lt;/h3&gt;
+&lt;h3 id=&#34;codex-cli-的實驗結果&#34;&gt;Codex CLI 的實驗結果&lt;/h3&gt;
 &lt;table&gt;
   &lt;thead&gt;
       &lt;tr&gt;
@@ -334,16 +334,28 @@
 &lt;p&gt;同樣的 &lt;code&gt;case_06&lt;/code&gt;，但 Codex 在 &lt;code&gt;prompt_only&lt;/code&gt; 模式下反而會把 &lt;code&gt;[^1]/[^3]&lt;/code&gt; 改成 &lt;code&gt;[^1]/[^2]&lt;/code&gt;，順利過關。也就是說，同一個任務、同一份 prompt，兩個 agent 在邊界條件上做出了不同解釋。&lt;/p&gt;
 &lt;p&gt;這正是 &lt;code&gt;prompt_only&lt;/code&gt; 脆弱的地方。當「到底要不要修」本身就是一個判斷題，而判斷依據又散在 prompt 各處時，模型很容易找到一條對自己比較寬鬆的解釋路徑，然後把那個局部合理的解釋，當成整個 workflow 裡的完成判定。&lt;/p&gt;
 &lt;p&gt;至於 &lt;code&gt;tool_with_readback&lt;/code&gt; 這做法，其實沒有讓模型突然更懂 Markdown；它只是把放行權從語言模型身上移走。若 checker 說 &lt;code&gt;pass=false&lt;/code&gt;，流程就不能結案；得一直修到 &lt;code&gt;pass=true&lt;/code&gt; 為止。&lt;/p&gt;
+&lt;h2 id=&#34;邊界條件本機小模型-qwen3-系列&#34;&gt;邊界條件：本機小模型 (Qwen3 系列)&lt;/h2&gt;
+&lt;p&gt;我在本機用兩個 Qwen3 系列模型重做這組實驗：Qwen3:8b (general dense)，以及 2026/02 發布的下一代 Qwen3.5-9B (hybrid 架構)，把 Claude Code 客戶端直接接到本機 Ollama。&lt;/p&gt;
+&lt;p&gt;兩個模型的工具呼叫能力都沒問題。但放進 Claude Code 整套 harness 去跑實驗，結果兩個模型都沒有任何一次真實的呼叫工具，失敗方式也完全不同。&lt;/p&gt;
+&lt;p&gt;在 Qwen3:8b 的實驗裡，每一個 case 都是 agent failure。不只是「沒寫檔」，也根本沒有真的呼叫任何工具。模型自己把整套 readback 流程都在想像中「演」完了，它甚至從 prompt 路徑裡抓到 workspace 名稱的字串，順手填進 &lt;code&gt;run_id&lt;/code&gt; 欄位。夠聰明吧！&lt;/p&gt;
+&lt;p&gt;8B 失敗的原因是「決策被淹沒」。當 prompt 長到一個程度、工具選項多到一個程度，模型會跳過 tool-use 那個分支，直接退化成「產出一段&lt;strong&gt;看起來像答案&lt;/strong&gt;的文字」就交差。能力沒消失，只是被擠出有效 attention 的範圍。&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt; 從假性完成的角度看，這個結果其實比 Claude/Codex 的 30–50% 還糟：表面看像 100% 通過 (vacuous pass)，實際上 100% 沒做事。&lt;/p&gt;
+&lt;p&gt;至於 Qwen3.5-9B，inference 真的有在跑，只是 token 產出速率崩潰到實務上完全不可用——Claude Code 這樣的 harness，對它來說太重了。本來是「能呼叫工具」，最後變成「來不及呼叫工具」。&lt;/p&gt;
+&lt;p&gt;兩個模型都顯示：能力（模型支援 tool call）和行為（模型在這個 harness 下實際發 tool call）是兩件事——一邊是「決策被淹沒」、另一邊是「throughput 崩潰」，結果都沒觸發 completion gate。&lt;/p&gt;
+&lt;p&gt;因此，gate 是必要條件，但若要真的有效，還得確保&lt;strong&gt;模型在當時的負荷之下，還會（並且來得及）去碰它&lt;/strong&gt;。&lt;/p&gt;
 &lt;h2 id=&#34;結語&#34;&gt;結語&lt;/h2&gt;
-&lt;p&gt;這組實驗主要在表明：在同一個任務、同一份 prompt 下，只改 completion gate 的位置，假性完成的發生率就會跟著變。&lt;/p&gt;
+&lt;p&gt;這組實驗主要在表明：在同一個任務、同一份 prompt 下，改 completion gate 的位置，假性完成的發生率就會跟著變動。&lt;/p&gt;
 &lt;p&gt;以這次的註腳重排任務來說，當 workflow 的成敗開始取決於真實狀態、工具結果、驗證通過或錯誤恢復時，如果 completion gate 只停留在語言層，假性完成率高達 30–50%；當 completion gate 真正搬到外面的 checker，假性完成率則降到 0%。&lt;/p&gt;
 &lt;p&gt;這篇測的是一個有明確 checker、錯誤類型清楚、完成條件可外部檢查的任務，不是嚴格的 model benchmark。但結果已經夠直接了：&lt;strong&gt;Prompt engineering 可以改善表達與引導，但不會自動把控制責任做到位。&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;至少對這次失敗的 case 來說，Claude 和 Codex 給的是同一個答案：是。&lt;/p&gt;
+&lt;p&gt;流程設計上，除了要把控制責任移出去，還得確認那個閘門在實際負荷下真的有人敲——&lt;strong&gt;沒人敲的閘門，跟沒有閘門差不多&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;這就是 Claude 和 Codex 對這些失敗 case 給的提醒。&lt;/p&gt;
 &lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
 &lt;hr&gt;
 &lt;ol&gt;
 &lt;li id=&#34;fn:1&#34;&gt;
 &lt;p&gt;這裡選擇 Claude Code CLI 與 Codex CLI，而不是直接呼叫 LLM API，主要是因為本文要觀察的是比較接近實務使用的 agent workflow：它們會讀檔、寫檔、跑命令，也比較容易暴露「完成判定放在哪裡」這類控制問題。因此，這次只比較 agent CLI 在多步驟任務中的 workflow 行為。缺點是結果會受模型版本、權限設定與工作目錄狀態影響，所以比較適合把它當成 workflow control demo 來看。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;順帶一提，在 Qwen3.5 出現之前，Ollama 建議跟 Claude Code 搭配的 Qwen3 模型，並不是 &lt;code&gt;Qwen3:8b&lt;/code&gt;，而是 &lt;code&gt;qwen3-coder&lt;/code&gt;（30B-A3B MoE，agentic 後訓練變體）。Alibaba 並沒有提供小 dense 的 coder 版本——這個產品決策本身就間接承認：要在 agentic harness 裡可靠觸發 tool-use，光只有「模型支援 function calling」還不夠，還要相應的後訓練配上夠大的決策容量。&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;</description>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="zh-tw" itemscope itemtype="http://schema.org/WebPage" data-theme="light">
+
+<html lang="zh-TW" itemscope itemtype="http://schema.org/WebPage" data-theme="light">
 
 <head>
   <meta charset="utf-8" />
@@ -9,6 +10,7 @@
     Prompt 寫了卻還是不穩：用三組實驗看完成判定該放在哪裡 - Potioneer&#39;s Essays
     </title>
   
+
 
 
 <meta name="renderer" content="webkit" />
@@ -56,7 +58,7 @@
   <meta property="og:site_name" content="Potioneer&#39;s Essays">
   <meta property="og:title" content="Prompt 寫了卻還是不穩：用三組實驗看完成判定該放在哪裡">
   <meta property="og:description" content="Prompt 編寫不穩定，核心問題在於完成判定機制的缺失。多步驟代理流程常因過早啟動、假完成或未驗證即結束，導致完成判定權責不清。僅將完成條件寫入 Prompt 還不夠，需用外部機制控制完成 gating。實驗顯示，將完成判定移至流程外可顯著降低錯誤率，提升流程穩定性與結果準確性。">
-  <meta property="og:locale" content="zh_tw">
+  <meta property="og:locale" content="zh_TW">
   <meta property="og:type" content="article">
     <meta property="article:section" content="post">
     <meta property="article:published_time" content="2026-04-30T20:00:00+08:00">
@@ -70,7 +72,7 @@
   <meta itemprop="description" content="Prompt 編寫不穩定，核心問題在於完成判定機制的缺失。多步驟代理流程常因過早啟動、假完成或未驗證即結束，導致完成判定權責不清。僅將完成條件寫入 Prompt 還不夠，需用外部機制控制完成 gating。實驗顯示，將完成判定移至流程外可顯著降低錯誤率，提升流程穩定性與結果準確性。">
   <meta itemprop="datePublished" content="2026-04-30T20:00:00+08:00">
   <meta itemprop="dateModified" content="2026-04-30T20:00:00+08:00">
-  <meta itemprop="wordCount" content="3748">
+  <meta itemprop="wordCount" content="4608">
   <meta itemprop="keywords" content="Ai,Cs,Programming,Testing">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Prompt 寫了卻還是不穩：用三組實驗看完成判定該放在哪裡">
@@ -88,7 +90,7 @@
 
 
 
-<link rel="stylesheet" href="/css/style.min.364a007898cdc7d632240f31102306c744fd369adbb24a222f4cad1f2e80ede3.css" integrity="sha256-NkoAeJjNx9YyJA8xECMGx0T9NprbskoiL0ytHy6A7eM=" media="screen"
+<link rel="stylesheet" href="/css/style.min.ee30689ac65455824f0122a99cb99487e0871a76d8e7f2037e03ea1f0b67368a.css" integrity="sha256-7jBomsZUVYJPASKpnLmUh&#43;CHGnbY5/IDfgPqHwtnNoo=" media="screen"
   crossorigin="anonymous">
 
 
@@ -422,10 +424,11 @@
       <input type="checkbox" id="toc-toggle" class="toc-toggle-input" aria-hidden="true">
 
   <label for="toc-toggle" class="toc-toggle-button" aria-label="文章目錄">
+    
     <svg class="toc-icon-open" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-      <line x1="3" y1="6" x2="21" y2="6"></line>
-      <line x1="3" y1="12" x2="15" y2="12"></line>
-      <line x1="3" y1="18" x2="18" y2="18"></line>
+      <line x1="4" y1="6" x2="20" y2="6"></line>
+      <line x1="4" y1="12" x2="20" y2="12"></line>
+      <line x1="4" y1="18" x2="20" y2="18"></line>
     </svg>
     <svg class="toc-icon-close" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
       <line x1="18" y1="6" x2="6" y2="18"></line>
@@ -454,11 +457,12 @@
     </li>
     <li><a href="#實驗結果">實驗結果</a>
       <ul>
-        <li><a href="#claude-code-cli">Claude Code CLI</a></li>
-        <li><a href="#codex-cli">Codex CLI</a></li>
+        <li><a href="#claude-code-cli-的實驗結果">Claude Code CLI 的實驗結果</a></li>
+        <li><a href="#codex-cli-的實驗結果">Codex CLI 的實驗結果</a></li>
         <li><a href="#case_06模型把局部合理的解釋當成完成"><code>case_06</code>：模型把局部合理的解釋當成完成</a></li>
       </ul>
     </li>
+    <li><a href="#邊界條件本機小模型-qwen3-系列">邊界條件：本機小模型 (Qwen3 系列)</a></li>
     <li><a href="#結語">結語</a></li>
   </ul>
 </nav>
@@ -499,8 +503,8 @@
 
   <div class="post-meta__right">
     <span class="post-meta-more">
-      約 3748 字 -
-      預計閱讀 8 分鐘
+      約 4608 字 -
+      預計閱讀 10 分鐘
       
       
       </span>
@@ -741,7 +745,7 @@
   </figure>
 </div>
 
-<h3 id="claude-code-cli">Claude Code CLI</h3>
+<h3 id="claude-code-cli-的實驗結果">Claude Code CLI 的實驗結果</h3>
 <table>
   <thead>
       <tr>
@@ -779,7 +783,7 @@
 <p><code>prompt_only</code> 出現 40% false completion。10 個 case 裡有 4 個是 AI 宣稱 completed，但最終 checker 判失敗；失敗的是 <code>case_05</code>、<code>case_06</code>、<code>case_08</code>、<code>case_10</code>。</p>
 <p>到了 <code>tool_no_readback</code>，Claude 又多失敗一個 <code>case_01</code>，false completion 升到 50%。模型確實有呼叫 checker，但沒有讀回真正的檢查結果；這次呼叫不只沒幫上忙，還讓 <code>case_01</code> 偏移成 false completion。</p>
 <p>到了 <code>tool_with_readback</code>，Claude 100% 通過，false completion 降到 0。就這組任務來看，只讓模型「有呼叫工具」不夠；checker 結果真的成為 gate，才有差別。</p>
-<h3 id="codex-cli">Codex CLI</h3>
+<h3 id="codex-cli-的實驗結果">Codex CLI 的實驗結果</h3>
 <table>
   <thead>
       <tr>
@@ -842,16 +846,28 @@
 <p>同樣的 <code>case_06</code>，但 Codex 在 <code>prompt_only</code> 模式下反而會把 <code>[^1]/[^3]</code> 改成 <code>[^1]/[^2]</code>，順利過關。也就是說，同一個任務、同一份 prompt，兩個 agent 在邊界條件上做出了不同解釋。</p>
 <p>這正是 <code>prompt_only</code> 脆弱的地方。當「到底要不要修」本身就是一個判斷題，而判斷依據又散在 prompt 各處時，模型很容易找到一條對自己比較寬鬆的解釋路徑，然後把那個局部合理的解釋，當成整個 workflow 裡的完成判定。</p>
 <p>至於 <code>tool_with_readback</code> 這做法，其實沒有讓模型突然更懂 Markdown；它只是把放行權從語言模型身上移走。若 checker 說 <code>pass=false</code>，流程就不能結案；得一直修到 <code>pass=true</code> 為止。</p>
+<h2 id="邊界條件本機小模型-qwen3-系列">邊界條件：本機小模型 (Qwen3 系列)</h2>
+<p>我在本機用兩個 Qwen3 系列模型重做這組實驗：Qwen3:8b (general dense)，以及 2026/02 發布的下一代 Qwen3.5-9B (hybrid 架構)，把 Claude Code 客戶端直接接到本機 Ollama。</p>
+<p>兩個模型的工具呼叫能力都沒問題。但放進 Claude Code 整套 harness 去跑實驗，結果兩個模型都沒有任何一次真實的呼叫工具，失敗方式也完全不同。</p>
+<p>在 Qwen3:8b 的實驗裡，每一個 case 都是 agent failure。不只是「沒寫檔」，也根本沒有真的呼叫任何工具。模型自己把整套 readback 流程都在想像中「演」完了，它甚至從 prompt 路徑裡抓到 workspace 名稱的字串，順手填進 <code>run_id</code> 欄位。夠聰明吧！</p>
+<p>8B 失敗的原因是「決策被淹沒」。當 prompt 長到一個程度、工具選項多到一個程度，模型會跳過 tool-use 那個分支，直接退化成「產出一段<strong>看起來像答案</strong>的文字」就交差。能力沒消失，只是被擠出有效 attention 的範圍。<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> 從假性完成的角度看，這個結果其實比 Claude/Codex 的 30–50% 還糟：表面看像 100% 通過 (vacuous pass)，實際上 100% 沒做事。</p>
+<p>至於 Qwen3.5-9B，inference 真的有在跑，只是 token 產出速率崩潰到實務上完全不可用——Claude Code 這樣的 harness，對它來說太重了。本來是「能呼叫工具」，最後變成「來不及呼叫工具」。</p>
+<p>兩個模型都顯示：能力（模型支援 tool call）和行為（模型在這個 harness 下實際發 tool call）是兩件事——一邊是「決策被淹沒」、另一邊是「throughput 崩潰」，結果都沒觸發 completion gate。</p>
+<p>因此，gate 是必要條件，但若要真的有效，還得確保<strong>模型在當時的負荷之下，還會（並且來得及）去碰它</strong>。</p>
 <h2 id="結語">結語</h2>
-<p>這組實驗主要在表明：在同一個任務、同一份 prompt 下，只改 completion gate 的位置，假性完成的發生率就會跟著變。</p>
+<p>這組實驗主要在表明：在同一個任務、同一份 prompt 下，改 completion gate 的位置，假性完成的發生率就會跟著變動。</p>
 <p>以這次的註腳重排任務來說，當 workflow 的成敗開始取決於真實狀態、工具結果、驗證通過或錯誤恢復時，如果 completion gate 只停留在語言層，假性完成率高達 30–50%；當 completion gate 真正搬到外面的 checker，假性完成率則降到 0%。</p>
 <p>這篇測的是一個有明確 checker、錯誤類型清楚、完成條件可外部檢查的任務，不是嚴格的 model benchmark。但結果已經夠直接了：<strong>Prompt engineering 可以改善表達與引導，但不會自動把控制責任做到位。</strong></p>
-<p>至少對這次失敗的 case 來說，Claude 和 Codex 給的是同一個答案：是。</p>
+<p>流程設計上，除了要把控制責任移出去，還得確認那個閘門在實際負荷下真的有人敲——<strong>沒人敲的閘門，跟沒有閘門差不多</strong>。</p>
+<p>這就是 Claude 和 Codex 對這些失敗 case 給的提醒。</p>
 <div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
 <li id="fn:1">
 <p>這裡選擇 Claude Code CLI 與 Codex CLI，而不是直接呼叫 LLM API，主要是因為本文要觀察的是比較接近實務使用的 agent workflow：它們會讀檔、寫檔、跑命令，也比較容易暴露「完成判定放在哪裡」這類控制問題。因此，這次只比較 agent CLI 在多步驟任務中的 workflow 行為。缺點是結果會受模型版本、權限設定與工作目錄狀態影響，所以比較適合把它當成 workflow control demo 來看。&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>順帶一提，在 Qwen3.5 出現之前，Ollama 建議跟 Claude Code 搭配的 Qwen3 模型，並不是 <code>Qwen3:8b</code>，而是 <code>qwen3-coder</code>（30B-A3B MoE，agentic 後訓練變體）。Alibaba 並沒有提供小 dense 的 coder 版本——這個產品決策本身就間接承認：要在 agentic harness 裡可靠觸發 tool-use，光只有「模型支援 function calling」還不夠，還要相應的後訓練配上夠大的決策容量。&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </div>
