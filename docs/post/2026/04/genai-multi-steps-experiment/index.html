@@ -38,7 +38,7 @@
 
 
 
-<meta name="author" content="William Yeh" /><meta name="description" content="Prompt 編寫不穩定，核心問題在於完成判定機制的缺失。多步驟代理流程常因過早啟動、假完成或未驗證即結束，導致完成判定權責不清。僅將完成條件寫入 Prompt 還不夠，需用外部機制控制完成 gating。實驗顯示，將完成判定移至流程外可顯著降低錯誤率，提升流程穩定性與結果準確性。" />
+<meta name="author" content="William Yeh" /><meta name="description" content="多步驟代理工作流程的穩定性經常受到完成判定機制的影響。過早啟動、假性完成與未驗證即結案是三大失靈主因。任務成敗需仰賴真實狀態與工具結果，單憑提示詞條件往往不足。實驗證實，將完成判定置於不同位置會明顯改變虛假完成發生率。實務上應結合驗證條件與外部機制，確保流程在真實狀態達成時才正確終止，以提升自動化流程的準確度與可靠性。" />
 
 
 
@@ -57,7 +57,7 @@
 <meta property="og:url" content="//william-yeh.net/post/2026/04/genai-multi-steps-experiment/">
   <meta property="og:site_name" content="Potioneer&#39;s Essays">
   <meta property="og:title" content="Prompt 寫了卻還是不穩：用三組實驗看完成判定該放在哪裡">
-  <meta property="og:description" content="Prompt 編寫不穩定，核心問題在於完成判定機制的缺失。多步驟代理流程常因過早啟動、假完成或未驗證即結束，導致完成判定權責不清。僅將完成條件寫入 Prompt 還不夠，需用外部機制控制完成 gating。實驗顯示，將完成判定移至流程外可顯著降低錯誤率，提升流程穩定性與結果準確性。">
+  <meta property="og:description" content="多步驟代理工作流程的穩定性經常受到完成判定機制的影響。過早啟動、假性完成與未驗證即結案是三大失靈主因。任務成敗需仰賴真實狀態與工具結果，單憑提示詞條件往往不足。實驗證實，將完成判定置於不同位置會明顯改變虛假完成發生率。實務上應結合驗證條件與外部機制，確保流程在真實狀態達成時才正確終止，以提升自動化流程的準確度與可靠性。">
   <meta property="og:locale" content="zh_TW">
   <meta property="og:type" content="article">
     <meta property="article:section" content="post">
@@ -69,14 +69,14 @@
     <meta property="article:tag" content="Testing">
 
   <meta itemprop="name" content="Prompt 寫了卻還是不穩：用三組實驗看完成判定該放在哪裡">
-  <meta itemprop="description" content="Prompt 編寫不穩定，核心問題在於完成判定機制的缺失。多步驟代理流程常因過早啟動、假完成或未驗證即結束，導致完成判定權責不清。僅將完成條件寫入 Prompt 還不夠，需用外部機制控制完成 gating。實驗顯示，將完成判定移至流程外可顯著降低錯誤率，提升流程穩定性與結果準確性。">
+  <meta itemprop="description" content="多步驟代理工作流程的穩定性經常受到完成判定機制的影響。過早啟動、假性完成與未驗證即結案是三大失靈主因。任務成敗需仰賴真實狀態與工具結果，單憑提示詞條件往往不足。實驗證實，將完成判定置於不同位置會明顯改變虛假完成發生率。實務上應結合驗證條件與外部機制，確保流程在真實狀態達成時才正確終止，以提升自動化流程的準確度與可靠性。">
   <meta itemprop="datePublished" content="2026-04-30T20:00:00+08:00">
   <meta itemprop="dateModified" content="2026-04-30T20:00:00+08:00">
   <meta itemprop="wordCount" content="4608">
   <meta itemprop="keywords" content="Ai,Cs,Programming,Testing">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Prompt 寫了卻還是不穩：用三組實驗看完成判定該放在哪裡">
-  <meta name="twitter:description" content="Prompt 編寫不穩定，核心問題在於完成判定機制的缺失。多步驟代理流程常因過早啟動、假完成或未驗證即結束，導致完成判定權責不清。僅將完成條件寫入 Prompt 還不夠，需用外部機制控制完成 gating。實驗顯示，將完成判定移至流程外可顯著降低錯誤率，提升流程穩定性與結果準確性。">
+  <meta name="twitter:description" content="多步驟代理工作流程的穩定性經常受到完成判定機制的影響。過早啟動、假性完成與未驗證即結案是三大失靈主因。任務成敗需仰賴真實狀態與工具結果，單憑提示詞條件往往不足。實驗證實，將完成判定置於不同位置會明顯改變虛假完成發生率。實務上應結合驗證條件與外部機制，確保流程在真實狀態達成時才正確終止，以提升自動化流程的準確度與可靠性。">
 
 <link rel="icon" href="/favicon.ico" />
 
@@ -90,7 +90,7 @@
 
 
 
-<link rel="stylesheet" href="/css/style.min.ee30689ac65455824f0122a99cb99487e0871a76d8e7f2037e03ea1f0b67368a.css" integrity="sha256-7jBomsZUVYJPASKpnLmUh&#43;CHGnbY5/IDfgPqHwtnNoo=" media="screen"
+<link rel="stylesheet" href="/css/style.min.c1cc5084afa61f2d5d261ff4f44ad0a4c90db9ccf89aa04220d7ca52dc3ad3b2.css" integrity="sha256-wcxQhK&#43;mHy1dJh/09ErQpMkNucz4mqBCINfKUtw607I=" media="screen"
   crossorigin="anonymous">
 
 
