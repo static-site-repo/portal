@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="zh-tw" itemscope itemtype="http://schema.org/WebPage" data-theme="light">
+
+<html lang="zh-TW" itemscope itemtype="http://schema.org/WebPage" data-theme="light">
 
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8" />
@@ -9,6 +10,7 @@
     AI 是個穩定可靠的測試者嗎？ - Potioneer&#39;s Essays
     </title>
   
+
 
 
 <meta name="renderer" content="webkit" />
@@ -31,7 +33,7 @@
 <meta name="generator" content="Hugo 0.161.1" />
 
 
-<link rel="canonical" href="http://0.0.0.0:1313/post/2026/04/genai-testing/" />
+<link rel="canonical" href="//localhost:1313/post/2026/04/genai-testing/" />
 
 
 
@@ -54,11 +56,11 @@
 <meta name="keywords" content="ai, cs, programming, testing" />
 
 
-<meta property="og:url" content="http://0.0.0.0:1313/post/2026/04/genai-testing/">
+<meta property="og:url" content="//localhost:1313/post/2026/04/genai-testing/">
   <meta property="og:site_name" content="Potioneer&#39;s Essays">
   <meta property="og:title" content="AI 是個穩定可靠的測試者嗎？">
   <meta property="og:description" content="在 AI 時代，工程護欄重要性提高。有些人就想說，測試既然這麼重要，但又是苦差事，何不讓 AI 來做？ 譬如說，很多人都吃到這個甜頭：有了像 superpowers 這種 agent skill 來走 TDD 流程，單元測試簡直是又快又多。於是，品質就自動有了保障了嗎？ 很多人也吃到 Playwright 的甜頭，驅動它產生向來繁瑣又脆弱的 end to end 測試。於是，品質就自動有了保障了嗎？ 有人說，透過 SDD (spec driven development) 手法，甚至從源頭就可以用 acceptance criteria 角度、用 given-when-then 界定之後的測試方向。AI 掌握需求前緣了，理論上應該很能生出涵蓋面極廣、包含各種 edge case 的測試案例吧？ 以上這些想法，是否有實證資料佐證？或是反證？ Rough ideas: [ ] James Whittaker 觀光客測試法 https://www.facebook.com/share/p/1HFagr4W9D/ [ ] AI 測試常見的問題及原因 https://www.facebook.com/share/p/1DjxRR1uUA/ [ ] . https://www.facebook.com/share/p/17Vwr4RMGr/ [ ] 還有其他結構化測試 &amp; 探索式測試 的經驗可以幫助 AI 測試嗎？ consider: “AI 讀了程式後，根據現有邏輯去推論 expected behavior，接著再寫測試去驗證那套推論。” but 如果是像 superpowers 那樣採用 TDD 或是 SDD: 讓 AI 先從 spec/validation 角度生出測試案例，再去寫 implemention 程式，是否就不會有上述的問題？">
-  <meta property="og:locale" content="zh_tw">
+  <meta property="og:locale" content="zh_TW">
   <meta property="og:type" content="article">
     <meta property="article:section" content="post">
     <meta property="article:published_time" content="2026-04-24T08:00:00+08:00">
@@ -90,12 +92,10 @@
 
 
 
-<link rel="stylesheet" href="/css/style.min.ee30689ac65455824f0122a99cb99487e0871a76d8e7f2037e03ea1f0b67368a.css" integrity="sha256-7jBomsZUVYJPASKpnLmUh&#43;CHGnbY5/IDfgPqHwtnNoo=" media="screen"
+<link rel="stylesheet" href="/css/style.min.bb1eb901584c89594918ba9821cb0f685d2652dee18d424f9571c751b1047500.css" integrity="sha256-ux65AVhMiVlJGLqYIcsPaF0mUt7hjUJPlXHHUbEEdQA=" media="screen"
   crossorigin="anonymous">
 
 
-
-<link rel="stylesheet" href="/css/custom.css">
 
 
 
@@ -174,7 +174,7 @@
         
         
         
-        <a class="menu-item-link" href="http://0.0.0.0:1313/">♜</a>
+        <a class="menu-item-link" href="//localhost:1313/">♜</a>
         
 
         
@@ -185,7 +185,7 @@
         
         
         
-        <a class="menu-item-link" href="http://0.0.0.0:1313/post/">Archives</a>
+        <a class="menu-item-link" href="//localhost:1313/post/">Archives</a>
         
 
         
@@ -195,7 +195,7 @@
       <li class="menu-item">
         
         
-        <a class="menu-item-link menu-parent" href="http://0.0.0.0:1313/series/">
+        <a class="menu-item-link menu-parent" href="//localhost:1313/series/">
           Series
           
 <svg aria-hidden="true" class="lucide lucide-chevron-down hi-svg-inline icon--chevron-down" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="m6 9 6 6 6-6"/></svg>
@@ -203,35 +203,35 @@
         <ul class="submenu">
           
           <li class="submenu-item">
-            <a href="http://0.0.0.0:1313/series/career-reading-club/">職涯躍升書系導讀會</a>
+            <a href="//localhost:1313/series/career-reading-club/">職涯躍升書系導讀會</a>
           </li>
           
           <li class="submenu-item">
-            <a href="http://0.0.0.0:1313/series/essence-of-scrum/">Essence of Scrum</a>
+            <a href="//localhost:1313/series/essence-of-scrum/">Essence of Scrum</a>
           </li>
           
           <li class="submenu-item">
-            <a href="http://0.0.0.0:1313/series/scrum-master-training/">Scrum master 培訓系列</a>
+            <a href="//localhost:1313/series/scrum-master-training/">Scrum master 培訓系列</a>
           </li>
           
           <li class="submenu-item">
-            <a href="http://0.0.0.0:1313/series/agile-decomposition/">敏捷的工作分解方法</a>
+            <a href="//localhost:1313/series/agile-decomposition/">敏捷的工作分解方法</a>
           </li>
           
           <li class="submenu-item">
-            <a href="http://0.0.0.0:1313/series/systhinking-series/">「系統思考工作坊」系列</a>
+            <a href="//localhost:1313/series/systhinking-series/">「系統思考工作坊」系列</a>
           </li>
           
           <li class="submenu-item">
-            <a href="http://0.0.0.0:1313/series/criteria-series/">「判準與指標」系列</a>
+            <a href="//localhost:1313/series/criteria-series/">「判準與指標」系列</a>
           </li>
           
           <li class="submenu-item">
-            <a href="http://0.0.0.0:1313/series/change-series/">「改變」系列</a>
+            <a href="//localhost:1313/series/change-series/">「改變」系列</a>
           </li>
           
           <li class="submenu-item">
-            <a href="http://0.0.0.0:1313/series/book-review/">書籍／課程推薦</a>
+            <a href="//localhost:1313/series/book-review/">書籍／課程推薦</a>
           </li>
           
         </ul>
@@ -244,7 +244,7 @@
         
         
         
-        <a class="menu-item-link" href="http://0.0.0.0:1313/tags/">Tags</a>
+        <a class="menu-item-link" href="//localhost:1313/tags/">Tags</a>
         
 
         
@@ -255,7 +255,7 @@
         
         
         
-        <a class="menu-item-link" href="http://0.0.0.0:1313/categories/">Categories</a>
+        <a class="menu-item-link" href="//localhost:1313/categories/">Categories</a>
         
 
         
@@ -281,7 +281,7 @@
       </li>
 
       <li class="menu-item">
-        <a class="menu-item-link" href="http://0.0.0.0:1313/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
+        <a class="menu-item-link" href="//localhost:1313/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
           title="rss" target="_blank">
           
 <svg aria-hidden="true" class="lucide lucide-rss hi-svg-inline icon--rss" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg>
@@ -312,14 +312,14 @@
         
         
         
-        <a class="menu-item-link" href="http://0.0.0.0:1313/">♜</a>
+        <a class="menu-item-link" href="//localhost:1313/">♜</a>
         
         
       </li><li class="mobile-menu-item">
         
         
         
-        <a class="menu-item-link" href="http://0.0.0.0:1313/post/">Archives</a>
+        <a class="menu-item-link" href="//localhost:1313/post/">Archives</a>
         
         
       </li><li class="mobile-menu-item">
@@ -327,42 +327,42 @@
         
         <div class="mobile-menu-parent">
           <span class="mobile-submenu-open"></span>
-          <a href="http://0.0.0.0:1313/series/">
+          <a href="//localhost:1313/series/">
             Series
           </a>
         </div>
         <ul class="mobile-submenu-list">
           
           <li>
-            <a href="http://0.0.0.0:1313/series/career-reading-club/">職涯躍升書系導讀會</a>
+            <a href="//localhost:1313/series/career-reading-club/">職涯躍升書系導讀會</a>
           </li>
           
           <li>
-            <a href="http://0.0.0.0:1313/series/essence-of-scrum/">Essence of Scrum</a>
+            <a href="//localhost:1313/series/essence-of-scrum/">Essence of Scrum</a>
           </li>
           
           <li>
-            <a href="http://0.0.0.0:1313/series/scrum-master-training/">Scrum master 培訓系列</a>
+            <a href="//localhost:1313/series/scrum-master-training/">Scrum master 培訓系列</a>
           </li>
           
           <li>
-            <a href="http://0.0.0.0:1313/series/agile-decomposition/">敏捷的工作分解方法</a>
+            <a href="//localhost:1313/series/agile-decomposition/">敏捷的工作分解方法</a>
           </li>
           
           <li>
-            <a href="http://0.0.0.0:1313/series/systhinking-series/">「系統思考工作坊」系列</a>
+            <a href="//localhost:1313/series/systhinking-series/">「系統思考工作坊」系列</a>
           </li>
           
           <li>
-            <a href="http://0.0.0.0:1313/series/criteria-series/">「判準與指標」系列</a>
+            <a href="//localhost:1313/series/criteria-series/">「判準與指標」系列</a>
           </li>
           
           <li>
-            <a href="http://0.0.0.0:1313/series/change-series/">「改變」系列</a>
+            <a href="//localhost:1313/series/change-series/">「改變」系列</a>
           </li>
           
           <li>
-            <a href="http://0.0.0.0:1313/series/book-review/">書籍／課程推薦</a>
+            <a href="//localhost:1313/series/book-review/">書籍／課程推薦</a>
           </li>
           
         </ul>
@@ -371,14 +371,14 @@
         
         
         
-        <a class="menu-item-link" href="http://0.0.0.0:1313/tags/">Tags</a>
+        <a class="menu-item-link" href="//localhost:1313/tags/">Tags</a>
         
         
       </li><li class="mobile-menu-item">
         
         
         
-        <a class="menu-item-link" href="http://0.0.0.0:1313/categories/">Categories</a>
+        <a class="menu-item-link" href="//localhost:1313/categories/">Categories</a>
         
         
       </li>
@@ -399,7 +399,7 @@
       </li>
 
       <li class="mobile-menu-item">
-        <a class="menu-item-link" href="http://0.0.0.0:1313/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
+        <a class="menu-item-link" href="//localhost:1313/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
           title="rss" target="_blank">
           
 <svg aria-hidden="true" class="lucide lucide-rss hi-svg-inline icon--rss" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg>
@@ -497,7 +497,7 @@
       
         
           
-        <a href="http://0.0.0.0:1313/categories/tech/">tech</a>
+        <a href="//localhost:1313/categories/tech/">tech</a>
     </div>
 
 
@@ -1589,10 +1589,10 @@ AI 時代，工程護欄更重要——不是把測試全丟給 AI，而是把 A
 
         <footer class="post-footer">
           <div class="post-tags">
-              <a href="http://0.0.0.0:1313/tags/ai/">ai</a>
-                <a href="http://0.0.0.0:1313/tags/cs/">cs</a>
-                <a href="http://0.0.0.0:1313/tags/programming/">programming</a>
-                <a href="http://0.0.0.0:1313/tags/testing/">testing</a>
+              <a href="//localhost:1313/tags/ai/">ai</a>
+                <a href="//localhost:1313/tags/cs/">cs</a>
+                <a href="//localhost:1313/tags/programming/">programming</a>
+                <a href="//localhost:1313/tags/testing/">testing</a>
                 
             </div>
 
@@ -1722,7 +1722,7 @@ AI 時代，工程護欄更重要——不是把測試全丟給 AI，而是把 A
 </a>
 
 
-<a href="http://0.0.0.0:1313/index.xml" rel="noopener alternate" type="application/rss&#43;xml" class="social-icon-link" title="rss"
+<a href="//localhost:1313/index.xml" rel="noopener alternate" type="application/rss&#43;xml" class="social-icon-link" title="rss"
   target="_blank">
   
 <svg aria-hidden="true" class="lucide lucide-rss hi-svg-inline" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg>

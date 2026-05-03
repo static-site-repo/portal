@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="zh-tw" itemscope itemtype="http://schema.org/WebPage" data-theme="light">
+
+<html lang="zh-TW" itemscope itemtype="http://schema.org/WebPage" data-theme="light">
 
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8" />
@@ -9,6 +10,7 @@
     資料結構相關元素與程式庫的 Complexity - Potioneer&#39;s Essays
     </title>
   
+
 
 
 <meta name="renderer" content="webkit" />
@@ -31,7 +33,7 @@
 <meta name="generator" content="Hugo 0.161.1" />
 
 
-<link rel="canonical" href="http://0.0.0.0:1313/post/2023/03/ds-lib-complexity/" />
+<link rel="canonical" href="//localhost:1313/post/2023/03/ds-lib-complexity/" />
 
 
 
@@ -58,7 +60,7 @@
 <meta name="keywords" content="algorithm, cs, programming" />
 
 
-<meta property="og:url" content="http://0.0.0.0:1313/post/2023/03/ds-lib-complexity/">
+<meta property="og:url" content="//localhost:1313/post/2023/03/ds-lib-complexity/">
   <meta property="og:site_name" content="Potioneer&#39;s Essays">
   <meta property="og:title" content="資料結構相關元素與程式庫的 Complexity">
   <meta property="og:description" content="這年頭，程式設計師必須具備多語能力。
@@ -66,7 +68,7 @@
 雖然大體來說，這應該是了無新意的題材，只是我最近發現，我對某些語言的某些資料結構相關設施，有錯誤的認知。因此，想藉此記錄一下考察的結果。
 以下內容將大致參考 Competitive Programming 4 第二章的標題順序來整理，重點會放在 CDT (concrete data types) 而不是 ADT (abstract data types)，畢竟這才是左右效率的關鍵。
 某些語言的規格書就已定義好 complexity（像 C&#43;&#43; 的 STL），某些語言則無。對於後者，只能以典型的實作品來談：像 Java 我就鎖定 OpenJDK，Python 則鎖定 CPython 3。">
-  <meta property="og:locale" content="zh_tw">
+  <meta property="og:locale" content="zh_TW">
   <meta property="og:type" content="article">
     <meta property="article:section" content="post">
     <meta property="article:published_time" content="2023-03-01T08:00:00+08:00">
@@ -105,12 +107,10 @@
 
 
 
-<link rel="stylesheet" href="/css/style.min.ee30689ac65455824f0122a99cb99487e0871a76d8e7f2037e03ea1f0b67368a.css" integrity="sha256-7jBomsZUVYJPASKpnLmUh&#43;CHGnbY5/IDfgPqHwtnNoo=" media="screen"
+<link rel="stylesheet" href="/css/style.min.bb1eb901584c89594918ba9821cb0f685d2652dee18d424f9571c751b1047500.css" integrity="sha256-ux65AVhMiVlJGLqYIcsPaF0mUt7hjUJPlXHHUbEEdQA=" media="screen"
   crossorigin="anonymous">
 
 
-
-<link rel="stylesheet" href="/css/custom.css">
 
 
 
@@ -189,7 +189,7 @@
         
         
         
-        <a class="menu-item-link" href="http://0.0.0.0:1313/">♜</a>
+        <a class="menu-item-link" href="//localhost:1313/">♜</a>
         
 
         
@@ -200,7 +200,7 @@
         
         
         
-        <a class="menu-item-link" href="http://0.0.0.0:1313/post/">Archives</a>
+        <a class="menu-item-link" href="//localhost:1313/post/">Archives</a>
         
 
         
@@ -210,7 +210,7 @@
       <li class="menu-item">
         
         
-        <a class="menu-item-link menu-parent" href="http://0.0.0.0:1313/series/">
+        <a class="menu-item-link menu-parent" href="//localhost:1313/series/">
           Series
           
 <svg aria-hidden="true" class="lucide lucide-chevron-down hi-svg-inline icon--chevron-down" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="m6 9 6 6 6-6"/></svg>
@@ -218,35 +218,35 @@
         <ul class="submenu">
           
           <li class="submenu-item">
-            <a href="http://0.0.0.0:1313/series/career-reading-club/">職涯躍升書系導讀會</a>
+            <a href="//localhost:1313/series/career-reading-club/">職涯躍升書系導讀會</a>
           </li>
           
           <li class="submenu-item">
-            <a href="http://0.0.0.0:1313/series/essence-of-scrum/">Essence of Scrum</a>
+            <a href="//localhost:1313/series/essence-of-scrum/">Essence of Scrum</a>
           </li>
           
           <li class="submenu-item">
-            <a href="http://0.0.0.0:1313/series/scrum-master-training/">Scrum master 培訓系列</a>
+            <a href="//localhost:1313/series/scrum-master-training/">Scrum master 培訓系列</a>
           </li>
           
           <li class="submenu-item">
-            <a href="http://0.0.0.0:1313/series/agile-decomposition/">敏捷的工作分解方法</a>
+            <a href="//localhost:1313/series/agile-decomposition/">敏捷的工作分解方法</a>
           </li>
           
           <li class="submenu-item">
-            <a href="http://0.0.0.0:1313/series/systhinking-series/">「系統思考工作坊」系列</a>
+            <a href="//localhost:1313/series/systhinking-series/">「系統思考工作坊」系列</a>
           </li>
           
           <li class="submenu-item">
-            <a href="http://0.0.0.0:1313/series/criteria-series/">「判準與指標」系列</a>
+            <a href="//localhost:1313/series/criteria-series/">「判準與指標」系列</a>
           </li>
           
           <li class="submenu-item">
-            <a href="http://0.0.0.0:1313/series/change-series/">「改變」系列</a>
+            <a href="//localhost:1313/series/change-series/">「改變」系列</a>
           </li>
           
           <li class="submenu-item">
-            <a href="http://0.0.0.0:1313/series/book-review/">書籍／課程推薦</a>
+            <a href="//localhost:1313/series/book-review/">書籍／課程推薦</a>
           </li>
           
         </ul>
@@ -259,7 +259,7 @@
         
         
         
-        <a class="menu-item-link" href="http://0.0.0.0:1313/tags/">Tags</a>
+        <a class="menu-item-link" href="//localhost:1313/tags/">Tags</a>
         
 
         
@@ -270,7 +270,7 @@
         
         
         
-        <a class="menu-item-link" href="http://0.0.0.0:1313/categories/">Categories</a>
+        <a class="menu-item-link" href="//localhost:1313/categories/">Categories</a>
         
 
         
@@ -296,7 +296,7 @@
       </li>
 
       <li class="menu-item">
-        <a class="menu-item-link" href="http://0.0.0.0:1313/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
+        <a class="menu-item-link" href="//localhost:1313/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
           title="rss" target="_blank">
           
 <svg aria-hidden="true" class="lucide lucide-rss hi-svg-inline icon--rss" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg>
@@ -327,14 +327,14 @@
         
         
         
-        <a class="menu-item-link" href="http://0.0.0.0:1313/">♜</a>
+        <a class="menu-item-link" href="//localhost:1313/">♜</a>
         
         
       </li><li class="mobile-menu-item">
         
         
         
-        <a class="menu-item-link" href="http://0.0.0.0:1313/post/">Archives</a>
+        <a class="menu-item-link" href="//localhost:1313/post/">Archives</a>
         
         
       </li><li class="mobile-menu-item">
@@ -342,42 +342,42 @@
         
         <div class="mobile-menu-parent">
           <span class="mobile-submenu-open"></span>
-          <a href="http://0.0.0.0:1313/series/">
+          <a href="//localhost:1313/series/">
             Series
           </a>
         </div>
         <ul class="mobile-submenu-list">
           
           <li>
-            <a href="http://0.0.0.0:1313/series/career-reading-club/">職涯躍升書系導讀會</a>
+            <a href="//localhost:1313/series/career-reading-club/">職涯躍升書系導讀會</a>
           </li>
           
           <li>
-            <a href="http://0.0.0.0:1313/series/essence-of-scrum/">Essence of Scrum</a>
+            <a href="//localhost:1313/series/essence-of-scrum/">Essence of Scrum</a>
           </li>
           
           <li>
-            <a href="http://0.0.0.0:1313/series/scrum-master-training/">Scrum master 培訓系列</a>
+            <a href="//localhost:1313/series/scrum-master-training/">Scrum master 培訓系列</a>
           </li>
           
           <li>
-            <a href="http://0.0.0.0:1313/series/agile-decomposition/">敏捷的工作分解方法</a>
+            <a href="//localhost:1313/series/agile-decomposition/">敏捷的工作分解方法</a>
           </li>
           
           <li>
-            <a href="http://0.0.0.0:1313/series/systhinking-series/">「系統思考工作坊」系列</a>
+            <a href="//localhost:1313/series/systhinking-series/">「系統思考工作坊」系列</a>
           </li>
           
           <li>
-            <a href="http://0.0.0.0:1313/series/criteria-series/">「判準與指標」系列</a>
+            <a href="//localhost:1313/series/criteria-series/">「判準與指標」系列</a>
           </li>
           
           <li>
-            <a href="http://0.0.0.0:1313/series/change-series/">「改變」系列</a>
+            <a href="//localhost:1313/series/change-series/">「改變」系列</a>
           </li>
           
           <li>
-            <a href="http://0.0.0.0:1313/series/book-review/">書籍／課程推薦</a>
+            <a href="//localhost:1313/series/book-review/">書籍／課程推薦</a>
           </li>
           
         </ul>
@@ -386,14 +386,14 @@
         
         
         
-        <a class="menu-item-link" href="http://0.0.0.0:1313/tags/">Tags</a>
+        <a class="menu-item-link" href="//localhost:1313/tags/">Tags</a>
         
         
       </li><li class="mobile-menu-item">
         
         
         
-        <a class="menu-item-link" href="http://0.0.0.0:1313/categories/">Categories</a>
+        <a class="menu-item-link" href="//localhost:1313/categories/">Categories</a>
         
         
       </li>
@@ -414,7 +414,7 @@
       </li>
 
       <li class="mobile-menu-item">
-        <a class="menu-item-link" href="http://0.0.0.0:1313/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
+        <a class="menu-item-link" href="//localhost:1313/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
           title="rss" target="_blank">
           
 <svg aria-hidden="true" class="lucide lucide-rss hi-svg-inline icon--rss" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg>
@@ -524,7 +524,7 @@
       
         
           
-        <a href="http://0.0.0.0:1313/categories/tech/">tech</a>
+        <a href="//localhost:1313/categories/tech/">tech</a>
     </div>
 
 
@@ -686,9 +686,9 @@
 
         <footer class="post-footer">
           <div class="post-tags">
-              <a href="http://0.0.0.0:1313/tags/algorithm/">algorithm</a>
-                <a href="http://0.0.0.0:1313/tags/cs/">cs</a>
-                <a href="http://0.0.0.0:1313/tags/programming/">programming</a>
+              <a href="//localhost:1313/tags/algorithm/">algorithm</a>
+                <a href="//localhost:1313/tags/cs/">cs</a>
+                <a href="//localhost:1313/tags/programming/">programming</a>
                 
             </div>
 
@@ -818,7 +818,7 @@
 </a>
 
 
-<a href="http://0.0.0.0:1313/index.xml" rel="noopener alternate" type="application/rss&#43;xml" class="social-icon-link" title="rss"
+<a href="//localhost:1313/index.xml" rel="noopener alternate" type="application/rss&#43;xml" class="social-icon-link" title="rss"
   target="_blank">
   
 <svg aria-hidden="true" class="lucide lucide-rss hi-svg-inline" fill="none" height="1em" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg>

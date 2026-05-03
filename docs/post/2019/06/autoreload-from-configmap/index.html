@@ -91,7 +91,7 @@
 
 
 
-<link rel="stylesheet" href="/css/style.min.bb1eb901584c89594918ba9821cb0f685d2652dee18d424f9571c751b1047500.css" integrity="sha256-ux65AVhMiVlJGLqYIcsPaF0mUt7hjUJPlXHHUbEEdQA=" media="screen"
+<link rel="stylesheet" href="/css/style.min.8a128c11998582c1eb7b191efc647a984aca8d6fba2b4149696a62bbf077ef44.css" integrity="sha256-ihKMEZmFgsHrexke/GR6mErKjW&#43;6K0FJaWpiu/B370Q=" media="screen"
   crossorigin="anonymous">
 
 
@@ -450,6 +450,29 @@
 </nav>
     </div>
   </nav>
+
+  
+  <script>
+    (function () {
+      var toggle = document.getElementById('toc-toggle');
+      var toc = document.getElementById('TableOfContents');
+      if (!toggle || !toc) return;
+
+      toc.addEventListener('click', function (e) {
+        var link = e.target.closest('a[href^="#"]');
+        if (!link) return;
+        var href = link.getAttribute('href');
+        var id = decodeURIComponent(href.slice(1));
+        var target = document.getElementById(id);
+        if (!target) return;
+
+        e.preventDefault();
+        toggle.checked = false;
+        history.replaceState(null, '', href);
+        target.scrollIntoView({ block: 'start' });
+      });
+    })();
+  </script>
 
     </aside>
 
