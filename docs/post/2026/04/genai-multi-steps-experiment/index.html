@@ -72,7 +72,7 @@
   <meta itemprop="description" content="多步驟代理工作流程的穩定性經常受到完成判定機制的影響。過早啟動、假性完成與未驗證即結案是三大失靈主因。任務成敗需仰賴真實狀態與工具結果，單憑提示詞條件往往不足。實驗證實，將完成判定置於不同位置會明顯改變虛假完成發生率。實務上應結合驗證條件與外部機制，確保流程在真實狀態達成時才正確終止，以提升自動化流程的準確度與可靠性。">
   <meta itemprop="datePublished" content="2026-04-30T20:00:00+08:00">
   <meta itemprop="dateModified" content="2026-04-30T20:00:00+08:00">
-  <meta itemprop="wordCount" content="4608">
+  <meta itemprop="wordCount" content="4604">
   <meta itemprop="keywords" content="Ai,Cs,Programming,Testing">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Prompt 寫了卻還是不穩：用三組實驗看完成判定該放在哪裡">
@@ -90,7 +90,7 @@
 
 
 
-<link rel="stylesheet" href="/css/style.min.3356e9c62a02c8d5156376245708f1d2abc0fcbd6a3d3f9761555cea22ddb2d8.css" integrity="sha256-M1bpxioCyNUVY3YkVwjx0qvA/L1qPT&#43;XYVVc6iLdstg=" media="screen"
+<link rel="stylesheet" href="/css/style.min.5881f0e9d5d3e2c8c32ffb488885e8a1dda774f2ab3ddc85735e0526af99e672.css" integrity="sha256-WIHw6dXT4sjDL/tIiIXood2ndPKrPdyFc14FJq&#43;Z5nI=" media="screen"
   crossorigin="anonymous">
 
 
@@ -524,7 +524,7 @@
 
   <div class="post-meta__right">
     <span class="post-meta-more">
-      約 4608 字 -
+      約 4604 字 -
       預計閱讀 10 分鐘
       
       
@@ -868,7 +868,7 @@
 <p>這正是 <code>prompt_only</code> 脆弱的地方。當「到底要不要修」本身就是一個判斷題，而判斷依據又散在 prompt 各處時，模型很容易找到一條對自己比較寬鬆的解釋路徑，然後把那個局部合理的解釋，當成整個 workflow 裡的完成判定。</p>
 <p>至於 <code>tool_with_readback</code> 這做法，其實沒有讓模型突然更懂 Markdown；它只是把放行權從語言模型身上移走。若 checker 說 <code>pass=false</code>，流程就不能結案；得一直修到 <code>pass=true</code> 為止。</p>
 <h2 id="邊界條件本機小模型-qwen3-系列">邊界條件：本機小模型 (Qwen3 系列)</h2>
-<p>我在本機用兩個 Qwen3 系列模型重做這組實驗：Qwen3:8b (general dense)，以及 2026/02 發布的下一代 Qwen3.5-9B (hybrid 架構)，把 Claude Code 客戶端直接接到本機 Ollama。</p>
+<p>我再用兩個 Qwen3 系列模型重做這組實驗：Qwen3:8b (general dense)，以及 2026/02 發布的下一代 Qwen3.5-9B (hybrid 架構)，把 Claude Code CLI 直接接到本機 Ollama。</p>
 <p>兩個模型的工具呼叫能力都沒問題。但放進 Claude Code 整套 harness 去跑實驗，結果兩個模型都沒有任何一次真實的呼叫工具，失敗方式也完全不同。</p>
 <p>在 Qwen3:8b 的實驗裡，每一個 case 都是 agent failure。不只是「沒寫檔」，也根本沒有真的呼叫任何工具。模型自己把整套 readback 流程都在想像中「演」完了，它甚至從 prompt 路徑裡抓到 workspace 名稱的字串，順手填進 <code>run_id</code> 欄位。夠聰明吧！</p>
 <p>8B 失敗的原因是「決策被淹沒」。當 prompt 長到一個程度、工具選項多到一個程度，模型會跳過 tool-use 那個分支，直接退化成「產出一段<strong>看起來像答案</strong>的文字」就交差。能力沒消失，只是被擠出有效 attention 的範圍。<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> 從假性完成的角度看，這個結果其實比 Claude/Codex 的 30–50% 還糟：表面看像 100% 通過 (vacuous pass)，實際上 100% 沒做事。</p>

@@ -335,7 +335,7 @@
 &lt;p&gt;這正是 &lt;code&gt;prompt_only&lt;/code&gt; 脆弱的地方。當「到底要不要修」本身就是一個判斷題，而判斷依據又散在 prompt 各處時，模型很容易找到一條對自己比較寬鬆的解釋路徑，然後把那個局部合理的解釋，當成整個 workflow 裡的完成判定。&lt;/p&gt;
 &lt;p&gt;至於 &lt;code&gt;tool_with_readback&lt;/code&gt; 這做法，其實沒有讓模型突然更懂 Markdown；它只是把放行權從語言模型身上移走。若 checker 說 &lt;code&gt;pass=false&lt;/code&gt;，流程就不能結案；得一直修到 &lt;code&gt;pass=true&lt;/code&gt; 為止。&lt;/p&gt;
 &lt;h2 id=&#34;邊界條件本機小模型-qwen3-系列&#34;&gt;邊界條件：本機小模型 (Qwen3 系列)&lt;/h2&gt;
-&lt;p&gt;我在本機用兩個 Qwen3 系列模型重做這組實驗：Qwen3:8b (general dense)，以及 2026/02 發布的下一代 Qwen3.5-9B (hybrid 架構)，把 Claude Code 客戶端直接接到本機 Ollama。&lt;/p&gt;
+&lt;p&gt;我再用兩個 Qwen3 系列模型重做這組實驗：Qwen3:8b (general dense)，以及 2026/02 發布的下一代 Qwen3.5-9B (hybrid 架構)，把 Claude Code CLI 直接接到本機 Ollama。&lt;/p&gt;
 &lt;p&gt;兩個模型的工具呼叫能力都沒問題。但放進 Claude Code 整套 harness 去跑實驗，結果兩個模型都沒有任何一次真實的呼叫工具，失敗方式也完全不同。&lt;/p&gt;
 &lt;p&gt;在 Qwen3:8b 的實驗裡，每一個 case 都是 agent failure。不只是「沒寫檔」，也根本沒有真的呼叫任何工具。模型自己把整套 readback 流程都在想像中「演」完了，它甚至從 prompt 路徑裡抓到 workspace 名稱的字串，順手填進 &lt;code&gt;run_id&lt;/code&gt; 欄位。夠聰明吧！&lt;/p&gt;
 &lt;p&gt;8B 失敗的原因是「決策被淹沒」。當 prompt 長到一個程度、工具選項多到一個程度，模型會跳過 tool-use 那個分支，直接退化成「產出一段&lt;strong&gt;看起來像答案&lt;/strong&gt;的文字」就交差。能力沒消失，只是被擠出有效 attention 的範圍。&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt; 從假性完成的角度看，這個結果其實比 Claude/Codex 的 30–50% 還糟：表面看像 100% 通過 (vacuous pass)，實際上 100% 沒做事。&lt;/p&gt;
